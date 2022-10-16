@@ -3,8 +3,6 @@
 #include <iostream>
 
 
-#include <fmt/printf.h>
-
 namespace
 {
     bool& is_exception_enabled()
