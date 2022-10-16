@@ -6,9 +6,7 @@
 #include <optional>
 #include <algorithm>
 #include <cstdint>
-
-#include <fmt/core.h>
-#include <fmt/format.h>
+#include <sstream>
 
 // in favor of euphoria base library
 #include "three/dependency_glm.h"

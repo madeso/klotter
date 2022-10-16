@@ -5,19 +5,14 @@
 #include <cmath>
 
 #include "three/assert.h"
-#include "three/cint.h"
 #include "three/dependency_opengl.h"
-#include "three/log.h"
-#include "three/template_engine.h"
-
-#include "three/render/engine.h"
-#include "three/render/handle.funcs.h"
 #include "three/render/material.property.h"
 #include "three/render/material.shader.source.h"
 #include "three/render/mesh.h"
 #include "three/render/shader.h"
 #include "three/render/texture.h"
 #include "three/render/opengl_utils.h"
+#include "three/str.h"
 
 
 namespace render
@@ -298,7 +293,7 @@ get_light_uniforms_from_shader
 
     for(int point_light_index=0; point_light_index<lp.number_of_point_lights; point_light_index += 1)
     {
-        const auto uniform_name = fmt::format("uPointLights[{}]", point_light_index);
+        const std::string uniform_name = Str{} << "uPointLights[" << point_light_index << "]";
         r.point_lights.emplace_back(get_point_light_uniforms_from_shader(shader, uniform_name));
     }
 

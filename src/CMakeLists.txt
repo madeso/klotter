@@ -15,6 +15,7 @@ set(src_base
     three/dependency_opengl.cc three/dependency_opengl.h
     three/dependency_sdl.cc three/dependency_sdl.h
     three/result.cc three/result.h
+    three/str.cc three/str.h
     three/windows.sdl.convert.cc three/windows.sdl.convert.h
 )
 

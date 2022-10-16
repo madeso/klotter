@@ -1,6 +1,6 @@
 #include "three/assert.h"
 
-#include <cstdlib>
+#include <iostream>
 
 
 #include <fmt/printf.h>
@@ -17,7 +17,10 @@ namespace
 
 void on_assert_failure(std::string_view function, std::string_view reason, std::string_view file, int line)
 {
-    const auto text = fmt::format("{}({}): Assertion failed in {}: {}", file, line, function, reason);
+    const std::string text = Str{}
+        << file << "(" << line << "): "
+        << "Assertion failed in " << function  << ": " << reason
+        ;
     
     if(is_exception_enabled())
     {
@@ -25,8 +28,7 @@ void on_assert_failure(std::string_view function, std::string_view reason, std::
     }
     else
     {
-        fmt::print("{}", text);
-        fflush(stdout);
+        std::cerr << text << std::endl;
         std::abort();
     }
 }
