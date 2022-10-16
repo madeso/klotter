@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "three/str.h"
+
 
 namespace
 {

@@ -39,6 +39,9 @@ target_link_libraries(three
         stb::image
         external::glm
         external::glad
+    PRIVATE
+        three::project_options
+        three::project_warnings
 )
 target_include_directories(three
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
