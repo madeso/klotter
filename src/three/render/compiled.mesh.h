@@ -14,7 +14,7 @@
 #include "three/render/light.h"
 
 
-namespace render
+namespace three
 {
 
 

@@ -3,7 +3,7 @@
 #include "vertex_layout.h"
 
 
-namespace render::shader
+namespace three::shader
 {
 
 enum class ShaderMessageType

@@ -3,7 +3,7 @@
 #include "three/stdutils.h"
 
 
-namespace render
+namespace three
 {
 
 bool operator<(const MaterialPropertyReference& lhs, const MaterialPropertyReference& rhs)

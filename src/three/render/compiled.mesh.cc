@@ -15,7 +15,7 @@
 #include "three/str.h"
 
 
-namespace render
+namespace three
 {
 
 

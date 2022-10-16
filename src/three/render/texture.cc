@@ -9,7 +9,7 @@
 #include "three/log.h"
 
 
-namespace render
+namespace three
 {
 
 

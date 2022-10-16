@@ -1,6 +1,6 @@
 #pragma once
 
-namespace render
+namespace three
 {
 
 enum class MaterialPropertyType

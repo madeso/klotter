@@ -2,7 +2,7 @@
 
 #include "three/undef_windows.h"
 
-namespace input
+namespace three
 {
 
 enum class MouseButton

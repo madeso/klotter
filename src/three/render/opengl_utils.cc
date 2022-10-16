@@ -7,7 +7,7 @@
 #include "three/dependency_sdl.h"
 
 
-namespace render
+namespace three
 {
 
 const char*

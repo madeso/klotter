@@ -2,7 +2,7 @@
 
 #include "three/colors.h"
 
-namespace render
+namespace three
 {
 
 

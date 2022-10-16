@@ -13,7 +13,7 @@
 using namespace std::literals;
 
 
-namespace render
+namespace three
 {
 
 SpriteBatch::SpriteBatch(ShaderProgram* quad_shader, Render2* r)

@@ -1,6 +1,6 @@
 #include "three/render/uniform.h"
 
-namespace render
+namespace three
 {
 
 Uniform::Uniform()

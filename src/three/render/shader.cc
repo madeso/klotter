@@ -6,7 +6,7 @@
 #include "three/cint.h"
 
 
-namespace render
+namespace three
 {
 
 bool

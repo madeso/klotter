@@ -4,7 +4,7 @@
 #include "three/render/shader.source.h"
 #include "three/render/material.property.h"
 
-namespace render
+namespace three
 {
 
 struct Vfs;

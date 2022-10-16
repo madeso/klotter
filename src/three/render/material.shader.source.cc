@@ -4,7 +4,7 @@
 #include "three/render/vfs.h"
 
 
-namespace render
+namespace three
 {
 
 MaterialShaderSource::MaterialShaderSource(const shader::ShaderSource& src, bool al)

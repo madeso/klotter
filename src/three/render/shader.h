@@ -7,7 +7,7 @@
 
 #include "three/render/vertex_layout.h"
 
-namespace render
+namespace three
 {
 
 struct ShaderProgram

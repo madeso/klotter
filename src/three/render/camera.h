@@ -1,6 +1,6 @@
 #pragma once
 
-namespace render
+namespace three
 {
 
 constexpr auto UP = glm::vec3(0.0f, 1.0f, 0.0f);
@@ -15,12 +15,13 @@ struct CameraVectors
 
 struct Camera
 {
-    float fov = 45.0f;
+    float fov;
+    float near;
+    float far;
 
-    float near = 0.1f;
-    float far = 100.0f;
+    Camera(float a_fov, float a_near, float a_far);
 
-    glm::vec3 position = glm::vec3{0.0f, 0.0f,  3.0f};
+    glm::vec3 position = glm::vec3{0.0f, 0.0f,  0.0f};
 
     float yaw = -90.0f;
     float pitch = 0.0f;

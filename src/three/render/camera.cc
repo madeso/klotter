@@ -2,8 +2,15 @@
 
 #include <cmath>
 
-namespace render
+namespace three
 {
+
+Camera::Camera(float a_fov, float a_near, float a_far)
+    : fov(a_fov)
+    , near(a_near)
+    , far(a_far)
+{
+}
 
 CameraVectors
 create_vectors(const Camera& cam)

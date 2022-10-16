@@ -7,7 +7,7 @@
 #include "three/render/texture.h"
 
 
-namespace render
+namespace three
 {
 
 struct SpriteBatch;

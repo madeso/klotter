@@ -1,6 +1,6 @@
 #pragma once
 
-namespace render
+namespace three
 {
 
 /** Represents a found shader uniform and created via ShaderProgram::GetUniform()
