@@ -64,3 +64,4 @@ void render(const Scene& scene, const Camera& camera);
 
 #define IMPLEMENT_MAIN(APP) int main(int argc, char** argv)\
 { return three::run_main(argc, argv, [](){ return std::make_unique<APP>();}); }
+
