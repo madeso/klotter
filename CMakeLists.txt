@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 set_property(GLOBAL PROPERTY USE_FOLDERS OFF)
 project(theecpp CXX C)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
 add_library(project_options INTERFACE)
 add_library(project_warnings INTERFACE)
