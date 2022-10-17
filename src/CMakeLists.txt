@@ -17,6 +17,8 @@ set(src_base
     three/result.cc three/result.h
     three/str.cc three/str.h
     three/windows.sdl.convert.cc three/windows.sdl.convert.h
+
+    three/three.cc three/three.h
 )
 
 set(src_pch

@@ -14,12 +14,16 @@ struct App
     virtual void on_render(float dt) = 0;
 };
 
+using MakeAppFunction = std::function<std::unique_ptr<App>()>;
+int run_main(int argc, char** argv, MakeAppFunction make_app);
+
 
 
 struct CompiledGeom
 {
 };
-std::shared_ptr<CompiledGeom> make_BoxGeometry(float boxWidth, float boxHeight, float boxDepth);
+using GeomPtr = std::shared_ptr<CompiledGeom>;
+GeomPtr make_BoxGeometry(float boxWidth, float boxHeight, float boxDepth);
 
 
 
@@ -27,16 +31,19 @@ struct Material
 {
     glm::vec3 color;
 };
-std::shared_ptr<Material> make_MeshBasicMaterial();
+using MaterialPtr = std::shared_ptr<Material>;
+MaterialPtr make_MeshBasicMaterial();
 
 
 
 struct Mesh
 {
+    GeomPtr geom;
+    MaterialPtr material;
     glm::vec3 rotation;
 };
 using MeshPtr = std::shared_ptr<Mesh>;
-MeshPtr make_Mesh(std::shared_ptr<CompiledGeom>, std::shared_ptr<Material> material);
+MeshPtr make_Mesh(GeomPtr geom, MaterialPtr material);
 
 
 glm::vec3 color_from_hex(int hex);
@@ -48,11 +55,6 @@ struct Scene
 
     void add(MeshPtr mesh);
 };
-
-using MakeAppFunction = std::function<std::unique_ptr<App>()>;
-
-
-int run_main(int argc, char** argv, MakeAppFunction make_app);
 
 
 void render(const Scene& scene, const Camera& camera);
