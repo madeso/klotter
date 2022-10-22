@@ -2,6 +2,7 @@
 
 
 #include "three/render/camera.h"
+#include "three/dependency_sdl.h"
 
 
 namespace three
@@ -15,7 +16,7 @@ struct App
 };
 
 using MakeAppFunction = std::function<std::unique_ptr<App>()>;
-int run_main(int argc, char** argv, MakeAppFunction make_app);
+int run_main(MakeAppFunction make_app);
 
 
 
@@ -62,6 +63,6 @@ void render(const Scene& scene, const Camera& camera);
 }
 
 
-#define IMPLEMENT_MAIN(APP) int main(int argc, char** argv)\
-{ return three::run_main(argc, argv, [](){ return std::make_unique<APP>();}); }
+#define IMPLEMENT_MAIN(APP) int main(int, char**)\
+{ return three::run_main([](){ return std::make_unique<APP>();}); }
 

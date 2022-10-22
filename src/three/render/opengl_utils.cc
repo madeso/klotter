@@ -1,7 +1,6 @@
 #include "three/render/opengl_utils.h"
 
 #include "three/assert.h"
-#include "three/log.h"
 
 #include "three/dependency_opengl.h"
 #include "three/dependency_sdl.h"
@@ -104,11 +103,12 @@ on_opengl_error
     }
     ++ErrorCount;
 
-    LOG_ERROR
+    SDL_LogCritical
     (
+        SDL_LOG_CATEGORY_ERROR, 
         "---------------\n"
-        "Debug message ({}): {}\n"
-        "Source {} type: {} Severity: {}",
+        "Debug message (%d): %s\n"
+        "Source %s type: %s Severity: %s",
         id, message,
         source_to_string(source),
         type_to_string(type),
@@ -125,7 +125,7 @@ setup_opengl_debug()
     const bool has_debug = GLAD_GL_ARB_debug_output == 1;
     if(has_debug)
     {
-        LOG_INFO("Enabling OpenGL debug output");
+        SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Enabling OpenGL debug output");
         glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB);
         glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB);
         glDebugMessageCallbackARB(on_opengl_error, nullptr);

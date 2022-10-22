@@ -5,6 +5,7 @@ set(src_input
 
 set(src_render
     three/render/camera.cc three/render/camera.h
+    three/render/opengl_utils.cc three/render/opengl_utils.h
 )
     
 set(src_base
