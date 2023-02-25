@@ -10,7 +10,7 @@ struct CubeApp : App
 {
     Camera camera;
     Scene scene;
-    MeshPtr cube;
+    MeshInstancePtr cube;
 
     CubeApp()
         : camera{fov, near, far}
@@ -21,9 +21,9 @@ struct CubeApp : App
         const auto boxHeight = 1;
         const auto boxDepth = 1;
         auto geometry = make_BoxGeometry(boxWidth, boxHeight, boxDepth);
-        auto material = make_MeshBasicMaterial();
+        auto material = make_BasicMaterial();
         
-        cube = make_Mesh(geometry, material);
+        cube = make_MeshInstance(geometry, material);
         scene.meshes.emplace_back(cube);
     }
 

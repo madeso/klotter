@@ -14,14 +14,14 @@ GeomPtr make_BoxGeometry(float boxWidth, float boxHeight, float boxDepth)
     return std::make_shared<CompiledGeom>();
 }
 
-MaterialPtr make_MeshBasicMaterial()
+MaterialPtr make_BasicMaterial()
 {
     return std::make_shared<Material>();
 }
 
-MeshPtr make_Mesh(GeomPtr geom, MaterialPtr material)
+MeshInstancePtr make_MeshInstance(GeomPtr geom, MaterialPtr material)
 {
-    auto mesh = std::make_shared<Mesh>();
+    auto mesh = std::make_shared<MeshInstance>();
     mesh->geom = geom;
     mesh->material = material;
     return mesh;

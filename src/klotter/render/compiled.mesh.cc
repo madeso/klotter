@@ -829,13 +829,13 @@ compile_geom(const Geom& mesh, const CompiledGeomVertexAttributes& layout)
 }
 
 
-CompiledMesh
+CompiledMeshInstance
 compile_mesh
 (
     Engine* engine,
     Cache* cache,
     const Vfs& vfs,
-    const Mesh& mesh
+    const MeshInstance& mesh
 )
 {
     auto material = compile_material(engine, cache, vfs, mesh.material);

@@ -21,11 +21,11 @@ struct Material
 {
 };
 using MaterialPtr = std::shared_ptr<Material>;
-MaterialPtr make_MeshBasicMaterial();
+MaterialPtr make_BasicMaterial();
 
 
 
-struct Mesh
+struct MeshInstance
 {
     GeomPtr geom;
     MaterialPtr material;
@@ -33,8 +33,8 @@ struct Mesh
     glm::vec3 position;
     glm::quat rotation;
 };
-using MeshPtr = std::shared_ptr<Mesh>;
-MeshPtr make_Mesh(GeomPtr geom, MaterialPtr material);
+using MeshInstancePtr = std::shared_ptr<MeshInstance>;
+MeshInstancePtr make_MeshInstance(GeomPtr geom, MaterialPtr material);
 
 
 glm::vec3 color_from_hex(int hex);
@@ -42,7 +42,7 @@ glm::vec3 color_from_hex(int hex);
 
 struct Scene
 {
-    std::vector<MeshPtr> meshes;
+    std::vector<MeshInstancePtr> meshes;
 };
 
 

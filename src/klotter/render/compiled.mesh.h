@@ -27,7 +27,7 @@ struct Engine;
 struct Geom;
 struct MaterialDescription;
 struct MaterialPropertyReference;
-struct Mesh;
+struct MeshInstance;
 struct OpenglStates;
 struct PointLight;
 struct ShaderProgram;
@@ -221,7 +221,7 @@ struct CompiledGeom
 };
 
 
-struct CompiledMesh
+struct CompiledMeshInstance
 {
     CompiledGeom geom;
     CompiledMaterial material;
@@ -263,8 +263,8 @@ compile_material
     const MaterialDescription& mat
 );
 
-CompiledMesh
-compile_mesh(Engine* engine, Cache* cache, const Vfs& vfs, const Mesh& mesh);
+CompiledMeshInstance
+compile_mesh(Engine* engine, Cache* cache, const Vfs& vfs, const MeshInstance& mesh);
 
 void
 render_geom(const CompiledGeom& geom);
