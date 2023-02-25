@@ -22,10 +22,9 @@ struct CubeApp : App
         const auto boxDepth = 1;
         auto geometry = make_BoxGeometry(boxWidth, boxHeight, boxDepth);
         auto material = make_MeshBasicMaterial();
-        material->color = color_from_hex(0x44aa88);
         
         cube = make_Mesh(geometry, material);
-        scene.add(cube);
+        scene.meshes.emplace_back(cube);
     }
 
     void on_render(float time) override

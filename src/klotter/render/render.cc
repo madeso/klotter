@@ -32,13 +32,6 @@ glm::vec3 color_from_hex(int hex)
 {
     return {0, 0, 0};
 }
-        
-
-void
-Scene::add(MeshPtr mesh)
-{
-    meshes.emplace_back(mesh);
-}
 
 
 

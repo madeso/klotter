@@ -18,6 +18,8 @@ struct App
 using MakeAppFunction = std::function<std::unique_ptr<App>()>;
 int run_main(MakeAppFunction make_app);
 
+const glm::ivec2 get_window_size();
+
 }
 
 
