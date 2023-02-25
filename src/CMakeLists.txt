@@ -1,4 +1,5 @@
 set(src_render
+    klotter/render/render.cc klotter/render/render.h
     klotter/render/camera.cc klotter/render/camera.h
     klotter/render/opengl_utils.cc klotter/render/opengl_utils.h
 )
