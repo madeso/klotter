@@ -52,7 +52,7 @@ namespace glm
 		vec<2, T, Q> const& v,
 		T const& angle);
 
-	//! Rotate a three dimensional vector around an axis.
+	//! Rotate a klotter dimensional vector around an axis.
 	//! From GLM_GTX_rotate_vector extension.
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL vec<3, T, Q> rotate(
@@ -68,21 +68,21 @@ namespace glm
 		T const& angle,
 		vec<3, T, Q> const& normal);
 
-	//! Rotate a three dimensional vector around the X axis.
+	//! Rotate a klotter dimensional vector around the X axis.
 	//! From GLM_GTX_rotate_vector extension.
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL vec<3, T, Q> rotateX(
 		vec<3, T, Q> const& v,
 		T const& angle);
 
-	//! Rotate a three dimensional vector around the Y axis.
+	//! Rotate a klotter dimensional vector around the Y axis.
 	//! From GLM_GTX_rotate_vector extension.
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL vec<3, T, Q> rotateY(
 		vec<3, T, Q> const& v,
 		T const& angle);
 
-	//! Rotate a three dimensional vector around the Z axis.
+	//! Rotate a klotter dimensional vector around the Z axis.
 	//! From GLM_GTX_rotate_vector extension.
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL vec<3, T, Q> rotateZ(

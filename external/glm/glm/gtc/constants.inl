@@ -33,7 +33,7 @@ namespace glm
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType three_over_two_pi()
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType klotter_over_two_pi()
 	{
 		return genType(4.71238898038468985769396507491925432);
 	}
@@ -117,7 +117,7 @@ namespace glm
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType root_three()
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType root_klotter()
 	{
 		return genType(1.73205080756887729352744634150587236);
 	}

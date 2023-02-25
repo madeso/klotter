@@ -8,7 +8,7 @@
 ///
 /// Include <glm/gtx/handed_coordinate_system.hpp> to use the features of this extension.
 ///
-/// To know if a set of three basis vectors defines a right or left-handed coordinate system.
+/// To know if a set of klotter basis vectors defines a right or left-handed coordinate system.
 
 #pragma once
 

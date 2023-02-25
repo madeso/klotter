@@ -52,7 +52,7 @@ namespace glm
 	/// Return pi / 2 * 3.
 	/// @see gtc_constants
 	template<typename genType>
-	GLM_FUNC_DECL GLM_CONSTEXPR genType three_over_two_pi();
+	GLM_FUNC_DECL GLM_CONSTEXPR genType klotter_over_two_pi();
 
 	/// Return pi / 4.
 	/// @see gtc_constants
@@ -122,7 +122,7 @@ namespace glm
 	/// Return sqrt(3).
 	/// @see gtc_constants
 	template<typename genType>
-	GLM_FUNC_DECL GLM_CONSTEXPR genType root_three();
+	GLM_FUNC_DECL GLM_CONSTEXPR genType root_klotter();
 
 	/// Return sqrt(5).
 	/// @see gtc_constants

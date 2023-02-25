@@ -1,6 +1,6 @@
-#include "three/three.h"
+#include "klotter/klotter.h"
 
-using namespace three;
+using namespace klotter;
 
 constexpr auto fov = 75.0f;
 constexpr auto near = 0.1f;

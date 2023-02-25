@@ -318,7 +318,7 @@ namespace glm
 	/// @see ivec4 unpackI3x10_1x2(uint32 const& p)
 	GLM_FUNC_DECL uint32 packI3x10_1x2(ivec4 const& v);
 
-	/// Unpacks a single 32-bit unsigned integer p into three 10-bit and one 2-bit signed integers.
+	/// Unpacks a single 32-bit unsigned integer p into klotter 10-bit and one 2-bit signed integers.
 	///
 	/// The first component of the returned vector will be extracted from the least significant bits of the input;
 	/// the last component will be extracted from the most significant bits.
@@ -342,7 +342,7 @@ namespace glm
 	/// @see ivec4 unpackU3x10_1x2(uint32 const& p)
 	GLM_FUNC_DECL uint32 packU3x10_1x2(uvec4 const& v);
 
-	/// Unpacks a single 32-bit unsigned integer p into three 10-bit and one 2-bit unsigned integers.
+	/// Unpacks a single 32-bit unsigned integer p into klotter 10-bit and one 2-bit unsigned integers.
 	///
 	/// The first component of the returned vector will be extracted from the least significant bits of the input;
 	/// the last component will be extracted from the most significant bits.
@@ -353,7 +353,7 @@ namespace glm
 	/// @see uvec4 unpackI3x10_1x2(uint32 const& p);
 	GLM_FUNC_DECL uvec4 unpackU3x10_1x2(uint32 p);
 
-	/// First, converts the first three components of the normalized floating-point value v into 10-bit signed integer values.
+	/// First, converts the first klotter components of the normalized floating-point value v into 10-bit signed integer values.
 	/// Then, converts the forth component of the normalized floating-point value v into 2-bit signed integer values.
 	/// Then, the results are packed into the returned 32-bit unsigned integer.
 	///
@@ -388,7 +388,7 @@ namespace glm
 	/// @see uvec4 unpackU3x10_1x2(uint32 const& p)
 	GLM_FUNC_DECL vec4 unpackSnorm3x10_1x2(uint32 p);
 
-	/// First, converts the first three components of the normalized floating-point value v into 10-bit unsigned integer values.
+	/// First, converts the first klotter components of the normalized floating-point value v into 10-bit unsigned integer values.
 	/// Then, converts the forth component of the normalized floating-point value v into 2-bit signed uninteger values.
 	/// Then, the results are packed into the returned 32-bit unsigned integer.
 	///
@@ -435,7 +435,7 @@ namespace glm
 	GLM_FUNC_DECL uint32 packF2x11_1x10(vec3 const& v);
 
 	/// First, unpacks a single 32-bit unsigned integer p into two 11-bit signless floating-point values and one 10-bit signless floating-point value .
-	/// Then, each component is converted to a normalized floating-point value to generate the returned three-component vector.
+	/// Then, each component is converted to a normalized floating-point value to generate the returned klotter-component vector.
 	///
 	/// The first component of the returned vector will be extracted from the least significant bits of the input;
 	/// the last component will be extracted from the most significant bits.
@@ -459,7 +459,7 @@ namespace glm
 	GLM_FUNC_DECL uint32 packF3x9_E1x5(vec3 const& v);
 
 	/// First, unpacks a single 32-bit unsigned integer p into two 11-bit signless floating-point values and one 10-bit signless floating-point value .
-	/// Then, each component is converted to a normalized floating-point value to generate the returned three-component vector.
+	/// Then, each component is converted to a normalized floating-point value to generate the returned klotter-component vector.
 	///
 	/// The first component of the returned vector will be extracted from the least significant bits of the input;
 	/// the last component will be extracted from the most significant bits.

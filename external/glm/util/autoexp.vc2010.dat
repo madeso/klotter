@@ -1897,7 +1897,7 @@ std::tr1::sub_match<char const *>|std::tr1::sub_match<wchar_t const *>|std::tr1:
 
 	children (
 		#(
-			; sub_match's three data members are public, but we list them here
+			; sub_match's klotter data members are public, but we list them here
 			; (a) to display matched before first and second, and
 			; (b) to gloss over the fact that sub_match derives from std::pair.
 			#(matched : $e.matched),
