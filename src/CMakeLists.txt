@@ -1,8 +1,3 @@
-set(src_input
-    klotter/input/axis.cc klotter/input/axis.h
-    klotter/input/key.cc klotter/input/key.h
-)
-
 set(src_render
     klotter/render/camera.cc klotter/render/camera.h
     klotter/render/opengl_utils.cc klotter/render/opengl_utils.h
@@ -17,7 +12,6 @@ set(src_base
     klotter/dependency_sdl.cc klotter/dependency_sdl.h
     klotter/result.cc klotter/result.h
     klotter/str.cc klotter/str.h
-    klotter/windows.sdl.convert.cc klotter/windows.sdl.convert.h
 
     klotter/klotter.cc klotter/klotter.h
 )
@@ -27,7 +21,6 @@ set(src_pch
 )
 
 set(src
-    ${src_input}
     ${src_empty}
     ${src_render}
     ${src_base}
