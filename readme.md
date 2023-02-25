@@ -16,4 +16,4 @@ Klotter in swedish could be translated as doodlge, graffiti or scribbling.
 ### Non goals
 * versatile data driven rendering library that fits all purposes (use specific interfaces)
 * have a good api design with great memory management (use smart pointers)
-
+* modern c++ dependencies (use iostream instead of fmt)

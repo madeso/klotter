@@ -1,0 +1,6 @@
+{
+  "name": "klotter",
+  "dependencies": [
+    "sdl-2.0.20"
+  ]
+}
