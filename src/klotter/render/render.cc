@@ -3,7 +3,6 @@
 #include <string_view>
 
 #include "klotter/dependency_opengl.h"
-#include "klotter/colors.h"
 
 
 using namespace std::literals::string_view_literals;
@@ -59,6 +58,11 @@ void destroy_ebo(u32 ebo)
     glDeleteBuffers(1, &ebo);
 }
 
+Vertex::Vertex(glm::vec3 p, glm::vec3 c)
+    : position(std::move(p))
+    , color(std::move(c))
+{
+}
 
 Mesh::Mesh(std::vector<Vertex> v, std::vector<Face> f)
     : vertices(std::move(v))
@@ -75,22 +79,30 @@ ShaderResource::ShaderResource()
     shader = std::make_shared<ShaderProgram>(
     R"glsl(
         #version 330 core
-        layout(location = 0) in vec3 aPos;
+
+        layout (location = 0) in vec3 aPos;
+        layout (location = 1) in vec3 aColor;
+
+        out vec3 vColor;
+
         void main()
         {
             gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+            vColor = aColor;
         }
     )glsl"sv,
      R"glsl(
         #version 330 core
-        
+
         uniform vec4 TintColor;
+
+        in vec3 vColor;
 
         out vec4 FragColor;
 
         void main()
         {
-            FragColor = TintColor;
+            FragColor = TintColor.rgba * vec4(vColor.rgb, 1.0);
         }
     )glsl"sv
         );
@@ -116,12 +128,18 @@ BasicMaterial::BasicMaterial()
 std::vector<float> BasicMaterial::compile_mesh_data(const Mesh& mesh)
 {
     std::vector<float> vertices;
-    for (const auto& vv : mesh.vertices)
+
+    auto push3 = [&vertices](const glm::vec3& p)
     {
-        const auto& p = vv.position;
         vertices.emplace_back(p.x);
         vertices.emplace_back(p.y);
         vertices.emplace_back(p.z);
+    };
+
+    for (const auto& v : mesh.vertices)
+    {
+        push3(v.position);
+        push3(v.color);
     }
     return vertices;
 }
@@ -160,12 +178,16 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     glBindVertexArray(vao);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(sizeof(float) * vertices.size()), vertices.data(), GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), nullptr);
+    
+    const GLsizei stride = 6 * sizeof(float);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, nullptr);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, reinterpret_cast<void*>(3 * sizeof(float)));
 
     const auto ebo = create_ebo();
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, Csizet_to_glsizeiptr(sizeof(u32) * indices.size()), indices.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
 
     return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, static_cast<i32>(mesh.faces.size()));
 }

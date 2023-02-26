@@ -4,7 +4,9 @@
 
 #include "klotter/render/camera.h"
 #include "klotter/render/shader.h"
+
 #include "klotter/types.h"
+#include "klotter/colors.h"
 
 namespace klotter
 {
@@ -19,6 +21,9 @@ struct ShaderResource
 struct Vertex
 {
     glm::vec3 position;
+    glm::vec3 color;
+
+    explicit Vertex(glm::vec3 p, glm::vec3 c = white);
 };
 
 struct Face

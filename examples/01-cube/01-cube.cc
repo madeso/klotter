@@ -1,7 +1,5 @@
 #include "klotter/klotter.h"
 
-#include "klotter/colors.h"
-
 using namespace klotter;
 
 constexpr auto fov = 75.0f;
@@ -22,10 +20,10 @@ struct CubeApp : App
         const auto triangle = Mesh
         {
             {
-                Vertex{{ 0.5f,  0.5f, 0.0f}},  // top right
-                Vertex{{ 0.5f, -0.5f, 0.0f}},  // bottom right
-                Vertex{{-0.5f, -0.5f, 0.0f}},  // bottom left
-                Vertex{{-0.5f,  0.5f, 0.0f}}   // top left 
+                Vertex{{ 0.5f,  0.5f, 0.0f}, red_vermillion},  // top right
+                Vertex{{ 0.5f, -0.5f, 0.0f}, blue},  // bottom right
+                Vertex{{-0.5f, -0.5f, 0.0f}, green_bluish},  // bottom left
+                Vertex{{-0.5f,  0.5f, 0.0f}, orange}   // top left 
             },
             {
                 Face{0, 1, 3},   // first triangle
@@ -34,7 +32,7 @@ struct CubeApp : App
         };
 
         auto material = std::make_shared<BasicMaterial>();
-        material->color = {orange, 1.0f};
+        material->color = {white, 1.0f};
         auto geometry = compile_Mesh(triangle, material);
         
         cube = make_MeshInstance(geometry);
