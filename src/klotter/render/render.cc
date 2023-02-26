@@ -3,6 +3,7 @@
 #include <string_view>
 
 #include "klotter/dependency_opengl.h"
+#include "klotter/colors.h"
 
 
 using namespace std::literals::string_view_literals;
@@ -82,11 +83,14 @@ ShaderResource::ShaderResource()
     )glsl"sv,
      R"glsl(
         #version 330 core
+        
+        uniform vec4 TintColor;
+
         out vec4 FragColor;
 
         void main()
         {
-            FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+            FragColor = TintColor;
         }
     )glsl"sv
         );
@@ -105,12 +109,15 @@ Material::Material(std::shared_ptr<ShaderProgram> s)
 
 struct BasicMaterial : Material
 {
+    glm::vec4 tint_color;
+
     BasicMaterial()
         : Material(shaders().shader)
+        , tint_color(white, 1.0f)
     {
     }
 
-    std::vector<float> compile_mesh_data(const Mesh& mesh)
+    std::vector<float> compile_mesh_data(const Mesh& mesh) override
     {
         std::vector<float> vertices;
         for (const auto& vv : mesh.vertices)
@@ -121,6 +128,12 @@ struct BasicMaterial : Material
             vertices.emplace_back(p.z);
         }
         return vertices;
+    }
+
+    void setUniforms() override
+    {
+        const auto color = shader->get_uniform("TintColor");
+        shader->set_vec4(color, tint_color);
     }
 };
 
@@ -177,6 +190,7 @@ CompiledMesh::~CompiledMesh()
 void CompiledMesh::render()
 {
     material->shader->use();
+    material->setUniforms();
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
     glBindVertexArray(vao);

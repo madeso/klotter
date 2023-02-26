@@ -51,6 +51,8 @@ struct Material
     void operator=(Material&&) = delete;
 
     virtual std::vector<float> compile_mesh_data(const Mesh& mesh) = 0;
+
+    virtual void setUniforms() = 0;
 };
 using MaterialPtr = std::shared_ptr<Material>;
 MaterialPtr make_BasicMaterial();
