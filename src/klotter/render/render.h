@@ -16,15 +16,23 @@ struct ShaderResource
     std::shared_ptr<ShaderProgram> shader;
 };
 
+struct Vertex
+{
+    glm::vec3 position;
+};
+
 struct Face
 {
-    glm::vec3 a;
-    glm::vec3 b;
-    glm::vec3 c;
+    u32 a;
+    u32 b;
+    u32 c;
 };
 
 struct Mesh
 {
+    Mesh(std::vector<Vertex>, std::vector<Face> faces);
+
+    std::vector<Vertex> vertices;
     std::vector<Face> faces;
 };
 
@@ -53,9 +61,11 @@ struct CompiledMesh
 {
     u32 vbo;
     u32 vao;
+    u32 ebo;
     MaterialPtr material;
+    i32 number_of_triangles;
 
-    explicit CompiledMesh(u32, u32, MaterialPtr);
+    explicit CompiledMesh(u32, u32, u32, MaterialPtr, i32);
     ~CompiledMesh();
 
     CompiledMesh(const CompiledMesh&) = delete;

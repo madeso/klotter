@@ -33,6 +33,20 @@ u32 create_vao()
     return vao;
 }
 
+u32 create_ebo()
+{
+    unsigned int ebo;
+    glGenBuffers(1, &ebo);
+    return ebo;
+}
+
+
+Mesh::Mesh(std::vector<Vertex> v, std::vector<Face> f)
+    : vertices(std::move(v))
+    , faces(std::move(f))
+{
+}
+
 
 ShaderResource::ShaderResource()
 {
@@ -82,19 +96,30 @@ struct BasicMaterial : Material
     std::vector<float> compile_mesh_data(const Mesh& mesh)
     {
         std::vector<float> vertices;
-        const auto push = [&vertices](const glm::vec3& v)
+        for (const auto& vv : mesh.vertices)
         {
-            vertices.emplace_back(v.x);
-            vertices.emplace_back(v.y);
-            vertices.emplace_back(v.z);
-        };
-        for (const auto& f : mesh.faces)
-        {
-            push(f.a); push(f.b); push(f.c);
+            const auto& p = vv.position;
+            vertices.emplace_back(p.x);
+            vertices.emplace_back(p.y);
+            vertices.emplace_back(p.z);
         }
         return vertices;
     }
 };
+
+std::vector<u32> compile_indices(const Mesh& mesh)
+{
+    std::vector<u32> indices;
+    const auto push = [&indices](const u32 i)
+    {
+        indices.emplace_back(i);
+    };
+    for (const auto& f : mesh.faces)
+    {
+        push(f.a); push(f.b); push(f.c);
+    }
+    return indices;
+}
 
 MaterialPtr make_BasicMaterial()
 {
@@ -103,9 +128,11 @@ MaterialPtr make_BasicMaterial()
 
 CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 {
+    const auto indices = compile_indices(mesh);
     const auto vertices = material->compile_mesh_data(mesh);
     const auto vbo = create_vbo();
     const auto vao = create_vao();
+    const auto ebo = create_ebo();
 
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
@@ -115,22 +142,30 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(u32) * indices.size(), indices.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
 
-    return std::make_shared<CompiledMesh>(vbo, vao, material);
+    return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, static_cast<i32>(mesh.faces.size()));
 }
 
 void CompiledMesh::render()
 {
     material->shader->use();
+    
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
     glBindVertexArray(vao);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawElements(GL_TRIANGLES, number_of_triangles * 3, GL_UNSIGNED_INT, 0);
+    // glBindVertexArray(0);
 }
 
-CompiledMesh::CompiledMesh(u32 b, u32 a, MaterialPtr m)
+CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, MaterialPtr m, i32 tc)
     : vbo(b)
     , vao(a)
+    , ebo(e)
     , material(m)
+    , number_of_triangles(tc)
 {
 }
 
@@ -147,7 +182,6 @@ MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom)
 }
 
 
-// move to member function of app to access current window size
 void render(const Scene& scene, const Camera&)
 {
     for (auto& m : scene.meshes)

@@ -204,7 +204,7 @@ void opengl_setup(OpenglStates* state)
 
     {
         OpenglStates new_states;
-        new_states.cull_face = true;
+        new_states.cull_face = false;
         apply(state, new_states);
     }
     

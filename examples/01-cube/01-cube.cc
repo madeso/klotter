@@ -17,12 +17,19 @@ struct CubeApp : App
     {
         camera.position.z = 2;
 
-        auto triangle = Mesh{};
-        triangle.faces.push_back({
-            glm::vec3{-0.5f, -0.5f, 0.0f},
-            glm::vec3{ 0.5f, -0.5f, 0.0f},
-            glm::vec3{ 0.0f,  0.5f, 0.0f}
-        });
+        const auto triangle = Mesh
+        {
+            {
+                Vertex{{ 0.5f,  0.5f, 0.0f}},  // top right
+                Vertex{{ 0.5f, -0.5f, 0.0f}},  // bottom right
+                Vertex{{-0.5f, -0.5f, 0.0f}},  // bottom left
+                Vertex{{-0.5f,  0.5f, 0.0f}}   // top left 
+            },
+            {
+                Face{0, 1, 3},   // first triangle
+                Face{1, 2, 3}    // second triangle
+            }
+        };
 
         auto material = make_BasicMaterial();
         auto geometry = compile_Mesh(triangle, material);
