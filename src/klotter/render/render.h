@@ -1,43 +1,87 @@
 #pragma once
 
-#include "klotter/render/camera.h"
+#include <memory>
 
+#include "klotter/render/camera.h"
+#include "klotter/render/shader.h"
+#include "klotter/types.h"
 
 namespace klotter
 {
 
-
-
-struct CompiledGeom
+struct ShaderResource
 {
+    ShaderResource();
+    ~ShaderResource();
+    std::shared_ptr<ShaderProgram> shader;
 };
 
-using GeomPtr = std::shared_ptr<CompiledGeom>;
-GeomPtr make_BoxGeometry(float boxWidth, float boxHeight, float boxDepth);
+struct Face
+{
+    glm::vec3 a;
+    glm::vec3 b;
+    glm::vec3 c;
+};
+
+struct Mesh
+{
+    std::vector<Face> faces;
+};
 
 
 
 struct Material
 {
+    std::shared_ptr<ShaderProgram> shader;
+
+    Material(std::shared_ptr<ShaderProgram>);
+    virtual ~Material() = default;
+
+    Material(const Material&) = delete;
+    Material(Material&&) = delete;
+    void operator=(const Material&) = delete;
+    void operator=(Material&&) = delete;
+
+    virtual std::vector<float> compile_mesh_data(const Mesh& mesh) = 0;
 };
 using MaterialPtr = std::shared_ptr<Material>;
 MaterialPtr make_BasicMaterial();
 
 
 
+struct CompiledMesh
+{
+    u32 vbo;
+    u32 vao;
+    MaterialPtr material;
+
+    explicit CompiledMesh(u32, u32, MaterialPtr);
+    ~CompiledMesh();
+
+    CompiledMesh(const CompiledMesh&) = delete;
+    CompiledMesh(CompiledMesh&&) = delete;
+    void operator=(const CompiledMesh&) = delete;
+    void operator=(CompiledMesh&&) = delete;
+
+    void render();
+};
+
+
+
+using CompiledMeshPtr = std::shared_ptr<CompiledMesh>;
+CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material);
+
+
+
 struct MeshInstance
 {
-    GeomPtr geom;
-    MaterialPtr material;
+    CompiledMeshPtr geom;
 
     glm::vec3 position;
     glm::quat rotation;
 };
 using MeshInstancePtr = std::shared_ptr<MeshInstance>;
-MeshInstancePtr make_MeshInstance(GeomPtr geom, MaterialPtr material);
-
-
-glm::vec3 color_from_hex(int hex);
+MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom);
         
 
 struct Scene

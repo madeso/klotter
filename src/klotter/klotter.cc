@@ -61,7 +61,7 @@ int run_main(MakeAppFunction make_app)
 
     if(sdl_glcontext == nullptr)
     {
-        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Could not create window: %s", SDL_GetError());
+        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Could not create gl context: %s", SDL_GetError());
 
         SDL_DestroyWindow(sdl_window);
         sdl_window = nullptr;
@@ -71,7 +71,7 @@ int run_main(MakeAppFunction make_app)
 
     if (!gladLoadGLLoader(SDL_GL_GetProcAddress))
     {
-        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Failed to initialize OpenGL context");
+        SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Failed to load OpenGL");
 
         SDL_GL_DeleteContext(sdl_glcontext);
         sdl_glcontext = nullptr;
@@ -84,6 +84,8 @@ int run_main(MakeAppFunction make_app)
 
     OpenglStates states;
     opengl_setup(&states);
+
+    ShaderResource shaders;
 
     bool running = true;
     auto app = make_app();
@@ -132,7 +134,7 @@ int run_main(MakeAppFunction make_app)
         // update
         // render
         glViewport(0,0, window_width, window_height);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         opengl_set3d(&states);
 
         app->on_render(dt);

@@ -1,11 +1,9 @@
 #pragma once
 
-#include "klotter/render/vertex_layout.h"
 #include "klotter/render/uniform.h"
 
 #include <unordered_set>
 
-#include "klotter/render/vertex_layout.h"
 
 namespace klotter
 {
@@ -15,14 +13,12 @@ struct ShaderProgram
     ShaderProgram
     (
         const std::string& vertex_source,
-        const std::string& fragment_source,
-        const CompiledShaderVertexAttributes& layout
+        const std::string& fragment_source
     );
     ShaderProgram
     (
         std::string_view vertex_source,
-        std::string_view fragment_source,
-        const CompiledShaderVertexAttributes& layout
+        std::string_view fragment_source
     );
 
     ~ShaderProgram();
@@ -68,18 +64,11 @@ struct ShaderProgram
 
 
     unsigned int shader_program;
-    VertexTypes debug_vertex_types;
 };
 
 
 void
 setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list);
-
-void
-set_shader_program(unsigned int new_program, const VertexTypes& types);
-
-bool
-is_bound_for_shader(const std::unordered_set<VertexType>& debug_shader_types);
 
 bool
 is_shader_bound(unsigned int program);

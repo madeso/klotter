@@ -17,13 +17,17 @@ struct CubeApp : App
     {
         camera.position.z = 2;
 
-        const auto boxWidth = 1;
-        const auto boxHeight = 1;
-        const auto boxDepth = 1;
-        auto geometry = make_BoxGeometry(boxWidth, boxHeight, boxDepth);
+        auto triangle = Mesh{};
+        triangle.faces.push_back({
+            glm::vec3{-0.5f, -0.5f, 0.0f},
+            glm::vec3{ 0.5f, -0.5f, 0.0f},
+            glm::vec3{ 0.0f,  0.5f, 0.0f}
+        });
+
         auto material = make_BasicMaterial();
+        auto geometry = compile_Mesh(triangle, material);
         
-        cube = make_MeshInstance(geometry, material);
+        cube = make_MeshInstance(geometry);
         scene.meshes.emplace_back(cube);
     }
 
