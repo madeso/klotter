@@ -72,16 +72,15 @@ ShaderResource::ShaderResource()
     shader_resource() = this;
 
     shader = std::make_shared<ShaderProgram>(
-        R"glsl(
-    #version 330 core
-    layout(location = 0) in vec3 aPos;
-
-    void main()
-    {
-        gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
-    }
+    R"glsl(
+        #version 330 core
+        layout(location = 0) in vec3 aPos;
+        void main()
+        {
+            gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+        }
     )glsl"sv,
-        R"glsl(
+     R"glsl(
         #version 330 core
         out vec4 FragColor;
 
