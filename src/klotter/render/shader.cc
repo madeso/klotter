@@ -167,7 +167,7 @@ ShaderProgram::get_uniform(const std::string& name) const
     const auto uni = Uniform{name, glGetUniformLocation(shader_program, name.c_str()), shader_program};
     if(uni.is_valid() == false)
     {
-        LOG_ERROR("Uniform {} not found", name.c_str());
+        LOG_ERROR("Uniform %s not found", name.c_str());
     }
     return uni;
 }
