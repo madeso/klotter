@@ -107,35 +107,30 @@ Material::Material(std::shared_ptr<ShaderProgram> s)
 }
 
 
-struct BasicMaterial : Material
+BasicMaterial::BasicMaterial()
+    : Material(shaders().shader)
+    , color(white, 1.0f)
 {
-    glm::vec4 tint_color;
+}
 
-    BasicMaterial()
-        : Material(shaders().shader)
-        , tint_color(white, 1.0f)
+std::vector<float> BasicMaterial::compile_mesh_data(const Mesh& mesh)
+{
+    std::vector<float> vertices;
+    for (const auto& vv : mesh.vertices)
     {
+        const auto& p = vv.position;
+        vertices.emplace_back(p.x);
+        vertices.emplace_back(p.y);
+        vertices.emplace_back(p.z);
     }
+    return vertices;
+}
 
-    std::vector<float> compile_mesh_data(const Mesh& mesh) override
-    {
-        std::vector<float> vertices;
-        for (const auto& vv : mesh.vertices)
-        {
-            const auto& p = vv.position;
-            vertices.emplace_back(p.x);
-            vertices.emplace_back(p.y);
-            vertices.emplace_back(p.z);
-        }
-        return vertices;
-    }
-
-    void setUniforms() override
-    {
-        const auto color = shader->get_uniform("TintColor");
-        shader->set_vec4(color, tint_color);
-    }
-};
+void BasicMaterial::setUniforms()
+{
+    const auto uni = shader->get_uniform("TintColor");
+    shader->set_vec4(uni, color);
+}
 
 std::vector<u32> compile_indices(const Mesh& mesh)
 {
@@ -149,11 +144,6 @@ std::vector<u32> compile_indices(const Mesh& mesh)
         push(f.a); push(f.b); push(f.c);
     }
     return indices;
-}
-
-MaterialPtr make_BasicMaterial()
-{
-    return std::make_shared<BasicMaterial>();
 }
 
 CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)

@@ -55,7 +55,16 @@ struct Material
     virtual void setUniforms() = 0;
 };
 using MaterialPtr = std::shared_ptr<Material>;
-MaterialPtr make_BasicMaterial();
+
+
+struct BasicMaterial : Material
+{
+    glm::vec4 color;
+
+    BasicMaterial();
+    std::vector<float> compile_mesh_data(const Mesh& mesh) override;
+    void setUniforms() override;
+};
 
 
 

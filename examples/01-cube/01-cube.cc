@@ -1,5 +1,7 @@
 #include "klotter/klotter.h"
 
+#include "klotter/colors.h"
+
 using namespace klotter;
 
 constexpr auto fov = 75.0f;
@@ -31,7 +33,8 @@ struct CubeApp : App
             }
         };
 
-        auto material = make_BasicMaterial();
+        auto material = std::make_shared<BasicMaterial>();
+        material->color = {orange, 1.0f};
         auto geometry = compile_Mesh(triangle, material);
         
         cube = make_MeshInstance(geometry);

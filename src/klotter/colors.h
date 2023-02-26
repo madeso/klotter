@@ -15,7 +15,7 @@ constexpr glm::vec3 rgb(int r, int g, int b)
 
 
 // https://www.nature.com/articles/nmeth.1618
-constexpr glm::vec3 organge = rgb(230, 159, 0);
+constexpr glm::vec3 orange = rgb(230, 159, 0);
 constexpr glm::vec3 blue_sky = rgb(86, 180, 233);
 constexpr glm::vec3 green_bluish = rgb(0, 158, 115);
 constexpr glm::vec3 yellow = rgb(240, 228, 66);
