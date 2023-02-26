@@ -26,6 +26,11 @@ u32 create_vbo()
     return vbo;
 }
 
+void destroy_vbo(u32 vbo)
+{
+    glDeleteBuffers(1, &vbo);
+}
+
 u32 create_vao()
 {
     u32 vao;
@@ -33,11 +38,21 @@ u32 create_vao()
     return vao;
 }
 
+void destroy_vao(u32 vao)
+{
+    glDeleteVertexArrays(1, &vao);
+}
+
 u32 create_ebo()
 {
     unsigned int ebo;
     glGenBuffers(1, &ebo);
     return ebo;
+}
+
+void destroy_ebo(u32 ebo)
+{
+    glDeleteBuffers(1, &ebo);
 }
 
 
@@ -130,24 +145,31 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 {
     const auto indices = compile_indices(mesh);
     const auto vertices = material->compile_mesh_data(mesh);
-    const auto vbo = create_vbo();
-    const auto vao = create_vao();
-    const auto ebo = create_ebo();
 
+    const auto vbo = create_vbo();
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
     shaders().shader->use();
 
+    const auto vao = create_vao();
     glBindVertexArray(vao);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     
+    const auto ebo = create_ebo();
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(u32) * indices.size(), indices.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
 
     return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, static_cast<i32>(mesh.faces.size()));
+}
+
+CompiledMesh::~CompiledMesh()
+{
+    destroy_ebo(ebo);
+    destroy_vao(vao);
+    destroy_vbo(vbo);
 }
 
 void CompiledMesh::render()
@@ -167,11 +189,6 @@ CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, MaterialPtr m, i32 tc)
     , material(m)
     , number_of_triangles(tc)
 {
-}
-
-CompiledMesh::~CompiledMesh()
-{
-    // tdoo(Gustav): implement destructor
 }
 
 MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom)
