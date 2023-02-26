@@ -1,0 +1,3 @@
+[submodule "external/embed"]
+	path = external/embed
+	url = git@github.com:madeso/embed.git
