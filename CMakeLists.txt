@@ -3,6 +3,11 @@ set_property(GLOBAL PROPERTY USE_FOLDERS OFF)
 project(klotter CXX C)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 
+function(cmake_source_group)
+    source_group("_cmake/pch" REGULAR_EXPRESSION "cmake_pch.[ch]xx$")
+    source_group("_cmake/rules" REGULAR_EXPRESSION "\.rule$")
+    source_group("_cmake" REGULAR_EXPRESSION "CMakeLists\.txt")
+endfunction()
 
 add_library(edit_and_continue INTERFACE)
 if(MSVC)

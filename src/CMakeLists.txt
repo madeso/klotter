@@ -32,7 +32,6 @@ set(src_pch
 )
 
 set(src
-    ${src_empty}
     ${src_render}
     ${src_base}
     ${src_pch}
@@ -66,11 +65,11 @@ target_precompile_headers(klotter
 source_group("" FILES ${src})
 
 source_group("input" FILES ${src_input})
-source_group("empty" FILES ${src_empty})
 source_group("render" FILES ${src_render})
-source_group("base" FILES ${src_base})
+# source_group("base" FILES ${src_base})
 source_group("pch" FILES ${src_pch})
-source_group("_generated" FILES ${src_assets})
+source_group("_assets" FILES ${src_assets})
 
+cmake_source_group()
 
 add_library(klotter::klotter ALIAS klotter)
