@@ -11,68 +11,84 @@ using namespace std::literals::string_view_literals;
 namespace klotter
 {
 
-template<typename T, typename TChange>
-void apply_generic_state(std::optional<T>* current_state, std::optional<T> new_state, TChange change_function)
+template<typename T>
+bool should_change(std::optional<T>* current_state, T new_state)
 {
-    if
-    (
-        new_state.has_value() == false
-        ||
-        (current_state->has_value() && **current_state == *new_state)
-    )
+    // if there is a value, and that is the same... then don't update opengl
+    if (*current_state && *current_state == new_state)
+    { return false; }
+
+    *current_state = new_state;
+    return true;
+}
+
+
+void apply(std::optional<bool>* current_state, bool new_state, GLenum gl_type)
+{
+    if(should_change(current_state, new_state))
     {
-        return;
+        if(new_state)
+        {
+            glEnable(gl_type);
+        }
+        else
+        {
+            glDisable(gl_type);
+        }
+    }
+}
+
+struct States
+{
+    OpenglStates* states;
+
+    explicit States(OpenglStates* s)
+        : states(s)
+    {
     }
 
-    ASSERT(new_state.has_value());
-
-    change_function(*new_state);
-    *current_state = new_state;
-}
-
-void apply_state(std::optional<bool>* current_state, std::optional<bool> new_state, GLenum gl_type)
-{
-    apply_generic_state<bool>
-    (
-        current_state, new_state,
-        [gl_type](bool enable)
-        {
-            if(enable)
-            {
-                glEnable(gl_type);
-            }
-            else
-            {
-                glDisable(gl_type);
-            }
-        }
-    );
-}
-
-
-void apply(OpenglStates* current_states, const OpenglStates& new_states)
-{
-    #define APPLY_STATE(name, gl) apply_state(&current_states->name, new_states.name, gl)
-    APPLY_STATE(cull_face, GL_CULL_FACE);
-    APPLY_STATE(blending, GL_BLEND);
-    APPLY_STATE(depth_test, GL_DEPTH_TEST);
-    #undef APPLY_STATE
-
-    apply_generic_state(&current_states->render_mode, new_states.render_mode, [](unsigned int rm)
+    States& cull_face(bool new_state)
     {
-        glPolygonMode(GL_FRONT_AND_BACK, rm);
-    });
-}
+        apply(&states->cull_face, new_state, GL_CULL_FACE);
+        return *this;
+    }
 
+    States& blending(bool new_state)
+    {
+        apply(&states->blending, new_state, GL_BLEND);
+        return *this;
+    }
+
+    States& depth_test(bool new_state)
+    {
+        apply(&states->depth_test, new_state, GL_DEPTH_TEST);
+        return *this;
+    }
+
+    States& render_mode(RenderMode new_state)
+    {
+        if (should_change(&states->render_mode, new_state))
+        {
+            const auto mode = ([new_state]() -> GLenum
+            {
+                switch (new_state)
+                {
+                case RenderMode::fill: return GL_FILL;
+                case RenderMode::line: return GL_LINE;
+                case RenderMode::point: return GL_POINT;
+                default: return GL_FILL;
+                }
+            })();
+            glPolygonMode(GL_FRONT_AND_BACK, mode);
+        }
+        return *this;
+    }
+};
 
 
 void opengl_setup(OpenglStates* state)
 {
-    {
-        OpenglStates new_states;
-        new_states.cull_face = false;
-        apply(state, new_states);
-    }
+    States{state}.cull_face(false);
     
     glCullFace(GL_BACK);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -81,51 +97,20 @@ void opengl_setup(OpenglStates* state)
 
 void opengl_set2d(OpenglStates* states)
 {
-    OpenglStates new_states;
-    new_states.depth_test = false;
-    new_states.blending = true;
-
-    apply(states, new_states);
+    States{ states }
+        .depth_test(false)
+        .blending(true)
+        ;
 }
 
 
 void opengl_set3d(OpenglStates* states)
 {
-    OpenglStates new_states;
-    new_states.depth_test = true;
-    new_states.blending = false;
-
-    apply(states, new_states);
+    States{states}
+        .depth_test(true)
+        .blending(false)
+        ;
 }
-
-
-void opengl_set_render_mode_to_fill(OpenglStates* states)
-{
-    OpenglStates new_states;
-    new_states.render_mode = GL_FILL;
-
-    apply(states, new_states);
-}
-
-
-void opengl_set_render_mode_to_line(OpenglStates* states)
-{
-    OpenglStates new_states;
-    new_states.render_mode = GL_LINE;
-
-    apply(states, new_states);
-}
-
-
-void opengl_set_render_mode_to_point(OpenglStates* states)
-{
-    OpenglStates new_states;
-    new_states.render_mode = GL_POINT;
-
-    apply(states, new_states);
-}
-
-
 
 
 ShaderResource*& shader_resource()

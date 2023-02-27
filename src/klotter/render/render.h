@@ -118,13 +118,14 @@ struct Scene
     std::vector<MeshInstancePtr> meshes;
 };
 
+enum class RenderMode {fill, line, point};
 
 struct OpenglStates
 {
     std::optional<bool> cull_face;
     std::optional<bool> blending;
     std::optional<bool> depth_test;
-    std::optional<unsigned int> render_mode;
+    std::optional<RenderMode> render_mode;
 };
 
 struct Renderer
