@@ -59,7 +59,7 @@ struct Material
 
     virtual std::vector<float> compile_mesh_data(const Mesh& mesh) = 0;
 
-    virtual void setUniforms() = 0;
+    virtual void setUniforms(const glm::mat4&) = 0;
     virtual void bind_textures(Assets* assets) = 0;
 };
 using MaterialPtr = std::shared_ptr<Material>;
@@ -72,7 +72,7 @@ struct BasicMaterial : Material
 
     BasicMaterial();
     std::vector<float> compile_mesh_data(const Mesh& mesh) override;
-    void setUniforms() override;
+    void setUniforms(const glm::mat4&) override;
     void bind_textures(Assets* assets) override;
 };
 
@@ -92,7 +92,7 @@ struct CompiledMesh
     void operator=(const CompiledMesh&) = delete;
     void operator=(CompiledMesh&&) = delete;
 
-    void render(Assets*);
+    void render(Assets*, const glm::mat4&);
 };
 
 
@@ -107,7 +107,7 @@ struct MeshInstance
     CompiledMeshPtr geom;
 
     glm::vec3 position;
-    glm::quat rotation;
+    glm::vec3 rotation; // yaw pitch roll
 };
 using MeshInstancePtr = std::shared_ptr<MeshInstance>;
 MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom);
