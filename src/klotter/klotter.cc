@@ -79,14 +79,18 @@ int run_main(MakeAppFunction make_app)
     int window_width = start_width;
     int window_height = starth_height;
 
+    int frame_skip = 3; // wait a few frames so the fps can stabilize
+
     auto last = SDL_GetPerformanceCounter();
     while (running)
     {
         const auto now = SDL_GetPerformanceCounter();
         const auto diff = static_cast<float>(now - last);
         const auto freq = static_cast<float>(SDL_GetPerformanceFrequency());
-        const auto dt = diff / freq;
+        const auto dt = frame_skip > 0 ? 0.0f : diff / freq;
         last = now;
+
+        if (frame_skip > 0) { frame_skip -= 1; }
 
         // handle events
         SDL_Event e;
