@@ -1,7 +1,6 @@
 #pragma once
 
 #include "klotter/rect.h"
-#include "klotter/types.h"
 
 #include "klotter/render/shader.h"
 #include "klotter/render/texture.h"

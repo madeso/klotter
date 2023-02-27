@@ -20,12 +20,9 @@ set(src_base
     klotter/colors.cc klotter/colors.h
     klotter/dependency_glad.h
     klotter/dependency_glm.h klotter/dependency_glm.cc
-    klotter/dependency_opengl.cc klotter/dependency_opengl.h
     klotter/dependency_sdl.cc klotter/dependency_sdl.h
     klotter/result.cc klotter/result.h
     klotter/str.cc klotter/str.h
-
-    klotter/types.h
 
     klotter/klotter.cc klotter/klotter.h
 )

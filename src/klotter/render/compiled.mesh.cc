@@ -5,14 +5,15 @@
 #include <cmath>
 
 #include "klotter/assert.h"
-#include "klotter/dependency_opengl.h"
+#include "klotter/str.h"
+
+
 #include "klotter/render/material.property.h"
 #include "klotter/render/material.shader.source.h"
 #include "klotter/render/mesh.h"
 #include "klotter/render/shader.h"
 #include "klotter/render/texture.h"
 #include "klotter/render/opengl_utils.h"
-#include "klotter/str.h"
 
 
 namespace klotter

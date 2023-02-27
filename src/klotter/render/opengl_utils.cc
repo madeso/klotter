@@ -1,8 +1,6 @@
 #include "klotter/render/opengl_utils.h"
 
 #include "klotter/assert.h"
-
-#include "klotter/dependency_opengl.h"
 #include "klotter/dependency_sdl.h"
 
 
@@ -119,8 +117,7 @@ on_opengl_error
 
 
 
-void
-setup_opengl_debug()
+void setup_opengl_debug()
 {
     const bool has_debug = GLAD_GL_ARB_debug_output == 1;
     if(has_debug)
@@ -143,120 +140,27 @@ setup_opengl_debug()
 
 
 
-template<typename T, typename TChange>
-void apply_generic_state(std::optional<T>* current_state, std::optional<T> new_state, TChange change_function)
+GLenum Cint_to_glenum(int i)
 {
-    if
-    (
-        new_state.has_value() == false
-        ||
-        (current_state->has_value() && **current_state == *new_state)
-    )
-    {
-        return;
-    }
-
-    ASSERT(new_state.has_value());
-
-    change_function(*new_state);
-    *current_state = new_state;
-}
-
-void apply_state(std::optional<bool>* current_state, std::optional<bool> new_state, GLenum gl_type)
-{
-    apply_generic_state<bool>
-    (
-        current_state, new_state,
-        [gl_type](bool enable)
-        {
-            if(enable)
-            {
-                glEnable(gl_type);
-            }
-            else
-            {
-                glDisable(gl_type);
-            }
-        }
-    );
+    return static_cast<GLenum>(i);
 }
 
 
-void apply(OpenglStates* current_states, const OpenglStates& new_states)
+GLuint Cint_to_gluint(int i)
 {
-    #define APPLY_STATE(name, gl) apply_state(&current_states->name, new_states.name, gl)
-    APPLY_STATE(cull_face, GL_CULL_FACE);
-    APPLY_STATE(blending, GL_BLEND);
-    APPLY_STATE(depth_test, GL_DEPTH_TEST);
-    #undef APPLY_STATE
-
-    apply_generic_state(&current_states->render_mode, new_states.render_mode, [](unsigned int rm)
-    {
-        glPolygonMode(GL_FRONT_AND_BACK, rm);
-    });
+    return static_cast<GLuint>(i);
 }
 
 
-
-void opengl_setup(OpenglStates* state)
+GLsizeiptr Csizet_to_glsizeiptr(std::size_t t)
 {
-    setup_opengl_debug();
-
-    {
-        OpenglStates new_states;
-        new_states.cull_face = false;
-        apply(state, new_states);
-    }
-    
-    glCullFace(GL_BACK);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    return static_cast<GLsizeiptr>(t);
 }
 
 
-void opengl_set2d(OpenglStates* states)
+GLsizei Csizet_to_glsizei(std::size_t t)
 {
-    OpenglStates new_states;
-    new_states.depth_test = false;
-    new_states.blending = true;
-
-    apply(states, new_states);
-}
-
-
-void opengl_set3d(OpenglStates* states)
-{
-    OpenglStates new_states;
-    new_states.depth_test = true;
-    new_states.blending = false;
-
-    apply(states, new_states);
-}
-
-
-void opengl_set_render_mode_to_fill(OpenglStates* states)
-{
-    OpenglStates new_states;
-    new_states.render_mode = GL_FILL;
-
-    apply(states, new_states);
-}
-
-
-void opengl_set_render_mode_to_line(OpenglStates* states)
-{
-    OpenglStates new_states;
-    new_states.render_mode = GL_LINE;
-
-    apply(states, new_states);
-}
-
-
-void opengl_set_render_mode_to_point(OpenglStates* states)
-{
-    OpenglStates new_states;
-    new_states.render_mode = GL_POINT;
-
-    apply(states, new_states);
+    return static_cast<GLsizei>(t);
 }
 
 

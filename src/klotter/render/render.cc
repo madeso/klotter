@@ -2,13 +2,131 @@
 
 #include <string_view>
 
-#include "klotter/dependency_opengl.h"
+#include "klotter/assert.h"
+#include "klotter/render/opengl_utils.h"
 
 
 using namespace std::literals::string_view_literals;
 
 namespace klotter
 {
+
+template<typename T, typename TChange>
+void apply_generic_state(std::optional<T>* current_state, std::optional<T> new_state, TChange change_function)
+{
+    if
+    (
+        new_state.has_value() == false
+        ||
+        (current_state->has_value() && **current_state == *new_state)
+    )
+    {
+        return;
+    }
+
+    ASSERT(new_state.has_value());
+
+    change_function(*new_state);
+    *current_state = new_state;
+}
+
+void apply_state(std::optional<bool>* current_state, std::optional<bool> new_state, GLenum gl_type)
+{
+    apply_generic_state<bool>
+    (
+        current_state, new_state,
+        [gl_type](bool enable)
+        {
+            if(enable)
+            {
+                glEnable(gl_type);
+            }
+            else
+            {
+                glDisable(gl_type);
+            }
+        }
+    );
+}
+
+
+void apply(OpenglStates* current_states, const OpenglStates& new_states)
+{
+    #define APPLY_STATE(name, gl) apply_state(&current_states->name, new_states.name, gl)
+    APPLY_STATE(cull_face, GL_CULL_FACE);
+    APPLY_STATE(blending, GL_BLEND);
+    APPLY_STATE(depth_test, GL_DEPTH_TEST);
+    #undef APPLY_STATE
+
+    apply_generic_state(&current_states->render_mode, new_states.render_mode, [](unsigned int rm)
+    {
+        glPolygonMode(GL_FRONT_AND_BACK, rm);
+    });
+}
+
+
+
+void opengl_setup(OpenglStates* state)
+{
+    {
+        OpenglStates new_states;
+        new_states.cull_face = false;
+        apply(state, new_states);
+    }
+    
+    glCullFace(GL_BACK);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+
+
+void opengl_set2d(OpenglStates* states)
+{
+    OpenglStates new_states;
+    new_states.depth_test = false;
+    new_states.blending = true;
+
+    apply(states, new_states);
+}
+
+
+void opengl_set3d(OpenglStates* states)
+{
+    OpenglStates new_states;
+    new_states.depth_test = true;
+    new_states.blending = false;
+
+    apply(states, new_states);
+}
+
+
+void opengl_set_render_mode_to_fill(OpenglStates* states)
+{
+    OpenglStates new_states;
+    new_states.render_mode = GL_FILL;
+
+    apply(states, new_states);
+}
+
+
+void opengl_set_render_mode_to_line(OpenglStates* states)
+{
+    OpenglStates new_states;
+    new_states.render_mode = GL_LINE;
+
+    apply(states, new_states);
+}
+
+
+void opengl_set_render_mode_to_point(OpenglStates* states)
+{
+    OpenglStates new_states;
+    new_states.render_mode = GL_POINT;
+
+    apply(states, new_states);
+}
+
+
+
 
 ShaderResource*& shader_resource()
 {
@@ -112,7 +230,7 @@ ShaderResource::ShaderResource()
             FragColor = texture(uTexture, vTexCoord) * TintColor.rgba * vec4(vColor.rgb, 1.0);
         }
     )glsl"sv
-        );
+    );
 }
 ShaderResource::~ShaderResource()
 {
@@ -255,8 +373,19 @@ MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom)
 }
 
 
+Renderer::Renderer()
+    : window_size{0, 0}
+{
+    glClearColor(0, 0, 0, 1.0f);
+    opengl_setup(&states);
+}
+
 void Renderer::render(const Scene& scene, const Camera&)
 {
+    glViewport(0, 0, window_size.x, window_size.y);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    opengl_set3d(&states);
+
     for (auto& m : scene.meshes)
     {
         m->geom->render(&assets);

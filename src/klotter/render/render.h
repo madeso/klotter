@@ -2,7 +2,6 @@
 
 #include <memory>
 
-#include "klotter/types.h"
 #include "klotter/colors.h"
 
 #include "klotter/render/camera.h"
@@ -120,9 +119,22 @@ struct Scene
 };
 
 
+struct OpenglStates
+{
+    std::optional<bool> cull_face;
+    std::optional<bool> blending;
+    std::optional<bool> depth_test;
+    std::optional<unsigned int> render_mode;
+};
+
 struct Renderer
 {
+    Renderer();
+
+    ShaderResource shaders;
+    OpenglStates states;
     Assets assets;
+    glm::ivec2 window_size;
 
     void render(const Scene&, const Camera&);
 };

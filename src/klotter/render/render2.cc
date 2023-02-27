@@ -1,6 +1,5 @@
 #include "klotter/render/render2.h"
 
-#include "klotter/dependency_opengl.h"
 #include "klotter/assert.h"
 #include "klotter/rect.h"
 

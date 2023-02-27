@@ -2,8 +2,6 @@
 
 #include "klotter/render/uniform.h"
 
-#include "klotter/types.h"
-
 
 namespace klotter
 {

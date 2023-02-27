@@ -2,18 +2,9 @@
 #include "klotter/dependency_glad.h"
 #include "klotter/render/opengl_utils.h"
 
-namespace
-{
-    glm::ivec2 window_size;
-}
 
 namespace klotter
 {
-
-const glm::ivec2 get_window_size()
-{
-    return window_size;
-}
 
 int run_main(MakeAppFunction make_app)
 {
@@ -49,8 +40,6 @@ int run_main(MakeAppFunction make_app)
         SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE
     );
 
-    window_size = {start_width, starth_height};
-
     if(sdl_window == nullptr)
     {
         SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Could not create window: %s", SDL_GetError());
@@ -82,10 +71,7 @@ int run_main(MakeAppFunction make_app)
         return -1;
     }
 
-    OpenglStates states;
-    opengl_setup(&states);
-
-    ShaderResource shaders;
+    setup_opengl_debug();
 
     bool running = true;
     auto app = make_app();
@@ -93,10 +79,8 @@ int run_main(MakeAppFunction make_app)
     int window_width = start_width;
     int window_height = starth_height;
 
-    glClearColor(0, 0, 0, 1.0f);
-
     auto last = SDL_GetPerformanceCounter();
-    while(running)
+    while (running)
     {
         const auto now = SDL_GetPerformanceCounter();
         const auto diff = static_cast<float>(now - last);
@@ -106,21 +90,20 @@ int run_main(MakeAppFunction make_app)
 
         // handle events
         SDL_Event e;
-        while(SDL_PollEvent(&e) != 0)
+        while (SDL_PollEvent(&e) != 0)
         {
-            switch(e.type)
+            switch (e.type)
             {
             case SDL_WINDOWEVENT:
-                switch(e.window.event)
+                switch (e.window.event)
                 {
-                    case SDL_WINDOWEVENT_RESIZED:
-                        window_width = e.window.data1;
-                        window_height = e.window.data2;
-                        window_size = { window_width, window_height};
-                        break;
-                    case SDL_WINDOWEVENT_CLOSE:
-                        running = false;
-                        break;
+                case SDL_WINDOWEVENT_RESIZED:
+                    window_width = e.window.data1;
+                    window_height = e.window.data2;
+                    break;
+                case SDL_WINDOWEVENT_CLOSE:
+                    running = false;
+                    break;
                 }
                 break;
             case SDL_QUIT:
@@ -133,10 +116,7 @@ int run_main(MakeAppFunction make_app)
 
         // update
         // render
-        glViewport(0,0, window_width, window_height);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        opengl_set3d(&states);
-
+        app->renderer.window_size = {window_width, window_height};
         app->on_render(dt);
 
         SDL_GL_SwapWindow(sdl_window);

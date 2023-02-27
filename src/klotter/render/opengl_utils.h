@@ -3,20 +3,13 @@
 namespace klotter
 {
 
-struct OpenglStates
-{
-    std::optional<bool> cull_face;
-    std::optional<bool> blending;
-    std::optional<bool> depth_test;
-    std::optional<unsigned int> render_mode;
-};
 
-void opengl_setup(OpenglStates* states);
-void opengl_set2d(OpenglStates* states);
-void opengl_set3d(OpenglStates* states);
+void setup_opengl_debug();
 
-void opengl_set_render_mode_to_fill(OpenglStates* states);
-void opengl_set_render_mode_to_line(OpenglStates* states);
-void opengl_set_render_mode_to_point(OpenglStates* states);
+
+GLenum Cint_to_glenum(int i);
+GLuint Cint_to_gluint(int i);
+GLsizeiptr Csizet_to_glsizeiptr(std::size_t t);
+GLsizei Csizet_to_glsizei(std::size_t t);
 
 }

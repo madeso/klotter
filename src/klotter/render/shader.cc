@@ -1,9 +1,10 @@
 #include "klotter/render/shader.h"
 
 #include "klotter/assert.h"
-#include "klotter/dependency_opengl.h"
 #include "klotter/log.h"
 #include "klotter/cint.h"
+
+#include "klotter/render/opengl_utils.h"
 
 
 namespace klotter

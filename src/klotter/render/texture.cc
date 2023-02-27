@@ -4,9 +4,9 @@
 
 #include "klotter/assert.h"
 #include "klotter/cint.h"
-#include "klotter/dependency_opengl.h"
 #include "klotter/log.h"
 
+#include "klotter/render/opengl_utils.h"
 #include "klotter/render/texture.io.h"
 
 
