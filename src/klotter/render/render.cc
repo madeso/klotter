@@ -321,9 +321,9 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(sizeof(float) * vertices.size()), vertices.data(), GL_STATIC_DRAW);
     
     const GLsizei stride = 8 * sizeof(float);
-    const auto float_offset = [](int f) -> void*
+    const auto float_offset = [](std::size_t number_of_floats) -> void*
     {
-        return reinterpret_cast<void*>(f * sizeof(float));
+        return reinterpret_cast<void*>(number_of_floats * sizeof(float));
     };
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, float_offset(0)); // next offset 3
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, float_offset(3)); // next offset 6
