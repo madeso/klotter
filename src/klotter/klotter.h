@@ -10,6 +10,8 @@ namespace klotter
 
 struct App
 {
+    Renderer renderer;
+
     virtual ~App() = default;
 
     virtual void on_render(float dt) = 0;

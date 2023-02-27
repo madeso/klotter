@@ -2,11 +2,13 @@
 
 #include <memory>
 
-#include "klotter/render/camera.h"
-#include "klotter/render/shader.h"
-
 #include "klotter/types.h"
 #include "klotter/colors.h"
+
+#include "klotter/render/camera.h"
+#include "klotter/render/shader.h"
+#include "klotter/render/texture.h"
+#include "klotter/render/assets.h"
 
 namespace klotter
 {
@@ -21,9 +23,10 @@ struct ShaderResource
 struct Vertex
 {
     glm::vec3 position;
+    glm::vec2 uv;
     glm::vec3 color;
 
-    explicit Vertex(glm::vec3 p, glm::vec3 c = white);
+    explicit Vertex(glm::vec3 p, glm::vec2, glm::vec3 c = white);
 };
 
 struct Face
@@ -58,6 +61,7 @@ struct Material
     virtual std::vector<float> compile_mesh_data(const Mesh& mesh) = 0;
 
     virtual void setUniforms() = 0;
+    virtual void bind_textures(Assets* assets) = 0;
 };
 using MaterialPtr = std::shared_ptr<Material>;
 
@@ -65,13 +69,13 @@ using MaterialPtr = std::shared_ptr<Material>;
 struct BasicMaterial : Material
 {
     glm::vec4 color;
+    std::shared_ptr<Texture> texture;
 
     BasicMaterial();
     std::vector<float> compile_mesh_data(const Mesh& mesh) override;
     void setUniforms() override;
+    void bind_textures(Assets* assets) override;
 };
-
-
 
 struct CompiledMesh
 {
@@ -89,13 +93,13 @@ struct CompiledMesh
     void operator=(const CompiledMesh&) = delete;
     void operator=(CompiledMesh&&) = delete;
 
-    void render();
+    void render(Assets*);
 };
 
 
 
 using CompiledMeshPtr = std::shared_ptr<CompiledMesh>;
-CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material);
+CompiledMeshPtr compile_Mesh(const Mesh&, MaterialPtr);
 
 
 
@@ -116,8 +120,12 @@ struct Scene
 };
 
 
-void render(const Scene& scene, const Camera& camera);
+struct Renderer
+{
+    Assets assets;
 
+    void render(const Scene&, const Camera&);
+};
 
 
 }

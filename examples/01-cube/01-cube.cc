@@ -17,13 +17,17 @@ struct CubeApp : App
     {
         camera.position.z = 2;
 
+        const auto left = 0.0f;
+        const auto right = 2.0;
+        const auto top = 2.0f;
+        const auto bottom = 0.0f;
         const auto triangle = Mesh
         {
             {
-                Vertex{{ 0.5f,  0.5f, 0.0f}, red_vermillion},  // top right
-                Vertex{{ 0.5f, -0.5f, 0.0f}, blue},  // bottom right
-                Vertex{{-0.5f, -0.5f, 0.0f}, green_bluish},  // bottom left
-                Vertex{{-0.5f,  0.5f, 0.0f}, orange}   // top left 
+                Vertex{{ 0.5f,  0.5f, 0.0f}, {right, top}},  // top right
+                Vertex{{ 0.5f, -0.5f, 0.0f}, {right, bottom}},  // bottom right
+                Vertex{{-0.5f, -0.5f, 0.0f}, {left, bottom}},  // bottom left
+                Vertex{{-0.5f,  0.5f, 0.0f}, {left, top}}   // top left 
             },
             {
                 Face{0, 1, 3},   // first triangle
@@ -33,6 +37,7 @@ struct CubeApp : App
 
         auto material = std::make_shared<BasicMaterial>();
         material->color = {white, 1.0f};
+        // material->texture = renderer.assets.get_dark_grid();
         auto geometry = compile_Mesh(triangle, material);
         
         cube = make_MeshInstance(geometry);
@@ -44,7 +49,7 @@ struct CubeApp : App
         cube->rotation.x = time;
         cube->rotation.y = time;
 
-        render(scene, camera);
+        renderer.render(scene, camera);
     }
 };
 

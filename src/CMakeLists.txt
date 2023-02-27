@@ -1,3 +1,8 @@
+embed(src_assets
+    AS_BINARY
+        textures/texture_01.png
+)
+
 set(src_render
     klotter/render/render.cc klotter/render/render.h
     klotter/render/camera.cc klotter/render/camera.h
@@ -5,6 +10,9 @@ set(src_render
 
     klotter/render/shader.cc klotter/render/shader.h
     klotter/render/uniform.cc klotter/render/uniform.h
+    klotter/render/texture.cc klotter/render/texture.h
+    klotter/render/texture.io.h
+    klotter/render/assets.cc klotter/render/assets.h
 )
     
 set(src_base
@@ -31,6 +39,7 @@ set(src
     ${src_render}
     ${src_base}
     ${src_pch}
+    ${src_assets}
 )
 
 add_library(klotter STATIC ${src})
@@ -42,11 +51,15 @@ target_link_libraries(klotter
         external::glm
         external::glad
     PRIVATE
+        embed::embed
         klotter::project_options
         klotter::project_warnings
 )
 target_include_directories(klotter
-    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+    PRIVATE
+        ${CMAKE_CURRENT_BINARY_DIR}
 )
 target_precompile_headers(klotter
     PUBLIC klotter/pch.public.h
@@ -60,5 +73,7 @@ source_group("empty" FILES ${src_empty})
 source_group("render" FILES ${src_render})
 source_group("base" FILES ${src_base})
 source_group("pch" FILES ${src_pch})
+source_group("_generated" FILES ${src_assets})
+
 
 add_library(klotter::klotter ALIAS klotter)

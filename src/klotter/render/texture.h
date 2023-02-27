@@ -2,8 +2,8 @@
 
 #include "klotter/render/uniform.h"
 
-#include "embed/types.h"
 #include "klotter/types.h"
+
 
 namespace klotter
 {
@@ -61,15 +61,6 @@ struct Texture
 // set the texture for the specified uniform
 void
 bind_texture(const Uniform& uniform, const Texture& texture);
-
-Texture
-load_image_from_embedded
-(
-    const embedded_binary& image_binary,
-    TextureEdge te,
-    TextureRenderStyle trs,
-    Transparency t
-);
 
 Texture
 load_image_from_color

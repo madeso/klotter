@@ -2,16 +2,8 @@
 
 #include "klotter/assert.h"
 #include "klotter/dependency_opengl.h"
-// #include "klotter/log.h"
-// #include "klotter/cint.h"
-
-#include "SDL_log.h"
-#define LOG_ERROR(...) SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, __VA_ARGS__)
-
-int Csizet_to_int(std::size_t i)
-{
-    return static_cast<int>(i);
-}
+#include "klotter/log.h"
+#include "klotter/cint.h"
 
 
 namespace klotter
