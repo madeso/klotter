@@ -14,13 +14,10 @@ using Index = u64;
 struct Vertex
 {
     Index position;
-    Index texture;
     Index normal;
+    Index texture;
 
-    Vertex();
-    Vertex(Index vertex, Index normal, Index textureCoordinate);
-
-    static Vertex Create_VN_T(Index vertexAndNormal, Index text);
+    Vertex(Index vertex, Index normal, Index texture);
 };
 
 
@@ -31,25 +28,24 @@ struct Triangle
     Vertex v2;
 
     Triangle(Vertex v0, Vertex v1, Vertex v2);
-    Triangle();
-
-    Vertex& operator[](Index index);
-    const Vertex& operator[](Index index) const;
 };
 
 struct Builder
 {
-    Index addTextCoord(const glm::vec2& v);
-    Index addPosition(const glm::vec3& pos);
-    Index addNormal(const glm::vec3& norm);
-    void addTriangle(const Triangle& t);
+    Index add_text_coord(const glm::vec2& v);
+    Index add_position(const glm::vec3& pos);
+    Index add_normal(const glm::vec3& norm);
+    
+    Builder& add_triangle(const Triangle& t);
+    Builder& add_quad(bool reverse, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3);
+    Builder& add_face(const std::vector<Vertex>&);
 
-    void addQuad(bool reverse, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3);
-    void addFace(const std::vector<Vertex>& vertices);
+    Builder& replace_with_smooth_normals();
+    Builder& move(const glm::vec3& dir);
+    Builder& scale(float scale);
+    Builder& invert_normals();
 
-    void buildNormals();
-
-    Mesh asMesh() const;
+    Mesh to_mesh() const;
 
     std::vector<Triangle> triangles;
     std::vector<glm::vec3> positions;
@@ -58,6 +54,6 @@ struct Builder
 };
 
 
-Builder CreateBox(float w, float h, float d, bool faceOut);
+Builder create_box(float w, float h, float d, bool face_out);
 
 }
