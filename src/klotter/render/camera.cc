@@ -5,15 +5,7 @@
 namespace klotter
 {
 
-Camera::Camera(float a_fov, float a_near, float a_far)
-    : fov(a_fov)
-    , near(a_near)
-    , far(a_far)
-{
-}
-
-CameraVectors
-create_vectors(const Camera& cam)
+CameraVectors create_vectors(const Camera& cam)
 {
     const auto direction = glm::vec3
     {
@@ -26,6 +18,20 @@ create_vectors(const Camera& cam)
     const auto up = glm::normalize(glm::cross(right, front));
 
     return {front, right, up};
+}
+
+
+CompiledCamera compile(const Camera& cam, const glm::ivec2 window_size)
+{
+    const float aspect = static_cast<float>(window_size.x) / static_cast<float>(window_size.y);
+    const auto projection = glm::perspective(glm::radians(cam.fov), aspect, 0.1f, 100.0f);
+
+    // this is probably wrong
+    const auto translation = glm::translate(glm::mat4(1.0f), -cam.position);
+    const auto rotation = glm::yawPitchRoll(cam.yaw, cam.pitch, cam.roll);
+    const auto view = translation * rotation;
+
+    return CompiledCamera{ projection, view };
 }
 
 }

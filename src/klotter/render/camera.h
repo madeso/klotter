@@ -15,16 +15,22 @@ struct CameraVectors
 
 struct Camera
 {
-    float fov;
-    float near;
-    float far;
-
-    Camera(float a_fov, float a_near, float a_far);
+    float fov = 45.0f;
+    float near = 0.1f;
+    float far = 100.0f;
 
     glm::vec3 position = glm::vec3{0.0f, 0.0f,  0.0f};
 
-    float yaw = -90.0f;
+    float yaw = 0.0f;
     float pitch = 0.0f;
+    float roll = 0.0f;
+};
+
+
+struct CompiledCamera
+{
+    glm::mat4 projection;
+    glm::mat4 view;
 };
 
 
@@ -32,5 +38,6 @@ struct Camera
 // Functions
 
 CameraVectors create_vectors(const Camera& camera);
+CompiledCamera compile(const Camera&, const glm::ivec2 window_size);
 
 }

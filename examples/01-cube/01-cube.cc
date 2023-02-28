@@ -4,10 +4,6 @@
 
 using namespace klotter;
 
-constexpr auto fov = 75.0f;
-constexpr auto near = 0.1f;
-constexpr auto far = 5.0f;
-
 struct CubeApp : App
 {
     Camera camera;
@@ -15,7 +11,6 @@ struct CubeApp : App
     MeshInstancePtr cube;
 
     CubeApp()
-        : camera{fov, near, far}
     {
         camera.position.z = 2;
 
@@ -51,7 +46,8 @@ struct CubeApp : App
     {
         // cube->rotation.x += time;
         p += dt * 2.0f;
-        cube->position.x = sin(p) * 0.6f;
+        cube->position.z = std::cos(p) - 1.0f;
+        cube->position.x = std::sin(p) * 0.6f;
         cube->rotation.z += dt;
 
         renderer.render(scene, camera);

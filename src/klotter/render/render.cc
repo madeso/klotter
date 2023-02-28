@@ -188,6 +188,8 @@ ShaderResource::ShaderResource()
         layout (location = 1) in vec3 aColor;
         layout (location = 2) in vec2 aTexCoord;
 
+        uniform mat4 uProjection;
+        uniform mat4 uView;
         uniform mat4 uTransform;
 
         out vec3 vColor;
@@ -195,7 +197,7 @@ ShaderResource::ShaderResource()
 
         void main()
         {
-            gl_Position = uTransform * vec4(aPos.xyz, 1.0);
+            gl_Position = uProjection * uView * uTransform * vec4(aPos.xyz, 1.0);
             vColor = aColor;
             vTexCoord = aTexCoord;
         }
@@ -262,10 +264,12 @@ std::vector<float> BasicMaterial::compile_mesh_data(const Mesh& mesh)
     return vertices;
 }
 
-void BasicMaterial::setUniforms(const glm::mat4& transform)
+void BasicMaterial::setUniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
     shader->set_vec4(shader->get_uniform("TintColor"), color);
     shader->set_mat(shader->get_uniform("uTransform"), transform);
+    shader->set_mat(shader->get_uniform("uProjection"), cc.projection);
+    shader->set_mat(shader->get_uniform("uView"), cc.view);
 }
 
 void BasicMaterial::bind_textures(Assets* assets)
@@ -331,10 +335,10 @@ CompiledMesh::~CompiledMesh()
     destroy_vbo(vbo);
 }
 
-void CompiledMesh::render(Assets* assets, const glm::mat4& transform)
+void CompiledMesh::render(Assets* assets, const CompiledCamera& cc, const glm::mat4& transform)
 {
     material->shader->use();
-    material->setUniforms(transform);
+    material->setUniforms(cc, transform);
     material->bind_textures(assets);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
@@ -367,17 +371,19 @@ Renderer::Renderer()
     opengl_setup(&states);
 }
 
-void Renderer::render(const Scene& scene, const Camera&)
+void Renderer::render(const Scene& scene, const Camera& camera)
 {
     glViewport(0, 0, window_size.x, window_size.y);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     opengl_set3d(&states);
 
+    const auto compiled_camera = compile(camera, window_size);
+
     for (auto& m : scene.meshes)
     {
         const auto translation = glm::translate(glm::mat4(1.0f), m->position);
         const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
-        m->geom->render(&assets, translation * rotation);
+        m->geom->render(&assets, compiled_camera, translation * rotation);
     }
 }
 
