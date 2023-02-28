@@ -25,6 +25,11 @@ set(src_base
     klotter/str.cc klotter/str.h
 
     klotter/klotter.cc klotter/klotter.h
+
+    klotter/compiler_warning.h
+    klotter/log.h
+    klotter/cint.h
+    klotter/undef_windows.h
 )
 
 set(src_pch
