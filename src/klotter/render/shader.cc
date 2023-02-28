@@ -51,7 +51,7 @@ void
 upload_shader_source(unsigned int shader, std::string_view source)
 {
     const char* const s = &source[0];
-    const int length = Csizet_to_int(source.length());
+    const int length = Csizet_to_int(source.length()); // should be GLint
     glShaderSource(shader, 1, &s, &length);
 }
 

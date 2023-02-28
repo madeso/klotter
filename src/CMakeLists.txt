@@ -13,6 +13,8 @@ set(src_render
     klotter/render/texture.cc klotter/render/texture.h
     klotter/render/texture.io.h
     klotter/render/assets.cc klotter/render/assets.h
+
+    klotter/render/mesh.builder.cc klotter/render/mesh.builder.h
 )
     
 set(src_base

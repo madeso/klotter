@@ -43,8 +43,6 @@ struct Mesh
     std::vector<Face> faces;
 };
 
-
-
 struct Material
 {
     std::shared_ptr<ShaderProgram> shader;

@@ -1,4 +1,5 @@
 #include "klotter/klotter.h"
+#include "klotter/render/mesh.builder.h"
 
 #include <cmath>
 
@@ -13,28 +14,10 @@ struct CubeApp : App
     CubeApp()
     {
         camera.position.z = 2;
-
-        const auto left = 0.0f;
-        const auto right = 2.0;
-        const auto top = 2.0f;
-        const auto bottom = 0.0f;
-        
-        const auto triangle = Mesh
-        {
-            {
-                Vertex{{ 0.5f,  0.5f, 0.0f}, {right, top}},  // top right
-                Vertex{{ 0.5f, -0.5f, 0.0f}, {right, bottom}},  // bottom right
-                Vertex{{-0.5f, -0.5f, 0.0f}, {left, bottom}},  // bottom left
-                Vertex{{-0.5f,  0.5f, 0.0f}, {left, top}}   // top left 
-            },
-            {
-                Face{0, 1, 3},   // first triangle
-                Face{1, 2, 3}    // second triangle
-            }
-        };
+        const auto triangle = mesh::CreateBox(1.0f, 1.0f, 1.0f, false).asMesh();
         auto material = std::make_shared<BasicMaterial>();
-        material->color = {white, 1.0f};
-        // material->texture = renderer.assets.get_dark_grid();
+        // material->color = {white, 1.0f};
+        material->texture = renderer.assets.get_dark_grid();
         auto geometry = compile_Mesh(triangle, material);
         
         cube = make_MeshInstance(geometry);
