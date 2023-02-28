@@ -45,13 +45,15 @@ Builder create_box(float w, float h, float d, bool face_out)
 
 // ==================================================================================================================================
 
-Vertex::Vertex(
-        Index a_position,
-        Index a_normal,
-        Index a_texture)
+Vertex::Vertex
+(
+    Index a_position,
+    Index a_normal,
+    Index a_texture
+)
     : position(a_position)
-    , texture(a_texture)
     , normal(a_normal)
+    , texture(a_texture)
 {
 }
 
@@ -64,19 +66,19 @@ Triangle::Triangle(Vertex a, Vertex b, Vertex c) : v0(a), v1(b), v2(c)
 Index Builder::add_text_coord(const glm::vec2& tc)
 {
     texcoords.push_back(tc);
-    return static_cast<Index>(texcoords.size() - 1);
+    return texcoords.size() - 1;
 }
 
 Index Builder::add_position(const glm::vec3& pos)
 {
     positions.push_back(pos);
-    return static_cast<Index>(positions.size() - 1);
+    return positions.size() - 1;
 }
 
 Index Builder::add_normal(const glm::vec3& norm)
 {
     normals.push_back(norm);
-    return static_cast<Index>(normals.size() - 1);
+    return normals.size() - 1;
 }
 
 Builder& Builder::add_triangle(const Triangle& t)
@@ -266,16 +268,16 @@ Mesh Builder::to_mesh() const
             const glm::vec2 text = texcoords.empty()
                 ? glm::vec2(0, 0)
                 : texcoords[c.texture];
-            const glm::vec3 normal = normals.empty() == false
-                ? normals[c.normal]
-                : glm::vec3(0, 0, 0);
+            // const glm::vec3 normal = normals.empty() == false
+            //    ? normals[c.normal]
+            //    : glm::vec3(0, 0, 0);
             const auto ind = vertices.size();
             vertices.emplace_back(pos, text);
             combinations.insert({ c,  Csizet_to_u32(ind) });
             return Csizet_to_u32(ind);
         }
     };
-    
+
     for(const Triangle& tri: triangles)
     {
         const auto v0 = convert_vert(tri.v0);
