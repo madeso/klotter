@@ -25,7 +25,7 @@ struct Vertex
     glm::vec2 uv;
     glm::vec3 color;
 
-    explicit Vertex(glm::vec3 p, glm::vec2, glm::vec3 c = white);
+    explicit Vertex(glm::vec3 p, glm::vec2, glm::vec3 c = colors::white);
 };
 
 struct Face

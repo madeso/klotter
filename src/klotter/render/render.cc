@@ -226,7 +226,7 @@ Material::Material(std::shared_ptr<ShaderProgram> s)
 
 BasicMaterial::BasicMaterial()
     : Material(shaders().shader)
-    , color(white, 1.0f)
+    , color(colors::white, 1.0f)
 {
 }
 

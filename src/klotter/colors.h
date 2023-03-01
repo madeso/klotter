@@ -1,5 +1,8 @@
 #pragma once
 
+namespace klotter::colors
+{
+
 constexpr auto white = glm::vec3{1.0f, 1.0f, 1.0f};
 constexpr auto black = glm::vec3{0.0f, 0.0f, 0.0f};
 
@@ -22,3 +25,5 @@ constexpr glm::vec3 yellow = rgb(240, 228, 66);
 constexpr glm::vec3 blue = rgb(0, 114, 178);
 constexpr glm::vec3 red_vermillion = rgb(213, 94, 0);
 constexpr glm::vec3 purple_redish = rgb(204, 121, 167);
+
+}

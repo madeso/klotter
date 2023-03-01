@@ -45,42 +45,42 @@ Builder create_box(float x, float y, float z, bool face_out)
     const float hz = z * 0.5f;
 
     // front
-    v(white,
+    v(colors::white,
         {-hx, -hy, -hz}, { 0.0f, 0.0f},
         { hx, -hy, -hz}, { x*ts, 0.0f},
         { hx,  hy, -hz}, { x*ts, y*ts},
         {-hx,  hy, -hz}, { 0.0f, y*ts});
 
     // back
-    v(white,
+    v(colors::white,
         {-hx, -hy,  hz}, { 0.0f, 0.0f},
         {-hx,  hy,  hz}, { 0.0f, y*ts},
         { hx,  hy,  hz}, { x*ts, y*ts},
         { hx, -hy,  hz}, { x*ts, 0.0f});
 
     // left
-    v(white,
+    v(colors::white,
         {-hx,  hy, -hz}, { y*ts, 0.0f},
         {-hx,  hy,  hz}, { y*ts, z*ts},
         {-hx, -hy,  hz}, { 0.0f, z*ts},
         {-hx, -hy, -hz}, { 0.0f, 0.0f});
 
     // right
-    v(white,
+    v(colors::white,
         { hx,  hy,  hz}, { y*ts, z*ts},
         { hx,  hy, -hz}, { 0.0f, z*ts},
         { hx, -hy, -hz}, { 0.0f, 0.0f},
         { hx, -hy,  hz}, { y*ts, 0.0f});
 
     // bottom
-    v(white,
+    v(colors::white,
         {-hx, -hy, -hz}, { 0.0f, 0.0f},
         {-hx, -hy,  hz}, { 0.0f, z*ts},
         { hx, -hy,  hz}, { x*ts, z*ts},
         { hx, -hy, -hz}, { x*ts, 0.0f});
 
     // top
-    v(white,
+    v(colors::white,
         {-hx,  hy, -hz}, { 0.0f, 0.0f},
         { hx,  hy, -hz}, { x*ts, 0.0f},
         { hx,  hy,  hz}, { x*ts, z*ts},
@@ -352,7 +352,7 @@ Mesh Builder::to_mesh() const
                 ? glm::vec2(0, 0)
                 : texcoords[c.texture];
             const glm::vec4 col = colors.empty()
-                ? glm::vec4{white, 1.0f}
+                ? glm::vec4{colors::white, 1.0f}
                 : colors[c.color];
             // const glm::vec3 normal = normals.empty() == false
             //    ? normals[c.normal]
