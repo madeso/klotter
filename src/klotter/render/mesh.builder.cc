@@ -144,7 +144,7 @@ Builder& Builder::add_face(const std::vector<Vertex>& vertices)
 {
     // we currently doesnt support ton-triangular faces so - triangulate it
     const std::vector<Vertex>::size_type size = vertices.size();
-    bool added = false;
+    [[maybe_unused]] bool added = false;
     for (std::vector<Vertex>::size_type i = 2; i < size; ++i)
     {
         add_triangle(Triangle(vertices[0], vertices[i - 1], vertices[i]));
