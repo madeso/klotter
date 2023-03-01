@@ -1,6 +1,7 @@
 embed(src_assets
     AS_BINARY
-        textures/texture_01.png
+        textures/light_01.png
+        textures/dark_01.png
 )
 
 set(src_render

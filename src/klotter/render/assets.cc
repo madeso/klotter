@@ -4,20 +4,31 @@
 
 
 // assets
-#include "texture_01.png.h"
+#include "light_01.png.h"
+#include "dark_01.png.h"
 
 
 namespace klotter
 {
 
-std::shared_ptr<Texture> Assets::get_dark_grid()
+std::shared_ptr<Texture> get_or_load(std::shared_ptr<Texture>* texture, const embedded_binary& bin)
 {
-	if(dark_grid == nullptr)
+	if (*texture == nullptr)
 	{
-		dark_grid = std::make_shared<Texture>(load_image_from_embedded(TEXTURE_01_PNG,
+		*texture = std::make_shared<Texture>(load_image_from_embedded(bin,
 			TextureEdge::repeat, TextureRenderStyle::smooth, Transparency::exclude));
 	}
-	return dark_grid;
+	return *texture;
+}
+
+std::shared_ptr<Texture> Assets::get_dark_grid()
+{
+	return get_or_load(&dark_grid, DARK_01_PNG);
+}
+
+std::shared_ptr<Texture> Assets::get_light_grid()
+{
+	return get_or_load(&light_grid, LIGHT_01_PNG);
 }
 
 std::shared_ptr<Texture> Assets::get_white()

@@ -14,10 +14,10 @@ struct CubeApp : App
     CubeApp()
     {
         camera.position.z = 2;
-        const auto triangle = mesh::create_box(1.0f, 1.0f, 1.0f, false).to_mesh();
+        const auto triangle = mesh::create_box(0.5f, 2.0f, 1.5f, false).to_mesh();
         auto material = std::make_shared<BasicMaterial>();
         // material->color = {white, 1.0f};
-        material->texture = renderer.assets.get_dark_grid();
+        material->texture = renderer.assets.get_light_grid();
         auto geometry = compile_Mesh(triangle, material);
         
         cube = make_MeshInstance(geometry);
@@ -28,10 +28,14 @@ struct CubeApp : App
     void on_render(float dt) override
     {
         // cube->rotation.x += time;
-        p += dt * 2.0f;
-        cube->position.z = std::cos(p) - 1.0f;
-        cube->position.x = std::sin(p) * 0.6f;
-        cube->rotation.z += dt;
+        p += dt;
+        cube->position.z = std::cos(p * 2.1f) - 1.0f;
+        cube->position.x = std::sin(p * 1.4f) * 0.6f;
+        cube->position.y = std::sin(p * 0.4f) * 0.5f;
+
+        cube->rotation.z = p;
+        cube->rotation.y = -p / 4.0f;
+        cube->rotation.x = std::sin(p * 0.6f);
 
         renderer.render(scene, camera);
     }
