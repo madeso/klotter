@@ -23,6 +23,7 @@ struct Vertex
 
 struct Triangle
 {
+    //ccw = frontfacing
     Vertex v0;
     Vertex v1;
     Vertex v2;
@@ -35,6 +36,15 @@ struct Builder
     Index add_text_coord(const glm::vec2& v);
     Index add_position(const glm::vec3& pos);
     Index add_normal(const glm::vec3& norm);
+
+    std::optional<Index> find_text_coord(const glm::vec2& v, float max_diff) const;
+    std::optional<Index> find_position(const glm::vec3& pos, float max_diff) const;
+    std::optional<Index> find_normal(const glm::vec3& norm, float max_diff) const;
+
+    // find or add
+    Index foa_text_coord(const glm::vec2& v, float max_diff);
+    Index foa_position(const glm::vec3& pos, float max_diff);
+    Index foa_normal(const glm::vec3& norm, float max_diff);
     
     Builder& add_triangle(const Triangle& t);
     Builder& add_quad(bool reverse, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3);

@@ -86,15 +86,6 @@ struct States
 };
 
 
-void opengl_setup(OpenglStates* state)
-{
-    States{state}.cull_face(false);
-    
-    glCullFace(GL_BACK);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-}
-
-
 void opengl_set2d(OpenglStates* states)
 {
     States{ states }
@@ -368,7 +359,11 @@ Renderer::Renderer()
     : window_size{0, 0}
 {
     glClearColor(0, 0, 0, 1.0f);
-    opengl_setup(&states);
+
+    States{ &states }.cull_face(true);
+
+    glCullFace(GL_BACK);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void Renderer::render(const Scene& scene, const Camera& camera)

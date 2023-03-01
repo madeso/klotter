@@ -12,34 +12,72 @@ namespace klotter::mesh
 
 
 
-Builder create_box(float w, float h, float d, bool face_out)
+Builder create_box(float x, float y, float z, bool face_out)
 {
     Builder b;
 
-    const Index t0 = b.add_text_coord(glm::vec2(0, 1));
-    const Index t1 = b.add_text_coord(glm::vec2(1, 1));
-    const Index t2 = b.add_text_coord(glm::vec2(0, 0));
-    const Index t3 = b.add_text_coord(glm::vec2(1, 0));
+    const auto v = [&]
+    (
+        glm::vec3 p0, glm::vec2 t0,
+        glm::vec3 p1, glm::vec2 t1,
+        glm::vec3 p2, glm::vec2 t2,
+        glm::vec3 p3, glm::vec2 t3
+    )
+    {
+        constexpr float pd = 0.1f;
+        constexpr float td = 0.01f;
+        const auto v0 = Vertex{ b.foa_position(p0, pd), 0, b.foa_text_coord(t0, td) };
+        const auto v1 = Vertex{ b.foa_position(p1, pd), 0, b.foa_text_coord(t1, td) };
+        const auto v2 = Vertex{ b.foa_position(p2, pd), 0, b.foa_text_coord(t2, td) };
+        const auto v3 = Vertex{ b.foa_position(p3, pd), 0, b.foa_text_coord(t3, td) };
 
-    // front side
-    const Index v0 = b.add_position(glm::vec3(0, 0, 0));
-    const Index v1 = b.add_position(glm::vec3(w, 0, 0));
-    const Index v2 = b.add_position(glm::vec3(0, h, 0));
-    const Index v3 = b.add_position(glm::vec3(w, h, 0));
+        b.add_quad(face_out, v0, v1, v2, v3);
+    };
 
-    // back side
-    const Index v4 = b.add_position(glm::vec3(0, 0, d));
-    const Index v5 = b.add_position(glm::vec3(w, 0, d));
-    const Index v6 = b.add_position(glm::vec3(0, h, d));
-    const Index v7 = b.add_position(glm::vec3(w, h, d));
+    // texel scale
+    const float ts = 1.0f;
+    
+    // half sizes
+    const float hx = x * 0.5f;
+    const float hy = y * 0.5f;
+    const float hz = z * 0.5f;
 
-    const auto v = [](Index p, Index t) -> Vertex { return { p, 0, t }; };
-    b.add_quad(!face_out, v(v0, t2), v(v2, t0), v(v3, t1), v(v1, t3));  // front
-    b.add_quad(!face_out, v(v1, t3), v(v3, t1), v(v7, t0), v(v5, t2));  // right
-    b.add_quad(!face_out, v(v4, t3), v(v6, t1), v(v2, t0), v(v0, t2));  // left
-    b.add_quad(!face_out, v(v5, t2), v(v7, t0), v(v6, t1), v(v4, t3));  // back
-    b.add_quad(!face_out, v(v3, t1), v(v2, t3), v(v6, t2), v(v7, t0));  // up
-    b.add_quad(!face_out, v(v4, t0), v(v0, t1), v(v1, t3), v(v5, t2));  // bottom
+    // front
+    v(  {-hx, -hy, -hz}, { 0.0f, 0.0f},
+        { hx, -hy, -hz}, { x*ts, 0.0f},
+        { hx,  hy, -hz}, { x*ts, y*ts},
+        {-hx,  hy, -hz}, { 0.0f, y*ts});
+
+    // back
+    v(  {-hx, -hy,  hz}, { 0.0f, 0.0f},
+        {-hx,  hy,  hz}, { 0.0f, y*ts},
+        { hx,  hy,  hz}, { x*ts, y*ts},
+        { hx, -hy,  hz}, { x*ts, 0.0f});
+
+    // left
+    v(  {-hx,  hy, -hz}, { y*ts, 0.0f},
+        {-hx,  hy,  hz}, { y*ts, z*ts},
+        {-hx, -hy,  hz}, { 0.0f, z*ts},
+        {-hx, -hy, -hz}, { 0.0f, 0.0f});
+
+    // right
+    v(  { hx,  hy,  hz}, { y*ts, z*ts},
+        { hx,  hy, -hz}, { 0.0f, z*ts},
+        { hx, -hy, -hz}, { 0.0f, 0.0f},
+        { hx, -hy,  hz}, { y*ts, 0.0f});
+
+    // bottom
+    v(  {-hx, -hy, -hz}, { 0.0f, 0.0f},
+        {-hx, -hy,  hz}, { 0.0f, z*ts},
+        { hx, -hy,  hz}, { x*ts, z*ts},
+        { hx, -hy, -hz}, { x*ts, 0.0f});
+
+    // top
+    v(  {-hx,  hy, -hz}, { 0.0f, 0.0f},
+        { hx,  hy, -hz}, { x*ts, 0.0f},
+        { hx,  hy,  hz}, { x*ts, z*ts},
+        {-hx,  hy,  hz}, { 0.0f, z*ts});
+
     return b;
 }
 
@@ -63,23 +101,63 @@ Triangle::Triangle(Vertex a, Vertex b, Vertex c) : v0(a), v1(b), v2(c)
 
 // ==================================================================================================================================
 
+namespace
+{
+    template<typename T>
+    Index add_vec(std::vector<T>* v, T t)
+    {
+        v->emplace_back(t);
+        return v->size() - 1;
+    }
+
+    template<typename T>
+    std::optional<Index> find_vec(const std::vector<T>& v, T t, float diff)
+    {
+        const auto d2 = diff * diff;
+        Index index = 0;
+        for (const auto& r : v)
+        {
+            if (glm::distance2(r, t) < d2)
+            {
+                return index;
+            }
+            index += 1;
+        }
+        
+        return std::nullopt;
+    }
+
+    template<typename T>
+    Index find_or_add_vec(std::vector<T>* v, T t, float diff)
+    {
+        const auto found = find_vec(*v, t, diff);
+        if (found) { return *found; }
+
+        return add_vec(v, t);
+    }
+}
+
 Index Builder::add_text_coord(const glm::vec2& tc)
-{
-    texcoords.push_back(tc);
-    return texcoords.size() - 1;
-}
-
+    { return add_vec(&texcoords, tc); }
 Index Builder::add_position(const glm::vec3& pos)
-{
-    positions.push_back(pos);
-    return positions.size() - 1;
-}
-
+    { return add_vec(&positions, pos); }
 Index Builder::add_normal(const glm::vec3& norm)
-{
-    normals.push_back(norm);
-    return normals.size() - 1;
-}
+    { return add_vec(&normals, norm); }
+
+std::optional<Index> Builder::find_text_coord(const glm::vec2& v, float max_diff) const
+    { return find_vec(texcoords, v, max_diff); }
+std::optional<Index> Builder::find_position(const glm::vec3& pos, float max_diff) const
+    { return find_vec(positions, pos, max_diff); }
+std::optional<Index> Builder::find_normal(const glm::vec3& norm, float max_diff) const
+    { return find_vec(normals, norm, max_diff); }
+
+Index Builder::foa_text_coord(const glm::vec2& v, float max_diff)
+    { return find_or_add_vec(&texcoords, v, max_diff); }
+Index Builder::foa_position(const glm::vec3& pos, float max_diff)
+    { return find_or_add_vec(&positions, pos, max_diff); }
+Index Builder::foa_normal(const glm::vec3& norm, float max_diff)
+    { return find_or_add_vec(&normals, norm, max_diff); }
+
 
 Builder& Builder::add_triangle(const Triangle& t)
 {
@@ -89,20 +167,22 @@ Builder& Builder::add_triangle(const Triangle& t)
 
 Builder& Builder::add_quad
 (
-    bool reverse,
+    bool ccw,
     const Vertex& v0,
     const Vertex& v1,
     const Vertex& v2,
     const Vertex& v3
 )
 {
-    if (reverse)
+    if (ccw)
     {
+        // add counter clock wise
         add_triangle(Triangle(v0, v1, v2));
         add_triangle(Triangle(v0, v2, v3));
     }
     else
     {
+        // add clock wise
         add_triangle(Triangle(v2, v1, v0));
         add_triangle(Triangle(v3, v2, v0));
     }

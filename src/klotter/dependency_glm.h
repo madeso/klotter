@@ -12,5 +12,6 @@ DISABLE_WARNING_NONSTANDARD_NAMELESS_STRUCT_UNION
 #include "glm/gtc/type_ptr.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtx/euler_angles.hpp"
+#include "glm/gtx/norm.hpp"
 
 DISABLE_WARNING_POP
