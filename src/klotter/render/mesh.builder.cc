@@ -67,10 +67,10 @@ Builder create_box(float x, float y, float z, bool face_out)
 
     // right
     v(colors::white,
-        { hx,  hy,  hz}, { y*ts, z*ts},
-        { hx,  hy, -hz}, { 0.0f, z*ts},
+        { hx,  hy,  hz}, { z*ts, y*ts},
+        { hx,  hy, -hz}, { 0.0f, y*ts},
         { hx, -hy, -hz}, { 0.0f, 0.0f},
-        { hx, -hy,  hz}, { y*ts, 0.0f});
+        { hx, -hy,  hz}, { z*ts, 0.0f});
 
     // bottom
     v(colors::white,
