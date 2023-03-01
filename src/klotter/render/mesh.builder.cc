@@ -26,10 +26,10 @@ Builder create_box(float x, float y, float z, bool face_out)
     {
         constexpr float pd = 0.1f;
         constexpr float td = 0.01f;
-        const auto v0 = Vertex{ b.foa_position(p0, pd), 0, b.foa_text_coord(t0, td) };
-        const auto v1 = Vertex{ b.foa_position(p1, pd), 0, b.foa_text_coord(t1, td) };
-        const auto v2 = Vertex{ b.foa_position(p2, pd), 0, b.foa_text_coord(t2, td) };
-        const auto v3 = Vertex{ b.foa_position(p3, pd), 0, b.foa_text_coord(t3, td) };
+        const auto v0 = Vertex{ b.foa_position(p0, pd), 0, b.foa_text_coord(t0, td), 0 };
+        const auto v1 = Vertex{ b.foa_position(p1, pd), 0, b.foa_text_coord(t1, td), 0 };
+        const auto v2 = Vertex{ b.foa_position(p2, pd), 0, b.foa_text_coord(t2, td), 0 };
+        const auto v3 = Vertex{ b.foa_position(p3, pd), 0, b.foa_text_coord(t3, td), 0 };
 
         b.add_quad(face_out, v0, v1, v2, v3);
     };
@@ -87,11 +87,13 @@ Vertex::Vertex
 (
     Index a_position,
     Index a_normal,
-    Index a_texture
+    Index a_texture,
+    Index a_color
 )
     : position(a_position)
     , normal(a_normal)
     , texture(a_texture)
+    , color(a_color)
 {
 }
 
@@ -143,13 +145,8 @@ Index Builder::add_position(const glm::vec3& pos)
     { return add_vec(&positions, pos); }
 Index Builder::add_normal(const glm::vec3& norm)
     { return add_vec(&normals, norm); }
-
-std::optional<Index> Builder::find_text_coord(const glm::vec2& v, float max_diff) const
-    { return find_vec(texcoords, v, max_diff); }
-std::optional<Index> Builder::find_position(const glm::vec3& pos, float max_diff) const
-    { return find_vec(positions, pos, max_diff); }
-std::optional<Index> Builder::find_normal(const glm::vec3& norm, float max_diff) const
-    { return find_vec(normals, norm, max_diff); }
+Index Builder::add_color(const glm::vec4& c)
+    { return add_vec(&colors, c); }
 
 Index Builder::foa_text_coord(const glm::vec2& v, float max_diff)
     { return find_or_add_vec(&texcoords, v, max_diff); }
@@ -157,6 +154,8 @@ Index Builder::foa_position(const glm::vec3& pos, float max_diff)
     { return find_or_add_vec(&positions, pos, max_diff); }
 Index Builder::foa_normal(const glm::vec3& norm, float max_diff)
     { return find_or_add_vec(&normals, norm, max_diff); }
+Index Builder::foa_color(const glm::vec4& c, float max_diff)
+    { return find_or_add_vec(&colors, c, max_diff); }
 
 
 Builder& Builder::add_triangle(const Triangle& t)
@@ -295,29 +294,25 @@ struct Combo
     Index position;
     Index texture;
     Index normal;
+    Index color;
 
     Combo(const Vertex& v)
         : position(v.position)
         , texture(v.texture)
         , normal(v.normal)
+        , color(v.color)
     {
     }
 };
 
 bool operator<(const Combo& lhs, const Combo& rhs)
 {
-    if (lhs.position != rhs.position)
-    {
-        return lhs.position < rhs.position;
-    }
-    else if (lhs.texture != rhs.texture)
-    {
-        return lhs.texture < rhs.texture;
-    }
-    else if (lhs.normal != rhs.normal)
-    {
-        return lhs.normal < rhs.normal;
-    }
+#define SORT_ON(NAME) if (lhs.NAME != rhs.NAME) { return lhs.NAME < rhs.NAME; }
+    SORT_ON(position)
+    else SORT_ON(texture)
+    else SORT_ON(normal)
+    else SORT_ON(color)
+#undef SORT_ON
     else
     {
         // all equal
@@ -348,11 +343,14 @@ Mesh Builder::to_mesh() const
             const glm::vec2 text = texcoords.empty()
                 ? glm::vec2(0, 0)
                 : texcoords[c.texture];
+            const glm::vec4 col = colors.empty()
+                ? glm::vec4{white, 1.0f}
+                : colors[c.color];
             // const glm::vec3 normal = normals.empty() == false
             //    ? normals[c.normal]
             //    : glm::vec3(0, 0, 0);
             const auto ind = vertices.size();
-            vertices.emplace_back(pos, text);
+            vertices.emplace_back(pos, text, col);
             combinations.insert({ c,  Csizet_to_u32(ind) });
             return Csizet_to_u32(ind);
         }
