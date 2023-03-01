@@ -1,5 +1,8 @@
 #pragma once
 
+#include "klotter/colors.h"
+
+
 namespace klotter
 {
     struct Mesh;
@@ -64,6 +67,6 @@ struct Builder
 };
 
 
-Builder create_box(float w, float h, float d, bool face_out);
+Builder create_box(float w, float h, float d, bool face_out, const glm::vec3& color = colors::white);
 
 }

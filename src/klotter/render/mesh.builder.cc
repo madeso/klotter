@@ -12,13 +12,12 @@ namespace klotter::mesh
 
 
 
-Builder create_box(float x, float y, float z, bool face_out)
+Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& color)
 {
     Builder b;
 
     const auto v = [&]
     (
-        glm::vec3 color,
         glm::vec3 p0, glm::vec2 t0,
         glm::vec3 p1, glm::vec2 t1,
         glm::vec3 p2, glm::vec2 t2,
@@ -45,43 +44,37 @@ Builder create_box(float x, float y, float z, bool face_out)
     const float hz = z * 0.5f;
 
     // front
-    v(colors::white,
-        {-hx, -hy, -hz}, { 0.0f, 0.0f},
+    v(  {-hx, -hy, -hz}, { 0.0f, 0.0f},
         { hx, -hy, -hz}, { x*ts, 0.0f},
         { hx,  hy, -hz}, { x*ts, y*ts},
         {-hx,  hy, -hz}, { 0.0f, y*ts});
 
     // back
-    v(colors::white,
-        {-hx, -hy,  hz}, { 0.0f, 0.0f},
+    v(  {-hx, -hy,  hz}, { 0.0f, 0.0f},
         {-hx,  hy,  hz}, { 0.0f, y*ts},
         { hx,  hy,  hz}, { x*ts, y*ts},
         { hx, -hy,  hz}, { x*ts, 0.0f});
 
     // left
-    v(colors::white,
-        {-hx,  hy, -hz}, { y*ts, 0.0f},
+    v(  {-hx,  hy, -hz}, { y*ts, 0.0f},
         {-hx,  hy,  hz}, { y*ts, z*ts},
         {-hx, -hy,  hz}, { 0.0f, z*ts},
         {-hx, -hy, -hz}, { 0.0f, 0.0f});
 
     // right
-    v(colors::white,
-        { hx,  hy,  hz}, { z*ts, y*ts},
+    v(  { hx,  hy,  hz}, { z*ts, y*ts},
         { hx,  hy, -hz}, { 0.0f, y*ts},
         { hx, -hy, -hz}, { 0.0f, 0.0f},
         { hx, -hy,  hz}, { z*ts, 0.0f});
 
     // bottom
-    v(colors::white,
-        {-hx, -hy, -hz}, { 0.0f, 0.0f},
+    v(  {-hx, -hy, -hz}, { 0.0f, 0.0f},
         {-hx, -hy,  hz}, { 0.0f, z*ts},
         { hx, -hy,  hz}, { x*ts, z*ts},
         { hx, -hy, -hz}, { x*ts, 0.0f});
 
     // top
-    v(colors::white,
-        {-hx,  hy, -hz}, { 0.0f, 0.0f},
+    v(  {-hx,  hy, -hz}, { 0.0f, 0.0f},
         { hx,  hy, -hz}, { x*ts, 0.0f},
         { hx,  hy,  hz}, { x*ts, z*ts},
         {-hx,  hy,  hz}, { 0.0f, z*ts});

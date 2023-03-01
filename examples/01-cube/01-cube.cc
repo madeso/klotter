@@ -14,7 +14,7 @@ struct CubeApp : App
     CubeApp()
     {
         camera.position.z = 2;
-        const auto triangle = mesh::create_box(0.5f, 2.0f, 1.5f, false).to_mesh();
+        const auto triangle = mesh::create_box(0.5f, 2.0f, 1.5f, false, colors::red_vermillion).to_mesh();
         auto material = std::make_shared<BasicMaterial>();
         // material->color = {white, 1.0f};
         material->texture = renderer.assets.get_light_grid();
