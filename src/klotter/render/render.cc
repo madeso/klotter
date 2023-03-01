@@ -95,15 +95,6 @@ void opengl_set2d(OpenglStates* states)
 }
 
 
-void opengl_set3d(OpenglStates* states)
-{
-    States{states}
-        .depth_test(true)
-        .blending(false)
-        ;
-}
-
-
 ShaderResource*& shader_resource()
 {
     static ShaderResource* s = nullptr;
@@ -370,7 +361,10 @@ void Renderer::render(const Scene& scene, const Camera& camera)
 {
     glViewport(0, 0, window_size.x, window_size.y);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    opengl_set3d(&states);
+    States{ &states }
+        .depth_test(true)
+        .blending(false)
+        ;
 
     const auto compiled_camera = compile(camera, window_size);
 
