@@ -107,40 +107,28 @@ ShaderResource& shaders()
     return *shader_resource();
 }
 
-u32 create_vbo()
+u32 create_buffer()
 {
     u32 vbo;
     glGenBuffers(1, &vbo);
     return vbo;
 }
 
-void destroy_vbo(u32 vbo)
+void destroy_buffer(u32 vbo)
 {
     glDeleteBuffers(1, &vbo);
 }
 
-u32 create_vao()
+u32 create_vertex_array()
 {
     u32 vao;
     glGenVertexArrays(1, &vao);
     return vao;
 }
 
-void destroy_vao(u32 vao)
+void destroy_vertex_array(u32 vao)
 {
     glDeleteVertexArrays(1, &vao);
-}
-
-u32 create_ebo()
-{
-    unsigned int ebo;
-    glGenBuffers(1, &ebo);
-    return ebo;
-}
-
-void destroy_ebo(u32 ebo)
-{
-    glDeleteBuffers(1, &ebo);
 }
 
 Vertex::Vertex(glm::vec3 p, glm::vec2 u, glm::vec3 c)
@@ -172,14 +160,14 @@ ShaderResource::ShaderResource()
 
         uniform mat4 uProjection;
         uniform mat4 uView;
-        uniform mat4 uTransform;
+        uniform mat4 uModel;
 
         out vec3 vColor;
         out vec2 vTexCoord;
 
         void main()
         {
-            gl_Position = uProjection * uView * uTransform * vec4(aPos.xyz, 1.0);
+            gl_Position = uProjection * uView * uModel * vec4(aPos.xyz, 1.0);
             vColor = aColor;
             vTexCoord = aTexCoord;
         }
@@ -249,7 +237,7 @@ std::vector<float> BasicMaterial::compile_mesh_data(const Mesh& mesh)
 void BasicMaterial::setUniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
     shader->set_vec4(shader->get_uniform("TintColor"), color);
-    shader->set_mat(shader->get_uniform("uTransform"), transform);
+    shader->set_mat(shader->get_uniform("uModel"), transform);
     shader->set_mat(shader->get_uniform("uProjection"), cc.projection);
     shader->set_mat(shader->get_uniform("uView"), cc.view);
 }
@@ -276,21 +264,33 @@ std::vector<u32> compile_indices(const Mesh& mesh)
     return indices;
 }
 
+CompiledMesh::~CompiledMesh()
+{
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+    destroy_buffer(ebo);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    destroy_buffer(vbo);
+
+    glBindVertexArray(0);
+    destroy_vertex_array(vao);
+}
+
 CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 {
     const auto indices = compile_indices(mesh);
     const auto vertices = material->compile_mesh_data(mesh);
 
-    const auto vbo = create_vbo();
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
     shaders().shader->use();
 
-    const auto vao = create_vao();
+    const auto vbo = create_buffer();
+    const auto vao = create_vertex_array();
     glBindVertexArray(vao);
+
+    
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(sizeof(float) * vertices.size()), vertices.data(), GL_STATIC_DRAW);
-    
+
     const GLsizei stride = 8 * sizeof(float);
     const auto float_offset = [](std::size_t number_of_floats) -> void*
     {
@@ -299,22 +299,22 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, float_offset(0)); // next offset 3
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, float_offset(3)); // next offset 6
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, float_offset(6)); // next offset 8
-
-    const auto ebo = create_ebo();
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, Csizet_to_glsizeiptr(sizeof(u32) * indices.size()), indices.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
     glEnableVertexAttribArray(2);
 
-    return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, static_cast<i32>(mesh.faces.size()));
-}
 
-CompiledMesh::~CompiledMesh()
-{
-    destroy_ebo(ebo);
-    destroy_vao(vao);
-    destroy_vbo(vbo);
+    const auto ebo = create_buffer();
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, Csizet_to_glsizeiptr(sizeof(u32) * indices.size()), indices.data(), GL_STATIC_DRAW);
+
+    // todo(Gustav): disable binding
+    // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); // ebo
+    // glBindVertexArray(0); // vao
+    // glBindBuffer(GL_ARRAY_BUFFER, 0); // vbo
+
+
+    return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, static_cast<i32>(mesh.faces.size()));
 }
 
 void CompiledMesh::render(Assets* assets, const CompiledCamera& cc, const glm::mat4& transform)
@@ -323,10 +323,8 @@ void CompiledMesh::render(Assets* assets, const CompiledCamera& cc, const glm::m
     material->setUniforms(cc, transform);
     material->bind_textures(assets);
 
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
     glBindVertexArray(vao);
     glDrawElements(GL_TRIANGLES, number_of_triangles * 3, GL_UNSIGNED_INT, 0);
-    // glBindVertexArray(0);
 }
 
 CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, MaterialPtr m, i32 tc)
