@@ -81,6 +81,14 @@ int run_main(MakeAppFunction make_app)
 
     int frame_skip = 3; // wait a few frames so the fps can stabilize
 
+    bool mouse = false;
+    bool w = false;
+    bool a = false;
+    bool s = false;
+    bool d = false;
+    bool space = false;
+    bool lctrl = false;
+
     auto last = SDL_GetPerformanceCounter();
     while (running)
     {
@@ -110,6 +118,48 @@ int run_main(MakeAppFunction make_app)
                     break;
                 }
                 break;
+
+            case SDL_KEYDOWN:
+            case SDL_KEYUP:
+            {
+                const auto down = e.type == SDL_KEYDOWN;
+                if (mouse)
+                {
+                    switch (e.key.keysym.scancode)
+                    {
+                    case SDL_SCANCODE_W: w = down; break;
+                    case SDL_SCANCODE_A: a = down; break;
+                    case SDL_SCANCODE_S: s = down; break;
+                    case SDL_SCANCODE_D: d = down; break;
+                    case SDL_SCANCODE_SPACE: space = down; break;
+                    case SDL_SCANCODE_LCTRL: lctrl = down; break;
+                    }
+                }
+            }
+            break;
+
+            case SDL_MOUSEBUTTONUP:
+            case SDL_MOUSEBUTTONDOWN:
+            {
+                const auto down = e.type == SDL_MOUSEBUTTONDOWN;
+                if (e.button.button == 1)
+                {
+                    mouse = down;
+
+                    w = a = s = d = space = lctrl = false;
+                }
+            }
+            break;
+
+            case SDL_MOUSEMOTION:
+                if (mouse)
+                {
+                    const float sensitivity = 0.25f;
+                    app->camera.yaw += glm::radians(static_cast<float>(e.motion.yrel)) * sensitivity;
+                    app->camera.pitch += glm::radians(static_cast<float>(e.motion.xrel)) * sensitivity;
+                }
+                break;
+
             case SDL_QUIT:
                 running = false;
                 break;
@@ -119,6 +169,19 @@ int run_main(MakeAppFunction make_app)
         }
 
         // update
+        {
+            auto& cam = app->camera;
+            const auto v = create_vectors(cam);
+            
+            const auto move = [](bool p, bool n) -> std::optional<float>
+                { if (p != n) { return p ? 1.0f : -1.0f; }
+                else { return std::nullopt; } };
+
+            if (const auto m = move(w, s); m) { cam.position += v.front * *m * dt; }
+            if (const auto m = move(d, a); m) { cam.position += v.right * *m * dt; }
+            if (const auto m = move(space, lctrl); m) { cam.position += v.up * *m * dt; }
+
+        }
         // render
         app->renderer.window_size = {window_width, window_height};
         app->on_render(dt);
