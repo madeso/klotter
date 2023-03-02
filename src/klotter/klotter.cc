@@ -123,17 +123,14 @@ int run_main(MakeAppFunction make_app)
             case SDL_KEYUP:
             {
                 const auto down = e.type == SDL_KEYDOWN;
-                if (mouse)
+                switch (e.key.keysym.scancode)
                 {
-                    switch (e.key.keysym.scancode)
-                    {
-                    case SDL_SCANCODE_W: w = down; break;
-                    case SDL_SCANCODE_A: a = down; break;
-                    case SDL_SCANCODE_S: s = down; break;
-                    case SDL_SCANCODE_D: d = down; break;
-                    case SDL_SCANCODE_SPACE: space = down; break;
-                    case SDL_SCANCODE_LCTRL: lctrl = down; break;
-                    }
+                case SDL_SCANCODE_W: w = down; break;
+                case SDL_SCANCODE_A: a = down; break;
+                case SDL_SCANCODE_S: s = down; break;
+                case SDL_SCANCODE_D: d = down; break;
+                case SDL_SCANCODE_SPACE: space = down; break;
+                case SDL_SCANCODE_LCTRL: lctrl = down; break;
                 }
             }
             break;
@@ -145,8 +142,7 @@ int run_main(MakeAppFunction make_app)
                 if (e.button.button == 1)
                 {
                     mouse = down;
-
-                    w = a = s = d = space = lctrl = false;
+                    SDL_SetRelativeMouseMode(mouse ? SDL_TRUE : SDL_FALSE);
                 }
             }
             break;
@@ -155,8 +151,11 @@ int run_main(MakeAppFunction make_app)
                 if (mouse)
                 {
                     const float sensitivity = 0.25f;
-                    app->camera.yaw += glm::radians(static_cast<float>(e.motion.yrel)) * sensitivity;
-                    app->camera.pitch += glm::radians(static_cast<float>(e.motion.xrel)) * sensitivity;
+                    app->camera.yaw += static_cast<float>(e.motion.xrel) * sensitivity;
+                    app->camera.pitch -= static_cast<float>(e.motion.yrel) * sensitivity;
+
+                    if (app->camera.pitch > 89.0f) { app->camera.pitch = 89.0f; }
+                    if (app->camera.pitch < -89.0f) { app->camera.pitch = -89.0f; }
                 }
                 break;
 
@@ -169,6 +168,7 @@ int run_main(MakeAppFunction make_app)
         }
 
         // update
+        if(mouse)
         {
             auto& cam = app->camera;
             const auto v = create_vectors(cam);
