@@ -7,7 +7,6 @@ using namespace klotter;
 
 struct CubeApp : App
 {
-    Camera camera;
     Scene scene;
     MeshInstancePtr cube;
 
