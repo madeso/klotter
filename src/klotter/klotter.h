@@ -1,5 +1,8 @@
 #pragma once
 
+#include <memory>
+
+#include "imgui.h"
 
 #include "klotter/render/render.h"
 #include "klotter/dependency_sdl.h"
@@ -8,14 +11,23 @@
 namespace klotter
 {
 
+struct Scene
+{
+    virtual ~Scene() = default;
+
+    Camera camera;
+
+    virtual void on_render(float dt) = 0;
+};
+
 struct App
 {
     Renderer renderer;
-    Camera camera;
+    std::shared_ptr<Scene> scene;
 
     virtual ~App() = default;
 
-    virtual void on_render(float dt) = 0;
+    virtual void on_gui() = 0;
 };
 
 using MakeAppFunction = std::function<std::unique_ptr<App>()>;

@@ -127,6 +127,7 @@ int run_main(MakeAppFunction make_app)
     ////////////////////////////////////////////////////////////////
     // run app
     bool running = true;
+
     auto app = make_app();
 
     int window_width = start_width;
@@ -145,6 +146,8 @@ int run_main(MakeAppFunction make_app)
     auto last = SDL_GetPerformanceCounter();
     while (running)
     {
+        auto scene = app->scene;
+
         const auto now = SDL_GetPerformanceCounter();
         const auto diff = static_cast<float>(now - last);
         const auto freq = static_cast<float>(SDL_GetPerformanceFrequency());
@@ -212,11 +215,11 @@ int run_main(MakeAppFunction make_app)
                 if (mouse)
                 {
                     const float sensitivity = 0.25f;
-                    app->camera.yaw += static_cast<float>(e.motion.xrel) * sensitivity;
-                    app->camera.pitch -= static_cast<float>(e.motion.yrel) * sensitivity;
+                    scene->camera.yaw += static_cast<float>(e.motion.xrel) * sensitivity;
+                    scene->camera.pitch -= static_cast<float>(e.motion.yrel) * sensitivity;
 
-                    if (app->camera.pitch > 89.0f) { app->camera.pitch = 89.0f; }
-                    if (app->camera.pitch < -89.0f) { app->camera.pitch = -89.0f; }
+                    if (scene->camera.pitch > 89.0f) { scene->camera.pitch = 89.0f; }
+                    if (scene->camera.pitch < -89.0f) { scene->camera.pitch = -89.0f; }
                 }
                 break;
 
@@ -231,7 +234,7 @@ int run_main(MakeAppFunction make_app)
         // update
         if(mouse)
         {
-            auto& cam = app->camera;
+            auto& cam = scene->camera;
             const auto v = create_vectors(cam);
             
             const auto move = [](bool p, bool n) -> std::optional<float>
@@ -250,13 +253,13 @@ int run_main(MakeAppFunction make_app)
         ImGui_ImplSDL2_NewFrame();
         ImGui::NewFrame();
 
-        ImGui::ShowDemoWindow();
+        app->on_gui();
         ImGui::Render();
 
 
         // render
         app->renderer.window_size = {window_width, window_height};
-        app->on_render(dt);
+        scene->on_render(dt);
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         SDL_GL_SwapWindow(sdl_window);

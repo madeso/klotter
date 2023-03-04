@@ -5,18 +5,21 @@
 
 using namespace klotter;
 
-struct CubeApp : App
+struct CubeScene : Scene
 {
+    Renderer* renderer;
     World world;
     MeshInstancePtr cube;
 
-    CubeApp()
+    CubeScene(Renderer* r)
+        : renderer(r)
     {
-        camera.position.z = 2;
+        camera.position.z = 0;
+        camera.position.x = -3;
         const auto triangle = mesh::create_box(0.5f, 2.0f, 1.5f, false, colors::red_vermillion).to_mesh();
         auto material = std::make_shared<BasicMaterial>();
         // material->color = {white, 1.0f};
-        material->texture = renderer.assets.get_light_grid();
+        material->texture = renderer->assets.get_light_grid();
         auto geometry = compile_Mesh(triangle, material);
         
         cube = make_MeshInstance(geometry);
@@ -36,8 +39,11 @@ struct CubeApp : App
         cube->rotation.y = -p / 4.0f;
         cube->rotation.x = std::sin(p * 0.6f);
 
-        renderer.render(world, camera);
+        renderer->render(world, camera);
     }
 };
 
-IMPLEMENT_MAIN(CubeApp)
+std::shared_ptr<Scene> make_cube(Renderer* renderer)
+{
+    return std::make_shared<CubeScene>(renderer);
+}
