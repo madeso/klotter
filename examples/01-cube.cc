@@ -7,7 +7,7 @@ using namespace klotter;
 
 struct CubeApp : App
 {
-    Scene scene;
+    World world;
     MeshInstancePtr cube;
 
     CubeApp()
@@ -20,7 +20,7 @@ struct CubeApp : App
         auto geometry = compile_Mesh(triangle, material);
         
         cube = make_MeshInstance(geometry);
-        scene.meshes.emplace_back(cube);
+        world.meshes.emplace_back(cube);
     }
 
     float p = 0.0f;
@@ -36,7 +36,7 @@ struct CubeApp : App
         cube->rotation.y = -p / 4.0f;
         cube->rotation.x = std::sin(p * 0.6f);
 
-        renderer.render(scene, camera);
+        renderer.render(world, camera);
     }
 };
 

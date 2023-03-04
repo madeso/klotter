@@ -7,7 +7,7 @@ using namespace klotter;
 
 struct SceneApp : App
 {
-    Scene scene;
+    World world;
 
     MeshInstancePtr add_cube(float x, float y, float z, bool invert, const glm::vec3& color)
     {
@@ -17,7 +17,7 @@ struct SceneApp : App
         auto geometry = compile_Mesh(triangle, material);
         
         auto cube = make_MeshInstance(geometry);
-        scene.meshes.emplace_back(cube);
+        world.meshes.emplace_back(cube);
 
         return cube;
     }
@@ -53,7 +53,7 @@ struct SceneApp : App
 
     void on_render(float) override
     {
-        renderer.render(scene, camera);
+        renderer.render(world, camera);
     }
 };
 

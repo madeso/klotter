@@ -125,7 +125,7 @@ using MeshInstancePtr = std::shared_ptr<MeshInstance>;
 MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom);
         
 
-struct Scene
+struct World
 {
     std::vector<MeshInstancePtr> meshes;
 };
@@ -149,7 +149,7 @@ struct Renderer
     Assets assets;
     glm::ivec2 window_size;
 
-    void render(const Scene&, const Camera&);
+    void render(const World&, const Camera&);
 };
 
 

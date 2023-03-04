@@ -450,7 +450,7 @@ Renderer::Renderer()
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-void Renderer::render(const Scene& scene, const Camera& camera)
+void Renderer::render(const World& world, const Camera& camera)
 {
     glViewport(0, 0, window_size.x, window_size.y);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -461,7 +461,7 @@ void Renderer::render(const Scene& scene, const Camera& camera)
 
     const auto compiled_camera = compile(camera, window_size);
 
-    for (auto& m : scene.meshes)
+    for (auto& m : world.meshes)
     {
         const auto translation = glm::translate(glm::mat4(1.0f), m->position);
         const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
