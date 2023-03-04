@@ -74,3 +74,43 @@ target_include_directories(external_glm SYSTEM
 add_library(external::glm ALIAS external_glm)
 
 
+
+
+###################################################################################################
+# dear_imgui
+set(dear_imgui_src
+    imgui/imconfig.h
+    imgui/imgui_demo.cpp
+    imgui/imgui_draw.cpp
+    imgui/imgui_internal.h
+    imgui/imgui_tables.cpp
+    imgui/imgui_widgets.cpp
+    imgui/imgui.cpp
+    imgui/imgui.h
+    imgui/imstb_rectpack.h
+    imgui/imstb_textedit.h
+    imgui/imstb_truetype.h
+
+    imgui/backends/imgui_impl_sdl2.cpp
+    imgui/backends/imgui_impl_sdl2.h
+    imgui/backends/imgui_impl_opengl3.cpp
+    imgui/backends/imgui_impl_opengl3.h
+)
+add_library(dear_imgui STATIC ${dear_imgui_src})
+source_group("" FILES ${dear_imgui_src})
+target_include_directories(dear_imgui SYSTEM
+    PUBLIC
+        imgui/
+        imgui/backends/
+)
+target_link_libraries(dear_imgui
+    PUBLIC
+        external::glad
+        external::opengl
+        external::sdl2
+)
+target_compile_definitions(dear_imgui
+    PUBLIC
+        IMGUI_IMPL_OPENGL_LOADER_GLAD
+)
+add_library(external::imgui ALIAS dear_imgui)

@@ -54,6 +54,7 @@ target_link_libraries(klotter
         stb::image
         external::glm
         external::glad
+        external::imgui
     PRIVATE
         embed::embed
         klotter::project_options
