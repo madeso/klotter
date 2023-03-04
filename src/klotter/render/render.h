@@ -16,7 +16,9 @@ struct ShaderResource
 {
     ShaderResource();
     ~ShaderResource();
-    std::shared_ptr<ShaderProgram> shader;
+
+    std::shared_ptr<ShaderProgram> basic_shader;
+    std::shared_ptr<ShaderProgram> light_shader;
 };
 
 struct Vertex
@@ -69,6 +71,18 @@ struct BasicMaterial : Material
     std::shared_ptr<Texture> texture;
 
     BasicMaterial();
+    std::vector<float> compile_mesh_data(const Mesh& mesh) override;
+    void setUniforms(const CompiledCamera&, const glm::mat4&) override;
+    void bind_textures(Assets* assets) override;
+};
+
+
+struct LightMaterial : Material
+{
+    glm::vec4 color;
+    std::shared_ptr<Texture> texture;
+
+    LightMaterial();
     std::vector<float> compile_mesh_data(const Mesh& mesh) override;
     void setUniforms(const CompiledCamera&, const glm::mat4&) override;
     void bind_textures(Assets* assets) override;

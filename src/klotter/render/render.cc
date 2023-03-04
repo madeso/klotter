@@ -150,7 +150,7 @@ ShaderResource::ShaderResource()
     assert(shader_resource() == nullptr);
     shader_resource() = this;
 
-    shader = std::make_shared<ShaderProgram>(
+    basic_shader = std::make_shared<ShaderProgram>(
     R"glsl(
         #version 330 core
 
@@ -190,6 +190,47 @@ ShaderResource::ShaderResource()
         }
     )glsl"sv
     );
+
+    light_shader = std::make_shared<ShaderProgram>(
+        R"glsl(
+        #version 330 core
+
+        layout (location = 0) in vec3 aPos;
+        layout (location = 1) in vec3 aColor;
+        layout (location = 2) in vec2 aTexCoord;
+
+        uniform mat4 uProjection;
+        uniform mat4 uView;
+        uniform mat4 uModel;
+
+        out vec3 vColor;
+        out vec2 vTexCoord;
+
+        void main()
+        {
+            gl_Position = uProjection * uView * uModel * vec4(aPos.xyz, 1.0);
+            vColor = aColor;
+            vTexCoord = aTexCoord;
+        }
+    )glsl"sv,
+        R"glsl(
+        #version 330 core
+
+        uniform vec4 TintColor;
+
+        in vec3 vColor;
+        in vec2 vTexCoord;
+
+        uniform sampler2D uTexture;
+
+        out vec4 FragColor;
+
+        void main()
+        {
+            FragColor = texture(uTexture, vTexCoord) * TintColor.rgba * vec4(vColor.rgb, 1.0);
+        }
+    )glsl"sv
+        );
 }
 ShaderResource::~ShaderResource()
 {
@@ -202,9 +243,10 @@ Material::Material(std::shared_ptr<ShaderProgram> s)
 {
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BasicMaterial::BasicMaterial()
-    : Material(shaders().shader)
+    : Material(shaders().basic_shader)
     , color(colors::white, 1.0f)
 {
 }
@@ -250,6 +292,59 @@ void BasicMaterial::bind_textures(Assets* assets)
     glBindTexture(GL_TEXTURE_2D, t->id);
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LightMaterial::LightMaterial()
+    : Material(shaders().light_shader)
+    , color(colors::white, 1.0f)
+{
+}
+
+std::vector<float> LightMaterial::compile_mesh_data(const Mesh& mesh)
+{
+    std::vector<float> vertices;
+
+    auto push3 = [&vertices](const glm::vec3& p)
+    {
+        vertices.emplace_back(p.x);
+        vertices.emplace_back(p.y);
+        vertices.emplace_back(p.z);
+    };
+    auto push2 = [&vertices](const glm::vec2& p)
+    {
+        vertices.emplace_back(p.x);
+        vertices.emplace_back(p.y);
+    };
+
+    for (const auto& v : mesh.vertices)
+    {
+        push3(v.position);
+        push3(v.color);
+        push2(v.uv);
+    }
+    return vertices;
+}
+
+void LightMaterial::setUniforms(const CompiledCamera& cc, const glm::mat4& transform)
+{
+    shader->set_vec4(shader->get_uniform("TintColor"), color);
+    shader->set_mat(shader->get_uniform("uModel"), transform);
+    shader->set_mat(shader->get_uniform("uProjection"), cc.projection);
+    shader->set_mat(shader->get_uniform("uView"), cc.view);
+}
+
+void LightMaterial::bind_textures(Assets* assets)
+{
+    glActiveTexture(GL_TEXTURE0);
+    std::shared_ptr<Texture> t = texture;
+    if (t == nullptr) { t = assets->get_white(); }
+    glBindTexture(GL_TEXTURE_2D, t->id);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 std::vector<u32> compile_indices(const Mesh& mesh)
 {
     std::vector<u32> indices;
@@ -281,7 +376,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     const auto indices = compile_indices(mesh);
     const auto vertices = material->compile_mesh_data(mesh);
 
-    shaders().shader->use();
+    material->shader->use();
 
     const auto vbo = create_buffer();
     const auto vao = create_vertex_array();
