@@ -276,7 +276,7 @@ std::vector<float> BasicMaterial::compile_mesh_data(const Mesh& mesh)
     return vertices;
 }
 
-void BasicMaterial::setUniforms(const CompiledCamera& cc, const glm::mat4& transform)
+void BasicMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
     shader->set_vec4(shader->get_uniform("TintColor"), color);
     shader->set_mat(shader->get_uniform("uModel"), transform);
@@ -326,7 +326,7 @@ std::vector<float> LightMaterial::compile_mesh_data(const Mesh& mesh)
     return vertices;
 }
 
-void LightMaterial::setUniforms(const CompiledCamera& cc, const glm::mat4& transform)
+void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
     shader->set_vec4(shader->get_uniform("TintColor"), color);
     shader->set_mat(shader->get_uniform("uModel"), transform);
@@ -415,7 +415,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 void CompiledMesh::render(Assets* assets, const CompiledCamera& cc, const glm::mat4& transform)
 {
     material->shader->use();
-    material->setUniforms(cc, transform);
+    material->set_uniforms(cc, transform);
     material->bind_textures(assets);
 
     glBindVertexArray(vao);

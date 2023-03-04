@@ -59,7 +59,7 @@ struct Material
 
     virtual std::vector<float> compile_mesh_data(const Mesh& mesh) = 0;
 
-    virtual void setUniforms(const CompiledCamera&, const glm::mat4&) = 0;
+    virtual void set_uniforms(const CompiledCamera&, const glm::mat4&) = 0;
     virtual void bind_textures(Assets* assets) = 0;
 };
 using MaterialPtr = std::shared_ptr<Material>;
@@ -72,7 +72,7 @@ struct BasicMaterial : Material
 
     BasicMaterial();
     std::vector<float> compile_mesh_data(const Mesh& mesh) override;
-    void setUniforms(const CompiledCamera&, const glm::mat4&) override;
+    void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
     void bind_textures(Assets* assets) override;
 };
 
@@ -84,7 +84,7 @@ struct LightMaterial : Material
 
     LightMaterial();
     std::vector<float> compile_mesh_data(const Mesh& mesh) override;
-    void setUniforms(const CompiledCamera&, const glm::mat4&) override;
+    void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
     void bind_textures(Assets* assets) override;
 };
 
