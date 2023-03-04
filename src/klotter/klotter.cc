@@ -131,6 +131,9 @@ int run_main(MakeAppFunction make_app)
                 case SDL_SCANCODE_D: d = down; break;
                 case SDL_SCANCODE_SPACE: space = down; break;
                 case SDL_SCANCODE_LCTRL: lctrl = down; break;
+                default:
+                    // ignore other keys
+                    break;
                 }
             }
             break;
