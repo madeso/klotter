@@ -7,6 +7,7 @@ using namespace klotter;
 
 void register_cube(App* app);
 void register_scene(App* app);
+void register_lights(App* app);
 
 struct ExampleApp : App
 {
@@ -14,6 +15,7 @@ struct ExampleApp : App
     {
         register_cube(this);
         register_scene(this);
+        register_lights(this);
     }
 };
 

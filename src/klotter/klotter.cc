@@ -285,9 +285,10 @@ int run_main(MakeAppFunction make_app)
             ImGui::EndCombo();
         }
 
+        scene->on_gui();
+
         ImGui::End();
 
-        scene->on_gui();
         ImGui::Render();
 
 
