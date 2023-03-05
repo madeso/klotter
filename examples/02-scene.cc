@@ -38,7 +38,8 @@ struct SceneScene : Scene
     SceneScene(Renderer* r)
         : renderer(r)
     {
-        // camera.position.z = 2;
+        camera.pitch = 15;
+        camera.yaw = -50;
 
         add_cube(50.0f, 50.0f, 50.0f, true, colors::blue_sky);
 
