@@ -21,12 +21,11 @@ Klotter in swedish could be translated as doodlge, graffiti or scribbling.
 
 ### todo
 
-* render basic cubes with color
-* expose a fly camera
+* allow example to take a argument to start with a certain example instead iof "latest"
+* split mesh generation from adding in examples
 * integrate dear imgui with "debug mode"
 * change transform of objects with a scene outline and properties
 * add debug renderer
-* render textures
 * lights
 * better lightning
 * complete rest of learn opengl
