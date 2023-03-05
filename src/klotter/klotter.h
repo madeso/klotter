@@ -30,7 +30,6 @@ struct SceneType
 struct App
 {
     Renderer renderer;
-    std::shared_ptr<Scene> scene;
     std::vector<SceneType> types;
 
     template<typename T>

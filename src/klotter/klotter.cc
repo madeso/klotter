@@ -132,10 +132,15 @@ int run_main(MakeAppFunction make_app)
     ////////////////////////////////////////////////////////////////
     // create actual app
     auto app = make_app();
-    if (app->scene == nullptr)
+
+    std::size_t scene_index;
+    std::shared_ptr<Scene> selected_scene;
+    auto select_scene = [&](std::size_t new_scene)
     {
-        app->scene = app->types.rbegin()->create(&app->renderer);
-    }
+        scene_index = new_scene;
+        selected_scene = app->types[scene_index].create(&app->renderer);
+    };
+    select_scene(app->types.size() - 1);
 
 
     ////////////////////////////////////////////////////////////////
@@ -158,7 +163,7 @@ int run_main(MakeAppFunction make_app)
     auto last = SDL_GetPerformanceCounter();
     while (running)
     {
-        auto scene = app->scene;
+        auto scene = selected_scene;
 
         const auto now = SDL_GetPerformanceCounter();
         const auto diff = static_cast<float>(now - last);
@@ -267,13 +272,19 @@ int run_main(MakeAppFunction make_app)
         // ImGui::ShowDemoWindow();
 
         ImGui::Begin("Scene switcher");
-        for (auto& t : app->types)
+
+        if(ImGui::BeginCombo("Scene", app->types[scene_index].name.c_str(), ImGuiComboFlags_HeightRegular))
         {
-            if (ImGui::Button(t.name.c_str()))
+            for (std::size_t si = 0; si < app->types.size(); si += 1)
             {
-                app->scene = t.create(&app->renderer);
+                if (ImGui::Selectable(app->types[si].name.c_str(), si == scene_index))
+                {
+                    select_scene(si);
+                }
             }
+            ImGui::EndCombo();
         }
+
         ImGui::End();
 
         scene->on_gui();
