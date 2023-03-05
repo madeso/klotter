@@ -55,6 +55,8 @@ int run_main(MakeAppFunction make_app)
     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
 
 
+
+
     ////////////////////////////////////////////////////////////////////////////////
     // create window
 
@@ -102,6 +104,8 @@ int run_main(MakeAppFunction make_app)
         return -1;
     }
 
+
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // dear imgui setup
 
@@ -118,22 +122,30 @@ int run_main(MakeAppFunction make_app)
     ImGui_ImplOpenGL3_Init(glsl_version);
 
 
+
+
     ///////////////////////////////////////////////////////////////
     // complete setup
     setup_opengl_debug();
 
+
+    ////////////////////////////////////////////////////////////////
+    // create actual app
+    auto app = make_app();
+    if (app->scene == nullptr)
+    {
+        app->scene = app->types.rbegin()->create(&app->renderer);
+    }
 
 
     ////////////////////////////////////////////////////////////////
     // run app
     bool running = true;
 
-    auto app = make_app();
-
     int window_width = start_width;
     int window_height = starth_height;
 
-    int frame_skip = 3; // wait a few frames so the fps can stabilize
+    int frame_skip = 2; // wait a few frames so the fps can stabilize
 
     bool mouse = false;
     bool w = false;
@@ -244,7 +256,6 @@ int run_main(MakeAppFunction make_app)
             if (const auto m = move(w, s); m) { cam.position += v.front * *m * dt; }
             if (const auto m = move(d, a); m) { cam.position += v.right * *m * dt; }
             if (const auto m = move(space, lctrl); m) { cam.position += v.up * *m * dt; }
-
         }
 
 
@@ -253,7 +264,19 @@ int run_main(MakeAppFunction make_app)
         ImGui_ImplSDL2_NewFrame();
         ImGui::NewFrame();
 
-        app->on_gui();
+        // ImGui::ShowDemoWindow();
+
+        ImGui::Begin("Scene switcher");
+        for (auto& t : app->types)
+        {
+            if (ImGui::Button(t.name.c_str()))
+            {
+                app->scene = t.create(&app->renderer);
+            }
+        }
+        ImGui::End();
+
+        scene->on_gui();
         ImGui::Render();
 
 

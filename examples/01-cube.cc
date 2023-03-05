@@ -41,9 +41,13 @@ struct CubeScene : Scene
 
         renderer->render(world, camera);
     }
+
+    void on_gui() override
+    {
+    }
 };
 
-std::shared_ptr<Scene> make_cube(Renderer* renderer)
+void register_cube(App* app)
 {
-    return std::make_shared<CubeScene>(renderer);
+    app->add_type<CubeScene>("Cube");
 }

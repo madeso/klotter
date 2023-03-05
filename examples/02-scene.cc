@@ -58,9 +58,13 @@ struct SceneScene : Scene
     {
         renderer->render(world, camera);
     }
+
+    void on_gui() override
+    {
+    }
 };
 
-std::shared_ptr<Scene> make_scene(Renderer* renderer)
+void register_scene(App* app)
 {
-    return std::make_shared<SceneScene>(renderer);
+    app->add_type<SceneScene>("Scene");
 }

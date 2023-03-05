@@ -18,16 +18,33 @@ struct Scene
     Camera camera;
 
     virtual void on_render(float dt) = 0;
+    virtual void on_gui() = 0;
+};
+
+struct SceneType
+{
+    std::string name;
+    std::function<std::shared_ptr<Scene>(Renderer*)> create;
 };
 
 struct App
 {
     Renderer renderer;
     std::shared_ptr<Scene> scene;
+    std::vector<SceneType> types;
+
+    template<typename T>
+    void add_type(const std::string& name)
+    {
+        types.emplace_back(
+            SceneType{name,
+                [](Renderer* r) -> std::shared_ptr<Scene>
+                { return std::make_shared<T>(r); }
+            }
+        );
+    }
 
     virtual ~App() = default;
-
-    virtual void on_gui() = 0;
 };
 
 using MakeAppFunction = std::function<std::unique_ptr<App>()>;
