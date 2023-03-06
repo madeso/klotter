@@ -292,6 +292,9 @@ void BasicMaterial::bind_textures(Assets* assets)
     glBindTexture(GL_TEXTURE_2D, t->id);
 }
 
+void BasicMaterial::apply_lights(const Lights&)
+{
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -340,6 +343,10 @@ void LightMaterial::bind_textures(Assets* assets)
     std::shared_ptr<Texture> t = texture;
     if (t == nullptr) { t = assets->get_white(); }
     glBindTexture(GL_TEXTURE_2D, t->id);
+}
+
+void LightMaterial::apply_lights(const Lights&)
+{
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -412,11 +419,12 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, static_cast<i32>(mesh.faces.size()));
 }
 
-void CompiledMesh::render(Assets* assets, const CompiledCamera& cc, const glm::mat4& transform)
+void CompiledMesh::render(Assets* assets, const CompiledCamera& cc, const glm::mat4& transform, const Lights& lights)
 {
     material->shader->use();
     material->set_uniforms(cc, transform);
     material->bind_textures(assets);
+    material->apply_lights(lights);
 
     glBindVertexArray(vao);
     glDrawElements(GL_TRIANGLES, number_of_triangles * 3, GL_UNSIGNED_INT, 0);
@@ -465,7 +473,7 @@ void Renderer::render(const World& world, const Camera& camera)
     {
         const auto translation = glm::translate(glm::mat4(1.0f), m->position);
         const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
-        m->geom->render(&assets, compiled_camera, translation * rotation);
+        m->geom->render(&assets, compiled_camera, translation * rotation, world.lights);
     }
 }
 

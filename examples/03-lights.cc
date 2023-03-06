@@ -11,11 +11,9 @@ struct LightsScene : Scene
 
     World world;
 
-    MeshInstancePtr add_cube(float x, float y, float z, bool invert, const glm::vec3& color)
+    MeshInstancePtr add_cube(float x, float y, float z, bool invert, MaterialPtr material, const glm::vec3& color)
     {
         const auto triangle = mesh::create_box(x, y, z, invert, color).to_mesh();
-        auto material = std::make_shared<LightMaterial>();
-        material->texture = renderer->assets.get_light_grid();
         auto geometry = compile_Mesh(triangle, material);
         
         auto cube = make_MeshInstance(geometry);
@@ -26,7 +24,10 @@ struct LightsScene : Scene
 
     void add_mini_cube(const glm::vec3& p, int index)
     {
-        auto cube = add_cube(1.0f, 1.0f, 1.0f, false, colors::white);
+        auto material = std::make_shared<LightMaterial>();
+        material->texture = renderer->assets.get_light_grid();
+
+        auto cube = add_cube(1.0f, 1.0f, 1.0f, false, material, colors::white);
         cube->position = p;
 
         const auto fi = [index](int i) -> float { return 5.0f * static_cast<float>((index + i) % 10); };
@@ -35,11 +36,16 @@ struct LightsScene : Scene
         cube->rotation.z = fi(5);
     }
 
+    std::shared_ptr<BasicMaterial> light_material;
+
     LightsScene(Renderer* r)
         : renderer(r)
     {
         camera.pitch = 15;
         camera.yaw = -50;
+
+        light_material = std::make_shared<BasicMaterial>();
+        auto cube = add_cube(0.5f, 0.5f, 0.5f, false, light_material, colors::white);
 
         add_mini_cube({ 0.0f,  0.0f,   0.0f}, 0);
         add_mini_cube({ 2.0f,  5.0f, -15.0f}, 1);

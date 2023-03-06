@@ -12,6 +12,9 @@
 namespace klotter
 {
 
+struct Lights;
+
+
 struct ShaderResource
 {
     ShaderResource();
@@ -61,6 +64,7 @@ struct Material
 
     virtual void set_uniforms(const CompiledCamera&, const glm::mat4&) = 0;
     virtual void bind_textures(Assets* assets) = 0;
+    virtual void apply_lights(const Lights& lights) = 0;
 };
 using MaterialPtr = std::shared_ptr<Material>;
 
@@ -74,6 +78,7 @@ struct BasicMaterial : Material
     std::vector<float> compile_mesh_data(const Mesh& mesh) override;
     void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
     void bind_textures(Assets* assets) override;
+    void apply_lights(const Lights& lights) override;
 };
 
 
@@ -86,6 +91,7 @@ struct LightMaterial : Material
     std::vector<float> compile_mesh_data(const Mesh& mesh) override;
     void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
     void bind_textures(Assets* assets) override;
+    void apply_lights(const Lights& lights) override;
 };
 
 struct CompiledMesh
@@ -104,7 +110,7 @@ struct CompiledMesh
     void operator=(const CompiledMesh&) = delete;
     void operator=(CompiledMesh&&) = delete;
 
-    void render(Assets*, const CompiledCamera&, const glm::mat4&);
+    void render(Assets*, const CompiledCamera&, const glm::mat4&, const Lights&);
 };
 
 
@@ -123,11 +129,22 @@ struct MeshInstance
 };
 using MeshInstancePtr = std::shared_ptr<MeshInstance>;
 MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom);
-        
+
+struct PointLight
+{
+    glm::vec3 position = {0.0f, 0.0f, 0.0f};
+    glm::vec3 color = colors::white;
+};
+
+struct Lights
+{
+    PointLight point_light;
+};
 
 struct World
 {
     std::vector<MeshInstancePtr> meshes;
+    Lights lights;
 };
 
 enum class RenderMode {fill, line, point};
