@@ -1,5 +1,6 @@
 #include "klotter/klotter.h"
 #include "klotter/render/mesh.builder.h"
+#include "klotter/str.h"
 
 #include <cmath>
 
@@ -15,7 +16,7 @@ struct LightsScene : Scene
     {
         const auto triangle = mesh::create_box(x, y, z, invert, color).to_mesh();
         auto geometry = compile_Mesh(triangle, material);
-        
+
         auto cube = make_MeshInstance(geometry);
         world.meshes.emplace_back(cube);
 
@@ -66,8 +67,8 @@ struct LightsScene : Scene
 
     void on_gui() override
     {
-        ImGui::LabelText("pitch", "%f", camera.pitch);
-        ImGui::LabelText("yaw", "%f", camera.yaw);
+        ImGui::LabelText("pitch", "%s", (Str{} << camera.pitch).str().c_str());
+        ImGui::LabelText("yaw", "%s", (Str{} << camera.yaw).str().c_str());
     }
 };
 
