@@ -247,7 +247,8 @@ Material::Material(std::shared_ptr<ShaderProgram> s)
 
 BasicMaterial::BasicMaterial()
     : Material(shaders().basic_shader)
-    , color(colors::white, 1.0f)
+    , color(colors::white)
+    , alpha(1.0f)
 {
 }
 
@@ -278,7 +279,7 @@ std::vector<float> BasicMaterial::compile_mesh_data(const Mesh& mesh)
 
 void BasicMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-    shader->set_vec4(shader->get_uniform("u_tint_color"), color);
+    shader->set_vec4(shader->get_uniform("u_tint_color"), {color, alpha});
     shader->set_mat(shader->get_uniform("u_model"), transform);
     shader->set_mat(shader->get_uniform("u_projection"), cc.projection);
     shader->set_mat(shader->get_uniform("u_view"), cc.view);
@@ -300,7 +301,8 @@ void BasicMaterial::apply_lights(const Lights&)
 
 LightMaterial::LightMaterial()
     : Material(shaders().light_shader)
-    , color(colors::white, 1.0f)
+    , color(colors::white)
+    , alpha(1.0f)
 {
 }
 
@@ -331,7 +333,7 @@ std::vector<float> LightMaterial::compile_mesh_data(const Mesh& mesh)
 
 void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-    shader->set_vec4(shader->get_uniform("u_tint_color"), color);
+    shader->set_vec4(shader->get_uniform("u_tint_color"), {color, alpha});
     shader->set_mat(shader->get_uniform("u_model"), transform);
     shader->set_mat(shader->get_uniform("u_projection"), cc.projection);
     shader->set_mat(shader->get_uniform("u_view"), cc.view);

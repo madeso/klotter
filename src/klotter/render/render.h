@@ -71,7 +71,8 @@ using MaterialPtr = std::shared_ptr<Material>;
 
 struct BasicMaterial : Material
 {
-    glm::vec4 color;
+    glm::vec3 color;
+    float alpha;
     std::shared_ptr<Texture> texture;
 
     BasicMaterial();
@@ -84,7 +85,8 @@ struct BasicMaterial : Material
 
 struct LightMaterial : Material
 {
-    glm::vec4 color;
+    glm::vec3 color;
+    float alpha;
     std::shared_ptr<Texture> texture;
 
     LightMaterial();
