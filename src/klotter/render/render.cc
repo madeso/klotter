@@ -217,6 +217,7 @@ ShaderResource::ShaderResource()
 
         uniform vec4 u_tint_color;
         uniform sampler2D u_tex_diffuse;
+        uniform vec3 u_light_color;
 
         in vec3 v_color;
         in vec2 v_tex_coord;
@@ -225,7 +226,13 @@ ShaderResource::ShaderResource()
 
         void main()
         {
-            o_frag_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
+            float ambient_strength = 0.1;
+            vec3 ambient_color = ambient_strength * u_light_color;
+            vec3 light_color = ambient_color;
+
+            vec4 object_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
+
+            o_frag_color = vec4(light_color.rgb * object_color.rgb, object_color.a);
         }
     )glsl"sv
         );
@@ -352,8 +359,9 @@ void LightMaterial::bind_textures(Assets* assets)
     glBindTexture(GL_TEXTURE_2D, t->id);
 }
 
-void LightMaterial::apply_lights(const Lights&)
+void LightMaterial::apply_lights(const Lights& lights)
 {
+    shader->set_vec3(shader->get_uniform("u_light_color"), lights.point_light.color);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
