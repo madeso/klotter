@@ -176,11 +176,10 @@ ShaderResource::ShaderResource()
         #version 330 core
 
         uniform vec4 u_tint_color;
+        uniform sampler2D u_tex_diffuse;
 
         in vec3 v_color;
         in vec2 v_tex_coord;
-
-        uniform sampler2D u_tex_diffuse;
 
         out vec4 o_frag_color;
 
@@ -217,11 +216,10 @@ ShaderResource::ShaderResource()
         #version 330 core
 
         uniform vec4 u_tint_color;
+        uniform sampler2D u_tex_diffuse;
 
         in vec3 v_color;
         in vec2 v_tex_coord;
-
-        uniform sampler2D u_tex_diffuse;
 
         out vec4 o_frag_color;
 
