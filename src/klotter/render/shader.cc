@@ -12,8 +12,7 @@ namespace klotter
 
 void set_shader_program(unsigned int new_program);
 
-bool
-check_shader_compilation_error(const char* name, unsigned int shader)
+bool check_shader_compilation_error(const char* name, unsigned int shader)
 {
     int  success = 0;
     char log[512] = {0,};
@@ -30,8 +29,7 @@ check_shader_compilation_error(const char* name, unsigned int shader)
 }
 
 
-bool
-check_shader_link_error(unsigned int program)
+bool check_shader_link_error(unsigned int program)
 {
     int  success = 0;
     char log[512] = {0,};
@@ -47,8 +45,7 @@ check_shader_link_error(unsigned int program)
 }
 
 
-void
-upload_shader_source(unsigned int shader, std::string_view source)
+void upload_shader_source(unsigned int shader, std::string_view source)
 {
     const char* const s = &source[0];
     const int length = Csizet_to_int(source.length()); // should be GLint
@@ -107,6 +104,7 @@ ShaderProgram::ShaderProgram
     load_shader_source(this, vertex_source, fragment_source);
 }
 
+
 ShaderProgram::ShaderProgram
 (
     std::string_view vertex_source,
@@ -118,11 +116,11 @@ ShaderProgram::ShaderProgram
 }
 
 
-void
-ShaderProgram::use() const
+void ShaderProgram::use() const
 {
     set_shader_program(shader_program);
 }
+
 
 ShaderProgram::ShaderProgram(ShaderProgram&& rhs)
     : shader_program(rhs.shader_program)
@@ -130,8 +128,8 @@ ShaderProgram::ShaderProgram(ShaderProgram&& rhs)
     rhs.shader_program = 0;
 }
 
-void
-ShaderProgram::operator=(ShaderProgram&& rhs)
+
+void ShaderProgram::operator=(ShaderProgram&& rhs)
 {
     clear();
 
@@ -140,18 +138,20 @@ ShaderProgram::operator=(ShaderProgram&& rhs)
     rhs.shader_program = 0;
 }
 
+
 ShaderProgram::~ShaderProgram()
 {
     clear();
 }
+
 
 bool ShaderProgram::is_loaded() const
 {
     return shader_program != 0;
 }
 
-void
-ShaderProgram::clear()
+
+void ShaderProgram::clear()
 {
     clear_shader_program();
     glDeleteProgram(shader_program);
@@ -159,8 +159,7 @@ ShaderProgram::clear()
 }
 
 
-Uniform
-ShaderProgram::get_uniform(const std::string& name) const
+Uniform ShaderProgram::get_uniform(const std::string& name) const
 {
     const auto uni = Uniform{name, glGetUniformLocation(shader_program, name.c_str()), shader_program};
     if(uni.is_valid() == false)
@@ -171,9 +170,7 @@ ShaderProgram::get_uniform(const std::string& name) const
 }
 
 
-// shader neeeds to be bound
-void
-ShaderProgram::set_float(const Uniform& uniform, float value) const
+void ShaderProgram::set_float(const Uniform& uniform, float value) const
 {
     ASSERT(is_shader_bound(shader_program));
     if(uniform.is_valid() == false) { return; }
@@ -183,8 +180,8 @@ ShaderProgram::set_float(const Uniform& uniform, float value) const
     glUniform1f(uniform.location, value);
 }
 
-void
-ShaderProgram::set_vec3(const Uniform& uniform, float x, float y, float z) const
+
+void ShaderProgram::set_vec3(const Uniform& uniform, float x, float y, float z) const
 {
     ASSERT(is_shader_bound(shader_program));
     if(uniform.is_valid() == false) { return; }
@@ -195,15 +192,13 @@ ShaderProgram::set_vec3(const Uniform& uniform, float x, float y, float z) const
 }
 
 
-void
-ShaderProgram::set_vec3(const Uniform& uniform, const glm::vec3& v) const
+void ShaderProgram::set_vec3(const Uniform& uniform, const glm::vec3& v) const
 {
     set_vec3(uniform, v.x, v.y, v.z);
 }
 
 
-void
-ShaderProgram::set_vec4(const Uniform& uniform, float x, float y, float z, float w) const
+void ShaderProgram::set_vec4(const Uniform& uniform, float x, float y, float z, float w) const
 {
     ASSERT(is_shader_bound(shader_program));
     if(uniform.is_valid() == false) { return; }
@@ -213,15 +208,14 @@ ShaderProgram::set_vec4(const Uniform& uniform, float x, float y, float z, float
     glUniform4f(uniform.location, x, y, z, w);
 }
 
-void
-ShaderProgram::set_vec4(const Uniform& uniform, const glm::vec4& v) const
+
+void ShaderProgram::set_vec4(const Uniform& uniform, const glm::vec4& v) const
 {
     set_vec4(uniform, v.x, v.y, v.z, v.w);
 }
 
 
-void
-ShaderProgram::set_texture(const Uniform& uniform) const
+void ShaderProgram::set_texture(const Uniform& uniform) const
 {
     ASSERT(is_shader_bound(shader_program));
     if(uniform.is_valid() == false) { return; }
@@ -232,8 +226,7 @@ ShaderProgram::set_texture(const Uniform& uniform) const
 }
 
 
-void
-ShaderProgram::set_mat(const Uniform& uniform, const glm::mat4& mat) const
+void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat4& mat) const
 {
     ASSERT(is_shader_bound(shader_program));
     if(uniform.is_valid() == false) { return; }
@@ -244,8 +237,7 @@ ShaderProgram::set_mat(const Uniform& uniform, const glm::mat4& mat) const
 }
 
 
-void
-ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
+void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
 {
     ASSERT(is_shader_bound(shader_program));
     if(uniform.is_valid() == false) { return; }
@@ -256,8 +248,7 @@ ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
 }
 
 
-void
-setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list)
+void setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list)
 {
     // OpenGL should support atleast 16 textures
     ASSERT(uniform_list.size() <= 16);
@@ -273,31 +264,32 @@ setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list)
     }
 }
 
+
 namespace
 {
     unsigned int debug_current_shader_program = 0;
 }
 
 
-void
-set_shader_program(unsigned int new_program)
+void set_shader_program(unsigned int new_program)
 {
     debug_current_shader_program = new_program;
     glUseProgram(new_program);
 }
 
 
-bool
-is_shader_bound(unsigned int program)
+bool is_shader_bound(unsigned int program)
 {
     return debug_current_shader_program == program;
 }
 
 
-void
-clear_shader_program()
+void clear_shader_program()
 {
     set_shader_program(0);
 }
+
+
+
 
 }
