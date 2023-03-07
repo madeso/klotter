@@ -237,6 +237,13 @@ ShaderResource::~ShaderResource()
     shader_resource() = nullptr;
 }
 
+bool ShaderResource::is_loaded() const
+{
+    return
+        basic_shader->is_loaded() &&
+        light_shader->is_loaded()
+        ;
+}
 
 Material::Material(std::shared_ptr<ShaderProgram> s)
     : shader(s)

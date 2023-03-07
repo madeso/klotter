@@ -145,6 +145,11 @@ ShaderProgram::~ShaderProgram()
     clear();
 }
 
+bool ShaderProgram::is_loaded() const
+{
+    return shader_program != 0;
+}
+
 void
 ShaderProgram::clear()
 {

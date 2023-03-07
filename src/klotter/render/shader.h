@@ -30,6 +30,7 @@ struct ShaderProgram
     void operator=(ShaderProgram&&);
 
     void clear();
+    bool is_loaded() const;
 
     void
     use() const;

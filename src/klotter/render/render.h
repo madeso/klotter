@@ -22,6 +22,8 @@ struct ShaderResource
 
     std::shared_ptr<ShaderProgram> basic_shader;
     std::shared_ptr<ShaderProgram> light_shader;
+
+    bool is_loaded() const;
 };
 
 struct Vertex

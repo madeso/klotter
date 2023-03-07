@@ -160,6 +160,13 @@ int run_main(MakeAppFunction make_app)
     bool space = false;
     bool lctrl = false;
 
+    if (app->renderer.shaders.is_loaded() == false)
+    {
+        // oh no... we actually didn't load everything
+        // don't continue if shaders failed to load :(
+        running = false;
+    }
+
     auto last = SDL_GetPerformanceCounter();
     while (running)
     {
