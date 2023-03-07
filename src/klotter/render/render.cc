@@ -154,39 +154,39 @@ ShaderResource::ShaderResource()
     R"glsl(
         #version 330 core
 
-        layout (location = 0) in vec3 aPos;
-        layout (location = 1) in vec3 aColor;
-        layout (location = 2) in vec2 aTexCoord;
+        layout (location = 0) in vec3 a_position;
+        layout (location = 1) in vec3 a_color;
+        layout (location = 2) in vec2 a_tex_coord;
 
-        uniform mat4 uProjection;
-        uniform mat4 uView;
-        uniform mat4 uModel;
+        uniform mat4 u_projection;
+        uniform mat4 u_view;
+        uniform mat4 u_model;
 
-        out vec3 vColor;
-        out vec2 vTexCoord;
+        out vec3 v_color;
+        out vec2 v_tex_coord;
 
         void main()
         {
-            gl_Position = uProjection * uView * uModel * vec4(aPos.xyz, 1.0);
-            vColor = aColor;
-            vTexCoord = aTexCoord;
+            gl_Position = u_projection * u_view * u_model * vec4(a_position.xyz, 1.0);
+            v_color = a_color;
+            v_tex_coord = a_tex_coord;
         }
     )glsl"sv,
      R"glsl(
         #version 330 core
 
-        uniform vec4 TintColor;
+        uniform vec4 u_tint_color;
 
-        in vec3 vColor;
-        in vec2 vTexCoord;
+        in vec3 v_color;
+        in vec2 v_tex_coord;
 
-        uniform sampler2D uTexture;
+        uniform sampler2D u_tex_diffuse;
 
-        out vec4 FragColor;
+        out vec4 o_frag_color;
 
         void main()
         {
-            FragColor = texture(uTexture, vTexCoord) * TintColor.rgba * vec4(vColor.rgb, 1.0);
+            o_frag_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
         }
     )glsl"sv
     );
@@ -195,39 +195,39 @@ ShaderResource::ShaderResource()
         R"glsl(
         #version 330 core
 
-        layout (location = 0) in vec3 aPos;
-        layout (location = 1) in vec3 aColor;
-        layout (location = 2) in vec2 aTexCoord;
+        layout (location = 0) in vec3 a_position;
+        layout (location = 1) in vec3 a_color;
+        layout (location = 2) in vec2 a_tex_coord;
 
-        uniform mat4 uProjection;
-        uniform mat4 uView;
-        uniform mat4 uModel;
+        uniform mat4 u_projection;
+        uniform mat4 u_view;
+        uniform mat4 u_model;
 
-        out vec3 vColor;
-        out vec2 vTexCoord;
+        out vec3 v_color;
+        out vec2 v_tex_coord;
 
         void main()
         {
-            gl_Position = uProjection * uView * uModel * vec4(aPos.xyz, 1.0);
-            vColor = aColor;
-            vTexCoord = aTexCoord;
+            gl_Position = u_projection * u_view * u_model * vec4(a_position.xyz, 1.0);
+            v_color = a_color;
+            v_tex_coord = a_tex_coord;
         }
     )glsl"sv,
         R"glsl(
         #version 330 core
 
-        uniform vec4 TintColor;
+        uniform vec4 u_tint_color;
 
-        in vec3 vColor;
-        in vec2 vTexCoord;
+        in vec3 v_color;
+        in vec2 v_tex_coord;
 
-        uniform sampler2D uTexture;
+        uniform sampler2D u_tex_diffuse;
 
-        out vec4 FragColor;
+        out vec4 o_frag_color;
 
         void main()
         {
-            FragColor = texture(uTexture, vTexCoord) * TintColor.rgba * vec4(vColor.rgb, 1.0);
+            o_frag_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
         }
     )glsl"sv
         );
@@ -278,10 +278,10 @@ std::vector<float> BasicMaterial::compile_mesh_data(const Mesh& mesh)
 
 void BasicMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-    shader->set_vec4(shader->get_uniform("TintColor"), color);
-    shader->set_mat(shader->get_uniform("uModel"), transform);
-    shader->set_mat(shader->get_uniform("uProjection"), cc.projection);
-    shader->set_mat(shader->get_uniform("uView"), cc.view);
+    shader->set_vec4(shader->get_uniform("u_tint_color"), color);
+    shader->set_mat(shader->get_uniform("u_model"), transform);
+    shader->set_mat(shader->get_uniform("u_projection"), cc.projection);
+    shader->set_mat(shader->get_uniform("u_view"), cc.view);
 }
 
 void BasicMaterial::bind_textures(Assets* assets)
@@ -331,10 +331,10 @@ std::vector<float> LightMaterial::compile_mesh_data(const Mesh& mesh)
 
 void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-    shader->set_vec4(shader->get_uniform("TintColor"), color);
-    shader->set_mat(shader->get_uniform("uModel"), transform);
-    shader->set_mat(shader->get_uniform("uProjection"), cc.projection);
-    shader->set_mat(shader->get_uniform("uView"), cc.view);
+    shader->set_vec4(shader->get_uniform("u_tint_color"), color);
+    shader->set_mat(shader->get_uniform("u_model"), transform);
+    shader->set_mat(shader->get_uniform("u_projection"), cc.projection);
+    shader->set_mat(shader->get_uniform("u_view"), cc.view);
 }
 
 void LightMaterial::bind_textures(Assets* assets)
