@@ -8,7 +8,8 @@ using namespace klotter;
 
 struct LightsScene : Scene
 {
-    Renderer* renderer;
+    Renderer& renderer;
+    Camera& camera;
 
     World world;
 
@@ -26,7 +27,7 @@ struct LightsScene : Scene
     void add_mini_cube(const glm::vec3& p, int index)
     {
         auto material = std::make_shared<LightMaterial>();
-        material->texture = renderer->assets.get_light_grid();
+        material->texture = renderer.assets.get_light_grid();
 
         auto cube = add_cube(1.0f, 1.0f, 1.0f, false, material, colors::white);
         cube->position = p;
@@ -39,8 +40,9 @@ struct LightsScene : Scene
 
     std::shared_ptr<BasicMaterial> light_material;
 
-    LightsScene(Renderer* r)
+    LightsScene(Renderer& r, Camera& c)
         : renderer(r)
+        , camera(c)
     {
         camera.pitch = 15;
         camera.yaw = -50;
@@ -62,7 +64,7 @@ struct LightsScene : Scene
 
     void on_render(float) override
     {
-        renderer->render(world, camera);
+        renderer.render(world, camera);
     }
 
     void on_gui() override

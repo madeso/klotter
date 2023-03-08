@@ -5,7 +5,7 @@ namespace klotter
     void SceneApp::select_scene(std::size_t new_scene)
     {
         scene_index = new_scene;
-        selected_scene = types[scene_index].create(&renderer);
+        selected_scene = types[scene_index].create(renderer, camera);
     }
 
     void SceneApp::on_frame()

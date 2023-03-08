@@ -7,7 +7,8 @@ using namespace klotter;
 
 struct SceneScene : Scene
 {
-    Renderer* renderer;
+    Renderer& renderer;
+    Camera& camera;
 
     World world;
 
@@ -15,7 +16,7 @@ struct SceneScene : Scene
     {
         const auto triangle = mesh::create_box(x, y, z, invert, color).to_mesh();
         auto material = std::make_shared<BasicMaterial>();
-        material->texture = renderer->assets.get_light_grid();
+        material->texture = renderer.assets.get_light_grid();
         auto geometry = compile_Mesh(triangle, material);
         
         auto cube = make_MeshInstance(geometry);
@@ -35,8 +36,9 @@ struct SceneScene : Scene
         cube->rotation.z = fi(5);
     }
 
-    SceneScene(Renderer* r)
+    SceneScene(Renderer& r, Camera& c)
         : renderer(r)
+        , camera(c)
     {
         camera.pitch = 15;
         camera.yaw = -50;
@@ -57,7 +59,7 @@ struct SceneScene : Scene
 
     void on_render(float) override
     {
-        renderer->render(world, camera);
+        renderer.render(world, camera);
     }
 
     void on_gui() override

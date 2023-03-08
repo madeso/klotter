@@ -10,8 +10,6 @@ struct Scene
 {
     virtual ~Scene() = default;
 
-    Camera camera;
-
     virtual void on_render(float dt) = 0;
     virtual void on_gui() = 0;
 };
@@ -19,7 +17,7 @@ struct Scene
 struct SceneType
 {
     std::string name;
-    std::function<std::shared_ptr<Scene>(Renderer*)> create;
+    std::function<std::shared_ptr<Scene>(Renderer&, Camera&)> create;
 };
 
 struct SceneApp: App
@@ -36,8 +34,8 @@ struct SceneApp: App
     {
         types.emplace_back(
             SceneType{name,
-                [](Renderer* r) -> std::shared_ptr<Scene>
-                { return std::make_shared<T>(r); }
+                [](Renderer& r, Camera& c) -> std::shared_ptr<Scene>
+                { return std::make_shared<T>(r, c); }
             }
         );
     }
