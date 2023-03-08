@@ -8,6 +8,8 @@ namespace klotter
 
 struct Scene
 {
+    Camera stored_camera;
+
     virtual ~Scene() = default;
 
     virtual void on_render(float dt) = 0;
@@ -17,6 +19,7 @@ struct Scene
 struct SceneType
 {
     std::string name;
+    std::shared_ptr<Scene> created_scene;
     std::function<std::shared_ptr<Scene>(Renderer&, Camera&)> create;
 };
 
@@ -33,7 +36,7 @@ struct SceneApp: App
     void add_type(const std::string& name)
     {
         types.emplace_back(
-            SceneType{name,
+            SceneType{name, nullptr,
                 [](Renderer& r, Camera& c) -> std::shared_ptr<Scene>
                 { return std::make_shared<T>(r, c); }
             }

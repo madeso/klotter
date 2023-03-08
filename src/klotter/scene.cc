@@ -4,8 +4,29 @@ namespace klotter
 {
     void SceneApp::select_scene(std::size_t new_scene)
     {
+        auto last_selected = selected_scene;
         scene_index = new_scene;
-        selected_scene = types[scene_index].create(renderer, camera);
+
+        if (types[scene_index].created_scene == nullptr)
+        {
+            camera = {};
+            types[scene_index].created_scene = types[scene_index].create(renderer, camera);
+            types[scene_index].created_scene->stored_camera = camera;
+        }
+        selected_scene = types[scene_index].created_scene;
+
+        if (last_selected != selected_scene)
+        {
+            if (last_selected != nullptr)
+            {
+                last_selected->stored_camera = camera;
+            }
+
+            if (selected_scene)
+            {
+                camera = selected_scene->stored_camera;
+            }
+        }
     }
 
     void SceneApp::on_frame()
