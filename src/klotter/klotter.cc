@@ -133,15 +133,6 @@ int run_main(MakeAppFunction make_app)
     // create actual app
     auto app = make_app();
 
-    std::size_t scene_index;
-    std::shared_ptr<Scene> selected_scene;
-    auto select_scene = [&](std::size_t new_scene)
-    {
-        scene_index = new_scene;
-        selected_scene = app->types[scene_index].create(&app->renderer);
-    };
-    select_scene(app->types.size() - 1);
-
 
     ////////////////////////////////////////////////////////////////
     // run app
@@ -170,8 +161,7 @@ int run_main(MakeAppFunction make_app)
     auto last = SDL_GetPerformanceCounter();
     while (running)
     {
-        auto scene = selected_scene;
-
+        app->on_frame();
         const auto now = SDL_GetPerformanceCounter();
         const auto diff = static_cast<float>(now - last);
         const auto freq = static_cast<float>(SDL_GetPerformanceFrequency());
@@ -239,11 +229,11 @@ int run_main(MakeAppFunction make_app)
                 if (mouse)
                 {
                     const float sensitivity = 0.25f;
-                    scene->camera.yaw += static_cast<float>(e.motion.xrel) * sensitivity;
-                    scene->camera.pitch -= static_cast<float>(e.motion.yrel) * sensitivity;
+                    app->camera.yaw += static_cast<float>(e.motion.xrel) * sensitivity;
+                    app->camera.pitch -= static_cast<float>(e.motion.yrel) * sensitivity;
 
-                    if (scene->camera.pitch > 89.0f) { scene->camera.pitch = 89.0f; }
-                    if (scene->camera.pitch < -89.0f) { scene->camera.pitch = -89.0f; }
+                    if (app->camera.pitch > 89.0f) { app->camera.pitch = 89.0f; }
+                    if (app->camera.pitch < -89.0f) { app->camera.pitch = -89.0f; }
                 }
                 break;
 
@@ -258,7 +248,7 @@ int run_main(MakeAppFunction make_app)
         // update
         if(mouse)
         {
-            auto& cam = scene->camera;
+            auto& cam = app->camera;
             const auto v = create_vectors(cam);
             
             const auto move = [](bool p, bool n) -> std::optional<float>
@@ -278,30 +268,14 @@ int run_main(MakeAppFunction make_app)
 
         // ImGui::ShowDemoWindow();
 
-        ImGui::Begin("Scene switcher");
-
-        if(ImGui::BeginCombo("Scene", app->types[scene_index].name.c_str(), ImGuiComboFlags_HeightRegular))
-        {
-            for (std::size_t si = 0; si < app->types.size(); si += 1)
-            {
-                if (ImGui::Selectable(app->types[si].name.c_str(), si == scene_index))
-                {
-                    select_scene(si);
-                }
-            }
-            ImGui::EndCombo();
-        }
-
-        scene->on_gui();
-
-        ImGui::End();
+        app->on_gui();
 
         ImGui::Render();
 
 
         // render
         app->renderer.window_size = {window_width, window_height};
-        scene->on_render(dt);
+        app->on_render(dt);
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         SDL_GL_SwapWindow(sdl_window);

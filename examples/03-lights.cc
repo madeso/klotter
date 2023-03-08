@@ -1,4 +1,4 @@
-#include "klotter/klotter.h"
+#include "klotter/scene.h"
 #include "klotter/render/mesh.builder.h"
 #include "klotter/str.h"
 
@@ -72,7 +72,7 @@ struct LightsScene : Scene
     }
 };
 
-void register_lights(App* app)
+void register_lights(SceneApp* app)
 {
     app->add_type<LightsScene>("Lights");
 }

@@ -1,4 +1,4 @@
-#include "klotter/klotter.h"
+#include "klotter/scene.h"
 #include "klotter/render/mesh.builder.h"
 
 #include <cmath>
@@ -47,7 +47,7 @@ struct CubeScene : Scene
     }
 };
 
-void register_cube(App* app)
+void register_cube(SceneApp* app)
 {
     app->add_type<CubeScene>("Cube");
 }
