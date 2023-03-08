@@ -10,7 +10,7 @@ namespace klotter
         if (types[scene_index].created_scene == nullptr)
         {
             camera = {};
-            types[scene_index].created_scene = types[scene_index].create(renderer, camera);
+            types[scene_index].created_scene = types[scene_index].create(&renderer, &camera);
             types[scene_index].created_scene->stored_camera = camera;
         }
         selected_scene = types[scene_index].created_scene;

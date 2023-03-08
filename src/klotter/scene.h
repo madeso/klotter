@@ -20,7 +20,7 @@ struct SceneType
 {
     std::string name;
     std::shared_ptr<Scene> created_scene;
-    std::function<std::shared_ptr<Scene>(Renderer&, Camera&)> create;
+    std::function<std::shared_ptr<Scene>(Renderer*, Camera*)> create;
 };
 
 struct SceneApp: App
@@ -37,7 +37,7 @@ struct SceneApp: App
     {
         types.emplace_back(
             SceneType{name, nullptr,
-                [](Renderer& r, Camera& c) -> std::shared_ptr<Scene>
+                [](Renderer* r, Camera* c) -> std::shared_ptr<Scene>
                 { return std::make_shared<T>(r, c); }
             }
         );
