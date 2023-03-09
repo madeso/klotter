@@ -18,15 +18,13 @@ Klotter in swedish could be translated as doodlge, graffiti or scribbling.
 
 
 ### todo stage 1
-* move scene concept from klotter to example
-* allow example to take a argument to start with a certain example instead iof "latest"
 * split mesh generation from adding in examples
-* integrate dear imgui with "debug mode"
-* change transform of objects with a scene outline and properties
-* add debug renderer
+* change transform of objects with a scene outline and properties - still relevant with example setup?
+* add debug renderer (call anywhere, basic shapes, 3d text)
 * lights
 * better lightning
 * complete rest of learn opengl
+* allow example to take a argument to start with a certain example instead iof "latest"
 
 
 ## todo stage 2
