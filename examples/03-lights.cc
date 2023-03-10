@@ -48,18 +48,17 @@ struct LightsScene : Scene
         camera->yaw = -50;
 
         light_material = std::make_shared<BasicMaterial>();
-        auto cube = add_cube(0.5f, 0.5f, 0.5f, false, light_material, colors::white);
+        auto light = add_cube(0.25f, 0.25f, 0.25f, false, light_material, colors::white);
+        light->position.z = 0.5f;
 
-        add_mini_cube({ 0.0f,  0.0f,   0.0f}, 0);
-        add_mini_cube({ 2.0f,  5.0f, -15.0f}, 1);
-        add_mini_cube({-1.5f, -2.2f,  -2.5f}, 2);
-        add_mini_cube({-3.8f, -2.0f, -12.3f}, 3);
-        add_mini_cube({ 2.4f, -0.4f,  -3.5f}, 4);
+        add_mini_cube({ 1.5f,  2.0f,   2.5f}, 0);
+        add_mini_cube({ 1.5f,  0.2f,  -1.5f}, 1);
+        add_mini_cube({ 2.4f, -0.4f,   3.5f}, 2);
+        add_mini_cube({ 1.3f, -2.0f,  -2.5f}, 3);
+        add_mini_cube({-1.3f,  1.0f,   1.5f}, 4);
         add_mini_cube({-1.7f,  3.0f,  -7.5f}, 5);
-        add_mini_cube({ 1.3f, -2.0f,  -2.5f}, 6);
-        add_mini_cube({ 1.5f,  2.0f,  -2.5f}, 7);
-        add_mini_cube({ 1.5f,  0.2f,  -1.5f}, 8);
-        add_mini_cube({-1.3f,  1.0f,  -1.5f}, 9);
+        add_mini_cube({-1.5f, -2.2f,   2.5f}, 6);
+        add_mini_cube({-3.8f, -2.0f,  -2.3f}, 7);
     }
 
     void on_render(float) override
