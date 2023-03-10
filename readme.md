@@ -20,7 +20,8 @@ Klotter in swedish could be translated as doodlge, graffiti or scribbling.
 ### todo stage 1
 * split mesh generation from adding in examples
 * change transform of objects with a scene outline and properties - still relevant with example setup?
-* add debug renderer (call anywhere, basic shapes, 3d text)
+* add debug render modes (onlyt render diffuse, only render normals), like sketchfab model inspector views
+* add immediate mode styled debug renderer that can render lines, basic shapes(shphere, rect) and text
 * lights
 * better lightning
 * complete rest of learn opengl
