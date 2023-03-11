@@ -4,6 +4,7 @@
 
 #include "klotter/assert.h"
 #include "klotter/render/opengl_utils.h"
+#include "klotter/render/vertex_layout.h"
 
 
 using namespace std::literals::string_view_literals;
@@ -144,14 +145,55 @@ Mesh::Mesh(std::vector<Vertex> v, std::vector<Face> f)
 {
 }
 
+struct ShaderSource
+{
+    ShaderVertexAttributes layout;
+    std::string_view vertex;
+    std::string_view fragment;
+};
+
+std::shared_ptr<ShaderProgram> load_shader(const ShaderSource& source)
+{
+    return std::make_shared<ShaderProgram>(source.vertex, source.fragment);
+}
+
+ShaderSource basic_shader_source();
+ShaderSource light_shader_source();
 
 ShaderResource::ShaderResource()
 {
     assert(shader_resource() == nullptr);
     shader_resource() = this;
 
-    basic_shader = std::make_shared<ShaderProgram>(
-    R"glsl(
+    basic_shader = load_shader(basic_shader_source());
+    light_shader = load_shader(light_shader_source());
+}
+
+ShaderResource::~ShaderResource()
+{
+    shader_resource() = nullptr;
+}
+
+bool ShaderResource::is_loaded() const
+{
+    return
+        basic_shader->is_loaded() &&
+        light_shader->is_loaded()
+        ;
+}
+
+Material::Material(std::shared_ptr<ShaderProgram> s)
+    : shader(s)
+{
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ShaderSource basic_shader_source() {
+    return
+    {
+        {},
+        R"glsl(
         #version 330 core
 
         layout (location = 0) in vec3 a_position;
@@ -188,74 +230,8 @@ ShaderResource::ShaderResource()
             o_frag_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
         }
     )glsl"sv
-    );
-
-    light_shader = std::make_shared<ShaderProgram>(
-        R"glsl(
-        #version 330 core
-
-        layout (location = 0) in vec3 a_position;
-        layout (location = 1) in vec3 a_color;
-        layout (location = 2) in vec2 a_tex_coord;
-
-        uniform mat4 u_projection;
-        uniform mat4 u_view;
-        uniform mat4 u_model;
-
-        out vec3 v_color;
-        out vec2 v_tex_coord;
-
-        void main()
-        {
-            gl_Position = u_projection * u_view * u_model * vec4(a_position.xyz, 1.0);
-            v_color = a_color;
-            v_tex_coord = a_tex_coord;
-        }
-    )glsl"sv,
-        R"glsl(
-        #version 330 core
-
-        uniform vec4 u_tint_color;
-        uniform sampler2D u_tex_diffuse;
-        uniform vec3 u_light_color;
-
-        in vec3 v_color;
-        in vec2 v_tex_coord;
-
-        out vec4 o_frag_color;
-
-        void main()
-        {
-            float ambient_strength = 0.1;
-            vec3 ambient_color = ambient_strength * u_light_color;
-            vec3 light_color = ambient_color;
-
-            vec4 object_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
-
-            o_frag_color = vec4(light_color.rgb * object_color.rgb, object_color.a);
-        }
-    )glsl"sv
-        );
+    };
 }
-ShaderResource::~ShaderResource()
-{
-    shader_resource() = nullptr;
-}
-
-bool ShaderResource::is_loaded() const
-{
-    return
-        basic_shader->is_loaded() &&
-        light_shader->is_loaded()
-        ;
-}
-
-Material::Material(std::shared_ptr<ShaderProgram> s)
-    : shader(s)
-{
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BasicMaterial::BasicMaterial()
     : Material(shaders().basic_shader)
@@ -310,6 +286,59 @@ void BasicMaterial::apply_lights(const Lights&)
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ShaderSource light_shader_source()
+{
+    return 
+    {
+        {},
+        R"glsl(
+        #version 330 core
+
+        layout (location = 0) in vec3 a_position;
+        layout (location = 1) in vec3 a_color;
+        layout (location = 2) in vec2 a_tex_coord;
+
+        uniform mat4 u_projection;
+        uniform mat4 u_view;
+        uniform mat4 u_model;
+
+        out vec3 v_color;
+        out vec2 v_tex_coord;
+
+        void main()
+        {
+            gl_Position = u_projection * u_view * u_model * vec4(a_position.xyz, 1.0);
+            v_color = a_color;
+            v_tex_coord = a_tex_coord;
+        }
+    )glsl"sv,
+        R"glsl(
+        #version 330 core
+
+        uniform vec4 u_tint_color;
+        uniform sampler2D u_tex_diffuse;
+        uniform vec3 u_light_color;
+
+        in vec3 v_color;
+        in vec2 v_tex_coord;
+
+        out vec4 o_frag_color;
+
+        void main()
+        {
+            float ambient_strength = 0.1;
+            vec3 ambient_color = ambient_strength * u_light_color;
+            vec3 light_color = ambient_color;
+
+            vec4 object_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
+
+            o_frag_color = vec4(light_color.rgb * object_color.rgb, object_color.a);
+        }
+    )glsl"sv
+};
+}
 
 LightMaterial::LightMaterial()
     : Material(shaders().light_shader)

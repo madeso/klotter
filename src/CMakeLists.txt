@@ -15,6 +15,8 @@ set(src_render
     klotter/render/texture.io.h
     klotter/render/assets.cc klotter/render/assets.h
 
+    klotter/render/vertex_layout.cc klotter/render/vertex_layout.h
+
     klotter/render/mesh.builder.cc klotter/render/mesh.builder.h
 )
     
