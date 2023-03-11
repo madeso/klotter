@@ -471,40 +471,41 @@ void push4(VertexVector* vv, const glm::vec4& p)
 
 CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 {
+    // ---------------------------------------------------------------------------------------------
     // Extract data from mesh for OpenGL
     const auto& layout = material->shader.mesh_layout;
 
     const auto indices = compile_indices(mesh);
 
     const auto data = [&]()
-    {
-        auto data = std::vector<BufferData>{};
-        data.reserve(layout.elements.size());
-        for (const auto& element : layout.elements)
         {
-            switch (element.type)
+            auto data = std::vector<BufferData>{};
+            data.reserve(layout.elements.size());
+            for (const auto& element : layout.elements)
             {
-#define MAP(VT, PROP, COUNT)\
-                case VT: \
-                data.emplace_back(COUNT, [](VertexVector* vertices, const Vertex& vertex)\
-                    {\
-                        push##COUNT(vertices, PROP);\
-                    });\
-                break
+                switch (element.type)
+                {
+                    #define MAP(VT, PROP, COUNT)\
+                    case VT: \
+                    data.emplace_back(COUNT, [](VertexVector* vertices, const Vertex& vertex)\
+                        {\
+                            push##COUNT(vertices, PROP);\
+                        });\
+                    break
 
-                MAP(VertexType::position3, vertex.position, 3);
-                // MAP(VertexType::normal3, vertex.normal, 3); // normals not implemented yet...
-                MAP(VertexType::color3, vertex.color, 3);
-                MAP(VertexType::color4, glm::vec4(vertex.color, 1.0f), 4);
-                MAP(VertexType::texture2, vertex.uv, 2);
-#undef MAP
-            default:
-                DIE("Invalid buffer type");
-                break;
+                    MAP(VertexType::position3, vertex.position, 3);
+                    // MAP(VertexType::normal3, vertex.normal, 3); // normals not implemented yet...
+                    MAP(VertexType::color3, vertex.color, 3);
+                    MAP(VertexType::color4, glm::vec4(vertex.color, 1.0f), 4);
+                    MAP(VertexType::texture2, vertex.uv, 2);
+                    #undef MAP
+                default:
+                    DIE("Invalid buffer type");
+                    break;
+                }
             }
-        }
-        return data;
-    }();
+            return data;
+        }();
 
     // ---------------------------------------------------------------------------------------------
     // upload data to opengl
