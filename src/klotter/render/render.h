@@ -69,8 +69,6 @@ struct Material
     void operator=(const Material&) = delete;
     void operator=(Material&&) = delete;
 
-    virtual std::vector<float> compile_mesh_data(const Mesh& mesh) = 0;
-
     virtual void set_uniforms(const CompiledCamera&, const glm::mat4&) = 0;
     virtual void bind_textures(Assets* assets) = 0;
     virtual void apply_lights(const Lights& lights) = 0;
@@ -85,7 +83,6 @@ struct BasicMaterial : Material
     std::shared_ptr<Texture> texture;
 
     BasicMaterial();
-    std::vector<float> compile_mesh_data(const Mesh& mesh) override;
     void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
     void bind_textures(Assets* assets) override;
     void apply_lights(const Lights& lights) override;
@@ -99,7 +96,6 @@ struct LightMaterial : Material
     std::shared_ptr<Texture> texture;
 
     LightMaterial();
-    std::vector<float> compile_mesh_data(const Mesh& mesh) override;
     void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
     void bind_textures(Assets* assets) override;
     void apply_lights(const Lights& lights) override;

@@ -1,5 +1,11 @@
 #pragma once
 
+
+constexpr std::size_t Cint_to_sizet(int i)
+{
+    return static_cast<std::size_t>(i);
+}
+
 constexpr u32 Csizet_to_u32(std::size_t i)
 {
     return static_cast<u32>(i);
