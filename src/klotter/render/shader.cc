@@ -10,7 +10,6 @@
 namespace klotter
 {
 
-void set_shader_program(unsigned int new_program);
 
 bool check_shader_compilation_error(const char* name, unsigned int shader)
 {
@@ -53,12 +52,46 @@ void upload_shader_source(unsigned int shader, std::string_view source)
 }
 
 
+void bind_shader_attribute_location(unsigned int shader_program, const CompiledShaderVertexAttributes& layout)
+{
+    for(const auto& b: layout.elements)
+    {
+        glBindAttribLocation(shader_program, Cint_to_gluint(b.index), b.name.c_str());
+    }
+}
+
+
+void verify_shader_attribute_location(unsigned int shader_program, const CompiledShaderVertexAttributes& layout)
+{
+    for(const auto& b: layout.elements)
+    {
+        const auto actual_index = glGetAttribLocation
+        (
+            shader_program,
+            b.name.c_str()
+        );
+
+        if(actual_index != b.index)
+        {
+            LOG_ERROR
+            (
+                "ERROR: %s was bound to %d but requested at %d",
+                b.name.c_str(),
+                actual_index,
+                b.index
+            );
+        }
+    }
+}
+
+
 template<typename T>
 void load_shader_source
 (
     ShaderProgram* self,
     const T& vertex_source,
-    const T& fragment_source
+    const T& fragment_source,
+    const CompiledShaderVertexAttributes& layout
 )
 {
     const auto vertex_shader = glCreateShader(GL_VERTEX_SHADER);
@@ -73,6 +106,7 @@ void load_shader_source
 
     glAttachShader(self->shader_program, vertex_shader);
     glAttachShader(self->shader_program, fragment_shader);
+    bind_shader_attribute_location(self->shader_program, layout);
     glLinkProgram(self->shader_program);
     const auto link_ok = check_shader_link_error(self->shader_program);
 
@@ -84,6 +118,7 @@ void load_shader_source
     if(vertex_ok && fragment_ok && link_ok)
     {
         // nop
+        verify_shader_attribute_location(self->shader_program, layout);
     }
     else
     {
@@ -97,35 +132,41 @@ void load_shader_source
 ShaderProgram::ShaderProgram
 (
     const std::string& vertex_source,
-    const std::string& fragment_source
+    const std::string& fragment_source,
+    const CompiledShaderVertexAttributes& layout
 )
     : shader_program(glCreateProgram())
+    , debug_vertex_types(layout.debug_types)
 {
-    load_shader_source(this, vertex_source, fragment_source);
+    load_shader_source(this, vertex_source, fragment_source, layout);
 }
 
 
 ShaderProgram::ShaderProgram
 (
     std::string_view vertex_source,
-    std::string_view fragment_source
+    std::string_view fragment_source,
+    const CompiledShaderVertexAttributes& layout
 )
     : shader_program(glCreateProgram())
+    , debug_vertex_types(layout.debug_types)
 {
-    load_shader_source(this, vertex_source, fragment_source);
+    load_shader_source(this, vertex_source, fragment_source, layout);
 }
 
 
 void ShaderProgram::use() const
 {
-    set_shader_program(shader_program);
+    set_shader_program(shader_program, debug_vertex_types);
 }
 
 
 ShaderProgram::ShaderProgram(ShaderProgram&& rhs)
     : shader_program(rhs.shader_program)
+    , debug_vertex_types(rhs.debug_vertex_types)
 {
     rhs.shader_program = 0;
+    rhs.debug_vertex_types = {};
 }
 
 
@@ -134,8 +175,10 @@ void ShaderProgram::operator=(ShaderProgram&& rhs)
     clear();
 
     shader_program = rhs.shader_program;
+    debug_vertex_types = rhs.debug_vertex_types;
 
     rhs.shader_program = 0;
+    rhs.debug_vertex_types = {};
 }
 
 
@@ -208,7 +251,6 @@ void ShaderProgram::set_vec4(const Uniform& uniform, float x, float y, float z, 
     glUniform4f(uniform.location, x, y, z, w);
 }
 
-
 void ShaderProgram::set_vec4(const Uniform& uniform, const glm::vec4& v) const
 {
     set_vec4(uniform, v.x, v.y, v.z, v.w);
@@ -264,19 +306,34 @@ void setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list)
     }
 }
 
-
 namespace
 {
+    VertexTypes debug_current_shader_types;
     unsigned int debug_current_shader_program = 0;
 }
 
 
-void set_shader_program(unsigned int new_program)
+void set_shader_program(unsigned int new_program, const VertexTypes& types)
 {
     debug_current_shader_program = new_program;
+    debug_current_shader_types = types;
     glUseProgram(new_program);
 }
 
+
+bool is_bound_for_shader(const std::unordered_set<VertexType>&  debug_mesh_shader_types)
+{
+    for(auto t: debug_current_shader_types)
+    {
+        if(debug_mesh_shader_types.find(t) == debug_mesh_shader_types.end())
+        {
+            // if shader type isn't found in mesh
+            // then error out
+            return false;
+        }
+    }
+    return true;
+}
 
 bool is_shader_bound(unsigned int program)
 {
@@ -286,10 +343,7 @@ bool is_shader_bound(unsigned int program)
 
 void clear_shader_program()
 {
-    set_shader_program(0);
+    set_shader_program(0, {});
 }
-
-
-
 
 }

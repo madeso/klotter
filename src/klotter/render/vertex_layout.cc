@@ -13,6 +13,7 @@ std::optional<VertexType> parse_vertex_type(const std::string& name)
     NAME(position2)
     else NAME(position3)
     else NAME(normal3)
+    else NAME(color3)
     else NAME(color4)
     else NAME(texture2)
     else return {};

@@ -8,11 +8,18 @@
 #include "klotter/render/shader.h"
 #include "klotter/render/texture.h"
 #include "klotter/render/assets.h"
+#include "klotter/render/vertex_layout.h"
 
 namespace klotter
 {
 
 struct Lights;
+
+struct LoadedShaderData
+{
+    std::shared_ptr<ShaderProgram> program;
+    CompiledGeomVertexAttributes mesh_layout;
+};
 
 
 struct ShaderResource
@@ -20,8 +27,8 @@ struct ShaderResource
     ShaderResource();
     ~ShaderResource();
 
-    std::shared_ptr<ShaderProgram> basic_shader;
-    std::shared_ptr<ShaderProgram> light_shader;
+    LoadedShaderData basic_shader;
+    LoadedShaderData light_shader;
 
     bool is_loaded() const;
 };
@@ -52,9 +59,9 @@ struct Mesh
 
 struct Material
 {
-    std::shared_ptr<ShaderProgram> shader;
+    LoadedShaderData shader;
 
-    Material(std::shared_ptr<ShaderProgram>);
+    explicit Material(LoadedShaderData data);
     virtual ~Material() = default;
 
     Material(const Material&) = delete;

@@ -10,7 +10,7 @@ namespace klotter
 /** Vertex source type, position, normal etc. */
 enum class VertexType
 {
-    position2, position3, normal3, color4, texture2
+    position2, position3, normal3, color3, color4, texture2
     // change to include other textcoords and custom types that are created from scripts
 };
 

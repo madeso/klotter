@@ -4,7 +4,6 @@
 
 #include "klotter/assert.h"
 #include "klotter/render/opengl_utils.h"
-#include "klotter/render/vertex_layout.h"
 
 
 using namespace std::literals::string_view_literals;
@@ -152,9 +151,17 @@ struct ShaderSource
     std::string_view fragment;
 };
 
-std::shared_ptr<ShaderProgram> load_shader(const ShaderSource& source)
+using BaseShaderData = std::vector<VertexType>;
+
+LoadedShaderData load_shader(const BaseShaderData& base_layout, const ShaderSource& source)
 {
-    return std::make_shared<ShaderProgram>(source.vertex, source.fragment);
+    auto layout_compiler = compile_attribute_layouts(base_layout, { source.layout });
+    const auto mesh_layout = get_mesh_layout(layout_compiler);
+    const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout);
+
+    auto program = std::make_shared<ShaderProgram>(source.vertex, source.fragment, compiled_layout);
+
+    return { program, mesh_layout };
 }
 
 ShaderSource basic_shader_source();
@@ -165,8 +172,9 @@ ShaderResource::ShaderResource()
     assert(shader_resource() == nullptr);
     shader_resource() = this;
 
-    basic_shader = load_shader(basic_shader_source());
-    light_shader = load_shader(light_shader_source());
+    auto global_shader_data = BaseShaderData{};
+    basic_shader = load_shader(global_shader_data, basic_shader_source());
+    light_shader = load_shader(global_shader_data, light_shader_source());
 }
 
 ShaderResource::~ShaderResource()
@@ -177,13 +185,13 @@ ShaderResource::~ShaderResource()
 bool ShaderResource::is_loaded() const
 {
     return
-        basic_shader->is_loaded() &&
-        light_shader->is_loaded()
+        basic_shader.program->is_loaded() &&
+        light_shader.program->is_loaded()
         ;
 }
 
-Material::Material(std::shared_ptr<ShaderProgram> s)
-    : shader(s)
+Material::Material(LoadedShaderData s)
+    : shader(std::move(s))
 {
 }
 
@@ -192,13 +200,17 @@ Material::Material(std::shared_ptr<ShaderProgram> s)
 ShaderSource basic_shader_source() {
     return
     {
-        {},
+        {
+            {VertexType::position3, "a_position"},
+            {VertexType::color3, "a_color"},
+            {VertexType::texture2, "a_tex_coord"}
+        },
         R"glsl(
         #version 330 core
 
-        layout (location = 0) in vec3 a_position;
-        layout (location = 1) in vec3 a_color;
-        layout (location = 2) in vec2 a_tex_coord;
+        in vec3 a_position;
+        in vec3 a_color;
+        in vec2 a_tex_coord;
 
         uniform mat4 u_projection;
         uniform mat4 u_view;
@@ -267,10 +279,10 @@ std::vector<float> BasicMaterial::compile_mesh_data(const Mesh& mesh)
 
 void BasicMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-    shader->set_vec4(shader->get_uniform("u_tint_color"), {color, alpha});
-    shader->set_mat(shader->get_uniform("u_model"), transform);
-    shader->set_mat(shader->get_uniform("u_projection"), cc.projection);
-    shader->set_mat(shader->get_uniform("u_view"), cc.view);
+    shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
+    shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
+    shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
+    shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
 }
 
 void BasicMaterial::bind_textures(Assets* assets)
@@ -292,7 +304,11 @@ ShaderSource light_shader_source()
 {
     return 
     {
-        {},
+        {
+            {VertexType::position3, "a_position"},
+            {VertexType::color3, "a_color"},
+            {VertexType::texture2, "a_tex_coord"}
+        },
         R"glsl(
         #version 330 core
 
@@ -374,10 +390,10 @@ std::vector<float> LightMaterial::compile_mesh_data(const Mesh& mesh)
 
 void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-    shader->set_vec4(shader->get_uniform("u_tint_color"), {color, alpha});
-    shader->set_mat(shader->get_uniform("u_model"), transform);
-    shader->set_mat(shader->get_uniform("u_projection"), cc.projection);
-    shader->set_mat(shader->get_uniform("u_view"), cc.view);
+    shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
+    shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
+    shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
+    shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
 }
 
 void LightMaterial::bind_textures(Assets* assets)
@@ -390,7 +406,7 @@ void LightMaterial::bind_textures(Assets* assets)
 
 void LightMaterial::apply_lights(const Lights& lights)
 {
-    shader->set_vec3(shader->get_uniform("u_light_color"), lights.point_light.color);
+    shader.program->set_vec3(shader.program->get_uniform("u_light_color"), lights.point_light.color);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -427,7 +443,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     const auto indices = compile_indices(mesh);
     const auto vertices = material->compile_mesh_data(mesh);
 
-    material->shader->use();
+    material->shader.program->use();
 
     const auto vbo = create_buffer();
     const auto vao = create_vertex_array();
@@ -465,7 +481,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 
 void CompiledMesh::render(Assets* assets, const CompiledCamera& cc, const glm::mat4& transform, const Lights& lights)
 {
-    material->shader->use();
+    material->shader.program->use();
     material->set_uniforms(cc, transform);
     material->bind_textures(assets);
     material->apply_lights(lights);

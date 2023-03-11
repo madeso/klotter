@@ -1,17 +1,27 @@
 #pragma once
 
-#include "klotter/render/uniform.h"
-
 #include <unordered_set>
 
+#include "klotter/render/vertex_layout.h"
+#include "klotter/render/uniform.h"
 
 namespace klotter
 {
 
 struct ShaderProgram
 {
-    ShaderProgram(const std::string& vertex_source, const std::string& fragment_source);
-    ShaderProgram(std::string_view vertex_source, std::string_view fragment_source);
+    ShaderProgram
+    (
+        const std::string& vertex_source,
+        const std::string& fragment_source,
+        const CompiledShaderVertexAttributes& layout
+    );
+    ShaderProgram
+    (
+        std::string_view vertex_source,
+        std::string_view fragment_source,
+        const CompiledShaderVertexAttributes& layout
+    );
 
     ~ShaderProgram();
 
@@ -25,6 +35,7 @@ struct ShaderProgram
 
     bool is_loaded() const;
     void use() const;
+
     Uniform get_uniform(const std::string& name) const;
 
     // shader needs to be bound
@@ -39,16 +50,14 @@ struct ShaderProgram
 
 
     unsigned int shader_program;
+    VertexTypes debug_vertex_types;
 };
 
 
-void
-setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list);
-
-bool
-is_shader_bound(unsigned int program);
-
-void
-clear_shader_program();
+void setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list);
+void set_shader_program(unsigned int new_program, const VertexTypes& types);
+bool is_bound_for_shader(const std::unordered_set<VertexType>& debug_shader_types);
+bool is_shader_bound(unsigned int program);
+void clear_shader_program();
 
 }
