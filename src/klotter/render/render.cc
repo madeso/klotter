@@ -477,7 +477,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 
     const auto indices = compile_indices(mesh);
 
-    const auto data = [&]()
+    const auto attribute_descriptions = [&]()
         {
             auto data = std::vector<BufferData>{};
             data.reserve(layout.elements.size());
@@ -514,7 +514,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     (
         std::accumulate
         (
-            data.begin(), data.end(),
+            attribute_descriptions.begin(), attribute_descriptions.end(),
             0, [](auto s, const auto& d)
             {
                 return s + d.count;
@@ -523,16 +523,16 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     );
     const auto vertices = [&]()
         {
-            auto vertices = VertexVector{};
-            vertices.reserve(mesh.vertices.size() * floats_per_vertex);
+            auto verts = VertexVector{};
+            verts.reserve(mesh.vertices.size() * floats_per_vertex);
             for (const auto& vertex : mesh.vertices)
             {
-                for (const auto& d : data)
+                for (const auto& d : attribute_descriptions)
                 {
-                    d.per_vertex(&vertices, vertex);
+                    d.per_vertex(&verts, vertex);
                 }
             }
-            return vertices;
+            return verts;
         }();
 
     material->shader.program->use();
@@ -547,7 +547,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
     const auto stride = floats_per_vertex * sizeof(float);
     int location = 0;
     std::size_t offset = 0;
-    for (const auto& d : data)
+    for (const auto& d : attribute_descriptions)
     {
         const auto normalize = false;
         glVertexAttribPointer
