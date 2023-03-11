@@ -484,40 +484,20 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
         {
             switch (element.type)
             {
-            case VertexType::position3:
-                data.emplace_back(3, [](VertexVector* vertices, const Vertex& vertex)
-                    {
-                        push3(vertices, vertex.position);
-                    });
-                break;
-            case VertexType::normal3:
-#if 1
-                assert(false && "normals not implemented yet...");
-#else
-                data.emplace_back(3, [](VertexVector* vertices, const Vertex& vertex)
-                    {
-                        push3(vertices, vertex.normal);
-                    });
-#endif
-                break;
-            case VertexType::color3:
-                data.emplace_back(3, [](VertexVector* vertices, const Vertex& vertex)
-                    {
-                        push3(vertices, vertex.color);
-                    });
-                break;
-            case VertexType::color4:
-                data.emplace_back(4, [](VertexVector* vertices, const Vertex& vertex)
-                    {
-                        push4(vertices, { vertex.position, 1.0f });
-                    });
-                break;
-            case VertexType::texture2:
-                data.emplace_back(2, [](VertexVector* vertices, const Vertex& vertex)
-                    {
-                        push2(vertices, vertex.uv);
-                    });
-                break;
+#define MAP(VT, PROP, COUNT)\
+                case VT: \
+                data.emplace_back(COUNT, [](VertexVector* vertices, const Vertex& vertex)\
+                    {\
+                        push##COUNT(vertices, PROP);\
+                    });\
+                break
+
+                MAP(VertexType::position3, vertex.position, 3);
+                // MAP(VertexType::normal3, vertex.normal, 3); // normals not implemented yet...
+                MAP(VertexType::color3, vertex.color, 3);
+                MAP(VertexType::color4, glm::vec4(vertex.color, 1.0f), 4);
+                MAP(VertexType::texture2, vertex.uv, 2);
+#undef MAP
             default:
                 DIE("Invalid buffer type");
                 break;
