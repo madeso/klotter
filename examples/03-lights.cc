@@ -12,6 +12,8 @@ struct LightsScene : Scene
     Camera* camera;
 
     World world;
+    std::vector<MeshInstancePtr> cubes;
+    float anim = 0.0f;
 
     MeshInstancePtr add_cube(float x, float y, float z, bool invert, MaterialPtr material, const glm::vec3& color)
     {
@@ -24,7 +26,7 @@ struct LightsScene : Scene
         return cube;
     }
 
-    void add_mini_cube(const glm::vec3& p, int index)
+    void add_mini_cube(const glm::vec3& p)
     {
         auto material = std::make_shared<LightMaterial>();
         material->texture = renderer->assets.get_light_grid();
@@ -32,10 +34,7 @@ struct LightsScene : Scene
         auto cube = add_cube(1.0f, 1.0f, 1.0f, false, material, colors::white);
         cube->position = p;
 
-        const auto fi = [index](int i) -> float { return 5.0f * static_cast<float>((index + i) % 10); };
-        cube->rotation.x = fi(1);
-        cube->rotation.y = fi(3);
-        cube->rotation.z = fi(5);
+        cubes.emplace_back(cube);
     }
 
     std::shared_ptr<BasicMaterial> light_material;
@@ -51,18 +50,35 @@ struct LightsScene : Scene
         auto light = add_cube(0.25f, 0.25f, 0.25f, false, light_material, colors::white);
         light->position.z = 0.5f;
 
-        add_mini_cube({ 1.5f,  2.0f,   2.5f}, 0);
-        add_mini_cube({ 1.5f,  0.2f,  -1.5f}, 1);
-        add_mini_cube({ 2.4f, -0.4f,   3.5f}, 2);
-        add_mini_cube({ 1.3f, -2.0f,  -2.5f}, 3);
-        add_mini_cube({-1.3f,  1.0f,   1.5f}, 4);
-        add_mini_cube({-1.7f,  3.0f,  -7.5f}, 5);
-        add_mini_cube({-1.5f, -2.2f,   2.5f}, 6);
-        add_mini_cube({-3.8f, -2.0f,  -2.3f}, 7);
+        add_mini_cube({ 1.5f,  2.0f,   2.5f});
+        add_mini_cube({ 1.5f,  0.2f,  -1.5f});
+        add_mini_cube({ 2.4f, -0.4f,   3.5f});
+        add_mini_cube({ 1.3f, -2.0f,  -2.5f});
+        add_mini_cube({-1.3f,  1.0f,   1.5f});
+        add_mini_cube({-1.7f,  3.0f,  -7.5f});
+        add_mini_cube({-1.5f, -2.2f,   2.5f});
+        add_mini_cube({-3.8f, -2.0f,  -2.3f});
+        apply_animation();
     }
 
-    void on_render(float) override
+    void apply_animation()
     {
+        int index = 0;
+        int cube_count = static_cast<int>(cubes.size() + 1);
+        for(auto& cube: cubes)
+        {
+            const auto fi = [this, index, cube_count](int i) -> float
+                { return anim + 5.0f * static_cast<float>((index + i) % cube_count); };
+            cube->rotation.x = fi(1);
+            cube->rotation.y = fi(3);
+            cube->rotation.z = fi(5);
+        }
+    }
+
+    void on_render(float dt) override
+    {
+        anim += dt * 0.25f;
+        apply_animation();
         renderer->render(world, *camera);
     }
 
