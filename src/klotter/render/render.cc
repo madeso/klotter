@@ -144,8 +144,9 @@ void destroy_vertex_array(u32 vao)
 }
 
 
-Vertex::Vertex(glm::vec3 p, glm::vec2 u, glm::vec3 c)
+Vertex::Vertex(glm::vec3 p, glm::vec3 n, glm::vec2 u, glm::vec3 c)
     : position(std::move(p))
+    , normal(std::move(n))
     , uv(std::move(u))
     , color(std::move(c))
 {
@@ -310,6 +311,7 @@ ShaderSource light_shader_source()
     {
         {
             {VertexType::position3, "a_position"},
+            {VertexType::normal3, "a_normal"},
             {VertexType::color3, "a_color"},
             {VertexType::texture2, "a_tex_coord"}
         },
@@ -317,6 +319,7 @@ ShaderSource light_shader_source()
     #version 330 core
 
     in vec3 a_position;
+    in vec3 a_normal;
     in vec3 a_color;
     in vec2 a_tex_coord;
 
@@ -324,12 +327,16 @@ ShaderSource light_shader_source()
     uniform mat4 u_view;
     uniform mat4 u_model;
 
+    out vec3 v_worldspace;
+    out vec3 v_normal;
     out vec3 v_color;
     out vec2 v_tex_coord;
 
     void main()
     {
         gl_Position = u_projection * u_view * u_model * vec4(a_position.xyz, 1.0);
+        v_worldspace = vec3(u_model * vec4(a_position.xyz, 1.0));
+        v_normal = mat3(transpose(inverse(u_model))) * a_normal; // move to cpu
         v_color = a_color;
         v_tex_coord = a_tex_coord;
     }
@@ -340,7 +347,10 @@ ShaderSource light_shader_source()
     uniform vec4 u_tint_color;
     uniform sampler2D u_tex_diffuse;
     uniform vec3 u_light_color;
+    uniform vec3 u_light_world;
 
+    in vec3 v_worldspace;
+    in vec3 v_normal;
     in vec3 v_color;
     in vec2 v_tex_coord;
 
@@ -350,7 +360,12 @@ ShaderSource light_shader_source()
     {
         float ambient_strength = 0.1;
         vec3 ambient_color = ambient_strength * u_light_color;
-        vec3 light_color = ambient_color;
+
+        vec3 normal = normalize(v_normal);
+        vec3 light_direction = normalize(u_light_world - v_worldspace);
+        vec3 diffuse_color = max(dot(normal, light_direction), 0.0) * u_light_color;
+
+        vec3 light_color = ambient_color + diffuse_color;
 
         vec4 object_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
 
@@ -390,6 +405,7 @@ void LightMaterial::bind_textures(Assets* assets)
 void LightMaterial::apply_lights(const Lights& lights)
 {
     shader.program->set_vec3(shader.program->get_uniform("u_light_color"), lights.point_light.color);
+    shader.program->set_vec3(shader.program->get_uniform("u_light_world"), lights.point_light.position);
 }
 
 
@@ -494,7 +510,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
                     break
 
                     MAP(VertexType::position3, vertex.position, 3);
-                    // MAP(VertexType::normal3, vertex.normal, 3); // normals not implemented yet...
+                    MAP(VertexType::normal3, vertex.normal, 3);
                     MAP(VertexType::color3, vertex.color, 3);
                     MAP(VertexType::color4, glm::vec4(vertex.color, 1.0f), 4);
                     MAP(VertexType::texture2, vertex.uv, 2);

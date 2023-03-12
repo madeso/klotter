@@ -36,10 +36,11 @@ struct ShaderResource
 struct Vertex
 {
     glm::vec3 position;
+    glm::vec3 normal;
     glm::vec2 uv;
     glm::vec3 color;
 
-    explicit Vertex(glm::vec3 p, glm::vec2, glm::vec3 c = colors::white);
+    explicit Vertex(glm::vec3, glm::vec3, glm::vec2, glm::vec3 c = colors::white);
 };
 
 struct Face

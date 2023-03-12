@@ -18,6 +18,7 @@ Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& co
 
     const auto v = [&]
     (
+        glm::vec3 normal,
         glm::vec3 p0, glm::vec2 t0,
         glm::vec3 p1, glm::vec2 t1,
         glm::vec3 p2, glm::vec2 t2,
@@ -27,10 +28,11 @@ Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& co
         constexpr float pd = 0.1f;
         constexpr float td = 0.01f;
         const auto ci = b.foa_color({ color, 1.0f }, 0.001f);
-        const auto v0 = Vertex{ b.foa_position(p0, pd), 0, b.foa_text_coord(t0, td), ci };
-        const auto v1 = Vertex{ b.foa_position(p1, pd), 0, b.foa_text_coord(t1, td), ci };
-        const auto v2 = Vertex{ b.foa_position(p2, pd), 0, b.foa_text_coord(t2, td), ci };
-        const auto v3 = Vertex{ b.foa_position(p3, pd), 0, b.foa_text_coord(t3, td), ci };
+        const auto no = b.foa_normal(normal, 0.001f);
+        const auto v0 = Vertex{ b.foa_position(p0, pd), no, b.foa_text_coord(t0, td), ci };
+        const auto v1 = Vertex{ b.foa_position(p1, pd), no, b.foa_text_coord(t1, td), ci };
+        const auto v2 = Vertex{ b.foa_position(p2, pd), no, b.foa_text_coord(t2, td), ci };
+        const auto v3 = Vertex{ b.foa_position(p3, pd), no, b.foa_text_coord(t3, td), ci };
 
         b.add_quad(face_out, v0, v1, v2, v3);
     };
@@ -43,38 +45,46 @@ Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& co
     const float hy = y * 0.5f;
     const float hz = z * 0.5f;
 
+    constexpr float n = 0.0f;
+
     // front
-    v(  {-hx, -hy, -hz}, { 0.0f, 0.0f},
+    v(  { n, n, -1.0f },
+        {-hx, -hy, -hz}, { 0.0f, 0.0f },
         { hx, -hy, -hz}, { x*ts, 0.0f},
         { hx,  hy, -hz}, { x*ts, y*ts},
         {-hx,  hy, -hz}, { 0.0f, y*ts});
 
     // back
-    v(  {-hx, -hy,  hz}, { 0.0f, 0.0f},
+    v(  { n, n, 1.0f },
+        {-hx, -hy,  hz}, { 0.0f, 0.0f},
         {-hx,  hy,  hz}, { 0.0f, y*ts},
         { hx,  hy,  hz}, { x*ts, y*ts},
         { hx, -hy,  hz}, { x*ts, 0.0f});
 
     // left
-    v(  {-hx,  hy, -hz}, { y*ts, 0.0f},
+    v(  { -1.0f, n, n },
+        {-hx,  hy, -hz}, { y*ts, 0.0f},
         {-hx,  hy,  hz}, { y*ts, z*ts},
         {-hx, -hy,  hz}, { 0.0f, z*ts},
         {-hx, -hy, -hz}, { 0.0f, 0.0f});
 
     // right
-    v(  { hx,  hy,  hz}, { z*ts, y*ts},
+    v(  { 1.0f, n, n },
+        { hx,  hy,  hz}, { z*ts, y*ts},
         { hx,  hy, -hz}, { 0.0f, y*ts},
         { hx, -hy, -hz}, { 0.0f, 0.0f},
         { hx, -hy,  hz}, { z*ts, 0.0f});
 
     // bottom
-    v(  {-hx, -hy, -hz}, { 0.0f, 0.0f},
+    v(  { n, -1.0f, n },
+        {-hx, -hy, -hz}, { 0.0f, 0.0f},
         {-hx, -hy,  hz}, { 0.0f, z*ts},
         { hx, -hy,  hz}, { x*ts, z*ts},
         { hx, -hy, -hz}, { x*ts, 0.0f});
 
     // top
-    v(  {-hx,  hy, -hz}, { 0.0f, 0.0f},
+    v(  { n, 1.0f, n },
+        {-hx,  hy, -hz}, { 0.0f, 0.0f},
         { hx,  hy, -hz}, { x*ts, 0.0f},
         { hx,  hy,  hz}, { x*ts, z*ts},
         {-hx,  hy,  hz}, { 0.0f, z*ts});
@@ -347,11 +357,11 @@ Mesh Builder::to_mesh() const
             const glm::vec4 col = colors.empty()
                 ? glm::vec4{colors::white, 1.0f}
                 : colors[c.color];
-            // const glm::vec3 normal = normals.empty() == false
-            //    ? normals[c.normal]
-            //    : glm::vec3(0, 0, 0);
+            const glm::vec3 normal = normals.empty() == false
+               ? normals[c.normal]
+               : glm::vec3(1, 0, 0);
             const auto ind = vertices.size();
-            vertices.emplace_back(pos, text, col);
+            vertices.emplace_back(pos, normal, text, col);
             combinations.insert({ c,  Csizet_to_u32(ind) });
             return Csizet_to_u32(ind);
         }
