@@ -35,7 +35,7 @@ CompiledCamera compile(const Camera& cam, const glm::ivec2 window_size)
         {0.0f, 1.0f, 0.0f}
     );
 
-    return CompiledCamera{ projection, view };
+    return CompiledCamera{ projection, view, cam.position };
 }
 
 }

@@ -346,6 +346,7 @@ ShaderSource light_shader_source()
 
     uniform vec4 u_tint_color;
     uniform sampler2D u_tex_diffuse;
+    uniform vec3 u_view_position;
     uniform vec3 u_light_color;
     uniform vec3 u_light_world;
 
@@ -359,13 +360,19 @@ ShaderSource light_shader_source()
     void main()
     {
         float ambient_strength = 0.1;
-        vec3 ambient_color = ambient_strength * u_light_color;
+        float specular_strength = 0.1;
+        int material_shininess = 64;
 
         vec3 normal = normalize(v_normal);
         vec3 light_direction = normalize(u_light_world - v_worldspace);
-        vec3 diffuse_color = max(dot(normal, light_direction), 0.0) * u_light_color;
+        vec3 view_direction = normalize(u_view_position - v_worldspace);
+        vec3 reflect_direction = reflect(-light_direction, normal);
 
-        vec3 light_color = ambient_color + diffuse_color;
+        vec3 ambient_color = ambient_strength * u_light_color;     
+        vec3 diffuse_color = max(dot(normal, light_direction), 0.0) * u_light_color;
+        vec3 specular_color = specular_strength * pow(max(dot(view_direction, reflect_direction), 0.0), material_shininess) * u_light_color; 
+
+        vec3 light_color = ambient_color + diffuse_color + specular_color;
 
         vec4 object_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
 
@@ -390,6 +397,7 @@ void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tran
     shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
     shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
     shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
+    shader.program->set_vec3(shader.program->get_uniform("u_view_position"), cc.position);
 }
 
 
