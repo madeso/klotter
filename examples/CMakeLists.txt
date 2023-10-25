@@ -1,10 +1,3 @@
-function(add_sample name)
-    
-endfunction()
-
-add_sample(01-cube)
-add_sample(02-scene)
-
 set(src
     main.cc
     01-cube.cc
