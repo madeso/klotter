@@ -2,7 +2,7 @@
 A 3d rendering library + sdl starter project
 
 ### Name
-Klotter in swedish could be translated as doodlge, graffiti or scribbling.
+Klotter in swedish could be translated as doodle, graffiti or scribbling.
 
 
 ### Goals
