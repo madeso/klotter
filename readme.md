@@ -31,5 +31,27 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 ## todo stage 2
 * replace shared ptr with proper owners
 * remove "globals"
-* replace opengl with different "drivers"
+* add particle effects
 
+## todo stage 3
+* scriptable render pipeline [mobius with ben day dots]
+  or some render graph setup:
+  - https://logins.github.io/graphics/2021/05/31/RenderGraphs.html
+  - https://levelup.gitconnected.com/organizing-gpu-work-with-directed-acyclic-graphs-f3fd5f2c2af3
+* support different light types (cookies, attenuation setups, flickering, frustum spotlights with projections)
+* post processing:
+  - anti aliasing
+  - depth of field
+  - camera motion blur
+  - panini projection
+  - bloom
+  - lens distortion
+  - chromatic aberration
+  - color grading and tonemapping
+  - vignette
+  - film grain
+  - 8 bit dithering
+  - custom effects
+
+## todo stage 4
+* replace opengl with different "drivers"
