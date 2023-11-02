@@ -16,23 +16,24 @@ Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& co
 {
     Builder b;
 
+	// position and texture coord struct
+	struct Pt{ glm::vec3 pos; glm::vec2 tex; };
+
     const auto v = [&]
     (
-        glm::vec3 normal,
-        glm::vec3 p0, glm::vec2 t0,
-        glm::vec3 p1, glm::vec2 t1,
-        glm::vec3 p2, glm::vec2 t2,
-        glm::vec3 p3, glm::vec2 t3
+        Pt p0,
+        Pt p1,
+        Pt p2,
+        Pt p3
     )
     {
         constexpr float pd = 0.1f;
         constexpr float td = 0.01f;
         const auto ci = b.foa_color({ color, 1.0f }, 0.001f);
-        const auto no = b.foa_normal(normal, 0.001f);
-        const auto v0 = Vertex{ b.foa_position(p0, pd), no, b.foa_text_coord(t0, td), ci };
-        const auto v1 = Vertex{ b.foa_position(p1, pd), no, b.foa_text_coord(t1, td), ci };
-        const auto v2 = Vertex{ b.foa_position(p2, pd), no, b.foa_text_coord(t2, td), ci };
-        const auto v3 = Vertex{ b.foa_position(p3, pd), no, b.foa_text_coord(t3, td), ci };
+        const auto v0 = Vertex{ b.foa_position(p0.pos, pd), 0, b.foa_text_coord(p0.tex, td), ci };
+        const auto v1 = Vertex{ b.foa_position(p1.pos, pd), 0, b.foa_text_coord(p1.tex, td), ci };
+        const auto v2 = Vertex{ b.foa_position(p2.pos, pd), 0, b.foa_text_coord(p2.tex, td), ci };
+        const auto v3 = Vertex{ b.foa_position(p3.pos, pd), 0, b.foa_text_coord(p3.tex, td), ci };
 
         b.add_quad(face_out, v0, v1, v2, v3);
     };
@@ -45,49 +46,41 @@ Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& co
     const float hy = y * 0.5f;
     const float hz = z * 0.5f;
 
-    constexpr float n = 0.0f;
-
     // front
-    v(  { n, n, -1.0f },
-        {-hx, -hy, -hz}, { 0.0f, 0.0f },
-        { hx, -hy, -hz}, { x*ts, 0.0f},
-        { hx,  hy, -hz}, { x*ts, y*ts},
-        {-hx,  hy, -hz}, { 0.0f, y*ts});
+    v(  {{-hx, -hy, -hz}, { 0.0f, 0.0f}},
+        {{ hx, -hy, -hz}, { x*ts, 0.0f}},
+        {{ hx,  hy, -hz}, { x*ts, y*ts}},
+        {{-hx,  hy, -hz}, { 0.0f, y*ts}});
 
     // back
-    v(  { n, n, 1.0f },
-        {-hx, -hy,  hz}, { 0.0f, 0.0f},
-        {-hx,  hy,  hz}, { 0.0f, y*ts},
-        { hx,  hy,  hz}, { x*ts, y*ts},
-        { hx, -hy,  hz}, { x*ts, 0.0f});
+    v(  {{-hx, -hy,  hz}, { 0.0f, 0.0f}},
+        {{-hx,  hy,  hz}, { 0.0f, y*ts}},
+        {{ hx,  hy,  hz}, { x*ts, y*ts}},
+        {{ hx, -hy,  hz}, { x*ts, 0.0f}});
 
     // left
-    v(  { -1.0f, n, n },
-        {-hx,  hy, -hz}, { y*ts, 0.0f},
-        {-hx,  hy,  hz}, { y*ts, z*ts},
-        {-hx, -hy,  hz}, { 0.0f, z*ts},
-        {-hx, -hy, -hz}, { 0.0f, 0.0f});
+    v(  {{-hx,  hy, -hz}, { y*ts, 0.0f}},
+        {{-hx,  hy,  hz}, { y*ts, z*ts}},
+        {{-hx, -hy,  hz}, { 0.0f, z*ts}},
+        {{-hx, -hy, -hz}, { 0.0f, 0.0f}});
 
     // right
-    v(  { 1.0f, n, n },
-        { hx,  hy,  hz}, { z*ts, y*ts},
-        { hx,  hy, -hz}, { 0.0f, y*ts},
-        { hx, -hy, -hz}, { 0.0f, 0.0f},
-        { hx, -hy,  hz}, { z*ts, 0.0f});
+    v(  {{ hx,  hy,  hz}, { z*ts, y*ts}},
+        {{ hx,  hy, -hz}, { 0.0f, y*ts}},
+        {{ hx, -hy, -hz}, { 0.0f, 0.0f}},
+        {{ hx, -hy,  hz}, { z*ts, 0.0f}});
 
     // bottom
-    v(  { n, -1.0f, n },
-        {-hx, -hy, -hz}, { 0.0f, 0.0f},
-        {-hx, -hy,  hz}, { 0.0f, z*ts},
-        { hx, -hy,  hz}, { x*ts, z*ts},
-        { hx, -hy, -hz}, { x*ts, 0.0f});
+    v(  {{-hx, -hy, -hz}, { 0.0f, 0.0f}},
+        {{-hx, -hy,  hz}, { 0.0f, z*ts}},
+        {{ hx, -hy,  hz}, { x*ts, z*ts}},
+        {{ hx, -hy, -hz}, { x*ts, 0.0f}});
 
     // top
-    v(  { n, 1.0f, n },
-        {-hx,  hy, -hz}, { 0.0f, 0.0f},
-        { hx,  hy, -hz}, { x*ts, 0.0f},
-        { hx,  hy,  hz}, { x*ts, z*ts},
-        {-hx,  hy,  hz}, { 0.0f, z*ts});
+    v(  {{-hx,  hy, -hz}, { 0.0f, 0.0f}},
+        {{ hx,  hy, -hz}, { x*ts, 0.0f}},
+        {{ hx,  hy,  hz}, { x*ts, z*ts}},
+        {{-hx,  hy,  hz}, { 0.0f, z*ts}});
 
     return b;
 }
