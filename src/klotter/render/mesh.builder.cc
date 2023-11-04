@@ -10,6 +10,70 @@
 namespace klotter::mesh
 {
 
+struct HashCombiner
+{
+	std::size_t result = 17;
+
+	template<typename T>
+	HashCombiner& combine(const T& t)
+	{
+		// src: https://stackoverflow.com/a/17017281/180307
+		// numbers from: https://stackoverflow.com/a/1646913/180307
+		// A word of warning, this is (a variation of) the Berstein hash, and because nobody
+		// knows why it does well in tests it is not advisable when hashing is critical.
+		// See eternallyconfuzzled.com/tuts/algorithms/jsw_tut_hashing.aspx
+		result = result * 31 + std::hash<T>{}( t );
+		return *this;
+	}
+};
+
+
+struct Combo
+{
+    Index position;
+    Index texture;
+    Index normal;
+    Index color;
+
+    Combo(const Vertex& v)
+        : position(v.position)
+        , texture(v.texture)
+        , normal(v.normal)
+        , color(v.color)
+    {
+    }
+};
+
+bool operator==(const Combo& lhs, const Combo& rhs)
+{
+	return lhs.position == rhs.position
+			&& lhs.texture == rhs.texture
+			&& lhs.normal == rhs.normal
+			&& lhs.color == rhs.color
+			;
+}
+
+}
+
+template <>
+struct std::hash<klotter::mesh::Combo>
+{
+    std::size_t operator()(const klotter::mesh::Combo& c) const
+    {
+		return klotter::mesh::HashCombiner{}
+			.combine(c.position)
+			.combine(c.texture)
+			.combine(c.normal)
+			.combine(c.color)
+			.result
+			;
+	}
+};
+
+
+namespace klotter::mesh
+{
+
 
 
 Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& color)
@@ -293,41 +357,9 @@ Builder& Builder::replace_with_smooth_normals()
 }
 
 
-struct Combo
-{
-    Index position;
-    Index texture;
-    Index normal;
-    Index color;
-
-    Combo(const Vertex& v)
-        : position(v.position)
-        , texture(v.texture)
-        , normal(v.normal)
-        , color(v.color)
-    {
-    }
-};
-
-bool operator<(const Combo& lhs, const Combo& rhs)
-{
-#define SORT_ON(NAME) if (lhs.NAME != rhs.NAME) { return lhs.NAME < rhs.NAME; }
-    SORT_ON(position)
-    else SORT_ON(texture)
-    else SORT_ON(normal)
-    else SORT_ON(color)
-#undef SORT_ON
-    else
-    {
-        // all equal
-        return false;
-    }
-}
-
-
 Mesh Builder::to_mesh() const
 {
-    std::map<Combo, u32> combinations;
+    std::unordered_map<Combo, u32> combinations;
 
     // foreach triangle
     std::vector<klotter::Vertex> vertices;
