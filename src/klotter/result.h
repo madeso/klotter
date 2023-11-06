@@ -2,23 +2,36 @@
 
 #include <optional>
 
-
-
-template<typename T, typename E=std::string>
+template<typename T, typename E = std::string>
 struct Result
 {
-    std::optional<T> value;
-    std::optional<E> e;
+	std::optional<T> value;
+	std::optional<E> e;
 
-    Result(T&& tt) : value(std::move(tt)) {}
-    Result(const E& ee) : e(ee) {}
+	Result(T&& tt)
+		: value(std::move(tt))
+	{
+	}
 
-    operator bool() const { return value.has_value(); }
+	Result(const E& ee)
+		: e(ee)
+	{
+	}
 
-    E get_error(const E& missing = E{}) const
-    {
-        if(e) { return *e; }
-        else { return missing; }
-    }
+	operator bool() const
+	{
+		return value.has_value();
+	}
+
+	E get_error(const E& missing = E{}) const
+	{
+		if (e)
+		{
+			return *e;
+		}
+		else
+		{
+			return missing;
+		}
+	}
 };
-

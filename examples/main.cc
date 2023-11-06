@@ -11,12 +11,12 @@ void register_lights(SceneApp* app);
 
 struct ExampleApp : SceneApp
 {
-    ExampleApp()
-    {
-        register_cube(this);
-        register_scene(this);
-        register_lights(this);
-    }
+	ExampleApp()
+	{
+		register_cube(this);
+		register_scene(this);
+		register_lights(this);
+	}
 };
 
 IMPLEMENT_MAIN(ExampleApp)

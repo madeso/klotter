@@ -1,2 +1,1 @@
 #include "klotter/colors.h"
-

@@ -2,17 +2,16 @@
 
 struct Str
 {
-    std::ostringstream ss;
+	std::ostringstream ss;
 
-    template<typename T>
-    Str& operator<<(const T& t)
-    {
-        ss << t;
-        return *this;
-    }
+	template<typename T>
+	Str& operator<<(const T& t)
+	{
+		ss << t;
+		return *this;
+	}
 
-    std::string str() const;
+	std::string str() const;
 
-    operator std::string() const;
+	operator std::string() const;
 };
-

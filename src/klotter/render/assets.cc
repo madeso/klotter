@@ -7,7 +7,6 @@
 #include "light_01.png.h"
 #include "dark_01.png.h"
 
-
 namespace klotter
 {
 
@@ -15,8 +14,9 @@ std::shared_ptr<Texture> get_or_load(std::shared_ptr<Texture>* texture, const em
 {
 	if (*texture == nullptr)
 	{
-		*texture = std::make_shared<Texture>(load_image_from_embedded(bin,
-			TextureEdge::repeat, TextureRenderStyle::smooth, Transparency::exclude));
+		*texture = std::make_shared<Texture>(load_image_from_embedded(
+			bin, TextureEdge::repeat, TextureRenderStyle::smooth, Transparency::exclude
+		));
 	}
 	return *texture;
 }
@@ -33,14 +33,14 @@ std::shared_ptr<Texture> Assets::get_light_grid()
 
 std::shared_ptr<Texture> Assets::get_white()
 {
-	if(white == nullptr)
+	if (white == nullptr)
 	{
-		white = std::make_shared<Texture>(load_image_from_color(0xFFFFFFFF,
-			TextureEdge::repeat, TextureRenderStyle::pixel, Transparency::exclude));
+		white = std::make_shared<Texture>(load_image_from_color(
+			0xFFFFFFFF, TextureEdge::repeat, TextureRenderStyle::pixel, Transparency::exclude
+		));
 	}
 
 	return white;
 }
 
-}
-
+}  //  namespace klotter
