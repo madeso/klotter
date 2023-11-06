@@ -6,21 +6,6 @@ namespace klotter
 {
 
 
-std::optional<VertexType> parse_vertex_type(const std::string& name)
-{
-    #define NAME(x) if(name == #x) { return VertexType::x; }
-
-    NAME(position2)
-    else NAME(position3)
-    else NAME(normal3)
-    else NAME(color3)
-    else NAME(color4)
-    else NAME(texture2)
-    else return {};
-    #undef NAME
-}
-
-
 /** A list of things we need to extract from the Geom when compiling */
 struct VertexTypeList
 {

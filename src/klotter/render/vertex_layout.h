@@ -71,9 +71,6 @@ struct CompiledVertexTypeList
 };
 
 
-std::optional<VertexType>
-parse_vertex_type(const std::string& name);
-
 [[nodiscard]] CompiledShaderVertexAttributes
 compile_shader_layout
 (
