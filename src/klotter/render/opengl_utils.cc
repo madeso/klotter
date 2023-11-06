@@ -12,18 +12,18 @@ opengl_error_to_string(GLenum error_code)
 {
     switch(error_code)
     {
-    case GL_INVALID_ENUM: return "INVALID_ENUM"; break;
-    case GL_INVALID_VALUE: return "INVALID_VALUE"; break;
-    case GL_INVALID_OPERATION: return "INVALID_OPERATION"; break;
+    case GL_INVALID_ENUM: return "INVALID_ENUM";
+    case GL_INVALID_VALUE: return "INVALID_VALUE";
+    case GL_INVALID_OPERATION: return "INVALID_OPERATION";
 #ifdef GL_STACK_OVERFLOW
-    case GL_STACK_OVERFLOW: return "STACK_OVERFLOW"; break;
+    case GL_STACK_OVERFLOW: return "STACK_OVERFLOW";
 #endif
 #ifdef GL_STACK_UNDERFLOW
-    case GL_STACK_UNDERFLOW: return "STACK_UNDERFLOW"; break;
+    case GL_STACK_UNDERFLOW: return "STACK_UNDERFLOW";
 #endif
-    case GL_OUT_OF_MEMORY: return "OUT_OF_MEMORY"; break;
-    case GL_INVALID_FRAMEBUFFER_OPERATION: return "INVALID_FRAMEBUFFER_OPERATION"; break;
-    default: return "UNKNOWN"; break;
+    case GL_OUT_OF_MEMORY: return "OUT_OF_MEMORY";
+    case GL_INVALID_FRAMEBUFFER_OPERATION: return "INVALID_FRAMEBUFFER_OPERATION";
+    default: return "UNKNOWN";
     }
 }
 
@@ -35,12 +35,12 @@ namespace
     {
         switch(source)
         {
-        case GL_DEBUG_SOURCE_API_ARB: return "API"; break;
-        case GL_DEBUG_SOURCE_WINDOW_SYSTEM_ARB: return "Window System"; break;
-        case GL_DEBUG_SOURCE_SHADER_COMPILER_ARB: return "Shader Compiler"; break;
-        case GL_DEBUG_SOURCE_THIRD_PARTY_ARB: return "Third Party"; break;
-        case GL_DEBUG_SOURCE_APPLICATION_ARB: return "Application"; break;
-        case GL_DEBUG_SOURCE_OTHER_ARB: return "Other"; break;
+        case GL_DEBUG_SOURCE_API_ARB: return "API";
+        case GL_DEBUG_SOURCE_WINDOW_SYSTEM_ARB: return "Window System";
+        case GL_DEBUG_SOURCE_SHADER_COMPILER_ARB: return "Shader Compiler";
+        case GL_DEBUG_SOURCE_THIRD_PARTY_ARB: return "Third Party";
+        case GL_DEBUG_SOURCE_APPLICATION_ARB: return "Application";
+        case GL_DEBUG_SOURCE_OTHER_ARB: return "Other";
         default: return "Unknown";
         }
     }
@@ -50,12 +50,12 @@ namespace
     {
         switch(type)
         {
-        case GL_DEBUG_TYPE_ERROR_ARB: return "Error"; break;
-        case GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB: return "Deprecated Behaviour"; break;
-        case GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB: return "Undefined Behaviour"; break;
-        case GL_DEBUG_TYPE_PORTABILITY_ARB: return "Portability"; break;
-        case GL_DEBUG_TYPE_PERFORMANCE_ARB: return "Performance"; break;
-        case GL_DEBUG_TYPE_OTHER_ARB: return "Other"; break;
+        case GL_DEBUG_TYPE_ERROR_ARB: return "Error";
+        case GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB: return "Deprecated Behaviour";
+        case GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB: return "Undefined Behaviour";
+        case GL_DEBUG_TYPE_PORTABILITY_ARB: return "Portability";
+        case GL_DEBUG_TYPE_PERFORMANCE_ARB: return "Performance";
+        case GL_DEBUG_TYPE_OTHER_ARB: return "Other";
         default: return "Unknown";
         }
     }
@@ -65,9 +65,9 @@ namespace
     {
         switch(severity)
         {
-        case GL_DEBUG_SEVERITY_HIGH_ARB: return "high"; break;
-        case GL_DEBUG_SEVERITY_MEDIUM_ARB: return "medium"; break;
-        case GL_DEBUG_SEVERITY_LOW_ARB: return "low"; break;
+        case GL_DEBUG_SEVERITY_HIGH_ARB: return "high";
+        case GL_DEBUG_SEVERITY_MEDIUM_ARB: return "medium";
+        case GL_DEBUG_SEVERITY_LOW_ARB: return "low";
         default: return "unknown";
         }
     }
