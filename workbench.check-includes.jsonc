@@ -1,0 +1,30 @@
+﻿{
+  "includes": [
+    [
+      "^\"klotter/render/[a-zA-Z_.]+\\.h\"$"
+    ],
+    [
+      "^\"klotter/[a-zA-Z_.]+\\.h\"$"
+    ],
+    [
+      "^\"catch.hpp\"$"
+    ],
+    [
+      "^\"glad\\.h\"$",
+      "^\"imgui",
+      "^\"glm/",
+      "^\"SDL[_a-zA-Z]*\\.h\"$",
+      "^\"stb_image\\.h\"$",
+      "^\"glad/glad\\.h\"$",
+      "^\"klotter/dependency_[a-z]+\\.h\"$",
+      "^\"catchy/[a-z]+\\.h\"$",
+      "^\"embed/types\\.h\"$"
+    ],
+    [
+      "\\.png\\.h\"$"
+    ],
+    [
+      "^<[a-zA-Z_]+>$"
+    ]
+  ]
+}
