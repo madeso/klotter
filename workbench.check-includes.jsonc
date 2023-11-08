@@ -1,6 +1,10 @@
 ﻿{
   "includes": [
     [
+      "^\"klotter/render/{file_stem}\\.h\"$",
+      "^\"klotter/{file_stem}\\.h\"$"
+    ],
+    [
       "^\"klotter/render/[a-zA-Z_.]+\\.h\"$"
     ],
     [
@@ -19,6 +23,10 @@
       "^\"klotter/dependency_[a-z]+\\.h\"$",
       "^\"catchy/[a-z]+\\.h\"$",
       "^\"embed/types\\.h\"$"
+    ],
+    [
+      // todo(Gustav): add priority
+      "^\"klotter/undef_windows\\.h\"$"
     ],
     [
       "\\.png\\.h\"$"
