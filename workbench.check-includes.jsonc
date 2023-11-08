@@ -25,8 +25,7 @@
       "^\"embed/types\\.h\"$"
     ],
     [
-      // todo(Gustav): add priority
-      "^\"klotter/undef_windows\\.h\"$"
+      {"regex": "^\"klotter/undef_windows\\.h\"$", "rank": 1}
     ],
     [
       "\\.png\\.h\"$"
