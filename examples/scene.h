@@ -2,6 +2,9 @@
 
 #include "klotter/klotter.h"
 
+// todo(Gustav): rename to sample
+// todo(Gustav): refactor away from shared_ptr
+
 namespace examples
 {
 
@@ -20,11 +23,13 @@ struct SceneType
 {
 	std::string name;
 	std::shared_ptr<Scene> created_scene;
+	// todo(Gustav): refactor away from std::function
 	std::function<std::shared_ptr<Scene>(klotter::Renderer*, klotter::Camera*)> create;
 };
 
 struct SceneApp : klotter::App
 {
+	// todo(Gustav): refactor shared_ptr to indices
 	std::vector<SceneType> types;
 	std::size_t scene_index;
 	std::shared_ptr<Scene> selected_scene;

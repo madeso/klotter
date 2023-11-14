@@ -22,6 +22,7 @@ struct App
 	virtual ~App() = default;
 };
 
+// todo(Gustav): refactor away from std::function
 using MakeAppFunction = std::function<std::unique_ptr<App>()>;
 int run_main(MakeAppFunction make_app);
 
