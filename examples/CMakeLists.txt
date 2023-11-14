@@ -3,6 +3,9 @@ set(src
     01-cube.cc
     02-scene.cc
     03-lights.cc
+
+    scene.cc
+    scene.h
 )
 
 add_executable(example ${src})

@@ -1,9 +1,13 @@
-#include "klotter/scene.h"
 #include "klotter/render/mesh.builder.h"
+
+#include "scene.h"
 
 #include <cmath>
 
 using namespace klotter;
+
+namespace examples
+{
 
 struct CubeScene : Scene
 {
@@ -56,3 +60,5 @@ void register_cube(SceneApp* app)
 {
 	app->add_type<CubeScene>("Cube");
 }
+
+}  //  namespace examples

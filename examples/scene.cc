@@ -1,7 +1,9 @@
-#include "klotter/scene.h"
+#include "scene.h"
 
-namespace klotter
+namespace examples
 {
+
+
 void SceneApp::select_scene(std::size_t new_scene)
 {
 	auto last_selected = selected_scene;
@@ -62,6 +64,8 @@ void SceneApp::on_gui()
 	active_scene->on_gui();
 
 	ImGui::End();
+
+	ImGui::ShowDemoWindow(nullptr);
 }
 
-}  //  namespace klotter
+}  //  namespace examples

@@ -2,13 +2,13 @@
 
 #include "klotter/klotter.h"
 
-namespace klotter
+namespace examples
 {
 
 
 struct Scene
 {
-	Camera stored_camera;
+	klotter::Camera stored_camera;
 
 	virtual ~Scene() = default;
 
@@ -20,10 +20,10 @@ struct SceneType
 {
 	std::string name;
 	std::shared_ptr<Scene> created_scene;
-	std::function<std::shared_ptr<Scene>(Renderer*, Camera*)> create;
+	std::function<std::shared_ptr<Scene>(klotter::Renderer*, klotter::Camera*)> create;
 };
 
-struct SceneApp : App
+struct SceneApp : klotter::App
 {
 	std::vector<SceneType> types;
 	std::size_t scene_index;
@@ -38,7 +38,7 @@ struct SceneApp : App
 		types.emplace_back(SceneType{
 			name,
 			nullptr,
-			[](Renderer* r, Camera* c) -> std::shared_ptr<Scene>
+			[](klotter::Renderer* r, klotter::Camera* c) -> std::shared_ptr<Scene>
 			{
 				return std::make_shared<T>(r, c);
 			}});
@@ -50,4 +50,4 @@ struct SceneApp : App
 };
 
 
-}  //  namespace klotter
+}  //  namespace examples

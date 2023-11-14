@@ -30,7 +30,6 @@ set(src_base
     klotter/str.cc klotter/str.h
 
     klotter/klotter.cc klotter/klotter.h
-    klotter/scene.cc klotter/scene.h
 
     klotter/compiler_warning.h
     klotter/log.h

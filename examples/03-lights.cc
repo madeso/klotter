@@ -1,10 +1,14 @@
-#include "klotter/scene.h"
 #include "klotter/render/mesh.builder.h"
 #include "klotter/str.h"
+
+#include "scene.h"
 
 #include <cmath>
 
 using namespace klotter;
+
+namespace examples
+{
 
 struct LightsScene : Scene
 {
@@ -97,3 +101,5 @@ void register_lights(SceneApp* app)
 {
 	app->add_type<LightsScene>("Lights");
 }
+
+}  //  namespace examples
