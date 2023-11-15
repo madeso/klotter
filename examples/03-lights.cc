@@ -1,7 +1,7 @@
 #include "klotter/render/mesh.builder.h"
 #include "klotter/str.h"
 
-#include "scene.h"
+#include "sample.h"
 
 #include <cmath>
 

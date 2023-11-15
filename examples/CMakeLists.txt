@@ -4,8 +4,8 @@ set(src
     02-scene.cc
     03-lights.cc
 
-    scene.cc
-    scene.h
+    sample.cc
+    sample.h
 )
 
 add_executable(example ${src})

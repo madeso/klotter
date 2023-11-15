@@ -1,4 +1,4 @@
-#include "scene.h"
+#include "sample.h"
 
 namespace examples
 {
