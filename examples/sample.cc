@@ -53,26 +53,23 @@ void SampleApp::on_gui()
 {
 	ImGui::Begin("Sample switcher");
 
-	if (selected_sample)
+	for (std::size_t si = 0; si < samples.size(); si += 1)
 	{
-		for (std::size_t si = 0; si < samples.size(); si += 1)
+		if (si != 0)
 		{
-			if (si != 0)
-			{
-				ImGui::SameLine();
-			}
-
-			const auto is_selected = si == *selected_sample;
-			const auto& color = is_selected ? klotter::imgui::red : klotter::imgui::gray;
-			ImGui::PushStyleColor(ImGuiCol_Button, color[6]);
-			ImGui::PushStyleColor(ImGuiCol_ButtonHovered, color[7]);
-			ImGui::PushStyleColor(ImGuiCol_ButtonActive, color[5]);
-			if (ImGui::Button(samples[si].name.c_str()))
-			{
-				set_selected_sample(si);
-			}
-			ImGui::PopStyleColor(3);
+			ImGui::SameLine();
 		}
+
+		const auto is_selected = selected_sample && si == *selected_sample;
+		const auto& color = is_selected ? klotter::imgui::red : klotter::imgui::gray;
+		ImGui::PushStyleColor(ImGuiCol_Button, color[6]);
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, color[7]);
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, color[5]);
+		if (ImGui::Button(samples[si].name.c_str()))
+		{
+			set_selected_sample(si);
+		}
+		ImGui::PopStyleColor(3);
 	}
 
 	if (active_sample)
