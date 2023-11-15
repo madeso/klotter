@@ -31,8 +31,8 @@ struct SampleApp : klotter::App
 	// todo(Gustav): refactor shared_ptr to indices
 	std::vector<DefinedSample> samples;
 	std::size_t sample_index;
-	std::shared_ptr<Sample> selected_sample;
-	std::shared_ptr<Sample> active_sample;
+	std::optional<std::size_t> selected_sample;
+	std::optional<std::size_t> active_sample;
 
 	void set_selected_sample(std::size_t new_selected_sample);
 
