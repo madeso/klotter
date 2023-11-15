@@ -2,8 +2,6 @@
 
 #include "klotter/klotter.h"
 
-// todo(Gustav): refactor away from shared_ptr
-
 namespace examples
 {
 
@@ -22,14 +20,14 @@ struct Sample
 struct DefinedSample
 {
 	std::string name;
-	std::shared_ptr<Sample> created_sample;
+	std::unique_ptr<Sample> created_sample;
 	// todo(Gustav): refactor away from std::function, is it needed?h
-	std::function<std::shared_ptr<Sample>(klotter::Renderer*, klotter::Camera*)> create;
+	std::function<std::unique_ptr<Sample>(klotter::Renderer*, klotter::Camera*)> create;
 };
 
 struct SampleApp : klotter::App
 {
-	// todo(Gustav): refactor shared_ptr to indices
+	// todo(Gustav): refactor unique_ptr to indices
 	std::vector<DefinedSample> samples;
 	std::optional<std::size_t> selected_sample;
 	std::optional<std::size_t> active_sample;
@@ -42,9 +40,9 @@ struct SampleApp : klotter::App
 		samples.emplace_back(DefinedSample{
 			name,
 			nullptr,
-			[](klotter::Renderer* r, klotter::Camera* c) -> std::shared_ptr<Sample>
+			[](klotter::Renderer* r, klotter::Camera* c) -> std::unique_ptr<Sample>
 			{
-				return std::make_shared<T>(r, c);
+				return std::make_unique<T>(r, c);
 			}});
 	}
 
