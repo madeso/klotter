@@ -1,14 +1,19 @@
 // public header file for the precompiled header
 
+#include <cstdint>
+
+#include <unordered_map>
 #include <vector>
+
 #include <string>
 #include <string_view>
+
 #include <optional>
 #include <algorithm>
-#include <cstdint>
+
 #include <sstream>
 #include <memory>
-#include <functional>
+
 
 // in favor of euphoria base library
 #include "klotter/dependency_glm.h"

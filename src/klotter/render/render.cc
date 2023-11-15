@@ -416,7 +416,7 @@ CompiledMesh::~CompiledMesh()
 
 struct BufferData
 {
-	using PerVertex = std::function<void(std::vector<float>*, const Vertex&)>;
+	using PerVertex = void (*)(std::vector<float>*, const Vertex&);
 
 	int count;
 	PerVertex per_vertex;

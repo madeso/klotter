@@ -22,8 +22,7 @@ struct App
 	virtual ~App() = default;
 };
 
-// todo(Gustav): refactor away from std::function
-using MakeAppFunction = std::function<std::unique_ptr<App>()>;
+using MakeAppFunction = std::unique_ptr<App> (*)();
 int run_main(MakeAppFunction make_app);
 
 }  //  namespace klotter
@@ -31,5 +30,7 @@ int run_main(MakeAppFunction make_app);
 #define IMPLEMENT_MAIN(APP) \
 	int main(int, char**) \
 	{ \
-		return klotter::run_main([]() { return std::make_unique<APP>(); }); \
+		return klotter::run_main( \
+			[]() -> std::unique_ptr<App> { return std::make_unique<APP>(); } \
+		); \
 	}

@@ -21,8 +21,9 @@ struct DefinedSample
 {
 	std::string name;
 	std::unique_ptr<Sample> created_sample;
-	// todo(Gustav): refactor away from std::function, is it needed?h
-	std::function<std::unique_ptr<Sample>(klotter::Renderer*, klotter::Camera*)> create;
+
+	// delayed sample creation
+	std::unique_ptr<Sample> (*create)(klotter::Renderer*, klotter::Camera*);
 };
 
 struct SampleApp : klotter::App
