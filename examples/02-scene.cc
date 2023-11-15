@@ -9,7 +9,7 @@ using namespace klotter;
 namespace examples
 {
 
-struct SceneScene : Scene
+struct SceneSample : Sample
 {
 	Renderer* renderer;
 	Camera* camera;
@@ -43,7 +43,7 @@ struct SceneScene : Scene
 		cube->rotation.z = fi(5);
 	}
 
-	SceneScene(Renderer* r, Camera* c)
+	SceneSample(Renderer* r, Camera* c)
 		: renderer(r)
 		, camera(c)
 	{
@@ -75,9 +75,9 @@ struct SceneScene : Scene
 	}
 };
 
-void register_scene(SceneApp* app)
+void register_scene(SampleApp* app)
 {
-	app->add_type<SceneScene>("Scene");
+	app->add_sample<SceneSample>("Scene");
 }
 
 }  //  namespace examples

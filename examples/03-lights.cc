@@ -10,7 +10,7 @@ using namespace klotter;
 namespace examples
 {
 
-struct LightsScene : Scene
+struct LightsSample : Sample
 {
 	Renderer* renderer;
 	Camera* camera;
@@ -45,7 +45,7 @@ struct LightsScene : Scene
 
 	std::shared_ptr<BasicMaterial> light_material;
 
-	LightsScene(Renderer* r, Camera* c)
+	LightsSample(Renderer* r, Camera* c)
 		: renderer(r)
 		, camera(c)
 	{
@@ -97,9 +97,9 @@ struct LightsScene : Scene
 	}
 };
 
-void register_lights(SceneApp* app)
+void register_lights(SampleApp* app)
 {
-	app->add_type<LightsScene>("Lights");
+	app->add_sample<LightsSample>("Lights");
 }
 
 }  //  namespace examples

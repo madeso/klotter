@@ -2,48 +2,47 @@
 
 #include "klotter/klotter.h"
 
-// todo(Gustav): rename to sample
 // todo(Gustav): refactor away from shared_ptr
 
 namespace examples
 {
 
 
-struct Scene
+struct Sample
 {
 	klotter::Camera stored_camera;
 
-	virtual ~Scene() = default;
+	virtual ~Sample() = default;
 
 	virtual void on_render(float dt) = 0;
 	virtual void on_gui() = 0;
 };
 
-struct SceneType
+struct DefinedSample
 {
 	std::string name;
-	std::shared_ptr<Scene> created_scene;
+	std::shared_ptr<Sample> created_sample;
 	// todo(Gustav): refactor away from std::function
-	std::function<std::shared_ptr<Scene>(klotter::Renderer*, klotter::Camera*)> create;
+	std::function<std::shared_ptr<Sample>(klotter::Renderer*, klotter::Camera*)> create;
 };
 
-struct SceneApp : klotter::App
+struct SampleApp : klotter::App
 {
 	// todo(Gustav): refactor shared_ptr to indices
-	std::vector<SceneType> types;
-	std::size_t scene_index;
-	std::shared_ptr<Scene> selected_scene;
-	std::shared_ptr<Scene> active_scene;
+	std::vector<DefinedSample> samples;
+	std::size_t sample_index;
+	std::shared_ptr<Sample> selected_sample;
+	std::shared_ptr<Sample> active_sample;
 
-	void select_scene(std::size_t new_scene);
+	void set_selected_sample(std::size_t new_selected_sample);
 
 	template<typename T>
-	void add_type(const std::string& name)
+	void add_sample(const std::string& name)
 	{
-		types.emplace_back(SceneType{
+		samples.emplace_back(DefinedSample{
 			name,
 			nullptr,
-			[](klotter::Renderer* r, klotter::Camera* c) -> std::shared_ptr<Scene>
+			[](klotter::Renderer* r, klotter::Camera* c) -> std::shared_ptr<Sample>
 			{
 				return std::make_shared<T>(r, c);
 			}});

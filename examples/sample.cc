@@ -4,64 +4,66 @@ namespace examples
 {
 
 
-void SceneApp::select_scene(std::size_t new_scene)
+void SampleApp::set_selected_sample(std::size_t new_selected_sample)
 {
-	auto last_selected = selected_scene;
-	scene_index = new_scene;
+	auto last_selected = selected_sample;
+	sample_index = new_selected_sample;
 
-	if (types[scene_index].created_scene == nullptr)
+	if (samples[sample_index].created_sample == nullptr)
 	{
 		camera = {};
-		types[scene_index].created_scene = types[scene_index].create(&renderer, &camera);
-		types[scene_index].created_scene->stored_camera = camera;
+		samples[sample_index].created_sample = samples[sample_index].create(&renderer, &camera);
+		samples[sample_index].created_sample->stored_camera = camera;
 	}
-	selected_scene = types[scene_index].created_scene;
+	selected_sample = samples[sample_index].created_sample;
 
-	if (last_selected != selected_scene)
+	if (last_selected != selected_sample)
 	{
 		if (last_selected != nullptr)
 		{
 			last_selected->stored_camera = camera;
 		}
 
-		if (selected_scene)
+		if (selected_sample)
 		{
-			camera = selected_scene->stored_camera;
+			camera = selected_sample->stored_camera;
 		}
 	}
 }
 
-void SceneApp::on_frame()
+void SampleApp::on_frame()
 {
-	if (selected_scene == nullptr)
+	if (selected_sample == nullptr)
 	{
-		select_scene(types.size() - 1);
+		set_selected_sample(samples.size() - 1);
 	}
-	active_scene = selected_scene;
+	active_sample = selected_sample;
 }
 
-void SceneApp::on_render(float dt)
+void SampleApp::on_render(float dt)
 {
-	active_scene->on_render(dt);
+	active_sample->on_render(dt);
 }
 
-void SceneApp::on_gui()
+void SampleApp::on_gui()
 {
-	ImGui::Begin("Scene switcher");
+	ImGui::Begin("Sample switcher");
 
-	if (ImGui::BeginCombo("Scene", types[scene_index].name.c_str(), ImGuiComboFlags_HeightRegular))
+	if (ImGui::BeginCombo(
+			"Sample", samples[sample_index].name.c_str(), ImGuiComboFlags_HeightRegular
+		))
 	{
-		for (std::size_t si = 0; si < types.size(); si += 1)
+		for (std::size_t si = 0; si < samples.size(); si += 1)
 		{
-			if (ImGui::Selectable(types[si].name.c_str(), si == scene_index))
+			if (ImGui::Selectable(samples[si].name.c_str(), si == sample_index))
 			{
-				select_scene(si);
+				set_selected_sample(si);
 			}
 		}
 		ImGui::EndCombo();
 	}
 
-	active_scene->on_gui();
+	active_sample->on_gui();
 
 	ImGui::End();
 

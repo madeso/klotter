@@ -9,7 +9,7 @@ using namespace klotter;
 namespace examples
 {
 
-struct CubeScene : Scene
+struct CubeSample : Sample
 {
 	Renderer* renderer;
 	Camera* camera;
@@ -17,7 +17,7 @@ struct CubeScene : Scene
 	World world;
 	MeshInstancePtr cube;
 
-	CubeScene(Renderer* r, Camera* c)
+	CubeSample(Renderer* r, Camera* c)
 		: renderer(r)
 		, camera(c)
 	{
@@ -56,9 +56,9 @@ struct CubeScene : Scene
 	}
 };
 
-void register_cube(SceneApp* app)
+void register_cube(SampleApp* app)
 {
-	app->add_type<CubeScene>("Cube");
+	app->add_sample<CubeSample>("Cube");
 }
 
 }  //  namespace examples

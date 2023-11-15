@@ -7,12 +7,12 @@ using namespace klotter;
 
 namespace examples
 {
-void register_cube(SceneApp* app);
-void register_scene(SceneApp* app);
-void register_lights(SceneApp* app);
+void register_cube(SampleApp* app);
+void register_scene(SampleApp* app);
+void register_lights(SampleApp* app);
 }  //  namespace examples
 
-struct ExampleApp : examples::SceneApp
+struct ExampleApp : examples::SampleApp
 {
 	ExampleApp()
 	{
