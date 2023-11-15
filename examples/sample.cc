@@ -7,15 +7,15 @@ namespace examples
 void SampleApp::set_selected_sample(std::size_t new_selected_sample)
 {
 	auto last_selected = selected_sample;
-	sample_index = new_selected_sample;
+	selected_sample = new_selected_sample;
 
-	if (samples[sample_index].created_sample == nullptr)
+	if (samples[*selected_sample].created_sample == nullptr)
 	{
 		camera = {};
-		samples[sample_index].created_sample = samples[sample_index].create(&renderer, &camera);
-		samples[sample_index].created_sample->stored_camera = camera;
+		samples[*selected_sample].created_sample
+			= samples[*selected_sample].create(&renderer, &camera);
+		samples[*selected_sample].created_sample->stored_camera = camera;
 	}
-	selected_sample = sample_index;
 
 	if (last_selected != selected_sample)
 	{
@@ -42,28 +42,37 @@ void SampleApp::on_frame()
 
 void SampleApp::on_render(float dt)
 {
-	samples[*active_sample].created_sample->on_render(dt);
+	if (active_sample)
+	{
+		samples[*active_sample].created_sample->on_render(dt);
+	}
 }
 
 void SampleApp::on_gui()
 {
 	ImGui::Begin("Sample switcher");
 
-	if (ImGui::BeginCombo(
-			"Sample", samples[sample_index].name.c_str(), ImGuiComboFlags_HeightRegular
-		))
+	if (selected_sample)
 	{
-		for (std::size_t si = 0; si < samples.size(); si += 1)
+		if (ImGui::BeginCombo(
+				"Sample", samples[*selected_sample].name.c_str(), ImGuiComboFlags_HeightRegular
+			))
 		{
-			if (ImGui::Selectable(samples[si].name.c_str(), si == sample_index))
+			for (std::size_t si = 0; si < samples.size(); si += 1)
 			{
-				set_selected_sample(si);
+				if (ImGui::Selectable(samples[si].name.c_str(), si == *selected_sample))
+				{
+					set_selected_sample(si);
+				}
 			}
+			ImGui::EndCombo();
 		}
-		ImGui::EndCombo();
 	}
 
-	samples[*active_sample].created_sample->on_gui();
+	if (active_sample)
+	{
+		samples[*active_sample].created_sample->on_gui();
+	}
 
 	ImGui::End();
 

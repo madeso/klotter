@@ -10,6 +10,7 @@ namespace examples
 
 struct Sample
 {
+	// todo(Gustav): move stored_camera to DefinedSample
 	klotter::Camera stored_camera;
 
 	virtual ~Sample() = default;
@@ -22,7 +23,7 @@ struct DefinedSample
 {
 	std::string name;
 	std::shared_ptr<Sample> created_sample;
-	// todo(Gustav): refactor away from std::function
+	// todo(Gustav): refactor away from std::function, is it needed?h
 	std::function<std::shared_ptr<Sample>(klotter::Renderer*, klotter::Camera*)> create;
 };
 
@@ -30,7 +31,6 @@ struct SampleApp : klotter::App
 {
 	// todo(Gustav): refactor shared_ptr to indices
 	std::vector<DefinedSample> samples;
-	std::size_t sample_index;
 	std::optional<std::size_t> selected_sample;
 	std::optional<std::size_t> active_sample;
 
