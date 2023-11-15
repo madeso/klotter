@@ -22,16 +22,4 @@ struct Result
 	{
 		return value.has_value();
 	}
-
-	E get_error(const E& missing = E{}) const
-	{
-		if (e)
-		{
-			return *e;
-		}
-		else
-		{
-			return missing;
-		}
-	}
 };

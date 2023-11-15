@@ -1,5 +1,7 @@
 #include "sample.h"
 
+#include "klotter/im_colors.h"
+
 namespace examples
 {
 
@@ -53,18 +55,23 @@ void SampleApp::on_gui()
 
 	if (selected_sample)
 	{
-		if (ImGui::BeginCombo(
-				"Sample", samples[*selected_sample].name.c_str(), ImGuiComboFlags_HeightRegular
-			))
+		for (std::size_t si = 0; si < samples.size(); si += 1)
 		{
-			for (std::size_t si = 0; si < samples.size(); si += 1)
+			if (si != 0)
 			{
-				if (ImGui::Selectable(samples[si].name.c_str(), si == *selected_sample))
-				{
-					set_selected_sample(si);
-				}
+				ImGui::SameLine();
 			}
-			ImGui::EndCombo();
+
+			const auto is_selected = si == *selected_sample;
+			const auto& color = is_selected ? klotter::imgui::red : klotter::imgui::gray;
+			ImGui::PushStyleColor(ImGuiCol_Button, color[6]);
+			ImGui::PushStyleColor(ImGuiCol_ButtonHovered, color[7]);
+			ImGui::PushStyleColor(ImGuiCol_ButtonActive, color[5]);
+			if (ImGui::Button(samples[si].name.c_str()))
+			{
+				set_selected_sample(si);
+			}
+			ImGui::PopStyleColor(3);
 		}
 	}
 
