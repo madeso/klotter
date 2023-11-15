@@ -8,9 +8,6 @@ namespace examples
 
 struct Sample
 {
-	// todo(Gustav): move stored_camera to DefinedSample
-	klotter::Camera stored_camera;
-
 	virtual ~Sample() = default;
 
 	virtual void on_render(float dt) = 0;
@@ -21,6 +18,7 @@ struct DefinedSample
 {
 	std::string name;
 	std::unique_ptr<Sample> created_sample;
+	klotter::Camera stored_camera;
 
 	// delayed sample creation
 	std::unique_ptr<Sample> (*create)(klotter::Renderer*, klotter::Camera*);
@@ -28,7 +26,6 @@ struct DefinedSample
 
 struct SampleApp : klotter::App
 {
-	// todo(Gustav): refactor unique_ptr to indices
 	std::vector<DefinedSample> samples;
 	std::optional<std::size_t> selected_sample;
 	std::optional<std::size_t> active_sample;
@@ -41,6 +38,7 @@ struct SampleApp : klotter::App
 		samples.emplace_back(DefinedSample{
 			name,
 			nullptr,
+			{},
 			[](klotter::Renderer* r, klotter::Camera* c) -> std::unique_ptr<Sample>
 			{
 				return std::make_unique<T>(r, c);

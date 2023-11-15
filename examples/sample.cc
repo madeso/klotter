@@ -11,22 +11,21 @@ void SampleApp::set_selected_sample(std::size_t new_selected_sample)
 
 	if (samples[*selected_sample].created_sample == nullptr)
 	{
-		camera = {};
-		samples[*selected_sample].created_sample
-			= samples[*selected_sample].create(&renderer, &camera);
-		samples[*selected_sample].created_sample->stored_camera = camera;
+		auto& def = samples[*selected_sample];
+		def.stored_camera = {};
+		def.created_sample = def.create(&renderer, &def.stored_camera);
 	}
 
 	if (last_selected != selected_sample)
 	{
 		if (last_selected)
 		{
-			samples[*last_selected].created_sample->stored_camera = camera;
+			samples[*last_selected].stored_camera = camera;
 		}
 
 		if (selected_sample)
 		{
-			camera = samples[*selected_sample].created_sample->stored_camera;
+			camera = samples[*selected_sample].stored_camera;
 		}
 	}
 }
