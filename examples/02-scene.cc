@@ -11,16 +11,20 @@ namespace examples
 
 struct SceneSample : Sample
 {
-	Renderer* renderer;
-	Camera* camera;
-
 	World world;
 
-	MeshInstancePtr add_cube(float x, float y, float z, bool invert, const glm::vec3& color)
+	MeshInstancePtr add_cube(
+		std::shared_ptr<klotter::Texture> texture,
+		float x,
+		float y,
+		float z,
+		bool invert,
+		const glm::vec3& color
+	)
 	{
 		const auto triangle = mesh::create_box(x, y, z, invert, color).to_mesh();
 		auto material = std::make_shared<BasicMaterial>();
-		material->texture = renderer->assets.get_light_grid();
+		material->texture = texture;
 		auto geometry = compile_Mesh(triangle, material);
 
 		auto cube = make_MeshInstance(geometry);
@@ -29,9 +33,9 @@ struct SceneSample : Sample
 		return cube;
 	}
 
-	void add_mini_cube(const glm::vec3& p, int index)
+	void add_mini_cube(std::shared_ptr<klotter::Texture> texture, const glm::vec3& p, int index)
 	{
-		auto cube = add_cube(1.0f, 1.0f, 1.0f, false, colors::white);
+		auto cube = add_cube(texture, 1.0f, 1.0f, 1.0f, false, colors::white);
 		cube->position = p;
 
 		const auto fi = [index](int i) -> float
@@ -43,34 +47,31 @@ struct SceneSample : Sample
 		cube->rotation.z = fi(5);
 	}
 
-	SceneSample(Renderer* r, Camera* c)
-		: renderer(r)
-		, camera(c)
+	SceneSample(klotter::Renderer* renderer, klotter::Camera* camera)
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
 
+		auto t = renderer->assets.get_light_grid();
 		// add world
-		add_cube(10.0f, 10.0f, 10.0f, true, colors::blue_sky);
+		add_cube(t, 10.0f, 10.0f, 10.0f, true, colors::blue_sky);
 
-		// add_mini_cube({ 0.0f,  0.0f,   0.0f}, 0);
-
-		add_mini_cube({1.5f, 2.0f, 2.5f}, 0);
-		add_mini_cube({1.5f, 0.2f, -1.5f}, 1);
-		add_mini_cube({2.4f, -0.4f, 3.5f}, 2);
-		add_mini_cube({1.3f, -2.0f, -2.5f}, 3);
-		add_mini_cube({-1.3f, 1.0f, 1.5f}, 4);
-		add_mini_cube({-1.7f, 3.0f, -7.5f}, 5);
-		add_mini_cube({-1.5f, -2.2f, 2.5f}, 6);
-		add_mini_cube({-3.8f, -2.0f, -2.3f}, 7);
+		add_mini_cube(t, {1.5f, 2.0f, 2.5f}, 0);
+		add_mini_cube(t, {1.5f, 0.2f, -1.5f}, 1);
+		add_mini_cube(t, {2.4f, -0.4f, 3.5f}, 2);
+		add_mini_cube(t, {1.3f, -2.0f, -2.5f}, 3);
+		add_mini_cube(t, {-1.3f, 1.0f, 1.5f}, 4);
+		add_mini_cube(t, {-1.7f, 3.0f, -7.5f}, 5);
+		add_mini_cube(t, {-1.5f, -2.2f, 2.5f}, 6);
+		add_mini_cube(t, {-3.8f, -2.0f, -2.3f}, 7);
 	}
 
-	void on_render(float) override
+	void on_render(klotter::Renderer* renderer, klotter::Camera* camera, float) override
 	{
 		renderer->render(world, *camera);
 	}
 
-	void on_gui() override
+	void on_gui(klotter::Camera*) override
 	{
 	}
 };

@@ -45,7 +45,7 @@ void SampleApp::on_render(float dt)
 {
 	if (active_sample)
 	{
-		samples[*active_sample].created_sample->on_render(dt);
+		samples[*active_sample].created_sample->on_render(&renderer, &camera, dt);
 	}
 }
 
@@ -74,7 +74,7 @@ void SampleApp::on_gui()
 
 	if (active_sample)
 	{
-		samples[*active_sample].created_sample->on_gui();
+		samples[*active_sample].created_sample->on_gui(&camera);
 	}
 
 	ImGui::End();

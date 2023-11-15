@@ -10,8 +10,8 @@ struct Sample
 {
 	virtual ~Sample() = default;
 
-	virtual void on_render(float dt) = 0;
-	virtual void on_gui() = 0;
+	virtual void on_render(klotter::Renderer* ren, klotter::Camera* cam, float dt) = 0;
+	virtual void on_gui(klotter::Camera* cam) = 0;
 };
 
 struct DefinedSample

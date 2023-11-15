@@ -11,22 +11,16 @@ namespace examples
 
 struct CubeSample : Sample
 {
-	Renderer* renderer;
-	Camera* camera;
-
 	World world;
 	MeshInstancePtr cube;
 
-	CubeSample(Renderer* r, Camera* c)
-		: renderer(r)
-		, camera(c)
+	CubeSample(Renderer* renderer, Camera* camera)
 	{
 		camera->position.z = 0;
 		camera->position.x = -3;
 		const auto triangle
 			= mesh::create_box(0.5f, 2.0f, 1.5f, false, colors::red_vermillion).to_mesh();
 		auto material = std::make_shared<BasicMaterial>();
-		// material->color = {white, 1.0f};
 		material->texture = renderer->assets.get_light_grid();
 		auto geometry = compile_Mesh(triangle, material);
 
@@ -36,7 +30,7 @@ struct CubeSample : Sample
 
 	float p = 0.0f;
 
-	void on_render(float dt) override
+	void on_render(klotter::Renderer* renderer, klotter::Camera* camera, float dt) override
 	{
 		// cube->rotation.x += time;
 		p += dt;
@@ -51,7 +45,7 @@ struct CubeSample : Sample
 		renderer->render(world, *camera);
 	}
 
-	void on_gui() override
+	void on_gui(klotter::Camera*) override
 	{
 	}
 };
