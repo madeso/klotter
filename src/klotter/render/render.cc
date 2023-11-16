@@ -45,35 +45,34 @@ void apply(std::optional<bool>* current_state, bool new_state, GLenum gl_type)
 	}
 }
 
-// todo(Gustav): rename to ChangeStates
-struct States
+struct StateChanger
 {
 	OpenglStates* states;
 
-	explicit States(OpenglStates* s)
+	explicit StateChanger(OpenglStates* s)
 		: states(s)
 	{
 	}
 
-	States& cull_face(bool new_state)
+	StateChanger& cull_face(bool new_state)
 	{
 		apply(&states->cull_face, new_state, GL_CULL_FACE);
 		return *this;
 	}
 
-	States& blending(bool new_state)
+	StateChanger& blending(bool new_state)
 	{
 		apply(&states->blending, new_state, GL_BLEND);
 		return *this;
 	}
 
-	States& depth_test(bool new_state)
+	StateChanger& depth_test(bool new_state)
 	{
 		apply(&states->depth_test, new_state, GL_DEPTH_TEST);
 		return *this;
 	}
 
-	States& render_mode(RenderMode new_state)
+	StateChanger& render_mode(RenderMode new_state)
 	{
 		if (should_change(&states->render_mode, new_state))
 		{
@@ -95,7 +94,7 @@ struct States
 
 void opengl_set2d(OpenglStates* states)
 {
-	States{states}.depth_test(false).blending(true);
+	StateChanger{states}.depth_test(false).blending(true);
 }
 
 ShaderResource*& shader_resource()
@@ -607,7 +606,7 @@ Renderer::Renderer()
 {
 	glClearColor(0, 0, 0, 1.0f);
 
-	States{&states}.cull_face(true);
+	StateChanger{&states}.cull_face(true);
 
 	// todo(Gustav): move to states
 	glCullFace(GL_BACK);
@@ -618,7 +617,7 @@ void Renderer::render(const World& world, const Camera& camera)
 {
 	glViewport(0, 0, window_size.x, window_size.y);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	States{&states}.depth_test(true).blending(false);
+	StateChanger{&states}.depth_test(true).blending(false);
 
 	const auto compiled_camera = compile(camera, window_size);
 
