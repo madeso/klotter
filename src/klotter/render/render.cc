@@ -7,6 +7,9 @@
 #include "klotter/assert.h"
 #include "klotter/render/opengl_utils.h"
 
+// todo(Gustav): move glsl to embedded resource files
+// todo(Gustav): split to more files
+// todo(Gustav): apply states
 
 using namespace std::literals::string_view_literals;
 
@@ -42,6 +45,7 @@ void apply(std::optional<bool>* current_state, bool new_state, GLenum gl_type)
 	}
 }
 
+// todo(Gustav): rename to ChangeStates
 struct States
 {
 	OpenglStates* states;
@@ -605,6 +609,7 @@ Renderer::Renderer()
 
 	States{&states}.cull_face(true);
 
+	// todo(Gustav): move to states
 	glCullFace(GL_BACK);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
