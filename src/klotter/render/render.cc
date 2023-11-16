@@ -95,18 +95,6 @@ void opengl_set2d(OpenglStates* states)
 	StateChanger{states}.depth_test(false).blending(true);
 }
 
-ShaderResource*& shader_resource()
-{
-	static ShaderResource* s = nullptr;
-	return s;
-}
-
-ShaderResource& shaders()
-{
-	assert(shader_resource());
-	return *shader_resource();
-}
-
 u32 create_buffer()
 {
 	u32 vbo;
@@ -160,19 +148,12 @@ LoadedShaderData load_shader(const BaseShaderData& base_layout, const ShaderSour
 
 ShaderResource::ShaderResource()
 {
-	assert(shader_resource() == nullptr);
-	shader_resource() = this;
-
 	auto global_shader_data = BaseShaderData{};
 	basic_shader = load_shader(global_shader_data, basic_shader_source());
 	light_shader = load_shader(global_shader_data, light_shader_source());
 }
 
-ShaderResource::~ShaderResource()
-{
-	shader_resource() = nullptr;
-}
-
+// todo(Gustav): remove this member function?
 bool ShaderResource::is_loaded() const
 {
 	return basic_shader.program->is_loaded() && light_shader.program->is_loaded();
@@ -187,8 +168,8 @@ Material::Material(LoadedShaderData s)
 
 
 
-BasicMaterial::BasicMaterial()
-	: Material(shaders().basic_shader)
+BasicMaterial::BasicMaterial(const ShaderResource& resource)
+	: Material(resource.basic_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
@@ -221,8 +202,8 @@ void BasicMaterial::apply_lights(const Lights&)
 
 
 
-LightMaterial::LightMaterial()
-	: Material(shaders().light_shader)
+LightMaterial::LightMaterial(const ShaderResource& resource)
+	: Material(resource.light_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
@@ -483,6 +464,16 @@ Renderer::Renderer()
 	// todo(Gustav): move to states
 	glCullFace(GL_BACK);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+
+std::shared_ptr<BasicMaterial> Renderer::make_basic_material()
+{
+	return std::make_shared<BasicMaterial>(shaders);
+}
+
+std::shared_ptr<LightMaterial> Renderer::make_light_material()
+{
+	return std::make_shared<LightMaterial>(shaders);
 }
 
 void Renderer::render(const World& world, const Camera& camera)

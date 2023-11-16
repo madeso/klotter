@@ -29,9 +29,11 @@ struct LightsSample : Sample
 		return cube;
 	}
 
-	void add_mini_cube(std::shared_ptr<klotter::Texture> texture, const glm::vec3& p)
+	void add_mini_cube(
+		klotter::Renderer* renderer, std::shared_ptr<klotter::Texture> texture, const glm::vec3& p
+	)
 	{
-		auto material = std::make_shared<LightMaterial>();
+		auto material = renderer->make_light_material();
 		material->texture = texture;
 
 		auto cube = add_cube(1.0f, 1.0f, 1.0f, false, material, colors::white);
@@ -47,19 +49,19 @@ struct LightsSample : Sample
 		camera->pitch = 15;
 		camera->yaw = -50;
 
-		light_material = std::make_shared<BasicMaterial>();
+		light_material = renderer->make_basic_material();
 		auto light = add_cube(0.25f, 0.25f, 0.25f, false, light_material, colors::white);
 		light->position.z = 0.5f;
 
 		auto t = renderer->assets.get_light_grid();
-		add_mini_cube(t, {1.5f, 2.0f, 2.5f});
-		add_mini_cube(t, {1.5f, 0.2f, -1.5f});
-		add_mini_cube(t, {2.4f, -0.4f, 3.5f});
-		add_mini_cube(t, {1.3f, -2.0f, -2.5f});
-		add_mini_cube(t, {-1.3f, 1.0f, 1.5f});
-		add_mini_cube(t, {-1.7f, 3.0f, -7.5f});
-		add_mini_cube(t, {-1.5f, -2.2f, 2.5f});
-		add_mini_cube(t, {-3.8f, -2.0f, -2.3f});
+		add_mini_cube(renderer, t, {1.5f, 2.0f, 2.5f});
+		add_mini_cube(renderer, t, {1.5f, 0.2f, -1.5f});
+		add_mini_cube(renderer, t, {2.4f, -0.4f, 3.5f});
+		add_mini_cube(renderer, t, {1.3f, -2.0f, -2.5f});
+		add_mini_cube(renderer, t, {-1.3f, 1.0f, 1.5f});
+		add_mini_cube(renderer, t, {-1.7f, 3.0f, -7.5f});
+		add_mini_cube(renderer, t, {-1.5f, -2.2f, 2.5f});
+		add_mini_cube(renderer, t, {-3.8f, -2.0f, -2.3f});
 		apply_animation();
 	}
 

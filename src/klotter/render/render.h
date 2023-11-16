@@ -24,7 +24,6 @@ struct LoadedShaderData
 struct ShaderResource
 {
 	ShaderResource();
-	~ShaderResource();
 
 	LoadedShaderData basic_shader;
 	LoadedShaderData light_shader;
@@ -82,7 +81,7 @@ struct BasicMaterial : Material
 	float alpha;
 	std::shared_ptr<Texture> texture;
 
-	BasicMaterial();
+	explicit BasicMaterial(const ShaderResource& resource);
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(Assets* assets) override;
 	void apply_lights(const Lights& lights) override;
@@ -94,7 +93,7 @@ struct LightMaterial : Material
 	float alpha;
 	std::shared_ptr<Texture> texture;
 
-	LightMaterial();
+	explicit LightMaterial(const ShaderResource& resource);
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(Assets* assets) override;
 	void apply_lights(const Lights& lights) override;
@@ -173,6 +172,9 @@ struct Renderer
 	OpenglStates states;
 	Assets assets;
 	glm::ivec2 window_size;
+
+	std::shared_ptr<BasicMaterial> make_basic_material();
+	std::shared_ptr<LightMaterial> make_light_material();
 
 	void render(const World&, const Camera&);
 };
