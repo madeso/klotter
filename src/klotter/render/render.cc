@@ -8,8 +8,9 @@
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/shader.source.h"
 
-// todo(Gustav): split to more files
-// todo(Gustav): apply states
+// todo(Gustav): split to more files (mesh/material/renderer/states seems okay)
+// todo(Gustav): apply more states
+// todo(Gustav): rename shaders to unlit and lit
 
 namespace klotter
 {
