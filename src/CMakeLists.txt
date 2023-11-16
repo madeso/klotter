@@ -10,6 +10,8 @@ set(src_render
     klotter/render/opengl_utils.cc klotter/render/opengl_utils.h
 
     klotter/render/shader.cc klotter/render/shader.h
+    klotter/render/shader.source.cc klotter/render/shader.source.h
+
     klotter/render/uniform.cc klotter/render/uniform.h
     klotter/render/texture.cc klotter/render/texture.h
     klotter/render/texture.io.h
