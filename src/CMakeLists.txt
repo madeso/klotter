@@ -2,6 +2,11 @@ embed(src_assets
     AS_BINARY
         textures/light_01.png
         textures/dark_01.png
+    AS_TEXT
+        shaders/basic.vert.glsl
+        shaders/basic.frag.glsl
+        shaders/light.vert.glsl
+        shaders/light.frag.glsl
 )
 
 set(src_render
