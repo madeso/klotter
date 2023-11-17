@@ -114,8 +114,6 @@ struct CompiledMesh
 	CompiledMesh(CompiledMesh&&) = delete;
 	void operator=(const CompiledMesh&) = delete;
 	void operator=(CompiledMesh&&) = delete;
-
-	void render(Assets*, const CompiledCamera&, const glm::mat4&, const Lights&);
 };
 
 using CompiledMeshPtr = std::shared_ptr<CompiledMesh>;

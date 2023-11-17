@@ -15,6 +15,8 @@
 namespace klotter
 {
 
+// ------------------------------------------------------------------------------------------------
+// renderer
 
 template<typename T>
 bool should_change(std::optional<T>* current_state, T new_state)
@@ -96,6 +98,9 @@ void opengl_set2d(OpenglStates* states)
 	StateChanger{states}.depth_test(false).blending(true);
 }
 
+// ------------------------------------------------------------------------------------------------
+// mesh
+
 u32 create_buffer()
 {
 	u32 vbo;
@@ -160,14 +165,13 @@ bool ShaderResource::is_loaded() const
 	return basic_shader.program->is_loaded() && light_shader.program->is_loaded();
 }
 
+// ------------------------------------------------------------------------------------------------
+// material
+
 Material::Material(LoadedShaderData s)
 	: shader(std::move(s))
 {
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 BasicMaterial::BasicMaterial(const ShaderResource& resource)
 	: Material(resource.basic_shader)
@@ -198,10 +202,6 @@ void BasicMaterial::bind_textures(Assets* assets)
 void BasicMaterial::apply_lights(const Lights&)
 {
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 LightMaterial::LightMaterial(const ShaderResource& resource)
 	: Material(resource.light_shader)
@@ -240,8 +240,8 @@ void LightMaterial::apply_lights(const Lights& lights)
 	);
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// ------------------------------------------------------------------------------------------------
+// mesh
 
 std::vector<u32> compile_indices(const Mesh& mesh)
 {
@@ -313,10 +313,18 @@ namespace
 
 }  //  namespace
 
-CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
+// Extract data from mesh for OpenGL
+struct ExtractedMesh
 {
-	// ---------------------------------------------------------------------------------------------
-	// Extract data from mesh for OpenGL
+	VertexVector vertices;
+	std::size_t floats_per_vertex;
+	std::vector<BufferData> attribute_descriptions;
+	std::vector<u32> indices;
+	i32 face_size;
+};
+
+ExtractedMesh extract_Mesh(const Mesh& mesh, MaterialPtr material)
+{
 	const auto& layout = material->shader.mesh_layout;
 
 	const auto indices = compile_indices(mesh);
@@ -348,9 +356,6 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 		return data;
 	}();
 
-	// ---------------------------------------------------------------------------------------------
-	// upload data to opengl
-
 	const auto floats_per_vertex = Cint_to_sizet(std::accumulate(
 		attribute_descriptions.begin(),
 		attribute_descriptions.end(),
@@ -371,6 +376,16 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 		return verts;
 	}();
 
+	const auto face_size = static_cast<i32>(mesh.faces.size());
+
+	return {vertices, floats_per_vertex, attribute_descriptions, indices, face_size};
+}
+
+// upload data to opengl
+CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
+{
+	const auto ex = extract_Mesh(mesh, material);
+
 	material->shader.program->use();
 
 	const auto vbo = create_buffer();
@@ -380,15 +395,15 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(
 		GL_ARRAY_BUFFER,
-		Csizet_to_glsizeiptr(sizeof(float) * vertices.size()),
-		vertices.data(),
+		Csizet_to_glsizeiptr(sizeof(float) * ex.vertices.size()),
+		ex.vertices.data(),
 		GL_STATIC_DRAW
 	);
 
-	const auto stride = floats_per_vertex * sizeof(float);
+	const auto stride = ex.floats_per_vertex * sizeof(float);
 	int location = 0;
 	std::size_t offset = 0;
-	for (const auto& d: attribute_descriptions)
+	for (const auto& d: ex.attribute_descriptions)
 	{
 		const auto normalize = false;
 		glVertexAttribPointer(
@@ -410,8 +425,8 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 	glBufferData(
 		GL_ELEMENT_ARRAY_BUFFER,
-		Csizet_to_glsizeiptr(sizeof(u32) * indices.size()),
-		indices.data(),
+		Csizet_to_glsizeiptr(sizeof(u32) * ex.indices.size()),
+		ex.indices.data(),
 		GL_STATIC_DRAW
 	);
 
@@ -421,22 +436,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 	// glBindBuffer(GL_ARRAY_BUFFER, 0); // vbo
 
 
-	return std::make_shared<CompiledMesh>(
-		vbo, vao, ebo, material, static_cast<i32>(mesh.faces.size())
-	);
-}
-
-void CompiledMesh::render(
-	Assets* assets, const CompiledCamera& cc, const glm::mat4& transform, const Lights& lights
-)
-{
-	material->shader.program->use();
-	material->set_uniforms(cc, transform);
-	material->bind_textures(assets);
-	material->apply_lights(lights);
-
-	glBindVertexArray(vao);
-	glDrawElements(GL_TRIANGLES, number_of_triangles * 3, GL_UNSIGNED_INT, 0);
+	return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, ex.face_size);
 }
 
 CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, MaterialPtr m, i32 tc)
@@ -454,6 +454,9 @@ MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom)
 	mesh->geom = geom;
 	return mesh;
 }
+
+// ------------------------------------------------------------------------------------------------
+// renderer
 
 Renderer::Renderer()
 	: window_size{0, 0}
@@ -489,7 +492,15 @@ void Renderer::render(const World& world, const Camera& camera)
 	{
 		const auto translation = glm::translate(glm::mat4(1.0f), m->position);
 		const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
-		m->geom->render(&assets, compiled_camera, translation * rotation, world.lights);
+		const auto transform = translation * rotation;
+
+		m->geom->material->shader.program->use();
+		m->geom->material->set_uniforms(compiled_camera, transform);
+		m->geom->material->bind_textures(&assets);
+		m->geom->material->apply_lights(world.lights);
+
+		glBindVertexArray(m->geom->vao);
+		glDrawElements(GL_TRIANGLES, m->geom->number_of_triangles * 3, GL_UNSIGNED_INT, 0);
 	}
 }
 
