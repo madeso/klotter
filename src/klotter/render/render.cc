@@ -16,6 +16,278 @@ namespace klotter
 {
 
 // ------------------------------------------------------------------------------------------------
+// mesh & glue code
+
+CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, MaterialPtr m, i32 tc)
+	: vbo(b)
+	, vao(a)
+	, ebo(e)
+	, material(m)
+	, number_of_triangles(tc)
+{
+}
+
+MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom)
+{
+	auto mesh = std::make_shared<MeshInstance>();
+	mesh->geom = geom;
+	return mesh;
+}
+
+std::shared_ptr<BasicMaterial> Renderer::make_basic_material()
+{
+	return std::make_shared<BasicMaterial>(shaders);
+}
+
+std::shared_ptr<LightMaterial> Renderer::make_light_material()
+{
+	return std::make_shared<LightMaterial>(shaders);
+}
+
+Vertex::Vertex(glm::vec3 p, glm::vec3 n, glm::vec2 u, glm::vec3 c)
+	: position(std::move(p))
+	, normal(std::move(n))
+	, uv(std::move(u))
+	, color(std::move(c))
+{
+}
+
+Mesh::Mesh(std::vector<Vertex> v, std::vector<Face> f)
+	: vertices(std::move(v))
+	, faces(std::move(f))
+{
+}
+
+// ------------------------------------------------------------------------------------------------
+// shader loading
+
+using BaseShaderData = std::vector<VertexType>;
+
+LoadedShaderData load_shader(const BaseShaderData& base_layout, const ShaderSource& source)
+{
+	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
+	const auto mesh_layout = get_mesh_layout(layout_compiler);
+	const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout);
+
+	auto program = std::make_shared<ShaderProgram>(source.vertex, source.fragment, compiled_layout);
+
+	return {program, mesh_layout};
+}
+
+ShaderResource::ShaderResource()
+{
+	auto global_shader_data = BaseShaderData{};
+	basic_shader = load_shader(global_shader_data, basic_shader_source());
+	light_shader = load_shader(global_shader_data, light_shader_source());
+}
+
+// todo(Gustav): remove this member function?
+bool ShaderResource::is_loaded() const
+{
+	return basic_shader.program->is_loaded() && light_shader.program->is_loaded();
+}
+
+// ------------------------------------------------------------------------------------------------
+// material, part of rendering?
+
+Material::Material(LoadedShaderData s)
+	: shader(std::move(s))
+{
+}
+
+BasicMaterial::BasicMaterial(const ShaderResource& resource)
+	: Material(resource.basic_shader)
+	, color(colors::white)
+	, alpha(1.0f)
+{
+}
+
+void BasicMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
+{
+	shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
+	shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
+	shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
+	shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
+}
+
+void BasicMaterial::bind_textures(Assets* assets)
+{
+	glActiveTexture(GL_TEXTURE0);
+	std::shared_ptr<Texture> t = texture;
+	if (t == nullptr)
+	{
+		t = assets->get_white();
+	}
+	glBindTexture(GL_TEXTURE_2D, t->id);
+}
+
+void BasicMaterial::apply_lights(const Lights&)
+{
+}
+
+LightMaterial::LightMaterial(const ShaderResource& resource)
+	: Material(resource.light_shader)
+	, color(colors::white)
+	, alpha(1.0f)
+{
+}
+
+void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
+{
+	shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
+	shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
+	shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
+	shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
+
+	shader.program->set_vec3(shader.program->get_uniform("u_view_position"), cc.position);
+}
+
+void LightMaterial::bind_textures(Assets* assets)
+{
+	glActiveTexture(GL_TEXTURE0);
+	std::shared_ptr<Texture> t = texture;
+	if (t == nullptr)
+	{
+		t = assets->get_white();
+	}
+	glBindTexture(GL_TEXTURE_2D, t->id);
+}
+
+void LightMaterial::apply_lights(const Lights& lights)
+{
+	shader.program->set_vec3(
+		shader.program->get_uniform("u_light_color"), lights.point_light.color
+	);
+	shader.program->set_vec3(
+		shader.program->get_uniform("u_light_world"), lights.point_light.position
+	);
+}
+
+// ------------------------------------------------------------------------------------------------
+// mesh building
+
+std::vector<u32> compile_indices(const Mesh& mesh)
+{
+	std::vector<u32> indices;
+	const auto push = [&indices](const u32 i)
+	{
+		indices.emplace_back(i);
+	};
+	for (const auto& f: mesh.faces)
+	{
+		push(f.a);
+		push(f.b);
+		push(f.c);
+	}
+	return indices;
+}
+
+struct BufferData
+{
+	using PerVertex = void (*)(std::vector<float>*, const Vertex&);
+
+	int count;
+	PerVertex per_vertex;
+
+	BufferData(int c, PerVertex pv)
+		: count(c)
+		, per_vertex(pv)
+	{
+	}
+};
+
+using VertexVector = std::vector<float>;
+
+/// Extracted data from mesh for OpenGL
+struct ExtractedMesh
+{
+	VertexVector vertices;
+	std::size_t floats_per_vertex;
+	std::vector<BufferData> attribute_descriptions;
+	std::vector<u32> indices;
+	i32 face_size;
+};
+
+void push2(VertexVector* vv, const glm::vec2& p)
+{
+	vv->emplace_back(p.x);
+	vv->emplace_back(p.y);
+}
+
+void push3(VertexVector* vv, const glm::vec3& p)
+{
+	vv->emplace_back(p.x);
+	vv->emplace_back(p.y);
+	vv->emplace_back(p.z);
+}
+
+void push4(VertexVector* vv, const glm::vec4& p)
+{
+	vv->emplace_back(p.x);
+	vv->emplace_back(p.y);
+	vv->emplace_back(p.z);
+	vv->emplace_back(p.w);
+}
+
+ExtractedMesh extract_Mesh(const Mesh& mesh, MaterialPtr material)
+{
+	const auto& layout = material->shader.mesh_layout;
+
+	const auto indices = compile_indices(mesh);
+
+	const auto attribute_descriptions = [&]()
+	{
+		auto data = std::vector<BufferData>{};
+		data.reserve(layout.elements.size());
+		for (const auto& element: layout.elements)
+		{
+			switch (element.type)
+			{
+#define MAP(VT, PROP, COUNT) \
+	case VT: \
+		data.emplace_back( \
+			COUNT, \
+			[](VertexVector* vertices, const Vertex& vertex) { push##COUNT(vertices, PROP); } \
+		); \
+		break
+				MAP(VertexType::position3, vertex.position, 3);
+				MAP(VertexType::normal3, vertex.normal, 3);
+				MAP(VertexType::color3, vertex.color, 3);
+				MAP(VertexType::color4, glm::vec4(vertex.color, 1.0f), 4);
+				MAP(VertexType::texture2, vertex.uv, 2);
+#undef MAP
+			default: DIE("Invalid buffer type"); break;
+			}
+		}
+		return data;
+	}();
+
+	const auto floats_per_vertex = Cint_to_sizet(std::accumulate(
+		attribute_descriptions.begin(),
+		attribute_descriptions.end(),
+		0,
+		[](auto s, const auto& d) { return s + d.count; }
+	));
+	const auto vertices = [&]()
+	{
+		auto verts = VertexVector{};
+		verts.reserve(mesh.vertices.size() * floats_per_vertex);
+		for (const auto& vertex: mesh.vertices)
+		{
+			for (const auto& d: attribute_descriptions)
+			{
+				d.per_vertex(&verts, vertex);
+			}
+		}
+		return verts;
+	}();
+
+	const auto face_size = static_cast<i32>(mesh.faces.size());
+
+	return {vertices, floats_per_vertex, attribute_descriptions, indices, face_size};
+}
+
+// ------------------------------------------------------------------------------------------------
 // renderer
 
 template<typename T>
@@ -98,9 +370,6 @@ void opengl_set2d(OpenglStates* states)
 	StateChanger{states}.depth_test(false).blending(true);
 }
 
-// ------------------------------------------------------------------------------------------------
-// mesh
-
 u32 create_buffer()
 {
 	u32 vbo;
@@ -125,263 +394,6 @@ void destroy_vertex_array(u32 vao)
 	glDeleteVertexArrays(1, &vao);
 }
 
-Vertex::Vertex(glm::vec3 p, glm::vec3 n, glm::vec2 u, glm::vec3 c)
-	: position(std::move(p))
-	, normal(std::move(n))
-	, uv(std::move(u))
-	, color(std::move(c))
-{
-}
-
-Mesh::Mesh(std::vector<Vertex> v, std::vector<Face> f)
-	: vertices(std::move(v))
-	, faces(std::move(f))
-{
-}
-
-using BaseShaderData = std::vector<VertexType>;
-
-LoadedShaderData load_shader(const BaseShaderData& base_layout, const ShaderSource& source)
-{
-	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
-	const auto mesh_layout = get_mesh_layout(layout_compiler);
-	const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout);
-
-	auto program = std::make_shared<ShaderProgram>(source.vertex, source.fragment, compiled_layout);
-
-	return {program, mesh_layout};
-}
-
-ShaderResource::ShaderResource()
-{
-	auto global_shader_data = BaseShaderData{};
-	basic_shader = load_shader(global_shader_data, basic_shader_source());
-	light_shader = load_shader(global_shader_data, light_shader_source());
-}
-
-// todo(Gustav): remove this member function?
-bool ShaderResource::is_loaded() const
-{
-	return basic_shader.program->is_loaded() && light_shader.program->is_loaded();
-}
-
-// ------------------------------------------------------------------------------------------------
-// material
-
-Material::Material(LoadedShaderData s)
-	: shader(std::move(s))
-{
-}
-
-BasicMaterial::BasicMaterial(const ShaderResource& resource)
-	: Material(resource.basic_shader)
-	, color(colors::white)
-	, alpha(1.0f)
-{
-}
-
-void BasicMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
-{
-	shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
-	shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
-	shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
-	shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
-}
-
-void BasicMaterial::bind_textures(Assets* assets)
-{
-	glActiveTexture(GL_TEXTURE0);
-	std::shared_ptr<Texture> t = texture;
-	if (t == nullptr)
-	{
-		t = assets->get_white();
-	}
-	glBindTexture(GL_TEXTURE_2D, t->id);
-}
-
-void BasicMaterial::apply_lights(const Lights&)
-{
-}
-
-LightMaterial::LightMaterial(const ShaderResource& resource)
-	: Material(resource.light_shader)
-	, color(colors::white)
-	, alpha(1.0f)
-{
-}
-
-void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
-{
-	shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
-	shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
-	shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
-	shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
-	shader.program->set_vec3(shader.program->get_uniform("u_view_position"), cc.position);
-}
-
-void LightMaterial::bind_textures(Assets* assets)
-{
-	glActiveTexture(GL_TEXTURE0);
-	std::shared_ptr<Texture> t = texture;
-	if (t == nullptr)
-	{
-		t = assets->get_white();
-	}
-	glBindTexture(GL_TEXTURE_2D, t->id);
-}
-
-void LightMaterial::apply_lights(const Lights& lights)
-{
-	shader.program->set_vec3(
-		shader.program->get_uniform("u_light_color"), lights.point_light.color
-	);
-	shader.program->set_vec3(
-		shader.program->get_uniform("u_light_world"), lights.point_light.position
-	);
-}
-
-// ------------------------------------------------------------------------------------------------
-// mesh
-
-std::vector<u32> compile_indices(const Mesh& mesh)
-{
-	std::vector<u32> indices;
-	const auto push = [&indices](const u32 i)
-	{
-		indices.emplace_back(i);
-	};
-	for (const auto& f: mesh.faces)
-	{
-		push(f.a);
-		push(f.b);
-		push(f.c);
-	}
-	return indices;
-}
-
-CompiledMesh::~CompiledMesh()
-{
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-	destroy_buffer(ebo);
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	destroy_buffer(vbo);
-
-	glBindVertexArray(0);
-	destroy_vertex_array(vao);
-}
-
-struct BufferData
-{
-	using PerVertex = void (*)(std::vector<float>*, const Vertex&);
-
-	int count;
-	PerVertex per_vertex;
-
-	BufferData(int c, PerVertex pv)
-		: count(c)
-		, per_vertex(pv)
-	{
-	}
-};
-
-namespace
-{
-
-	using VertexVector = std::vector<float>;
-
-	void push2(VertexVector* vv, const glm::vec2& p)
-	{
-		vv->emplace_back(p.x);
-		vv->emplace_back(p.y);
-	}
-
-	void push3(VertexVector* vv, const glm::vec3& p)
-	{
-		vv->emplace_back(p.x);
-		vv->emplace_back(p.y);
-		vv->emplace_back(p.z);
-	}
-
-	void push4(VertexVector* vv, const glm::vec4& p)
-	{
-		vv->emplace_back(p.x);
-		vv->emplace_back(p.y);
-		vv->emplace_back(p.z);
-		vv->emplace_back(p.w);
-	}
-
-}  //  namespace
-
-// Extract data from mesh for OpenGL
-struct ExtractedMesh
-{
-	VertexVector vertices;
-	std::size_t floats_per_vertex;
-	std::vector<BufferData> attribute_descriptions;
-	std::vector<u32> indices;
-	i32 face_size;
-};
-
-ExtractedMesh extract_Mesh(const Mesh& mesh, MaterialPtr material)
-{
-	const auto& layout = material->shader.mesh_layout;
-
-	const auto indices = compile_indices(mesh);
-
-	const auto attribute_descriptions = [&]()
-	{
-		auto data = std::vector<BufferData>{};
-		data.reserve(layout.elements.size());
-		for (const auto& element: layout.elements)
-		{
-			switch (element.type)
-			{
-#define MAP(VT, PROP, COUNT) \
-	case VT: \
-		data.emplace_back( \
-			COUNT, \
-			[](VertexVector* vertices, const Vertex& vertex) { push##COUNT(vertices, PROP); } \
-		); \
-		break
-				MAP(VertexType::position3, vertex.position, 3);
-				MAP(VertexType::normal3, vertex.normal, 3);
-				MAP(VertexType::color3, vertex.color, 3);
-				MAP(VertexType::color4, glm::vec4(vertex.color, 1.0f), 4);
-				MAP(VertexType::texture2, vertex.uv, 2);
-#undef MAP
-			default: DIE("Invalid buffer type"); break;
-			}
-		}
-		return data;
-	}();
-
-	const auto floats_per_vertex = Cint_to_sizet(std::accumulate(
-		attribute_descriptions.begin(),
-		attribute_descriptions.end(),
-		0,
-		[](auto s, const auto& d) { return s + d.count; }
-	));
-	const auto vertices = [&]()
-	{
-		auto verts = VertexVector{};
-		verts.reserve(mesh.vertices.size() * floats_per_vertex);
-		for (const auto& vertex: mesh.vertices)
-		{
-			for (const auto& d: attribute_descriptions)
-			{
-				d.per_vertex(&verts, vertex);
-			}
-		}
-		return verts;
-	}();
-
-	const auto face_size = static_cast<i32>(mesh.faces.size());
-
-	return {vertices, floats_per_vertex, attribute_descriptions, indices, face_size};
-}
-
-// upload data to opengl
 CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 {
 	const auto ex = extract_Mesh(mesh, material);
@@ -439,24 +451,17 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 	return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, ex.face_size);
 }
 
-CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, MaterialPtr m, i32 tc)
-	: vbo(b)
-	, vao(a)
-	, ebo(e)
-	, material(m)
-	, number_of_triangles(tc)
+CompiledMesh::~CompiledMesh()
 {
-}
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	destroy_buffer(ebo);
 
-MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom)
-{
-	auto mesh = std::make_shared<MeshInstance>();
-	mesh->geom = geom;
-	return mesh;
-}
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	destroy_buffer(vbo);
 
-// ------------------------------------------------------------------------------------------------
-// renderer
+	glBindVertexArray(0);
+	destroy_vertex_array(vao);
+}
 
 Renderer::Renderer()
 	: window_size{0, 0}
@@ -468,16 +473,6 @@ Renderer::Renderer()
 	// todo(Gustav): move to states
 	glCullFace(GL_BACK);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-}
-
-std::shared_ptr<BasicMaterial> Renderer::make_basic_material()
-{
-	return std::make_shared<BasicMaterial>(shaders);
-}
-
-std::shared_ptr<LightMaterial> Renderer::make_light_material()
-{
-	return std::make_shared<LightMaterial>(shaders);
 }
 
 void Renderer::render(const World& world, const Camera& camera)
