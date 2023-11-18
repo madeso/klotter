@@ -62,6 +62,8 @@ LoadedShaderData load_shader(const BaseShaderData& base_layout, const ShaderSour
 
 ShaderResource::ShaderResource()
 {
+	// todo(Gustav): change so that there are common "base" shaders (example: single color) that
+	// can be used for everything and specific shaders (example: pbr)
 	auto global_shader_data = BaseShaderData{};
 	basic_shader = load_shader(global_shader_data, basic_shader_source());
 	light_shader = load_shader(global_shader_data, light_shader_source());
@@ -258,6 +260,8 @@ void destroy_vertex_array(u32 vao)
 
 CompiledMeshPtr compile_Mesh(const Mesh& mesh, std::shared_ptr<Material> material)
 {
+	// todo(Gustav): change it so that 1. this function only takes the mesh layout
+	// that 2. the material is part of the instance and 3. the actual material/shader layout is verified when rendering
 	const auto ex = extract_mesh(mesh, material->shader.mesh_layout);
 
 	const auto vbo = create_buffer();
