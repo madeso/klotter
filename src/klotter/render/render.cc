@@ -1,6 +1,7 @@
 #include "klotter/render/render.h"
 
 #include "klotter/cint.h"
+#include "klotter/assert.h"
 
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/shader.source.h"
@@ -98,12 +99,14 @@ void UnlitMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tran
 
 void UnlitMaterial::bind_textures(Assets* assets)
 {
-	glActiveTexture(GL_TEXTURE0);
 	std::shared_ptr<Texture> t = texture;
 	if (t == nullptr)
 	{
 		t = assets->get_white();
 	}
+
+	// todo(Gustav): move bound texture to state
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, t->id);
 }
 
@@ -130,12 +133,12 @@ void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tr
 
 void DefaultMaterial::bind_textures(Assets* assets)
 {
-	glActiveTexture(GL_TEXTURE0);
 	std::shared_ptr<Texture> t = texture;
 	if (t == nullptr)
 	{
 		t = assets->get_white();
 	}
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, t->id);
 }
 
@@ -218,19 +221,69 @@ struct StateChanger
                     case RenderMode::fill: return GL_FILL;
                     case RenderMode::line: return GL_LINE;
                     case RenderMode::point: return GL_POINT;
-                    default: return GL_FILL;
+                    default: DIE("Invalid render mode"); return GL_FILL;
                     }
                 })();
 			glPolygonMode(GL_FRONT_AND_BACK, mode);
 		}
 		return *this;
 	}
-};
 
-void opengl_set2d(OpenglStates* states)
-{
-	StateChanger{states}.depth_test(false).blending(true);
-}
+	StateChanger& cull_face_mode(CullFace new_state)
+	{
+		if (should_change(&states->cull_face_mode, new_state))
+		{
+			const auto mode = ([new_state]() -> GLenum
+                {
+                    switch (new_state)
+                    {
+                    case CullFace::front: return GL_FRONT;
+                    case CullFace::back: return GL_BACK;
+                    case CullFace::front_and_back: return GL_FRONT_AND_BACK;
+                    default: DIE("Invalid cull face mode"); return GL_BACK;
+                    }
+                })();
+			glCullFace(mode);
+		}
+		return *this;
+	}
+
+	StateChanger& blend_mode(BlendMode new_state)
+	{
+		if (should_change(&states->blend_mode, new_state))
+		{
+			const auto convert = [](Blend b) -> GLenum
+			{
+				switch (b)
+				{
+				case Blend::zero: return GL_ZERO;
+				case Blend::one: return GL_ONE;
+				case Blend::src_color: return GL_SRC_COLOR;
+				case Blend::one_minus_src_color: return GL_ONE_MINUS_SRC_COLOR;
+				case Blend::dst_color: return GL_DST_COLOR;
+				case Blend::one_minus_dst_color: return GL_ONE_MINUS_DST_COLOR;
+				case Blend::src_alpha: return GL_SRC_ALPHA;
+				case Blend::one_minus_src_alpha: return GL_ONE_MINUS_SRC_ALPHA;
+				case Blend::dst_alpha: return GL_DST_ALPHA;
+				case Blend::one_minus_dst_alpha: return GL_ONE_MINUS_DST_ALPHA;
+				case Blend::constant_color: return GL_CONSTANT_COLOR;
+				case Blend::one_minus_constant_color: return GL_ONE_MINUS_CONSTANT_COLOR;
+				case Blend::constant_alpha: return GL_CONSTANT_ALPHA;
+				case Blend::one_minus_constant_alpha: return GL_ONE_MINUS_CONSTANT_ALPHA;
+				case Blend::src_alpha_saturate: return GL_SRC_ALPHA_SATURATE;
+				case Blend::src1_color: return GL_SRC1_COLOR;
+				case Blend::one_minus_src1_color: return GL_ONE_MINUS_SRC1_COLOR;
+				case Blend::src1_alpha: return GL_SRC1_ALPHA;
+				case Blend::one_minus_src1_alpha: return GL_ONE_MINUS_SRC1_ALPHA;
+				default: DIE("Invalid blend mode"); return GL_ZERO;
+				}
+			};
+			const auto [src, dst] = new_state;
+			glBlendFunc(convert(src), convert(dst));
+		}
+		return *this;
+	}
+};
 
 u32 create_buffer()
 {
@@ -328,18 +381,16 @@ CompiledMesh::~CompiledMesh()
 Renderer::Renderer()
 	: window_size{0, 0}
 {
-	glClearColor(0, 0, 0, 1.0f);
-
-	StateChanger{&states}.cull_face(true);
-
-	// todo(Gustav): move to states
-	glCullFace(GL_BACK);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	StateChanger{&states}
+		.cull_face(true)
+		.cull_face_mode(CullFace::back)
+		.blend_mode({Blend::src_alpha, Blend::one_minus_src_alpha});
 }
 
 void Renderer::render(const World& world, const Camera& camera)
 {
 	glViewport(0, 0, window_size.x, window_size.y);
+	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	StateChanger{&states}.depth_test(true).blending(false);
 

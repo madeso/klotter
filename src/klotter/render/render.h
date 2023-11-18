@@ -128,10 +128,44 @@ enum class RenderMode
 	point
 };
 
+enum class CullFace
+{
+	front,
+	back,
+	front_and_back
+};
+
+enum class Blend
+{
+	zero,
+	one,
+	src_color,
+	one_minus_src_color,
+	dst_color,
+	one_minus_dst_color,
+	src_alpha,
+	one_minus_src_alpha,
+	dst_alpha,
+	one_minus_dst_alpha,
+	constant_color,
+	one_minus_constant_color,
+	constant_alpha,
+	one_minus_constant_alpha,
+	src_alpha_saturate,
+	src1_color,
+	one_minus_src1_color,
+	src1_alpha,
+	one_minus_src1_alpha
+};
+
+using BlendMode = std::tuple<Blend, Blend>;
+
 struct OpenglStates
 {
 	std::optional<bool> cull_face;
+	std::optional<CullFace> cull_face_mode;
 	std::optional<bool> blending;
+	std::optional<BlendMode> blend_mode;
 	std::optional<bool> depth_test;
 	std::optional<RenderMode> render_mode;
 };
