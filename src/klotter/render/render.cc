@@ -8,7 +8,6 @@
 
 #include <string_view>
 
-// todo(Gustav): split to more files (mesh/material/renderer/states seems okay)
 // todo(Gustav): apply more states
 // todo(Gustav): rename shaders to unlit and lit
 
