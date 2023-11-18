@@ -18,7 +18,7 @@ namespace klotter
 // ------------------------------------------------------------------------------------------------
 // mesh & glue code
 
-CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, MaterialPtr m, i32 tc)
+CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, std::shared_ptr<Material> m, i32 tc)
 	: vbo(b)
 	, vao(a)
 	, ebo(e)
@@ -256,7 +256,7 @@ void destroy_vertex_array(u32 vao)
 	glDeleteVertexArrays(1, &vao);
 }
 
-CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
+CompiledMeshPtr compile_Mesh(const Mesh& mesh, std::shared_ptr<Material> material)
 {
 	const auto ex = extract_mesh(mesh, material->shader.mesh_layout);
 

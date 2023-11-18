@@ -49,8 +49,6 @@ struct Material
 	virtual void apply_lights(const Lights& lights) = 0;
 };
 
-using MaterialPtr = std::shared_ptr<Material>;
-
 struct BasicMaterial : Material
 {
 	glm::vec3 color;
@@ -80,10 +78,10 @@ struct CompiledMesh
 	u32 vbo;
 	u32 vao;
 	u32 ebo;
-	MaterialPtr material;
+	std::shared_ptr<Material> material;
 	i32 number_of_triangles;
 
-	explicit CompiledMesh(u32, u32, u32, MaterialPtr, i32);
+	explicit CompiledMesh(u32, u32, u32, std::shared_ptr<Material>, i32);
 	~CompiledMesh();
 
 	CompiledMesh(const CompiledMesh&) = delete;
@@ -93,7 +91,7 @@ struct CompiledMesh
 };
 
 using CompiledMeshPtr = std::shared_ptr<CompiledMesh>;
-CompiledMeshPtr compile_Mesh(const Mesh&, MaterialPtr);
+CompiledMeshPtr compile_Mesh(const Mesh&, std::shared_ptr<Material>);
 
 struct MeshInstance
 {

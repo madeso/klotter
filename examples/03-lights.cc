@@ -17,9 +17,15 @@ struct LightsSample : Sample
 	float anim = 0.0f;
 
 	MeshInstancePtr add_cube(
-		float x, float y, float z, bool invert, MaterialPtr material, const glm::vec3& color
+		float x,
+		float y,
+		float z,
+		bool invert,
+		std::shared_ptr<Material> material,
+		const glm::vec3& color
 	)
 	{
+		// todo(gustav): take mesh as a argument, don't create a new mesh for each sub cube
 		const auto triangle = mesh::create_box(x, y, z, invert, color).to_mesh();
 		auto geometry = compile_Mesh(triangle, material);
 
@@ -95,6 +101,7 @@ struct LightsSample : Sample
 	}
 };
 
+// todo(Gustav): rename to add_light_sample or add_sample_light
 void register_lights(SampleApp* app)
 {
 	app->add_sample<LightsSample>("Lights");
