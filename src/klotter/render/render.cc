@@ -260,8 +260,6 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, std::shared_ptr<Material> materia
 {
 	const auto ex = extract_mesh(mesh, material->shader.mesh_layout);
 
-	material->shader.program->use();
-
 	const auto vbo = create_buffer();
 	const auto vao = create_vertex_array();
 	glBindVertexArray(vao);
