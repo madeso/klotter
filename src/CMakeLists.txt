@@ -3,10 +3,10 @@ embed(src_assets
         textures/light_01.png
         textures/dark_01.png
     AS_TEXT
-        shaders/basic.vert.glsl
-        shaders/basic.frag.glsl
-        shaders/light.vert.glsl
-        shaders/light.frag.glsl
+        shaders/unlit.vert.glsl
+        shaders/unlit.frag.glsl
+        shaders/default.vert.glsl
+        shaders/default.frag.glsl
 )
 
 set(src_render

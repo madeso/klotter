@@ -13,7 +13,7 @@ struct ShaderSource
 	std::string_view fragment;
 };
 
-ShaderSource basic_shader_source();
-ShaderSource light_shader_source();
+ShaderSource load_unlit_shader_source();
+ShaderSource load_default_shader_source();
 
 }  //  namespace klotter

@@ -9,7 +9,6 @@
 #include <string_view>
 
 // todo(Gustav): apply more states
-// todo(Gustav): rename shaders to unlit and lit
 
 namespace klotter
 {
@@ -33,14 +32,14 @@ MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom)
 	return mesh;
 }
 
-std::shared_ptr<BasicMaterial> Renderer::make_basic_material()
+std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material()
 {
-	return std::make_shared<BasicMaterial>(shaders);
+	return std::make_shared<UnlitMaterial>(shaders);
 }
 
-std::shared_ptr<LightMaterial> Renderer::make_light_material()
+std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 {
-	return std::make_shared<LightMaterial>(shaders);
+	return std::make_shared<DefaultMaterial>(shaders);
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -64,14 +63,14 @@ ShaderResource::ShaderResource()
 	// todo(Gustav): change so that there are common "base" shaders (example: single color) that
 	// can be used for everything and specific shaders (example: pbr)
 	auto global_shader_data = BaseShaderData{};
-	basic_shader = load_shader(global_shader_data, basic_shader_source());
-	light_shader = load_shader(global_shader_data, light_shader_source());
+	unlit_shader = load_shader(global_shader_data, load_unlit_shader_source());
+	default_shader = load_shader(global_shader_data, load_default_shader_source());
 }
 
 // todo(Gustav): remove this member function?
 bool ShaderResource::is_loaded() const
 {
-	return basic_shader.program->is_loaded() && light_shader.program->is_loaded();
+	return unlit_shader.program->is_loaded() && default_shader.program->is_loaded();
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -82,14 +81,14 @@ Material::Material(LoadedShaderData s)
 {
 }
 
-BasicMaterial::BasicMaterial(const ShaderResource& resource)
-	: Material(resource.basic_shader)
+UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
+	: Material(resource.unlit_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
 }
 
-void BasicMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
+void UnlitMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
 	shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
 	shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
@@ -97,7 +96,7 @@ void BasicMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tran
 	shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
 }
 
-void BasicMaterial::bind_textures(Assets* assets)
+void UnlitMaterial::bind_textures(Assets* assets)
 {
 	glActiveTexture(GL_TEXTURE0);
 	std::shared_ptr<Texture> t = texture;
@@ -108,18 +107,18 @@ void BasicMaterial::bind_textures(Assets* assets)
 	glBindTexture(GL_TEXTURE_2D, t->id);
 }
 
-void BasicMaterial::apply_lights(const Lights&)
+void UnlitMaterial::apply_lights(const Lights&)
 {
 }
 
-LightMaterial::LightMaterial(const ShaderResource& resource)
-	: Material(resource.light_shader)
+DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
+	: Material(resource.default_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
 }
 
-void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
+void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
 	shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
 	shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
@@ -129,7 +128,7 @@ void LightMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tran
 	shader.program->set_vec3(shader.program->get_uniform("u_view_position"), cc.position);
 }
 
-void LightMaterial::bind_textures(Assets* assets)
+void DefaultMaterial::bind_textures(Assets* assets)
 {
 	glActiveTexture(GL_TEXTURE0);
 	std::shared_ptr<Texture> t = texture;
@@ -140,7 +139,7 @@ void LightMaterial::bind_textures(Assets* assets)
 	glBindTexture(GL_TEXTURE_2D, t->id);
 }
 
-void LightMaterial::apply_lights(const Lights& lights)
+void DefaultMaterial::apply_lights(const Lights& lights)
 {
 	shader.program->set_vec3(
 		shader.program->get_uniform("u_light_color"), lights.point_light.color

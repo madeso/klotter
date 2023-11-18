@@ -26,8 +26,8 @@ struct ShaderResource
 {
 	ShaderResource();
 
-	LoadedShaderData basic_shader;
-	LoadedShaderData light_shader;
+	LoadedShaderData unlit_shader;
+	LoadedShaderData default_shader;
 
 	bool is_loaded() const;
 };
@@ -49,25 +49,25 @@ struct Material
 	virtual void apply_lights(const Lights& lights) = 0;
 };
 
-struct BasicMaterial : Material
+struct UnlitMaterial : Material
 {
 	glm::vec3 color;
 	float alpha;
 	std::shared_ptr<Texture> texture;
 
-	explicit BasicMaterial(const ShaderResource& resource);
+	explicit UnlitMaterial(const ShaderResource& resource);
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(Assets* assets) override;
 	void apply_lights(const Lights& lights) override;
 };
 
-struct LightMaterial : Material
+struct DefaultMaterial : Material
 {
 	glm::vec3 color;
 	float alpha;
 	std::shared_ptr<Texture> texture;
 
-	explicit LightMaterial(const ShaderResource& resource);
+	explicit DefaultMaterial(const ShaderResource& resource);
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(Assets* assets) override;
 	void apply_lights(const Lights& lights) override;
@@ -145,8 +145,8 @@ struct Renderer
 	Assets assets;
 	glm::ivec2 window_size;
 
-	std::shared_ptr<BasicMaterial> make_basic_material();
-	std::shared_ptr<LightMaterial> make_light_material();
+	std::shared_ptr<UnlitMaterial> make_unlit_material();
+	std::shared_ptr<DefaultMaterial> make_default_material();
 
 	void render(const World&, const Camera&);
 };

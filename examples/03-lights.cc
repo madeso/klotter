@@ -39,7 +39,7 @@ struct LightsSample : Sample
 		klotter::Renderer* renderer, std::shared_ptr<klotter::Texture> texture, const glm::vec3& p
 	)
 	{
-		auto material = renderer->make_light_material();
+		auto material = renderer->make_default_material();
 		material->texture = texture;
 
 		auto cube = add_cube(1.0f, 1.0f, 1.0f, false, material, colors::white);
@@ -48,14 +48,14 @@ struct LightsSample : Sample
 		cubes.emplace_back(cube);
 	}
 
-	std::shared_ptr<BasicMaterial> light_material;
+	std::shared_ptr<UnlitMaterial> light_material;
 
 	LightsSample(Renderer* renderer, Camera* camera)
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
 
-		light_material = renderer->make_basic_material();
+		light_material = renderer->make_unlit_material();
 		auto light = add_cube(0.25f, 0.25f, 0.25f, false, light_material, colors::white);
 		light->position.z = 0.5f;
 

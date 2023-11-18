@@ -25,7 +25,7 @@ struct SceneSample : Sample
 	{
 		// todo(gustav): take mesh as a argument, don't create a new mesh for each sub cube
 		const auto triangle = mesh::create_box(x, y, z, invert, color).to_mesh();
-		auto material = renderer->make_basic_material();
+		auto material = renderer->make_unlit_material();
 		material->texture = texture;
 		auto geometry = compile_Mesh(triangle, material);
 
