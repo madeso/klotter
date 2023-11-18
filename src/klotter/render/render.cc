@@ -182,20 +182,6 @@ std::vector<u32> compile_indices(const Mesh& mesh)
 	return indices;
 }
 
-struct BufferData
-{
-	using PerVertex = void (*)(std::vector<float>*, const Vertex&);
-
-	int count;
-	PerVertex per_vertex;
-
-	BufferData(int c, PerVertex pv)
-		: count(c)
-		, per_vertex(pv)
-	{
-	}
-};
-
 using VertexVector = std::vector<float>;
 
 /// Extracted data from mesh for OpenGL
@@ -203,7 +189,7 @@ struct ExtractedMesh
 {
 	VertexVector vertices;
 	std::size_t floats_per_vertex;
-	std::vector<BufferData> attribute_descriptions;
+	std::vector<int> attribute_counts;
 	std::vector<u32> indices;
 	i32 face_size;
 };
@@ -229,26 +215,33 @@ void push4(VertexVector* vv, const glm::vec4& p)
 	vv->emplace_back(p.w);
 }
 
-ExtractedMesh extract_Mesh(const Mesh& mesh, MaterialPtr material)
+struct BufferData
 {
-	const auto& layout = material->shader.mesh_layout;
+	using PerVertex = void (*)(std::vector<float>*, const Vertex&);
 
+	std::vector<int> count;
+	std::vector<PerVertex> per_vertex;
+};
+
+ExtractedMesh extract_mesh(const Mesh& mesh, const CompiledGeomVertexAttributes& layout)
+{
 	const auto indices = compile_indices(mesh);
 
 	const auto attribute_descriptions = [&]()
 	{
-		auto data = std::vector<BufferData>{};
-		data.reserve(layout.elements.size());
+		auto data = BufferData{};
+		data.count.reserve(layout.elements.size());
+		data.per_vertex.reserve(layout.elements.size());
+
 		for (const auto& element: layout.elements)
 		{
 			switch (element.type)
 			{
 #define MAP(VT, PROP, COUNT) \
 	case VT: \
-		data.emplace_back( \
-			COUNT, \
-			[](VertexVector* vertices, const Vertex& vertex) { push##COUNT(vertices, PROP); } \
-		); \
+		data.count.emplace_back(COUNT); \
+		data.per_vertex.emplace_back([](VertexVector* vertices, const Vertex& vertex) \
+									 { push##COUNT(vertices, PROP); }); \
 		break
 				MAP(VertexType::position3, vertex.position, 3);
 				MAP(VertexType::normal3, vertex.normal, 3);
@@ -263,10 +256,10 @@ ExtractedMesh extract_Mesh(const Mesh& mesh, MaterialPtr material)
 	}();
 
 	const auto floats_per_vertex = Cint_to_sizet(std::accumulate(
-		attribute_descriptions.begin(),
-		attribute_descriptions.end(),
+		attribute_descriptions.count.begin(),
+		attribute_descriptions.count.end(),
 		0,
-		[](auto s, const auto& d) { return s + d.count; }
+		[](auto s, const auto& d) { return s + d; }
 	));
 	const auto vertices = [&]()
 	{
@@ -274,9 +267,9 @@ ExtractedMesh extract_Mesh(const Mesh& mesh, MaterialPtr material)
 		verts.reserve(mesh.vertices.size() * floats_per_vertex);
 		for (const auto& vertex: mesh.vertices)
 		{
-			for (const auto& d: attribute_descriptions)
+			for (const auto& per_vertex: attribute_descriptions.per_vertex)
 			{
-				d.per_vertex(&verts, vertex);
+				per_vertex(&verts, vertex);
 			}
 		}
 		return verts;
@@ -284,7 +277,7 @@ ExtractedMesh extract_Mesh(const Mesh& mesh, MaterialPtr material)
 
 	const auto face_size = static_cast<i32>(mesh.faces.size());
 
-	return {vertices, floats_per_vertex, attribute_descriptions, indices, face_size};
+	return {vertices, floats_per_vertex, attribute_descriptions.count, indices, face_size};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -396,7 +389,7 @@ void destroy_vertex_array(u32 vao)
 
 CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 {
-	const auto ex = extract_Mesh(mesh, material);
+	const auto ex = extract_mesh(mesh, material->shader.mesh_layout);
 
 	material->shader.program->use();
 
@@ -415,12 +408,12 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 	const auto stride = ex.floats_per_vertex * sizeof(float);
 	int location = 0;
 	std::size_t offset = 0;
-	for (const auto& d: ex.attribute_descriptions)
+	for (const auto& a_count: ex.attribute_counts)
 	{
 		const auto normalize = false;
 		glVertexAttribPointer(
 			Cint_to_gluint(location),
-			d.count,
+			a_count,
 			GL_FLOAT,
 			normalize ? GL_TRUE : GL_FALSE,
 			Csizet_to_glsizei(stride),
@@ -429,7 +422,7 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, MaterialPtr material)
 		glEnableVertexAttribArray(Cint_to_gluint(location));
 
 		location += 1;
-		offset += Cint_to_sizet(d.count) * sizeof(float);
+		offset += Cint_to_sizet(a_count) * sizeof(float);
 	}
 
 
