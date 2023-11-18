@@ -13,10 +13,10 @@ namespace examples
 struct LightsSample : Sample
 {
 	World world;
-	std::vector<MeshInstancePtr> cubes;
+	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
 
-	MeshInstancePtr add_cube(
+	std::shared_ptr<MeshInstance> add_cube(
 		float x,
 		float y,
 		float z,

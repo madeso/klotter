@@ -13,7 +13,7 @@ struct SceneSample : Sample
 {
 	World world;
 
-	MeshInstancePtr add_cube(
+	std::shared_ptr<MeshInstance> add_cube(
 		klotter::Renderer* renderer,
 		std::shared_ptr<klotter::Texture> texture,
 		float x,

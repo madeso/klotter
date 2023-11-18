@@ -12,7 +12,7 @@ namespace examples
 struct CubeSample : Sample
 {
 	World world;
-	MeshInstancePtr cube;
+	std::shared_ptr<MeshInstance> cube;
 
 	CubeSample(Renderer* renderer, Camera* camera)
 	{

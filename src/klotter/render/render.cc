@@ -26,7 +26,7 @@ CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, std::shared_ptr<Material> m, i32
 {
 }
 
-MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom)
+std::shared_ptr<MeshInstance> make_MeshInstance(std::shared_ptr<CompiledMesh> geom)
 {
 	auto mesh = std::make_shared<MeshInstance>();
 	mesh->geom = geom;
@@ -309,7 +309,7 @@ void destroy_vertex_array(u32 vao)
 	glDeleteVertexArrays(1, &vao);
 }
 
-CompiledMeshPtr compile_Mesh(const Mesh& mesh, std::shared_ptr<Material> material)
+std::shared_ptr<CompiledMesh> compile_Mesh(const Mesh& mesh, std::shared_ptr<Material> material)
 {
 	// todo(Gustav): change it so that 1. this function only takes the mesh layout
 	// that 2. the material is part of the instance and 3. the actual material/shader layout is verified when rendering
@@ -356,12 +356,6 @@ CompiledMeshPtr compile_Mesh(const Mesh& mesh, std::shared_ptr<Material> materia
 		ex.indices.data(),
 		GL_STATIC_DRAW
 	);
-
-	// todo(Gustav): disable binding
-	// glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); // ebo
-	// glBindVertexArray(0); // vao
-	// glBindBuffer(GL_ARRAY_BUFFER, 0); // vbo
-
 
 	return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, ex.face_size);
 }

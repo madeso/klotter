@@ -90,19 +90,17 @@ struct CompiledMesh
 	void operator=(CompiledMesh&&) = delete;
 };
 
-using CompiledMeshPtr = std::shared_ptr<CompiledMesh>;
-CompiledMeshPtr compile_Mesh(const Mesh&, std::shared_ptr<Material>);
+std::shared_ptr<CompiledMesh> compile_Mesh(const Mesh&, std::shared_ptr<Material>);
 
 struct MeshInstance
 {
-	CompiledMeshPtr geom;
+	std::shared_ptr<CompiledMesh> geom;
 
 	glm::vec3 position;
 	glm::vec3 rotation;	 // yaw pitch roll
 };
 
-using MeshInstancePtr = std::shared_ptr<MeshInstance>;
-MeshInstancePtr make_MeshInstance(CompiledMeshPtr geom);
+std::shared_ptr<MeshInstance> make_MeshInstance(std::shared_ptr<CompiledMesh> geom);
 
 struct PointLight
 {
@@ -117,7 +115,7 @@ struct Lights
 
 struct World
 {
-	std::vector<MeshInstancePtr> meshes;
+	std::vector<std::shared_ptr<MeshInstance>> meshes;
 	Lights lights;
 };
 
