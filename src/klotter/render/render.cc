@@ -9,8 +9,6 @@
 
 #include <string_view>
 
-// todo(Gustav): apply more states
-
 namespace klotter
 {
 

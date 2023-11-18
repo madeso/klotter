@@ -175,6 +175,8 @@ struct Renderer
 	ShaderResource shaders;
 	OpenglStates states;
 	Assets assets;
+
+	// todo(Gustav): store window size elsewhere...
 	glm::ivec2 window_size;
 
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
