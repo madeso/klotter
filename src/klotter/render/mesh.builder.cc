@@ -2,7 +2,7 @@
 
 #include "klotter/cint.h"
 
-#include "klotter/render/render.h"
+#include "klotter/render/mesh.h"
 
 #include <map>
 
@@ -398,7 +398,7 @@ Mesh Builder::to_mesh() const
 			const glm::vec3 normal
 				= normals.empty() == false ? normals[c.normal] : glm::vec3(1, 0, 0);
 			const auto ind = vertices.size();
-			vertices.emplace_back(pos, normal, text, col);
+			vertices.emplace_back(klotter::Vertex{pos, normal, text, col});
 			combinations.insert({c, Csizet_to_u32(ind)});
 			return Csizet_to_u32(ind);
 		}
@@ -414,7 +414,7 @@ Mesh Builder::to_mesh() const
 		faces.emplace_back(Face{v0, v1, v2});
 	}
 
-	return Mesh(std::move(vertices), std::move(faces));
+	return {std::move(vertices), std::move(faces)};
 }
 
 

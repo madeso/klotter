@@ -9,6 +9,7 @@
 #include "klotter/render/texture.h"
 #include "klotter/render/assets.h"
 #include "klotter/render/vertex_layout.h"
+#include "klotter/render/mesh.h"
 
 namespace klotter
 {
@@ -29,31 +30,6 @@ struct ShaderResource
 	LoadedShaderData light_shader;
 
 	bool is_loaded() const;
-};
-
-struct Vertex
-{
-	glm::vec3 position;
-	glm::vec3 normal;
-	glm::vec2 uv;
-	glm::vec3 color;
-
-	explicit Vertex(glm::vec3, glm::vec3, glm::vec2, glm::vec3 c = colors::white);
-};
-
-struct Face
-{
-	u32 a;
-	u32 b;
-	u32 c;
-};
-
-struct Mesh
-{
-	Mesh(std::vector<Vertex>, std::vector<Face> faces);
-
-	std::vector<Vertex> vertices;
-	std::vector<Face> faces;
 };
 
 struct Material
