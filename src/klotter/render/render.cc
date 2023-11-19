@@ -31,13 +31,16 @@ struct LoadedShader_Unlit : LoadedShader
 	LoadedShader_Unlit(LoadedShader s)
 		: LoadedShader(std::move(s.program), s.geom_layout)
 		, tint_color(program->get_uniform("u_tint_color"))
+		, tex_diffuse(program->get_uniform("u_tex_diffuse"))
 		, model(program->get_uniform("u_model"))
 		, projection(program->get_uniform("u_projection"))
 		, view(program->get_uniform("u_view"))
 	{
+		setup_textures(program.get(), {&tex_diffuse});
 	}
 
 	Uniform tint_color;
+	Uniform tex_diffuse;
 
 	Uniform model;
 	Uniform projection;
@@ -49,6 +52,7 @@ struct LoadedShader_Default : LoadedShader
 	LoadedShader_Default(LoadedShader s)
 		: LoadedShader(std::move(s.program), s.geom_layout)
 		, tint_color(program->get_uniform("u_tint_color"))
+		, tex_diffuse(program->get_uniform("u_tex_diffuse"))
 		, model(program->get_uniform("u_model"))
 		, projection(program->get_uniform("u_projection"))
 		, view(program->get_uniform("u_view"))
@@ -56,9 +60,11 @@ struct LoadedShader_Default : LoadedShader
 		, light_color(program->get_uniform("u_light_color"))
 		, light_world(program->get_uniform("u_light_world"))
 	{
+		setup_textures(program.get(), {&tex_diffuse});
 	}
 
 	Uniform tint_color;
+	Uniform tex_diffuse;
 
 	Uniform model;
 	Uniform projection;
@@ -198,9 +204,7 @@ void UnlitMaterial::bind_textures(Assets* assets)
 		t = assets->get_white();
 	}
 
-	// todo(Gustav): move bound texture to state
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, t->id);
+	bind_texture(shader->tex_diffuse, *t);
 }
 
 void UnlitMaterial::apply_lights(const Lights&)
@@ -235,8 +239,8 @@ void DefaultMaterial::bind_textures(Assets* assets)
 	{
 		t = assets->get_white();
 	}
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, t->id);
+
+	bind_texture(shader->tex_diffuse, *t);
 }
 
 void DefaultMaterial::apply_lights(const Lights& lights)
