@@ -80,7 +80,7 @@ struct CompiledGeom
 	u32 vao;
 	u32 ebo;
 	i32 number_of_triangles;
-	VertexTypes debug_types;
+	std::unordered_set<VertexType> debug_types;
 
 	explicit CompiledGeom(u32, u32, u32, const CompiledGeomVertexAttributes&, i32);
 	~CompiledGeom();

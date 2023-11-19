@@ -20,7 +20,7 @@ CompiledGeom::CompiledGeom(u32 b, u32 a, u32 e, const CompiledGeomVertexAttribut
 	, vao(a)
 	, ebo(e)
 	, number_of_triangles(tc)
-	, debug_types(att.debug_types)
+	, debug_types(att.debug_types.begin(), att.debug_types.end())
 {
 }
 
@@ -410,15 +410,12 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
 		const auto transform = translation * rotation;
 
-		// todo(Gustav): improve shader/geom test here to allow partial matches
-		// investigate using bool is_bound_for_shader
-		ASSERT(m->material->shader.geom_layout.debug_types == m->geom->debug_types);
-
 		m->material->shader.program->use();
 		m->material->set_uniforms(compiled_camera, transform);
 		m->material->bind_textures(&assets);
 		m->material->apply_lights(world.lights);
 
+		ASSERT(is_bound_for_shader(m->geom->debug_types));
 		glBindVertexArray(m->geom->vao);
 		glDrawElements(GL_TRIANGLES, m->geom->number_of_triangles * 3, GL_UNSIGNED_INT, 0);
 	}
