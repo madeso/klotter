@@ -26,6 +26,22 @@ struct LoadedShader
 	CompiledGeomVertexAttributes geom_layout;
 };
 
+struct LoadedShader_Unlit : LoadedShader
+{
+	LoadedShader_Unlit(LoadedShader s)
+		: LoadedShader(std::move(s.program), s.geom_layout)
+	{
+	}
+};
+
+struct LoadedShader_Default : LoadedShader
+{
+	LoadedShader_Default(LoadedShader s)
+		: LoadedShader(std::move(s.program), s.geom_layout)
+	{
+	}
+};
+
 struct ShaderResource::ShaderResourcePimpl
 {
 	ShaderResourcePimpl(LoadedShader unlit, LoadedShader def)
@@ -34,8 +50,8 @@ struct ShaderResource::ShaderResourcePimpl
 	{
 	}
 
-	LoadedShader unlit_shader;
-	LoadedShader default_shader;
+	LoadedShader_Unlit unlit_shader;
+	LoadedShader_Default default_shader;
 };
 
 ShaderResource::~ShaderResource()

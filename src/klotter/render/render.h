@@ -16,7 +16,8 @@ namespace klotter
 
 struct Lights;
 
-struct LoadedShader;
+struct LoadedShader_Unlit;
+struct LoadedShader_Default;
 
 /// All loaded/known shaders
 struct ShaderResource
@@ -52,7 +53,7 @@ struct Material
 /// a unlit (or fully lit) material, not affected by light
 struct UnlitMaterial : Material
 {
-	const LoadedShader* shader;
+	const LoadedShader_Unlit* shader;
 	glm::vec3 color;
 	float alpha;
 	std::shared_ptr<Texture> texture;
@@ -67,7 +68,7 @@ struct UnlitMaterial : Material
 /// a material affected by light
 struct DefaultMaterial : Material
 {
-	const LoadedShader* shader;
+	const LoadedShader_Default* shader;
 	glm::vec3 color;
 	float alpha;
 	std::shared_ptr<Texture> texture;
