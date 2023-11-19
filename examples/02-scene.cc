@@ -14,11 +14,10 @@ struct SceneSample : Sample
 	World world;
 
 	std::shared_ptr<CompiledGeom> make_unlit_cube(
-		klotter::Renderer* renderer, float x, float y, float z, bool invert, const glm::vec3& color
+		klotter::Renderer* renderer, float x, float y, float z, bool invert
 	)
 	{
-		// todo(Gustav): move color to shader
-		const auto triangles = geom::create_box(x, y, z, invert, color).to_geom();
+		const auto triangles = geom::create_box(x, y, z, invert).to_geom();
 		auto geom = compile_geom(triangles, renderer->unlit_geom_layout());
 		return geom;
 	}
@@ -26,10 +25,12 @@ struct SceneSample : Sample
 	std::shared_ptr<MeshInstance> add_unlit_cube(
 		klotter::Renderer* renderer,
 		std::shared_ptr<klotter::Texture> texture,
-		std::shared_ptr<CompiledGeom> geom
+		std::shared_ptr<CompiledGeom> geom,
+		const glm::vec3& color
 	)
 	{
 		auto material = renderer->make_unlit_material();
+		material->color = color;
 		material->texture = texture;
 
 		auto cube = make_mesh_instance(geom, material);
@@ -46,7 +47,7 @@ struct SceneSample : Sample
 		int index
 	)
 	{
-		auto cube = add_unlit_cube(renderer, texture, geom);
+		auto cube = add_unlit_cube(renderer, texture, geom, colors::white);
 		cube->position = p;
 
 		const auto fi = [index](int i) -> float
@@ -65,10 +66,10 @@ struct SceneSample : Sample
 
 		auto t = renderer->assets.get_light_grid();
 		// add world
-		auto world_geom = make_unlit_cube(renderer, 10.0f, 10.0f, 10.0f, true, colors::blue_sky);
-		add_unlit_cube(renderer, t, world_geom);
+		auto world_geom = make_unlit_cube(renderer, 10.0f, 10.0f, 10.0f, true);
+		add_unlit_cube(renderer, t, world_geom, colors::blue_sky);
 
-		auto mini = make_unlit_cube(renderer, 1.0f, 1.0f, 1.0f, false, colors::white);
+		auto mini = make_unlit_cube(renderer, 1.0f, 1.0f, 1.0f, false);
 		add_unlit_mini_cube(renderer, mini, t, {1.5f, 2.0f, 2.5f}, 0);
 		add_unlit_mini_cube(renderer, mini, t, {1.5f, 0.2f, -1.5f}, 1);
 		add_unlit_mini_cube(renderer, mini, t, {2.4f, -0.4f, 3.5f}, 2);
