@@ -11,6 +11,7 @@ namespace klotter::geom
 {
 using Index = u64;
 
+/// A single vertex referencing the shared data in the Builder
 struct Vertex
 {
 	Index position;
@@ -21,9 +22,10 @@ struct Vertex
 	Vertex(Index vertex, Index normal, Index texture, Index color);
 };
 
+/// A simple triangle face in a Builder
 struct Triangle
 {
-	//ccw = frontfacing
+	// ccw = frontfacing
 	Vertex v0;
 	Vertex v1;
 	Vertex v2;
@@ -31,6 +33,7 @@ struct Triangle
 	Triangle(Vertex v0, Vertex v1, Vertex v2);
 };
 
+/// A helper utility to create a Geom
 struct Builder
 {
 	Index add_text_coord(const glm::vec2& v);

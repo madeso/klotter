@@ -10,7 +10,7 @@ struct Uniform
 	std::string name;
 	int location;
 	unsigned int debug_shader_program;
-	int texture = -1;  // >=0 if this is uniform maps to a texture
+	int texture = -1;  ///< The value is >=0 if this is uniform maps to a texture
 
 	/// Creates a invalid uniform
 	Uniform();

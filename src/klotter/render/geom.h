@@ -3,6 +3,7 @@
 namespace klotter
 {
 
+/// A single vertex in a Geom
 struct Vertex
 {
 	glm::vec3 position;
@@ -11,6 +12,7 @@ struct Vertex
 	glm::vec3 color;
 };
 
+/// A triangulated face in a Geom
 struct Face
 {
 	u32 a;
@@ -18,6 +20,7 @@ struct Face
 	u32 c;
 };
 
+/// vertices and triangles
 struct Geom
 {
 	std::vector<Vertex> vertices;

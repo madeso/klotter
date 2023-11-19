@@ -11,7 +11,7 @@ namespace klotter
 
 using VertexVector = std::vector<float>;
 
-/// Extracted data from geom for OpenGL
+/// Extracted data from a Geom for a specific shader layout so a CompiledGeom can be created
 struct ExtractedGeom
 {
 	VertexVector vertices;

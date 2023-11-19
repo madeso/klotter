@@ -6,7 +6,8 @@
 namespace klotter
 {
 
-/** Vertex source type, position, normal etc. */
+/// Vertex source type, position, normal etc.
+/// @todo change to include other textcoords and custom types that are created from scripts
 enum class VertexType
 {
 	position2,
@@ -15,20 +16,19 @@ enum class VertexType
 	color3,
 	color4,
 	texture2
-	// change to include other textcoords and custom types that are created from scripts
 };
 
-/** A not-yet-realised binding to a shader variable like 'vec3 position' */
+/// A not-yet-realised binding to a shader variable like `vec3 position`
 struct VertexElementDescription
 {
 	VertexType type;
 	std::string name;
 };
 
-/** Describes all vertex inputs a shader requires like `[vec3 position, vec3 normal, vec2 uv]`*/
+/// Describes all vertex inputs a shader requires like `[vec3 position, vec3 normal, vec2 uv]`
 using ShaderVertexAttributes = std::vector<VertexElementDescription>;
 
-/** A realized VertexElementDescription like `vec3 position` at gl shader position 3 */
+/// A realized VertexElementDescription like `vec3 position` at gl shader position 3
 struct CompiledVertexElement
 {
 	VertexType type;
@@ -36,7 +36,7 @@ struct CompiledVertexElement
 	int index;
 };
 
-/** A realized VertexElementDescription without name like `vec3` at gl shader position 3 */
+/// A realized VertexElementDescription without name like `vec3` at gl shader position 3
 struct CompiledVertexElementNoName
 {
 	VertexType type;
@@ -45,21 +45,21 @@ struct CompiledVertexElementNoName
 
 using VertexTypes = std::vector<VertexType>;
 
-/** A list of CompiledVertexElement (for shader) */
+/// A list of CompiledVertexElement (for shader)
 struct CompiledShaderVertexAttributes
 {
 	std::vector<CompiledVertexElement> elements;
 	VertexTypes debug_types;
 };
 
-/** A list of CompiledVertexLayoutNoNameList (for geom) */
+/// A list of CompiledVertexLayoutNoNameList (for geom)
 struct CompiledGeomVertexAttributes
 {
 	std::vector<CompiledVertexElementNoName> elements;
 	VertexTypes debug_types;
 };
 
-/** A mapping of the vertex type (position...) to the actual shader id (for more than one shader) */
+/// A mapping of the vertex type (position...) to the actual shader id (for more than one shader)
 struct CompiledVertexTypeList
 {
 	std::map<VertexType, int> indices;

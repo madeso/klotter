@@ -22,6 +22,7 @@ struct LoadedShaderData
 	CompiledGeomVertexAttributes geom_layout;
 };
 
+/// All loaded/known shaders
 struct ShaderResource
 {
 	ShaderResource();
@@ -50,6 +51,7 @@ struct Material
 	virtual void apply_lights(const Lights& lights) = 0;
 };
 
+/// a unlit (or fully lit) material, not affected by light
 struct UnlitMaterial : Material
 {
 	glm::vec3 color;
@@ -62,6 +64,7 @@ struct UnlitMaterial : Material
 	void apply_lights(const Lights& lights) override;
 };
 
+/// a material affected by light
 struct DefaultMaterial : Material
 {
 	glm::vec3 color;
@@ -74,6 +77,7 @@ struct DefaultMaterial : Material
 	void apply_lights(const Lights& lights) override;
 };
 
+/// Represents a Geom on the GPU.
 struct CompiledGeom
 {
 	u32 vbo;
@@ -93,6 +97,7 @@ struct CompiledGeom
 
 std::shared_ptr<CompiledGeom> compile_geom(const Geom&, const CompiledGeomVertexAttributes& layout);
 
+/// Stores Geom + Material (aka a mesh) and its current transform
 struct MeshInstance
 {
 	std::shared_ptr<CompiledGeom> geom;
@@ -112,11 +117,13 @@ struct PointLight
 	glm::vec3 color = colors::white;
 };
 
+/// All lights in a world
 struct Lights
 {
 	PointLight point_light;
 };
 
+/// also known as a scene
 struct World
 {
 	std::vector<std::shared_ptr<MeshInstance>> meshes;
@@ -172,6 +179,7 @@ struct OpenglStates
 	std::optional<RenderMode> render_mode;
 };
 
+/// the renderering "engine"
 struct Renderer
 {
 	Renderer();
