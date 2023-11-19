@@ -30,16 +30,43 @@ struct LoadedShader_Unlit : LoadedShader
 {
 	LoadedShader_Unlit(LoadedShader s)
 		: LoadedShader(std::move(s.program), s.geom_layout)
+		, tint_color(program->get_uniform("u_tint_color"))
+		, model(program->get_uniform("u_model"))
+		, projection(program->get_uniform("u_projection"))
+		, view(program->get_uniform("u_view"))
 	{
 	}
+
+	Uniform tint_color;
+
+	Uniform model;
+	Uniform projection;
+	Uniform view;
 };
 
 struct LoadedShader_Default : LoadedShader
 {
 	LoadedShader_Default(LoadedShader s)
 		: LoadedShader(std::move(s.program), s.geom_layout)
+		, tint_color(program->get_uniform("u_tint_color"))
+		, model(program->get_uniform("u_model"))
+		, projection(program->get_uniform("u_projection"))
+		, view(program->get_uniform("u_view"))
+		, view_position(program->get_uniform("u_view_position"))
+		, light_color(program->get_uniform("u_light_color"))
+		, light_world(program->get_uniform("u_light_world"))
 	{
 	}
+
+	Uniform tint_color;
+
+	Uniform model;
+	Uniform projection;
+	Uniform view;
+
+	Uniform view_position;
+	Uniform light_color;
+	Uniform light_world;
 };
 
 struct ShaderResource::ShaderResourcePimpl
@@ -157,11 +184,10 @@ void UnlitMaterial::use_shader()
 
 void UnlitMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-	// todo(Gustav): move uniforms to a specific loaded shader class to cache the gets
-	shader->program->set_vec4(shader->program->get_uniform("u_tint_color"), {color, alpha});
-	shader->program->set_mat(shader->program->get_uniform("u_model"), transform);
-	shader->program->set_mat(shader->program->get_uniform("u_projection"), cc.projection);
-	shader->program->set_mat(shader->program->get_uniform("u_view"), cc.view);
+	shader->program->set_vec4(shader->tint_color, {color, alpha});
+	shader->program->set_mat(shader->model, transform);
+	shader->program->set_mat(shader->projection, cc.projection);
+	shader->program->set_mat(shader->view, cc.view);
 }
 
 void UnlitMaterial::bind_textures(Assets* assets)
@@ -195,11 +221,11 @@ void DefaultMaterial::use_shader()
 
 void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-	shader->program->set_vec4(shader->program->get_uniform("u_tint_color"), {color, alpha});
-	shader->program->set_mat(shader->program->get_uniform("u_model"), transform);
-	shader->program->set_mat(shader->program->get_uniform("u_projection"), cc.projection);
-	shader->program->set_mat(shader->program->get_uniform("u_view"), cc.view);
-	shader->program->set_vec3(shader->program->get_uniform("u_view_position"), cc.position);
+	shader->program->set_vec4(shader->tint_color, {color, alpha});
+	shader->program->set_mat(shader->model, transform);
+	shader->program->set_mat(shader->projection, cc.projection);
+	shader->program->set_mat(shader->view, cc.view);
+	shader->program->set_vec3(shader->view_position, cc.position);
 }
 
 void DefaultMaterial::bind_textures(Assets* assets)
@@ -215,12 +241,8 @@ void DefaultMaterial::bind_textures(Assets* assets)
 
 void DefaultMaterial::apply_lights(const Lights& lights)
 {
-	shader->program->set_vec3(
-		shader->program->get_uniform("u_light_color"), lights.point_light.color
-	);
-	shader->program->set_vec3(
-		shader->program->get_uniform("u_light_world"), lights.point_light.position
-	);
+	shader->program->set_vec3(shader->light_color, lights.point_light.color);
+	shader->program->set_vec3(shader->light_world, lights.point_light.position);
 }
 
 // ------------------------------------------------------------------------------------------------
