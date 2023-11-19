@@ -182,8 +182,6 @@ struct OpenglStates
 /// the renderering "engine"
 struct Renderer
 {
-	Renderer();
-
 	ShaderResource shaders;
 	OpenglStates states;
 	Assets assets;

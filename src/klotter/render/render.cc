@@ -387,16 +387,13 @@ CompiledGeom::~CompiledGeom()
 	destroy_vertex_array(vao);
 }
 
-Renderer::Renderer()
+void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
 	StateChanger{&states}
 		.cull_face(true)
 		.cull_face_mode(CullFace::back)
 		.blend_mode({Blend::src_alpha, Blend::one_minus_src_alpha});
-}
 
-void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
-{
 	glViewport(0, 0, window_size.x, window_size.y);
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
