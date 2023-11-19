@@ -17,7 +17,7 @@ int app_main(MakeAppFunction make_app, SDL_Window* sdl_window)
 	////////////////////////////////////////////////////////////////
 	// create actual app
 	Renderer renderer;
-	if (renderer.shaders.is_loaded() == false)
+	if (renderer.is_loaded() == false)
 	{
 		return -1;
 	}

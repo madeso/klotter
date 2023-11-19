@@ -13,7 +13,7 @@ namespace klotter
 {
 
 // ------------------------------------------------------------------------------------------------
-// mesh & glue code
+// glue code
 
 CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, std::shared_ptr<Material> m, i32 tc)
 	: vbo(b)
@@ -41,6 +41,16 @@ std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 	return std::make_shared<DefaultMaterial>(shaders);
 }
 
+bool ShaderResource::is_loaded() const
+{
+	return unlit_shader.program->is_loaded() && default_shader.program->is_loaded();
+}
+
+bool Renderer::is_loaded() const
+{
+	return shaders.is_loaded();
+}
+
 // ------------------------------------------------------------------------------------------------
 // shader loading
 
@@ -64,12 +74,6 @@ ShaderResource::ShaderResource()
 	auto global_shader_data = BaseShaderData{};
 	unlit_shader = load_shader(global_shader_data, load_unlit_shader_source());
 	default_shader = load_shader(global_shader_data, load_default_shader_source());
-}
-
-// todo(Gustav): remove this member function?
-bool ShaderResource::is_loaded() const
-{
-	return unlit_shader.program->is_loaded() && default_shader.program->is_loaded();
 }
 
 // ------------------------------------------------------------------------------------------------

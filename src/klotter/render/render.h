@@ -182,6 +182,7 @@ struct Renderer
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
 	std::shared_ptr<DefaultMaterial> make_default_material();
 
+	bool is_loaded() const;
 	void render(const World&, const Camera&);
 };
 
