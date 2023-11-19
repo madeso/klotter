@@ -412,6 +412,7 @@ void Renderer::render(const World& world, const Camera& camera)
 		const auto transform = translation * rotation;
 
 		// todo(Gustav): improve shader/geom test here to allow partial matches
+		// investigate using bool is_bound_for_shader
 		ASSERT(m->material->shader.geom_layout.debug_types == m->geom->debug_types);
 
 		m->material->shader.program->use();
