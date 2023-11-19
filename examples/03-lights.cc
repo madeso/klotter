@@ -106,8 +106,7 @@ struct LightsSample : Sample
 	}
 };
 
-// todo(Gustav): rename to add_light_sample or add_sample_light
-void register_lights(SampleApp* app)
+void add_sample_lights(SampleApp* app)
 {
 	app->add_sample<LightsSample>("Lights");
 }

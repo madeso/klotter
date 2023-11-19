@@ -7,18 +7,18 @@ using namespace klotter;
 
 namespace examples
 {
-void register_cube(SampleApp* app);
-void register_scene(SampleApp* app);
-void register_lights(SampleApp* app);
+void add_sample_cube(SampleApp* app);
+void add_sample_scene(SampleApp* app);
+void add_sample_lights(SampleApp* app);
 }  //  namespace examples
 
 struct ExampleApp : examples::SampleApp
 {
 	ExampleApp(klotter::Renderer*)
 	{
-		register_cube(this);
-		register_scene(this);
-		register_lights(this);
+		add_sample_cube(this);
+		add_sample_scene(this);
+		add_sample_lights(this);
 	}
 };
 

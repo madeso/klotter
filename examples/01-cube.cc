@@ -50,7 +50,7 @@ struct CubeSample : Sample
 	}
 };
 
-void register_cube(SampleApp* app)
+void add_sample_cube(SampleApp* app)
 {
 	app->add_sample<CubeSample>("Cube");
 }

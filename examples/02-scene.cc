@@ -90,7 +90,7 @@ struct SceneSample : Sample
 	}
 };
 
-void register_scene(SampleApp* app)
+void add_sample_scene(SampleApp* app)
 {
 	app->add_sample<SceneSample>("Scene");
 }
