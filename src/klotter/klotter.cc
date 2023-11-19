@@ -9,128 +9,20 @@
 namespace klotter
 {
 
-int run_main(MakeAppFunction make_app)
+constexpr int start_width = 800;
+constexpr int starth_height = 600;
+
+int app_main(MakeAppFunction make_app, SDL_Window* sdl_window)
 {
-	constexpr int start_width = 800;
-	constexpr int starth_height = 600;
-
-
-
-	////////////////////////////////////////////////////////////////////////////////
-	// sdl config
-
-	constexpr Uint32 flags = SDL_INIT_VIDEO;
-	if (SDL_Init(flags) != 0)
-	{
-		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Unable to initialize SDL: %s", SDL_GetError());
-		return -1;
-	}
-
-#if defined(__APPLE__)
-	// GL 3.2 Core + GLSL 150
-	const char* glsl_version = "#version 150";
-	SDL_GL_SetAttribute(
-		SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG
-	);	// Always required on Mac
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
-#else
-	// GL 3.0 + GLSL 130
-	const char* glsl_version = "#version 130";
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, 0);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);  // was 0 in dear imgui example??
-#endif
-
-	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
-	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
-
-	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
-
-	SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
-
-
-
-	////////////////////////////////////////////////////////////////////////////////
-	// create window
-
-	auto* sdl_window = SDL_CreateWindow(
-		"klotter",
-		SDL_WINDOWPOS_UNDEFINED,
-		SDL_WINDOWPOS_UNDEFINED,
-		start_width,
-		starth_height,
-		SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI
-	);
-
-	if (sdl_window == nullptr)
-	{
-		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Could not create window: %s", SDL_GetError());
-		return -1;
-	}
-
-	auto sdl_glcontext = SDL_GL_CreateContext(sdl_window);
-
-	if (sdl_glcontext == nullptr)
-	{
-		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Could not create gl context: %s", SDL_GetError());
-
-		SDL_DestroyWindow(sdl_window);
-		sdl_window = nullptr;
-
-		return -1;
-	}
-
-	SDL_GL_MakeCurrent(sdl_window, sdl_glcontext);
-	SDL_GL_SetSwapInterval(1);	// Enable vsync
-
-	if (! gladLoadGLLoader(SDL_GL_GetProcAddress))
-	{
-		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Failed to load OpenGL");
-
-		SDL_GL_DeleteContext(sdl_glcontext);
-		sdl_glcontext = nullptr;
-
-		SDL_DestroyWindow(sdl_window);
-		sdl_window = nullptr;
-
-		return -1;
-	}
-
-
-
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// dear imgui setup
-
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO();
-	(void) io;
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-
-	ImGui::StyleColorsDark();
-	//ImGui::StyleColorsLight();
-
-	ImGui_ImplSDL2_InitForOpenGL(sdl_window, sdl_glcontext);
-	ImGui_ImplOpenGL3_Init(glsl_version);
-
-
-
-	///////////////////////////////////////////////////////////////
-	// complete setup
-	setup_opengl_debug();
-
-
 	////////////////////////////////////////////////////////////////
 	// create actual app
-	auto app = make_app();
+	Renderer renderer;
+	if (renderer.shaders.is_loaded() == false)
+	{
+		return -1;
+	}
+
+	auto app = make_app(&renderer);
 
 
 	////////////////////////////////////////////////////////////////
@@ -150,17 +42,10 @@ int run_main(MakeAppFunction make_app)
 	bool space = false;
 	bool lctrl = false;
 
-	if (app->renderer.shaders.is_loaded() == false)
-	{
-		// oh no... we actually didn't load everything
-		// don't continue if shaders failed to load :(
-		running = false;
-	}
-
 	auto last = SDL_GetPerformanceCounter();
 	while (running)
 	{
-		app->on_frame();
+		app->on_frame(&renderer);
 		const auto now = SDL_GetPerformanceCounter();
 		const auto diff = static_cast<float>(now - last);
 		const auto freq = static_cast<float>(SDL_GetPerformanceFrequency());
@@ -288,18 +173,137 @@ int run_main(MakeAppFunction make_app)
 
 		// ImGui::ShowDemoWindow();
 
-		app->on_gui();
+		app->on_gui(&renderer);
 
 		ImGui::Render();
 
 
 		// render
-		app->renderer.window_size = {window_width, window_height};
-		app->on_render(dt);
+		renderer.window_size = {window_width, window_height};
+		app->on_render(&renderer, dt);
 
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		SDL_GL_SwapWindow(sdl_window);
 	}
+
+	return 0;
+}
+
+int run_main(MakeAppFunction make_app)
+{
+	////////////////////////////////////////////////////////////////////////////////
+	// sdl config
+
+	constexpr Uint32 flags = SDL_INIT_VIDEO;
+	if (SDL_Init(flags) != 0)
+	{
+		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Unable to initialize SDL: %s", SDL_GetError());
+		return -1;
+	}
+
+#if defined(__APPLE__)
+	// GL 3.2 Core + GLSL 150
+	const char* glsl_version = "#version 150";
+	SDL_GL_SetAttribute(
+		SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG
+	);	// Always required on Mac
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+#else
+	// GL 3.0 + GLSL 130
+	const char* glsl_version = "#version 130";
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, 0);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);  // was 0 in dear imgui example??
+#endif
+
+	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
+
+	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+
+	SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
+	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
+	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
+
+
+
+	////////////////////////////////////////////////////////////////////////////////
+	// create window
+
+	auto* sdl_window = SDL_CreateWindow(
+		"klotter",
+		SDL_WINDOWPOS_UNDEFINED,
+		SDL_WINDOWPOS_UNDEFINED,
+		start_width,
+		starth_height,
+		SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI
+	);
+
+	if (sdl_window == nullptr)
+	{
+		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Could not create window: %s", SDL_GetError());
+		return -1;
+	}
+
+	auto sdl_glcontext = SDL_GL_CreateContext(sdl_window);
+
+	if (sdl_glcontext == nullptr)
+	{
+		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Could not create gl context: %s", SDL_GetError());
+
+		SDL_DestroyWindow(sdl_window);
+		sdl_window = nullptr;
+
+		return -1;
+	}
+
+	SDL_GL_MakeCurrent(sdl_window, sdl_glcontext);
+	SDL_GL_SetSwapInterval(1);	// Enable vsync
+
+	if (! gladLoadGLLoader(SDL_GL_GetProcAddress))
+	{
+		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Failed to load OpenGL");
+
+		SDL_GL_DeleteContext(sdl_glcontext);
+		sdl_glcontext = nullptr;
+
+		SDL_DestroyWindow(sdl_window);
+		sdl_window = nullptr;
+
+		return -1;
+	}
+
+
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// dear imgui setup
+
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO();
+	(void) io;
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+
+	ImGui::StyleColorsDark();
+	//ImGui::StyleColorsLight();
+
+	ImGui_ImplSDL2_InitForOpenGL(sdl_window, sdl_glcontext);
+	ImGui_ImplOpenGL3_Init(glsl_version);
+
+
+
+	///////////////////////////////////////////////////////////////
+	// complete setup
+	setup_opengl_debug();
+
+
+	const auto exit_code = app_main(make_app, sdl_window);
 
 
 
@@ -314,7 +318,8 @@ int run_main(MakeAppFunction make_app)
 	sdl_glcontext = nullptr;
 	SDL_DestroyWindow(sdl_window);
 	SDL_Quit();
-	return 0;
+
+	return exit_code;
 }
 
 

@@ -12,17 +12,16 @@ namespace klotter
 
 struct App
 {
-	Renderer renderer;
 	Camera camera;
 
-	virtual void on_frame() = 0;
-	virtual void on_gui() = 0;
-	virtual void on_render(float) = 0;
+	virtual void on_frame(Renderer*) = 0;
+	virtual void on_gui(Renderer*) = 0;
+	virtual void on_render(Renderer*, float) = 0;
 
 	virtual ~App() = default;
 };
 
-using MakeAppFunction = std::unique_ptr<App> (*)();
+using MakeAppFunction = std::unique_ptr<App> (*)(Renderer*);
 int run_main(MakeAppFunction make_app);
 
 }  //  namespace klotter
@@ -31,6 +30,6 @@ int run_main(MakeAppFunction make_app);
 	int main(int, char**) \
 	{ \
 		return klotter::run_main( \
-			[]() -> std::unique_ptr<App> { return std::make_unique<APP>(); } \
+			[](Renderer* r) -> std::unique_ptr<App> { return std::make_unique<APP>(r); } \
 		); \
 	}

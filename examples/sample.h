@@ -30,7 +30,7 @@ struct SampleApp : klotter::App
 	std::optional<std::size_t> selected_sample;
 	std::optional<std::size_t> active_sample;
 
-	void set_selected_sample(std::size_t new_selected_sample);
+	void set_selected_sample(klotter::Renderer* renderer, std::size_t new_selected_sample);
 
 	template<typename T>
 	void add_sample(const std::string& name)
@@ -45,9 +45,9 @@ struct SampleApp : klotter::App
 			}});
 	}
 
-	void on_frame() override;
-	void on_gui() override;
-	void on_render(float) override;
+	void on_frame(klotter::Renderer*) override;
+	void on_gui(klotter::Renderer*) override;
+	void on_render(klotter::Renderer*, float) override;
 };
 
 

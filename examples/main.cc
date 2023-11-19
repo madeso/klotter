@@ -14,7 +14,7 @@ void register_lights(SampleApp* app);
 
 struct ExampleApp : examples::SampleApp
 {
-	ExampleApp()
+	ExampleApp(klotter::Renderer*)
 	{
 		register_cube(this);
 		register_scene(this);
