@@ -4,6 +4,7 @@
 #include "klotter/log.h"
 #include "klotter/cint.h"
 
+#include "klotter/render/constants.h"
 #include "klotter/render/opengl_utils.h"
 
 namespace klotter
@@ -288,8 +289,7 @@ void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
 
 void setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list)
 {
-	// OpenGL should support atleast 16 textures
-	ASSERT(uniform_list.size() <= 16);
+	ASSERT(uniform_list.size() <= MAX_TEXTURES_SUPPORTED);
 
 	shader->use();
 

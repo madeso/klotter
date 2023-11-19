@@ -5,6 +5,7 @@
 #include "klotter/colors.h"
 
 #include "klotter/render/camera.h"
+#include "klotter/render/constants.h"
 #include "klotter/render/shader.h"
 #include "klotter/render/texture.h"
 #include "klotter/render/assets.h"
@@ -18,6 +19,60 @@ struct Lights;
 
 struct LoadedShader_Unlit;
 struct LoadedShader_Default;
+
+
+
+enum class RenderMode
+{
+	fill,
+	line,
+	point
+};
+
+enum class CullFace
+{
+	front,
+	back,
+	front_and_back
+};
+
+enum class Blend
+{
+	zero,
+	one,
+	src_color,
+	one_minus_src_color,
+	dst_color,
+	one_minus_dst_color,
+	src_alpha,
+	one_minus_src_alpha,
+	dst_alpha,
+	one_minus_dst_alpha,
+	constant_color,
+	one_minus_constant_color,
+	constant_alpha,
+	one_minus_constant_alpha,
+	src_alpha_saturate,
+	src1_color,
+	one_minus_src1_color,
+	src1_alpha,
+	one_minus_src1_alpha
+};
+
+using BlendMode = std::tuple<Blend, Blend>;
+
+struct OpenglStates
+{
+	std::optional<bool> cull_face;
+	std::optional<CullFace> cull_face_mode;
+	std::optional<bool> blending;
+	std::optional<BlendMode> blend_mode;
+	std::optional<bool> depth_test;
+	std::optional<RenderMode> render_mode;
+
+	std::optional<int> active_texture;
+	std::array<std::optional<unsigned int>, MAX_TEXTURES_SUPPORTED> texture_bound;
+};
 
 /// All loaded/known shaders
 struct ShaderResource
@@ -46,7 +101,7 @@ struct Material
 
 	virtual void use_shader() = 0;
 	virtual void set_uniforms(const CompiledCamera&, const glm::mat4&) = 0;
-	virtual void bind_textures(Assets* assets) = 0;
+	virtual void bind_textures(OpenglStates* states, Assets* assets) = 0;
 	virtual void apply_lights(const Lights& lights) = 0;
 };
 
@@ -61,7 +116,7 @@ struct UnlitMaterial : Material
 	explicit UnlitMaterial(const ShaderResource& resource);
 	void use_shader() override;
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
-	void bind_textures(Assets* assets) override;
+	void bind_textures(OpenglStates* states, Assets* assets) override;
 	void apply_lights(const Lights& lights) override;
 };
 
@@ -76,7 +131,7 @@ struct DefaultMaterial : Material
 	explicit DefaultMaterial(const ShaderResource& resource);
 	void use_shader() override;
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
-	void bind_textures(Assets* assets) override;
+	void bind_textures(OpenglStates* states, Assets* assets) override;
 	void apply_lights(const Lights& lights) override;
 };
 
@@ -131,55 +186,6 @@ struct World
 {
 	std::vector<std::shared_ptr<MeshInstance>> meshes;
 	Lights lights;
-};
-
-enum class RenderMode
-{
-	fill,
-	line,
-	point
-};
-
-enum class CullFace
-{
-	front,
-	back,
-	front_and_back
-};
-
-enum class Blend
-{
-	zero,
-	one,
-	src_color,
-	one_minus_src_color,
-	dst_color,
-	one_minus_dst_color,
-	src_alpha,
-	one_minus_src_alpha,
-	dst_alpha,
-	one_minus_dst_alpha,
-	constant_color,
-	one_minus_constant_color,
-	constant_alpha,
-	one_minus_constant_alpha,
-	src_alpha_saturate,
-	src1_color,
-	one_minus_src1_color,
-	src1_alpha,
-	one_minus_src1_alpha
-};
-
-using BlendMode = std::tuple<Blend, Blend>;
-
-struct OpenglStates
-{
-	std::optional<bool> cull_face;
-	std::optional<CullFace> cull_face_mode;
-	std::optional<bool> blending;
-	std::optional<BlendMode> blend_mode;
-	std::optional<bool> depth_test;
-	std::optional<RenderMode> render_mode;
 };
 
 /// the renderering "engine"
