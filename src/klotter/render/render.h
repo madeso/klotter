@@ -79,10 +79,10 @@ struct CompiledMesh
 	u32 vbo;
 	u32 vao;
 	u32 ebo;
-	std::shared_ptr<Material> material;
 	i32 number_of_triangles;
+	VertexTypes debug_types;
 
-	explicit CompiledMesh(u32, u32, u32, std::shared_ptr<Material>, i32);
+	explicit CompiledMesh(u32, u32, u32, const CompiledGeomVertexAttributes&, i32);
 	~CompiledMesh();
 
 	CompiledMesh(const CompiledMesh&) = delete;
@@ -91,17 +91,20 @@ struct CompiledMesh
 	void operator=(CompiledMesh&&) = delete;
 };
 
-std::shared_ptr<CompiledMesh> compile_Mesh(const Mesh&, std::shared_ptr<Material>);
+std::shared_ptr<CompiledMesh> compile_Mesh(const Mesh&, const CompiledGeomVertexAttributes& layout);
 
 struct MeshInstance
 {
 	std::shared_ptr<CompiledMesh> geom;
+	std::shared_ptr<Material> material;
 
 	glm::vec3 position;
 	glm::vec3 rotation;	 ///< yaw pitch roll
 };
 
-std::shared_ptr<MeshInstance> make_MeshInstance(std::shared_ptr<CompiledMesh> geom);
+std::shared_ptr<MeshInstance> make_MeshInstance(
+	std::shared_ptr<CompiledMesh> geom, std::shared_ptr<Material> mat
+);
 
 struct PointLight
 {
@@ -182,6 +185,9 @@ struct Renderer
 
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
 	std::shared_ptr<DefaultMaterial> make_default_material();
+
+	CompiledGeomVertexAttributes unlit_geom_layout();
+	CompiledGeomVertexAttributes default_geom_layout();
 
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;

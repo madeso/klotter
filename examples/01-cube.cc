@@ -20,11 +20,11 @@ struct CubeSample : Sample
 		camera->position.x = -3;
 		const auto triangle
 			= mesh::create_box(0.5f, 2.0f, 1.5f, false, colors::red_vermillion).to_mesh();
+		auto geom = compile_Mesh(triangle, renderer->unlit_geom_layout());
+
 		auto material = renderer->make_unlit_material();
 		material->texture = renderer->assets.get_light_grid();
-		auto geometry = compile_Mesh(triangle, material);
-
-		cube = make_MeshInstance(geometry);
+		cube = make_MeshInstance(geom, material);
 		world.meshes.emplace_back(cube);
 	}
 

@@ -15,19 +15,22 @@ namespace klotter
 // ------------------------------------------------------------------------------------------------
 // glue code
 
-CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, std::shared_ptr<Material> m, i32 tc)
+CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, const CompiledGeomVertexAttributes& att, i32 tc)
 	: vbo(b)
 	, vao(a)
 	, ebo(e)
-	, material(m)
 	, number_of_triangles(tc)
+	, debug_types(att.debug_types)
 {
 }
 
-std::shared_ptr<MeshInstance> make_MeshInstance(std::shared_ptr<CompiledMesh> geom)
+std::shared_ptr<MeshInstance> make_MeshInstance(
+	std::shared_ptr<CompiledMesh> geom, std::shared_ptr<Material> mat
+)
 {
 	auto mesh = std::make_shared<MeshInstance>();
 	mesh->geom = geom;
+	mesh->material = mat;
 	return mesh;
 }
 
@@ -39,6 +42,16 @@ std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material()
 std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 {
 	return std::make_shared<DefaultMaterial>(shaders);
+}
+
+CompiledGeomVertexAttributes Renderer::unlit_geom_layout()
+{
+	return shaders.unlit_shader.mesh_layout;
+}
+
+CompiledGeomVertexAttributes Renderer::default_geom_layout()
+{
+	return shaders.default_shader.mesh_layout;
 }
 
 bool ShaderResource::is_loaded() const
@@ -311,11 +324,11 @@ void destroy_vertex_array(u32 vao)
 	glDeleteVertexArrays(1, &vao);
 }
 
-std::shared_ptr<CompiledMesh> compile_Mesh(const Mesh& mesh, std::shared_ptr<Material> material)
+std::shared_ptr<CompiledMesh> compile_Mesh(
+	const Mesh& mesh, const CompiledGeomVertexAttributes& mesh_layout
+)
 {
-	// todo(Gustav): change it so that 1. this function only takes the mesh layout
-	// that 2. the material is part of the instance and 3. the actual material/shader layout is verified when rendering
-	const auto ex = extract_mesh(mesh, material->shader.mesh_layout);
+	const auto ex = extract_mesh(mesh, mesh_layout);
 
 	const auto vbo = create_buffer();
 	const auto vao = create_vertex_array();
@@ -359,7 +372,7 @@ std::shared_ptr<CompiledMesh> compile_Mesh(const Mesh& mesh, std::shared_ptr<Mat
 		GL_STATIC_DRAW
 	);
 
-	return std::make_shared<CompiledMesh>(vbo, vao, ebo, material, ex.face_size);
+	return std::make_shared<CompiledMesh>(vbo, vao, ebo, mesh_layout, ex.face_size);
 }
 
 CompiledMesh::~CompiledMesh()
@@ -398,10 +411,13 @@ void Renderer::render(const World& world, const Camera& camera)
 		const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
 		const auto transform = translation * rotation;
 
-		m->geom->material->shader.program->use();
-		m->geom->material->set_uniforms(compiled_camera, transform);
-		m->geom->material->bind_textures(&assets);
-		m->geom->material->apply_lights(world.lights);
+		// todo(Gustav): improve shader/geom test here to allow partial matches
+		ASSERT(m->material->shader.mesh_layout.debug_types == m->geom->debug_types);
+
+		m->material->shader.program->use();
+		m->material->set_uniforms(compiled_camera, transform);
+		m->material->bind_textures(&assets);
+		m->material->apply_lights(world.lights);
 
 		glBindVertexArray(m->geom->vao);
 		glDrawElements(GL_TRIANGLES, m->geom->number_of_triangles * 3, GL_UNSIGNED_INT, 0);

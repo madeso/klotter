@@ -16,33 +16,35 @@ struct LightsSample : Sample
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
 
-	std::shared_ptr<MeshInstance> add_cube(
-		float x,
-		float y,
-		float z,
-		bool invert,
-		std::shared_ptr<Material> material,
-		const glm::vec3& color
+	std::shared_ptr<CompiledMesh> create_cube_geom(
+		float x, float y, float z, bool invert, CompiledGeomVertexAttributes layout
 	)
 	{
-		// todo(gustav): take mesh as a argument, don't create a new mesh for each sub cube
-		const auto triangle = mesh::create_box(x, y, z, invert, color).to_mesh();
-		auto geometry = compile_Mesh(triangle, material);
+		const auto triangle = mesh::create_box(x, y, z, invert, colors::white).to_mesh();
+		auto geom = compile_Mesh(triangle, layout);
+		return geom;
+	}
 
-		auto cube = make_MeshInstance(geometry);
+	std::shared_ptr<MeshInstance> add_cube(
+		std::shared_ptr<CompiledMesh> geom, std::shared_ptr<Material> material
+	)
+	{
+		auto cube = make_MeshInstance(geom, material);
 		world.meshes.emplace_back(cube);
-
 		return cube;
 	}
 
 	void add_mini_cube(
-		klotter::Renderer* renderer, std::shared_ptr<klotter::Texture> texture, const glm::vec3& p
+		klotter::Renderer* renderer,
+		std::shared_ptr<CompiledMesh> geom,
+		std::shared_ptr<klotter::Texture> texture,
+		const glm::vec3& p
 	)
 	{
 		auto material = renderer->make_default_material();
 		material->texture = texture;
 
-		auto cube = add_cube(1.0f, 1.0f, 1.0f, false, material, colors::white);
+		auto cube = add_cube(geom, material);
 		cube->position = p;
 
 		cubes.emplace_back(cube);
@@ -56,18 +58,21 @@ struct LightsSample : Sample
 		camera->yaw = -50;
 
 		light_material = renderer->make_unlit_material();
-		auto light = add_cube(0.25f, 0.25f, 0.25f, false, light_material, colors::white);
+		auto light_geom
+			= create_cube_geom(0.25f, 0.25f, 0.25f, false, renderer->unlit_geom_layout());
+		auto light = add_cube(light_geom, light_material);
 		light->position.z = 0.5f;
 
+		auto mini = create_cube_geom(1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
 		auto t = renderer->assets.get_light_grid();
-		add_mini_cube(renderer, t, {1.5f, 2.0f, 2.5f});
-		add_mini_cube(renderer, t, {1.5f, 0.2f, -1.5f});
-		add_mini_cube(renderer, t, {2.4f, -0.4f, 3.5f});
-		add_mini_cube(renderer, t, {1.3f, -2.0f, -2.5f});
-		add_mini_cube(renderer, t, {-1.3f, 1.0f, 1.5f});
-		add_mini_cube(renderer, t, {-1.7f, 3.0f, -7.5f});
-		add_mini_cube(renderer, t, {-1.5f, -2.2f, 2.5f});
-		add_mini_cube(renderer, t, {-3.8f, -2.0f, -2.3f});
+		add_mini_cube(renderer, mini, t, {1.5f, 2.0f, 2.5f});
+		add_mini_cube(renderer, mini, t, {1.5f, 0.2f, -1.5f});
+		add_mini_cube(renderer, mini, t, {2.4f, -0.4f, 3.5f});
+		add_mini_cube(renderer, mini, t, {1.3f, -2.0f, -2.5f});
+		add_mini_cube(renderer, mini, t, {-1.3f, 1.0f, 1.5f});
+		add_mini_cube(renderer, mini, t, {-1.7f, 3.0f, -7.5f});
+		add_mini_cube(renderer, mini, t, {-1.5f, -2.2f, 2.5f});
+		add_mini_cube(renderer, mini, t, {-3.8f, -2.0f, -2.3f});
 		apply_animation();
 	}
 

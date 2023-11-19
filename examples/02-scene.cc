@@ -13,36 +13,40 @@ struct SceneSample : Sample
 {
 	World world;
 
-	std::shared_ptr<MeshInstance> add_cube(
-		klotter::Renderer* renderer,
-		std::shared_ptr<klotter::Texture> texture,
-		float x,
-		float y,
-		float z,
-		bool invert,
-		const glm::vec3& color
+	std::shared_ptr<CompiledMesh> make_unlit_cube(
+		klotter::Renderer* renderer, float x, float y, float z, bool invert, const glm::vec3& color
 	)
 	{
-		// todo(gustav): take mesh as a argument, don't create a new mesh for each sub cube
-		const auto triangle = mesh::create_box(x, y, z, invert, color).to_mesh();
+		// todo(Gustav): move color to shader
+		const auto triangles = mesh::create_box(x, y, z, invert, color).to_mesh();
+		auto geom = compile_Mesh(triangles, renderer->unlit_geom_layout());
+		return geom;
+	}
+
+	std::shared_ptr<MeshInstance> add_unlit_cube(
+		klotter::Renderer* renderer,
+		std::shared_ptr<klotter::Texture> texture,
+		std::shared_ptr<CompiledMesh> geom
+	)
+	{
 		auto material = renderer->make_unlit_material();
 		material->texture = texture;
-		auto geometry = compile_Mesh(triangle, material);
 
-		auto cube = make_MeshInstance(geometry);
+		auto cube = make_MeshInstance(geom, material);
 		world.meshes.emplace_back(cube);
 
 		return cube;
 	}
 
-	void add_mini_cube(
+	void add_unlit_mini_cube(
 		klotter::Renderer* renderer,
+		std::shared_ptr<CompiledMesh> geom,
 		std::shared_ptr<klotter::Texture> texture,
 		const glm::vec3& p,
 		int index
 	)
 	{
-		auto cube = add_cube(renderer, texture, 1.0f, 1.0f, 1.0f, false, colors::white);
+		auto cube = add_unlit_cube(renderer, texture, geom);
 		cube->position = p;
 
 		const auto fi = [index](int i) -> float
@@ -61,16 +65,18 @@ struct SceneSample : Sample
 
 		auto t = renderer->assets.get_light_grid();
 		// add world
-		add_cube(renderer, t, 10.0f, 10.0f, 10.0f, true, colors::blue_sky);
+		auto world_geom = make_unlit_cube(renderer, 10.0f, 10.0f, 10.0f, true, colors::blue_sky);
+		add_unlit_cube(renderer, t, world_geom);
 
-		add_mini_cube(renderer, t, {1.5f, 2.0f, 2.5f}, 0);
-		add_mini_cube(renderer, t, {1.5f, 0.2f, -1.5f}, 1);
-		add_mini_cube(renderer, t, {2.4f, -0.4f, 3.5f}, 2);
-		add_mini_cube(renderer, t, {1.3f, -2.0f, -2.5f}, 3);
-		add_mini_cube(renderer, t, {-1.3f, 1.0f, 1.5f}, 4);
-		add_mini_cube(renderer, t, {-1.7f, 3.0f, -7.5f}, 5);
-		add_mini_cube(renderer, t, {-1.5f, -2.2f, 2.5f}, 6);
-		add_mini_cube(renderer, t, {-3.8f, -2.0f, -2.3f}, 7);
+		auto mini = make_unlit_cube(renderer, 1.0f, 1.0f, 1.0f, false, colors::white);
+		add_unlit_mini_cube(renderer, mini, t, {1.5f, 2.0f, 2.5f}, 0);
+		add_unlit_mini_cube(renderer, mini, t, {1.5f, 0.2f, -1.5f}, 1);
+		add_unlit_mini_cube(renderer, mini, t, {2.4f, -0.4f, 3.5f}, 2);
+		add_unlit_mini_cube(renderer, mini, t, {1.3f, -2.0f, -2.5f}, 3);
+		add_unlit_mini_cube(renderer, mini, t, {-1.3f, 1.0f, 1.5f}, 4);
+		add_unlit_mini_cube(renderer, mini, t, {-1.7f, 3.0f, -7.5f}, 5);
+		add_unlit_mini_cube(renderer, mini, t, {-1.5f, -2.2f, 2.5f}, 6);
+		add_unlit_mini_cube(renderer, mini, t, {-3.8f, -2.0f, -2.3f}, 7);
 	}
 
 	void on_render(klotter::Renderer* renderer, klotter::Camera* camera, float) override
