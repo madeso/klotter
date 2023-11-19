@@ -34,11 +34,10 @@ struct ShaderResource
 	bool is_loaded() const;
 };
 
+/// Base class for all materials
 struct Material
 {
-	LoadedShaderData shader;
-
-	explicit Material(LoadedShaderData data);
+	Material() = default;
 	virtual ~Material() = default;
 
 	Material(const Material&) = delete;
@@ -46,6 +45,7 @@ struct Material
 	void operator=(const Material&) = delete;
 	void operator=(Material&&) = delete;
 
+	virtual void use_shader() = 0;
 	virtual void set_uniforms(const CompiledCamera&, const glm::mat4&) = 0;
 	virtual void bind_textures(Assets* assets) = 0;
 	virtual void apply_lights(const Lights& lights) = 0;
@@ -54,11 +54,13 @@ struct Material
 /// a unlit (or fully lit) material, not affected by light
 struct UnlitMaterial : Material
 {
+	const LoadedShaderData* shader;
 	glm::vec3 color;
 	float alpha;
 	std::shared_ptr<Texture> texture;
 
 	explicit UnlitMaterial(const ShaderResource& resource);
+	void use_shader() override;
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(Assets* assets) override;
 	void apply_lights(const Lights& lights) override;
@@ -67,11 +69,13 @@ struct UnlitMaterial : Material
 /// a material affected by light
 struct DefaultMaterial : Material
 {
+	const LoadedShaderData* shader;
 	glm::vec3 color;
 	float alpha;
 	std::shared_ptr<Texture> texture;
 
 	explicit DefaultMaterial(const ShaderResource& resource);
+	void use_shader() override;
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(Assets* assets) override;
 	void apply_lights(const Lights& lights) override;

@@ -92,24 +92,24 @@ ShaderResource::ShaderResource()
 // ------------------------------------------------------------------------------------------------
 // material, part of rendering?
 
-Material::Material(LoadedShaderData s)
-	: shader(std::move(s))
-{
-}
-
 UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
-	: Material(resource.unlit_shader)
+	: shader(&resource.unlit_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
 }
 
+void UnlitMaterial::use_shader()
+{
+	shader->program->use();
+}
+
 void UnlitMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-	shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
-	shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
-	shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
-	shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
+	shader->program->set_vec4(shader->program->get_uniform("u_tint_color"), {color, alpha});
+	shader->program->set_mat(shader->program->get_uniform("u_model"), transform);
+	shader->program->set_mat(shader->program->get_uniform("u_projection"), cc.projection);
+	shader->program->set_mat(shader->program->get_uniform("u_view"), cc.view);
 }
 
 void UnlitMaterial::bind_textures(Assets* assets)
@@ -130,20 +130,24 @@ void UnlitMaterial::apply_lights(const Lights&)
 }
 
 DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
-	: Material(resource.default_shader)
+	: shader(&resource.default_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
 }
 
+void DefaultMaterial::use_shader()
+{
+	shader->program->use();
+}
+
 void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-	shader.program->set_vec4(shader.program->get_uniform("u_tint_color"), {color, alpha});
-	shader.program->set_mat(shader.program->get_uniform("u_model"), transform);
-	shader.program->set_mat(shader.program->get_uniform("u_projection"), cc.projection);
-	shader.program->set_mat(shader.program->get_uniform("u_view"), cc.view);
-
-	shader.program->set_vec3(shader.program->get_uniform("u_view_position"), cc.position);
+	shader->program->set_vec4(shader->program->get_uniform("u_tint_color"), {color, alpha});
+	shader->program->set_mat(shader->program->get_uniform("u_model"), transform);
+	shader->program->set_mat(shader->program->get_uniform("u_projection"), cc.projection);
+	shader->program->set_mat(shader->program->get_uniform("u_view"), cc.view);
+	shader->program->set_vec3(shader->program->get_uniform("u_view_position"), cc.position);
 }
 
 void DefaultMaterial::bind_textures(Assets* assets)
@@ -159,11 +163,11 @@ void DefaultMaterial::bind_textures(Assets* assets)
 
 void DefaultMaterial::apply_lights(const Lights& lights)
 {
-	shader.program->set_vec3(
-		shader.program->get_uniform("u_light_color"), lights.point_light.color
+	shader->program->set_vec3(
+		shader->program->get_uniform("u_light_color"), lights.point_light.color
 	);
-	shader.program->set_vec3(
-		shader.program->get_uniform("u_light_world"), lights.point_light.position
+	shader->program->set_vec3(
+		shader->program->get_uniform("u_light_world"), lights.point_light.position
 	);
 }
 
@@ -407,7 +411,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
 		const auto transform = translation * rotation;
 
-		m->material->shader.program->use();
+		m->material->use_shader();
 		m->material->set_uniforms(compiled_camera, transform);
 		m->material->bind_textures(&assets);
 		m->material->apply_lights(world.lights);
