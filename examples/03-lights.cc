@@ -1,4 +1,4 @@
-#include "klotter/render/mesh.builder.h"
+#include "klotter/render/geom.builder.h"
 #include "klotter/str.h"
 
 #include "sample.h"
@@ -16,27 +16,27 @@ struct LightsSample : Sample
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
 
-	std::shared_ptr<CompiledMesh> create_cube_geom(
+	std::shared_ptr<CompiledGeom> create_cube_geom(
 		float x, float y, float z, bool invert, CompiledGeomVertexAttributes layout
 	)
 	{
-		const auto triangle = mesh::create_box(x, y, z, invert, colors::white).to_mesh();
-		auto geom = compile_Mesh(triangle, layout);
+		const auto triangle = geom::create_box(x, y, z, invert, colors::white).to_geom();
+		auto geom = compile_geom(triangle, layout);
 		return geom;
 	}
 
 	std::shared_ptr<MeshInstance> add_cube(
-		std::shared_ptr<CompiledMesh> geom, std::shared_ptr<Material> material
+		std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> material
 	)
 	{
-		auto cube = make_MeshInstance(geom, material);
+		auto cube = make_mesh_instance(geom, material);
 		world.meshes.emplace_back(cube);
 		return cube;
 	}
 
 	void add_mini_cube(
 		klotter::Renderer* renderer,
-		std::shared_ptr<CompiledMesh> geom,
+		std::shared_ptr<CompiledGeom> geom,
 		std::shared_ptr<klotter::Texture> texture,
 		const glm::vec3& p
 	)

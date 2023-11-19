@@ -1,12 +1,12 @@
-#include "klotter/render/mesh.builder.h"
+#include "klotter/render/geom.builder.h"
 
 #include "klotter/cint.h"
 
-#include "klotter/render/mesh.h"
+#include "klotter/render/geom.h"
 
 #include <map>
 
-namespace klotter::mesh
+namespace klotter::geom
 {
 
 struct HashCombiner
@@ -48,14 +48,14 @@ bool operator==(const Combo& lhs, const Combo& rhs)
 		&& lhs.color == rhs.color;
 }
 
-}  //  namespace klotter::mesh
+}  //  namespace klotter::geom
 
 template<>
-struct std::hash<klotter::mesh::Combo>
+struct std::hash<klotter::geom::Combo>
 {
-	std::size_t operator()(const klotter::mesh::Combo& c) const
+	std::size_t operator()(const klotter::geom::Combo& c) const
 	{
-		return klotter::mesh::HashCombiner{}
+		return klotter::geom::HashCombiner{}
 			.combine(c.position)
 			.combine(c.texture)
 			.combine(c.normal)
@@ -64,7 +64,7 @@ struct std::hash<klotter::mesh::Combo>
 	}
 };
 
-namespace klotter::mesh
+namespace klotter::geom
 {
 
 
@@ -374,7 +374,7 @@ Builder& Builder::replace_with_smooth_normals()
 	return *this;
 }
 
-Mesh Builder::to_mesh() const
+Geom Builder::to_geom() const
 {
 	std::unordered_map<Combo, u32> combinations;
 
@@ -410,7 +410,7 @@ Mesh Builder::to_mesh() const
 		const auto v1 = convert_vert(tri.v1);
 		const auto v2 = convert_vert(tri.v2);
 
-		// add traingle to mesh
+		// add traingle to geom
 		faces.emplace_back(Face{v0, v1, v2});
 	}
 
@@ -419,4 +419,4 @@ Mesh Builder::to_mesh() const
 
 
 
-}  //  namespace klotter::mesh
+}  //  namespace klotter::geom

@@ -1,4 +1,4 @@
-#include "klotter/render/mesh.builder.h"
+#include "klotter/render/geom.builder.h"
 
 #include "sample.h"
 
@@ -13,26 +13,26 @@ struct SceneSample : Sample
 {
 	World world;
 
-	std::shared_ptr<CompiledMesh> make_unlit_cube(
+	std::shared_ptr<CompiledGeom> make_unlit_cube(
 		klotter::Renderer* renderer, float x, float y, float z, bool invert, const glm::vec3& color
 	)
 	{
 		// todo(Gustav): move color to shader
-		const auto triangles = mesh::create_box(x, y, z, invert, color).to_mesh();
-		auto geom = compile_Mesh(triangles, renderer->unlit_geom_layout());
+		const auto triangles = geom::create_box(x, y, z, invert, color).to_geom();
+		auto geom = compile_geom(triangles, renderer->unlit_geom_layout());
 		return geom;
 	}
 
 	std::shared_ptr<MeshInstance> add_unlit_cube(
 		klotter::Renderer* renderer,
 		std::shared_ptr<klotter::Texture> texture,
-		std::shared_ptr<CompiledMesh> geom
+		std::shared_ptr<CompiledGeom> geom
 	)
 	{
 		auto material = renderer->make_unlit_material();
 		material->texture = texture;
 
-		auto cube = make_MeshInstance(geom, material);
+		auto cube = make_mesh_instance(geom, material);
 		world.meshes.emplace_back(cube);
 
 		return cube;
@@ -40,7 +40,7 @@ struct SceneSample : Sample
 
 	void add_unlit_mini_cube(
 		klotter::Renderer* renderer,
-		std::shared_ptr<CompiledMesh> geom,
+		std::shared_ptr<CompiledGeom> geom,
 		std::shared_ptr<klotter::Texture> texture,
 		const glm::vec3& p,
 		int index

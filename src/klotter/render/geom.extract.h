@@ -2,7 +2,7 @@
 
 namespace klotter
 {
-struct Mesh;
+struct Geom;
 struct CompiledGeomVertexAttributes;
 }  //  namespace klotter
 
@@ -11,8 +11,8 @@ namespace klotter
 
 using VertexVector = std::vector<float>;
 
-/// Extracted data from mesh for OpenGL
-struct ExtractedMesh
+/// Extracted data from geom for OpenGL
+struct ExtractedGeom
 {
 	VertexVector vertices;
 	std::size_t floats_per_vertex;
@@ -21,6 +21,6 @@ struct ExtractedMesh
 	i32 face_size;
 };
 
-ExtractedMesh extract_mesh(const Mesh& mesh, const CompiledGeomVertexAttributes& layout);
+ExtractedGeom extract_geom(const Geom& geom, const CompiledGeomVertexAttributes& layout);
 
 }  //  namespace klotter

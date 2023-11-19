@@ -46,7 +46,7 @@ CompiledShaderVertexAttributes compile_shader_layout(
 }
 
 [[nodiscard]]
-CompiledGeomVertexAttributes get_mesh_layout(const CompiledVertexTypeList& l)
+CompiledGeomVertexAttributes get_geom_layout(const CompiledVertexTypeList& l)
 {
 	std::vector<CompiledVertexElementNoName> list;
 

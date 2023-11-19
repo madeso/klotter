@@ -18,7 +18,7 @@ struct Face
 	u32 c;
 };
 
-struct Mesh
+struct Geom
 {
 	std::vector<Vertex> vertices;
 	std::vector<Face> faces;

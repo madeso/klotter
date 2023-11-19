@@ -1,4 +1,4 @@
-#include "klotter/render/mesh.builder.h"
+#include "klotter/render/geom.builder.h"
 
 #include "sample.h"
 
@@ -19,12 +19,12 @@ struct CubeSample : Sample
 		camera->position.z = 0;
 		camera->position.x = -3;
 		const auto triangle
-			= mesh::create_box(0.5f, 2.0f, 1.5f, false, colors::red_vermillion).to_mesh();
-		auto geom = compile_Mesh(triangle, renderer->unlit_geom_layout());
+			= geom::create_box(0.5f, 2.0f, 1.5f, false, colors::red_vermillion).to_geom();
+		auto geom = compile_geom(triangle, renderer->unlit_geom_layout());
 
 		auto material = renderer->make_unlit_material();
 		material->texture = renderer->assets.get_light_grid();
-		cube = make_MeshInstance(geom, material);
+		cube = make_mesh_instance(geom, material);
 		world.meshes.emplace_back(cube);
 	}
 

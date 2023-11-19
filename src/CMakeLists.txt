@@ -24,9 +24,9 @@ set(src_render
 
     klotter/render/vertex_layout.cc klotter/render/vertex_layout.h
 
-    klotter/render/mesh.h
-    klotter/render/mesh.builder.cc klotter/render/mesh.builder.h
-    klotter/render/mesh.extract.cc klotter/render/mesh.extract.h
+    klotter/render/geom.h
+    klotter/render/geom.builder.cc klotter/render/geom.builder.h
+    klotter/render/geom.extract.cc klotter/render/geom.extract.h
 )
     
 set(src_base

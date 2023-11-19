@@ -5,7 +5,7 @@
 
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/shader.source.h"
-#include "klotter/render/mesh.extract.h"
+#include "klotter/render/geom.extract.h"
 
 #include <string_view>
 
@@ -15,7 +15,7 @@ namespace klotter
 // ------------------------------------------------------------------------------------------------
 // glue code
 
-CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, const CompiledGeomVertexAttributes& att, i32 tc)
+CompiledGeom::CompiledGeom(u32 b, u32 a, u32 e, const CompiledGeomVertexAttributes& att, i32 tc)
 	: vbo(b)
 	, vao(a)
 	, ebo(e)
@@ -24,14 +24,14 @@ CompiledMesh::CompiledMesh(u32 b, u32 a, u32 e, const CompiledGeomVertexAttribut
 {
 }
 
-std::shared_ptr<MeshInstance> make_MeshInstance(
-	std::shared_ptr<CompiledMesh> geom, std::shared_ptr<Material> mat
+std::shared_ptr<MeshInstance> make_mesh_instance(
+	std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat
 )
 {
-	auto mesh = std::make_shared<MeshInstance>();
-	mesh->geom = geom;
-	mesh->material = mat;
-	return mesh;
+	auto instance = std::make_shared<MeshInstance>();
+	instance->geom = geom;
+	instance->material = mat;
+	return instance;
 }
 
 std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material()
@@ -46,12 +46,12 @@ std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 
 CompiledGeomVertexAttributes Renderer::unlit_geom_layout()
 {
-	return shaders.unlit_shader.mesh_layout;
+	return shaders.unlit_shader.geom_layout;
 }
 
 CompiledGeomVertexAttributes Renderer::default_geom_layout()
 {
-	return shaders.default_shader.mesh_layout;
+	return shaders.default_shader.geom_layout;
 }
 
 bool ShaderResource::is_loaded() const
@@ -72,12 +72,12 @@ using BaseShaderData = std::vector<VertexType>;
 LoadedShaderData load_shader(const BaseShaderData& base_layout, const ShaderSource& source)
 {
 	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
-	const auto mesh_layout = get_mesh_layout(layout_compiler);
+	const auto geom_layout = get_geom_layout(layout_compiler);
 	const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout);
 
 	auto program = std::make_shared<ShaderProgram>(source.vertex, source.fragment, compiled_layout);
 
-	return {program, mesh_layout};
+	return {program, geom_layout};
 }
 
 ShaderResource::ShaderResource()
@@ -324,11 +324,11 @@ void destroy_vertex_array(u32 vao)
 	glDeleteVertexArrays(1, &vao);
 }
 
-std::shared_ptr<CompiledMesh> compile_Mesh(
-	const Mesh& mesh, const CompiledGeomVertexAttributes& mesh_layout
+std::shared_ptr<CompiledGeom> compile_geom(
+	const Geom& geom, const CompiledGeomVertexAttributes& geom_layout
 )
 {
-	const auto ex = extract_mesh(mesh, mesh_layout);
+	const auto ex = extract_geom(geom, geom_layout);
 
 	const auto vbo = create_buffer();
 	const auto vao = create_vertex_array();
@@ -372,10 +372,10 @@ std::shared_ptr<CompiledMesh> compile_Mesh(
 		GL_STATIC_DRAW
 	);
 
-	return std::make_shared<CompiledMesh>(vbo, vao, ebo, mesh_layout, ex.face_size);
+	return std::make_shared<CompiledGeom>(vbo, vao, ebo, geom_layout, ex.face_size);
 }
 
-CompiledMesh::~CompiledMesh()
+CompiledGeom::~CompiledGeom()
 {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	destroy_buffer(ebo);
@@ -412,7 +412,7 @@ void Renderer::render(const World& world, const Camera& camera)
 		const auto transform = translation * rotation;
 
 		// todo(Gustav): improve shader/geom test here to allow partial matches
-		ASSERT(m->material->shader.mesh_layout.debug_types == m->geom->debug_types);
+		ASSERT(m->material->shader.geom_layout.debug_types == m->geom->debug_types);
 
 		m->material->shader.program->use();
 		m->material->set_uniforms(compiled_camera, transform);

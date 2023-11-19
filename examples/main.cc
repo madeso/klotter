@@ -1,4 +1,4 @@
-#include "klotter/render/mesh.builder.h"
+#include "klotter/render/geom.builder.h"
 #include "sample.h"
 
 #include <cmath>

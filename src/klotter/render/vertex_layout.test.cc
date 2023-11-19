@@ -140,7 +140,7 @@ TEST_CASE("vertex_layout_test_simple", "[vertex_layout]")
 	auto layout_compiler = compile_attribute_layouts({layout_shader_material});
 
 	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material);
-	const auto mesh_layout = get_mesh_layout(layout_compiler);
+	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
 		compiled_layout,
@@ -152,7 +152,7 @@ TEST_CASE("vertex_layout_test_simple", "[vertex_layout]")
 	));
 
 	CHECK(is_equal(
-		mesh_layout,
+		geom_layout,
 		{{{VertexType::position3, 0},
 		  {VertexType::normal3, 1},
 		  {VertexType::color4, 2},
@@ -174,7 +174,7 @@ TEST_CASE("vertex_layout_test_with_custom_layput", "[vertex_layout]")
 	);
 
 	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material);
-	const auto mesh_layout = get_mesh_layout(layout_compiler);
+	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
 		compiled_layout,
@@ -186,7 +186,7 @@ TEST_CASE("vertex_layout_test_with_custom_layput", "[vertex_layout]")
 	));
 
 	CHECK(is_equal(
-		mesh_layout,
+		geom_layout,
 		{{{VertexType::position3, 2},
 		  {VertexType::normal3, 3},
 		  {VertexType::color4, 0},
@@ -209,7 +209,7 @@ TEST_CASE("vertex_layout_test_material_and_depth", "[vertex_layout]")
 	const auto compiled_layout_material
 		= compile_shader_layout(layout_compiler, layout_shader_material);
 	const auto compiled_layout_depth = compile_shader_layout(layout_compiler, layout_shader_depth);
-	const auto mesh_layout = get_mesh_layout(layout_compiler);
+	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
 		compiled_layout_material,
@@ -227,7 +227,7 @@ TEST_CASE("vertex_layout_test_material_and_depth", "[vertex_layout]")
 	));
 
 	CHECK(is_equal(
-		mesh_layout,
+		geom_layout,
 		{{{VertexType::position3, 0},
 		  {VertexType::normal3, 1},
 		  {VertexType::color4, 2},
@@ -256,7 +256,7 @@ TEST_CASE("vertex_layout_test_material_and_different", "[vertex_layout]")
 		= compile_shader_layout(layout_compiler, layout_shader_material);
 	const auto compiled_layout_different
 		= compile_shader_layout(layout_compiler, layout_shader_different);
-	const auto mesh_layout = get_mesh_layout(layout_compiler);
+	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
 		compiled_layout_material,
@@ -277,7 +277,7 @@ TEST_CASE("vertex_layout_test_material_and_different", "[vertex_layout]")
 	));
 
 	CHECK(is_equal(
-		mesh_layout,
+		geom_layout,
 		{{{VertexType::position3, 0},
 		  {VertexType::normal3, 1},
 		  {VertexType::color4, 2},
@@ -294,7 +294,7 @@ TEST_CASE("vertex_layout_test_crazy", "[vertex_layout]")
 	auto layout_compiler = compile_attribute_layouts({layout_shader_a, layout_shader_b});
 	const auto compiled_layout_a = compile_shader_layout(layout_compiler, layout_shader_a);
 	const auto compiled_layout_b = compile_shader_layout(layout_compiler, layout_shader_b);
-	const auto mesh_layout = get_mesh_layout(layout_compiler);
+	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
 		compiled_layout_a,
@@ -307,7 +307,7 @@ TEST_CASE("vertex_layout_test_crazy", "[vertex_layout]")
 	));
 
 	CHECK(is_equal(
-		mesh_layout,
+		geom_layout,
 		{{{VertexType::color4, 0}, {VertexType::texture2, 1}},
 		 {VertexType::color4, VertexType::texture2}}
 	));
@@ -326,7 +326,7 @@ TEST_CASE("vertex_layout_test_get_not_requested", "[vertex_layout]")
 
 	auto layout_compiler = compile_attribute_layouts({layout_shader_material});
 
-	const auto mesh_layout = get_mesh_layout(layout_compiler);
+	const auto geom_layout = get_geom_layout(layout_compiler);
 
 
 	// not requested variables should assert
@@ -341,5 +341,5 @@ TEST_CASE("vertex_layout_test_get_not_requested", "[vertex_layout]")
 	CHECK(is_equal(compiled_layout, {{{VertexType::position3, "pos", 0}}, {VertexType::position3}})
 	);
 
-	CHECK(is_equal(mesh_layout, {{{VertexType::position3, 0}}, {VertexType::position3}}));
+	CHECK(is_equal(geom_layout, {{{VertexType::position3, 0}}, {VertexType::position3}}));
 }

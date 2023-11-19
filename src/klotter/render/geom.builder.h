@@ -4,10 +4,10 @@
 
 namespace klotter
 {
-struct Mesh;
+struct Geom;
 }
 
-namespace klotter::mesh
+namespace klotter::geom
 {
 using Index = u64;
 
@@ -55,7 +55,7 @@ struct Builder
 	Builder& scale(float scale);
 	Builder& invert_normals();
 
-	Mesh to_mesh() const;
+	Geom to_geom() const;
 
 	std::vector<Triangle> triangles;
 	std::vector<glm::vec3> positions;
@@ -68,4 +68,4 @@ Builder create_box(
 	float w, float h, float d, bool face_out, const glm::vec3& color = colors::white
 );
 
-}  //  namespace klotter::mesh
+}  //  namespace klotter::geom

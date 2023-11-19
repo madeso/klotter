@@ -1,9 +1,9 @@
-#include "klotter/render/mesh.extract.h"
+#include "klotter/render/geom.extract.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
 
-#include "klotter/render/mesh.h"
+#include "klotter/render/geom.h"
 #include "klotter/render/vertex_layout.h"
 
 #include <numeric>
@@ -11,14 +11,14 @@
 namespace klotter
 {
 
-std::vector<u32> compile_indices(const Mesh& mesh)
+std::vector<u32> compile_indices(const Geom& geom)
 {
 	std::vector<u32> indices;
 	const auto push = [&indices](const u32 i)
 	{
 		indices.emplace_back(i);
 	};
-	for (const auto& f: mesh.faces)
+	for (const auto& f: geom.faces)
 	{
 		push(f.a);
 		push(f.b);
@@ -56,9 +56,9 @@ struct BufferData
 	std::vector<PerVertex> per_vertex;
 };
 
-ExtractedMesh extract_mesh(const Mesh& mesh, const CompiledGeomVertexAttributes& layout)
+ExtractedGeom extract_geom(const Geom& geom, const CompiledGeomVertexAttributes& layout)
 {
-	const auto indices = compile_indices(mesh);
+	const auto indices = compile_indices(geom);
 
 	const auto attribute_descriptions = [&]()
 	{
@@ -97,8 +97,8 @@ ExtractedMesh extract_mesh(const Mesh& mesh, const CompiledGeomVertexAttributes&
 	const auto vertices = [&]()
 	{
 		auto verts = VertexVector{};
-		verts.reserve(mesh.vertices.size() * floats_per_vertex);
-		for (const auto& vertex: mesh.vertices)
+		verts.reserve(geom.vertices.size() * floats_per_vertex);
+		for (const auto& vertex: geom.vertices)
 		{
 			for (const auto& per_vertex: attribute_descriptions.per_vertex)
 			{
@@ -108,7 +108,7 @@ ExtractedMesh extract_mesh(const Mesh& mesh, const CompiledGeomVertexAttributes&
 		return verts;
 	}();
 
-	const auto face_size = static_cast<i32>(mesh.faces.size());
+	const auto face_size = static_cast<i32>(geom.faces.size());
 
 	return {vertices, floats_per_vertex, attribute_descriptions.count, indices, face_size};
 }

@@ -9,7 +9,7 @@
 #include "klotter/render/texture.h"
 #include "klotter/render/assets.h"
 #include "klotter/render/vertex_layout.h"
-#include "klotter/render/mesh.h"
+#include "klotter/render/geom.h"
 
 namespace klotter
 {
@@ -19,7 +19,7 @@ struct Lights;
 struct LoadedShaderData
 {
 	std::shared_ptr<ShaderProgram> program;
-	CompiledGeomVertexAttributes mesh_layout;
+	CompiledGeomVertexAttributes geom_layout;
 };
 
 struct ShaderResource
@@ -74,7 +74,7 @@ struct DefaultMaterial : Material
 	void apply_lights(const Lights& lights) override;
 };
 
-struct CompiledMesh
+struct CompiledGeom
 {
 	u32 vbo;
 	u32 vao;
@@ -82,28 +82,28 @@ struct CompiledMesh
 	i32 number_of_triangles;
 	VertexTypes debug_types;
 
-	explicit CompiledMesh(u32, u32, u32, const CompiledGeomVertexAttributes&, i32);
-	~CompiledMesh();
+	explicit CompiledGeom(u32, u32, u32, const CompiledGeomVertexAttributes&, i32);
+	~CompiledGeom();
 
-	CompiledMesh(const CompiledMesh&) = delete;
-	CompiledMesh(CompiledMesh&&) = delete;
-	void operator=(const CompiledMesh&) = delete;
-	void operator=(CompiledMesh&&) = delete;
+	CompiledGeom(const CompiledGeom&) = delete;
+	CompiledGeom(CompiledGeom&&) = delete;
+	void operator=(const CompiledGeom&) = delete;
+	void operator=(CompiledGeom&&) = delete;
 };
 
-std::shared_ptr<CompiledMesh> compile_Mesh(const Mesh&, const CompiledGeomVertexAttributes& layout);
+std::shared_ptr<CompiledGeom> compile_geom(const Geom&, const CompiledGeomVertexAttributes& layout);
 
 struct MeshInstance
 {
-	std::shared_ptr<CompiledMesh> geom;
+	std::shared_ptr<CompiledGeom> geom;
 	std::shared_ptr<Material> material;
 
 	glm::vec3 position;
 	glm::vec3 rotation;	 ///< yaw pitch roll
 };
 
-std::shared_ptr<MeshInstance> make_MeshInstance(
-	std::shared_ptr<CompiledMesh> geom, std::shared_ptr<Material> mat
+std::shared_ptr<MeshInstance> make_mesh_instance(
+	std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat
 );
 
 struct PointLight

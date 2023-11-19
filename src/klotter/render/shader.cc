@@ -315,13 +315,13 @@ void set_shader_program(unsigned int new_program, const VertexTypes& types)
 	glUseProgram(new_program);
 }
 
-bool is_bound_for_shader(const std::unordered_set<VertexType>& debug_mesh_shader_types)
+bool is_bound_for_shader(const std::unordered_set<VertexType>& debug_geom_shader_types)
 {
 	for (auto t: debug_current_shader_types)
 	{
-		if (debug_mesh_shader_types.find(t) == debug_mesh_shader_types.end())
+		if (debug_geom_shader_types.find(t) == debug_geom_shader_types.end())
 		{
-			// if shader type isn't found in mesh
+			// if shader type isn't found in geom
 			// then error out
 			return false;
 		}

@@ -52,7 +52,7 @@ struct CompiledShaderVertexAttributes
 	VertexTypes debug_types;
 };
 
-/** A list of CompiledVertexLayoutNoNameList (for mesh) */
+/** A list of CompiledVertexLayoutNoNameList (for geom) */
 struct CompiledGeomVertexAttributes
 {
 	std::vector<CompiledVertexElementNoName> elements;
@@ -72,7 +72,7 @@ CompiledShaderVertexAttributes compile_shader_layout(
 );
 
 [[nodiscard]]
-CompiledGeomVertexAttributes get_mesh_layout(const CompiledVertexTypeList& l);
+CompiledGeomVertexAttributes get_geom_layout(const CompiledVertexTypeList& l);
 
 CompiledVertexTypeList compile_attribute_layouts(
 	const std::vector<VertexType>& base_layout,
