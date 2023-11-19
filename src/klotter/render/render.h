@@ -29,6 +29,7 @@ struct ShaderResource
 	LoadedShaderData unlit_shader;
 	LoadedShaderData default_shader;
 
+	/// verify that the shaders are loaded
 	bool is_loaded() const;
 };
 
@@ -97,7 +98,7 @@ struct MeshInstance
 	std::shared_ptr<CompiledMesh> geom;
 
 	glm::vec3 position;
-	glm::vec3 rotation;	 // yaw pitch roll
+	glm::vec3 rotation;	 ///< yaw pitch roll
 };
 
 std::shared_ptr<MeshInstance> make_MeshInstance(std::shared_ptr<CompiledMesh> geom);
@@ -182,7 +183,9 @@ struct Renderer
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
 	std::shared_ptr<DefaultMaterial> make_default_material();
 
+	/// verify that the renderer was fully loaded
 	bool is_loaded() const;
+
 	void render(const World&, const Camera&);
 };
 
