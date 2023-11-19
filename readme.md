@@ -20,6 +20,7 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 
 ### todo stage 1
 
+- expand "C"/convert functions with asserts
 - expand scene sample with selected object and transform/rotate/scale widget to change transform of objects with a scene outline and simple properties
 - add debug render modes (only render diffuse/normals/etc), like sketchfab model inspector views
 - add immediate mode styled debug renderer that can render lines, basic shapes(shphere, rect) and text
