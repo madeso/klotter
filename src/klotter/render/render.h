@@ -16,19 +16,17 @@ namespace klotter
 
 struct Lights;
 
-struct LoadedShaderData
-{
-	std::shared_ptr<ShaderProgram> program;
-	CompiledGeomVertexAttributes geom_layout;
-};
+struct LoadedShader;
 
 /// All loaded/known shaders
 struct ShaderResource
 {
 	ShaderResource();
+	~ShaderResource();
 
-	LoadedShaderData unlit_shader;
-	LoadedShaderData default_shader;
+	struct ShaderResourcePimpl;
+
+	std::unique_ptr<ShaderResourcePimpl> r;
 
 	/// verify that the shaders are loaded
 	bool is_loaded() const;
@@ -54,7 +52,7 @@ struct Material
 /// a unlit (or fully lit) material, not affected by light
 struct UnlitMaterial : Material
 {
-	const LoadedShaderData* shader;
+	const LoadedShader* shader;
 	glm::vec3 color;
 	float alpha;
 	std::shared_ptr<Texture> texture;
@@ -69,7 +67,7 @@ struct UnlitMaterial : Material
 /// a material affected by light
 struct DefaultMaterial : Material
 {
-	const LoadedShaderData* shader;
+	const LoadedShader* shader;
 	glm::vec3 color;
 	float alpha;
 	std::shared_ptr<Texture> texture;

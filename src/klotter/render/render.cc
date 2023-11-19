@@ -11,6 +11,36 @@
 
 namespace klotter
 {
+// ------------------------------------------------------------------------------------------------
+// ShaderResource
+
+struct LoadedShader
+{
+	LoadedShader(std::shared_ptr<ShaderProgram> p, const CompiledGeomVertexAttributes& l)
+		: program(std::move(p))
+		, geom_layout(l)
+	{
+	}
+
+	std::shared_ptr<ShaderProgram> program;
+	CompiledGeomVertexAttributes geom_layout;
+};
+
+struct ShaderResource::ShaderResourcePimpl
+{
+	ShaderResourcePimpl(LoadedShader unlit, LoadedShader def)
+		: unlit_shader(std::move(unlit))
+		, default_shader(std::move(def))
+	{
+	}
+
+	LoadedShader unlit_shader;
+	LoadedShader default_shader;
+};
+
+ShaderResource::~ShaderResource()
+{
+}
 
 // ------------------------------------------------------------------------------------------------
 // glue code
@@ -21,6 +51,7 @@ CompiledGeom::CompiledGeom(u32 b, u32 a, u32 e, const CompiledGeomVertexAttribut
 	, ebo(e)
 	, number_of_triangles(tc)
 	, debug_types(att.debug_types.begin(), att.debug_types.end())
+
 {
 }
 
@@ -46,17 +77,17 @@ std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 
 CompiledGeomVertexAttributes Renderer::unlit_geom_layout()
 {
-	return shaders.unlit_shader.geom_layout;
+	return shaders.r->unlit_shader.geom_layout;
 }
 
 CompiledGeomVertexAttributes Renderer::default_geom_layout()
 {
-	return shaders.default_shader.geom_layout;
+	return shaders.r->default_shader.geom_layout;
 }
 
 bool ShaderResource::is_loaded() const
 {
-	return unlit_shader.program->is_loaded() && default_shader.program->is_loaded();
+	return r->unlit_shader.program->is_loaded() && r->default_shader.program->is_loaded();
 }
 
 bool Renderer::is_loaded() const
@@ -69,7 +100,7 @@ bool Renderer::is_loaded() const
 
 using BaseShaderData = std::vector<VertexType>;
 
-LoadedShaderData load_shader(const BaseShaderData& base_layout, const ShaderSource& source)
+LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& source)
 {
 	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
 	const auto geom_layout = get_geom_layout(layout_compiler);
@@ -85,15 +116,19 @@ ShaderResource::ShaderResource()
 	// todo(Gustav): change so that there are common "base" shaders (example: single color) that
 	// can be used for everything and specific shaders (example: pbr)
 	auto global_shader_data = BaseShaderData{};
-	unlit_shader = load_shader(global_shader_data, load_unlit_shader_source());
-	default_shader = load_shader(global_shader_data, load_default_shader_source());
+
+
+	r = std::make_unique<ShaderResourcePimpl>(
+		load_shader(global_shader_data, load_unlit_shader_source()),
+		load_shader(global_shader_data, load_default_shader_source())
+	);
 }
 
 // ------------------------------------------------------------------------------------------------
-// material, part of rendering?
+// material
 
 UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
-	: shader(&resource.unlit_shader)
+	: shader(&resource.r->unlit_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
@@ -106,6 +141,7 @@ void UnlitMaterial::use_shader()
 
 void UnlitMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
+	// todo(Gustav): move uniforms to a specific loaded shader class to cache the gets
 	shader->program->set_vec4(shader->program->get_uniform("u_tint_color"), {color, alpha});
 	shader->program->set_mat(shader->program->get_uniform("u_model"), transform);
 	shader->program->set_mat(shader->program->get_uniform("u_projection"), cc.projection);
@@ -130,7 +166,7 @@ void UnlitMaterial::apply_lights(const Lights&)
 }
 
 DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
-	: shader(&resource.default_shader)
+	: shader(&resource.r->default_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
