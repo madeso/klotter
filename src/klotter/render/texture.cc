@@ -120,18 +120,6 @@ void Texture::unload()
 	height = invalid_size;
 }
 
-void bind_texture(const Uniform& uniform, const Texture& texture)
-{
-	if (uniform.is_valid() == false)
-	{
-		return;
-	}
-	ASSERT(uniform.texture >= 0);
-
-	glActiveTexture(Cint_to_glenum(GL_TEXTURE0 + uniform.texture));
-	glBindTexture(GL_TEXTURE_2D, texture.id);
-}
-
 Texture LoadImage(
 	const unsigned char* image_source,
 	int size,

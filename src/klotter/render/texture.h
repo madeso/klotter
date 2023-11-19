@@ -50,9 +50,6 @@ struct Texture
 	void unload();
 };
 
-/// set the texture for the specified uniform
-void bind_texture(const Uniform& uniform, const Texture& texture);
-
 Texture load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
 
 

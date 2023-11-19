@@ -176,6 +176,18 @@ ShaderResource::ShaderResource()
 // ------------------------------------------------------------------------------------------------
 // material
 
+void bind_texture(const Uniform& uniform, const Texture& texture)
+{
+	if (uniform.is_valid() == false)
+	{
+		return;
+	}
+	ASSERT(uniform.texture >= 0);
+
+	glActiveTexture(Cint_to_glenum(GL_TEXTURE0 + uniform.texture));
+	glBindTexture(GL_TEXTURE_2D, texture.id);
+}
+
 UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
 	: shader(&resource.r->unlit_shader)
 	, color(colors::white)
