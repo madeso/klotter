@@ -179,8 +179,7 @@ int app_main(MakeAppFunction make_app, SDL_Window* sdl_window)
 
 
 		// render
-		renderer.window_size = {window_width, window_height};
-		app->on_render(&renderer, dt);
+		app->on_render({window_width, window_height}, &renderer, dt);
 
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		SDL_GL_SwapWindow(sdl_window);

@@ -41,11 +41,11 @@ void SampleApp::on_frame(klotter::Renderer* renderer)
 	active_sample = selected_sample;
 }
 
-void SampleApp::on_render(klotter::Renderer* renderer, float dt)
+void SampleApp::on_render(const glm::ivec2& window_size, klotter::Renderer* renderer, float dt)
 {
 	if (active_sample)
 	{
-		samples[*active_sample].created_sample->on_render(renderer, &camera, dt);
+		samples[*active_sample].created_sample->on_render(window_size, renderer, &camera, dt);
 	}
 }
 

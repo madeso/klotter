@@ -30,7 +30,12 @@ struct CubeSample : Sample
 
 	float p = 0.0f;
 
-	void on_render(klotter::Renderer* renderer, klotter::Camera* camera, float dt) override
+	void on_render(
+		const glm::ivec2& window_size,
+		klotter::Renderer* renderer,
+		klotter::Camera* camera,
+		float dt
+	) override
 	{
 		// cube->rotation.x += time;
 		p += dt;
@@ -42,7 +47,7 @@ struct CubeSample : Sample
 		cube->rotation.y = -p / 4.0f;
 		cube->rotation.x = std::sin(p * 0.6f);
 
-		renderer->render(world, *camera);
+		renderer->render(window_size, world, *camera);
 	}
 
 	void on_gui(klotter::Camera*) override

@@ -16,7 +16,7 @@ struct App
 
 	virtual void on_frame(Renderer*) = 0;
 	virtual void on_gui(Renderer*) = 0;
-	virtual void on_render(Renderer*, float) = 0;
+	virtual void on_render(const glm::ivec2&, Renderer*, float) = 0;
 
 	virtual ~App() = default;
 };

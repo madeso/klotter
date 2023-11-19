@@ -10,7 +10,9 @@ struct Sample
 {
 	virtual ~Sample() = default;
 
-	virtual void on_render(klotter::Renderer* ren, klotter::Camera* cam, float dt) = 0;
+	virtual void on_render(
+		const glm::ivec2& window_size, klotter::Renderer* ren, klotter::Camera* cam, float dt
+	) = 0;
 	virtual void on_gui(klotter::Camera* cam) = 0;
 };
 
@@ -47,7 +49,7 @@ struct SampleApp : klotter::App
 
 	void on_frame(klotter::Renderer*) override;
 	void on_gui(klotter::Renderer*) override;
-	void on_render(klotter::Renderer*, float) override;
+	void on_render(const glm::ivec2&, klotter::Renderer*, float) override;
 };
 
 

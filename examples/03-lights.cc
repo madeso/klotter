@@ -92,11 +92,16 @@ struct LightsSample : Sample
 		}
 	}
 
-	void on_render(klotter::Renderer* renderer, klotter::Camera* camera, float dt) override
+	void on_render(
+		const glm::ivec2& window_size,
+		klotter::Renderer* renderer,
+		klotter::Camera* camera,
+		float dt
+	) override
 	{
 		anim += dt * 0.25f;
 		apply_animation();
-		renderer->render(world, *camera);
+		renderer->render(window_size, world, *camera);
 	}
 
 	void on_gui(klotter::Camera* camera) override

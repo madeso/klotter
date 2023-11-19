@@ -388,7 +388,6 @@ CompiledGeom::~CompiledGeom()
 }
 
 Renderer::Renderer()
-	: window_size{0, 0}
 {
 	StateChanger{&states}
 		.cull_face(true)
@@ -396,7 +395,7 @@ Renderer::Renderer()
 		.blend_mode({Blend::src_alpha, Blend::one_minus_src_alpha});
 }
 
-void Renderer::render(const World& world, const Camera& camera)
+void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
 	glViewport(0, 0, window_size.x, window_size.y);
 	glClearColor(0, 0, 0, 1.0f);

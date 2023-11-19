@@ -80,9 +80,11 @@ struct SceneSample : Sample
 		add_unlit_mini_cube(renderer, mini, t, {-3.8f, -2.0f, -2.3f}, 7);
 	}
 
-	void on_render(klotter::Renderer* renderer, klotter::Camera* camera, float) override
+	void on_render(
+		const glm::ivec2& window_size, klotter::Renderer* renderer, klotter::Camera* camera, float
+	) override
 	{
-		renderer->render(world, *camera);
+		renderer->render(window_size, world, *camera);
 	}
 
 	void on_gui(klotter::Camera*) override

@@ -180,9 +180,6 @@ struct Renderer
 	OpenglStates states;
 	Assets assets;
 
-	// todo(Gustav): store window size elsewhere...
-	glm::ivec2 window_size;
-
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
 	std::shared_ptr<DefaultMaterial> make_default_material();
 
@@ -192,7 +189,7 @@ struct Renderer
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;
 
-	void render(const World&, const Camera&);
+	void render(const glm::ivec2& window_size, const World&, const Camera&);
 };
 
 
