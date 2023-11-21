@@ -1,5 +1,10 @@
 #pragma once
 
+constexpr float Cint_to_float(int i)
+{
+	return static_cast<float>(i);
+}
+
 constexpr std::size_t Cint_to_sizet(int i)
 {
 	return static_cast<std::size_t>(i);

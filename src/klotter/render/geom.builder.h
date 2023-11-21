@@ -19,6 +19,7 @@ struct Vertex
 	Index texture;
 	Index color;
 
+	Vertex(Index vnt, Index color);
 	Vertex(Index vertex, Index normal, Index texture, Index color);
 };
 
@@ -69,6 +70,17 @@ struct Builder
 
 Builder create_box(
 	float w, float h, float d, bool face_out, const glm::vec3& color = colors::white
+);
+
+///
+/// @param longitude number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
+/// @param lattitude number of lines that go horizontal, parallels to the equator is one of those lines
+Builder create_uv_sphere(
+	float diameter,
+	int longitude_count,
+	int lattitude_count,
+	bool face_out,
+	const glm::vec3& color = colors::white
 );
 
 }  //  namespace klotter::geom

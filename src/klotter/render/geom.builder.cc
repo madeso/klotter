@@ -1,5 +1,6 @@
 #include "klotter/render/geom.builder.h"
 
+#include "klotter/assert.h"
 #include "klotter/cint.h"
 
 #include "klotter/render/geom.h"
@@ -67,92 +68,13 @@ struct std::hash<klotter::geom::Combo>
 namespace klotter::geom
 {
 
-
-
-Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& color)
+Vertex::Vertex(Index pnt, Index a_color)
+	: position(pnt)
+	, normal(pnt)
+	, texture(pnt)
+	, color(a_color)
 {
-	Builder b;
-
-	// position and texture coord struct
-	struct Pt
-	{
-		glm::vec3 pos;
-		glm::vec2 tex;
-	};
-
-	const auto add_quad_to_builder = [&](Pt p0, Pt p1, Pt p2, Pt p3)
-	{
-		constexpr float pd = 0.1f;
-		constexpr float td = 0.01f;
-		const auto ci = b.foa_color({color, 1.0f}, 0.001f);
-		const auto v0 = Vertex{b.foa_position(p0.pos, pd), 0, b.foa_text_coord(p0.tex, td), ci};
-		const auto v1 = Vertex{b.foa_position(p1.pos, pd), 0, b.foa_text_coord(p1.tex, td), ci};
-		const auto v2 = Vertex{b.foa_position(p2.pos, pd), 0, b.foa_text_coord(p2.tex, td), ci};
-		const auto v3 = Vertex{b.foa_position(p3.pos, pd), 0, b.foa_text_coord(p3.tex, td), ci};
-
-		b.add_quad(face_out, v0, v1, v2, v3);
-	};
-
-	// texel scale
-	const float ts = 1.0f;
-
-	// half sizes
-	const float hx = x * 0.5f;
-	const float hy = y * 0.5f;
-	const float hz = z * 0.5f;
-
-	// front
-	add_quad_to_builder(
-		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
-		{{hx, -hy, -hz}, {x * ts, 0.0f}},
-		{{hx, hy, -hz}, {x * ts, y * ts}},
-		{{-hx, hy, -hz}, {0.0f, y * ts}}
-	);
-
-	// back
-	add_quad_to_builder(
-		{{-hx, -hy, hz}, {0.0f, 0.0f}},
-		{{-hx, hy, hz}, {0.0f, y * ts}},
-		{{hx, hy, hz}, {x * ts, y * ts}},
-		{{hx, -hy, hz}, {x * ts, 0.0f}}
-	);
-
-	// left
-	add_quad_to_builder(
-		{{-hx, hy, -hz}, {y * ts, 0.0f}},
-		{{-hx, hy, hz}, {y * ts, z * ts}},
-		{{-hx, -hy, hz}, {0.0f, z * ts}},
-		{{-hx, -hy, -hz}, {0.0f, 0.0f}}
-	);
-
-	// right
-	add_quad_to_builder(
-		{{hx, hy, hz}, {z * ts, y * ts}},
-		{{hx, hy, -hz}, {0.0f, y * ts}},
-		{{hx, -hy, -hz}, {0.0f, 0.0f}},
-		{{hx, -hy, hz}, {z * ts, 0.0f}}
-	);
-
-	// bottom
-	add_quad_to_builder(
-		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
-		{{-hx, -hy, hz}, {0.0f, z * ts}},
-		{{hx, -hy, hz}, {x * ts, z * ts}},
-		{{hx, -hy, -hz}, {x * ts, 0.0f}}
-	);
-
-	// top
-	add_quad_to_builder(
-		{{-hx, hy, -hz}, {0.0f, 0.0f}},
-		{{hx, hy, -hz}, {x * ts, 0.0f}},
-		{{hx, hy, hz}, {x * ts, z * ts}},
-		{{-hx, hy, hz}, {0.0f, z * ts}}
-	);
-
-	return b;
 }
-
-// ==================================================================================================================================
 
 Vertex::Vertex(Index a_position, Index a_normal, Index a_texture, Index a_color)
 	: position(a_position)
@@ -417,6 +339,172 @@ Geom Builder::to_geom() const
 	return {std::move(vertices), std::move(faces)};
 }
 
+// ==================================================================================================================================
+
+Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& color)
+{
+	Builder b;
+
+	// position and texture coord struct
+	struct Pt
+	{
+		glm::vec3 pos;
+		glm::vec2 tex;
+	};
+
+	const auto add_quad_to_builder = [&](Pt p0, Pt p1, Pt p2, Pt p3)
+	{
+		constexpr float pd = 0.1f;
+		constexpr float td = 0.01f;
+		const auto ci = b.foa_color({color, 1.0f}, 0.001f);
+		const auto v0 = Vertex{b.foa_position(p0.pos, pd), 0, b.foa_text_coord(p0.tex, td), ci};
+		const auto v1 = Vertex{b.foa_position(p1.pos, pd), 0, b.foa_text_coord(p1.tex, td), ci};
+		const auto v2 = Vertex{b.foa_position(p2.pos, pd), 0, b.foa_text_coord(p2.tex, td), ci};
+		const auto v3 = Vertex{b.foa_position(p3.pos, pd), 0, b.foa_text_coord(p3.tex, td), ci};
+
+		b.add_quad(face_out, v0, v1, v2, v3);
+	};
+
+	// texel scale
+	const float ts = 1.0f;
+
+	// half sizes
+	const float hx = x * 0.5f;
+	const float hy = y * 0.5f;
+	const float hz = z * 0.5f;
+
+	// front
+	add_quad_to_builder(
+		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
+		{{hx, -hy, -hz}, {x * ts, 0.0f}},
+		{{hx, hy, -hz}, {x * ts, y * ts}},
+		{{-hx, hy, -hz}, {0.0f, y * ts}}
+	);
+
+	// back
+	add_quad_to_builder(
+		{{-hx, -hy, hz}, {0.0f, 0.0f}},
+		{{-hx, hy, hz}, {0.0f, y * ts}},
+		{{hx, hy, hz}, {x * ts, y * ts}},
+		{{hx, -hy, hz}, {x * ts, 0.0f}}
+	);
+
+	// left
+	add_quad_to_builder(
+		{{-hx, hy, -hz}, {y * ts, 0.0f}},
+		{{-hx, hy, hz}, {y * ts, z * ts}},
+		{{-hx, -hy, hz}, {0.0f, z * ts}},
+		{{-hx, -hy, -hz}, {0.0f, 0.0f}}
+	);
+
+	// right
+	add_quad_to_builder(
+		{{hx, hy, hz}, {z * ts, y * ts}},
+		{{hx, hy, -hz}, {0.0f, y * ts}},
+		{{hx, -hy, -hz}, {0.0f, 0.0f}},
+		{{hx, -hy, hz}, {z * ts, 0.0f}}
+	);
+
+	// bottom
+	add_quad_to_builder(
+		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
+		{{-hx, -hy, hz}, {0.0f, z * ts}},
+		{{hx, -hy, hz}, {x * ts, z * ts}},
+		{{hx, -hy, -hz}, {x * ts, 0.0f}}
+	);
+
+	// top
+	add_quad_to_builder(
+		{{-hx, hy, -hz}, {0.0f, 0.0f}},
+		{{hx, hy, -hz}, {x * ts, 0.0f}},
+		{{hx, hy, hz}, {x * ts, z * ts}},
+		{{-hx, hy, hz}, {0.0f, z * ts}}
+	);
+
+	return b;
+}
+
+// ==================================================================================================================================
+
+
+// based on https://gist.github.com/Pikachuxxxx/5c4c490a7d7679824e0e18af42918efc
+Builder create_uv_sphere(
+	float diameter, int longitudes, int latitudes, bool /*face_out*/, const glm::vec3& color
+)
+{
+	assert(longitudes >= 3);
+	assert(latitudes >= 2);
+
+	constexpr float pi = 3.14159265358979323846f;
+
+	Builder b;
+	b.add_color({color, 1.0f});
+
+	const auto radius = diameter / 2;
+	const auto lengthInv = 1.0f / radius;
+
+	const auto deltaLatitude = pi / Cint_to_float(latitudes);
+	const auto deltaLongitude = 2 * pi / Cint_to_float(longitudes);
+
+	// Compute all vertices first except normals
+	for (int i = 0; i <= latitudes; ++i)
+	{
+		const auto latitudeAngle
+			= pi / 2 - Cint_to_float(i) * deltaLatitude;  // Starting -pi/2 to pi/2
+		const auto xy = radius * std::cos(latitudeAngle);
+		const auto z = radius * std::sin(latitudeAngle);
+
+		// We add (latitudes + 1) vertices per longitude because of equator,
+		// the North pole and South pole are not counted here, as they overlap.
+		// The first and last vertices have same position and normal, but
+		// different tex coords.
+		for (int j = 0; j <= longitudes; ++j)
+		{
+			const auto longitudeAngle = Cint_to_float(j) * deltaLongitude;
+
+			const auto vertex_x = xy * std::cos(longitudeAngle);
+			const auto vertex_y = xy * std::sin(longitudeAngle);
+			const auto vertex_z = z;
+			const auto vertex_s = Cint_to_float(j) / Cint_to_float(longitudes);
+			const auto vertex_t = Cint_to_float(i) / Cint_to_float(latitudes);
+			b.add_position({vertex_x, vertex_y, vertex_z});
+			b.add_text_coord({vertex_s, vertex_t});
+
+			// normalized vertex normal
+			const auto nx = vertex_x * lengthInv;
+			const auto ny = vertex_y * lengthInv;
+			const auto nz = vertex_z * lengthInv;
+			b.add_normal({nx, ny, nz});
+		}
+	}
+
+
+	//  Indices
+	//  k1--k1+1
+	//  |  / |
+	//  | /  |
+	//  k2--k2+1
+	for (Index i = 0; i < static_cast<Index>(latitudes); ++i)
+	{
+		Index k1 = i * (static_cast<Index>(longitudes) + 1);
+		Index k2 = k1 + static_cast<Index>(longitudes) + 1;
+		// 2 Triangles per latitude block excluding the first and last longitudes blocks
+		for (Index j = 0; j < static_cast<Index>(longitudes); ++j, ++k1, ++k2)
+		{
+			if (i != 0)
+			{
+				b.add_triangle({{k1, 0}, {k2, 0}, {k1 + 1, 0}});
+			}
+
+			if (i != static_cast<Index>(latitudes - 1))
+			{
+				b.add_triangle({{k1 + 1, 0}, {k2, 0}, {k2 + 1, 0}});
+			}
+		}
+	}
+
+	return b;
+}
 
 
 }  //  namespace klotter::geom
