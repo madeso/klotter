@@ -48,6 +48,8 @@ struct Builder
 	Index foa_normal(const glm::vec3& norm, float max_diff);
 	Index foa_color(const glm::vec4& color, float max_diff);
 
+	// todo(Gustav): hrm... perhaps change so we support n-gon instead of just tris and just
+	// triangulate when converting to a geom? the intent would be clearer in the obj dump...
 	Builder& add_triangle(const Triangle& t);
 	Builder& add_quad(
 		bool reverse, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3
