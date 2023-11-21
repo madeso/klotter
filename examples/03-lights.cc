@@ -64,7 +64,8 @@ struct LightsSample : Sample
 		light->position.z = 0.5f;
 
 		auto mini = compile_geom(
-			geom::create_uv_sphere(1.0f, 9, 9, false).to_geom(), renderer->default_geom_layout()
+			geom::create_uv_sphere(1.0f, 9, 9, false).write_obj("mini-sphere.obj").to_geom(),
+			renderer->default_geom_layout()
 		);
 		// auto mini = create_(1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
 		auto t = renderer->assets.get_light_grid();

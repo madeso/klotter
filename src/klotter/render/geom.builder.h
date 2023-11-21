@@ -61,6 +61,8 @@ struct Builder
 
 	Geom to_geom() const;
 
+	Builder& write_obj(const std::string& path);
+
 	std::vector<Triangle> triangles;
 	std::vector<glm::vec3> positions;
 	std::vector<glm::vec3> normals;

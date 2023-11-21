@@ -5,6 +5,7 @@
 
 #include "klotter/render/geom.h"
 
+#include <fstream>
 #include <map>
 
 namespace klotter::geom
@@ -337,6 +338,52 @@ Geom Builder::to_geom() const
 	}
 
 	return {std::move(vertices), std::move(faces)};
+}
+
+Builder& Builder::write_obj(const std::string& path)
+{
+	std::ofstream f(path.c_str());
+	if (f.good() == false)
+	{
+		DIE("Failed to create file");
+		return *this;
+	}
+
+	f << "# Vertices\n";
+	for (const auto& p: positions)
+	{
+		f << "v " << p.x << " " << p.y << " " << p.z << '\n';
+	}
+	f << '\n';
+
+	f << "# Normals\n";
+	for (const auto& p: normals)
+	{
+		f << "vn " << p.x << " " << p.y << " " << p.z << '\n';
+	}
+	f << '\n';
+
+	f << "# Texcoords\n";
+	for (const auto& p: texcoords)
+	{
+		f << "vt " << p.x << " " << p.y << '\n';
+	}
+	f << '\n';
+
+	f << "# Triangles\n";
+	for (const auto& p: triangles)
+	{
+		f << "f";
+		const std::array<Vertex, 3> t{p.v0, p.v1, p.v2};
+		for (const auto& v: t)
+		{
+			f << ' ' << (v.position + 1) << '/' << (v.texture + 1) << '/' << (v.normal + 1);
+		}
+		f << '\n';
+	}
+	f << '\n';
+
+	return *this;
 }
 
 // ==================================================================================================================================
