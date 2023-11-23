@@ -31,18 +31,20 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
   1. Different lights
   1. Multiple lights
   1. Model loading?
-  1. Depth testing (Advanced OpenGL)
-  1. Stencil testing (Advanced OpenGL)
-  1. Blending (Advanced OpenGL)
-  1. Face culling (Advanced OpenGL)
-  1. Framebuffers (Advanced OpenGL)
-  1. Cubemaps (Advanced OpenGL)
+
+  1. (feat. outlining) - Stencil testing (Advanced OpenGL)
+  1. (feat. transparency) - Blending (Advanced OpenGL)
+  1. (done?) Face culling (Advanced OpenGL)
+  1. (feat. full screen effects) Framebuffers (Advanced OpenGL)
+  1. (feat. depth in fse) Depth testing (Advanced OpenGL)
+  1. (feat. skybox, reflection/refraction, point light cookies) Cubemaps (Advanced OpenGL)
   1. Advanced Data (Advanced OpenGL)
-  1. Advanced GLSL (Advanced OpenGL)
+  1. (optimize uniforms) Advanced GLSL (Advanced OpenGL)
   1. Geometry Shader (Advanced OpenGL)
-  1. Instancing (Advanced OpenGL)
-  1. Anti Aliasing (Advanced OpenGL)
-  1. Advanced Lighting (Advanced Lighting)
+  1. (render many objects, grass billboards) Instancing (Advanced OpenGL)
+  1. (render setting) Anti Aliasing (Advanced OpenGL)
+
+  1. (feat. phong => blinnn phong) Advanced Lighting (Advanced Lighting)
   1. Gamma Correction (Advanced Lighting)
   1. Shadows - Shadow Mapping (Advanced Lighting)
   1. Shadows - Point Shadows (Advanced Lighting)
@@ -52,14 +54,16 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
   1. Bloom (Advanced Lighting)
   1. Deferred Shading (Advanced Lighting)
   1. SSAO (Advanced Lighting)
+
   1. Theory (PBR)
   1. Lighting (PBR)
   1. IBL - Diffuse irradiance (PBR)
   1. IBL - Specular IBL (PBR)
+
   1. OIT - Introduction (2020)
   1. OIT - Weighted Blended (2020)
   1. Skeletal Animation (2020)
-  1. CSM (2021)
+  1. (bugfix: shadows) CSM (2021)
   1. Scene - Scene Graph (2021)
   1. Scene - Frustum Culling (2021)
   1. Tessellation - Height map (2021)
