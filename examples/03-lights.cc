@@ -62,12 +62,13 @@ struct LightsSample : Sample
 			= create_cube_geom(0.25f, 0.25f, 0.25f, false, renderer->unlit_geom_layout());
 		auto light = add_cube(light_geom, light_material);
 		light->position.z = 0.5f;
+		world.lights.point_light.position = light->position;
 
 		auto mini = compile_geom(
 			geom::create_uv_sphere(1.0f, 9, 9, false).write_obj("mini-sphere.obj").to_geom(),
 			renderer->default_geom_layout()
 		);
-		// auto mini = create_(1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
+		//auto mini = create_cube_geom(1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
 		auto t = renderer->assets.get_light_grid();
 		add_mini_cube(renderer, mini, t, {1.5f, 2.0f, 2.5f});
 		add_mini_cube(renderer, mini, t, {1.5f, 0.2f, -1.5f});
