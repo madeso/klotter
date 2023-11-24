@@ -72,9 +72,7 @@ struct Builder
 	std::vector<glm::vec4> colors;
 };
 
-Builder create_box(
-	float w, float h, float d, bool face_out, const glm::vec3& color = colors::white
-);
+Builder create_box(float w, float h, float d, bool invert, const glm::vec3& color = colors::white);
 
 ///
 /// @param longitude number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
@@ -83,7 +81,7 @@ Builder create_uv_sphere(
 	float diameter,
 	int longitude_count,
 	int lattitude_count,
-	bool face_out,
+	bool invert,
 	const glm::vec3& color = colors::white
 );
 

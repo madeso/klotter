@@ -388,7 +388,7 @@ Builder& Builder::write_obj(const std::string& path)
 
 // ==================================================================================================================================
 
-Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& color)
+Builder create_box(float x, float y, float z, bool invert, const glm::vec3& color)
 {
 	Builder b;
 
@@ -409,7 +409,7 @@ Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& co
 		const auto v2 = Vertex{b.foa_position(p2.pos, pd), 0, b.foa_text_coord(p2.tex, td), ci};
 		const auto v3 = Vertex{b.foa_position(p3.pos, pd), 0, b.foa_text_coord(p3.tex, td), ci};
 
-		b.add_quad(face_out, v0, v1, v2, v3);
+		b.add_quad(invert, v0, v1, v2, v3);
 	};
 
 	// texel scale
@@ -476,7 +476,7 @@ Builder create_box(float x, float y, float z, bool face_out, const glm::vec3& co
 
 // based on https://gist.github.com/Pikachuxxxx/5c4c490a7d7679824e0e18af42918efc
 Builder create_uv_sphere(
-	float diameter, int longitudes, int latitudes, bool /*face_out*/, const glm::vec3& color
+	float diameter, int longitudes, int latitudes, bool invert, const glm::vec3& color
 )
 {
 	assert(longitudes >= 3);
@@ -484,73 +484,85 @@ Builder create_uv_sphere(
 
 	constexpr float pi = 3.14159265358979323846f;
 
-	Builder b;
-	b.add_color({color, 1.0f});
+	Builder ret;
+	ret.add_color({color, 1.0f});
 
 	const auto radius = diameter / 2;
-	const auto lengthInv = 1.0f / radius;
 
-	const auto deltaLatitude = pi / Cint_to_float(latitudes);
-	const auto deltaLongitude = 2 * pi / Cint_to_float(longitudes);
+	const auto delta_lat = pi / Cint_to_float(latitudes);
+	const auto delta_lon = 2 * pi / Cint_to_float(longitudes);
 
-	// Compute all vertices first except normals
 	for (int i = 0; i <= latitudes; ++i)
 	{
-		const auto latitudeAngle
-			= pi / 2 - Cint_to_float(i) * deltaLatitude;  // Starting -pi/2 to pi/2
-		const auto xy = radius * std::cos(latitudeAngle);
-		const auto z = radius * std::sin(latitudeAngle);
+		const auto lat_angle = pi / 2 - Cint_to_float(i) * delta_lat;
+		const auto xy = std::cos(lat_angle);
+		const auto z = std::sin(lat_angle);
 
-		// We add (latitudes + 1) vertices per longitude because of equator,
-		// the North pole and South pole are not counted here, as they overlap.
-		// The first and last vertices have same position and normal, but
-		// different tex coords.
 		for (int j = 0; j <= longitudes; ++j)
 		{
-			const auto longitudeAngle = Cint_to_float(j) * deltaLongitude;
+			const auto lon_angle = Cint_to_float(j) * delta_lon;
 
-			const auto vertex_x = xy * std::cos(longitudeAngle);
-			const auto vertex_y = xy * std::sin(longitudeAngle);
-			const auto vertex_z = z;
+			const auto normal_x = xy * std::cos(lon_angle);
+			const auto normal_y = xy * std::sin(lon_angle);
+			const auto normal_z = z;
+
 			const auto vertex_s = Cint_to_float(j) / Cint_to_float(longitudes);
 			const auto vertex_t = Cint_to_float(i) / Cint_to_float(latitudes);
-			b.add_position({vertex_x, vertex_y, vertex_z});
-			b.add_text_coord({vertex_s, vertex_t});
+			ret.add_position({radius * normal_x, radius * normal_y, radius * normal_z});
+			ret.add_text_coord({vertex_s, vertex_t});
 
-			// normalized vertex normal
-			const auto nx = vertex_x * lengthInv;
-			const auto ny = vertex_y * lengthInv;
-			const auto nz = vertex_z * lengthInv;
-			b.add_normal({nx, ny, nz});
+			const auto normal_scale = invert ? -1.0f : 1.0f;
+			ret.add_normal(
+				{normal_scale * normal_x, normal_scale * normal_y, normal_scale * normal_z}
+			);
 		}
 	}
 
 
 	//  Indices
-	//  k1--k1+1
-	//  |  / |
-	//  | /  |
-	//  k2--k2+1
+	//  k1--k1+1     a----b
+	//  |  / |       |  / |
+	//  | /  |       | /  |
+	//  k2--k2+1     c----d
 	for (Index i = 0; i < static_cast<Index>(latitudes); ++i)
 	{
-		Index k1 = i * (static_cast<Index>(longitudes) + 1);
-		Index k2 = k1 + static_cast<Index>(longitudes) + 1;
-		// 2 Triangles per latitude block excluding the first and last longitudes blocks
-		for (Index j = 0; j < static_cast<Index>(longitudes); ++j, ++k1, ++k2)
+		for (Index j = 0; j < static_cast<Index>(longitudes); ++j)
 		{
+			const auto k1 = i * (static_cast<Index>(longitudes) + 1) + j;
+			const auto k2 = k1 + static_cast<Index>(longitudes) + 1;
+
+			const auto a = k1;
+			const auto b = k1 + 1;
+			const auto c = k2;
+			const auto d = k2 + 1;
+
 			if (i != 0)
 			{
-				b.add_triangle({{k1, 0}, {k2, 0}, {k1 + 1, 0}});
+				if (invert)
+				{
+					ret.add_triangle({{a, 0}, {b, 0}, {c, 0}});	 // cw
+				}
+				else
+				{
+					ret.add_triangle({{a, 0}, {c, 0}, {b, 0}});	 // ccw
+				}
 			}
 
 			if (i != static_cast<Index>(latitudes - 1))
 			{
-				b.add_triangle({{k1 + 1, 0}, {k2, 0}, {k2 + 1, 0}});
+				if (invert)
+				{
+					ret.add_triangle({{b, 0}, {d, 0}, {c, 0}});	 // cw
+				}
+				else
+				{
+					ret.add_triangle({{b, 0}, {c, 0}, {d, 0}});	 // ccw
+				}
 			}
 		}
 	}
 
-	return b;
+	return ret;
 }
 
 
