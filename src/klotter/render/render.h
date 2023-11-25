@@ -126,6 +126,11 @@ struct DefaultMaterial : Material
 	const LoadedShader_Default* shader;
 	glm::vec3 color;
 	float alpha;
+
+	glm::vec3 ambient_tint;
+	glm::vec3 specular_color;
+	float shininess;
+
 	std::shared_ptr<Texture> texture;
 
 	explicit DefaultMaterial(const ShaderResource& resource);
@@ -173,6 +178,10 @@ struct PointLight
 {
 	glm::vec3 position = {0.0f, 0.0f, 0.0f};
 	glm::vec3 color = colors::white;
+
+	float specular = 1.0f;
+	float diffuse = 1.0f;
+	float ambient = 0.2f;
 };
 
 /// All lights in a world

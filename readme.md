@@ -26,7 +26,6 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - add immediate mode styled debug renderer that can render lines, basic shapes(shphere, rect) and text
 - complete rest of learn opengl
 
-  1. Materials
   1. Lightning maps/textures
   1. Different lights
   1. Multiple lights

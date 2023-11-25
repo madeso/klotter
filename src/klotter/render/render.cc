@@ -206,11 +206,16 @@ struct LoadedShader_Default : LoadedShader
 		: LoadedShader(std::move(s.program), s.geom_layout)
 		, tint_color(program->get_uniform("u_tint_color"))
 		, tex_diffuse(program->get_uniform("u_tex_diffuse"))
+		, ambient_tint(program->get_uniform("u_ambient_tint"))
+		, specular_color(program->get_uniform("u_specular_color"))
+		, shininess(program->get_uniform("u_shininess"))
 		, model(program->get_uniform("u_model"))
 		, projection(program->get_uniform("u_projection"))
 		, view(program->get_uniform("u_view"))
 		, view_position(program->get_uniform("u_view_position"))
-		, light_color(program->get_uniform("u_light_color"))
+		, light_ambient_color(program->get_uniform("u_light_ambient_color"))
+		, light_diffuse_color(program->get_uniform("u_light_diffuse_color"))
+		, light_specular_color(program->get_uniform("u_light_specular_color"))
 		, light_world(program->get_uniform("u_light_world"))
 	{
 		setup_textures(program.get(), {&tex_diffuse});
@@ -218,13 +223,18 @@ struct LoadedShader_Default : LoadedShader
 
 	Uniform tint_color;
 	Uniform tex_diffuse;
+	Uniform ambient_tint;
+	Uniform specular_color;
+	Uniform shininess;
 
 	Uniform model;
 	Uniform projection;
 	Uniform view;
 
 	Uniform view_position;
-	Uniform light_color;
+	Uniform light_ambient_color;
+	Uniform light_diffuse_color;
+	Uniform light_specular_color;
 	Uniform light_world;
 };
 
@@ -386,6 +396,9 @@ DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
 	: shader(&resource.r->default_shader)
 	, color(colors::white)
 	, alpha(1.0f)
+	, ambient_tint(colors::white)
+	, specular_color(colors::white)
+	, shininess(32.0f)
 {
 }
 
@@ -397,6 +410,10 @@ void DefaultMaterial::use_shader()
 void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
 	shader->program->set_vec4(shader->tint_color, {color, alpha});
+	shader->program->set_vec3(shader->ambient_tint, ambient_tint);
+	shader->program->set_vec3(shader->specular_color, specular_color);
+	shader->program->set_float(shader->shininess, shininess);
+
 	shader->program->set_mat(shader->model, transform);
 	shader->program->set_mat(shader->projection, cc.projection);
 	shader->program->set_mat(shader->view, cc.view);
@@ -416,8 +433,11 @@ void DefaultMaterial::bind_textures(OpenglStates* states, Assets* assets)
 
 void DefaultMaterial::apply_lights(const Lights& lights)
 {
-	shader->program->set_vec3(shader->light_color, lights.point_light.color);
-	shader->program->set_vec3(shader->light_world, lights.point_light.position);
+	const auto& p = lights.point_light;
+	shader->program->set_vec3(shader->light_ambient_color, p.color * p.ambient);
+	shader->program->set_vec3(shader->light_diffuse_color, p.color * p.diffuse);
+	shader->program->set_vec3(shader->light_specular_color, p.color * p.specular);
+	shader->program->set_vec3(shader->light_world, p.position);
 }
 
 // ------------------------------------------------------------------------------------------------
