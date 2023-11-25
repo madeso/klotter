@@ -15,11 +15,6 @@ struct ShaderProgram
 		const std::string& fragment_source,
 		const CompiledShaderVertexAttributes& layout
 	);
-	ShaderProgram(
-		std::string_view vertex_source,
-		std::string_view fragment_source,
-		const CompiledShaderVertexAttributes& layout
-	);
 
 	~ShaderProgram();
 

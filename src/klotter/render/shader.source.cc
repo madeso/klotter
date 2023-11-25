@@ -1,33 +1,50 @@
 #include "klotter/render/shader.source.h"
 
-#include "unlit.vert.glsl.h"
-#include "unlit.frag.glsl.h"
+#include "klotter/log.h"
 
-#include "default.vert.glsl.h"
-#include "default.frag.glsl.h"
+#include "mustache/mustache.hpp"
+
+#include "default_shader.vert.glsl.h"
+#include "default_shader.frag.glsl.h"
 
 namespace klotter
 {
 
-ShaderSource load_unlit_shader_source()
+
+using Properties = std::unordered_map<std::string, std::string>;
+
+std::string generate(std::string_view str, const ShaderOptions& options)
 {
-	return {
-		{{VertexType::position3, "a_position"},
-		 {VertexType::color3, "a_color"},
-		 {VertexType::texture2, "a_tex_coord"}},
-		UNLIT_VERT_GLSL,
-		UNLIT_FRAG_GLSL};
+	auto input = kainjow::mustache::mustache{std::string{str.begin(), str.end()}};
+	if (input.is_valid() == false)
+	{
+		const auto error = input.error_message();
+		LOG_ERROR("Failed to parse mustache: %s", error.c_str());
+	}
+
+	input.set_custom_escape([](const std::string& s) { return s; });
+	auto data = kainjow::mustache::data{};
+
+	data["use_lights"] = options.use_lights;
+	return input.render(data);
 }
 
-ShaderSource load_default_shader_source()
+ShaderSource load_shader_source(const ShaderOptions& options)
 {
-	return {
-		{{VertexType::position3, "a_position"},
-		 {VertexType::normal3, "a_normal"},
-		 {VertexType::color3, "a_color"},
-		 {VertexType::texture2, "a_tex_coord"}},
-		DEFAULT_VERT_GLSL,
-		DEFAULT_FRAG_GLSL};
+	auto layout = ShaderVertexAttributes{
+		{VertexType::position3, "a_position"},
+		{VertexType::color3, "a_color"},
+		{VertexType::texture2, "a_tex_coord"}};
+
+	if (options.use_lights)
+	{
+		layout.emplace_back(VertexElementDescription{VertexType::normal3, "a_normal"});
+	}
+
+	return ShaderSource{
+		layout,
+		generate(DEFAULT_SHADER_VERT_GLSL, options),
+		generate(DEFAULT_SHADER_FRAG_GLSL, options)};
 }
 
 }  //  namespace klotter

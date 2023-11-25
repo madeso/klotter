@@ -114,3 +114,14 @@ target_compile_definitions(dear_imgui
         IMGUI_IMPL_OPENGL_LOADER_GLAD
 )
 add_library(external::imgui ALIAS dear_imgui)
+
+
+
+###################################################################################################
+# mustache
+add_library(mustache INTERFACE)
+target_include_directories(mustache SYSTEM
+    INTERFACE
+        mustache
+)
+add_library(external::mustache ALIAS mustache)

@@ -22,7 +22,7 @@ bool check_shader_compilation_error(const char* name, unsigned int shader)
 	if (! success)
 	{
 		glGetShaderInfoLog(shader, 512, NULL, log);
-		LOG_ERROR("ERROR: %s shader compilation failed\n%s\n", name, log);
+		LOG_ERROR("%s shader compilation failed\n%s\n", name, log);
 		return false;
 	}
 
@@ -39,7 +39,7 @@ bool check_shader_link_error(unsigned int program)
 	if (! success)
 	{
 		glGetProgramInfoLog(program, 512, NULL, log);
-		LOG_ERROR("ERROR: shader linking failed\n%s\n", log);
+		LOG_ERROR("shader linking failed\n%s\n", log);
 		return false;
 	}
 
@@ -83,11 +83,10 @@ void verify_shader_attribute_location(
 	}
 }
 
-template<typename T>
 void load_shader_source(
 	ShaderProgram* self,
-	const T& vertex_source,
-	const T& fragment_source,
+	const std::string& vertex_source,
+	const std::string& fragment_source,
 	const CompiledShaderVertexAttributes& layout
 )
 {
@@ -95,11 +94,19 @@ void load_shader_source(
 	upload_shader_source(vertex_shader, vertex_source);
 	glCompileShader(vertex_shader);
 	const auto vertex_ok = check_shader_compilation_error("vertex", vertex_shader);
+	if (vertex_ok == false)
+	{
+		LOG_INFO("Vertex source: <%s>", vertex_source.c_str());
+	}
 
 	const auto fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
 	upload_shader_source(fragment_shader, fragment_source);
 	glCompileShader(fragment_shader);
 	const auto fragment_ok = check_shader_compilation_error("fragment", fragment_shader);
+	if (fragment_ok == false)
+	{
+		LOG_INFO("Fragment source: <%s>", fragment_source.c_str());
+	}
 
 	glAttachShader(self->shader_program, vertex_shader);
 	glAttachShader(self->shader_program, fragment_shader);
@@ -128,17 +135,6 @@ void load_shader_source(
 ShaderProgram::ShaderProgram(
 	const std::string& vertex_source,
 	const std::string& fragment_source,
-	const CompiledShaderVertexAttributes& layout
-)
-	: shader_program(glCreateProgram())
-	, debug_vertex_types(layout.debug_types)
-{
-	load_shader_source(this, vertex_source, fragment_source, layout);
-}
-
-ShaderProgram::ShaderProgram(
-	std::string_view vertex_source,
-	std::string_view fragment_source,
 	const CompiledShaderVertexAttributes& layout
 )
 	: shader_program(glCreateProgram())

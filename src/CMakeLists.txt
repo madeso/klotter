@@ -3,10 +3,8 @@ embed(src_assets
         textures/light_01.png
         textures/dark_01.png
     AS_TEXT
-        shaders/unlit.vert.glsl
-        shaders/unlit.frag.glsl
-        shaders/default.vert.glsl
-        shaders/default.frag.glsl
+        klotter/render/default_shader.vert.glsl
+        klotter/render/default_shader.frag.glsl
 )
 
 set(src_render
@@ -67,6 +65,7 @@ target_link_libraries(klotter
         external::glad
         external::imgui
     PRIVATE
+        external::mustache
         embed::embed
         klotter::project_options
         klotter::project_warnings

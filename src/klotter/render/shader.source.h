@@ -5,15 +5,18 @@
 namespace klotter
 {
 
+struct ShaderOptions
+{
+	bool use_lights = false;
+};
 
 struct ShaderSource
 {
 	ShaderVertexAttributes layout;
-	std::string_view vertex;
-	std::string_view fragment;
+	std::string vertex;
+	std::string fragment;
 };
 
-ShaderSource load_unlit_shader_source();
-ShaderSource load_default_shader_source();
+ShaderSource load_shader_source(const ShaderOptions& options);
 
 }  //  namespace klotter

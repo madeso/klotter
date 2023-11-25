@@ -319,10 +319,12 @@ ShaderResource::ShaderResource()
 	// can be used for everything and specific shaders (example: pbr)
 	auto global_shader_data = BaseShaderData{};
 
+	ShaderOptions default_shader_options;
+	default_shader_options.use_lights = true;
 
 	r = std::make_unique<ShaderResourcePimpl>(
-		load_shader(global_shader_data, load_unlit_shader_source()),
-		load_shader(global_shader_data, load_default_shader_source())
+		load_shader(global_shader_data, load_shader_source(ShaderOptions{})),
+		load_shader(global_shader_data, load_shader_source(default_shader_options))
 	);
 }
 
