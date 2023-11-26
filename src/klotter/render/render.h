@@ -130,9 +130,11 @@ struct DefaultMaterial : Material
 	glm::vec3 ambient_tint;
 	glm::vec3 specular_color;
 	float shininess;
+	float emissive_factor;
 
 	std::shared_ptr<Texture> diffuse;
 	std::shared_ptr<Texture> specular;
+	std::shared_ptr<Texture> emissive;
 
 	explicit DefaultMaterial(const ShaderResource& resource);
 	void use_shader() override;

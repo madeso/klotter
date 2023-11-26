@@ -6,6 +6,7 @@
 // assets
 #include "light_01.png.h"
 #include "dark_01.png.h"
+#include "matrix.jpg.h"
 #include "container_diffuse.png.h"
 #include "container_specular.png.h"
 
@@ -20,6 +21,18 @@ std::shared_ptr<Texture> get_or_load(std::shared_ptr<Texture>* texture, const em
 			bin, TextureEdge::repeat, TextureRenderStyle::smooth, Transparency::exclude
 		));
 	}
+	return *texture;
+}
+
+std::shared_ptr<Texture> get_or_create(std::shared_ptr<Texture>* texture, u32 pixel_color)
+{
+	if (*texture == nullptr)
+	{
+		*texture = std::make_shared<Texture>(load_image_from_color(
+			pixel_color, TextureEdge::repeat, TextureRenderStyle::pixel, Transparency::exclude
+		));
+	}
+
 	return *texture;
 }
 
@@ -43,16 +56,19 @@ std::shared_ptr<Texture> Assets::get_container_specular()
 	return get_or_load(&container_specular, CONTAINER_SPECULAR_PNG);
 }
 
+std::shared_ptr<Texture> Assets::get_matrix()
+{
+	return get_or_load(&matrix, MATRIX_JPG);
+}
+
+std::shared_ptr<Texture> Assets::get_black()
+{
+	return get_or_create(&black, 0x000000FF);
+}
+
 std::shared_ptr<Texture> Assets::get_white()
 {
-	if (white == nullptr)
-	{
-		white = std::make_shared<Texture>(load_image_from_color(
-			0xFFFFFFFF, TextureEdge::repeat, TextureRenderStyle::pixel, Transparency::exclude
-		));
-	}
-
-	return white;
+	return get_or_create(&white, 0xFFFFFFFF);
 }
 
 }  //  namespace klotter

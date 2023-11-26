@@ -207,9 +207,11 @@ struct LoadedShader_Default : LoadedShader
 		, tint_color(program->get_uniform("u_tint_color"))
 		, tex_diffuse(program->get_uniform("u_tex_diffuse"))
 		, tex_specular(program->get_uniform("u_tex_specular"))
+		, tex_emissive(program->get_uniform("u_tex_emissive"))
 		, ambient_tint(program->get_uniform("u_ambient_tint"))
 		, specular_color(program->get_uniform("u_specular_color"))
 		, shininess(program->get_uniform("u_shininess"))
+		, emissive_factor(program->get_uniform("u_emissive_factor"))
 		, model(program->get_uniform("u_model"))
 		, projection(program->get_uniform("u_projection"))
 		, view(program->get_uniform("u_view"))
@@ -219,15 +221,17 @@ struct LoadedShader_Default : LoadedShader
 		, light_specular_color(program->get_uniform("u_light_specular_color"))
 		, light_world(program->get_uniform("u_light_world"))
 	{
-		setup_textures(program.get(), {&tex_diffuse, &tex_specular});
+		setup_textures(program.get(), {&tex_diffuse, &tex_specular, &tex_emissive});
 	}
 
 	Uniform tint_color;
 	Uniform tex_diffuse;
 	Uniform tex_specular;
+	Uniform tex_emissive;
 	Uniform ambient_tint;
 	Uniform specular_color;
 	Uniform shininess;
+	Uniform emissive_factor;
 
 	Uniform model;
 	Uniform projection;
@@ -401,6 +405,7 @@ DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
 	, ambient_tint(colors::white)
 	, specular_color(colors::white)
 	, shininess(32.0f)
+	, emissive_factor(0.0f)
 {
 }
 
@@ -415,6 +420,7 @@ void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tr
 	shader->program->set_vec3(shader->ambient_tint, ambient_tint);
 	shader->program->set_vec3(shader->specular_color, specular_color);
 	shader->program->set_float(shader->shininess, shininess);
+	shader->program->set_float(shader->emissive_factor, emissive_factor);
 
 	shader->program->set_mat(shader->model, transform);
 	shader->program->set_mat(shader->projection, cc.projection);
@@ -436,8 +442,21 @@ void DefaultMaterial::bind_textures(OpenglStates* states, Assets* assets)
 		}
 	};
 
+	const auto get_or_black = [assets](std::shared_ptr<Texture> t)
+	{
+		if (t == nullptr)
+		{
+			return assets->get_black();
+		}
+		else
+		{
+			return t;
+		}
+	};
+
 	bind_texture(states, shader->tex_diffuse, *get_or_white(diffuse));
 	bind_texture(states, shader->tex_specular, *get_or_white(specular));
+	bind_texture(states, shader->tex_emissive, *get_or_black(emissive));
 }
 
 void DefaultMaterial::apply_lights(const Lights& lights)

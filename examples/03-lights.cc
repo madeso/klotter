@@ -34,7 +34,7 @@ struct LightsSample : Sample
 		return cube;
 	}
 
-	void add_mini_cube(
+	std::shared_ptr<klotter::DefaultMaterial> add_mini_cube(
 		klotter::Renderer* renderer,
 		std::shared_ptr<CompiledGeom> geom,
 		std::shared_ptr<klotter::Texture> diffuse,
@@ -50,6 +50,8 @@ struct LightsSample : Sample
 		cube->position = p;
 
 		cubes.emplace_back(cube);
+
+		return material;
 	}
 
 	std::shared_ptr<UnlitMaterial> light_material;
@@ -80,9 +82,11 @@ struct LightsSample : Sample
 		add_mini_cube(renderer, mini, t, s, {2.4f, -0.4f, 3.5f});
 		add_mini_cube(renderer, mini, t, s, {1.3f, -2.0f, -2.5f});
 		add_mini_cube(renderer, mini, t, s, {-1.3f, 1.0f, 1.5f});
-		add_mini_cube(renderer, mini, t, s, {-1.7f, 3.0f, -7.5f});
+		auto mat = add_mini_cube(renderer, mini2, ct, cs, {-1.7f, 3.0f, -3.5f});
 		add_mini_cube(renderer, mini, t, s, {-1.5f, -2.2f, 2.5f});
 		add_mini_cube(renderer, mini, t, s, {-3.8f, -2.0f, -2.3f});
+		mat->emissive = renderer->assets.get_matrix();
+		mat->emissive_factor = 1.0f;
 		apply_animation();
 	}
 

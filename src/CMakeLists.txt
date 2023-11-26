@@ -4,6 +4,7 @@ embed(src_assets
         textures/dark_01.png
         textures/container_diffuse.png
         textures/container_specular.png
+        textures/matrix.jpg
     AS_TEXT
         klotter/render/default_shader.vert.glsl
         klotter/render/default_shader.frag.glsl

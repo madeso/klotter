@@ -7,6 +7,9 @@ uniform sampler2D u_tex_diffuse;
 
 {{#use_lights}}
 uniform sampler2D u_tex_specular;
+uniform sampler2D u_tex_emissive;
+
+uniform float u_emissive_factor;
 uniform vec3 u_ambient_tint;
 uniform vec3 u_specular_color;
 uniform float u_shininess;
@@ -48,6 +51,7 @@ void main()
     vec3 reflect_direction = reflect(-light_direction, normal);
     vec4 tex = texture(u_tex_diffuse, v_tex_coord);
     vec3 spec_t = texture(u_tex_specular, v_tex_coord).rgb;
+    vec3 emi_t = texture(u_tex_emissive, v_tex_coord).rgb;
     vec3 base_color = tex.rgb * v_color.rgb;
     float alpha = tex.a * u_tint_color.a;
 
@@ -60,9 +64,12 @@ void main()
 
     // specular color
     float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_shininess);
-    vec3 specular_color = spec * (u_specular_color * spec_t * u_light_specular_color); 
+    vec3 specular_color = spec * (u_specular_color * spec_t * u_light_specular_color);
 
-    vec3 light_color = ambient_color + diffuse_color + specular_color;
+    // emissive color
+    vec3 emissive_color = u_emissive_factor * emi_t;
+
+    vec3 light_color = ambient_color + diffuse_color + specular_color + emissive_color;
 
     o_frag_color = vec4(light_color.rgb, alpha);
 {{/use_lights}}
