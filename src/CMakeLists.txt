@@ -2,6 +2,8 @@ embed(src_assets
     AS_BINARY
         textures/light_01.png
         textures/dark_01.png
+        textures/container_diffuse.png
+        textures/container_specular.png
     AS_TEXT
         klotter/render/default_shader.vert.glsl
         klotter/render/default_shader.frag.glsl

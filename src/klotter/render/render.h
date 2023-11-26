@@ -131,7 +131,8 @@ struct DefaultMaterial : Material
 	glm::vec3 specular_color;
 	float shininess;
 
-	std::shared_ptr<Texture> texture;
+	std::shared_ptr<Texture> diffuse;
+	std::shared_ptr<Texture> specular;
 
 	explicit DefaultMaterial(const ShaderResource& resource);
 	void use_shader() override;

@@ -206,6 +206,7 @@ struct LoadedShader_Default : LoadedShader
 		: LoadedShader(std::move(s.program), s.geom_layout)
 		, tint_color(program->get_uniform("u_tint_color"))
 		, tex_diffuse(program->get_uniform("u_tex_diffuse"))
+		, tex_specular(program->get_uniform("u_tex_specular"))
 		, ambient_tint(program->get_uniform("u_ambient_tint"))
 		, specular_color(program->get_uniform("u_specular_color"))
 		, shininess(program->get_uniform("u_shininess"))
@@ -218,11 +219,12 @@ struct LoadedShader_Default : LoadedShader
 		, light_specular_color(program->get_uniform("u_light_specular_color"))
 		, light_world(program->get_uniform("u_light_world"))
 	{
-		setup_textures(program.get(), {&tex_diffuse});
+		setup_textures(program.get(), {&tex_diffuse, &tex_specular});
 	}
 
 	Uniform tint_color;
 	Uniform tex_diffuse;
+	Uniform tex_specular;
 	Uniform ambient_tint;
 	Uniform specular_color;
 	Uniform shininess;
@@ -422,13 +424,20 @@ void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tr
 
 void DefaultMaterial::bind_textures(OpenglStates* states, Assets* assets)
 {
-	std::shared_ptr<Texture> t = texture;
-	if (t == nullptr)
+	const auto get_or_white = [assets](std::shared_ptr<Texture> t)
 	{
-		t = assets->get_white();
-	}
+		if (t == nullptr)
+		{
+			return assets->get_white();
+		}
+		else
+		{
+			return t;
+		}
+	};
 
-	bind_texture(states, shader->tex_diffuse, *t);
+	bind_texture(states, shader->tex_diffuse, *get_or_white(diffuse));
+	bind_texture(states, shader->tex_specular, *get_or_white(specular));
 }
 
 void DefaultMaterial::apply_lights(const Lights& lights)

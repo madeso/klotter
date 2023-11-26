@@ -6,6 +6,8 @@
 // assets
 #include "light_01.png.h"
 #include "dark_01.png.h"
+#include "container_diffuse.png.h"
+#include "container_specular.png.h"
 
 namespace klotter
 {
@@ -29,6 +31,16 @@ std::shared_ptr<Texture> Assets::get_dark_grid()
 std::shared_ptr<Texture> Assets::get_light_grid()
 {
 	return get_or_load(&light_grid, LIGHT_01_PNG);
+}
+
+std::shared_ptr<Texture> Assets::get_container_diffuse()
+{
+	return get_or_load(&container_diffuse, CONTAINER_DIFFUSE_PNG);
+}
+
+std::shared_ptr<Texture> Assets::get_container_specular()
+{
+	return get_or_load(&container_specular, CONTAINER_SPECULAR_PNG);
 }
 
 std::shared_ptr<Texture> Assets::get_white()

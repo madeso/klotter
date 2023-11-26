@@ -37,12 +37,14 @@ struct LightsSample : Sample
 	void add_mini_cube(
 		klotter::Renderer* renderer,
 		std::shared_ptr<CompiledGeom> geom,
-		std::shared_ptr<klotter::Texture> texture,
+		std::shared_ptr<klotter::Texture> diffuse,
+		std::shared_ptr<klotter::Texture> specular,
 		const glm::vec3& p
 	)
 	{
 		auto material = renderer->make_default_material();
-		material->texture = texture;
+		material->diffuse = diffuse;
+		material->specular = specular;
 
 		auto cube = add_cube(geom, material);
 		cube->position = p;
@@ -68,16 +70,19 @@ struct LightsSample : Sample
 			geom::create_uv_sphere(1.0f, 9, 9, false).write_obj("mini-sphere.obj").to_geom(),
 			renderer->default_geom_layout()
 		);
-		//auto mini = create_cube_geom(1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
+		auto mini2 = create_cube_geom(1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
 		auto t = renderer->assets.get_light_grid();
-		add_mini_cube(renderer, mini, t, {1.5f, 2.0f, 2.5f});
-		add_mini_cube(renderer, mini, t, {1.5f, 0.2f, -1.5f});
-		add_mini_cube(renderer, mini, t, {2.4f, -0.4f, 3.5f});
-		add_mini_cube(renderer, mini, t, {1.3f, -2.0f, -2.5f});
-		add_mini_cube(renderer, mini, t, {-1.3f, 1.0f, 1.5f});
-		add_mini_cube(renderer, mini, t, {-1.7f, 3.0f, -7.5f});
-		add_mini_cube(renderer, mini, t, {-1.5f, -2.2f, 2.5f});
-		add_mini_cube(renderer, mini, t, {-3.8f, -2.0f, -2.3f});
+		auto s = renderer->assets.get_white();
+		auto ct = renderer->assets.get_container_diffuse();
+		auto cs = renderer->assets.get_container_specular();
+		add_mini_cube(renderer, mini, ct, cs, {1.5f, 2.0f, 2.5f});
+		add_mini_cube(renderer, mini2, ct, cs, {1.5f, 0.2f, -1.5f});
+		add_mini_cube(renderer, mini, t, s, {2.4f, -0.4f, 3.5f});
+		add_mini_cube(renderer, mini, t, s, {1.3f, -2.0f, -2.5f});
+		add_mini_cube(renderer, mini, t, s, {-1.3f, 1.0f, 1.5f});
+		add_mini_cube(renderer, mini, t, s, {-1.7f, 3.0f, -7.5f});
+		add_mini_cube(renderer, mini, t, s, {-1.5f, -2.2f, 2.5f});
+		add_mini_cube(renderer, mini, t, s, {-3.8f, -2.0f, -2.3f});
 		apply_animation();
 	}
 
