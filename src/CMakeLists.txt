@@ -38,6 +38,7 @@ set(src_base
     klotter/dependency_sdl.cc klotter/dependency_sdl.h
     klotter/result.cc klotter/result.h
     klotter/str.cc klotter/str.h
+    klotter/scurve.cc klotter/scurve.h
 
     klotter/klotter.cc klotter/klotter.h
 

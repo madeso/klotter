@@ -11,6 +11,7 @@
 #include "klotter/render/assets.h"
 #include "klotter/render/vertex_layout.h"
 #include "klotter/render/geom.h"
+#include "klotter/scurve.h"
 
 namespace klotter
 {
@@ -185,6 +186,10 @@ struct PointLight
 	float specular = 1.0f;
 	float diffuse = 1.0f;
 	float ambient = 0.2f;
+
+	float min_range = 10.0f;
+	float max_range = 20.0f;
+	SCurve curve = {1.0f, 0.75f};  ///< default value is "linear"
 };
 
 /// All lights in a world
