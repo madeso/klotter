@@ -118,14 +118,12 @@ struct LightsSample : Sample
 		renderer->render(window_size, world, *camera);
 	}
 
-	ImVec2 curve;
-
 	void on_gui(klotter::Camera* camera) override
 	{
 		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());
 		ImGui::LabelText("yaw", "%s", (Str{} << camera->yaw).str().c_str());
 
-		imgui_s_curve_editor("att", &world.lights.point_light.curve, &curve);
+		imgui_s_curve_editor("att", &world.lights.point_light.curve);
 	}
 };
 

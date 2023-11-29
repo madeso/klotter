@@ -189,7 +189,7 @@ struct PointLight
 
 	float min_range = 10.0f;
 	float max_range = 20.0f;
-	SCurve curve = {1.0f, 0.75f};  ///< default value is "linear"
+	SCurveAndDrag curve;  ///< curve and ui, needs to be trimmed down for actual renderer
 };
 
 /// All lights in a world

@@ -63,15 +63,10 @@ ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
 	return {lhs.x - rhs.x, lhs.y - rhs.y};
 }
 
-bool imgui_s_curve_editor(const char* title, SCurve* sc, ImVec2* drag)
+bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd)
 {
 	ImGui::Text(
-		"%s (%f %f/%f %f)",
-		title,
-		static_cast<double>(drag->x),
-		static_cast<double>(drag->y),
-		static_cast<double>(sc->s),
-		static_cast<double>(sc->t)
+		"%s (%f %f)", title, static_cast<double>(scd->curve.s), static_cast<double>(scd->curve.t)
 	);
 	if (ImGui::BeginChild(
 			title, ImVec2{100, 100}, false, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove
@@ -104,7 +99,7 @@ bool imgui_s_curve_editor(const char* title, SCurve* sc, ImVec2* drag)
 	for (int i = 0; i < max_points + 1; i += 1)
 	{
 		const float x = static_cast<float>(i) / static_cast<float>(max_points);
-		const float y = calculate_s_curve(x, sc->s, sc->t);
+		const float y = calculate_s_curve(x, scd->curve.s, scd->curve.t);
 		points[i] = ImVec2{x * size.x, (1 - y) * size.y} + pos;
 	}
 	draw->AddPolyline(points, max_points + 1, line_color, ImDrawFlags_None, 1.0f);
@@ -117,7 +112,7 @@ bool imgui_s_curve_editor(const char* title, SCurve* sc, ImVec2* drag)
 		}
 	}
 	draw->AddCircleFilled(
-		ImVec2{drag->x * size.x, (1 - drag->y) * size.y} + pos, radius, drag_color
+		ImVec2{scd->drag.x * size.x, (1 - scd->drag.y) * size.y} + pos, radius, drag_color
 	);
 
 	const auto t01 = [&pos, &size](const ImVec2& mp)
@@ -127,26 +122,30 @@ bool imgui_s_curve_editor(const char* title, SCurve* sc, ImVec2* drag)
 		return ImVec2{x, y};
 	};
 
-	const auto within01 = [](float s)
+	const auto within01 = [](const ImVec2& p)
 	{
-		if (s < 0.0f) return false;
-		if (s > 1.0f)
-			return false;
-		else
-			return true;
+#define T(s) \
+	do \
+	{ \
+		if (s < 0.0f) \
+			return false; \
+		else if (s > 1.0f) \
+			return false; \
+	} while (false)
+		T(p.x);
+		T(p.y);
+		return true;
+#undef T
 	};
 
-	auto& io = ImGui::GetIO();
-
-	const auto drag_start = t01(io.MouseClickedPos[button]);
-
-	if (ImGui::IsMouseDragging(button) && within01(drag_start.x) && within01(drag_start.y))
+	if (ImGui::IsMouseDown(button) && within01(t01(ImGui::GetIO().MouseClickedPos[button])))
 	{
+		// mouse is down and started inside the component
 		const auto mp = ImGui::GetMousePos();
 		const auto n = t01(mp);
-		drag->x = std::min(1.0f, std::max(n.x, 0.0f));
-		drag->y = std::min(1.0f, std::max(n.y, 0.0f));
-		*sc = s_curve_from_input(drag->x, drag->y);
+		scd->drag.x = std::min(1.0f, std::max(n.x, 0.0f));
+		scd->drag.y = std::min(1.0f, std::max(n.y, 0.0f));
+		scd->curve = s_curve_from_input(scd->drag.x, scd->drag.y);
 		changed = true;
 	}
 
