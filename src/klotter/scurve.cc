@@ -13,7 +13,7 @@ float square(float x)
 	return x * x;
 }
 
-constexpr SCurve s_curve_from_input_c(float x, float y)
+constexpr SCurve s_curve_from_input_c(float mx, float my)
 {
 	// s curve
 	// Colugo's curve editor: https://twitter.com/ColugoMusic/status/1363071439679729665?s=20
@@ -21,9 +21,9 @@ constexpr SCurve s_curve_from_input_c(float x, float y)
 	// which is based off of Yann van der Cruyssen's sCurve formula: https://twitter.com/Morusque/status/1352569197499441155
 	// which is based off of this paper: https://arxiv.org/pdf/2010.09714.pdf
 
-	const auto p0 = x;
+	const auto p0 = mx;
 	// gustav addition: switch p1 to match curve to xy
-	const auto p1 = x > 0.5f ? y : 1 - y;
+	const auto p1 = mx > 0.5f ? my : 1 - my;
 
 	const auto o = [](float x)
 	{
