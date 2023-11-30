@@ -42,7 +42,12 @@ out vec4 o_frag_color;
 
 ///////////////////////////////////////////////////////////////////////////////
 // s curve
-
+float calculate_s_curve(float x, float s, float t)
+{
+	float mE = 0.00001f;	// machine epsilon
+	return x < t ? t * x / (x + s * (t - x) + mE)
+				 : ((1 - t) * (x - 1)) / (1 - x - s * (t - x) + mE) + 1;
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // code
@@ -77,7 +82,7 @@ void main()
     float min_dist = u_light_attenuation.x;
     float max_dist = u_light_attenuation.y;
     float distance = length(u_light_world - v_worldspace);
-    float attenuation = 1.0 - clamp((distance - min_dist) / (max_dist - min_dist), 0, 1);
+    float attenuation = 1.0 - calculate_s_curve(clamp((distance - min_dist) / (max_dist - min_dist), 0, 1), u_light_attenuation.z, u_light_attenuation.w);
 
     vec3 light_color = ambient_color + (diffuse_color + specular_color + emissive_color) * attenuation;
 
