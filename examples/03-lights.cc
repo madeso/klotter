@@ -128,6 +128,7 @@ struct LightsSample : Sample
 		const auto m = pl.min_range;
 		if (ImGui::DragFloat("min", &pl.min_range, speed))
 		{
+			pl.min_range = std::max(0.0f, pl.min_range);
 			const auto change = pl.min_range - m;
 			pl.max_range += change;
 		}
