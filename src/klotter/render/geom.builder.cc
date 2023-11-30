@@ -399,15 +399,17 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 		glm::vec2 tex;
 	};
 
-	const auto add_quad_to_builder = [&](Pt p0, Pt p1, Pt p2, Pt p3)
+	const auto add_quad_to_builder = [&](glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
 	{
 		constexpr float pd = 0.1f;
 		constexpr float td = 0.01f;
 		const auto ci = b.foa_color({color, 1.0f}, 0.001f);
-		const auto v0 = Vertex{b.foa_position(p0.pos, pd), 0, b.foa_text_coord(p0.tex, td), ci};
-		const auto v1 = Vertex{b.foa_position(p1.pos, pd), 0, b.foa_text_coord(p1.tex, td), ci};
-		const auto v2 = Vertex{b.foa_position(p2.pos, pd), 0, b.foa_text_coord(p2.tex, td), ci};
-		const auto v3 = Vertex{b.foa_position(p3.pos, pd), 0, b.foa_text_coord(p3.tex, td), ci};
+		const auto no = b.add_normal(normal);
+
+		const auto v0 = Vertex{b.foa_position(p0.pos, pd), no, b.foa_text_coord(p0.tex, td), ci};
+		const auto v1 = Vertex{b.foa_position(p1.pos, pd), no, b.foa_text_coord(p1.tex, td), ci};
+		const auto v2 = Vertex{b.foa_position(p2.pos, pd), no, b.foa_text_coord(p2.tex, td), ci};
+		const auto v3 = Vertex{b.foa_position(p3.pos, pd), no, b.foa_text_coord(p3.tex, td), ci};
 
 		b.add_quad(invert, v0, v1, v2, v3);
 	};
@@ -420,8 +422,11 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 	const float hy = y * 0.5f;
 	const float hz = z * 0.5f;
 
+	const float s = invert ? -1 : 1;
+
 	// front
 	add_quad_to_builder(
+		{0, 0, -s},
 		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
 		{{hx, -hy, -hz}, {x * ts, 0.0f}},
 		{{hx, hy, -hz}, {x * ts, y * ts}},
@@ -430,6 +435,7 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 
 	// back
 	add_quad_to_builder(
+		{0, 0, s},
 		{{-hx, -hy, hz}, {0.0f, 0.0f}},
 		{{-hx, hy, hz}, {0.0f, y * ts}},
 		{{hx, hy, hz}, {x * ts, y * ts}},
@@ -438,6 +444,7 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 
 	// left
 	add_quad_to_builder(
+		{-s, 0, 0},
 		{{-hx, hy, -hz}, {y * ts, 0.0f}},
 		{{-hx, hy, hz}, {y * ts, z * ts}},
 		{{-hx, -hy, hz}, {0.0f, z * ts}},
@@ -446,6 +453,7 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 
 	// right
 	add_quad_to_builder(
+		{s, 0, 0},
 		{{hx, hy, hz}, {z * ts, y * ts}},
 		{{hx, hy, -hz}, {0.0f, y * ts}},
 		{{hx, -hy, -hz}, {0.0f, 0.0f}},
@@ -454,6 +462,7 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 
 	// bottom
 	add_quad_to_builder(
+		{0, -s, 0},
 		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
 		{{-hx, -hy, hz}, {0.0f, z * ts}},
 		{{hx, -hy, hz}, {x * ts, z * ts}},
@@ -462,6 +471,7 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 
 	// top
 	add_quad_to_builder(
+		{0, s, 0},
 		{{-hx, hy, -hz}, {0.0f, 0.0f}},
 		{{hx, hy, -hz}, {x * ts, 0.0f}},
 		{{hx, hy, hz}, {x * ts, z * ts}},
