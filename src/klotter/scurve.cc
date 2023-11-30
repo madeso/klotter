@@ -63,7 +63,7 @@ ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
 	return {lhs.x - rhs.x, lhs.y - rhs.y};
 }
 
-bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd)
+bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 {
 	ImGui::Text(
 		"%s (%f %f)", title, static_cast<double>(scd->curve.s), static_cast<double>(scd->curve.t)
@@ -98,8 +98,9 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd)
 	ImVec2 points[max_points + 1];
 	for (int i = 0; i < max_points + 1; i += 1)
 	{
-		const float x = static_cast<float>(i) / static_cast<float>(max_points);
-		const float y = calculate_s_curve(x, scd->curve.s, scd->curve.t);
+		const float srcx = static_cast<float>(i) / static_cast<float>(max_points);
+		const float x = flip_x ? 1 - srcx : srcx;
+		const float y = calculate_s_curve(srcx, scd->curve.s, scd->curve.t);
 		points[i] = ImVec2{x * size.x, (1 - y) * size.y} + pos;
 	}
 	draw->AddPolyline(points, max_points + 1, line_color, ImDrawFlags_None, 1.0f);
@@ -145,7 +146,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd)
 		const auto n = t01(mp);
 		scd->drag.x = std::min(1.0f, std::max(n.x, 0.0f));
 		scd->drag.y = std::min(1.0f, std::max(n.y, 0.0f));
-		scd->curve = s_curve_from_input(scd->drag.x, scd->drag.y);
+		scd->curve = s_curve_from_input(flip_x ? 1 - scd->drag.x : scd->drag.x, scd->drag.y);
 		changed = true;
 	}
 
