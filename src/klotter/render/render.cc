@@ -220,6 +220,7 @@ struct LoadedShader_Default : LoadedShader
 		, light_diffuse_color(program->get_uniform("u_light_diffuse_color"))
 		, light_specular_color(program->get_uniform("u_light_specular_color"))
 		, light_world(program->get_uniform("u_light_world"))
+		, light_attenuation(program->get_uniform("u_light_attenuation"))
 	{
 		setup_textures(program.get(), {&tex_diffuse, &tex_specular, &tex_emissive});
 	}
@@ -242,6 +243,7 @@ struct LoadedShader_Default : LoadedShader
 	Uniform light_diffuse_color;
 	Uniform light_specular_color;
 	Uniform light_world;
+	Uniform light_attenuation;
 };
 
 struct ShaderResource::ShaderResourcePimpl
@@ -466,6 +468,9 @@ void DefaultMaterial::apply_lights(const Lights& lights)
 	shader->program->set_vec3(shader->light_diffuse_color, p.color * p.diffuse);
 	shader->program->set_vec3(shader->light_specular_color, p.color * p.specular);
 	shader->program->set_vec3(shader->light_world, p.position);
+	shader->program->set_vec4(
+		shader->light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
+	);
 }
 
 // ------------------------------------------------------------------------------------------------

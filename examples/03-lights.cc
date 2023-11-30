@@ -123,7 +123,19 @@ struct LightsSample : Sample
 		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());
 		ImGui::LabelText("yaw", "%s", (Str{} << camera->yaw).str().c_str());
 
-		imgui_s_curve_editor("att", &world.lights.point_light.curve, true);
+		const float speed = 0.1f;
+		auto& pl = world.lights.point_light;
+		const auto m = pl.min_range;
+		if (ImGui::DragFloat("min", &pl.min_range, speed))
+		{
+			const auto change = pl.min_range - m;
+			pl.max_range += change;
+		}
+		if (ImGui::DragFloat("max", &pl.max_range, speed))
+		{
+			pl.max_range = std::max(pl.max_range, pl.min_range + 0.01f);
+		}
+		imgui_s_curve_editor("att", &pl.curve, true);
 	}
 };
 

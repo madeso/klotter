@@ -19,6 +19,7 @@ uniform vec3 u_view_position;
 uniform vec3 u_light_ambient_color;
 uniform vec3 u_light_diffuse_color;
 uniform vec3 u_light_specular_color;
+uniform vec4 u_light_attenuation; // min max s t
 
 uniform vec3 u_light_world;
 {{/use_lights}}
@@ -38,6 +39,9 @@ in vec3 v_normal;
 ///////////////////////////////////////////////////////////////////////////////
 // output
 out vec4 o_frag_color;
+
+///////////////////////////////////////////////////////////////////////////////
+// s curve
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -69,7 +73,13 @@ void main()
     // emissive color
     vec3 emissive_color = u_emissive_factor * emi_t;
 
-    vec3 light_color = ambient_color + diffuse_color + specular_color + emissive_color;
+    // attenuation
+    float min_dist = u_light_attenuation.x;
+    float max_dist = u_light_attenuation.y;
+    float distance = length(u_light_world - v_worldspace);
+    float attenuation = 1.0 - clamp((distance - min_dist) / (max_dist - min_dist), 0, 1);
+
+    vec3 light_color = ambient_color + (diffuse_color + specular_color + emissive_color) * attenuation;
 
     o_frag_color = vec4(light_color.rgb, alpha);
 {{/use_lights}}
