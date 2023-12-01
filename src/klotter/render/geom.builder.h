@@ -73,6 +73,7 @@ struct Builder
 };
 
 Builder create_box(float w, float h, float d, bool invert, const glm::vec3& color = colors::white);
+Builder create_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
 
 ///
 /// @param longitude number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.

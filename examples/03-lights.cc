@@ -87,6 +87,22 @@ struct LightsSample : Sample
 		add_mini_cube(renderer, mini, t, s, {-3.8f, -2.0f, -2.3f});
 		mat->emissive = renderer->assets.get_matrix();
 		mat->emissive_factor = 1.0f;
+
+		{
+			constexpr auto PLANE_SIZE = 100.0f;
+			auto plane_geom = compile_geom(
+				geom::create_plane(PLANE_SIZE, PLANE_SIZE, false).to_geom(),
+				renderer->default_geom_layout()
+			);
+
+			auto material = renderer->make_default_material();
+			material->diffuse = renderer->assets.get_light_grid();
+			material->specular = renderer->assets.get_white();
+
+			auto plane = add_cube(plane_geom, material);
+			plane->position = {0.0f, -3.0f, 0.0f};
+		}
+
 		apply_animation();
 	}
 
