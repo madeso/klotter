@@ -10,6 +10,11 @@ embed(src_assets
         klotter/render/default_shader.frag.glsl
 )
 
+set(shaders
+    klotter/render/default_shader.vert.glsl
+    klotter/render/default_shader.frag.glsl
+)
+
 set(src_render
     klotter/render/render.cc klotter/render/render.h
     klotter/render/camera.cc klotter/render/camera.h
@@ -57,6 +62,7 @@ set(src
     ${src_base}
     ${src_pch}
     ${src_assets}
+    ${shaders}
 )
 
 add_library(klotter STATIC ${src})
@@ -92,6 +98,7 @@ source_group("render" FILES ${src_render})
 # source_group("base" FILES ${src_base})
 source_group("pch" FILES ${src_pch})
 source_group("_assets" FILES ${src_assets})
+source_group("shaders", FILES ${shaders})
 
 cmake_source_group()
 
