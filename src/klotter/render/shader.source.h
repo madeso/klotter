@@ -9,6 +9,7 @@ struct ShaderOptions
 {
 	bool use_lights = false;
 	int number_of_point_lights = 0;
+	int number_of_directional_lights = 0;
 };
 
 struct ShaderSource

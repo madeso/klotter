@@ -1,5 +1,6 @@
 #include "klotter/render/geom.builder.h"
 #include "klotter/str.h"
+#include "klotter/cint.h"
 
 #include "sample.h"
 
@@ -70,6 +71,16 @@ struct LightsSample : Sample
 		world.lights.point_lights.emplace_back();
 		world.lights.point_lights[0].position = light->position;
 
+		{
+			world.lights.directional_lights.emplace_back();
+			auto& dili = world.lights.directional_lights[0];
+			dili.direction = {-1.0f, -1.0f, -1.0f};
+			dili.direction = glm::normalize(dili.direction);
+			dili.diffuse = 0.1f;
+			dili.specular = 0.1f;
+			dili.color = colors::red_vermillion;
+		}
+
 		auto mini = compile_geom(
 			geom::create_uv_sphere(1.0f, 9, 9, false).write_obj("mini-sphere.obj").to_geom(),
 			renderer->default_geom_layout()
@@ -138,24 +149,47 @@ struct LightsSample : Sample
 
 	void on_gui(klotter::Camera* camera) override
 	{
+		const float FAC_SPEED = 0.01f;
+		const float RANGE_SPEED = 0.1f;
+
 		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());
 		ImGui::LabelText("yaw", "%s", (Str{} << camera->yaw).str().c_str());
 
-		const float speed = 0.1f;
-		for (auto& pl: world.lights.point_lights)
+		ImGui::DragFloat("Ambient", &world.lights.ambient, FAC_SPEED, 0.0f, 1.0f);
+
+
+		for (int dir_light_index = 0;
+			 dir_light_index < Csizet_to_int(world.lights.directional_lights.size());
+			 dir_light_index += 1)
 		{
+			ImGui::PushID(dir_light_index);
+			auto& dl = world.lights.directional_lights[Cint_to_sizet(dir_light_index)];
+			if (ImGui::DragFloat("Directional", &dl.diffuse, FAC_SPEED, 0.0f, 1.0f))
+			{
+				dl.specular = dl.diffuse;
+			}
+			ImGui::PopID();
+		}
+
+		for (int point_light_index = 0;
+			 point_light_index < Csizet_to_int(world.lights.point_lights.size());
+			 point_light_index += 1)
+		{
+			auto& pl = world.lights.point_lights[Cint_to_sizet(point_light_index)];
+			ImGui::PushID(point_light_index);
 			const auto m = pl.min_range;
-			if (ImGui::DragFloat("min", &pl.min_range, speed))
+			if (ImGui::DragFloat("min", &pl.min_range, RANGE_SPEED))
 			{
 				pl.min_range = std::max(0.0f, pl.min_range);
 				const auto change = pl.min_range - m;
 				pl.max_range += change;
 			}
-			if (ImGui::DragFloat("max", &pl.max_range, speed))
+			if (ImGui::DragFloat("max", &pl.max_range, RANGE_SPEED))
 			{
 				pl.max_range = std::max(pl.max_range, pl.min_range + 0.01f);
 			}
 			imgui_s_curve_editor("att", &pl.curve, true);
+			ImGui::PopID();
 		}
 	}
 };

@@ -217,6 +217,20 @@ struct PointLightUniforms
 	Uniform light_world;
 };
 
+struct DirectionalLightUniforms
+{
+	DirectionalLightUniforms(ShaderProgram* program, const std::string& base)
+		: light_diffuse_color(program->get_uniform(base + "diffuse"))
+		, light_specular_color(program->get_uniform(base + "specular"))
+		, dir(program->get_uniform(base + "dir"))
+	{
+	}
+
+	Uniform light_diffuse_color;
+	Uniform light_specular_color;
+	Uniform dir;
+};
+
 struct LoadedShader_Default : LoadedShader
 {
 	LoadedShader_Default(LoadedShader s, const RenderSettings& settings)
@@ -242,6 +256,12 @@ struct LoadedShader_Default : LoadedShader
 			const std::string base = Str{} << "u_point_lights[" << i << "].";
 			point_lights.emplace_back(program.get(), base);
 		}
+
+		for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+		{
+			const std::string base = Str{} << "u_directional_lights[" << i << "].";
+			directional_lights.emplace_back(program.get(), base);
+		}
 	}
 
 	Uniform tint_color;
@@ -261,6 +281,7 @@ struct LoadedShader_Default : LoadedShader
 	Uniform light_ambient_color;
 
 	std::vector<PointLightUniforms> point_lights;
+	std::vector<DirectionalLightUniforms> directional_lights;
 };
 
 struct ShaderResource::ShaderResourcePimpl
@@ -357,6 +378,7 @@ ShaderResource::ShaderResource(const RenderSettings& settings)
 	ShaderOptions default_shader_options;
 	default_shader_options.use_lights = true;
 	default_shader_options.number_of_point_lights = settings.number_of_point_lights;
+	default_shader_options.number_of_directional_lights = settings.number_of_directional_lights;
 
 	r = std::make_unique<ShaderResourcePimpl>(
 		load_shader(global_shader_data, load_shader_source(ShaderOptions{})),
@@ -491,6 +513,13 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 		p.specular = 0.0f;
 		return p;
 	})();
+	const auto no_directional_light = ([]() {
+		DirectionalLight p;
+		p.color = colors::black;
+		p.diffuse = 0.0f;
+		p.specular = 0.0f;
+		return p;
+	})();
 
 	// todo(Gustav): graph the most influental lights instead of the first N lights
 	for (int i = 0; i < settings.number_of_point_lights; i += 1)
@@ -505,6 +534,16 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 		shader->program->set_vec4(
 			u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
 		);
+	}
+	for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+	{
+		const auto& p = Cint_to_sizet(i) < lights.directional_lights.size()
+						  ? lights.directional_lights[Cint_to_sizet(i)]
+						  : no_directional_light;
+		const auto& u = shader->directional_lights[Cint_to_sizet(i)];
+		shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
+		shader->program->set_vec3(u.light_specular_color, p.color * p.specular);
+		shader->program->set_vec3(u.dir, p.direction);
 	}
 }
 

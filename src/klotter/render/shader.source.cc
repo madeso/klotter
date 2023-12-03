@@ -28,6 +28,7 @@ std::string generate(std::string_view str, const ShaderOptions& options)
 
 	data["use_lights"] = options.use_lights;
 	data["number_of_point_lights"] = (Str() << options.number_of_point_lights).str();
+	data["number_of_directional_lights"] = (Str() << options.number_of_directional_lights).str();
 	return input.render(data);
 }
 

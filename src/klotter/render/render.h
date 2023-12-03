@@ -78,6 +78,7 @@ struct OpenglStates
 struct RenderSettings
 {
 	int number_of_point_lights = 5;
+	int number_of_directional_lights = 5;
 };
 
 /// All loaded/known shaders
@@ -183,6 +184,15 @@ std::shared_ptr<MeshInstance> make_mesh_instance(
 	std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat
 );
 
+struct DirectionalLight
+{
+	glm::vec3 direction = {1.0f, 0.0f, 0.0f};
+
+	glm::vec3 color = colors::white;
+	float specular = 1.0f;
+	float diffuse = 1.0f;
+};
+
 struct PointLight
 {
 	glm::vec3 position = {0.0f, 0.0f, 0.0f};
@@ -202,6 +212,7 @@ struct Lights
 	float ambient = 0.2f;
 
 	std::vector<PointLight> point_lights;
+	std::vector<DirectionalLight> directional_lights;
 };
 
 /// also known as a scene

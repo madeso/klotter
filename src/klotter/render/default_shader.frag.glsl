@@ -25,6 +25,14 @@ uniform vec3 u_view_position;
 
 uniform vec3 u_ambient_light;
 
+struct DirectionalLight
+{
+    vec3 diffuse;
+    vec3 specular;
+
+    vec3 dir;
+};
+
 struct PointLight
 {
     vec3 diffuse;
@@ -35,6 +43,7 @@ struct PointLight
 };
 
 uniform PointLight u_point_lights[{{number_of_point_lights}}];
+uniform DirectionalLight u_directional_lights[{{number_of_directional_lights}}];
 {{/use_lights}}
 
 
@@ -71,6 +80,23 @@ float calculate_attenuation(vec4 att, float distance)
     float scale = (distance - min_dist) / (max_dist - min_dist); // 0 at min, 1 at max
     float attenuation = 1.0 - calculate_s_curve(clamp(scale, 0, 1), att.z, att.w);
     return attenuation; // 1 at min, 0 at max
+}
+
+vec3 calculate_directional_light(
+    DirectionalLight pl, vec3 normal, vec3 view_direction, vec3 spec_t, vec3 base_color)
+{
+    vec3 light_direction = -pl.dir;
+    vec3 reflect_direction = reflect(-light_direction, normal);
+
+    // diffuse color
+    float diff = max(dot(normal, light_direction), 0.0);
+    vec3 diffuse_color = diff * (u_material.diffuse_tint.rgb * base_color * pl.diffuse);
+
+    // specular color
+    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_material.shininess);
+    vec3 specular_color = spec * (u_material.specular_tint * spec_t * pl.specular);
+
+    return diffuse_color + specular_color;
 }
 
 vec3 calculate_point_light(
@@ -115,6 +141,12 @@ void main()
     vec3 emissive_color = u_material.emissive_factor * emi_t;
 
     vec3 light_color = ambient_color + emissive_color;
+
+    // directional lights
+    for(int i=0; i<{{number_of_directional_lights}}; i+=1)
+    {
+        light_color += calculate_directional_light(u_directional_lights[i], normal, view_direction, spec_t, base_color);
+    }
 
     // point lights
     for(int i=0; i<{{number_of_point_lights}}; i+=1)
