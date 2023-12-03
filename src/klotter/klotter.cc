@@ -12,11 +12,11 @@ namespace klotter
 constexpr int start_width = 800;
 constexpr int starth_height = 600;
 
-int app_main(MakeAppFunction make_app, SDL_Window* sdl_window)
+int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl_window)
 {
 	////////////////////////////////////////////////////////////////
 	// create actual app
-	Renderer renderer;
+	Renderer renderer{rs};
 	if (renderer.is_loaded() == false)
 	{
 		return -1;
@@ -188,7 +188,7 @@ int app_main(MakeAppFunction make_app, SDL_Window* sdl_window)
 	return 0;
 }
 
-int run_main(MakeAppFunction make_app)
+int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 {
 	////////////////////////////////////////////////////////////////////////////////
 	// sdl config
@@ -302,7 +302,7 @@ int run_main(MakeAppFunction make_app)
 	setup_opengl_debug();
 
 
-	const auto exit_code = app_main(make_app, sdl_window);
+	const auto exit_code = app_main(rs, make_app, sdl_window);
 
 
 

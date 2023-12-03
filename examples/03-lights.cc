@@ -66,7 +66,9 @@ struct LightsSample : Sample
 			= create_cube_geom(0.25f, 0.25f, 0.25f, false, renderer->unlit_geom_layout());
 		auto light = add_cube(light_geom, light_material);
 		light->position.z = 0.5f;
-		world.lights.point_light.position = light->position;
+
+		world.lights.point_lights.emplace_back();
+		world.lights.point_lights[0].position = light->position;
 
 		auto mini = compile_geom(
 			geom::create_uv_sphere(1.0f, 9, 9, false).write_obj("mini-sphere.obj").to_geom(),
@@ -140,19 +142,21 @@ struct LightsSample : Sample
 		ImGui::LabelText("yaw", "%s", (Str{} << camera->yaw).str().c_str());
 
 		const float speed = 0.1f;
-		auto& pl = world.lights.point_light;
-		const auto m = pl.min_range;
-		if (ImGui::DragFloat("min", &pl.min_range, speed))
+		for (auto& pl: world.lights.point_lights)
 		{
-			pl.min_range = std::max(0.0f, pl.min_range);
-			const auto change = pl.min_range - m;
-			pl.max_range += change;
+			const auto m = pl.min_range;
+			if (ImGui::DragFloat("min", &pl.min_range, speed))
+			{
+				pl.min_range = std::max(0.0f, pl.min_range);
+				const auto change = pl.min_range - m;
+				pl.max_range += change;
+			}
+			if (ImGui::DragFloat("max", &pl.max_range, speed))
+			{
+				pl.max_range = std::max(pl.max_range, pl.min_range + 0.01f);
+			}
+			imgui_s_curve_editor("att", &pl.curve, true);
 		}
-		if (ImGui::DragFloat("max", &pl.max_range, speed))
-		{
-			pl.max_range = std::max(pl.max_range, pl.min_range + 0.01f);
-		}
-		imgui_s_curve_editor("att", &pl.curve, true);
 	}
 };
 

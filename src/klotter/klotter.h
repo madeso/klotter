@@ -22,7 +22,7 @@ struct App
 };
 
 using MakeAppFunction = std::unique_ptr<App> (*)(Renderer*);
-int run_main(MakeAppFunction make_app);
+int run_main(const RenderSettings& rs, MakeAppFunction make_app);
 
 }  //  namespace klotter
 
@@ -30,6 +30,7 @@ int run_main(MakeAppFunction make_app);
 	int main(int, char**) \
 	{ \
 		return klotter::run_main( \
+			APP::get_render_settings(), \
 			[](Renderer* r) -> std::unique_ptr<App> { return std::make_unique<APP>(r); } \
 		); \
 	}

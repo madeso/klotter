@@ -8,6 +8,7 @@ namespace klotter
 struct ShaderOptions
 {
 	bool use_lights = false;
+	int number_of_pointlights = 0;
 };
 
 struct ShaderSource

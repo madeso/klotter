@@ -1,6 +1,7 @@
 #include "klotter/render/shader.source.h"
 
 #include "klotter/log.h"
+#include "klotter/str.h"
 
 #include "mustache/mustache.hpp"
 
@@ -26,6 +27,7 @@ std::string generate(std::string_view str, const ShaderOptions& options)
 	auto data = kainjow::mustache::data{};
 
 	data["use_lights"] = options.use_lights;
+	data["number_of_pointlights"] = (Str() << options.number_of_pointlights).str();
 	return input.render(data);
 }
 

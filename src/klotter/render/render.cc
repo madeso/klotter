@@ -2,6 +2,7 @@
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
+#include "klotter/str.h"
 
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/shader.source.h"
@@ -218,7 +219,7 @@ struct PointLightUniforms
 
 struct LoadedShader_Default : LoadedShader
 {
-	LoadedShader_Default(LoadedShader s)
+	LoadedShader_Default(LoadedShader s, const RenderSettings& settings)
 		: LoadedShader(std::move(s.program), s.geom_layout)
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
@@ -233,9 +234,14 @@ struct LoadedShader_Default : LoadedShader
 		, view(program->get_uniform("u_view"))
 		, view_position(program->get_uniform("u_view_position"))
 		, light_ambient_color(program->get_uniform("u_ambient_light"))
-		, point_lights(program.get(), "u_point_lights[0].")
 	{
 		setup_textures(program.get(), {&tex_diffuse, &tex_specular, &tex_emissive});
+
+		for (int i = 0; i < settings.number_of_pointlights; i += 1)
+		{
+			const std::string base = Str{} << "u_point_lights[" << i << "].";
+			point_lights.emplace_back(program.get(), base);
+		}
 	}
 
 	Uniform tint_color;
@@ -254,14 +260,14 @@ struct LoadedShader_Default : LoadedShader
 	Uniform view_position;
 	Uniform light_ambient_color;
 
-	PointLightUniforms point_lights;
+	std::vector<PointLightUniforms> point_lights;
 };
 
 struct ShaderResource::ShaderResourcePimpl
 {
-	ShaderResourcePimpl(LoadedShader unlit, LoadedShader def)
+	ShaderResourcePimpl(LoadedShader unlit, LoadedShader def, const RenderSettings& settings)
 		: unlit_shader(std::move(unlit))
-		, default_shader(std::move(def))
+		, default_shader(std::move(def), settings)
 	{
 	}
 
@@ -342,7 +348,7 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& 
 	return {program, geom_layout};
 }
 
-ShaderResource::ShaderResource()
+ShaderResource::ShaderResource(const RenderSettings& settings)
 {
 	// todo(Gustav): change so that there are common "base" shaders (example: single color) that
 	// can be used for everything and specific shaders (example: pbr)
@@ -350,10 +356,12 @@ ShaderResource::ShaderResource()
 
 	ShaderOptions default_shader_options;
 	default_shader_options.use_lights = true;
+	default_shader_options.number_of_pointlights = settings.number_of_pointlights;
 
 	r = std::make_unique<ShaderResourcePimpl>(
 		load_shader(global_shader_data, load_shader_source(ShaderOptions{})),
-		load_shader(global_shader_data, load_shader_source(default_shader_options))
+		load_shader(global_shader_data, load_shader_source(default_shader_options)),
+		settings
 	);
 }
 
@@ -407,7 +415,7 @@ void UnlitMaterial::bind_textures(OpenglStates* states, Assets* assets)
 	bind_texture(states, shader->tex_diffuse, *t);
 }
 
-void UnlitMaterial::apply_lights(const Lights&)
+void UnlitMaterial::apply_lights(const Lights&, const RenderSettings&)
 {
 }
 
@@ -472,18 +480,31 @@ void DefaultMaterial::bind_textures(OpenglStates* states, Assets* assets)
 	bind_texture(states, shader->tex_emissive, *get_or_black(emissive));
 }
 
-void DefaultMaterial::apply_lights(const Lights& lights)
+void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& settings)
 {
 	shader->program->set_vec3(shader->light_ambient_color, lights.color * lights.ambient);
 
-	const auto& p = lights.point_light;
-	const auto& u = shader->point_lights;
-	shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
-	shader->program->set_vec3(u.light_specular_color, p.color * p.specular);
-	shader->program->set_vec3(u.light_world, p.position);
-	shader->program->set_vec4(
-		u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
-	);
+	const auto no_pointlight = ([]() {
+		PointLight p;
+		p.color = colors::black;
+		p.diffuse = 0.0f;
+		p.specular = 0.0f;
+		return p;
+	})();
+
+	for (int i = 0; i < settings.number_of_pointlights; i += 1)
+	{
+		const auto& p = Cint_to_sizet(i) < lights.point_lights.size()
+						  ? lights.point_lights[Cint_to_sizet(i)]
+						  : no_pointlight;
+		const auto& u = shader->point_lights[Cint_to_sizet(i)];
+		shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
+		shader->program->set_vec3(u.light_specular_color, p.color * p.specular);
+		shader->program->set_vec3(u.light_world, p.position);
+		shader->program->set_vec4(
+			u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
+		);
+	}
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -576,6 +597,12 @@ CompiledGeom::~CompiledGeom()
 	destroy_vertex_array(vao);
 }
 
+Renderer::Renderer(const RenderSettings& set)
+	: settings(set)
+	, shaders(set)
+{
+}
+
 void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
 	StateChanger{&states}
@@ -599,7 +626,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		m->material->use_shader();
 		m->material->set_uniforms(compiled_camera, transform);
 		m->material->bind_textures(&states, &assets);
-		m->material->apply_lights(world.lights);
+		m->material->apply_lights(world.lights, settings);
 
 		ASSERT(is_bound_for_shader(m->geom->debug_types));
 		glBindVertexArray(m->geom->vao);

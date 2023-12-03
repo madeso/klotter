@@ -14,6 +14,12 @@ void add_sample_lights(SampleApp* app);
 
 struct ExampleApp : examples::SampleApp
 {
+	static klotter::RenderSettings get_render_settings()
+	{
+		// use default
+		return klotter::RenderSettings{};
+	}
+
 	ExampleApp(klotter::Renderer*)
 	{
 		add_sample_cube(this);

@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "klotter/colors.h"
+#include "klotter/scurve.h"
 
 #include "klotter/render/camera.h"
 #include "klotter/render/constants.h"
@@ -11,7 +12,6 @@
 #include "klotter/render/assets.h"
 #include "klotter/render/vertex_layout.h"
 #include "klotter/render/geom.h"
-#include "klotter/scurve.h"
 
 namespace klotter
 {
@@ -75,10 +75,15 @@ struct OpenglStates
 	std::array<std::optional<unsigned int>, MAX_TEXTURES_SUPPORTED> texture_bound;
 };
 
+struct RenderSettings
+{
+	int number_of_pointlights = 5;
+};
+
 /// All loaded/known shaders
 struct ShaderResource
 {
-	ShaderResource();
+	explicit ShaderResource(const RenderSettings& settings);
 	~ShaderResource();
 
 	struct ShaderResourcePimpl;
@@ -103,7 +108,7 @@ struct Material
 	virtual void use_shader() = 0;
 	virtual void set_uniforms(const CompiledCamera&, const glm::mat4&) = 0;
 	virtual void bind_textures(OpenglStates* states, Assets* assets) = 0;
-	virtual void apply_lights(const Lights& lights) = 0;
+	virtual void apply_lights(const Lights& lights, const RenderSettings& settings) = 0;
 };
 
 /// a unlit (or fully lit) material, not affected by light
@@ -118,7 +123,7 @@ struct UnlitMaterial : Material
 	void use_shader() override;
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(OpenglStates* states, Assets* assets) override;
-	void apply_lights(const Lights& lights) override;
+	void apply_lights(const Lights& lights, const RenderSettings& settings) override;
 };
 
 /// a material affected by light
@@ -141,7 +146,7 @@ struct DefaultMaterial : Material
 	void use_shader() override;
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(OpenglStates* states, Assets* assets) override;
-	void apply_lights(const Lights& lights) override;
+	void apply_lights(const Lights& lights, const RenderSettings& settings) override;
 };
 
 /// Represents a Geom on the GPU.
@@ -196,7 +201,7 @@ struct Lights
 	glm::vec3 color = colors::white;
 	float ambient = 0.2f;
 
-	PointLight point_light;
+	std::vector<PointLight> point_lights;
 };
 
 /// also known as a scene
@@ -209,9 +214,12 @@ struct World
 /// the renderering "engine"
 struct Renderer
 {
+	RenderSettings settings;
 	ShaderResource shaders;
 	OpenglStates states;
 	Assets assets;
+
+	explicit Renderer(const RenderSettings& settings);
 
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
 	std::shared_ptr<DefaultMaterial> make_default_material();
