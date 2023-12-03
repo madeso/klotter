@@ -181,20 +181,21 @@ std::shared_ptr<MeshInstance> make_mesh_instance(
 struct PointLight
 {
 	glm::vec3 position = {0.0f, 0.0f, 0.0f};
-	glm::vec3 color = colors::white;
-
-	float specular = 1.0f;
-	float diffuse = 1.0f;
-	float ambient = 0.2f;
-
 	float min_range = 10.0f;
 	float max_range = 20.0f;
 	SCurveAndDrag curve;  ///< curve and ui, needs to be trimmed down for actual renderer
+
+	glm::vec3 color = colors::white;
+	float specular = 1.0f;
+	float diffuse = 1.0f;
 };
 
 /// All lights in a world
 struct Lights
 {
+	glm::vec3 color = colors::white;
+	float ambient = 0.2f;
+
 	PointLight point_light;
 };
 

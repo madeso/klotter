@@ -200,6 +200,22 @@ struct LoadedShader_Unlit : LoadedShader
 	Uniform view;
 };
 
+struct PointLightUniforms
+{
+	PointLightUniforms(ShaderProgram* program, const std::string& base)
+		: light_diffuse_color(program->get_uniform(base + "diffuse"))
+		, light_specular_color(program->get_uniform(base + "specular"))
+		, light_attenuation(program->get_uniform(base + "attenuation"))
+		, light_world(program->get_uniform(base + "world_pos"))
+	{
+	}
+
+	Uniform light_diffuse_color;
+	Uniform light_specular_color;
+	Uniform light_attenuation;
+	Uniform light_world;
+};
+
 struct LoadedShader_Default : LoadedShader
 {
 	LoadedShader_Default(LoadedShader s)
@@ -217,10 +233,7 @@ struct LoadedShader_Default : LoadedShader
 		, view(program->get_uniform("u_view"))
 		, view_position(program->get_uniform("u_view_position"))
 		, light_ambient_color(program->get_uniform("u_ambient_light"))
-		, light_diffuse_color(program->get_uniform("u_point_lights[0].diffuse"))
-		, light_specular_color(program->get_uniform("u_point_lights[0].specular"))
-		, light_world(program->get_uniform("u_point_lights[0].world_pos"))
-		, light_attenuation(program->get_uniform("u_point_lights[0].attenuation"))
+		, point_lights(program.get(), "u_point_lights[0].")
 	{
 		setup_textures(program.get(), {&tex_diffuse, &tex_specular, &tex_emissive});
 	}
@@ -240,10 +253,8 @@ struct LoadedShader_Default : LoadedShader
 
 	Uniform view_position;
 	Uniform light_ambient_color;
-	Uniform light_diffuse_color;
-	Uniform light_specular_color;
-	Uniform light_world;
-	Uniform light_attenuation;
+
+	PointLightUniforms point_lights;
 };
 
 struct ShaderResource::ShaderResourcePimpl
@@ -463,13 +474,15 @@ void DefaultMaterial::bind_textures(OpenglStates* states, Assets* assets)
 
 void DefaultMaterial::apply_lights(const Lights& lights)
 {
+	shader->program->set_vec3(shader->light_ambient_color, lights.color * lights.ambient);
+
 	const auto& p = lights.point_light;
-	shader->program->set_vec3(shader->light_ambient_color, p.color * p.ambient);
-	shader->program->set_vec3(shader->light_diffuse_color, p.color * p.diffuse);
-	shader->program->set_vec3(shader->light_specular_color, p.color * p.specular);
-	shader->program->set_vec3(shader->light_world, p.position);
+	const auto& u = shader->point_lights;
+	shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
+	shader->program->set_vec3(u.light_specular_color, p.color * p.specular);
+	shader->program->set_vec3(u.light_world, p.position);
 	shader->program->set_vec4(
-		shader->light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
+		u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
 	);
 }
 
