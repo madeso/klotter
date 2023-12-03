@@ -13,7 +13,7 @@ float square(float x)
 	return x * x;
 }
 
-constexpr SCurve s_curve_from_input_c(float mx, float my)
+SCurve s_curve_from_input(float mx, float my)
 {
 	// s curve
 	// Colugo's curve editor: https://twitter.com/ColugoMusic/status/1363071439679729665?s=20
@@ -39,11 +39,6 @@ constexpr SCurve s_curve_from_input_c(float mx, float my)
 	const auto s = a(10 * (q0 - 0.5f));
 	const auto t = 0.5f + (0.5f * (1.0f - q1));
 	return {s, t};
-}
-
-SCurve s_curve_from_input(float x, float y)
-{
-	return s_curve_from_input_c(x, y);
 }
 
 float calculate_s_curve(float x, float s, float t)

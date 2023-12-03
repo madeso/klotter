@@ -422,7 +422,7 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 	const float hy = y * 0.5f;
 	const float hz = z * 0.5f;
 
-	const float s = invert ? -1 : 1;
+	const float s = invert ? -1.0f : 1.0f;
 
 	// front
 	add_quad_to_builder(
@@ -514,7 +514,7 @@ Builder create_plane(float x, float z, bool invert, const glm::vec3& color)
 	const float hx = x * 0.5f;
 	const float hz = z * 0.5f;
 
-	const float s = invert ? -1 : 1;
+	const float s = invert ? -1.0f : 1.0f;
 	add_quad_to_builder(
 		{0, s, 0},
 		{{-hx, 0.0f, -hz}, {0.0f, 0.0f}},
