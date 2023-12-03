@@ -2,26 +2,39 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 // uniforms
-uniform vec4 u_tint_color; // diffuse + alpha
-uniform sampler2D u_tex_diffuse;
+
+struct Material
+{
+    vec4 diffuse_tint; // diffuse + alpha
+    sampler2D diffuse_tex;
+
+    {{#use_lights}}
+    sampler2D specular_tex;
+    sampler2D emissive_tex;
+    float emissive_factor;
+    vec3 ambient_tint;
+    vec3 specular_tint;
+    float shininess;
+    {{/use_lights}}
+};
+
+uniform Material u_material;
 
 {{#use_lights}}
-uniform sampler2D u_tex_specular;
-uniform sampler2D u_tex_emissive;
-
-uniform float u_emissive_factor;
-uniform vec3 u_ambient_tint;
-uniform vec3 u_specular_color;
-uniform float u_shininess;
-
 uniform vec3 u_view_position;
-// uniform vec3 u_light_color;
-uniform vec3 u_light_ambient_color;
-uniform vec3 u_light_diffuse_color;
-uniform vec3 u_light_specular_color;
-uniform vec4 u_light_attenuation; // min max s t
 
-uniform vec3 u_light_world;
+uniform vec3 u_ambient_light;
+
+struct PointLight
+{
+    vec3 diffuse;
+    vec3 specular;
+    vec4 attenuation; // min max s t
+
+    vec3 world_pos;
+};
+
+uniform PointLight u_point_lights[1];
 {{/use_lights}}
 
 
@@ -49,47 +62,54 @@ float calculate_s_curve(float x, float s, float t)
 				 : ((1 - t) * (x - 1)) / (1 - x - s * (t - x) + mE) + 1;
 }
 
+float calculate_attenuation(vec4 att, float distance)
+{
+    float min_dist = att.x;
+    float max_dist = att.y;
+    float scale = (distance - min_dist) / (max_dist - min_dist); // 0 at min, 1 at max
+    float attenuation = 1.0 - calculate_s_curve(clamp(scale, 0, 1), att.z, att.w);
+    return attenuation; // 1 at min, 0 at max
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 // code
 void main()
 {
 {{#use_lights}}
     vec3 normal = normalize(v_normal);
-    vec3 light_direction = normalize(u_light_world - v_worldspace);
+    vec3 light_direction = normalize(u_point_lights[0].world_pos - v_worldspace);
     vec3 view_direction = normalize(u_view_position - v_worldspace);
     vec3 reflect_direction = reflect(-light_direction, normal);
-    vec4 tex = texture(u_tex_diffuse, v_tex_coord);
-    vec3 spec_t = texture(u_tex_specular, v_tex_coord).rgb;
-    vec3 emi_t = texture(u_tex_emissive, v_tex_coord).rgb;
+    vec4 tex = texture(u_material.diffuse_tex, v_tex_coord);
+    vec3 spec_t = texture(u_material.specular_tex, v_tex_coord).rgb;
+    vec3 emi_t = texture(u_material.emissive_tex, v_tex_coord).rgb;
     vec3 base_color = tex.rgb * v_color.rgb;
-    float alpha = tex.a * u_tint_color.a;
+    float alpha = tex.a * u_material.diffuse_tint.a;
 
     // ambient color
-    vec3 ambient_color = u_ambient_tint * base_color * u_light_ambient_color;
+    vec3 ambient_color = u_material.ambient_tint * base_color * u_ambient_light;
 
     // diffuse color
     float diff = max(dot(normal, light_direction), 0.0);
-    vec3 diffuse_color = diff * (u_tint_color.rgb * base_color * u_light_diffuse_color);
+    vec3 diffuse_color = diff * (u_material.diffuse_tint.rgb * base_color * u_point_lights[0].diffuse);
 
     // specular color
-    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_shininess);
-    vec3 specular_color = spec * (u_specular_color * spec_t * u_light_specular_color);
+    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_material.shininess);
+    vec3 specular_color = spec * (u_material.specular_tint * spec_t * u_point_lights[0].specular);
 
     // emissive color
-    vec3 emissive_color = u_emissive_factor * emi_t;
+    vec3 emissive_color = u_material.emissive_factor * emi_t;
 
     // attenuation
-    float min_dist = u_light_attenuation.x;
-    float max_dist = u_light_attenuation.y;
-    float distance = length(u_light_world - v_worldspace);
-    float attenuation = 1.0 - calculate_s_curve(clamp((distance - min_dist) / (max_dist - min_dist), 0, 1), u_light_attenuation.z, u_light_attenuation.w);
+    float distance = length(u_point_lights[0].world_pos - v_worldspace);
+    float attenuation = calculate_attenuation(u_point_lights[0].attenuation, distance);
 
     vec3 light_color = ambient_color + (diffuse_color + specular_color + emissive_color) * attenuation;
 
     o_frag_color = vec4(light_color.rgb, alpha);
 {{/use_lights}}
 {{^use_lights}}
-    vec4 object_color = texture(u_tex_diffuse, v_tex_coord) * u_tint_color.rgba * vec4(v_color.rgb, 1.0);
+    vec4 object_color = texture(u_material.diffuse_tex, v_tex_coord) * u_material.diffuse_tint.rgba * vec4(v_color.rgb, 1.0);
     o_frag_color = object_color;
 {{/use_lights}}
 
