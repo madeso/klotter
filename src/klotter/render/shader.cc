@@ -83,6 +83,18 @@ void verify_shader_attribute_location(
 	}
 }
 
+void log_source(const std::string& src)
+{
+	std::istringstream ss(src);
+	std::string line;
+	int index = 1;
+	while (std::getline(ss, line))
+	{
+		LOG_INFO("%d: %s", index, line.c_str());
+		index += 1;
+	}
+}
+
 void load_shader_source(
 	ShaderProgram* self,
 	const std::string& vertex_source,
@@ -96,7 +108,8 @@ void load_shader_source(
 	const auto vertex_ok = check_shader_compilation_error("vertex", vertex_shader);
 	if (vertex_ok == false)
 	{
-		LOG_INFO("Vertex source: <%s>", vertex_source.c_str());
+		LOG_INFO("Vertex source:");
+		log_source(vertex_source);
 	}
 
 	const auto fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -105,7 +118,8 @@ void load_shader_source(
 	const auto fragment_ok = check_shader_compilation_error("fragment", fragment_shader);
 	if (fragment_ok == false)
 	{
-		LOG_INFO("Fragment source: <%s>", fragment_source.c_str());
+		LOG_INFO("Fragment source:");
+		log_source(fragment_source);
 	}
 
 	glAttachShader(self->shader_program, vertex_shader);
