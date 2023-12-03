@@ -27,8 +27,9 @@ std::string generate(std::string_view str, const ShaderOptions& options)
 	auto data = kainjow::mustache::data{};
 
 	data["use_lights"] = options.use_lights;
-	data["number_of_point_lights"] = (Str() << options.number_of_point_lights).str();
 	data["number_of_directional_lights"] = (Str() << options.number_of_directional_lights).str();
+	data["number_of_point_lights"] = (Str() << options.number_of_point_lights).str();
+	data["number_of_frustum_lights"] = (Str() << options.number_of_frustum_lights).str();
 	return input.render(data);
 }
 

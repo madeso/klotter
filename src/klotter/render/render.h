@@ -77,8 +77,9 @@ struct OpenglStates
 
 struct RenderSettings
 {
-	int number_of_point_lights = 5;
 	int number_of_directional_lights = 5;
+	int number_of_point_lights = 5;
+	int number_of_frustum_lights = 5;
 };
 
 /// All loaded/known shaders
@@ -205,14 +206,31 @@ struct PointLight
 	float diffuse = 1.0f;
 };
 
+struct FrustumLight
+{
+	glm::vec3 position = {0.0f, 0.0f, 0.0f};
+	glm::vec3 rotation = {0.0f, 0.0f, 0.0f};  // yaw pitch roll
+	float fov = 30.0f;	// in angles
+	float aspect = 1.0f;
+
+	float min_range = 10.0f;
+	float max_range = 20.0f;
+	SCurveAndDrag curve;  ///< curve and ui, needs to be trimmed down for actual renderer
+
+	glm::vec3 color = colors::white;
+	float specular = 1.0f;
+	float diffuse = 1.0f;
+};
+
 /// All lights in a world
 struct Lights
 {
 	glm::vec3 color = colors::white;
 	float ambient = 0.2f;
 
-	std::vector<PointLight> point_lights;
 	std::vector<DirectionalLight> directional_lights;
+	std::vector<PointLight> point_lights;
+	std::vector<FrustumLight> frustum_lights;
 };
 
 /// also known as a scene

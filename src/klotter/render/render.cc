@@ -201,6 +201,20 @@ struct LoadedShader_Unlit : LoadedShader
 	Uniform view;
 };
 
+struct DirectionalLightUniforms
+{
+	DirectionalLightUniforms(ShaderProgram* program, const std::string& base)
+		: light_diffuse_color(program->get_uniform(base + "diffuse"))
+		, light_specular_color(program->get_uniform(base + "specular"))
+		, dir(program->get_uniform(base + "dir"))
+	{
+	}
+
+	Uniform light_diffuse_color;
+	Uniform light_specular_color;
+	Uniform dir;
+};
+
 struct PointLightUniforms
 {
 	PointLightUniforms(ShaderProgram* program, const std::string& base)
@@ -217,18 +231,22 @@ struct PointLightUniforms
 	Uniform light_world;
 };
 
-struct DirectionalLightUniforms
+struct FrustumLightUniforms
 {
-	DirectionalLightUniforms(ShaderProgram* program, const std::string& base)
-		: light_diffuse_color(program->get_uniform(base + "diffuse"))
-		, light_specular_color(program->get_uniform(base + "specular"))
-		, dir(program->get_uniform(base + "dir"))
+	FrustumLightUniforms(ShaderProgram* program, const std::string& base)
+		: diffuse(program->get_uniform(base + "diffuse"))
+		, specular(program->get_uniform(base + "specular"))
+		, attenuation(program->get_uniform(base + "attenuation"))
+		, world_to_01(program->get_uniform(base + "world_to_01"))
+		, world_pos(program->get_uniform(base + "world_pos"))
 	{
 	}
 
-	Uniform light_diffuse_color;
-	Uniform light_specular_color;
-	Uniform dir;
+	Uniform diffuse;
+	Uniform specular;
+	Uniform attenuation;
+	Uniform world_to_01;
+	Uniform world_pos;
 };
 
 struct LoadedShader_Default : LoadedShader
@@ -251,16 +269,22 @@ struct LoadedShader_Default : LoadedShader
 	{
 		setup_textures(program.get(), {&tex_diffuse, &tex_specular, &tex_emissive});
 
+		for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+		{
+			const std::string base = Str{} << "u_directional_lights[" << i << "].";
+			directional_lights.emplace_back(program.get(), base);
+		}
+
 		for (int i = 0; i < settings.number_of_point_lights; i += 1)
 		{
 			const std::string base = Str{} << "u_point_lights[" << i << "].";
 			point_lights.emplace_back(program.get(), base);
 		}
 
-		for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+		for (int i = 0; i < settings.number_of_frustum_lights; i += 1)
 		{
-			const std::string base = Str{} << "u_directional_lights[" << i << "].";
-			directional_lights.emplace_back(program.get(), base);
+			const std::string base = Str{} << "u_frustum_lights[" << i << "].";
+			frustum_lights.emplace_back(program.get(), base);
 		}
 	}
 
@@ -280,8 +304,9 @@ struct LoadedShader_Default : LoadedShader
 	Uniform view_position;
 	Uniform light_ambient_color;
 
-	std::vector<PointLightUniforms> point_lights;
 	std::vector<DirectionalLightUniforms> directional_lights;
+	std::vector<PointLightUniforms> point_lights;
+	std::vector<FrustumLightUniforms> frustum_lights;
 };
 
 struct ShaderResource::ShaderResourcePimpl
@@ -377,8 +402,9 @@ ShaderResource::ShaderResource(const RenderSettings& settings)
 
 	ShaderOptions default_shader_options;
 	default_shader_options.use_lights = true;
-	default_shader_options.number_of_point_lights = settings.number_of_point_lights;
 	default_shader_options.number_of_directional_lights = settings.number_of_directional_lights;
+	default_shader_options.number_of_point_lights = settings.number_of_point_lights;
+	default_shader_options.number_of_frustum_lights = settings.number_of_frustum_lights;
 
 	r = std::make_unique<ShaderResourcePimpl>(
 		load_shader(global_shader_data, load_shader_source(ShaderOptions{})),
@@ -506,13 +532,6 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 {
 	shader->program->set_vec3(shader->light_ambient_color, lights.color * lights.ambient);
 
-	const auto no_point_light = ([]() {
-		PointLight p;
-		p.color = colors::black;
-		p.diffuse = 0.0f;
-		p.specular = 0.0f;
-		return p;
-	})();
 	const auto no_directional_light = ([]() {
 		DirectionalLight p;
 		p.color = colors::black;
@@ -520,8 +539,33 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 		p.specular = 0.0f;
 		return p;
 	})();
+	const auto no_point_light = ([]() {
+		PointLight p;
+		p.color = colors::black;
+		p.diffuse = 0.0f;
+		p.specular = 0.0f;
+		return p;
+	})();
+	const auto no_frustum_light = ([]() {
+		FrustumLight p;
+		p.color = colors::black;
+		p.diffuse = 0.0f;
+		p.specular = 0.0f;
+		return p;
+	})();
 
 	// todo(Gustav): graph the most influental lights instead of the first N lights
+	for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+	{
+		const auto& p = Cint_to_sizet(i) < lights.directional_lights.size()
+						  ? lights.directional_lights[Cint_to_sizet(i)]
+						  : no_directional_light;
+		const auto& u = shader->directional_lights[Cint_to_sizet(i)];
+		shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
+		shader->program->set_vec3(u.light_specular_color, p.color * p.specular);
+		shader->program->set_vec3(u.dir, p.direction);
+	}
+
 	for (int i = 0; i < settings.number_of_point_lights; i += 1)
 	{
 		const auto& p = Cint_to_sizet(i) < lights.point_lights.size()
@@ -535,15 +579,23 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 			u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
 		);
 	}
-	for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+
+	for (int i = 0; i < settings.number_of_frustum_lights; i += 1)
 	{
-		const auto& p = Cint_to_sizet(i) < lights.directional_lights.size()
-						  ? lights.directional_lights[Cint_to_sizet(i)]
-						  : no_directional_light;
-		const auto& u = shader->directional_lights[Cint_to_sizet(i)];
-		shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
-		shader->program->set_vec3(u.light_specular_color, p.color * p.specular);
-		shader->program->set_vec3(u.dir, p.direction);
+		const auto& p = Cint_to_sizet(i) < lights.frustum_lights.size()
+						  ? lights.frustum_lights[Cint_to_sizet(i)]
+						  : no_frustum_light;
+		const auto& u = shader->frustum_lights[Cint_to_sizet(i)];
+		shader->program->set_vec3(u.diffuse, p.color * p.diffuse);
+		shader->program->set_vec3(u.specular, p.color * p.specular);
+		shader->program->set_vec3(u.world_pos, p.position);
+		shader->program->set_vec4(
+			u.attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
+		);
+
+		const auto view = create_view_mat(p.position, create_vectors(p.rotation.x, p.rotation.y));
+		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);
+		shader->program->set_mat(u.world_to_01, projection * view);
 	}
 }
 

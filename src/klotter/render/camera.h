@@ -35,6 +35,9 @@ struct CompiledCamera
 // Functions
 
 CameraVectors create_vectors(const Camera& camera);
+
+CameraVectors create_vectors(float yaw, float pitch);
+glm::mat4 create_view_mat(const glm::vec3& pos, const CameraVectors& cv);
 CompiledCamera compile(const Camera&, const glm::ivec2 window_size);
 
 }  //  namespace klotter

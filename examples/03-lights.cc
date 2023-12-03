@@ -56,6 +56,7 @@ struct LightsSample : Sample
 	}
 
 	std::shared_ptr<UnlitMaterial> light_material;
+	bool follow_player = true;
 
 	LightsSample(Renderer* renderer, Camera* camera)
 	{
@@ -79,6 +80,10 @@ struct LightsSample : Sample
 			dili.diffuse = 0.1f;
 			dili.specular = 0.1f;
 			dili.color = colors::red_vermillion;
+		}
+
+		{
+			world.lights.frustum_lights.emplace_back();
 		}
 
 		auto mini = compile_geom(
@@ -142,16 +147,39 @@ struct LightsSample : Sample
 		float dt
 	) override
 	{
+		if (follow_player)
+		{
+			auto& fl = world.lights.frustum_lights[0];
+			fl.position = camera->position;
+			fl.rotation = {camera->yaw, camera->pitch, 0.0f};
+		}
 		anim += dt * 0.25f;
 		apply_animation();
 		renderer->render(window_size, world, *camera);
 	}
 
+	static void min_max(float* min_range, float* max_range)
+	{
+		const float RANGE_SPEED = 0.1f;
+
+		const auto m = *min_range;
+		if (ImGui::DragFloat("min", min_range, RANGE_SPEED))
+		{
+			*min_range = std::max(0.0f, *min_range);
+			const auto change = *min_range - m;
+			*max_range += change;
+		}
+		if (ImGui::DragFloat("max", max_range, RANGE_SPEED))
+		{
+			*max_range = std::max(*max_range, *min_range + 0.01f);
+		}
+	}
+
 	void on_gui(klotter::Camera* camera) override
 	{
 		const float FAC_SPEED = 0.01f;
-		const float RANGE_SPEED = 0.1f;
 
+		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
 		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());
 		ImGui::LabelText("yaw", "%s", (Str{} << camera->yaw).str().c_str());
 
@@ -177,20 +205,51 @@ struct LightsSample : Sample
 		{
 			auto& pl = world.lights.point_lights[Cint_to_sizet(point_light_index)];
 			ImGui::PushID(point_light_index);
-			const auto m = pl.min_range;
-			if (ImGui::DragFloat("min", &pl.min_range, RANGE_SPEED))
+
+			if (ImGui::DragFloat("Point", &pl.diffuse, FAC_SPEED, 0.0f, 1.0f))
 			{
-				pl.min_range = std::max(0.0f, pl.min_range);
-				const auto change = pl.min_range - m;
-				pl.max_range += change;
+				pl.specular = pl.diffuse;
 			}
-			if (ImGui::DragFloat("max", &pl.max_range, RANGE_SPEED))
-			{
-				pl.max_range = std::max(pl.max_range, pl.min_range + 0.01f);
-			}
+			min_max(&pl.min_range, &pl.max_range);
 			imgui_s_curve_editor("att", &pl.curve, true);
 			ImGui::PopID();
 		}
+
+		ImGui::PushID("frustum lights");
+		{
+			ImGui::Checkbox("Follow player", &follow_player);
+			auto& fl = world.lights.frustum_lights[0];
+
+			if (follow_player == false)
+			{
+				ImGui::DragFloat3("position", glm::value_ptr(fl.position));
+				ImGui::DragFloat3("ypr", glm::value_ptr(fl.rotation));
+			}
+			else
+			{
+				ImGui::Text(
+					"position (%f, %f %f)",
+					static_cast<double>(fl.position.x),
+					static_cast<double>(fl.position.y),
+					static_cast<double>(fl.position.z)
+				);
+				ImGui::Text(
+					"ypr (%f, %f %f)",
+					static_cast<double>(fl.rotation.x),
+					static_cast<double>(fl.rotation.y),
+					static_cast<double>(fl.rotation.z)
+				);
+			}
+			if (ImGui::DragFloat("Frustum", &fl.diffuse, FAC_SPEED, 0.0f, 1.0f))
+			{
+				fl.specular = fl.diffuse;
+			}
+			ImGui::DragFloat("fov", &fl.fov, 0.1f);
+			ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
+			min_max(&fl.min_range, &fl.max_range);
+			imgui_s_curve_editor("att", &fl.curve, true);
+		}
+		ImGui::PopID();
 	}
 };
 

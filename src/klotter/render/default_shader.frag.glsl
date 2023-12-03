@@ -42,8 +42,21 @@ struct PointLight
     vec3 world_pos;
 };
 
+struct FrustumLight
+{
+    vec3 diffuse;
+    vec3 specular;
+    vec4 attenuation; // min max s t
+
+    mat4 world_to_01;
+    vec3 world_pos; // for specular calc
+
+    // todo(Gustav): add texture
+};
+
 uniform PointLight u_point_lights[{{number_of_point_lights}}];
 uniform DirectionalLight u_directional_lights[{{number_of_directional_lights}}];
+uniform FrustumLight u_frustum_lights[{{number_of_frustum_lights}}];
 {{/use_lights}}
 
 
@@ -119,6 +132,39 @@ vec3 calculate_point_light(
 
     return (diffuse_color + specular_color) * attenuation;
 }
+
+float extract_frustum_light_factor(vec2 uv)
+{
+    // todo(Gustav): remove branching
+    if(uv.x < -1.0) { return 0.0; }
+    if(uv.x > 1.0) { return 0.0; }
+    if(uv.y < -1.0) { return 0.0; }
+    if(uv.y > 1.0) { return 0.0; }
+    return 1.0;
+}
+
+vec3 calculate_frustum_light(
+    FrustumLight pl, vec3 normal, vec3 view_direction, vec3 spec_t, vec3 base_color)
+{
+    vec3 light_direction = normalize(pl.world_pos - v_worldspace);
+    vec3 reflect_direction = reflect(-light_direction, normal);
+
+    vec2 ndc = (pl.world_to_01 * vec4(v_worldspace, 1.0)).xy;
+    float factor = extract_frustum_light_factor(ndc);
+
+    // diffuse color
+    vec3 diffuse_color = factor * (u_material.diffuse_tint.rgb * base_color * pl.diffuse);
+
+    // specular color
+    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_material.shininess);
+    vec3 specular_color = factor * spec * (u_material.specular_tint * spec_t * pl.specular);
+
+    // attenuation
+    float distance = length(pl.world_pos - v_worldspace);
+    float attenuation = calculate_attenuation(pl.attenuation, distance);
+
+    return (diffuse_color + specular_color) * attenuation;
+}
 {{/use_lights}}
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -152,6 +198,12 @@ void main()
     for(int i=0; i<{{number_of_point_lights}}; i+=1)
     {
         light_color += calculate_point_light(u_point_lights[i], normal, view_direction, spec_t, base_color);
+    }
+
+    // frustum lights
+    for(int i=0; i<{{number_of_frustum_lights}}; i+=1)
+    {
+        light_color += calculate_frustum_light(u_frustum_lights[i], normal, view_direction, spec_t, base_color);
     }
 
     o_frag_color = vec4(light_color.rgb, alpha);
