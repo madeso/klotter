@@ -95,6 +95,7 @@ AlignConsecutiveBitFields:
   Enabled: false
 AlignConsecutiveAssignments:
   Enabled: false
+AlignTrailingComments: Never
 
 # clang 17
 # AlignConsecutiveShortCaseStatements:
