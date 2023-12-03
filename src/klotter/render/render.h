@@ -77,7 +77,7 @@ struct OpenglStates
 
 struct RenderSettings
 {
-	int number_of_pointlights = 5;
+	int number_of_point_lights = 5;
 };
 
 /// All loaded/known shaders

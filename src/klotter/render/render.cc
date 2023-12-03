@@ -237,7 +237,7 @@ struct LoadedShader_Default : LoadedShader
 	{
 		setup_textures(program.get(), {&tex_diffuse, &tex_specular, &tex_emissive});
 
-		for (int i = 0; i < settings.number_of_pointlights; i += 1)
+		for (int i = 0; i < settings.number_of_point_lights; i += 1)
 		{
 			const std::string base = Str{} << "u_point_lights[" << i << "].";
 			point_lights.emplace_back(program.get(), base);
@@ -356,7 +356,7 @@ ShaderResource::ShaderResource(const RenderSettings& settings)
 
 	ShaderOptions default_shader_options;
 	default_shader_options.use_lights = true;
-	default_shader_options.number_of_pointlights = settings.number_of_pointlights;
+	default_shader_options.number_of_point_lights = settings.number_of_point_lights;
 
 	r = std::make_unique<ShaderResourcePimpl>(
 		load_shader(global_shader_data, load_shader_source(ShaderOptions{})),
@@ -484,7 +484,7 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 {
 	shader->program->set_vec3(shader->light_ambient_color, lights.color * lights.ambient);
 
-	const auto no_pointlight = ([]() {
+	const auto no_point_light = ([]() {
 		PointLight p;
 		p.color = colors::black;
 		p.diffuse = 0.0f;
@@ -493,11 +493,11 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 	})();
 
 	// todo(Gustav): graph the most influental lights instead of the first N lights
-	for (int i = 0; i < settings.number_of_pointlights; i += 1)
+	for (int i = 0; i < settings.number_of_point_lights; i += 1)
 	{
 		const auto& p = Cint_to_sizet(i) < lights.point_lights.size()
 						  ? lights.point_lights[Cint_to_sizet(i)]
-						  : no_pointlight;
+						  : no_point_light;
 		const auto& u = shader->point_lights[Cint_to_sizet(i)];
 		shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
 		shader->program->set_vec3(u.light_specular_color, p.color * p.specular);

@@ -34,7 +34,7 @@ struct PointLight
     vec3 world_pos;
 };
 
-uniform PointLight u_point_lights[{{number_of_pointlights}}];
+uniform PointLight u_point_lights[{{number_of_point_lights}}];
 {{/use_lights}}
 
 
@@ -117,7 +117,7 @@ void main()
     vec3 light_color = ambient_color + emissive_color;
 
     // point lights
-    for(int i=0; i<{{number_of_pointlights}}; i+=1)
+    for(int i=0; i<{{number_of_point_lights}}; i+=1)
     {
         light_color += calculate_point_light(u_point_lights[i], normal, view_direction, spec_t, base_color);
     }
