@@ -492,6 +492,7 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 		return p;
 	})();
 
+	// todo(Gustav): graph the most influental lights instead of the first N lights
 	for (int i = 0; i < settings.number_of_pointlights; i += 1)
 	{
 		const auto& p = Cint_to_sizet(i) < lights.point_lights.size()
