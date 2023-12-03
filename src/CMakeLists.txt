@@ -98,7 +98,7 @@ source_group("render" FILES ${src_render})
 # source_group("base" FILES ${src_base})
 source_group("pch" FILES ${src_pch})
 source_group("_assets" FILES ${src_assets})
-source_group("shaders", FILES ${shaders})
+source_group("shaders" FILES ${shaders})
 
 cmake_source_group()
 
