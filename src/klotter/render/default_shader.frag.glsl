@@ -119,7 +119,7 @@ void main()
     // point lights
     for(int i=0; i<{{number_of_pointlights}}; i+=1)
     {
-        calculate_point_light(u_point_lights[i], normal, view_direction, spec_t, base_color);
+        light_color += calculate_point_light(u_point_lights[i], normal, view_direction, spec_t, base_color);
     }
 
     o_frag_color = vec4(light_color.rgb, alpha);
