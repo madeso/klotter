@@ -237,7 +237,7 @@ struct FrustumLightUniforms
 		: diffuse(program->get_uniform(base + "diffuse"))
 		, specular(program->get_uniform(base + "specular"))
 		, attenuation(program->get_uniform(base + "attenuation"))
-		, world_to_01(program->get_uniform(base + "world_to_01"))
+		, world_to_clip(program->get_uniform(base + "world_to_clip"))
 		, world_pos(program->get_uniform(base + "world_pos"))
 	{
 	}
@@ -245,7 +245,7 @@ struct FrustumLightUniforms
 	Uniform diffuse;
 	Uniform specular;
 	Uniform attenuation;
-	Uniform world_to_01;
+	Uniform world_to_clip;
 	Uniform world_pos;
 };
 
@@ -593,9 +593,9 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 			u.attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
 		);
 
-		const auto view = create_view_mat(p.position, create_vectors(p.rotation.x, p.rotation.y));
+		const auto view = create_view_mat(p.position, create_vectors(p.yaw, p.pitch));
 		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);
-		shader->program->set_mat(u.world_to_01, projection * view);
+		shader->program->set_mat(u.world_to_clip, projection * view);
 	}
 }
 

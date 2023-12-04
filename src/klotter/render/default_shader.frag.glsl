@@ -48,7 +48,7 @@ struct FrustumLight
     vec3 specular;
     vec4 attenuation; // min max s t
 
-    mat4 world_to_01;
+    mat4 world_to_clip;
     vec3 world_pos; // for specular calc
 
     // todo(Gustav): add texture
@@ -149,7 +149,8 @@ vec3 calculate_frustum_light(
     vec3 light_direction = normalize(pl.world_pos - v_worldspace);
     vec3 reflect_direction = reflect(-light_direction, normal);
 
-    vec2 ndc = (pl.world_to_01 * vec4(v_worldspace, 1.0)).xy;
+    vec4 clip_coord = pl.world_to_clip * vec4(v_worldspace, 1.0);
+    vec2 ndc = clip_coord.xy / clip_coord.w;
     float factor = extract_frustum_light_factor(ndc);
 
     // diffuse color

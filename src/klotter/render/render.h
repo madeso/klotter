@@ -209,9 +209,10 @@ struct PointLight
 struct FrustumLight
 {
 	glm::vec3 position = {0.0f, 0.0f, 0.0f};
-	glm::vec3 rotation = {0.0f, 0.0f, 0.0f};  // yaw pitch roll
-	float fov = 30.0f;	// in angles
-	float aspect = 1.0f;
+	float yaw = 0.0f;
+	float pitch = 0.0f;
+	float fov = 10.0f;	// in angles
+	float aspect = 1.0;
 
 	float min_range = 10.0f;
 	float max_range = 20.0f;

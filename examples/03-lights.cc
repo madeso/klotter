@@ -69,21 +69,31 @@ struct LightsSample : Sample
 		auto light = add_cube(light_geom, light_material);
 		light->position.z = 0.5f;
 
-		world.lights.point_lights.emplace_back();
-		world.lights.point_lights[0].position = light->position;
+		// ambient
+		world.lights.ambient = 0.1f;
 
+		// directional
 		{
 			world.lights.directional_lights.emplace_back();
 			auto& dili = world.lights.directional_lights[0];
 			dili.direction = {-1.0f, -1.0f, -1.0f};
 			dili.direction = glm::normalize(dili.direction);
 			dili.diffuse = 0.1f;
-			dili.specular = 0.1f;
+			dili.specular = dili.diffuse;
 			dili.color = colors::red_vermillion;
 		}
 
+		// point light
+		world.lights.point_lights.emplace_back();
+		world.lights.point_lights[0].position = light->position;
+		world.lights.point_lights[0].diffuse = 0.4f;
+		world.lights.point_lights[0].specular = world.lights.point_lights[0].diffuse;
+
+		// frustum
 		{
 			world.lights.frustum_lights.emplace_back();
+			world.lights.frustum_lights[0].diffuse = 0.4f;
+			world.lights.frustum_lights[0].specular = world.lights.frustum_lights[0].diffuse;
 		}
 
 		auto mini = compile_geom(
@@ -151,7 +161,8 @@ struct LightsSample : Sample
 		{
 			auto& fl = world.lights.frustum_lights[0];
 			fl.position = camera->position;
-			fl.rotation = {camera->yaw, camera->pitch, 0.0f};
+			fl.yaw = camera->yaw;
+			fl.pitch = camera->pitch;
 		}
 		anim += dt * 0.25f;
 		apply_animation();
@@ -223,21 +234,19 @@ struct LightsSample : Sample
 			if (follow_player == false)
 			{
 				ImGui::DragFloat3("position", glm::value_ptr(fl.position));
-				ImGui::DragFloat3("ypr", glm::value_ptr(fl.rotation));
+				ImGui::DragFloat("yaw", &fl.yaw);
+				ImGui::DragFloat("pitch", &fl.pitch);
 			}
 			else
 			{
 				ImGui::Text(
-					"position (%f, %f %f)",
+					"position (%f %f %f)",
 					static_cast<double>(fl.position.x),
 					static_cast<double>(fl.position.y),
 					static_cast<double>(fl.position.z)
 				);
 				ImGui::Text(
-					"ypr (%f, %f %f)",
-					static_cast<double>(fl.rotation.x),
-					static_cast<double>(fl.rotation.y),
-					static_cast<double>(fl.rotation.z)
+					"ypr (%f %f)", static_cast<double>(fl.pitch), static_cast<double>(fl.yaw)
 				);
 			}
 			if (ImGui::DragFloat("Frustum", &fl.diffuse, FAC_SPEED, 0.0f, 1.0f))
