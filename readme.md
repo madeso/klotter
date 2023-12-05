@@ -31,8 +31,6 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - different camera setups (fps, rotate around origin, editor?)
 - complete rest of learn opengl
 
-  1. Different lights
-  1. Multiple lights
   1. Model loading?
 
   1. (feat. outlining) - Stencil testing (Advanced OpenGL)
