@@ -31,8 +31,6 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - different camera setups (fps, rotate around origin, editor?)
 - complete rest of learn opengl
 
-  1. Model loading?
-
   1. (feat. outlining) - Stencil testing (Advanced OpenGL)
   1. (feat. transparency) - Blending (Advanced OpenGL)
   1. (done?) Face culling (Advanced OpenGL)
@@ -63,6 +61,7 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 
   1. OIT - Introduction (2020)
   1. OIT - Weighted Blended (2020)
+  1. Model loading
   1. Skeletal Animation (2020)
   1. (bugfix: shadows) CSM (2021)
   1. Scene - Scene Graph (2021)
