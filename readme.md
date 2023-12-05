@@ -24,6 +24,7 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - expand scene sample with selected object and transform/rotate/scale widget to change transform of objects with a scene outline and simple properties
 - add debug render modes (only render diffuse/normals/etc), like sketchfab model inspector views
 - add immediate mode styled debug renderer that can render lines, basic shapes(shphere, rect) and text
+- fix current camera/mesh/frustum light rotation functions to use a "transform" setup with same logic all over
 - material sorting
 - frustum culling
 - different worlds (loose octree / portal)
