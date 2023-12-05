@@ -9,6 +9,7 @@ namespace klotter
 
 struct Assets
 {
+	std::shared_ptr<Texture> get_cookie();
 	std::shared_ptr<Texture> get_container_diffuse();
 	std::shared_ptr<Texture> get_container_specular();
 	std::shared_ptr<Texture> get_dark_grid();
@@ -19,6 +20,7 @@ struct Assets
 
    private:
 
+	std::shared_ptr<Texture> cookie;
 	std::shared_ptr<Texture> dark_grid;
 	std::shared_ptr<Texture> light_grid;
 	std::shared_ptr<Texture> container_diffuse;

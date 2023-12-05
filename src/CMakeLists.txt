@@ -5,6 +5,7 @@ embed(src_assets
         textures/container_diffuse.png
         textures/container_specular.png
         textures/matrix.jpg
+        textures/cookie_01.png
     AS_TEXT
         klotter/render/default_shader.vert.glsl
         klotter/render/default_shader.frag.glsl

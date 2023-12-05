@@ -51,7 +51,7 @@ struct FrustumLight
     mat4 world_to_clip;
     vec3 world_pos; // for specular calc
 
-    // todo(Gustav): add texture
+    sampler2D cookie;
 };
 
 uniform PointLight u_point_lights[{{number_of_point_lights}}];
@@ -151,7 +151,9 @@ vec3 calculate_frustum_light(
 
     vec4 clip_coord = pl.world_to_clip * vec4(v_worldspace, 1.0);
     vec2 ndc = clip_coord.xy / clip_coord.w;
-    float factor = extract_frustum_light_factor(ndc);
+    // look up cookie texture and transform [-1, 1] ndc to [0, 1] uv
+    float cookie = texture(pl.cookie, (ndc.xy / 2.0) + 0.5).r;
+    float factor = extract_frustum_light_factor(ndc) * cookie;
 
     // diffuse color
     vec3 diffuse_color = factor * (u_material.diffuse_tint.rgb * base_color * pl.diffuse);

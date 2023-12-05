@@ -92,8 +92,10 @@ struct LightsSample : Sample
 		// frustum
 		{
 			world.lights.frustum_lights.emplace_back();
-			world.lights.frustum_lights[0].diffuse = 0.4f;
-			world.lights.frustum_lights[0].specular = world.lights.frustum_lights[0].diffuse;
+			auto& fl = world.lights.frustum_lights[0];
+			fl.diffuse = 0.4f;
+			fl.specular = fl.diffuse;
+			fl.cookie = renderer->assets.get_cookie();
 		}
 
 		auto mini = compile_geom(

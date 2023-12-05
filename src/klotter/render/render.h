@@ -110,7 +110,9 @@ struct Material
 	virtual void use_shader() = 0;
 	virtual void set_uniforms(const CompiledCamera&, const glm::mat4&) = 0;
 	virtual void bind_textures(OpenglStates* states, Assets* assets) = 0;
-	virtual void apply_lights(const Lights& lights, const RenderSettings& settings) = 0;
+	virtual void apply_lights(
+		const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
+	) = 0;
 };
 
 /// a unlit (or fully lit) material, not affected by light
@@ -125,7 +127,9 @@ struct UnlitMaterial : Material
 	void use_shader() override;
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(OpenglStates* states, Assets* assets) override;
-	void apply_lights(const Lights& lights, const RenderSettings& settings) override;
+	void apply_lights(
+		const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
+	) override;
 };
 
 /// a material affected by light
@@ -148,7 +152,9 @@ struct DefaultMaterial : Material
 	void use_shader() override;
 	void set_uniforms(const CompiledCamera&, const glm::mat4&) override;
 	void bind_textures(OpenglStates* states, Assets* assets) override;
-	void apply_lights(const Lights& lights, const RenderSettings& settings) override;
+	void apply_lights(
+		const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
+	) override;
 };
 
 /// Represents a Geom on the GPU.
@@ -221,6 +227,8 @@ struct FrustumLight
 	glm::vec3 color = colors::white;
 	float specular = 1.0f;
 	float diffuse = 1.0f;
+
+	std::shared_ptr<Texture> cookie;  // if null, pure white is used
 };
 
 /// All lights in a world

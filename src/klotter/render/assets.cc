@@ -9,6 +9,7 @@
 #include "matrix.jpg.h"
 #include "container_diffuse.png.h"
 #include "container_specular.png.h"
+#include "cookie_01.png.h"
 
 namespace klotter
 {
@@ -34,6 +35,11 @@ std::shared_ptr<Texture> get_or_create(std::shared_ptr<Texture>* texture, u32 pi
 	}
 
 	return *texture;
+}
+
+std::shared_ptr<Texture> Assets::get_cookie()
+{
+	return get_or_load(&cookie, COOKIE_01_PNG);
 }
 
 std::shared_ptr<Texture> Assets::get_dark_grid()

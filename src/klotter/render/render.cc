@@ -239,6 +239,7 @@ struct FrustumLightUniforms
 		, attenuation(program->get_uniform(base + "attenuation"))
 		, world_to_clip(program->get_uniform(base + "world_to_clip"))
 		, world_pos(program->get_uniform(base + "world_pos"))
+		, cookie(program->get_uniform(base + "cookie"))
 	{
 	}
 
@@ -247,6 +248,7 @@ struct FrustumLightUniforms
 	Uniform attenuation;
 	Uniform world_to_clip;
 	Uniform world_pos;
+	Uniform cookie;
 };
 
 struct LoadedShader_Default : LoadedShader
@@ -267,8 +269,6 @@ struct LoadedShader_Default : LoadedShader
 		, view_position(program->get_uniform("u_view_position"))
 		, light_ambient_color(program->get_uniform("u_ambient_light"))
 	{
-		setup_textures(program.get(), {&tex_diffuse, &tex_specular, &tex_emissive});
-
 		for (int i = 0; i < settings.number_of_directional_lights; i += 1)
 		{
 			const std::string base = Str{} << "u_directional_lights[" << i << "].";
@@ -286,6 +286,14 @@ struct LoadedShader_Default : LoadedShader
 			const std::string base = Str{} << "u_frustum_lights[" << i << "].";
 			frustum_lights.emplace_back(program.get(), base);
 		}
+
+		std::vector<Uniform*> textures = {&tex_diffuse, &tex_specular, &tex_emissive};
+		for (auto& fl: frustum_lights)
+		{
+			textures.emplace_back(&fl.cookie);
+		}
+
+		setup_textures(program.get(), textures);
 	}
 
 	Uniform tint_color;
@@ -463,7 +471,7 @@ void UnlitMaterial::bind_textures(OpenglStates* states, Assets* assets)
 	bind_texture(states, shader->tex_diffuse, *t);
 }
 
-void UnlitMaterial::apply_lights(const Lights&, const RenderSettings&)
+void UnlitMaterial::apply_lights(const Lights&, const RenderSettings&, OpenglStates*, Assets*)
 {
 }
 
@@ -497,38 +505,40 @@ void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tr
 	shader->program->set_vec3(shader->view_position, cc.position);
 }
 
+std::shared_ptr<Texture> get_or_white(Assets* assets, std::shared_ptr<Texture> t)
+{
+	if (t == nullptr)
+	{
+		return assets->get_white();
+	}
+	else
+	{
+		return t;
+	}
+};
+
+std::shared_ptr<Texture> get_or_black(Assets* assets, std::shared_ptr<Texture> t)
+{
+	if (t == nullptr)
+	{
+		return assets->get_black();
+	}
+	else
+	{
+		return t;
+	}
+};
+
 void DefaultMaterial::bind_textures(OpenglStates* states, Assets* assets)
 {
-	const auto get_or_white = [assets](std::shared_ptr<Texture> t)
-	{
-		if (t == nullptr)
-		{
-			return assets->get_white();
-		}
-		else
-		{
-			return t;
-		}
-	};
-
-	const auto get_or_black = [assets](std::shared_ptr<Texture> t)
-	{
-		if (t == nullptr)
-		{
-			return assets->get_black();
-		}
-		else
-		{
-			return t;
-		}
-	};
-
-	bind_texture(states, shader->tex_diffuse, *get_or_white(diffuse));
-	bind_texture(states, shader->tex_specular, *get_or_white(specular));
-	bind_texture(states, shader->tex_emissive, *get_or_black(emissive));
+	bind_texture(states, shader->tex_diffuse, *get_or_white(assets, diffuse));
+	bind_texture(states, shader->tex_specular, *get_or_white(assets, specular));
+	bind_texture(states, shader->tex_emissive, *get_or_black(assets, emissive));
 }
 
-void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& settings)
+void DefaultMaterial::apply_lights(
+	const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
+)
 {
 	shader->program->set_vec3(shader->light_ambient_color, lights.color * lights.ambient);
 
@@ -596,6 +606,8 @@ void DefaultMaterial::apply_lights(const Lights& lights, const RenderSettings& s
 		const auto view = create_view_mat(p.position, create_vectors(p.yaw, p.pitch));
 		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);
 		shader->program->set_mat(u.world_to_clip, projection * view);
+
+		bind_texture(states, u.cookie, *get_or_white(assets, p.cookie));
 	}
 }
 
@@ -718,7 +730,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		m->material->use_shader();
 		m->material->set_uniforms(compiled_camera, transform);
 		m->material->bind_textures(&states, &assets);
-		m->material->apply_lights(world.lights, settings);
+		m->material->apply_lights(world.lights, settings, &states, &assets);
 
 		ASSERT(is_bound_for_shader(m->geom->debug_types));
 		glBindVertexArray(m->geom->vao);
