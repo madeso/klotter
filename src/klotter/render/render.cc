@@ -44,6 +44,22 @@ void apply(std::optional<bool>* current_state, bool new_state, GLenum gl_type)
 	}
 }
 
+GLenum C(Compare new_state)
+{
+	switch (new_state)
+	{
+	case Compare::always: return GL_ALWAYS;
+	case Compare::never: return GL_NEVER;
+	case Compare::less: return GL_LESS;
+	case Compare::equal: return GL_EQUAL;
+	case Compare::less_equal: return GL_LEQUAL;
+	case Compare::greater: return GL_GREATER;
+	case Compare::not_equal: return GL_NOTEQUAL;
+	case Compare::greater_equal: return GL_GEQUAL;
+	default: DIE("Invalid depth func"); return GL_LESS;
+	}
+}
+
 struct StateChanger
 {
 	OpenglStates* states;
@@ -80,29 +96,39 @@ struct StateChanger
 		return *this;
 	}
 
-	StateChanger& depth_func(DepthFunc new_state)
+	StateChanger& depth_func(Compare new_state)
 	{
 		if (should_change(&states->depth_func, new_state))
 		{
-			const auto mode = (
-				[new_state]() -> GLenum
-				{
-					switch(new_state)
-					{
-						case DepthFunc::always: return GL_ALWAYS;
-						case DepthFunc::never: return GL_NEVER;
-						case DepthFunc::less: return GL_LESS;
-						case DepthFunc::equal: return GL_EQUAL;
-						case DepthFunc::less_equal: return GL_LEQUAL;
-						case DepthFunc::greater: return GL_GREATER;
-						case DepthFunc::not_equal: return GL_NOTEQUAL;
-						case DepthFunc::greater_equal: return GL_GEQUAL;
-						default: DIE("Invalid depth func"); return GL_LESS;
-					}
-				}
-			)();
-
+			const auto mode = C(new_state);
 			glDepthFunc(mode);
+		}
+
+		return *this;
+	}
+
+	StateChanger& stencil_test(bool new_state)
+	{
+		apply(&states->stencil_test, new_state, GL_STENCIL_TEST);
+		return *this;
+	}
+
+	StateChanger& stencil_mask(u32 new_state)
+	{
+		if (should_change(&states->stencil_mask, new_state))
+		{
+			glStencilMask(new_state);
+		}
+
+		return *this;
+	}
+
+	StateChanger& stencil_func(StencilFunc new_state)
+	{
+		if (should_change(&states->stencil_func, new_state))
+		{
+			const auto [func, ref, mask] = new_state;
+			glStencilFunc(C(func), ref, mask);
 		}
 
 		return *this;
@@ -124,6 +150,33 @@ struct StateChanger
                 })();
 			glPolygonMode(GL_FRONT_AND_BACK, mode);
 		}
+		return *this;
+	}
+
+	StateChanger& stencil_op(StencilOp new_state)
+	{
+		const auto Csa = [](StencilAction sa)
+		{
+			switch (sa)
+			{
+			case StencilAction::keep: return GL_KEEP;
+			case StencilAction::zero: return GL_ZERO;
+			case StencilAction::replace: return GL_REPLACE;
+			case StencilAction::increase: return GL_INCR;
+			case StencilAction::increase_wrap: return GL_INCR_WRAP;
+			case StencilAction::decrease: return GL_DECR;
+			case StencilAction::decrease_wrap: return GL_DECR_WRAP;
+			case StencilAction::invert: return GL_INVERT;
+			default: DIE("Invalid stencil action"); return GL_KEEP;
+			}
+		};
+
+		if (should_change(&states->stencil_op, new_state))
+		{
+			const auto [stencil_fail, depth_fail, pass] = new_state;
+			glStencilOp(Csa(stencil_fail), Csa(depth_fail), Csa(pass));
+		}
+
 		return *this;
 	}
 
@@ -757,7 +810,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 	StateChanger{&states}
 		.depth_test(true)
 		.depth_mask(true)
-		.depth_func(DepthFunc::less)
+		.depth_func(Compare::less)
 		.blending(false);
 
 	const auto compiled_camera = compile(camera, window_size);

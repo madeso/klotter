@@ -60,7 +60,7 @@ enum class Blend
 	one_minus_src1_alpha
 };
 
-enum class DepthFunc
+enum class Compare
 {
 	always,
 	never,
@@ -72,7 +72,29 @@ enum class DepthFunc
 	greater_equal
 };
 
+enum class StencilAction
+{
+	/// The currently stored stencil value is kept.
+	keep,
+	/// The stencil value is set to 0.
+	zero,
+	/// The stencil value is replaced with the reference value set with stencil_func.
+	replace,
+	/// The stencil value is increased by 1 if it is lower than the maximum value.
+	increase,
+	/// Same as increase, but wraps it back to 0 as soon as the maximum value is exceeded.
+	increase_wrap,
+	/// The stencil value is decreased by 1 if it is higher than the minimum value.
+	decrease,
+	/// Same as decrease, but wraps it to the maximum value if it ends up lower than 0.
+	decrease_wrap,
+	/// Bitwise inverts the current stencil buffer value.
+	invert
+};
+
 using BlendMode = std::tuple<Blend, Blend>;
+using StencilFunc = std::tuple<Compare, i32, u32>;
+using StencilOp = std::tuple<StencilAction, StencilAction, StencilAction>;
 
 struct OpenglStates
 {
@@ -84,9 +106,14 @@ struct OpenglStates
 
 	std::optional<bool> depth_test;
 	std::optional<bool> depth_mask;
-	std::optional<DepthFunc> depth_func;
+	std::optional<Compare> depth_func;
+
+	std::optional<bool> stencil_test;
+	std::optional<u32> stencil_mask;
 
 	std::optional<RenderMode> render_mode;
+	std::optional<StencilFunc> stencil_func;
+	std::optional<StencilOp> stencil_op;
 
 	std::optional<int> active_texture;
 	std::array<std::optional<unsigned int>, MAX_TEXTURES_SUPPORTED> texture_bound;
