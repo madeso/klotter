@@ -123,11 +123,10 @@ struct StateChanger
 		return *this;
 	}
 
-	StateChanger& stencil_func(StencilFunc new_state)
+	StateChanger& stencil_func(Compare func, i32 ref, u32 mask)
 	{
-		if (should_change(&states->stencil_func, new_state))
+		if (should_change(&states->stencil_func, {func, ref, mask}))
 		{
-			const auto [func, ref, mask] = new_state;
 			glStencilFunc(C(func), ref, mask);
 		}
 
@@ -153,7 +152,9 @@ struct StateChanger
 		return *this;
 	}
 
-	StateChanger& stencil_op(StencilOp new_state)
+	StateChanger& stencil_op(
+		StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass
+	)
 	{
 		const auto Csa = [](StencilAction sa)
 		{
@@ -171,9 +172,8 @@ struct StateChanger
 			}
 		};
 
-		if (should_change(&states->stencil_op, new_state))
+		if (should_change(&states->stencil_op, {stencil_fail, depth_fail, pass}))
 		{
-			const auto [stencil_fail, depth_fail, pass] = new_state;
 			glStencilOp(Csa(stencil_fail), Csa(depth_fail), Csa(pass));
 		}
 
@@ -199,9 +199,9 @@ struct StateChanger
 		return *this;
 	}
 
-	StateChanger& blend_mode(BlendMode new_state)
+	StateChanger& blend_mode(Blend src, Blend dst)
 	{
-		if (should_change(&states->blend_mode, new_state))
+		if (should_change(&states->blend_mode, {src, dst}))
 		{
 			const auto convert = [](Blend b) -> GLenum
 			{
@@ -229,7 +229,6 @@ struct StateChanger
 				default: DIE("Invalid blend mode"); return GL_ZERO;
 				}
 			};
-			const auto [src, dst] = new_state;
 			glBlendFunc(convert(src), convert(dst));
 		}
 		return *this;
@@ -802,7 +801,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 	StateChanger{&states}
 		.cull_face(true)
 		.cull_face_mode(CullFace::back)
-		.blend_mode({Blend::src_alpha, Blend::one_minus_src_alpha});
+		.blend_mode(Blend::src_alpha, Blend::one_minus_src_alpha);
 
 	glViewport(0, 0, window_size.x, window_size.y);
 	glClearColor(0, 0, 0, 1.0f);
