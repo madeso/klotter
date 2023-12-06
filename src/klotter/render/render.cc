@@ -113,6 +113,7 @@ struct StateChanger
 		return *this;
 	}
 
+	/// Set a bitmask that is ANDed with the stencil value about to be written to the buffer.
 	StateChanger& stencil_mask(u32 new_state)
 	{
 		if (should_change(&states->stencil_mask, new_state))
@@ -123,6 +124,11 @@ struct StateChanger
 		return *this;
 	}
 
+	/** 
+	* @param func sets the stencil test function that determines whether a fragment passes or is discarded. This test function is applied to the stored stencil value and the ref value.
+	* @param ref specifies the reference value for the stencil test. The stencil buffer's content is compared to this value.
+	* @param mask specifies a mask that is ANDed with both the reference value and the stored stencil value before the test compares them. Initially set to all 1s.
+	*/
 	StateChanger& stencil_func(Compare func, i32 ref, u32 mask)
 	{
 		if (should_change(&states->stencil_func, {func, ref, mask}))
@@ -152,6 +158,11 @@ struct StateChanger
 		return *this;
 	}
 
+	/**
+    * @param stencil_fail action to take if the stencil test fails.
+    * @param depth_fail action to take if the stencil test passes, but the depth test fails.
+    * @param pass action to take if both the stencil and the depth test pass.
+	*/
 	StateChanger& stencil_op(
 		StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass
 	)
