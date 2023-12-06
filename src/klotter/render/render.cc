@@ -71,6 +71,43 @@ struct StateChanger
 		return *this;
 	}
 
+	StateChanger& depth_mask(bool new_state)
+	{
+		if (should_change(&states->depth_mask, new_state))
+		{
+			glDepthMask(new_state ? GL_TRUE : GL_FALSE);
+		}
+		return *this;
+	}
+
+	StateChanger& depth_func(DepthFunc new_state)
+	{
+		if (should_change(&states->depth_func, new_state))
+		{
+			const auto mode = (
+				[new_state]() -> GLenum
+				{
+					switch(new_state)
+					{
+						case DepthFunc::always: return GL_ALWAYS;
+						case DepthFunc::never: return GL_NEVER;
+						case DepthFunc::less: return GL_LESS;
+						case DepthFunc::equal: return GL_EQUAL;
+						case DepthFunc::less_equal: return GL_LEQUAL;
+						case DepthFunc::greater: return GL_GREATER;
+						case DepthFunc::not_equal: return GL_NOTEQUAL;
+						case DepthFunc::greater_equal: return GL_GEQUAL;
+						default: DIE("Invalid depth func"); return GL_LESS;
+					}
+				}
+			)();
+
+			glDepthFunc(mode);
+		}
+
+		return *this;
+	}
+
 	StateChanger& render_mode(RenderMode new_state)
 	{
 		if (should_change(&states->render_mode, new_state))
@@ -717,7 +754,11 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 	glViewport(0, 0, window_size.x, window_size.y);
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	StateChanger{&states}.depth_test(true).blending(false);
+	StateChanger{&states}
+		.depth_test(true)
+		.depth_mask(true)
+		.depth_func(DepthFunc::less)
+		.blending(false);
 
 	const auto compiled_camera = compile(camera, window_size);
 

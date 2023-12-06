@@ -60,15 +60,32 @@ enum class Blend
 	one_minus_src1_alpha
 };
 
+enum class DepthFunc
+{
+	always,
+	never,
+	less,
+	equal,
+	less_equal,
+	greater,
+	not_equal,
+	greater_equal
+};
+
 using BlendMode = std::tuple<Blend, Blend>;
 
 struct OpenglStates
 {
 	std::optional<bool> cull_face;
 	std::optional<CullFace> cull_face_mode;
+
 	std::optional<bool> blending;
 	std::optional<BlendMode> blend_mode;
+
 	std::optional<bool> depth_test;
+	std::optional<bool> depth_mask;
+	std::optional<DepthFunc> depth_func;
+
 	std::optional<RenderMode> render_mode;
 
 	std::optional<int> active_texture;
