@@ -27,6 +27,7 @@ std::string generate(std::string_view str, const ShaderOptions& options)
 	auto data = kainjow::mustache::data{};
 
 	data["use_lights"] = options.use_lights;
+	data["use_texture"] = options.use_texture;
 	data["number_of_directional_lights"] = (Str() << options.number_of_directional_lights).str();
 	data["number_of_point_lights"] = (Str() << options.number_of_point_lights).str();
 	data["number_of_frustum_lights"] = (Str() << options.number_of_frustum_lights).str();
@@ -36,9 +37,12 @@ std::string generate(std::string_view str, const ShaderOptions& options)
 ShaderSource load_shader_source(const ShaderOptions& options)
 {
 	auto layout = ShaderVertexAttributes{
-		{VertexType::position3, "a_position"},
-		{VertexType::color3, "a_color"},
-		{VertexType::texture2, "a_tex_coord"}};
+		{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}};
+
+	if (options.use_texture)
+	{
+		layout.emplace_back(VertexElementDescription{VertexType::texture2, "a_tex_coord"});
+	}
 
 	if (options.use_lights)
 	{

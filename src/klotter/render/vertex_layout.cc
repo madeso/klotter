@@ -55,6 +55,15 @@ CompiledGeomVertexAttributes get_geom_layout(const CompiledVertexTypeList& l)
 		list.push_back({e.first, e.second});
 	}
 
+	std::sort(
+		list.begin(),
+		list.end(),
+		[](const CompiledVertexElementNoName& lhs, const CompiledVertexElementNoName& rhs)
+		{ return lhs.index < rhs.index; }
+	);
+
+	// todo(Gustav): the index property is confusing and error prone, just remove it
+
 	return {list, l.debug_types};
 }
 

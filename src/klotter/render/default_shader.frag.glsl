@@ -6,7 +6,9 @@
 struct Material
 {
     vec4 diffuse_tint; // diffuse + alpha
+{{#use_texture}}
     sampler2D diffuse_tex;
+{{/use_texture}}
 
     {{#use_lights}}
     sampler2D specular_tex;
@@ -212,9 +214,15 @@ void main()
     o_frag_color = vec4(light_color.rgb, alpha);
 {{/use_lights}}
 {{^use_lights}}
+{{#use_texture}}
     vec4 object_color = texture(u_material.diffuse_tex, v_tex_coord)
         * u_material.diffuse_tint.rgba * vec4(v_color.rgb, 1.0);
     o_frag_color = object_color;
+{{/use_texture}}
+{{^use_texture}}
+    vec4 object_color = u_material.diffuse_tint.rgba * vec4(v_color.rgb, 1.0);
+    o_frag_color = object_color;
+{{/use_texture}}
 {{/use_lights}}
 
 }

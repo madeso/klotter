@@ -198,6 +198,27 @@ struct LightsSample : Sample
 
 		ImGui::DragFloat("Ambient", &world.lights.ambient, FAC_SPEED, 0.0f, 1.0f);
 
+		{
+			// outline
+			static int index = 2;
+			ImGui::SliderInt("Index", &index, 0, Csizet_to_int(world.meshes.size()) - 1);
+			if (index >= 0 && Cint_to_sizet(index) < world.meshes.size())
+			{
+				auto& inst = world.meshes[Cint_to_sizet(index)];
+				bool check = inst->outline.has_value();
+				if (ImGui::Checkbox("outline?", &check))
+				{
+					if (inst->outline)
+					{
+						inst->outline = std::nullopt;
+					}
+					else
+					{
+						inst->outline = colors::blue_sky;
+					}
+				}
+			}
+		}
 
 		for (int dir_light_index = 0;
 			 dir_light_index < Csizet_to_int(world.lights.directional_lights.size());

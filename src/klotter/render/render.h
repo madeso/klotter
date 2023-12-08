@@ -216,6 +216,8 @@ struct MeshInstance
 	std::shared_ptr<CompiledGeom> geom;
 	std::shared_ptr<Material> material;
 
+	std::optional<glm::vec3> outline;
+
 	glm::vec3 position;
 	glm::vec3 rotation;	 ///< yaw pitch roll
 };

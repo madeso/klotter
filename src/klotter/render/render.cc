@@ -280,6 +280,24 @@ struct LoadedShader
 	CompiledGeomVertexAttributes geom_layout;
 };
 
+struct LoadedShader_SingleColor : LoadedShader
+{
+	LoadedShader_SingleColor(LoadedShader s)
+		: LoadedShader(std::move(s.program), s.geom_layout)
+		, tint_color(program->get_uniform("u_material.diffuse_tint"))
+		, model(program->get_uniform("u_model"))
+		, projection(program->get_uniform("u_projection"))
+		, view(program->get_uniform("u_view"))
+	{
+	}
+
+	Uniform tint_color;
+
+	Uniform model;
+	Uniform projection;
+	Uniform view;
+};
+
 struct LoadedShader_Unlit : LoadedShader
 {
 	LoadedShader_Unlit(LoadedShader s)
@@ -419,12 +437,19 @@ struct LoadedShader_Default : LoadedShader
 
 struct ShaderResource
 {
-	ShaderResource(LoadedShader unlit, LoadedShader def, const RenderSettings& settings)
-		: unlit_shader(std::move(unlit))
+	ShaderResource(
+		LoadedShader single_color,
+		LoadedShader unlit,
+		LoadedShader def,
+		const RenderSettings& settings
+	)
+		: single_color_shader(std::move(single_color))
+		, unlit_shader(std::move(unlit))
 		, default_shader(std::move(def), settings)
 	{
 	}
 
+	LoadedShader_SingleColor single_color_shader;
 	LoadedShader_Unlit unlit_shader;
 	LoadedShader_Default default_shader;
 
@@ -501,6 +526,16 @@ bool Renderer::is_loaded() const
 
 using BaseShaderData = std::vector<VertexType>;
 
+BaseShaderData get_vertex_types(const ShaderVertexAttributes& va)
+{
+	auto ret = BaseShaderData{};
+	for (const auto& v: va)
+	{
+		ret.emplace_back(v.type);
+	}
+	return ret;
+}
+
 LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& source)
 {
 	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
@@ -514,18 +549,23 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& 
 
 ShaderResource load_shaders(const RenderSettings& settings)
 {
-	// todo(Gustav): change so that there are common "base" shaders (example: single color) that
-	// can be used for everything and specific shaders (example: pbr)
-	auto global_shader_data = BaseShaderData{};
+	const auto single_color_shader = load_shader_source({});
+
+	BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
+
+	ShaderOptions unlit_shader_options;
+	unlit_shader_options.use_texture = true;
 
 	ShaderOptions default_shader_options;
 	default_shader_options.use_lights = true;
+	default_shader_options.use_texture = true;
 	default_shader_options.number_of_directional_lights = settings.number_of_directional_lights;
 	default_shader_options.number_of_point_lights = settings.number_of_point_lights;
 	default_shader_options.number_of_frustum_lights = settings.number_of_frustum_lights;
 
 	return {
-		load_shader(global_shader_data, load_shader_source(ShaderOptions{})),
+		load_shader(global_shader_data, single_color_shader),
+		load_shader(global_shader_data, load_shader_source(unlit_shader_options)),
 		load_shader(global_shader_data, load_shader_source(default_shader_options)),
 		settings};
 }
@@ -561,12 +601,27 @@ void UnlitMaterial::use_shader()
 	shader->program->use();
 }
 
+void set_model_projection_view(
+	std::shared_ptr<ShaderProgram> program,
+	Uniform model,
+	Uniform projection,
+	Uniform view,
+	const CompiledCamera& cc,
+	const glm::mat4& transform
+)
+{
+	program->set_mat(model, transform);
+	program->set_mat(projection, cc.projection);
+	program->set_mat(view, cc.view);
+}
+
 void UnlitMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
 	shader->program->set_vec4(shader->tint_color, {color, alpha});
-	shader->program->set_mat(shader->model, transform);
-	shader->program->set_mat(shader->projection, cc.projection);
-	shader->program->set_mat(shader->view, cc.view);
+
+	set_model_projection_view(
+		shader->program, shader->model, shader->projection, shader->view, cc, transform
+	);
 }
 
 void UnlitMaterial::bind_textures(OpenglStates* states, Assets* assets)
@@ -608,9 +663,9 @@ void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& tr
 	shader->program->set_float(shader->shininess, shininess);
 	shader->program->set_float(shader->emissive_factor, emissive_factor);
 
-	shader->program->set_mat(shader->model, transform);
-	shader->program->set_mat(shader->projection, cc.projection);
-	shader->program->set_mat(shader->view, cc.view);
+	set_model_projection_view(
+		shader->program, shader->model, shader->projection, shader->view, cc, transform
+	);
 	shader->program->set_vec3(shader->view_position, cc.position);
 }
 
@@ -842,10 +897,27 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
 		const auto transform = translation * rotation;
 
-		m->material->use_shader();
-		m->material->set_uniforms(compiled_camera, transform);
-		m->material->bind_textures(&pimpl->states, &assets);
-		m->material->apply_lights(world.lights, settings, &pimpl->states, &assets);
+		if (m->outline)
+		{
+			auto& shader = pimpl->shaders.single_color_shader;
+			shader.program->use();
+			shader.program->set_vec4(shader.tint_color, {*m->outline, 1});
+			set_model_projection_view(
+				shader.program,
+				shader.model,
+				shader.projection,
+				shader.view,
+				compiled_camera,
+				transform
+			);
+		}
+		else
+		{
+			m->material->use_shader();
+			m->material->set_uniforms(compiled_camera, transform);
+			m->material->bind_textures(&pimpl->states, &assets);
+			m->material->apply_lights(world.lights, settings, &pimpl->states, &assets);
+		}
 
 		ASSERT(is_bound_for_shader(m->geom->debug_types));
 		glBindVertexArray(m->geom->vao);
