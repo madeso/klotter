@@ -127,18 +127,7 @@ struct RenderSettings
 };
 
 /// All loaded/known shaders
-struct ShaderResource
-{
-	explicit ShaderResource(const RenderSettings& settings);
-	~ShaderResource();
-
-	struct ShaderResourcePimpl;
-
-	std::unique_ptr<ShaderResourcePimpl> r;
-
-	/// verify that the shaders are loaded
-	bool is_loaded() const;
-};
+struct ShaderResource;
 
 /// Base class for all materials
 struct Material

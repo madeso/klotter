@@ -417,10 +417,9 @@ struct LoadedShader_Default : LoadedShader
 	std::vector<FrustumLightUniforms> frustum_lights;
 };
 
-// todo(Gustav): move shader resource here and remove pimpl
-struct ShaderResource::ShaderResourcePimpl
+struct ShaderResource
 {
-	ShaderResourcePimpl(LoadedShader unlit, LoadedShader def, const RenderSettings& settings)
+	ShaderResource(LoadedShader unlit, LoadedShader def, const RenderSettings& settings)
 		: unlit_shader(std::move(unlit))
 		, default_shader(std::move(def), settings)
 	{
@@ -428,11 +427,15 @@ struct ShaderResource::ShaderResourcePimpl
 
 	LoadedShader_Unlit unlit_shader;
 	LoadedShader_Default default_shader;
+
+	/// verify that the shaders are loaded
+	bool is_loaded() const
+	{
+		return unlit_shader.program->is_loaded() && default_shader.program->is_loaded();
+	}
 };
 
-ShaderResource::~ShaderResource()
-{
-}
+ShaderResource load_shaders(const RenderSettings& settings);
 
 struct RendererPimpl
 {
@@ -440,7 +443,7 @@ struct RendererPimpl
 	OpenglStates states;
 
 	RendererPimpl(const RenderSettings& set)
-		: shaders(set)
+		: shaders(load_shaders(set))
 	{
 	}
 };
@@ -480,17 +483,12 @@ std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 
 CompiledGeomVertexAttributes Renderer::unlit_geom_layout()
 {
-	return pimpl->shaders.r->unlit_shader.geom_layout;
+	return pimpl->shaders.unlit_shader.geom_layout;
 }
 
 CompiledGeomVertexAttributes Renderer::default_geom_layout()
 {
-	return pimpl->shaders.r->default_shader.geom_layout;
-}
-
-bool ShaderResource::is_loaded() const
-{
-	return r->unlit_shader.program->is_loaded() && r->default_shader.program->is_loaded();
+	return pimpl->shaders.default_shader.geom_layout;
 }
 
 bool Renderer::is_loaded() const
@@ -514,7 +512,7 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& 
 	return {program, geom_layout};
 }
 
-ShaderResource::ShaderResource(const RenderSettings& settings)
+ShaderResource load_shaders(const RenderSettings& settings)
 {
 	// todo(Gustav): change so that there are common "base" shaders (example: single color) that
 	// can be used for everything and specific shaders (example: pbr)
@@ -526,11 +524,10 @@ ShaderResource::ShaderResource(const RenderSettings& settings)
 	default_shader_options.number_of_point_lights = settings.number_of_point_lights;
 	default_shader_options.number_of_frustum_lights = settings.number_of_frustum_lights;
 
-	r = std::make_unique<ShaderResourcePimpl>(
+	return {
 		load_shader(global_shader_data, load_shader_source(ShaderOptions{})),
 		load_shader(global_shader_data, load_shader_source(default_shader_options)),
-		settings
-	);
+		settings};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -553,7 +550,7 @@ void bind_texture(OpenglStates* states, const Uniform& uniform, const Texture& t
 }
 
 UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
-	: shader(&resource.r->unlit_shader)
+	: shader(&resource.unlit_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 {
@@ -588,7 +585,7 @@ void UnlitMaterial::apply_lights(const Lights&, const RenderSettings&, OpenglSta
 }
 
 DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
-	: shader(&resource.r->default_shader)
+	: shader(&resource.default_shader)
 	, color(colors::white)
 	, alpha(1.0f)
 	, ambient_tint(colors::white)
