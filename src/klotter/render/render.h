@@ -293,15 +293,18 @@ struct World
 	Lights lights;
 };
 
+struct RendererPimpl;
+
 /// the renderering "engine"
 struct Renderer
 {
 	RenderSettings settings;
-	ShaderResource shaders;
-	OpenglStates states;
 	Assets assets;
 
+	std::unique_ptr<RendererPimpl> pimpl;
+
 	explicit Renderer(const RenderSettings& settings);
+	~Renderer();
 
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
 	std::shared_ptr<DefaultMaterial> make_default_material();

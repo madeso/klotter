@@ -417,6 +417,7 @@ struct LoadedShader_Default : LoadedShader
 	std::vector<FrustumLightUniforms> frustum_lights;
 };
 
+// todo(Gustav): move shader resource here and remove pimpl
 struct ShaderResource::ShaderResourcePimpl
 {
 	ShaderResourcePimpl(LoadedShader unlit, LoadedShader def, const RenderSettings& settings)
@@ -432,6 +433,17 @@ struct ShaderResource::ShaderResourcePimpl
 ShaderResource::~ShaderResource()
 {
 }
+
+struct RendererPimpl
+{
+	ShaderResource shaders;
+	OpenglStates states;
+
+	RendererPimpl(const RenderSettings& set)
+		: shaders(set)
+	{
+	}
+};
 
 // ------------------------------------------------------------------------------------------------
 // glue code
@@ -458,22 +470,22 @@ std::shared_ptr<MeshInstance> make_mesh_instance(
 
 std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material()
 {
-	return std::make_shared<UnlitMaterial>(shaders);
+	return std::make_shared<UnlitMaterial>(pimpl->shaders);
 }
 
 std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 {
-	return std::make_shared<DefaultMaterial>(shaders);
+	return std::make_shared<DefaultMaterial>(pimpl->shaders);
 }
 
 CompiledGeomVertexAttributes Renderer::unlit_geom_layout()
 {
-	return shaders.r->unlit_shader.geom_layout;
+	return pimpl->shaders.r->unlit_shader.geom_layout;
 }
 
 CompiledGeomVertexAttributes Renderer::default_geom_layout()
 {
-	return shaders.r->default_shader.geom_layout;
+	return pimpl->shaders.r->default_shader.geom_layout;
 }
 
 bool ShaderResource::is_loaded() const
@@ -483,7 +495,7 @@ bool ShaderResource::is_loaded() const
 
 bool Renderer::is_loaded() const
 {
-	return shaders.is_loaded();
+	return pimpl->shaders.is_loaded();
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -803,13 +815,15 @@ CompiledGeom::~CompiledGeom()
 
 Renderer::Renderer(const RenderSettings& set)
 	: settings(set)
-	, shaders(set)
+	, pimpl(std::make_unique<RendererPimpl>(set))
 {
 }
 
+Renderer::~Renderer() = default;
+
 void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
-	StateChanger{&states}
+	StateChanger{&pimpl->states}
 		.cull_face(true)
 		.cull_face_mode(CullFace::back)
 		.blend_mode(Blend::src_alpha, Blend::one_minus_src_alpha);
@@ -817,7 +831,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 	glViewport(0, 0, window_size.x, window_size.y);
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	StateChanger{&states}
+	StateChanger{&pimpl->states}
 		.depth_test(true)
 		.depth_mask(true)
 		.depth_func(Compare::less)
@@ -833,8 +847,8 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 
 		m->material->use_shader();
 		m->material->set_uniforms(compiled_camera, transform);
-		m->material->bind_textures(&states, &assets);
-		m->material->apply_lights(world.lights, settings, &states, &assets);
+		m->material->bind_textures(&pimpl->states, &assets);
+		m->material->apply_lights(world.lights, settings, &pimpl->states, &assets);
 
 		ASSERT(is_bound_for_shader(m->geom->debug_types));
 		glBindVertexArray(m->geom->vao);
