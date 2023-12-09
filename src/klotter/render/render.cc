@@ -875,53 +875,89 @@ Renderer::~Renderer() = default;
 
 void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
+	const auto has_outlined_meshes = std::any_of(
+		world.meshes.begin(),
+		world.meshes.end(),
+		[](const auto& mesh) { return mesh->outline.has_value(); }
+	);
 	StateChanger{&pimpl->states}
 		.cull_face(true)
 		.cull_face_mode(CullFace::back)
+		.stencil_mask(0xFF)
+		.stencil_test(has_outlined_meshes)
+		.stencil_op(StencilAction::keep, StencilAction::replace, StencilAction::replace)
 		.blend_mode(Blend::src_alpha, Blend::one_minus_src_alpha);
 
 	glViewport(0, 0, window_size.x, window_size.y);
 	glClearColor(0, 0, 0, 1.0f);
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	StateChanger{&pimpl->states}
-		.depth_test(true)
-		.depth_mask(true)
-		.depth_func(Compare::less)
-		.blending(false);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 	const auto compiled_camera = compile(camera, window_size);
 
-	for (auto& m: world.meshes)
+	const auto calc_mesh_transform = [](std::shared_ptr<MeshInstance> m)
 	{
 		const auto translation = glm::translate(glm::mat4(1.0f), m->position);
 		const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
-		const auto transform = translation * rotation;
+		return translation * rotation;
+	};
+	const auto render_geom = [](std::shared_ptr<CompiledGeom> geom)
+	{
+		ASSERT(is_bound_for_shader(geom->debug_types));
+		glBindVertexArray(geom->vao);
+		glDrawElements(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, 0);
+	};
+
+	for (auto& m: world.meshes)
+	{
+		StateChanger{&pimpl->states}
+			.depth_test(true)
+			.depth_mask(true)
+			.depth_func(Compare::less)
+			.blending(false)
+			.stencil_mask(0x0)
+			.stencil_func(Compare::always, 1, 0xFF);
 
 		if (m->outline)
 		{
-			auto& shader = pimpl->shaders.single_color_shader;
-			shader.program->use();
-			shader.program->set_vec4(shader.tint_color, {*m->outline, 1});
-			set_model_projection_view(
-				shader.program,
-				shader.model,
-				shader.projection,
-				shader.view,
-				compiled_camera,
-				transform
-			);
+			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 		}
-		else
-		{
-			m->material->use_shader();
-			m->material->set_uniforms(compiled_camera, transform);
-			m->material->bind_textures(&pimpl->states, &assets);
-			m->material->apply_lights(world.lights, settings, &pimpl->states, &assets);
-		}
+		m->material->use_shader();
+		m->material->set_uniforms(compiled_camera, calc_mesh_transform(m));
+		m->material->bind_textures(&pimpl->states, &assets);
+		m->material->apply_lights(world.lights, settings, &pimpl->states, &assets);
 
-		ASSERT(is_bound_for_shader(m->geom->debug_types));
-		glBindVertexArray(m->geom->vao);
-		glDrawElements(GL_TRIANGLES, m->geom->number_of_triangles * 3, GL_UNSIGNED_INT, 0);
+		render_geom(m->geom);
+	}
+
+	if (has_outlined_meshes)
+	{
+		for (auto& m: world.meshes)
+		{
+			if (m->outline)
+			{
+				StateChanger{&pimpl->states}
+					.stencil_func(Compare::not_equal, 1, 0xFF)
+					.stencil_mask(0x00)
+					.depth_test(false);
+				const auto small_scale = 1.1;
+				const auto small_scale_mat
+					= glm::scale(glm::mat4(1.0f), {small_scale, small_scale, small_scale});
+
+				auto& shader = pimpl->shaders.single_color_shader;
+				shader.program->use();
+				shader.program->set_vec4(shader.tint_color, {*m->outline, 1});
+				set_model_projection_view(
+					shader.program,
+					shader.model,
+					shader.projection,
+					shader.view,
+					compiled_camera,
+					calc_mesh_transform(m) * small_scale_mat
+				);
+
+				render_geom(m->geom);
+			}
+		}
 	}
 }
 
