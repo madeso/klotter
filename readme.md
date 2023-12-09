@@ -29,9 +29,9 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - frustum culling
 - different worlds (loose octree / portal)
 - different camera setups (fps, rotate around origin, editor?)
+- implement better outlines that handles more meshes and hoepfully specify outline in screenspace: https://ameye.dev/notes/rendering-outlines/
 - complete rest of learn opengl
 
-  1. (feat. outlining) - Stencil testing (Advanced OpenGL)
   1. (feat. transparency) - Blending (Advanced OpenGL)
   1. (done?) Face culling (Advanced OpenGL)
   1. (feat. full screen effects) Framebuffers (Advanced OpenGL)
