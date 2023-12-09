@@ -6,6 +6,8 @@ embed(src_assets
         textures/container_specular.png
         textures/matrix.jpg
         textures/cookie_01.png
+        textures/glass.png
+        textures/grass.png
     AS_TEXT
         klotter/render/default_shader.vert.glsl
         klotter/render/default_shader.frag.glsl

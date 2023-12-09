@@ -146,6 +146,8 @@ struct Material
 	virtual void apply_lights(
 		const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) = 0;
+
+	virtual bool is_transparent() const = 0;
 };
 
 /// a unlit (or fully lit) material, not affected by light
@@ -163,6 +165,8 @@ struct UnlitMaterial : Material
 	void apply_lights(
 		const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) override;
+
+	bool is_transparent() const override;
 };
 
 /// a material affected by light
@@ -188,6 +192,8 @@ struct DefaultMaterial : Material
 	void apply_lights(
 		const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) override;
+
+	bool is_transparent() const override;
 };
 
 /// Represents a Geom on the GPU.

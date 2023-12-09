@@ -526,6 +526,68 @@ Builder create_plane(float x, float z, bool invert, const glm::vec3& color)
 	return b;
 }
 
+Builder create_xy_plane(float x, float y, bool two_sided, const glm::vec3& color)
+{
+	Builder b;
+
+	// position and texture coord struct
+	struct Pt
+	{
+		glm::vec3 pos;
+		glm::vec2 tex;
+	};
+
+	const bool invert = false;
+
+	const auto add_quad_to_builder = [&](glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
+	{
+		constexpr float pd = 0.1f;
+		constexpr float td = 0.01f;
+		const auto ci = b.foa_color({color, 1.0f}, 0.001f);
+		const auto no = b.add_normal(normal);
+
+		const auto v0 = Vertex{b.foa_position(p0.pos, pd), no, b.foa_text_coord(p0.tex, td), ci};
+		const auto v1 = Vertex{b.foa_position(p1.pos, pd), no, b.foa_text_coord(p1.tex, td), ci};
+		const auto v2 = Vertex{b.foa_position(p2.pos, pd), no, b.foa_text_coord(p2.tex, td), ci};
+		const auto v3 = Vertex{b.foa_position(p3.pos, pd), no, b.foa_text_coord(p3.tex, td), ci};
+
+		b.add_quad(invert, v0, v1, v2, v3);
+	};
+
+	// texel scale
+	const float ts = 1.0f;
+
+	// half sizes
+	const float hx = x * 0.5f;
+	const float hy = y * 0.5f;
+	const float hz = 0.0f;
+
+	const float s = invert ? -1.0f : 1.0f;
+
+	// front
+	add_quad_to_builder(
+		{0, 0, -s},
+		{{-hx, -hy, hz}, {0.0f, 0.0f}},
+		{{hx, -hy, hz}, {x * ts, 0.0f}},
+		{{hx, hy, hz}, {x * ts, y * ts}},
+		{{-hx, hy, hz}, {0.0f, y * ts}}
+	);
+
+	// back
+	if (two_sided)
+	{
+		add_quad_to_builder(
+			{0, 0, s},
+			{{-hx, -hy, hz}, {0.0f, 0.0f}},
+			{{-hx, hy, hz}, {0.0f, y * ts}},
+			{{hx, hy, hz}, {x * ts, y * ts}},
+			{{hx, -hy, hz}, {x * ts, 0.0f}}
+		);
+	}
+
+	return b;
+}
+
 // ==================================================================================================================================
 
 

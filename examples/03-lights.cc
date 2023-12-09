@@ -118,6 +118,19 @@ struct LightsSample : Sample
 		mat->emissive = renderer->assets.get_matrix();
 		mat->emissive_factor = 1.0f;
 
+		// glasses
+		{
+			const auto triangle = geom::create_xy_plane(1.0f, 1.0f, true).to_geom();
+			auto geom = compile_geom(triangle, renderer->default_geom_layout());
+
+			auto glass_mat = renderer->make_default_material();
+			glass_mat->diffuse = renderer->assets.get_glass();
+			glass_mat->alpha = 0.5f;
+
+			auto glass = add_cube(geom, glass_mat);
+			glass->position = {0.0f, 0.0f, 1.0f};
+		}
+
 		{
 			constexpr auto PLANE_SIZE = 100.0f;
 			auto plane_geom = compile_geom(

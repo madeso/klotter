@@ -642,6 +642,12 @@ void UnlitMaterial::apply_lights(const Lights&, const RenderSettings&, OpenglSta
 {
 }
 
+bool UnlitMaterial::is_transparent() const
+{
+	// todo(Gustav): improve trasparency
+	return alpha < 0.99f;
+}
+
 DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
 	: shader(&resource.default_shader)
 	, color(colors::white)
@@ -778,6 +784,12 @@ void DefaultMaterial::apply_lights(
 	}
 }
 
+bool DefaultMaterial::is_transparent() const
+{
+	// todo(Gustav): improve trasparency
+	return alpha < 0.99f;
+}
+
 // ------------------------------------------------------------------------------------------------
 // renderer
 
@@ -910,13 +922,43 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		glDrawElements(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, 0);
 	};
 
+	std::vector<std::shared_ptr<MeshInstance>> transparent_meshes;
+
 	for (auto& m: world.meshes)
 	{
+		if (m->material->is_transparent())
+		{
+			transparent_meshes.emplace_back(m);
+			continue;
+		}
 		StateChanger{&pimpl->states}
 			.depth_test(true)
 			.depth_mask(true)
 			.depth_func(Compare::less)
 			.blending(false)
+			.stencil_mask(0x0)
+			.stencil_func(Compare::always, 1, 0xFF);
+
+		if (m->outline)
+		{
+			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
+		}
+		m->material->use_shader();
+		m->material->set_uniforms(compiled_camera, calc_mesh_transform(m));
+		m->material->bind_textures(&pimpl->states, &assets);
+		m->material->apply_lights(world.lights, settings, &pimpl->states, &assets);
+
+		render_geom(m->geom);
+	}
+
+	// todo(Gustav): depth sort meshes
+	for (auto& m: transparent_meshes)
+	{
+		StateChanger{&pimpl->states}
+			.depth_test(true)
+			.depth_mask(true)
+			.depth_func(Compare::less)
+			.blending(true)
 			.stencil_mask(0x0)
 			.stencil_func(Compare::always, 1, 0xFF);
 
