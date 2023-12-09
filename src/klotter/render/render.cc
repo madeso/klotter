@@ -125,9 +125,10 @@ struct StateChanger
 	}
 
 	/** 
-	* @param func sets the stencil test function that determines whether a fragment passes or is discarded. This test function is applied to the stored stencil value and the ref value.
-	* @param ref specifies the reference value for the stencil test. The stencil buffer's content is compared to this value.
-	* @param mask specifies a mask that is ANDed with both the reference value and the stored stencil value before the test compares them. Initially set to all 1s.
+	* @param func the stencil test function that determines whether a fragment passes or is discarded.
+	This test function is applied to the stored stencil value and the ref value.
+	* @param ref the reference value for the stencil test. The stencil buffer's content is compared to this value.
+	* @param mask the mask that is ANDed with both the reference value and the stored stencil value before the test compares them.
 	*/
 	StateChanger& stencil_func(Compare func, i32 ref, u32 mask)
 	{
@@ -185,6 +186,8 @@ struct StateChanger
 
 		if (should_change(&states->stencil_op, {stencil_fail, depth_fail, pass}))
 		{
+			// todo(Gustav): look into using glStencilOpSeparate instead to specify front and back faces
+			// https://registry.khronos.org/OpenGL-Refpages/gl4/html/glStencilOpSeparate.xhtml
 			glStencilOp(Csa(stencil_fail), Csa(depth_fail), Csa(pass));
 		}
 
