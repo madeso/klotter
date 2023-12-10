@@ -568,9 +568,9 @@ Builder create_xy_plane(float x, float y, bool two_sided, const glm::vec3& color
 	add_quad_to_builder(
 		{0, 0, -s},
 		{{-hx, -hy, hz}, {0.0f, 0.0f}},
-		{{hx, -hy, hz}, {x * ts, 0.0f}},
-		{{hx, hy, hz}, {x * ts, y * ts}},
-		{{-hx, hy, hz}, {0.0f, y * ts}}
+		{{hx, -hy, hz}, {ts, 0.0f}},
+		{{hx, hy, hz}, {ts, ts}},
+		{{-hx, hy, hz}, {0.0f, ts}}
 	);
 
 	// back
@@ -579,9 +579,9 @@ Builder create_xy_plane(float x, float y, bool two_sided, const glm::vec3& color
 		add_quad_to_builder(
 			{0, 0, s},
 			{{-hx, -hy, hz}, {0.0f, 0.0f}},
-			{{-hx, hy, hz}, {0.0f, y * ts}},
-			{{hx, hy, hz}, {x * ts, y * ts}},
-			{{hx, -hy, hz}, {x * ts, 0.0f}}
+			{{-hx, hy, hz}, {0.0f, ts}},
+			{{hx, hy, hz}, {ts, ts}},
+			{{hx, -hy, hz}, {ts, 0.0f}}
 		);
 	}
 
