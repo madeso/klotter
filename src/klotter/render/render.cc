@@ -301,10 +301,12 @@ struct LoadedShader_SingleColor : LoadedShader
 	Uniform view;
 };
 
-struct LoadedShader_Unlit : LoadedShader
+struct Base_LoadedShader_Unlit
 {
-	LoadedShader_Unlit(LoadedShader s)
-		: LoadedShader(std::move(s.program), s.geom_layout)
+	std::shared_ptr<ShaderProgram> program;
+
+	Base_LoadedShader_Unlit(LoadedShader s)
+		: program(std::move(s.program))
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
 		, model(program->get_uniform("u_model"))
@@ -372,10 +374,12 @@ struct FrustumLightUniforms
 	Uniform cookie;
 };
 
-struct LoadedShader_Default : LoadedShader
+struct Base_LoadedShader_Default
 {
-	LoadedShader_Default(LoadedShader s, const RenderSettings& settings)
-		: LoadedShader(std::move(s.program), s.geom_layout)
+	std::shared_ptr<ShaderProgram> program;
+
+	Base_LoadedShader_Default(LoadedShader s, const RenderSettings& settings)
+		: program(std::move(s.program))
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
 		, tex_specular(program->get_uniform("u_material.specular_tex"))
@@ -438,28 +442,50 @@ struct LoadedShader_Default : LoadedShader
 	std::vector<FrustumLightUniforms> frustum_lights;
 };
 
-struct ShaderResource
+struct LoadedShader_Unlit
 {
-	ShaderResource(
-		LoadedShader single_color,
-		LoadedShader unlit,
-		LoadedShader def,
-		const RenderSettings& settings
-	)
-		: single_color_shader(std::move(single_color))
-		, unlit_shader(std::move(unlit))
-		, default_shader(std::move(def), settings)
+	CompiledGeomVertexAttributes geom_layout;
+	Base_LoadedShader_Unlit the_base;
+
+	const Base_LoadedShader_Unlit& base() const
 	{
+		return the_base;
 	}
 
+	bool is_loaded() const
+	{
+		return the_base.program->is_loaded();
+	}
+};
+
+struct LoadedShader_Default
+{
+	CompiledGeomVertexAttributes geom_layout;
+	Base_LoadedShader_Default the_base;
+
+	const Base_LoadedShader_Default& base() const
+	{
+		return the_base;
+	}
+
+	bool is_loaded() const
+	{
+		return the_base.program->is_loaded();
+	}
+};
+
+struct ShaderResource
+{
 	LoadedShader_SingleColor single_color_shader;
+
 	LoadedShader_Unlit unlit_shader;
 	LoadedShader_Default default_shader;
 
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
-		return unlit_shader.program->is_loaded() && default_shader.program->is_loaded();
+		return single_color_shader.program->is_loaded() && unlit_shader.is_loaded()
+			&& default_shader.is_loaded();
 	}
 };
 
@@ -566,11 +592,14 @@ ShaderResource load_shaders(const RenderSettings& settings)
 	default_shader_options.number_of_point_lights = settings.number_of_point_lights;
 	default_shader_options.number_of_frustum_lights = settings.number_of_frustum_lights;
 
+	auto loaded_unlit = load_shader(global_shader_data, load_shader_source(unlit_shader_options));
+	auto loaded_default
+		= load_shader(global_shader_data, load_shader_source(default_shader_options));
+
 	return {
 		load_shader(global_shader_data, single_color_shader),
-		load_shader(global_shader_data, load_shader_source(unlit_shader_options)),
-		load_shader(global_shader_data, load_shader_source(default_shader_options)),
-		settings};
+		{loaded_unlit.geom_layout, loaded_unlit},
+		{loaded_default.geom_layout, {loaded_default, settings}}};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -601,7 +630,7 @@ UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
 
 void UnlitMaterial::use_shader()
 {
-	shader->program->use();
+	shader->base().program->use();
 }
 
 void set_model_projection_view(
@@ -620,11 +649,10 @@ void set_model_projection_view(
 
 void UnlitMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-	shader->program->set_vec4(shader->tint_color, {color, alpha});
+	const auto& base = shader->base();
+	base.program->set_vec4(base.tint_color, {color, alpha});
 
-	set_model_projection_view(
-		shader->program, shader->model, shader->projection, shader->view, cc, transform
-	);
+	set_model_projection_view(base.program, base.model, base.projection, base.view, cc, transform);
 }
 
 void UnlitMaterial::bind_textures(OpenglStates* states, Assets* assets)
@@ -635,7 +663,7 @@ void UnlitMaterial::bind_textures(OpenglStates* states, Assets* assets)
 		t = assets->get_white();
 	}
 
-	bind_texture(states, shader->tex_diffuse, *t);
+	bind_texture(states, shader->base().tex_diffuse, *t);
 }
 
 void UnlitMaterial::apply_lights(const Lights&, const RenderSettings&, OpenglStates*, Assets*)
@@ -661,21 +689,21 @@ DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
 
 void DefaultMaterial::use_shader()
 {
-	shader->program->use();
+	shader->base().program->use();
 }
 
 void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
 {
-	shader->program->set_vec4(shader->tint_color, {color, alpha});
-	shader->program->set_vec3(shader->ambient_tint, ambient_tint);
-	shader->program->set_vec3(shader->specular_color, specular_color);
-	shader->program->set_float(shader->shininess, shininess);
-	shader->program->set_float(shader->emissive_factor, emissive_factor);
+	const auto& base = shader->base();
 
-	set_model_projection_view(
-		shader->program, shader->model, shader->projection, shader->view, cc, transform
-	);
-	shader->program->set_vec3(shader->view_position, cc.position);
+	base.program->set_vec4(base.tint_color, {color, alpha});
+	base.program->set_vec3(base.ambient_tint, ambient_tint);
+	base.program->set_vec3(base.specular_color, specular_color);
+	base.program->set_float(base.shininess, shininess);
+	base.program->set_float(base.emissive_factor, emissive_factor);
+
+	set_model_projection_view(base.program, base.model, base.projection, base.view, cc, transform);
+	base.program->set_vec3(base.view_position, cc.position);
 }
 
 std::shared_ptr<Texture> get_or_white(Assets* assets, std::shared_ptr<Texture> t)
@@ -704,16 +732,18 @@ std::shared_ptr<Texture> get_or_black(Assets* assets, std::shared_ptr<Texture> t
 
 void DefaultMaterial::bind_textures(OpenglStates* states, Assets* assets)
 {
-	bind_texture(states, shader->tex_diffuse, *get_or_white(assets, diffuse));
-	bind_texture(states, shader->tex_specular, *get_or_white(assets, specular));
-	bind_texture(states, shader->tex_emissive, *get_or_black(assets, emissive));
+	const auto& base = shader->base();
+	bind_texture(states, base.tex_diffuse, *get_or_white(assets, diffuse));
+	bind_texture(states, base.tex_specular, *get_or_white(assets, specular));
+	bind_texture(states, base.tex_emissive, *get_or_black(assets, emissive));
 }
 
 void DefaultMaterial::apply_lights(
 	const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 )
 {
-	shader->program->set_vec3(shader->light_ambient_color, lights.color * lights.ambient);
+	const auto& base = shader->base();
+	base.program->set_vec3(base.light_ambient_color, lights.color * lights.ambient);
 
 	const auto no_directional_light = ([]() {
 		DirectionalLight p;
@@ -743,10 +773,10 @@ void DefaultMaterial::apply_lights(
 		const auto& p = Cint_to_sizet(i) < lights.directional_lights.size()
 						  ? lights.directional_lights[Cint_to_sizet(i)]
 						  : no_directional_light;
-		const auto& u = shader->directional_lights[Cint_to_sizet(i)];
-		shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
-		shader->program->set_vec3(u.light_specular_color, p.color * p.specular);
-		shader->program->set_vec3(u.dir, p.direction);
+		const auto& u = base.directional_lights[Cint_to_sizet(i)];
+		base.program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
+		base.program->set_vec3(u.light_specular_color, p.color * p.specular);
+		base.program->set_vec3(u.dir, p.direction);
 	}
 
 	for (int i = 0; i < settings.number_of_point_lights; i += 1)
@@ -754,11 +784,11 @@ void DefaultMaterial::apply_lights(
 		const auto& p = Cint_to_sizet(i) < lights.point_lights.size()
 						  ? lights.point_lights[Cint_to_sizet(i)]
 						  : no_point_light;
-		const auto& u = shader->point_lights[Cint_to_sizet(i)];
-		shader->program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
-		shader->program->set_vec3(u.light_specular_color, p.color * p.specular);
-		shader->program->set_vec3(u.light_world, p.position);
-		shader->program->set_vec4(
+		const auto& u = base.point_lights[Cint_to_sizet(i)];
+		base.program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
+		base.program->set_vec3(u.light_specular_color, p.color * p.specular);
+		base.program->set_vec3(u.light_world, p.position);
+		base.program->set_vec4(
 			u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
 		);
 	}
@@ -768,17 +798,17 @@ void DefaultMaterial::apply_lights(
 		const auto& p = Cint_to_sizet(i) < lights.frustum_lights.size()
 						  ? lights.frustum_lights[Cint_to_sizet(i)]
 						  : no_frustum_light;
-		const auto& u = shader->frustum_lights[Cint_to_sizet(i)];
-		shader->program->set_vec3(u.diffuse, p.color * p.diffuse);
-		shader->program->set_vec3(u.specular, p.color * p.specular);
-		shader->program->set_vec3(u.world_pos, p.position);
-		shader->program->set_vec4(
+		const auto& u = base.frustum_lights[Cint_to_sizet(i)];
+		base.program->set_vec3(u.diffuse, p.color * p.diffuse);
+		base.program->set_vec3(u.specular, p.color * p.specular);
+		base.program->set_vec3(u.world_pos, p.position);
+		base.program->set_vec4(
 			u.attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
 		);
 
 		const auto view = create_view_mat(p.position, create_vectors(p.yaw, p.pitch));
 		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);
-		shader->program->set_mat(u.world_to_clip, projection * view);
+		base.program->set_mat(u.world_to_clip, projection * view);
 
 		bind_texture(states, u.cookie, *get_or_white(assets, p.cookie));
 	}
