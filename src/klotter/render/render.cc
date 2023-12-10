@@ -442,35 +442,42 @@ struct Base_LoadedShader_Default
 	std::vector<FrustumLightUniforms> frustum_lights;
 };
 
+struct RenderContext
+{
+	bool use_transparency;
+};
+
 struct LoadedShader_Unlit
 {
 	CompiledGeomVertexAttributes geom_layout;
-	Base_LoadedShader_Unlit the_base;
+	Base_LoadedShader_Unlit default_shader;
+	Base_LoadedShader_Unlit transparency_shader;
 
-	const Base_LoadedShader_Unlit& base() const
+	const Base_LoadedShader_Unlit& base(const RenderContext& rc) const
 	{
-		return the_base;
+		return rc.use_transparency ? transparency_shader : default_shader;
 	}
 
 	bool is_loaded() const
 	{
-		return the_base.program->is_loaded();
+		return default_shader.program->is_loaded() && transparency_shader.program->is_loaded();
 	}
 };
 
 struct LoadedShader_Default
 {
 	CompiledGeomVertexAttributes geom_layout;
-	Base_LoadedShader_Default the_base;
+	Base_LoadedShader_Default default_shader;
+	Base_LoadedShader_Default transparency_shader;
 
-	const Base_LoadedShader_Default& base() const
+	const Base_LoadedShader_Default& base(const RenderContext& rc) const
 	{
-		return the_base;
+		return rc.use_transparency ? transparency_shader : default_shader;
 	}
 
 	bool is_loaded() const
 	{
-		return the_base.program->is_loaded();
+		return default_shader.program->is_loaded() && transparency_shader.program->is_loaded();
 	}
 };
 
@@ -596,10 +603,26 @@ ShaderResource load_shaders(const RenderSettings& settings)
 	auto loaded_default
 		= load_shader(global_shader_data, load_shader_source(default_shader_options));
 
+	auto loaded_unlit_transparency
+		= load_shader(global_shader_data, load_shader_source(unlit_shader_options));
+	auto loaded_default_transparency
+		= load_shader(global_shader_data, load_shader_source(default_shader_options));
+
+	// todo(Gustav): should the asserts here be runtime errors? currently all setups are compile-time...
+	assert(
+		loaded_unlit.geom_layout.debug_types == loaded_unlit_transparency.geom_layout.debug_types
+	);
+	assert(
+		loaded_default.geom_layout.debug_types
+		== loaded_default_transparency.geom_layout.debug_types
+	);
+
 	return {
 		load_shader(global_shader_data, single_color_shader),
-		{loaded_unlit.geom_layout, loaded_unlit},
-		{loaded_default.geom_layout, {loaded_default, settings}}};
+		{loaded_unlit.geom_layout, loaded_unlit, loaded_unlit_transparency},
+		{loaded_default.geom_layout,
+		 {loaded_default, settings},
+		 {loaded_default_transparency, settings}}};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -628,9 +651,9 @@ UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
 {
 }
 
-void UnlitMaterial::use_shader()
+void UnlitMaterial::use_shader(const RenderContext& rc)
 {
-	shader->base().program->use();
+	shader->base(rc).program->use();
 }
 
 void set_model_projection_view(
@@ -647,15 +670,17 @@ void set_model_projection_view(
 	program->set_mat(view, cc.view);
 }
 
-void UnlitMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
+void UnlitMaterial::set_uniforms(
+	const RenderContext& rc, const CompiledCamera& cc, const glm::mat4& transform
+)
 {
-	const auto& base = shader->base();
+	const auto& base = shader->base(rc);
 	base.program->set_vec4(base.tint_color, {color, alpha});
 
 	set_model_projection_view(base.program, base.model, base.projection, base.view, cc, transform);
 }
 
-void UnlitMaterial::bind_textures(OpenglStates* states, Assets* assets)
+void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
 {
 	std::shared_ptr<Texture> t = texture;
 	if (t == nullptr)
@@ -663,10 +688,11 @@ void UnlitMaterial::bind_textures(OpenglStates* states, Assets* assets)
 		t = assets->get_white();
 	}
 
-	bind_texture(states, shader->base().tex_diffuse, *t);
+	bind_texture(states, shader->base(rc).tex_diffuse, *t);
 }
 
-void UnlitMaterial::apply_lights(const Lights&, const RenderSettings&, OpenglStates*, Assets*)
+void UnlitMaterial::
+	apply_lights(const RenderContext&, const Lights&, const RenderSettings&, OpenglStates*, Assets*)
 {
 }
 
@@ -687,14 +713,16 @@ DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
 {
 }
 
-void DefaultMaterial::use_shader()
+void DefaultMaterial::use_shader(const RenderContext& rc)
 {
-	shader->base().program->use();
+	shader->base(rc).program->use();
 }
 
-void DefaultMaterial::set_uniforms(const CompiledCamera& cc, const glm::mat4& transform)
+void DefaultMaterial::set_uniforms(
+	const RenderContext& rc, const CompiledCamera& cc, const glm::mat4& transform
+)
 {
-	const auto& base = shader->base();
+	const auto& base = shader->base(rc);
 
 	base.program->set_vec4(base.tint_color, {color, alpha});
 	base.program->set_vec3(base.ambient_tint, ambient_tint);
@@ -730,19 +758,23 @@ std::shared_ptr<Texture> get_or_black(Assets* assets, std::shared_ptr<Texture> t
 	}
 };
 
-void DefaultMaterial::bind_textures(OpenglStates* states, Assets* assets)
+void DefaultMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
 {
-	const auto& base = shader->base();
+	const auto& base = shader->base(rc);
 	bind_texture(states, base.tex_diffuse, *get_or_white(assets, diffuse));
 	bind_texture(states, base.tex_specular, *get_or_white(assets, specular));
 	bind_texture(states, base.tex_emissive, *get_or_black(assets, emissive));
 }
 
 void DefaultMaterial::apply_lights(
-	const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
+	const RenderContext& rc,
+	const Lights& lights,
+	const RenderSettings& settings,
+	OpenglStates* states,
+	Assets* assets
 )
 {
-	const auto& base = shader->base();
+	const auto& base = shader->base(rc);
 	base.program->set_vec3(base.light_ambient_color, lights.color * lights.ambient);
 
 	const auto no_directional_light = ([]() {
@@ -962,6 +994,8 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 
 	for (auto& m: world.meshes)
 	{
+		const auto not_transparent = RenderContext{.use_transparency = false};
+
 		if (m->material->is_transparent())
 		{
 			transparent_meshes.emplace_back(TransparentMesh{
@@ -980,10 +1014,10 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		{
 			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 		}
-		m->material->use_shader();
-		m->material->set_uniforms(compiled_camera, calc_mesh_transform(m));
-		m->material->bind_textures(&pimpl->states, &assets);
-		m->material->apply_lights(world.lights, settings, &pimpl->states, &assets);
+		m->material->use_shader(not_transparent);
+		m->material->set_uniforms(not_transparent, compiled_camera, calc_mesh_transform(m));
+		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
+		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
 
 		render_geom(m->geom);
 	}
@@ -997,6 +1031,8 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 
 	for (auto& tm: transparent_meshes)
 	{
+		const auto transparent = RenderContext{.use_transparency = true};
+
 		const auto& m = tm.mesh;
 		StateChanger{&pimpl->states}
 			.depth_test(true)
@@ -1010,10 +1046,10 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		{
 			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 		}
-		m->material->use_shader();
-		m->material->set_uniforms(compiled_camera, calc_mesh_transform(m));
-		m->material->bind_textures(&pimpl->states, &assets);
-		m->material->apply_lights(world.lights, settings, &pimpl->states, &assets);
+		m->material->use_shader(transparent);
+		m->material->set_uniforms(transparent, compiled_camera, calc_mesh_transform(m));
+		m->material->bind_textures(transparent, &pimpl->states, &assets);
+		m->material->apply_lights(transparent, world.lights, settings, &pimpl->states, &assets);
 
 		render_geom(m->geom);
 	}
