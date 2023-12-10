@@ -25,7 +25,7 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - add debug render modes (only render diffuse/normals/etc), like sketchfab model inspector views
 - add immediate mode styled debug renderer that can render lines, basic shapes(shphere, rect) and text
 - fix current camera/mesh/frustum light rotation functions to use a "transform" setup with same logic all over
-- material sorting
+- material sorting: https://realtimecollisiondetection.net/blog/?p=86
 - frustum culling
 - different worlds (loose octree / portal)
 - different camera setups (fps, rotate around origin, editor?)
