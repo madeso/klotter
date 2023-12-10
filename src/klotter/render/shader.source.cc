@@ -14,6 +14,13 @@ namespace klotter
 
 using Properties = std::unordered_map<std::string, std::string>;
 
+ShaderOptions ShaderOptions::with_transparent_cutoff() const
+{
+	auto ret = *this;
+	ret.transparent_cutoff = true;
+	return ret;
+}
+
 std::string generate(std::string_view str, const ShaderOptions& options)
 {
 	auto input = kainjow::mustache::mustache{std::string{str.begin(), str.end()}};
@@ -31,6 +38,8 @@ std::string generate(std::string_view str, const ShaderOptions& options)
 	data["number_of_directional_lights"] = (Str() << options.number_of_directional_lights).str();
 	data["number_of_point_lights"] = (Str() << options.number_of_point_lights).str();
 	data["number_of_frustum_lights"] = (Str() << options.number_of_frustum_lights).str();
+	data["transparent_cutoff"] = options.transparent_cutoff;
+
 	return input.render(data);
 }
 

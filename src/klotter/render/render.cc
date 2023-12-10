@@ -599,9 +599,12 @@ ShaderResource load_shaders(const RenderSettings& settings)
 	default_shader_options.number_of_point_lights = settings.number_of_point_lights;
 	default_shader_options.number_of_frustum_lights = settings.number_of_frustum_lights;
 
-	auto loaded_unlit = load_shader(global_shader_data, load_shader_source(unlit_shader_options));
-	auto loaded_default
-		= load_shader(global_shader_data, load_shader_source(default_shader_options));
+	auto loaded_unlit = load_shader(
+		global_shader_data, load_shader_source(unlit_shader_options.with_transparent_cutoff())
+	);
+	auto loaded_default = load_shader(
+		global_shader_data, load_shader_source(default_shader_options.with_transparent_cutoff())
+	);
 
 	auto loaded_unlit_transparency
 		= load_shader(global_shader_data, load_shader_source(unlit_shader_options));

@@ -12,6 +12,9 @@ struct ShaderOptions
 	int number_of_point_lights = 0;
 	int number_of_frustum_lights = 0;
 	int number_of_directional_lights = 0;
+
+	bool transparent_cutoff = false;
+	ShaderOptions with_transparent_cutoff() const;
 };
 
 struct ShaderSource

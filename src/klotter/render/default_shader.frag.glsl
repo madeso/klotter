@@ -185,6 +185,14 @@ void main()
     vec3 base_color = tex.rgb * v_color.rgb;
     float alpha = tex.a * u_material.diffuse_tint.a;
 
+{{#transparent_cutoff}}
+    if(alpha < 0.1)
+    {
+        discard;
+    }
+    alpha = 1.0;
+{{/transparent_cutoff}}
+
     // ambient color
     vec3 ambient_color = u_material.ambient_tint * base_color * u_ambient_light;
 
@@ -217,6 +225,13 @@ void main()
 {{#use_texture}}
     vec4 object_color = texture(u_material.diffuse_tex, v_tex_coord)
         * u_material.diffuse_tint.rgba * vec4(v_color.rgb, 1.0);
+{{#transparent_cutoff}}
+    if(object_color.a < 0.1)
+    {
+        discard;
+    }
+    object_color.a = 1.0;
+{{/transparent_cutoff}}
     o_frag_color = object_color;
 {{/use_texture}}
 {{^use_texture}}
