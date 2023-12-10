@@ -32,7 +32,6 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - implement better outlines that handles more meshes and hoepfully specify outline in screenspace: https://ameye.dev/notes/rendering-outlines/
 - complete rest of learn opengl
 
-  1. (feat. transparency) - Blending (Advanced OpenGL)
   1. (done?) Face culling (Advanced OpenGL)
   1. (feat. full screen effects) Framebuffers (Advanced OpenGL)
   1. (feat. depth in fse) Depth testing (Advanced OpenGL)
