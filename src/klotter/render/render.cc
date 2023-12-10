@@ -888,6 +888,12 @@ Renderer::Renderer(const RenderSettings& set)
 
 Renderer::~Renderer() = default;
 
+struct TransparentMesh
+{
+	std::shared_ptr<MeshInstance> mesh;
+	float squared_distance_to_camera;
+};
+
 void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
 	const auto has_outlined_meshes = std::any_of(
@@ -922,13 +928,14 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		glDrawElements(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, 0);
 	};
 
-	std::vector<std::shared_ptr<MeshInstance>> transparent_meshes;
+	std::vector<TransparentMesh> transparent_meshes;
 
 	for (auto& m: world.meshes)
 	{
 		if (m->material->is_transparent())
 		{
-			transparent_meshes.emplace_back(m);
+			transparent_meshes.emplace_back(TransparentMesh{
+				m, glm::length2(camera.position - m->position)});
 			continue;
 		}
 		StateChanger{&pimpl->states}
@@ -951,9 +958,16 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		render_geom(m->geom);
 	}
 
-	// todo(Gustav): depth sort meshes
-	for (auto& m: transparent_meshes)
+	std::sort(
+		transparent_meshes.begin(),
+		transparent_meshes.end(),
+		[](const auto& lhs, const auto& rhs)
+		{ return lhs.squared_distance_to_camera > rhs.squared_distance_to_camera; }
+	);
+
+	for (auto& tm: transparent_meshes)
 	{
+		const auto& m = tm.mesh;
 		StateChanger{&pimpl->states}
 			.depth_test(true)
 			.depth_mask(true)

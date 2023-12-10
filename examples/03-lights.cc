@@ -125,10 +125,13 @@ struct LightsSample : Sample
 
 			auto glass_mat = renderer->make_default_material();
 			glass_mat->diffuse = renderer->assets.get_glass();
-			glass_mat->alpha = 0.5f;
+			glass_mat->alpha = 0.3f;
 
 			auto glass = add_cube(geom, glass_mat);
 			glass->position = {0.0f, 0.0f, 1.0f};
+
+			glass = add_cube(geom, glass_mat);
+			glass->position = {0.0f, 0.0f, -1.0f};
 		}
 
 		{
