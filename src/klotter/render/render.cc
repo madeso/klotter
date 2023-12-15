@@ -168,7 +168,7 @@ struct StateChanger
 		StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass
 	)
 	{
-		const auto Csa = [](StencilAction sa)
+		const auto Csa = [](StencilAction sa) -> GLenum
 		{
 			switch (sa)
 			{
