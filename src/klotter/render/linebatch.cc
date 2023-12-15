@@ -12,7 +12,6 @@ DebugDrawer::DebugDrawer()
 	, line_layout(
 		  compile_shader_layout(compile_attribute_layouts({line_description}), line_description)
 	  )
-	// todo(Gustav): update shader to support set_model_projection_view
 	, line_shader(
 		  R"glsl(
             #version 430 core
@@ -64,6 +63,7 @@ LineBatch::LineBatch(ShaderProgram* shader)
 
 	constexpr auto vertex_size = 6 * sizeof(float);
 	constexpr auto max_vertices = 2 * max_lines;
+	constexpr auto max_indices = 2 * max_lines;
 
 	glGenBuffers(1, &vb);
 	glBindBuffer(GL_ARRAY_BUFFER, vb);
@@ -83,10 +83,31 @@ LineBatch::LineBatch(ShaderProgram* shader)
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, vertex_size, relative_offset(offset));
 	offset += 3;
+
+	std::vector<u32> indices;
+	indices.reserve(max_indices);
+
+	for (auto quad_index = 0; quad_index < max_lines; quad_index += 1)
+	{
+		const auto base = quad_index * 2;
+		indices.emplace_back(base + 0);
+		indices.emplace_back(base + 1);
+	}
+
+	ASSERT(max_indices == indices.size());
+
+	glGenBuffers(1, &ib);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ib);
+	glBufferData(
+		GL_ELEMENT_ARRAY_BUFFER, max_indices * sizeof(u32), indices.data(), GL_STATIC_DRAW
+	);
 }
 
 LineBatch::~LineBatch()
 {
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	glDeleteBuffers(1, &ib);
+
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glDeleteBuffers(1, &vb);
 
@@ -125,7 +146,7 @@ void LineBatch::submit()
 		return;
 	}
 
-	// todo(Gustav): this assumes set_model_projection_view has been called
+	// this assumes set_model_projection_view has been called
 
 	glBindVertexArray(va);
 
@@ -136,7 +157,7 @@ void LineBatch::submit()
 		static_cast<GLsizeiptr>(sizeof(float) * data.size()),
 		static_cast<const void*>(data.data())
 	);
-	glDrawArrays(GL_LINE, 0, 2 * lines);
+	glDrawElements(GL_LINES, 2 * lines, GL_UNSIGNED_INT, nullptr);
 
 	data.resize(0);
 	lines = 0;

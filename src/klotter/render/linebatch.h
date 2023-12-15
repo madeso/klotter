@@ -13,6 +13,7 @@ struct LineBatch
 	int lines = 0;
 	u32 va;
 	u32 vb;
+	u32 ib;
 
 	explicit LineBatch(ShaderProgram*);
 	~LineBatch();
