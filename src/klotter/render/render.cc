@@ -269,7 +269,7 @@ struct StateChanger
 };
 
 // ------------------------------------------------------------------------------------------------
-// ShaderResource
+// shader resources
 
 struct LoadedShader
 {
@@ -502,6 +502,7 @@ struct RendererPimpl
 {
 	ShaderResource shaders;
 	OpenglStates states;
+	DebugDrawer debug;
 
 	RendererPimpl(const RenderSettings& set)
 		: shaders(load_shaders(set))
@@ -554,7 +555,14 @@ CompiledGeomVertexAttributes Renderer::default_geom_layout()
 
 bool Renderer::is_loaded() const
 {
-	return pimpl->shaders.is_loaded();
+	return pimpl->shaders.is_loaded() && pimpl->debug.is_loaded();
+}
+
+void DebugRender::add_line(
+	const glm::vec3& from, const glm::vec3& to, const glm::vec3& color, LineStyle style
+)
+{
+	debug_lines.emplace_back(DebugLine{from, to, color, style});
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1057,6 +1065,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		render_geom(m->geom);
 	}
 
+	// render outline over all other meshes
 	if (has_outlined_meshes)
 	{
 		for (auto& m: world.meshes)
@@ -1087,6 +1096,37 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 			}
 		}
 	}
+
+	// render debug lines
+	// todo(Gustav): draw solid lines here
+	pimpl->debug.line_shader.use();
+	pimpl->debug.line_shader.set_mat(pimpl->debug.line_projection, compiled_camera.projection);
+	pimpl->debug.line_shader.set_mat(pimpl->debug.line_view, compiled_camera.view);
+	for (const auto line: debug.debug_lines)
+	{
+		if (line.style == LineStyle::always_visible) continue;
+		StateChanger{&pimpl->states}.depth_func(Compare::less).depth_test(true);
+		pimpl->debug.line_batch.line(line.from, line.to, line.color);
+	}
+	pimpl->debug.line_batch.submit();
+
+	for (const auto line: debug.debug_lines)
+	{
+		if (line.style != LineStyle::always_visible) continue;
+		StateChanger{&pimpl->states}.depth_test(false);
+		pimpl->debug.line_batch.line(line.from, line.to, line.color);
+	}
+	pimpl->debug.line_batch.submit();
+
+	// todo(Gustav): start drawing dashed lines here
+	for (const auto line: debug.debug_lines)
+	{
+		if (line.style != LineStyle::dashed_when_hidden) continue;
+		StateChanger{&pimpl->states}.depth_func(Compare::greater_equal).depth_test(true);
+		pimpl->debug.line_batch.line(line.from, line.to, line.color);
+	}
+	pimpl->debug.line_batch.submit();
+	debug.debug_lines.clear();
 }
 
 

@@ -32,6 +32,7 @@ set(src_render
     klotter/render/assets.cc klotter/render/assets.h
 
     klotter/render/vertex_layout.cc klotter/render/vertex_layout.h
+    klotter/render/linebatch.cc klotter/render/linebatch.h
 
     klotter/render/geom.h
     klotter/render/geom.builder.cc klotter/render/geom.builder.h

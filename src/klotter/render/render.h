@@ -12,6 +12,7 @@
 #include "klotter/render/assets.h"
 #include "klotter/render/vertex_layout.h"
 #include "klotter/render/geom.h"
+#include "klotter/render/linebatch.h"
 
 namespace klotter
 {
@@ -303,6 +304,31 @@ struct World
 	Lights lights;
 };
 
+enum LineStyle
+{
+	depth,
+	always_visible,
+	dashed_when_hidden
+};
+
+struct DebugLine
+{
+	glm::vec3 from;
+	glm::vec3 to;
+	glm::vec3 color;
+	LineStyle style;
+};
+
+struct DebugRender
+{
+	std::vector<DebugLine> debug_lines;
+
+	void add_line(
+		const glm::vec3& from, const glm::vec3& to, const glm::vec3& color, LineStyle style
+	);
+};
+
+
 struct RendererPimpl;
 
 /// the renderering "engine"
@@ -310,6 +336,7 @@ struct Renderer
 {
 	RenderSettings settings;
 	Assets assets;
+	DebugRender debug;
 
 	std::unique_ptr<RendererPimpl> pimpl;
 

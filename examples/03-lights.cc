@@ -190,13 +190,19 @@ struct LightsSample : Sample
 		float dt
 	) override
 	{
+		auto& fl = world.lights.frustum_lights[0];
 		if (follow_player)
 		{
-			auto& fl = world.lights.frustum_lights[0];
 			fl.position = camera->position;
 			fl.yaw = camera->yaw;
 			fl.pitch = camera->pitch;
 		}
+		renderer->debug.add_line(
+			glm::vec3{0, 0, 0},
+			glm::vec3{10.0f, 10.0f, 10.0f},
+			klotter::colors::orange,
+			klotter::LineStyle::always_visible
+		);
 		anim += dt * 0.25f;
 		apply_animation();
 		renderer->render(window_size, world, *camera);
