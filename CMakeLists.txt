@@ -26,7 +26,7 @@ add_library(project_warnings INTERFACE)
 
 target_link_libraries(project_options INTERFACE edit_and_continue)
 
-target_compile_features(project_options INTERFACE cxx_std_20)
+target_compile_features(project_options INTERFACE cxx_std_17)
 set_project_warnings(project_warnings)
 enable_sanitizers(project_options)
 

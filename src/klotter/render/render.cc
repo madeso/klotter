@@ -1003,9 +1003,16 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 
 	std::vector<TransparentMesh> transparent_meshes;
 
+	const auto make_rc_with_transparency = [](bool use_transparency)
+	{
+		RenderContext rc;
+		rc.use_transparency = use_transparency;
+		return rc;
+	};
+
 	for (auto& m: world.meshes)
 	{
-		const auto not_transparent = RenderContext{.use_transparency = false};
+		const auto not_transparent = make_rc_with_transparency(false);
 
 		if (m->material->is_transparent())
 		{
@@ -1042,7 +1049,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 
 	for (auto& tm: transparent_meshes)
 	{
-		const auto transparent = RenderContext{.use_transparency = true};
+		const auto transparent = make_rc_with_transparency(true);
 
 		const auto& m = tm.mesh;
 		StateChanger{&pimpl->states}
