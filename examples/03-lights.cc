@@ -201,7 +201,7 @@ struct LightsSample : Sample
 			glm::vec3{0, 0, 0},
 			glm::vec3{10.0f, 10.0f, 10.0f},
 			klotter::colors::orange,
-			klotter::LineStyle::always_visible
+			klotter::LineStyle::dashed_when_hidden
 		);
 		anim += dt * 0.25f;
 		apply_animation();

@@ -14,39 +14,80 @@ DebugDrawer::DebugDrawer()
 	  )
 	, line_shader(
 		  R"glsl(
-            #version 430 core
-            in vec3 a_position;
-            in vec3 a_color;
+			#version 430 core
+			in vec3 a_position;
+			in vec3 a_color;
 
-            uniform mat4 u_projection;
+			uniform mat4 u_projection;
 			uniform mat4 u_view;
 
-            out vec4 v_color;
+			out vec4 v_color;
+			out vec3 v_vert_pos;
+			flat out vec3 v_start_pos;
 
-            void main()
-            {
-                v_color = vec4(a_color, 1.0);
-                gl_Position = u_projection * u_view * vec4(a_position.xyz, 1.0);
-            }
-        )glsl",
+			void main()
+			{
+				v_color = vec4(a_color, 1.0);
+				vec4 pos = u_projection * u_view * vec4(a_position.xyz, 1.0);
+				gl_Position = pos;
+				v_vert_pos = pos.xyz / pos.w;
+				v_start_pos = v_vert_pos;
+			}
+		)glsl",
 		  R"glsl(
-            #version 430 core
+			#version 430 core
 
-            in vec4 v_color;
+			in vec4 v_color;
+			flat in vec3 v_start_pos;
+			in vec3 v_vert_pos;
 
-            out vec4 color;
+			uniform vec2  u_resolution;
+			uniform float u_dash_size;
+			uniform float u_gap_size;
 
-            void main()
-            {
-                color = v_color;
-            }
-        )glsl",
+			out vec4 color;
+
+			void main()
+			{
+				if(u_resolution.x > 0.0)
+				{
+					vec2 nor = (v_vert_pos.xy - v_start_pos.xy);
+					vec2 dir = nor * u_resolution/2.0;
+					float dist = length(dir);
+
+					if (fract(dist / (u_dash_size + u_gap_size)) > u_dash_size/(u_dash_size + u_gap_size))
+					{
+						discard;
+					}
+					color = v_color;
+				}
+				else
+				{
+					color = v_color;
+				}
+			}
+		)glsl",
 		  line_layout
 	  )
 	, line_projection(line_shader.get_uniform("u_projection"))
 	, line_view(line_shader.get_uniform("u_view"))
+	, line_resolution(line_shader.get_uniform("u_resolution"))
+	, line_dash_size(line_shader.get_uniform("u_dash_size"))
+	, line_gap_size(line_shader.get_uniform("u_gap_size"))
 	, line_batch(&line_shader)
 {
+}
+
+void DebugDrawer::set_line_dash(const glm::vec2& resolution, float dash_size, float gap_size)
+{
+	line_shader.set_vec2(line_resolution, resolution);
+	line_shader.set_float(line_dash_size, dash_size);
+	line_shader.set_float(line_gap_size, gap_size);
+}
+
+void DebugDrawer::set_line_line()
+{
+	line_shader.set_vec2(line_resolution, {-1.0f, -1.0f});
 }
 
 bool DebugDrawer::is_loaded() const

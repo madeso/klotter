@@ -33,6 +33,8 @@ struct ShaderProgram
 
 	// shader needs to be bound
 	void set_float(const Uniform& uniform, float value) const;
+	void set_vec2(const Uniform& uniform, float x, float y) const;
+	void set_vec2(const Uniform& uniform, const glm::vec2& v) const;
 	void set_vec3(const Uniform& uniform, float x, float y, float z) const;
 	void set_vec3(const Uniform& uniform, const glm::vec3& v) const;
 	void set_vec4(const Uniform& uniform, float x, float y, float z, float w) const;

@@ -222,6 +222,24 @@ void ShaderProgram::set_float(const Uniform& uniform, float value) const
 	glUniform1f(uniform.location, value);
 }
 
+void ShaderProgram::set_vec2(const Uniform& uniform, float x, float y) const
+{
+	ASSERT(is_shader_bound(shader_program));
+	if (uniform.is_valid() == false)
+	{
+		return;
+	}
+	ASSERT(uniform.debug_shader_program == shader_program);
+
+	ASSERT(uniform.texture == -1 && "uniform is a texture not a vec3");
+	glUniform2f(uniform.location, x, y);
+}
+
+void ShaderProgram::set_vec2(const Uniform& uniform, const glm::vec2& v) const
+{
+	set_vec2(uniform, v.x, v.y);
+}
+
 void ShaderProgram::set_vec3(const Uniform& uniform, float x, float y, float z) const
 {
 	ASSERT(is_shader_bound(shader_program));

@@ -34,9 +34,15 @@ struct DebugDrawer
 	ShaderProgram line_shader;
 	Uniform line_projection;
 	Uniform line_view;
+	Uniform line_resolution;
+	Uniform line_dash_size;
+	Uniform line_gap_size;
 	LineBatch line_batch;
 
 	DebugDrawer();
+
+	void set_line_dash(const glm::vec2& resolution, float dash_size, float gap_size);
+	void set_line_line();
 
 	bool is_loaded() const;
 };

@@ -1041,35 +1041,56 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 	}
 
 	// render debug lines
-	// todo(Gustav): draw solid lines here
-	pimpl->debug.line_shader.use();
-	pimpl->debug.line_shader.set_mat(pimpl->debug.line_projection, compiled_camera.projection);
-	pimpl->debug.line_shader.set_mat(pimpl->debug.line_view, compiled_camera.view);
-	for (const auto line: debug.debug_lines)
 	{
-		if (line.style == LineStyle::always_visible) continue;
-		StateChanger{&pimpl->states}.depth_func(Compare::less).depth_test(true);
-		pimpl->debug.line_batch.line(line.from, line.to, line.color);
-	}
-	pimpl->debug.line_batch.submit();
+		int line_state = -1;
+		constexpr int line_state_solid = 1;
+		constexpr int line_state_dash = 0;
 
-	for (const auto line: debug.debug_lines)
-	{
-		if (line.style != LineStyle::always_visible) continue;
-		StateChanger{&pimpl->states}.depth_test(false);
-		pimpl->debug.line_batch.line(line.from, line.to, line.color);
-	}
-	pimpl->debug.line_batch.submit();
+		// todo(Gustav): draw solid lines here
+		pimpl->debug.line_shader.use();
+		pimpl->debug.line_shader.set_mat(pimpl->debug.line_projection, compiled_camera.projection);
+		pimpl->debug.line_shader.set_mat(pimpl->debug.line_view, compiled_camera.view);
+		for (const auto line: debug.debug_lines)
+		{
+			if (line.style == LineStyle::always_visible) continue;
+			StateChanger{&pimpl->states}.depth_func(Compare::less).depth_test(true);
+			if (line_state != line_state_solid)
+			{
+				pimpl->debug.set_line_line();
+				line_state = line_state_solid;
+			}
+			pimpl->debug.line_batch.line(line.from, line.to, line.color);
+		}
+		pimpl->debug.line_batch.submit();
 
-	// todo(Gustav): start drawing dashed lines here
-	for (const auto line: debug.debug_lines)
-	{
-		if (line.style != LineStyle::dashed_when_hidden) continue;
-		StateChanger{&pimpl->states}.depth_func(Compare::greater_equal).depth_test(true);
-		pimpl->debug.line_batch.line(line.from, line.to, line.color);
+		for (const auto line: debug.debug_lines)
+		{
+			if (line.style != LineStyle::always_visible) continue;
+			StateChanger{&pimpl->states}.depth_test(false);
+			if (line_state != line_state_solid)
+			{
+				pimpl->debug.set_line_line();
+				line_state = line_state_solid;
+			}
+			pimpl->debug.line_batch.line(line.from, line.to, line.color);
+		}
+		pimpl->debug.line_batch.submit();
+
+		// todo(Gustav): start drawing dashed lines here
+		for (const auto line: debug.debug_lines)
+		{
+			if (line.style != LineStyle::dashed_when_hidden) continue;
+			StateChanger{&pimpl->states}.depth_func(Compare::greater).depth_test(false);
+			if (line_state != line_state_dash)
+			{
+				pimpl->debug.set_line_dash({window_size.x, window_size.y}, 20.0f, 20.0f);
+				line_state = line_state_dash;
+			}
+			pimpl->debug.line_batch.line(line.from, line.to, line.color);
+		}
+		pimpl->debug.line_batch.submit();
+		debug.debug_lines.clear();
 	}
-	pimpl->debug.line_batch.submit();
-	debug.debug_lines.clear();
 
 	std::sort(
 		transparent_meshes.begin(),
