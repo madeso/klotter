@@ -20,17 +20,18 @@ DebugDrawer::DebugDrawer()
 
 			uniform mat4 u_projection;
 			uniform mat4 u_view;
+			uniform vec2  u_resolution;
 
 			out vec4 v_color;
-			out vec3 v_vert_pos;
-			flat out vec3 v_start_pos;
+			out vec2 v_vert_pos;
+			flat out vec2 v_start_pos;
 
 			void main()
 			{
 				v_color = vec4(a_color, 1.0);
 				vec4 pos = u_projection * u_view * vec4(a_position.xyz, 1.0);
 				gl_Position = pos;
-				v_vert_pos = pos.xyz / pos.w;
+				v_vert_pos = ((pos.xy / pos.w) + 1)/2.0 * u_resolution;
 				v_start_pos = v_vert_pos;
 			}
 		)glsl",
@@ -38,12 +39,12 @@ DebugDrawer::DebugDrawer()
 			#version 430 core
 
 			in vec4 v_color;
-			flat in vec3 v_start_pos;
-			in vec3 v_vert_pos;
+			flat in vec2 v_start_pos;
+			in vec2 v_vert_pos;
 
-			uniform vec2  u_resolution;
 			uniform float u_dash_size;
 			uniform float u_gap_size;
+			uniform vec2  u_resolution;
 
 			out vec4 color;
 
@@ -51,11 +52,13 @@ DebugDrawer::DebugDrawer()
 			{
 				if(u_resolution.x > 0.0)
 				{
-					vec2 nor = (v_vert_pos.xy - v_start_pos.xy);
-					vec2 dir = nor * u_resolution/2.0;
-					float dist = length(dir);
+					float seg_len = u_dash_size + u_gap_size;
 
-					if (fract(dist / (u_dash_size + u_gap_size)) > u_dash_size/(u_dash_size + u_gap_size))
+					float dash_seg = u_dash_size/seg_len;
+
+					float cur = length(v_vert_pos - v_start_pos);
+					float cur_seg = fract(cur / seg_len);
+					if(cur_seg > dash_seg)
 					{
 						discard;
 					}
