@@ -56,4 +56,15 @@ CompiledCamera compile(const Camera& cam, const glm::ivec2 window_size)
 	return CompiledCamera{projection, view, cam.position};
 }
 
+glm::vec2 to_screen(const CompiledCamera& cam, const glm::vec3& pos, const glm::vec2& resolution)
+{
+	const auto clip = cam.projection * cam.view * glm::vec4(pos, 1.0f);
+	const auto ndc = glm::vec3(clip) / clip.w;
+	const auto c = [](float f)
+	{
+		return (f + 1.0f) / 2.0f;
+	};
+	return glm::vec2{c(ndc.x), c(ndc.y)} * resolution;
+}
+
 }  //  namespace klotter

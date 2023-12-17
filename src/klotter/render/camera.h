@@ -40,4 +40,6 @@ CameraVectors create_vectors(float yaw, float pitch);
 glm::mat4 create_view_mat(const glm::vec3& pos, const CameraVectors& cv);
 CompiledCamera compile(const Camera&, const glm::ivec2 window_size);
 
+glm::vec2 to_screen(const CompiledCamera& cam, const glm::vec3& pos, const glm::vec2& resolution);
+
 }  //  namespace klotter
