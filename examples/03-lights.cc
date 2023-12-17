@@ -183,6 +183,9 @@ struct LightsSample : Sample
 		}
 	}
 
+	glm::ivec2 ws;
+	glm::vec2 wp;
+
 	void on_render(
 		const glm::ivec2& window_size,
 		klotter::Renderer* renderer,
@@ -197,9 +200,12 @@ struct LightsSample : Sample
 			fl.yaw = camera->yaw;
 			fl.pitch = camera->pitch;
 		}
+		const auto target = glm::vec3{10.0f, 10.0f, 10.0f};
+		ws = window_size;
+		wp = to_screen(compile(*camera, window_size), target, window_size);
 		renderer->debug.add_line(
 			glm::vec3{0, 0, 0},
-			glm::vec3{10.0f, 10.0f, 10.0f},
+			target,
 			klotter::colors::orange,
 			klotter::LineStyle::dashed_when_hidden
 		);
@@ -232,6 +238,8 @@ struct LightsSample : Sample
 		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
 		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());
 		ImGui::LabelText("yaw", "%s", (Str{} << camera->yaw).str().c_str());
+		ImGui::DragInt2("ws", glm::value_ptr(ws));
+		ImGui::DragFloat2("wp", glm::value_ptr(wp));
 
 		ImGui::DragFloat("Ambient", &world.lights.ambient, FAC_SPEED, 0.0f, 1.0f);
 
