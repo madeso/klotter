@@ -230,6 +230,13 @@ struct CompiledGeom
 
 std::shared_ptr<CompiledGeom> compile_geom(const Geom&, const CompiledGeomVertexAttributes& layout);
 
+struct LocalAxis
+{
+	glm::vec3 x;
+	glm::vec3 y;
+	glm::vec3 z;
+};
+
 /// Stores Geom + Material (aka a mesh) and its current transform
 struct MeshInstance
 {
@@ -240,6 +247,8 @@ struct MeshInstance
 
 	glm::vec3 position;
 	glm::vec3 rotation;	 ///< yaw pitch roll
+
+	LocalAxis get_local_axis() const;
 };
 
 std::shared_ptr<MeshInstance> make_mesh_instance(

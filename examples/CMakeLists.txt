@@ -3,6 +3,7 @@ set(src
     01-cube.cc
     02-scene.cc
     03-lights.cc
+    03-transform.cc
 
     sample.cc
     sample.h

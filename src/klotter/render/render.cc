@@ -967,6 +967,20 @@ struct TransparentMesh
 	float squared_distance_to_camera;
 };
 
+glm::mat4 get_mesh_rotation_matrix(const MeshInstance* m)
+{
+	return glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
+}
+
+LocalAxis MeshInstance::get_local_axis() const
+{
+	const auto m = get_mesh_rotation_matrix(this);
+	return {
+		glm::vec3{m * glm::vec4{1, 0, 0, 0}},
+		glm::vec3{m * glm::vec4{0, 1, 0, 0}},
+		glm::vec3{m * glm::vec4{0, 0, 1, 0}}};
+}
+
 void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
 	const auto has_outlined_meshes = std::any_of(
@@ -991,7 +1005,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 	const auto calc_mesh_transform = [](std::shared_ptr<MeshInstance> m)
 	{
 		const auto translation = glm::translate(glm::mat4(1.0f), m->position);
-		const auto rotation = glm::yawPitchRoll(m->rotation.x, m->rotation.y, m->rotation.z);
+		const auto rotation = get_mesh_rotation_matrix(m.get());
 		return translation * rotation;
 	};
 	const auto render_geom = [](std::shared_ptr<CompiledGeom> geom)
