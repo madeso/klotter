@@ -988,50 +988,48 @@ glm::mat4 rot_from_basis(const glm::vec3& a, const glm::vec3& b, const glm::vec3
 	return glm::mat4{glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
 }
 
-glm::mat4 billboard_calc_fixed_right(const glm::vec3& normal, const glm::vec3& up)
-{
-	const auto right = glm::normalize(glm::cross(normal, up));
-	const auto new_up = glm::normalize(glm::cross(right, normal));
-	return rot_from_basis(right, new_up, normal);
-}
-
-glm::mat4 billboard_calc_fixed_up(const glm::vec3& normal, const glm::vec3& up)
-{
-	const auto right = glm::normalize(glm::cross(normal, up));
-	const auto new_normal = glm::normalize(glm::cross(right, up));
-	return rot_from_basis(right, up, new_normal);
-};
-
 glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCamera& cc)
 {
+	const auto calc_fixed_right = [](const glm::vec3& normal, const glm::vec3& up)
+	{
+		const auto right = glm::normalize(glm::cross(normal, up));
+		const auto new_up = glm::normalize(glm::cross(right, normal));
+		return rot_from_basis(right, new_up, normal);
+	};
+
+	const auto calc_fixed_up = [](const glm::vec3& normal, const glm::vec3& up)
+	{
+		const auto right = glm::normalize(glm::cross(normal, up));
+		const auto new_normal = glm::normalize(glm::cross(right, up));
+		return rot_from_basis(right, up, new_normal);
+	};
+
 	const auto translation = glm::translate(glm::mat4(1.0f), m->position);
 
 	switch (m->billboarding)
 	{
 	case Billboarding::screen:
 		{
-			const auto rotation = billboard_calc_fixed_right(
-				glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0}
-			);
+			const auto rotation
+				= calc_fixed_right(glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0});
 			return translation * rotation;
 		}
 	case Billboarding::screen_fast:
 		{
-			// todo(Gustav): move to precalculated?
-			const auto rotation = billboard_calc_fixed_right(cc.in, glm::vec3{0, 1, 0});
+			// todo(Gustav): move to precalculated or remove?
+			const auto rotation = calc_fixed_right(cc.in, glm::vec3{0, 1, 0});
 			return translation * rotation;
 		}
 	case Billboarding::axial_y:
 		{
-			const auto rotation = billboard_calc_fixed_up(
-				glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0}
-			);
+			const auto rotation
+				= calc_fixed_up(glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0});
 			return translation * rotation;
 		}
 	case Billboarding::axial_y_fast:
 		{
-			// todo(Gustav): move to precalculated?
-			const auto rotation = billboard_calc_fixed_up(cc.in, glm::vec3{0, 1, 0});
+			// todo(Gustav): move to precalculated or remove?
+			const auto rotation = calc_fixed_up(cc.in, glm::vec3{0, 1, 0});
 			return translation * rotation;
 		}
 	default:
