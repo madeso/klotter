@@ -983,6 +983,34 @@ LocalAxis MeshInstance::get_local_axis() const
 		glm::vec3{m * glm::vec4{0, 0, 1, 0}}};
 }
 
+glm::mat4 billboard_calc_fixed_right(const glm::vec3& normal, const glm::vec3& up)
+{
+	const auto right = glm::normalize(glm::cross(normal, up));
+	const auto new_up = glm::normalize(glm::cross(right, normal));
+
+	const auto a = right;
+	const auto b = new_up;
+	const auto c = normal;
+
+	const auto rot
+		= glm::mat4{glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
+	return rot;
+}
+
+glm::mat4 billboard_calc_fixed_up(const glm::vec3& normal, const glm::vec3& up)
+{
+	const auto right = glm::normalize(glm::cross(normal, up));
+	const auto new_normal = glm::normalize(glm::cross(right, up));
+
+	const auto a = right;
+	const auto b = up;
+	const auto c = new_normal;
+
+	const auto rot
+		= glm::mat4{glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
+	return rot;
+};
+
 void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
 	const auto has_outlined_meshes = std::any_of(
@@ -1006,88 +1034,13 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 
 	const auto calc_mesh_transform = [&](std::shared_ptr<MeshInstance> m)
 	{
-		const auto calc_fixed_right = [&](const glm::vec3& normal, const glm::vec3& up)
-		{
-			const auto right = glm::normalize(glm::cross(normal, up));
-			const auto new_up = glm::normalize(glm::cross(right, normal));
-
-			const auto a = right;
-			const auto b = new_up;
-			const auto c = normal;
-
-			// debug code
-			{
-				const auto cp = m->position;
-				const auto length = 1.0f;
-				debug.add_line(
-					cp,
-					cp + a * length,
-					klotter::colors::red_vermillion,
-					klotter::LineStyle::dashed_when_hidden
-				);
-				debug.add_line(
-					cp,
-					cp + b * length,
-					klotter::colors::blue_sky,
-					klotter::LineStyle::dashed_when_hidden
-				);
-				debug.add_line(
-					cp,
-					cp + c * length,
-					klotter::colors::white,
-					klotter::LineStyle::dashed_when_hidden
-				);
-			}
-
-			const auto rot = glm::mat4{
-				glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
-			return rot;
-		};
-		const auto calc_fixed_up = [&](const glm::vec3& normal, const glm::vec3& up)
-		{
-			const auto right = glm::normalize(glm::cross(normal, up));
-			const auto new_normal = glm::normalize(glm::cross(right, up));
-
-			const auto a = right;
-			const auto b = up;
-			const auto c = new_normal;
-
-			// debug code
-			{
-				const auto cp = m->position;
-				const auto length = 1.0f;
-				debug.add_line(
-					cp,
-					cp + a * length,
-					klotter::colors::red_vermillion,
-					klotter::LineStyle::dashed_when_hidden
-				);
-				debug.add_line(
-					cp,
-					cp + b * length,
-					klotter::colors::blue_sky,
-					klotter::LineStyle::dashed_when_hidden
-				);
-				debug.add_line(
-					cp,
-					cp + c * length,
-					klotter::colors::white,
-					klotter::LineStyle::dashed_when_hidden
-				);
-			}
-
-			const auto rot = glm::mat4{
-				glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
-			return rot;
-		};
-
 		const auto translation = glm::translate(glm::mat4(1.0f), m->position);
 
 		switch (m->billboarding)
 		{
 		case Billboarding::screen:
 			{
-				const auto rotation = calc_fixed_right(
+				const auto rotation = billboard_calc_fixed_right(
 					glm::normalize(m->position - camera.position), glm::vec3{0, 1, 0}
 				);
 				return translation * rotation;
@@ -1095,12 +1048,13 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		case Billboarding::screen_fast:
 			{
 				// todo(Gustav): move to precalculated?
-				const auto rotation = calc_fixed_right(compiled_camera.in, glm::vec3{0, 1, 0});
+				const auto rotation
+					= billboard_calc_fixed_right(compiled_camera.in, glm::vec3{0, 1, 0});
 				return translation * rotation;
 			}
 		case Billboarding::axial_y:
 			{
-				const auto rotation = calc_fixed_up(
+				const auto rotation = billboard_calc_fixed_up(
 					glm::normalize(m->position - camera.position), glm::vec3{0, 1, 0}
 				);
 				return translation * rotation;
@@ -1108,7 +1062,8 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		case Billboarding::axial_y_fast:
 			{
 				// todo(Gustav): move to precalculated?
-				const auto rotation = calc_fixed_up(compiled_camera.in, glm::vec3{0, 1, 0});
+				const auto rotation
+					= billboard_calc_fixed_up(compiled_camera.in, glm::vec3{0, 1, 0});
 				return translation * rotation;
 			}
 		default:
