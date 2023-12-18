@@ -33,7 +33,6 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - implement virtual textures for use in in-game cameras, mirrors, portals and computer screens
 - complete rest of learn opengl
 
-  1. (done?) Face culling (Advanced OpenGL)
   1. (feat. full screen effects) Framebuffers (Advanced OpenGL)
   1. (feat. depth in fse) Depth testing (Advanced OpenGL)
   1. (feat. skybox, reflection/refraction, point light cookies) Cubemaps (Advanced OpenGL)
