@@ -983,32 +983,63 @@ LocalAxis MeshInstance::get_local_axis() const
 		glm::vec3{m * glm::vec4{0, 0, 1, 0}}};
 }
 
+glm::mat4 rot_from_basis(const glm::vec3& a, const glm::vec3& b, const glm::vec3& c)
+{
+	return glm::mat4{glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
+}
+
 glm::mat4 billboard_calc_fixed_right(const glm::vec3& normal, const glm::vec3& up)
 {
 	const auto right = glm::normalize(glm::cross(normal, up));
 	const auto new_up = glm::normalize(glm::cross(right, normal));
-
-	const auto a = right;
-	const auto b = new_up;
-	const auto c = normal;
-
-	const auto rot
-		= glm::mat4{glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
-	return rot;
+	return rot_from_basis(right, new_up, normal);
 }
 
 glm::mat4 billboard_calc_fixed_up(const glm::vec3& normal, const glm::vec3& up)
 {
 	const auto right = glm::normalize(glm::cross(normal, up));
 	const auto new_normal = glm::normalize(glm::cross(right, up));
+	return rot_from_basis(right, up, new_normal);
+};
 
-	const auto a = right;
-	const auto b = up;
-	const auto c = new_normal;
+glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCamera& cc)
+{
+	const auto translation = glm::translate(glm::mat4(1.0f), m->position);
 
-	const auto rot
-		= glm::mat4{glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
-	return rot;
+	switch (m->billboarding)
+	{
+	case Billboarding::screen:
+		{
+			const auto rotation = billboard_calc_fixed_right(
+				glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0}
+			);
+			return translation * rotation;
+		}
+	case Billboarding::screen_fast:
+		{
+			// todo(Gustav): move to precalculated?
+			const auto rotation = billboard_calc_fixed_right(cc.in, glm::vec3{0, 1, 0});
+			return translation * rotation;
+		}
+	case Billboarding::axial_y:
+		{
+			const auto rotation = billboard_calc_fixed_up(
+				glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0}
+			);
+			return translation * rotation;
+		}
+	case Billboarding::axial_y_fast:
+		{
+			// todo(Gustav): move to precalculated?
+			const auto rotation = billboard_calc_fixed_up(cc.in, glm::vec3{0, 1, 0});
+			return translation * rotation;
+		}
+	default:
+		{
+			const auto rotation = get_mesh_rotation_matrix(m.get());
+			return translation * rotation;
+		}
+	}
 };
 
 void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
@@ -1032,47 +1063,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 
 	const auto compiled_camera = compile(camera, window_size);
 
-	const auto calc_mesh_transform = [&](std::shared_ptr<MeshInstance> m)
-	{
-		const auto translation = glm::translate(glm::mat4(1.0f), m->position);
 
-		switch (m->billboarding)
-		{
-		case Billboarding::screen:
-			{
-				const auto rotation = billboard_calc_fixed_right(
-					glm::normalize(m->position - camera.position), glm::vec3{0, 1, 0}
-				);
-				return translation * rotation;
-			}
-		case Billboarding::screen_fast:
-			{
-				// todo(Gustav): move to precalculated?
-				const auto rotation
-					= billboard_calc_fixed_right(compiled_camera.in, glm::vec3{0, 1, 0});
-				return translation * rotation;
-			}
-		case Billboarding::axial_y:
-			{
-				const auto rotation = billboard_calc_fixed_up(
-					glm::normalize(m->position - camera.position), glm::vec3{0, 1, 0}
-				);
-				return translation * rotation;
-			}
-		case Billboarding::axial_y_fast:
-			{
-				// todo(Gustav): move to precalculated?
-				const auto rotation
-					= billboard_calc_fixed_up(compiled_camera.in, glm::vec3{0, 1, 0});
-				return translation * rotation;
-			}
-		default:
-			{
-				const auto rotation = get_mesh_rotation_matrix(m.get());
-				return translation * rotation;
-			}
-		}
-	};
 	const auto render_geom = [](std::shared_ptr<CompiledGeom> geom)
 	{
 		ASSERT(is_bound_for_shader(geom->debug_types));
@@ -1112,7 +1103,9 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 		}
 		m->material->use_shader(not_transparent);
-		m->material->set_uniforms(not_transparent, compiled_camera, calc_mesh_transform(m));
+		m->material->set_uniforms(
+			not_transparent, compiled_camera, calc_mesh_transform(m, compiled_camera)
+		);
 		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
 		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
 
@@ -1196,7 +1189,9 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 		}
 		m->material->use_shader(transparent);
-		m->material->set_uniforms(transparent, compiled_camera, calc_mesh_transform(m));
+		m->material->set_uniforms(
+			transparent, compiled_camera, calc_mesh_transform(m, compiled_camera)
+		);
 		m->material->bind_textures(transparent, &pimpl->states, &assets);
 		m->material->apply_lights(transparent, world.lights, settings, &pimpl->states, &assets);
 
@@ -1227,7 +1222,7 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 					shader.projection,
 					shader.view,
 					compiled_camera,
-					calc_mesh_transform(m) * small_scale_mat
+					calc_mesh_transform(m, compiled_camera) * small_scale_mat
 				);
 
 				render_geom(m->geom);
