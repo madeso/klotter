@@ -481,7 +481,7 @@ Builder create_box(float x, float y, float z, bool invert, const glm::vec3& colo
 	return b;
 }
 
-Builder create_plane(float x, float z, bool invert, const glm::vec3& color)
+Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color)
 {
 	Builder b;
 

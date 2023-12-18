@@ -237,6 +237,15 @@ struct LocalAxis
 	glm::vec3 z;
 };
 
+enum Billboarding
+{
+	none,
+	screen,
+	screen_fast,
+	world_fast,
+	axial_y
+};
+
 /// Stores Geom + Material (aka a mesh) and its current transform
 struct MeshInstance
 {
@@ -247,6 +256,7 @@ struct MeshInstance
 
 	glm::vec3 position;
 	glm::vec3 rotation;	 ///< yaw pitch roll
+	Billboarding billboarding = Billboarding::none;	 ///< if not none, rotation is ignored
 
 	LocalAxis get_local_axis() const;
 };

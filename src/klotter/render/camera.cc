@@ -53,7 +53,7 @@ CompiledCamera compile(const Camera& cam, const glm::ivec2 window_size)
 	const auto camera_space = create_vectors(cam);
 	const auto view = create_view_mat(cam.position, camera_space);
 
-	return CompiledCamera{projection, view, cam.position};
+	return CompiledCamera{projection, view, cam.position, camera_space.front};
 }
 
 glm::vec2 to_screen(const CompiledCamera& cam, const glm::vec3& pos, const glm::vec2& resolution)

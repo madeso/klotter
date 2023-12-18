@@ -73,7 +73,7 @@ struct Builder
 };
 
 Builder create_box(float w, float h, float d, bool invert, const glm::vec3& color = colors::white);
-Builder create_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
+Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
 
 Builder create_xy_plane(float x, float y, bool two_sided, const glm::vec3& color = colors::white);
 
