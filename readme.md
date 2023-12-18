@@ -30,6 +30,7 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - different worlds (loose octree / portal)
 - different camera setups (fps, rotate around origin, editor?)
 - implement better outlines that handles more meshes and hoepfully specify outline in screenspace: https://ameye.dev/notes/rendering-outlines/
+- implement virtual textures for use in in-game cameras, mirrors, portals and computer screens
 - complete rest of learn opengl
 
   1. (done?) Face culling (Advanced OpenGL)
