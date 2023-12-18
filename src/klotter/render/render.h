@@ -242,8 +242,8 @@ enum Billboarding
 	none,
 	screen,
 	screen_fast,
-	world_fast,
-	axial_y
+	axial_y,
+	axial_y_fast
 };
 
 /// Stores Geom + Material (aka a mesh) and its current transform

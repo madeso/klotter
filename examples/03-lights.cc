@@ -146,11 +146,11 @@ struct LightsSample : Sample
 
 			auto glass = add_cube(geom, glass_mat);
 			glass->position = {1.0f, 0.0f, 0.0f};
-			glass->billboarding = Billboarding::screen;
+			glass->billboarding = Billboarding::axial_y;
 
 			glass = add_cube(geom, glass_mat);
 			glass->position = {-1.0f, 0.0f, -1.0f};
-			glass->billboarding = Billboarding::screen;
+			glass->billboarding = Billboarding::axial_y_fast;
 		}
 
 		{
