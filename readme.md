@@ -31,6 +31,9 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - different camera setups (fps, rotate around origin, editor?)
 - implement better outlines that handles more meshes and hoepfully specify outline in screenspace: https://ameye.dev/notes/rendering-outlines/
 - implement virtual textures for use in in-game cameras, mirrors, portals and computer screens
+- flickering lights: https://www.alanzucconi.com/2021/06/15/valve-flickering-lights/
+- river system: https://twitter.com/JasperRLZ/status/1511951178753445896?t=yhT2wJVw8-iJlyBqADf-Yw&s=09
+  > A few people were asking me how the dynamic water surface worked. Quite simple! Two sine waves, one going across the river, the other going down the river. With heights and speeds dialed into tasteful values, and some extra texture scrolling, the result is surprisingly dynamic.
 - complete rest of learn opengl
 
   1. (feat. full screen effects) Framebuffers (Advanced OpenGL)
