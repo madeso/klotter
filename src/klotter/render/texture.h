@@ -16,7 +16,8 @@ enum class TextureEdge
 enum class TextureRenderStyle
 {
 	pixel,
-	smooth
+	mipmap,
+	linear
 };
 
 

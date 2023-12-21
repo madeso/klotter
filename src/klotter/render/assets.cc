@@ -26,7 +26,7 @@ std::shared_ptr<Texture> get_or_load(
 	if (*texture == nullptr)
 	{
 		*texture = std::make_shared<Texture>(
-			load_image_from_embedded(bin, texture_edge, TextureRenderStyle::smooth, transparency)
+			load_image_from_embedded(bin, texture_edge, TextureRenderStyle::mipmap, transparency)
 		);
 	}
 	return *texture;

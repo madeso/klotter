@@ -33,6 +33,30 @@ Texture::Texture()
 {
 }
 
+void set_texture_wrap(TextureEdge te)
+{
+	const auto wrap = te == TextureEdge::clamp ? GL_CLAMP_TO_EDGE : GL_REPEAT;
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrap);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrap);
+}
+
+struct MinMagFilter
+{
+	GLint min;
+	GLint mag;
+};
+
+MinMagFilter min_mag_from_trs(TextureRenderStyle trs)
+{
+	switch (trs)
+	{
+	case TextureRenderStyle::pixel: return {GL_NEAREST, GL_NEAREST};
+	case TextureRenderStyle::linear: return {GL_LINEAR, GL_LINEAR};
+	case TextureRenderStyle::mipmap: return {GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR};
+	default: DIE("Invalid texture render style"); return {GL_NEAREST, GL_NEAREST};
+	}
+}
+
 Texture::Texture(
 	void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t
 )
@@ -40,43 +64,32 @@ Texture::Texture(
 	, width(w)
 	, height(h)
 {
+	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_2D, id);
 
-	const auto wrap = te == TextureEdge::clamp ? GL_CLAMP_TO_EDGE : GL_REPEAT;
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrap);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrap);
+	set_texture_wrap(te);
 
-	const auto render_pixels = trs == TextureRenderStyle::pixel;
-
-	const auto min_filter = render_pixels ? GL_NEAREST : GL_LINEAR_MIPMAP_LINEAR;
-	const auto mag_filter = render_pixels ? GL_NEAREST : GL_LINEAR;
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, min_filter);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, mag_filter);
+	const auto filter = min_mag_from_trs(trs);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter.min);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter.mag);
 
 	const auto include_transparency = t == Transparency::include;
 
-	if (pixel_data == nullptr)
+	glTexImage2D(
+		GL_TEXTURE_2D,
+		0,
+		include_transparency ? GL_RGBA : GL_RGB,
+		width,
+		height,
+		0,
+		include_transparency ? GL_RGBA : GL_RGB,
+		GL_UNSIGNED_BYTE,
+		pixel_data
+	);
+
+	if (trs == TextureRenderStyle::mipmap)
 	{
-		LOG_ERROR("ERROR: Failed to load image.");
-		unload();
-	}
-	else
-	{
-		glTexImage2D(
-			GL_TEXTURE_2D,
-			0,
-			include_transparency ? GL_RGBA : GL_RGB,
-			width,
-			height,
-			0,
-			include_transparency ? GL_RGBA : GL_RGB,
-			GL_UNSIGNED_BYTE,
-			pixel_data
-		);
-		if (render_pixels == false)
-		{
-			glGenerateMipmap(GL_TEXTURE_2D);
-		}
+		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 }
 
@@ -147,10 +160,7 @@ Texture LoadImage(
 
 	auto loaded = Texture{pixel_data, width, height, te, trs, t};
 
-	if (pixel_data != nullptr)
-	{
-		stbi_image_free(pixel_data);
-	}
+	stbi_image_free(pixel_data);
 
 	return loaded;
 }
