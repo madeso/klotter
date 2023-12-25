@@ -11,6 +11,8 @@ embed(src_assets
     AS_TEXT
         klotter/render/default_shader.vert.glsl
         klotter/render/default_shader.frag.glsl
+        klotter/render/pp.vert.glsl
+        klotter/render/pp.invert.frag.glsl
 )
 
 set(shaders

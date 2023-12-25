@@ -3,6 +3,10 @@
 namespace klotter
 {
 
+/** \addtogroup geom Geom
+ *  @{
+*/
+
 /// A single vertex in a Geom
 struct Vertex
 {
@@ -26,5 +30,9 @@ struct Geom
 	std::vector<Vertex> vertices;
 	std::vector<Face> faces;
 };
+
+/**
+ * @}
+*/
 
 }  //  namespace klotter

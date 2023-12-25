@@ -47,11 +47,12 @@ std::shared_ptr<FrameBuffer> create_buffer(
 	int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency trans
 )
 {
-	ASSERT(trs == TextureRenderStyle::mipmap);
+	ASSERT(trs != TextureRenderStyle::mipmap);
 	auto fbo = std::make_shared<FrameBuffer>(create_fbo());
 	auto bound = BoundFbo{fbo};
 
 	fbo->texture = Texture{nullptr, width, height, te, trs, trans};
+	ASSERT(fbo->texture.id >= 0);
 
 	constexpr GLint mipmap_level = 0;
 	glFramebufferTexture2D(

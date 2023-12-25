@@ -2,6 +2,7 @@
 
 #include "klotter/assert.h"
 #include "klotter/cint.h"
+#include "klotter/hash.h"
 
 #include "klotter/render/geom.h"
 
@@ -10,23 +11,6 @@
 
 namespace klotter::geom
 {
-
-struct HashCombiner
-{
-	std::size_t result = 17;
-
-	template<typename T>
-	HashCombiner& combine(const T& t)
-	{
-		// src: https://stackoverflow.com/a/17017281/180307
-		// numbers from: https://stackoverflow.com/a/1646913/180307
-		// A word of warning, this is (a variation of) the Berstein hash, and because nobody
-		// knows why it does well in tests it is not advisable when hashing is critical.
-		// See eternallyconfuzzled.com/tuts/algorithms/jsw_tut_hashing.aspx
-		result = result * 31 + std::hash<T>{}(t);
-		return *this;
-	}
-};
 
 struct Combo
 {
@@ -52,19 +36,12 @@ bool operator==(const Combo& lhs, const Combo& rhs)
 
 }  //  namespace klotter::geom
 
-template<>
-struct std::hash<klotter::geom::Combo>
-{
-	std::size_t operator()(const klotter::geom::Combo& c) const
-	{
-		return klotter::geom::HashCombiner{}
-			.combine(c.position)
-			.combine(c.texture)
-			.combine(c.normal)
-			.combine(c.color)
-			.result;
-	}
-};
+HASH_DEF_BEGIN(klotter::geom::Combo)
+HASH_DEF(position)
+HASH_DEF(texture)
+HASH_DEF(normal)
+HASH_DEF(color)
+HASH_DEF_END()
 
 namespace klotter::geom
 {

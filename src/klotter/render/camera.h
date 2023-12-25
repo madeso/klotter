@@ -3,6 +3,10 @@
 namespace klotter
 {
 
+/** \addtogroup render
+ *  @{
+*/
+
 constexpr auto UP = glm::vec3(0.0f, 1.0f, 0.0f);
 
 struct CameraVectors
@@ -43,4 +47,7 @@ CompiledCamera compile(const Camera&, const glm::ivec2 window_size);
 
 glm::vec2 to_screen(const CompiledCamera& cam, const glm::vec3& pos, const glm::vec2& resolution);
 
+/**
+@}
+*/
 }  //  namespace klotter

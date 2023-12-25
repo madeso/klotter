@@ -9,6 +9,10 @@ struct Geom;
 
 namespace klotter::geom
 {
+
+/** \addtogroup geom-builder
+ *  @{
+*/
 using Index = u64;
 
 /// A single vertex referencing the shared data in the Builder
@@ -78,8 +82,8 @@ Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color = 
 Builder create_xy_plane(float x, float y, bool two_sided, const glm::vec3& color = colors::white);
 
 ///
-/// @param longitude number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
-/// @param lattitude number of lines that go horizontal, parallels to the equator is one of those lines
+/// @param longitude_count number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
+/// @param lattitude_count number of lines that go horizontal, parallels to the equator, which is one of those lines
 Builder create_uv_sphere(
 	float diameter,
 	int longitude_count,
@@ -87,5 +91,9 @@ Builder create_uv_sphere(
 	bool invert,
 	const glm::vec3& color = colors::white
 );
+
+/**
+ * @}
+*/
 
 }  //  namespace klotter::geom

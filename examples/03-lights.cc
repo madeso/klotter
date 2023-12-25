@@ -14,6 +14,9 @@ namespace examples
 struct LightsSample : Sample
 {
 	World world;
+	EffectStack effects;
+	std::shared_ptr<Effect> pp_invert;
+
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
 
@@ -59,9 +62,12 @@ struct LightsSample : Sample
 	bool follow_player = true;
 
 	LightsSample(Renderer* renderer, Camera* camera)
+		: pp_invert(renderer->make_invert_effect())
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
+
+		effects.effects.emplace_back(pp_invert);
 
 		light_material = renderer->make_unlit_material();
 		auto light_geom
@@ -215,7 +221,7 @@ struct LightsSample : Sample
 		);
 		anim += dt * 0.25f;
 		apply_animation();
-		renderer->render(window_size, world, *camera);
+		effects.render({&world, window_size, camera, renderer});
 	}
 
 	static void min_max(float* min_range, float* max_range)
@@ -238,6 +244,13 @@ struct LightsSample : Sample
 	void on_gui(klotter::Camera* camera) override
 	{
 		const float FAC_SPEED = 0.01f;
+		{
+			bool enabled = pp_invert->enabled();
+			if (ImGui::Checkbox("invert", &enabled))
+			{
+				pp_invert->set_enabled(enabled);
+			}
+		}
 
 		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
 		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());

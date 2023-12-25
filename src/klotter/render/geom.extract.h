@@ -9,6 +9,10 @@ struct CompiledGeomVertexAttributes;
 namespace klotter
 {
 
+/** \addtogroup geom-builder
+ *  @{
+*/
+
 using VertexVector = std::vector<float>;
 
 /// Extracted data from a Geom for a specific shader layout so a CompiledGeom can be created
@@ -22,5 +26,9 @@ struct ExtractedGeom
 };
 
 ExtractedGeom extract_geom(const Geom& geom, const CompiledGeomVertexAttributes& layout);
+
+/**
+ * @}
+*/
 
 }  //  namespace klotter

@@ -1,12 +1,17 @@
 #include "klotter/render/render.h"
 
+#include "pp.vert.glsl.h"
+#include "pp.invert.frag.glsl.h"
+
 #include "klotter/cint.h"
 #include "klotter/assert.h"
 #include "klotter/str.h"
+#include "klotter/log.h"
 
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/shader.source.h"
 #include "klotter/render/geom.extract.h"
+#include "klotter/render/geom.builder.h"
 
 #include "imgui.h"
 
@@ -14,6 +19,12 @@
 
 namespace klotter
 {
+
+// ------------------------------------------------------------------------------------------------
+// internal header
+
+void set_gl_viewport(const glm::ivec2& sz);
+void render_geom(std::shared_ptr<CompiledGeom> geom);
 
 // ------------------------------------------------------------------------------------------------
 // state management
@@ -376,6 +387,21 @@ struct FrustumLightUniforms
 	Uniform cookie;
 };
 
+struct LoadedPostProcShader
+{
+	std::shared_ptr<ShaderProgram> program;
+	Uniform texture;
+
+	// todo(Gustav): update with time and "power"
+
+	explicit LoadedPostProcShader(std::shared_ptr<ShaderProgram> s)
+		: program(std::move(s))
+		, texture(program->get_uniform("u_texture"))
+	{
+		setup_textures(program.get(), {&texture});
+	}
+};
+
 struct Base_LoadedShader_Default
 {
 	std::shared_ptr<ShaderProgram> program;
@@ -490,24 +516,45 @@ struct ShaderResource
 	LoadedShader_Unlit unlit_shader;
 	LoadedShader_Default default_shader;
 
+	std::shared_ptr<LoadedPostProcShader> pp_invert;
+
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
 		return single_color_shader.program->is_loaded() && unlit_shader.is_loaded()
-			&& default_shader.is_loaded();
+			&& default_shader.is_loaded() && pp_invert->program->is_loaded();
 	}
 };
 
-ShaderResource load_shaders(const RenderSettings& settings);
+struct FullScreenInfo
+{
+	std::shared_ptr<CompiledGeom> full_screen_geom;
+	CompiledShaderVertexAttributes full_scrren_layout;
+
+	FullScreenInfo()
+	{
+		const auto layout_shader_material = ShaderVertexAttributes{
+			{VertexType::position2xz, "a_position"}, {VertexType::texture2, "a_tex_coord"}};
+
+		auto layout_compiler = compile_attribute_layouts({layout_shader_material});
+		full_scrren_layout = compile_shader_layout(layout_compiler, layout_shader_material);
+		const auto layout = get_geom_layout(layout_compiler);
+		full_screen_geom = compile_geom(geom::create_xy_plane(1.0f, 1.0f, false).to_geom(), layout);
+	}
+};
+
+ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo& fsi);
 
 struct RendererPimpl
 {
 	ShaderResource shaders;
 	OpenglStates states;
 	DebugDrawer debug;
+	std::shared_ptr<CompiledGeom> full_screen_geom;
 
-	RendererPimpl(const RenderSettings& set)
-		: shaders(load_shaders(set))
+	RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi)
+		: shaders(load_shaders(set, fsi))
+		, full_screen_geom(fsi.full_screen_geom)
 	{
 	}
 };
@@ -593,7 +640,7 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& 
 	return {program, geom_layout};
 }
 
-ShaderResource load_shaders(const RenderSettings& settings)
+ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo& fsi)
 {
 	const auto single_color_shader = load_shader_source({});
 
@@ -630,12 +677,17 @@ ShaderResource load_shaders(const RenderSettings& settings)
 		== loaded_default_transparency.geom_layout.debug_types
 	);
 
+	auto pp_invert = std::make_shared<LoadedPostProcShader>(std::make_shared<ShaderProgram>(
+		std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, fsi.full_scrren_layout
+	));
+
 	return {
 		load_shader(global_shader_data, single_color_shader),
 		{loaded_unlit.geom_layout, loaded_unlit, loaded_unlit_transparency},
 		{loaded_default.geom_layout,
 		 {loaded_default, settings},
-		 {loaded_default_transparency, settings}}};
+		 {loaded_default_transparency, settings}},
+		pp_invert};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -866,6 +918,142 @@ bool DefaultMaterial::is_transparent() const
 }
 
 // ------------------------------------------------------------------------------------------------
+// post proc
+
+std::shared_ptr<FrameBuffer> FrameBufferCache::get(
+	glm::ivec2 size, TextureEdge edge, TextureRenderStyle render_style, Transparency transperency
+)
+{
+	// todo(Gustav): reuse buffers created from a earlier build
+	// todo(Gustav): reuse buffers from earlier in the stack, that aren't in use
+	auto buffer = create_buffer(size.x, size.y, edge, render_style, transperency);
+	return buffer;
+}
+
+bool Effect::enabled() const
+{
+	return is_enabled;
+}
+
+void Effect::set_enabled(bool n)
+{
+	if (is_enabled == n) return;
+	is_enabled = n;
+	if (owner)
+	{
+		owner->dirty = true;
+	}
+}
+
+struct RenderWorld : RenderSource
+{
+	void render(const PostProcArg& arg)
+	{
+		arg.renderer->render_world(arg.window_size, *arg.world, *arg.camera);
+	}
+};
+
+RenderTask::RenderTask(
+	std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, LoadedPostProcShader* sh
+)
+	: source(s)
+	, fbo(f)
+	, shader(sh)
+{
+}
+
+void RenderTask::render(const PostProcArg& arg)
+{
+	ASSERT(shader);
+	shader->program->use();
+	bind_texture(&arg.renderer->pimpl->states, shader->texture, fbo->texture);
+	render_geom(arg.renderer->pimpl->full_screen_geom);
+}
+
+void RenderTask::update(const PostProcArg& arg)
+{
+	auto bound = BoundFbo{fbo};
+	set_gl_viewport({fbo->texture.width, fbo->texture.height});
+	source->render(arg);
+}
+
+void EffectStack::render(const PostProcArg& arg)
+{
+	// set the owner, if any new then we are dirty
+	for (auto e: effects)
+	{
+		if (e->owner != this)
+		{
+			e->owner = this;
+			dirty = true;
+		}
+	}
+
+	if (window_size.has_value() == false || *window_size != arg.window_size)
+	{
+		window_size = arg.window_size;
+		dirty = true;
+	}
+
+	// if dirty, update the compiled state
+	if (dirty)
+	{
+		dirty = false;
+		LOG_INFO("Bulding effects stack");
+
+		compiled.targets.clear();
+		compiled.last_source = std::make_shared<RenderWorld>();
+
+		for (auto& e: effects)
+		{
+			if (e->is_enabled)
+			{
+				e->build({&compiled, &fbos, arg.window_size});
+			}
+		}
+	}
+
+	// the stack is now compiled
+	// before rendering, update all targets/fbos and present
+	for (auto& action: compiled.targets)
+	{
+		action->update(arg);
+	}
+
+	// render the final image to the screen
+	set_gl_viewport(arg.window_size);
+	compiled.last_source->render(arg);
+}
+
+struct SimpleEffect : Effect
+{
+	std::shared_ptr<LoadedPostProcShader> shader;
+
+	SimpleEffect(std::shared_ptr<LoadedPostProcShader> s)
+		: shader(s)
+	{
+	}
+
+	void build(const BuildArg& arg) override
+	{
+		auto fbo = arg.fbo->get(
+			arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude
+		);
+
+		auto src = arg.builder->last_source;
+		auto target = std::make_shared<RenderTask>(src, fbo, shader.get());
+
+		arg.builder->targets.emplace_back(target);
+		arg.builder->last_source = target;
+	}
+};
+
+std::shared_ptr<Effect> Renderer::make_invert_effect()
+{
+	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_invert);
+}
+
+// ------------------------------------------------------------------------------------------------
 // renderer
 
 u32 create_buffer()
@@ -890,6 +1078,11 @@ u32 create_vertex_array()
 void destroy_vertex_array(u32 vao)
 {
 	glDeleteVertexArrays(1, &vao);
+}
+
+void set_gl_viewport(const glm::ivec2& sz)
+{
+	glViewport(0, 0, sz.x, sz.y);
 }
 
 std::shared_ptr<CompiledGeom> compile_geom(
@@ -957,7 +1150,7 @@ CompiledGeom::~CompiledGeom()
 
 Renderer::Renderer(const RenderSettings& set)
 	: settings(set)
-	, pimpl(std::make_unique<RendererPimpl>(set))
+	, pimpl(std::make_unique<RendererPimpl>(set, FullScreenInfo{}))
 {
 }
 
@@ -1103,7 +1296,7 @@ void render_debug_lines(
 	r->debug.debug_lines.clear();
 }
 
-void Renderer::render(const glm::ivec2& window_size, const World& world, const Camera& camera)
+void Renderer::render_world(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
 	const auto has_outlined_meshes = std::any_of(
 		world.meshes.begin(),
@@ -1118,7 +1311,6 @@ void Renderer::render(const glm::ivec2& window_size, const World& world, const C
 		.stencil_op(StencilAction::keep, StencilAction::replace, StencilAction::replace)
 		.blend_mode(Blend::src_alpha, Blend::one_minus_src_alpha);
 
-	glViewport(0, 0, window_size.x, window_size.y);
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 

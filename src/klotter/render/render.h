@@ -13,9 +13,14 @@
 #include "klotter/render/vertex_layout.h"
 #include "klotter/render/geom.h"
 #include "klotter/render/linebatch.h"
+#include "klotter/render/framebuffer.h"
 
 namespace klotter
 {
+
+/** \addtogroup render Renderer
+ *  @{
+*/
 
 struct Lights;
 
@@ -347,6 +352,104 @@ struct DebugRender
 	);
 };
 
+struct Renderer;
+
+struct PostProcArg
+{
+	const World* world;
+	glm::ivec2 window_size;
+	const Camera* camera;
+	Renderer* renderer;
+};
+
+struct RenderSource
+{
+	virtual ~RenderSource() = default;
+	virtual void render(const PostProcArg& arg) = 0;
+};
+
+struct LoadedPostProcShader;
+
+struct RenderTask : RenderSource
+{
+	std::shared_ptr<RenderSource> source;
+	std::shared_ptr<FrameBuffer> fbo;
+	LoadedPostProcShader* shader;
+
+	RenderTask(
+		std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, LoadedPostProcShader* sh
+	);
+
+	/// render internal fbo to a quad with a shader
+	void render(const PostProcArg& arg) override;
+
+	/// call render on linked source and render to fbo
+	void update(const PostProcArg& arg);
+};
+
+/// when compiled it could be:
+/// * [render world to screen]
+/// * [render world to fbo], [render fbo to screen with shader]
+/// * [render world to fbo] [[render fbo to intermediate with shader] [render int to screen with shader]]
+/// * [render world to fbo] [[render fbo to intermediate with shader] [render int to fbo with shader]] [render fbo to screen with shader]
+struct CompiledStack
+{
+	/// start with a simple world, but depending on the current effect list, could be more...
+	std::shared_ptr<RenderSource> last_source;
+
+	std::vector<std::shared_ptr<RenderTask>> targets;
+};
+
+struct FrameBufferCache
+{
+	std::shared_ptr<FrameBuffer> get(
+		glm::ivec2 size,
+		TextureEdge edge,
+		TextureRenderStyle render_style,
+		Transparency transperency
+	);
+};
+
+struct BuildArg
+{
+	CompiledStack* builder;
+	FrameBufferCache* fbo;
+	glm::ivec2 window_size;
+};
+
+
+struct EffectStack;
+
+struct Effect
+{
+	virtual ~Effect() = default;
+
+	virtual void build(const BuildArg& arg) = 0;
+
+	bool enabled() const;
+	void set_enabled(bool n);
+
+   private:
+
+	friend EffectStack;
+
+	bool is_enabled = false;
+	EffectStack* owner = nullptr;
+};
+
+/// The facade of the post-proc framework.
+struct EffectStack
+{
+	bool dirty = true;
+	std::optional<glm::ivec2> window_size;
+	std::vector<std::shared_ptr<Effect>> effects;
+	CompiledStack compiled;
+	FrameBufferCache fbos;
+
+	/// rebuilds stack if dirty, update all targets, then render the last_source
+	void render(const PostProcArg& arg);
+};
+
 
 struct RendererPimpl;
 
@@ -368,11 +471,17 @@ struct Renderer
 	CompiledGeomVertexAttributes unlit_geom_layout();
 	CompiledGeomVertexAttributes default_geom_layout();
 
+	std::shared_ptr<Effect> make_invert_effect();
+
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;
 
-	void render(const glm::ivec2& window_size, const World&, const Camera&);
+	/// doesn't set the size, prefer EffectStack::render
+	void render_world(const glm::ivec2& window_size, const World&, const Camera&);
 };
 
+/**
+ * @}
+*/
 
 }  //  namespace klotter

@@ -15,6 +15,7 @@ constexpr float cube_size = 1.0f;
 struct TransformSample : Sample
 {
 	World world;
+	EffectStack effects;
 
 	std::shared_ptr<MeshInstance> center;
 	std::vector<std::shared_ptr<MeshInstance>> before;
@@ -122,7 +123,7 @@ struct TransformSample : Sample
 			before[si]->rotation = after[si]->rotation = center->rotation;
 		}
 
-		renderer->render(window_size, world, *camera);
+		effects.render({&world, window_size, camera, renderer});
 	}
 
 	void on_gui(klotter::Camera*) override

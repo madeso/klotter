@@ -6,11 +6,15 @@
 namespace klotter
 {
 
+/** \defgroup vertex-layout Vertex layout
+ *  @{
+*/
+
 /// Vertex source type, position, normal etc.
 /// @todo change to include other textcoords and custom types that are created from scripts
 enum class VertexType
 {
-	position2,
+	position2xz,
 	position3,
 	normal3,
 	color3,
@@ -82,5 +86,8 @@ CompiledVertexTypeList compile_attribute_layouts(
 CompiledVertexTypeList compile_attribute_layouts(
 	const std::vector<ShaderVertexAttributes>& descriptions
 );
+
+/** @}
+*/
 
 }  //  namespace klotter

@@ -4,8 +4,12 @@
 
 namespace klotter
 {
+/** \addtogroup framebuffer Frame buffer
+ *  @{
+*/
 
 
+/// "render to texture" feature
 struct FrameBuffer
 {
 	explicit FrameBuffer(unsigned int fbo);
@@ -17,6 +21,7 @@ struct FrameBuffer
 	unsigned int rbo = 0;
 };
 
+/// raii class to render to a FrameBuffer
 struct BoundFbo
 {
 	std::shared_ptr<FrameBuffer> fbo;
@@ -24,5 +29,13 @@ struct BoundFbo
 	explicit BoundFbo(std::shared_ptr<FrameBuffer> f);
 	~BoundFbo();
 };
+
+std::shared_ptr<FrameBuffer> create_buffer(
+	int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency trans
+);
+
+/**
+ * @}
+*/
 
 }  //  namespace klotter

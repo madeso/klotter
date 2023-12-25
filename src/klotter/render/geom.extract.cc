@@ -76,6 +76,7 @@ ExtractedGeom extract_geom(const Geom& geom, const CompiledGeomVertexAttributes&
 		data.per_vertex.emplace_back([](VertexVector* vertices, const Vertex& vertex) \
 									 { push##COUNT(vertices, PROP); }); \
 		break
+				MAP(VertexType::position2xz, (glm::vec2{vertex.position.x, vertex.position.z}), 2);
 				MAP(VertexType::position3, vertex.position, 3);
 				MAP(VertexType::normal3, vertex.normal, 3);
 				MAP(VertexType::color3, vertex.color, 3);

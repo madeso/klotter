@@ -12,6 +12,7 @@ namespace examples
 struct CubeSample : Sample
 {
 	World world;
+	EffectStack effects;
 	std::shared_ptr<MeshInstance> cube;
 
 	CubeSample(Renderer* renderer, Camera* camera)
@@ -47,7 +48,7 @@ struct CubeSample : Sample
 		cube->rotation.y = -p / 4.0f;
 		cube->rotation.x = std::sin(p * 0.6f);
 
-		renderer->render(window_size, world, *camera);
+		effects.render({&world, window_size, camera, renderer});
 	}
 
 	void on_gui(klotter::Camera*) override

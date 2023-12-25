@@ -12,6 +12,7 @@ namespace examples
 struct SceneSample : Sample
 {
 	World world;
+	EffectStack effects;
 
 	std::shared_ptr<CompiledGeom> make_unlit_cube(
 		klotter::Renderer* renderer, float x, float y, float z, bool invert
@@ -84,7 +85,7 @@ struct SceneSample : Sample
 		const glm::ivec2& window_size, klotter::Renderer* renderer, klotter::Camera* camera, float
 	) override
 	{
-		renderer->render(window_size, world, *camera);
+		effects.render({&world, window_size, camera, renderer});
 	}
 
 	void on_gui(klotter::Camera*) override
