@@ -14,6 +14,7 @@ namespace klotter
 /// @todo change to include other textcoords and custom types that are created from scripts
 enum class VertexType
 {
+	position2xy,
 	position2xz,
 	position3,
 	normal3,

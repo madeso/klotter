@@ -534,12 +534,14 @@ struct FullScreenInfo
 	FullScreenInfo()
 	{
 		const auto layout_shader_material = ShaderVertexAttributes{
-			{VertexType::position2xz, "a_position"}, {VertexType::texture2, "a_tex_coord"}};
+			{VertexType::position2xy, "a_position"}, {VertexType::texture2, "a_tex_coord"}};
 
 		auto layout_compiler = compile_attribute_layouts({layout_shader_material});
 		full_scrren_layout = compile_shader_layout(layout_compiler, layout_shader_material);
 		const auto layout = get_geom_layout(layout_compiler);
-		full_screen_geom = compile_geom(geom::create_xy_plane(1.0f, 1.0f, false).to_geom(), layout);
+
+		// ndc is [-1, 1], plane func generate a centered geom, so we set out plane to a size of 2
+		full_screen_geom = compile_geom(geom::create_xy_plane(2.0f, 2.0f, false).to_geom(), layout);
 	}
 };
 
@@ -965,6 +967,17 @@ RenderTask::RenderTask(
 void RenderTask::render(const PostProcArg& arg)
 {
 	ASSERT(shader);
+
+	StateChanger{&arg.renderer->pimpl->states}
+		.cull_face(false)
+		.stencil_test(false)
+		.depth_test(false)
+		.depth_mask(false)
+		.blending(false);
+
+	glClearColor(0, 0, 0, 1.0f);
+	glClear(GL_COLOR_BUFFER_BIT);
+
 	shader->program->use();
 	bind_texture(&arg.renderer->pimpl->states, shader->texture, fbo->texture);
 	render_geom(arg.renderer->pimpl->full_screen_geom);
