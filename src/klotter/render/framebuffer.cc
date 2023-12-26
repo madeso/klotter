@@ -1,5 +1,7 @@
-#include "klotter/assert.h"
 #include "klotter/render/framebuffer.h"
+
+#include "klotter/assert.h"
+#include "klotter/log.h"
 
 namespace klotter
 {
@@ -47,13 +49,14 @@ std::shared_ptr<FrameBuffer> create_buffer(
 	int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency trans
 )
 {
+	LOG_INFO("Creating frame buffer %d %d", width, height);
 	ASSERT(trs != TextureRenderStyle::mipmap);
 	auto fbo = std::make_shared<FrameBuffer>(create_fbo());
-	auto bound = BoundFbo{fbo};
 
 	fbo->texture = Texture{nullptr, width, height, te, trs, trans};
 	ASSERT(fbo->texture.id >= 0);
 
+	auto bound = BoundFbo{fbo};
 	constexpr GLint mipmap_level = 0;
 	glFramebufferTexture2D(
 		GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fbo->texture.id, mipmap_level
@@ -63,7 +66,7 @@ std::shared_ptr<FrameBuffer> create_buffer(
 	glGenRenderbuffers(1, &fbo->rbo);
 	ASSERT(fbo->rbo != 0);
 	glBindRenderbuffer(GL_RENDERBUFFER, fbo->rbo);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
 	glBindRenderbuffer(GL_RENDERBUFFER, 0);
 	glFramebufferRenderbuffer(
 		GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo
@@ -71,11 +74,11 @@ std::shared_ptr<FrameBuffer> create_buffer(
 
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 	{
+		LOG_ERROR("Failed to create frame buffer");
 		return nullptr;
 	}
 
 	return fbo;
-	// glViewport(0, 0, width, height);
 }
 
 }  //  namespace klotter
