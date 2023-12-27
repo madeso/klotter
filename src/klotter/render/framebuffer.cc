@@ -54,7 +54,7 @@ std::shared_ptr<FrameBuffer> create_buffer(
 	auto fbo = std::make_shared<FrameBuffer>(create_fbo());
 
 	fbo->texture = Texture{nullptr, width, height, te, trs, trans};
-	ASSERT(fbo->texture.id >= 0);
+	ASSERT(fbo->texture.id > 0);
 
 	auto bound = BoundFbo{fbo};
 	constexpr GLint mipmap_level = 0;
