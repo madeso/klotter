@@ -1321,6 +1321,8 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		.cull_face_mode(CullFace::back)
 		.stencil_mask(0xFF)
 		.stencil_test(has_outlined_meshes)
+		.depth_test(true)
+		.depth_mask(true)
 		.stencil_op(StencilAction::keep, StencilAction::replace, StencilAction::replace)
 		.blend_mode(Blend::src_alpha, Blend::one_minus_src_alpha);
 
