@@ -15,7 +15,7 @@ struct LightsSample : Sample
 {
 	World world;
 	EffectStack effects;
-	std::shared_ptr<Effect> pp_invert;
+	std::shared_ptr<FactorEffect> pp_invert;
 
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
@@ -245,10 +245,10 @@ struct LightsSample : Sample
 	{
 		const float FAC_SPEED = 0.01f;
 		{
-			bool enabled = pp_invert->enabled();
-			if (ImGui::Checkbox("invert", &enabled))
+			auto factor = pp_invert->get_factor();
+			if (ImGui::SliderFloat("invert", &factor, 0.0f, 1.0f))
 			{
-				pp_invert->set_enabled(enabled);
+				pp_invert->set_factor(factor);
 			}
 		}
 

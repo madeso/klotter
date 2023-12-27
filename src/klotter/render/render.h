@@ -368,17 +368,15 @@ struct RenderSource
 	virtual void render(const PostProcArg& arg) = 0;
 };
 
-struct LoadedPostProcShader;
+struct Effect;
 
 struct RenderTask : RenderSource
 {
 	std::shared_ptr<RenderSource> source;
 	std::shared_ptr<FrameBuffer> fbo;
-	LoadedPostProcShader* shader;
+	Effect* effect;
 
-	RenderTask(
-		std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, LoadedPostProcShader* sh
-	);
+	RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, Effect* e);
 
 	/// render internal fbo to a quad with a shader
 	void render(const PostProcArg& arg) override;
@@ -427,6 +425,10 @@ struct Effect
 	virtual void build(const BuildArg& arg) = 0;
 
 	bool enabled() const;
+	virtual void use_shader(Renderer* r, const Texture& t) = 0;
+
+   protected:
+
 	void set_enabled(bool n);
 
    private:
@@ -435,6 +437,17 @@ struct Effect
 
 	bool is_enabled = false;
 	EffectStack* owner = nullptr;
+};
+
+struct FactorEffect : Effect
+{
+	FactorEffect();
+	float get_factor() const;
+	void set_factor(float f);
+
+   private:
+
+	float factor;
 };
 
 /// The facade of the post-proc framework.
@@ -471,7 +484,7 @@ struct Renderer
 	CompiledGeomVertexAttributes unlit_geom_layout();
 	CompiledGeomVertexAttributes default_geom_layout();
 
-	std::shared_ptr<Effect> make_invert_effect();
+	std::shared_ptr<FactorEffect> make_invert_effect();
 
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;

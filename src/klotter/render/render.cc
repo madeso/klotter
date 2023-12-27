@@ -391,12 +391,14 @@ struct LoadedPostProcShader
 {
 	std::shared_ptr<ShaderProgram> program;
 	Uniform texture;
+	Uniform factor;
 
 	// todo(Gustav): update with time and "power"
 
 	explicit LoadedPostProcShader(std::shared_ptr<ShaderProgram> s)
 		: program(std::move(s))
 		, texture(program->get_uniform("u_texture"))
+		, factor(program->get_uniform("u_factor"))
 	{
 		setup_textures(program.get(), {&texture});
 	}
@@ -955,18 +957,17 @@ struct RenderWorld : RenderSource
 	}
 };
 
-RenderTask::RenderTask(
-	std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, LoadedPostProcShader* sh
-)
+RenderTask::RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, Effect* e)
 	: source(s)
 	, fbo(f)
-	, shader(sh)
+	, effect(e)
 {
+	ASSERT(effect);
 }
 
 void RenderTask::render(const PostProcArg& arg)
 {
-	ASSERT(shader);
+	ASSERT(effect);
 
 	StateChanger{&arg.renderer->pimpl->states}
 		.cull_face(false)
@@ -978,8 +979,7 @@ void RenderTask::render(const PostProcArg& arg)
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	shader->program->use();
-	bind_texture(&arg.renderer->pimpl->states, shader->texture, fbo->texture);
+	effect->use_shader(arg.renderer, fbo->texture);
 	render_geom(arg.renderer->pimpl->full_screen_geom);
 }
 
@@ -1038,13 +1038,37 @@ void EffectStack::render(const PostProcArg& arg)
 	compiled.last_source->render(arg);
 }
 
-struct SimpleEffect : Effect
+FactorEffect::FactorEffect()
+	: factor(0.0f)
+{
+	set_enabled(false);
+}
+
+float FactorEffect::get_factor() const
+{
+	return factor;
+}
+
+void FactorEffect::set_factor(float f)
+{
+	factor = f;
+	set_enabled(factor > 0.0001f);
+}
+
+struct SimpleEffect : FactorEffect
 {
 	std::shared_ptr<LoadedPostProcShader> shader;
 
 	SimpleEffect(std::shared_ptr<LoadedPostProcShader> s)
 		: shader(s)
 	{
+	}
+
+	void use_shader(Renderer* r, const Texture& t) override
+	{
+		shader->program->use();
+		shader->program->set_float(shader->factor, get_factor());
+		bind_texture(&r->pimpl->states, shader->texture, t);
 	}
 
 	void build(const BuildArg& arg) override
@@ -1054,14 +1078,14 @@ struct SimpleEffect : Effect
 		);
 
 		auto src = arg.builder->last_source;
-		auto target = std::make_shared<RenderTask>(src, fbo, shader.get());
+		auto target = std::make_shared<RenderTask>(src, fbo, this);
 
 		arg.builder->targets.emplace_back(target);
 		arg.builder->last_source = target;
 	}
 };
 
-std::shared_ptr<Effect> Renderer::make_invert_effect()
+std::shared_ptr<FactorEffect> Renderer::make_invert_effect()
 {
 	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_invert);
 }
