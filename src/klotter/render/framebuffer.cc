@@ -62,12 +62,10 @@ std::shared_ptr<FrameBuffer> create_buffer(
 		GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fbo->texture.id, mipmap_level
 	);
 
-
 	glGenRenderbuffers(1, &fbo->rbo);
 	ASSERT(fbo->rbo != 0);
 	glBindRenderbuffer(GL_RENDERBUFFER, fbo->rbo);
 	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
-	glBindRenderbuffer(GL_RENDERBUFFER, 0);
 	glFramebufferRenderbuffer(
 		GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo
 	);
