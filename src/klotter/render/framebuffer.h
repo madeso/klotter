@@ -15,7 +15,7 @@ struct FrameBuffer
 	explicit FrameBuffer(unsigned int fbo);
 	~FrameBuffer();
 
-	unsigned int fbo;
+	unsigned int fbo = 0;
 
 	Texture texture;
 	unsigned int rbo = 0;
