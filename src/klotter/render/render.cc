@@ -18,6 +18,14 @@
 
 #include <string_view>
 
+namespace
+{
+constexpr float ALMOST_ZERO = 0.01f;
+
+/// if alpha goes above this limit, it is no longer considered transparent
+constexpr float ALPHA_TRANSPARENCY_LIMIT = 1.0f - ALMOST_ZERO;
+}  //  namespace
+
 namespace klotter
 {
 
@@ -783,7 +791,7 @@ void UnlitMaterial::
 bool UnlitMaterial::is_transparent() const
 {
 	// todo(Gustav): improve trasparency
-	return alpha < 0.99f;
+	return alpha < ALPHA_TRANSPARENCY_LIMIT;
 }
 
 DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
@@ -933,7 +941,7 @@ void DefaultMaterial::apply_lights(
 bool DefaultMaterial::is_transparent() const
 {
 	// todo(Gustav): improve trasparency
-	return alpha < 0.99f;
+	return alpha < ALPHA_TRANSPARENCY_LIMIT;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1067,7 +1075,7 @@ float FactorEffect::get_factor() const
 void FactorEffect::set_factor(float f)
 {
 	factor = f;
-	set_enabled(factor > 0.0001f);
+	set_enabled(factor > ALMOST_ZERO);
 }
 
 struct SimpleEffect : FactorEffect
