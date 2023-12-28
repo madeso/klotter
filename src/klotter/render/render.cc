@@ -546,7 +546,9 @@ struct FullScreenInfo
 		const auto layout = get_geom_layout(layout_compiler);
 
 		// ndc is [-1, 1], plane func generate a centered geom, so we set out plane to a size of 2
-		full_screen_geom = compile_geom(geom::create_xy_plane(2.0f, 2.0f, false).to_geom(), layout);
+		full_screen_geom = compile_geom(
+			geom::create_xy_plane(2.0f, 2.0f, geom::TwoSided::one_sided).to_geom(), layout
+		);
 	}
 };
 
@@ -1248,6 +1250,7 @@ glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCam
 
 	const auto translation = glm::translate(glm::mat4(1.0f), m->position);
 
+	// todo(Gustav): verify that the billboards are oriented correctly, grass in example 3 is twosided...
 	switch (m->billboarding)
 	{
 	case Billboarding::screen:

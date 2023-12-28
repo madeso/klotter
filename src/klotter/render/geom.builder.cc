@@ -503,7 +503,7 @@ Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color)
 	return b;
 }
 
-Builder create_xy_plane(float x, float y, bool two_sided, const glm::vec3& color)
+Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& color)
 {
 	Builder b;
 
@@ -551,7 +551,7 @@ Builder create_xy_plane(float x, float y, bool two_sided, const glm::vec3& color
 	);
 
 	// back
-	if (two_sided)
+	if (two_sided == TwoSided::two_sided)
 	{
 		add_quad_to_builder(
 			{0, 0, s},

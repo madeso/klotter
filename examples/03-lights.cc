@@ -129,7 +129,8 @@ struct LightsSample : Sample
 
 		// glasses
 		{
-			const auto triangle = geom::create_xy_plane(1.0f, 1.0f, true).to_geom();
+			const auto triangle
+				= geom::create_xy_plane(1.0f, 1.0f, geom::TwoSided::two_sided).to_geom();
 			auto geom = compile_geom(triangle, renderer->default_geom_layout());
 
 			auto glass_mat = renderer->make_default_material();
@@ -145,8 +146,8 @@ struct LightsSample : Sample
 
 		// grass
 		{
-			// const auto triangle = geom::create_xy_plane(0.5f, 0.5f, true).to_geom();
-			const auto triangle = geom::create_xy_plane(1.0f, 1.0f, true).to_geom();
+			const auto triangle
+				= geom::create_xy_plane(1.0f, 1.0f, geom::TwoSided::two_sided).to_geom();
 			auto geom = compile_geom(triangle, renderer->default_geom_layout());
 
 			auto glass_mat = renderer->make_default_material();

@@ -15,6 +15,12 @@ namespace klotter::geom
 */
 using Index = u64;
 
+enum class TwoSided
+{
+	one_sided,
+	two_sided
+};
+
 /// A single vertex referencing the shared data in the Builder
 struct Vertex
 {
@@ -79,7 +85,9 @@ struct Builder
 Builder create_box(float w, float h, float d, bool invert, const glm::vec3& color = colors::white);
 Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
 
-Builder create_xy_plane(float x, float y, bool two_sided, const glm::vec3& color = colors::white);
+Builder create_xy_plane(
+	float x, float y, TwoSided two_sided, const glm::vec3& color = colors::white
+);
 
 ///
 /// @param longitude_count number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
