@@ -30,6 +30,23 @@ namespace klotter
 {
 
 // ------------------------------------------------------------------------------------------------
+// std utils
+
+// convert a enum class to it's underlying (int) type
+// src: https://twitter.com/idoccor/status/1314664849276899328
+template<typename E>
+constexpr typename std::underlying_type<E>::type base_cast(E e) noexcept
+{
+	return static_cast<typename std::underlying_type<E>::type>(e);
+}
+
+template<typename E>
+constexpr bool is_flag_set(E var, E flag)
+{
+	return (base_cast(var) & base_cast(flag)) > 0;
+}
+
+// ------------------------------------------------------------------------------------------------
 // internal header
 
 void set_gl_viewport(const glm::ivec2& sz);
@@ -396,18 +413,43 @@ struct FrustumLightUniforms
 	Uniform cookie;
 };
 
+enum class PostProcSetup
+{
+	none = 0,
+	factor = 1 << 1
+};
+
+PostProcSetup operator|(PostProcSetup lhs, PostProcSetup rhs)
+{
+	return static_cast<PostProcSetup>(base_cast(lhs) | base_cast(rhs));
+}
+
+std::optional<Uniform> get_uniform(
+	ShaderProgram& prog, const std::string& name, PostProcSetup setup, PostProcSetup flag
+)
+{
+	if (is_flag_set(setup, flag))
+	{
+		return prog.get_uniform(name);
+	}
+	else
+	{
+		return std::nullopt;
+	}
+}
+
 struct LoadedPostProcShader
 {
 	std::shared_ptr<ShaderProgram> program;
 	Uniform texture;
-	Uniform factor;
+	std::optional<Uniform> factor;
 
 	// todo(Gustav): update with time and "power"
 
-	explicit LoadedPostProcShader(std::shared_ptr<ShaderProgram> s)
+	explicit LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, PostProcSetup setup)
 		: program(std::move(s))
 		, texture(program->get_uniform("u_texture"))
-		, factor(program->get_uniform("u_factor"))
+		, factor(get_uniform(*program, "u_factor", setup, PostProcSetup::factor))
 	{
 		setup_textures(program.get(), {&texture});
 	}
@@ -700,12 +742,18 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		== loaded_default_transparency.geom_layout.debug_types
 	);
 
-	auto pp_invert = std::make_shared<LoadedPostProcShader>(std::make_shared<ShaderProgram>(
-		std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, fsi.full_scrren_layout
-	));
-	auto pp_grayscale = std::make_shared<LoadedPostProcShader>(std::make_shared<ShaderProgram>(
-		std::string{PP_VERT_GLSL}, std::string{PP_GRAYSCALE_FRAG_GLSL}, fsi.full_scrren_layout
-	));
+	auto pp_invert = std::make_shared<LoadedPostProcShader>(
+		std::make_shared<ShaderProgram>(
+			std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, fsi.full_scrren_layout
+		),
+		PostProcSetup::factor
+	);
+	auto pp_grayscale = std::make_shared<LoadedPostProcShader>(
+		std::make_shared<ShaderProgram>(
+			std::string{PP_VERT_GLSL}, std::string{PP_GRAYSCALE_FRAG_GLSL}, fsi.full_scrren_layout
+		),
+		PostProcSetup::factor
+	);
 
 	return {
 		load_shader(global_shader_data, single_color_shader),
@@ -1085,12 +1133,16 @@ struct SimpleEffect : FactorEffect
 	SimpleEffect(std::shared_ptr<LoadedPostProcShader> s)
 		: shader(s)
 	{
+		ASSERT(shader->factor.has_value());
 	}
 
 	void use_shader(Renderer* r, const Texture& t) override
 	{
 		shader->program->use();
-		shader->program->set_float(shader->factor, get_factor());
+		if (shader->factor)
+		{
+			shader->program->set_float(*shader->factor, get_factor());
+		}
 		bind_texture(&r->pimpl->states, shader->texture, t);
 	}
 
