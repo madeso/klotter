@@ -2,6 +2,7 @@
 
 #include "pp.vert.glsl.h"
 #include "pp.invert.frag.glsl.h"
+#include "pp.grayscale.frag.glsl.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -519,12 +520,14 @@ struct ShaderResource
 	LoadedShader_Default default_shader;
 
 	std::shared_ptr<LoadedPostProcShader> pp_invert;
+	std::shared_ptr<LoadedPostProcShader> pp_grayscale;
 
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
 		return single_color_shader.program->is_loaded() && unlit_shader.is_loaded()
-			&& default_shader.is_loaded() && pp_invert->program->is_loaded();
+			&& default_shader.is_loaded() && pp_invert->program->is_loaded()
+			&& pp_grayscale->program->is_loaded();
 	}
 };
 
@@ -684,6 +687,9 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 	auto pp_invert = std::make_shared<LoadedPostProcShader>(std::make_shared<ShaderProgram>(
 		std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, fsi.full_scrren_layout
 	));
+	auto pp_grayscale = std::make_shared<LoadedPostProcShader>(std::make_shared<ShaderProgram>(
+		std::string{PP_VERT_GLSL}, std::string{PP_GRAYSCALE_FRAG_GLSL}, fsi.full_scrren_layout
+	));
 
 	return {
 		load_shader(global_shader_data, single_color_shader),
@@ -691,7 +697,8 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		{loaded_default.geom_layout,
 		 {loaded_default, settings},
 		 {loaded_default_transparency, settings}},
-		pp_invert};
+		pp_invert,
+		pp_grayscale};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1088,6 +1095,11 @@ struct SimpleEffect : FactorEffect
 std::shared_ptr<FactorEffect> Renderer::make_invert_effect()
 {
 	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_invert);
+}
+
+std::shared_ptr<FactorEffect> Renderer::make_grayscale_effect()
+{
+	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_grayscale);
 }
 
 // ------------------------------------------------------------------------------------------------

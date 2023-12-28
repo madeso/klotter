@@ -16,6 +16,7 @@ struct LightsSample : Sample
 	World world;
 	EffectStack effects;
 	std::shared_ptr<FactorEffect> pp_invert;
+	std::shared_ptr<FactorEffect> pp_grayscale;
 
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
@@ -63,11 +64,13 @@ struct LightsSample : Sample
 
 	LightsSample(Renderer* renderer, Camera* camera)
 		: pp_invert(renderer->make_invert_effect())
+		, pp_grayscale(renderer->make_grayscale_effect())
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
 
 		effects.effects.emplace_back(pp_invert);
+		effects.effects.emplace_back(pp_grayscale);
 
 		light_material = renderer->make_unlit_material();
 		auto light_geom
@@ -249,6 +252,13 @@ struct LightsSample : Sample
 			if (ImGui::SliderFloat("invert", &factor, 0.0f, 1.0f))
 			{
 				pp_invert->set_factor(factor);
+			}
+		}
+		{
+			auto factor = pp_grayscale->get_factor();
+			if (ImGui::SliderFloat("grayscale", &factor, 0.0f, 1.0f))
+			{
+				pp_grayscale->set_factor(factor);
 			}
 		}
 

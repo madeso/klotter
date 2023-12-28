@@ -485,6 +485,7 @@ struct Renderer
 	CompiledGeomVertexAttributes default_geom_layout();
 
 	std::shared_ptr<FactorEffect> make_invert_effect();
+	std::shared_ptr<FactorEffect> make_grayscale_effect();
 
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;
