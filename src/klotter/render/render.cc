@@ -473,9 +473,15 @@ struct Base_LoadedShader_Default
 	std::vector<FrustumLightUniforms> frustum_lights;
 };
 
+enum class UseTransparency
+{
+	yes,
+	no
+};
+
 struct RenderContext
 {
-	bool use_transparency;
+	UseTransparency use_transparency;
 };
 
 struct LoadedShader_Unlit
@@ -486,7 +492,7 @@ struct LoadedShader_Unlit
 
 	const Base_LoadedShader_Unlit& base(const RenderContext& rc) const
 	{
-		return rc.use_transparency ? transparency_shader : default_shader;
+		return rc.use_transparency == UseTransparency::yes ? transparency_shader : default_shader;
 	}
 
 	bool is_loaded() const
@@ -503,7 +509,7 @@ struct LoadedShader_Default
 
 	const Base_LoadedShader_Default& base(const RenderContext& rc) const
 	{
-		return rc.use_transparency ? transparency_shader : default_shader;
+		return rc.use_transparency == UseTransparency::yes ? transparency_shader : default_shader;
 	}
 
 	bool is_loaded() const
@@ -1372,16 +1378,9 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	std::vector<TransparentMesh> transparent_meshes;
 
-	const auto make_rc_with_transparency = [](bool use_transparency)
-	{
-		RenderContext rc;
-		rc.use_transparency = use_transparency;
-		return rc;
-	};
-
 	for (auto& m: world.meshes)
 	{
-		const auto not_transparent = make_rc_with_transparency(false);
+		const auto not_transparent = RenderContext{UseTransparency::no};
 
 		if (m->material->is_transparent())
 		{
@@ -1422,7 +1421,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& tm: transparent_meshes)
 	{
-		const auto transparent = make_rc_with_transparency(true);
+		const auto transparent = RenderContext{UseTransparency::yes};
 
 		const auto& m = tm.mesh;
 		StateChanger{&pimpl->states}
