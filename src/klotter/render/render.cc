@@ -3,6 +3,7 @@
 #include "pp.vert.glsl.h"
 #include "pp.invert.frag.glsl.h"
 #include "pp.grayscale.frag.glsl.h"
+#include "pp.damage.frag.glsl.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -416,7 +417,9 @@ struct FrustumLightUniforms
 enum class PostProcSetup
 {
 	none = 0,
-	factor = 1 << 1
+	factor = 1 << 1,
+	resolution = 1 << 2,
+	time = 1 << 3
 };
 
 PostProcSetup operator|(PostProcSetup lhs, PostProcSetup rhs)
@@ -443,13 +446,15 @@ struct LoadedPostProcShader
 	std::shared_ptr<ShaderProgram> program;
 	Uniform texture;
 	std::optional<Uniform> factor;
-
-	// todo(Gustav): update with time and "power"
+	std::optional<Uniform> resolution;
+	std::optional<Uniform> time;
 
 	explicit LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, PostProcSetup setup)
 		: program(std::move(s))
 		, texture(program->get_uniform("u_texture"))
 		, factor(get_uniform(*program, "u_factor", setup, PostProcSetup::factor))
+		, resolution(get_uniform(*program, "u_resolution", setup, PostProcSetup::resolution))
+		, time(get_uniform(*program, "u_time", setup, PostProcSetup::time))
 	{
 		setup_textures(program.get(), {&texture});
 	}
@@ -577,13 +582,14 @@ struct ShaderResource
 
 	std::shared_ptr<LoadedPostProcShader> pp_invert;
 	std::shared_ptr<LoadedPostProcShader> pp_grayscale;
+	std::shared_ptr<LoadedPostProcShader> pp_damage;
 
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
 		return single_color_shader.program->is_loaded() && unlit_shader.is_loaded()
 			&& default_shader.is_loaded() && pp_invert->program->is_loaded()
-			&& pp_grayscale->program->is_loaded();
+			&& pp_grayscale->program->is_loaded() && pp_damage->program->is_loaded();
 	}
 };
 
@@ -754,6 +760,12 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		),
 		PostProcSetup::factor
 	);
+	auto pp_damage = std::make_shared<LoadedPostProcShader>(
+		std::make_shared<ShaderProgram>(
+			std::string{PP_VERT_GLSL}, std::string{PP_DAMAGE_FRAG_GLSL}, fsi.full_scrren_layout
+		),
+		PostProcSetup::factor | PostProcSetup::resolution | PostProcSetup::time
+	);
 
 	return {
 		load_shader(global_shader_data, single_color_shader),
@@ -762,7 +774,8 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		 {loaded_default, settings},
 		 {loaded_default_transparency, settings}},
 		pp_invert,
-		pp_grayscale};
+		pp_grayscale,
+		pp_damage};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1050,7 +1063,7 @@ void RenderTask::render(const PostProcArg& arg)
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	effect->use_shader(arg.renderer, fbo->texture);
+	effect->use_shader(arg, fbo->texture);
 	render_geom(arg.renderer->pimpl->full_screen_geom);
 }
 
@@ -1059,6 +1072,19 @@ void RenderTask::update(const PostProcArg& arg)
 	auto bound = BoundFbo{fbo};
 	set_gl_viewport({fbo->texture.width, fbo->texture.height});
 	source->render(arg);
+}
+
+void EffectStack::update(float dt)
+{
+	for (auto e: effects)
+	{
+		if (e->is_enabled == false)
+		{
+			continue;
+		}
+
+		e->update(dt);
+	}
 }
 
 void EffectStack::render(const PostProcArg& arg)
@@ -1129,6 +1155,7 @@ void FactorEffect::set_factor(float f)
 struct SimpleEffect : FactorEffect
 {
 	std::shared_ptr<LoadedPostProcShader> shader;
+	float time = 0.0f;
 
 	SimpleEffect(std::shared_ptr<LoadedPostProcShader> s)
 		: shader(s)
@@ -1136,18 +1163,33 @@ struct SimpleEffect : FactorEffect
 		ASSERT(shader->factor.has_value());
 	}
 
-	void use_shader(Renderer* r, const Texture& t) override
+	void update(float dt) override
+	{
+		time += dt;
+	}
+
+	void use_shader(const PostProcArg& a, const Texture& t) override
 	{
 		shader->program->use();
 		if (shader->factor)
 		{
 			shader->program->set_float(*shader->factor, get_factor());
 		}
-		bind_texture(&r->pimpl->states, shader->texture, t);
+		if (shader->resolution)
+		{
+			shader->program->set_vec2(*shader->resolution, a.window_size);
+		}
+		if (shader->time)
+		{
+			shader->program->set_float(*shader->time, time);
+		}
+		bind_texture(&a.renderer->pimpl->states, shader->texture, t);
 	}
 
 	void build(const BuildArg& arg) override
 	{
+		time = 0.0f;
+
 		auto fbo = arg.fbo->get(
 			arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude
 		);
@@ -1168,6 +1210,11 @@ std::shared_ptr<FactorEffect> Renderer::make_invert_effect()
 std::shared_ptr<FactorEffect> Renderer::make_grayscale_effect()
 {
 	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_grayscale);
+}
+
+std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
+{
+	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_damage);
 }
 
 // ------------------------------------------------------------------------------------------------

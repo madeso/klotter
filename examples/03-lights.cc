@@ -17,6 +17,7 @@ struct LightsSample : Sample
 	EffectStack effects;
 	std::shared_ptr<FactorEffect> pp_invert;
 	std::shared_ptr<FactorEffect> pp_grayscale;
+	std::shared_ptr<FactorEffect> pp_damage;
 
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
@@ -65,12 +66,14 @@ struct LightsSample : Sample
 	LightsSample(Renderer* renderer, Camera* camera)
 		: pp_invert(renderer->make_invert_effect())
 		, pp_grayscale(renderer->make_grayscale_effect())
+		, pp_damage(renderer->make_damage_effect())
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
 
 		effects.effects.emplace_back(pp_invert);
 		effects.effects.emplace_back(pp_grayscale);
+		effects.effects.emplace_back(pp_damage);
 
 		light_material = renderer->make_unlit_material();
 		auto light_geom
@@ -207,6 +210,7 @@ struct LightsSample : Sample
 		float dt
 	) override
 	{
+		effects.update(dt);
 		auto& fl = world.lights.frustum_lights[0];
 		if (follow_player)
 		{
@@ -260,6 +264,13 @@ struct LightsSample : Sample
 			if (ImGui::SliderFloat("grayscale", &factor, 0.0f, 1.0f))
 			{
 				pp_grayscale->set_factor(factor);
+			}
+		}
+		{
+			auto factor = pp_damage->get_factor();
+			if (ImGui::SliderFloat("damage", &factor, 0.0f, 1.0f))
+			{
+				pp_damage->set_factor(factor);
 			}
 		}
 

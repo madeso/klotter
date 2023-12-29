@@ -423,9 +423,10 @@ struct Effect
 	virtual ~Effect() = default;
 
 	virtual void build(const BuildArg& arg) = 0;
+	virtual void update(float dt) = 0;
 
 	bool enabled() const;
-	virtual void use_shader(Renderer* r, const Texture& t) = 0;
+	virtual void use_shader(const PostProcArg& a, const Texture& t) = 0;
 
    protected:
 
@@ -461,6 +462,7 @@ struct EffectStack
 
 	/// rebuilds stack if dirty, update all targets, then render the last_source
 	void render(const PostProcArg& arg);
+	void update(float dt);
 };
 
 
@@ -486,6 +488,7 @@ struct Renderer
 
 	std::shared_ptr<FactorEffect> make_invert_effect();
 	std::shared_ptr<FactorEffect> make_grayscale_effect();
+	std::shared_ptr<FactorEffect> make_damage_effect();
 
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;
