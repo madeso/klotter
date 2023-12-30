@@ -273,6 +273,7 @@ struct LightsSample : Sample
 				pp_damage->set_factor(factor);
 			}
 		}
+		effects.gui();
 
 		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
 		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());

@@ -1135,6 +1135,18 @@ void EffectStack::render(const PostProcArg& arg)
 	compiled.last_source->render(arg);
 }
 
+void EffectStack::gui()
+{
+	int index = 0;
+	for (auto e: effects)
+	{
+		ImGui::PushID(index);
+		e->gui();
+		ImGui::PopID();
+		index += 1;
+	}
+}
+
 FactorEffect::FactorEffect()
 	: factor(0.0f)
 {
@@ -1152,15 +1164,110 @@ void FactorEffect::set_factor(float f)
 	set_enabled(factor > ALMOST_ZERO);
 }
 
+struct ShaderProp
+{
+	virtual ~ShaderProp() = default;
+
+	virtual void use(const PostProcArg& a, ShaderProgram& shader) = 0;
+	virtual void gui() = 0;
+};
+
+struct FloatDragShaderProp : ShaderProp
+{
+	Uniform uniform;
+	std::string name;
+	float value;
+	float speed;
+
+	FloatDragShaderProp(
+		std::shared_ptr<LoadedPostProcShader> shader, const std::string& n, float v, float s
+	)
+		: uniform(shader->program->get_uniform(n))
+		, name(n)
+		, value(v)
+		, speed(s)
+	{
+	}
+
+	void use(const PostProcArg&, ShaderProgram& shader) override
+	{
+		shader.set_float(uniform, value);
+	}
+
+	void gui() override
+	{
+		ImGui::DragFloat(name.c_str(), &value, speed);
+	}
+};
+
+struct FloatSliderShaderProp : ShaderProp
+{
+	Uniform uniform;
+	std::string name;
+	float value;
+	float min;
+	float max;
+
+	FloatSliderShaderProp(
+		std::shared_ptr<LoadedPostProcShader> shader,
+		const std::string& n,
+		float v,
+		float mi,
+		float ma
+	)
+		: uniform(shader->program->get_uniform(n))
+		, name(n)
+		, value(v)
+		, min(mi)
+		, max(ma)
+	{
+	}
+
+	void use(const PostProcArg&, ShaderProgram& shader) override
+	{
+		shader.set_float(uniform, value);
+	}
+
+	void gui() override
+	{
+		ImGui::SliderFloat(name.c_str(), &value, min, max);
+	}
+};
+
 struct SimpleEffect : FactorEffect
 {
 	std::shared_ptr<LoadedPostProcShader> shader;
+	std::vector<std::shared_ptr<ShaderProp>> properties;
 	float time = 0.0f;
 
 	SimpleEffect(std::shared_ptr<LoadedPostProcShader> s)
 		: shader(s)
 	{
 		ASSERT(shader->factor.has_value());
+	}
+
+	void add_float_drag_prop(const std::string& name, float value, float speed)
+	{
+		properties.emplace_back(std::make_shared<FloatDragShaderProp>(shader, name, value, speed));
+	}
+
+	void add_float_slider_prop(const std::string& name, float value, float min, float max)
+	{
+		properties.emplace_back(
+			std::make_shared<FloatSliderShaderProp>(shader, name, value, min, max)
+		);
+	}
+
+	void gui() override
+	{
+		int index = 0;
+		for (auto& p: properties)
+		{
+			ImGui::PushID(index);
+			p->gui();
+			ImGui::PopID();
+			index += 1;
+		}
 	}
 
 	void update(float dt) override
@@ -1182,6 +1289,10 @@ struct SimpleEffect : FactorEffect
 		if (shader->time)
 		{
 			shader->program->set_float(*shader->time, time);
+		}
+		for (auto& p: properties)
+		{
+			p->use(a, *shader->program);
 		}
 		bind_texture(&a.renderer->pimpl->states, shader->texture, t);
 	}
@@ -1214,7 +1325,12 @@ std::shared_ptr<FactorEffect> Renderer::make_grayscale_effect()
 
 std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 {
-	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_damage);
+	auto r = std::make_shared<SimpleEffect>(pimpl->shaders.pp_damage);
+	r->add_float_drag_prop("u_vignette_radius", 0.13f, 0.01f);
+	r->add_float_slider_prop("u_vignette_smoothness", 1.0f, 0.001f, 1.0f);
+	r->add_float_slider_prop("u_vignette_darkening", 1.0f, 0.0f, 1.0f);
+	r->add_float_drag_prop("u_noise_scale", 25.0f, 1.0f);
+	return r;
 }
 
 // ------------------------------------------------------------------------------------------------

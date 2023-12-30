@@ -4,6 +4,12 @@ in vec2 v_tex_coord;
 uniform sampler2D u_texture;
 uniform float u_factor;
 uniform vec2 u_resolution;
+
+uniform float u_vignette_radius;
+uniform float u_vignette_smoothness;
+uniform float u_vignette_darkening;
+uniform float u_noise_scale;
+
 uniform float u_time;
 out vec4 o_frag_color;
 
@@ -87,19 +93,15 @@ float cnoise(vec3 P){
 
 void main()
 {
-    float vignette_radius = 0.13;
-    float vignette_smoothness = 1;
-    float vignette_darkening = 1;
     vec3 tint = vec3(1, 0, 0);
-    float noise_scale = 25;
 
-    float nf = min(1, max(0, cnoise(vec3(v_tex_coord * noise_scale, u_time)) * 0.5 + 0.5));
+    float nf = min(1, max(0, cnoise(vec3(v_tex_coord * u_noise_scale, u_time)) * 0.5 + 0.5));
     float nfs = nf;
 
     float size = min(u_resolution.x, u_resolution.y);
     float scale = 1 - length((v_tex_coord - 0.5) * u_resolution) / size;
-    float sm = smoothstep(vignette_radius, vignette_radius + vignette_smoothness, scale);
-    float vignette = mix(1, 1-vignette_darkening, sm);
+    float sm = smoothstep(u_vignette_radius, u_vignette_radius + u_vignette_smoothness, scale);
+    float vignette = mix(1, 1-u_vignette_darkening, sm);
     
     vec3 color = texture(u_texture, v_tex_coord).rgb;
 

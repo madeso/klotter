@@ -424,6 +424,7 @@ struct Effect
 
 	virtual void build(const BuildArg& arg) = 0;
 	virtual void update(float dt) = 0;
+	virtual void gui() = 0;
 
 	bool enabled() const;
 	virtual void use_shader(const PostProcArg& a, const Texture& t) = 0;
@@ -463,6 +464,7 @@ struct EffectStack
 	/// rebuilds stack if dirty, update all targets, then render the last_source
 	void render(const PostProcArg& arg);
 	void update(float dt);
+	void gui();
 };
 
 
