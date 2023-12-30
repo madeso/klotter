@@ -1236,31 +1236,46 @@ struct FloatSliderShaderProp : ShaderProp
 
 struct SimpleEffect : FactorEffect
 {
+	std::string name;
 	std::shared_ptr<LoadedPostProcShader> shader;
 	std::vector<std::shared_ptr<ShaderProp>> properties;
 	float time = 0.0f;
 
-	SimpleEffect(std::shared_ptr<LoadedPostProcShader> s)
-		: shader(s)
+	SimpleEffect(const std::string& n, std::shared_ptr<LoadedPostProcShader> s)
+		: name(n)
+		, shader(s)
 	{
 		ASSERT(shader->factor.has_value());
 	}
 
-	void add_float_drag_prop(const std::string& name, float value, float speed)
-	{
-		properties.emplace_back(std::make_shared<FloatDragShaderProp>(shader, name, value, speed));
-	}
-
-	void add_float_slider_prop(const std::string& name, float value, float min, float max)
+	void add_float_drag_prop(const std::string& prop_name, float value, float speed)
 	{
 		properties.emplace_back(
-			std::make_shared<FloatSliderShaderProp>(shader, name, value, min, max)
+			std::make_shared<FloatDragShaderProp>(shader, prop_name, value, speed)
+		);
+	}
+
+	void add_float_slider_prop(const std::string& prop_name, float value, float min, float max)
+	{
+		properties.emplace_back(
+			std::make_shared<FloatSliderShaderProp>(shader, prop_name, value, min, max)
 		);
 	}
 
 	void gui() override
 	{
+		if (properties.empty())
+		{
+			return;
+		}
+
 		int index = 0;
+
+		if (ImGui::CollapsingHeader(name.c_str()) == false)
+		{
+			return;
+		}
+
 		for (auto& p: properties)
 		{
 			ImGui::PushID(index);
@@ -1315,17 +1330,17 @@ struct SimpleEffect : FactorEffect
 
 std::shared_ptr<FactorEffect> Renderer::make_invert_effect()
 {
-	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_invert);
+	return std::make_shared<SimpleEffect>("Invert", pimpl->shaders.pp_invert);
 }
 
 std::shared_ptr<FactorEffect> Renderer::make_grayscale_effect()
 {
-	return std::make_shared<SimpleEffect>(pimpl->shaders.pp_grayscale);
+	return std::make_shared<SimpleEffect>("Grayscale", pimpl->shaders.pp_grayscale);
 }
 
 std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 {
-	auto r = std::make_shared<SimpleEffect>(pimpl->shaders.pp_damage);
+	auto r = std::make_shared<SimpleEffect>("Damage", pimpl->shaders.pp_damage);
 	r->add_float_drag_prop("u_vignette_radius", 0.13f, 0.01f);
 	r->add_float_slider_prop("u_vignette_smoothness", 1.0f, 0.001f, 1.0f);
 	r->add_float_slider_prop("u_vignette_darkening", 1.0f, 0.0f, 1.0f);
