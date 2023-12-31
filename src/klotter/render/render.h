@@ -368,15 +368,21 @@ struct RenderSource
 	virtual void render(const PostProcArg& arg) = 0;
 };
 
-struct Effect;
+struct ShaderPropertyProvider
+{
+	virtual ~ShaderPropertyProvider() = default;
+	virtual void use_shader(const PostProcArg& a, const Texture& t) = 0;
+};
 
 struct RenderTask : RenderSource
 {
 	std::shared_ptr<RenderSource> source;
 	std::shared_ptr<FrameBuffer> fbo;
-	Effect* effect;
+	ShaderPropertyProvider* effect;
 
-	RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, Effect* e);
+	RenderTask(
+		std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e
+	);
 
 	/// render internal fbo to a quad with a shader
 	void render(const PostProcArg& arg) override;
@@ -427,7 +433,6 @@ struct Effect
 	virtual void gui() = 0;
 
 	bool enabled() const;
-	virtual void use_shader(const PostProcArg& a, const Texture& t) = 0;
 
    protected:
 

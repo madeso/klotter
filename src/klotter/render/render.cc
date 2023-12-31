@@ -1041,7 +1041,9 @@ struct RenderWorld : RenderSource
 	}
 };
 
-RenderTask::RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, Effect* e)
+RenderTask::RenderTask(
+	std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e
+)
 	: source(s)
 	, fbo(f)
 	, effect(e)
@@ -1234,7 +1236,9 @@ struct FloatSliderShaderProp : ShaderProp
 	}
 };
 
-struct SimpleEffect : FactorEffect
+struct SimpleEffect
+	: FactorEffect
+	, ShaderPropertyProvider
 {
 	std::string name;
 	std::shared_ptr<LoadedPostProcShader> shader;
