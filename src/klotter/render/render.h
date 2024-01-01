@@ -496,6 +496,7 @@ struct Renderer
 	std::shared_ptr<FactorEffect> make_invert_effect();
 	std::shared_ptr<FactorEffect> make_grayscale_effect();
 	std::shared_ptr<FactorEffect> make_damage_effect();
+	std::shared_ptr<FactorEffect> make_blur_effect();
 
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;

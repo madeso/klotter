@@ -4,6 +4,7 @@
 #include "pp.invert.frag.glsl.h"
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
+#include "pp.blur.frag.glsl.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -583,13 +584,14 @@ struct ShaderResource
 	std::shared_ptr<LoadedPostProcShader> pp_invert;
 	std::shared_ptr<LoadedPostProcShader> pp_grayscale;
 	std::shared_ptr<LoadedPostProcShader> pp_damage;
+	std::shared_ptr<LoadedPostProcShader> pp_blur;
 
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
 		return single_color_shader.program->is_loaded() && unlit_shader.is_loaded()
 			&& default_shader.is_loaded() && pp_invert->program->is_loaded()
-			&& pp_grayscale->program->is_loaded() && pp_damage->program->is_loaded();
+			&& pp_grayscale->program->is_loaded() && pp_blur->program->is_loaded();
 	}
 };
 
@@ -766,6 +768,12 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		),
 		PostProcSetup::factor | PostProcSetup::resolution | PostProcSetup::time
 	);
+	auto pp_blur = std::make_shared<LoadedPostProcShader>(
+		std::make_shared<ShaderProgram>(
+			std::string{PP_VERT_GLSL}, std::string{PP_BLUR_FRAG_GLSL}, fsi.full_scrren_layout
+		),
+		PostProcSetup::factor | PostProcSetup::resolution
+	);
 
 	return {
 		load_shader(global_shader_data, single_color_shader),
@@ -775,7 +783,8 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		 {loaded_default_transparency, settings}},
 		pp_invert,
 		pp_grayscale,
-		pp_damage};
+		pp_damage,
+		pp_blur};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1349,6 +1358,13 @@ std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 	r->add_float_slider_prop("u_vignette_smoothness", 1.0f, 0.001f, 1.0f);
 	r->add_float_slider_prop("u_vignette_darkening", 1.0f, 0.0f, 1.0f);
 	r->add_float_drag_prop("u_noise_scale", 25.0f, 1.0f);
+	return r;
+}
+
+std::shared_ptr<FactorEffect> Renderer::make_blur_effect()
+{
+	auto r = std::make_shared<SimpleEffect>("Blur", pimpl->shaders.pp_blur);
+	r->add_float_slider_prop("u_blur_size", 0.25f, 0.0f, 1.0f);
 	return r;
 }
 

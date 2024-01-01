@@ -18,6 +18,7 @@ struct LightsSample : Sample
 	std::shared_ptr<FactorEffect> pp_invert;
 	std::shared_ptr<FactorEffect> pp_grayscale;
 	std::shared_ptr<FactorEffect> pp_damage;
+	std::shared_ptr<FactorEffect> pp_blur;
 
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
@@ -67,12 +68,14 @@ struct LightsSample : Sample
 		: pp_invert(renderer->make_invert_effect())
 		, pp_grayscale(renderer->make_grayscale_effect())
 		, pp_damage(renderer->make_damage_effect())
+		, pp_blur(renderer->make_blur_effect())
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
 
 		effects.effects.emplace_back(pp_invert);
 		effects.effects.emplace_back(pp_grayscale);
+		effects.effects.emplace_back(pp_blur);
 		effects.effects.emplace_back(pp_damage);
 
 		light_material = renderer->make_unlit_material();
@@ -264,6 +267,13 @@ struct LightsSample : Sample
 			if (ImGui::SliderFloat("grayscale", &factor, 0.0f, 1.0f))
 			{
 				pp_grayscale->set_factor(factor);
+			}
+		}
+		{
+			auto factor = pp_blur->get_factor();
+			if (ImGui::SliderFloat("blur", &factor, 0.0f, 1.0f))
+			{
+				pp_blur->set_factor(factor);
 			}
 		}
 		{
