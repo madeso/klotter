@@ -5,6 +5,7 @@
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
 #include "pp.blurv.frag.glsl.h"
+#include "pp.blurh.frag.glsl.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -585,13 +586,15 @@ struct ShaderResource
 	std::shared_ptr<LoadedPostProcShader> pp_grayscale;
 	std::shared_ptr<LoadedPostProcShader> pp_damage;
 	std::shared_ptr<LoadedPostProcShader> pp_blurv;
+	std::shared_ptr<LoadedPostProcShader> pp_blurh;
 
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
 		return single_color_shader.program->is_loaded() && unlit_shader.is_loaded()
 			&& default_shader.is_loaded() && pp_invert->program->is_loaded()
-			&& pp_grayscale->program->is_loaded() && pp_blurv->program->is_loaded();
+			&& pp_grayscale->program->is_loaded() && pp_blurv->program->is_loaded()
+			&& pp_blurh->program->is_loaded();
 	}
 };
 
@@ -774,6 +777,12 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		),
 		PostProcSetup::factor
 	);
+	auto pp_blurh = std::make_shared<LoadedPostProcShader>(
+		std::make_shared<ShaderProgram>(
+			std::string{PP_VERT_GLSL}, std::string{PP_BLURH_FRAG_GLSL}, fsi.full_scrren_layout
+		),
+		PostProcSetup::factor | PostProcSetup::resolution
+	);
 
 	return {
 		load_shader(global_shader_data, single_color_shader),
@@ -784,7 +793,8 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		pp_invert,
 		pp_grayscale,
 		pp_damage,
-		pp_blurv};
+		pp_blurv,
+		pp_blurh};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1341,6 +1351,129 @@ struct SimpleEffect
 	}
 };
 
+struct BlurEffect;
+
+struct VertProvider : ShaderPropertyProvider
+{
+	explicit VertProvider(BlurEffect* b)
+		: blur(b)
+	{
+	}
+
+	BlurEffect* blur;
+	void use_shader(const PostProcArg& a, const Texture& t) override;
+};
+
+struct HoriProvider : ShaderPropertyProvider
+{
+	explicit HoriProvider(BlurEffect* b)
+		: blur(b)
+	{
+	}
+
+	BlurEffect* blur;
+	void use_shader(const PostProcArg& a, const Texture& t) override;
+};
+
+struct BlurEffect : FactorEffect
+{
+	std::string name;
+	VertProvider vert_p;
+	HoriProvider hori_p;
+	std::shared_ptr<LoadedPostProcShader> vert;
+	std::shared_ptr<LoadedPostProcShader> hori;
+
+	Uniform blur_size_v;
+	Uniform blur_size_h;
+
+	float blur_size = 0.03f;
+
+	BlurEffect(
+		const std::string& n,
+		std::shared_ptr<LoadedPostProcShader> v,
+		std::shared_ptr<LoadedPostProcShader> h
+	)
+		: name(n)
+		, vert_p(this)
+		, hori_p(this)
+		, vert(v)
+		, hori(h)
+		, blur_size_v(vert->program->get_uniform("u_blur_size"))
+		, blur_size_h(hori->program->get_uniform("u_blur_size"))
+	{
+		ASSERT(vert->factor.has_value());
+		ASSERT(hori->factor.has_value());
+	}
+
+	void gui() override
+	{
+		if (ImGui::CollapsingHeader(name.c_str()) == false)
+		{
+			return;
+		}
+
+		ImGui::SliderFloat("Blur size", &blur_size, 0.0f, 0.1f);
+	}
+
+	void update(float) override
+	{
+	}
+
+	void use_vert_shader(const PostProcArg& a, const Texture& t)
+	{
+		vert->program->use();
+		ASSERT(vert->factor);
+		vert->program->set_float(*vert->factor, get_factor());
+		vert->program->set_float(blur_size_v, blur_size);
+		bind_texture(&a.renderer->pimpl->states, vert->texture, t);
+	}
+
+	void use_hori_shader(const PostProcArg& a, const Texture& t)
+	{
+		hori->program->use();
+		ASSERT(hori->factor);
+		hori->program->set_float(*hori->factor, get_factor());
+		ASSERT(hori->resolution);
+		hori->program->set_vec2(*hori->resolution, a.window_size);
+		hori->program->set_float(blur_size_h, blur_size);
+		bind_texture(&a.renderer->pimpl->states, hori->texture, t);
+	}
+
+	void build(const BuildArg& arg) override
+	{
+		auto src = arg.builder->last_source;
+
+		// todo(Gustav): modify size
+
+		// step 1: vertical
+		auto fbo_v = arg.fbo->get(
+			arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude
+		);
+		auto target_v = std::make_shared<RenderTask>(src, fbo_v, &vert_p);
+		arg.builder->targets.emplace_back(target_v);
+
+		// step 2: horizontal
+		auto fbo_h = arg.fbo->get(
+			arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude
+		);
+		auto target_h = std::make_shared<RenderTask>(target_v, fbo_h, &hori_p);
+		arg.builder->targets.emplace_back(target_h);
+
+		// done
+		arg.builder->last_source = target_h;
+	}
+};
+
+void VertProvider::use_shader(const PostProcArg& a, const Texture& t)
+{
+	blur->use_vert_shader(a, t);
+}
+
+void HoriProvider::use_shader(const PostProcArg& a, const Texture& t)
+{
+	blur->use_hori_shader(a, t);
+}
+
 std::shared_ptr<FactorEffect> Renderer::make_invert_effect()
 {
 	return std::make_shared<SimpleEffect>("Invert", pimpl->shaders.pp_invert);
@@ -1363,9 +1496,7 @@ std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 
 std::shared_ptr<FactorEffect> Renderer::make_blur_effect()
 {
-	auto r = std::make_shared<SimpleEffect>("Blur", pimpl->shaders.pp_blurv);
-	r->add_float_slider_prop("u_blur_size", 0.03f, 0.0f, 0.1f);
-	return r;
+	return std::make_shared<BlurEffect>("Blur", pimpl->shaders.pp_blurv, pimpl->shaders.pp_blurh);
 }
 
 // ------------------------------------------------------------------------------------------------
