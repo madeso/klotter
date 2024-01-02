@@ -1,5 +1,7 @@
 #version 330 core
 
+#define SAMPLES {{sample_count}}
+
 in vec2 v_tex_coord;
 uniform sampler2D u_texture;
 {{#is_horizontal}}
@@ -9,7 +11,6 @@ uniform float u_factor;
 uniform float u_blur_size;
 out vec4 o_frag_color;
 
-#define SAMPLES 10
 
 void main()
 {

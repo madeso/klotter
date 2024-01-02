@@ -41,6 +41,7 @@ std::string generate_blur(std::string_view src, const BlurOptions& options)
 
 	data["is_horizontal"] = options.blur == BlurType::horizontal;
 	data["is_vertical"] = options.blur == BlurType::vertical;
+	data["sample_count"] = (Str{} << options.sample_count).str();
 
 	return input.render(data);
 }

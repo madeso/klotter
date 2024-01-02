@@ -33,6 +33,7 @@ enum class BlurType
 struct BlurOptions
 {
 	BlurType blur;
+	int sample_count;
 };
 
 std::string generate_blur(std::string_view src, const BlurOptions& options);

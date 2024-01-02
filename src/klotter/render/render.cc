@@ -26,6 +26,8 @@ constexpr float ALMOST_ZERO = 0.01f;
 
 /// if alpha goes above this limit, it is no longer considered transparent
 constexpr float ALPHA_TRANSPARENCY_LIMIT = 1.0f - ALMOST_ZERO;
+
+constexpr int BLUR_SAMPLES = 10;
 }  //  namespace
 
 namespace klotter
@@ -773,7 +775,7 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 	auto pp_blurv = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL},
-			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::vertical}),
+			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::vertical, BLUR_SAMPLES}),
 			fsi.full_scrren_layout
 		),
 		PostProcSetup::factor
@@ -781,7 +783,7 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 	auto pp_blurh = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL},
-			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::horizontal}),
+			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::horizontal, BLUR_SAMPLES}),
 			fsi.full_scrren_layout
 		),
 		PostProcSetup::factor | PostProcSetup::resolution
