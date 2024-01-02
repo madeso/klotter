@@ -30,6 +30,8 @@ constexpr float ALPHA_TRANSPARENCY_LIMIT = 1.0f - ALMOST_ZERO;
 constexpr int BLUR_SAMPLES = 10;
 }  //  namespace
 
+#define BLUR_USE_GAUSS 1
+
 namespace klotter
 {
 
@@ -772,10 +774,19 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		),
 		PostProcSetup::factor | PostProcSetup::resolution | PostProcSetup::time
 	);
+
+	constexpr IsGauss use_gauss =
+#if BLUR_USE_GAUSS == 1
+		IsGauss::yes
+#else
+		IsGauss::no
+#endif
+		;
+
 	auto pp_blurv = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL},
-			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::vertical, BLUR_SAMPLES}),
+			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::vertical, BLUR_SAMPLES, use_gauss}),
 			fsi.full_scrren_layout
 		),
 		PostProcSetup::factor
@@ -783,7 +794,7 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 	auto pp_blurh = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL},
-			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::horizontal, BLUR_SAMPLES}),
+			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::horizontal, BLUR_SAMPLES, use_gauss}),
 			fsi.full_scrren_layout
 		),
 		PostProcSetup::factor | PostProcSetup::resolution
@@ -1391,7 +1402,15 @@ struct BlurEffect : FactorEffect
 	Uniform blur_size_v;
 	Uniform blur_size_h;
 
-	float blur_size = 0.03f;
+#if BLUR_USE_GAUSS == 1
+	Uniform std_dev_v;
+	Uniform std_dev_h;
+#endif
+
+	float blur_size = 0.02f;
+#if BLUR_USE_GAUSS == 1
+	float std_dev = 0.02f;
+#endif
 
 	BlurEffect(
 		const std::string& n,
@@ -1405,6 +1424,10 @@ struct BlurEffect : FactorEffect
 		, hori(h)
 		, blur_size_v(vert->program->get_uniform("u_blur_size"))
 		, blur_size_h(hori->program->get_uniform("u_blur_size"))
+#if BLUR_USE_GAUSS == 1
+		, std_dev_v(vert->program->get_uniform("u_std_dev"))
+		, std_dev_h(hori->program->get_uniform("u_std_dev"))
+#endif
 	{
 		ASSERT(vert->factor.has_value());
 		ASSERT(hori->factor.has_value());
@@ -1417,7 +1440,10 @@ struct BlurEffect : FactorEffect
 			return;
 		}
 
-		ImGui::SliderFloat("Blur size", &blur_size, 0.0f, 0.1f);
+		ImGui::SliderFloat("Blur size", &blur_size, 0.0f, 0.2f);
+#if BLUR_USE_GAUSS == 1
+		ImGui::SliderFloat("Standard deviation", &std_dev, 0.0f, 0.1f);
+#endif
 	}
 
 	void update(float) override
@@ -1430,6 +1456,9 @@ struct BlurEffect : FactorEffect
 		ASSERT(vert->factor);
 		vert->program->set_float(*vert->factor, get_factor());
 		vert->program->set_float(blur_size_v, blur_size);
+#if BLUR_USE_GAUSS == 1
+		vert->program->set_float(std_dev_v, std_dev);
+#endif
 		bind_texture(&a.renderer->pimpl->states, vert->texture, t);
 	}
 
@@ -1441,6 +1470,9 @@ struct BlurEffect : FactorEffect
 		ASSERT(hori->resolution);
 		hori->program->set_vec2(*hori->resolution, a.window_size);
 		hori->program->set_float(blur_size_h, blur_size);
+#if BLUR_USE_GAUSS == 1
+		hori->program->set_float(std_dev_h, std_dev);
+#endif
 		bind_texture(&a.renderer->pimpl->states, hori->texture, t);
 	}
 
@@ -1448,7 +1480,7 @@ struct BlurEffect : FactorEffect
 	{
 		auto src = arg.builder->last_source;
 
-		// todo(Gustav): modify size
+		// todo(Gustav): modify resolution to get better blur and at a lower cost!
 
 		// step 1: vertical
 		auto fbo_v = arg.fbo->get(

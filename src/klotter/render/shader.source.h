@@ -30,10 +30,17 @@ enum class BlurType
 	vertical
 };
 
+enum class IsGauss
+{
+	no,
+	yes
+};
+
 struct BlurOptions
 {
 	BlurType blur;
 	int sample_count;
+	IsGauss is_gauss;
 };
 
 std::string generate_blur(std::string_view src, const BlurOptions& options);
