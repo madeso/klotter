@@ -772,7 +772,7 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL}, std::string{PP_BLUR_FRAG_GLSL}, fsi.full_scrren_layout
 		),
-		PostProcSetup::factor | PostProcSetup::resolution
+		PostProcSetup::factor
 	);
 
 	return {
