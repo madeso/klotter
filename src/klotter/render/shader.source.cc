@@ -21,7 +21,7 @@ ShaderOptions ShaderOptions::with_transparent_cutoff() const
 	return ret;
 }
 
-std::string generate(std::string_view str, const ShaderOptions& options)
+kainjow::mustache::mustache load_mustache(std::string_view str)
 {
 	auto input = kainjow::mustache::mustache{std::string{str.begin(), str.end()}};
 	if (input.is_valid() == false)
@@ -31,6 +31,23 @@ std::string generate(std::string_view str, const ShaderOptions& options)
 	}
 
 	input.set_custom_escape([](const std::string& s) { return s; });
+	return input;
+}
+
+std::string generate_blur(std::string_view src, const BlurOptions& options)
+{
+	auto input = load_mustache(src);
+	auto data = kainjow::mustache::data{};
+
+	data["is_horizontal"] = options.blur == BlurType::horizontal;
+	data["is_vertical"] = options.blur == BlurType::vertical;
+
+	return input.render(data);
+}
+
+std::string generate(std::string_view str, const ShaderOptions& options)
+{
+	auto input = load_mustache(str);
 	auto data = kainjow::mustache::data{};
 
 	data["use_lights"] = options.use_lights;

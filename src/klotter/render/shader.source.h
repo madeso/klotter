@@ -24,6 +24,19 @@ struct ShaderSource
 	std::string fragment;
 };
 
+enum class BlurType
+{
+	horizontal,
+	vertical
+};
+
+struct BlurOptions
+{
+	BlurType blur;
+};
+
+std::string generate_blur(std::string_view src, const BlurOptions& options);
+
 ShaderSource load_shader_source(const ShaderOptions& options);
 
 }  //  namespace klotter

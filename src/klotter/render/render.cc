@@ -4,8 +4,7 @@
 #include "pp.invert.frag.glsl.h"
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
-#include "pp.blurv.frag.glsl.h"
-#include "pp.blurh.frag.glsl.h"
+#include "pp.blur.frag.glsl.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -773,13 +772,17 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 	);
 	auto pp_blurv = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_BLURV_FRAG_GLSL}, fsi.full_scrren_layout
+			std::string{PP_VERT_GLSL},
+			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::vertical}),
+			fsi.full_scrren_layout
 		),
 		PostProcSetup::factor
 	);
 	auto pp_blurh = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_BLURH_FRAG_GLSL}, fsi.full_scrren_layout
+			std::string{PP_VERT_GLSL},
+			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::horizontal}),
+			fsi.full_scrren_layout
 		),
 		PostProcSetup::factor | PostProcSetup::resolution
 	);
