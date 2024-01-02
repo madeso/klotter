@@ -1364,7 +1364,7 @@ std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 std::shared_ptr<FactorEffect> Renderer::make_blur_effect()
 {
 	auto r = std::make_shared<SimpleEffect>("Blur", pimpl->shaders.pp_blur);
-	r->add_float_slider_prop("u_blur_size", 0.25f, 0.0f, 1.0f);
+	r->add_float_slider_prop("u_blur_size", 0.03f, 0.0f, 0.1f);
 	return r;
 }
 
