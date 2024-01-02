@@ -15,7 +15,7 @@ embed(src_assets
         klotter/render/pp.invert.frag.glsl
         klotter/render/pp.grayscale.frag.glsl
         klotter/render/pp.damage.frag.glsl
-        klotter/render/pp.blur.frag.glsl
+        klotter/render/pp.blurv.frag.glsl
 )
 
 set(shaders

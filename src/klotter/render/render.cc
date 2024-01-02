@@ -4,7 +4,7 @@
 #include "pp.invert.frag.glsl.h"
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
-#include "pp.blur.frag.glsl.h"
+#include "pp.blurv.frag.glsl.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -584,14 +584,14 @@ struct ShaderResource
 	std::shared_ptr<LoadedPostProcShader> pp_invert;
 	std::shared_ptr<LoadedPostProcShader> pp_grayscale;
 	std::shared_ptr<LoadedPostProcShader> pp_damage;
-	std::shared_ptr<LoadedPostProcShader> pp_blur;
+	std::shared_ptr<LoadedPostProcShader> pp_blurv;
 
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
 		return single_color_shader.program->is_loaded() && unlit_shader.is_loaded()
 			&& default_shader.is_loaded() && pp_invert->program->is_loaded()
-			&& pp_grayscale->program->is_loaded() && pp_blur->program->is_loaded();
+			&& pp_grayscale->program->is_loaded() && pp_blurv->program->is_loaded();
 	}
 };
 
@@ -768,9 +768,9 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		),
 		PostProcSetup::factor | PostProcSetup::resolution | PostProcSetup::time
 	);
-	auto pp_blur = std::make_shared<LoadedPostProcShader>(
+	auto pp_blurv = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_BLUR_FRAG_GLSL}, fsi.full_scrren_layout
+			std::string{PP_VERT_GLSL}, std::string{PP_BLURV_FRAG_GLSL}, fsi.full_scrren_layout
 		),
 		PostProcSetup::factor
 	);
@@ -784,7 +784,7 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 		pp_invert,
 		pp_grayscale,
 		pp_damage,
-		pp_blur};
+		pp_blurv};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -1363,7 +1363,7 @@ std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 
 std::shared_ptr<FactorEffect> Renderer::make_blur_effect()
 {
-	auto r = std::make_shared<SimpleEffect>("Blur", pimpl->shaders.pp_blur);
+	auto r = std::make_shared<SimpleEffect>("Blur", pimpl->shaders.pp_blurv);
 	r->add_float_slider_prop("u_blur_size", 0.03f, 0.0f, 0.1f);
 	return r;
 }
