@@ -39,7 +39,6 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - Blur shader! https://www.ronja-tutorials.com/post/023-postprocessing-blur/ https://blog.innogames.com/shader-exploration-the-art-of-blurring/
 - complete rest of learn opengl
 
-  1. (feat. full screen effects) Framebuffers (Advanced OpenGL)
   1. (feat. depth in fse) Depth testing (Advanced OpenGL)
   1. (feat. skybox, reflection/refraction, point light cookies) Cubemaps (Advanced OpenGL)
   1. Advanced Data (Advanced OpenGL)
