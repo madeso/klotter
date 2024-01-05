@@ -53,5 +53,30 @@ struct Texture
 
 Texture load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
 
+struct Cubemap
+{
+	unsigned int id;
+	int width;
+	int height;
+
+	Cubemap();	///< creates a invalid cubemap
+
+	Cubemap(std::array<void*, 6> pixel_data, int w, int h);
+
+	~Cubemap();
+
+
+	Cubemap(const Cubemap&) = delete;
+	void operator=(const Cubemap&) = delete;
+
+	Cubemap(Cubemap&&);
+	void operator=(Cubemap&&);
+
+	// clears the loaded cubemap to a invalid texture
+	void unload();
+};
+
+Cubemap load_cubemap_from_color(u32 pixel);
+
 
 }  //  namespace klotter

@@ -13,6 +13,9 @@ namespace klotter
 {
 
 
+// ------------------------------------------------------------------------------------------------
+// general
+
 namespace
 {
 	constexpr unsigned int invalid_id = 0;
@@ -24,37 +27,40 @@ namespace
 		glGenTextures(1, &texture);
 		return texture;
 	}
+
+	void set_texture_wrap(TextureEdge te)
+	{
+		const auto wrap = te == TextureEdge::clamp ? GL_CLAMP_TO_EDGE : GL_REPEAT;
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrap);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrap);
+	}
+
+	struct MinMagFilter
+	{
+		GLint min;
+		GLint mag;
+	};
+
+	MinMagFilter min_mag_from_trs(TextureRenderStyle trs)
+	{
+		switch (trs)
+		{
+		case TextureRenderStyle::pixel: return {GL_NEAREST, GL_NEAREST};
+		case TextureRenderStyle::linear: return {GL_LINEAR, GL_LINEAR};
+		case TextureRenderStyle::mipmap: return {GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR};
+		default: DIE("Invalid texture render style"); return {GL_NEAREST, GL_NEAREST};
+		}
+	}
 }  //  namespace
+
+// ------------------------------------------------------------------------------------------------
+// texture
 
 Texture::Texture()
 	: id(invalid_id)
 	, width(invalid_size)
 	, height(invalid_size)
 {
-}
-
-void set_texture_wrap(TextureEdge te)
-{
-	const auto wrap = te == TextureEdge::clamp ? GL_CLAMP_TO_EDGE : GL_REPEAT;
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrap);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrap);
-}
-
-struct MinMagFilter
-{
-	GLint min;
-	GLint mag;
-};
-
-MinMagFilter min_mag_from_trs(TextureRenderStyle trs)
-{
-	switch (trs)
-	{
-	case TextureRenderStyle::pixel: return {GL_NEAREST, GL_NEAREST};
-	case TextureRenderStyle::linear: return {GL_LINEAR, GL_LINEAR};
-	case TextureRenderStyle::mipmap: return {GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR};
-	default: DIE("Invalid texture render style"); return {GL_NEAREST, GL_NEAREST};
-	}
 }
 
 Texture::Texture(
@@ -182,5 +188,91 @@ Texture load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs,
 {
 	return {&pixel, 1, 1, te, trs, t};
 }
+
+// ------------------------------------------------------------------------------------------------
+// cubemap
+
+Cubemap::Cubemap()
+	: id(invalid_id)
+	, width(invalid_size)
+	, height(invalid_size)
+{
+}
+
+Cubemap::Cubemap(std::array<void*, 6> pixel_data, int w, int h)
+	: id(create_texture())
+	, width(w)
+	, height(h)
+{
+	// todo(Gustav): use states
+	glBindTexture(GL_TEXTURE_CUBE_MAP, id);
+
+	for (size_t index = 0; index < 6; index += 1)
+	{
+		glTexImage2D(
+			static_cast<GLenum>(GL_TEXTURE_CUBE_MAP_POSITIVE_X + index),
+			0,
+			GL_RGB,
+			width,
+			height,
+			0,
+			GL_RGB,
+			GL_UNSIGNED_BYTE,
+			pixel_data[index]
+		);
+	}
+
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+}
+
+Cubemap::~Cubemap()
+{
+	unload();
+}
+
+Cubemap::Cubemap(Cubemap&& rhs)
+	: id(rhs.id)
+	, width(rhs.width)
+	, height(rhs.height)
+{
+	rhs.id = invalid_id;
+	rhs.width = invalid_size;
+	rhs.height = invalid_size;
+}
+
+void Cubemap::operator=(Cubemap&& rhs)
+{
+	unload();
+
+	id = rhs.id;
+	width = rhs.width;
+	height = rhs.height;
+
+	rhs.id = invalid_id;
+	rhs.width = invalid_size;
+	rhs.height = invalid_size;
+}
+
+void Cubemap::unload()
+{
+	if (id != invalid_id)
+	{
+		glDeleteTextures(1, &id);
+		id = invalid_id;
+	}
+
+	width = invalid_size;
+	height = invalid_size;
+}
+
+Cubemap load_cubemap_from_color(u32 pixel)
+{
+	return {{&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1};
+}
+
 
 }  //  namespace klotter
