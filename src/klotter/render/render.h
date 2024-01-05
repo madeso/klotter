@@ -167,7 +167,7 @@ struct UnlitMaterial : Material
 	const LoadedShader_Unlit* shader;
 	glm::vec3 color;
 	float alpha;
-	std::shared_ptr<Texture> texture;
+	std::shared_ptr<Texture2d> texture;
 
 	explicit UnlitMaterial(const ShaderResource& resource);
 	void use_shader(const RenderContext&) override;
@@ -196,9 +196,9 @@ struct DefaultMaterial : Material
 	float shininess;
 	float emissive_factor;
 
-	std::shared_ptr<Texture> diffuse;
-	std::shared_ptr<Texture> specular;
-	std::shared_ptr<Texture> emissive;
+	std::shared_ptr<Texture2d> diffuse;
+	std::shared_ptr<Texture2d> specular;
+	std::shared_ptr<Texture2d> emissive;
 
 	explicit DefaultMaterial(const ShaderResource& resource);
 	void use_shader(const RenderContext&) override;
@@ -307,7 +307,7 @@ struct FrustumLight
 	float specular = 1.0f;
 	float diffuse = 1.0f;
 
-	std::shared_ptr<Texture> cookie;  // if null, pure white is used
+	std::shared_ptr<Texture2d> cookie;  // if null, pure white is used
 };
 
 /// All lights in a world
@@ -371,7 +371,7 @@ struct RenderSource
 struct ShaderPropertyProvider
 {
 	virtual ~ShaderPropertyProvider() = default;
-	virtual void use_shader(const PostProcArg& a, const Texture& t) = 0;
+	virtual void use_shader(const PostProcArg& a, const Texture2d& t) = 0;
 };
 
 struct RenderTask : RenderSource

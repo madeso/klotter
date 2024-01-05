@@ -53,7 +53,7 @@ std::shared_ptr<FrameBuffer> create_buffer(
 	ASSERT(trs != TextureRenderStyle::mipmap);
 	auto fbo = std::make_shared<FrameBuffer>(create_fbo());
 
-	fbo->texture = Texture{nullptr, width, height, te, trs, trans};
+	fbo->texture = Texture2d{nullptr, width, height, te, trs, trans};
 	ASSERT(fbo->texture.id > 0);
 
 	auto bound = BoundFbo{fbo};

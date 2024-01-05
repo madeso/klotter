@@ -816,7 +816,7 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 // ------------------------------------------------------------------------------------------------
 // material
 
-void bind_texture(OpenglStates* states, const Uniform& uniform, const Texture& texture)
+void bind_texture(OpenglStates* states, const Uniform& uniform, const Texture2d& texture)
 {
 	if (uniform.is_valid() == false)
 	{
@@ -870,7 +870,7 @@ void UnlitMaterial::set_uniforms(
 
 void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
 {
-	std::shared_ptr<Texture> t = texture;
+	std::shared_ptr<Texture2d> t = texture;
 	if (t == nullptr)
 	{
 		t = assets->get_white();
@@ -922,7 +922,7 @@ void DefaultMaterial::set_uniforms(
 	base.program->set_vec3(base.view_position, cc.position);
 }
 
-std::shared_ptr<Texture> get_or_white(Assets* assets, std::shared_ptr<Texture> t)
+std::shared_ptr<Texture2d> get_or_white(Assets* assets, std::shared_ptr<Texture2d> t)
 {
 	if (t == nullptr)
 	{
@@ -934,7 +934,7 @@ std::shared_ptr<Texture> get_or_white(Assets* assets, std::shared_ptr<Texture> t
 	}
 };
 
-std::shared_ptr<Texture> get_or_black(Assets* assets, std::shared_ptr<Texture> t)
+std::shared_ptr<Texture2d> get_or_black(Assets* assets, std::shared_ptr<Texture2d> t)
 {
 	if (t == nullptr)
 	{
@@ -1329,7 +1329,7 @@ struct SimpleEffect
 		time += dt;
 	}
 
-	void use_shader(const PostProcArg& a, const Texture& t) override
+	void use_shader(const PostProcArg& a, const Texture2d& t) override
 	{
 		shader->program->use();
 		if (shader->factor)
@@ -1377,7 +1377,7 @@ struct VertProvider : ShaderPropertyProvider
 	}
 
 	BlurEffect* blur;
-	void use_shader(const PostProcArg& a, const Texture& t) override;
+	void use_shader(const PostProcArg& a, const Texture2d& t) override;
 };
 
 struct HoriProvider : ShaderPropertyProvider
@@ -1388,7 +1388,7 @@ struct HoriProvider : ShaderPropertyProvider
 	}
 
 	BlurEffect* blur;
-	void use_shader(const PostProcArg& a, const Texture& t) override;
+	void use_shader(const PostProcArg& a, const Texture2d& t) override;
 };
 
 struct BlurEffect : FactorEffect
@@ -1450,7 +1450,7 @@ struct BlurEffect : FactorEffect
 	{
 	}
 
-	void use_vert_shader(const PostProcArg& a, const Texture& t)
+	void use_vert_shader(const PostProcArg& a, const Texture2d& t)
 	{
 		vert->program->use();
 		ASSERT(vert->factor);
@@ -1462,7 +1462,7 @@ struct BlurEffect : FactorEffect
 		bind_texture(&a.renderer->pimpl->states, vert->texture, t);
 	}
 
-	void use_hori_shader(const PostProcArg& a, const Texture& t)
+	void use_hori_shader(const PostProcArg& a, const Texture2d& t)
 	{
 		hori->program->use();
 		ASSERT(hori->factor);
@@ -1501,12 +1501,12 @@ struct BlurEffect : FactorEffect
 	}
 };
 
-void VertProvider::use_shader(const PostProcArg& a, const Texture& t)
+void VertProvider::use_shader(const PostProcArg& a, const Texture2d& t)
 {
 	blur->use_vert_shader(a, t);
 }
 
-void HoriProvider::use_shader(const PostProcArg& a, const Texture& t)
+void HoriProvider::use_shader(const PostProcArg& a, const Texture2d& t)
 {
 	blur->use_hori_shader(a, t);
 }

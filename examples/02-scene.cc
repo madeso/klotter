@@ -25,7 +25,7 @@ struct SceneSample : Sample
 
 	std::shared_ptr<MeshInstance> add_unlit_cube(
 		klotter::Renderer* renderer,
-		std::shared_ptr<klotter::Texture> texture,
+		std::shared_ptr<klotter::Texture2d> texture,
 		std::shared_ptr<CompiledGeom> geom,
 		const glm::vec3& color
 	)
@@ -43,7 +43,7 @@ struct SceneSample : Sample
 	void add_unlit_mini_cube(
 		klotter::Renderer* renderer,
 		std::shared_ptr<CompiledGeom> geom,
-		std::shared_ptr<klotter::Texture> texture,
+		std::shared_ptr<klotter::Texture2d> texture,
 		const glm::vec3& p,
 		int index
 	)

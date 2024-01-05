@@ -17,7 +17,7 @@ struct FrameBuffer
 
 	unsigned int fbo = 0;
 
-	Texture texture;
+	Texture2d texture;
 	unsigned int rbo = 0;
 };
 

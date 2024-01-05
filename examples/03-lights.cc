@@ -44,8 +44,8 @@ struct LightsSample : Sample
 	std::shared_ptr<klotter::DefaultMaterial> add_mini_cube(
 		klotter::Renderer* renderer,
 		std::shared_ptr<CompiledGeom> geom,
-		std::shared_ptr<klotter::Texture> diffuse,
-		std::shared_ptr<klotter::Texture> specular,
+		std::shared_ptr<klotter::Texture2d> diffuse,
+		std::shared_ptr<klotter::Texture2d> specular,
 		const glm::vec3& p
 	)
 	{

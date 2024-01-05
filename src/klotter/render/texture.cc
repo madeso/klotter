@@ -56,14 +56,14 @@ namespace
 // ------------------------------------------------------------------------------------------------
 // texture
 
-Texture::Texture()
+Texture2d::Texture2d()
 	: id(invalid_id)
 	, width(invalid_size)
 	, height(invalid_size)
 {
 }
 
-Texture::Texture(
+Texture2d::Texture2d(
 	void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t
 )
 	: id(create_texture())
@@ -99,12 +99,12 @@ Texture::Texture(
 	}
 }
 
-Texture::~Texture()
+Texture2d::~Texture2d()
 {
 	unload();
 }
 
-Texture::Texture(Texture&& rhs)
+Texture2d::Texture2d(Texture2d&& rhs)
 	: id(rhs.id)
 	, width(rhs.width)
 	, height(rhs.height)
@@ -114,7 +114,7 @@ Texture::Texture(Texture&& rhs)
 	rhs.height = invalid_size;
 }
 
-void Texture::operator=(Texture&& rhs)
+void Texture2d::operator=(Texture2d&& rhs)
 {
 	unload();
 
@@ -127,7 +127,7 @@ void Texture::operator=(Texture&& rhs)
 	rhs.height = invalid_size;
 }
 
-void Texture::unload()
+void Texture2d::unload()
 {
 	if (id != invalid_id)
 	{
@@ -139,7 +139,7 @@ void Texture::unload()
 	height = invalid_size;
 }
 
-Texture LoadImage(
+Texture2d LoadImage(
 	const unsigned char* image_source,
 	int size,
 	TextureEdge te,
@@ -164,14 +164,14 @@ Texture LoadImage(
 		return {};
 	}
 
-	auto loaded = Texture{pixel_data, width, height, te, trs, t};
+	auto loaded = Texture2d{pixel_data, width, height, te, trs, t};
 
 	stbi_image_free(pixel_data);
 
 	return loaded;
 }
 
-Texture load_image_from_embedded(
+Texture2d load_image_from_embedded(
 	const embedded_binary& image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t
 )
 {
@@ -184,7 +184,7 @@ Texture load_image_from_embedded(
 	);
 }
 
-Texture load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)
+Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)
 {
 	return {&pixel, 1, 1, te, trs, t};
 }
@@ -192,14 +192,14 @@ Texture load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs,
 // ------------------------------------------------------------------------------------------------
 // cubemap
 
-Cubemap::Cubemap()
+TextureCubemap::TextureCubemap()
 	: id(invalid_id)
 	, width(invalid_size)
 	, height(invalid_size)
 {
 }
 
-Cubemap::Cubemap(std::array<void*, 6> pixel_data, int w, int h)
+TextureCubemap::TextureCubemap(std::array<void*, 6> pixel_data, int w, int h)
 	: id(create_texture())
 	, width(w)
 	, height(h)
@@ -229,12 +229,12 @@ Cubemap::Cubemap(std::array<void*, 6> pixel_data, int w, int h)
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 }
 
-Cubemap::~Cubemap()
+TextureCubemap::~TextureCubemap()
 {
 	unload();
 }
 
-Cubemap::Cubemap(Cubemap&& rhs)
+TextureCubemap::TextureCubemap(TextureCubemap&& rhs)
 	: id(rhs.id)
 	, width(rhs.width)
 	, height(rhs.height)
@@ -244,7 +244,7 @@ Cubemap::Cubemap(Cubemap&& rhs)
 	rhs.height = invalid_size;
 }
 
-void Cubemap::operator=(Cubemap&& rhs)
+void TextureCubemap::operator=(TextureCubemap&& rhs)
 {
 	unload();
 
@@ -257,7 +257,7 @@ void Cubemap::operator=(Cubemap&& rhs)
 	rhs.height = invalid_size;
 }
 
-void Cubemap::unload()
+void TextureCubemap::unload()
 {
 	if (id != invalid_id)
 	{
@@ -269,7 +269,7 @@ void Cubemap::unload()
 	height = invalid_size;
 }
 
-Cubemap load_cubemap_from_color(u32 pixel)
+TextureCubemap load_cubemap_from_color(u32 pixel)
 {
 	return {{&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1};
 }

@@ -27,56 +27,58 @@ enum class Transparency
 	exclude
 };
 
-struct Texture
+struct Texture2d
 {
 	unsigned int id;
 	int width;
 	int height;
 
-	Texture();	///< creates a invalid texture
+	Texture2d();  ///< creates a invalid texture
 
 	/// "internal"
-	Texture(void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
+	Texture2d(
+		void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t
+	);
 
-	~Texture();
+	~Texture2d();
 
 
-	Texture(const Texture&) = delete;
-	void operator=(const Texture&) = delete;
+	Texture2d(const Texture2d&) = delete;
+	void operator=(const Texture2d&) = delete;
 
-	Texture(Texture&&);
-	void operator=(Texture&&);
+	Texture2d(Texture2d&&);
+	void operator=(Texture2d&&);
 
 	// clears the loaded texture to a invalid texture
 	void unload();
 };
 
-Texture load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
+Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
 
-struct Cubemap
+struct TextureCubemap
 {
 	unsigned int id;
 	int width;
 	int height;
 
-	Cubemap();	///< creates a invalid cubemap
+	TextureCubemap();  ///< creates a invalid cubemap
 
-	Cubemap(std::array<void*, 6> pixel_data, int w, int h);
+	TextureCubemap(std::array<void*, 6> pixel_data, int w, int h);
 
-	~Cubemap();
+	~TextureCubemap();
 
 
-	Cubemap(const Cubemap&) = delete;
-	void operator=(const Cubemap&) = delete;
+	TextureCubemap(const TextureCubemap&) = delete;
+	void operator=(const TextureCubemap&) = delete;
 
-	Cubemap(Cubemap&&);
-	void operator=(Cubemap&&);
+	TextureCubemap(TextureCubemap&&);
+	void operator=(TextureCubemap&&);
 
 	// clears the loaded cubemap to a invalid texture
 	void unload();
 };
 
-Cubemap load_cubemap_from_color(u32 pixel);
+TextureCubemap load_cubemap_from_color(u32 pixel);
 
 
 }  //  namespace klotter
