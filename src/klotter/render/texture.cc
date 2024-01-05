@@ -54,21 +54,71 @@ namespace
 }  //  namespace
 
 // ------------------------------------------------------------------------------------------------
-// texture
+// base texture
 
-Texture2d::Texture2d()
+BaseTexture::BaseTexture()
 	: id(invalid_id)
 	, width(invalid_size)
 	, height(invalid_size)
 {
 }
 
-Texture2d::Texture2d(
-	void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t
-)
+BaseTexture::BaseTexture(int w, int h)
 	: id(create_texture())
 	, width(w)
 	, height(h)
+{
+}
+
+BaseTexture::~BaseTexture()
+{
+	unload();
+}
+
+BaseTexture::BaseTexture(BaseTexture&& rhs)
+	: id(rhs.id)
+	, width(rhs.width)
+	, height(rhs.height)
+{
+	rhs.id = invalid_id;
+	rhs.width = invalid_size;
+	rhs.height = invalid_size;
+}
+
+BaseTexture& BaseTexture::operator=(BaseTexture&& rhs)
+{
+	unload();
+
+	id = rhs.id;
+	width = rhs.width;
+	height = rhs.height;
+
+	rhs.id = invalid_id;
+	rhs.width = invalid_size;
+	rhs.height = invalid_size;
+
+	return *this;
+}
+
+void BaseTexture::unload()
+{
+	if (id != invalid_id)
+	{
+		glDeleteTextures(1, &id);
+		id = invalid_id;
+	}
+
+	width = invalid_size;
+	height = invalid_size;
+}
+
+// ------------------------------------------------------------------------------------------------
+// texture 2d
+
+Texture2d::Texture2d(
+	void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t
+)
+	: BaseTexture(w, h)
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_2D, id);
@@ -97,46 +147,6 @@ Texture2d::Texture2d(
 	{
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}
-}
-
-Texture2d::~Texture2d()
-{
-	unload();
-}
-
-Texture2d::Texture2d(Texture2d&& rhs)
-	: id(rhs.id)
-	, width(rhs.width)
-	, height(rhs.height)
-{
-	rhs.id = invalid_id;
-	rhs.width = invalid_size;
-	rhs.height = invalid_size;
-}
-
-void Texture2d::operator=(Texture2d&& rhs)
-{
-	unload();
-
-	id = rhs.id;
-	width = rhs.width;
-	height = rhs.height;
-
-	rhs.id = invalid_id;
-	rhs.width = invalid_size;
-	rhs.height = invalid_size;
-}
-
-void Texture2d::unload()
-{
-	if (id != invalid_id)
-	{
-		glDeleteTextures(1, &id);
-		id = invalid_id;
-	}
-
-	width = invalid_size;
-	height = invalid_size;
 }
 
 Texture2d LoadImage(
@@ -192,17 +202,8 @@ Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle tr
 // ------------------------------------------------------------------------------------------------
 // cubemap
 
-TextureCubemap::TextureCubemap()
-	: id(invalid_id)
-	, width(invalid_size)
-	, height(invalid_size)
-{
-}
-
 TextureCubemap::TextureCubemap(std::array<void*, 6> pixel_data, int w, int h)
-	: id(create_texture())
-	, width(w)
-	, height(h)
+	: BaseTexture(w, h)
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_CUBE_MAP, id);
@@ -227,46 +228,6 @@ TextureCubemap::TextureCubemap(std::array<void*, 6> pixel_data, int w, int h)
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-}
-
-TextureCubemap::~TextureCubemap()
-{
-	unload();
-}
-
-TextureCubemap::TextureCubemap(TextureCubemap&& rhs)
-	: id(rhs.id)
-	, width(rhs.width)
-	, height(rhs.height)
-{
-	rhs.id = invalid_id;
-	rhs.width = invalid_size;
-	rhs.height = invalid_size;
-}
-
-void TextureCubemap::operator=(TextureCubemap&& rhs)
-{
-	unload();
-
-	id = rhs.id;
-	width = rhs.width;
-	height = rhs.height;
-
-	rhs.id = invalid_id;
-	rhs.width = invalid_size;
-	rhs.height = invalid_size;
-}
-
-void TextureCubemap::unload()
-{
-	if (id != invalid_id)
-	{
-		glDeleteTextures(1, &id);
-		id = invalid_id;
-	}
-
-	width = invalid_size;
-	height = invalid_size;
 }
 
 TextureCubemap load_cubemap_from_color(u32 pixel)
