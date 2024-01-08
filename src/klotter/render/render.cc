@@ -5,6 +5,8 @@
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
+#include "skybox.vert.glsl.h"
+#include "skybox.frag.glsl.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -302,12 +304,22 @@ struct StateChanger
 		return *this;
 	}
 
-	StateChanger& bind_texture(int slot, unsigned int texture)
+	StateChanger& bind_texture_2d(int slot, unsigned int texture)
 	{
 		ASSERT(slot == states->active_texture);
 		if (should_change(&states->texture_bound[Cint_to_sizet(slot)], texture))
 		{
 			glBindTexture(GL_TEXTURE_2D, texture);
+		}
+		return *this;
+	}
+
+	StateChanger& bind_texture_cubemap(int slot, unsigned int texture)
+	{
+		ASSERT(slot == states->active_texture);
+		if (should_change(&states->texture_bound[Cint_to_sizet(slot)], texture))
+		{
+			glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
 		}
 		return *this;
 	}
@@ -344,6 +356,23 @@ struct LoadedShader_SingleColor : LoadedShader
 	Uniform model;
 	Uniform projection;
 	Uniform view;
+};
+
+struct LoadedShader_Skybox : LoadedShader
+{
+	LoadedShader_Skybox(LoadedShader s)
+		: LoadedShader(std::move(s.program), s.geom_layout)
+		, projection(program->get_uniform("u_projection"))
+		, view(program->get_uniform("u_view"))
+		, tex_skybox(program->get_uniform("u_skybox_tex"))
+	{
+		setup_textures(program.get(), {&tex_skybox});
+	}
+
+	Uniform projection;
+	Uniform view;
+
+	Uniform tex_skybox;
 };
 
 struct Base_LoadedShader_Unlit
@@ -581,6 +610,7 @@ struct LoadedShader_Default
 struct ShaderResource
 {
 	LoadedShader_SingleColor single_color_shader;
+	LoadedShader_Skybox skybox_shader;
 
 	LoadedShader_Unlit unlit_shader;
 	LoadedShader_Default default_shader;
@@ -594,10 +624,10 @@ struct ShaderResource
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
-		return single_color_shader.program->is_loaded() && unlit_shader.is_loaded()
-			&& default_shader.is_loaded() && pp_invert->program->is_loaded()
-			&& pp_grayscale->program->is_loaded() && pp_blurv->program->is_loaded()
-			&& pp_blurh->program->is_loaded();
+		return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded()
+			&& unlit_shader.is_loaded() && default_shader.is_loaded()
+			&& pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
+			&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded();
 	}
 };
 
@@ -722,6 +752,10 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& 
 ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo& fsi)
 {
 	const auto single_color_shader = load_shader_source({});
+	const auto skybox_shader = ShaderSource{
+		ShaderVertexAttributes{{VertexType::position3, "a_position"}},
+		std::string{SKYBOX_VERT_GLSL},
+		std::string{SKYBOX_FRAG_GLSL}};
 
 	BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
 
@@ -802,6 +836,7 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 
 	return {
 		load_shader(global_shader_data, single_color_shader),
+		load_shader({}, skybox_shader),
 		{loaded_unlit.geom_layout, loaded_unlit, loaded_unlit_transparency},
 		{loaded_default.geom_layout,
 		 {loaded_default, settings},
@@ -816,7 +851,7 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 // ------------------------------------------------------------------------------------------------
 // material
 
-void bind_texture(OpenglStates* states, const Uniform& uniform, const Texture2d& texture)
+void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const Texture2d& texture)
 {
 	if (uniform.is_valid() == false)
 	{
@@ -826,10 +861,22 @@ void bind_texture(OpenglStates* states, const Uniform& uniform, const Texture2d&
 
 	StateChanger{states}
 		.activate_texture(uniform.texture)
-		.bind_texture(uniform.texture, texture.id);
+		.bind_texture_2d(uniform.texture, texture.id);
+}
 
-	// glActiveTexture(Cint_to_glenum(GL_TEXTURE0 + uniform.texture));
-	// glBindTexture(GL_TEXTURE_2D, texture.id);
+void bind_texture_cubemap(
+	OpenglStates* states, const Uniform& uniform, const TextureCubemap& texture
+)
+{
+	if (uniform.is_valid() == false)
+	{
+		return;
+	}
+	ASSERT(uniform.texture >= 0);
+
+	StateChanger{states}
+		.activate_texture(uniform.texture)
+		.bind_texture_cubemap(uniform.texture, texture.id);
 }
 
 UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
@@ -842,6 +889,28 @@ UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
 void UnlitMaterial::use_shader(const RenderContext& rc)
 {
 	shader->base(rc).program->use();
+}
+
+void set_projection_view(
+	std::shared_ptr<ShaderProgram> program,
+	Uniform projection,
+	Uniform view,
+	const glm::mat4& projection_mat,
+	const glm::mat4& view_mat
+)
+{
+	program->set_mat(projection, projection_mat);
+	program->set_mat(view, view_mat);
+}
+
+void set_projection_view(
+	std::shared_ptr<ShaderProgram> program,
+	Uniform projection,
+	Uniform view,
+	const CompiledCamera& cc
+)
+{
+	set_projection_view(program, projection, view, cc.projection, cc.view);
 }
 
 void set_model_projection_view(
@@ -876,7 +945,7 @@ void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states,
 		t = assets->get_white();
 	}
 
-	bind_texture(states, shader->base(rc).tex_diffuse, *t);
+	bind_texture_2d(states, shader->base(rc).tex_diffuse, *t);
 }
 
 void UnlitMaterial::
@@ -949,9 +1018,9 @@ std::shared_ptr<Texture2d> get_or_black(Assets* assets, std::shared_ptr<Texture2
 void DefaultMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
 {
 	const auto& base = shader->base(rc);
-	bind_texture(states, base.tex_diffuse, *get_or_white(assets, diffuse));
-	bind_texture(states, base.tex_specular, *get_or_white(assets, specular));
-	bind_texture(states, base.tex_emissive, *get_or_black(assets, emissive));
+	bind_texture_2d(states, base.tex_diffuse, *get_or_white(assets, diffuse));
+	bind_texture_2d(states, base.tex_specular, *get_or_white(assets, specular));
+	bind_texture_2d(states, base.tex_emissive, *get_or_black(assets, emissive));
 }
 
 void DefaultMaterial::apply_lights(
@@ -1030,7 +1099,7 @@ void DefaultMaterial::apply_lights(
 		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);
 		base.program->set_mat(u.world_to_clip, projection * view);
 
-		bind_texture(states, u.cookie, *get_or_white(assets, p.cookie));
+		bind_texture_2d(states, u.cookie, *get_or_white(assets, p.cookie));
 	}
 }
 
@@ -1348,7 +1417,7 @@ struct SimpleEffect
 		{
 			p->use(a, *shader->program);
 		}
-		bind_texture(&a.renderer->pimpl->states, shader->texture, t);
+		bind_texture_2d(&a.renderer->pimpl->states, shader->texture, t);
 	}
 
 	void build(const BuildArg& arg) override
@@ -1459,7 +1528,7 @@ struct BlurEffect : FactorEffect
 #if BLUR_USE_GAUSS == 1
 		vert->program->set_float(std_dev_v, std_dev);
 #endif
-		bind_texture(&a.renderer->pimpl->states, vert->texture, t);
+		bind_texture_2d(&a.renderer->pimpl->states, vert->texture, t);
 	}
 
 	void use_hori_shader(const PostProcArg& a, const Texture2d& t)
@@ -1473,7 +1542,7 @@ struct BlurEffect : FactorEffect
 #if BLUR_USE_GAUSS == 1
 		hori->program->set_float(std_dev_h, std_dev);
 #endif
-		bind_texture(&a.renderer->pimpl->states, hori->texture, t);
+		bind_texture_2d(&a.renderer->pimpl->states, hori->texture, t);
 	}
 
 	void build(const BuildArg& arg) override
@@ -1638,6 +1707,20 @@ Renderer::Renderer(const RenderSettings& set)
 }
 
 Renderer::~Renderer() = default;
+
+Skybox Renderer::make_skybox(std::shared_ptr<TextureCubemap> texture)
+{
+	constexpr float size = 1.0f;
+	constexpr bool invert = true;
+
+	const auto layout = pimpl->shaders.skybox_shader.geom_layout;
+
+	const auto triangle = geom::create_box(size, size, size, invert, colors::white).to_geom();
+	auto geom = compile_geom(triangle, layout);
+
+	LOG_INFO("Creating skybox");
+	return {geom, texture};
+}
 
 struct TransparentMesh
 {
@@ -1902,6 +1985,33 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				render_geom(m->geom);
 			}
 		}
+	}
+
+	// render skybox
+	if (world.skybox.cubemap != nullptr && world.skybox.geom != nullptr)
+	{
+		StateChanger{&pimpl->states}
+			.depth_test(true)
+			.depth_mask(false)
+			.depth_func(Compare::less_equal)
+			.blending(false)
+			.stencil_mask(0x0)
+			.stencil_func(Compare::always, 1, 0xFF);
+
+		auto& shader = pimpl->shaders.skybox_shader;
+
+		shader.program->use();
+		const auto rotation_only = glm::mat4{glm::mat3{compiled_camera.view}};
+		set_projection_view(
+			shader.program,
+			shader.projection,
+			shader.view,
+			compiled_camera.projection,
+			rotation_only
+		);
+		bind_texture_cubemap(&pimpl->states, shader.tex_skybox, *world.skybox.cubemap);
+
+		render_geom(world.skybox.geom);
 	}
 }
 

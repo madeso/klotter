@@ -7,7 +7,12 @@ embed(src_assets
         textures/matrix.jpg
         textures/cookie_01.png
         textures/glass.png
-        textures/grass.png
+        textures/skybox-back.jpg
+        textures/skybox-left.jpg
+        textures/skybox-bottom.jpg
+        textures/skybox-right.jpg
+        textures/skybox-front.jpg
+        textures/skybox-top.jpg
     AS_TEXT
         klotter/render/default_shader.vert.glsl
         klotter/render/default_shader.frag.glsl
@@ -16,6 +21,8 @@ embed(src_assets
         klotter/render/pp.grayscale.frag.glsl
         klotter/render/pp.damage.frag.glsl
         klotter/render/pp.blur.frag.glsl
+        klotter/render/skybox.vert.glsl
+        klotter/render/skybox.frag.glsl
 )
 
 set(shaders

@@ -21,6 +21,7 @@ struct Assets
 	std::shared_ptr<Texture2d> get_matrix();
 	std::shared_ptr<Texture2d> get_glass();
 	std::shared_ptr<Texture2d> get_grass();
+	std::shared_ptr<TextureCubemap> get_skybox();
 
    private:
 
@@ -36,6 +37,7 @@ struct Assets
 	std::shared_ptr<Texture2d> matrix;
 	std::shared_ptr<Texture2d> glass;
 	std::shared_ptr<Texture2d> grass;
+	std::shared_ptr<TextureCubemap> skybox;
 };
 
 }  //  namespace klotter

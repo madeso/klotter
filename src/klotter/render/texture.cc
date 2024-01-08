@@ -149,49 +149,57 @@ Texture2d::Texture2d(
 	}
 }
 
-Texture2d LoadImage(
-	const unsigned char* image_source,
-	int size,
-	TextureEdge te,
-	TextureRenderStyle trs,
-	Transparency t
-)
+struct PixelData
 {
-	const auto include_transparency = t == Transparency::include;
-
+	stbi_uc* pixel_data = nullptr;
 	int width = 0;
 	int height = 0;
-	int junk_channels = 0;
 
-	stbi_set_flip_vertically_on_load(true);
-	auto* pixel_data = stbi_load_from_memory(
-		image_source, size, &width, &height, &junk_channels, include_transparency ? 4 : 3
-	);
-
-	if (pixel_data == nullptr)
+	PixelData(const embedded_binary& image_binary, bool include_transparency, bool flip = true)
 	{
-		LOG_ERROR("ERROR: Failed to load image from image source");
-		return {};
+		int junk_channels = 0;
+		stbi_set_flip_vertically_on_load(flip);
+
+		pixel_data = stbi_load_from_memory(
+			reinterpret_cast<const unsigned char*>(image_binary.data),
+			Cunsigned_int_to_int(image_binary.size),
+			&width,
+			&height,
+			&junk_channels,
+			include_transparency ? 4 : 3
+		);
+
+		if (pixel_data == nullptr)
+		{
+			LOG_ERROR("ERROR: Failed to read pixel data");
+			width = 0;
+			height = 0;
+		}
 	}
 
-	auto loaded = Texture2d{pixel_data, width, height, te, trs, t};
-
-	stbi_image_free(pixel_data);
-
-	return loaded;
-}
+	~PixelData()
+	{
+		if (pixel_data != nullptr)
+		{
+			stbi_image_free(pixel_data);
+		}
+	}
+};
 
 Texture2d load_image_from_embedded(
 	const embedded_binary& image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t
 )
 {
-	return LoadImage(
-		reinterpret_cast<const unsigned char*>(image_binary.data),
-		Cunsigned_int_to_int(image_binary.size),
-		te,
-		trs,
-		t
-	);
+	const auto include_transparency = t == Transparency::include;
+
+	auto parsed = PixelData{image_binary, include_transparency};
+	if (parsed.pixel_data == nullptr)
+	{
+		LOG_ERROR("ERROR: Failed to load image from image source");
+		return {};
+	}
+
+	return {parsed.pixel_data, parsed.width, parsed.height, te, trs, t};
 }
 
 Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)
@@ -233,6 +241,70 @@ TextureCubemap::TextureCubemap(std::array<void*, 6> pixel_data, int w, int h)
 TextureCubemap load_cubemap_from_color(u32 pixel)
 {
 	return {{&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1};
+}
+
+TextureCubemap load_cubemap_from_embedded(
+	const embedded_binary& image_right,
+	const embedded_binary& image_left,
+	const embedded_binary& image_top,
+	const embedded_binary& image_bottom,
+	const embedded_binary& image_back,
+	const embedded_binary& image_front
+)
+{
+	constexpr auto include_transparency = false;
+	constexpr auto flip = false;
+
+	const auto parsed_right = PixelData{image_right, include_transparency, flip};
+	const auto parsed_left = PixelData{image_left, include_transparency, flip};
+	const auto parsed_top = PixelData{image_top, include_transparency, flip};
+	const auto parsed_bottom = PixelData{image_bottom, include_transparency, flip};
+	const auto parsed_back = PixelData{image_back, include_transparency, flip};
+	const auto parsed_front = PixelData{image_front, include_transparency, flip};
+
+	// is loaded ok
+	if (parsed_right.pixel_data == nullptr || parsed_left.pixel_data == nullptr
+		|| parsed_top.pixel_data == nullptr || parsed_bottom.pixel_data == nullptr
+		|| parsed_back.pixel_data == nullptr || parsed_front.pixel_data == nullptr)
+	{
+		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
+		return {};
+	}
+
+	// test width
+	if (parsed_right.width == parsed_left.width && parsed_right.width == parsed_top.width
+		&& parsed_right.width == parsed_bottom.width && parsed_right.width == parsed_back.width
+		&& parsed_right.width == parsed_front.width)
+	{
+	}
+	else
+	{
+		LOG_ERROR("ERROR: cubemap has inconsistent width");
+		return {};
+	}
+
+	// test height
+	if (parsed_right.height == parsed_left.height && parsed_right.height == parsed_top.height
+		&& parsed_right.height == parsed_bottom.height && parsed_right.height == parsed_back.height
+		&& parsed_right.height == parsed_front.height)
+	{
+	}
+	else
+	{
+		LOG_ERROR("ERROR: cubemap has inconsistent height");
+		return {};
+	}
+
+	// ok
+	return {
+		{parsed_right.pixel_data,
+		 parsed_left.pixel_data,
+		 parsed_top.pixel_data,
+		 parsed_bottom.pixel_data,
+		 parsed_front.pixel_data,
+		 parsed_back.pixel_data},
+		parsed_right.width,
+		parsed_right.height};
 }
 
 

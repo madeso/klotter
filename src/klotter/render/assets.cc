@@ -13,6 +13,13 @@
 #include "glass.png.h"
 #include "grass.png.h"
 
+#include "skybox-right.jpg.h"
+#include "skybox-left.jpg.h"
+#include "skybox-top.jpg.h"
+#include "skybox-bottom.jpg.h"
+#include "skybox-back.jpg.h"
+#include "skybox-front.jpg.h"
+
 namespace klotter
 {
 
@@ -98,6 +105,23 @@ std::shared_ptr<Texture2d> Assets::get_glass()
 std::shared_ptr<Texture2d> Assets::get_grass()
 {
 	return get_or_load(&grass, GRASS_PNG, TextureEdge::clamp, Transparency::include);
+}
+
+std::shared_ptr<TextureCubemap> Assets::get_skybox()
+{
+	if (skybox == nullptr)
+	{
+		skybox = std::make_shared<TextureCubemap>(load_cubemap_from_embedded(
+			SKYBOX_RIGHT_JPG,
+			SKYBOX_LEFT_JPG,
+			SKYBOX_TOP_JPG,
+			SKYBOX_BOTTOM_JPG,
+			SKYBOX_BACK_JPG,
+			SKYBOX_FRONT_JPG
+		));
+	}
+
+	return skybox;
 }
 
 }  //  namespace klotter

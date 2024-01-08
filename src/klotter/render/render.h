@@ -307,7 +307,7 @@ struct FrustumLight
 	float specular = 1.0f;
 	float diffuse = 1.0f;
 
-	std::shared_ptr<Texture2d> cookie;  // if null, pure white is used
+	std::shared_ptr<Texture2d> cookie;	// if null, pure white is used
 };
 
 /// All lights in a world
@@ -321,11 +321,19 @@ struct Lights
 	std::vector<FrustumLight> frustum_lights;
 };
 
+struct Skybox
+{
+	std::shared_ptr<CompiledGeom> geom = nullptr;
+	std::shared_ptr<TextureCubemap> cubemap = nullptr;
+};
+
 /// also known as a scene
 struct World
 {
 	std::vector<std::shared_ptr<MeshInstance>> meshes;
 	Lights lights;
+
+	Skybox skybox;
 };
 
 enum LineStyle
@@ -497,6 +505,8 @@ struct Renderer
 	std::shared_ptr<FactorEffect> make_grayscale_effect();
 	std::shared_ptr<FactorEffect> make_damage_effect();
 	std::shared_ptr<FactorEffect> make_blur_effect();
+
+	Skybox make_skybox(std::shared_ptr<TextureCubemap> texture);
 
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;

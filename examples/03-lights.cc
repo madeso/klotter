@@ -84,8 +84,12 @@ struct LightsSample : Sample
 		auto light = add_cube(light_geom, light_material);
 		light->position.z = 0.5f;
 
+		// skybox
+		world.skybox = renderer->make_skybox(renderer->assets.get_skybox());
+
 		// ambient
 		world.lights.ambient = 0.1f;
+
 
 		// directional
 		{
