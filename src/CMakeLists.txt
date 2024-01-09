@@ -7,6 +7,7 @@ embed(src_assets
         textures/matrix.jpg
         textures/cookie_01.png
         textures/glass.png
+        textures/grass.png
         textures/skybox-back.jpg
         textures/skybox-left.jpg
         textures/skybox-bottom.jpg
