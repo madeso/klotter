@@ -1921,6 +1921,33 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	render_debug_lines(this, compiled_camera, window_size);
 
+	// render skybox
+	if (world.skybox.cubemap != nullptr && world.skybox.geom != nullptr)
+	{
+		StateChanger{&pimpl->states}
+			.depth_test(true)
+			.depth_mask(false)
+			.depth_func(Compare::less_equal)
+			.blending(false)
+			.stencil_mask(0x0)
+			.stencil_func(Compare::always, 1, 0xFF);
+
+		auto& shader = pimpl->shaders.skybox_shader;
+
+		shader.program->use();
+		const auto rotation_only = glm::mat4{glm::mat3{compiled_camera.view}};
+		set_projection_view(
+			shader.program,
+			shader.projection,
+			shader.view,
+			compiled_camera.projection,
+			rotation_only
+		);
+		bind_texture_cubemap(&pimpl->states, shader.tex_skybox, *world.skybox.cubemap);
+
+		render_geom(world.skybox.geom);
+	}
+
 	std::sort(
 		transparent_meshes.begin(),
 		transparent_meshes.end(),
@@ -1985,33 +2012,6 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				render_geom(m->geom);
 			}
 		}
-	}
-
-	// render skybox
-	if (world.skybox.cubemap != nullptr && world.skybox.geom != nullptr)
-	{
-		StateChanger{&pimpl->states}
-			.depth_test(true)
-			.depth_mask(false)
-			.depth_func(Compare::less_equal)
-			.blending(false)
-			.stencil_mask(0x0)
-			.stencil_func(Compare::always, 1, 0xFF);
-
-		auto& shader = pimpl->shaders.skybox_shader;
-
-		shader.program->use();
-		const auto rotation_only = glm::mat4{glm::mat3{compiled_camera.view}};
-		set_projection_view(
-			shader.program,
-			shader.projection,
-			shader.view,
-			compiled_camera.projection,
-			rotation_only
-		);
-		bind_texture_cubemap(&pimpl->states, shader.tex_skybox, *world.skybox.cubemap);
-
-		render_geom(world.skybox.geom);
 	}
 }
 
