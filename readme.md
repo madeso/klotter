@@ -35,13 +35,14 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - river system, with spline and polygon editor, vertex color painting, alpha for joining paths and "flow map" painting (another vertex attribute?)
   https://twitter.com/JasperRLZ/status/1511951178753445896?t=yhT2wJVw8-iJlyBqADf-Yw&s=09
   > A few people were asking me how the dynamic water surface worked. Quite simple! Two sine waves, one going across the river, the other going down the river. With heights and speeds dialed into tasteful values, and some extra texture scrolling, the result is surprisingly dynamic.
-- Add shader permutation tool, change options (int slider, enum dropdown, bool) to select current permutation
-- Blur shader! https://www.ronja-tutorials.com/post/023-postprocessing-blur/ https://blog.innogames.com/shader-exploration-the-art-of-blurring/
+- fse/material: Add shader permutation tool, change options (int slider, enum dropdown, bool) to select current permutation
+- fse: improve blur shader: https://www.ronja-tutorials.com/post/023-postprocessing-blur/ https://blog.innogames.com/shader-exploration-the-art-of-blurring/
+- fse: add depth (just a optional additional texture) to simulate depth of field of no-glasses
+- fse: add chromatic abberation to simulate damage/drugs
+- material: framebuffer distortions to simulate reflection/refraction
+- material: use cubemap + color
 - complete rest of learn opengl
 
-  1. (feat. depth in fse) Depth testing (Advanced OpenGL)
-  1. (feat. skybox, reflection/refraction, point light cookies) Cubemaps (Advanced OpenGL)
-  1. Advanced Data (Advanced OpenGL)
   1. (optimize uniforms) Advanced GLSL (Advanced OpenGL)
   1. Geometry Shader (Advanced OpenGL)
   1. (render many objects, grass billboards) Instancing (Advanced OpenGL)
