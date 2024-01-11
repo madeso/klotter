@@ -171,8 +171,6 @@ int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl
 		ImGui_ImplSDL2_NewFrame();
 		ImGui::NewFrame();
 
-		// ImGui::ShowDemoWindow();
-
 		app->on_gui(&renderer);
 
 		ImGui::Render();
@@ -286,12 +284,8 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO();
 	(void) io;
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-
 	ImGui::StyleColorsDark();
-	//ImGui::StyleColorsLight();
-
+	
 	ImGui_ImplSDL2_InitForOpenGL(sdl_window, sdl_glcontext);
 	ImGui_ImplOpenGL3_Init(glsl_version);
 

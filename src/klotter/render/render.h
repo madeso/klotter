@@ -165,8 +165,8 @@ struct Material
 struct UnlitMaterial : Material
 {
 	const LoadedShader_Unlit* shader;
-	glm::vec3 color;
-	float alpha;
+	glm::vec3 color = colors::white;
+	float alpha = 1.0f;
 	std::shared_ptr<Texture2d> texture;
 
 	explicit UnlitMaterial(const ShaderResource& resource);
@@ -187,14 +187,14 @@ struct UnlitMaterial : Material
 /// a material affected by light
 struct DefaultMaterial : Material
 {
-	const LoadedShader_Default* shader;
-	glm::vec3 color;
-	float alpha;
+	const LoadedShader_Default* shader = nullptr;
+	glm::vec3 color = colors::white;
+	float alpha = 1.0f;
 
-	glm::vec3 ambient_tint;
-	glm::vec3 specular_color;
-	float shininess;
-	float emissive_factor;
+	glm::vec3 ambient_tint = colors::white;
+	glm::vec3 specular_color = colors::white;
+	float shininess = 32.0f;
+	float emissive_factor = 0.0f;
 
 	std::shared_ptr<Texture2d> diffuse;
 	std::shared_ptr<Texture2d> specular;
@@ -259,8 +259,8 @@ struct MeshInstance
 
 	std::optional<glm::vec3> outline;
 
-	glm::vec3 position;
-	glm::vec3 rotation;	 ///< yaw pitch roll
+	glm::vec3 position = glm::vec3{0.0f};
+	glm::vec3 rotation = glm::vec3{0.0f};  ///< yaw pitch roll
 	Billboarding billboarding = Billboarding::none;	 ///< if not none, rotation is ignored
 
 	LocalAxis get_local_axis() const;
@@ -419,7 +419,7 @@ struct FrameBufferCache
 		TextureEdge edge,
 		TextureRenderStyle render_style,
 		Transparency transperency
-	);
+	) const;
 };
 
 struct BuildArg
@@ -462,7 +462,7 @@ struct FactorEffect : Effect
 
    private:
 
-	float factor;
+	float factor = 0.0f;
 };
 
 /// The facade of the post-proc framework.
@@ -476,8 +476,8 @@ struct EffectStack
 
 	/// rebuilds stack if dirty, update all targets, then render the last_source
 	void render(const PostProcArg& arg);
-	void update(float dt);
-	void gui();
+	void update(float dt) const;
+	void gui() const;
 };
 
 
@@ -498,15 +498,15 @@ struct Renderer
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
 	std::shared_ptr<DefaultMaterial> make_default_material();
 
-	CompiledGeomVertexAttributes unlit_geom_layout();
-	CompiledGeomVertexAttributes default_geom_layout();
+	CompiledGeomVertexAttributes unlit_geom_layout() const;
+	CompiledGeomVertexAttributes default_geom_layout() const;
 
 	std::shared_ptr<FactorEffect> make_invert_effect();
 	std::shared_ptr<FactorEffect> make_grayscale_effect();
 	std::shared_ptr<FactorEffect> make_damage_effect();
 	std::shared_ptr<FactorEffect> make_blur_effect();
 
-	Skybox make_skybox(std::shared_ptr<TextureCubemap> texture);
+	Skybox make_skybox(std::shared_ptr<TextureCubemap> texture) const;
 
 	/// verify that the renderer was fully loaded
 	bool is_loaded() const;

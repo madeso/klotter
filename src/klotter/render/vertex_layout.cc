@@ -50,9 +50,9 @@ CompiledGeomVertexAttributes get_geom_layout(const CompiledVertexTypeList& l)
 {
 	std::vector<CompiledVertexElementNoName> list;
 
-	for (const auto& e: l.indices)
+	for (const auto& [first, second]: l.indices)
 	{
-		list.push_back({e.first, e.second});
+		list.push_back({first, second});
 	}
 
 	std::sort(

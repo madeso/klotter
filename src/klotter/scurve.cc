@@ -90,7 +90,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 	auto* draw = ImGui::GetWindowDrawList();
 	draw->AddRectFilled(pos, pos + size, background_color);
 
-	ImVec2 points[max_points + 1];
+	std::array < ImVec2, max_points + 1> points;
 	for (int i = 0; i < max_points + 1; i += 1)
 	{
 		const float srcx = static_cast<float>(i) / static_cast<float>(max_points);
@@ -98,7 +98,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 		const float y = calculate_s_curve(srcx, scd->curve.s, scd->curve.t);
 		points[i] = ImVec2{x * size.x, (1 - y) * size.y} + pos;
 	}
-	draw->AddPolyline(points, max_points + 1, line_color, ImDrawFlags_None, 1.0f);
+	draw->AddPolyline(points.data(), max_points + 1, line_color, ImDrawFlags_None, 1.0f);
 
 	if (draw_points)
 	{

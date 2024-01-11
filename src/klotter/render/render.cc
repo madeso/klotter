@@ -342,7 +342,7 @@ struct LoadedShader
 
 struct LoadedShader_SingleColor : LoadedShader
 {
-	LoadedShader_SingleColor(LoadedShader s)
+	explicit LoadedShader_SingleColor(LoadedShader s)
 		: LoadedShader(std::move(s.program), s.geom_layout)
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, model(program->get_uniform("u_model"))
@@ -360,7 +360,7 @@ struct LoadedShader_SingleColor : LoadedShader
 
 struct LoadedShader_Skybox : LoadedShader
 {
-	LoadedShader_Skybox(LoadedShader s)
+	explicit LoadedShader_Skybox(LoadedShader s)
 		: LoadedShader(std::move(s.program), s.geom_layout)
 		, projection(program->get_uniform("u_projection"))
 		, view(program->get_uniform("u_view"))
@@ -379,7 +379,7 @@ struct Base_LoadedShader_Unlit
 {
 	std::shared_ptr<ShaderProgram> program;
 
-	Base_LoadedShader_Unlit(LoadedShader s)
+	explicit Base_LoadedShader_Unlit(LoadedShader s)
 		: program(std::move(s.program))
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
@@ -701,12 +701,12 @@ std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 	return std::make_shared<DefaultMaterial>(pimpl->shaders);
 }
 
-CompiledGeomVertexAttributes Renderer::unlit_geom_layout()
+CompiledGeomVertexAttributes Renderer::unlit_geom_layout() const
 {
 	return pimpl->shaders.unlit_shader.geom_layout;
 }
 
-CompiledGeomVertexAttributes Renderer::default_geom_layout()
+CompiledGeomVertexAttributes Renderer::default_geom_layout() const
 {
 	return pimpl->shaders.default_shader.geom_layout;
 }
@@ -835,12 +835,16 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 	);
 
 	return {
-		load_shader(global_shader_data, single_color_shader),
-		load_shader({}, skybox_shader),
-		{loaded_unlit.geom_layout, loaded_unlit, loaded_unlit_transparency},
-		{loaded_default.geom_layout,
-		 {loaded_default, settings},
-		 {loaded_default_transparency, settings}},
+		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader)},
+		LoadedShader_Skybox{load_shader({}, skybox_shader)},
+		LoadedShader_Unlit{
+			loaded_unlit.geom_layout,
+			Base_LoadedShader_Unlit{loaded_unlit},
+			Base_LoadedShader_Unlit{loaded_unlit_transparency}},
+		LoadedShader_Default{
+			loaded_default.geom_layout,
+			Base_LoadedShader_Default{loaded_default, settings},
+			Base_LoadedShader_Default{loaded_default_transparency, settings}},
 		pp_invert,
 		pp_grayscale,
 		pp_damage,
@@ -881,8 +885,6 @@ void bind_texture_cubemap(
 
 UnlitMaterial::UnlitMaterial(const ShaderResource& resource)
 	: shader(&resource.unlit_shader)
-	, color(colors::white)
-	, alpha(1.0f)
 {
 }
 
@@ -893,8 +895,8 @@ void UnlitMaterial::use_shader(const RenderContext& rc)
 
 void set_projection_view(
 	std::shared_ptr<ShaderProgram> program,
-	Uniform projection,
-	Uniform view,
+	const Uniform& projection,
+	const Uniform& view,
 	const glm::mat4& projection_mat,
 	const glm::mat4& view_mat
 )
@@ -905,8 +907,8 @@ void set_projection_view(
 
 void set_projection_view(
 	std::shared_ptr<ShaderProgram> program,
-	Uniform projection,
-	Uniform view,
+	const Uniform& projection,
+	const Uniform& view,
 	const CompiledCamera& cc
 )
 {
@@ -915,9 +917,9 @@ void set_projection_view(
 
 void set_model_projection_view(
 	std::shared_ptr<ShaderProgram> program,
-	Uniform model,
-	Uniform projection,
-	Uniform view,
+	const Uniform& model,
+	const Uniform& projection,
+	const Uniform& view,
 	const CompiledCamera& cc,
 	const glm::mat4& transform
 )
@@ -961,12 +963,6 @@ bool UnlitMaterial::is_transparent() const
 
 DefaultMaterial::DefaultMaterial(const ShaderResource& resource)
 	: shader(&resource.default_shader)
-	, color(colors::white)
-	, alpha(1.0f)
-	, ambient_tint(colors::white)
-	, specular_color(colors::white)
-	, shininess(32.0f)
-	, emissive_factor(0.0f)
 {
 }
 
@@ -1114,7 +1110,7 @@ bool DefaultMaterial::is_transparent() const
 
 std::shared_ptr<FrameBuffer> FrameBufferCache::get(
 	glm::ivec2 size, TextureEdge edge, TextureRenderStyle render_style, Transparency transperency
-)
+) const
 {
 	// todo(Gustav): reuse buffers created from a earlier build
 	// todo(Gustav): reuse buffers from earlier in the stack, that aren't in use
@@ -1180,7 +1176,7 @@ void RenderTask::update(const PostProcArg& arg)
 	source->render(arg);
 }
 
-void EffectStack::update(float dt)
+void EffectStack::update(float dt) const
 {
 	for (auto e: effects)
 	{
@@ -1241,7 +1237,7 @@ void EffectStack::render(const PostProcArg& arg)
 	compiled.last_source->render(arg);
 }
 
-void EffectStack::gui()
+void EffectStack::gui() const
 {
 	int index = 0;
 	for (auto e: effects)
@@ -1254,7 +1250,6 @@ void EffectStack::gui()
 }
 
 FactorEffect::FactorEffect()
-	: factor(0.0f)
 {
 	set_enabled(false);
 }
@@ -1519,7 +1514,7 @@ struct BlurEffect : FactorEffect
 	{
 	}
 
-	void use_vert_shader(const PostProcArg& a, const Texture2d& t)
+	void use_vert_shader(const PostProcArg& a, const Texture2d& t) const
 	{
 		vert->program->use();
 		ASSERT(vert->factor);
@@ -1708,7 +1703,7 @@ Renderer::Renderer(const RenderSettings& set)
 
 Renderer::~Renderer() = default;
 
-Skybox Renderer::make_skybox(std::shared_ptr<TextureCubemap> texture)
+Skybox Renderer::make_skybox(std::shared_ptr<TextureCubemap> texture) const
 {
 	constexpr float size = 1.0f;
 	constexpr bool invert = true;
@@ -1804,7 +1799,7 @@ void render_geom(std::shared_ptr<CompiledGeom> geom)
 {
 	ASSERT(is_bound_for_shader(geom->debug_types));
 	glBindVertexArray(geom->vao);
-	glDrawElements(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, nullptr);
 }
 
 void render_debug_lines(
@@ -1821,7 +1816,7 @@ void render_debug_lines(
 		r->pimpl->debug.line_projection, compiled_camera.projection
 	);
 	r->pimpl->debug.line_shader.set_mat(r->pimpl->debug.line_view, compiled_camera.view);
-	for (const auto line: r->debug.debug_lines)
+	for (const auto& line: r->debug.debug_lines)
 	{
 		if (line.style == LineStyle::always_visible) continue;
 		StateChanger{&r->pimpl->states}.depth_func(Compare::less).depth_test(true);
@@ -1834,7 +1829,7 @@ void render_debug_lines(
 	}
 	r->pimpl->debug.line_batch.submit();
 
-	for (const auto line: r->debug.debug_lines)
+	for (const auto& line: r->debug.debug_lines)
 	{
 		if (line.style != LineStyle::always_visible) continue;
 		StateChanger{&r->pimpl->states}.depth_test(false);
@@ -1848,7 +1843,7 @@ void render_debug_lines(
 	r->pimpl->debug.line_batch.submit();
 
 	// todo(Gustav): start drawing dashed lines here
-	for (const auto line: r->debug.debug_lines)
+	for (const auto& line: r->debug.debug_lines)
 	{
 		if (line.style != LineStyle::dashed_when_hidden) continue;
 		StateChanger{&r->pimpl->states}.depth_func(Compare::greater).depth_test(false);
