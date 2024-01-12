@@ -41,7 +41,7 @@ struct Triangle
 	Vertex v1;
 	Vertex v2;
 
-	Triangle(Vertex v0, Vertex v1, Vertex v2);
+	Triangle(const Vertex& v0, const Vertex& v1, const Vertex& v2);
 };
 
 /// A helper utility to create a Geom

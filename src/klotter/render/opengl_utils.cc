@@ -103,7 +103,7 @@ void APIENTRY on_opengl_error(
 		type_to_string(type),
 		severity_to_string(severity)
 	);
-	// DIE("OpenGL error");
+	DIE("OpenGL error");
 }
 
 void setup_opengl_debug()

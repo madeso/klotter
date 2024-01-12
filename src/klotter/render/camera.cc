@@ -6,21 +6,6 @@ namespace klotter
 {
 
 // todo(Gustav): replace create_vectors and create_view_mat when we have test rendering
-/*
-const glm::mat4 ypr(const glm::vec3& rot)
-{
-	const auto yaw = rot.x;
-	const auto pitch = -rot.y;
-	const auto roll = rot.z;
-
-	const auto x = glm::eulerAngleX(glm::radians(pitch));
-	const auto y = glm::eulerAngleY(glm::radians(yaw));
-	const auto z = glm::eulerAngleZ(glm::radians(roll));
-	const auto aa = x * y;
-	return aa * z;
-}
-*/
-
 
 CameraVectors create_vectors(float yaw, float pitch)
 {

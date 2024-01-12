@@ -75,7 +75,7 @@ BaseTexture::~BaseTexture()
 	unload();
 }
 
-BaseTexture::BaseTexture(BaseTexture&& rhs)
+BaseTexture::BaseTexture(BaseTexture&& rhs) noexcept
 	: id(rhs.id)
 	, width(rhs.width)
 	, height(rhs.height)
@@ -85,7 +85,7 @@ BaseTexture::BaseTexture(BaseTexture&& rhs)
 	rhs.height = invalid_size;
 }
 
-BaseTexture& BaseTexture::operator=(BaseTexture&& rhs)
+BaseTexture& BaseTexture::operator=(BaseTexture&& rhs) noexcept
 {
 	unload();
 
@@ -184,6 +184,11 @@ struct PixelData
 			stbi_image_free(pixel_data);
 		}
 	}
+
+	PixelData(const PixelData&) = delete;
+	PixelData(PixelData&&) = delete;
+	void operator=(const PixelData&) = delete;
+	void operator=(PixelData&&) = delete;
 };
 
 Texture2d load_image_from_embedded(
@@ -271,11 +276,11 @@ TextureCubemap load_cubemap_from_embedded(
 		return {};
 	}
 
-	// test width
 	if (parsed_right.width == parsed_left.width && parsed_right.width == parsed_top.width
 		&& parsed_right.width == parsed_bottom.width && parsed_right.width == parsed_back.width
 		&& parsed_right.width == parsed_front.width)
 	{
+		// width ok
 	}
 	else
 	{
@@ -283,11 +288,11 @@ TextureCubemap load_cubemap_from_embedded(
 		return {};
 	}
 
-	// test height
 	if (parsed_right.height == parsed_left.height && parsed_right.height == parsed_top.height
 		&& parsed_right.height == parsed_bottom.height && parsed_right.height == parsed_back.height
 		&& parsed_right.height == parsed_front.height)
 	{
+		// height ok
 	}
 	else
 	{

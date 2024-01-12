@@ -105,9 +105,12 @@ LineBatch::LineBatch(ShaderProgram* shader)
 	glGenVertexArrays(1, &va);
 	glBindVertexArray(va);
 
-	constexpr auto vertex_size = 6 * sizeof(float);
-	constexpr auto max_vertices = 2 * max_lines;
-	constexpr auto max_indices = 2 * max_lines;
+	constexpr auto vertex_count = 2;
+	constexpr auto float_per_vertex = 3;
+	constexpr auto float_count = vertex_count * float_per_vertex;
+	constexpr auto vertex_size = float_count * sizeof(float);
+	constexpr auto max_vertices = vertex_count * max_lines;
+	constexpr auto max_indices = vertex_count * max_lines;
 
 	glGenBuffers(1, &vb);
 	glBindBuffer(GL_ARRAY_BUFFER, vb);
@@ -127,6 +130,7 @@ LineBatch::LineBatch(ShaderProgram* shader)
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, vertex_size, relative_offset(offset));
 	offset += 3;
+	ASSERT(offset == float_count);
 
 	std::vector<u32> indices;
 	indices.reserve(max_indices);

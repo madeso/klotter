@@ -21,7 +21,7 @@ bool check_shader_compilation_error(const char* name, unsigned int shader)
 
 	if (! success)
 	{
-		glGetShaderInfoLog(shader, 512, NULL, log);
+		glGetShaderInfoLog(shader, 512, nullptr, log);
 		LOG_ERROR("%s shader compilation failed\n%s\n", name, log);
 		return false;
 	}
@@ -38,7 +38,7 @@ bool check_shader_link_error(unsigned int program)
 	glGetProgramiv(program, GL_LINK_STATUS, &success);
 	if (! success)
 	{
-		glGetProgramInfoLog(program, 512, NULL, log);
+		glGetProgramInfoLog(program, 512, nullptr, log);
 		LOG_ERROR("shader linking failed\n%s\n", log);
 		return false;
 	}
@@ -162,7 +162,7 @@ void ShaderProgram::use() const
 	set_shader_program(shader_program, debug_vertex_types);
 }
 
-ShaderProgram::ShaderProgram(ShaderProgram&& rhs)
+ShaderProgram::ShaderProgram(ShaderProgram&& rhs) noexcept
 	: shader_program(rhs.shader_program)
 	, debug_vertex_types(rhs.debug_vertex_types)
 {
@@ -170,7 +170,7 @@ ShaderProgram::ShaderProgram(ShaderProgram&& rhs)
 	rhs.debug_vertex_types = {};
 }
 
-void ShaderProgram::operator=(ShaderProgram&& rhs)
+void ShaderProgram::operator=(ShaderProgram&& rhs) noexcept
 {
 	clear();
 
@@ -315,7 +315,7 @@ void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
 	glUniformMatrix3fv(uniform.location, 1, GL_FALSE, glm::value_ptr(mat));
 }
 
-void setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list)
+void setup_textures(ShaderProgram* shader, const std::vector<Uniform*>& uniform_list)
 {
 	ASSERT(uniform_list.size() <= MAX_TEXTURES_SUPPORTED);
 

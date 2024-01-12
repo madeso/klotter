@@ -62,7 +62,7 @@ Vertex::Vertex(Index a_position, Index a_normal, Index a_texture, Index a_color)
 {
 }
 
-Triangle::Triangle(Vertex a, Vertex b, Vertex c)
+Triangle::Triangle(const Vertex& a, const Vertex& b, const Vertex& c)
 	: v0(a)
 	, v1(b)
 	, v2(c)

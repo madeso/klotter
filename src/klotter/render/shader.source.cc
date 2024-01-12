@@ -26,7 +26,7 @@ kainjow::mustache::mustache load_mustache(std::string_view str)
 	auto input = kainjow::mustache::mustache{std::string{str.begin(), str.end()}};
 	if (input.is_valid() == false)
 	{
-		const auto error = input.error_message();
+		const auto& error = input.error_message();
 		LOG_ERROR("Failed to parse mustache: %s", error.c_str());
 	}
 

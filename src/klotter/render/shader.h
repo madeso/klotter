@@ -21,8 +21,8 @@ struct ShaderProgram
 	ShaderProgram(const ShaderProgram&) = delete;
 	void operator=(const ShaderProgram&) = delete;
 
-	ShaderProgram(ShaderProgram&&);
-	void operator=(ShaderProgram&&);
+	ShaderProgram(ShaderProgram&&) noexcept;
+	void operator=(ShaderProgram&&) noexcept;
 
 	void clear();
 
@@ -48,7 +48,7 @@ struct ShaderProgram
 	VertexTypes debug_vertex_types;
 };
 
-void setup_textures(ShaderProgram* shader, std::vector<Uniform*> uniform_list);
+void setup_textures(ShaderProgram* shader, const std::vector<Uniform*>& uniform_list);
 void set_shader_program(unsigned int new_program, const VertexTypes& types);
 bool is_bound_for_shader(const std::unordered_set<VertexType>& debug_shader_types);
 bool is_shader_bound(unsigned int program);

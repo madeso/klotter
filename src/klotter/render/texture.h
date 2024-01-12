@@ -41,8 +41,8 @@ struct BaseTexture
 	BaseTexture(const BaseTexture&) = delete;
 	void operator=(const BaseTexture&) = delete;
 
-	BaseTexture(BaseTexture&&);
-	BaseTexture& operator=(BaseTexture&&);
+	BaseTexture(BaseTexture&&) noexcept;
+	BaseTexture& operator=(BaseTexture&&) noexcept;
 
 	// clears the loaded texture to a invalid texture
 	void unload();
