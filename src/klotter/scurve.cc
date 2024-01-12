@@ -75,7 +75,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 	constexpr float radius = 10.0f;
 	constexpr float dot_radius = 3.0f;
 	constexpr auto button = ImGuiMouseButton_Left;
-	constexpr int max_points = 20;
+	constexpr std::size_t max_points = 20;
 	constexpr auto dot_color = IM_COL32(0, 100, 0, 255);
 	constexpr auto background_color = IM_COL32(50, 50, 50, 255);
 	constexpr auto line_color = IM_COL32(100, 100, 100, 255);
@@ -90,8 +90,8 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 	auto* draw = ImGui::GetWindowDrawList();
 	draw->AddRectFilled(pos, pos + size, background_color);
 
-	std::array < ImVec2, max_points + 1> points;
-	for (int i = 0; i < max_points + 1; i += 1)
+	std::array<ImVec2, max_points + 1> points;
+	for (std::size_t i = 0; i < max_points + 1; i += 1)
 	{
 		const float srcx = static_cast<float>(i) / static_cast<float>(max_points);
 		const float x = flip_x ? 1 - srcx : srcx;
@@ -102,7 +102,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 
 	if (draw_points)
 	{
-		for (int i = 0; i < max_points + 1; i += 1)
+		for (std::size_t i = 0; i < max_points + 1; i += 1)
 		{
 			draw->AddCircleFilled(points[i], dot_radius, dot_color);
 		}
