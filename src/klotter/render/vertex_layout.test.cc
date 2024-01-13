@@ -14,9 +14,11 @@ struct fmt::formatter<VertexType> : formatter<string_view>
 		string_view name = "<unknown>";
 		switch (c)
 		{
-		case VertexType::position2: name = "position2"; break;
+		case VertexType::position2xy: name = "position2xy"; break;
+		case VertexType::position2xz: name = "position2xz"; break;
 		case VertexType::position3: name = "position3"; break;
 		case VertexType::normal3: name = "normal3"; break;
+		case VertexType::color3: name = "color3"; break;
 		case VertexType::color4: name = "color4"; break;
 		case VertexType::texture2: name = "texture2"; break;
 		}
@@ -187,10 +189,10 @@ TEST_CASE("vertex_layout_test_with_custom_layput", "[vertex_layout]")
 
 	CHECK(is_equal(
 		geom_layout,
-		{{{VertexType::position3, 2},
-		  {VertexType::normal3, 3},
-		  {VertexType::color4, 0},
-		  {VertexType::texture2, 1}},
+		{{{VertexType::color4, 0},
+		  {VertexType::texture2, 1},
+		  {VertexType::position3, 2},
+		  {VertexType::normal3, 3}},
 		 {VertexType::position3, VertexType::normal3, VertexType::color4, VertexType::texture2}}
 	));
 }
@@ -318,7 +320,7 @@ TEST_CASE("vertex_layout_test_get_not_requested", "[vertex_layout]")
 	const auto layout_shader_material = ShaderVertexAttributes{{VertexType::position3, "pos"}};
 
 	const auto not_requested_property = GENERATE(
-		VertexType::position2, VertexType::normal3, VertexType::color4, VertexType::texture2
+		VertexType::position2xy, VertexType::normal3, VertexType::color4, VertexType::texture2
 	);
 
 	const auto layout_shader_not_requested

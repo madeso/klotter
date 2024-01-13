@@ -121,3 +121,16 @@ source_group("shaders" FILES ${shaders})
 cmake_source_group()
 
 add_library(klotter::klotter ALIAS klotter)
+
+
+set(src_test
+    klotter/main.test.cc
+    klotter/render/vertex_layout.test.cc
+)
+add_executable(test
+    ${src_test}
+)
+target_link_libraries(test
+    catchy::catchy
+    klotter::klotter
+)
