@@ -45,6 +45,7 @@ set(src_render
     klotter/render/assets.cc klotter/render/assets.h
 
     klotter/render/vertex_layout.cc klotter/render/vertex_layout.h
+    klotter/render/uniform_buffer.cc klotter/render/uniform_buffer.h
     klotter/render/linebatch.cc klotter/render/linebatch.h
     klotter/render/framebuffer.cc klotter/render/framebuffer.h
 
@@ -126,6 +127,7 @@ add_library(klotter::klotter ALIAS klotter)
 set(src_test
     klotter/main.test.cc
     klotter/render/vertex_layout.test.cc
+    klotter/render/uniform_buffer.test.cc
 )
 add_executable(test
     ${src_test}
