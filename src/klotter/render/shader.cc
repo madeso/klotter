@@ -6,6 +6,7 @@
 
 #include "klotter/render/constants.h"
 #include "klotter/render/opengl_utils.h"
+#include "klotter/render/uniform_buffer.h"
 
 namespace klotter
 {
@@ -313,6 +314,17 @@ void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
 
 	ASSERT(uniform.texture == -1 && "uniform is a texture not a matrix3");
 	glUniformMatrix3fv(uniform.location, 1, GL_FALSE, glm::value_ptr(mat));
+}
+
+void ShaderProgram::setup_uniform_block(const UniformBufferSetup& setup)
+{
+	unsigned int shader_block_index = glGetUniformBlockIndex(shader_program, setup.name.c_str());
+	if (shader_block_index == 0)
+	{
+		LOG_ERROR("Shader missing uniform block %s", setup.name.c_str());
+		return;
+	}
+	glUniformBlockBinding(shader_program, shader_block_index, setup.binding_point);
 }
 
 void setup_textures(ShaderProgram* shader, const std::vector<Uniform*>& uniform_list)

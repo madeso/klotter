@@ -17,6 +17,7 @@
 #include "klotter/render/shader.source.h"
 #include "klotter/render/geom.extract.h"
 #include "klotter/render/geom.builder.h"
+#include "klotter/render/uniform_buffer.h"
 
 #include "imgui.h"
 
@@ -654,17 +655,28 @@ struct FullScreenInfo
 
 ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo& fsi);
 
+struct CameraUniformBufferDesc : UniformBufferSetup
+{
+	CompiledUniformProp projection;
+	CompiledUniformProp view;
+};
+
 struct RendererPimpl
 {
 	ShaderResource shaders;
 	OpenglStates states;
 	DebugDrawer debug;
 	std::shared_ptr<CompiledGeom> full_screen_geom;
+	CameraUniformBufferDesc camera_uniform_buffer_desc;
 
 	RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi)
 		: shaders(load_shaders(set, fsi))
 		, full_screen_geom(fsi.full_screen_geom)
 	{
+		UniformBufferCompiler compiler;
+		compiler.add(&camera_uniform_buffer_desc.projection, UniformType::mat4, "projection");
+		compiler.add(&camera_uniform_buffer_desc.view, UniformType::mat4, "view");
+		compiler.compile("Camera", &camera_uniform_buffer_desc, 0);
 	}
 };
 

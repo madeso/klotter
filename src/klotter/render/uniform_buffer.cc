@@ -5,6 +5,8 @@
 namespace klotter
 {
 
+using UniformBufferDescription = std::vector<UniformProp>;
+
 /// returns the size in bytes
 int size_of(UniformProp prop, bool align)
 {
@@ -32,19 +34,6 @@ int calculate_alignment_bytes(int current_size, UniformProp prop)
 	const auto to_add = size - mod;
 	ASSERT((to_add + mod) % size == 0);
 	return to_add;
-}
-
-CompiledUniformBufferDescription compile(const UniformBufferDescription& desc)
-{
-	auto compiled = CompiledUniformBufferDescription{};
-	for (const auto& p: desc)
-	{
-		const auto size = size_of(p, false);
-		compiled.total_size += calculate_alignment_bytes(compiled.total_size, p);
-		compiled.props[p.name] = {compiled.total_size, p.type, p.array_count};
-		compiled.total_size += size * p.array_count;
-	}
-	return compiled;
 }
 
 std::string to_source(const std::string& name, const UniformBufferDescription& desc)
@@ -79,6 +68,99 @@ std::string to_source(const std::string& name, const UniformBufferDescription& d
 	ss << "};"
 	   << "\n";
 	return ss.str();
+}
+
+void UniformBufferCompiler::add(
+	CompiledUniformProp* target, UniformType type, const std::string& name, int array_count
+)
+{
+	props.emplace_back(UniformProp{target, type, name, array_count});
+}
+
+void UniformBufferCompiler::compile(
+	const std::string& name, UniformBufferSetup* target, int binding_point
+)
+{
+	target->size = 0;
+	target->binding_point = binding_point;
+	target->name = name;
+	target->source = to_source(name, props);
+	for (const auto& p: props)
+	{
+		const auto size = size_of(p, false);
+		target->size += calculate_alignment_bytes(target->size, p);
+		*p.target = {target->size, p.type, p.array_count};
+		target->size += size * p.array_count;
+	}
+}
+
+namespace
+{
+	UniformBuffer* bound_buffer = nullptr;
+
+	void bind_uniform_buffer(UniformBuffer* b)
+	{
+		ASSERT(bound_buffer == nullptr);
+		bound_buffer = b;
+		glBindBuffer(GL_UNIFORM_BUFFER, b->id);
+	}
+
+	void unbind_uniform_buffer(UniformBuffer* b)
+	{
+		ASSERT(bound_buffer == b);
+		bound_buffer = nullptr;
+		glBindBuffer(GL_UNIFORM_BUFFER, 0);
+	}
+}  //  namespace
+
+UniformBuffer::UniformBuffer(const UniformBufferSetup& setup)
+{
+	// todo(Gustav): replace all buffer creation/destruction with 2 basic functions
+
+	glGenBuffers(1, &id);
+	bind_uniform_buffer(this);
+	glBufferData(GL_UNIFORM_BUFFER, setup.size, nullptr, GL_STATIC_DRAW);
+	glBindBufferBase(GL_UNIFORM_BUFFER, setup.binding_point, id);
+	unbind_uniform_buffer(this);
+}
+
+UniformBuffer::~UniformBuffer()
+{
+	unload();
+}
+
+UniformBuffer::UniformBuffer(UniformBuffer&& rhs) noexcept
+	: id(rhs.id)
+{
+	rhs.id = 0;
+}
+
+UniformBuffer& UniformBuffer::operator=(UniformBuffer&& rhs) noexcept
+{
+	unload();
+	id = rhs.id;
+	rhs.id = 0;
+	return *this;
+}
+
+// clears the loaded buffer to a invalid buffer
+void UniformBuffer::unload()
+{
+	if (id == 0)
+	{
+		return;
+	}
+
+	glDeleteBuffers(1, &id);
+	id = 0;
+}
+
+void UniformBuffer::set_mat4(const CompiledUniformProp& prop, const glm::mat4& m)
+{
+	// todo(Gustav): verify that the prop belongs to self
+	ASSERT(prop.type == UniformType::mat4 && prop.array_count == 1);
+	// todo(Gustav): replace sizeof with actual size
+	glBufferSubData(GL_UNIFORM_BUFFER, prop.offset, sizeof(glm::mat4), glm::value_ptr(m));
 }
 
 }  //  namespace klotter

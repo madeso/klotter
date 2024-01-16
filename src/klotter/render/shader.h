@@ -8,6 +8,8 @@
 namespace klotter
 {
 
+struct UniformBufferSetup;
+
 struct ShaderProgram
 {
 	ShaderProgram(
@@ -43,6 +45,7 @@ struct ShaderProgram
 	void set_mat(const Uniform& uniform, const glm::mat4& mat) const;
 	void set_mat(const Uniform& uniform, const glm::mat3& mat) const;
 
+	void setup_uniform_block(const UniformBufferSetup& setup);
 
 	unsigned int shader_program;
 	VertexTypes debug_vertex_types;
