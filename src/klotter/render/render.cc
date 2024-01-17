@@ -329,6 +329,24 @@ struct StateChanger
 // ------------------------------------------------------------------------------------------------
 // shader resources
 
+struct CameraUniformBuffer
+{
+	UniformBufferSetup setup;
+
+	CompiledUniformProp projection_prop;
+	CompiledUniformProp view_prop;
+
+	// this replaces the u_projection and u_view matrices
+
+	std::unique_ptr<UniformBuffer> buffer;
+
+	void set_props(const CompiledCamera& cc)
+	{
+		buffer->set_mat4(projection_prop, cc.projection);
+		buffer->set_mat4(view_prop, cc.view);
+	}
+};
+
 struct LoadedShader
 {
 	LoadedShader(std::shared_ptr<ShaderProgram> p, const CompiledGeomVertexAttributes& l)
@@ -343,35 +361,28 @@ struct LoadedShader
 
 struct LoadedShader_SingleColor : LoadedShader
 {
-	explicit LoadedShader_SingleColor(LoadedShader s)
+	LoadedShader_SingleColor(LoadedShader s, const CameraUniformBuffer& desc)
 		: LoadedShader(std::move(s.program), s.geom_layout)
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, model(program->get_uniform("u_model"))
-		, projection(program->get_uniform("u_projection"))
-		, view(program->get_uniform("u_view"))
 	{
+		program->setup_uniform_block(desc.setup);
 	}
 
 	Uniform tint_color;
 
 	Uniform model;
-	Uniform projection;
-	Uniform view;
 };
 
 struct LoadedShader_Skybox : LoadedShader
 {
-	explicit LoadedShader_Skybox(LoadedShader s)
+	LoadedShader_Skybox(LoadedShader s, const CameraUniformBuffer& desc)
 		: LoadedShader(std::move(s.program), s.geom_layout)
-		, projection(program->get_uniform("u_projection"))
-		, view(program->get_uniform("u_view"))
 		, tex_skybox(program->get_uniform("u_skybox_tex"))
 	{
 		setup_textures(program.get(), {&tex_skybox});
+		program->setup_uniform_block(desc.setup);
 	}
-
-	Uniform projection;
-	Uniform view;
 
 	Uniform tex_skybox;
 };
@@ -380,23 +391,20 @@ struct Base_LoadedShader_Unlit
 {
 	std::shared_ptr<ShaderProgram> program;
 
-	explicit Base_LoadedShader_Unlit(LoadedShader s)
+	explicit Base_LoadedShader_Unlit(LoadedShader s, const CameraUniformBuffer& desc)
 		: program(std::move(s.program))
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
 		, model(program->get_uniform("u_model"))
-		, projection(program->get_uniform("u_projection"))
-		, view(program->get_uniform("u_view"))
 	{
 		setup_textures(program.get(), {&tex_diffuse});
+		program->setup_uniform_block(desc.setup);
 	}
 
 	Uniform tint_color;
 	Uniform tex_diffuse;
 
 	Uniform model;
-	Uniform projection;
-	Uniform view;
 };
 
 struct DirectionalLightUniforms
@@ -499,7 +507,9 @@ struct Base_LoadedShader_Default
 {
 	std::shared_ptr<ShaderProgram> program;
 
-	Base_LoadedShader_Default(LoadedShader s, const RenderSettings& settings)
+	Base_LoadedShader_Default(
+		LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
+	)
 		: program(std::move(s.program))
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
@@ -510,8 +520,6 @@ struct Base_LoadedShader_Default
 		, shininess(program->get_uniform("u_material.shininess"))
 		, emissive_factor(program->get_uniform("u_material.emissive_factor"))
 		, model(program->get_uniform("u_model"))
-		, projection(program->get_uniform("u_projection"))
-		, view(program->get_uniform("u_view"))
 		, view_position(program->get_uniform("u_view_position"))
 		, light_ambient_color(program->get_uniform("u_ambient_light"))
 	{
@@ -540,6 +548,7 @@ struct Base_LoadedShader_Default
 		}
 
 		setup_textures(program.get(), textures);
+		program->setup_uniform_block(desc.setup);
 	}
 
 	Uniform tint_color;
@@ -552,8 +561,6 @@ struct Base_LoadedShader_Default
 	Uniform emissive_factor;
 
 	Uniform model;
-	Uniform projection;
-	Uniform view;
 
 	Uniform view_position;
 	Uniform light_ambient_color;
@@ -653,30 +660,39 @@ struct FullScreenInfo
 	}
 };
 
-ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo& fsi);
+ShaderResource load_shaders(
+	const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenInfo& fsi
+);
 
-struct CameraUniformBufferDesc : UniformBufferSetup
+CameraUniformBuffer make_camera_uniform_buffer_desc()
 {
-	CompiledUniformProp projection;
-	CompiledUniformProp view;
-};
+	CameraUniformBuffer camera_uniform_buffer;
+
+	{
+		UniformBufferCompiler compiler;
+		compiler.add(&camera_uniform_buffer.projection_prop, UniformType::mat4, "projection");
+		compiler.add(&camera_uniform_buffer.view_prop, UniformType::mat4, "view");
+		compiler.compile("Camera", &camera_uniform_buffer.setup, 0);
+	}
+
+	camera_uniform_buffer.buffer = std::make_unique<UniformBuffer>(camera_uniform_buffer.setup);
+
+	return camera_uniform_buffer;
+}
 
 struct RendererPimpl
 {
+	CameraUniformBuffer camera_uniform_buffer;
 	ShaderResource shaders;
 	OpenglStates states;
 	DebugDrawer debug;
 	std::shared_ptr<CompiledGeom> full_screen_geom;
-	CameraUniformBufferDesc camera_uniform_buffer_desc;
 
 	RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi)
-		: shaders(load_shaders(set, fsi))
+		: camera_uniform_buffer(make_camera_uniform_buffer_desc())
+		, shaders(load_shaders(camera_uniform_buffer, set, fsi))
 		, full_screen_geom(fsi.full_screen_geom)
 	{
-		UniformBufferCompiler compiler;
-		compiler.add(&camera_uniform_buffer_desc.projection, UniformType::mat4, "projection");
-		compiler.add(&camera_uniform_buffer_desc.view, UniformType::mat4, "view");
-		compiler.compile("Camera", &camera_uniform_buffer_desc, 0);
 	}
 };
 
@@ -761,7 +777,9 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& 
 	return {program, geom_layout};
 }
 
-ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo& fsi)
+ShaderResource load_shaders(
+	const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenInfo& fsi
+)
 {
 	const auto single_color_shader = load_shader_source({});
 	const auto skybox_shader = ShaderSource{
@@ -847,16 +865,16 @@ ShaderResource load_shaders(const RenderSettings& settings, const FullScreenInfo
 	);
 
 	return {
-		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader)},
-		LoadedShader_Skybox{load_shader({}, skybox_shader)},
+		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader), desc},
+		LoadedShader_Skybox{load_shader({}, skybox_shader), desc},
 		LoadedShader_Unlit{
 			loaded_unlit.geom_layout,
-			Base_LoadedShader_Unlit{loaded_unlit},
-			Base_LoadedShader_Unlit{loaded_unlit_transparency}},
+			Base_LoadedShader_Unlit{loaded_unlit, desc},
+			Base_LoadedShader_Unlit{loaded_unlit_transparency, desc}},
 		LoadedShader_Default{
 			loaded_default.geom_layout,
-			Base_LoadedShader_Default{loaded_default, settings},
-			Base_LoadedShader_Default{loaded_default_transparency, settings}},
+			Base_LoadedShader_Default{loaded_default, settings, desc},
+			Base_LoadedShader_Default{loaded_default_transparency, settings, desc}},
 		pp_invert,
 		pp_grayscale,
 		pp_damage,
@@ -905,50 +923,13 @@ void UnlitMaterial::use_shader(const RenderContext& rc)
 	shader->base(rc).program->use();
 }
 
-void set_projection_view(
-	std::shared_ptr<ShaderProgram> program,
-	const Uniform& projection,
-	const Uniform& view,
-	const glm::mat4& projection_mat,
-	const glm::mat4& view_mat
-)
-{
-	program->set_mat(projection, projection_mat);
-	program->set_mat(view, view_mat);
-}
-
-void set_projection_view(
-	std::shared_ptr<ShaderProgram> program,
-	const Uniform& projection,
-	const Uniform& view,
-	const CompiledCamera& cc
-)
-{
-	set_projection_view(program, projection, view, cc.projection, cc.view);
-}
-
-void set_model_projection_view(
-	std::shared_ptr<ShaderProgram> program,
-	const Uniform& model,
-	const Uniform& projection,
-	const Uniform& view,
-	const CompiledCamera& cc,
-	const glm::mat4& transform
-)
-{
-	program->set_mat(model, transform);
-	program->set_mat(projection, cc.projection);
-	program->set_mat(view, cc.view);
-}
-
 void UnlitMaterial::set_uniforms(
-	const RenderContext& rc, const CompiledCamera& cc, const glm::mat4& transform
+	const RenderContext& rc, const CompiledCamera&, const glm::mat4& transform
 )
 {
 	const auto& base = shader->base(rc);
 	base.program->set_vec4(base.tint_color, {color, alpha});
-
-	set_model_projection_view(base.program, base.model, base.projection, base.view, cc, transform);
+	base.program->set_mat(base.model, transform);
 }
 
 void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
@@ -995,7 +976,7 @@ void DefaultMaterial::set_uniforms(
 	base.program->set_float(base.shininess, shininess);
 	base.program->set_float(base.emissive_factor, emissive_factor);
 
-	set_model_projection_view(base.program, base.model, base.projection, base.view, cc, transform);
+	base.program->set_mat(base.model, transform);
 	base.program->set_vec3(base.view_position, cc.position);
 }
 
@@ -1892,6 +1873,8 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	const auto compiled_camera = compile(camera, window_size);
 
+	pimpl->camera_uniform_buffer.set_props(compiled_camera);
+
 	std::vector<TransparentMesh> transparent_meshes;
 
 	for (auto& m: world.meshes)
@@ -1942,14 +1925,6 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		auto& shader = pimpl->shaders.skybox_shader;
 
 		shader.program->use();
-		const auto rotation_only = glm::mat4{glm::mat3{compiled_camera.view}};
-		set_projection_view(
-			shader.program,
-			shader.projection,
-			shader.view,
-			compiled_camera.projection,
-			rotation_only
-		);
 		bind_texture_cubemap(&pimpl->states, shader.tex_skybox, *world.skybox.cubemap);
 
 		render_geom(world.skybox.geom);
@@ -2007,13 +1982,9 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				auto& shader = pimpl->shaders.single_color_shader;
 				shader.program->use();
 				shader.program->set_vec4(shader.tint_color, {*m->outline, 1});
-				set_model_projection_view(
-					shader.program,
-					shader.model,
-					shader.projection,
-					shader.view,
-					compiled_camera,
-					calc_mesh_transform(m, compiled_camera) * small_scale_mat
+
+				shader.program->set_mat(
+					shader.model, calc_mesh_transform(m, compiled_camera) * small_scale_mat
 				);
 
 				render_geom(m->geom);
