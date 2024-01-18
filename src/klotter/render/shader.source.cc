@@ -47,7 +47,9 @@ std::string generate_blur(std::string_view src, const BlurOptions& options)
 	return input.render(data);
 }
 
-std::string generate(std::string_view str, const ShaderOptions& options)
+std::string generate(
+	std::string_view str, const ShaderOptions& options, const std::string& uniform_buffer_source
+)
 {
 	auto input = load_mustache(str);
 	auto data = kainjow::mustache::data{};
@@ -58,11 +60,14 @@ std::string generate(std::string_view str, const ShaderOptions& options)
 	data["number_of_point_lights"] = (Str() << options.number_of_point_lights).str();
 	data["number_of_frustum_lights"] = (Str() << options.number_of_frustum_lights).str();
 	data["transparent_cutoff"] = options.transparent_cutoff;
+	data["uniform_buffer_source"] = uniform_buffer_source;
 
 	return input.render(data);
 }
 
-ShaderSource load_shader_source(const ShaderOptions& options)
+ShaderSource load_shader_source(
+	const ShaderOptions& options, const std::string& uniform_buffer_source
+)
 {
 	auto layout = ShaderVertexAttributes{
 		{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}};
@@ -79,8 +84,8 @@ ShaderSource load_shader_source(const ShaderOptions& options)
 
 	return ShaderSource{
 		layout,
-		generate(DEFAULT_SHADER_VERT_GLSL, options),
-		generate(DEFAULT_SHADER_FRAG_GLSL, options)};
+		generate(DEFAULT_SHADER_VERT_GLSL, options, uniform_buffer_source),
+		generate(DEFAULT_SHADER_FRAG_GLSL, options, uniform_buffer_source)};
 }
 
 }  //  namespace klotter

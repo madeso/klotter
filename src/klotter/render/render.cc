@@ -670,8 +670,8 @@ CameraUniformBuffer make_camera_uniform_buffer_desc()
 
 	{
 		UniformBufferCompiler compiler;
-		compiler.add(&camera_uniform_buffer.projection_prop, UniformType::mat4, "projection");
-		compiler.add(&camera_uniform_buffer.view_prop, UniformType::mat4, "view");
+		compiler.add(&camera_uniform_buffer.projection_prop, UniformType::mat4, "u_projection");
+		compiler.add(&camera_uniform_buffer.view_prop, UniformType::mat4, "u_view");
 		compiler.compile("Camera", &camera_uniform_buffer.setup, 0);
 	}
 
@@ -781,7 +781,9 @@ ShaderResource load_shaders(
 	const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenInfo& fsi
 )
 {
-	const auto single_color_shader = load_shader_source({});
+	const auto single_color_shader = load_shader_source({}, desc.setup.source);
+
+	// todo(Gustav): fix skybox shader
 	const auto skybox_shader = ShaderSource{
 		ShaderVertexAttributes{{VertexType::position3, "a_position"}},
 		std::string{SKYBOX_VERT_GLSL},
@@ -800,16 +802,20 @@ ShaderResource load_shaders(
 	default_shader_options.number_of_frustum_lights = settings.number_of_frustum_lights;
 
 	auto loaded_unlit = load_shader(
-		global_shader_data, load_shader_source(unlit_shader_options.with_transparent_cutoff())
+		global_shader_data,
+		load_shader_source(unlit_shader_options.with_transparent_cutoff(), desc.setup.source)
 	);
 	auto loaded_default = load_shader(
-		global_shader_data, load_shader_source(default_shader_options.with_transparent_cutoff())
+		global_shader_data,
+		load_shader_source(default_shader_options.with_transparent_cutoff(), desc.setup.source)
 	);
 
-	auto loaded_unlit_transparency
-		= load_shader(global_shader_data, load_shader_source(unlit_shader_options));
-	auto loaded_default_transparency
-		= load_shader(global_shader_data, load_shader_source(default_shader_options));
+	auto loaded_unlit_transparency = load_shader(
+		global_shader_data, load_shader_source(unlit_shader_options, desc.setup.source)
+	);
+	auto loaded_default_transparency = load_shader(
+		global_shader_data, load_shader_source(default_shader_options, desc.setup.source)
+	);
 
 	// todo(Gustav): should the asserts here be runtime errors? currently all setups are compile-time...
 	assert(

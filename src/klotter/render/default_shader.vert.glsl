@@ -12,8 +12,8 @@ in vec2 a_tex_coord;
 
 ///////////////////////////////////////////////////////////////////////////////
 // uniforms
-uniform mat4 u_projection;
-uniform mat4 u_view;
+{{uniform_buffer_source}}
+
 uniform mat4 u_model;
 
 

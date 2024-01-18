@@ -319,7 +319,7 @@ void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
 void ShaderProgram::setup_uniform_block(const UniformBufferSetup& setup)
 {
 	unsigned int shader_block_index = glGetUniformBlockIndex(shader_program, setup.name.c_str());
-	if (shader_block_index == 0)
+	if (shader_block_index == GL_INVALID_INDEX)
 	{
 		LOG_ERROR("Shader missing uniform block %s", setup.name.c_str());
 		return;
