@@ -766,7 +766,7 @@ BaseShaderData get_vertex_types(const ShaderVertexAttributes& va)
 	return ret;
 }
 
-LoadedShader load_shader(const BaseShaderData& base_layout, const ShaderSource& source)
+LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSource& source)
 {
 	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
 	const auto geom_layout = get_geom_layout(layout_compiler);
@@ -784,7 +784,7 @@ ShaderResource load_shaders(
 	const auto single_color_shader = load_shader_source({}, desc.setup.source);
 
 	// todo(Gustav): fix skybox shader
-	const auto skybox_shader = ShaderSource{
+	const auto skybox_shader = VertexShaderSource{
 		ShaderVertexAttributes{{VertexType::position3, "a_position"}},
 		std::string{SKYBOX_VERT_GLSL},
 		std::string{SKYBOX_FRAG_GLSL}};

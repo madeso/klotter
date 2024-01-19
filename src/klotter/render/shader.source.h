@@ -17,7 +17,7 @@ struct ShaderOptions
 	ShaderOptions with_transparent_cutoff() const;
 };
 
-struct ShaderSource
+struct VertexShaderSource
 {
 	ShaderVertexAttributes layout;
 	std::string vertex;
@@ -45,7 +45,7 @@ struct BlurOptions
 
 std::string generate_blur(std::string_view src, const BlurOptions& options);
 
-ShaderSource load_shader_source(
+VertexShaderSource load_shader_source(
 	const ShaderOptions& options, const std::string& uniform_buffer_source
 );
 
