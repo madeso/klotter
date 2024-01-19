@@ -69,4 +69,12 @@ struct UniformBuffer
 	unsigned int id;
 };
 
+struct BoundUniformBuffer
+{
+	explicit BoundUniformBuffer(UniformBuffer* b);
+	~BoundUniformBuffer();
+
+	UniformBuffer* buffer;
+};
+
 }  //  namespace klotter

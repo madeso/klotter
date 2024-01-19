@@ -97,31 +97,31 @@ void UniformBufferCompiler::compile(
 namespace
 {
 	UniformBuffer* bound_buffer = nullptr;
-
-	void bind_uniform_buffer(UniformBuffer* b)
-	{
-		ASSERT(bound_buffer == nullptr);
-		bound_buffer = b;
-		glBindBuffer(GL_UNIFORM_BUFFER, b->id);
-	}
-
-	void unbind_uniform_buffer(UniformBuffer* b)
-	{
-		ASSERT(bound_buffer == b);
-		bound_buffer = nullptr;
-		glBindBuffer(GL_UNIFORM_BUFFER, 0);
-	}
 }  //  namespace
+
+BoundUniformBuffer::BoundUniformBuffer(UniformBuffer* b)
+	: buffer(b)
+{
+	ASSERT(bound_buffer == nullptr);
+	bound_buffer = b;
+	glBindBuffer(GL_UNIFORM_BUFFER, b->id);
+}
+
+BoundUniformBuffer::~BoundUniformBuffer()
+{
+	ASSERT(bound_buffer == buffer);
+	bound_buffer = nullptr;
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);
+}
 
 UniformBuffer::UniformBuffer(const UniformBufferSetup& setup)
 {
 	// todo(Gustav): replace all buffer creation/destruction with 2 basic functions
 
 	glGenBuffers(1, &id);
-	bind_uniform_buffer(this);
+	auto bound = BoundUniformBuffer{this};
 	glBufferData(GL_UNIFORM_BUFFER, setup.size, nullptr, GL_STATIC_DRAW);
 	glBindBufferBase(GL_UNIFORM_BUFFER, setup.binding_point, id);
-	unbind_uniform_buffer(this);
 }
 
 UniformBuffer::~UniformBuffer()

@@ -1879,6 +1879,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	const auto compiled_camera = compile(camera, window_size);
 
+	auto bound_camera_buffer = BoundUniformBuffer{pimpl->camera_uniform_buffer.buffer.get()};
 	pimpl->camera_uniform_buffer.set_props(compiled_camera);
 
 	std::vector<TransparentMesh> transparent_meshes;
