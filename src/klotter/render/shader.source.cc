@@ -8,6 +8,9 @@
 #include "default_shader.vert.glsl.h"
 #include "default_shader.frag.glsl.h"
 
+#include "skybox.vert.glsl.h"
+#include "skybox.frag.glsl.h"
+
 namespace klotter
 {
 
@@ -65,6 +68,16 @@ std::string generate(
 	return input.render(data);
 }
 
+std::string generate(std::string_view str, const std::string& uniform_buffer_source)
+{
+	auto input = load_mustache(str);
+	auto data = kainjow::mustache::data{};
+
+	data["uniform_buffer_source"] = uniform_buffer_source;
+
+	return input.render(data);
+}
+
 VertexShaderSource load_shader_source(
 	const ShaderOptions& options, const std::string& uniform_buffer_source
 )
@@ -86,6 +99,13 @@ VertexShaderSource load_shader_source(
 		layout,
 		generate(DEFAULT_SHADER_VERT_GLSL, options, uniform_buffer_source),
 		generate(DEFAULT_SHADER_FRAG_GLSL, options, uniform_buffer_source)};
+}
+
+ShaderSource load_skybox_source(const std::string& uniform_buffer_source)
+{
+	return ShaderSource{
+		generate(SKYBOX_VERT_GLSL, uniform_buffer_source),
+		generate(SKYBOX_FRAG_GLSL, uniform_buffer_source)};
 }
 
 }  //  namespace klotter

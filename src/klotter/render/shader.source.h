@@ -24,6 +24,12 @@ struct VertexShaderSource
 	std::string fragment;
 };
 
+struct ShaderSource
+{
+	std::string vertex;
+	std::string fragment;
+};
+
 enum class BlurType
 {
 	horizontal,
@@ -48,5 +54,7 @@ std::string generate_blur(std::string_view src, const BlurOptions& options);
 VertexShaderSource load_shader_source(
 	const ShaderOptions& options, const std::string& uniform_buffer_source
 );
+
+ShaderSource load_skybox_source(const std::string& uniform_buffer_source);
 
 }  //  namespace klotter

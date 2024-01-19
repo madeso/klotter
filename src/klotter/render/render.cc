@@ -5,8 +5,6 @@
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
-#include "skybox.vert.glsl.h"
-#include "skybox.frag.glsl.h"
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -784,10 +782,11 @@ ShaderResource load_shaders(
 	const auto single_color_shader = load_shader_source({}, desc.setup.source);
 
 	// todo(Gustav): fix skybox shader
+	const auto skybox_source = load_skybox_source(desc.setup.source);
 	const auto skybox_shader = VertexShaderSource{
 		ShaderVertexAttributes{{VertexType::position3, "a_position"}},
-		std::string{SKYBOX_VERT_GLSL},
-		std::string{SKYBOX_FRAG_GLSL}};
+		skybox_source.vertex,
+		skybox_source.fragment};
 
 	BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
 
