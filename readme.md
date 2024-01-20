@@ -43,8 +43,6 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - material: use cubemap + color
 - complete rest of learn opengl
 
-  1. (optimize uniforms) Advanced GLSL (Advanced OpenGL)
-  1. Geometry Shader (Advanced OpenGL)
   1. (render many objects, grass billboards) Instancing (Advanced OpenGL)
   1. (render setting) Anti Aliasing (Advanced OpenGL)
 
