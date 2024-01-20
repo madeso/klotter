@@ -324,7 +324,7 @@ void ShaderProgram::setup_uniform_block(const UniformBufferSetup& setup)
 		LOG_ERROR("Shader missing uniform block %s", setup.name.c_str());
 		return;
 	}
-	glUniformBlockBinding(shader_program, shader_block_index, setup.binding_point);
+	glUniformBlockBinding(shader_program, shader_block_index, Cint_to_gluint(setup.binding_point));
 }
 
 void setup_textures(ShaderProgram* shader, const std::vector<Uniform*>& uniform_list)
