@@ -1642,22 +1642,28 @@ std::shared_ptr<CompiledGeom> compile_geom(
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(
-		GL_ARRAY_BUFFER,
-		Csizet_to_glsizeiptr(sizeof(float) * ex.vertices.size()),
-		ex.vertices.data(),
-		GL_STATIC_DRAW
+		GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW
 	);
 
-	const auto stride = ex.floats_per_vertex * sizeof(float);
+	const auto get_type = [](const ExtractedAttribute& ex) -> GLenum
+	{
+		switch (ex.type)
+		{
+		case ExtractedAttributeType::Float: return GL_FLOAT;
+		default: DIE("invalid extracted attribute"); return GL_FLOAT;
+		}
+	};
+
+	const auto stride = ex.stride;
 	int location = 0;
 	std::size_t offset = 0;
-	for (const auto& a_count: ex.attribute_counts)
+	for (const auto& att: ex.attributes)
 	{
 		const auto normalize = false;
 		glVertexAttribPointer(
 			Cint_to_gluint(location),
-			a_count,
-			GL_FLOAT,
+			att.count,
+			get_type(att),
 			normalize ? GL_TRUE : GL_FALSE,
 			Csizet_to_glsizei(stride),
 			reinterpret_cast<void*>(offset)
@@ -1665,7 +1671,7 @@ std::shared_ptr<CompiledGeom> compile_geom(
 		glEnableVertexAttribArray(Cint_to_gluint(location));
 
 		location += 1;
-		offset += Cint_to_sizet(a_count) * sizeof(float);
+		offset += att.size;
 	}
 
 

@@ -13,18 +13,25 @@ namespace klotter
  *  @{
 */
 
-using VertexVector = std::vector<float>;
+enum class ExtractedAttributeType
+{
+	Float
+};
+
+struct ExtractedAttribute
+{
+	ExtractedAttributeType type;
+	int count;
+	std::size_t size;
+};
 
 /// Extracted data from a Geom for a specific shader layout so a CompiledGeom can be created
 struct ExtractedGeom
 {
-	// todo(Gustav): replace with a byte buffer to support non-float types (like bone assignments)
-	VertexVector vertices;
+	std::vector<char> data;
+	std::size_t stride;
 
-	// todo(Gustav): replace with stride
-	std::size_t floats_per_vertex;
-
-	std::vector<int> attribute_counts;
+	std::vector<ExtractedAttribute> attributes;
 	std::vector<u32> indices;
 	i32 face_size;
 };
