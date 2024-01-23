@@ -15,6 +15,7 @@ namespace klotter::geom
 */
 using Index = u64;
 
+/// A enum describing if a face is one or two sided
 enum class TwoSided
 {
 	one_sided,

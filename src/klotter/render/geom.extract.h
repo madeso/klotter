@@ -13,11 +13,13 @@ namespace klotter
  *  @{
 */
 
+/// The type of a extracted attribute, like 'float'
 enum class ExtractedAttributeType
 {
 	Float
 };
 
+/// A extracted attribute like `float 3`
 struct ExtractedAttribute
 {
 	ExtractedAttributeType type;
