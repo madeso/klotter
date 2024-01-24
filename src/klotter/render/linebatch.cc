@@ -3,6 +3,8 @@
 #include "klotter/assert.h"
 #include "klotter/dependency_glad.h"
 
+#include "klotter/render/opengl_utils.h"
+
 namespace klotter
 {
 DebugDrawer::DebugDrawer()
@@ -112,7 +114,7 @@ LineBatch::LineBatch(ShaderProgram* shader)
 	constexpr auto max_vertices = vertex_count * max_lines;
 	constexpr auto max_indices = vertex_count * max_lines;
 
-	glGenBuffers(1, &vb);
+	vb = create_buffer();
 	glBindBuffer(GL_ARRAY_BUFFER, vb);
 	glBufferData(GL_ARRAY_BUFFER, vertex_size * max_vertices, nullptr, GL_DYNAMIC_DRAW);
 
@@ -144,7 +146,7 @@ LineBatch::LineBatch(ShaderProgram* shader)
 
 	ASSERT(max_indices == indices.size());
 
-	glGenBuffers(1, &ib);
+	ib = create_buffer();
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ib);
 	glBufferData(
 		GL_ELEMENT_ARRAY_BUFFER, max_indices * sizeof(u32), indices.data(), GL_STATIC_DRAW
@@ -154,10 +156,10 @@ LineBatch::LineBatch(ShaderProgram* shader)
 LineBatch::~LineBatch()
 {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-	glDeleteBuffers(1, &ib);
+	destroy_buffer(ib);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glDeleteBuffers(1, &vb);
+	destroy_buffer(vb);
 
 	glBindVertexArray(0);
 	glDeleteVertexArrays(1, &va);

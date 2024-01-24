@@ -30,7 +30,7 @@ struct BoundFbo
 	~BoundFbo();
 };
 
-std::shared_ptr<FrameBuffer> create_buffer(
+std::shared_ptr<FrameBuffer> create_frame_buffer(
 	int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency trans
 );
 

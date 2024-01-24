@@ -117,10 +117,8 @@ BoundUniformBuffer::~BoundUniformBuffer()
 }
 
 UniformBuffer::UniformBuffer(const UniformBufferSetup& setup)
+	: id(create_buffer())
 {
-	// todo(Gustav): replace all buffer creation/destruction with 2 basic functions
-
-	glGenBuffers(1, &id);
 	auto bound = BoundUniformBuffer{this};
 	glBufferData(GL_UNIFORM_BUFFER, setup.size, nullptr, GL_STATIC_DRAW);
 	glBindBufferBase(GL_UNIFORM_BUFFER, Cint_to_gluint(setup.binding_point), id);
@@ -153,7 +151,7 @@ void UniformBuffer::unload()
 		return;
 	}
 
-	glDeleteBuffers(1, &id);
+	destroy_buffer(id);
 	id = 0;
 }
 

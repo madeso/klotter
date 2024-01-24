@@ -1112,7 +1112,7 @@ std::shared_ptr<FrameBuffer> FrameBufferCache::get(
 {
 	// todo(Gustav): reuse buffers created from a earlier build
 	// todo(Gustav): reuse buffers from earlier in the stack, that aren't in use
-	auto buffer = create_buffer(size.x, size.y, edge, render_style, transperency);
+	auto buffer = create_frame_buffer(size.x, size.y, edge, render_style, transperency);
 	return buffer;
 }
 
@@ -1600,18 +1600,6 @@ std::shared_ptr<FactorEffect> Renderer::make_blur_effect()
 
 // ------------------------------------------------------------------------------------------------
 // renderer
-
-u32 create_buffer()
-{
-	u32 vbo;
-	glGenBuffers(1, &vbo);
-	return vbo;
-}
-
-void destroy_buffer(u32 vbo)
-{
-	glDeleteBuffers(1, &vbo);
-}
 
 u32 create_vertex_array()
 {

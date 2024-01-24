@@ -139,6 +139,17 @@ GLsizei Csizet_to_glsizei(std::size_t t)
 	return static_cast<GLsizei>(t);
 }
 
+u32 create_buffer()
+{
+	u32 vbo;
+	glGenBuffers(1, &vbo);
+	return vbo;
+}
+
+void destroy_buffer(u32 vbo)
+{
+	glDeleteBuffers(1, &vbo);
+}
 
 
 }  //  namespace klotter

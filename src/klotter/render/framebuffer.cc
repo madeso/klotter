@@ -45,7 +45,7 @@ BoundFbo::~BoundFbo()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-std::shared_ptr<FrameBuffer> create_buffer(
+std::shared_ptr<FrameBuffer> create_frame_buffer(
 	int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency trans
 )
 {
