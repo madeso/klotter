@@ -1633,9 +1633,9 @@ std::shared_ptr<CompiledGeom> compile_geom(
 		GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW
 	);
 
-	const auto get_type = [](const ExtractedAttribute& ex) -> GLenum
+	const auto get_type = [](const ExtractedAttribute& extracted) -> GLenum
 	{
-		switch (ex.type)
+		switch (extracted.type)
 		{
 		case ExtractedAttributeType::Float: return GL_FLOAT;
 		default: DIE("invalid extracted attribute"); return GL_FLOAT;
