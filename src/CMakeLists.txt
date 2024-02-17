@@ -65,6 +65,8 @@ set(src_base
     klotter/scurve.cc klotter/scurve.h
 
     klotter/klotter.cc klotter/klotter.h
+    
+    klotter/bitfield.h
 
     klotter/compiler_warning.h
     klotter/log.h
