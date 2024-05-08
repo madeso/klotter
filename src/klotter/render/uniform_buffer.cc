@@ -98,7 +98,7 @@ void UniformBufferCompiler::compile(
 
 namespace
 {
-	UniformBuffer* bound_buffer = nullptr;
+	const UniformBuffer* bound_buffer = nullptr;
 }  //  namespace
 
 BoundUniformBuffer::BoundUniformBuffer(UniformBuffer* b)

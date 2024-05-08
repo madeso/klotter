@@ -31,6 +31,7 @@ std::vector<u32> compile_indices(const Geom& geom)
 
 void push_float(ByteBuffer* vv, float f)
 {
+	// todo(Gustav): is this safe?
 	union
 	{
 		float f;
@@ -89,8 +90,9 @@ ExtractedGeom extract_geom(const Geom& geom, const CompiledGeomVertexAttributes&
 			{
 #define MAP(VT, PROP, COUNT) \
 	case VT: \
-		data.attributes.emplace_back(ExtractedAttribute{ \
-			ExtractedAttributeType::Float, COUNT, sizeof(float) * COUNT}); \
+		data.attributes.emplace_back( \
+			ExtractedAttribute{ExtractedAttributeType::Float, COUNT, sizeof(float) * COUNT} \
+		); \
 		data.per_vertex.emplace_back([](ByteBuffer* vertices, const Vertex& vertex) \
 									 { push##COUNT(vertices, PROP); }); \
 		break

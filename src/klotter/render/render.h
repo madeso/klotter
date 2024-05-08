@@ -242,7 +242,7 @@ struct LocalAxis
 	glm::vec3 z;
 };
 
-enum Billboarding
+enum class Billboarding
 {
 	none,
 	screen,
@@ -336,7 +336,7 @@ struct World
 	Skybox skybox;
 };
 
-enum LineStyle
+enum class LineStyle
 {
 	depth,
 	always_visible,
@@ -448,7 +448,7 @@ struct Effect
 
    private:
 
-	friend EffectStack;
+	friend struct EffectStack;
 
 	bool is_enabled = false;
 	EffectStack* owner = nullptr;

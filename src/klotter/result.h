@@ -8,17 +8,17 @@ struct Result
 	std::optional<T> value;
 	std::optional<E> e;
 
-	Result(T&& tt)
+	explicit Result(T&& tt)
 		: value(std::move(tt))
 	{
 	}
 
-	Result(const E& ee)
+	explicit Result(const E& ee)
 		: e(ee)
 	{
 	}
 
-	operator bool() const
+	explicit operator bool() const
 	{
 		return value.has_value();
 	}

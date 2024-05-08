@@ -21,7 +21,7 @@ struct ExampleApp : examples::SampleApp
 		return klotter::RenderSettings{};
 	}
 
-	ExampleApp(klotter::Renderer*)
+	explicit ExampleApp(klotter::Renderer*)
 	{
 		add_sample_cube(this);
 		add_sample_scene(this);

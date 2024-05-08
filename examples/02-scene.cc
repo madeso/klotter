@@ -51,7 +51,7 @@ struct SceneSample : Sample
 		auto cube = add_unlit_cube(renderer, texture, geom, colors::white);
 		cube->position = p;
 
-		const auto fi = [index](int i) -> float
+		const auto fi = [index](int i)
 		{
 			return 5.0f * static_cast<float>((index + i) % 10);
 		};
@@ -90,6 +90,7 @@ struct SceneSample : Sample
 
 	void on_gui(klotter::Camera*) override
 	{
+		// no ui needed
 	}
 };
 

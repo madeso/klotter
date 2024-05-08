@@ -19,7 +19,7 @@ struct Combo
 	Index normal;
 	Index color;
 
-	Combo(const Vertex& v)
+	explicit Combo(const Vertex& v)
 		: position(v.position)
 		, texture(v.texture)
 		, normal(v.normal)
@@ -213,7 +213,7 @@ Builder& Builder::add_face(const std::vector<Vertex>& vertices)
 	[[maybe_unused]] bool added = false;
 	for (std::vector<Vertex>::size_type i = 2; i < size; ++i)
 	{
-		add_triangle(Triangle(vertices[0], vertices[i - 1], vertices[i]));
+		add_triangle(Triangle{vertices[0], vertices[i - 1], vertices[i]});
 		added = true;
 	}
 	assert(added);

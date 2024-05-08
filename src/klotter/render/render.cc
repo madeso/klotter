@@ -42,9 +42,9 @@ namespace klotter
 // convert a enum class to it's underlying (int) type
 // src: https://twitter.com/idoccor/status/1314664849276899328
 template<typename E>
-constexpr typename std::underlying_type<E>::type base_cast(E e) noexcept
+constexpr typename std::underlying_type_t<E> base_cast(E e) noexcept
 {
-	return static_cast<typename std::underlying_type<E>::type>(e);
+	return static_cast<typename std::underlying_type_t<E>>(e);
 }
 
 template<typename E>
@@ -645,7 +645,8 @@ struct FullScreenInfo
 	FullScreenInfo()
 	{
 		const auto layout_shader_material = ShaderVertexAttributes{
-			{VertexType::position2xy, "a_position"}, {VertexType::texture2, "a_tex_coord"}};
+			{VertexType::position2xy, "a_position"}, {VertexType::texture2, "a_tex_coord"}
+		};
 
 		auto layout_compiler = compile_attribute_layouts({layout_shader_material});
 		full_scrren_layout = compile_shader_layout(layout_compiler, layout_shader_material);
@@ -786,7 +787,8 @@ ShaderResource load_shaders(
 	const auto skybox_shader = VertexShaderSource{
 		ShaderVertexAttributes{{VertexType::position3, "a_position"}},
 		skybox_source.vertex,
-		skybox_source.fragment};
+		skybox_source.fragment
+	};
 
 	BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
 
@@ -875,16 +877,19 @@ ShaderResource load_shaders(
 		LoadedShader_Unlit{
 			loaded_unlit.geom_layout,
 			Base_LoadedShader_Unlit{loaded_unlit, desc},
-			Base_LoadedShader_Unlit{loaded_unlit_transparency, desc}},
+			Base_LoadedShader_Unlit{loaded_unlit_transparency, desc}
+		},
 		LoadedShader_Default{
 			loaded_default.geom_layout,
 			Base_LoadedShader_Default{loaded_default, settings, desc},
-			Base_LoadedShader_Default{loaded_default_transparency, settings, desc}},
+			Base_LoadedShader_Default{loaded_default_transparency, settings, desc}
+		},
 		pp_invert,
 		pp_grayscale,
 		pp_damage,
 		pp_blurv,
-		pp_blurh};
+		pp_blurh
+	};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -951,6 +956,7 @@ void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states,
 void UnlitMaterial::
 	apply_lights(const RenderContext&, const Lights&, const RenderSettings&, OpenglStates*, Assets*)
 {
+	// no lights for unlit material
 }
 
 bool UnlitMaterial::is_transparent() const
@@ -1133,7 +1139,7 @@ void Effect::set_enabled(bool n)
 
 struct RenderWorld : RenderSource
 {
-	void render(const PostProcArg& arg)
+	void render(const PostProcArg& arg) override
 	{
 		arg.renderer->render_world(arg.window_size, *arg.world, *arg.camera);
 	}
@@ -1510,6 +1516,7 @@ struct BlurEffect : FactorEffect
 
 	void update(float) override
 	{
+		// no update needed
 	}
 
 	void use_vert_shader(const PostProcArg& a, const Texture2d& t) const
@@ -1726,7 +1733,8 @@ LocalAxis MeshInstance::get_local_axis() const
 	return {
 		glm::vec3{m * glm::vec4{1, 0, 0, 0}},
 		glm::vec3{m * glm::vec4{0, 1, 0, 0}},
-		glm::vec3{m * glm::vec4{0, 0, 1, 0}}};
+		glm::vec3{m * glm::vec4{0, 0, 1, 0}}
+	};
 }
 
 glm::mat4 rot_from_basis(const glm::vec3& a, const glm::vec3& b, const glm::vec3& c)
@@ -1883,8 +1891,9 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 		if (m->material->is_transparent())
 		{
-			transparent_meshes.emplace_back(TransparentMesh{
-				m, glm::length2(camera.position - m->position)});
+			transparent_meshes.emplace_back(
+				TransparentMesh{m, glm::length2(camera.position - m->position)}
+			);
 			continue;
 		}
 		StateChanger{&pimpl->states}

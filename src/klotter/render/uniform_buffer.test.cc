@@ -1,5 +1,4 @@
 #include "catch.hpp"
-// #include "catchy/vectorequals.h"
 #include "catchy/stringeq.h"
 
 #include "klotter/render/uniform_buffer.h"

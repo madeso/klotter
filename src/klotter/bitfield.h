@@ -15,7 +15,7 @@ struct Bitfield
 	{
 	}
 
-	Bitfield(T t)
+	explicit Bitfield(T t)
 		: value(t)
 	{
 	}

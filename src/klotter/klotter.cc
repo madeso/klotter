@@ -73,6 +73,9 @@ int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl
 					window_height = e.window.data2;
 					break;
 				case SDL_WINDOWEVENT_CLOSE: running = false; break;
+				default:
+					// ignore other events
+					break;
 				}
 				break;
 
@@ -285,7 +288,7 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	ImGuiIO& io = ImGui::GetIO();
 	(void) io;
 	ImGui::StyleColorsDark();
-	
+
 	ImGui_ImplSDL2_InitForOpenGL(sdl_window, sdl_glcontext);
 	ImGui_ImplOpenGL3_Init(glsl_version);
 

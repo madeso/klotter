@@ -38,7 +38,6 @@ struct CubeSample : Sample
 		float dt
 	) override
 	{
-		// cube->rotation.x += time;
 		p += dt;
 		cube->position.z = std::cos(p * 2.1f) - 1.0f;
 		cube->position.x = std::sin(p * 1.4f) * 0.6f;
@@ -53,6 +52,7 @@ struct CubeSample : Sample
 
 	void on_gui(klotter::Camera*) override
 	{
+		// no gui needed
 	}
 };
 

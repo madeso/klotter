@@ -69,6 +69,7 @@ struct LightsSample : Sample
 		, pp_grayscale(renderer->make_grayscale_effect())
 		, pp_damage(renderer->make_damage_effect())
 		, pp_blur(renderer->make_blur_effect())
+		, light_material(renderer->make_unlit_material())
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
@@ -78,7 +79,6 @@ struct LightsSample : Sample
 		effects.effects.emplace_back(pp_blur);
 		effects.effects.emplace_back(pp_damage);
 
-		light_material = renderer->make_unlit_material();
 		auto light_geom
 			= create_cube_geom(0.25f, 0.25f, 0.25f, false, renderer->unlit_geom_layout());
 		auto light = add_cube(light_geom, light_material);

@@ -9,7 +9,7 @@ namespace klotter
 /** A list of things we need to extract from the Geom when compiling */
 struct VertexTypeList
 {
-	VertexTypeList(const std::vector<VertexType>& a_base_layout)
+	explicit VertexTypeList(const std::vector<VertexType>& a_base_layout)
 		: base_layout(a_base_layout)
 	{
 	}

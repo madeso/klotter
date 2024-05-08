@@ -12,17 +12,19 @@ namespace klotter
 {
 
 
+const GLsizei LOG_SIZE = 1024;
+
 bool check_shader_compilation_error(const char* name, unsigned int shader)
 {
 	int success = 0;
-	char log[512] = {
+	char log[LOG_SIZE] = {
 		0,
 	};
 	glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
 
 	if (! success)
 	{
-		glGetShaderInfoLog(shader, 512, nullptr, log);
+		glGetShaderInfoLog(shader, LOG_SIZE, nullptr, log);
 		LOG_ERROR("%s shader compilation failed\n%s\n", name, log);
 		return false;
 	}
@@ -33,13 +35,13 @@ bool check_shader_compilation_error(const char* name, unsigned int shader)
 bool check_shader_link_error(unsigned int program)
 {
 	int success = 0;
-	char log[512] = {
+	char log[LOG_SIZE] = {
 		0,
 	};
 	glGetProgramiv(program, GL_LINK_STATUS, &success);
 	if (! success)
 	{
-		glGetProgramInfoLog(program, 512, nullptr, log);
+		glGetProgramInfoLog(program, LOG_SIZE, nullptr, log);
 		LOG_ERROR("shader linking failed\n%s\n", log);
 		return false;
 	}
