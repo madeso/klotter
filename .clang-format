@@ -41,7 +41,7 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyRecord: true
   SplitEmptyNamespace: true
-AlignConsecutiveAssignments: None
+# AlignConsecutiveAssignments: None
 AllowShortFunctionsOnASingleLine: None
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortBlocksOnASingleLine: Never
@@ -55,7 +55,6 @@ AllowShortLoopsOnASingleLine: false
 FixNamespaceComments: true
 ShortNamespaceLines: 1 # todo(Gustav): increase or remove?
 
-SortIncludes: Never
 AlwaysBreakAfterReturnType: None
 AlwaysBreakTemplateDeclarations: Yes
 AlwaysBreakBeforeMultilineStrings: true
@@ -67,9 +66,7 @@ BreakConstructorInitializers: BeforeComma
 BreakInheritanceList: BeforeComma
 BreakStringLiterals: false
 BreakArrays: false
-PackConstructorInitializers: Never
 
-LineEnding: LF
 AlignAfterOpenBracket: BlockIndent
 
 DerivePointerAlignment: false
@@ -77,7 +74,17 @@ PointerAlignment: Left
 ReferenceAlignment: Left
 SpaceAroundPointerQualifiers: Default
 QualifierAlignment: Custom
-QualifierOrder: ['static', 'const', 'constexpr', 'type', 'inline', 'friend', 'volatile', 'restrict']
+QualifierOrder:
+  [
+    "static",
+    "const",
+    "constexpr",
+    "type",
+    "inline",
+    "friend",
+    "volatile",
+    "restrict",
+  ]
 
 KeepEmptyLinesAtTheStartOfBlocks: false
 EmptyLineAfterAccessModifier: Always
@@ -113,7 +120,6 @@ AllowAllArgumentsOnNextLine: true
 BinPackArguments: false
 BinPackParameters: false
 InsertBraces: false
-InsertNewlineAtEOF: true
 ReflowComments: false
 
 # clang 17
@@ -138,26 +144,25 @@ SortUsingDeclarations: LexicographicNumeric
 SortIncludes: Never # CaseInsensitive
 IncludeBlocks: Preserve # Regroup
 
-
 IncludeCategories:
-  - Regex:           '^"klotter\\/render\/'
-    Priority:        2
-  - Regex:           '^"klotter\\/'
-    Priority:        3
-  - Regex:           '^"imgui'
-    Priority:        3
-  - Regex:           '^"SDL_'
-    Priority:        4
-  - Regex:           '^"klotter\\/dependency_'
-    Priority:        4
-  - Regex:           '^"catchy\\/'
-    Priority:        4
-  - Regex:           '^"embed\\/'
-    Priority:        4
-  - Regex:           '.*'
-    Priority:        5
-  - Regex:           '<'
-    Priority:        100
+  - Regex: '^"klotter\\/render\/'
+    Priority: 2
+  - Regex: '^"klotter\\/'
+    Priority: 3
+  - Regex: '^"imgui'
+    Priority: 3
+  - Regex: '^"SDL_'
+    Priority: 4
+  - Regex: '^"klotter\\/dependency_'
+    Priority: 4
+  - Regex: '^"catchy\\/'
+    Priority: 4
+  - Regex: '^"embed\\/'
+    Priority: 4
+  - Regex: ".*"
+    Priority: 5
+  - Regex: "<"
+    Priority: 100
 IncludeIsMainRegex: "(\\.test)?$"
 IncludeIsMainSourceRegex: (.inl)$
 
@@ -183,7 +188,6 @@ SpacesInLineCommentPrefix:
   Minimum: 2
   Maximum: 2
 SpacesBeforeTrailingComments: 2
-
 # issues:
 # min 3 lines between functions: manual task, clang doesnt support this
 # header include order
