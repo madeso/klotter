@@ -194,7 +194,7 @@ struct LightsSample : Sample
 	void apply_animation()
 	{
 		int index = 0;
-		int cube_count = static_cast<int>(cubes.size() + 1);
+		auto cube_count = static_cast<int>(cubes.size() + 1);
 		for (auto& cube: cubes)
 		{
 			const auto fi = [this, index, cube_count](int i) -> float
