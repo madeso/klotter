@@ -1,3 +1,15 @@
+set(shaders
+    klotter/render/shaders/default_shader.vert.glsl
+    klotter/render/shaders/default_shader.frag.glsl
+    klotter/render/shaders/pp.vert.glsl
+    klotter/render/shaders/pp.invert.frag.glsl
+    klotter/render/shaders/pp.grayscale.frag.glsl
+    klotter/render/shaders/pp.damage.frag.glsl
+    klotter/render/shaders/pp.blur.frag.glsl
+    klotter/render/shaders/skybox.vert.glsl
+    klotter/render/shaders/skybox.frag.glsl
+)
+
 embed(src_assets
     AS_BINARY
         textures/light_01.png
@@ -15,20 +27,7 @@ embed(src_assets
         textures/skybox-front.jpg
         textures/skybox-top.jpg
     AS_TEXT
-        klotter/render/default_shader.vert.glsl
-        klotter/render/default_shader.frag.glsl
-        klotter/render/pp.vert.glsl
-        klotter/render/pp.invert.frag.glsl
-        klotter/render/pp.grayscale.frag.glsl
-        klotter/render/pp.damage.frag.glsl
-        klotter/render/pp.blur.frag.glsl
-        klotter/render/skybox.vert.glsl
-        klotter/render/skybox.frag.glsl
-)
-
-set(shaders
-    klotter/render/default_shader.vert.glsl
-    klotter/render/default_shader.frag.glsl
+        ${shaders}
 )
 
 set(src_render
@@ -53,7 +52,7 @@ set(src_render
     klotter/render/geom.builder.cc klotter/render/geom.builder.h
     klotter/render/geom.extract.cc klotter/render/geom.extract.h
 )
-    
+
 set(src_base
     klotter/assert.cc klotter/assert.h
     klotter/colors.cc klotter/colors.h
@@ -65,7 +64,7 @@ set(src_base
     klotter/scurve.cc klotter/scurve.h
 
     klotter/klotter.cc klotter/klotter.h
-    
+
     klotter/bitfield.h
 
     klotter/compiler_warning.h
