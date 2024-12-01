@@ -6,6 +6,8 @@
 #include "imgui_impl_sdl2.h"
 #include "imgui_impl_opengl3.h"
 
+#include "klotter/log.h"
+
 namespace klotter
 {
 
@@ -215,7 +217,7 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	const char* glsl_version = "#version 130";
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, 0);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);  // was 0 in dear imgui example??
 #endif
 
@@ -265,7 +267,8 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	SDL_GL_MakeCurrent(sdl_window, sdl_glcontext);
 	SDL_GL_SetSwapInterval(1);	// Enable vsync
 
-	if (! gladLoadGLLoader(SDL_GL_GetProcAddress))
+
+	if (gladLoadGLLoader(SDL_GL_GetProcAddress) == 0)
 	{
 		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Failed to load OpenGL");
 
@@ -278,6 +281,7 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 		return -1;
 	}
 
+	LOG_INFO("Loaded OpenGL %d.%d", GLVersion.major, GLVersion.minor);
 
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
