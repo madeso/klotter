@@ -44,7 +44,8 @@ struct SampleApp : klotter::App
 			[](klotter::Renderer* r, klotter::Camera* c) -> std::unique_ptr<Sample>
 			{
 				return std::make_unique<T>(r, c);
-			}});
+			}
+		});
 	}
 
 	void on_frame(klotter::Renderer*) override;

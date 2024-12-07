@@ -83,7 +83,8 @@ VertexShaderSource load_shader_source(
 )
 {
 	auto layout = ShaderVertexAttributes{
-		{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}};
+		{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}
+	};
 
 	if (options.use_texture)
 	{
@@ -98,14 +99,16 @@ VertexShaderSource load_shader_source(
 	return VertexShaderSource{
 		layout,
 		generate(DEFAULT_SHADER_VERT_GLSL, options, uniform_buffer_source),
-		generate(DEFAULT_SHADER_FRAG_GLSL, options, uniform_buffer_source)};
+		generate(DEFAULT_SHADER_FRAG_GLSL, options, uniform_buffer_source)
+	};
 }
 
 ShaderSource load_skybox_source(const std::string& uniform_buffer_source)
 {
 	return ShaderSource{
 		generate(SKYBOX_VERT_GLSL, uniform_buffer_source),
-		generate(SKYBOX_FRAG_GLSL, uniform_buffer_source)};
+		generate(SKYBOX_FRAG_GLSL, uniform_buffer_source)
+	};
 }
 
 }  //  namespace klotter

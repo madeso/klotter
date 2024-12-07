@@ -309,7 +309,8 @@ TextureCubemap load_cubemap_from_embedded(
 		 parsed_front.pixel_data,
 		 parsed_back.pixel_data},
 		parsed_right.width,
-		parsed_right.height};
+		parsed_right.height
+	};
 }
 
 

@@ -700,7 +700,8 @@ struct RendererPimpl
 		const auto vendor = string_from_gl_bytes(glGetString(GL_VENDOR));
 		const auto renderer = string_from_gl_bytes(glGetString(GL_RENDERER));
 		const auto version = string_from_gl_bytes(glGetString(GL_VERSION));
-		const auto shading_language_version = string_from_gl_bytes(glGetString(GL_SHADING_LANGUAGE_VERSION));
+		const auto shading_language_version
+			= string_from_gl_bytes(glGetString(GL_SHADING_LANGUAGE_VERSION));
 		const auto extensions = string_from_gl_bytes(glGetStringi(GL_EXTENSIONS, 0));
 
 		LOG_INFO("vendor %s, renderer %s", vendor.c_str(), renderer.c_str());

@@ -137,7 +137,8 @@ TEST_CASE("vertex_layout_test_simple", "[vertex_layout]")
 		{VertexType::position3, "aPos"},
 		{VertexType::normal3, "aNormal"},
 		{VertexType::color4, "aColor"},
-		{VertexType::texture2, "aTexCoord"}};
+		{VertexType::texture2, "aTexCoord"}
+	};
 
 	auto layout_compiler = compile_attribute_layouts({layout_shader_material});
 
@@ -169,7 +170,8 @@ TEST_CASE("vertex_layout_test_with_custom_layput", "[vertex_layout]")
 		{VertexType::position3, "aPos"},
 		{VertexType::normal3, "aNormal"},
 		{VertexType::color4, "aColor"},
-		{VertexType::texture2, "aTexCoord"}};
+		{VertexType::texture2, "aTexCoord"}
+	};
 
 	auto layout_compiler = compile_attribute_layouts(
 		{VertexType::color4, VertexType::texture2}, {layout_shader_material}
@@ -203,7 +205,8 @@ TEST_CASE("vertex_layout_test_material_and_depth", "[vertex_layout]")
 		{VertexType::position3, "aPos"},
 		{VertexType::normal3, "aNormal"},
 		{VertexType::color4, "aColor"},
-		{VertexType::texture2, "aTexCoord"}};
+		{VertexType::texture2, "aTexCoord"}
+	};
 
 	const auto layout_shader_depth = ShaderVertexAttributes{{VertexType::position3, "aPos"}};
 
@@ -244,13 +247,15 @@ TEST_CASE("vertex_layout_test_material_and_different", "[vertex_layout]")
 		{VertexType::position3, "aPos"},
 		{VertexType::normal3, "aNormal"},
 		{VertexType::color4, "aColor"},
-		{VertexType::texture2, "aTexCoord"}};
+		{VertexType::texture2, "aTexCoord"}
+	};
 
 	const auto layout_shader_different = ShaderVertexAttributes{
 		{VertexType::color4, "aColor"},
 		{VertexType::texture2, "aTexCoord"},
 		{VertexType::position3, "aPos"},
-		{VertexType::normal3, "aNormal"}};
+		{VertexType::normal3, "aNormal"}
+	};
 
 	auto layout_compiler
 		= compile_attribute_layouts({layout_shader_different, layout_shader_material});
