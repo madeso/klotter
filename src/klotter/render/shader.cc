@@ -11,6 +11,8 @@
 namespace klotter
 {
 
+// internal "header", defined later
+void set_shader_program(unsigned int new_program, const VertexTypes& types);
 
 const GLsizei LOG_SIZE = 1024;
 
