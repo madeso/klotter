@@ -34,6 +34,8 @@ int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl
 	int window_width = start_width;
 	int window_height = starth_height;
 
+	SDL_GetWindowSize(sdl_window, &window_width, &window_height);
+
 	int frame_skip = 2;	 // wait a few frames so the fps can stabilize
 
 	bool mouse = false;
