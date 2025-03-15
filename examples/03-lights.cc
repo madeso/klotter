@@ -15,10 +15,14 @@ struct LightsSample : Sample
 {
 	World world;
 	EffectStack effects;
+	std::shared_ptr<UnlitMaterial> light_material;
+	bool follow_player = true;
+#if INCLUDE_POST_PROC == 1
 	std::shared_ptr<FactorEffect> pp_invert;
 	std::shared_ptr<FactorEffect> pp_grayscale;
 	std::shared_ptr<FactorEffect> pp_damage;
 	std::shared_ptr<FactorEffect> pp_blur;
+#endif
 
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
@@ -61,23 +65,24 @@ struct LightsSample : Sample
 		return material;
 	}
 
-	std::shared_ptr<UnlitMaterial> light_material;
-	bool follow_player = true;
-
 	LightsSample(Renderer* renderer, Camera* camera)
-		: pp_invert(renderer->make_invert_effect())
+		: light_material(renderer->make_unlit_material())
+#if INCLUDE_POST_PROC == 1
+		, pp_invert(renderer->make_invert_effect())
 		, pp_grayscale(renderer->make_grayscale_effect())
 		, pp_damage(renderer->make_damage_effect())
 		, pp_blur(renderer->make_blur_effect())
-		, light_material(renderer->make_unlit_material())
+#endif
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
 
+#if INCLUDE_POST_PROC == 1
 		effects.effects.emplace_back(pp_invert);
 		effects.effects.emplace_back(pp_grayscale);
 		effects.effects.emplace_back(pp_blur);
 		effects.effects.emplace_back(pp_damage);
+#endif
 
 		auto light_geom
 			= create_cube_geom(0.25f, 0.25f, 0.25f, false, renderer->unlit_geom_layout());
@@ -259,6 +264,7 @@ struct LightsSample : Sample
 	void on_gui(klotter::Camera* camera) override
 	{
 		const float FAC_SPEED = 0.01f;
+		#if INCLUDE_POST_PROC == 1
 		{
 			auto factor = pp_invert->get_factor();
 			if (ImGui::SliderFloat("invert", &factor, 0.0f, 1.0f))
@@ -287,6 +293,7 @@ struct LightsSample : Sample
 				pp_damage->set_factor(factor);
 			}
 		}
+		#endif
 		effects.gui();
 
 		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
