@@ -1,12 +1,10 @@
 #include "klotter/render/render.h"
 
-#if INCLUDE_POST_PROC == 1
 #include "pp.vert.glsl.h"
 #include "pp.invert.frag.glsl.h"
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
-#endif
 
 #include "klotter/cint.h"
 #include "klotter/assert.h"
@@ -30,9 +28,7 @@ constexpr float ALMOST_ZERO = 0.01f;
 /// if alpha goes above this limit, it is no longer considered transparent
 constexpr float ALPHA_TRANSPARENCY_LIMIT = 1.0f - ALMOST_ZERO;
 
-#if INCLUDE_POST_PROC == 1
 constexpr int BLUR_SAMPLES = 10;
-#endif
 }  //  namespace
 
 #define BLUR_USE_GAUSS 1
@@ -625,24 +621,19 @@ struct ShaderResource
 	LoadedShader_Unlit unlit_shader;
 	LoadedShader_Default default_shader;
 
-#if INCLUDE_POST_PROC == 1
 	std::shared_ptr<LoadedPostProcShader> pp_invert;
 	std::shared_ptr<LoadedPostProcShader> pp_grayscale;
 	std::shared_ptr<LoadedPostProcShader> pp_damage;
 	std::shared_ptr<LoadedPostProcShader> pp_blurv;
 	std::shared_ptr<LoadedPostProcShader> pp_blurh;
-#endif
 
 	/// verify that the shaders are loaded
 	bool is_loaded() const
 	{
 		return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded()
 			&& unlit_shader.is_loaded() && default_shader.is_loaded()
-#if INCLUDE_POST_PROC == 1
 			&& pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
-			&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded()
-#endif
-			;
+			&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded();
 	}
 };
 
@@ -801,7 +792,7 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSo
 }
 
 ShaderResource load_shaders(
-	const CameraUniformBuffer& desc, const RenderSettings& settings, [[maybe_unused]] const FullScreenInfo& fsi
+	const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenInfo& fsi
 )
 {
 	const auto single_color_shader = load_shader_source({}, desc.setup.source);
@@ -851,7 +842,6 @@ ShaderResource load_shaders(
 		== loaded_default_transparency.geom_layout.debug_types
 	);
 
-#if INCLUDE_POST_PROC == 1
 	auto pp_invert = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, fsi.full_scrren_layout
@@ -895,7 +885,6 @@ ShaderResource load_shaders(
 		),
 		PostProcSetup::factor | PostProcSetup::resolution
 	);
-#endif
 
 	return {
 		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader), desc},
@@ -909,15 +898,12 @@ ShaderResource load_shaders(
 			loaded_default.geom_layout,
 			Base_LoadedShader_Default{loaded_default, settings, desc},
 			Base_LoadedShader_Default{loaded_default_transparency, settings, desc}
-		}
-#if INCLUDE_POST_PROC == 1
-		,
+		},
 		pp_invert,
 		pp_grayscale,
 		pp_damage,
 		pp_blurv,
 		pp_blurh
-#endif
 	};
 }
 
@@ -1609,7 +1595,6 @@ void HoriProvider::use_shader(const PostProcArg& a, const Texture2d& t)
 	blur->use_hori_shader(a, t);
 }
 
-#if INCLUDE_POST_PROC == 1
 std::shared_ptr<FactorEffect> Renderer::make_invert_effect()
 {
 	return std::make_shared<SimpleEffect>("Invert", pimpl->shaders.pp_invert);
@@ -1634,7 +1619,6 @@ std::shared_ptr<FactorEffect> Renderer::make_blur_effect()
 {
 	return std::make_shared<BlurEffect>("Blur", pimpl->shaders.pp_blurv, pimpl->shaders.pp_blurh);
 }
-#endif
 
 // ------------------------------------------------------------------------------------------------
 // renderer

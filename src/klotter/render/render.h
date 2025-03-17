@@ -15,8 +15,6 @@
 #include "klotter/render/linebatch.h"
 #include "klotter/render/framebuffer.h"
 
-#define INCLUDE_POST_PROC 0
-
 namespace klotter
 {
 
@@ -503,12 +501,10 @@ struct Renderer
 	CompiledGeomVertexAttributes unlit_geom_layout() const;
 	CompiledGeomVertexAttributes default_geom_layout() const;
 
-#if INCLUDE_POST_PROC == 1
 	std::shared_ptr<FactorEffect> make_invert_effect();
 	std::shared_ptr<FactorEffect> make_grayscale_effect();
 	std::shared_ptr<FactorEffect> make_damage_effect();
 	std::shared_ptr<FactorEffect> make_blur_effect();
-#endif
 
 	Skybox make_skybox(std::shared_ptr<TextureCubemap> texture) const;
 
