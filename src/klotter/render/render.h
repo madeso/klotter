@@ -233,7 +233,30 @@ struct CompiledGeom
 	void operator=(CompiledGeom&&) = delete;
 };
 
+/// Represents a Geom on the GPU, instanced on a transform.
+struct CompiledGeom_TransformInstance
+{
+	u32 instance_vbo;
+	std::size_t max_instances;
+
+	u32 vbo;
+	u32 vao;
+	u32 ebo;
+	i32 number_of_triangles;
+	std::unordered_set<VertexType> debug_types;
+
+	explicit CompiledGeom_TransformInstance(u32, std::size_t, u32, u32, u32, const CompiledGeomVertexAttributes&, i32);
+	~CompiledGeom_TransformInstance();
+
+	CompiledGeom_TransformInstance(const CompiledGeom_TransformInstance&) = delete;
+	CompiledGeom_TransformInstance(CompiledGeom_TransformInstance&&) = delete;
+	void operator=(const CompiledGeom_TransformInstance&) = delete;
+	void operator=(CompiledGeom_TransformInstance&&) = delete;
+};
+
+
 std::shared_ptr<CompiledGeom> compile_geom(const Geom&, const CompiledGeomVertexAttributes& layout);
+std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_instance(const Geom&, const CompiledGeomVertexAttributes& layout, std::size_t max_instances);
 
 struct LocalAxis
 {
@@ -268,6 +291,21 @@ struct MeshInstance
 
 std::shared_ptr<MeshInstance> make_mesh_instance(
 	std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat
+);
+
+/// Stores Geom + Material (aka a mesh) and its current transform but instanced for faster rendering
+struct MeshInstance_TransformInstance
+{
+	std::shared_ptr<CompiledGeom_TransformInstance> geom;
+	std::shared_ptr<Material> material;
+
+	//todo(Gustav): add outline
+
+	std::vector<glm::mat4> transforms;
+};
+
+std::shared_ptr<MeshInstance_TransformInstance> make_mesh_instance(
+	std::shared_ptr<CompiledGeom_TransformInstance> geom, std::shared_ptr<Material> mat
 );
 
 struct DirectionalLight
@@ -331,6 +369,7 @@ struct Skybox
 struct World
 {
 	std::vector<std::shared_ptr<MeshInstance>> meshes;
+	std::vector<std::shared_ptr<MeshInstance_TransformInstance>> instances;
 	Lights lights;
 
 	Skybox skybox;

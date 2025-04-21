@@ -21,6 +21,7 @@ struct fmt::formatter<VertexType> : formatter<string_view>
 		case VertexType::color3: name = "color3"; break;
 		case VertexType::color4: name = "color4"; break;
 		case VertexType::texture2: name = "texture2"; break;
+		case VertexType::transform: name = "transform"; break;
 		}
 		return formatter<string_view>::format(name, ctx);
 	}

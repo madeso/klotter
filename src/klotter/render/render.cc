@@ -723,6 +723,19 @@ CompiledGeom::CompiledGeom(u32 b, u32 a, u32 e, const CompiledGeomVertexAttribut
 {
 }
 
+CompiledGeom_TransformInstance::CompiledGeom_TransformInstance
+	(u32 iv, std::size_t mi, u32 b, u32 a, u32 e, const CompiledGeomVertexAttributes& att, i32 tc)
+	: instance_vbo(iv)
+	, max_instances(mi)
+	, vbo(b)
+	, vao(a)
+	, ebo(e)
+	, number_of_triangles(tc)
+	, debug_types(att.debug_types.begin(), att.debug_types.end())
+
+{
+}
+
 std::shared_ptr<MeshInstance> make_mesh_instance(
 	std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat
 )
@@ -1665,22 +1678,22 @@ std::shared_ptr<CompiledGeom> compile_geom(
 	};
 
 	const auto stride = ex.stride;
-	int location = 0;
+	int attrib_location = 0;
 	std::size_t offset = 0;
 	for (const auto& att: ex.attributes)
 	{
 		const auto normalize = false;
 		glVertexAttribPointer(
-			Cint_to_gluint(location),
+			Cint_to_gluint(attrib_location),
 			att.count,
 			get_type(att),
 			normalize ? GL_TRUE : GL_FALSE,
 			Csizet_to_glsizei(stride),
 			reinterpret_cast<void*>(offset)
 		);
-		glEnableVertexAttribArray(Cint_to_gluint(location));
+		glEnableVertexAttribArray(Cint_to_gluint(attrib_location));
 
-		location += 1;
+		attrib_location += 1;
 		offset += att.size;
 	}
 
@@ -1704,6 +1717,103 @@ CompiledGeom::~CompiledGeom()
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	destroy_buffer(vbo);
+
+	glBindVertexArray(0);
+	destroy_vertex_array(vao);
+}
+
+
+std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_instance(
+	const Geom& geom, const CompiledGeomVertexAttributes& geom_layout, std::size_t max_instances
+)
+{
+	const auto ex = extract_geom(geom, geom_layout);
+
+	const auto instance_vbo = create_buffer();
+	const auto vbo = create_buffer();
+	const auto vao = create_vertex_array();
+	glBindVertexArray(vao);
+
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	glBufferData(
+		GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW
+	);
+
+	const auto get_type = [](const ExtractedAttribute& extracted) -> GLenum
+	{
+		switch (extracted.type)
+		{
+		case ExtractedAttributeType::Float: return GL_FLOAT;
+		default: DIE("invalid extracted attribute"); return GL_FLOAT;
+		}
+	};
+
+	const auto stride = ex.stride;
+	int attrib_location = 0;
+	std::size_t offset = 0;
+	for (const auto& att: ex.attributes)
+	{
+		const auto normalize = false;
+		glVertexAttribPointer(
+			Cint_to_gluint(attrib_location),
+			att.count,
+			get_type(att),
+			normalize ? GL_TRUE : GL_FALSE,
+			Csizet_to_glsizei(stride),
+			reinterpret_cast<void*>(offset)
+		);
+		glEnableVertexAttribArray(Cint_to_gluint(attrib_location));
+
+		attrib_location += 1;
+		offset += att.size;
+	}
+
+	// finally bind instance_vbo data, use a null data since the data will be uploaded before rendering
+	// todo(Gustav): is dynamic draw correct?
+	glBindBuffer(GL_ARRAY_BUFFER, instance_vbo);
+	glBufferData(
+		GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(sizeof(float) * 16 * max_instances), nullptr, GL_DYNAMIC_DRAW
+	);
+	for(int matrix=0; matrix < 4; matrix +=1) {
+		const auto attribute = Cint_to_gluint(attrib_location + matrix);
+		glEnableVertexAttribArray(attribute);
+		glVertexAttribDivisor(attribute, 1);
+	}
+
+
+	const auto ebo = create_buffer();
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+	glBufferData(
+		GL_ELEMENT_ARRAY_BUFFER,
+		Csizet_to_glsizeiptr(sizeof(u32) * ex.indices.size()),
+		ex.indices.data(),
+		GL_STATIC_DRAW
+	);
+
+	return std::make_shared<CompiledGeom_TransformInstance>(instance_vbo, max_instances, vbo, vao, ebo, geom_layout, ex.face_size);
+}
+
+void render_geom_instanced(MeshInstance_TransformInstance* instance)
+{
+	auto* geom = instance->geom.get();
+	ASSERT(is_bound_for_shader(geom->debug_types));
+	ASSERT(instance->transforms.size() != 0);
+	ASSERT(instance->transforms.size() < instance->geom->max_instances);
+
+	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(float)*16*instance->transforms.size()), instance->transforms.data());
+
+	glBindVertexArray(geom->vao);
+	glDrawElementsInstanced(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, nullptr, instance->transforms.size());
+}
+
+CompiledGeom_TransformInstance::~CompiledGeom_TransformInstance()
+{
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	destroy_buffer(ebo);
+
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	destroy_buffer(vbo);
+	destroy_buffer(instance_vbo);
 
 	glBindVertexArray(0);
 	destroy_vertex_array(vao);
@@ -1931,6 +2041,28 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
 
 		render_geom(m->geom);
+	}
+
+	for (auto& m: world.instances)
+	{
+		const auto not_transparent = RenderContext{UseTransparency::no};
+
+		StateChanger{&pimpl->states}
+			.depth_test(true)
+			.depth_mask(true)
+			.depth_func(Compare::less)
+			.blending(false)
+			.stencil_mask(0x0)
+			.stencil_func(Compare::always, 1, 0xFF);
+		m->material->use_shader(not_transparent);
+		m->material->set_uniforms(
+			// todo(Gustav): should we really set the model matrix for instanced meshes?
+			not_transparent, compiled_camera, glm::mat4{}
+		);
+		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
+		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
+
+		render_geom_instanced(m.get());
 	}
 
 	render_debug_lines(this, compiled_camera, window_size);

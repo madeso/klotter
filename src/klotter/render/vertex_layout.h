@@ -14,14 +14,29 @@ namespace klotter
 /// @todo change to include other textcoords and custom types that are created from scripts
 enum class VertexType
 {
+	// vertex based
 	position2xy,
 	position2xz,
 	position3,
 	normal3,
 	color3,
 	color4,
-	texture2
+	texture2,
+
+	// instance based
+	transform
 };
+
+constexpr bool is_instance_based(VertexType v)
+{
+	switch(v)
+	{
+	case VertexType::transform:
+		return true;
+	default:
+		return false;
+	}
+}
 
 /// A not-yet-realised binding to a shader variable like `vec3 position`
 struct VertexElementDescription
