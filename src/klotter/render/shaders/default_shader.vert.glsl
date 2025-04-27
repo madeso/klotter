@@ -14,7 +14,12 @@ in vec2 a_tex_coord;
 // uniforms
 {{uniform_buffer_source}}
 
+{{#use_instancing}}
+in mat4 u_model; // hacky way to define a attribute :/
+{{/use_instancing}}
+{{^use_instancing}}
 uniform mat4 u_model;
+{{/use_instancing}}
 
 
 ///////////////////////////////////////////////////////////////////////////////

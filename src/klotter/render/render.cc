@@ -327,6 +327,15 @@ struct StateChanger
 // ------------------------------------------------------------------------------------------------
 // shader resources
 
+enum class ModelSource
+{
+	/// the model source is provided as a mat4 uniform.
+	Uniform,
+
+	/// the model source is provided as a (instanced) mat4 attribute
+	Instanced_mat4
+};
+
 struct CameraUniformBuffer
 {
 	UniformBufferSetup setup;
@@ -389,11 +398,11 @@ struct Base_LoadedShader_Unlit
 {
 	std::shared_ptr<ShaderProgram> program;
 
-	explicit Base_LoadedShader_Unlit(LoadedShader s, const CameraUniformBuffer& desc)
+	explicit Base_LoadedShader_Unlit(ModelSource model_source, LoadedShader s, const CameraUniformBuffer& desc)
 		: program(std::move(s.program))
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
 		, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
-		, model(program->get_uniform("u_model"))
+		, model(model_source == ModelSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_model")} : std::nullopt)
 	{
 		setup_textures(program.get(), {&tex_diffuse});
 		program->setup_uniform_block(desc.setup);
@@ -402,7 +411,7 @@ struct Base_LoadedShader_Unlit
 	Uniform tint_color;
 	Uniform tex_diffuse;
 
-	Uniform model;
+	std::optional<Uniform> model;
 };
 
 struct DirectionalLightUniforms
@@ -506,7 +515,7 @@ struct Base_LoadedShader_Default
 	std::shared_ptr<ShaderProgram> program;
 
 	Base_LoadedShader_Default(
-		LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
+		ModelSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
 	)
 		: program(std::move(s.program))
 		, tint_color(program->get_uniform("u_material.diffuse_tint"))
@@ -517,7 +526,7 @@ struct Base_LoadedShader_Default
 		, specular_color(program->get_uniform("u_material.specular_tint"))
 		, shininess(program->get_uniform("u_material.shininess"))
 		, emissive_factor(program->get_uniform("u_material.emissive_factor"))
-		, model(program->get_uniform("u_model"))
+		, model(model_source == ModelSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_model")} : std::nullopt)
 		, view_position(program->get_uniform("u_view_position"))
 		, light_ambient_color(program->get_uniform("u_ambient_light"))
 	{
@@ -558,7 +567,7 @@ struct Base_LoadedShader_Default
 	Uniform shininess;
 	Uniform emissive_factor;
 
-	Uniform model;
+	std::optional<Uniform> model;
 
 	Uniform view_position;
 	Uniform light_ambient_color;
@@ -576,6 +585,7 @@ enum class UseTransparency
 
 struct RenderContext
 {
+	ModelSource model_source;
 	UseTransparency use_transparency;
 };
 
@@ -601,10 +611,21 @@ struct LoadedShader_Default
 	CompiledGeomVertexAttributes geom_layout;
 	Base_LoadedShader_Default default_shader;
 	Base_LoadedShader_Default transparency_shader;
+	Base_LoadedShader_Default default_shader_instance;
 
 	const Base_LoadedShader_Default& base(const RenderContext& rc) const
 	{
-		return rc.use_transparency == UseTransparency::yes ? transparency_shader : default_shader;
+		switch(rc.model_source)
+		{
+		case ModelSource::Uniform:
+			return rc.use_transparency == UseTransparency::yes ? transparency_shader : default_shader;
+		case ModelSource::Instanced_mat4:
+			assert(rc.use_transparency == UseTransparency::no); // not currently supporting instanced transparency
+			return default_shader_instance;
+		default:
+			assert(false && "unhandled");
+			return default_shader;
+		}
 	}
 
 	bool is_loaded() const
@@ -838,6 +859,10 @@ ShaderResource load_shaders(
 		global_shader_data,
 		load_shader_source(default_shader_options.with_transparent_cutoff(), desc.setup.source)
 	);
+	auto loaded_default_instanced = load_shader(
+		global_shader_data,
+		load_shader_source(default_shader_options.with_transparent_cutoff().with_instanced_mat4(), desc.setup.source)
+	);
 
 	auto loaded_unlit_transparency = load_shader(
 		global_shader_data, load_shader_source(unlit_shader_options, desc.setup.source)
@@ -854,6 +879,10 @@ ShaderResource load_shaders(
 		loaded_default.geom_layout.debug_types
 		== loaded_default_transparency.geom_layout.debug_types
 	);
+	assert(
+		loaded_default.geom_layout.debug_types
+		== loaded_default_instanced.geom_layout.debug_types
+	); // is this valid? should this fail?
 
 	auto pp_invert = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
@@ -904,13 +933,14 @@ ShaderResource load_shaders(
 		LoadedShader_Skybox{load_shader({}, skybox_shader), desc},
 		LoadedShader_Unlit{
 			loaded_unlit.geom_layout,
-			Base_LoadedShader_Unlit{loaded_unlit, desc},
-			Base_LoadedShader_Unlit{loaded_unlit_transparency, desc}
+			Base_LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit, desc},
+			Base_LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit_transparency, desc}
 		},
 		LoadedShader_Default{
 			loaded_default.geom_layout,
-			Base_LoadedShader_Default{loaded_default, settings, desc},
-			Base_LoadedShader_Default{loaded_default_transparency, settings, desc}
+			Base_LoadedShader_Default{ModelSource::Uniform, loaded_default, settings, desc},
+			Base_LoadedShader_Default{ModelSource::Uniform, loaded_default_transparency, settings, desc},
+			Base_LoadedShader_Default{ModelSource::Instanced_mat4, loaded_default_instanced, settings, desc}
 		},
 		pp_invert,
 		pp_grayscale,
@@ -961,13 +991,23 @@ void UnlitMaterial::use_shader(const RenderContext& rc)
 	shader->base(rc).program->use();
 }
 
+void set_optional_mat(ShaderProgram* program, const std::optional<Uniform>& uniform, const std::optional<glm::mat4>& transform)
+{
+	if(transform) {
+		program->set_mat(*uniform, *transform);
+	}
+	else {
+		assert(uniform.has_value() == false);
+	}
+}
+
 void UnlitMaterial::set_uniforms(
-	const RenderContext& rc, const CompiledCamera&, const glm::mat4& transform
+	const RenderContext& rc, const CompiledCamera&, const std::optional<glm::mat4>& transform
 )
 {
 	const auto& base = shader->base(rc);
 	base.program->set_vec4(base.tint_color, {color, alpha});
-	base.program->set_mat(base.model, transform);
+	set_optional_mat(base.program.get(), base.model, transform);
 }
 
 void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
@@ -1004,7 +1044,7 @@ void DefaultMaterial::use_shader(const RenderContext& rc)
 }
 
 void DefaultMaterial::set_uniforms(
-	const RenderContext& rc, const CompiledCamera& cc, const glm::mat4& transform
+	const RenderContext& rc, const CompiledCamera& cc, const std::optional<glm::mat4>& transform
 )
 {
 	const auto& base = shader->base(rc);
@@ -1015,7 +1055,7 @@ void DefaultMaterial::set_uniforms(
 	base.program->set_float(base.shininess, shininess);
 	base.program->set_float(base.emissive_factor, emissive_factor);
 
-	base.program->set_mat(base.model, transform);
+	set_optional_mat(base.program.get(), base.model, transform);
 	base.program->set_vec3(base.view_position, cc.position);
 }
 
@@ -2012,7 +2052,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& m: world.meshes)
 	{
-		const auto not_transparent = RenderContext{UseTransparency::no};
+		const auto not_transparent = RenderContext{ModelSource::Uniform, UseTransparency::no};
 
 		if (m->material->is_transparent())
 		{
@@ -2045,7 +2085,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& m: world.instances)
 	{
-		const auto not_transparent = RenderContext{UseTransparency::no};
+		const auto not_transparent = RenderContext{ModelSource::Instanced_mat4, UseTransparency::no};
 
 		StateChanger{&pimpl->states}
 			.depth_test(true)
@@ -2057,7 +2097,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		m->material->use_shader(not_transparent);
 		m->material->set_uniforms(
 			// todo(Gustav): should we really set the model matrix for instanced meshes?
-			not_transparent, compiled_camera, glm::mat4{}
+			not_transparent, compiled_camera, std::nullopt
 		);
 		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
 		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
@@ -2095,7 +2135,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& tm: transparent_meshes)
 	{
-		const auto transparent = RenderContext{UseTransparency::yes};
+		const auto transparent = RenderContext{ModelSource::Uniform, UseTransparency::yes};
 
 		const auto& m = tm.mesh;
 		StateChanger{&pimpl->states}

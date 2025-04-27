@@ -15,6 +15,9 @@ struct ShaderOptions
 
 	bool transparent_cutoff = false;
 	ShaderOptions with_transparent_cutoff() const;
+
+	bool use_instancing = false;
+	ShaderOptions with_instanced_mat4() const;
 };
 
 struct VertexShaderSource

@@ -24,6 +24,13 @@ ShaderOptions ShaderOptions::with_transparent_cutoff() const
 	return ret;
 }
 
+ShaderOptions ShaderOptions::with_instanced_mat4() const
+{
+	auto ret = *this;
+	ret.use_instancing = true;
+	return ret;
+}
+
 kainjow::mustache::mustache load_mustache(std::string_view str)
 {
 	auto input = kainjow::mustache::mustache{std::string{str.begin(), str.end()}};
@@ -63,6 +70,7 @@ std::string generate(
 	data["number_of_point_lights"] = (Str() << options.number_of_point_lights).str();
 	data["number_of_frustum_lights"] = (Str() << options.number_of_frustum_lights).str();
 	data["transparent_cutoff"] = options.transparent_cutoff;
+	data["use_instancing"] = options.use_instancing;
 	data["uniform_buffer_source"] = uniform_buffer_source;
 
 	return input.render(data);

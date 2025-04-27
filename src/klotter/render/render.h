@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <optional>
 
 #include "klotter/colors.h"
 #include "klotter/scurve.h"
@@ -148,7 +149,7 @@ struct Material
 	void operator=(Material&&) = delete;
 
 	virtual void use_shader(const RenderContext&) = 0;
-	virtual void set_uniforms(const RenderContext&, const CompiledCamera&, const glm::mat4&) = 0;
+	virtual void set_uniforms(const RenderContext&, const CompiledCamera&, const std::optional<glm::mat4>&) = 0;
 	virtual void bind_textures(const RenderContext&, OpenglStates* states, Assets* assets) = 0;
 	virtual void apply_lights(
 		const RenderContext&,
@@ -171,7 +172,7 @@ struct UnlitMaterial : Material
 
 	explicit UnlitMaterial(const ShaderResource& resource);
 	void use_shader(const RenderContext&) override;
-	void set_uniforms(const RenderContext&, const CompiledCamera&, const glm::mat4&) override;
+	void set_uniforms(const RenderContext&, const CompiledCamera&, const std::optional<glm::mat4>&) override;
 	void bind_textures(const RenderContext&, OpenglStates* states, Assets* assets) override;
 	void apply_lights(
 		const RenderContext&,
@@ -202,7 +203,7 @@ struct DefaultMaterial : Material
 
 	explicit DefaultMaterial(const ShaderResource& resource);
 	void use_shader(const RenderContext&) override;
-	void set_uniforms(const RenderContext&, const CompiledCamera&, const glm::mat4&) override;
+	void set_uniforms(const RenderContext&, const CompiledCamera&, const std::optional<glm::mat4>&) override;
 	void bind_textures(const RenderContext&, OpenglStates* states, Assets* assets) override;
 	void apply_lights(
 		const RenderContext&,
