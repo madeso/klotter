@@ -2,6 +2,7 @@
 
 #include <map>
 #include <set>
+#include <optional>
 
 namespace klotter
 {
@@ -24,14 +25,14 @@ enum class VertexType
 	texture2,
 
 	// instance based
-	transform
+	instance_transform
 };
 
 constexpr bool is_instance_based(VertexType v)
 {
 	switch(v)
 	{
-	case VertexType::transform:
+	case VertexType::instance_transform:
 		return true;
 	default:
 		return false;
@@ -84,11 +85,18 @@ struct CompiledVertexTypeList
 {
 	std::map<VertexType, int> indices;
 	VertexTypes debug_types;
+	int next_index;
+};
+
+struct InstanceProp
+{
+	VertexType type;
+	std::string name;
 };
 
 [[nodiscard]]
 CompiledShaderVertexAttributes compile_shader_layout(
-	const CompiledVertexTypeList& l, const ShaderVertexAttributes& elements
+	const CompiledVertexTypeList& l, const ShaderVertexAttributes& elements, std::optional<InstanceProp> instance_prop
 );
 
 [[nodiscard]]

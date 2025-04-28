@@ -21,7 +21,7 @@ struct fmt::formatter<VertexType> : formatter<string_view>
 		case VertexType::color3: name = "color3"; break;
 		case VertexType::color4: name = "color4"; break;
 		case VertexType::texture2: name = "texture2"; break;
-		case VertexType::transform: name = "transform"; break;
+		case VertexType::instance_transform: name = "transform"; break;
 		}
 		return formatter<string_view>::format(name, ctx);
 	}
@@ -143,7 +143,7 @@ TEST_CASE("vertex_layout_test_simple", "[vertex_layout]")
 
 	auto layout_compiler = compile_attribute_layouts({layout_shader_material});
 
-	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material);
+	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
@@ -178,7 +178,7 @@ TEST_CASE("vertex_layout_test_with_custom_layput", "[vertex_layout]")
 		{VertexType::color4, VertexType::texture2}, {layout_shader_material}
 	);
 
-	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material);
+	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
@@ -213,8 +213,8 @@ TEST_CASE("vertex_layout_test_material_and_depth", "[vertex_layout]")
 
 	auto layout_compiler = compile_attribute_layouts({layout_shader_material, layout_shader_depth});
 	const auto compiled_layout_material
-		= compile_shader_layout(layout_compiler, layout_shader_material);
-	const auto compiled_layout_depth = compile_shader_layout(layout_compiler, layout_shader_depth);
+		= compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
+	const auto compiled_layout_depth = compile_shader_layout(layout_compiler, layout_shader_depth, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
@@ -261,9 +261,9 @@ TEST_CASE("vertex_layout_test_material_and_different", "[vertex_layout]")
 	auto layout_compiler
 		= compile_attribute_layouts({layout_shader_different, layout_shader_material});
 	const auto compiled_layout_material
-		= compile_shader_layout(layout_compiler, layout_shader_material);
+		= compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 	const auto compiled_layout_different
-		= compile_shader_layout(layout_compiler, layout_shader_different);
+		= compile_shader_layout(layout_compiler, layout_shader_different, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
@@ -300,8 +300,8 @@ TEST_CASE("vertex_layout_test_crazy", "[vertex_layout]")
 
 	const auto layout_shader_b = ShaderVertexAttributes{{VertexType::texture2, "uv"}};
 	auto layout_compiler = compile_attribute_layouts({layout_shader_a, layout_shader_b});
-	const auto compiled_layout_a = compile_shader_layout(layout_compiler, layout_shader_a);
-	const auto compiled_layout_b = compile_shader_layout(layout_compiler, layout_shader_b);
+	const auto compiled_layout_a = compile_shader_layout(layout_compiler, layout_shader_a, std::nullopt);
+	const auto compiled_layout_b = compile_shader_layout(layout_compiler, layout_shader_b, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
 
 	CHECK(is_equal(
@@ -339,12 +339,12 @@ TEST_CASE("vertex_layout_test_get_not_requested", "[vertex_layout]")
 
 	// not requested variables should assert
 	REQUIRE_THROWS_WITH(
-		compile_shader_layout(layout_compiler, layout_shader_not_requested),
+		compile_shader_layout(layout_compiler, layout_shader_not_requested, std::nullopt),
 		Catch::Contains("Assertion failed")
 			&& Catch::Contains("layout wasn't added to the compilation list")
 	);
 
-	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material);
+	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 
 	CHECK(is_equal(compiled_layout, {{{VertexType::position3, "pos", 0}}, {VertexType::position3}})
 	);

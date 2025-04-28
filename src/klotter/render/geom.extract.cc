@@ -104,7 +104,8 @@ ExtractedGeom extract_geom(const Geom& geom, const CompiledGeomVertexAttributes&
 				MAP(VertexType::color4, glm::vec4(vertex.color, 1.0f), 4);
 				MAP(VertexType::texture2, vertex.uv, 2);
 #undef MAP
-			case VertexType::transform: break; // todo(Gustav): should something else be done here?
+			case VertexType::instance_transform:
+				DIE("can't use instance types for extraction"); break; // todo(Gustav): should something else be done here?
 			default: DIE("Invalid buffer type"); break;
 			}
 		}

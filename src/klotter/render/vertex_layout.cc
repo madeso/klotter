@@ -27,7 +27,7 @@ struct VertexTypeList
 };
 
 CompiledShaderVertexAttributes compile_shader_layout(
-	const CompiledVertexTypeList& l, const ShaderVertexAttributes& elements
+	const CompiledVertexTypeList& l, const ShaderVertexAttributes& elements, std::optional<InstanceProp> instance_prop
 )
 {
 	std::vector<CompiledVertexElement> list;
@@ -40,6 +40,11 @@ CompiledShaderVertexAttributes compile_shader_layout(
 		{
 			list.push_back({e.type, e.name, found->second});
 		}
+	}
+
+	if(instance_prop.has_value())
+	{
+		list.push_back({instance_prop->type, instance_prop->name, l.next_index});
 	}
 
 	return {list, l.debug_types};
@@ -96,7 +101,7 @@ CompiledVertexTypeList compile_vertex_type_list(const VertexTypeList& list)
 		next_index += ShaderAttributeSize(type);
 	}
 
-	return {indices, {list.indices.begin(), list.indices.end()}};
+	return {indices, {list.indices.begin(), list.indices.end()}, next_index};
 }
 
 CompiledVertexTypeList compile_attribute_layouts(

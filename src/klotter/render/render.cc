@@ -670,7 +670,7 @@ struct FullScreenInfo
 		};
 
 		auto layout_compiler = compile_attribute_layouts({layout_shader_material});
-		full_scrren_layout = compile_shader_layout(layout_compiler, layout_shader_material);
+		full_scrren_layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 		const auto layout = get_geom_layout(layout_compiler);
 
 		// ndc is [-1, 1], plane func generate a centered geom, so we set out plane to a size of 2
@@ -814,11 +814,24 @@ BaseShaderData get_vertex_types(const ShaderVertexAttributes& va)
 	return ret;
 }
 
-LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSource& source)
+LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSource& source, ModelSource model_source)
 {
 	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
 	const auto geom_layout = get_geom_layout(layout_compiler);
-	const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout);
+
+	std::optional<InstanceProp> instance_prop;
+	switch(model_source)
+	{
+	case ModelSource::Instanced_mat4:
+		instance_prop = InstanceProp{VertexType::instance_transform, "a_position"};
+		break;
+	case ModelSource::Uniform:
+		break;
+	default:
+		assert(false && "unhandled ModelSource");
+	}
+
+	const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout, instance_prop);
 
 	auto program = std::make_shared<ShaderProgram>(source.vertex, source.fragment, compiled_layout);
 
@@ -853,22 +866,27 @@ ShaderResource load_shaders(
 
 	auto loaded_unlit = load_shader(
 		global_shader_data,
-		load_shader_source(unlit_shader_options.with_transparent_cutoff(), desc.setup.source)
+		load_shader_source(unlit_shader_options.with_transparent_cutoff(), desc.setup.source),
+		ModelSource::Uniform
 	);
 	auto loaded_default = load_shader(
 		global_shader_data,
-		load_shader_source(default_shader_options.with_transparent_cutoff(), desc.setup.source)
+		load_shader_source(default_shader_options.with_transparent_cutoff(), desc.setup.source),
+		ModelSource::Uniform
 	);
 	auto loaded_default_instanced = load_shader(
 		global_shader_data,
-		load_shader_source(default_shader_options.with_transparent_cutoff().with_instanced_mat4(), desc.setup.source)
+		load_shader_source(default_shader_options.with_transparent_cutoff().with_instanced_mat4(), desc.setup.source),
+		ModelSource::Instanced_mat4
 	);
 
 	auto loaded_unlit_transparency = load_shader(
-		global_shader_data, load_shader_source(unlit_shader_options, desc.setup.source)
+		global_shader_data, load_shader_source(unlit_shader_options, desc.setup.source),
+		ModelSource::Uniform
 	);
 	auto loaded_default_transparency = load_shader(
-		global_shader_data, load_shader_source(default_shader_options, desc.setup.source)
+		global_shader_data, load_shader_source(default_shader_options, desc.setup.source),
+		ModelSource::Uniform
 	);
 
 	// todo(Gustav): should the asserts here be runtime errors? currently all setups are compile-time...
@@ -929,8 +947,8 @@ ShaderResource load_shaders(
 	);
 
 	return {
-		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader), desc},
-		LoadedShader_Skybox{load_shader({}, skybox_shader), desc},
+		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader, ModelSource::Uniform), desc},
+		LoadedShader_Skybox{load_shader({}, skybox_shader, ModelSource::Uniform), desc},
 		LoadedShader_Unlit{
 			loaded_unlit.geom_layout,
 			Base_LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit, desc},

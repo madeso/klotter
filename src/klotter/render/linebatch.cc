@@ -12,7 +12,7 @@ DebugDrawer::DebugDrawer()
 	// todo(Gustav): move quad_description and quad_layout to a seperate setup
 	: line_description({{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}})
 	, line_layout(
-		  compile_shader_layout(compile_attribute_layouts({line_description}), line_description)
+		  compile_shader_layout(compile_attribute_layouts({line_description}), line_description, std::nullopt)
 	  )
 	, line_shader(
 		  R"glsl(
