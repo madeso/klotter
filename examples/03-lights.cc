@@ -188,6 +188,32 @@ struct LightsSample : Sample
 			plane->position = {0.0f, -3.0f, 0.0f};
 		}
 
+		// instances
+		{
+			constexpr std::size_t instance_count = 100;
+			constexpr float cube_size = 0.1f;
+			constexpr bool invert = false;
+			auto instances_geom = compile_geom_with_transform_instance(
+				geom::create_box(cube_size, cube_size, cube_size, invert, colors::white).to_geom(),
+				renderer->default_geom_layout(),
+				instance_count
+			);
+			auto material = renderer->make_default_material();
+			material->diffuse = renderer->assets.get_glass();
+			
+			auto instances = make_mesh_instance(instances_geom, material);
+
+			const auto mk = [](const glm::vec3& pos, const glm::vec3& rot) {
+				const auto translation = glm::translate(glm::mat4(1.0f), pos);
+				const auto rotation = glm::yawPitchRoll(rot.x, rot.y, rot.z);
+				return translation * rotation;
+			};
+
+			instances->transforms.emplace_back(mk({0, 0, 0}, {0, 0, 0}));
+
+			world.instances.emplace_back(instances);
+		}
+
 		apply_animation();
 	}
 

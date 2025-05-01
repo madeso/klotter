@@ -767,6 +767,16 @@ std::shared_ptr<MeshInstance> make_mesh_instance(
 	return instance;
 }
 
+std::shared_ptr<MeshInstance_TransformInstance> make_mesh_instance(
+	std::shared_ptr<CompiledGeom_TransformInstance> geom, std::shared_ptr<Material> mat
+)
+{
+	auto instance = std::make_shared<MeshInstance_TransformInstance>();
+	instance->geom = geom;
+	instance->material = mat;
+	return instance;
+}
+
 std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material()
 {
 	return std::make_shared<UnlitMaterial>(pimpl->shaders);
