@@ -1871,7 +1871,7 @@ void render_geom_instanced(MeshInstance_TransformInstance* instance)
 	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(float)*16*instance->transforms.size()), instance->transforms.data());
 
 	glBindVertexArray(geom->vao);
-	glDrawElementsInstanced(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, nullptr, instance->transforms.size());
+	glDrawElementsInstanced(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, nullptr, Csizet_to_glsizei(instance->transforms.size()));
 }
 
 CompiledGeom_TransformInstance::~CompiledGeom_TransformInstance()
