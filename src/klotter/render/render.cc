@@ -833,7 +833,7 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSo
 	switch(model_source)
 	{
 	case ModelSource::Instanced_mat4:
-		instance_prop = InstanceProp{VertexType::instance_transform, "a_position"};
+		instance_prop = InstanceProp{VertexType::instance_transform, "u_model"};
 		break;
 	case ModelSource::Uniform:
 		break;
