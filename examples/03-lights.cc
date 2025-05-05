@@ -213,7 +213,7 @@ struct LightsSample : Sample
 			{
 				for(int j=0; j<10; j+=1)
 				{
-					instances->transforms.emplace_back(mk({Cint_to_float(i), Cint_to_float(j), 0}, {Cint_to_float(i)/10.0f * 90.0f, Cint_to_float(j)/10.0f * 90.0f, 0}));
+					instances->transforms.emplace_back(mk({Cint_to_float(i), Cint_to_float(j), -10}, {Cint_to_float(i)/10.0f * 90.0f, Cint_to_float(j)/10.0f * 90.0f, 0}));
 				}
 			}
 
