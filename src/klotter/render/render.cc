@@ -1836,18 +1836,22 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 		offset += att.size;
 	}
 
-	// finally bind instance_vbo data, use a null data since the data will be uploaded before rendering
+	// finally bind instance_vbo data, use a dummy data since the data will be uploaded before rendering
 	// todo(Gustav): is dynamic draw correct?
 	glBindBuffer(GL_ARRAY_BUFFER, instance_vbo);
+	std::vector<glm::mat4> temp_data(max_instances);
+	constexpr auto instance_size = sizeof(float) * 16;
 	glBufferData(
-		GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(sizeof(float) * 16 * max_instances), nullptr, GL_DYNAMIC_DRAW
+		GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(instance_size * max_instances), nullptr, GL_DYNAMIC_DRAW
 	);
-	for(int matrix=0; matrix < 4; matrix +=1) {
+
+	for (int matrix = 0; matrix < 4; matrix += 1)
+	{
 		const auto attribute = Cint_to_gluint(attrib_location + matrix);
+		glVertexAttribPointer(attribute, 4, GL_FLOAT, GL_FALSE, instance_size, reinterpret_cast<void*>(sizeof(glm::vec4) * matrix));
 		glEnableVertexAttribArray(attribute);
 		glVertexAttribDivisor(attribute, 1);
 	}
-
 
 	const auto ebo = create_buffer();
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
@@ -1866,9 +1870,10 @@ void render_geom_instanced(MeshInstance_TransformInstance* instance)
 	auto* geom = instance->geom.get();
 	ASSERT(is_bound_for_shader(geom->debug_types));
 	ASSERT(instance->transforms.size() != 0);
-	ASSERT(instance->transforms.size() < instance->geom->max_instances);
+	ASSERT(instance->transforms.size() < instance->geom->max_instances); // todo(Gustav): is this assert correct?
 
-	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(float)*16*instance->transforms.size()), instance->transforms.data());
+	glBindBuffer(GL_ARRAY_BUFFER, instance->geom->instance_vbo);
+	glBufferSubData(GL_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(glm::mat4) * instance->transforms.size()), instance->transforms.data());
 
 	glBindVertexArray(geom->vao);
 	glDrawElementsInstanced(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, nullptr, Csizet_to_glsizei(instance->transforms.size()));
