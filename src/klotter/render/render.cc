@@ -1848,7 +1848,14 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	for (int matrix = 0; matrix < 4; matrix += 1)
 	{
 		const auto attribute = Cint_to_gluint(attrib_location + matrix);
-		glVertexAttribPointer(attribute, 4, GL_FLOAT, GL_FALSE, instance_size, reinterpret_cast<void*>(sizeof(glm::vec4) * matrix));
+		glVertexAttribPointer(
+			attribute,
+			4,
+			GL_FLOAT,
+			GL_FALSE,
+			instance_size,
+			reinterpret_cast<void*>(sizeof(glm::vec4) * static_cast<std::size_t>(matrix))
+		);
 		glEnableVertexAttribArray(attribute);
 		glVertexAttribDivisor(attribute, 1);
 	}
