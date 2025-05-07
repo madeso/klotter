@@ -191,7 +191,7 @@ struct LightsSample : Sample
 		// instances
 		{
 			constexpr std::size_t instance_count = 150;
-			constexpr float cube_size = 0.2f;
+			constexpr float cube_size = 0.75f;
 			constexpr bool invert = false;
 			auto instances_geom = compile_geom_with_transform_instance(
 				geom::create_box(cube_size, cube_size, cube_size, invert, colors::white).to_geom(),
@@ -213,7 +213,7 @@ struct LightsSample : Sample
 			{
 				for(int j=0; j<10; j+=1)
 				{
-					instances->transforms.emplace_back(mk({Cint_to_float(i), Cint_to_float(j), -10}, {Cint_to_float(i)/10.0f * 90.0f, Cint_to_float(j)/10.0f * 90.0f, 0}));
+					instances->transforms.emplace_back(mk({Cint_to_float(i), Cint_to_float(j), -4}, {Cint_to_float(i)/10.0f * 90.0f, Cint_to_float(j)/10.0f * 90.0f, 0}));
 				}
 			}
 
