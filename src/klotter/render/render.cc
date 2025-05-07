@@ -1877,7 +1877,7 @@ void render_geom_instanced(MeshInstance_TransformInstance* instance)
 	auto* geom = instance->geom.get();
 	ASSERT(is_bound_for_shader(geom->debug_types));
 	ASSERT(instance->transforms.size() != 0);
-	ASSERT(instance->transforms.size() < instance->geom->max_instances); // todo(Gustav): is this assert correct?
+	ASSERT(instance->transforms.size() <= instance->geom->max_instances);
 
 	glBindBuffer(GL_ARRAY_BUFFER, instance->geom->instance_vbo);
 	glBufferSubData(GL_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(glm::mat4) * instance->transforms.size()), instance->transforms.data());

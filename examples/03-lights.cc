@@ -190,7 +190,7 @@ struct LightsSample : Sample
 
 		// instances
 		{
-			constexpr std::size_t instance_count = 150;
+			constexpr std::size_t instance_count = 100;
 			constexpr float cube_size = 0.75f;
 			constexpr bool invert = false;
 			auto instances_geom = compile_geom_with_transform_instance(
