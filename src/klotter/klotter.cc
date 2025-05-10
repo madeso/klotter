@@ -226,6 +226,12 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
 
+	if (rs.msaa > 0)
+	{
+		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 2);
+	}
+
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 
@@ -269,7 +275,6 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	SDL_GL_MakeCurrent(sdl_window, sdl_glcontext);
 	SDL_GL_SetSwapInterval(1);	// Enable vsync
 
-
 	if (gladLoadGLLoader(SDL_GL_GetProcAddress) == 0)
 	{
 		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Failed to load OpenGL");
@@ -304,6 +309,10 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	// complete setup
 	setup_opengl_debug();
 
+	if (rs.msaa > 0)
+	{
+		glEnable(GL_MULTISAMPLE);
+	}
 
 	const auto exit_code = app_main(rs, make_app, sdl_window);
 
