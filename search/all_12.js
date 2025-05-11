@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['u16_502',['u16',['../pch_8public_8h.html#a6dbf9516e516c901604625282c174aa4',1,'pch.public.h']]],
+  ['u32_503',['u32',['../pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41',1,'pch.public.h']]],
+  ['u64_504',['u64',['../pch_8public_8h.html#a1af9f95651e921615e75917a6dd1b574',1,'pch.public.h']]],
+  ['u8_505',['u8',['../pch_8public_8h.html#a987e4d6cf789cb59dbb390728271e4d6',1,'pch.public.h']]],
+  ['undef_5fwindows_2eh_506',['undef_windows.h',['../undef__windows_8h.html',1,'']]],
+  ['uniform_507',['Uniform',['../structklotter_1_1Uniform.html',1,'klotter::Uniform'],['../structklotter_1_1Uniform.html#ae92165c2777bb0ec48e24ffde3742e4d',1,'klotter::Uniform::Uniform()=default'],['../structklotter_1_1Uniform.html#a43cacf8fca562546d3b825dc34b8b52b',1,'klotter::Uniform::Uniform(const std::string &amp;n, int l, unsigned int sp)']]],
+  ['uniform_2eh_508',['uniform.h',['../uniform_8h.html',1,'']]],
+  ['uniform_5fbuffer_2eh_509',['uniform_buffer.h',['../uniform__buffer_8h.html',1,'']]],
+  ['uniformbuffer_510',['UniformBuffer',['../structklotter_1_1UniformBuffer.html',1,'klotter::UniformBuffer'],['../structklotter_1_1UniformBuffer.html#a29e2e9a46bc63036c50617dc4f2b6691',1,'klotter::UniformBuffer::UniformBuffer(const UniformBufferSetup &amp;setup)'],['../structklotter_1_1UniformBuffer.html#a03ff2727aaca768a9bb3604a1217ac2d',1,'klotter::UniformBuffer::UniformBuffer(const UniformBuffer &amp;)=delete'],['../structklotter_1_1UniformBuffer.html#a10578c83c85fb3077c1ff4e609e618ac',1,'klotter::UniformBuffer::UniformBuffer(UniformBuffer &amp;&amp;) noexcept']]],
+  ['uniformbuffercompiler_511',['UniformBufferCompiler',['../structklotter_1_1UniformBufferCompiler.html',1,'klotter']]],
+  ['uniformbuffersetup_512',['UniformBufferSetup',['../structklotter_1_1UniformBufferSetup.html',1,'klotter']]],
+  ['uniformprop_513',['UniformProp',['../structklotter_1_1UniformProp.html',1,'klotter']]],
+  ['uniformtype_514',['UniformType',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40',1,'klotter']]],
+  ['unlit_5fgeom_5flayout_515',['unlit_geom_layout',['../structklotter_1_1Renderer.html#a9fae832300d65af1aea9beb8e90ff06c',1,'klotter::Renderer']]],
+  ['unlitmaterial_516',['UnlitMaterial',['../structklotter_1_1UnlitMaterial.html',1,'klotter::UnlitMaterial'],['../structklotter_1_1UnlitMaterial.html#abeea77af30a3fe439dcf57f07dee7e30',1,'klotter::UnlitMaterial::UnlitMaterial()']]],
+  ['unload_517',['unload',['../structklotter_1_1BaseTexture.html#a6dd65084b3eab03e75daa283d40b701f',1,'klotter::BaseTexture::unload()'],['../structklotter_1_1UniformBuffer.html#a348e12ce181e5c649149b5442d5703a4',1,'klotter::UniformBuffer::unload()']]],
+  ['up_518',['UP',['../group__render.html#ga86f2208b879c568d1ee1e6e771c0caa1',1,'klotter']]],
+  ['up_519',['up',['../structklotter_1_1CameraVectors.html#af53d2d059ea34390beb2f73311aa9e7e',1,'klotter::CameraVectors']]],
+  ['update_520',['update',['../structklotter_1_1EffectStack.html#a045d1a84ab1f0e78ac4382191f521c75',1,'klotter::EffectStack::update()'],['../structklotter_1_1Effect.html#afc39fdba773e59c79338ee7486da0b5e',1,'klotter::Effect::update()'],['../structklotter_1_1RenderTask.html#ad2c4a504a72924f5db7478e6ae667bae',1,'klotter::RenderTask::update()']]],
+  ['use_521',['use',['../structklotter_1_1ShaderProgram.html#a73e4bc128e29565ba48a973aaa4037b4',1,'klotter::ShaderProgram']]],
+  ['use_5finstancing_522',['use_instancing',['../structklotter_1_1ShaderOptions.html#a17d6ad6992bb59a5003261b8565172db',1,'klotter::ShaderOptions']]],
+  ['use_5flights_523',['use_lights',['../structklotter_1_1ShaderOptions.html#aca2a16f5f74d2173ad16e3190ece623c',1,'klotter::ShaderOptions']]],
+  ['use_5fshader_524',['use_shader',['../structklotter_1_1Material.html#acc7a0623867b0770e101cdcca4c294ce',1,'klotter::Material::use_shader()'],['../structklotter_1_1UnlitMaterial.html#a24a10994b33c725dc865ac96d8a6bdc8',1,'klotter::UnlitMaterial::use_shader()'],['../structklotter_1_1DefaultMaterial.html#afcb65bb4df7f01d99dc756c3a7aecbb1',1,'klotter::DefaultMaterial::use_shader()'],['../structklotter_1_1ShaderPropertyProvider.html#a57a1f8889a902992e20b5bb509972b01',1,'klotter::ShaderPropertyProvider::use_shader()']]],
+  ['use_5ftexture_525',['use_texture',['../structklotter_1_1ShaderOptions.html#a5a82c2357b48240169bd49d29200c408',1,'klotter::ShaderOptions']]],
+  ['uv_526',['uv',['../structklotter_1_1Vertex.html#a9c6e27934cc260af46556c60004edc43',1,'klotter::Vertex']]]
+];
