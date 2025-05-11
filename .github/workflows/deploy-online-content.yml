@@ -1,0 +1,29 @@
+name: linux
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: ubuntu-22.04
+
+        steps:
+        - uses: actions/checkout@v3
+          with:
+            submodules: recursive
+
+        - name: Install Dependencies
+          run: |
+                sudo apt update
+                sudo apt install -y doxygen
+
+        - name: Create documentation
+          shell: bash
+          working-directory: ${{github.workspace}}
+          run: doxygen docs/doxygen.ini
+
+        - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          if: github.ref == 'refs/heads/main' && (success())
+          with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: ./build/docs/html/
