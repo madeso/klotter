@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertextypes_1070',['VertexTypes',['../group__vertex-layout.html#gaaae7ace888e1a1b056bf63de6e6db1b8',1,'klotter']]]
+  ['vertextypes_0',['VertexTypes',['../group__vertex-layout.html#gaa3eb81233db95fb693918802ac36cc30',1,'klotter']]]
 ];

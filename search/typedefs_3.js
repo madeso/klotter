@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['makeappfunction_1062',['MakeAppFunction',['../namespaceklotter.html#acec460ce9776f7130c3afedb55e3a2d1',1,'klotter']]]
+  ['makeappfunction_0',['MakeAppFunction',['../namespaceklotter.html#a7421aae5c39bf21635e20a1d6011fabd',1,'klotter']]]
 ];
