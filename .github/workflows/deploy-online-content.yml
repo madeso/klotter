@@ -1,4 +1,4 @@
-name: linux
+name: Deploy online content
 
 on: [push]
 
@@ -18,7 +18,9 @@ jobs:
         - name: Create documentation
           shell: bash
           working-directory: ${{github.workspace}}
-          run: doxygen docs/doxygen.ini
+          run: |
+                mkdir -p build/docs
+                doxygen docs/doxygen.ini
 
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
