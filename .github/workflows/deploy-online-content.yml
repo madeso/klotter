@@ -11,10 +11,9 @@ jobs:
           with:
             submodules: recursive
 
-        - name: Install Dependencies
-          run: |
-                sudo apt update
-                sudo apt install -y doxygen
+        - uses: ssciwr/doxygen-install@v1
+          with:
+            version: "1.13.2"
 
         - name: Create documentation
           shell: bash
