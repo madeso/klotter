@@ -332,6 +332,7 @@ struct PointLight
 	float diffuse = 1.0f;
 };
 
+/// Like a spotlight but can be positioned with a transform, supports light cookies and can use a "viewfrustom" when culling
 struct FrustumLight
 {
 	glm::vec3 position = {0.0f, 0.0f, 0.0f};
@@ -441,6 +442,7 @@ struct RenderTask : RenderSource
 	void update(const PostProcArg& arg);
 };
 
+/// A compiled full-screen-effect.
 /// when compiled it could be:
 /// * [render world to screen]
 /// * [render world to fbo], [render fbo to screen with shader]
