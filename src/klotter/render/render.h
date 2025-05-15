@@ -164,7 +164,7 @@ struct Material
 	virtual bool is_transparent() const = 0;
 };
 
-/// a unlit (or fully lit) material, not affected by light
+/// A unlit (or fully lit) material, not affected by light.
 struct UnlitMaterial : Material
 {
 	const LoadedShader_Unlit* shader;
@@ -187,7 +187,7 @@ struct UnlitMaterial : Material
 	bool is_transparent() const override;
 };
 
-/// a material affected by light
+/// A material affected by light.
 struct DefaultMaterial : Material
 {
 	const LoadedShader_Default* shader = nullptr;
@@ -277,7 +277,7 @@ enum class Billboarding
 	axial_y_fast
 };
 
-/// Stores Geom + Material (aka a mesh) and its current transform
+/// Stores Geom + Material (aka a mesh) and its current transform.
 struct MeshInstance
 {
 	std::shared_ptr<CompiledGeom> geom;
@@ -296,7 +296,7 @@ std::shared_ptr<MeshInstance> make_mesh_instance(
 	std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat
 );
 
-/// Stores Geom + Material (aka a mesh) and its current transform but instanced for faster rendering
+/// Stores Geom + Material (aka a mesh) and its current transform but instanced for faster rendering.
 struct MeshInstance_TransformInstance
 {
 	std::shared_ptr<CompiledGeom_TransformInstance> geom;
@@ -332,7 +332,7 @@ struct PointLight
 	float diffuse = 1.0f;
 };
 
-/// Like a spotlight but can be positioned with a transform, supports light cookies and can use a "viewfrustom" when culling
+/// Like a spotlight but can be positioned with a transform, supports light cookies and can use a "viewfrustom" when culling.
 struct FrustumLight
 {
 	glm::vec3 position = {0.0f, 0.0f, 0.0f};
@@ -352,7 +352,7 @@ struct FrustumLight
 	std::shared_ptr<Texture2d> cookie;	// if null, pure white is used
 };
 
-/// All lights in a world
+/// All lights in a world.
 struct Lights
 {
 	glm::vec3 color = colors::white;
@@ -369,7 +369,8 @@ struct Skybox
 	std::shared_ptr<TextureCubemap> cubemap = nullptr;
 };
 
-/// also known as a scene
+/// A list of objects to render.
+/// This is also sometimes known as a scene.
 struct World
 {
 	std::vector<std::shared_ptr<MeshInstance>> meshes;
@@ -381,8 +382,13 @@ struct World
 
 enum class LineStyle
 {
+	/// The line is not visible when things are in front it.
 	depth,
+
+	/// The line is always visible.
 	always_visible,
+
+	/// The line renders fully when in front of objects and dashed when behind things.
 	dashed_when_hidden
 };
 
@@ -527,7 +533,7 @@ struct EffectStack
 
 struct RendererPimpl;
 
-/// the renderering "engine"
+/// The renderering engine.
 struct Renderer
 {
 	RenderSettings settings;
