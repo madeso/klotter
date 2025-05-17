@@ -7,8 +7,10 @@ namespace klotter
 
 struct ShaderOptions
 {
+	bool use_blinn_phong = true;
 	bool use_texture = false;
 	bool use_lights = false;
+
 	int number_of_point_lights = 0;
 	int number_of_frustum_lights = 0;
 	int number_of_directional_lights = 0;

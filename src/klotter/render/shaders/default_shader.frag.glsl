@@ -97,6 +97,23 @@ float calculate_attenuation(vec4 att, float distance)
     return attenuation; // 1 at min, 0 at max
 }
 
+float calculate_specular(vec3 view_direction, vec3 light_direction, vec3 normal, float shininess)
+{
+    const float kPi = 3.14159265;
+
+    {{#use_blinn_phong}}
+        float energy_conservation = ( 8.0 + shininess ) / ( 8.0 * kPi ); 
+        vec3 halfwayDir = normalize(light_direction + view_direction); 
+        return energy_conservation * pow(max(dot(normal, halfwayDir), 0.0), shininess);
+    {{/use_blinn_phong}}
+
+    {{^use_blinn_phong}}
+        float energy_conservation = ( 2.0 + shininess ) / ( 2.0 * kPi ); 
+        vec3 reflectDir = reflect(-light_direction, normal);
+        return energy_conservation * pow(max(dot(view_direction, reflectDir), 0.0), shininess);
+    {{/use_blinn_phong}}
+}
+
 vec3 calculate_directional_light(
     DirectionalLight pl, vec3 normal, vec3 view_direction, vec3 spec_t, vec3 base_color)
 {
@@ -108,7 +125,7 @@ vec3 calculate_directional_light(
     vec3 diffuse_color = diff * (u_material.diffuse_tint.rgb * base_color * pl.diffuse);
 
     // specular color
-    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_material.shininess);
+    float spec = calculate_specular(view_direction, light_direction, normal, u_material.shininess);
     vec3 specular_color = spec * (u_material.specular_tint * spec_t * pl.specular);
 
     return diffuse_color + specular_color;
@@ -125,7 +142,7 @@ vec3 calculate_point_light(
     vec3 diffuse_color = diff * (u_material.diffuse_tint.rgb * base_color * pl.diffuse);
 
     // specular color
-    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_material.shininess);
+    float spec = calculate_specular(view_direction, light_direction, normal, u_material.shininess);
     vec3 specular_color = spec * (u_material.specular_tint * spec_t * pl.specular);
 
     // attenuation
@@ -161,7 +178,7 @@ vec3 calculate_frustum_light(
     vec3 diffuse_color = factor * (u_material.diffuse_tint.rgb * base_color * pl.diffuse);
 
     // specular color
-    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_material.shininess);
+    float spec = calculate_specular(view_direction, light_direction, normal, u_material.shininess);
     vec3 specular_color = factor * spec * (u_material.specular_tint * spec_t * pl.specular);
 
     // attenuation

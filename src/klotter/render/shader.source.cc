@@ -65,6 +65,7 @@ std::string generate(
 	auto data = kainjow::mustache::data{};
 
 	data["use_lights"] = options.use_lights;
+	data["use_blinn_phong"] = options.use_blinn_phong;
 	data["use_texture"] = options.use_texture;
 	data["number_of_directional_lights"] = (Str() << options.number_of_directional_lights).str();
 	data["number_of_point_lights"] = (Str() << options.number_of_point_lights).str();
