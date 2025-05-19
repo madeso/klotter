@@ -30,8 +30,19 @@ struct BoundFbo
 	~BoundFbo();
 };
 
+struct FboSetup
+{
+	constexpr FboSetup(int w, int h)
+		: width(w)
+		, height(h)
+	{}
+
+	int width;
+	int height;
+};
+
 std::shared_ptr<FrameBuffer> create_frame_buffer(
-	int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency trans
+	const FboSetup& setup, TextureEdge te, TextureRenderStyle trs, Transparency trans
 );
 
 /**

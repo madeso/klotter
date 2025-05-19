@@ -46,29 +46,26 @@ BoundFbo::~BoundFbo()
 }
 
 std::shared_ptr<FrameBuffer> create_frame_buffer(
-	int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency trans
+	const FboSetup& set, TextureEdge te, TextureRenderStyle trs, Transparency trans
 )
 {
-	LOG_INFO("Creating frame buffer %d %d", width, height);
+	LOG_INFO("Creating frame buffer %d %d", set.width, set.height);
 	ASSERT(trs != TextureRenderStyle::mipmap);
 	auto fbo = std::make_shared<FrameBuffer>(create_fbo());
 
-	fbo->texture = Texture2d{nullptr, width, height, te, trs, trans};
+	fbo->texture = Texture2d{nullptr, set.width, set.height, te, trs, trans};
 	ASSERT(fbo->texture.id > 0);
 
 	auto bound = BoundFbo{fbo};
 	constexpr GLint mipmap_level = 0;
-	glFramebufferTexture2D(
-		GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fbo->texture.id, mipmap_level
-	);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fbo->texture.id, mipmap_level);
 
 	glGenRenderbuffers(1, &fbo->rbo);
 	ASSERT(fbo->rbo != 0);
 	glBindRenderbuffer(GL_RENDERBUFFER, fbo->rbo);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
-	glFramebufferRenderbuffer(
-		GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo
-	);
+
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, set.width, set.height);
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo);
 
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 	{
