@@ -13,7 +13,7 @@ ContinuationIndentWidth: 4
 # BracedInitializerIndentWidth: 4
 ConstructorInitializerIndentWidth: 4
 LineEnding: LF
-ColumnLimit: 100
+ColumnLimit: 120
 
 InsertNewlineAtEOF: true
 NamespaceIndentation: Inner
