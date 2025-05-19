@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klotter: Frame buffer</title>
+<title>Klotter: klotter::FboSetup Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,8 +76,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="doc-content">
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function(){ initResizable(false); });
@@ -104,63 +102,97 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1FboSetup.html">FboSetup</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Frame buffer</div></div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="structklotter_1_1FboSetup-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">klotter::FboSetup Struct Reference<div class="ingroups"><a class="el" href="group__framebuffer.html">Frame buffer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="framebuffer_8h_source.html">framebuffer.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1FrameBuffer.html">klotter::FrameBuffer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"render to texture" feature  <a href="structklotter_1_1FrameBuffer.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1BoundFbo.html">klotter::BoundFbo</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">raii class to render to a <a class="el" href="structklotter_1_1FrameBuffer.html" title="&quot;render to texture&quot; feature">FrameBuffer</a>  <a href="structklotter_1_1BoundFbo.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1FboSetup.html">klotter::FboSetup</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa98370bdc93bb5c92dcd14427571768e" id="r_aa98370bdc93bb5c92dcd14427571768e"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa98370bdc93bb5c92dcd14427571768e">FboSetup</a> (int w, int h)</td></tr>
+<tr class="separator:aa98370bdc93bb5c92dcd14427571768e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga21869ad6ecb7d07cdad114951985c01c" id="r_ga21869ad6ecb7d07cdad114951985c01c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga21869ad6ecb7d07cdad114951985c01c">klotter::create_frame_buffer</a> (const <a class="el" href="structklotter_1_1FboSetup.html">FboSetup</a> &amp;setup, <a class="el" href="namespaceklotter.html#a975d5c1b5f6b62b122652d21e890346e">TextureEdge</a> te, <a class="el" href="namespaceklotter.html#a96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a> trs, <a class="el" href="namespaceklotter.html#a3257f86dae0e1a101035a7d4cd2026bc">Transparency</a> trans)</td></tr>
-<tr class="separator:ga21869ad6ecb7d07cdad114951985c01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4374adcd5cdbdf8ef200e65210de3952" id="r_a4374adcd5cdbdf8ef200e65210de3952"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4374adcd5cdbdf8ef200e65210de3952">width</a></td></tr>
+<tr class="separator:a4374adcd5cdbdf8ef200e65210de3952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c78ab3c83a5bfc8d7f180a0fda8a8f7" id="r_a1c78ab3c83a5bfc8d7f180a0fda8a8f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c78ab3c83a5bfc8d7f180a0fda8a8f7">height</a></td></tr>
+<tr class="separator:a1c78ab3c83a5bfc8d7f180a0fda8a8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga21869ad6ecb7d07cdad114951985c01c" name="ga21869ad6ecb7d07cdad114951985c01c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga21869ad6ecb7d07cdad114951985c01c">&#9670;&#160;</a></span>create_frame_buffer()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa98370bdc93bb5c92dcd14427571768e" name="aa98370bdc93bb5c92dcd14427571768e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa98370bdc93bb5c92dcd14427571768e">&#9670;&#160;</a></span>FboSetup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">klotter::FboSetup::FboSetup </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1c78ab3c83a5bfc8d7f180a0fda8a8f7" name="a1c78ab3c83a5bfc8d7f180a0fda8a8f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c78ab3c83a5bfc8d7f180a0fda8a8f7">&#9670;&#160;</a></span>height</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt; klotter::create_frame_buffer </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structklotter_1_1FboSetup.html">FboSetup</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>setup</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceklotter.html#a975d5c1b5f6b62b122652d21e890346e">TextureEdge</a></td>          <td class="paramname"><span class="paramname"><em>te</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceklotter.html#a96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a></td>          <td class="paramname"><span class="paramname"><em>trs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceklotter.html#a3257f86dae0e1a101035a7d4cd2026bc">Transparency</a></td>          <td class="paramname"><span class="paramname"><em>trans</em></span>&#160;)</td>
+          <td class="memname">int klotter::FboSetup::height</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
+<a id="a4374adcd5cdbdf8ef200e65210de3952" name="a4374adcd5cdbdf8ef200e65210de3952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4374adcd5cdbdf8ef200e65210de3952">&#9670;&#160;</a></span>width</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int klotter::FboSetup::width</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>src/klotter/render/<a class="el" href="framebuffer_8h_source.html">framebuffer.h</a></li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
