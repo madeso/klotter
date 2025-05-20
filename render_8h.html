@@ -111,99 +111,22 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle"><div class="title">render.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;optional&gt;</code><br />
-<code>#include &quot;<a class="el" href="colors_8h_source.html">klotter/colors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="scurve_8h_source.html">klotter/scurve.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="camera_8h_source.html">klotter/render/camera.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="constants_8h_source.html">klotter/render/constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="shader_8h_source.html">klotter/render/shader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="texture_8h_source.html">klotter/render/texture.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="assets_8h_source.html">klotter/render/assets.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="assets_8h_source.html">klotter/render/assets.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="debug_8h_source.html">klotter/render/debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fse_8h_source.html">klotter/render/fse.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="material_8h_source.html">klotter/render/material.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render__settings_8h_source.html">klotter/render/render_settings.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="vertex__layout_8h_source.html">klotter/render/vertex_layout.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="geom_8h_source.html">klotter/render/geom.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="linebatch_8h_source.html">klotter/render/linebatch.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="framebuffer_8h_source.html">klotter/render/framebuffer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="world_8h_source.html">klotter/render/world.h</a>&quot;</code><br />
 </div>
 <p><a href="render_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1OpenglStates.html">klotter::OpenglStates</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1RenderSettings.html">klotter::RenderSettings</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Material.html">klotter::Material</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all materials.  <a href="structklotter_1_1Material.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1UnlitMaterial.html">klotter::UnlitMaterial</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unlit (or fully lit) material, not affected by light.  <a href="structklotter_1_1UnlitMaterial.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1DefaultMaterial.html">klotter::DefaultMaterial</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A material affected by light.  <a href="structklotter_1_1DefaultMaterial.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CompiledGeom.html">klotter::CompiledGeom</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> on the GPU.  <a href="structklotter_1_1CompiledGeom.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CompiledGeom__TransformInstance.html">klotter::CompiledGeom_TransformInstance</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> on the GPU, instanced on a transform.  <a href="structklotter_1_1CompiledGeom__TransformInstance.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1LocalAxis.html">klotter::LocalAxis</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1MeshInstance.html">klotter::MeshInstance</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> + <a class="el" href="structklotter_1_1Material.html" title="Base class for all materials.">Material</a> (aka a mesh) and its current transform.  <a href="structklotter_1_1MeshInstance.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1MeshInstance__TransformInstance.html">klotter::MeshInstance_TransformInstance</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> + <a class="el" href="structklotter_1_1Material.html" title="Base class for all materials.">Material</a> (aka a mesh) and its current transform but instanced for faster rendering.  <a href="structklotter_1_1MeshInstance__TransformInstance.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1DirectionalLight.html">klotter::DirectionalLight</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1PointLight.html">klotter::PointLight</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1FrustumLight.html">klotter::FrustumLight</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like a spotlight but can be positioned with a transform, supports light cookies and can use a "viewfrustom" when culling.  <a href="structklotter_1_1FrustumLight.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Lights.html">klotter::Lights</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">All lights in a world.  <a href="structklotter_1_1Lights.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Skybox.html">klotter::Skybox</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1World.html">klotter::World</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of objects to render.  <a href="structklotter_1_1World.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1DebugLine.html">klotter::DebugLine</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1DebugRender.html">klotter::DebugRender</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1PostProcArg.html">klotter::PostProcArg</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1RenderSource.html">klotter::RenderSource</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1ShaderPropertyProvider.html">klotter::ShaderPropertyProvider</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1RenderTask.html">klotter::RenderTask</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CompiledStack.html">klotter::CompiledStack</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A compiled full-screen-effect.  <a href="structklotter_1_1CompiledStack.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1FrameBufferCache.html">klotter::FrameBufferCache</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1BuildArg.html">klotter::BuildArg</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Effect.html">klotter::Effect</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1FactorEffect.html">klotter::FactorEffect</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1EffectStack.html">klotter::EffectStack</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The facade of the post-proc framework.  <a href="structklotter_1_1EffectStack.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Renderer.html">klotter::Renderer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The renderering engine.  <a href="structklotter_1_1Renderer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,107 +135,6 @@ Classes</h2></td></tr>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html">klotter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga2bf0fb4228d3cf9922870684f4b25e81" id="r_ga2bf0fb4228d3cf9922870684f4b25e81"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga2bf0fb4228d3cf9922870684f4b25e81">klotter::BlendMode</a> = std::tuple&lt;<a class="el" href="group__render.html#gac6cdf1ef1b23f9fc7361b5add6bf481b">Blend</a>, <a class="el" href="group__render.html#gac6cdf1ef1b23f9fc7361b5add6bf481b">Blend</a>&gt;</td></tr>
-<tr class="separator:ga2bf0fb4228d3cf9922870684f4b25e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad39dccc38e66e47ae52ef347a685cf07" id="r_gad39dccc38e66e47ae52ef347a685cf07"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gad39dccc38e66e47ae52ef347a685cf07">klotter::StencilFunc</a> = std::tuple&lt;<a class="el" href="group__render.html#gaf50df8edcb23dcda6cc8f1fd15918d69">Compare</a>, <a class="el" href="pch_8public_8h.html#aec41e5f8e4b7aef2540e84268692fa84">i32</a>, <a class="el" href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a>&gt;</td></tr>
-<tr class="separator:gad39dccc38e66e47ae52ef347a685cf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1c638300d3c0acd1ab75efc88f4aa741" id="r_ga1c638300d3c0acd1ab75efc88f4aa741"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga1c638300d3c0acd1ab75efc88f4aa741">klotter::StencilOp</a> = std::tuple&lt;<a class="el" href="group__render.html#gac7b12ed0e553cee508d8ca86f8c8e84f">StencilAction</a>, <a class="el" href="group__render.html#gac7b12ed0e553cee508d8ca86f8c8e84f">StencilAction</a>, <a class="el" href="group__render.html#gac7b12ed0e553cee508d8ca86f8c8e84f">StencilAction</a>&gt;</td></tr>
-<tr class="separator:ga1c638300d3c0acd1ab75efc88f4aa741"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ga58b3e0e4918f62f8cf5fa2c0e3ec9718" id="r_ga58b3e0e4918f62f8cf5fa2c0e3ec9718"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga58b3e0e4918f62f8cf5fa2c0e3ec9718">klotter::RenderMode</a> { <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718aa552c74784b3a82177bca6c8adde0efb">klotter::RenderMode::fill</a>
-, <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a6438c669e0d0de98e6929c2cc0fac474">klotter::RenderMode::line</a>
-, <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a78ee54aa8f813885fe2fe20d232518b9">klotter::RenderMode::point</a>
- }</td></tr>
-<tr class="separator:ga58b3e0e4918f62f8cf5fa2c0e3ec9718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2da9ff87267808b55c2680259db65b5c" id="r_ga2da9ff87267808b55c2680259db65b5c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga2da9ff87267808b55c2680259db65b5c">klotter::CullFace</a> { <a class="el" href="group__render.html#gga2da9ff87267808b55c2680259db65b5cae6ec529ba185279aa0adcf93e645c7cd">klotter::CullFace::front</a>
-, <a class="el" href="group__render.html#gga2da9ff87267808b55c2680259db65b5ca469bba0a564235dfceede42db14f17b0">klotter::CullFace::back</a>
-, <a class="el" href="group__render.html#gga2da9ff87267808b55c2680259db65b5cad46b3c78f91c7d43349252714bf07404">klotter::CullFace::front_and_back</a>
- }</td></tr>
-<tr class="separator:ga2da9ff87267808b55c2680259db65b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac6cdf1ef1b23f9fc7361b5add6bf481b" id="r_gac6cdf1ef1b23f9fc7361b5add6bf481b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gac6cdf1ef1b23f9fc7361b5add6bf481b">klotter::Blend</a> { <br />
-&#160;&#160;<a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481bad02c4c4cde7ae76252540d116a40f23a">klotter::Blend::zero</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481baf97c5d29941bfb1b2fdab0874906ab82">klotter::Blend::one</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481ba3bbfc559ec491c8f1c2e45bb87255cf2">klotter::Blend::src_color</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481bab41ddc54ca846edeec43f65983a0f8ae">klotter::Blend::one_minus_src_color</a>
-, <br />
-&#160;&#160;<a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481baeadd61e269579f1d602a06d9ae0972e3">klotter::Blend::dst_color</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481ba10b63c6bd5f63fd9a592ebf3f6103ff3">klotter::Blend::one_minus_dst_color</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481baff175e9d424fcb3eef837a773872fb9e">klotter::Blend::src_alpha</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481baa415ef353601f5e5d8a3e5ac06683703">klotter::Blend::one_minus_src_alpha</a>
-, <br />
-&#160;&#160;<a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481bab71b79d6bf971b9dd2ee1d43565ab344">klotter::Blend::dst_alpha</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481ba8d3a4c2d0c55b1041c69d3fdd7ed55e1">klotter::Blend::one_minus_dst_alpha</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481baec5574dc954581793a5dcbdf0e358ae1">klotter::Blend::constant_color</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481ba645421b2fe9a762542bf70220d9eae9c">klotter::Blend::one_minus_constant_color</a>
-, <br />
-&#160;&#160;<a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481ba9831f8a00f48f451286ea6c16cd2f55e">klotter::Blend::constant_alpha</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481bae984532432604da975ecbe092f88091c">klotter::Blend::one_minus_constant_alpha</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481ba4ca927a00bbb81ed85f09169e3280e4f">klotter::Blend::src_alpha_saturate</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481bab0d68a99473c977a3817fedc7d08f0e2">klotter::Blend::src1_color</a>
-, <br />
-&#160;&#160;<a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481badfdd9575355e1f8bf7a8ac999b80aec5">klotter::Blend::one_minus_src1_color</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481ba0617538b9cf7a4e498eb780836a56839">klotter::Blend::src1_alpha</a>
-, <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481ba0f5e5ae7cbb93bf3f4e223b2e967aedf">klotter::Blend::one_minus_src1_alpha</a>
-<br />
- }</td></tr>
-<tr class="separator:gac6cdf1ef1b23f9fc7361b5add6bf481b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf50df8edcb23dcda6cc8f1fd15918d69" id="r_gaf50df8edcb23dcda6cc8f1fd15918d69"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gaf50df8edcb23dcda6cc8f1fd15918d69">klotter::Compare</a> { <br />
-&#160;&#160;<a class="el" href="group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69af9f90eeaf400d228facde6bc48da5cfb">klotter::Compare::always</a>
-, <a class="el" href="group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69ac7561db7a418dd39b2201dfe110ab4a4">klotter::Compare::never</a>
-, <a class="el" href="group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69ae37e8d912e8f7b8f9b5ef9452ba47ff1">klotter::Compare::less</a>
-, <a class="el" href="group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a465289687a70db7aa7217cc240c29f0f">klotter::Compare::equal</a>
-, <br />
-&#160;&#160;<a class="el" href="group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a77932225fb35fc4b74dc8fabf0992dac">klotter::Compare::less_equal</a>
-, <a class="el" href="group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a7b8dc4fb0fb55fc8eb69ff080c45ed7e">klotter::Compare::greater</a>
-, <a class="el" href="group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a96ee5c0e2a7149613e7fd0b83316486e">klotter::Compare::not_equal</a>
-, <a class="el" href="group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a5675102b0e596d9d43bbb0e0f8ea07e2">klotter::Compare::greater_equal</a>
-<br />
- }</td></tr>
-<tr class="separator:gaf50df8edcb23dcda6cc8f1fd15918d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac7b12ed0e553cee508d8ca86f8c8e84f" id="r_gac7b12ed0e553cee508d8ca86f8c8e84f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gac7b12ed0e553cee508d8ca86f8c8e84f">klotter::StencilAction</a> { <br />
-&#160;&#160;<a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fa18ccf61d533b600bbf5a963359223fe4">klotter::StencilAction::keep</a>
-, <a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fad02c4c4cde7ae76252540d116a40f23a">klotter::StencilAction::zero</a>
-, <a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fa9dde360102c103867bd2f45872f1129c">klotter::StencilAction::replace</a>
-, <a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fa11198b294adbcf089f9d27990258fd22">klotter::StencilAction::increase</a>
-, <br />
-&#160;&#160;<a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fad064962a2816754e5a85ff6f3ea93d98">klotter::StencilAction::increase_wrap</a>
-, <a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fab0fe2606af48e49fd3746844798eb6a0">klotter::StencilAction::decrease</a>
-, <a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84faeea8162fd4103d6d9864b893f79150f1">klotter::StencilAction::decrease_wrap</a>
-, <a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fa20e57f32ba12b9cd13ebe9ef5e32d949">klotter::StencilAction::invert</a>
-<br />
- }</td></tr>
-<tr class="separator:gac7b12ed0e553cee508d8ca86f8c8e84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8b35cebf3243809e4ea2b1ab6bb19fce" id="r_ga8b35cebf3243809e4ea2b1ab6bb19fce"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga8b35cebf3243809e4ea2b1ab6bb19fce">klotter::Billboarding</a> { <br />
-&#160;&#160;<a class="el" href="group__render.html#gga8b35cebf3243809e4ea2b1ab6bb19fcea334c4a4c42fdb79d7ebc3e73b517e6f8">klotter::Billboarding::none</a>
-, <a class="el" href="group__render.html#gga8b35cebf3243809e4ea2b1ab6bb19fcea599eba19aa93a929cb8589f148b8a6c4">klotter::Billboarding::screen</a>
-, <a class="el" href="group__render.html#gga8b35cebf3243809e4ea2b1ab6bb19fcea0c696d31c08ea533281573b99fc17e7a">klotter::Billboarding::screen_fast</a>
-, <a class="el" href="group__render.html#gga8b35cebf3243809e4ea2b1ab6bb19fcea7e71d1f362f989fdcd3829f7b9cea7dc">klotter::Billboarding::axial_y</a>
-, <br />
-&#160;&#160;<a class="el" href="group__render.html#gga8b35cebf3243809e4ea2b1ab6bb19fcead56ef2b8111596c3345b42a6e2be5325">klotter::Billboarding::axial_y_fast</a>
-<br />
- }</td></tr>
-<tr class="separator:ga8b35cebf3243809e4ea2b1ab6bb19fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3abacaa100d79a814507a19cd5839971" id="r_ga3abacaa100d79a814507a19cd5839971"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga3abacaa100d79a814507a19cd5839971">klotter::LineStyle</a> { <a class="el" href="group__render.html#gga3abacaa100d79a814507a19cd5839971a12a055bf01a31369fe81ac35d85c7bc1">klotter::LineStyle::depth</a>
-, <a class="el" href="group__render.html#gga3abacaa100d79a814507a19cd5839971a914d9209a378fe4848b7b83190ef1517">klotter::LineStyle::always_visible</a>
-, <a class="el" href="group__render.html#gga3abacaa100d79a814507a19cd5839971aba538e81aa9c029653be13651bfda432">klotter::LineStyle::dashed_when_hidden</a>
- }</td></tr>
-<tr class="separator:ga3abacaa100d79a814507a19cd5839971"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga2ca8107d458634f500f8d493a6d5b1ac" id="r_ga2ca8107d458634f500f8d493a6d5b1ac"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1CompiledGeom.html">CompiledGeom</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga2ca8107d458634f500f8d493a6d5b1ac">klotter::compile_geom</a> (const <a class="el" href="structklotter_1_1Geom.html">Geom</a> &amp;, const <a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a> &amp;layout)</td></tr>
-<tr class="separator:ga2ca8107d458634f500f8d493a6d5b1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1beb62848a80887bda5bb5d4d78bb3f" id="r_gac1beb62848a80887bda5bb5d4d78bb3f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1CompiledGeom__TransformInstance.html">CompiledGeom_TransformInstance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gac1beb62848a80887bda5bb5d4d78bb3f">klotter::compile_geom_with_transform_instance</a> (const <a class="el" href="structklotter_1_1Geom.html">Geom</a> &amp;, const <a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a> &amp;layout, std::size_t max_instances)</td></tr>
-<tr class="separator:gac1beb62848a80887bda5bb5d4d78bb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1c7bfa5f2902fc511ab0ef72a8d3f6b" id="r_gab1c7bfa5f2902fc511ab0ef72a8d3f6b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1MeshInstance.html">MeshInstance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gab1c7bfa5f2902fc511ab0ef72a8d3f6b">klotter::make_mesh_instance</a> (std::shared_ptr&lt; <a class="el" href="structklotter_1_1CompiledGeom.html">CompiledGeom</a> &gt; geom, std::shared_ptr&lt; <a class="el" href="structklotter_1_1Material.html">Material</a> &gt; mat)</td></tr>
-<tr class="separator:gab1c7bfa5f2902fc511ab0ef72a8d3f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa09943573a2d597bca5180757f4ac9ee" id="r_gaa09943573a2d597bca5180757f4ac9ee"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1MeshInstance__TransformInstance.html">MeshInstance_TransformInstance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gaa09943573a2d597bca5180757f4ac9ee">klotter::make_mesh_instance</a> (std::shared_ptr&lt; <a class="el" href="structklotter_1_1CompiledGeom__TransformInstance.html">CompiledGeom_TransformInstance</a> &gt; geom, std::shared_ptr&lt; <a class="el" href="structklotter_1_1Material.html">Material</a> &gt; mat)</td></tr>
-<tr class="separator:gaa09943573a2d597bca5180757f4ac9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

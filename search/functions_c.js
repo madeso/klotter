@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['render_0',['render',['../structklotter_1_1RenderSource.html#a09fe11c60248250aeeaf931bb1f0e2e1',1,'klotter::RenderSource::render()'],['../structklotter_1_1RenderTask.html#a052fe8fe4d5af2b0b91c2aaca91ec300',1,'klotter::RenderTask::render()'],['../structklotter_1_1EffectStack.html#aaf622b94ba48b5950c9324c6d4434c05',1,'klotter::EffectStack::render()']]],
-  ['render_5fworld_1',['render_world',['../structklotter_1_1Renderer.html#a48524cf82c262c4ee5caa4d8341ea351',1,'klotter::Renderer']]],
-  ['renderer_2',['Renderer',['../structklotter_1_1Renderer.html#ad5a6f1e81638462af81153f65f17b967',1,'klotter::Renderer']]],
-  ['rendertask_3',['RenderTask',['../structklotter_1_1RenderTask.html#a0e66888be774e850d306e4290106b577',1,'klotter::RenderTask']]],
-  ['replace_5fwith_5fsmooth_5fnormals_4',['replace_with_smooth_normals',['../structklotter_1_1geom_1_1Builder.html#a0040ee70080e791cf4a27d1450db0b0f',1,'klotter::geom::Builder']]],
-  ['result_5',['Result',['../structResult.html#a09bfef910ff61b121e04b9df35ab8a1a',1,'Result::Result(T &amp;&amp;tt)'],['../structResult.html#aef1257385182062000e093cc7979f46f',1,'Result::Result(const E &amp;ee)']]],
-  ['rgb_6',['rgb',['../namespaceklotter_1_1colors.html#a6e8e137168aec076ff4447ce7b8e9bb8',1,'klotter::colors']]],
-  ['run_5fmain_7',['run_main',['../namespaceklotter.html#ae8ba8f25677bd8a5d98681f05fd0a162',1,'klotter']]]
+  ['pointlightuniforms_0',['PointLightUniforms',['../structklotter_1_1PointLightUniforms.html#ab499febb6dc0fe23f39049a2fe14dc18',1,'klotter::PointLightUniforms']]]
 ];

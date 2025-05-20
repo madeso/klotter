@@ -7,5 +7,8 @@ var searchData=
   ['with_5ftransparent_5fcutoff_4',['with_transparent_cutoff',['../structklotter_1_1ShaderOptions.html#a824c6abd7ff4c7ebfbcc15364a68455c',1,'klotter::ShaderOptions']]],
   ['world_5',['World',['../structklotter_1_1World.html',1,'klotter']]],
   ['world_6',['world',['../structklotter_1_1PostProcArg.html#ae521c7b4cb6fef35f2a72569076209df',1,'klotter::PostProcArg']]],
-  ['write_5fobj_7',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
+  ['world_2eh_7',['world.h',['../world_8h.html',1,'']]],
+  ['world_5fpos_8',['world_pos',['../structklotter_1_1FrustumLightUniforms.html#a70bbfbb9f0a74757269f9848070a87c0',1,'klotter::FrustumLightUniforms']]],
+  ['world_5fto_5fclip_9',['world_to_clip',['../structklotter_1_1FrustumLightUniforms.html#afc52906ec8254b1167a57f01de5140e0',1,'klotter::FrustumLightUniforms']]],
+  ['write_5fobj_10',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
 ];

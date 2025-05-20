@@ -120,7 +120,7 @@ $(function(){ initResizable(false); });
 <p>A unlit (or fully lit) material, not affected by light.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="render_8h_source.html">render.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="material_8h_source.html">material.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for klotter::UnlitMaterial:</div>
 <div class="dyncontent">
@@ -133,15 +133,15 @@ Inheritance diagram for klotter::UnlitMaterial:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abeea77af30a3fe439dcf57f07dee7e30" id="r_abeea77af30a3fe439dcf57f07dee7e30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeea77af30a3fe439dcf57f07dee7e30">UnlitMaterial</a> (const ShaderResource &amp;resource)</td></tr>
+<tr class="memitem:abeea77af30a3fe439dcf57f07dee7e30" id="r_abeea77af30a3fe439dcf57f07dee7e30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeea77af30a3fe439dcf57f07dee7e30">UnlitMaterial</a> (const <a class="el" href="structklotter_1_1ShaderResource.html">ShaderResource</a> &amp;resource)</td></tr>
 <tr class="separator:abeea77af30a3fe439dcf57f07dee7e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24a10994b33c725dc865ac96d8a6bdc8" id="r_a24a10994b33c725dc865ac96d8a6bdc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24a10994b33c725dc865ac96d8a6bdc8">use_shader</a> (const RenderContext &amp;) override</td></tr>
+<tr class="memitem:a24a10994b33c725dc865ac96d8a6bdc8" id="r_a24a10994b33c725dc865ac96d8a6bdc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24a10994b33c725dc865ac96d8a6bdc8">use_shader</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;) override</td></tr>
 <tr class="separator:a24a10994b33c725dc865ac96d8a6bdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a943b628224cf9d4eab243c7a344961a1" id="r_a943b628224cf9d4eab243c7a344961a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a943b628224cf9d4eab243c7a344961a1">set_uniforms</a> (const RenderContext &amp;, const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;, const std::optional&lt; glm::mat4 &gt; &amp;) override</td></tr>
+<tr class="memitem:a943b628224cf9d4eab243c7a344961a1" id="r_a943b628224cf9d4eab243c7a344961a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a943b628224cf9d4eab243c7a344961a1">set_uniforms</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;, const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;, const std::optional&lt; glm::mat4 &gt; &amp;) override</td></tr>
 <tr class="separator:a943b628224cf9d4eab243c7a344961a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a647c9b677bbb4ee9a36333eb42cc8c" id="r_a4a647c9b677bbb4ee9a36333eb42cc8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a647c9b677bbb4ee9a36333eb42cc8c">bind_textures</a> (const RenderContext &amp;, <a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, <a class="el" href="structklotter_1_1Assets.html">Assets</a> *assets) override</td></tr>
+<tr class="memitem:a4a647c9b677bbb4ee9a36333eb42cc8c" id="r_a4a647c9b677bbb4ee9a36333eb42cc8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a647c9b677bbb4ee9a36333eb42cc8c">bind_textures</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;, <a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, <a class="el" href="structklotter_1_1Assets.html">Assets</a> *assets) override</td></tr>
 <tr class="separator:a4a647c9b677bbb4ee9a36333eb42cc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08cab92f0b59a39ae2adb6cfa51ca7e1" id="r_a08cab92f0b59a39ae2adb6cfa51ca7e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08cab92f0b59a39ae2adb6cfa51ca7e1">apply_lights</a> (const RenderContext &amp;, const <a class="el" href="structklotter_1_1Lights.html">Lights</a> &amp;lights, const <a class="el" href="structklotter_1_1RenderSettings.html">RenderSettings</a> &amp;settings, <a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, <a class="el" href="structklotter_1_1Assets.html">Assets</a> *assets) override</td></tr>
+<tr class="memitem:a08cab92f0b59a39ae2adb6cfa51ca7e1" id="r_a08cab92f0b59a39ae2adb6cfa51ca7e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08cab92f0b59a39ae2adb6cfa51ca7e1">apply_lights</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;, const <a class="el" href="structklotter_1_1Lights.html">Lights</a> &amp;lights, const <a class="el" href="structklotter_1_1RenderSettings.html">RenderSettings</a> &amp;settings, <a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, <a class="el" href="structklotter_1_1Assets.html">Assets</a> *assets) override</td></tr>
 <tr class="separator:a08cab92f0b59a39ae2adb6cfa51ca7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13281148f24bc55c04ba816c9aab8d1e" id="r_a13281148f24bc55c04ba816c9aab8d1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13281148f24bc55c04ba816c9aab8d1e">is_transparent</a> () const override</td></tr>
 <tr class="separator:a13281148f24bc55c04ba816c9aab8d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,7 +161,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a46118b23cbb85f7493c943d7ba14a505" id="r_a46118b23cbb85f7493c943d7ba14a505"><td class="memItemLeft" align="right" valign="top">const LoadedShader_Unlit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46118b23cbb85f7493c943d7ba14a505">shader</a></td></tr>
+<tr class="memitem:a46118b23cbb85f7493c943d7ba14a505" id="r_a46118b23cbb85f7493c943d7ba14a505"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46118b23cbb85f7493c943d7ba14a505">shader</a></td></tr>
 <tr class="separator:a46118b23cbb85f7493c943d7ba14a505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86e02b2711077f61273ca868079c5cbf" id="r_a86e02b2711077f61273ca868079c5cbf"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86e02b2711077f61273ca868079c5cbf">color</a> = <a class="el" href="namespaceklotter_1_1colors.html#a31ced28375c71daf9b639bdcb0e282e8">colors::white</a></td></tr>
 <tr class="separator:a86e02b2711077f61273ca868079c5cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,7 +185,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">klotter::UnlitMaterial::UnlitMaterial </td>
           <td>(</td>
-          <td class="paramtype">const ShaderResource &amp;</td>          <td class="paramname"><span class="paramname"><em>resource</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1ShaderResource.html">ShaderResource</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>resource</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -211,7 +211,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void klotter::UnlitMaterial::apply_lights </td>
           <td>(</td>
-          <td class="paramtype">const RenderContext &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -257,7 +257,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void klotter::UnlitMaterial::bind_textures </td>
           <td>(</td>
-          <td class="paramtype">const RenderContext &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -320,7 +320,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void klotter::UnlitMaterial::set_uniforms </td>
           <td>(</td>
-          <td class="paramtype">const RenderContext &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -356,7 +356,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void klotter::UnlitMaterial::use_shader </td>
           <td>(</td>
-          <td class="paramtype">const RenderContext &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -407,7 +407,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const LoadedShader_Unlit* klotter::UnlitMaterial::shader</td>
+          <td class="memname">const <a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a>* klotter::UnlitMaterial::shader</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -429,7 +429,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/klotter/render/<a class="el" href="render_8h_source.html">render.h</a></li>
+<li>src/klotter/render/<a class="el" href="material_8h_source.html">material.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

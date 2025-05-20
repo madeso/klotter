@@ -20,12 +20,15 @@ var searchData=
   ['create_5fframe_5fbuffer_17',['create_frame_buffer',['../group__framebuffer.html#ga21869ad6ecb7d07cdad114951985c01c',1,'klotter']]],
   ['create_5fuv_5fsphere_18',['create_uv_sphere',['../group__geom-builder.html#ga4f80b55431712546da63589dfbd7a699',1,'klotter::geom']]],
   ['create_5fvectors_19',['create_vectors',['../group__render.html#gaa482e8fe45daf1b222cbb8afc10f1d8b',1,'klotter::create_vectors(const Camera &amp;camera)'],['../group__render.html#ga531baa4b9f91162f31830d9dd415d002',1,'klotter::create_vectors(float yaw, float pitch)']]],
-  ['create_5fview_5fmat_20',['create_view_mat',['../group__render.html#ga3408f89cc9f18beff9e655676bd9fc1f',1,'klotter']]],
-  ['create_5fxy_5fplane_21',['create_xy_plane',['../group__geom-builder.html#gacc3da38a6c5889a300a1d8769f5c1802',1,'klotter::geom']]],
-  ['create_5fxz_5fplane_22',['create_xz_plane',['../group__geom-builder.html#gadadd83bd1fcb86e428069505223ba10c',1,'klotter::geom']]],
-  ['csizet_5fto_5fglsizei_23',['Csizet_to_glsizei',['../namespaceklotter.html#a74b93fdf6b89120f7b81a7e8e1054efd',1,'klotter']]],
-  ['csizet_5fto_5fglsizeiptr_24',['Csizet_to_glsizeiptr',['../namespaceklotter.html#a39b3d4b9e03ecb5fdeee532561b67f78',1,'klotter']]],
-  ['csizet_5fto_5fint_25',['Csizet_to_int',['../cint_8h.html#a3435682dd39119e67b0dfa427b562fe8',1,'cint.h']]],
-  ['csizet_5fto_5fu32_26',['Csizet_to_u32',['../cint_8h.html#a01b3b8e0df41484e0ae28b3829ea3359',1,'cint.h']]],
-  ['cunsigned_5fint_5fto_5fint_27',['Cunsigned_int_to_int',['../cint_8h.html#a1e7fb62626bf824af41d93896c4a1f54',1,'cint.h']]]
+  ['create_5fvertex_5farray_20',['create_vertex_array',['../namespaceklotter.html#a6b9047ff3f4c1bc18394f9404fa00f6a',1,'klotter']]],
+  ['create_5fview_5fmat_21',['create_view_mat',['../group__render.html#ga3408f89cc9f18beff9e655676bd9fc1f',1,'klotter']]],
+  ['create_5fxy_5fplane_22',['create_xy_plane',['../group__geom-builder.html#gacc3da38a6c5889a300a1d8769f5c1802',1,'klotter::geom']]],
+  ['create_5fxz_5fplane_23',['create_xz_plane',['../group__geom-builder.html#gadadd83bd1fcb86e428069505223ba10c',1,'klotter::geom']]],
+  ['csizet_5fto_5fglsizei_24',['Csizet_to_glsizei',['../namespaceklotter.html#a74b93fdf6b89120f7b81a7e8e1054efd',1,'klotter']]],
+  ['csizet_5fto_5fglsizeiptr_25',['Csizet_to_glsizeiptr',['../namespaceklotter.html#a39b3d4b9e03ecb5fdeee532561b67f78',1,'klotter']]],
+  ['csizet_5fto_5fint_26',['Csizet_to_int',['../cint_8h.html#a3435682dd39119e67b0dfa427b562fe8',1,'cint.h']]],
+  ['csizet_5fto_5fu32_27',['Csizet_to_u32',['../cint_8h.html#a01b3b8e0df41484e0ae28b3829ea3359',1,'cint.h']]],
+  ['cull_5fface_28',['cull_face',['../structklotter_1_1StateChanger.html#a41280644fa164a17e213a1025c7168d2',1,'klotter::StateChanger']]],
+  ['cull_5fface_5fmode_29',['cull_face_mode',['../structklotter_1_1StateChanger.html#a15a745b044fb2f29909d93a22d48d176',1,'klotter::StateChanger']]],
+  ['cunsigned_5fint_5fto_5fint_30',['Cunsigned_int_to_int',['../cint_8h.html#a1e7fb62626bf824af41d93896c4a1f54',1,'cint.h']]]
 ];

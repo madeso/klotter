@@ -14,8 +14,9 @@ var searchData=
   ['get_5flight_5fgrid_11',['get_light_grid',['../structklotter_1_1Assets.html#ae7b09eec40c2d366af885019880a9537',1,'klotter::Assets']]],
   ['get_5flocal_5faxis_12',['get_local_axis',['../structklotter_1_1MeshInstance.html#a432f513dd7171e9439850f04bec18748',1,'klotter::MeshInstance']]],
   ['get_5fmatrix_13',['get_matrix',['../structklotter_1_1Assets.html#af788dcba6c4f2a6ab7e44c4be2dc8791',1,'klotter::Assets']]],
-  ['get_5fskybox_14',['get_skybox',['../structklotter_1_1Assets.html#a00c23637f1b2b401f37b9b3eb2213645',1,'klotter::Assets']]],
-  ['get_5funiform_15',['get_uniform',['../structklotter_1_1ShaderProgram.html#ace564eff29cd0309c6bf3843c5e71c4d',1,'klotter::ShaderProgram']]],
-  ['get_5fwhite_16',['get_white',['../structklotter_1_1Assets.html#aa72f0833340b8a6bcfee58ae038df747',1,'klotter::Assets']]],
-  ['gui_17',['gui',['../structklotter_1_1Effect.html#a36c3f6e7b50c297201964c3c20087dd6',1,'klotter::Effect::gui()'],['../structklotter_1_1EffectStack.html#a3bff8502909b4fd618bbe469208c660f',1,'klotter::EffectStack::gui()']]]
+  ['get_5fmesh_5frotation_5fmatrix_14',['get_mesh_rotation_matrix',['../namespaceklotter.html#a9bd81ae1288afd6864048084bd7c4c9d',1,'klotter']]],
+  ['get_5fskybox_15',['get_skybox',['../structklotter_1_1Assets.html#a00c23637f1b2b401f37b9b3eb2213645',1,'klotter::Assets']]],
+  ['get_5funiform_16',['get_uniform',['../structklotter_1_1ShaderProgram.html#ace564eff29cd0309c6bf3843c5e71c4d',1,'klotter::ShaderProgram::get_uniform()'],['../group__render.html#gac2e3012d518484348974e4dc36e3112c',1,'klotter::get_uniform()']]],
+  ['get_5fwhite_17',['get_white',['../structklotter_1_1Assets.html#aa72f0833340b8a6bcfee58ae038df747',1,'klotter::Assets']]],
+  ['gui_18',['gui',['../structklotter_1_1Effect.html#a36c3f6e7b50c297201964c3c20087dd6',1,'klotter::Effect::gui()'],['../structklotter_1_1EffectStack.html#a3bff8502909b4fd618bbe469208c660f',1,'klotter::EffectStack::gui()']]]
 ];

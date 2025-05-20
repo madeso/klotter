@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uniformtype_0',['UniformType',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40',1,'klotter']]]
+  ['stencilaction_0',['StencilAction',['../group__render.html#gac7b12ed0e553cee508d8ca86f8c8e84f',1,'klotter']]]
 ];

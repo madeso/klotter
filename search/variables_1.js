@@ -9,6 +9,7 @@ var searchData=
   ['blue_6',['blue',['../namespaceklotter_1_1colors.html#a8df157409e9a6105af965a4b4392a0c4',1,'klotter::colors::blue'],['../namespaceklotter_1_1imgui.html#af411963d263ef598e8c346f0609e059a',1,'klotter::imgui::blue']]],
   ['blue_5fsky_7',['blue_sky',['../namespaceklotter_1_1colors.html#af0a3826da1957c3dd11ca4f159b0e234',1,'klotter::colors']]],
   ['blur_8',['blur',['../structklotter_1_1BlurOptions.html#ae4bc15090a18f8500948c9fc3db2bd98',1,'klotter::BlurOptions']]],
-  ['buffer_9',['buffer',['../structklotter_1_1BoundUniformBuffer.html#aa5d78460694529bcc7bdc2f36242cd08',1,'klotter::BoundUniformBuffer']]],
-  ['builder_10',['builder',['../structklotter_1_1BuildArg.html#ae4684359223ba3b80efb252682c90fc7',1,'klotter::BuildArg']]]
+  ['blur_5fsamples_9',['BLUR_SAMPLES',['../namespaceklotter.html#a095e93aa73a0f90b24c3e84cc8fe2afe',1,'klotter']]],
+  ['buffer_10',['buffer',['../structklotter_1_1CameraUniformBuffer.html#a46b28bfe4ad5f8155051abfca7ad6652',1,'klotter::CameraUniformBuffer::buffer'],['../structklotter_1_1BoundUniformBuffer.html#aa5d78460694529bcc7bdc2f36242cd08',1,'klotter::BoundUniformBuffer::buffer']]],
+  ['builder_11',['builder',['../structklotter_1_1BuildArg.html#ae4684359223ba3b80efb252682c90fc7',1,'klotter::BuildArg']]]
 ];
