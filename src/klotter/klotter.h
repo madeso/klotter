@@ -6,6 +6,7 @@
 
 #include "klotter/render/render.h"
 #include "klotter/dependency_sdl.h"
+#include "klotter/render/camera.h"
 
 namespace klotter
 {

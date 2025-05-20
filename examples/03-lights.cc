@@ -6,6 +6,8 @@
 
 #include <cmath>
 
+#include "klotter/render/geom.h"
+
 using namespace klotter;
 
 namespace examples

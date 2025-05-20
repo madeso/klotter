@@ -151,5 +151,26 @@ void destroy_buffer(u32 vbo)
 	glDeleteBuffers(1, &vbo);
 }
 
+u32 create_vertex_array()
+{
+	u32 vao;
+	glGenVertexArrays(1, &vao);
+	return vao;
+}
+
+void destroy_vertex_array(u32 vao)
+{
+	glDeleteVertexArrays(1, &vao);
+}
+
+void set_gl_viewport(const glm::ivec2& sz)
+{
+	glViewport(0, 0, sz.x, sz.y);
+}
+
+glm::mat4 get_mesh_rotation_matrix(const glm::vec3& rotation)
+{
+	return glm::yawPitchRoll(rotation.x, rotation.y, rotation.z);
+}
 
 }  //  namespace klotter

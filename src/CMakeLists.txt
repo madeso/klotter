@@ -31,7 +31,24 @@ embed(src_assets
 )
 
 set(src_render
+
+    klotter/render/rendermode.cc klotter/render/rendermode.h
+    klotter/render/cullface.cc klotter/render/cullface.h
+    klotter/render/blend.cc klotter/render/blend.h
+    klotter/render/compare.cc klotter/render/compare.h
+    klotter/render/stencilaction.cc klotter/render/stencilaction.h
+    klotter/render/opengl_states.cc klotter/render/opengl_states.h
+    klotter/render/render_settings.cc klotter/render/render_settings.h
+    klotter/render/material.cc klotter/render/material.h
+    klotter/render/world.cc klotter/render/world.h
+    klotter/render/debug.cc klotter/render/debug.h
+    klotter/render/fse.cc klotter/render/fse.h
+    klotter/render/shader_resource.cc klotter/render/shader_resource.h
+    klotter/render/statechanger.cc klotter/render/statechanger.h
+    klotter/render/fullscreeninfo.cc klotter/render/fullscreeninfo.h
+
     klotter/render/render.cc klotter/render/render.h
+    klotter/render/render.pimpl.cc klotter/render/render.pimpl.h
     klotter/render/camera.cc klotter/render/camera.h
     klotter/render/opengl_utils.cc klotter/render/opengl_utils.h
 
@@ -64,6 +81,7 @@ set(src_base
     klotter/scurve.cc klotter/scurve.h
 
     klotter/klotter.cc klotter/klotter.h
+    klotter/cpp.cc klotter/cpp.h
 
     klotter/bitfield.h
 
