@@ -1,5 +1,7 @@
 #pragma once
 
+#include "klotter/preproc.h"
+
 namespace klotter
 {
 
@@ -17,4 +19,4 @@ constexpr int BLUR_SAMPLES = 10;
 
 }  //  namespace klotter
 
-#define BLUR_USE_GAUSS 1
+#define BLUR_USE_GAUSS IS_ENABLED
