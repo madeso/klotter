@@ -169,8 +169,7 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordtype">int</span> main(<span class="keywordtype">int</span>, <span class="keywordtype">char</span>**) \</div>
 <div class="line">    { \</div>
 <div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceklotter.html#ae8ba8f25677bd8a5d98681f05fd0a162">klotter::run_main</a>( \</div>
-<div class="line">            APP::get_render_settings(), \</div>
-<div class="line">            [](Renderer* r) -&gt; std::unique_ptr&lt;App&gt; { <span class="keywordflow">return</span> std::make_unique&lt;APP&gt;(r); } \</div>
+<div class="line">            APP::get_render_settings(), [](Renderer* r) -&gt; std::unique_ptr&lt;App&gt; { <span class="keywordflow">return</span> std::make_unique&lt;APP&gt;(r); } \</div>
 <div class="line">        ); \</div>
 <div class="line">    }</div>
 <div class="ttc" id="anamespaceklotter_html_ae8ba8f25677bd8a5d98681f05fd0a162"><div class="ttname"><a href="namespaceklotter.html#ae8ba8f25677bd8a5d98681f05fd0a162">klotter::run_main</a></div><div class="ttdeci">int run_main(const RenderSettings &amp;rs, MakeAppFunction make_app)</div></div>
