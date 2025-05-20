@@ -9,6 +9,7 @@
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/render.pimpl.h"
 #include "klotter/render/statechanger.h"
+#include "klotter/render/constants.h"
 
 namespace klotter
 {
@@ -329,9 +330,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 					.stencil_func(Compare::not_equal, 1, 0xFF)
 					.stencil_mask(0x00)
 					.depth_test(false);
-				const auto small_scale = 1.1;
-				const auto small_scale_mat
-					= glm::scale(glm::mat4(1.0f), {small_scale, small_scale, small_scale});
+				const auto small_scale_mat = glm::scale(glm::mat4(1.0f), {OUTLINE_SCALE, OUTLINE_SCALE, OUTLINE_SCALE});
 
 				auto& shader = pimpl->shaders.single_color_shader;
 				shader.program->use();
