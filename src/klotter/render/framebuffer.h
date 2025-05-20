@@ -35,7 +35,8 @@ struct FboSetup
 	constexpr FboSetup(int w, int h)
 		: width(w)
 		, height(h)
-	{}
+	{
+	}
 
 	int width;
 	int height;

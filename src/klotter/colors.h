@@ -8,11 +8,7 @@ constexpr auto black = glm::vec3{0.0f, 0.0f, 0.0f};
 
 constexpr glm::vec3 rgb(int r, int g, int b)
 {
-	return {
-		static_cast<float>(r) / 255.0f,
-		static_cast<float>(g) / 255.0f,
-		static_cast<float>(b) / 255.0f
-	};
+	return {static_cast<float>(r) / 255.0f, static_cast<float>(g) / 255.0f, static_cast<float>(b) / 255.0f};
 }
 
 // https://www.nature.com/articles/nmeth.1618

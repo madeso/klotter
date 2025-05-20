@@ -62,7 +62,6 @@ CompiledGeomVertexAttributes Renderer::default_geom_layout() const
 	return pimpl->shaders.default_shader.geom_layout;
 }
 
-
 bool Renderer::is_loaded() const
 {
 	return pimpl->shaders.is_loaded() && pimpl->debug.is_loaded();
@@ -96,8 +95,7 @@ glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCam
 	{
 	case Billboarding::screen:
 		{
-			const auto rotation
-				= calc_fixed_right(glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0});
+			const auto rotation = calc_fixed_right(glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0});
 			return translation * rotation;
 		}
 	case Billboarding::screen_fast:
@@ -108,8 +106,7 @@ glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCam
 		}
 	case Billboarding::axial_y:
 		{
-			const auto rotation
-				= calc_fixed_up(glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0});
+			const auto rotation = calc_fixed_up(glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0});
 			return translation * rotation;
 		}
 	case Billboarding::axial_y_fast:
@@ -126,9 +123,7 @@ glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCam
 	}
 };
 
-void render_debug_lines(
-	Renderer* r, const CompiledCamera& compiled_camera, const glm::ivec2& window_size
-)
+void render_debug_lines(Renderer* r, const CompiledCamera& compiled_camera, const glm::ivec2& window_size)
 {
 	int line_state = -1;
 	constexpr int line_state_solid = 1;
@@ -136,9 +131,7 @@ void render_debug_lines(
 
 	// todo(Gustav): draw solid lines here
 	r->pimpl->debug.line_shader.use();
-	r->pimpl->debug.line_shader.set_mat(
-		r->pimpl->debug.line_projection, compiled_camera.projection
-	);
+	r->pimpl->debug.line_shader.set_mat(r->pimpl->debug.line_projection, compiled_camera.projection);
 	r->pimpl->debug.line_shader.set_mat(r->pimpl->debug.line_view, compiled_camera.view);
 	for (const auto& line: r->debug.debug_lines)
 	{
@@ -185,9 +178,7 @@ void render_debug_lines(
 void Renderer::render_world(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
 	const auto has_outlined_meshes = std::any_of(
-		world.meshes.begin(),
-		world.meshes.end(),
-		[](const auto& mesh) { return mesh->outline.has_value(); }
+		world.meshes.begin(), world.meshes.end(), [](const auto& mesh) { return mesh->outline.has_value(); }
 	);
 	StateChanger{&pimpl->states}
 		.cull_face(true)
@@ -215,9 +206,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 		if (m->material->is_transparent())
 		{
-			transparent_meshes.emplace_back(
-				TransparentMesh{m, glm::length2(camera.position - m->position)}
-			);
+			transparent_meshes.emplace_back(TransparentMesh{m, glm::length2(camera.position - m->position)});
 			continue;
 		}
 		StateChanger{&pimpl->states}
@@ -233,9 +222,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 		}
 		m->material->use_shader(not_transparent);
-		m->material->set_uniforms(
-			not_transparent, compiled_camera, calc_mesh_transform(m, compiled_camera)
-		);
+		m->material->set_uniforms(not_transparent, compiled_camera, calc_mesh_transform(m, compiled_camera));
 		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
 		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
 
@@ -256,7 +243,9 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		m->material->use_shader(not_transparent);
 		m->material->set_uniforms(
 			// todo(Gustav): should we really set the model matrix for instanced meshes?
-			not_transparent, compiled_camera, std::nullopt
+			not_transparent,
+			compiled_camera,
+			std::nullopt
 		);
 		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
 		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
@@ -288,8 +277,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	std::sort(
 		transparent_meshes.begin(),
 		transparent_meshes.end(),
-		[](const auto& lhs, const auto& rhs)
-		{ return lhs.squared_distance_to_camera > rhs.squared_distance_to_camera; }
+		[](const auto& lhs, const auto& rhs) { return lhs.squared_distance_to_camera > rhs.squared_distance_to_camera; }
 	);
 
 	for (auto& tm: transparent_meshes)
@@ -310,9 +298,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 		}
 		m->material->use_shader(transparent);
-		m->material->set_uniforms(
-			transparent, compiled_camera, calc_mesh_transform(m, compiled_camera)
-		);
+		m->material->set_uniforms(transparent, compiled_camera, calc_mesh_transform(m, compiled_camera));
 		m->material->bind_textures(transparent, &pimpl->states, &assets);
 		m->material->apply_lights(transparent, world.lights, settings, &pimpl->states, &assets);
 
@@ -336,9 +322,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				shader.program->use();
 				shader.program->set_vec4(shader.tint_color, {*m->outline, 1});
 
-				shader.program->set_mat(
-					shader.model, calc_mesh_transform(m, compiled_camera) * small_scale_mat
-				);
+				shader.program->set_mat(shader.model, calc_mesh_transform(m, compiled_camera) * small_scale_mat);
 
 				render_geom(*m->geom);
 			}

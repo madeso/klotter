@@ -58,9 +58,7 @@ void upload_shader_source(unsigned int shader, std::string_view source)
 	glShaderSource(shader, 1, &s, &length);
 }
 
-void bind_shader_attribute_location(
-	unsigned int shader_program, const CompiledShaderVertexAttributes& layout
-)
+void bind_shader_attribute_location(unsigned int shader_program, const CompiledShaderVertexAttributes& layout)
 {
 	for (const auto& b: layout.elements)
 	{
@@ -68,9 +66,7 @@ void bind_shader_attribute_location(
 	}
 }
 
-void verify_shader_attribute_location(
-	unsigned int shader_program, const CompiledShaderVertexAttributes& layout
-)
+void verify_shader_attribute_location(unsigned int shader_program, const CompiledShaderVertexAttributes& layout)
 {
 	for (const auto& b: layout.elements)
 	{
@@ -78,12 +74,7 @@ void verify_shader_attribute_location(
 
 		if (actual_index != b.index)
 		{
-			LOG_ERROR(
-				"ERROR: %s was bound to %d but requested at %d",
-				b.name.c_str(),
-				actual_index,
-				b.index
-			);
+			LOG_ERROR("ERROR: %s was bound to %d but requested at %d", b.name.c_str(), actual_index, b.index);
 		}
 	}
 }
@@ -152,9 +143,7 @@ void load_shader_source(
 }
 
 ShaderProgram::ShaderProgram(
-	const std::string& vertex_source,
-	const std::string& fragment_source,
-	const CompiledShaderVertexAttributes& layout
+	const std::string& vertex_source, const std::string& fragment_source, const CompiledShaderVertexAttributes& layout
 )
 	: shader_program(glCreateProgram())
 	, debug_vertex_types(layout.debug_types)
@@ -205,8 +194,7 @@ void ShaderProgram::clear()
 
 Uniform ShaderProgram::get_uniform(const std::string& name) const
 {
-	const auto uni
-		= Uniform{name, glGetUniformLocation(shader_program, name.c_str()), shader_program};
+	const auto uni = Uniform{name, glGetUniformLocation(shader_program, name.c_str()), shader_program};
 	if (uni.is_valid() == false)
 	{
 		LOG_ERROR("Uniform %s not found", name.c_str());

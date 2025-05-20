@@ -144,9 +144,7 @@ StateChanger& StateChanger::render_mode(RenderMode new_state)
 	return *this;
 }
 
-StateChanger& StateChanger::stencil_op(
-	StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass
-)
+StateChanger& StateChanger::stencil_op(StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass)
 {
 	const auto Csa = [](StencilAction sa) -> GLenum
 	{
@@ -256,7 +254,6 @@ StateChanger& StateChanger::bind_texture_cubemap(int slot, unsigned int texture)
 	}
 	return *this;
 }
-
 
 void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const Texture2d& texture)
 {

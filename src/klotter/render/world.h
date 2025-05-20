@@ -6,7 +6,6 @@
 #include "klotter/render/material.h"
 #include "klotter/render/vertex_layout.h"
 
-
 namespace klotter
 {
 struct Geom;
@@ -55,9 +54,10 @@ struct CompiledGeom_TransformInstance
 	void operator=(CompiledGeom_TransformInstance&&) = delete;
 };
 
-
 std::shared_ptr<CompiledGeom> compile_geom(const Geom&, const CompiledGeomVertexAttributes& layout);
-std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_instance(const Geom&, const CompiledGeomVertexAttributes& layout, std::size_t max_instances);
+std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_instance(
+	const Geom&, const CompiledGeomVertexAttributes& layout, std::size_t max_instances
+);
 
 struct LocalAxis
 {
@@ -90,9 +90,7 @@ struct MeshInstance
 	LocalAxis get_local_axis() const;
 };
 
-std::shared_ptr<MeshInstance> make_mesh_instance(
-	std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat
-);
+std::shared_ptr<MeshInstance> make_mesh_instance(std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat);
 
 /// Stores Geom + Material (aka a mesh) and its current transform but instanced for faster rendering.
 struct MeshInstance_TransformInstanced
@@ -180,7 +178,6 @@ struct World
 
 	Skybox skybox;
 };
-
 
 /**
  * @}

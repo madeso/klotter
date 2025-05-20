@@ -90,11 +90,8 @@ ExtractedGeom extract_geom(const Geom& geom, const CompiledGeomVertexAttributes&
 			{
 #define MAP(VT, PROP, COUNT) \
 	case VT: \
-		data.attributes.emplace_back( \
-			ExtractedAttribute{ExtractedAttributeType::Float, COUNT, sizeof(float) * COUNT} \
-		); \
-		data.per_vertex.emplace_back([](ByteBuffer* vertices, const Vertex& vertex) \
-									 { push##COUNT(vertices, PROP); }); \
+		data.attributes.emplace_back(ExtractedAttribute{ExtractedAttributeType::Float, COUNT, sizeof(float) * COUNT}); \
+		data.per_vertex.emplace_back([](ByteBuffer* vertices, const Vertex& vertex) { push##COUNT(vertices, PROP); }); \
 		break
 				MAP(VertexType::position2xy, (glm::vec2{vertex.position.x, vertex.position.y}), 2);
 				MAP(VertexType::position2xz, (glm::vec2{vertex.position.x, vertex.position.z}), 2);
@@ -105,7 +102,8 @@ ExtractedGeom extract_geom(const Geom& geom, const CompiledGeomVertexAttributes&
 				MAP(VertexType::texture2, vertex.uv, 2);
 #undef MAP
 			case VertexType::instance_transform:
-				DIE("can't use instance types for extraction"); break; // todo(Gustav): should something else be done here?
+				DIE("can't use instance types for extraction");
+				break;	// todo(Gustav): should something else be done here?
 			default: DIE("Invalid buffer type"); break;
 			}
 		}

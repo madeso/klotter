@@ -39,9 +39,7 @@ struct RenderTask : RenderSource
 	std::shared_ptr<FrameBuffer> fbo;
 	ShaderPropertyProvider* effect;
 
-	RenderTask(
-		std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e
-	);
+	RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e);
 
 	/// render internal fbo to a quad with a shader
 	void render(const PostProcArg& arg) override;
@@ -67,10 +65,7 @@ struct CompiledStack
 struct FrameBufferCache
 {
 	std::shared_ptr<FrameBuffer> get(
-		glm::ivec2 size,
-		TextureEdge edge,
-		TextureRenderStyle render_style,
-		Transparency transperency
+		glm::ivec2 size, TextureEdge edge, TextureRenderStyle render_style, Transparency transperency
 	) const;
 };
 

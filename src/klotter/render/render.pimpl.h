@@ -24,7 +24,6 @@ struct RendererPimpl
 	RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi);
 };
 
-
 /**
  * @}
 */

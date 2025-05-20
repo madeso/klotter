@@ -30,12 +30,10 @@ enum class VertexType
 
 constexpr bool is_instance_based(VertexType v)
 {
-	switch(v)
+	switch (v)
 	{
-	case VertexType::instance_transform:
-		return true;
-	default:
-		return false;
+	case VertexType::instance_transform: return true;
+	default: return false;
 	}
 }
 
@@ -103,13 +101,10 @@ CompiledShaderVertexAttributes compile_shader_layout(
 CompiledGeomVertexAttributes get_geom_layout(const CompiledVertexTypeList& l);
 
 CompiledVertexTypeList compile_attribute_layouts(
-	const std::vector<VertexType>& base_layout,
-	const std::vector<ShaderVertexAttributes>& descriptions
+	const std::vector<VertexType>& base_layout, const std::vector<ShaderVertexAttributes>& descriptions
 );
 
-CompiledVertexTypeList compile_attribute_layouts(
-	const std::vector<ShaderVertexAttributes>& descriptions
-);
+CompiledVertexTypeList compile_attribute_layouts(const std::vector<ShaderVertexAttributes>& descriptions);
 
 /** @}
 */

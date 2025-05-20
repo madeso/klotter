@@ -30,7 +30,6 @@ CameraUniformBuffer make_camera_uniform_buffer_desc()
 	return camera_uniform_buffer;
 }
 
-
 RendererPimpl::RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi)
 	: camera_uniform_buffer(make_camera_uniform_buffer_desc())
 	, shaders(load_shaders(camera_uniform_buffer, set, fsi))

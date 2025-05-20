@@ -53,9 +53,7 @@ struct Texture2d : BaseTexture
 	Texture2d() = default;	///< creates a invalid texture
 
 	/// "internal"
-	Texture2d(
-		void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t
-	);
+	Texture2d(void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
 };
 
 Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);

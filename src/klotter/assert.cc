@@ -13,9 +13,7 @@ bool& is_exception_enabled()
 }
 }  //  namespace
 
-void on_assert_failure(
-	std::string_view function, std::string_view reason, std::string_view file, int line
-)
+void on_assert_failure(std::string_view function, std::string_view reason, std::string_view file, int line)
 {
 	const std::string text = Str{} << file << "(" << line << "): "
 								   << "Assertion failed in " << function << ": " << reason;

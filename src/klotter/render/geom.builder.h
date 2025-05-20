@@ -62,9 +62,7 @@ struct Builder
 	// todo(Gustav): hrm... perhaps change so we support n-gon instead of just tris and just
 	// triangulate when converting to a geom? the intent would be clearer in the obj dump...
 	Builder& add_triangle(const Triangle& t);
-	Builder& add_quad(
-		bool reverse, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3
-	);
+	Builder& add_quad(bool reverse, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3);
 	Builder& add_face(const std::vector<Vertex>&);
 
 	Builder& replace_with_smooth_normals();
@@ -86,19 +84,13 @@ struct Builder
 Builder create_box(float w, float h, float d, bool invert, const glm::vec3& color = colors::white);
 Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
 
-Builder create_xy_plane(
-	float x, float y, TwoSided two_sided, const glm::vec3& color = colors::white
-);
+Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& color = colors::white);
 
 ///
 /// @param longitude_count number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
 /// @param lattitude_count number of lines that go horizontal, parallels to the equator, which is one of those lines
 Builder create_uv_sphere(
-	float diameter,
-	int longitude_count,
-	int lattitude_count,
-	bool invert,
-	const glm::vec3& color = colors::white
+	float diameter, int longitude_count, int lattitude_count, bool invert, const glm::vec3& color = colors::white
 );
 
 /**

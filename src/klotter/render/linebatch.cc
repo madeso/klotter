@@ -11,9 +11,7 @@ DebugDrawer::DebugDrawer()
 	// todo(Gustav): exapnd shader with stipple pattern https://stackoverflow.com/questions/52928678/dashed-line-in-opengl3/54543267#54543267
 	// todo(Gustav): move quad_description and quad_layout to a seperate setup
 	: line_description({{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}})
-	, line_layout(
-		  compile_shader_layout(compile_attribute_layouts({line_description}), line_description, std::nullopt)
-	  )
+	, line_layout(compile_shader_layout(compile_attribute_layouts({line_description}), line_description, std::nullopt))
 	, line_shader(
 		  R"glsl(
 			#version 430 core
@@ -148,9 +146,7 @@ LineBatch::LineBatch(ShaderProgram* shader)
 
 	ib = create_buffer();
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ib);
-	glBufferData(
-		GL_ELEMENT_ARRAY_BUFFER, max_indices * sizeof(u32), indices.data(), GL_STATIC_DRAW
-	);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, max_indices * sizeof(u32), indices.data(), GL_STATIC_DRAW);
 }
 
 LineBatch::~LineBatch()
@@ -202,10 +198,7 @@ void LineBatch::submit()
 
 	glBindBuffer(GL_ARRAY_BUFFER, vb);
 	glBufferSubData(
-		GL_ARRAY_BUFFER,
-		0,
-		static_cast<GLsizeiptr>(sizeof(float) * data.size()),
-		static_cast<const void*>(data.data())
+		GL_ARRAY_BUFFER, 0, static_cast<GLsizeiptr>(sizeof(float) * data.size()), static_cast<const void*>(data.data())
 	);
 	glDrawElements(GL_LINES, 2 * lines, GL_UNSIGNED_INT, nullptr);
 

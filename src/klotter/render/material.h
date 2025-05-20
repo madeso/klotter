@@ -39,11 +39,7 @@ struct Material
 	virtual void set_uniforms(const RenderContext&, const CompiledCamera&, const std::optional<glm::mat4>&) = 0;
 	virtual void bind_textures(const RenderContext&, OpenglStates* states, Assets* assets) = 0;
 	virtual void apply_lights(
-		const RenderContext&,
-		const Lights& lights,
-		const RenderSettings& settings,
-		OpenglStates* states,
-		Assets* assets
+		const RenderContext&, const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) = 0;
 
 	virtual bool is_transparent() const = 0;
@@ -62,11 +58,7 @@ struct UnlitMaterial : Material
 	void set_uniforms(const RenderContext&, const CompiledCamera&, const std::optional<glm::mat4>&) override;
 	void bind_textures(const RenderContext&, OpenglStates* states, Assets* assets) override;
 	void apply_lights(
-		const RenderContext&,
-		const Lights& lights,
-		const RenderSettings& settings,
-		OpenglStates* states,
-		Assets* assets
+		const RenderContext&, const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) override;
 
 	bool is_transparent() const override;
@@ -93,11 +85,7 @@ struct DefaultMaterial : Material
 	void set_uniforms(const RenderContext&, const CompiledCamera&, const std::optional<glm::mat4>&) override;
 	void bind_textures(const RenderContext&, OpenglStates* states, Assets* assets) override;
 	void apply_lights(
-		const RenderContext&,
-		const Lights& lights,
-		const RenderSettings& settings,
-		OpenglStates* states,
-		Assets* assets
+		const RenderContext&, const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) override;
 
 	bool is_transparent() const override;

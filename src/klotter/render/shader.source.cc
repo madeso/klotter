@@ -57,9 +57,7 @@ std::string generate_blur(std::string_view src, const BlurOptions& options)
 	return input.render(data);
 }
 
-std::string generate(
-	std::string_view str, const ShaderOptions& options, const std::string& uniform_buffer_source
-)
+std::string generate(std::string_view str, const ShaderOptions& options, const std::string& uniform_buffer_source)
 {
 	auto input = load_mustache(str);
 	auto data = kainjow::mustache::data{};
@@ -87,13 +85,9 @@ std::string generate(std::string_view str, const std::string& uniform_buffer_sou
 	return input.render(data);
 }
 
-VertexShaderSource load_shader_source(
-	const ShaderOptions& options, const std::string& uniform_buffer_source
-)
+VertexShaderSource load_shader_source(const ShaderOptions& options, const std::string& uniform_buffer_source)
 {
-	auto layout = ShaderVertexAttributes{
-		{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}
-	};
+	auto layout = ShaderVertexAttributes{{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}};
 
 	if (options.use_texture)
 	{
@@ -115,8 +109,7 @@ VertexShaderSource load_shader_source(
 ShaderSource load_skybox_source(const std::string& uniform_buffer_source)
 {
 	return ShaderSource{
-		generate(SKYBOX_VERT_GLSL, uniform_buffer_source),
-		generate(SKYBOX_FRAG_GLSL, uniform_buffer_source)
+		generate(SKYBOX_VERT_GLSL, uniform_buffer_source), generate(SKYBOX_FRAG_GLSL, uniform_buffer_source)
 	};
 }
 

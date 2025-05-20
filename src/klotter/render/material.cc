@@ -26,12 +26,16 @@ void UnlitMaterial::use_shader(const RenderContext& rc)
 	shader->base(rc).program->use();
 }
 
-void set_optional_mat(ShaderProgram* program, const std::optional<Uniform>& uniform, const std::optional<glm::mat4>& transform)
+void set_optional_mat(
+	ShaderProgram* program, const std::optional<Uniform>& uniform, const std::optional<glm::mat4>& transform
+)
 {
-	if(transform) {
+	if (transform)
+	{
 		program->set_mat(*uniform, *transform);
 	}
-	else {
+	else
+	{
 		assert(uniform.has_value() == false);
 	}
 }
@@ -56,8 +60,7 @@ void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states,
 	bind_texture_2d(states, shader->base(rc).tex_diffuse, *t);
 }
 
-void UnlitMaterial::
-	apply_lights(const RenderContext&, const Lights&, const RenderSettings&, OpenglStates*, Assets*)
+void UnlitMaterial::apply_lights(const RenderContext&, const Lights&, const RenderSettings&, OpenglStates*, Assets*)
 {
 	// no lights for unlit material
 }
@@ -127,11 +130,7 @@ void DefaultMaterial::bind_textures(const RenderContext& rc, OpenglStates* state
 }
 
 void DefaultMaterial::apply_lights(
-	const RenderContext& rc,
-	const Lights& lights,
-	const RenderSettings& settings,
-	OpenglStates* states,
-	Assets* assets
+	const RenderContext& rc, const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 )
 {
 	const auto& base = shader->base(rc);
@@ -173,30 +172,24 @@ void DefaultMaterial::apply_lights(
 
 	for (int i = 0; i < settings.number_of_point_lights; i += 1)
 	{
-		const auto& p = Cint_to_sizet(i) < lights.point_lights.size()
-						  ? lights.point_lights[Cint_to_sizet(i)]
-						  : no_point_light;
+		const auto& p
+			= Cint_to_sizet(i) < lights.point_lights.size() ? lights.point_lights[Cint_to_sizet(i)] : no_point_light;
 		const auto& u = base.point_lights[Cint_to_sizet(i)];
 		base.program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
 		base.program->set_vec3(u.light_specular_color, p.color * p.specular);
 		base.program->set_vec3(u.light_world, p.position);
-		base.program->set_vec4(
-			u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
-		);
+		base.program->set_vec4(u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t});
 	}
 
 	for (int i = 0; i < settings.number_of_frustum_lights; i += 1)
 	{
-		const auto& p = Cint_to_sizet(i) < lights.frustum_lights.size()
-						  ? lights.frustum_lights[Cint_to_sizet(i)]
-						  : no_frustum_light;
+		const auto& p = Cint_to_sizet(i) < lights.frustum_lights.size() ? lights.frustum_lights[Cint_to_sizet(i)]
+																		: no_frustum_light;
 		const auto& u = base.frustum_lights[Cint_to_sizet(i)];
 		base.program->set_vec3(u.diffuse, p.color * p.diffuse);
 		base.program->set_vec3(u.specular, p.color * p.specular);
 		base.program->set_vec3(u.world_pos, p.position);
-		base.program->set_vec4(
-			u.attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t}
-		);
+		base.program->set_vec4(u.attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t});
 
 		const auto view = create_view_mat(p.position, create_vectors(p.yaw, p.pitch));
 		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);

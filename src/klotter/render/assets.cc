@@ -43,9 +43,9 @@ std::shared_ptr<Texture2d> get_or_create(std::shared_ptr<Texture2d>* texture, u3
 {
 	if (*texture == nullptr)
 	{
-		*texture = std::make_shared<Texture2d>(load_image_from_color(
-			pixel_color, TextureEdge::repeat, TextureRenderStyle::pixel, Transparency::exclude
-		));
+		*texture = std::make_shared<Texture2d>(
+			load_image_from_color(pixel_color, TextureEdge::repeat, TextureRenderStyle::pixel, Transparency::exclude)
+		);
 	}
 
 	return *texture;
@@ -112,12 +112,7 @@ std::shared_ptr<TextureCubemap> Assets::get_skybox()
 	if (skybox == nullptr)
 	{
 		skybox = std::make_shared<TextureCubemap>(load_cubemap_from_embedded(
-			SKYBOX_RIGHT_JPG,
-			SKYBOX_LEFT_JPG,
-			SKYBOX_TOP_JPG,
-			SKYBOX_BOTTOM_JPG,
-			SKYBOX_BACK_JPG,
-			SKYBOX_FRONT_JPG
+			SKYBOX_RIGHT_JPG, SKYBOX_LEFT_JPG, SKYBOX_TOP_JPG, SKYBOX_BOTTOM_JPG, SKYBOX_BACK_JPG, SKYBOX_FRONT_JPG
 		));
 	}
 

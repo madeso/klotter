@@ -3,7 +3,6 @@
 #include "klotter/render/geom.builder.h"
 #include "klotter/render/geom.h"
 
-
 namespace klotter
 {
 

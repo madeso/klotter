@@ -31,7 +31,6 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app);
 	int main(int, char**) \
 	{ \
 		return klotter::run_main( \
-			APP::get_render_settings(), \
-			[](Renderer* r) -> std::unique_ptr<App> { return std::make_unique<APP>(r); } \
+			APP::get_render_settings(), [](Renderer* r) -> std::unique_ptr<App> { return std::make_unique<APP>(r); } \
 		); \
 	}

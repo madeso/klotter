@@ -72,16 +72,12 @@ std::string to_source(const std::string& name, const UniformBufferDescription& d
 	return ss.str();
 }
 
-void UniformBufferCompiler::add(
-	CompiledUniformProp* target, UniformType type, const std::string& name, int array_count
-)
+void UniformBufferCompiler::add(CompiledUniformProp* target, UniformType type, const std::string& name, int array_count)
 {
 	props.emplace_back(UniformProp{target, type, name, array_count});
 }
 
-void UniformBufferCompiler::compile(
-	const std::string& name, UniformBufferSetup* target, int binding_point
-)
+void UniformBufferCompiler::compile(const std::string& name, UniformBufferSetup* target, int binding_point)
 {
 	target->size = 0;
 	target->binding_point = binding_point;

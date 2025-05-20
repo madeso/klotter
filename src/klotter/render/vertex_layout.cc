@@ -42,7 +42,7 @@ CompiledShaderVertexAttributes compile_shader_layout(
 		}
 	}
 
-	if(instance_prop.has_value())
+	if (instance_prop.has_value())
 	{
 		list.push_back({instance_prop->type, instance_prop->name, l.next_index});
 	}
@@ -105,8 +105,7 @@ CompiledVertexTypeList compile_vertex_type_list(const VertexTypeList& list)
 }
 
 CompiledVertexTypeList compile_attribute_layouts(
-	const std::vector<VertexType>& base_layout,
-	const std::vector<ShaderVertexAttributes>& descriptions
+	const std::vector<VertexType>& base_layout, const std::vector<ShaderVertexAttributes>& descriptions
 )
 {
 	auto list = VertexTypeList{base_layout};
@@ -119,9 +118,7 @@ CompiledVertexTypeList compile_attribute_layouts(
 	return compile_vertex_type_list(list);
 }
 
-CompiledVertexTypeList compile_attribute_layouts(
-	const std::vector<ShaderVertexAttributes>& descriptions
-)
+CompiledVertexTypeList compile_attribute_layouts(const std::vector<ShaderVertexAttributes>& descriptions)
 {
 	return compile_attribute_layouts({}, descriptions);
 }

@@ -115,9 +115,7 @@ void BaseTexture::unload()
 // ------------------------------------------------------------------------------------------------
 // texture 2d
 
-Texture2d::Texture2d(
-	void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t
-)
+Texture2d::Texture2d(void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t)
 	: BaseTexture(w, h)
 {
 	// todo(Gustav): use states
@@ -268,9 +266,9 @@ TextureCubemap load_cubemap_from_embedded(
 	const auto parsed_front = PixelData{image_front, include_transparency, flip};
 
 	// is loaded ok
-	if (parsed_right.pixel_data == nullptr || parsed_left.pixel_data == nullptr
-		|| parsed_top.pixel_data == nullptr || parsed_bottom.pixel_data == nullptr
-		|| parsed_back.pixel_data == nullptr || parsed_front.pixel_data == nullptr)
+	if (parsed_right.pixel_data == nullptr || parsed_left.pixel_data == nullptr || parsed_top.pixel_data == nullptr
+		|| parsed_bottom.pixel_data == nullptr || parsed_back.pixel_data == nullptr
+		|| parsed_front.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
 		return {};

@@ -10,7 +10,7 @@
 #define HAS(x) (1 x 1)
 
 // #define FEATURE_A IS_ENABLED
-// 
+//
 // #if HAS(FEATURE_A)
 //    ...
 // #else

@@ -31,9 +31,7 @@ struct DebugRender
 {
 	std::vector<DebugLine> debug_lines;
 
-	void add_line(
-		const glm::vec3& from, const glm::vec3& to, const glm::vec3& color, LineStyle style
-	);
+	void add_line(const glm::vec3& from, const glm::vec3& to, const glm::vec3& color, LineStyle style);
 };
 
 /**

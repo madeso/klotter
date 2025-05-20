@@ -21,4 +21,4 @@ constexpr bool is_flag_set(E var, E flag)
 }
 
 
-}
+}  //  namespace klotter

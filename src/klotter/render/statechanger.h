@@ -47,9 +47,7 @@ struct StateChanger
     * @param depth_fail action to take if the stencil test passes, but the depth test fails.
     * @param pass action to take if both the stencil and the depth test pass.
 	*/
-	StateChanger& stencil_op(
-		StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass
-	);
+	StateChanger& stencil_op(StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass);
 	StateChanger& cull_face_mode(CullFace new_state);
 	StateChanger& blend_mode(Blend src, Blend dst);
 	StateChanger& activate_texture(int new_texture);

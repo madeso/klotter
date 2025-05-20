@@ -56,26 +56,23 @@ catchy::FalseString is_equal(
 			}
 			else
 			{
-				return catchy::FalseString::False(fmt::format(
-					"{}!={} {}!={} ({}!={})", a.type, b.type, a.name, b.name, a.index, b.index
-				));
+				return catchy::FalseString::False(
+					fmt::format("{}!={} {}!={} ({}!={})", a.type, b.type, a.name, b.name, a.index, b.index)
+				);
 			}
 		}
 	);
 }
 
 catchy::FalseString is_equal(
-	const std::vector<CompiledVertexElementNoName> lhs,
-	const std::vector<CompiledVertexElementNoName>& rhs
+	const std::vector<CompiledVertexElementNoName> lhs, const std::vector<CompiledVertexElementNoName>& rhs
 )
 {
 	return catchy::VectorEquals(
 		lhs,
 		rhs,
-		[](const CompiledVertexElementNoName& f) -> std::string
-		{ return fmt::format("{} ({})", f.type, f.index); },
-		[](const CompiledVertexElementNoName& a,
-		   const CompiledVertexElementNoName& b) -> catchy::FalseString
+		[](const CompiledVertexElementNoName& f) -> std::string { return fmt::format("{} ({})", f.type, f.index); },
+		[](const CompiledVertexElementNoName& a, const CompiledVertexElementNoName& b) -> catchy::FalseString
 		{
 			if (is_equal(a, b))
 			{
@@ -83,9 +80,7 @@ catchy::FalseString is_equal(
 			}
 			else
 			{
-				return catchy::FalseString::False(
-					fmt::format("{}!={} ({}!={})", a.type, b.type, a.index, b.index)
-				);
+				return catchy::FalseString::False(fmt::format("{}!={} ({}!={})", a.type, b.type, a.index, b.index));
 			}
 		}
 	);
@@ -111,9 +106,7 @@ catchy::FalseString is_equal(const std::vector<VertexType> lhs, const std::vecto
 	);
 }
 
-catchy::FalseString is_equal(
-	const CompiledShaderVertexAttributes& lhs, const CompiledShaderVertexAttributes& rhs
-)
+catchy::FalseString is_equal(const CompiledShaderVertexAttributes& lhs, const CompiledShaderVertexAttributes& rhs)
 {
 	const auto same_elements = is_equal(lhs.elements, rhs.elements);
 	const auto same_debug_types = is_equal(lhs.debug_types, rhs.debug_types);
@@ -121,9 +114,7 @@ catchy::FalseString is_equal(
 	return catchy::FalseString::Combine(same_elements, same_debug_types);
 }
 
-catchy::FalseString is_equal(
-	const CompiledGeomVertexAttributes& lhs, const CompiledGeomVertexAttributes& rhs
-)
+catchy::FalseString is_equal(const CompiledGeomVertexAttributes& lhs, const CompiledGeomVertexAttributes& rhs)
 {
 	const auto same_elements = is_equal(lhs.elements, rhs.elements);
 	const auto same_debug_types = is_equal(lhs.debug_types, rhs.debug_types);
@@ -157,10 +148,7 @@ TEST_CASE("vertex_layout_test_simple", "[vertex_layout]")
 
 	CHECK(is_equal(
 		geom_layout,
-		{{{VertexType::position3, 0},
-		  {VertexType::normal3, 1},
-		  {VertexType::color4, 2},
-		  {VertexType::texture2, 3}},
+		{{{VertexType::position3, 0}, {VertexType::normal3, 1}, {VertexType::color4, 2}, {VertexType::texture2, 3}},
 		 {VertexType::position3, VertexType::normal3, VertexType::color4, VertexType::texture2}}
 	));
 }
@@ -174,9 +162,8 @@ TEST_CASE("vertex_layout_test_with_custom_layput", "[vertex_layout]")
 		{VertexType::texture2, "aTexCoord"}
 	};
 
-	auto layout_compiler = compile_attribute_layouts(
-		{VertexType::color4, VertexType::texture2}, {layout_shader_material}
-	);
+	auto layout_compiler
+		= compile_attribute_layouts({VertexType::color4, VertexType::texture2}, {layout_shader_material});
 
 	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
@@ -192,10 +179,7 @@ TEST_CASE("vertex_layout_test_with_custom_layput", "[vertex_layout]")
 
 	CHECK(is_equal(
 		geom_layout,
-		{{{VertexType::color4, 0},
-		  {VertexType::texture2, 1},
-		  {VertexType::position3, 2},
-		  {VertexType::normal3, 3}},
+		{{{VertexType::color4, 0}, {VertexType::texture2, 1}, {VertexType::position3, 2}, {VertexType::normal3, 3}},
 		 {VertexType::position3, VertexType::normal3, VertexType::color4, VertexType::texture2}}
 	));
 }
@@ -212,8 +196,7 @@ TEST_CASE("vertex_layout_test_material_and_depth", "[vertex_layout]")
 	const auto layout_shader_depth = ShaderVertexAttributes{{VertexType::position3, "aPos"}};
 
 	auto layout_compiler = compile_attribute_layouts({layout_shader_material, layout_shader_depth});
-	const auto compiled_layout_material
-		= compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
+	const auto compiled_layout_material = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 	const auto compiled_layout_depth = compile_shader_layout(layout_compiler, layout_shader_depth, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
 
@@ -234,10 +217,7 @@ TEST_CASE("vertex_layout_test_material_and_depth", "[vertex_layout]")
 
 	CHECK(is_equal(
 		geom_layout,
-		{{{VertexType::position3, 0},
-		  {VertexType::normal3, 1},
-		  {VertexType::color4, 2},
-		  {VertexType::texture2, 3}},
+		{{{VertexType::position3, 0}, {VertexType::normal3, 1}, {VertexType::color4, 2}, {VertexType::texture2, 3}},
 		 {VertexType::position3, VertexType::normal3, VertexType::color4, VertexType::texture2}}
 	));
 }
@@ -258,10 +238,8 @@ TEST_CASE("vertex_layout_test_material_and_different", "[vertex_layout]")
 		{VertexType::normal3, "aNormal"}
 	};
 
-	auto layout_compiler
-		= compile_attribute_layouts({layout_shader_different, layout_shader_material});
-	const auto compiled_layout_material
-		= compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
+	auto layout_compiler = compile_attribute_layouts({layout_shader_different, layout_shader_material});
+	const auto compiled_layout_material = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 	const auto compiled_layout_different
 		= compile_shader_layout(layout_compiler, layout_shader_different, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
@@ -286,10 +264,7 @@ TEST_CASE("vertex_layout_test_material_and_different", "[vertex_layout]")
 
 	CHECK(is_equal(
 		geom_layout,
-		{{{VertexType::position3, 0},
-		  {VertexType::normal3, 1},
-		  {VertexType::color4, 2},
-		  {VertexType::texture2, 3}},
+		{{{VertexType::position3, 0}, {VertexType::normal3, 1}, {VertexType::color4, 2}, {VertexType::texture2, 3}},
 		 {VertexType::position3, VertexType::normal3, VertexType::color4, VertexType::texture2}}
 	));
 }
@@ -304,20 +279,12 @@ TEST_CASE("vertex_layout_test_crazy", "[vertex_layout]")
 	const auto compiled_layout_b = compile_shader_layout(layout_compiler, layout_shader_b, std::nullopt);
 	const auto geom_layout = get_geom_layout(layout_compiler);
 
-	CHECK(is_equal(
-		compiled_layout_a,
-		{{{VertexType::color4, "rgb", 0}}, {VertexType::color4, VertexType::texture2}}
-	));
+	CHECK(is_equal(compiled_layout_a, {{{VertexType::color4, "rgb", 0}}, {VertexType::color4, VertexType::texture2}}));
+
+	CHECK(is_equal(compiled_layout_b, {{{VertexType::texture2, "uv", 1}}, {VertexType::color4, VertexType::texture2}}));
 
 	CHECK(is_equal(
-		compiled_layout_b,
-		{{{VertexType::texture2, "uv", 1}}, {VertexType::color4, VertexType::texture2}}
-	));
-
-	CHECK(is_equal(
-		geom_layout,
-		{{{VertexType::color4, 0}, {VertexType::texture2, 1}},
-		 {VertexType::color4, VertexType::texture2}}
+		geom_layout, {{{VertexType::color4, 0}, {VertexType::texture2, 1}}, {VertexType::color4, VertexType::texture2}}
 	));
 }
 
@@ -325,12 +292,10 @@ TEST_CASE("vertex_layout_test_get_not_requested", "[vertex_layout]")
 {
 	const auto layout_shader_material = ShaderVertexAttributes{{VertexType::position3, "pos"}};
 
-	const auto not_requested_property = GENERATE(
-		VertexType::position2xy, VertexType::normal3, VertexType::color4, VertexType::texture2
-	);
+	const auto not_requested_property
+		= GENERATE(VertexType::position2xy, VertexType::normal3, VertexType::color4, VertexType::texture2);
 
-	const auto layout_shader_not_requested
-		= ShaderVertexAttributes{{not_requested_property, "not_requested_prop"}};
+	const auto layout_shader_not_requested = ShaderVertexAttributes{{not_requested_property, "not_requested_prop"}};
 
 	auto layout_compiler = compile_attribute_layouts({layout_shader_material});
 
@@ -340,14 +305,12 @@ TEST_CASE("vertex_layout_test_get_not_requested", "[vertex_layout]")
 	// not requested variables should assert
 	REQUIRE_THROWS_WITH(
 		compile_shader_layout(layout_compiler, layout_shader_not_requested, std::nullopt),
-		Catch::Contains("Assertion failed")
-			&& Catch::Contains("layout wasn't added to the compilation list")
+		Catch::Contains("Assertion failed") && Catch::Contains("layout wasn't added to the compilation list")
 	);
 
 	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 
-	CHECK(is_equal(compiled_layout, {{{VertexType::position3, "pos", 0}}, {VertexType::position3}})
-	);
+	CHECK(is_equal(compiled_layout, {{{VertexType::position3, "pos", 0}}, {VertexType::position3}}));
 
 	CHECK(is_equal(geom_layout, {{{VertexType::position3, 0}}, {VertexType::position3}}));
 }

@@ -44,8 +44,7 @@ SCurve s_curve_from_input(float mx, float my)
 float calculate_s_curve(float x, float s, float t)
 {
 	constexpr float mE = 0.00001f;	// machine epsilon
-	return x < t ? t * x / (x + s * (t - x) + mE)
-				 : ((1 - t) * (x - 1)) / (1 - x - s * (t - x) + mE) + 1;
+	return x < t ? t * x / (x + s * (t - x) + mE) : ((1 - t) * (x - 1)) / (1 - x - s * (t - x) + mE) + 1;
 }
 
 ImVec2 operator+(const ImVec2& lhs, const ImVec2& rhs)
@@ -60,12 +59,8 @@ ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
 
 bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 {
-	ImGui::Text(
-		"%s (%f %f)", title, static_cast<double>(scd->curve.s), static_cast<double>(scd->curve.t)
-	);
-	if (ImGui::BeginChild(
-			title, ImVec2{100, 100}, false, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove
-		)
+	ImGui::Text("%s (%f %f)", title, static_cast<double>(scd->curve.s), static_cast<double>(scd->curve.t));
+	if (ImGui::BeginChild(title, ImVec2{100, 100}, false, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
 		== false)
 	{
 		ImGui::EndChild();
@@ -107,9 +102,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 			draw->AddCircleFilled(points[i], dot_radius, dot_color);
 		}
 	}
-	draw->AddCircleFilled(
-		ImVec2{scd->drag.x * size.x, (1 - scd->drag.y) * size.y} + pos, radius, drag_color
-	);
+	draw->AddCircleFilled(ImVec2{scd->drag.x * size.x, (1 - scd->drag.y) * size.y} + pos, radius, drag_color);
 
 	const auto t01 = [&pos, &size](const ImVec2& mp)
 	{

@@ -13,7 +13,6 @@
 #include "klotter/render/statechanger.h"
 #include "klotter/render/render.pimpl.h"
 
-
 namespace klotter
 {
 struct ShaderProgram;
@@ -51,9 +50,7 @@ struct RenderWorld : RenderSource
 	}
 };
 
-RenderTask::RenderTask(
-	std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e
-)
+RenderTask::RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e)
 	: source(s)
 	, fbo(f)
 	, effect(e)
@@ -190,9 +187,7 @@ struct FloatDragShaderProp : ShaderProp
 	float value;
 	float speed;
 
-	FloatDragShaderProp(
-		std::shared_ptr<LoadedPostProcShader> shader, const std::string& n, float v, float s
-	)
+	FloatDragShaderProp(std::shared_ptr<LoadedPostProcShader> shader, const std::string& n, float v, float s)
 		: uniform(shader->program->get_uniform(n))
 		, name(n)
 		, value(v)
@@ -220,11 +215,7 @@ struct FloatSliderShaderProp : ShaderProp
 	float max;
 
 	FloatSliderShaderProp(
-		std::shared_ptr<LoadedPostProcShader> shader,
-		const std::string& n,
-		float v,
-		float mi,
-		float ma
+		std::shared_ptr<LoadedPostProcShader> shader, const std::string& n, float v, float mi, float ma
 	)
 		: uniform(shader->program->get_uniform(n))
 		, name(n)
@@ -263,16 +254,12 @@ struct SimpleEffect
 
 	void add_float_drag_prop(const std::string& prop_name, float value, float speed)
 	{
-		properties.emplace_back(
-			std::make_shared<FloatDragShaderProp>(shader, prop_name, value, speed)
-		);
+		properties.emplace_back(std::make_shared<FloatDragShaderProp>(shader, prop_name, value, speed));
 	}
 
 	void add_float_slider_prop(const std::string& prop_name, float value, float min, float max)
 	{
-		properties.emplace_back(
-			std::make_shared<FloatSliderShaderProp>(shader, prop_name, value, min, max)
-		);
+		properties.emplace_back(std::make_shared<FloatSliderShaderProp>(shader, prop_name, value, min, max));
 	}
 
 	void gui() override
@@ -329,9 +316,7 @@ struct SimpleEffect
 	{
 		time = 0.0f;
 
-		auto fbo = arg.fbo->get(
-			arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude
-		);
+		auto fbo = arg.fbo->get(arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude);
 
 		auto src = arg.builder->last_source;
 		auto target = std::make_shared<RenderTask>(src, fbo, this);
@@ -386,11 +371,7 @@ struct BlurEffect : FactorEffect
 	float std_dev = 0.02f;
 #endif
 
-	BlurEffect(
-		const std::string& n,
-		std::shared_ptr<LoadedPostProcShader> v,
-		std::shared_ptr<LoadedPostProcShader> h
-	)
+	BlurEffect(const std::string& n, std::shared_ptr<LoadedPostProcShader> v, std::shared_ptr<LoadedPostProcShader> h)
 		: name(n)
 		, vert_p(this)
 		, hori_p(this)
@@ -458,16 +439,14 @@ struct BlurEffect : FactorEffect
 		// todo(Gustav): modify resolution to get better blur and at a lower cost!
 
 		// step 1: vertical
-		auto fbo_v = arg.fbo->get(
-			arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude
-		);
+		auto fbo_v
+			= arg.fbo->get(arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude);
 		auto target_v = std::make_shared<RenderTask>(src, fbo_v, &vert_p);
 		arg.builder->targets.emplace_back(target_v);
 
 		// step 2: horizontal
-		auto fbo_h = arg.fbo->get(
-			arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude
-		);
+		auto fbo_h
+			= arg.fbo->get(arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude);
 		auto target_h = std::make_shared<RenderTask>(target_v, fbo_h, &hori_p);
 		arg.builder->targets.emplace_back(target_h);
 

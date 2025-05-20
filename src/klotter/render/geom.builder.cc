@@ -156,9 +156,7 @@ Builder& Builder::add_triangle(const Triangle& t)
 	return *this;
 }
 
-Builder& Builder::add_quad(
-	bool ccw, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3
-)
+Builder& Builder::add_quad(bool ccw, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3)
 {
 	if (ccw)
 	{
@@ -297,8 +295,7 @@ Geom Builder::to_geom() const
 			const glm::vec3 pos = positions[c.position];
 			const glm::vec2 text = texcoords.empty() ? glm::vec2(0, 0) : texcoords[c.texture];
 			const glm::vec4 col = colors.empty() ? glm::vec4{colors::white, 1.0f} : colors[c.color];
-			const glm::vec3 normal
-				= normals.empty() == false ? normals[c.normal] : glm::vec3(1, 0, 0);
+			const glm::vec3 normal = normals.empty() == false ? normals[c.normal] : glm::vec3(1, 0, 0);
 			const auto ind = vertices.size();
 			vertices.emplace_back(klotter::Vertex{pos, normal, text, col});
 			combinations.insert({c, Csizet_to_u32(ind)});
@@ -571,9 +568,7 @@ Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& c
 
 
 // based on https://gist.github.com/Pikachuxxxx/5c4c490a7d7679824e0e18af42918efc
-Builder create_uv_sphere(
-	float diameter, int longitudes, int latitudes, bool invert, const glm::vec3& color
-)
+Builder create_uv_sphere(float diameter, int longitudes, int latitudes, bool invert, const glm::vec3& color)
 {
 	assert(longitudes >= 3);
 	assert(latitudes >= 2);
@@ -608,9 +603,7 @@ Builder create_uv_sphere(
 			ret.add_text_coord({vertex_s, vertex_t});
 
 			const auto normal_scale = invert ? -1.0f : 1.0f;
-			ret.add_normal(
-				{normal_scale * normal_x, normal_scale * normal_y, normal_scale * normal_z}
-			);
+			ret.add_normal({normal_scale * normal_x, normal_scale * normal_y, normal_scale * normal_z});
 		}
 	}
 
