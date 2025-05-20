@@ -1,0 +1,12 @@
+{
+  "project_directories": [
+    "src"
+  ],
+  "include_directories": [
+    "src"
+  ],
+  "pre_compiled_headers": [
+    "src/klotter/pch.private.h",
+    "src/klotter/pch.public.h"
+  ]
+}
