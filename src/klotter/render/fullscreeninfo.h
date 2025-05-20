@@ -1,6 +1,6 @@
 #pragma once
-#include "world.h"
 
+#include "klotter/render/world.h"
 
 namespace klotter
 {
@@ -13,7 +13,7 @@ namespace klotter
 struct FullScreenInfo
 {
 	std::shared_ptr<CompiledGeom> full_screen_geom;
-	CompiledShaderVertexAttributes full_scrren_layout;
+	CompiledShaderVertexAttributes full_screen_layout;
 
 	FullScreenInfo();
 };

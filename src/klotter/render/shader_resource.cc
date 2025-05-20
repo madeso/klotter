@@ -292,19 +292,19 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 
 	auto pp_invert = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, fsi.full_scrren_layout
+			std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, fsi.full_screen_layout
 		),
 		PostProcSetup::factor
 	);
 	auto pp_grayscale = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_GRAYSCALE_FRAG_GLSL}, fsi.full_scrren_layout
+			std::string{PP_VERT_GLSL}, std::string{PP_GRAYSCALE_FRAG_GLSL}, fsi.full_screen_layout
 		),
 		PostProcSetup::factor
 	);
 	auto pp_damage = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_DAMAGE_FRAG_GLSL}, fsi.full_scrren_layout
+			std::string{PP_VERT_GLSL}, std::string{PP_DAMAGE_FRAG_GLSL}, fsi.full_screen_layout
 		),
 		PostProcSetup::factor | PostProcSetup::resolution | PostProcSetup::time
 	);
@@ -321,7 +321,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL},
 			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::vertical, BLUR_SAMPLES, use_gauss}),
-			fsi.full_scrren_layout
+			fsi.full_screen_layout
 		),
 		PostProcSetup::factor
 	);
@@ -329,7 +329,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL},
 			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::horizontal, BLUR_SAMPLES, use_gauss}),
-			fsi.full_scrren_layout
+			fsi.full_screen_layout
 		),
 		PostProcSetup::factor | PostProcSetup::resolution
 	);
