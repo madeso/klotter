@@ -44,11 +44,11 @@ std::shared_ptr<MeshInstance> make_mesh_instance(
 	return instance;
 }
 
-std::shared_ptr<MeshInstance_TransformInstance> make_mesh_instance(
+std::shared_ptr<MeshInstance_TransformInstanced> make_mesh_instance(
 	std::shared_ptr<CompiledGeom_TransformInstance> geom, std::shared_ptr<Material> mat
 )
 {
-	auto instance = std::make_shared<MeshInstance_TransformInstance>();
+	auto instance = std::make_shared<MeshInstance_TransformInstanced>();
 	instance->geom = geom;
 	instance->material = mat;
 	return instance;
@@ -215,27 +215,27 @@ LocalAxis MeshInstance::get_local_axis() const
 	};
 }
 
-void render_geom(std::shared_ptr<CompiledGeom> geom)
+void render_geom(const CompiledGeom& geom)
 {
-	ASSERT(is_bound_for_shader(geom->debug_types));
-	glBindVertexArray(geom->vao);
-	glDrawElements(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, nullptr);
+	ASSERT(is_bound_for_shader(geom.debug_types));
+	glBindVertexArray(geom.vao);
+	glDrawElements(GL_TRIANGLES, geom.number_of_triangles * 3, GL_UNSIGNED_INT, nullptr);
 }
 
-void render_geom_instanced(MeshInstance_TransformInstance* instance)
+void render_geom_instanced(const MeshInstance_TransformInstanced& instanced)
 {
-	auto* geom = instance->geom.get();
+	auto* geom = instanced.geom.get();
 	ASSERT(is_bound_for_shader(geom->debug_types));
-	ASSERT(!instance->transforms.empty());
+	ASSERT(!instanced.transforms.empty());
 
-	for (std::size_t start_index = 0; start_index < instance->transforms.size(); start_index += instance->geom->max_instances)
+	for (std::size_t start_index = 0; start_index < instanced.transforms.size(); start_index += instanced.geom->max_instances)
 	{
-		const std::size_t step_size = std::min(instance->transforms.size() - start_index, instance->geom->max_instances);
-		glBindBuffer(GL_ARRAY_BUFFER, instance->geom->instance_vbo);
-		glBufferSubData(GL_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(glm::mat4) * step_size), &instance->transforms[start_index]);
+		const std::size_t step_size = std::min(instanced.transforms.size() - start_index, instanced.geom->max_instances);
+		glBindBuffer(GL_ARRAY_BUFFER, instanced.geom->instance_vbo);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(glm::mat4) * step_size), &instanced.transforms[start_index]);
 
 		glBindVertexArray(geom->vao);
-		glDrawElementsInstanced(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, nullptr, Csizet_to_glsizei(instance->transforms.size()));
+		glDrawElementsInstanced(GL_TRIANGLES, geom->number_of_triangles * 3, GL_UNSIGNED_INT, nullptr, Csizet_to_glsizei(instanced.transforms.size()));
 	}
 }
 

@@ -95,7 +95,7 @@ std::shared_ptr<MeshInstance> make_mesh_instance(
 );
 
 /// Stores Geom + Material (aka a mesh) and its current transform but instanced for faster rendering.
-struct MeshInstance_TransformInstance
+struct MeshInstance_TransformInstanced
 {
 	std::shared_ptr<CompiledGeom_TransformInstance> geom;
 	std::shared_ptr<Material> material;
@@ -105,13 +105,12 @@ struct MeshInstance_TransformInstance
 	std::vector<glm::mat4> transforms;
 };
 
-std::shared_ptr<MeshInstance_TransformInstance> make_mesh_instance(
+std::shared_ptr<MeshInstance_TransformInstanced> make_mesh_instance(
 	std::shared_ptr<CompiledGeom_TransformInstance> geom, std::shared_ptr<Material> mat
 );
 
-// todo(Gustav): this should take a pointer
-void render_geom(std::shared_ptr<CompiledGeom> geom);
-void render_geom_instanced(MeshInstance_TransformInstance* instance);
+void render_geom(const CompiledGeom& geom);
+void render_geom_instanced(const MeshInstance_TransformInstanced& instanced);
 
 struct DirectionalLight
 {
@@ -176,7 +175,7 @@ struct Skybox
 struct World
 {
 	std::vector<std::shared_ptr<MeshInstance>> meshes;
-	std::vector<std::shared_ptr<MeshInstance_TransformInstance>> instances;
+	std::vector<std::shared_ptr<MeshInstance_TransformInstanced>> instances;
 	Lights lights;
 
 	Skybox skybox;

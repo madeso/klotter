@@ -76,7 +76,7 @@ void RenderTask::render(const PostProcArg& arg)
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	effect->use_shader(arg, fbo->texture);
-	render_geom(arg.renderer->pimpl->full_screen_geom);
+	render_geom(*arg.renderer->pimpl->full_screen_geom);
 }
 
 void RenderTask::update(const PostProcArg& arg)

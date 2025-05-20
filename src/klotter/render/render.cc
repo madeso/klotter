@@ -238,7 +238,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
 		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
 
-		render_geom(m->geom);
+		render_geom(*m->geom);
 	}
 
 	for (auto& m: world.instances)
@@ -260,7 +260,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
 		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
 
-		render_geom_instanced(m.get());
+		render_geom_instanced(*m);
 	}
 
 	render_debug_lines(this, compiled_camera, window_size);
@@ -281,7 +281,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		shader.program->use();
 		bind_texture_cubemap(&pimpl->states, shader.tex_skybox, *world.skybox.cubemap);
 
-		render_geom(world.skybox.geom);
+		render_geom(*world.skybox.geom);
 	}
 
 	std::sort(
@@ -315,7 +315,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		m->material->bind_textures(transparent, &pimpl->states, &assets);
 		m->material->apply_lights(transparent, world.lights, settings, &pimpl->states, &assets);
 
-		render_geom(m->geom);
+		render_geom(*m->geom);
 	}
 
 	// render outline over all other meshes
@@ -341,7 +341,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 					shader.model, calc_mesh_transform(m, compiled_camera) * small_scale_mat
 				);
 
-				render_geom(m->geom);
+				render_geom(*m->geom);
 			}
 		}
 	}
