@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klotter: klotter::FullScreenInfo Struct Reference</title>
+<title>Klotter: klotter::MeshInstance_TransformInstanced Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,74 +104,71 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1FullScreenInfo.html">FullScreenInfo</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1MeshInstance__TransformInstanced.html">MeshInstance_TransformInstanced</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structklotter_1_1FullScreenInfo-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">klotter::FullScreenInfo Struct Reference<div class="ingroups"><a class="el" href="group__render.html">Renderer</a></div></div></div>
+<a href="structklotter_1_1MeshInstance__TransformInstanced-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">klotter::MeshInstance_TransformInstanced Struct Reference<div class="ingroups"><a class="el" href="group__render.html">Renderer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="fullscreeninfo_8h_source.html">fullscreeninfo.h</a>&gt;</code></p>
+<p>Stores <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> + <a class="el" href="structklotter_1_1Material.html" title="Base class for all materials.">Material</a> (aka a mesh) and its current transform but instanced for faster rendering.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="world_8h_source.html">world.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a35ca8d4064ff73edbfbb6bd5c7d0bfc5" id="r_a35ca8d4064ff73edbfbb6bd5c7d0bfc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35ca8d4064ff73edbfbb6bd5c7d0bfc5">FullScreenInfo</a> ()</td></tr>
-<tr class="separator:a35ca8d4064ff73edbfbb6bd5c7d0bfc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad70ffd0077d0e42cd132d5d3cb9f28eb" id="r_ad70ffd0077d0e42cd132d5d3cb9f28eb"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1CompiledGeom.html">CompiledGeom</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad70ffd0077d0e42cd132d5d3cb9f28eb">full_screen_geom</a></td></tr>
-<tr class="separator:ad70ffd0077d0e42cd132d5d3cb9f28eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a291efabe7fccc9b0db5609c042ba3164" id="r_a291efabe7fccc9b0db5609c042ba3164"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledShaderVertexAttributes.html">CompiledShaderVertexAttributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a291efabe7fccc9b0db5609c042ba3164">full_screen_layout</a></td></tr>
-<tr class="separator:a291efabe7fccc9b0db5609c042ba3164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14910f961fedc36210d3173fca24ab4" id="r_ad14910f961fedc36210d3173fca24ab4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1CompiledGeom__TransformInstance.html">CompiledGeom_TransformInstance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad14910f961fedc36210d3173fca24ab4">geom</a></td></tr>
+<tr class="separator:ad14910f961fedc36210d3173fca24ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad01fe393f543e9f9bfb9335621b75395" id="r_ad01fe393f543e9f9bfb9335621b75395"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1Material.html">Material</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad01fe393f543e9f9bfb9335621b75395">material</a></td></tr>
+<tr class="separator:ad01fe393f543e9f9bfb9335621b75395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96aeca9d8cae1640975fec540074c614" id="r_a96aeca9d8cae1640975fec540074c614"><td class="memItemLeft" align="right" valign="top">std::vector&lt; glm::mat4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96aeca9d8cae1640975fec540074c614">transforms</a></td></tr>
+<tr class="separator:a96aeca9d8cae1640975fec540074c614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a35ca8d4064ff73edbfbb6bd5c7d0bfc5" name="a35ca8d4064ff73edbfbb6bd5c7d0bfc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35ca8d4064ff73edbfbb6bd5c7d0bfc5">&#9670;&#160;</a></span>FullScreenInfo()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Stores <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> + <a class="el" href="structklotter_1_1Material.html" title="Base class for all materials.">Material</a> (aka a mesh) and its current transform but instanced for faster rendering. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad14910f961fedc36210d3173fca24ab4" name="ad14910f961fedc36210d3173fca24ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad14910f961fedc36210d3173fca24ab4">&#9670;&#160;</a></span>geom</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">klotter::FullScreenInfo::FullScreenInfo </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="structklotter_1_1CompiledGeom__TransformInstance.html">CompiledGeom_TransformInstance</a>&gt; klotter::MeshInstance_TransformInstanced::geom</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad70ffd0077d0e42cd132d5d3cb9f28eb" name="ad70ffd0077d0e42cd132d5d3cb9f28eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad70ffd0077d0e42cd132d5d3cb9f28eb">&#9670;&#160;</a></span>full_screen_geom</h2>
+<a id="ad01fe393f543e9f9bfb9335621b75395" name="ad01fe393f543e9f9bfb9335621b75395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad01fe393f543e9f9bfb9335621b75395">&#9670;&#160;</a></span>material</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="structklotter_1_1CompiledGeom.html">CompiledGeom</a>&gt; klotter::FullScreenInfo::full_screen_geom</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="structklotter_1_1Material.html">Material</a>&gt; klotter::MeshInstance_TransformInstanced::material</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a291efabe7fccc9b0db5609c042ba3164" name="a291efabe7fccc9b0db5609c042ba3164"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a291efabe7fccc9b0db5609c042ba3164">&#9670;&#160;</a></span>full_screen_layout</h2>
+<a id="a96aeca9d8cae1640975fec540074c614" name="a96aeca9d8cae1640975fec540074c614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96aeca9d8cae1640975fec540074c614">&#9670;&#160;</a></span>transforms</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1CompiledShaderVertexAttributes.html">CompiledShaderVertexAttributes</a> klotter::FullScreenInfo::full_screen_layout</td>
+          <td class="memname">std::vector&lt;glm::mat4&gt; klotter::MeshInstance_TransformInstanced::transforms</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -179,7 +176,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/klotter/render/<a class="el" href="fullscreeninfo_8h_source.html">fullscreeninfo.h</a></li>
+<li>src/klotter/render/<a class="el" href="world_8h_source.html">world.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -7,6 +7,6 @@ var searchData=
   ['indices_4',['indices',['../structklotter_1_1ExtractedGeom.html#a752875ea25c1a69d5b7905a7739defa2',1,'klotter::ExtractedGeom::indices'],['../structklotter_1_1CompiledVertexTypeList.html#afca053bc106f6c78d9dfb86f2e9825c9',1,'klotter::CompiledVertexTypeList::indices']]],
   ['indigo_5',['indigo',['../namespaceklotter_1_1imgui.html#a7af53378e11ed2f4ec0c2ce54b6be954',1,'klotter::imgui']]],
   ['instance_5fvbo_6',['instance_vbo',['../structklotter_1_1CompiledGeom__TransformInstance.html#ab5f7094925a36f1a915bbb22a51d6759',1,'klotter::CompiledGeom_TransformInstance']]],
-  ['instances_7',['instances',['../structklotter_1_1World.html#ac444e437e99f604c4fd1f4c6b32210ec',1,'klotter::World']]],
+  ['instances_7',['instances',['../structklotter_1_1World.html#a42950d49b98dc3304ea9a25ddbf83c9f',1,'klotter::World']]],
   ['is_5fgauss_8',['is_gauss',['../structklotter_1_1BlurOptions.html#a95c8cd4bd600737931412e2230899dfa',1,'klotter::BlurOptions']]]
 ];

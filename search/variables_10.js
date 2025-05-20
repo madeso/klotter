@@ -14,7 +14,7 @@ var searchData=
   ['time_11',['time',['../structklotter_1_1LoadedPostProcShader.html#ab03f315fa28e0bd1f19411d5b625e006',1,'klotter::LoadedPostProcShader']]],
   ['tint_5fcolor_12',['tint_color',['../structklotter_1_1LoadedShader__SingleColor.html#a17d5f165c10b23aab2d41fdab25123af',1,'klotter::LoadedShader_SingleColor::tint_color'],['../structklotter_1_1Base__LoadedShader__Unlit.html#a6c9a1414139898eceaeeef7d6bc2993a',1,'klotter::Base_LoadedShader_Unlit::tint_color'],['../structklotter_1_1Base__LoadedShader__Default.html#a6755391270eaca138829ec1d48f9bb29',1,'klotter::Base_LoadedShader_Default::tint_color']]],
   ['to_13',['to',['../structklotter_1_1DebugLine.html#ab28646931b94b77ad1c89dff411a4273',1,'klotter::DebugLine']]],
-  ['transforms_14',['transforms',['../structklotter_1_1MeshInstance__TransformInstance.html#a7a4ea1ad985cd6941804e6aac347ce81',1,'klotter::MeshInstance_TransformInstance']]],
+  ['transforms_14',['transforms',['../structklotter_1_1MeshInstance__TransformInstanced.html#a96aeca9d8cae1640975fec540074c614',1,'klotter::MeshInstance_TransformInstanced']]],
   ['transparency_5fshader_15',['transparency_shader',['../structklotter_1_1LoadedShader__Unlit.html#ae5de62ef27fa7090198684143ebf8b9d',1,'klotter::LoadedShader_Unlit::transparency_shader'],['../structklotter_1_1LoadedShader__Default.html#a353d4a04cbd90645db24399b5838f8fa',1,'klotter::LoadedShader_Default::transparency_shader']]],
   ['transparent_5fcutoff_16',['transparent_cutoff',['../structklotter_1_1ShaderOptions.html#a3dd056451d3e6bbf6c4a7f55fd99f64b',1,'klotter::ShaderOptions']]],
   ['triangles_17',['triangles',['../structklotter_1_1geom_1_1Builder.html#aa8423efe94121e82d6871d4cb7fd165d',1,'klotter::geom::Builder']]],

@@ -1,8 +1,8 @@
 var searchData=
 [
   ['render_0',['render',['../structklotter_1_1RenderSource.html#a09fe11c60248250aeeaf931bb1f0e2e1',1,'klotter::RenderSource::render()'],['../structklotter_1_1RenderTask.html#a052fe8fe4d5af2b0b91c2aaca91ec300',1,'klotter::RenderTask::render()'],['../structklotter_1_1EffectStack.html#aaf622b94ba48b5950c9324c6d4434c05',1,'klotter::EffectStack::render()']]],
-  ['render_5fgeom_1',['render_geom',['../group__render.html#gaff82c934afe2b2386edee0bf291d9d94',1,'klotter']]],
-  ['render_5fgeom_5finstanced_2',['render_geom_instanced',['../group__render.html#ga3ec46487f412c372046b76c35e4c481c',1,'klotter']]],
+  ['render_5fgeom_1',['render_geom',['../group__render.html#ga7c41540b85fbcd00d0dfbe1104d10443',1,'klotter']]],
+  ['render_5fgeom_5finstanced_2',['render_geom_instanced',['../group__render.html#ga23dc1ed0230e8dea88ce038e06a6136f',1,'klotter']]],
   ['render_5fmode_3',['render_mode',['../structklotter_1_1StateChanger.html#a4460dfe9a996fd2d47f4986fef9a763d',1,'klotter::StateChanger']]],
   ['render_5fworld_4',['render_world',['../structklotter_1_1Renderer.html#a48524cf82c262c4ee5caa4d8341ea351',1,'klotter::Renderer']]],
   ['renderer_5',['Renderer',['../structklotter_1_1Renderer.html#ad5a6f1e81638462af81153f65f17b967',1,'klotter::Renderer']]],
