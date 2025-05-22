@@ -51,8 +51,8 @@ struct RenderWorld : RenderSource
 };
 
 RenderTask::RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e)
-	: source(s)
-	, fbo(f)
+	: source(std::move(s))
+	, fbo(std::move(f))
 	, effect(e)
 {
 	ASSERT(effect);
@@ -193,9 +193,8 @@ struct FloatDragShaderProp : ShaderProp
 	float value;
 	float speed;
 
-	// todo(Gustav): shader shouldn't be a shared_ptr, same issue in the whole file it seems :/
-	FloatDragShaderProp(std::shared_ptr<LoadedPostProcShader> shader, const std::string& n, float v, float s)
-		: uniform(shader->program->get_uniform(n))
+	FloatDragShaderProp(const LoadedPostProcShader& shader, const std::string& n, float v, float s)
+		: uniform(shader.program->get_uniform(n))
 		, name(n)
 		, value(v)
 		, speed(s)
@@ -222,9 +221,9 @@ struct FloatSliderShaderProp : ShaderProp
 	float max;
 
 	FloatSliderShaderProp(
-		std::shared_ptr<LoadedPostProcShader> shader, const std::string& n, float v, float mi, float ma
+		const LoadedPostProcShader& shader, const std::string& n, float v, float mi, float ma
 	)
-		: uniform(shader->program->get_uniform(n))
+		: uniform(shader.program->get_uniform(n))
 		, name(n)
 		, value(v)
 		, min(mi)
@@ -261,12 +260,12 @@ struct SimpleEffect
 
 	void add_float_drag_prop(const std::string& prop_name, float value, float speed)
 	{
-		properties.emplace_back(std::make_shared<FloatDragShaderProp>(shader, prop_name, value, speed));
+		properties.emplace_back(std::make_shared<FloatDragShaderProp>(*shader, prop_name, value, speed));
 	}
 
 	void add_float_slider_prop(const std::string& prop_name, float value, float min, float max)
 	{
-		properties.emplace_back(std::make_shared<FloatSliderShaderProp>(shader, prop_name, value, min, max));
+		properties.emplace_back(std::make_shared<FloatSliderShaderProp>(*shader, prop_name, value, min, max));
 	}
 
 	void gui() override
