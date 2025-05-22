@@ -7,10 +7,7 @@ using namespace klotter;
 
 namespace examples
 {
-void add_sample_cube(SampleApp* app);
-void add_sample_scene(SampleApp* app);
 void add_sample_lights(SampleApp* app);
-void add_sample_transform(SampleApp* app);
 }  //  namespace examples
 
 struct ExampleApp : examples::SampleApp
@@ -23,9 +20,6 @@ struct ExampleApp : examples::SampleApp
 
 	explicit ExampleApp(klotter::Renderer*)
 	{
-		add_sample_cube(this);
-		add_sample_scene(this);
-		add_sample_transform(this);
 		add_sample_lights(this);
 	}
 };
