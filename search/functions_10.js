@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['uniform_0',['Uniform',['../structklotter_1_1Uniform.html#ae92165c2777bb0ec48e24ffde3742e4d',1,'klotter::Uniform::Uniform()=default'],['../structklotter_1_1Uniform.html#a43cacf8fca562546d3b825dc34b8b52b',1,'klotter::Uniform::Uniform(const std::string &amp;n, int l, unsigned int sp)']]],
+  ['uniform_0',['Uniform',['../structklotter_1_1Uniform.html#ae92165c2777bb0ec48e24ffde3742e4d',1,'klotter::Uniform::Uniform()=default'],['../structklotter_1_1Uniform.html#ac7e507c27683ef81a905bb0425f1bf8b',1,'klotter::Uniform::Uniform(std::string n, int l, unsigned int sp)']]],
   ['uniformbuffer_1',['UniformBuffer',['../structklotter_1_1UniformBuffer.html#a29e2e9a46bc63036c50617dc4f2b6691',1,'klotter::UniformBuffer::UniformBuffer(const UniformBufferSetup &amp;setup)'],['../structklotter_1_1UniformBuffer.html#a03ff2727aaca768a9bb3604a1217ac2d',1,'klotter::UniformBuffer::UniformBuffer(const UniformBuffer &amp;)=delete'],['../structklotter_1_1UniformBuffer.html#a10578c83c85fb3077c1ff4e609e618ac',1,'klotter::UniformBuffer::UniformBuffer(UniformBuffer &amp;&amp;) noexcept']]],
   ['unlit_5fgeom_5flayout_2',['unlit_geom_layout',['../structklotter_1_1Renderer.html#a9fae832300d65af1aea9beb8e90ff06c',1,'klotter::Renderer']]],
   ['unlitmaterial_3',['UnlitMaterial',['../structklotter_1_1UnlitMaterial.html#abeea77af30a3fe439dcf57f07dee7e30',1,'klotter::UnlitMaterial']]],

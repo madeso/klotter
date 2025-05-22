@@ -139,9 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a61c1ffd3bd1ebba2102572997fb8c51a" id="r_a61c1ffd3bd1ebba2102572997fb8c51a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61c1ffd3bd1ebba2102572997fb8c51a">ShaderProgram</a> (<a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a61c1ffd3bd1ebba2102572997fb8c51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take ownership of another shader.  <br /></td></tr>
 <tr class="separator:a61c1ffd3bd1ebba2102572997fb8c51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bb32a36df592b6117fc2b8d7e239213" id="r_a8bb32a36df592b6117fc2b8d7e239213"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bb32a36df592b6117fc2b8d7e239213">operator=</a> (<a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp;&amp;other) noexcept</td></tr>
-<tr class="memdesc:a8bb32a36df592b6117fc2b8d7e239213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take ownership of another shader.  <br /></td></tr>
-<tr class="separator:a8bb32a36df592b6117fc2b8d7e239213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3716ecafed56627d2172190890d0c6a7" id="r_a3716ecafed56627d2172190890d0c6a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3716ecafed56627d2172190890d0c6a7">operator=</a> (<a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp;&amp;rhs) noexcept</td></tr>
+<tr class="memdesc:a3716ecafed56627d2172190890d0c6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take ownership of another shader.  <br /></td></tr>
+<tr class="separator:a3716ecafed56627d2172190890d0c6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18bffd6cab01c6511de9ecaf2ed2a470" id="r_a18bffd6cab01c6511de9ecaf2ed2a470"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18bffd6cab01c6511de9ecaf2ed2a470">clear</a> ()</td></tr>
 <tr class="memdesc:a18bffd6cab01c6511de9ecaf2ed2a470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn this object into a zombie by destroying it.  <br /></td></tr>
 <tr class="separator:a18bffd6cab01c6511de9ecaf2ed2a470"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -309,7 +309,7 @@ Public Attributes</h2></td></tr>
 <p>Take ownership of another shader. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>the shader to take owenership from </td></tr>
+    <tr><td class="paramname">other</td><td>the shader to take ownership from </td></tr>
   </table>
   </dd>
 </dl>
@@ -342,6 +342,9 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a> klotter::ShaderProgram::get_uniform </td>
@@ -350,6 +353,11 @@ Public Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Get a uniform by name. </p>
@@ -368,6 +376,9 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool klotter::ShaderProgram::is_loaded </td>
@@ -376,6 +387,11 @@ Public Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checks if the <a class="el" href="structklotter_1_1ShaderProgram.html" title="RAII representation of a open gl shader program.">ShaderProgram</a> is loaded and valid. </p>
@@ -410,8 +426,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8bb32a36df592b6117fc2b8d7e239213" name="a8bb32a36df592b6117fc2b8d7e239213"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bb32a36df592b6117fc2b8d7e239213">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+<a id="a3716ecafed56627d2172190890d0c6a7" name="a3716ecafed56627d2172190890d0c6a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3716ecafed56627d2172190890d0c6a7">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,9 +436,9 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void klotter::ShaderProgram::operator= </td>
+          <td class="memname"><a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp; klotter::ShaderProgram::operator= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -436,7 +452,7 @@ Public Attributes</h2></td></tr>
 <p>Take ownership of another shader. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">other</td><td>the shader to take owenership from </td></tr>
+    <tr><td class="paramname">rhs</td><td>the shader to take ownership from </td></tr>
   </table>
   </dd>
 </dl>

@@ -117,7 +117,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>The renderering engine.  
+<p>The rendering engine.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="render_8h_source.html">render.h</a>&gt;</code></p>
@@ -128,6 +128,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad5a6f1e81638462af81153f65f17b967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84a0c241507db1c10f6779a0a06e7019" id="r_a84a0c241507db1c10f6779a0a06e7019"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84a0c241507db1c10f6779a0a06e7019">~Renderer</a> ()</td></tr>
 <tr class="separator:a84a0c241507db1c10f6779a0a06e7019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab746b0b937079d7c796a73c50b468dcb" id="r_ab746b0b937079d7c796a73c50b468dcb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab746b0b937079d7c796a73c50b468dcb">Renderer</a> (const <a class="el" href="structklotter_1_1Renderer.html">Renderer</a> &amp;)=delete</td></tr>
+<tr class="separator:ab746b0b937079d7c796a73c50b468dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088e263db406085384a2dac04cbc6f81" id="r_a088e263db406085384a2dac04cbc6f81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a088e263db406085384a2dac04cbc6f81">Renderer</a> (<a class="el" href="structklotter_1_1Renderer.html">Renderer</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a088e263db406085384a2dac04cbc6f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ad0477c6c2e0be00ab87ffbf5e219a4" id="r_a8ad0477c6c2e0be00ab87ffbf5e219a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ad0477c6c2e0be00ab87ffbf5e219a4">operator=</a> (const <a class="el" href="structklotter_1_1Renderer.html">Renderer</a> &amp;)=delete</td></tr>
+<tr class="separator:a8ad0477c6c2e0be00ab87ffbf5e219a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95008c898662faa4a74924eee472573c" id="r_a95008c898662faa4a74924eee472573c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95008c898662faa4a74924eee472573c">operator=</a> (<a class="el" href="structklotter_1_1Renderer.html">Renderer</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a95008c898662faa4a74924eee472573c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc015db1b63017bd38379bcd19f64e2f" id="r_abc015db1b63017bd38379bcd19f64e2f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1UnlitMaterial.html">UnlitMaterial</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc015db1b63017bd38379bcd19f64e2f">make_unlit_material</a> ()</td></tr>
 <tr class="separator:abc015db1b63017bd38379bcd19f64e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9881e905a29bec077109dc32895ae3e" id="r_af9881e905a29bec077109dc32895ae3e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1DefaultMaterial.html">DefaultMaterial</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9881e905a29bec077109dc32895ae3e">make_default_material</a> ()</td></tr>
@@ -165,10 +173,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a2a3c947386d5278b82c89d59af6ee7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The renderering engine. </p>
+<div class="textblock"><p>The rendering engine. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad5a6f1e81638462af81153f65f17b967" name="ad5a6f1e81638462af81153f65f17b967"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5a6f1e81638462af81153f65f17b967">&#9670;&#160;</a></span>Renderer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a6f1e81638462af81153f65f17b967">&#9670;&#160;</a></span>Renderer() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,12 +217,65 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab746b0b937079d7c796a73c50b468dcb" name="ab746b0b937079d7c796a73c50b468dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab746b0b937079d7c796a73c50b468dcb">&#9670;&#160;</a></span>Renderer() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">klotter::Renderer::Renderer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1Renderer.html">Renderer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a088e263db406085384a2dac04cbc6f81" name="a088e263db406085384a2dac04cbc6f81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088e263db406085384a2dac04cbc6f81">&#9670;&#160;</a></span>Renderer() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">klotter::Renderer::Renderer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1Renderer.html">Renderer</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a59e52edabd2be10264bc7782ed4fd6a6" name="a59e52edabd2be10264bc7782ed4fd6a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a59e52edabd2be10264bc7782ed4fd6a6">&#9670;&#160;</a></span>default_geom_layout()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a> klotter::Renderer::default_geom_layout </td>
@@ -223,6 +284,11 @@ Public Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -232,6 +298,9 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool klotter::Renderer::is_loaded </td>
@@ -240,6 +309,11 @@ Public Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>verify that the renderer was fully loaded </p>
@@ -336,6 +410,9 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structklotter_1_1Skybox.html">Skybox</a> klotter::Renderer::make_skybox </td>
@@ -344,6 +421,11 @@ Public Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -361,6 +443,56 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ad0477c6c2e0be00ab87ffbf5e219a4" name="a8ad0477c6c2e0be00ab87ffbf5e219a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ad0477c6c2e0be00ab87ffbf5e219a4">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klotter::Renderer::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1Renderer.html">Renderer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95008c898662faa4a74924eee472573c" name="a95008c898662faa4a74924eee472573c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95008c898662faa4a74924eee472573c">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klotter::Renderer::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1Renderer.html">Renderer</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -398,6 +530,9 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a> klotter::Renderer::unlit_geom_layout </td>
@@ -406,6 +541,11 @@ Public Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

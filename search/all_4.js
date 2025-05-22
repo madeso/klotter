@@ -2,7 +2,7 @@ var searchData=
 [
   ['e_0',['e',['../structResult.html#af75910267946ca1545b492ae2c9bc72e',1,'Result']]],
   ['ebo_1',['ebo',['../structklotter_1_1CompiledGeom.html#a892b06c701feae6c5b83e3f000096c03',1,'klotter::CompiledGeom::ebo'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a972a6aefcdadc9a796853f14f868f132',1,'klotter::CompiledGeom_TransformInstance::ebo']]],
-  ['effect_2',['Effect',['../structklotter_1_1Effect.html',1,'klotter']]],
+  ['effect_2',['Effect',['../structklotter_1_1Effect.html',1,'klotter::Effect'],['../structklotter_1_1Effect.html#a8e7175ac2393958842f6260823e24258',1,'klotter::Effect::Effect()=default'],['../structklotter_1_1Effect.html#aade7618d0f39f5e2ae74837304ce7c22',1,'klotter::Effect::Effect(const Effect &amp;)=delete'],['../structklotter_1_1Effect.html#ad5194abdfbb67f4333b87291577ce018',1,'klotter::Effect::Effect(Effect &amp;&amp;)=delete']]],
   ['effect_3',['effect',['../structklotter_1_1RenderTask.html#a5a5441557c6bb14a03d8dccb531785a9',1,'klotter::RenderTask']]],
   ['effects_4',['effects',['../structklotter_1_1EffectStack.html#a9e333bc5482652c2e731dc4362575d34',1,'klotter::EffectStack']]],
   ['effectstack_5',['EffectStack',['../structklotter_1_1EffectStack.html',1,'klotter::EffectStack'],['../structklotter_1_1Effect.html#a9baaf22c08590fd87da53ccb29ff2dcd',1,'klotter::Effect::EffectStack()']]],

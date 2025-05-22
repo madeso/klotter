@@ -36,7 +36,7 @@ var searchData=
   ['load_5fshaders_33',['load_shaders',['../group__render.html#ga06b89c4b8a624a7d71fe908f2fb61464',1,'klotter']]],
   ['load_5fskybox_5fsource_34',['load_skybox_source',['../namespaceklotter.html#ab77d87614fce92926c05c1cf4ac83bfa',1,'klotter']]],
   ['loadedpostprocshader_35',['LoadedPostProcShader',['../structklotter_1_1LoadedPostProcShader.html',1,'klotter::LoadedPostProcShader'],['../structklotter_1_1LoadedPostProcShader.html#ab3e27ddc81e87d1ac1cfd7824c97722b',1,'klotter::LoadedPostProcShader::LoadedPostProcShader()']]],
-  ['loadedshader_36',['LoadedShader',['../structklotter_1_1LoadedShader.html',1,'klotter::LoadedShader'],['../structklotter_1_1LoadedShader.html#a4331e0e0ee6ff99060cb7dff33279517',1,'klotter::LoadedShader::LoadedShader()']]],
+  ['loadedshader_36',['LoadedShader',['../structklotter_1_1LoadedShader.html',1,'klotter::LoadedShader'],['../structklotter_1_1LoadedShader.html#a58b50d38d1db60744dbc0c87bbac696b',1,'klotter::LoadedShader::LoadedShader()']]],
   ['loadedshader_5fdefault_37',['LoadedShader_Default',['../structklotter_1_1LoadedShader__Default.html',1,'klotter']]],
   ['loadedshader_5fsinglecolor_38',['LoadedShader_SingleColor',['../structklotter_1_1LoadedShader__SingleColor.html',1,'klotter::LoadedShader_SingleColor'],['../structklotter_1_1LoadedShader__SingleColor.html#a433c6fe85405408361bc7fba65d7210c',1,'klotter::LoadedShader_SingleColor::LoadedShader_SingleColor()']]],
   ['loadedshader_5fskybox_39',['LoadedShader_Skybox',['../structklotter_1_1LoadedShader__Skybox.html',1,'klotter::LoadedShader_Skybox'],['../structklotter_1_1LoadedShader__Skybox.html#a8ace952e0194b16aa820cd9981ca3dcc',1,'klotter::LoadedShader_Skybox::LoadedShader_Skybox()']]],

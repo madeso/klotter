@@ -11,7 +11,7 @@ var searchData=
   ['bitfield_8',['Bitfield',['../structklotter_1_1Bitfield.html#ad59d915e908fed3ce56542e96138380d',1,'klotter::Bitfield::Bitfield()'],['../structklotter_1_1Bitfield.html#a36ad8dc6e91dc1343d4ca23c51aac0c3',1,'klotter::Bitfield::Bitfield(T t)']]],
   ['blend_5fmode_9',['blend_mode',['../structklotter_1_1StateChanger.html#a975a77a826ea9561d27b994f06e94111',1,'klotter::StateChanger']]],
   ['blending_10',['blending',['../structklotter_1_1StateChanger.html#a656b206c64adb701104ddd5d19063d9f',1,'klotter::StateChanger']]],
-  ['boundfbo_11',['BoundFbo',['../structklotter_1_1BoundFbo.html#a7711b6a4637a0baea669081503aa70e0',1,'klotter::BoundFbo']]],
-  ['bounduniformbuffer_12',['BoundUniformBuffer',['../structklotter_1_1BoundUniformBuffer.html#abdc51a95a50e4e6e980bc1fe8a767bec',1,'klotter::BoundUniformBuffer']]],
+  ['boundfbo_11',['BoundFbo',['../structklotter_1_1BoundFbo.html#ab0a8fe6a0a96dcbe537f5cd618719f4f',1,'klotter::BoundFbo::BoundFbo(const BoundFbo &amp;)=delete'],['../structklotter_1_1BoundFbo.html#ad2380dad3d659ad7ace194845af9ca55',1,'klotter::BoundFbo::BoundFbo(BoundFbo &amp;&amp;)=delete'],['../structklotter_1_1BoundFbo.html#a7711b6a4637a0baea669081503aa70e0',1,'klotter::BoundFbo::BoundFbo(std::shared_ptr&lt; FrameBuffer &gt; f)']]],
+  ['bounduniformbuffer_12',['BoundUniformBuffer',['../structklotter_1_1BoundUniformBuffer.html#abdc51a95a50e4e6e980bc1fe8a767bec',1,'klotter::BoundUniformBuffer::BoundUniformBuffer(UniformBuffer *b)'],['../structklotter_1_1BoundUniformBuffer.html#a6673101fddaac9fe11f1968cc4e15c9c',1,'klotter::BoundUniformBuffer::BoundUniformBuffer(const BoundUniformBuffer &amp;)=delete'],['../structklotter_1_1BoundUniformBuffer.html#a1a4306236bad649a32fea4de503e3a0b',1,'klotter::BoundUniformBuffer::BoundUniformBuffer(BoundUniformBuffer &amp;&amp;)=delete']]],
   ['build_13',['build',['../structklotter_1_1Effect.html#a2b91279abfc5154b3f4e2d536a86e6f9',1,'klotter::Effect']]]
 ];
