@@ -33,7 +33,7 @@ Skybox Renderer::make_skybox(std::shared_ptr<TextureCubemap> texture) const
 	auto geom = compile_geom(triangle, layout);
 
 	LOG_INFO("Creating skybox");
-	return {geom, texture};
+	return {geom, std::move(texture)};
 }
 
 struct TransparentMesh
@@ -202,7 +202,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& m: world.meshes)
 	{
-		const auto not_transparent = RenderContext{ModelSource::Uniform, UseTransparency::no};
+		constexpr auto not_transparent = RenderContext{ModelSource::Uniform, UseTransparency::no};
 
 		if (m->material->is_transparent())
 		{
@@ -231,7 +231,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& m: world.instances)
 	{
-		const auto not_transparent = RenderContext{ModelSource::Instanced_mat4, UseTransparency::no};
+		constexpr auto not_transparent = RenderContext{ModelSource::Instanced_mat4, UseTransparency::no};
 
 		StateChanger{&pimpl->states}
 			.depth_test(true)
@@ -282,7 +282,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& tm: transparent_meshes)
 	{
-		const auto transparent = RenderContext{ModelSource::Uniform, UseTransparency::yes};
+		constexpr auto transparent = RenderContext{ModelSource::Uniform, UseTransparency::yes};
 
 		const auto& m = tm.mesh;
 		StateChanger{&pimpl->states}

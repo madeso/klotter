@@ -42,7 +42,7 @@ struct Material
 		const RenderContext&, const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) = 0;
 
-	virtual bool is_transparent() const = 0;
+	[[nodiscard]] virtual bool is_transparent() const = 0;
 };
 
 /// A unlit (or fully lit) material, not affected by light.
@@ -61,7 +61,7 @@ struct UnlitMaterial : Material
 		const RenderContext&, const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) override;
 
-	bool is_transparent() const override;
+	[[nodiscard]] bool is_transparent() const override;
 };
 
 /// A material affected by light.
@@ -88,7 +88,7 @@ struct DefaultMaterial : Material
 		const RenderContext&, const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
 	) override;
 
-	bool is_transparent() const override;
+	[[nodiscard]] bool is_transparent() const override;
 };
 
 /**

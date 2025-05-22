@@ -38,14 +38,14 @@ struct ShaderProgram
 	void operator=(const ShaderProgram&) = delete;
 
 	/** Take ownership of another shader.
-	 * @param other the shader to take owenership from
+	 * @param other the shader to take ownership from
      */
 	ShaderProgram(ShaderProgram&& other) noexcept;
 
 	/** Take ownership of another shader.
-	 * @param other the shader to take owenership from
+	 * @param rhs the shader to take ownership from
      */
-	void operator=(ShaderProgram&& other) noexcept;
+	ShaderProgram& operator=(ShaderProgram&& rhs) noexcept;
 
 	/** Turn this object into a zombie by destroying it.
       * @note Does nothing if it already is a zombie
@@ -55,7 +55,7 @@ struct ShaderProgram
 	/** Checks if the ShaderProgram is loaded and valid.
      * @return `true` if the program is valid; otherwise, `false`
      */
-	bool is_loaded() const;
+	[[nodiscard]] bool is_loaded() const;
 
 	/** Activates the ShaderProgram for rendering.
      */
@@ -65,7 +65,7 @@ struct ShaderProgram
      * @param name the name of the uniform in the shader program
      * @return Uniform object representing the location or a zombie if not found
      */
-	Uniform get_uniform(const std::string& name) const;
+	[[nodiscard]] Uniform get_uniform(const std::string& name) const;
 
 	/** Sets a uniform float value.
 	 * Does nothing if the uniform is a zombie.
@@ -168,12 +168,12 @@ struct ShaderProgram
 void setup_textures(ShaderProgram* shader, const std::vector<Uniform*>& uniform_list);
 
 /** Verifies if the current shader matches the required vertex types.
- * @param debug_shader_types Required set of vertex types
+ * @param debug_geom_shader_types Required set of vertex types
  * @return `true` if all required types are present; otherwise, `false`.
  * @note The shader must be bound before calling this function.
  * @note Internal function, should only be available in debug builds
  */
-bool is_bound_for_shader(const std::unordered_set<VertexType>& debug_shader_types);
+bool is_bound_for_shader(const std::unordered_set<VertexType>& debug_geom_shader_types);
 
 /** Checks if a specific shader program is currently active.
  * @param program the id of the shader program to check

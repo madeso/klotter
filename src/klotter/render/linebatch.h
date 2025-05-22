@@ -44,7 +44,7 @@ struct DebugDrawer
 	void set_line_dash(const glm::vec2& resolution, float dash_size, float gap_size);
 	void set_line_line();
 
-	bool is_loaded() const;
+	[[nodiscard]] bool is_loaded() const;
 };
 
 }  //  namespace klotter

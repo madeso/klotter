@@ -15,9 +15,9 @@ struct Uniform
 	/// Creates a invalid uniform
 	Uniform() = default;
 
-	Uniform(const std::string& n, int l, unsigned int sp);
+	Uniform(std::string n, int l, unsigned int sp);
 
-	bool is_valid() const;
+	[[nodiscard]] bool is_valid() const;
 };
 
 }  //  namespace klotter

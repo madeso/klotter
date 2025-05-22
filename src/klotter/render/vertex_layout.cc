@@ -67,7 +67,7 @@ CompiledGeomVertexAttributes get_geom_layout(const CompiledVertexTypeList& l)
 		{ return lhs.index < rhs.index; }
 	);
 
-	// todo(Gustav): the index property is confusing and error prone, just remove it
+	// todo(Gustav): the index property is confusing and error-prone, just remove it
 
 	return {list, l.debug_types};
 }

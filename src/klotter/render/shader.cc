@@ -14,7 +14,7 @@ namespace klotter
 // internal "header", defined later
 void set_shader_program(unsigned int new_program, const VertexTypes& types);
 
-const GLsizei LOG_SIZE = 1024;
+constexpr GLsizei LOG_SIZE = 1024;
 
 bool check_shader_compilation_error(const char* name, unsigned int shader)
 {
@@ -53,7 +53,7 @@ bool check_shader_link_error(unsigned int program)
 
 void upload_shader_source(unsigned int shader, std::string_view source)
 {
-	const char* const s = &source[0];
+	const char* const s = source.data();
 	const int length = Csizet_to_int(source.length());	// should be GLint
 	glShaderSource(shader, 1, &s, &length);
 }
@@ -156,15 +156,15 @@ void ShaderProgram::use() const
 	set_shader_program(shader_program, debug_vertex_types);
 }
 
-ShaderProgram::ShaderProgram(ShaderProgram&& rhs) noexcept
-	: shader_program(rhs.shader_program)
-	, debug_vertex_types(rhs.debug_vertex_types)
+ShaderProgram::ShaderProgram(ShaderProgram&& other) noexcept
+	: shader_program(other.shader_program)
+	, debug_vertex_types(std::move(other.debug_vertex_types))
 {
-	rhs.shader_program = 0;
-	rhs.debug_vertex_types = {};
+	other.shader_program = 0;
+	other.debug_vertex_types = {};
 }
 
-void ShaderProgram::operator=(ShaderProgram&& rhs) noexcept
+ShaderProgram& ShaderProgram::operator=(ShaderProgram&& rhs) noexcept
 {
 	clear();
 
@@ -173,6 +173,8 @@ void ShaderProgram::operator=(ShaderProgram&& rhs) noexcept
 
 	rhs.shader_program = 0;
 	rhs.debug_vertex_types = {};
+
+	return *this;
 }
 
 ShaderProgram::~ShaderProgram()

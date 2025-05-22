@@ -15,6 +15,11 @@ struct FrameBuffer
 	explicit FrameBuffer(unsigned int fbo);
 	~FrameBuffer();
 
+	FrameBuffer(const FrameBuffer&) = delete;
+	FrameBuffer(FrameBuffer&&) = delete;
+	void operator=(const FrameBuffer&) = delete;
+	void operator=(FrameBuffer&&) = delete;
+
 	unsigned int fbo = 0;
 
 	Texture2d texture;
@@ -25,6 +30,11 @@ struct FrameBuffer
 struct BoundFbo
 {
 	std::shared_ptr<FrameBuffer> fbo;
+
+	BoundFbo(const BoundFbo&) = delete;
+	BoundFbo(BoundFbo&&) = delete;
+	void operator=(const BoundFbo&) = delete;
+	void operator=(BoundFbo&&) = delete;
 
 	explicit BoundFbo(std::shared_ptr<FrameBuffer> f);
 	~BoundFbo();
@@ -43,7 +53,7 @@ struct FboSetup
 };
 
 std::shared_ptr<FrameBuffer> create_frame_buffer(
-	const FboSetup& setup, TextureEdge te, TextureRenderStyle trs, Transparency trans
+	const FboSetup& set, TextureEdge te, TextureRenderStyle trs, Transparency trans
 );
 
 /**

@@ -99,7 +99,7 @@ void EffectStack::update(float dt) const
 void EffectStack::render(const PostProcArg& arg)
 {
 	// set the owner, if any new then we are dirty
-	for (auto e: effects)
+	for (const auto& e: effects)
 	{
 		if (e->owner != this)
 		{
@@ -118,7 +118,7 @@ void EffectStack::render(const PostProcArg& arg)
 	if (dirty)
 	{
 		dirty = false;
-		LOG_INFO("Bulding effects stack");
+		LOG_INFO("Building effects stack");
 
 		compiled.targets.clear();
 		compiled.last_source = std::make_shared<RenderWorld>();
@@ -134,7 +134,7 @@ void EffectStack::render(const PostProcArg& arg)
 
 	// the stack is now compiled
 	// before rendering, update all targets/fbos and present
-	for (auto& action: compiled.targets)
+	for (const auto& action: compiled.targets)
 	{
 		action->update(arg);
 	}
@@ -147,7 +147,7 @@ void EffectStack::render(const PostProcArg& arg)
 void EffectStack::gui() const
 {
 	int index = 0;
-	for (auto e: effects)
+	for (const auto& e: effects)
 	{
 		ImGui::PushID(index);
 		e->gui();
@@ -174,6 +174,12 @@ void FactorEffect::set_factor(float f)
 
 struct ShaderProp
 {
+	ShaderProp() = default;
+	ShaderProp(const ShaderProp&) = delete;
+	ShaderProp(ShaderProp&&) = delete;
+	void operator=(const ShaderProp&) = delete;
+	void operator=(ShaderProp&&) = delete;
+
 	virtual ~ShaderProp() = default;
 
 	virtual void use(const PostProcArg& a, ShaderProgram& shader) = 0;
@@ -187,6 +193,7 @@ struct FloatDragShaderProp : ShaderProp
 	float value;
 	float speed;
 
+	// todo(Gustav): shader shouldn't be a shared_ptr, same issue in the whole file it seems :/
 	FloatDragShaderProp(std::shared_ptr<LoadedPostProcShader> shader, const std::string& n, float v, float s)
 		: uniform(shader->program->get_uniform(n))
 		, name(n)
@@ -245,9 +252,9 @@ struct SimpleEffect
 	std::vector<std::shared_ptr<ShaderProp>> properties;
 	float time = 0.0f;
 
-	SimpleEffect(const std::string& n, std::shared_ptr<LoadedPostProcShader> s)
-		: name(n)
-		, shader(s)
+	SimpleEffect(std::string n, std::shared_ptr<LoadedPostProcShader> s)
+		: name(std::move(n))
+		, shader(std::move(s))
 	{
 		ASSERT(shader->factor.has_value());
 	}
@@ -371,12 +378,12 @@ struct BlurEffect : FactorEffect
 	float std_dev = 0.02f;
 #endif
 
-	BlurEffect(const std::string& n, std::shared_ptr<LoadedPostProcShader> v, std::shared_ptr<LoadedPostProcShader> h)
-		: name(n)
+	BlurEffect(std::string n, std::shared_ptr<LoadedPostProcShader> v, std::shared_ptr<LoadedPostProcShader> h)
+		: name(std::move(n))
 		, vert_p(this)
 		, hori_p(this)
-		, vert(v)
-		, hori(h)
+		, vert(std::move(v))
+		, hori(std::move(h))
 		, blur_size_v(vert->program->get_uniform("u_blur_size"))
 		, blur_size_h(hori->program->get_uniform("u_blur_size"))
 #if HAS(BLUR_USE_GAUSS)

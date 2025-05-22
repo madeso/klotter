@@ -11,7 +11,7 @@ FullScreenInfo::FullScreenInfo()
 	const auto layout_shader_material
 		= ShaderVertexAttributes{{VertexType::position2xy, "a_position"}, {VertexType::texture2, "a_tex_coord"}};
 
-	auto layout_compiler = compile_attribute_layouts({layout_shader_material});
+	const auto layout_compiler = compile_attribute_layouts({layout_shader_material});
 	full_screen_layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
 	const auto layout = get_geom_layout(layout_compiler);
 

@@ -115,7 +115,7 @@ void BaseTexture::unload()
 // ------------------------------------------------------------------------------------------------
 // texture 2d
 
-Texture2d::Texture2d(void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t)
+Texture2d::Texture2d(const void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t)
 	: BaseTexture(w, h)
 {
 	// todo(Gustav): use states
@@ -213,7 +213,7 @@ Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle tr
 // ------------------------------------------------------------------------------------------------
 // cubemap
 
-TextureCubemap::TextureCubemap(std::array<void*, 6> pixel_data, int w, int h)
+TextureCubemap::TextureCubemap(const std::array<void*, 6>& pixel_data, int w, int h)
 	: BaseTexture(w, h)
 {
 	// todo(Gustav): use states

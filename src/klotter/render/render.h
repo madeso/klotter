@@ -17,7 +17,7 @@ namespace klotter
 
 struct RendererPimpl;
 
-/// The renderering engine.
+/// The rendering engine.
 struct Renderer
 {
 	RenderSettings settings;
@@ -29,21 +29,26 @@ struct Renderer
 	explicit Renderer(const RenderSettings& settings);
 	~Renderer();
 
+	Renderer(const Renderer&) = delete;
+	Renderer(Renderer&&) = delete;
+	void operator=(const Renderer&) = delete;
+	void operator=(Renderer&&) = delete;
+
 	std::shared_ptr<UnlitMaterial> make_unlit_material();
 	std::shared_ptr<DefaultMaterial> make_default_material();
 
-	CompiledGeomVertexAttributes unlit_geom_layout() const;
-	CompiledGeomVertexAttributes default_geom_layout() const;
+	[[nodiscard]] CompiledGeomVertexAttributes unlit_geom_layout() const;
+	[[nodiscard]] CompiledGeomVertexAttributes default_geom_layout() const;
 
 	std::shared_ptr<FactorEffect> make_invert_effect();
 	std::shared_ptr<FactorEffect> make_grayscale_effect();
 	std::shared_ptr<FactorEffect> make_damage_effect();
 	std::shared_ptr<FactorEffect> make_blur_effect();
 
-	Skybox make_skybox(std::shared_ptr<TextureCubemap> texture) const;
+	[[nodiscard]] Skybox make_skybox(std::shared_ptr<TextureCubemap> texture) const;
 
 	/// verify that the renderer was fully loaded
-	bool is_loaded() const;
+	[[nodiscard]] bool is_loaded() const;
 
 	/// doesn't set the size, prefer EffectStack::render
 	void render_world(const glm::ivec2& window_size, const World&, const Camera&);

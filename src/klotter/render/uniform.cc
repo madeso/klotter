@@ -2,9 +2,9 @@
 
 namespace klotter
 {
-Uniform::Uniform(const std::string& n, int l, unsigned int sp)
-	: name(n)
-	, location(l)
+Uniform::Uniform(std::string n, int l, unsigned int sp)
+	: name(std::move(n))
+	  , location(l)
 	, debug_shader_program(sp)
 {
 }

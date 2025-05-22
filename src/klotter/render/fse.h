@@ -23,12 +23,26 @@ struct PostProcArg
 
 struct RenderSource
 {
+	RenderSource() = default;
+
+	RenderSource(const RenderSource&) = delete;
+	RenderSource(RenderSource&&) = delete;
+	void operator=(const RenderSource&) = delete;
+	void operator=(RenderSource&&) = delete;
+
 	virtual ~RenderSource() = default;
 	virtual void render(const PostProcArg& arg) = 0;
 };
 
 struct ShaderPropertyProvider
 {
+	ShaderPropertyProvider() = default;
+
+	ShaderPropertyProvider(const ShaderPropertyProvider&) = delete;
+	ShaderPropertyProvider(ShaderPropertyProvider&&) = delete;
+	void operator=(const ShaderPropertyProvider&) = delete;
+	void operator=(ShaderPropertyProvider&&) = delete;
+
 	virtual ~ShaderPropertyProvider() = default;
 	virtual void use_shader(const PostProcArg& a, const Texture2d& t) = 0;
 };
@@ -64,7 +78,7 @@ struct CompiledStack
 
 struct FrameBufferCache
 {
-	std::shared_ptr<FrameBuffer> get(
+	[[nodiscard]] std::shared_ptr<FrameBuffer> get(
 		glm::ivec2 size, TextureEdge edge, TextureRenderStyle render_style, Transparency transperency
 	) const;
 };
@@ -81,6 +95,13 @@ struct EffectStack;
 
 struct Effect
 {
+	Effect() = default;
+
+	Effect(const Effect&) = delete;
+	Effect(Effect&&) = delete;
+	void operator=(const Effect&) = delete;
+	void operator=(Effect&&) = delete;
+
 	virtual ~Effect() = default;
 
 	virtual void build(const BuildArg& arg) = 0;
@@ -104,7 +125,7 @@ struct Effect
 struct FactorEffect : Effect
 {
 	FactorEffect();
-	float get_factor() const;
+	[[nodiscard]] float get_factor() const;
 	void set_factor(float f);
 
    private:

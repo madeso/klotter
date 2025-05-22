@@ -25,9 +25,9 @@ void CameraUniformBuffer::set_props(const CompiledCamera& cc)
 	buffer->set_mat4(view_prop, cc.view);
 }
 
-LoadedShader::LoadedShader(std::shared_ptr<ShaderProgram> p, const CompiledGeomVertexAttributes& l)
+LoadedShader::LoadedShader(std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l)
 	: program(std::move(p))
-	, geom_layout(l)
+	, geom_layout(std::move(l))
 {
 }
 

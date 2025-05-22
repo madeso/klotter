@@ -72,6 +72,11 @@ struct BoundUniformBuffer
 	explicit BoundUniformBuffer(UniformBuffer* b);
 	~BoundUniformBuffer();
 
+	BoundUniformBuffer(const BoundUniformBuffer&) = delete;
+	BoundUniformBuffer(BoundUniformBuffer&&) = delete;
+	void operator=(const BoundUniformBuffer&) = delete;
+	void operator=(BoundUniformBuffer&&) = delete;
+
 	UniformBuffer* buffer;
 };
 

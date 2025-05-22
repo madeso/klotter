@@ -206,11 +206,9 @@ Builder& Builder::invert_normals()
 
 Builder& Builder::add_face(const std::vector<Vertex>& vertices)
 {
-	// we currently doesnt support ton-triangular faces so - triangulate it
+	// we currently don't support ton-triangular faces so - triangulate it
 	const std::vector<Vertex>::size_type size = vertices.size();
-	[[maybe_unused]]
-	bool added
-		= false;
+	[[maybe_unused]] bool added = false;
 	for (std::vector<Vertex>::size_type i = 2; i < size; ++i)
 	{
 		add_triangle(Triangle{vertices[0], vertices[i - 1], vertices[i]});
@@ -309,7 +307,7 @@ Geom Builder::to_geom() const
 		const auto v1 = convert_vert(tri.v1);
 		const auto v2 = convert_vert(tri.v2);
 
-		// add traingle to geom
+		// add triangle to geom
 		faces.emplace_back(Face{v0, v1, v2});
 	}
 

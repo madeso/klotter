@@ -41,7 +41,7 @@ struct CameraUniformBuffer
 
 struct LoadedShader
 {
-	LoadedShader(std::shared_ptr<ShaderProgram> p, const CompiledGeomVertexAttributes& l);
+	LoadedShader(std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l);
 
 	std::shared_ptr<ShaderProgram> program;
 	CompiledGeomVertexAttributes geom_layout;
@@ -175,8 +175,9 @@ struct LoadedShader_Unlit
 	Base_LoadedShader_Unlit default_shader;
 	Base_LoadedShader_Unlit transparency_shader;
 
-	const Base_LoadedShader_Unlit& base(const RenderContext& rc) const;
-	bool is_loaded() const;
+	// todo(Gustav): rename to something better than "base"
+	[[nodiscard]] const Base_LoadedShader_Unlit& base(const RenderContext& rc) const;
+	[[nodiscard]] bool is_loaded() const;
 };
 
 struct LoadedShader_Default
@@ -186,8 +187,8 @@ struct LoadedShader_Default
 	Base_LoadedShader_Default transparency_shader;
 	Base_LoadedShader_Default default_shader_instance;
 
-	const Base_LoadedShader_Default& base(const RenderContext& rc) const;
-	bool is_loaded() const;
+	[[nodiscard]] const Base_LoadedShader_Default& base(const RenderContext& rc) const;
+	[[nodiscard]] bool is_loaded() const;
 };
 
 struct ShaderResource
@@ -198,6 +199,7 @@ struct ShaderResource
 	LoadedShader_Unlit unlit_shader;
 	LoadedShader_Default default_shader;
 
+	// todo(Gustav): split into 
 	std::shared_ptr<LoadedPostProcShader> pp_invert;
 	std::shared_ptr<LoadedPostProcShader> pp_grayscale;
 	std::shared_ptr<LoadedPostProcShader> pp_damage;
@@ -205,7 +207,7 @@ struct ShaderResource
 	std::shared_ptr<LoadedPostProcShader> pp_blurh;
 
 	/// verify that the shaders are loaded
-	bool is_loaded() const;
+	[[nodiscard]] bool is_loaded() const;
 };
 
 ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenInfo& fsi);

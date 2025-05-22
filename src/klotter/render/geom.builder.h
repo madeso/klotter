@@ -15,7 +15,7 @@ namespace klotter::geom
 */
 using Index = u64;
 
-/// A enum describing if a face is one or two sided
+/// A enum describing if a face is one or two-sided 
 enum class TwoSided
 {
 	one_sided,
@@ -37,7 +37,7 @@ struct Vertex
 /// A simple triangle face in a Builder
 struct Triangle
 {
-	// ccw = frontfacing
+	// ccw = front facing
 	Vertex v0;
 	Vertex v1;
 	Vertex v2;
@@ -48,7 +48,7 @@ struct Triangle
 /// A helper utility to create a Geom
 struct Builder
 {
-	Index add_text_coord(const glm::vec2& v);
+	Index add_text_coord(const glm::vec2& tc);
 	Index add_position(const glm::vec3& pos);
 	Index add_normal(const glm::vec3& norm);
 	Index add_color(const glm::vec4& color);
@@ -70,7 +70,7 @@ struct Builder
 	Builder& scale(float scale);
 	Builder& invert_normals();
 
-	Geom to_geom() const;
+	[[nodiscard]] Geom to_geom() const;
 
 	Builder& write_obj(const std::string& path);
 

@@ -53,7 +53,7 @@ struct Texture2d : BaseTexture
 	Texture2d() = default;	///< creates a invalid texture
 
 	/// "internal"
-	Texture2d(void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
+	Texture2d(const void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
 };
 
 Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
@@ -62,7 +62,7 @@ struct TextureCubemap : BaseTexture
 {
 	TextureCubemap() = default;	 ///< creates a invalid cubemap
 
-	TextureCubemap(std::array<void*, 6> pixel_data, int w, int h);
+	TextureCubemap(const std::array<void*, 6>& pixel_data, int w, int h);
 };
 
 TextureCubemap load_cubemap_from_color(u32 pixel);

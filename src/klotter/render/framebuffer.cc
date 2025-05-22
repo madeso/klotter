@@ -35,7 +35,7 @@ FrameBuffer::~FrameBuffer()
 }
 
 BoundFbo::BoundFbo(std::shared_ptr<FrameBuffer> f)
-	: fbo(f)
+	: fbo(std::move(f))
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo->fbo);
 }

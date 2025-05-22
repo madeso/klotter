@@ -12,7 +12,7 @@ namespace klotter
 */
 
 /// Vertex source type, position, normal etc.
-/// @todo change to include other textcoords and custom types that are created from scripts
+/// @todo change to include other texture coordinates and custom types that are created from scripts
 enum class VertexType
 {
 	// vertex based

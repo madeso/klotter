@@ -1,3 +1,5 @@
+#include <utility>
+
 #include "klotter/render/world.h"
 
 #include "klotter/assert.h"
@@ -37,8 +39,8 @@ CompiledGeom_TransformInstance::CompiledGeom_TransformInstance(
 std::shared_ptr<MeshInstance> make_mesh_instance(std::shared_ptr<CompiledGeom> geom, std::shared_ptr<Material> mat)
 {
 	auto instance = std::make_shared<MeshInstance>();
-	instance->geom = geom;
-	instance->material = mat;
+	instance->geom = std::move(geom);
+	instance->material = std::move(mat);
 	return instance;
 }
 
@@ -47,8 +49,8 @@ std::shared_ptr<MeshInstance_TransformInstanced> make_mesh_instance(
 )
 {
 	auto instance = std::make_shared<MeshInstance_TransformInstanced>();
-	instance->geom = geom;
-	instance->material = mat;
+	instance->geom = std::move(geom);
+	instance->material = std::move(mat);
 	return instance;
 }
 
@@ -77,7 +79,7 @@ std::shared_ptr<CompiledGeom> compile_geom(const Geom& geom, const CompiledGeomV
 	std::size_t offset = 0;
 	for (const auto& att: ex.attributes)
 	{
-		const auto normalize = false;
+		constexpr auto normalize = false;
 		glVertexAttribPointer(
 			Cint_to_gluint(attrib_location),
 			att.count,
@@ -145,7 +147,7 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	std::size_t offset = 0;
 	for (const auto& att: ex.attributes)
 	{
-		const auto normalize = false;
+		constexpr auto normalize = false;
 		glVertexAttribPointer(
 			Cint_to_gluint(attrib_location),
 			att.count,
