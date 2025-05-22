@@ -62,11 +62,11 @@ struct LoadedShader_Skybox : LoadedShader
 	Uniform tex_skybox;
 };
 
-struct Base_LoadedShader_Unlit
+struct LoadedShader_Unlit
 {
 	std::shared_ptr<ShaderProgram> program;
 
-	explicit Base_LoadedShader_Unlit(ModelSource model_source, LoadedShader s, const CameraUniformBuffer& desc);
+	explicit LoadedShader_Unlit(ModelSource model_source, LoadedShader s, const CameraUniformBuffer& desc);
 
 	Uniform tint_color;
 	Uniform tex_diffuse;
@@ -130,11 +130,11 @@ struct LoadedPostProcShader
 	explicit LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, PostProcSetup setup);
 };
 
-struct Base_LoadedShader_Default
+struct LoadedShader_Default
 {
 	std::shared_ptr<ShaderProgram> program;
 
-	Base_LoadedShader_Default(
+	LoadedShader_Default(
 		ModelSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
 	);
 
@@ -169,35 +169,37 @@ struct RenderContext
 	UseTransparency use_transparency;
 };
 
-struct LoadedShader_Unlit
+struct LoadedShader_Unlit_Container
 {
 	CompiledGeomVertexAttributes geom_layout;
-	Base_LoadedShader_Unlit default_shader;
-	Base_LoadedShader_Unlit transparency_shader;
 
-	// todo(Gustav): rename to something better than "base"
-	[[nodiscard]] const Base_LoadedShader_Unlit& base(const RenderContext& rc) const;
+	LoadedShader_Unlit default_shader;
+	LoadedShader_Unlit transparency_shader;
+
 	[[nodiscard]] bool is_loaded() const;
 };
 
-struct LoadedShader_Default
+struct LoadedShader_Default_Container
 {
 	CompiledGeomVertexAttributes geom_layout;
-	Base_LoadedShader_Default default_shader;
-	Base_LoadedShader_Default transparency_shader;
-	Base_LoadedShader_Default default_shader_instance;
 
-	[[nodiscard]] const Base_LoadedShader_Default& base(const RenderContext& rc) const;
+	LoadedShader_Default default_shader;
+	LoadedShader_Default transparency_shader;
+	LoadedShader_Default default_shader_instance;
+
 	[[nodiscard]] bool is_loaded() const;
 };
+
+[[nodiscard]] const LoadedShader_Unlit& shader_from_container(const LoadedShader_Unlit_Container& container, const RenderContext& rc);
+[[nodiscard]] const LoadedShader_Default& shader_from_container(const LoadedShader_Default_Container& container, const RenderContext& rc);
 
 struct ShaderResource
 {
 	LoadedShader_SingleColor single_color_shader;
 	LoadedShader_Skybox skybox_shader;
 
-	LoadedShader_Unlit unlit_shader;
-	LoadedShader_Default default_shader;
+	LoadedShader_Unlit_Container unlit_shader_container;
+	LoadedShader_Default_Container default_shader_container;
 
 	// todo(Gustav): split into 
 	std::shared_ptr<LoadedPostProcShader> pp_invert;

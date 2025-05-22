@@ -10,8 +10,8 @@ namespace klotter
 {
 struct Assets;
 struct CompiledCamera;
-struct LoadedShader_Default;
-struct LoadedShader_Unlit;
+struct LoadedShader_Default_Container;
+struct LoadedShader_Unlit_Container;
 struct RenderSettings;
 struct Lights;
 struct OpenglStates;
@@ -48,7 +48,7 @@ struct Material
 /// A unlit (or fully lit) material, not affected by light.
 struct UnlitMaterial : Material
 {
-	const LoadedShader_Unlit* shader;
+	const LoadedShader_Unlit_Container* shader_container;
 	glm::vec3 color = colors::white;
 	float alpha = 1.0f;
 	std::shared_ptr<Texture2d> texture;
@@ -67,7 +67,7 @@ struct UnlitMaterial : Material
 /// A material affected by light.
 struct DefaultMaterial : Material
 {
-	const LoadedShader_Default* shader = nullptr;
+	const LoadedShader_Default_Container* shader_container = nullptr;
 	glm::vec3 color = colors::white;
 	float alpha = 1.0f;
 

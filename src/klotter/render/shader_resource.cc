@@ -47,7 +47,7 @@ LoadedShader_Skybox::LoadedShader_Skybox(LoadedShader s, const CameraUniformBuff
 	program->setup_uniform_block(desc.setup);
 }
 
-Base_LoadedShader_Unlit::Base_LoadedShader_Unlit(
+LoadedShader_Unlit::LoadedShader_Unlit(
 	ModelSource model_source, LoadedShader s, const CameraUniformBuffer& desc
 )
 	: program(std::move(s.program))
@@ -115,7 +115,7 @@ LoadedPostProcShader::LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, Pos
 	setup_textures(program.get(), {&texture});
 }
 
-Base_LoadedShader_Default::Base_LoadedShader_Default(
+LoadedShader_Default::LoadedShader_Default(
 	ModelSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
 )
 	: program(std::move(s.program))
@@ -161,39 +161,38 @@ Base_LoadedShader_Default::Base_LoadedShader_Default(
 	program->setup_uniform_block(desc.setup);
 }
 
-const Base_LoadedShader_Unlit& LoadedShader_Unlit::base(const RenderContext& rc) const
+const LoadedShader_Unlit& shader_from_container(const LoadedShader_Unlit_Container& container, const RenderContext& rc)
 {
-	return rc.use_transparency == UseTransparency::yes ? transparency_shader : default_shader;
+	return rc.use_transparency == UseTransparency::yes ? container.transparency_shader : container.default_shader;
 }
 
-bool LoadedShader_Unlit::is_loaded() const
+bool LoadedShader_Unlit_Container::is_loaded() const
 {
 	return default_shader.program->is_loaded() && transparency_shader.program->is_loaded();
 }
 
-const Base_LoadedShader_Default& LoadedShader_Default::base(const RenderContext& rc) const
+const LoadedShader_Default& shader_from_container(const LoadedShader_Default_Container& container, const RenderContext& rc)
 {
 	switch (rc.model_source)
 	{
 	case ModelSource::Uniform:
-		return rc.use_transparency == UseTransparency::yes ? transparency_shader : default_shader;
+		return rc.use_transparency == UseTransparency::yes ? container.transparency_shader : container.default_shader;
 	case ModelSource::Instanced_mat4:
 		assert(rc.use_transparency == UseTransparency::no);	 // not currently supporting instanced transparency
-		return default_shader_instance;
-	default: assert(false && "unhandled"); return default_shader;
+		return container.default_shader_instance;
+	default: assert(false && "unhandled"); return container.default_shader;
 	}
 }
 
-bool LoadedShader_Default::is_loaded() const
+bool LoadedShader_Default_Container::is_loaded() const
 {
 	return default_shader.program->is_loaded() && transparency_shader.program->is_loaded();
 }
 
-/// verify that the shaders are loaded
 bool ShaderResource::is_loaded() const
 {
-	return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded() && unlit_shader.is_loaded()
-		&& default_shader.is_loaded() && pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
+	return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded() && unlit_shader_container.is_loaded()
+		&& default_shader_container.is_loaded() && pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
 		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded();
 }
 
@@ -328,16 +327,16 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 	return {
 		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader, ModelSource::Uniform), desc},
 		LoadedShader_Skybox{load_shader({}, skybox_shader, ModelSource::Uniform), desc},
-		LoadedShader_Unlit{
+		LoadedShader_Unlit_Container{
 			loaded_unlit.geom_layout,
-			Base_LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit, desc},
-			Base_LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit_transparency, desc}
+			LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit, desc},
+			LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit_transparency, desc}
 		},
-		LoadedShader_Default{
+		LoadedShader_Default_Container{
 			loaded_default.geom_layout,
-			Base_LoadedShader_Default{ModelSource::Uniform, loaded_default, settings, desc},
-			Base_LoadedShader_Default{ModelSource::Uniform, loaded_default_transparency, settings, desc},
-			Base_LoadedShader_Default{ModelSource::Instanced_mat4, loaded_default_instanced, settings, desc}
+			LoadedShader_Default{ModelSource::Uniform, loaded_default, settings, desc},
+			LoadedShader_Default{ModelSource::Uniform, loaded_default_transparency, settings, desc},
+			LoadedShader_Default{ModelSource::Instanced_mat4, loaded_default_instanced, settings, desc}
 		},
 		pp_invert,
 		pp_grayscale,

@@ -54,12 +54,12 @@ std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 
 CompiledGeomVertexAttributes Renderer::unlit_geom_layout() const
 {
-	return pimpl->shaders.unlit_shader.geom_layout;
+	return pimpl->shaders.unlit_shader_container.geom_layout;
 }
 
 CompiledGeomVertexAttributes Renderer::default_geom_layout() const
 {
-	return pimpl->shaders.default_shader.geom_layout;
+	return pimpl->shaders.default_shader_container.geom_layout;
 }
 
 bool Renderer::is_loaded() const
