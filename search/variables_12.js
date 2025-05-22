@@ -11,7 +11,7 @@ var searchData=
   ['vertex_8',['vertex',['../structklotter_1_1VertexShaderSource.html#a8f362859d9f3f6f46c10a7a9cabddf7c',1,'klotter::VertexShaderSource::vertex'],['../structklotter_1_1ShaderSource.html#a6b9e1c440250f9b203724b907da93f18',1,'klotter::ShaderSource::vertex']]],
   ['vertices_9',['vertices',['../structklotter_1_1Geom.html#a5f55a031de35199a3bd11ca612a08aae',1,'klotter::Geom']]],
   ['view_10',['view',['../structklotter_1_1CompiledCamera.html#a1eb29eda166a30627784a927bc854c47',1,'klotter::CompiledCamera']]],
-  ['view_5fposition_11',['view_position',['../structklotter_1_1Base__LoadedShader__Default.html#a140972e1f4a981a4137f6807a27cb775',1,'klotter::Base_LoadedShader_Default']]],
+  ['view_5fposition_11',['view_position',['../structklotter_1_1LoadedShader__Default.html#af42cd69f5c0e974bd7b51627ca1366d3',1,'klotter::LoadedShader_Default']]],
   ['view_5fprop_12',['view_prop',['../structklotter_1_1CameraUniformBuffer.html#ae47677224955f8ae8562a9cb414e33e4',1,'klotter::CameraUniformBuffer']]],
   ['violet_13',['violet',['../namespaceklotter_1_1imgui.html#ac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
 ];

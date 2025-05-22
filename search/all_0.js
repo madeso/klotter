@@ -19,7 +19,7 @@ var searchData=
   ['always_16',['always',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69af9f90eeaf400d228facde6bc48da5cfb',1,'klotter']]],
   ['always_5fvisible_17',['always_visible',['../group__render.html#gga3abacaa100d79a814507a19cd5839971a914d9209a378fe4848b7b83190ef1517',1,'klotter']]],
   ['ambient_18',['ambient',['../structklotter_1_1Lights.html#ad8ca55a3a70c4b053f146e9d88d82175',1,'klotter::Lights']]],
-  ['ambient_5ftint_19',['ambient_tint',['../structklotter_1_1DefaultMaterial.html#ac7727c8dcd38e5e863bb66ea09db20d0',1,'klotter::DefaultMaterial::ambient_tint'],['../structklotter_1_1Base__LoadedShader__Default.html#a711c7e10cca904f6d7ca7c749af7d876',1,'klotter::Base_LoadedShader_Default::ambient_tint']]],
+  ['ambient_5ftint_19',['ambient_tint',['../structklotter_1_1DefaultMaterial.html#ac7727c8dcd38e5e863bb66ea09db20d0',1,'klotter::DefaultMaterial::ambient_tint'],['../structklotter_1_1LoadedShader__Default.html#aab13f54acefd7936265f7781ec3855c1',1,'klotter::LoadedShader_Default::ambient_tint']]],
   ['app_20',['App',['../structklotter_1_1App.html',1,'klotter']]],
   ['apply_5flights_21',['apply_lights',['../structklotter_1_1Material.html#a54c02acb7ce2d5c1ab8637a819a52d76',1,'klotter::Material::apply_lights()'],['../structklotter_1_1UnlitMaterial.html#a08cab92f0b59a39ae2adb6cfa51ca7e1',1,'klotter::UnlitMaterial::apply_lights()'],['../structklotter_1_1DefaultMaterial.html#a07358b6eb7c2082fc2b93ab146d4f64f',1,'klotter::DefaultMaterial::apply_lights()']]],
   ['array_5fcount_22',['array_count',['../structklotter_1_1CompiledUniformProp.html#a44e535c1f090e34eec5929ed073788b0',1,'klotter::CompiledUniformProp::array_count'],['../structklotter_1_1UniformProp.html#ab57fc600f85806ebaef872dc42480b02',1,'klotter::UniformProp::array_count']]],

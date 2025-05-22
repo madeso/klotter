@@ -27,7 +27,7 @@ var searchData=
   ['from_24',['from',['../structklotter_1_1DebugLine.html#afa0c9a0ada0ad0186082527930108f73',1,'klotter::DebugLine']]],
   ['front_25',['front',['../structklotter_1_1CameraVectors.html#a1462b3c73fdf42f65589e3f926d6d921',1,'klotter::CameraVectors::front'],['../group__render.html#gga2da9ff87267808b55c2680259db65b5cae6ec529ba185279aa0adcf93e645c7cd',1,'klotter::front']]],
   ['front_5fand_5fback_26',['front_and_back',['../group__render.html#gga2da9ff87267808b55c2680259db65b5cad46b3c78f91c7d43349252714bf07404',1,'klotter']]],
-  ['frustum_5flights_27',['frustum_lights',['../structklotter_1_1Base__LoadedShader__Default.html#a50414c28a810abad6d878d2871719513',1,'klotter::Base_LoadedShader_Default::frustum_lights'],['../structklotter_1_1Lights.html#aa1be9e01f131119d7fe7aed807a69464',1,'klotter::Lights::frustum_lights']]],
+  ['frustum_5flights_27',['frustum_lights',['../structklotter_1_1LoadedShader__Default.html#a03e09db0a3440956c276c380fef51067',1,'klotter::LoadedShader_Default::frustum_lights'],['../structklotter_1_1Lights.html#aa1be9e01f131119d7fe7aed807a69464',1,'klotter::Lights::frustum_lights']]],
   ['frustumlight_28',['FrustumLight',['../structklotter_1_1FrustumLight.html',1,'klotter']]],
   ['frustumlightuniforms_29',['FrustumLightUniforms',['../structklotter_1_1FrustumLightUniforms.html',1,'klotter::FrustumLightUniforms'],['../structklotter_1_1FrustumLightUniforms.html#a8853c7aa1207bc1bc79214aa4a9f8685',1,'klotter::FrustumLightUniforms::FrustumLightUniforms()']]],
   ['fse_2eh_30',['fse.h',['../fse_8h.html',1,'']]],

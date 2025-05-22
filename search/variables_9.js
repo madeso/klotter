@@ -2,7 +2,7 @@ var searchData=
 [
   ['last_5fsource_0',['last_source',['../structklotter_1_1CompiledStack.html#a442cf553eb97dd8d5921b7a4d5c20bc2',1,'klotter::CompiledStack']]],
   ['layout_1',['layout',['../structklotter_1_1VertexShaderSource.html#a9d1ce2770a08847fa2b49550f7e70ae7',1,'klotter::VertexShaderSource']]],
-  ['light_5fambient_5fcolor_2',['light_ambient_color',['../structklotter_1_1Base__LoadedShader__Default.html#a20a9b7cc439fe24a05fa35ec0ece480a',1,'klotter::Base_LoadedShader_Default']]],
+  ['light_5fambient_5fcolor_2',['light_ambient_color',['../structklotter_1_1LoadedShader__Default.html#a5db9f7215a40897f83eeee017569be55',1,'klotter::LoadedShader_Default']]],
   ['light_5fattenuation_3',['light_attenuation',['../structklotter_1_1PointLightUniforms.html#aadb098fdd8fbaa45838feac3b98cea9a',1,'klotter::PointLightUniforms']]],
   ['light_5fdiffuse_5fcolor_4',['light_diffuse_color',['../structklotter_1_1DirectionalLightUniforms.html#a801338744f0a781c96cea0312853b29b',1,'klotter::DirectionalLightUniforms::light_diffuse_color'],['../structklotter_1_1PointLightUniforms.html#a374e21f06a53eea2cbad92af032504e1',1,'klotter::PointLightUniforms::light_diffuse_color']]],
   ['light_5fspecular_5fcolor_5',['light_specular_color',['../structklotter_1_1DirectionalLightUniforms.html#ab80a217f6a0dad1911ca5f03949f5398',1,'klotter::DirectionalLightUniforms::light_specular_color'],['../structklotter_1_1PointLightUniforms.html#a2904c2abd2d998fcfa02513bcbb0aacb',1,'klotter::PointLightUniforms::light_specular_color']]],

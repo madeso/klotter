@@ -8,7 +8,7 @@ var searchData=
   ['effectstack_5',['EffectStack',['../structklotter_1_1EffectStack.html',1,'klotter::EffectStack'],['../structklotter_1_1Effect.html#a9baaf22c08590fd87da53ccb29ff2dcd',1,'klotter::Effect::EffectStack()']]],
   ['elements_6',['elements',['../structklotter_1_1CompiledShaderVertexAttributes.html#af04505096c36afa76e0ae0fe19bfdbee',1,'klotter::CompiledShaderVertexAttributes::elements'],['../structklotter_1_1CompiledGeomVertexAttributes.html#a60ba041fe5f742bce8ae8022f3c88161',1,'klotter::CompiledGeomVertexAttributes::elements']]],
   ['emissive_7',['emissive',['../structklotter_1_1DefaultMaterial.html#a898d25a64155b2ff3393cf59406ea934',1,'klotter::DefaultMaterial']]],
-  ['emissive_5ffactor_8',['emissive_factor',['../structklotter_1_1DefaultMaterial.html#a1a567363b2fe120cf5e9174e2e2e3deb',1,'klotter::DefaultMaterial::emissive_factor'],['../structklotter_1_1Base__LoadedShader__Default.html#a6eae02965d7594f08c5bacb71c21bb09',1,'klotter::Base_LoadedShader_Default::emissive_factor']]],
+  ['emissive_5ffactor_8',['emissive_factor',['../structklotter_1_1DefaultMaterial.html#a1a567363b2fe120cf5e9174e2e2e3deb',1,'klotter::DefaultMaterial::emissive_factor'],['../structklotter_1_1LoadedShader__Default.html#a7189f051cfaf7a1d0b9f4a183ad088ec',1,'klotter::LoadedShader_Default::emissive_factor']]],
   ['enable_5fexception_5fon_5fassert_9',['enable_exception_on_assert',['../assert_8h.html#aee5e1bbf8aaba41d55d1018f6f5f700a',1,'assert.h']]],
   ['enabled_10',['enabled',['../structklotter_1_1Effect.html#a5b3f083f8b7d5c62e8ffaae80690786f',1,'klotter::Effect']]],
   ['equal_11',['equal',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a465289687a70db7aa7217cc240c29f0f',1,'klotter']]],

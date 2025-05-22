@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klotter: klotter::LoadedShader_Unlit Struct Reference</title>
+<title>Klotter: klotter::LoadedShader_Unlit_Container Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,7 +104,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1LoadedShader__Unlit__Container.html">LoadedShader_Unlit_Container</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -112,8 +112,8 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structklotter_1_1LoadedShader__Unlit-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">klotter::LoadedShader_Unlit Struct Reference<div class="ingroups"><a class="el" href="group__render.html">Renderer</a></div></div></div>
+<a href="structklotter_1_1LoadedShader__Unlit__Container-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">klotter::LoadedShader_Unlit_Container Struct Reference<div class="ingroups"><a class="el" href="group__render.html">Renderer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -121,23 +121,21 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af48f2e2c646f04432fd112c64fab82d2" id="r_af48f2e2c646f04432fd112c64fab82d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af48f2e2c646f04432fd112c64fab82d2">LoadedShader_Unlit</a> (<a class="el" href="group__render.html#ga00becf1348a9a20b568904f0000af614">ModelSource</a> model_source, <a class="el" href="structklotter_1_1LoadedShader.html">LoadedShader</a> s, const <a class="el" href="structklotter_1_1CameraUniformBuffer.html">CameraUniformBuffer</a> &amp;desc)</td></tr>
-<tr class="separator:af48f2e2c646f04432fd112c64fab82d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3905582d205b18ad3e4b4a99d73b6430" id="r_a3905582d205b18ad3e4b4a99d73b6430"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3905582d205b18ad3e4b4a99d73b6430">is_loaded</a> () const</td></tr>
+<tr class="separator:a3905582d205b18ad3e4b4a99d73b6430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae89bb303b8ae6300dc63f888bb7c0dc3" id="r_ae89bb303b8ae6300dc63f888bb7c0dc3"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae89bb303b8ae6300dc63f888bb7c0dc3">program</a></td></tr>
-<tr class="separator:ae89bb303b8ae6300dc63f888bb7c0dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0694d3d6da2bd4895af832ef45dab722" id="r_a0694d3d6da2bd4895af832ef45dab722"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0694d3d6da2bd4895af832ef45dab722">tint_color</a></td></tr>
-<tr class="separator:a0694d3d6da2bd4895af832ef45dab722"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47eb0877bdfee9da78598205614a9c9d" id="r_a47eb0877bdfee9da78598205614a9c9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47eb0877bdfee9da78598205614a9c9d">tex_diffuse</a></td></tr>
-<tr class="separator:a47eb0877bdfee9da78598205614a9c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8d72398e26d17b3fdc32ed1a48e63b8" id="r_ae8d72398e26d17b3fdc32ed1a48e63b8"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8d72398e26d17b3fdc32ed1a48e63b8">model</a></td></tr>
-<tr class="separator:ae8d72398e26d17b3fdc32ed1a48e63b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e66520bb7ca540cd1dbe0ef5d9d316" id="r_a87e66520bb7ca540cd1dbe0ef5d9d316"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87e66520bb7ca540cd1dbe0ef5d9d316">geom_layout</a></td></tr>
+<tr class="separator:a87e66520bb7ca540cd1dbe0ef5d9d316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ee307615257b90fe505bcdc939e66e" id="r_ad3ee307615257b90fe505bcdc939e66e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3ee307615257b90fe505bcdc939e66e">default_shader</a></td></tr>
+<tr class="separator:ad3ee307615257b90fe505bcdc939e66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a832f522432bead63aefa3f8873c026a4" id="r_a832f522432bead63aefa3f8873c026a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a832f522432bead63aefa3f8873c026a4">transparency_shader</a></td></tr>
+<tr class="separator:a832f522432bead63aefa3f8873c026a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af48f2e2c646f04432fd112c64fab82d2" name="af48f2e2c646f04432fd112c64fab82d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af48f2e2c646f04432fd112c64fab82d2">&#9670;&#160;</a></span>LoadedShader_Unlit()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3905582d205b18ad3e4b4a99d73b6430" name="a3905582d205b18ad3e4b4a99d73b6430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3905582d205b18ad3e4b4a99d73b6430">&#9670;&#160;</a></span>is_loaded()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,24 +144,15 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">klotter::LoadedShader_Unlit::LoadedShader_Unlit </td>
+          <td class="memname">bool klotter::LoadedShader_Unlit_Container::is_loaded </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__render.html#ga00becf1348a9a20b568904f0000af614">ModelSource</a></td>          <td class="paramname"><span class="paramname"><em>model_source</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structklotter_1_1LoadedShader.html">LoadedShader</a></td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structklotter_1_1CameraUniformBuffer.html">CameraUniformBuffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>desc</em></span>&#160;)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -171,56 +160,42 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae8d72398e26d17b3fdc32ed1a48e63b8" name="ae8d72398e26d17b3fdc32ed1a48e63b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8d72398e26d17b3fdc32ed1a48e63b8">&#9670;&#160;</a></span>model</h2>
+<a id="ad3ee307615257b90fe505bcdc939e66e" name="ad3ee307615257b90fe505bcdc939e66e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ee307615257b90fe505bcdc939e66e">&#9670;&#160;</a></span>default_shader</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="structklotter_1_1Uniform.html">Uniform</a>&gt; klotter::LoadedShader_Unlit::model</td>
+          <td class="memname"><a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a> klotter::LoadedShader_Unlit_Container::default_shader</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ae89bb303b8ae6300dc63f888bb7c0dc3" name="ae89bb303b8ae6300dc63f888bb7c0dc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae89bb303b8ae6300dc63f888bb7c0dc3">&#9670;&#160;</a></span>program</h2>
+<a id="a87e66520bb7ca540cd1dbe0ef5d9d316" name="a87e66520bb7ca540cd1dbe0ef5d9d316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e66520bb7ca540cd1dbe0ef5d9d316">&#9670;&#160;</a></span>geom_layout</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a>&gt; klotter::LoadedShader_Unlit::program</td>
+          <td class="memname"><a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a> klotter::LoadedShader_Unlit_Container::geom_layout</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a47eb0877bdfee9da78598205614a9c9d" name="a47eb0877bdfee9da78598205614a9c9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47eb0877bdfee9da78598205614a9c9d">&#9670;&#160;</a></span>tex_diffuse</h2>
+<a id="a832f522432bead63aefa3f8873c026a4" name="a832f522432bead63aefa3f8873c026a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a832f522432bead63aefa3f8873c026a4">&#9670;&#160;</a></span>transparency_shader</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a> klotter::LoadedShader_Unlit::tex_diffuse</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0694d3d6da2bd4895af832ef45dab722" name="a0694d3d6da2bd4895af832ef45dab722"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0694d3d6da2bd4895af832ef45dab722">&#9670;&#160;</a></span>tint_color</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a> klotter::LoadedShader_Unlit::tint_color</td>
+          <td class="memname"><a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a> klotter::LoadedShader_Unlit_Container::transparency_shader</td>
         </tr>
       </table>
 </div><div class="memdoc">
