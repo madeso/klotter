@@ -4,7 +4,7 @@ var searchData=
   ['add_1',['add',['../structklotter_1_1UniformBufferCompiler.html#a1006307a4f7b45ce5b348a19b8b1b474',1,'klotter::UniformBufferCompiler']]],
   ['add_5fcolor_2',['add_color',['../structklotter_1_1geom_1_1Builder.html#ab4601163cdc114970ed8f8561ebc3804',1,'klotter::geom::Builder']]],
   ['add_5fface_3',['add_face',['../structklotter_1_1geom_1_1Builder.html#a108dd5e1bb46cd95cc94662b5ec741b9',1,'klotter::geom::Builder']]],
-  ['add_5fline_4',['add_line',['../structklotter_1_1DebugRender.html#aab4bccca09441287dc83feea4a2d803d',1,'klotter::DebugRender']]],
+  ['add_5fline_4',['add_line',['../structklotter_1_1DebugRender.html#a1d12a005360124457989ff77b4d2e8e8',1,'klotter::DebugRender']]],
   ['add_5fnormal_5',['add_normal',['../structklotter_1_1geom_1_1Builder.html#a170c3028daab22f3d9525886b87ccc20',1,'klotter::geom::Builder']]],
   ['add_5fposition_6',['add_position',['../structklotter_1_1geom_1_1Builder.html#ad060993f3073843868929ff6dd65b045',1,'klotter::geom::Builder']]],
   ['add_5fquad_7',['add_quad',['../structklotter_1_1geom_1_1Builder.html#a4d704606049b23d843c5ec5bd2c2d8ee',1,'klotter::geom::Builder']]],

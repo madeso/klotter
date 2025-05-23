@@ -6,7 +6,7 @@ var searchData=
   ['setup_3',['setup',['../structklotter_1_1CameraUniformBuffer.html#a369782736daee9677a8d7c285cd92fd2',1,'klotter::CameraUniformBuffer']]],
   ['shader_5fcontainer_4',['shader_container',['../structklotter_1_1UnlitMaterial.html#a1324344df38382e9ebe569901cad360f',1,'klotter::UnlitMaterial::shader_container'],['../structklotter_1_1DefaultMaterial.html#af2fcf3b902871b551a45783e6f7b75db',1,'klotter::DefaultMaterial::shader_container']]],
   ['shader_5fprogram_5',['shader_program',['../structklotter_1_1ShaderProgram.html#af3084796decc7cdcf7e65f7367c280db',1,'klotter::ShaderProgram']]],
-  ['shaders_6',['shaders',['../structklotter_1_1RendererPimpl.html#a08c948c9c3e8eb268ab9e2ff1cfcf786',1,'klotter::RendererPimpl']]],
+  ['shaders_5fresources_6',['shaders_resources',['../structklotter_1_1RendererPimpl.html#a8707601c657c0774f0e7022c259f2cd5',1,'klotter::RendererPimpl']]],
   ['shininess_7',['shininess',['../structklotter_1_1DefaultMaterial.html#a3a93fa530b29586a9797f1d32220ce9f',1,'klotter::DefaultMaterial::shininess'],['../structklotter_1_1LoadedShader__Default.html#a784993d8702f0f1f4f3d497863e556b4',1,'klotter::LoadedShader_Default::shininess']]],
   ['single_5fcolor_5fshader_8',['single_color_shader',['../structklotter_1_1ShaderResource.html#ae8c6c5ddd6c4420cf6c0b45b7af33774',1,'klotter::ShaderResource']]],
   ['size_9',['size',['../structklotter_1_1ExtractedAttribute.html#a26fd68b8dcbbdaea8794287deed58f01',1,'klotter::ExtractedAttribute::size'],['../structklotter_1_1UniformBufferSetup.html#a4dd7230c77d6877d730e2a4fa45462f8',1,'klotter::UniformBufferSetup::size']]],
@@ -21,6 +21,5 @@ var searchData=
   ['stencil_5fmask_18',['stencil_mask',['../structklotter_1_1OpenglStates.html#a90695fe8cd6640b6d9ee540d4f583bca',1,'klotter::OpenglStates']]],
   ['stencil_5fop_19',['stencil_op',['../structklotter_1_1OpenglStates.html#af1e8ecdb450e36a413e6b35ce753c352',1,'klotter::OpenglStates']]],
   ['stencil_5ftest_20',['stencil_test',['../structklotter_1_1OpenglStates.html#a68cdfa7a0607de2cb1841ae79261653e',1,'klotter::OpenglStates']]],
-  ['stride_21',['stride',['../structklotter_1_1ExtractedGeom.html#a88aa2dea435a4e337465450b863fe03f',1,'klotter::ExtractedGeom']]],
-  ['style_22',['style',['../structklotter_1_1DebugLine.html#a0a7fb3edc2e2ece47fa97fabdd1de976',1,'klotter::DebugLine']]]
+  ['stride_21',['stride',['../structklotter_1_1ExtractedGeom.html#a88aa2dea435a4e337465450b863fe03f',1,'klotter::ExtractedGeom']]]
 ];

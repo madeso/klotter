@@ -18,6 +18,6 @@ var searchData=
   ['line_5fresolution_15',['line_resolution',['../structklotter_1_1DebugDrawer.html#a85644abeb6429521f4c77df173682754',1,'klotter::DebugDrawer']]],
   ['line_5fshader_16',['line_shader',['../structklotter_1_1DebugDrawer.html#a9877955110134aac565599c4f61a224f',1,'klotter::DebugDrawer']]],
   ['line_5fview_17',['line_view',['../structklotter_1_1DebugDrawer.html#a07a44bca587d8da4e0b6e4c56821f56b',1,'klotter::DebugDrawer']]],
-  ['lines_18',['lines',['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch']]],
+  ['lines_18',['lines',['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch::lines']]],
   ['location_19',['location',['../structklotter_1_1Uniform.html#a0a3d653eabb213c1f05a7ca494a5cf27',1,'klotter::Uniform']]]
 ];

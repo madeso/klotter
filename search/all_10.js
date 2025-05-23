@@ -14,8 +14,8 @@ var searchData=
   ['set_5ffactor_11',['set_factor',['../structklotter_1_1FactorEffect.html#a8e7f0594c2c1fde00083e4d48c9dbd44',1,'klotter::FactorEffect']]],
   ['set_5ffloat_12',['set_float',['../structklotter_1_1ShaderProgram.html#a9d99321663d5d4e68c16807fb9f966d8',1,'klotter::ShaderProgram']]],
   ['set_5fgl_5fviewport_13',['set_gl_viewport',['../namespaceklotter.html#a9c262112545baed06ed5325e9796633d',1,'klotter']]],
-  ['set_5fline_5fdash_14',['set_line_dash',['../structklotter_1_1DebugDrawer.html#a261e87613640674c15c2a5351de8f935',1,'klotter::DebugDrawer']]],
-  ['set_5fline_5fline_15',['set_line_line',['../structklotter_1_1DebugDrawer.html#ae643d3d07eec8080e6889f20a45b1a5c',1,'klotter::DebugDrawer']]],
+  ['set_5fline_5fto_5fdash_14',['set_line_to_dash',['../structklotter_1_1DebugDrawer.html#ac54f674b3963d5ffc1d1f4b18e0b4af3',1,'klotter::DebugDrawer']]],
+  ['set_5fline_5fto_5fsolid_15',['set_line_to_solid',['../structklotter_1_1DebugDrawer.html#af48a36d75cfe8784b2d3bc0c312cfeaf',1,'klotter::DebugDrawer']]],
   ['set_5fmat_16',['set_mat',['../structklotter_1_1ShaderProgram.html#a5350ff187b9af19f903d3d91ba1bf0b4',1,'klotter::ShaderProgram::set_mat(const Uniform &amp;uniform, const glm::mat4 &amp;mat) const'],['../structklotter_1_1ShaderProgram.html#a89ced20e53a1bd651a87de1c29d52399',1,'klotter::ShaderProgram::set_mat(const Uniform &amp;uniform, const glm::mat3 &amp;mat) const']]],
   ['set_5fmat4_17',['set_mat4',['../structklotter_1_1UniformBuffer.html#af8087e9d4f64acf4e8ab5ab9ff2e356f',1,'klotter::UniformBuffer']]],
   ['set_5fprops_18',['set_props',['../structklotter_1_1CameraUniformBuffer.html#ad2ab011ab7b8a6336fe212bb97425833',1,'klotter::CameraUniformBuffer']]],
@@ -39,7 +39,7 @@ var searchData=
   ['shaderprogram_36',['ShaderProgram',['../structklotter_1_1ShaderProgram.html',1,'klotter::ShaderProgram'],['../structklotter_1_1ShaderProgram.html#a4864256c983b0c6a509a6dd5f3e89427',1,'klotter::ShaderProgram::ShaderProgram(const std::string &amp;vertex_source, const std::string &amp;fragment_source, const CompiledShaderVertexAttributes &amp;layout)'],['../structklotter_1_1ShaderProgram.html#af07ac3e8da2e98fff4366f4994357c11',1,'klotter::ShaderProgram::ShaderProgram(const ShaderProgram &amp;)=delete'],['../structklotter_1_1ShaderProgram.html#a61c1ffd3bd1ebba2102572997fb8c51a',1,'klotter::ShaderProgram::ShaderProgram(ShaderProgram &amp;&amp;other) noexcept']]],
   ['shaderpropertyprovider_37',['ShaderPropertyProvider',['../structklotter_1_1ShaderPropertyProvider.html',1,'klotter::ShaderPropertyProvider'],['../structklotter_1_1ShaderPropertyProvider.html#a7a4ec231816c208cfd36842fee34f71e',1,'klotter::ShaderPropertyProvider::ShaderPropertyProvider()=default'],['../structklotter_1_1ShaderPropertyProvider.html#a5ad1b9975ebd7c34c346f6aa245e1d9f',1,'klotter::ShaderPropertyProvider::ShaderPropertyProvider(const ShaderPropertyProvider &amp;)=delete'],['../structklotter_1_1ShaderPropertyProvider.html#aeccea79ab55ae90cd8194fee436e18c5',1,'klotter::ShaderPropertyProvider::ShaderPropertyProvider(ShaderPropertyProvider &amp;&amp;)=delete']]],
   ['shaderresource_38',['ShaderResource',['../structklotter_1_1ShaderResource.html',1,'klotter']]],
-  ['shaders_39',['shaders',['../structklotter_1_1RendererPimpl.html#a08c948c9c3e8eb268ab9e2ff1cfcf786',1,'klotter::RendererPimpl']]],
+  ['shaders_5fresources_39',['shaders_resources',['../structklotter_1_1RendererPimpl.html#a8707601c657c0774f0e7022c259f2cd5',1,'klotter::RendererPimpl']]],
   ['shadersource_40',['ShaderSource',['../structklotter_1_1ShaderSource.html',1,'klotter']]],
   ['shadervertexattributes_41',['ShaderVertexAttributes',['../group__vertex-layout.html#gab14e38875ed51577f61fbbe750a605ea',1,'klotter']]],
   ['shininess_42',['shininess',['../structklotter_1_1DefaultMaterial.html#a3a93fa530b29586a9797f1d32220ce9f',1,'klotter::DefaultMaterial::shininess'],['../structklotter_1_1LoadedShader__Default.html#a784993d8702f0f1f4f3d497863e556b4',1,'klotter::LoadedShader_Default::shininess']]],
@@ -72,6 +72,5 @@ var searchData=
   ['str_69',['str',['../structStr.html#ae5bcd149c44251ab778610f5dfaff12d',1,'Str']]],
   ['str_2eh_70',['str.h',['../str_8h.html',1,'']]],
   ['stride_71',['stride',['../structklotter_1_1ExtractedGeom.html#a88aa2dea435a4e337465450b863fe03f',1,'klotter::ExtractedGeom']]],
-  ['style_72',['style',['../structklotter_1_1DebugLine.html#a0a7fb3edc2e2ece47fa97fabdd1de976',1,'klotter::DebugLine']]],
-  ['submit_73',['submit',['../structklotter_1_1LineBatch.html#ac11848294301883e840262a2f7be7392',1,'klotter::LineBatch']]]
+  ['submit_72',['submit',['../structklotter_1_1LineBatch.html#ac11848294301883e840262a2f7be7392',1,'klotter::LineBatch']]]
 ];

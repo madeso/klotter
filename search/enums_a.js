@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['uniformtype_0',['UniformType',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40',1,'klotter']]],
-  ['usetransparency_1',['UseTransparency',['../group__render.html#ga3453e147b5d5dff196af8e69e2adfc3b',1,'klotter']]]
+  ['vertextype_0',['VertexType',['../group__vertex-layout.html#gad736ea89c0534627057463235feb9189',1,'klotter']]]
 ];
