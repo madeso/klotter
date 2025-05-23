@@ -16,9 +16,9 @@ namespace klotter
 struct RendererPimpl
 {
 	CameraUniformBuffer camera_uniform_buffer;
-	ShaderResource shaders;
+	ShaderResource shaders_resources;
 	OpenglStates states;
-	DebugDrawer debug;
+	DebugDrawer debug_drawer;
 	std::shared_ptr<CompiledGeom> full_screen_geom;
 
 	RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi);

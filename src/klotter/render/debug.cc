@@ -3,9 +3,9 @@
 namespace klotter
 {
 
-void DebugRender::add_line(const glm::vec3& from, const glm::vec3& to, const glm::vec3& color, LineStyle style)
+void DebugRender::add_line(const glm::vec3& from, const glm::vec3& to, const glm::vec3& color)
 {
-	debug_lines.emplace_back(DebugLine{from, to, color, style});
+	lines.emplace_back(DebugLine{from, to, color});
 }
 
 

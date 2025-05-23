@@ -473,17 +473,17 @@ void HoriProvider::use_shader(const PostProcArg& a, const Texture2d& t)
 
 std::shared_ptr<FactorEffect> Renderer::make_invert_effect()
 {
-	return std::make_shared<SimpleEffect>("Invert", pimpl->shaders.pp_invert);
+	return std::make_shared<SimpleEffect>("Invert", pimpl->shaders_resources.pp_invert);
 }
 
 std::shared_ptr<FactorEffect> Renderer::make_grayscale_effect()
 {
-	return std::make_shared<SimpleEffect>("Grayscale", pimpl->shaders.pp_grayscale);
+	return std::make_shared<SimpleEffect>("Grayscale", pimpl->shaders_resources.pp_grayscale);
 }
 
 std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 {
-	auto r = std::make_shared<SimpleEffect>("Damage", pimpl->shaders.pp_damage);
+	auto r = std::make_shared<SimpleEffect>("Damage", pimpl->shaders_resources.pp_damage);
 	r->add_float_drag_prop("u_vignette_radius", 0.13f, 0.01f);
 	r->add_float_slider_prop("u_vignette_smoothness", 1.0f, 0.001f, 1.0f);
 	r->add_float_slider_prop("u_vignette_darkening", 1.0f, 0.0f, 1.0f);
@@ -493,7 +493,7 @@ std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 
 std::shared_ptr<FactorEffect> Renderer::make_blur_effect()
 {
-	return std::make_shared<BlurEffect>("Blur", pimpl->shaders.pp_blurv, pimpl->shaders.pp_blurh);
+	return std::make_shared<BlurEffect>("Blur", pimpl->shaders_resources.pp_blurv, pimpl->shaders_resources.pp_blurh);
 }
 
 }  //  namespace klotter

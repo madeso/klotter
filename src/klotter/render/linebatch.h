@@ -41,8 +41,8 @@ struct DebugDrawer
 
 	DebugDrawer();
 
-	void set_line_dash(const glm::vec2& resolution, float dash_size, float gap_size);
-	void set_line_line();
+	void set_line_to_dash(const glm::vec2& resolution, float dash_size, float gap_size);
+	void set_line_to_solid();
 
 	[[nodiscard]] bool is_loaded() const;
 };

@@ -32,7 +32,7 @@ CameraUniformBuffer make_camera_uniform_buffer_desc()
 
 RendererPimpl::RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi)
 	: camera_uniform_buffer(make_camera_uniform_buffer_desc())
-	, shaders(load_shaders(camera_uniform_buffer, set, fsi))
+	, shaders_resources(load_shaders(camera_uniform_buffer, set, fsi))
 	, full_screen_geom(fsi.full_screen_geom)
 {
 	const auto vendor = string_from_gl_bytes(glGetString(GL_VENDOR));

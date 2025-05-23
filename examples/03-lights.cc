@@ -265,8 +265,7 @@ struct LightsSample : Sample
 		renderer->debug.add_line(
 			glm::vec3{0, 0, 0},
 			target,
-			klotter::colors::orange,
-			klotter::LineStyle::dashed_when_hidden
+			klotter::colors::orange
 		);
 		anim += dt * 0.25f;
 		apply_animation();

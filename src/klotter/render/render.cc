@@ -27,7 +27,7 @@ Skybox Renderer::make_skybox(std::shared_ptr<TextureCubemap> texture) const
 	constexpr float size = 1.0f;
 	constexpr bool invert = true;
 
-	const auto layout = pimpl->shaders.skybox_shader.geom_layout;
+	const auto layout = pimpl->shaders_resources.skybox_shader.geom_layout;
 
 	const auto triangle = geom::create_box(size, size, size, invert, colors::white).to_geom();
 	auto geom = compile_geom(triangle, layout);
@@ -44,27 +44,27 @@ struct TransparentMesh
 
 std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material()
 {
-	return std::make_shared<UnlitMaterial>(pimpl->shaders);
+	return std::make_shared<UnlitMaterial>(pimpl->shaders_resources);
 }
 
 std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
 {
-	return std::make_shared<DefaultMaterial>(pimpl->shaders);
+	return std::make_shared<DefaultMaterial>(pimpl->shaders_resources);
 }
 
 CompiledGeomVertexAttributes Renderer::unlit_geom_layout() const
 {
-	return pimpl->shaders.unlit_shader_container.geom_layout;
+	return pimpl->shaders_resources.unlit_shader_container.geom_layout;
 }
 
 CompiledGeomVertexAttributes Renderer::default_geom_layout() const
 {
-	return pimpl->shaders.default_shader_container.geom_layout;
+	return pimpl->shaders_resources.default_shader_container.geom_layout;
 }
 
 bool Renderer::is_loaded() const
 {
-	return pimpl->shaders.is_loaded() && pimpl->debug.is_loaded();
+	return pimpl->shaders_resources.is_loaded() && pimpl->debug_drawer.is_loaded();
 }
 
 glm::mat4 rot_from_basis(const glm::vec3& a, const glm::vec3& b, const glm::vec3& c)
@@ -123,56 +123,29 @@ glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCam
 	}
 };
 
-void render_debug_lines(Renderer* r, const CompiledCamera& compiled_camera, const glm::ivec2& window_size)
+void batch_lines(DebugDrawer* drawer, const std::vector<DebugLine>& debug_lines)
 {
-	int line_state = -1;
-	constexpr int line_state_solid = 1;
-	constexpr int line_state_dash = 0;
-
-	// todo(Gustav): draw solid lines here
-	r->pimpl->debug.line_shader.use();
-	r->pimpl->debug.line_shader.set_mat(r->pimpl->debug.line_projection, compiled_camera.projection);
-	r->pimpl->debug.line_shader.set_mat(r->pimpl->debug.line_view, compiled_camera.view);
-	for (const auto& line: r->debug.debug_lines)
+	for (const auto& line: debug_lines)
 	{
-		if (line.style == LineStyle::always_visible) continue;
-		StateChanger{&r->pimpl->states}.depth_func(Compare::less).depth_test(true);
-		if (line_state != line_state_solid)
-		{
-			r->pimpl->debug.set_line_line();
-			line_state = line_state_solid;
-		}
-		r->pimpl->debug.line_batch.line(line.from, line.to, line.color);
+		drawer->line_batch.line(line.from, line.to, line.color);
 	}
-	r->pimpl->debug.line_batch.submit();
+	drawer->line_batch.submit();
+}
 
-	for (const auto& line: r->debug.debug_lines)
-	{
-		if (line.style != LineStyle::always_visible) continue;
-		StateChanger{&r->pimpl->states}.depth_test(false);
-		if (line_state != line_state_solid)
-		{
-			r->pimpl->debug.set_line_line();
-			line_state = line_state_solid;
-		}
-		r->pimpl->debug.line_batch.line(line.from, line.to, line.color);
-	}
-	r->pimpl->debug.line_batch.submit();
+void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates* states, DebugDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size)
+{
+	if (debug_lines.empty()) return;
+	drawer->line_shader.use();
+	drawer->line_shader.set_mat(drawer->line_projection, compiled_camera.projection);
+	drawer->line_shader.set_mat(drawer->line_view, compiled_camera.view);
+	
+	StateChanger{states}.depth_func(Compare::less_equal).depth_test(true);
+	drawer->set_line_to_solid();
+	batch_lines(drawer, debug_lines);
 
-	// todo(Gustav): start drawing dashed lines here
-	for (const auto& line: r->debug.debug_lines)
-	{
-		if (line.style != LineStyle::dashed_when_hidden) continue;
-		StateChanger{&r->pimpl->states}.depth_func(Compare::greater).depth_test(false);
-		if (line_state != line_state_dash)
-		{
-			r->pimpl->debug.set_line_dash({window_size.x, window_size.y}, 20.0f, 20.0f);
-			line_state = line_state_dash;
-		}
-		r->pimpl->debug.line_batch.line(line.from, line.to, line.color);
-	}
-	r->pimpl->debug.line_batch.submit();
-	r->debug.debug_lines.clear();
+	StateChanger{states}.depth_func(Compare::greater).depth_test(true);
+	drawer->set_line_to_dash({window_size.x, window_size.y}, 20.0f, 20.0f);
+	batch_lines(drawer, debug_lines);
 }
 
 void Renderer::render_world(const glm::ivec2& window_size, const World& world, const Camera& camera)
@@ -253,7 +226,8 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		render_geom_instanced(*m);
 	}
 
-	render_debug_lines(this, compiled_camera, window_size);
+	render_debug_lines(debug.lines, &pimpl->states, &pimpl->debug_drawer, compiled_camera, window_size);
+	debug.lines.clear();
 
 	// render skybox
 	if (world.skybox.cubemap != nullptr && world.skybox.geom != nullptr)
@@ -266,7 +240,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 			.stencil_mask(0x0)
 			.stencil_func(Compare::always, 1, 0xFF);
 
-		auto& shader = pimpl->shaders.skybox_shader;
+		auto& shader = pimpl->shaders_resources.skybox_shader;
 
 		shader.program->use();
 		bind_texture_cubemap(&pimpl->states, shader.tex_skybox, *world.skybox.cubemap);
@@ -318,7 +292,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 					.depth_test(false);
 				const auto small_scale_mat = glm::scale(glm::mat4(1.0f), {OUTLINE_SCALE, OUTLINE_SCALE, OUTLINE_SCALE});
 
-				auto& shader = pimpl->shaders.single_color_shader;
+				auto& shader = pimpl->shaders_resources.single_color_shader;
 				shader.program->use();
 				shader.program->set_vec4(shader.tint_color, {*m->outline, 1});
 

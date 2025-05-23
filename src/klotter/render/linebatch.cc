@@ -81,14 +81,14 @@ DebugDrawer::DebugDrawer()
 {
 }
 
-void DebugDrawer::set_line_dash(const glm::vec2& resolution, float dash_size, float gap_size)
+void DebugDrawer::set_line_to_dash(const glm::vec2& resolution, float dash_size, float gap_size)
 {
 	line_shader.set_vec2(line_resolution, resolution);
 	line_shader.set_float(line_dash_size, dash_size);
 	line_shader.set_float(line_gap_size, gap_size);
 }
 
-void DebugDrawer::set_line_line()
+void DebugDrawer::set_line_to_solid()
 {
 	line_shader.set_vec2(line_resolution, {-1.0f, -1.0f});
 }
