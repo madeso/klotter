@@ -1,6 +1,6 @@
 #pragma once
 
-#include "klotter/render/framebuffer.h"
+#include "klotter/render/texture.h"
 
 namespace klotter
 {

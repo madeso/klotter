@@ -63,7 +63,6 @@ set(src_render
     klotter/render/vertex_layout.cc klotter/render/vertex_layout.h
     klotter/render/uniform_buffer.cc klotter/render/uniform_buffer.h
     klotter/render/linebatch.cc klotter/render/linebatch.h
-    klotter/render/framebuffer.cc klotter/render/framebuffer.h
 
     klotter/render/geom.h
     klotter/render/geom.builder.cc klotter/render/geom.builder.h
