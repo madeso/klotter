@@ -72,14 +72,14 @@ void RenderTask::render(const PostProcArg& arg)
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	effect->use_shader(arg, fbo->texture);
+	effect->use_shader(arg, *fbo);
 	render_geom(*arg.renderer->pimpl->full_screen_geom);
 }
 
 void RenderTask::update(const PostProcArg& arg)
 {
 	auto bound = BoundFbo{fbo};
-	set_gl_viewport({fbo->texture.width, fbo->texture.height});
+	set_gl_viewport({fbo->width, fbo->height});
 	source->render(arg);
 }
 
@@ -296,7 +296,7 @@ struct SimpleEffect
 		time += dt;
 	}
 
-	void use_shader(const PostProcArg& a, const Texture2d& t) override
+	void use_shader(const PostProcArg& a, const FrameBuffer& t) override
 	{
 		shader->program->use();
 		if (shader->factor)
@@ -342,7 +342,7 @@ struct VertProvider : ShaderPropertyProvider
 	}
 
 	BlurEffect* blur;
-	void use_shader(const PostProcArg& a, const Texture2d& t) override;
+	void use_shader(const PostProcArg& a, const FrameBuffer& t) override;
 };
 
 struct HoriProvider : ShaderPropertyProvider
@@ -353,7 +353,7 @@ struct HoriProvider : ShaderPropertyProvider
 	}
 
 	BlurEffect* blur;
-	void use_shader(const PostProcArg& a, const Texture2d& t) override;
+	void use_shader(const PostProcArg& a, const FrameBuffer& t) override;
 };
 
 struct BlurEffect : FactorEffect
@@ -412,7 +412,7 @@ struct BlurEffect : FactorEffect
 		// no update needed
 	}
 
-	void use_vert_shader(const PostProcArg& a, const Texture2d& t) const
+	void use_vert_shader(const PostProcArg& a, const FrameBuffer& t) const
 	{
 		vert->program->use();
 		ASSERT(vert->factor);
@@ -424,7 +424,7 @@ struct BlurEffect : FactorEffect
 		bind_texture_2d(&a.renderer->pimpl->states, vert->texture, t);
 	}
 
-	void use_hori_shader(const PostProcArg& a, const Texture2d& t)
+	void use_hori_shader(const PostProcArg& a, const FrameBuffer& t)
 	{
 		hori->program->use();
 		ASSERT(hori->factor);
@@ -461,12 +461,12 @@ struct BlurEffect : FactorEffect
 	}
 };
 
-void VertProvider::use_shader(const PostProcArg& a, const Texture2d& t)
+void VertProvider::use_shader(const PostProcArg& a, const FrameBuffer& t)
 {
 	blur->use_vert_shader(a, t);
 }
 
-void HoriProvider::use_shader(const PostProcArg& a, const Texture2d& t)
+void HoriProvider::use_shader(const PostProcArg& a, const FrameBuffer& t)
 {
 	blur->use_hori_shader(a, t);
 }

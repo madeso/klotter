@@ -44,7 +44,7 @@ struct ShaderPropertyProvider
 	void operator=(ShaderPropertyProvider&&) = delete;
 
 	virtual ~ShaderPropertyProvider() = default;
-	virtual void use_shader(const PostProcArg& a, const Texture2d& t) = 0;
+	virtual void use_shader(const PostProcArg& a, const FrameBuffer& t) = 0;
 };
 
 struct RenderTask : RenderSource

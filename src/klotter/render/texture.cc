@@ -325,8 +325,9 @@ unsigned int create_fbo()
 	return fbo;
 }
 
-FrameBuffer::FrameBuffer(unsigned int f)
-	: fbo(f)
+FrameBuffer::FrameBuffer(unsigned int f, int w, int h)
+	: BaseTexture(w, h)
+	, fbo(f)
 {
 }
 
@@ -361,14 +362,36 @@ std::shared_ptr<FrameBuffer> create_frame_buffer(
 {
 	LOG_INFO("Creating frame buffer %d %d", set.width, set.height);
 	ASSERT(trs != TextureRenderStyle::mipmap);
-	auto fbo = std::make_shared<FrameBuffer>(create_fbo());
+	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), set.width, set.height);
+	ASSERT(fbo->id > 0);
 
-	fbo->texture = Texture2d{nullptr, set.width, set.height, te, trs, trans};
-	ASSERT(fbo->texture.id > 0);
+	// setup texture
+	glBindTexture(GL_TEXTURE_2D, fbo->id);
+	set_texture_wrap(te);
+	const auto filter = min_mag_from_trs(trs);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter.min);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter.mag);
+	const auto include_transparency = trans == Transparency::include;
+	glTexImage2D(
+		GL_TEXTURE_2D,
+		0,
+		include_transparency ? GL_RGBA : GL_RGB,
+		set.width,
+		set.height,
+		0,
+		include_transparency ? GL_RGBA : GL_RGB,
+		GL_UNSIGNED_BYTE,
+		nullptr
+	);
+	if (trs == TextureRenderStyle::mipmap)
+	{
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
 
+	// setup fbo
 	auto bound = BoundFbo{fbo};
 	constexpr GLint mipmap_level = 0;
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fbo->texture.id, mipmap_level);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fbo->id, mipmap_level);
 
 	glGenRenderbuffers(1, &fbo->rbo);
 	ASSERT(fbo->rbo != 0);

@@ -266,6 +266,17 @@ void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const Texture
 	StateChanger{states}.activate_texture(uniform.texture).bind_texture_2d(uniform.texture, texture.id);
 }
 
+void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const FrameBuffer& texture)
+{
+	if (uniform.is_valid() == false)
+	{
+		return;
+	}
+	ASSERT(uniform.texture >= 0);
+
+	StateChanger{states}.activate_texture(uniform.texture).bind_texture_2d(uniform.texture, texture.id);
+}
+
 void bind_texture_cubemap(OpenglStates* states, const Uniform& uniform, const TextureCubemap& texture)
 {
 	if (uniform.is_valid() == false)

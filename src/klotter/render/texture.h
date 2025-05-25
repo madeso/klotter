@@ -27,6 +27,7 @@ enum class Transparency
 	exclude
 };
 
+// todo(Gustav): why do the BaseTexture has a width and height when they aren't directly used??
 struct BaseTexture
 {
 	unsigned int id;
@@ -70,9 +71,12 @@ TextureCubemap load_cubemap_from_color(u32 pixel);
 
 
 /// "render to texture" feature
-struct FrameBuffer
+struct FrameBuffer : BaseTexture
 {
-	explicit FrameBuffer(unsigned int fbo);
+	/// @param f The FBO handle
+	/// @param w the texture width
+	/// @param h the texture height
+	FrameBuffer(unsigned int f, int w, int h);
 	~FrameBuffer();
 
 	FrameBuffer(const FrameBuffer&) = delete;
@@ -81,8 +85,6 @@ struct FrameBuffer
 	void operator=(FrameBuffer&&) = delete;
 
 	unsigned int fbo = 0;
-
-	Texture2d texture;
 	unsigned int rbo = 0;
 };
 

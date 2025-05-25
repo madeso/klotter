@@ -8,6 +8,7 @@
 
 namespace klotter
 {
+struct FrameBuffer;
 struct TextureCubemap;
 struct Texture2d;
 struct Uniform;
@@ -56,6 +57,7 @@ struct StateChanger
 };
 
 void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const Texture2d& texture);
+void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const FrameBuffer& texture);
 void bind_texture_cubemap(OpenglStates* states, const Uniform& uniform, const TextureCubemap& texture);
 
 /**
