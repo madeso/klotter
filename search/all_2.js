@@ -49,7 +49,7 @@ var searchData=
   ['cpp_2eh_46',['cpp.h',['../cpp_8h.html',1,'']]],
   ['create_5fbox_47',['create_box',['../group__geom-builder.html#gaf33b1b06b5a70dcf47a3dfe7cbfc3375',1,'klotter::geom']]],
   ['create_5fbuffer_48',['create_buffer',['../namespaceklotter.html#a6c289ace2f2ad87891be1f0825aa3893',1,'klotter']]],
-  ['create_5fframe_5fbuffer_49',['create_frame_buffer',['../namespaceklotter.html#a816a1593fb42fcd556bbba8278320bc6',1,'klotter']]],
+  ['create_5fframe_5fbuffer_49',['create_frame_buffer',['../namespaceklotter.html#aa286679116ed7fcd51cf4c3a7a8bd8b4',1,'klotter']]],
   ['create_5fuv_5fsphere_50',['create_uv_sphere',['../group__geom-builder.html#ga4f80b55431712546da63589dfbd7a699',1,'klotter::geom']]],
   ['create_5fvectors_51',['create_vectors',['../group__render.html#gaa482e8fe45daf1b222cbb8afc10f1d8b',1,'klotter::create_vectors(const Camera &amp;camera)'],['../group__render.html#ga531baa4b9f91162f31830d9dd415d002',1,'klotter::create_vectors(float yaw, float pitch)']]],
   ['create_5fvertex_5farray_52',['create_vertex_array',['../namespaceklotter.html#a6b9047ff3f4c1bc18394f9404fa00f6a',1,'klotter']]],
