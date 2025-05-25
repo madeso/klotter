@@ -29,11 +29,11 @@ namespace
 		return texture;
 	}
 
-	void set_texture_wrap(TextureEdge te)
+	void set_texture_wrap(GLenum target, TextureEdge te)
 	{
 		const auto wrap = te == TextureEdge::clamp ? GL_CLAMP_TO_EDGE : GL_REPEAT;
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrap);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrap);
+		glTexParameteri(target, GL_TEXTURE_WRAP_S, wrap);
+		glTexParameteri(target, GL_TEXTURE_WRAP_T, wrap);
 	}
 
 	struct MinMagFilter
@@ -122,7 +122,7 @@ Texture2d::Texture2d(const void* pixel_data, int w, int h, TextureEdge te, Textu
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_2D, id);
 
-	set_texture_wrap(te);
+	set_texture_wrap(GL_TEXTURE_2D, te);
 
 	const auto filter = min_mag_from_trs(trs);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter.min);
@@ -364,39 +364,66 @@ std::shared_ptr<FrameBuffer> create_frame_buffer(
 	const auto trs = TextureRenderStyle::linear;
 	const auto trans = Transparency::exclude;
 
+	const bool is_msaa = set.msaa_samples > 0;
+
 	LOG_INFO("Creating frame buffer %d %d", set.width, set.height);
 	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), set.width, set.height);
 	ASSERT(fbo->id > 0);
 
+	fbo->debug_is_msaa = is_msaa;
+
 	// setup texture
-	glBindTexture(GL_TEXTURE_2D, fbo->id);
-	set_texture_wrap(te);
+	const GLenum target = is_msaa ? GL_TEXTURE_2D_MULTISAMPLE : GL_TEXTURE_2D;
+	glBindTexture(target, fbo->id);
+	set_texture_wrap(target, te);
 	const auto filter = min_mag_from_trs(trs);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter.min);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter.mag);
+	glTexParameteri(target, GL_TEXTURE_MIN_FILTER, filter.min);
+	glTexParameteri(target, GL_TEXTURE_MAG_FILTER, filter.mag);
 	const auto include_transparency = trans == Transparency::include;
-	glTexImage2D(
-		GL_TEXTURE_2D,
-		0,
-		include_transparency ? GL_RGBA : GL_RGB,
-		set.width,
-		set.height,
-		0,
-		include_transparency ? GL_RGBA : GL_RGB,
-		GL_UNSIGNED_BYTE,
-		nullptr
-	);
+
+	if (is_msaa)
+	{
+		glTexImage2DMultisample(
+			target,
+			set.msaa_samples,
+			include_transparency ? GL_RGBA : GL_RGB,
+			set.width,
+			set.height,
+			GL_TRUE
+		);
+	}
+	else
+	{
+		glTexImage2D(
+			target,
+			0,
+			include_transparency ? GL_RGBA : GL_RGB,
+			set.width,
+			set.height,
+			0,
+			include_transparency ? GL_RGBA : GL_RGB,
+			GL_UNSIGNED_BYTE,
+			nullptr
+		);
+	}
 
 	// setup fbo
 	auto bound = BoundFbo{fbo};
 	constexpr GLint mipmap_level = 0;
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fbo->id, mipmap_level);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, target, fbo->id, mipmap_level);
 
 	glGenRenderbuffers(1, &fbo->rbo);
 	ASSERT(fbo->rbo != 0);
 	glBindRenderbuffer(GL_RENDERBUFFER, fbo->rbo);
 
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, set.width, set.height);
+	if (is_msaa)
+	{
+		glRenderbufferStorageMultisample(GL_RENDERBUFFER, set.msaa_samples, GL_DEPTH24_STENCIL8, set.width, set.height);
+	}
+	else
+	{
+		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, set.width, set.height);
+	}
 	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo);
 
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
@@ -406,6 +433,17 @@ std::shared_ptr<FrameBuffer> create_frame_buffer(
 	}
 
 	return fbo;
+}
+
+
+void resolve_multisampled_buffer(const FrameBuffer& src, FrameBuffer* dst)
+{
+	glBindFramebuffer(GL_READ_BUFFER, src.fbo);
+	glBindFramebuffer(GL_DRAW_BUFFER, dst->fbo);
+
+	glBlitFramebuffer(0, 0, src.width, src.height, 0, 0, dst->width, dst->height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+
+	glBindFramebuffer(GL_DRAW_BUFFER, 0);
 }
 
 

@@ -273,6 +273,7 @@ void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const FrameBu
 		return;
 	}
 	ASSERT(uniform.texture >= 0);
+	ASSERT(texture.debug_is_msaa == false);
 
 	StateChanger{states}.activate_texture(uniform.texture).bind_texture_2d(uniform.texture, texture.id);
 }

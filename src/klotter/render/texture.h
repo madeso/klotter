@@ -86,6 +86,8 @@ struct FrameBuffer : BaseTexture
 
 	unsigned int fbo = 0;
 	unsigned int rbo = 0;
+
+	bool debug_is_msaa = false;
 };
 
 struct FboSetup
@@ -98,6 +100,9 @@ struct FboSetup
 
 	int width;
 	int height;
+
+	/// 0 samples == no msaa
+	int msaa_samples = 0;
 };
 
 std::shared_ptr<FrameBuffer> create_frame_buffer(const FboSetup& set);
@@ -116,6 +121,6 @@ struct BoundFbo
 	~BoundFbo();
 };
 
-
+void resolve_multisampled_buffer(const FrameBuffer& src, FrameBuffer* dst);
 
 }  //  namespace klotter
