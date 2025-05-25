@@ -78,9 +78,7 @@ struct CompiledStack
 
 struct FrameBufferCache
 {
-	[[nodiscard]] std::shared_ptr<FrameBuffer> get(
-		glm::ivec2 size, TextureEdge edge, TextureRenderStyle render_style, Transparency transperency
-	) const;
+	[[nodiscard]] std::shared_ptr<FrameBuffer> get(glm::ivec2 size) const;
 };
 
 struct BuildArg

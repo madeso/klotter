@@ -18,12 +18,12 @@ namespace klotter
 struct ShaderProgram;
 
 std::shared_ptr<FrameBuffer> FrameBufferCache::get(
-	glm::ivec2 size, TextureEdge edge, TextureRenderStyle render_style, Transparency transperency
+	glm::ivec2 size
 ) const
 {
 	// todo(Gustav): reuse buffers created from a earlier build
 	// todo(Gustav): reuse buffers from earlier in the stack, that aren't in use
-	auto buffer = create_frame_buffer(FboSetup{size.x, size.y}, edge, render_style, transperency);
+	auto buffer = create_frame_buffer(FboSetup{size.x, size.y});
 	return buffer;
 }
 
@@ -322,7 +322,7 @@ struct SimpleEffect
 	{
 		time = 0.0f;
 
-		auto fbo = arg.fbo->get(arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude);
+		auto fbo = arg.fbo->get(arg.window_size);
 
 		auto src = arg.builder->last_source;
 		auto target = std::make_shared<RenderTask>(src, fbo, this);
@@ -446,13 +446,13 @@ struct BlurEffect : FactorEffect
 
 		// step 1: vertical
 		auto fbo_v
-			= arg.fbo->get(arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude);
+			= arg.fbo->get(arg.window_size);
 		auto target_v = std::make_shared<RenderTask>(src, fbo_v, &vert_p);
 		arg.builder->targets.emplace_back(target_v);
 
 		// step 2: horizontal
 		auto fbo_h
-			= arg.fbo->get(arg.window_size, TextureEdge::clamp, TextureRenderStyle::linear, Transparency::exclude);
+			= arg.fbo->get(arg.window_size);
 		auto target_h = std::make_shared<RenderTask>(target_v, fbo_h, &hori_p);
 		arg.builder->targets.emplace_back(target_h);
 

@@ -357,11 +357,14 @@ BoundFbo::~BoundFbo()
 }
 
 std::shared_ptr<FrameBuffer> create_frame_buffer(
-	const FboSetup& set, TextureEdge te, TextureRenderStyle trs, Transparency trans
+	const FboSetup& set
 )
 {
+	const auto te = TextureEdge::clamp;
+	const auto trs = TextureRenderStyle::linear;
+	const auto trans = Transparency::exclude;
+
 	LOG_INFO("Creating frame buffer %d %d", set.width, set.height);
-	ASSERT(trs != TextureRenderStyle::mipmap);
 	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), set.width, set.height);
 	ASSERT(fbo->id > 0);
 
@@ -383,10 +386,6 @@ std::shared_ptr<FrameBuffer> create_frame_buffer(
 		GL_UNSIGNED_BYTE,
 		nullptr
 	);
-	if (trs == TextureRenderStyle::mipmap)
-	{
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
 
 	// setup fbo
 	auto bound = BoundFbo{fbo};

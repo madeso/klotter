@@ -100,9 +100,7 @@ struct FboSetup
 	int height;
 };
 
-std::shared_ptr<FrameBuffer> create_frame_buffer(
-	const FboSetup& set, TextureEdge te, TextureRenderStyle trs, Transparency trans
-);
+std::shared_ptr<FrameBuffer> create_frame_buffer(const FboSetup& set);
 
 /// raii class to render to a FrameBuffer
 struct BoundFbo
