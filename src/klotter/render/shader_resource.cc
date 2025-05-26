@@ -15,6 +15,7 @@
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
+#include "pp.always.frag.glsl.h"
 
 namespace klotter
 {
@@ -193,7 +194,7 @@ bool ShaderResource::is_loaded() const
 {
 	return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded() && unlit_shader_container.is_loaded()
 		&& default_shader_container.is_loaded() && pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
-		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded();
+		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_always->program->is_loaded();
 }
 
 using BaseShaderData = std::vector<VertexType>;
@@ -324,6 +325,13 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		PostProcSetup::factor | PostProcSetup::resolution
 	);
 
+	auto pp_always = std::make_shared<LoadedPostProcShader>(
+		std::make_shared<ShaderProgram>(
+			std::string{PP_VERT_GLSL}, std::string{PP_ALWAYS_FRAG_GLSL}, fsi.full_screen_layout
+		),
+		PostProcSetup::none
+	);
+
 	return {
 		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader, ModelSource::Uniform), desc},
 		LoadedShader_Skybox{load_shader({}, skybox_shader, ModelSource::Uniform), desc},
@@ -342,7 +350,8 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		pp_grayscale,
 		pp_damage,
 		pp_blurv,
-		pp_blurh
+		pp_blurh,
+		pp_always
 	};
 }
 

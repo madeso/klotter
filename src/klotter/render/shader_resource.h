@@ -201,12 +201,16 @@ struct ShaderResource
 	LoadedShader_Unlit_Container unlit_shader_container;
 	LoadedShader_Default_Container default_shader_container;
 
-	// todo(Gustav): split into 
+	// todo(Gustav): split into custom struct
+	// todo(Gustav): make post proc more data driven
 	std::shared_ptr<LoadedPostProcShader> pp_invert;
 	std::shared_ptr<LoadedPostProcShader> pp_grayscale;
 	std::shared_ptr<LoadedPostProcShader> pp_damage;
 	std::shared_ptr<LoadedPostProcShader> pp_blurv;
 	std::shared_ptr<LoadedPostProcShader> pp_blurh;
+
+	/// the realization shader that is always run
+	std::shared_ptr<LoadedPostProcShader> pp_always;
 
 	/// verify that the shaders are loaded
 	[[nodiscard]] bool is_loaded() const;

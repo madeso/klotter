@@ -438,12 +438,16 @@ std::shared_ptr<FrameBuffer> create_frame_buffer(
 
 void resolve_multisampled_buffer(const FrameBuffer& src, FrameBuffer* dst)
 {
-	glBindFramebuffer(GL_READ_BUFFER, src.fbo);
-	glBindFramebuffer(GL_DRAW_BUFFER, dst->fbo);
+	glBindFramebuffer(GL_READ_FRAMEBUFFER, src.fbo);
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, dst->fbo);
+
+	ASSERT(src.width == dst->width);
+	ASSERT(src.height == dst->height);
 
 	glBlitFramebuffer(0, 0, src.width, src.height, 0, 0, dst->width, dst->height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
 
-	glBindFramebuffer(GL_DRAW_BUFFER, 0);
+	glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
 }
 
 

@@ -8,6 +8,7 @@ struct Texture2d;
 struct Renderer;
 struct Camera;
 struct World;
+struct RenderWorld;
 
 /** \addtogroup render Renderer
  *  @{
@@ -139,6 +140,8 @@ struct EffectStack
 	std::vector<std::shared_ptr<Effect>> effects;
 	CompiledStack compiled;
 	FrameBufferCache fbos;
+
+	std::weak_ptr<RenderWorld> render_world_ref;
 
 	/// rebuilds stack if dirty, update all targets, then render the last_source
 	void render(const PostProcArg& arg);

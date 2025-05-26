@@ -224,12 +224,6 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 	SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
 
-	if (rs.msaa > 0)
-	{
-		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
-		SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 2);
-	}
-
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 
@@ -306,11 +300,6 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	///////////////////////////////////////////////////////////////
 	// complete setup
 	setup_opengl_debug();
-
-	if (rs.msaa > 0)
-	{
-		glEnable(GL_MULTISAMPLE);
-	}
 
 	const auto exit_code = app_main(rs, make_app, sdl_window);
 

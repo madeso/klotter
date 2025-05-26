@@ -23,7 +23,7 @@ std::shared_ptr<FrameBuffer> FrameBufferCache::get(
 {
 	// todo(Gustav): reuse buffers created from a earlier build
 	// todo(Gustav): reuse buffers from earlier in the stack, that aren't in use
-	auto buffer = create_frame_buffer(FboSetup{size.x, size.y});
+	auto buffer = create_frame_buffer(FboSetup{size});
 	return buffer;
 }
 
@@ -44,9 +44,49 @@ void Effect::set_enabled(bool n)
 
 struct RenderWorld : RenderSource
 {
+	glm::ivec2 window_size;
+
+	std::shared_ptr<FrameBuffer> msaa_buffer;
+	std::shared_ptr<FrameBuffer> realized_buffer;
+	std::shared_ptr<LoadedPostProcShader> shader;
+
+	RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> sh, int msaa_samples)
+		: window_size(size)
+	{
+		msaa_buffer = create_frame_buffer(FboSetup{size}.with_msaa(msaa_samples));
+		realized_buffer = create_frame_buffer(FboSetup{size});
+		shader = std::move(sh);
+	}
+
+	void update(const PostProcArg& arg)
+	{
+		// render into msaa buffer
+		{
+			auto bound = BoundFbo{msaa_buffer};
+			arg.renderer->render_world(window_size, *arg.world, *arg.camera);
+		}
+
+		// copy msaa buffer to realized
+		resolve_multisampled_buffer(*msaa_buffer, realized_buffer.get());
+	}
+
 	void render(const PostProcArg& arg) override
 	{
-		arg.renderer->render_world(arg.window_size, *arg.world, *arg.camera);
+		// render realized (with shader)
+		StateChanger{&arg.renderer->pimpl->states}
+			.cull_face(false)
+			.stencil_test(false)
+			.depth_test(false)
+			.depth_mask(false)
+			.blending(false);
+
+		glClearColor(0, 0, 0, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		shader->program->use();
+		bind_texture_2d(&arg.renderer->pimpl->states, shader->texture, *realized_buffer);
+
+		render_geom(*arg.renderer->pimpl->full_screen_geom);
 	}
 };
 
@@ -108,6 +148,12 @@ void EffectStack::render(const PostProcArg& arg)
 		}
 	}
 
+	auto render_world = render_world_ref.lock();
+	if (render_world == nullptr)
+	{
+		dirty = true;
+	}
+
 	if (window_size.has_value() == false || *window_size != arg.window_size)
 	{
 		window_size = arg.window_size;
@@ -121,7 +167,12 @@ void EffectStack::render(const PostProcArg& arg)
 		LOG_INFO("Building effects stack");
 
 		compiled.targets.clear();
-		compiled.last_source = std::make_shared<RenderWorld>();
+
+		auto created_world
+			= std::make_shared<RenderWorld>(arg.window_size, arg.renderer->pimpl->shaders_resources.pp_always, arg.renderer->settings.msaa);
+		compiled.last_source = created_world;
+		render_world_ref = created_world;
+		render_world = created_world;
 
 		for (auto& e: effects)
 		{
@@ -134,6 +185,7 @@ void EffectStack::render(const PostProcArg& arg)
 
 	// the stack is now compiled
 	// before rendering, update all targets/fbos and present
+	render_world->update(arg);
 	for (const auto& action: compiled.targets)
 	{
 		action->update(arg);

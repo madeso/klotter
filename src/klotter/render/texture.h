@@ -92,9 +92,9 @@ struct FrameBuffer : BaseTexture
 
 struct FboSetup
 {
-	constexpr FboSetup(int w, int h)
-		: width(w)
-		, height(h)
+	constexpr explicit FboSetup(const glm::ivec2& size)
+		: width(size.x)
+		, height(size.y)
 	{
 	}
 
@@ -103,6 +103,12 @@ struct FboSetup
 
 	/// 0 samples == no msaa
 	int msaa_samples = 0;
+
+	constexpr FboSetup& with_msaa(int samples)
+	{
+		msaa_samples = samples;
+		return *this;
+	}
 };
 
 std::shared_ptr<FrameBuffer> create_frame_buffer(const FboSetup& set);
