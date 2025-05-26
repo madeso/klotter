@@ -121,8 +121,10 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa98370bdc93bb5c92dcd14427571768e" id="r_aa98370bdc93bb5c92dcd14427571768e"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa98370bdc93bb5c92dcd14427571768e">FboSetup</a> (int w, int h)</td></tr>
-<tr class="separator:aa98370bdc93bb5c92dcd14427571768e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21382dd9798d498e396b48c720cd341f" id="r_a21382dd9798d498e396b48c720cd341f"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21382dd9798d498e396b48c720cd341f">FboSetup</a> (const glm::ivec2 &amp;size)</td></tr>
+<tr class="separator:a21382dd9798d498e396b48c720cd341f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4893c57b2e36717b176274d70021d365" id="r_a4893c57b2e36717b176274d70021d365"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structklotter_1_1FboSetup.html">FboSetup</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4893c57b2e36717b176274d70021d365">with_msaa</a> (int samples)</td></tr>
+<tr class="separator:a4893c57b2e36717b176274d70021d365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -130,10 +132,13 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4374adcd5cdbdf8ef200e65210de3952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c78ab3c83a5bfc8d7f180a0fda8a8f7" id="r_a1c78ab3c83a5bfc8d7f180a0fda8a8f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c78ab3c83a5bfc8d7f180a0fda8a8f7">height</a></td></tr>
 <tr class="separator:a1c78ab3c83a5bfc8d7f180a0fda8a8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc001ebd66ff394883bacecca876fb71" id="r_afc001ebd66ff394883bacecca876fb71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc001ebd66ff394883bacecca876fb71">msaa_samples</a> = 0</td></tr>
+<tr class="memdesc:afc001ebd66ff394883bacecca876fb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 samples == no msaa  <br /></td></tr>
+<tr class="separator:afc001ebd66ff394883bacecca876fb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa98370bdc93bb5c92dcd14427571768e" name="aa98370bdc93bb5c92dcd14427571768e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa98370bdc93bb5c92dcd14427571768e">&#9670;&#160;</a></span>FboSetup()</h2>
+<a id="a21382dd9798d498e396b48c720cd341f" name="a21382dd9798d498e396b48c720cd341f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21382dd9798d498e396b48c720cd341f">&#9670;&#160;</a></span>FboSetup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,12 +149,34 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">klotter::FboSetup::FboSetup </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const glm::ivec2 &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4893c57b2e36717b176274d70021d365" name="a4893c57b2e36717b176274d70021d365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4893c57b2e36717b176274d70021d365">&#9670;&#160;</a></span>with_msaa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structklotter_1_1FboSetup.html">FboSetup</a> &amp; klotter::FboSetup::with_msaa </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>samples</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -173,6 +200,22 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc001ebd66ff394883bacecca876fb71" name="afc001ebd66ff394883bacecca876fb71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc001ebd66ff394883bacecca876fb71">&#9670;&#160;</a></span>msaa_samples</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int klotter::FboSetup::msaa_samples = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0 samples == no msaa </p>
 
 </div>
 </div>

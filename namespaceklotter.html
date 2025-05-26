@@ -574,6 +574,8 @@ Functions</h2></td></tr>
 <tr class="separator:a11aeed99ea8fb753ce2d570df4ccfed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa286679116ed7fcd51cf4c3a7a8bd8b4" id="r_aa286679116ed7fcd51cf4c3a7a8bd8b4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa286679116ed7fcd51cf4c3a7a8bd8b4">create_frame_buffer</a> (const <a class="el" href="structklotter_1_1FboSetup.html">FboSetup</a> &amp;set)</td></tr>
 <tr class="separator:aa286679116ed7fcd51cf4c3a7a8bd8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db91a5f624e2dc351118f2d7b0ecf31" id="r_a2db91a5f624e2dc351118f2d7b0ecf31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2db91a5f624e2dc351118f2d7b0ecf31">resolve_multisampled_buffer</a> (const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;src, <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> *dst)</td></tr>
+<tr class="separator:a2db91a5f624e2dc351118f2d7b0ecf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7bd526ec1b02f3574708d6a10b93551" id="r_ab7bd526ec1b02f3574708d6a10b93551"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7bd526ec1b02f3574708d6a10b93551">load_image_from_embedded</a> (const embedded_binary &amp;image_binary, <a class="el" href="#a975d5c1b5f6b62b122652d21e890346e">TextureEdge</a> te, <a class="el" href="#a96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a> trs, <a class="el" href="#a3257f86dae0e1a101035a7d4cd2026bc">Transparency</a> t)</td></tr>
 <tr class="separator:ab7bd526ec1b02f3574708d6a10b93551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38a69a7637e8762baee7ac881c361d31" id="r_a38a69a7637e8762baee7ac881c361d31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38a69a7637e8762baee7ac881c361d31">load_cubemap_from_embedded</a> (const embedded_binary &amp;image_right, const embedded_binary &amp;image_left, const embedded_binary &amp;image_top, const embedded_binary &amp;image_bottom, const embedded_binary &amp;image_back, const embedded_binary &amp;image_front)</td></tr>
@@ -1332,6 +1334,27 @@ template&lt;typename E&gt; </div>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>uniform_buffer_source</em></span></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2db91a5f624e2dc351118f2d7b0ecf31" name="a2db91a5f624e2dc351118f2d7b0ecf31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db91a5f624e2dc351118f2d7b0ecf31">&#9670;&#160;</a></span>resolve_multisampled_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klotter::resolve_multisampled_buffer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> *</td>          <td class="paramname"><span class="paramname"><em>dst</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
