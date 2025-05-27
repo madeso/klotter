@@ -1,7 +1,5 @@
 #pragma once
 
-#include "klotter/render/uniform.h"
-
 namespace klotter
 {
 
