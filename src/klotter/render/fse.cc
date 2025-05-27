@@ -17,16 +17,6 @@ namespace klotter
 {
 struct ShaderProgram;
 
-std::shared_ptr<FrameBuffer> FrameBufferCache::get(
-	glm::ivec2 size
-) const
-{
-	// todo(Gustav): reuse buffers created from a earlier build
-	// todo(Gustav): reuse buffers from earlier in the stack, that aren't in use
-	auto buffer = create_frame_buffer(FboSetup{size});
-	return buffer;
-}
-
 bool Effect::enabled() const
 {
 	return is_enabled;
@@ -53,8 +43,8 @@ struct RenderWorld : RenderSource
 	RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> sh, int msaa_samples)
 		: window_size(size)
 	{
-		msaa_buffer = create_frame_buffer(FboSetup{size}.with_msaa(msaa_samples));
-		realized_buffer = create_frame_buffer(FboSetup{size});
+		msaa_buffer = FrameBufferBuilder{size}.with_msaa(msaa_samples).build();
+		realized_buffer = FrameBufferBuilder{size}.build();
 		shader = std::move(sh);
 	}
 
@@ -178,7 +168,7 @@ void EffectStack::render(const PostProcArg& arg)
 		{
 			if (e->is_enabled)
 			{
-				e->build({&compiled, &fbos, arg.window_size});
+				e->build({&compiled, arg.window_size});
 			}
 		}
 	}
@@ -374,7 +364,7 @@ struct SimpleEffect
 	{
 		time = 0.0f;
 
-		auto fbo = arg.fbo->get(arg.window_size);
+		auto fbo = FrameBufferBuilder{arg.window_size}.build();
 
 		auto src = arg.builder->last_source;
 		auto target = std::make_shared<RenderTask>(src, fbo, this);
@@ -497,14 +487,12 @@ struct BlurEffect : FactorEffect
 		// todo(Gustav): modify resolution to get better blur and at a lower cost!
 
 		// step 1: vertical
-		auto fbo_v
-			= arg.fbo->get(arg.window_size);
+		auto fbo_v = FrameBufferBuilder{arg.window_size}.build();
 		auto target_v = std::make_shared<RenderTask>(src, fbo_v, &vert_p);
 		arg.builder->targets.emplace_back(target_v);
 
 		// step 2: horizontal
-		auto fbo_h
-			= arg.fbo->get(arg.window_size);
+		auto fbo_h = FrameBufferBuilder{arg.window_size}.build();
 		auto target_h = std::make_shared<RenderTask>(target_v, fbo_h, &hori_p);
 		arg.builder->targets.emplace_back(target_h);
 

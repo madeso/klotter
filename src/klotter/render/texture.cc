@@ -356,18 +356,16 @@ BoundFbo::~BoundFbo()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-std::shared_ptr<FrameBuffer> create_frame_buffer(
-	const FboSetup& set
-)
+std::shared_ptr<FrameBuffer> FrameBufferBuilder::build() const
 {
 	const auto te = TextureEdge::clamp;
 	const auto trs = TextureRenderStyle::linear;
 	const auto trans = Transparency::exclude;
 
-	const bool is_msaa = set.msaa_samples > 0;
+	const bool is_msaa = msaa_samples > 0;
 
-	LOG_INFO("Creating frame buffer %d %d", set.width, set.height);
-	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), set.width, set.height);
+	LOG_INFO("Creating frame buffer %d %d", width, height);
+	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), width, height);
 	ASSERT(fbo->id > 0);
 
 	fbo->debug_is_msaa = is_msaa;
@@ -385,10 +383,10 @@ std::shared_ptr<FrameBuffer> create_frame_buffer(
 	{
 		glTexImage2DMultisample(
 			target,
-			set.msaa_samples,
+			msaa_samples,
 			include_transparency ? GL_RGBA : GL_RGB,
-			set.width,
-			set.height,
+			width,
+			height,
 			GL_TRUE
 		);
 	}
@@ -398,8 +396,8 @@ std::shared_ptr<FrameBuffer> create_frame_buffer(
 			target,
 			0,
 			include_transparency ? GL_RGBA : GL_RGB,
-			set.width,
-			set.height,
+			width,
+			height,
 			0,
 			include_transparency ? GL_RGBA : GL_RGB,
 			GL_UNSIGNED_BYTE,
@@ -418,11 +416,11 @@ std::shared_ptr<FrameBuffer> create_frame_buffer(
 
 	if (is_msaa)
 	{
-		glRenderbufferStorageMultisample(GL_RENDERBUFFER, set.msaa_samples, GL_DEPTH24_STENCIL8, set.width, set.height);
+		glRenderbufferStorageMultisample(GL_RENDERBUFFER, msaa_samples, GL_DEPTH24_STENCIL8, width, height);
 	}
 	else
 	{
-		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, set.width, set.height);
+		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
 	}
 	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo);
 

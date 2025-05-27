@@ -77,15 +77,9 @@ struct CompiledStack
 	std::vector<std::shared_ptr<RenderTask>> targets;
 };
 
-struct FrameBufferCache
-{
-	[[nodiscard]] std::shared_ptr<FrameBuffer> get(glm::ivec2 size) const;
-};
-
 struct BuildArg
 {
 	CompiledStack* builder;
-	FrameBufferCache* fbo;
 	glm::ivec2 window_size;
 };
 
@@ -139,7 +133,6 @@ struct EffectStack
 	std::optional<glm::ivec2> window_size;
 	std::vector<std::shared_ptr<Effect>> effects;
 	CompiledStack compiled;
-	FrameBufferCache fbos;
 
 	std::weak_ptr<RenderWorld> render_world_ref;
 

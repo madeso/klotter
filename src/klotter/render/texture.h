@@ -71,6 +71,7 @@ TextureCubemap load_cubemap_from_color(u32 pixel);
 
 
 /// "render to texture" feature
+///	@see FrameBufferBuilder
 struct FrameBuffer : BaseTexture
 {
 	/// @param f The FBO handle
@@ -90,9 +91,9 @@ struct FrameBuffer : BaseTexture
 	bool debug_is_msaa = false;
 };
 
-struct FboSetup
+struct FrameBufferBuilder
 {
-	constexpr explicit FboSetup(const glm::ivec2& size)
+	constexpr explicit FrameBufferBuilder(const glm::ivec2& size)
 		: width(size.x)
 		, height(size.y)
 	{
@@ -104,14 +105,16 @@ struct FboSetup
 	/// 0 samples == no msaa
 	int msaa_samples = 0;
 
-	constexpr FboSetup& with_msaa(int samples)
+	constexpr FrameBufferBuilder& with_msaa(int samples)
 	{
 		msaa_samples = samples;
 		return *this;
 	}
-};
 
-std::shared_ptr<FrameBuffer> create_frame_buffer(const FboSetup& set);
+	// todo(Gustav): reuse buffers created from an earlier FSE build
+	// todo(Gustav): reuse buffers from earlier in the FSE stack, that aren't in use
+	std::shared_ptr<FrameBuffer> build() const;
+};
 
 /// raii class to render to a FrameBuffer
 struct BoundFbo
