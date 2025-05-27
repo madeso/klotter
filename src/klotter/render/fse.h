@@ -10,7 +10,7 @@ struct Camera;
 struct World;
 struct RenderWorld;
 
-/** \addtogroup render Renderer
+/** \addtogroup fse Full Screen Effect
  *  @{
 */
 

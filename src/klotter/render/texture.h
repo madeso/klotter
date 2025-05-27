@@ -3,6 +3,9 @@
 namespace klotter
 {
 
+/** \addtogroup texture Texture
+ *  @{
+*/
 
 enum class TextureEdge
 {
@@ -129,5 +132,9 @@ struct BoundFbo
 };
 
 void resolve_multisampled_buffer(const FrameBuffer& src, FrameBuffer* dst);
+
+/**
+ * @}
+*/
 
 }  //  namespace klotter
