@@ -10,5 +10,5 @@ var searchData=
   ['model_7',['model',['../structklotter_1_1LoadedShader__SingleColor.html#a5285455a32381c580d79d138b0b797de',1,'klotter::LoadedShader_SingleColor::model'],['../structklotter_1_1LoadedShader__Unlit.html#ae8d72398e26d17b3fdc32ed1a48e63b8',1,'klotter::LoadedShader_Unlit::model'],['../structklotter_1_1LoadedShader__Default.html#aafd90bab2ba7185d1edecbee1d408023',1,'klotter::LoadedShader_Default::model']]],
   ['model_5fsource_8',['model_source',['../structklotter_1_1RenderContext.html#a2f34dbac16264be8c4d3345f16f6cb9d',1,'klotter::RenderContext']]],
   ['msaa_9',['msaa',['../structklotter_1_1RenderSettings.html#a6a280b746dc55c256fccd34cf0fd93cc',1,'klotter::RenderSettings']]],
-  ['msaa_5fsamples_10',['msaa_samples',['../structklotter_1_1FboSetup.html#afc001ebd66ff394883bacecca876fb71',1,'klotter::FboSetup']]]
+  ['msaa_5fsamples_10',['msaa_samples',['../structklotter_1_1FrameBufferBuilder.html#ab281ad34ad7d4faef8a0c859d13c879a',1,'klotter::FrameBufferBuilder']]]
 ];

@@ -27,5 +27,5 @@ var searchData=
   ['modelsource_24',['ModelSource',['../group__render.html#ga00becf1348a9a20b568904f0000af614',1,'klotter']]],
   ['move_25',['move',['../structklotter_1_1geom_1_1Builder.html#aa6ae34b81a5b711fd60b55ba96a4efa0',1,'klotter::geom::Builder']]],
   ['msaa_26',['msaa',['../structklotter_1_1RenderSettings.html#a6a280b746dc55c256fccd34cf0fd93cc',1,'klotter::RenderSettings']]],
-  ['msaa_5fsamples_27',['msaa_samples',['../structklotter_1_1FboSetup.html#afc001ebd66ff394883bacecca876fb71',1,'klotter::FboSetup']]]
+  ['msaa_5fsamples_27',['msaa_samples',['../structklotter_1_1FrameBufferBuilder.html#ab281ad34ad7d4faef8a0c859d13c879a',1,'klotter::FrameBufferBuilder']]]
 ];
