@@ -7,7 +7,7 @@ var searchData=
   ['pimpl_4',['pimpl',['../structklotter_1_1Renderer.html#a2a3c947386d5278b82c89d59af6ee7a9',1,'klotter::Renderer']]],
   ['pink_5',['pink',['../namespaceklotter_1_1imgui.html#a592fc2fda898296f6faeb8f4f8774a79',1,'klotter::imgui']]],
   ['pitch_6',['pitch',['../structklotter_1_1Camera.html#a239ef16a40798863e933a2b56db8de78',1,'klotter::Camera::pitch'],['../structklotter_1_1FrustumLight.html#aebc136b2b2fc97327f73a56dac889319',1,'klotter::FrustumLight::pitch']]],
-  ['pixel_7',['pixel',['../namespaceklotter.html#a96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f',1,'klotter']]],
+  ['pixel_7',['pixel',['../group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f',1,'klotter']]],
   ['point_8',['point',['../group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a78ee54aa8f813885fe2fe20d232518b9',1,'klotter']]],
   ['point_5flights_9',['point_lights',['../structklotter_1_1LoadedShader__Default.html#ae798dd79cd77cf0754e3964efbacb314',1,'klotter::LoadedShader_Default::point_lights'],['../structklotter_1_1Lights.html#acb7b0f789218068315c8612d1ebe189c',1,'klotter::Lights::point_lights']]],
   ['pointlight_10',['PointLight',['../structklotter_1_1PointLight.html',1,'klotter']]],

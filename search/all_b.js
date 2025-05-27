@@ -21,7 +21,7 @@ var searchData=
   ['meshinstance_18',['MeshInstance',['../structklotter_1_1MeshInstance.html',1,'klotter']]],
   ['meshinstance_5ftransforminstanced_19',['MeshInstance_TransformInstanced',['../structklotter_1_1MeshInstance__TransformInstanced.html',1,'klotter']]],
   ['min_5frange_20',['min_range',['../structklotter_1_1PointLight.html#a29d07bcec7b9efd1198de1584e75dbae',1,'klotter::PointLight::min_range'],['../structklotter_1_1FrustumLight.html#a5e1f07d1b5f0d7cd4bcd745e417c572f',1,'klotter::FrustumLight::min_range']]],
-  ['mipmap_21',['mipmap',['../namespaceklotter.html#a96e6e729a16fb6dbf417daa7e61339caa9967d91df6ff379185f57d9a31b7c782',1,'klotter']]],
+  ['mipmap_21',['mipmap',['../group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caa9967d91df6ff379185f57d9a31b7c782',1,'klotter']]],
   ['model_22',['model',['../structklotter_1_1LoadedShader__SingleColor.html#a5285455a32381c580d79d138b0b797de',1,'klotter::LoadedShader_SingleColor::model'],['../structklotter_1_1LoadedShader__Unlit.html#ae8d72398e26d17b3fdc32ed1a48e63b8',1,'klotter::LoadedShader_Unlit::model'],['../structklotter_1_1LoadedShader__Default.html#aafd90bab2ba7185d1edecbee1d408023',1,'klotter::LoadedShader_Default::model']]],
   ['model_5fsource_23',['model_source',['../structklotter_1_1RenderContext.html#a2f34dbac16264be8c4d3345f16f6cb9d',1,'klotter::RenderContext']]],
   ['modelsource_24',['ModelSource',['../group__render.html#ga00becf1348a9a20b568904f0000af614',1,'klotter']]],
