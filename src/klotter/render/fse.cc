@@ -43,8 +43,12 @@ struct RenderWorld : RenderSource
 	RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> sh, int msaa_samples)
 		: window_size(size)
 	{
-		msaa_buffer = FrameBufferBuilder{size}.with_msaa(msaa_samples).build();
-		realized_buffer = FrameBufferBuilder{size}.build();
+		msaa_buffer = FrameBufferBuilder{size}
+			.with_msaa(msaa_samples)
+			.with_depth()
+			.build();
+		realized_buffer = FrameBufferBuilder{size}
+			.build();
 		shader = std::move(sh);
 	}
 

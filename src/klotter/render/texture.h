@@ -103,6 +103,8 @@ struct FrameBufferBuilder
 	int width;
 	int height;
 
+	bool include_depth = false;
+
 	/// 0 samples == no msaa
 	int msaa_samples = 0;
 
@@ -112,9 +114,15 @@ struct FrameBufferBuilder
 		return *this;
 	}
 
+	constexpr FrameBufferBuilder& with_depth()
+	{
+		include_depth = true;
+		return *this;
+	}
+
 	// todo(Gustav): reuse buffers created from an earlier FSE build
 	// todo(Gustav): reuse buffers from earlier in the FSE stack, that aren't in use
-	std::shared_ptr<FrameBuffer> build() const;
+	[[nodiscard]] std::shared_ptr<FrameBuffer> build() const;
 };
 
 /// raii class to render to a FrameBuffer

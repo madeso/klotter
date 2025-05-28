@@ -410,19 +410,26 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build() const
 	constexpr GLint mipmap_level = 0;
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, target, fbo->id, mipmap_level);
 
-	glGenRenderbuffers(1, &fbo->rbo);
-	ASSERT(fbo->rbo != 0);
-	glBindRenderbuffer(GL_RENDERBUFFER, fbo->rbo);
-
-	if (is_msaa)
+	if (include_depth)
 	{
-		glRenderbufferStorageMultisample(GL_RENDERBUFFER, msaa_samples, GL_DEPTH24_STENCIL8, width, height);
+		glGenRenderbuffers(1, &fbo->rbo);
+		ASSERT(fbo->rbo != 0);
+		glBindRenderbuffer(GL_RENDERBUFFER, fbo->rbo);
+
+		if (is_msaa)
+		{
+			glRenderbufferStorageMultisample(GL_RENDERBUFFER, msaa_samples, GL_DEPTH24_STENCIL8, width, height);
+		}
+		else
+		{
+			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
+		}
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo);
 	}
 	else
 	{
-		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
+		fbo->rbo = 0;
 	}
-	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo);
 
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 	{
