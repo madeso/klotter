@@ -125,6 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3e5157674b4f8d71cf2cef6c44ad0620"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb13c3b37555723323e059b39814aa4a" id="r_abb13c3b37555723323e059b39814aa4a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structklotter_1_1FrameBufferBuilder.html">FrameBufferBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb13c3b37555723323e059b39814aa4a">with_msaa</a> (int samples)</td></tr>
 <tr class="separator:abb13c3b37555723323e059b39814aa4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5e2aabca52f9857946c55e7d4c52a8" id="r_a6c5e2aabca52f9857946c55e7d4c52a8"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structklotter_1_1FrameBufferBuilder.html">FrameBufferBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c5e2aabca52f9857946c55e7d4c52a8">with_depth</a> ()</td></tr>
+<tr class="separator:a6c5e2aabca52f9857946c55e7d4c52a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a809b03792d82ff0dbdbba8382698fd39" id="r_a809b03792d82ff0dbdbba8382698fd39"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a809b03792d82ff0dbdbba8382698fd39">build</a> () const</td></tr>
 <tr class="separator:a809b03792d82ff0dbdbba8382698fd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -134,6 +136,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:abd3be8a4e6c94d4eb062c83030e8d31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cff15400f61967b5a7d5ae860363a12" id="r_a6cff15400f61967b5a7d5ae860363a12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cff15400f61967b5a7d5ae860363a12">height</a></td></tr>
 <tr class="separator:a6cff15400f61967b5a7d5ae860363a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a132b280ba068b2247cc5d2a695bbcb16" id="r_a132b280ba068b2247cc5d2a695bbcb16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a132b280ba068b2247cc5d2a695bbcb16">include_depth</a> = false</td></tr>
+<tr class="separator:a132b280ba068b2247cc5d2a695bbcb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab281ad34ad7d4faef8a0c859d13c879a" id="r_ab281ad34ad7d4faef8a0c859d13c879a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab281ad34ad7d4faef8a0c859d13c879a">msaa_samples</a> = 0</td></tr>
 <tr class="memdesc:ab281ad34ad7d4faef8a0c859d13c879a"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 samples == no msaa  <br /></td></tr>
 <tr class="separator:ab281ad34ad7d4faef8a0c859d13c879a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,6 +174,9 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt; klotter::FrameBufferBuilder::build </td>
@@ -178,6 +185,36 @@ Public Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c5e2aabca52f9857946c55e7d4c52a8" name="a6c5e2aabca52f9857946c55e7d4c52a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5e2aabca52f9857946c55e7d4c52a8">&#9670;&#160;</a></span>with_depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structklotter_1_1FrameBufferBuilder.html">FrameBufferBuilder</a> &amp; klotter::FrameBufferBuilder::with_depth </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -216,6 +253,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int klotter::FrameBufferBuilder::height</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a132b280ba068b2247cc5d2a695bbcb16" name="a132b280ba068b2247cc5d2a695bbcb16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a132b280ba068b2247cc5d2a695bbcb16">&#9670;&#160;</a></span>include_depth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool klotter::FrameBufferBuilder::include_depth = false</td>
         </tr>
       </table>
 </div><div class="memdoc">
