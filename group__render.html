@@ -195,8 +195,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> + <a class="el" href="structklotter_1_1Material.html" title="Base class for all materials.">Material</a> (aka a mesh) and its current transform but instanced for faster rendering.  <a href="structklotter_1_1MeshInstance__TransformInstanced.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1DirectionalLight.html">klotter::DirectionalLight</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A directional light,.  <a href="structklotter_1_1DirectionalLight.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1PointLight.html">klotter::PointLight</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A point light.  <a href="structklotter_1_1PointLight.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1FrustumLight.html">klotter::FrustumLight</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like a spotlight but can be positioned with a transform, supports light cookies and can use a "viewfrustom" when culling.  <a href="structklotter_1_1FrustumLight.html#details">More...</a><br /></td></tr>
@@ -205,6 +207,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">All lights in a world.  <a href="structklotter_1_1Lights.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Skybox.html">klotter::Skybox</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A skybox model with a cubemap texture.  <a href="structklotter_1_1Skybox.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1World.html">klotter::World</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of objects to render.  <a href="structklotter_1_1World.html#details">More...</a><br /></td></tr>
@@ -307,6 +310,7 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="#gga8b35cebf3243809e4ea2b1ab6bb19fcead56ef2b8111596c3345b42a6e2be5325">klotter::Billboarding::axial_y_fast</a>
 <br />
  }</td></tr>
+<tr class="memdesc:ga8b35cebf3243809e4ea2b1ab6bb19fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the billboarding algorithm to use.  <a href="#ga8b35cebf3243809e4ea2b1ab6bb19fce">More...</a><br /></td></tr>
 <tr class="separator:ga8b35cebf3243809e4ea2b1ab6bb19fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -423,6 +427,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Defines the billboarding algorithm to use. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga8b35cebf3243809e4ea2b1ab6bb19fcea334c4a4c42fdb79d7ebc3e73b517e6f8" name="gga8b35cebf3243809e4ea2b1ab6bb19fcea334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga8b35cebf3243809e4ea2b1ab6bb19fcea599eba19aa93a929cb8589f148b8a6c4" name="gga8b35cebf3243809e4ea2b1ab6bb19fcea599eba19aa93a929cb8589f148b8a6c4"></a>screen&#160;</td><td class="fielddoc"></td></tr>
