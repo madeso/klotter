@@ -59,6 +59,7 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	const Geom&, const CompiledGeomVertexAttributes& layout, std::size_t max_instances
 );
 
+// todo(Gustav): merge with CameraVectors... this has a better name
 struct LocalAxis
 {
 	glm::vec3 x;
@@ -66,6 +67,7 @@ struct LocalAxis
 	glm::vec3 z;
 };
 
+/// Defines the billboarding algorithm to use
 enum class Billboarding
 {
 	none,
@@ -110,6 +112,8 @@ std::shared_ptr<MeshInstance_TransformInstanced> make_mesh_instance(
 void render_geom(const CompiledGeom& geom);
 void render_geom_instanced(const MeshInstance_TransformInstanced& instanced);
 
+
+/// A directional light,
 struct DirectionalLight
 {
 	glm::vec3 direction = {1.0f, 0.0f, 0.0f};
@@ -119,6 +123,7 @@ struct DirectionalLight
 	float diffuse = 1.0f;
 };
 
+/// A point light.
 struct PointLight
 {
 	glm::vec3 position = {0.0f, 0.0f, 0.0f};
@@ -162,6 +167,7 @@ struct Lights
 	std::vector<FrustumLight> frustum_lights;
 };
 
+/// A skybox model with a cubemap texture.
 struct Skybox
 {
 	std::shared_ptr<CompiledGeom> geom = nullptr;
