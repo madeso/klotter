@@ -7,6 +7,7 @@ namespace klotter
  *  @{
 */
 
+/// Line + color
 struct DebugLine
 {
 	glm::vec3 from;
@@ -14,6 +15,9 @@ struct DebugLine
 	glm::vec3 color;
 };
 
+/// Stores debug render requests.
+/// Doesn't actually render anything.
+// @see Renderer
 struct DebugRender
 {
 	std::vector<DebugLine> lines;
