@@ -15,8 +15,7 @@ struct DebugLine
 	glm::vec3 color;
 };
 
-/// Stores debug render requests.
-/// Doesn't actually render anything.
+/// Just stores debug render requests and doesn't actually render anything.
 // @see Renderer
 struct DebugRender
 {

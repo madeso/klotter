@@ -11,7 +11,7 @@ namespace klotter
 
 // todo(Gustav): rename to something better
 // todo(Gustav): switch to a full screen triangle instead
-/// Store the information on how to render a full screen quad.
+/// Store the information for how to render a full screen quad.
 struct FullScreenInfo
 {
 	std::shared_ptr<CompiledGeom> full_screen_geom;
