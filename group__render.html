@@ -145,6 +145,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A material affected by light.  <a href="structklotter_1_1DefaultMaterial.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1OpenglStates.html">klotter::OpenglStates</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "cache" for the current open gl state.  <a href="structklotter_1_1OpenglStates.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Renderer.html">klotter::Renderer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The rendering engine.  <a href="structklotter_1_1Renderer.html#details">More...</a><br /></td></tr>
@@ -182,6 +183,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1ShaderResource.html">klotter::ShaderResource</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1StateChanger.html">klotter::StateChanger</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper class to change both the opengl state and the cache.  <a href="structklotter_1_1StateChanger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CompiledGeom.html">klotter::CompiledGeom</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> on the GPU.  <a href="structklotter_1_1CompiledGeom.html#details">More...</a><br /></td></tr>
@@ -219,10 +221,13 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga2bf0fb4228d3cf9922870684f4b25e81" id="r_ga2bf0fb4228d3cf9922870684f4b25e81"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2bf0fb4228d3cf9922870684f4b25e81">klotter::BlendMode</a> = std::tuple&lt;<a class="el" href="#gac6cdf1ef1b23f9fc7361b5add6bf481b">Blend</a>, <a class="el" href="#gac6cdf1ef1b23f9fc7361b5add6bf481b">Blend</a>&gt;</td></tr>
+<tr class="memdesc:ga2bf0fb4228d3cf9922870684f4b25e81"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#gac6cdf1ef1b23f9fc7361b5add6bf481b">Blend</a> mode state consisting of src and dst blend functions.  <br /></td></tr>
 <tr class="separator:ga2bf0fb4228d3cf9922870684f4b25e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad39dccc38e66e47ae52ef347a685cf07" id="r_gad39dccc38e66e47ae52ef347a685cf07"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad39dccc38e66e47ae52ef347a685cf07">klotter::StencilFunc</a> = std::tuple&lt;<a class="el" href="#gaf50df8edcb23dcda6cc8f1fd15918d69">Compare</a>, <a class="el" href="pch_8public_8h.html#aec41e5f8e4b7aef2540e84268692fa84">i32</a>, <a class="el" href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a>&gt;</td></tr>
+<tr class="memdesc:gad39dccc38e66e47ae52ef347a685cf07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stencil function state consisiting of the compare function, the ref and the state.  <br /></td></tr>
 <tr class="separator:gad39dccc38e66e47ae52ef347a685cf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1c638300d3c0acd1ab75efc88f4aa741" id="r_ga1c638300d3c0acd1ab75efc88f4aa741"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1c638300d3c0acd1ab75efc88f4aa741">klotter::StencilOp</a> = std::tuple&lt;<a class="el" href="#gac7b12ed0e553cee508d8ca86f8c8e84f">StencilAction</a>, <a class="el" href="#gac7b12ed0e553cee508d8ca86f8c8e84f">StencilAction</a>, <a class="el" href="#gac7b12ed0e553cee508d8ca86f8c8e84f">StencilAction</a>&gt;</td></tr>
+<tr class="memdesc:ga1c638300d3c0acd1ab75efc88f4aa741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stencil operation state consisting of the stencil fail, depth fail and the pass action.  <br /></td></tr>
 <tr class="separator:ga1c638300d3c0acd1ab75efc88f4aa741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -380,6 +385,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="#gac6cdf1ef1b23f9fc7361b5add6bf481b">Blend</a> mode state consisting of src and dst blend functions. </p>
+
 </div>
 </div>
 <a id="gad39dccc38e66e47ae52ef347a685cf07" name="gad39dccc38e66e47ae52ef347a685cf07"></a>
@@ -394,6 +401,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Stencil function state consisiting of the compare function, the ref and the state. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structklotter_1_1StateChanger.html#a526cf05c48c5b7d9d617e30a665bed70">StateChanger::stencil_func</a> </dd></dl>
+
 </div>
 </div>
 <a id="ga1c638300d3c0acd1ab75efc88f4aa741" name="ga1c638300d3c0acd1ab75efc88f4aa741"></a>
@@ -407,6 +417,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stencil operation state consisting of the stencil fail, depth fail and the pass action. </p>
 
 </div>
 </div>
