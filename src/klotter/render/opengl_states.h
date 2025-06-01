@@ -17,11 +17,17 @@ namespace klotter
  *  @{
 */
 
-
+/// Blend mode state consisting of src and dst blend functions
 using BlendMode = std::tuple<Blend, Blend>;
+
+/// Stencil function state consisiting of the compare function, the ref and the state.
+/// @see \ref StateChanger::stencil_func
 using StencilFunc = std::tuple<Compare, i32, u32>;
+
+/// Stencil operation state consisting of the stencil fail, depth fail and the pass action.
 using StencilOp = std::tuple<StencilAction, StencilAction, StencilAction>;
 
+/// A "cache" for the current open gl state.
 struct OpenglStates
 {
 	std::optional<bool> cull_face;

@@ -18,6 +18,7 @@ struct OpenglStates;
  *  @{
 */
 
+/// A helper class to change both the opengl state and the cache.
 struct StateChanger
 {
 	OpenglStates* states;
