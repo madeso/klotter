@@ -12,7 +12,7 @@ namespace klotter
  *  @{
 */
 
-
+/// Internal state of the renderer.
 struct RendererPimpl
 {
 	CameraUniformBuffer camera_uniform_buffer;

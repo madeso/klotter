@@ -16,6 +16,8 @@ struct CompiledCamera;
  *  @{
 */
 
+// todo(Gustav): rename to TransformSource?
+/// Enum describing on how the model transform is provided.
 enum class ModelSource
 {
 	/// the model source is provided as a mat4 uniform.
@@ -25,6 +27,7 @@ enum class ModelSource
 	Instanced_mat4
 };
 
+/// "Global state" for the shaders describing the state of the camera.
 struct CameraUniformBuffer
 {
 	UniformBufferSetup setup;
@@ -39,6 +42,8 @@ struct CameraUniformBuffer
 	void set_props(const CompiledCamera& cc);
 };
 
+// todo(Gustav): investigate the usefulness of this since some shaders can't inherit from this...
+/// Base class for loaded shaders.
 struct LoadedShader
 {
 	LoadedShader(std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l);
@@ -47,6 +52,8 @@ struct LoadedShader
 	CompiledGeomVertexAttributes geom_layout;
 };
 
+
+/// A single color shader.
 struct LoadedShader_SingleColor : LoadedShader
 {
 	LoadedShader_SingleColor(LoadedShader s, const CameraUniformBuffer& desc);
@@ -55,6 +62,7 @@ struct LoadedShader_SingleColor : LoadedShader
 	Uniform model;
 };
 
+/// A skybox shader.
 struct LoadedShader_Skybox : LoadedShader
 {
 	LoadedShader_Skybox(LoadedShader s, const CameraUniformBuffer& desc);
@@ -62,6 +70,8 @@ struct LoadedShader_Skybox : LoadedShader
 	Uniform tex_skybox;
 };
 
+/// Parts of a loaded unlit shader
+/// @see \ref LoadedShader_Unlit_Container
 struct LoadedShader_Unlit
 {
 	std::shared_ptr<ShaderProgram> program;
@@ -74,6 +84,8 @@ struct LoadedShader_Unlit
 	std::optional<Uniform> model;
 };
 
+/// Uniform for a directional light.
+/// @see \ref DirectionalLight
 struct DirectionalLightUniforms
 {
 	DirectionalLightUniforms(ShaderProgram* program, const std::string& base);
@@ -83,6 +95,8 @@ struct DirectionalLightUniforms
 	Uniform dir;
 };
 
+/// Uniforms for a point light.
+/// @see \ref PointLight
 struct PointLightUniforms
 {
 	PointLightUniforms(ShaderProgram* program, const std::string& base);
@@ -93,6 +107,8 @@ struct PointLightUniforms
 	Uniform light_world;
 };
 
+/// Uniforms for a frustum light.
+/// @see \ref FrustumLight
 struct FrustumLightUniforms
 {
 	FrustumLightUniforms(ShaderProgram* program, const std::string& base);
@@ -105,6 +121,7 @@ struct FrustumLightUniforms
 	Uniform cookie;
 };
 
+/// Bitmask for what features each fse shader wants.
 enum class PostProcSetup
 {
 	none = 0,
@@ -112,13 +129,14 @@ enum class PostProcSetup
 	resolution = 1 << 2,
 	time = 1 << 3
 };
-
 PostProcSetup operator|(PostProcSetup lhs, PostProcSetup rhs);
 
+// todo(Gustav): why is this exposed? remove?
 std::optional<Uniform> get_uniform(
 	ShaderProgram& prog, const std::string& name, PostProcSetup setup, PostProcSetup flag
 );
 
+/// The "base class" for a loaded fse shader.
 struct LoadedPostProcShader
 {
 	std::shared_ptr<ShaderProgram> program;
@@ -130,6 +148,8 @@ struct LoadedPostProcShader
 	explicit LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, PostProcSetup setup);
 };
 
+/// Part of a loaded "default" shader.
+/// @see \ref LoadedShader_Default_Container
 struct LoadedShader_Default
 {
 	std::shared_ptr<ShaderProgram> program;
@@ -157,18 +177,21 @@ struct LoadedShader_Default
 	std::vector<FrustumLightUniforms> frustum_lights;
 };
 
+/// A "named boolean"
 enum class UseTransparency
 {
 	yes,
 	no
 };
 
+/// Stores information that is uselful when seleting a shader part from a shader container.
 struct RenderContext
 {
 	ModelSource model_source;
 	UseTransparency use_transparency;
 };
 
+/// A unlit shader.
 struct LoadedShader_Unlit_Container
 {
 	CompiledGeomVertexAttributes geom_layout;
@@ -179,6 +202,7 @@ struct LoadedShader_Unlit_Container
 	[[nodiscard]] bool is_loaded() const;
 };
 
+/// A default shader
 struct LoadedShader_Default_Container
 {
 	CompiledGeomVertexAttributes geom_layout;
@@ -190,9 +214,13 @@ struct LoadedShader_Default_Container
 	[[nodiscard]] bool is_loaded() const;
 };
 
+/// Select the correct sub shader from a container.
 [[nodiscard]] const LoadedShader_Unlit& shader_from_container(const LoadedShader_Unlit_Container& container, const RenderContext& rc);
+
+/// Select the correct sub shader from a container.
 [[nodiscard]] const LoadedShader_Default& shader_from_container(const LoadedShader_Default_Container& container, const RenderContext& rc);
 
+/// All loaded shaders.
 struct ShaderResource
 {
 	LoadedShader_SingleColor single_color_shader;

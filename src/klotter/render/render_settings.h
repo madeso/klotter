@@ -7,7 +7,7 @@ namespace klotter
  *  @{
 */
 
-
+/// Startup settings for the renderer.
 struct RenderSettings
 {
 	int number_of_directional_lights = 5;
