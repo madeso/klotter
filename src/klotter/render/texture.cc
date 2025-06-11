@@ -373,10 +373,14 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build() const
 	// setup texture
 	const GLenum target = is_msaa ? GL_TEXTURE_2D_MULTISAMPLE : GL_TEXTURE_2D;
 	glBindTexture(target, fbo->id);
-	set_texture_wrap(target, te);
-	const auto filter = min_mag_from_trs(trs);
-	glTexParameteri(target, GL_TEXTURE_MIN_FILTER, filter.min);
-	glTexParameteri(target, GL_TEXTURE_MAG_FILTER, filter.mag);
+	if (is_msaa == false)
+	{
+		// msaa neither support min/mag filters nor texture wrapping
+		set_texture_wrap(target, te);
+		const auto filter = min_mag_from_trs(trs);
+		glTexParameteri(target, GL_TEXTURE_MIN_FILTER, filter.min);
+		glTexParameteri(target, GL_TEXTURE_MAG_FILTER, filter.mag);
+	}
 	const auto include_transparency = trans == Transparency::include;
 
 	if (is_msaa)
