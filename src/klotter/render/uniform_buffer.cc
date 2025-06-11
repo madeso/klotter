@@ -116,7 +116,12 @@ UniformBuffer::UniformBuffer(const UniformBufferSetup& setup)
 	: id(create_buffer())
 {
 	auto bound = BoundUniformBuffer{this};
-	glBufferData(GL_UNIFORM_BUFFER, setup.size, nullptr, GL_STATIC_DRAW);
+
+	// Changed to a dynamic draw due to:
+	//	Using glBufferSubData(...) to update a GL_STATIC_DRAW buffer
+	//	Performance Severity: medium
+	// todo(Gustav): profile? provide a hint in a argument?
+	glBufferData(GL_UNIFORM_BUFFER, setup.size, nullptr, GL_DYNAMIC_DRAW);
 	glBindBufferBase(GL_UNIFORM_BUFFER, Cint_to_gluint(setup.binding_point), id);
 }
 
