@@ -16,9 +16,8 @@ struct CompiledCamera;
  *  @{
 */
 
-// todo(Gustav): rename to TransformSource?
 /// Enum describing on how the model transform is provided.
-enum class ModelSource
+enum class TransformSource
 {
 	/// the model source is provided as a mat4 uniform.
 	Uniform,
@@ -76,7 +75,7 @@ struct LoadedShader_Unlit
 {
 	std::shared_ptr<ShaderProgram> program;
 
-	explicit LoadedShader_Unlit(ModelSource model_source, LoadedShader s, const CameraUniformBuffer& desc);
+	explicit LoadedShader_Unlit(TransformSource model_source, LoadedShader s, const CameraUniformBuffer& desc);
 
 	Uniform tint_color;
 	Uniform tex_diffuse;
@@ -155,7 +154,7 @@ struct LoadedShader_Default
 	std::shared_ptr<ShaderProgram> program;
 
 	LoadedShader_Default(
-		ModelSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
+		TransformSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
 	);
 
 	Uniform tint_color;
@@ -187,7 +186,7 @@ enum class UseTransparency
 /// Stores information that is uselful when seleting a shader part from a shader container.
 struct RenderContext
 {
-	ModelSource model_source;
+	TransformSource model_source;
 	UseTransparency use_transparency;
 };
 

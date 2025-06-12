@@ -175,7 +175,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& m: world.meshes)
 	{
-		constexpr auto not_transparent = RenderContext{ModelSource::Uniform, UseTransparency::no};
+		constexpr auto not_transparent = RenderContext{TransformSource::Uniform, UseTransparency::no};
 
 		if (m->material->is_transparent())
 		{
@@ -204,7 +204,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& m: world.instances)
 	{
-		constexpr auto not_transparent = RenderContext{ModelSource::Instanced_mat4, UseTransparency::no};
+		constexpr auto not_transparent = RenderContext{TransformSource::Instanced_mat4, UseTransparency::no};
 
 		StateChanger{&pimpl->states}
 			.depth_test(true)
@@ -256,7 +256,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	for (auto& tm: transparent_meshes)
 	{
-		constexpr auto transparent = RenderContext{ModelSource::Uniform, UseTransparency::yes};
+		constexpr auto transparent = RenderContext{TransformSource::Uniform, UseTransparency::yes};
 
 		const auto& m = tm.mesh;
 		StateChanger{&pimpl->states}

@@ -49,13 +49,13 @@ LoadedShader_Skybox::LoadedShader_Skybox(LoadedShader s, const CameraUniformBuff
 }
 
 LoadedShader_Unlit::LoadedShader_Unlit(
-	ModelSource model_source, LoadedShader s, const CameraUniformBuffer& desc
+	TransformSource model_source, LoadedShader s, const CameraUniformBuffer& desc
 )
 	: program(std::move(s.program))
 	, tint_color(program->get_uniform("u_material.diffuse_tint"))
 	, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
 	, model(
-		  model_source == ModelSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_model")} : std::nullopt
+		  model_source == TransformSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_model")} : std::nullopt
 	  )
 {
 	setup_textures(program.get(), {&tex_diffuse});
@@ -117,7 +117,7 @@ LoadedPostProcShader::LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, Pos
 }
 
 LoadedShader_Default::LoadedShader_Default(
-	ModelSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
+	TransformSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
 )
 	: program(std::move(s.program))
 	, tint_color(program->get_uniform("u_material.diffuse_tint"))
@@ -129,7 +129,7 @@ LoadedShader_Default::LoadedShader_Default(
 	, shininess(program->get_uniform("u_material.shininess"))
 	, emissive_factor(program->get_uniform("u_material.emissive_factor"))
 	, model(
-		  model_source == ModelSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_model")} : std::nullopt
+		  model_source == TransformSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_model")} : std::nullopt
 	  )
 	, view_position(program->get_uniform("u_view_position"))
 	, light_ambient_color(program->get_uniform("u_ambient_light"))
@@ -176,9 +176,9 @@ const LoadedShader_Default& shader_from_container(const LoadedShader_Default_Con
 {
 	switch (rc.model_source)
 	{
-	case ModelSource::Uniform:
+	case TransformSource::Uniform:
 		return rc.use_transparency == UseTransparency::yes ? container.transparency_shader : container.default_shader;
-	case ModelSource::Instanced_mat4:
+	case TransformSource::Instanced_mat4:
 		assert(rc.use_transparency == UseTransparency::no);	 // not currently supporting instanced transparency
 		return container.default_shader_instance;
 	default: assert(false && "unhandled"); return container.default_shader;
@@ -209,7 +209,7 @@ BaseShaderData get_vertex_types(const ShaderVertexAttributes& va)
 	return ret;
 }
 
-LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSource& source, ModelSource model_source)
+LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSource& source, TransformSource model_source)
 {
 	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
 	const auto geom_layout = get_geom_layout(layout_compiler);
@@ -217,8 +217,8 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSo
 	std::optional<InstanceProp> instance_prop;
 	switch (model_source)
 	{
-	case ModelSource::Instanced_mat4: instance_prop = InstanceProp{VertexType::instance_transform, "u_model"}; break;
-	case ModelSource::Uniform: break;
+	case TransformSource::Instanced_mat4: instance_prop = InstanceProp{VertexType::instance_transform, "u_model"}; break;
+	case TransformSource::Uniform: break;
 	default: assert(false && "unhandled ModelSource");
 	}
 
@@ -254,24 +254,24 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 	auto loaded_unlit = load_shader(
 		global_shader_data,
 		load_shader_source(unlit_shader_options.with_transparent_cutoff(), desc.setup.source),
-		ModelSource::Uniform
+		TransformSource::Uniform
 	);
 	auto loaded_default = load_shader(
 		global_shader_data,
 		load_shader_source(default_shader_options.with_transparent_cutoff(), desc.setup.source),
-		ModelSource::Uniform
+		TransformSource::Uniform
 	);
 	auto loaded_default_instanced = load_shader(
 		global_shader_data,
 		load_shader_source(default_shader_options.with_transparent_cutoff().with_instanced_mat4(), desc.setup.source),
-		ModelSource::Instanced_mat4
+		TransformSource::Instanced_mat4
 	);
 
 	auto loaded_unlit_transparency = load_shader(
-		global_shader_data, load_shader_source(unlit_shader_options, desc.setup.source), ModelSource::Uniform
+		global_shader_data, load_shader_source(unlit_shader_options, desc.setup.source), TransformSource::Uniform
 	);
 	auto loaded_default_transparency = load_shader(
-		global_shader_data, load_shader_source(default_shader_options, desc.setup.source), ModelSource::Uniform
+		global_shader_data, load_shader_source(default_shader_options, desc.setup.source), TransformSource::Uniform
 	);
 
 	// todo(Gustav): should the asserts here be runtime errors? currently all setups are compile-time...
@@ -333,18 +333,18 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 	);
 
 	return {
-		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader, ModelSource::Uniform), desc},
-		LoadedShader_Skybox{load_shader({}, skybox_shader, ModelSource::Uniform), desc},
+		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader, TransformSource::Uniform), desc},
+		LoadedShader_Skybox{load_shader({}, skybox_shader, TransformSource::Uniform), desc},
 		LoadedShader_Unlit_Container{
 			loaded_unlit.geom_layout,
-			LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit, desc},
-			LoadedShader_Unlit{ModelSource::Uniform, loaded_unlit_transparency, desc}
+			LoadedShader_Unlit{TransformSource::Uniform, loaded_unlit, desc},
+			LoadedShader_Unlit{TransformSource::Uniform, loaded_unlit_transparency, desc}
 		},
 		LoadedShader_Default_Container{
 			loaded_default.geom_layout,
-			LoadedShader_Default{ModelSource::Uniform, loaded_default, settings, desc},
-			LoadedShader_Default{ModelSource::Uniform, loaded_default_transparency, settings, desc},
-			LoadedShader_Default{ModelSource::Instanced_mat4, loaded_default_instanced, settings, desc}
+			LoadedShader_Default{TransformSource::Uniform, loaded_default, settings, desc},
+			LoadedShader_Default{TransformSource::Uniform, loaded_default_transparency, settings, desc},
+			LoadedShader_Default{TransformSource::Instanced_mat4, loaded_default_instanced, settings, desc}
 		},
 		pp_invert,
 		pp_grayscale,
