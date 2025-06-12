@@ -298,11 +298,11 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a78ee54aa8f813885fe2fe20d232518b9">klotter::RenderMode::point</a>
  }</td></tr>
 <tr class="separator:ga58b3e0e4918f62f8cf5fa2c0e3ec9718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00becf1348a9a20b568904f0000af614" id="r_ga00becf1348a9a20b568904f0000af614"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga00becf1348a9a20b568904f0000af614">klotter::ModelSource</a> { <a class="el" href="#gga00becf1348a9a20b568904f0000af614af19516d11f2946f894070e92fcb56b6d">klotter::ModelSource::Uniform</a>
-, <a class="el" href="#gga00becf1348a9a20b568904f0000af614a4bea50b56977df9fca1533e78fce2728">klotter::ModelSource::Instanced_mat4</a>
+<tr class="memitem:gad119e3d8725413aad6d684e0ec1c22aa" id="r_gad119e3d8725413aad6d684e0ec1c22aa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad119e3d8725413aad6d684e0ec1c22aa">klotter::TransformSource</a> { <a class="el" href="#ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d">klotter::TransformSource::Uniform</a>
+, <a class="el" href="#ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728">klotter::TransformSource::Instanced_mat4</a>
  }</td></tr>
-<tr class="memdesc:ga00becf1348a9a20b568904f0000af614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum describing on how the model transform is provided.  <a href="#ga00becf1348a9a20b568904f0000af614">More...</a><br /></td></tr>
-<tr class="separator:ga00becf1348a9a20b568904f0000af614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:gad119e3d8725413aad6d684e0ec1c22aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum describing on how the model transform is provided.  <a href="#gad119e3d8725413aad6d684e0ec1c22aa">More...</a><br /></td></tr>
+<tr class="separator:gad119e3d8725413aad6d684e0ec1c22aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga358c9176a5069a7059c1497704cd2875" id="r_ga358c9176a5069a7059c1497704cd2875"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga358c9176a5069a7059c1497704cd2875">klotter::PostProcSetup</a> { <a class="el" href="#gga358c9176a5069a7059c1497704cd2875a334c4a4c42fdb79d7ebc3e73b517e6f8">klotter::PostProcSetup::none</a> = 0
 , <a class="el" href="#gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d">klotter::PostProcSetup::factor</a> = 1 &lt;&lt; 1
 , <a class="el" href="#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">klotter::PostProcSetup::resolution</a> = 1 &lt;&lt; 2
@@ -577,36 +577,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga00becf1348a9a20b568904f0000af614" name="ga00becf1348a9a20b568904f0000af614"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga00becf1348a9a20b568904f0000af614">&#9670;&#160;</a></span>ModelSource</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#ga00becf1348a9a20b568904f0000af614">klotter::ModelSource</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enum describing on how the model transform is provided. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga00becf1348a9a20b568904f0000af614af19516d11f2946f894070e92fcb56b6d" name="gga00becf1348a9a20b568904f0000af614af19516d11f2946f894070e92fcb56b6d"></a>Uniform&#160;</td><td class="fielddoc"><p>the model source is provided as a mat4 uniform. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga00becf1348a9a20b568904f0000af614a4bea50b56977df9fca1533e78fce2728" name="gga00becf1348a9a20b568904f0000af614a4bea50b56977df9fca1533e78fce2728"></a>Instanced_mat4&#160;</td><td class="fielddoc"><p>the model source is provided as a (instanced) mat4 attribute </p>
-</td></tr>
-</table>
-
-</div>
-</div>
 <a id="ga358c9176a5069a7059c1497704cd2875" name="ga358c9176a5069a7059c1497704cd2875"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga358c9176a5069a7059c1497704cd2875">&#9670;&#160;</a></span>PostProcSetup</h2>
 
@@ -699,6 +669,36 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="ggac7b12ed0e553cee508d8ca86f8c8e84faeea8162fd4103d6d9864b893f79150f1" name="ggac7b12ed0e553cee508d8ca86f8c8e84faeea8162fd4103d6d9864b893f79150f1"></a>decrease_wrap&#160;</td><td class="fielddoc"><p>Same as decrease, but wraps it to the maximum value if it ends up lower than 0. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ggac7b12ed0e553cee508d8ca86f8c8e84fa20e57f32ba12b9cd13ebe9ef5e32d949" name="ggac7b12ed0e553cee508d8ca86f8c8e84fa20e57f32ba12b9cd13ebe9ef5e32d949"></a>invert&#160;</td><td class="fielddoc"><p>Bitwise inverts the current stencil buffer value. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="gad119e3d8725413aad6d684e0ec1c22aa" name="gad119e3d8725413aad6d684e0ec1c22aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad119e3d8725413aad6d684e0ec1c22aa">&#9670;&#160;</a></span>TransformSource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#gad119e3d8725413aad6d684e0ec1c22aa">klotter::TransformSource</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enum describing on how the model transform is provided. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d" name="ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d"></a>Uniform&#160;</td><td class="fielddoc"><p>the model source is provided as a mat4 uniform. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728" name="ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728"></a>Instanced_mat4&#160;</td><td class="fielddoc"><p>the model source is provided as a (instanced) mat4 attribute </p>
 </td></tr>
 </table>
 

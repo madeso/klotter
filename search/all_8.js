@@ -20,7 +20,7 @@ var searchData=
   ['indigo_17',['indigo',['../namespaceklotter_1_1imgui.html#a7af53378e11ed2f4ec0c2ce54b6be954',1,'klotter::imgui']]],
   ['instance_5ftransform_18',['instance_transform',['../group__vertex-layout.html#ggad736ea89c0534627057463235feb9189a6dacc621672a82305301e95d9c6b020e',1,'klotter']]],
   ['instance_5fvbo_19',['instance_vbo',['../structklotter_1_1CompiledGeom__TransformInstance.html#ab5f7094925a36f1a915bbb22a51d6759',1,'klotter::CompiledGeom_TransformInstance']]],
-  ['instanced_5fmat4_20',['Instanced_mat4',['../group__render.html#gga00becf1348a9a20b568904f0000af614a4bea50b56977df9fca1533e78fce2728',1,'klotter']]],
+  ['instanced_5fmat4_20',['Instanced_mat4',['../group__render.html#ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728',1,'klotter']]],
   ['instanceprop_21',['InstanceProp',['../structklotter_1_1InstanceProp.html',1,'klotter']]],
   ['instances_22',['instances',['../structklotter_1_1World.html#a42950d49b98dc3304ea9a25ddbf83c9f',1,'klotter::World']]],
   ['int_5ftype_23',['int_type',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40a06d324fffd90570dc177e7d1aabcb4dd',1,'klotter']]],
