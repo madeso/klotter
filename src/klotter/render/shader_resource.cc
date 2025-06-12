@@ -26,22 +26,22 @@ void CameraUniformBuffer::set_props(const CompiledCamera& cc)
 	buffer->set_mat4(view_prop, cc.view);
 }
 
-LoadedShader::LoadedShader(std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l)
+LoadedShader_SingleColor::LoadedShader_SingleColor(
+	std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l, const CameraUniformBuffer& desc
+)
 	: program(std::move(p))
 	, geom_layout(std::move(l))
-{
-}
-
-LoadedShader_SingleColor::LoadedShader_SingleColor(LoadedShader s, const CameraUniformBuffer& desc)
-	: LoadedShader(std::move(s.program), s.geom_layout)
 	, tint_color(program->get_uniform("u_material.diffuse_tint"))
 	, model(program->get_uniform("u_model"))
 {
 	program->setup_uniform_block(desc.setup);
 }
 
-LoadedShader_Skybox::LoadedShader_Skybox(LoadedShader s, const CameraUniformBuffer& desc)
-	: LoadedShader(std::move(s.program), s.geom_layout)
+LoadedShader_Skybox::LoadedShader_Skybox(
+	std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l, const CameraUniformBuffer& desc
+)
+	: program(std::move(p))
+	, geom_layout(std::move(l))
 	, tex_skybox(program->get_uniform("u_skybox_tex"))
 {
 	setup_textures(program.get(), {&tex_skybox});
@@ -49,9 +49,11 @@ LoadedShader_Skybox::LoadedShader_Skybox(LoadedShader s, const CameraUniformBuff
 }
 
 LoadedShader_Unlit::LoadedShader_Unlit(
-	TransformSource model_source, LoadedShader s, const CameraUniformBuffer& desc
+	TransformSource model_source,
+	std::shared_ptr<ShaderProgram> p,
+	const CameraUniformBuffer& desc
 )
-	: program(std::move(s.program))
+	: program(std::move(p))
 	, tint_color(program->get_uniform("u_material.diffuse_tint"))
 	, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
 	, model(
@@ -117,9 +119,12 @@ LoadedPostProcShader::LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, Pos
 }
 
 LoadedShader_Default::LoadedShader_Default(
-	TransformSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
+	TransformSource model_source,
+	std::shared_ptr<ShaderProgram> p,
+	const RenderSettings& settings,
+	const CameraUniformBuffer& desc
 )
-	: program(std::move(s.program))
+	: program(std::move(p))
 	, tint_color(program->get_uniform("u_material.diffuse_tint"))
 	, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
 	, tex_specular(program->get_uniform("u_material.specular_tex"))
@@ -208,6 +213,19 @@ BaseShaderData get_vertex_types(const ShaderVertexAttributes& va)
 	}
 	return ret;
 }
+
+
+// todo(Gustav): should this be a tuple instead? this way the members are named
+struct LoadedShader
+{
+	LoadedShader(std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l)
+		: program(std::move(p))
+		, geom_layout(std::move(l))
+	{}
+
+	std::shared_ptr<ShaderProgram> program;
+	CompiledGeomVertexAttributes geom_layout;
+};
 
 LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSource& source, TransformSource model_source)
 {
@@ -332,19 +350,23 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		PostProcSetup::none
 	);
 
+	auto loaded_single_color = load_shader(global_shader_data, single_color_shader, TransformSource::Uniform);
+	auto loaded_skybox_shader = load_shader({}, skybox_shader, TransformSource::Uniform);
+
 	return {
-		LoadedShader_SingleColor{load_shader(global_shader_data, single_color_shader, TransformSource::Uniform), desc},
-		LoadedShader_Skybox{load_shader({}, skybox_shader, TransformSource::Uniform), desc},
+		// todo(Gustav): not really happy with sending "the same" argument twice
+		LoadedShader_SingleColor{std::move(loaded_single_color.program), loaded_single_color.geom_layout, desc},
+		LoadedShader_Skybox{std::move(loaded_skybox_shader.program), loaded_skybox_shader.geom_layout, desc},
 		LoadedShader_Unlit_Container{
 			loaded_unlit.geom_layout,
-			LoadedShader_Unlit{TransformSource::Uniform, loaded_unlit, desc},
-			LoadedShader_Unlit{TransformSource::Uniform, loaded_unlit_transparency, desc}
+			LoadedShader_Unlit{TransformSource::Uniform, std::move(loaded_unlit.program), desc},
+			LoadedShader_Unlit{TransformSource::Uniform, std::move(loaded_unlit_transparency.program), desc}
 		},
 		LoadedShader_Default_Container{
 			loaded_default.geom_layout,
-			LoadedShader_Default{TransformSource::Uniform, loaded_default, settings, desc},
-			LoadedShader_Default{TransformSource::Uniform, loaded_default_transparency, settings, desc},
-			LoadedShader_Default{TransformSource::Instanced_mat4, loaded_default_instanced, settings, desc}
+			LoadedShader_Default{TransformSource::Uniform, std::move(loaded_default.program), settings, desc},
+			LoadedShader_Default{TransformSource::Uniform, std::move(loaded_default_transparency.program), settings, desc},
+			LoadedShader_Default{TransformSource::Instanced_mat4, std::move(loaded_default_instanced.program), settings, desc}
 		},
 		pp_invert,
 		pp_grayscale,

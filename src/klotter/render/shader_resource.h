@@ -41,31 +41,29 @@ struct CameraUniformBuffer
 	void set_props(const CompiledCamera& cc);
 };
 
-// todo(Gustav): investigate the usefulness of this since some shaders can't inherit from this...
-/// Base class for loaded shaders.
-struct LoadedShader
+
+/// A single color shader.
+struct LoadedShader_SingleColor
 {
-	LoadedShader(std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l);
+	LoadedShader_SingleColor(
+		std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l, const CameraUniformBuffer& desc
+	);
 
 	std::shared_ptr<ShaderProgram> program;
 	CompiledGeomVertexAttributes geom_layout;
-};
-
-
-/// A single color shader.
-struct LoadedShader_SingleColor : LoadedShader
-{
-	LoadedShader_SingleColor(LoadedShader s, const CameraUniformBuffer& desc);
-
 	Uniform tint_color;
 	Uniform model;
 };
 
 /// A skybox shader.
-struct LoadedShader_Skybox : LoadedShader
+struct LoadedShader_Skybox
 {
-	LoadedShader_Skybox(LoadedShader s, const CameraUniformBuffer& desc);
+	LoadedShader_Skybox(
+		std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l, const CameraUniformBuffer& desc
+	);
 
+	std::shared_ptr<ShaderProgram> program;
+	CompiledGeomVertexAttributes geom_layout;
 	Uniform tex_skybox;
 };
 
@@ -75,7 +73,7 @@ struct LoadedShader_Unlit
 {
 	std::shared_ptr<ShaderProgram> program;
 
-	explicit LoadedShader_Unlit(TransformSource model_source, LoadedShader s, const CameraUniformBuffer& desc);
+	explicit LoadedShader_Unlit(TransformSource model_source, std::shared_ptr<ShaderProgram> p, const CameraUniformBuffer& desc);
 
 	Uniform tint_color;
 	Uniform tex_diffuse;
@@ -154,7 +152,7 @@ struct LoadedShader_Default
 	std::shared_ptr<ShaderProgram> program;
 
 	LoadedShader_Default(
-		TransformSource model_source, LoadedShader s, const RenderSettings& settings, const CameraUniformBuffer& desc
+		TransformSource model_source, std::shared_ptr<ShaderProgram> p, const RenderSettings& settings, const CameraUniformBuffer& desc
 	);
 
 	Uniform tint_color;
