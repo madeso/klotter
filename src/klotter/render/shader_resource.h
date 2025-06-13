@@ -6,7 +6,7 @@
 
 namespace klotter
 {
-struct FullScreenInfo;
+struct FullScreenGeom;
 struct RenderSettings;
 struct CompiledGeomVertexAttributes;
 struct ShaderProgram;
@@ -241,7 +241,7 @@ struct ShaderResource
 	[[nodiscard]] bool is_loaded() const;
 };
 
-ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenInfo& fsi);
+ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenGeom& full_screen);
 
 /**
  * @}

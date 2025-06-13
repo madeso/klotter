@@ -46,7 +46,7 @@ set(src_render
     klotter/render/fse.cc klotter/render/fse.h
     klotter/render/shader_resource.cc klotter/render/shader_resource.h
     klotter/render/statechanger.cc klotter/render/statechanger.h
-    klotter/render/fullscreeninfo.cc klotter/render/fullscreeninfo.h
+    klotter/render/fullscreen.cc klotter/render/fullscreen.h
 
     klotter/render/render.cc klotter/render/render.h
     klotter/render/render.pimpl.cc klotter/render/render.pimpl.h

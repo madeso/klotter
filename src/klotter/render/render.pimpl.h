@@ -21,7 +21,7 @@ struct RendererPimpl
 	DebugDrawer debug_drawer;
 	std::shared_ptr<CompiledGeom> full_screen_geom;
 
-	RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi);
+	RendererPimpl(const RenderSettings& set, const FullScreenGeom& full_screen);
 };
 
 /**

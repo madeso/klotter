@@ -9,15 +9,15 @@ namespace klotter
  *  @{
 */
 
-// todo(Gustav): rename to something better
+// todo(Gustav): rename to something better... I don't like that it's Geom::geom
 // todo(Gustav): switch to a full screen triangle instead
 /// Store the information for how to render a full screen quad.
-struct FullScreenInfo
+struct FullScreenGeom
 {
-	std::shared_ptr<CompiledGeom> full_screen_geom;
-	CompiledShaderVertexAttributes full_screen_layout;
+	std::shared_ptr<CompiledGeom> geom;
+	CompiledShaderVertexAttributes layout;
 
-	FullScreenInfo();
+	FullScreenGeom();
 };
 
 /**

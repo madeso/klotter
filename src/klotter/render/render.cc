@@ -3,7 +3,7 @@
 #include "klotter/log.h"
 
 #include "klotter/render/camera.h"
-#include "klotter/render/fullscreeninfo.h"
+#include "klotter/render/fullscreen.h"
 #include "klotter/render/geom.builder.h"
 #include "klotter/render/geom.h"
 #include "klotter/render/opengl_utils.h"
@@ -16,7 +16,7 @@ namespace klotter
 
 Renderer::Renderer(const RenderSettings& set)
 	: settings(set)
-	, pimpl(std::make_unique<RendererPimpl>(set, FullScreenInfo{}))
+	, pimpl(std::make_unique<RendererPimpl>(set, FullScreenGeom{}))
 {
 }
 

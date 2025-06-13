@@ -8,7 +8,7 @@
 #include "klotter/render/shader.h"
 #include "klotter/render/camera.h"
 #include "klotter/render/render_settings.h"
-#include "klotter/render/fullscreeninfo.h"
+#include "klotter/render/fullscreen.h"
 
 #include "pp.vert.glsl.h"
 #include "pp.invert.frag.glsl.h"
@@ -247,7 +247,7 @@ LoadedShader load_shader(const BaseShaderData& base_layout, const VertexShaderSo
 	return {program, geom_layout};
 }
 
-ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenInfo& fsi)
+ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenGeom& full_screen)
 {
 	const auto single_color_shader = load_shader_source({}, desc.setup.source);
 
@@ -301,19 +301,19 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 
 	auto pp_invert = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, fsi.full_screen_layout
+			std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::factor
 	);
 	auto pp_grayscale = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_GRAYSCALE_FRAG_GLSL}, fsi.full_screen_layout
+			std::string{PP_VERT_GLSL}, std::string{PP_GRAYSCALE_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::factor
 	);
 	auto pp_damage = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_DAMAGE_FRAG_GLSL}, fsi.full_screen_layout
+			std::string{PP_VERT_GLSL}, std::string{PP_DAMAGE_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::factor | PostProcSetup::resolution | PostProcSetup::time
 	);
@@ -330,7 +330,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL},
 			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::vertical, BLUR_SAMPLES, use_gauss}),
-			fsi.full_screen_layout
+			full_screen.layout
 		),
 		PostProcSetup::factor
 	);
@@ -338,14 +338,14 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		std::make_shared<ShaderProgram>(
 			std::string{PP_VERT_GLSL},
 			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::horizontal, BLUR_SAMPLES, use_gauss}),
-			fsi.full_screen_layout
+			full_screen.layout
 		),
 		PostProcSetup::factor | PostProcSetup::resolution
 	);
 
 	auto pp_always = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			std::string{PP_VERT_GLSL}, std::string{PP_ALWAYS_FRAG_GLSL}, fsi.full_screen_layout
+			std::string{PP_VERT_GLSL}, std::string{PP_ALWAYS_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::none
 	);

@@ -2,7 +2,7 @@
 
 #include "klotter/log.h"
 
-#include "klotter/render/fullscreeninfo.h"
+#include "klotter/render/fullscreen.h"
 #include "klotter/render/shader_resource.h"
 
 namespace klotter
@@ -30,10 +30,10 @@ CameraUniformBuffer make_camera_uniform_buffer_desc()
 	return camera_uniform_buffer;
 }
 
-RendererPimpl::RendererPimpl(const RenderSettings& set, const FullScreenInfo& fsi)
+RendererPimpl::RendererPimpl(const RenderSettings& set, const FullScreenGeom& full_screen)
 	: camera_uniform_buffer(make_camera_uniform_buffer_desc())
-	, shaders_resources(load_shaders(camera_uniform_buffer, set, fsi))
-	, full_screen_geom(fsi.full_screen_geom)
+	, shaders_resources(load_shaders(camera_uniform_buffer, set, full_screen))
+	, full_screen_geom(full_screen.geom)
 {
 	const auto vendor = string_from_gl_bytes(glGetString(GL_VENDOR));
 	const auto renderer = string_from_gl_bytes(glGetString(GL_RENDERER));
