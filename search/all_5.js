@@ -28,8 +28,7 @@ var searchData=
   ['frustumlightuniforms_25',['FrustumLightUniforms',['../structklotter_1_1FrustumLightUniforms.html',1,'klotter::FrustumLightUniforms'],['../structklotter_1_1FrustumLightUniforms.html#a8853c7aa1207bc1bc79214aa4a9f8685',1,'klotter::FrustumLightUniforms::FrustumLightUniforms()']]],
   ['fse_2eh_26',['fse.h',['../fse_8h.html',1,'']]],
   ['full_20screen_20effect_27',['Full Screen Effect',['../group__fse.html',1,'']]],
-  ['full_5fscreen_5fgeom_28',['full_screen_geom',['../structklotter_1_1FullScreenInfo.html#ad70ffd0077d0e42cd132d5d3cb9f28eb',1,'klotter::FullScreenInfo::full_screen_geom'],['../structklotter_1_1RendererPimpl.html#a81cf9becda0b96defeb78b8f4ccd81bc',1,'klotter::RendererPimpl::full_screen_geom']]],
-  ['full_5fscreen_5flayout_29',['full_screen_layout',['../structklotter_1_1FullScreenInfo.html#a291efabe7fccc9b0db5609c042ba3164',1,'klotter::FullScreenInfo']]],
-  ['fullscreeninfo_30',['FullScreenInfo',['../structklotter_1_1FullScreenInfo.html',1,'klotter::FullScreenInfo'],['../structklotter_1_1FullScreenInfo.html#a35ca8d4064ff73edbfbb6bd5c7d0bfc5',1,'klotter::FullScreenInfo::FullScreenInfo()']]],
-  ['fullscreeninfo_2eh_31',['fullscreeninfo.h',['../fullscreeninfo_8h.html',1,'']]]
+  ['full_5fscreen_5fgeom_28',['full_screen_geom',['../structklotter_1_1RendererPimpl.html#a81cf9becda0b96defeb78b8f4ccd81bc',1,'klotter::RendererPimpl']]],
+  ['fullscreen_2eh_29',['fullscreen.h',['../fullscreen_8h.html',1,'']]],
+  ['fullscreengeom_30',['FullScreenGeom',['../structklotter_1_1FullScreenGeom.html',1,'klotter::FullScreenGeom'],['../structklotter_1_1FullScreenGeom.html#a55753c215cb88a040da3e21b585f9d3a',1,'klotter::FullScreenGeom::FullScreenGeom()']]]
 ];

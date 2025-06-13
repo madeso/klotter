@@ -6,5 +6,5 @@ var searchData=
   ['framebufferbuilder_3',['FrameBufferBuilder',['../structklotter_1_1FrameBufferBuilder.html',1,'klotter']]],
   ['frustumlight_4',['FrustumLight',['../structklotter_1_1FrustumLight.html',1,'klotter']]],
   ['frustumlightuniforms_5',['FrustumLightUniforms',['../structklotter_1_1FrustumLightUniforms.html',1,'klotter']]],
-  ['fullscreeninfo_6',['FullScreenInfo',['../structklotter_1_1FullScreenInfo.html',1,'klotter']]]
+  ['fullscreengeom_6',['FullScreenGeom',['../structklotter_1_1FullScreenGeom.html',1,'klotter']]]
 ];

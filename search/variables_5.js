@@ -10,6 +10,5 @@ var searchData=
   ['from_7',['from',['../structklotter_1_1DebugLine.html#afa0c9a0ada0ad0186082527930108f73',1,'klotter::DebugLine']]],
   ['front_8',['front',['../structklotter_1_1CameraVectors.html#a1462b3c73fdf42f65589e3f926d6d921',1,'klotter::CameraVectors']]],
   ['frustum_5flights_9',['frustum_lights',['../structklotter_1_1LoadedShader__Default.html#a03e09db0a3440956c276c380fef51067',1,'klotter::LoadedShader_Default::frustum_lights'],['../structklotter_1_1Lights.html#aa1be9e01f131119d7fe7aed807a69464',1,'klotter::Lights::frustum_lights']]],
-  ['full_5fscreen_5fgeom_10',['full_screen_geom',['../structklotter_1_1FullScreenInfo.html#ad70ffd0077d0e42cd132d5d3cb9f28eb',1,'klotter::FullScreenInfo::full_screen_geom'],['../structklotter_1_1RendererPimpl.html#a81cf9becda0b96defeb78b8f4ccd81bc',1,'klotter::RendererPimpl::full_screen_geom']]],
-  ['full_5fscreen_5flayout_11',['full_screen_layout',['../structklotter_1_1FullScreenInfo.html#a291efabe7fccc9b0db5609c042ba3164',1,'klotter::FullScreenInfo']]]
+  ['full_5fscreen_5fgeom_10',['full_screen_geom',['../structklotter_1_1RendererPimpl.html#a81cf9becda0b96defeb78b8f4ccd81bc',1,'klotter::RendererPimpl']]]
 ];

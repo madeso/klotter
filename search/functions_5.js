@@ -8,5 +8,5 @@ var searchData=
   ['framebuffer_5',['FrameBuffer',['../structklotter_1_1FrameBuffer.html#a8450b449b540c024574013e1ead16f47',1,'klotter::FrameBuffer::FrameBuffer(unsigned int f, int w, int h)'],['../structklotter_1_1FrameBuffer.html#a09179c63fdfa5fd654c53e249d357da9',1,'klotter::FrameBuffer::FrameBuffer(const FrameBuffer &amp;)=delete'],['../structklotter_1_1FrameBuffer.html#ae9e61e8d6bc6040e77bae32b48fb34ac',1,'klotter::FrameBuffer::FrameBuffer(FrameBuffer &amp;&amp;)=delete']]],
   ['framebufferbuilder_6',['FrameBufferBuilder',['../structklotter_1_1FrameBufferBuilder.html#a3e5157674b4f8d71cf2cef6c44ad0620',1,'klotter::FrameBufferBuilder']]],
   ['frustumlightuniforms_7',['FrustumLightUniforms',['../structklotter_1_1FrustumLightUniforms.html#a8853c7aa1207bc1bc79214aa4a9f8685',1,'klotter::FrustumLightUniforms']]],
-  ['fullscreeninfo_8',['FullScreenInfo',['../structklotter_1_1FullScreenInfo.html#a35ca8d4064ff73edbfbb6bd5c7d0bfc5',1,'klotter::FullScreenInfo']]]
+  ['fullscreengeom_8',['FullScreenGeom',['../structklotter_1_1FullScreenGeom.html#a55753c215cb88a040da3e21b585f9d3a',1,'klotter::FullScreenGeom']]]
 ];

@@ -16,7 +16,7 @@ var searchData=
   ['rendercontext_13',['RenderContext',['../structklotter_1_1RenderContext.html',1,'klotter']]],
   ['renderer_14',['Renderer',['../structklotter_1_1Renderer.html',1,'klotter::Renderer'],['../structklotter_1_1Renderer.html#ad5a6f1e81638462af81153f65f17b967',1,'klotter::Renderer::Renderer(const RenderSettings &amp;settings)'],['../structklotter_1_1Renderer.html#ab746b0b937079d7c796a73c50b468dcb',1,'klotter::Renderer::Renderer(const Renderer &amp;)=delete'],['../structklotter_1_1Renderer.html#a088e263db406085384a2dac04cbc6f81',1,'klotter::Renderer::Renderer(Renderer &amp;&amp;)=delete'],['../group__render.html',1,'Renderer']]],
   ['renderer_15',['renderer',['../structklotter_1_1PostProcArg.html#afb6209a69a9db4f6779c43290d6cc32c',1,'klotter::PostProcArg']]],
-  ['rendererpimpl_16',['RendererPimpl',['../structklotter_1_1RendererPimpl.html',1,'klotter::RendererPimpl'],['../structklotter_1_1RendererPimpl.html#aa1ec9f639639284d673d0e4e8927aefb',1,'klotter::RendererPimpl::RendererPimpl()']]],
+  ['rendererpimpl_16',['RendererPimpl',['../structklotter_1_1RendererPimpl.html',1,'klotter::RendererPimpl'],['../structklotter_1_1RendererPimpl.html#a5589ea5eb933cefc1fd719af2ae2f432',1,'klotter::RendererPimpl::RendererPimpl()']]],
   ['rendermode_17',['RenderMode',['../group__render.html#ga58b3e0e4918f62f8cf5fa2c0e3ec9718',1,'klotter']]],
   ['rendermode_2eh_18',['rendermode.h',['../rendermode_8h.html',1,'']]],
   ['rendersettings_19',['RenderSettings',['../structklotter_1_1RenderSettings.html',1,'klotter']]],
