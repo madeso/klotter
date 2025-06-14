@@ -28,16 +28,12 @@ enum class Transparency
 	exclude
 };
 
-// todo(Gustav): why do the BaseTexture has a width and height when they aren't directly used??
+// todo(Gustav): this doesn't do anything except allow code reuse, remove?
 struct BaseTexture
 {
 	unsigned int id;
-	int width;
-	int height;
 
-	BaseTexture();	///< creates a invalid texture
-	explicit BaseTexture(int w, int h);	 ///< creates a valid texture
-
+	BaseTexture();
 	~BaseTexture();
 
 	BaseTexture(const BaseTexture&) = delete;
@@ -46,13 +42,13 @@ struct BaseTexture
 	BaseTexture(BaseTexture&&) noexcept;
 	BaseTexture& operator=(BaseTexture&&) noexcept;
 
-	// clears the loaded texture to a invalid texture
+	/// clears the loaded texture to a invalid texture
 	void unload();
 };
 
 struct Texture2d : BaseTexture
 {
-	Texture2d() = default;	///< creates a invalid texture
+	Texture2d() = delete;
 
 	/// "internal"
 	Texture2d(const void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
@@ -62,9 +58,9 @@ Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle tr
 
 struct TextureCubemap : BaseTexture
 {
-	TextureCubemap() = default;	 ///< creates a invalid cubemap
+	TextureCubemap() = delete;
 
-	TextureCubemap(const std::array<void*, 6>& pixel_data, int w, int h);
+	TextureCubemap(const std::array<void*, 6>& pixel_data, int width, int height);
 };
 
 TextureCubemap load_cubemap_from_color(u32 pixel);
@@ -85,6 +81,9 @@ struct FrameBuffer : BaseTexture
 	FrameBuffer(FrameBuffer&&) = delete;
 	void operator=(const FrameBuffer&) = delete;
 	void operator=(FrameBuffer&&) = delete;
+
+	int width;
+	int height;
 
 	unsigned int fbo = 0;
 	unsigned int rbo = 0;

@@ -19,8 +19,8 @@ namespace klotter
 
 namespace
 {
+	constexpr u32 FAILED_TO_LOAD_IMAGE_COLOR = 0;
 	constexpr unsigned int invalid_id = 0;
-	constexpr int invalid_size = -1;
 
 	unsigned int create_texture()
 	{
@@ -58,16 +58,7 @@ namespace
 // base texture
 
 BaseTexture::BaseTexture()
-	: id(invalid_id)
-	, width(invalid_size)
-	, height(invalid_size)
-{
-}
-
-BaseTexture::BaseTexture(int w, int h)
 	: id(create_texture())
-	, width(w)
-	, height(h)
 {
 }
 
@@ -78,12 +69,8 @@ BaseTexture::~BaseTexture()
 
 BaseTexture::BaseTexture(BaseTexture&& rhs) noexcept
 	: id(rhs.id)
-	, width(rhs.width)
-	, height(rhs.height)
 {
 	rhs.id = invalid_id;
-	rhs.width = invalid_size;
-	rhs.height = invalid_size;
 }
 
 BaseTexture& BaseTexture::operator=(BaseTexture&& rhs) noexcept
@@ -91,12 +78,8 @@ BaseTexture& BaseTexture::operator=(BaseTexture&& rhs) noexcept
 	unload();
 
 	id = rhs.id;
-	width = rhs.width;
-	height = rhs.height;
 
 	rhs.id = invalid_id;
-	rhs.width = invalid_size;
-	rhs.height = invalid_size;
 
 	return *this;
 }
@@ -108,16 +91,12 @@ void BaseTexture::unload()
 		glDeleteTextures(1, &id);
 		id = invalid_id;
 	}
-
-	width = invalid_size;
-	height = invalid_size;
 }
 
 // ------------------------------------------------------------------------------------------------
 // texture 2d
 
-Texture2d::Texture2d(const void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t)
-	: BaseTexture(w, h)
+Texture2d::Texture2d(const void* pixel_data, int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency t)
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_2D, id);
@@ -200,7 +179,7 @@ Texture2d load_image_from_embedded(
 	if (parsed.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load image from image source");
-		return {};
+		return load_image_from_color(FAILED_TO_LOAD_IMAGE_COLOR, te, trs, t);
 	}
 
 	return {parsed.pixel_data, parsed.width, parsed.height, te, trs, t};
@@ -214,8 +193,7 @@ Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle tr
 // ------------------------------------------------------------------------------------------------
 // cubemap
 
-TextureCubemap::TextureCubemap(const std::array<void*, 6>& pixel_data, int w, int h)
-	: BaseTexture(w, h)
+TextureCubemap::TextureCubemap(const std::array<void*, 6>& pixel_data, int width, int height)
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_CUBE_MAP, id);
@@ -272,7 +250,7 @@ TextureCubemap load_cubemap_from_embedded(
 		|| parsed_front.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
-		return {};
+		load_cubemap_from_color(FAILED_TO_LOAD_IMAGE_COLOR);
 	}
 
 	if (parsed_right.width == parsed_left.width && parsed_right.width == parsed_top.width
@@ -284,7 +262,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent width");
-		return {};
+		load_cubemap_from_color(FAILED_TO_LOAD_IMAGE_COLOR);
 	}
 
 	if (parsed_right.height == parsed_left.height && parsed_right.height == parsed_top.height
@@ -296,7 +274,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent height");
-		return {};
+		load_cubemap_from_color(FAILED_TO_LOAD_IMAGE_COLOR);
 	}
 
 	// ok
@@ -326,7 +304,8 @@ unsigned int create_fbo()
 }
 
 FrameBuffer::FrameBuffer(unsigned int f, int w, int h)
-	: BaseTexture(w, h)
+	: width(w)
+	, height(h)
 	, fbo(f)
 {
 }
