@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['extractedattributetype_0',['ExtractedAttributeType',['../group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05',1,'klotter']]]
+  ['depthbits_0',['DepthBits',['../group__texture.html#gad4a5a90c6e8064ff314642d5cd089849',1,'klotter']]]
 ];
