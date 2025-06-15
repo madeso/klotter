@@ -46,6 +46,7 @@ struct RenderWorld : RenderSource
 		msaa_buffer = FrameBufferBuilder{size}
 			.with_msaa(msaa_samples)
 			.with_depth()
+			.with_stencil()
 			.build();
 		realized_buffer = FrameBufferBuilder{size}
 			.build();

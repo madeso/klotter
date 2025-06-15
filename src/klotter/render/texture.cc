@@ -335,6 +335,18 @@ BoundFbo::~BoundFbo()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
+GLenum determine_fbo_internal_format(DepthBits depth, bool add_stencil)
+{
+	switch (depth)
+	{
+	case DepthBits::use_16: return add_stencil? GL_DEPTH24_STENCIL8 : GL_DEPTH_COMPONENT16;
+	case DepthBits::use_24: return add_stencil? GL_DEPTH24_STENCIL8 : GL_DEPTH_COMPONENT24;
+	case DepthBits::use_32: return add_stencil? GL_DEPTH32F_STENCIL8 : GL_DEPTH_COMPONENT32F;
+	case DepthBits::use_none: return add_stencil ? GL_STENCIL_INDEX8 : GL_NONE;
+	default: assert(false && "invalid enum depth value"); return GL_NONE;
+	}
+}
+
 std::shared_ptr<FrameBuffer> FrameBufferBuilder::build() const
 {
 	const auto te = TextureEdge::clamp;
@@ -393,7 +405,8 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build() const
 	constexpr GLint mipmap_level = 0;
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, target, fbo->id, mipmap_level);
 
-	if (include_depth)
+	const auto internal_format = determine_fbo_internal_format(include_depth, include_stencil);
+	if (internal_format != GL_NONE)
 	{
 		glGenRenderbuffers(1, &fbo->rbo);
 		ASSERT(fbo->rbo != 0);
@@ -401,13 +414,17 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build() const
 
 		if (is_msaa)
 		{
-			glRenderbufferStorageMultisample(GL_RENDERBUFFER, msaa_samples, GL_DEPTH24_STENCIL8, width, height);
+			glRenderbufferStorageMultisample(GL_RENDERBUFFER, msaa_samples, internal_format, width, height);
 		}
 		else
 		{
-			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
+			glRenderbufferStorage(GL_RENDERBUFFER, internal_format, width, height);
 		}
-		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo);
+
+		if (include_stencil)
+		{
+			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, fbo->rbo);
+		}
 	}
 	else
 	{

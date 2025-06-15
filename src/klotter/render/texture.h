@@ -91,6 +91,12 @@ struct FrameBuffer : BaseTexture
 	bool debug_is_msaa = false;
 };
 
+enum class DepthBits
+{
+	use_none,
+	use_16, use_24, use_32
+};
+
 struct FrameBufferBuilder
 {
 	constexpr explicit FrameBufferBuilder(const glm::ivec2& size)
@@ -102,7 +108,8 @@ struct FrameBufferBuilder
 	int width;
 	int height;
 
-	bool include_depth = false;
+	DepthBits include_depth = DepthBits::use_none;
+	bool include_stencil = false;
 
 	/// 0 samples == no msaa
 	int msaa_samples = 0;
@@ -113,9 +120,15 @@ struct FrameBufferBuilder
 		return *this;
 	}
 
-	constexpr FrameBufferBuilder& with_depth()
+	constexpr FrameBufferBuilder& with_depth(DepthBits bits = DepthBits::use_24)
 	{
-		include_depth = true;
+		include_depth = bits;
+		return *this;
+	}
+
+	constexpr FrameBufferBuilder& with_stencil()
+	{
+		include_stencil = true;
 		return *this;
 	}
 
