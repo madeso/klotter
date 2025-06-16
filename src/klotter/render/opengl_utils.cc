@@ -116,10 +116,15 @@ bool has_debug_marker()
 	return GLAD_GL_EXT_debug_marker;
 }
 
+bool has_khr_debug()
+{
+	return GLAD_GL_KHR_debug;
+}
+
 #define LOG_STATUS(CHECK, WHAT) do \
 	if (CHECK)\
 	{\
-		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Using " WHAT);\
+		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Has " WHAT);\
 	}\
 	else\
 	{\
@@ -141,6 +146,7 @@ void setup_opengl_debug()
 
 	LOG_STATUS(has_debug_label(), "debug label");
 	LOG_STATUS(has_debug_marker(), "debug marker");
+	LOG_STATUS(has_khr_debug(), "khr debug");
 }
 
 GLenum Cint_to_glenum(int i)
