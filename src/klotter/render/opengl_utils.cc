@@ -111,42 +111,25 @@ bool has_debug_label()
 	return GLAD_GL_EXT_debug_label && glad_glLabelObjectEXT;
 }
 
-bool has_debug_marker()
-{
-	return GLAD_GL_EXT_debug_marker;
-}
-
 bool has_khr_debug()
 {
 	return GLAD_GL_KHR_debug;
 }
 
-#define LOG_STATUS(CHECK, WHAT) do \
-	if (CHECK)\
-	{\
-		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Has " WHAT);\
-	}\
-	else\
-	{\
-		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Missing " WHAT);\
-	}\
-	while (false)
-
 void setup_opengl_debug()
 {
-	const bool has_debug = GLAD_GL_ARB_debug_output == 1;
-	if (has_debug)
+	if (has_khr_debug())
 	{
-		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Enabling OpenGL debug output");
+		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Enabling OpenGL debug output (KHR_debug)");
 		glEnable(GL_DEBUG_OUTPUT);
-		glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB);
-		glDebugMessageCallbackARB(on_opengl_error, nullptr);
-		glDebugMessageControlARB(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
+		glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR);
+		glDebugMessageCallback(on_opengl_error, nullptr);
+		glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
 	}
-
-	LOG_STATUS(has_debug_label(), "debug label");
-	LOG_STATUS(has_debug_marker(), "debug marker");
-	LOG_STATUS(has_khr_debug(), "khr debug");
+	else
+	{
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "KHR_debug not available, OpenGL debug output not enabled");
+	}
 }
 
 GLenum Cint_to_glenum(int i)
