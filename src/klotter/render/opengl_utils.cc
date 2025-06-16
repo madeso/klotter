@@ -106,6 +106,27 @@ void APIENTRY on_opengl_error(
 	DIE("OpenGL error");
 }
 
+bool has_debug_label()
+{
+	return GLAD_GL_EXT_debug_label && glad_glLabelObjectEXT;
+}
+
+bool has_debug_marker()
+{
+	return GLAD_GL_EXT_debug_marker;
+}
+
+#define LOG_STATUS(CHECK, WHAT) do \
+	if (CHECK)\
+	{\
+		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Using " WHAT);\
+	}\
+	else\
+	{\
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Missing " WHAT);\
+	}\
+	while (false)
+
 void setup_opengl_debug()
 {
 	const bool has_debug = GLAD_GL_ARB_debug_output == 1;
@@ -117,6 +138,9 @@ void setup_opengl_debug()
 		glDebugMessageCallbackARB(on_opengl_error, nullptr);
 		glDebugMessageControlARB(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
 	}
+
+	LOG_STATUS(has_debug_label(), "debug label");
+	LOG_STATUS(has_debug_marker(), "debug marker");
 }
 
 GLenum Cint_to_glenum(int i)
@@ -173,4 +197,11 @@ glm::mat4 get_mesh_rotation_matrix(const glm::vec3& rotation)
 	return glm::yawPitchRoll(rotation.x, rotation.y, rotation.z);
 }
 
+void set_gl_debug_label(GLenum type, GLuint object, const char* label)
+{
+    if (has_debug_label())
+    {
+        glad_glLabelObjectEXT(type, object, -1, label);
+    }
+}
 }  //  namespace klotter
