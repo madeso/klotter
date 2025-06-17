@@ -40,4 +40,20 @@ enum class DebugLabelFor
 void set_gl_debug_label(DebugLabelFor type, GLuint object, const std::string& label);
 void set_gl_debug_label(DebugLabelFor type, GLuint object, std::string_view label);
 
+struct ScopedDebugGroup
+{
+	explicit ScopedDebugGroup(const std::string& message, unsigned int id=0);
+	explicit ScopedDebugGroup(std::string_view message, unsigned int id=0);
+    ~ScopedDebugGroup();
+
+    ScopedDebugGroup(ScopedDebugGroup&&) = delete;
+	ScopedDebugGroup(const ScopedDebugGroup&) = delete;
+    void operator=(ScopedDebugGroup&&) = delete;
+	void operator=(const ScopedDebugGroup&) = delete;
+};
+
+#define CONCAT_IMPL(x, y) x##y
+#define CONCAT(x, y) CONCAT_IMPL(x, y)
+#define SCOPED_DEBUG_GROUP(TEXT) [[maybe_unused]] const ScopedDebugGroup CONCAT(sc, __LINE__){TEXT##sv};
+
 }  //  namespace klotter

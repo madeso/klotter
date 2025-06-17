@@ -62,6 +62,7 @@ namespace
 		case GL_DEBUG_SEVERITY_HIGH: return "high";
 		case GL_DEBUG_SEVERITY_MEDIUM: return "medium";
 		case GL_DEBUG_SEVERITY_LOW: return "low";
+		case GL_DEBUG_SEVERITY_NOTIFICATION: return "notification";
 		default: return "unknown";
 		}
 	}
@@ -83,6 +84,11 @@ void APIENTRY on_opengl_error(
 	{
 		return;
 	}
+	if (severity == GL_DEBUG_SEVERITY_NOTIFICATION)
+	{
+		// this is from ScopedDebugGroup
+		return;
+	}
 
 	// only display the first 10
 	static int ErrorCount = 0;
@@ -96,7 +102,7 @@ void APIENTRY on_opengl_error(
 		SDL_LOG_CATEGORY_ERROR,
 		"---------------\n"
 		"Debug message (%d): %s\n"
-		"Source %s type: %s Severity: %s",
+		"Source: %s | Type: %s | Severity: %s",
 		id,
 		message,
 		source_to_string(source),
@@ -217,6 +223,26 @@ void set_gl_debug_label(DebugLabelFor type, GLuint object, const std::string& la
 void set_gl_debug_label(DebugLabelFor type, GLuint object, std::string_view label)
 {
 	set_gl_debug_label_with_size(type, object, label.size(), label.data());
+}
+
+void push_debug_group(unsigned int id, std::size_t size, const char* label)
+{
+	glPushDebugGroup(GL_DEBUG_SOURCE_APPLICATION, id, Csizet_to_glsizei(size), label);
+}
+
+ScopedDebugGroup::ScopedDebugGroup(const std::string& message, unsigned int id)
+{
+    push_debug_group(id, message.size(), message.data());
+}
+
+ScopedDebugGroup::ScopedDebugGroup(std::string_view message, unsigned int id)
+{
+    push_debug_group(id, message.size(), message.data());
+}
+
+ScopedDebugGroup::~ScopedDebugGroup()
+{
+    glPopDebugGroup();
 }
 
 }  //  namespace klotter
