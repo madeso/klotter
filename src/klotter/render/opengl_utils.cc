@@ -31,12 +31,12 @@ namespace
 	{
 		switch (source)
 		{
-		case GL_DEBUG_SOURCE_API_ARB: return "API";
-		case GL_DEBUG_SOURCE_WINDOW_SYSTEM_ARB: return "Window System";
-		case GL_DEBUG_SOURCE_SHADER_COMPILER_ARB: return "Shader Compiler";
-		case GL_DEBUG_SOURCE_THIRD_PARTY_ARB: return "Third Party";
-		case GL_DEBUG_SOURCE_APPLICATION_ARB: return "Application";
-		case GL_DEBUG_SOURCE_OTHER_ARB: return "Other";
+		case GL_DEBUG_SOURCE_API: return "API";
+		case GL_DEBUG_SOURCE_WINDOW_SYSTEM: return "Window System";
+		case GL_DEBUG_SOURCE_SHADER_COMPILER: return "Shader Compiler";
+		case GL_DEBUG_SOURCE_THIRD_PARTY: return "Third Party";
+		case GL_DEBUG_SOURCE_APPLICATION: return "Application";
+		case GL_DEBUG_SOURCE_OTHER: return "Other";
 		default: return "Unknown";
 		}
 	}
@@ -45,12 +45,12 @@ namespace
 	{
 		switch (type)
 		{
-		case GL_DEBUG_TYPE_ERROR_ARB: return "Error";
-		case GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB: return "Deprecated Behaviour";
-		case GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB: return "Undefined Behaviour";
-		case GL_DEBUG_TYPE_PORTABILITY_ARB: return "Portability";
-		case GL_DEBUG_TYPE_PERFORMANCE_ARB: return "Performance";
-		case GL_DEBUG_TYPE_OTHER_ARB: return "Other";
+		case GL_DEBUG_TYPE_ERROR: return "Error";
+		case GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR: return "Deprecated Behaviour";
+		case GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR: return "Undefined Behaviour";
+		case GL_DEBUG_TYPE_PORTABILITY: return "Portability";
+		case GL_DEBUG_TYPE_PERFORMANCE: return "Performance";
+		case GL_DEBUG_TYPE_OTHER: return "Other";
 		default: return "Unknown";
 		}
 	}
@@ -59,9 +59,9 @@ namespace
 	{
 		switch (severity)
 		{
-		case GL_DEBUG_SEVERITY_HIGH_ARB: return "high";
-		case GL_DEBUG_SEVERITY_MEDIUM_ARB: return "medium";
-		case GL_DEBUG_SEVERITY_LOW_ARB: return "low";
+		case GL_DEBUG_SEVERITY_HIGH: return "high";
+		case GL_DEBUG_SEVERITY_MEDIUM: return "medium";
+		case GL_DEBUG_SEVERITY_LOW: return "low";
 		default: return "unknown";
 		}
 	}
@@ -79,7 +79,7 @@ void APIENTRY on_opengl_error(
 )
 {
 	// ignore non-significant error/warning codes
-	if (type == GL_DEBUG_TYPE_OTHER_ARB)
+	if (type == GL_DEBUG_TYPE_OTHER)
 	{
 		return;
 	}
@@ -104,11 +104,6 @@ void APIENTRY on_opengl_error(
 		severity_to_string(severity)
 	);
 	DIE("OpenGL error");
-}
-
-bool has_debug_label()
-{
-	return GLAD_GL_EXT_debug_label && glad_glLabelObjectEXT;
 }
 
 bool has_khr_debug()
@@ -186,11 +181,42 @@ glm::mat4 get_mesh_rotation_matrix(const glm::vec3& rotation)
 	return glm::yawPitchRoll(rotation.x, rotation.y, rotation.z);
 }
 
-void set_gl_debug_label(GLenum type, GLuint object, const char* label)
+GLenum glenum_from_object_type(DebugLabelFor type)
 {
-    if (has_debug_label())
+    switch (type)
     {
-        glad_glLabelObjectEXT(type, object, -1, label);
+	case DebugLabelFor::Buffer: return GL_BUFFER;
+	case DebugLabelFor::Shader: return GL_SHADER;
+	case DebugLabelFor::Program: return GL_PROGRAM;
+	case DebugLabelFor::VertexArray: return GL_VERTEX_ARRAY;
+	case DebugLabelFor::Query: return GL_QUERY;
+	case DebugLabelFor::ProgramPipeline: return GL_PROGRAM_PIPELINE;
+	case DebugLabelFor::Sampler: return GL_SAMPLER;
+	case DebugLabelFor::Texture: return GL_TEXTURE;
+	case DebugLabelFor::RenderBuffer: return GL_RENDERBUFFER;
+	case DebugLabelFor::FrameBuffer: return GL_FRAMEBUFFER;
+    default:                          return GL_NONE;
     }
 }
+
+void set_gl_debug_label_with_size(DebugLabelFor type, GLuint object, std::size_t size, const char* label)
+{
+    if (!has_khr_debug()) return;
+
+    const auto gl_type = glenum_from_object_type(type);
+	if (gl_type == GL_NONE) return;
+	
+	glObjectLabel(gl_type, object, Csizet_to_glsizei(size), label);
+}
+
+void set_gl_debug_label(DebugLabelFor type, GLuint object, const std::string& label)
+{
+	set_gl_debug_label_with_size(type, object, label.size(), label.data());
+}
+
+void set_gl_debug_label(DebugLabelFor type, GLuint object, std::string_view label)
+{
+	set_gl_debug_label_with_size(type, object, label.size(), label.data());
+}
+
 }  //  namespace klotter

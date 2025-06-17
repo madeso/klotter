@@ -23,7 +23,21 @@ void set_gl_viewport(const glm::ivec2& sz);
 // todo(Gustav): move to a better place
 glm::mat4 get_mesh_rotation_matrix(const glm::vec3& rotation);
 
-// Debug label utilities (GL_EXT_debug_label)
-void set_gl_debug_label(GLenum type, GLuint object, const char* label);
+enum class DebugLabelFor
+{
+    Buffer,
+    Shader,
+    Program,
+    VertexArray,
+    Query,
+    ProgramPipeline,
+    Sampler,
+    Texture,
+    RenderBuffer,
+    FrameBuffer
+};
+
+void set_gl_debug_label(DebugLabelFor type, GLuint object, const std::string& label);
+void set_gl_debug_label(DebugLabelFor type, GLuint object, std::string_view label);
 
 }  //  namespace klotter
