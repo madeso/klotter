@@ -150,6 +150,7 @@ void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates*
 
 void Renderer::render_world(const glm::ivec2& window_size, const World& world, const Camera& camera)
 {
+	SCOPED_DEBUG_GROUP("render world call"sv);
 	const auto has_outlined_meshes = std::any_of(
 		world.meshes.begin(), world.meshes.end(), [](const auto& mesh) { return mesh->outline.has_value(); }
 	);
@@ -173,65 +174,78 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	std::vector<TransparentMesh> transparent_meshes;
 
-	for (auto& m: world.meshes)
+	if (world.meshes.empty() == false)
 	{
-		constexpr auto not_transparent = RenderContext{TransformSource::Uniform, UseTransparency::no};
-
-		if (m->material->is_transparent())
+		SCOPED_DEBUG_GROUP("render basic geom"sv);
+		for (auto& m: world.meshes)
 		{
-			transparent_meshes.emplace_back(TransparentMesh{m, glm::length2(camera.position - m->position)});
-			continue;
-		}
-		StateChanger{&pimpl->states}
-			.depth_test(true)
-			.depth_mask(true)
-			.depth_func(Compare::less)
-			.blending(false)
-			.stencil_mask(0x0)
-			.stencil_func(Compare::always, 1, 0xFF);
+			constexpr auto not_transparent = RenderContext{TransformSource::Uniform, UseTransparency::no};
 
-		if (m->outline)
-		{
-			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
-		}
-		m->material->use_shader(not_transparent);
-		m->material->set_uniforms(not_transparent, compiled_camera, calc_mesh_transform(m, compiled_camera));
-		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
-		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
+			if (m->material->is_transparent())
+			{
+				transparent_meshes.emplace_back(TransparentMesh{m, glm::length2(camera.position - m->position)});
+				continue;
+			}
+			StateChanger{&pimpl->states}
+				.depth_test(true)
+				.depth_mask(true)
+				.depth_func(Compare::less)
+				.blending(false)
+				.stencil_mask(0x0)
+				.stencil_func(Compare::always, 1, 0xFF);
 
-		render_geom(*m->geom);
+			if (m->outline)
+			{
+				StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
+			}
+			m->material->use_shader(not_transparent);
+			m->material->set_uniforms(not_transparent, compiled_camera, calc_mesh_transform(m, compiled_camera));
+			m->material->bind_textures(not_transparent, &pimpl->states, &assets);
+			m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
+
+			render_geom(*m->geom);
+		}
 	}
 
-	for (auto& m: world.instances)
+	if (world.instances.empty() == false)
 	{
-		constexpr auto not_transparent = RenderContext{TransformSource::Instanced_mat4, UseTransparency::no};
+		SCOPED_DEBUG_GROUP("render instances"sv);
+		for (auto& m: world.instances)
+		{
+			constexpr auto not_transparent = RenderContext{TransformSource::Instanced_mat4, UseTransparency::no};
 
-		StateChanger{&pimpl->states}
-			.depth_test(true)
-			.depth_mask(true)
-			.depth_func(Compare::less)
-			.blending(false)
-			.stencil_mask(0x0)
-			.stencil_func(Compare::always, 1, 0xFF);
-		m->material->use_shader(not_transparent);
-		m->material->set_uniforms(
-			// todo(Gustav): should we really set the model matrix for instanced meshes?
-			not_transparent,
-			compiled_camera,
-			std::nullopt
-		);
-		m->material->bind_textures(not_transparent, &pimpl->states, &assets);
-		m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
+			StateChanger{&pimpl->states}
+				.depth_test(true)
+				.depth_mask(true)
+				.depth_func(Compare::less)
+				.blending(false)
+				.stencil_mask(0x0)
+				.stencil_func(Compare::always, 1, 0xFF);
+			m->material->use_shader(not_transparent);
+			m->material->set_uniforms(
+				// todo(Gustav): should we really set the model matrix for instanced meshes?
+				not_transparent,
+				compiled_camera,
+				std::nullopt
+			);
+			m->material->bind_textures(not_transparent, &pimpl->states, &assets);
+			m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
 
-		render_geom_instanced(*m);
+			render_geom_instanced(*m);
+		}
 	}
 
-	render_debug_lines(debug.lines, &pimpl->states, &pimpl->debug_drawer, compiled_camera, window_size);
-	debug.lines.clear();
+	if (debug.lines.empty() == false)
+	{
+		SCOPED_DEBUG_GROUP("render debug lines"sv);
+		render_debug_lines(debug.lines, &pimpl->states, &pimpl->debug_drawer, compiled_camera, window_size);
+		debug.lines.clear();
+	}
 
 	// render skybox
 	if (world.skybox.cubemap != nullptr && world.skybox.geom != nullptr)
 	{
+		SCOPED_DEBUG_GROUP("render skybox"sv);
 		StateChanger{&pimpl->states}
 			.depth_test(true)
 			.depth_mask(false)
@@ -254,34 +268,39 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		[](const auto& lhs, const auto& rhs) { return lhs.squared_distance_to_camera > rhs.squared_distance_to_camera; }
 	);
 
-	for (auto& tm: transparent_meshes)
+	if (transparent_meshes.empty() == false)
 	{
-		constexpr auto transparent = RenderContext{TransformSource::Uniform, UseTransparency::yes};
-
-		const auto& m = tm.mesh;
-		StateChanger{&pimpl->states}
-			.depth_test(true)
-			.depth_mask(true)
-			.depth_func(Compare::less)
-			.blending(true)
-			.stencil_mask(0x0)
-			.stencil_func(Compare::always, 1, 0xFF);
-
-		if (m->outline)
+		SCOPED_DEBUG_GROUP("render transparent meshes"sv);
+		for (auto& tm: transparent_meshes)
 		{
-			StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
-		}
-		m->material->use_shader(transparent);
-		m->material->set_uniforms(transparent, compiled_camera, calc_mesh_transform(m, compiled_camera));
-		m->material->bind_textures(transparent, &pimpl->states, &assets);
-		m->material->apply_lights(transparent, world.lights, settings, &pimpl->states, &assets);
+			constexpr auto transparent = RenderContext{TransformSource::Uniform, UseTransparency::yes};
 
-		render_geom(*m->geom);
+			const auto& m = tm.mesh;
+			StateChanger{&pimpl->states}
+				.depth_test(true)
+				.depth_mask(true)
+				.depth_func(Compare::less)
+				.blending(true)
+				.stencil_mask(0x0)
+				.stencil_func(Compare::always, 1, 0xFF);
+
+			if (m->outline)
+			{
+				StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
+			}
+			m->material->use_shader(transparent);
+			m->material->set_uniforms(transparent, compiled_camera, calc_mesh_transform(m, compiled_camera));
+			m->material->bind_textures(transparent, &pimpl->states, &assets);
+			m->material->apply_lights(transparent, world.lights, settings, &pimpl->states, &assets);
+
+			render_geom(*m->geom);
+		}
 	}
 
 	// render outline over all other meshes
 	if (has_outlined_meshes)
 	{
+		SCOPED_DEBUG_GROUP("render outline meshes"sv);
 		for (auto& m: world.meshes)
 		{
 			if (m->outline)

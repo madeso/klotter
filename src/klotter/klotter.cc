@@ -184,9 +184,15 @@ int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl
 
 
 		// render
-		app->on_render({window_width, window_height}, &renderer, dt);
+		{
+			SCOPED_DEBUG_GROUP("Render App"sv);
+			app->on_render({window_width, window_height}, &renderer, dt);
+		}
 
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		{
+			SCOPED_DEBUG_GROUP("DearImGui rendering"sv);
+			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		}
 		SDL_GL_SwapWindow(sdl_window);
 	}
 

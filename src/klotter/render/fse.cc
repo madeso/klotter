@@ -4,6 +4,7 @@
 
 #include "klotter/assert.h"
 #include "klotter/log.h"
+#include "klotter/str.h"
 
 #include "klotter/render/constants.h"
 #include "klotter/render/opengl_utils.h"
@@ -57,17 +58,20 @@ struct RenderWorld : RenderSource
 	{
 		// render into msaa buffer
 		{
+			SCOPED_DEBUG_GROUP("rendering into msaa buffer"sv);
 			auto bound = BoundFbo{msaa_buffer};
 			arg.renderer->render_world(window_size, *arg.world, *arg.camera);
 		}
 
 		// copy msaa buffer to realized
+		SCOPED_DEBUG_GROUP("resolving msaa buffer"sv);
 		resolve_multisampled_buffer(*msaa_buffer, realized_buffer.get());
 	}
 
 	void render(const PostProcArg& arg) override
 	{
 		// render realized (with shader)
+		SCOPED_DEBUG_GROUP("render realized msaa buffer"sv);
 		StateChanger{&arg.renderer->pimpl->states}
 			.cull_face(false)
 			.stencil_test(false)
@@ -85,8 +89,9 @@ struct RenderWorld : RenderSource
 	}
 };
 
-RenderTask::RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e)
-	: source(std::move(s))
+RenderTask::RenderTask(std::string n, std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e)
+	: name(std::move(n))
+	, source(std::move(s))
 	, fbo(std::move(f))
 	, effect(e)
 {
@@ -96,6 +101,8 @@ RenderTask::RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuf
 void RenderTask::render(const PostProcArg& arg)
 {
 	ASSERT(effect);
+
+	SCOPED_DEBUG_GROUP(Str() << "Rendering task " << name);
 
 	StateChanger{&arg.renderer->pimpl->states}
 		.cull_face(false)
@@ -113,6 +120,7 @@ void RenderTask::render(const PostProcArg& arg)
 
 void RenderTask::update(const PostProcArg& arg)
 {
+	SCOPED_DEBUG_GROUP(Str() << "Updating task " << name);
 	auto bound = BoundFbo{fbo};
 	set_gl_viewport({fbo->width, fbo->height});
 	source->render(arg);
@@ -180,15 +188,25 @@ void EffectStack::render(const PostProcArg& arg)
 
 	// the stack is now compiled
 	// before rendering, update all targets/fbos and present
-	render_world->update(arg);
-	for (const auto& action: compiled.targets)
 	{
-		action->update(arg);
+		SCOPED_DEBUG_GROUP("updating fse render_world"sv);
+		render_world->update(arg);
+	}
+
+	{
+		SCOPED_DEBUG_GROUP("rendering fse actions"sv);
+		for (const auto& action: compiled.targets)
+		{
+			action->update(arg);
+		}
 	}
 
 	// render the final image to the screen
-	set_gl_viewport(arg.window_size);
-	compiled.last_source->render(arg);
+	{
+		SCOPED_DEBUG_GROUP("rendering fse to screen"sv);
+		set_gl_viewport(arg.window_size);
+		compiled.last_source->render(arg);
+	}
 }
 
 void EffectStack::gui() const
@@ -372,7 +390,7 @@ struct SimpleEffect
 		auto fbo = FrameBufferBuilder{arg.window_size}.build();
 
 		auto src = arg.builder->last_source;
-		auto target = std::make_shared<RenderTask>(src, fbo, this);
+		auto target = std::make_shared<RenderTask>(name, src, fbo, this);
 
 		arg.builder->targets.emplace_back(target);
 		arg.builder->last_source = target;
@@ -493,12 +511,12 @@ struct BlurEffect : FactorEffect
 
 		// step 1: vertical
 		auto fbo_v = FrameBufferBuilder{arg.window_size}.build();
-		auto target_v = std::make_shared<RenderTask>(src, fbo_v, &vert_p);
+		auto target_v = std::make_shared<RenderTask>("blur vertical", src, fbo_v, &vert_p);
 		arg.builder->targets.emplace_back(target_v);
 
 		// step 2: horizontal
 		auto fbo_h = FrameBufferBuilder{arg.window_size}.build();
-		auto target_h = std::make_shared<RenderTask>(target_v, fbo_h, &hori_p);
+		auto target_h = std::make_shared<RenderTask>("blur horizontal", target_v, fbo_h, &hori_p);
 		arg.builder->targets.emplace_back(target_h);
 
 		// done

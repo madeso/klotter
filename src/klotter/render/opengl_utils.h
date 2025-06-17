@@ -54,6 +54,6 @@ struct ScopedDebugGroup
 
 #define CONCAT_IMPL(x, y) x##y
 #define CONCAT(x, y) CONCAT_IMPL(x, y)
-#define SCOPED_DEBUG_GROUP(TEXT) [[maybe_unused]] const ScopedDebugGroup CONCAT(sc, __LINE__){TEXT##sv};
+#define SCOPED_DEBUG_GROUP(TEXT) [[maybe_unused]] const ScopedDebugGroup CONCAT(sc, __LINE__){TEXT}
 
 }  //  namespace klotter

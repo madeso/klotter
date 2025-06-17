@@ -50,11 +50,12 @@ struct ShaderPropertyProvider
 
 struct RenderTask : RenderSource
 {
+	std::string name;
 	std::shared_ptr<RenderSource> source;
 	std::shared_ptr<FrameBuffer> fbo;
 	ShaderPropertyProvider* effect;
 
-	RenderTask(std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e);
+	RenderTask(std::string n, std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e);
 
 	/// render internal fbo to a quad with a shader
 	void render(const PostProcArg& arg) override;
