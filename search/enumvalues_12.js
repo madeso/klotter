@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['uniform_0',['Uniform',['../group__render.html#ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d',1,'klotter']]],
-  ['use_5f16_1',['use_16',['../group__texture.html#ggad4a5a90c6e8064ff314642d5cd089849a2b8128f893f047b799dcef08274808e4',1,'klotter']]],
-  ['use_5f24_2',['use_24',['../group__texture.html#ggad4a5a90c6e8064ff314642d5cd089849ab33abfcb724dd7b2af41c9c87c2a947e',1,'klotter']]],
-  ['use_5f32_3',['use_32',['../group__texture.html#ggad4a5a90c6e8064ff314642d5cd089849ab58da2c01fd2c34c8f79d446758f5253',1,'klotter']]],
-  ['use_5fnone_4',['use_none',['../group__texture.html#ggad4a5a90c6e8064ff314642d5cd089849a6ad0a3981fb0e65854a9ef656e3beac4',1,'klotter']]]
+  ['texture_0',['Texture',['../namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b',1,'klotter']]],
+  ['texture2_1',['texture2',['../group__vertex-layout.html#ggad736ea89c0534627057463235feb9189ab500aaa6137a6357d8d9c5f5e09165cd',1,'klotter']]],
+  ['time_2',['time',['../group__render.html#gga358c9176a5069a7059c1497704cd2875a07cc694b9b3fc636710fa08b6922c42b',1,'klotter']]],
+  ['two_5fsided_3',['two_sided',['../group__geom-builder.html#ggaeea000e036687f28644e2c966bca3d7bad508e7494fb2417728b99ecbf116c08a',1,'klotter::geom']]]
 ];

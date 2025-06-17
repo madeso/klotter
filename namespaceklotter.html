@@ -300,6 +300,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1RenderTask.html">RenderTask</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1ScopedDebugGroup.html">ScopedDebugGroup</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1SCurve.html">SCurve</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1SCurveAndDrag.html">SCurveAndDrag</a></td></tr>
@@ -424,6 +426,22 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga09f336a0f9a765edc85ba7fb234aed05"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a extracted attribute, like 'float'.  <a href="group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05">More...</a><br /></td></tr>
 <tr class="separator:ga09f336a0f9a765edc85ba7fb234aed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe15a7f13f1c4941f1095804a220857" id="r_aebe15a7f13f1c4941f1095804a220857"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebe15a7f13f1c4941f1095804a220857">DebugLabelFor</a> { <br />
+&#160;&#160;<a class="el" href="#aebe15a7f13f1c4941f1095804a220857a7e62bc342f41c946868f0ea6f0b712d8">Buffer</a>
+, <a class="el" href="#aebe15a7f13f1c4941f1095804a220857aa88a92f4a0e793589f2341851a15c660">Shader</a>
+, <a class="el" href="#aebe15a7f13f1c4941f1095804a220857a95c50c7cc68e399ac5540898dfd06820">Program</a>
+, <a class="el" href="#aebe15a7f13f1c4941f1095804a220857ab521b83330c51691d58bbcb59c4df078">VertexArray</a>
+, <br />
+&#160;&#160;<a class="el" href="#aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d">Query</a>
+, <a class="el" href="#aebe15a7f13f1c4941f1095804a220857ac617c3b8678ee8c905d8d7c39bb55e45">ProgramPipeline</a>
+, <a class="el" href="#aebe15a7f13f1c4941f1095804a220857a5bca2f066df1fe641b2b779db2a63c0a">Sampler</a>
+, <a class="el" href="#aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b">Texture</a>
+, <br />
+&#160;&#160;<a class="el" href="#aebe15a7f13f1c4941f1095804a220857ada047b502449ef16ccddaec71ea865e1">RenderBuffer</a>
+, <a class="el" href="#aebe15a7f13f1c4941f1095804a220857abb0c68ab40c9ccdc5cfafa8622055efc">FrameBuffer</a>
+<br />
+ }</td></tr>
+<tr class="separator:aebe15a7f13f1c4941f1095804a220857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga58b3e0e4918f62f8cf5fa2c0e3ec9718" id="r_ga58b3e0e4918f62f8cf5fa2c0e3ec9718"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga58b3e0e4918f62f8cf5fa2c0e3ec9718">RenderMode</a> { <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718aa552c74784b3a82177bca6c8adde0efb">RenderMode::fill</a>
 , <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a6438c669e0d0de98e6929c2cc0fac474">RenderMode::line</a>
 , <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a78ee54aa8f813885fe2fe20d232518b9">RenderMode::point</a>
@@ -573,8 +591,10 @@ Functions</h2></td></tr>
 <tr class="separator:a9c262112545baed06ed5325e9796633d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bd81ae1288afd6864048084bd7c4c9d" id="r_a9bd81ae1288afd6864048084bd7c4c9d"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bd81ae1288afd6864048084bd7c4c9d">get_mesh_rotation_matrix</a> (const glm::vec3 &amp;rotation)</td></tr>
 <tr class="separator:a9bd81ae1288afd6864048084bd7c4c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac842884167741bf491ae0ed17765bb19" id="r_ac842884167741bf491ae0ed17765bb19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac842884167741bf491ae0ed17765bb19">set_gl_debug_label</a> (GLenum type, GLuint object, const char *label)</td></tr>
-<tr class="separator:ac842884167741bf491ae0ed17765bb19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35213551f34621dc876fa001cc4ca791" id="r_a35213551f34621dc876fa001cc4ca791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35213551f34621dc876fa001cc4ca791">set_gl_debug_label</a> (<a class="el" href="#aebe15a7f13f1c4941f1095804a220857">DebugLabelFor</a> type, GLuint object, const std::string &amp;label)</td></tr>
+<tr class="separator:a35213551f34621dc876fa001cc4ca791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f3dc2106d2b70075c315918fbc6376" id="r_a04f3dc2106d2b70075c315918fbc6376"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04f3dc2106d2b70075c315918fbc6376">set_gl_debug_label</a> (<a class="el" href="#aebe15a7f13f1c4941f1095804a220857">DebugLabelFor</a> type, GLuint object, std::string_view label)</td></tr>
+<tr class="separator:a04f3dc2106d2b70075c315918fbc6376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f825575d127751358894415f96c5bf6" id="r_a3f825575d127751358894415f96c5bf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f825575d127751358894415f96c5bf6">setup_textures</a> (<a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> *shader, const std::vector&lt; <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> * &gt; &amp;uniform_list)</td></tr>
 <tr class="memdesc:a3f825575d127751358894415f96c5bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up textures for a shader program.  <br /></td></tr>
 <tr class="separator:a3f825575d127751358894415f96c5bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -705,6 +725,40 @@ Variables</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f" name="a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f"></a>horizontal&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3" name="a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3"></a>vertical&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="aebe15a7f13f1c4941f1095804a220857" name="aebe15a7f13f1c4941f1095804a220857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebe15a7f13f1c4941f1095804a220857">&#9670;&#160;</a></span>DebugLabelFor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aebe15a7f13f1c4941f1095804a220857">klotter::DebugLabelFor</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857a7e62bc342f41c946868f0ea6f0b712d8" name="aebe15a7f13f1c4941f1095804a220857a7e62bc342f41c946868f0ea6f0b712d8"></a>Buffer&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857aa88a92f4a0e793589f2341851a15c660" name="aebe15a7f13f1c4941f1095804a220857aa88a92f4a0e793589f2341851a15c660"></a>Shader&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857a95c50c7cc68e399ac5540898dfd06820" name="aebe15a7f13f1c4941f1095804a220857a95c50c7cc68e399ac5540898dfd06820"></a>Program&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857ab521b83330c51691d58bbcb59c4df078" name="aebe15a7f13f1c4941f1095804a220857ab521b83330c51691d58bbcb59c4df078"></a>VertexArray&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d" name="aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d"></a>Query&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857ac617c3b8678ee8c905d8d7c39bb55e45" name="aebe15a7f13f1c4941f1095804a220857ac617c3b8678ee8c905d8d7c39bb55e45"></a>ProgramPipeline&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857a5bca2f066df1fe641b2b779db2a63c0a" name="aebe15a7f13f1c4941f1095804a220857a5bca2f066df1fe641b2b779db2a63c0a"></a>Sampler&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b" name="aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b"></a>Texture&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857ada047b502449ef16ccddaec71ea865e1" name="aebe15a7f13f1c4941f1095804a220857ada047b502449ef16ccddaec71ea865e1"></a>RenderBuffer&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aebe15a7f13f1c4941f1095804a220857abb0c68ab40c9ccdc5cfafa8622055efc" name="aebe15a7f13f1c4941f1095804a220857abb0c68ab40c9ccdc5cfafa8622055efc"></a>FrameBuffer&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -1281,8 +1335,8 @@ template&lt;typename E&gt; </div>
 
 </div>
 </div>
-<a id="ac842884167741bf491ae0ed17765bb19" name="ac842884167741bf491ae0ed17765bb19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac842884167741bf491ae0ed17765bb19">&#9670;&#160;</a></span>set_gl_debug_label()</h2>
+<a id="a35213551f34621dc876fa001cc4ca791" name="a35213551f34621dc876fa001cc4ca791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35213551f34621dc876fa001cc4ca791">&#9670;&#160;</a></span>set_gl_debug_label() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1290,7 +1344,7 @@ template&lt;typename E&gt; </div>
         <tr>
           <td class="memname">void klotter::set_gl_debug_label </td>
           <td>(</td>
-          <td class="paramtype">GLenum</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#aebe15a7f13f1c4941f1095804a220857">DebugLabelFor</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1300,7 +1354,33 @@ template&lt;typename E&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>label</em></span>&#160;)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>label</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04f3dc2106d2b70075c315918fbc6376" name="a04f3dc2106d2b70075c315918fbc6376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f3dc2106d2b70075c315918fbc6376">&#9670;&#160;</a></span>set_gl_debug_label() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klotter::set_gl_debug_label </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aebe15a7f13f1c4941f1095804a220857">DebugLabelFor</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint</td>          <td class="paramname"><span class="paramname"><em>object</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>label</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

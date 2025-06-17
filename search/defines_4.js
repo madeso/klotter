@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['implement_5fmain_0',['IMPLEMENT_MAIN',['../klotter_8h.html#a8c20628131afaadf69938840b3ce9ea7',1,'klotter.h']]],
-  ['is_5fdisabled_1',['IS_DISABLED',['../preproc_8h.html#a3527094f7d68d34b5ec4fee92ec5046a',1,'preproc.h']]],
-  ['is_5fenabled_2',['IS_ENABLED',['../preproc_8h.html#adddb6577f66f86f99392352a10a6482c',1,'preproc.h']]]
+  ['has_0',['HAS',['../preproc_8h.html#ae89f029ce3003d325871a98116b572b7',1,'preproc.h']]],
+  ['hash_5fdef_1',['HASH_DEF',['../hash_8h.html#a102a60c28b17bc852589bbb26135173b',1,'hash.h']]],
+  ['hash_5fdef_5fbegin_2',['HASH_DEF_BEGIN',['../hash_8h.html#a9038dc1dac99b31ae58ae04bee68d416',1,'hash.h']]],
+  ['hash_5fdef_5fend_3',['HASH_DEF_END',['../hash_8h.html#adea525dabdf353ba96abce59e6a5dadd',1,'hash.h']]]
 ];

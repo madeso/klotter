@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['log_5ferror_0',['LOG_ERROR',['../log_8h.html#ad4a9117ce894e3319e903142347a0f63',1,'log.h']]],
-  ['log_5finfo_1',['LOG_INFO',['../log_8h.html#a378e28bfcb78d17285210d6bbb70a083',1,'log.h']]]
+  ['implement_5fmain_0',['IMPLEMENT_MAIN',['../klotter_8h.html#a8c20628131afaadf69938840b3ce9ea7',1,'klotter.h']]],
+  ['is_5fdisabled_1',['IS_DISABLED',['../preproc_8h.html#a3527094f7d68d34b5ec4fee92ec5046a',1,'preproc.h']]],
+  ['is_5fenabled_2',['IS_ENABLED',['../preproc_8h.html#adddb6577f66f86f99392352a10a6482c',1,'preproc.h']]]
 ];

@@ -169,6 +169,7 @@ var menudata={children:[
 {text:"i",url:"globals.html#index_i"},
 {text:"l",url:"globals.html#index_l"},
 {text:"o",url:"globals.html#index_o"},
+{text:"s",url:"globals.html#index_s"},
 {text:"u",url:"globals.html#index_u"}]},
 {text:"Functions",url:"globals_func.html"},
 {text:"Typedefs",url:"globals_type.html"},

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['repeat_0',['repeat',['../group__texture.html#gga975d5c1b5f6b62b122652d21e890346ea32cf6da134a8b268cf4ab6b79a9a5ad9',1,'klotter']]],
-  ['replace_1',['replace',['../group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fa9dde360102c103867bd2f45872f1129c',1,'klotter']]],
-  ['resolution_2',['resolution',['../group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da',1,'klotter']]]
+  ['query_0',['Query',['../namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d',1,'klotter']]]
 ];
