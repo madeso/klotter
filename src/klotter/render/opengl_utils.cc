@@ -2,6 +2,7 @@
 
 #include "klotter/assert.h"
 #include "klotter/dependency_sdl.h"
+#include "klotter/str.h"
 
 namespace klotter
 {
@@ -103,17 +104,26 @@ void APIENTRY on_opengl_error(
 		++ErrorCount;
 	}
 
-	SDL_LogCritical(
-		SDL_LOG_CATEGORY_ERROR,
-		"---------------\n"
-		"Debug message (%d): %s\n"
-		"Source: %s | Type: %s | Severity: %s",
-		id,
-		message,
-		source_to_string(source),
-		type_to_string(type),
-		severity_to_string(severity)
-	);
+	const std::string to_out = Str() <<
+		"OpenGL #" << id << " ["
+			"src: "<< source_to_string(source) << " | "
+			"type: " << type_to_string(type) << " | "
+			"sev: " << severity_to_string(severity) << "] "
+			": " << message
+	;
+
+	const bool is_low =
+		severity == GL_DEBUG_SEVERITY_LOW ||
+		severity == GL_DEBUG_SEVERITY_NOTIFICATION;
+
+	if (is_low)
+	{
+		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "%s", to_out.c_str());
+	}
+	else
+	{
+		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "%s", to_out.c_str());
+	}
 
 	if (is_important)
 	{
