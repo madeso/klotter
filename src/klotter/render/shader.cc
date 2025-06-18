@@ -3,6 +3,7 @@
 #include "klotter/assert.h"
 #include "klotter/log.h"
 #include "klotter/cint.h"
+#include "klotter/str.h"
 
 #include "klotter/render/constants.h"
 #include "klotter/render/opengl_utils.h"
@@ -92,6 +93,7 @@ void log_source(const std::string& src)
 }
 
 void load_shader_source(
+	DEBUG_LABEL_ARG_MANY
 	ShaderProgram* self,
 	const std::string& vertex_source,
 	const std::string& fragment_source,
@@ -99,6 +101,7 @@ void load_shader_source(
 )
 {
 	const auto vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+	SET_DEBUG_LABEL_NAMED(vertex_shader, DebugLabelFor::Shader, Str() << "SHADER " << debug_label << " VERT");
 	upload_shader_source(vertex_shader, vertex_source);
 	glCompileShader(vertex_shader);
 	const auto vertex_ok = check_shader_compilation_error("vertex", vertex_shader);
@@ -109,6 +112,7 @@ void load_shader_source(
 	}
 
 	const auto fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+	SET_DEBUG_LABEL_NAMED(fragment_shader, DebugLabelFor::Shader, Str() << "SHADER " << debug_label << " FRAG");
 	upload_shader_source(fragment_shader, fragment_source);
 	glCompileShader(fragment_shader);
 	const auto fragment_ok = check_shader_compilation_error("fragment", fragment_shader);
@@ -143,12 +147,13 @@ void load_shader_source(
 }
 
 ShaderProgram::ShaderProgram(
-	const std::string& vertex_source, const std::string& fragment_source, const CompiledShaderVertexAttributes& layout
+	DEBUG_LABEL_ARG_MANY const std::string& vertex_source, const std::string& fragment_source, const CompiledShaderVertexAttributes& layout
 )
 	: shader_program(glCreateProgram())
 	, debug_vertex_types(layout.debug_types)
 {
-	load_shader_source(this, vertex_source, fragment_source, layout);
+	SET_DEBUG_LABEL_NAMED(shader_program, DebugLabelFor::Program, Str() << "PROGRAM " << debug_label);
+	load_shader_source(USE_DEBUG_LABEL(debug_label) this, vertex_source, fragment_source, layout);
 }
 
 void ShaderProgram::use() const

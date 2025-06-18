@@ -2,6 +2,7 @@
 
 #include <unordered_set>
 
+#include "opengl_utils.h"
 #include "klotter/render/vertex_layout.h"
 #include "klotter/render/uniform.h"
 
@@ -21,6 +22,7 @@ struct ShaderProgram
      * @param layout the vertex layout to use
      */
 	ShaderProgram(
+		DEBUG_LABEL_ARG_MANY
 		const std::string& vertex_source,
 		const std::string& fragment_source,
 		const CompiledShaderVertexAttributes& layout

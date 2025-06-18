@@ -40,6 +40,15 @@ enum class DebugLabelFor
 void set_gl_debug_label(DebugLabelFor type, GLuint object, const std::string& label);
 void set_gl_debug_label(DebugLabelFor type, GLuint object, std::string_view label);
 
+#define DEBUG_LABEL_ARG_MANY const std::string& debug_label,
+
+#define SET_DEBUG_LABEL(ID, FOR) set_gl_debug_label(FOR, ID, debug_label)
+#define SET_DEBUG_LABEL_NAMED(ID, FOR, NAME) set_gl_debug_label(FOR, ID, NAME)
+#define USE_DEBUG_LABEL(name) name,
+
+// debug labels
+#define USE_PROGRAM_LABEL(name) USE_DEBUG_LABEL(name)
+
 struct ScopedDebugGroup
 {
 	explicit ScopedDebugGroup(const std::string& message, unsigned int id=0);
