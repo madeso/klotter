@@ -80,23 +80,24 @@ void APIENTRY on_opengl_error(
 )
 {
 	// ignore non-significant error/warning codes
-	if (type == GL_DEBUG_TYPE_OTHER)
-	{
-		return;
-	}
+	const auto is_important = type != GL_DEBUG_TYPE_OTHER;
+
 	if (severity == GL_DEBUG_SEVERITY_NOTIFICATION)
 	{
 		// this is from ScopedDebugGroup
 		return;
 	}
 
-	// only display the first 10
+	// only display the first 10 (non-important)
 	static int ErrorCount = 0;
-	if (ErrorCount > 10)
+	if (is_important == false)
 	{
-		return;
+		if (ErrorCount > 10)
+		{
+			return;
+		}
+		++ErrorCount;
 	}
-	++ErrorCount;
 
 	SDL_LogCritical(
 		SDL_LOG_CATEGORY_ERROR,
@@ -109,7 +110,11 @@ void APIENTRY on_opengl_error(
 		type_to_string(type),
 		severity_to_string(severity)
 	);
-	DIE("OpenGL error");
+
+	if (is_important)
+	{
+		DIE("OpenGL error");
+	}
 }
 
 bool has_khr_debug()
