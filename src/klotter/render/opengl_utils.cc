@@ -82,10 +82,14 @@ void APIENTRY on_opengl_error(
 	// ignore non-significant error/warning codes
 	const auto is_important = type != GL_DEBUG_TYPE_OTHER;
 
-	if (severity == GL_DEBUG_SEVERITY_NOTIFICATION)
+	switch (type)
 	{
-		// this is from ScopedDebugGroup
+	// this is from ScopedDebugGroup
+	case GL_DEBUG_TYPE_PUSH_GROUP:
+	case GL_DEBUG_TYPE_POP_GROUP:
 		return;
+	default:
+		break;
 	}
 
 	// only display the first 10 (non-important)
