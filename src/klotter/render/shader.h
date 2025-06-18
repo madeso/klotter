@@ -2,7 +2,7 @@
 
 #include <unordered_set>
 
-#include "opengl_utils.h"
+#include "klotter/render/opengl_labels.h"
 #include "klotter/render/vertex_layout.h"
 #include "klotter/render/uniform.h"
 

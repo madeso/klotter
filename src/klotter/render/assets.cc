@@ -24,6 +24,7 @@ namespace klotter
 {
 
 std::shared_ptr<Texture2d> get_or_load(
+	DEBUG_LABEL_ARG_MANY
 	std::shared_ptr<Texture2d>* texture,
 	const embedded_binary& bin,
 	TextureEdge texture_edge = TextureEdge::repeat,
@@ -33,18 +34,18 @@ std::shared_ptr<Texture2d> get_or_load(
 	if (*texture == nullptr)
 	{
 		*texture = std::make_shared<Texture2d>(
-			load_image_from_embedded(bin, texture_edge, TextureRenderStyle::mipmap, transparency)
+			load_image_from_embedded(SEND_DEBUG_LABEL_MANY(debug_label) bin, texture_edge, TextureRenderStyle::mipmap, transparency)
 		);
 	}
 	return *texture;
 }
 
-std::shared_ptr<Texture2d> get_or_create(std::shared_ptr<Texture2d>* texture, u32 pixel_color)
+std::shared_ptr<Texture2d> get_or_create(DEBUG_LABEL_ARG_MANY std::shared_ptr<Texture2d>* texture, u32 pixel_color)
 {
 	if (*texture == nullptr)
 	{
 		*texture = std::make_shared<Texture2d>(
-			load_image_from_color(pixel_color, TextureEdge::repeat, TextureRenderStyle::pixel, Transparency::exclude)
+			load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) pixel_color, TextureEdge::repeat, TextureRenderStyle::pixel, Transparency::exclude)
 		);
 	}
 
@@ -55,56 +56,56 @@ std::shared_ptr<Texture2d> get_or_create(std::shared_ptr<Texture2d>* texture, u3
 
 std::shared_ptr<Texture2d> Assets::get_black()
 {
-	return get_or_create(&black, 0x000000FF);
+	return get_or_create(USE_TEXTURE_LABEL_MANY("black from pixel") & black, 0x000000FF);
 }
 
 std::shared_ptr<Texture2d> Assets::get_white()
 {
-	return get_or_create(&white, 0xFFFFFFFF);
+	return get_or_create(USE_TEXTURE_LABEL_MANY("white from pixel") & white, 0xFFFFFFFF);
 }
 
 // ----------------------------------------------------------------------------
 
 std::shared_ptr<Texture2d> Assets::get_cookie()
 {
-	return get_or_load(&cookie, COOKIE_01_PNG);
+	return get_or_load(USE_TEXTURE_LABEL_MANY("cookie.png") &cookie, COOKIE_01_PNG);
 }
 
 std::shared_ptr<Texture2d> Assets::get_dark_grid()
 {
-	return get_or_load(&dark_grid, DARK_01_PNG);
+	return get_or_load(USE_TEXTURE_LABEL_MANY("dark_grid.png") &dark_grid, DARK_01_PNG);
 }
 
 std::shared_ptr<Texture2d> Assets::get_light_grid()
 {
-	return get_or_load(&light_grid, LIGHT_01_PNG);
+	return get_or_load(USE_TEXTURE_LABEL_MANY("light_grid.png") &light_grid, LIGHT_01_PNG);
 }
 
 // ----------------------------------------------------------------------------
 
 std::shared_ptr<Texture2d> Assets::get_container_diffuse()
 {
-	return get_or_load(&container_diffuse, CONTAINER_DIFFUSE_PNG);
+	return get_or_load(USE_TEXTURE_LABEL_MANY("container-diffuse.png") &container_diffuse, CONTAINER_DIFFUSE_PNG);
 }
 
 std::shared_ptr<Texture2d> Assets::get_container_specular()
 {
-	return get_or_load(&container_specular, CONTAINER_SPECULAR_PNG);
+	return get_or_load(USE_TEXTURE_LABEL_MANY("container-specular.png") &container_specular, CONTAINER_SPECULAR_PNG);
 }
 
 std::shared_ptr<Texture2d> Assets::get_matrix()
 {
-	return get_or_load(&matrix, MATRIX_JPG);
+	return get_or_load(USE_TEXTURE_LABEL_MANY("matrix.jpg") &matrix, MATRIX_JPG);
 }
 
 std::shared_ptr<Texture2d> Assets::get_glass()
 {
-	return get_or_load(&glass, GLASS_PNG);
+	return get_or_load(USE_TEXTURE_LABEL_MANY("glass.png") &glass, GLASS_PNG);
 }
 
 std::shared_ptr<Texture2d> Assets::get_grass()
 {
-	return get_or_load(&grass, GRASS_PNG, TextureEdge::clamp, Transparency::include);
+	return get_or_load(USE_TEXTURE_LABEL_MANY("grass.png") &grass, GRASS_PNG, TextureEdge::clamp, Transparency::include);
 }
 
 std::shared_ptr<TextureCubemap> Assets::get_skybox()
@@ -112,6 +113,7 @@ std::shared_ptr<TextureCubemap> Assets::get_skybox()
 	if (skybox == nullptr)
 	{
 		skybox = std::make_shared<TextureCubemap>(load_cubemap_from_embedded(
+			USE_TEXTURE_LABEL_MANY("skybox cubemap") 
 			SKYBOX_RIGHT_JPG, SKYBOX_LEFT_JPG, SKYBOX_TOP_JPG, SKYBOX_BOTTOM_JPG, SKYBOX_BACK_JPG, SKYBOX_FRONT_JPG
 		));
 	}

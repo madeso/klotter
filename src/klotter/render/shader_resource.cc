@@ -242,7 +242,7 @@ LoadedShader load_shader(DEBUG_LABEL_ARG_MANY const BaseShaderData& base_layout,
 
 	const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout, instance_prop);
 
-	auto program = std::make_shared<ShaderProgram>(USE_DEBUG_LABEL(debug_label) source.vertex, source.fragment, compiled_layout);
+	auto program = std::make_shared<ShaderProgram>(USE_DEBUG_LABEL_MANY(debug_label) source.vertex, source.fragment, compiled_layout);
 
 	return {program, geom_layout};
 }
@@ -270,30 +270,30 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 	default_shader_options.number_of_frustum_lights = settings.number_of_frustum_lights;
 
 	auto loaded_unlit = load_shader(
-		USE_PROGRAM_LABEL("unlit")
+		USE_PROGRAM_LABEL_MANY("unlit")
 		global_shader_data,
 		load_shader_source(unlit_shader_options.with_transparent_cutoff(), desc.setup.source),
 		TransformSource::Uniform
 	);
 	auto loaded_default = load_shader(
-		USE_PROGRAM_LABEL("default")
+		USE_PROGRAM_LABEL_MANY("default")
 		global_shader_data,
 		load_shader_source(default_shader_options.with_transparent_cutoff(), desc.setup.source),
 		TransformSource::Uniform
 	);
 	auto loaded_default_instanced = load_shader(
-		USE_PROGRAM_LABEL("default instanced")
+		USE_PROGRAM_LABEL_MANY("default instanced")
 		global_shader_data,
 		load_shader_source(default_shader_options.with_transparent_cutoff().with_instanced_mat4(), desc.setup.source),
 		TransformSource::Instanced_mat4
 	);
 
 	auto loaded_unlit_transparency = load_shader(
-		USE_PROGRAM_LABEL("unlit transparency")
+		USE_PROGRAM_LABEL_MANY("unlit transparency")
 		global_shader_data, load_shader_source(unlit_shader_options, desc.setup.source), TransformSource::Uniform
 	);
 	auto loaded_default_transparency = load_shader(
-		USE_PROGRAM_LABEL("default transparency")
+		USE_PROGRAM_LABEL_MANY("default transparency")
 		global_shader_data, load_shader_source(default_shader_options, desc.setup.source), TransformSource::Uniform
 	);
 
@@ -306,21 +306,21 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 
 	auto pp_invert = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			USE_PROGRAM_LABEL("pp invert")
+			USE_PROGRAM_LABEL_MANY("pp invert")
 			std::string{PP_VERT_GLSL}, std::string{PP_INVERT_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::factor
 	);
 	auto pp_grayscale = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			USE_PROGRAM_LABEL("pp grayscale")
+			USE_PROGRAM_LABEL_MANY("pp grayscale")
 			std::string{PP_VERT_GLSL}, std::string{PP_GRAYSCALE_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::factor
 	);
 	auto pp_damage = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			USE_PROGRAM_LABEL("pp damage")
+			USE_PROGRAM_LABEL_MANY("pp damage")
 			std::string{PP_VERT_GLSL}, std::string{PP_DAMAGE_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::factor | PostProcSetup::resolution | PostProcSetup::time
@@ -336,7 +336,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 
 	auto pp_blurv = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			USE_PROGRAM_LABEL("pp blur vert")
+			USE_PROGRAM_LABEL_MANY("pp blur vert")
 			std::string{PP_VERT_GLSL},
 			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::vertical, BLUR_SAMPLES, use_gauss}),
 			full_screen.layout
@@ -345,7 +345,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 	);
 	auto pp_blurh = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			USE_PROGRAM_LABEL("pp blur hor")
+			USE_PROGRAM_LABEL_MANY("pp blur hor")
 			std::string{PP_VERT_GLSL},
 			generate_blur(PP_BLUR_FRAG_GLSL, {BlurType::horizontal, BLUR_SAMPLES, use_gauss}),
 			full_screen.layout
@@ -355,17 +355,17 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 
 	auto pp_always = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			USE_PROGRAM_LABEL("pp always")
+			USE_PROGRAM_LABEL_MANY("pp always")
 			std::string{PP_VERT_GLSL}, std::string{PP_ALWAYS_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::none
 	);
 
 	auto loaded_single_color = load_shader(
-		USE_PROGRAM_LABEL("single color") global_shader_data, single_color_shader, TransformSource::Uniform
+		USE_PROGRAM_LABEL_MANY("single color") global_shader_data, single_color_shader, TransformSource::Uniform
 	);
 	auto loaded_skybox_shader
-		= load_shader(USE_PROGRAM_LABEL("skybox"){}, skybox_shader, TransformSource::Uniform);
+		= load_shader(USE_PROGRAM_LABEL_MANY("skybox"){}, skybox_shader, TransformSource::Uniform);
 
 	return {
 		// todo(Gustav): not really happy with sending "the same" argument twice

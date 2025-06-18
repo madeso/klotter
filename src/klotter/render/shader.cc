@@ -153,7 +153,7 @@ ShaderProgram::ShaderProgram(
 	, debug_vertex_types(layout.debug_types)
 {
 	SET_DEBUG_LABEL_NAMED(shader_program, DebugLabelFor::Program, Str() << "PROGRAM " << debug_label);
-	load_shader_source(USE_DEBUG_LABEL(debug_label) this, vertex_source, fragment_source, layout);
+	load_shader_source(USE_DEBUG_LABEL_MANY(debug_label) this, vertex_source, fragment_source, layout);
 }
 
 void ShaderProgram::use() const

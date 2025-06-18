@@ -48,9 +48,9 @@ struct RenderWorld : RenderSource
 			.with_msaa(msaa_samples)
 			.with_depth()
 			.with_stencil()
-			.build();
+			.build(USE_TEXTURE_LABEL("msaa buffer"));
 		realized_buffer = FrameBufferBuilder{size}
-			.build();
+			.build(USE_TEXTURE_LABEL("realized msaa buffer"));
 		shader = std::move(sh);
 	}
 
@@ -387,7 +387,7 @@ struct SimpleEffect
 	{
 		time = 0.0f;
 
-		auto fbo = FrameBufferBuilder{arg.window_size}.build();
+		auto fbo = FrameBufferBuilder{arg.window_size}.build(USE_TEXTURE_LABEL(Str() << "fbo for " << name));
 
 		auto src = arg.builder->last_source;
 		auto target = std::make_shared<RenderTask>(name, src, fbo, this);
@@ -510,12 +510,12 @@ struct BlurEffect : FactorEffect
 		// todo(Gustav): modify resolution to get better blur and at a lower cost!
 
 		// step 1: vertical
-		auto fbo_v = FrameBufferBuilder{arg.window_size}.build();
+		auto fbo_v = FrameBufferBuilder{arg.window_size}.build(USE_TEXTURE_LABEL("blur vertical"));
 		auto target_v = std::make_shared<RenderTask>("blur vertical", src, fbo_v, &vert_p);
 		arg.builder->targets.emplace_back(target_v);
 
 		// step 2: horizontal
-		auto fbo_h = FrameBufferBuilder{arg.window_size}.build();
+		auto fbo_h = FrameBufferBuilder{arg.window_size}.build(USE_TEXTURE_LABEL("blur horizontal"));
 		auto target_h = std::make_shared<RenderTask>("blur horizontal", target_v, fbo_h, &hori_p);
 		arg.builder->targets.emplace_back(target_h);
 

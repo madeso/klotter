@@ -1,5 +1,7 @@
 #pragma once
 
+#include "klotter/render/opengl_labels.h"
+
 namespace klotter
 {
 
@@ -33,7 +35,7 @@ struct BaseTexture
 {
 	unsigned int id;
 
-	BaseTexture();
+	DEBUG_LABEL_EXPLICIT_NO_EXTRA BaseTexture(DEBUG_LABEL_ARG_SINGLE);
 	~BaseTexture();
 
 	BaseTexture(const BaseTexture&) = delete;
@@ -51,19 +53,19 @@ struct Texture2d : BaseTexture
 	Texture2d() = delete;
 
 	/// "internal"
-	Texture2d(const void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
+	Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
 };
 
-Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
+Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
 
 struct TextureCubemap : BaseTexture
 {
 	TextureCubemap() = delete;
 
-	TextureCubemap(const std::array<void*, 6>& pixel_data, int width, int height);
+	TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height);
 };
 
-TextureCubemap load_cubemap_from_color(u32 pixel);
+TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY u32 pixel);
 
 
 
@@ -74,7 +76,7 @@ struct FrameBuffer : BaseTexture
 	/// @param f The FBO handle
 	/// @param w the texture width
 	/// @param h the texture height
-	FrameBuffer(unsigned int f, int w, int h);
+	FrameBuffer(DEBUG_LABEL_ARG_MANY unsigned int f, int w, int h);
 	~FrameBuffer();
 
 	FrameBuffer(const FrameBuffer&) = delete;
@@ -134,7 +136,7 @@ struct FrameBufferBuilder
 
 	// todo(Gustav): reuse buffers created from an earlier FSE build
 	// todo(Gustav): reuse buffers from earlier in the FSE stack, that aren't in use
-	[[nodiscard]] std::shared_ptr<FrameBuffer> build() const;
+	[[nodiscard]] std::shared_ptr<FrameBuffer> build(DEBUG_LABEL_ARG_SINGLE) const;
 };
 
 /// raii class to render to a FrameBuffer

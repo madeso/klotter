@@ -13,7 +13,7 @@ DebugDrawer::DebugDrawer()
 	: line_description({{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}})
 	, line_layout(compile_shader_layout(compile_attribute_layouts({line_description}), line_description, std::nullopt))
 	, line_shader(
-		  USE_PROGRAM_LABEL("debug line")
+		  USE_PROGRAM_LABEL_MANY("debug line")
 		  R"glsl(
 			#version 430 core
 			in vec3 a_position;

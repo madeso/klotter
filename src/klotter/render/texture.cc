@@ -5,6 +5,7 @@
 #include "klotter/assert.h"
 #include "klotter/cint.h"
 #include "klotter/log.h"
+#include "klotter/str.h"
 
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/texture.io.h"
@@ -57,9 +58,10 @@ namespace
 // ------------------------------------------------------------------------------------------------
 // base texture
 
-BaseTexture::BaseTexture()
+BaseTexture::BaseTexture(DEBUG_LABEL_ARG_SINGLE)
 	: id(create_texture())
 {
+	SET_DEBUG_LABEL(id, DebugLabelFor::Texture);
 }
 
 BaseTexture::~BaseTexture()
@@ -96,7 +98,8 @@ void BaseTexture::unload()
 // ------------------------------------------------------------------------------------------------
 // texture 2d
 
-Texture2d::Texture2d(const void* pixel_data, int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency t)
+Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency t)
+	: BaseTexture(SEND_DEBUG_LABEL(Str() << "TEXTURE2d " << debug_label))
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_2D, id);
@@ -170,7 +173,7 @@ struct PixelData
 };
 
 Texture2d load_image_from_embedded(
-	const embedded_binary& image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t
+	DEBUG_LABEL_ARG_MANY const embedded_binary& image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t
 )
 {
 	const auto include_transparency = t == Transparency::include;
@@ -179,21 +182,22 @@ Texture2d load_image_from_embedded(
 	if (parsed.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load image from image source");
-		return load_image_from_color(FAILED_TO_LOAD_IMAGE_COLOR, te, trs, t);
+		return load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) FAILED_TO_LOAD_IMAGE_COLOR, te, trs, t);
 	}
 
-	return {parsed.pixel_data, parsed.width, parsed.height, te, trs, t};
+	return {SEND_DEBUG_LABEL_MANY(debug_label) parsed.pixel_data, parsed.width, parsed.height, te, trs, t};
 }
 
-Texture2d load_image_from_color(u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)
+Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)
 {
-	return {&pixel, 1, 1, te, trs, t};
+	return {SEND_DEBUG_LABEL_MANY(debug_label) & pixel, 1, 1, te, trs, t};
 }
 
 // ------------------------------------------------------------------------------------------------
 // cubemap
 
-TextureCubemap::TextureCubemap(const std::array<void*, 6>& pixel_data, int width, int height)
+TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height)
+	:BaseTexture(SEND_DEBUG_LABEL(Str() << "TEXTURE CUBEMAP " << debug_label))
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_CUBE_MAP, id);
@@ -220,12 +224,13 @@ TextureCubemap::TextureCubemap(const std::array<void*, 6>& pixel_data, int width
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 }
 
-TextureCubemap load_cubemap_from_color(u32 pixel)
+TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY u32 pixel)
 {
-	return {{&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1};
+	return {SEND_DEBUG_LABEL_MANY(debug_label) {&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1};
 }
 
 TextureCubemap load_cubemap_from_embedded(
+	DEBUG_LABEL_ARG_MANY
 	const embedded_binary& image_right,
 	const embedded_binary& image_left,
 	const embedded_binary& image_top,
@@ -250,7 +255,7 @@ TextureCubemap load_cubemap_from_embedded(
 		|| parsed_front.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
-		load_cubemap_from_color(FAILED_TO_LOAD_IMAGE_COLOR);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) FAILED_TO_LOAD_IMAGE_COLOR);
 	}
 
 	if (parsed_right.width == parsed_left.width && parsed_right.width == parsed_top.width
@@ -262,7 +267,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent width");
-		load_cubemap_from_color(FAILED_TO_LOAD_IMAGE_COLOR);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) FAILED_TO_LOAD_IMAGE_COLOR);
 	}
 
 	if (parsed_right.height == parsed_left.height && parsed_right.height == parsed_top.height
@@ -274,11 +279,12 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent height");
-		load_cubemap_from_color(FAILED_TO_LOAD_IMAGE_COLOR);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) FAILED_TO_LOAD_IMAGE_COLOR);
 	}
 
 	// ok
 	return {
+		SEND_DEBUG_LABEL_MANY(debug_label)
 		{parsed_right.pixel_data,
 		 parsed_left.pixel_data,
 		 parsed_top.pixel_data,
@@ -303,8 +309,9 @@ unsigned int create_fbo()
 	return fbo;
 }
 
-FrameBuffer::FrameBuffer(unsigned int f, int w, int h)
-	: width(w)
+FrameBuffer::FrameBuffer(DEBUG_LABEL_ARG_MANY unsigned int f, int w, int h)
+	: BaseTexture(SEND_DEBUG_LABEL(Str() << "TEXTURE FRAMEBUFFER " << debug_label))
+	, width(w)
 	, height(h)
 	, fbo(f)
 {
@@ -347,7 +354,7 @@ GLenum determine_fbo_internal_format(DepthBits depth, bool add_stencil)
 	}
 }
 
-std::shared_ptr<FrameBuffer> FrameBufferBuilder::build() const
+std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) const
 {
 	const auto te = TextureEdge::clamp;
 	const auto trs = TextureRenderStyle::linear;
@@ -356,7 +363,7 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build() const
 	const bool is_msaa = msaa_samples > 0;
 
 	LOG_INFO("Creating frame buffer %d %d", width, height);
-	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), width, height);
+	auto fbo = std::make_shared<FrameBuffer>(SEND_DEBUG_LABEL_MANY(debug_label) create_fbo(), width, height);
 	ASSERT(fbo->id > 0);
 
 	fbo->debug_is_msaa = is_msaa;

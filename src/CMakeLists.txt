@@ -52,6 +52,7 @@ set(src_render
     klotter/render/render.pimpl.cc klotter/render/render.pimpl.h
     klotter/render/camera.cc klotter/render/camera.h
     klotter/render/opengl_utils.cc klotter/render/opengl_utils.h
+    klotter/render/opengl_labels.cc klotter/render/opengl_labels.h
 
     klotter/render/shader.cc klotter/render/shader.h
     klotter/render/shader.source.cc klotter/render/shader.source.h
