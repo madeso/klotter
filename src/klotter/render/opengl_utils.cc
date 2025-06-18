@@ -59,11 +59,11 @@ namespace
 	{
 		switch (severity)
 		{
-		case GL_DEBUG_SEVERITY_HIGH: return "high";
-		case GL_DEBUG_SEVERITY_MEDIUM: return "medium";
-		case GL_DEBUG_SEVERITY_LOW: return "low";
-		case GL_DEBUG_SEVERITY_NOTIFICATION: return "notification";
-		default: return "unknown";
+		case GL_DEBUG_SEVERITY_HIGH: return "High";
+		case GL_DEBUG_SEVERITY_MEDIUM: return "Medium";
+		case GL_DEBUG_SEVERITY_LOW: return "Low";
+		case GL_DEBUG_SEVERITY_NOTIFICATION: return "Notification";
+		default: return "Unknown";
 		}
 	}
 
