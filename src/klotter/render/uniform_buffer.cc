@@ -1,6 +1,8 @@
 #include "klotter/render/uniform_buffer.h"
 
+#include "opengl_labels.h"
 #include "klotter/assert.h"
+#include "klotter/str.h"
 
 #include "klotter/render/opengl_utils.h"
 
@@ -112,10 +114,11 @@ BoundUniformBuffer::~BoundUniformBuffer()
 	glBindBuffer(GL_UNIFORM_BUFFER, 0);
 }
 
-UniformBuffer::UniformBuffer(const UniformBufferSetup& setup)
+UniformBuffer::UniformBuffer(DEBUG_LABEL_ARG_MANY const UniformBufferSetup& setup)
 	: id(create_buffer())
 {
 	auto bound = BoundUniformBuffer{this};
+	SET_DEBUG_LABEL_NAMED(id, DebugLabelFor::Buffer, Str() << "UNI B " << debug_label);
 
 	// Changed to a dynamic draw due to:
 	//	Using glBufferSubData(...) to update a GL_STATIC_DRAW buffer

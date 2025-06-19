@@ -59,11 +59,11 @@ std::shared_ptr<CompiledGeom> compile_geom(DEBUG_LABEL_ARG_MANY const Geom& geom
 {
 	const auto ex = extract_geom(geom, geom_layout);
 
-	const auto vbo = create_buffer();
 	const auto vao = create_vertex_array();
 	glBindVertexArray(vao);
 	SET_DEBUG_LABEL_NAMED(vao, DebugLabelFor::VertexArray, Str() << "VERT " << debug_label);
 
+	const auto vbo = create_buffer();
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	SET_DEBUG_LABEL_NAMED(vbo, DebugLabelFor::Buffer, Str() << "ARR BUF " << debug_label);
 	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
@@ -131,12 +131,11 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 {
 	const auto ex = extract_geom(geom, geom_layout);
 
-	const auto instance_vbo = create_buffer();
-	const auto vbo = create_buffer();
 	const auto vao = create_vertex_array();
 	glBindVertexArray(vao);
 	SET_DEBUG_LABEL_NAMED(vao, DebugLabelFor::VertexArray, Str() << "VERT (in) " << debug_label);
 
+	const auto vbo = create_buffer();
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	SET_DEBUG_LABEL_NAMED(vbo, DebugLabelFor::Buffer, Str() << "ARR BUF (in) " << debug_label);
 	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
@@ -172,7 +171,9 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 
 	// finally bind instance_vbo data, use a dummy data since the data will be uploaded before rendering
 	// todo(Gustav): is dynamic draw correct?
+	const auto instance_vbo = create_buffer();
 	glBindBuffer(GL_ARRAY_BUFFER, instance_vbo);
+	SET_DEBUG_LABEL_NAMED(instance_vbo, DebugLabelFor::Buffer, Str() << "ARRAY BUF (trans in) " << debug_label);
 	std::vector<glm::mat4> temp_data(max_instances);
 	constexpr auto instance_size = sizeof(float) * 16;
 	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(instance_size * max_instances), nullptr, GL_DYNAMIC_DRAW);

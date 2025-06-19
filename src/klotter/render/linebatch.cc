@@ -149,7 +149,7 @@ LineBatch::LineBatch(ShaderProgram* shader)
 
 	ib = create_buffer();
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ib);
-	SET_DEBUG_LABEL_NAMED(vb, DebugLabelFor::Buffer, "IND BUF line batch"sv);
+	SET_DEBUG_LABEL_NAMED(ib, DebugLabelFor::Buffer, "IND BUF line batch"sv);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, max_indices * sizeof(u32), indices.data(), GL_STATIC_DRAW);
 }
 

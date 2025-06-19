@@ -1,5 +1,7 @@
 #pragma once
 
+#include "klotter/render/opengl_labels.h"
+
 namespace klotter
 {
 
@@ -50,7 +52,7 @@ struct UniformBufferCompiler
 
 struct UniformBuffer
 {
-	explicit UniformBuffer(const UniformBufferSetup& setup);
+	DEBUG_LABEL_EXPLICIT_MANY UniformBuffer(DEBUG_LABEL_ARG_MANY const UniformBufferSetup& setup);
 	~UniformBuffer();
 
 	void set_mat4(const CompiledUniformProp& prop, const glm::mat4& m);

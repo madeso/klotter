@@ -25,7 +25,7 @@ CameraUniformBuffer make_camera_uniform_buffer_desc()
 		compiler.compile("Camera", &camera_uniform_buffer.setup, 0);
 	}
 
-	camera_uniform_buffer.buffer = std::make_unique<UniformBuffer>(camera_uniform_buffer.setup);
+	camera_uniform_buffer.buffer = std::make_unique<UniformBuffer>(USE_DEBUG_LABEL_MANY("camera uniform buffer") camera_uniform_buffer.setup);
 
 	return camera_uniform_buffer;
 }
