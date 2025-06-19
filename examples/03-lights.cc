@@ -26,11 +26,12 @@ struct LightsSample : Sample
 	float anim = 0.0f;
 
 	std::shared_ptr<CompiledGeom> create_cube_geom(
+		DEBUG_LABEL_ARG_MANY
 		float x, float y, float z, bool invert, CompiledGeomVertexAttributes layout
 	)
 	{
 		const auto triangle = geom::create_box(x, y, z, invert, colors::white).to_geom();
-		auto geom = compile_geom(triangle, layout);
+		auto geom = compile_geom(SEND_DEBUG_LABEL_MANY(debug_label) triangle, layout);
 		return geom;
 	}
 
@@ -82,7 +83,7 @@ struct LightsSample : Sample
 		effects.effects.emplace_back(pp_damage);
 
 		auto light_geom
-			= create_cube_geom(0.25f, 0.25f, 0.25f, false, renderer->unlit_geom_layout());
+			= create_cube_geom(USE_DEBUG_LABEL_MANY("light") 0.25f, 0.25f, 0.25f, false, renderer->unlit_geom_layout());
 		auto light = add_cube(light_geom, light_material);
 		light->position.z = 0.5f;
 
@@ -120,10 +121,11 @@ struct LightsSample : Sample
 		}
 
 		auto mini = compile_geom(
+			USE_DEBUG_LABEL_MANY("sphere")
 			geom::create_uv_sphere(1.0f, 9, 9, false).write_obj("mini-sphere.obj").to_geom(),
 			renderer->default_geom_layout()
 		);
-		auto mini2 = create_cube_geom(1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
+		auto mini2 = create_cube_geom(USE_DEBUG_LABEL_MANY("mini2") 1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
 		auto t = renderer->assets.get_light_grid();
 		auto s = renderer->assets.get_white();
 		auto ct = renderer->assets.get_container_diffuse();
@@ -143,7 +145,7 @@ struct LightsSample : Sample
 		{
 			const auto triangle
 				= geom::create_xy_plane(1.0f, 1.0f, geom::TwoSided::two_sided).to_geom();
-			auto geom = compile_geom(triangle, renderer->default_geom_layout());
+			auto geom = compile_geom(USE_DEBUG_LABEL_MANY("glass") triangle, renderer->default_geom_layout());
 
 			auto glass_mat = renderer->make_default_material();
 			glass_mat->diffuse = renderer->assets.get_glass();
@@ -156,21 +158,21 @@ struct LightsSample : Sample
 			glass->position = {0.0f, 0.0f, -1.0f};
 		}
 
-		// grass
+		// billboards
 		{
-			const auto triangle
+			const auto billboard_g
 				= geom::create_xy_plane(1.0f, 1.0f, geom::TwoSided::two_sided).to_geom();
-			auto geom = compile_geom(triangle, renderer->default_geom_layout());
+			auto billboard_cg = compile_geom(USE_DEBUG_LABEL_MANY("billboard") billboard_g, renderer->default_geom_layout());
 
-			auto glass_mat = renderer->make_default_material();
-			glass_mat->diffuse = renderer->assets.get_grass();
-			glass_mat->specular_color = colors::black;
+			auto grass_mat = renderer->make_default_material();
+			grass_mat->diffuse = renderer->assets.get_grass();
+			grass_mat->specular_color = colors::black;
 
-			auto glass = add_cube(geom, glass_mat);
+			auto glass = add_cube(billboard_cg, grass_mat);
 			glass->position = {1.0f, 0.0f, 0.0f};
 			glass->billboarding = Billboarding::axial_y;
 
-			glass = add_cube(geom, glass_mat);
+			glass = add_cube(billboard_cg, grass_mat);
 			glass->position = {-1.0f, 0.0f, -1.0f};
 			glass->billboarding = Billboarding::axial_y_fast;
 		}
@@ -178,6 +180,7 @@ struct LightsSample : Sample
 		{
 			constexpr auto PLANE_SIZE = 100.0f;
 			auto plane_geom = compile_geom(
+				USE_DEBUG_LABEL_MANY("plane")
 				geom::create_xz_plane(PLANE_SIZE, PLANE_SIZE, false).to_geom(),
 				renderer->default_geom_layout()
 			);
@@ -196,6 +199,7 @@ struct LightsSample : Sample
 			constexpr float cube_size = 0.75f;
 			constexpr bool invert = false;
 			auto instances_geom = compile_geom_with_transform_instance(
+				USE_DEBUG_LABEL_MANY("instanced box")
 				geom::create_box(cube_size, cube_size, cube_size, invert, colors::white).to_geom(),
 				renderer->default_geom_layout(),
 				instance_count

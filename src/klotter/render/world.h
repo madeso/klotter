@@ -54,8 +54,9 @@ struct CompiledGeom_TransformInstance
 	void operator=(CompiledGeom_TransformInstance&&) = delete;
 };
 
-std::shared_ptr<CompiledGeom> compile_geom(const Geom&, const CompiledGeomVertexAttributes& layout);
+std::shared_ptr<CompiledGeom> compile_geom(DEBUG_LABEL_ARG_MANY const Geom&, const CompiledGeomVertexAttributes& layout);
 std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_instance(
+	DEBUG_LABEL_ARG_MANY
 	const Geom&, const CompiledGeomVertexAttributes& layout, std::size_t max_instances
 );
 

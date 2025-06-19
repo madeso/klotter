@@ -19,7 +19,10 @@ FullScreenGeom::FullScreenGeom()
 	constexpr auto plane_size = 2.0f;
 	
 	layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);
-	geom = compile_geom(geom::create_xy_plane(plane_size, plane_size, geom::TwoSided::one_sided).to_geom(), geom_layout);
+	geom = compile_geom(
+		USE_DEBUG_LABEL_MANY("full screen geom") geom::create_xy_plane(plane_size, plane_size, geom::TwoSided::one_sided).to_geom(),
+		geom_layout
+	);
 }
 
 }  //  namespace klotter

@@ -3,6 +3,7 @@
 #include "klotter/render/world.h"
 
 #include "klotter/assert.h"
+#include "klotter/str.h"
 
 #include "klotter/render/geom.extract.h"
 #include "klotter/render/opengl_utils.h"
@@ -54,13 +55,14 @@ std::shared_ptr<MeshInstance_TransformInstanced> make_mesh_instance(
 	return instance;
 }
 
-std::shared_ptr<CompiledGeom> compile_geom(const Geom& geom, const CompiledGeomVertexAttributes& geom_layout)
+std::shared_ptr<CompiledGeom> compile_geom(DEBUG_LABEL_ARG_MANY const Geom& geom, const CompiledGeomVertexAttributes& geom_layout)
 {
 	const auto ex = extract_geom(geom, geom_layout);
 
 	const auto vbo = create_buffer();
 	const auto vao = create_vertex_array();
 	glBindVertexArray(vao);
+	SET_DEBUG_LABEL_NAMED(vao, DebugLabelFor::VertexArray, Str() << "VERT " << debug_label);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
@@ -120,6 +122,7 @@ CompiledGeom::~CompiledGeom()
 }
 
 std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_instance(
+	DEBUG_LABEL_ARG_MANY
 	const Geom& geom, const CompiledGeomVertexAttributes& geom_layout, std::size_t max_instances
 )
 {
@@ -129,6 +132,7 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	const auto vbo = create_buffer();
 	const auto vao = create_vertex_array();
 	glBindVertexArray(vao);
+	SET_DEBUG_LABEL_NAMED(vao, DebugLabelFor::VertexArray, Str() << "VERT " << debug_label);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);

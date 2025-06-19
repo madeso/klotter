@@ -30,7 +30,7 @@ Skybox Renderer::make_skybox(std::shared_ptr<TextureCubemap> texture) const
 	const auto layout = pimpl->shaders_resources.skybox_shader.geom_layout;
 
 	const auto triangle = geom::create_box(size, size, size, invert, colors::white).to_geom();
-	auto geom = compile_geom(triangle, layout);
+	auto geom = compile_geom(USE_DEBUG_LABEL_MANY("skybox") triangle, layout);
 
 	LOG_INFO("Creating skybox");
 	return {geom, std::move(texture)};

@@ -105,6 +105,7 @@ LineBatch::LineBatch(ShaderProgram* shader)
 
 	va = create_vertex_array();
 	glBindVertexArray(va);
+	SET_DEBUG_LABEL_NAMED(va, DebugLabelFor::VertexArray, "VERT line batch"sv);
 
 	constexpr auto vertex_count = 2;
 	constexpr auto float_per_vertex = 3;
