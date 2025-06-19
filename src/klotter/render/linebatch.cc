@@ -103,7 +103,7 @@ LineBatch::LineBatch(ShaderProgram* shader)
 {
 	shader->use();
 
-	glGenVertexArrays(1, &va);
+	va = create_vertex_array();
 	glBindVertexArray(va);
 
 	constexpr auto vertex_count = 2;
@@ -159,7 +159,7 @@ LineBatch::~LineBatch()
 	destroy_buffer(vb);
 
 	glBindVertexArray(0);
-	glDeleteVertexArrays(1, &va);
+	destroy_vertex_array(va);
 }
 
 void add_vertex(LineBatch* batch, const glm::vec3& position, const glm::vec3& color)
