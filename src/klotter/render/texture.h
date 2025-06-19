@@ -35,7 +35,7 @@ struct BaseTexture
 {
 	unsigned int id;
 
-	DEBUG_LABEL_EXPLICIT_NO_EXTRA BaseTexture(DEBUG_LABEL_ARG_SINGLE);
+	BaseTexture();
 	~BaseTexture();
 
 	BaseTexture(const BaseTexture&) = delete;
@@ -76,7 +76,7 @@ struct FrameBuffer : BaseTexture
 	/// @param f The FBO handle
 	/// @param w the texture width
 	/// @param h the texture height
-	FrameBuffer(DEBUG_LABEL_ARG_MANY unsigned int f, int w, int h);
+	FrameBuffer(unsigned int f, int w, int h);
 	~FrameBuffer();
 
 	FrameBuffer(const FrameBuffer&) = delete;

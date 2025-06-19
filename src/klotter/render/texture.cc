@@ -58,10 +58,9 @@ namespace
 // ------------------------------------------------------------------------------------------------
 // base texture
 
-BaseTexture::BaseTexture(DEBUG_LABEL_ARG_SINGLE)
+BaseTexture::BaseTexture()
 	: id(create_texture())
 {
-	SET_DEBUG_LABEL(id, DebugLabelFor::Texture);
 }
 
 BaseTexture::~BaseTexture()
@@ -99,10 +98,10 @@ void BaseTexture::unload()
 // texture 2d
 
 Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency t)
-	: BaseTexture(SEND_DEBUG_LABEL(Str() << "TEXTURE2d " << debug_label))
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_2D, id);
+	SET_DEBUG_LABEL_NAMED(id, DebugLabelFor::Texture, Str() << "TEXTURE2d " << debug_label);
 
 	set_texture_wrap(GL_TEXTURE_2D, te);
 
@@ -197,10 +196,10 @@ Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY u32 pixel, TextureEdge te, 
 // cubemap
 
 TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height)
-	:BaseTexture(SEND_DEBUG_LABEL(Str() << "TEXTURE CUBEMAP " << debug_label))
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_CUBE_MAP, id);
+	SET_DEBUG_LABEL_NAMED(id, DebugLabelFor::Texture, Str() << "TEXTURE CUBEMAP " << debug_label);
 
 	for (size_t index = 0; index < 6; index += 1)
 	{
@@ -309,9 +308,8 @@ unsigned int create_fbo()
 	return fbo;
 }
 
-FrameBuffer::FrameBuffer(DEBUG_LABEL_ARG_MANY unsigned int f, int w, int h)
-	: BaseTexture(SEND_DEBUG_LABEL(Str() << "TEXTURE FRAMEBUFFER " << debug_label))
-	, width(w)
+FrameBuffer::FrameBuffer(unsigned int f, int w, int h)
+	: width(w)
 	, height(h)
 	, fbo(f)
 {
@@ -363,7 +361,7 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 	const bool is_msaa = msaa_samples > 0;
 
 	LOG_INFO("Creating frame buffer %d %d", width, height);
-	auto fbo = std::make_shared<FrameBuffer>(SEND_DEBUG_LABEL_MANY(debug_label) create_fbo(), width, height);
+	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), width, height);
 	ASSERT(fbo->id > 0);
 
 	fbo->debug_is_msaa = is_msaa;
@@ -371,6 +369,7 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 	// setup texture
 	const GLenum target = is_msaa ? GL_TEXTURE_2D_MULTISAMPLE : GL_TEXTURE_2D;
 	glBindTexture(target, fbo->id);
+	SET_DEBUG_LABEL_NAMED(fbo->id, DebugLabelFor::Texture, Str() << "TEXTURE FRAMEBUFFER " << debug_label);
 	if (is_msaa == false)
 	{
 		// msaa neither support min/mag filters nor texture wrapping
