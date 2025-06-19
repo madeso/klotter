@@ -65,6 +65,7 @@ std::shared_ptr<CompiledGeom> compile_geom(DEBUG_LABEL_ARG_MANY const Geom& geom
 	SET_DEBUG_LABEL_NAMED(vao, DebugLabelFor::VertexArray, Str() << "VERT " << debug_label);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	SET_DEBUG_LABEL_NAMED(vbo, DebugLabelFor::Buffer, Str() << "ARR BUF " << debug_label);
 	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
 
 	const auto get_type = [](const ExtractedAttribute& extracted) -> GLenum
@@ -99,6 +100,8 @@ std::shared_ptr<CompiledGeom> compile_geom(DEBUG_LABEL_ARG_MANY const Geom& geom
 
 	const auto ebo = create_buffer();
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+	SET_DEBUG_LABEL_NAMED(ebo, DebugLabelFor::Buffer, Str() << "IND BUF " << debug_label);
+
 	glBufferData(
 		GL_ELEMENT_ARRAY_BUFFER,
 		Csizet_to_glsizeiptr(sizeof(u32) * ex.indices.size()),
@@ -132,9 +135,10 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	const auto vbo = create_buffer();
 	const auto vao = create_vertex_array();
 	glBindVertexArray(vao);
-	SET_DEBUG_LABEL_NAMED(vao, DebugLabelFor::VertexArray, Str() << "VERT " << debug_label);
+	SET_DEBUG_LABEL_NAMED(vao, DebugLabelFor::VertexArray, Str() << "VERT (in) " << debug_label);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	SET_DEBUG_LABEL_NAMED(vbo, DebugLabelFor::Buffer, Str() << "ARR BUF (in) " << debug_label);
 	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
 
 	const auto get_type = [](const ExtractedAttribute& extracted) -> GLenum
@@ -190,6 +194,7 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 
 	const auto ebo = create_buffer();
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+	SET_DEBUG_LABEL_NAMED(ebo, DebugLabelFor::Buffer, Str() << "IND BUF (in) " << debug_label);
 	glBufferData(
 		GL_ELEMENT_ARRAY_BUFFER,
 		Csizet_to_glsizeiptr(sizeof(u32) * ex.indices.size()),
