@@ -417,6 +417,7 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 		glGenRenderbuffers(1, &fbo->rbo);
 		ASSERT(fbo->rbo != 0);
 		glBindRenderbuffer(GL_RENDERBUFFER, fbo->rbo);
+		SET_DEBUG_LABEL_NAMED(fbo->rbo, DebugLabelFor::RenderBuffer, Str() << "TEXTURE RENDBUFF " << debug_label);
 
 		if (is_msaa)
 		{
