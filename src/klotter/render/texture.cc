@@ -408,6 +408,7 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 
 	// setup fbo
 	auto bound = BoundFbo{fbo};
+	SET_DEBUG_LABEL_NAMED(fbo->fbo, DebugLabelFor::FrameBuffer, Str() << "FBO " << debug_label);
 	constexpr GLint mipmap_level = 0;
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, target, fbo->id, mipmap_level);
 
