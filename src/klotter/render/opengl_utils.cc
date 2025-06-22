@@ -70,7 +70,7 @@ namespace
 
 }  // namespace
 
-void APIENTRY on_opengl_error(
+void APIENTRY on_opengl_debug_output(
 	GLenum source,
 	GLenum type,
 	GLuint id,
@@ -154,7 +154,7 @@ void setup_opengl_debug()
 		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Enabling OpenGL debug output (KHR_debug)");
 		glEnable(GL_DEBUG_OUTPUT);
 		glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR);
-		glDebugMessageCallback(on_opengl_error, nullptr);
+		glDebugMessageCallback(on_opengl_debug_output, nullptr);
 		glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE);
 	}
 	else
