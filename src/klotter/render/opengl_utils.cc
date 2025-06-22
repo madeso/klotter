@@ -80,9 +80,6 @@ void APIENTRY on_opengl_error(
 	const GLvoid* /*userParam*/
 )
 {
-	// ignore non-significant error/warning codes
-	const auto is_important = type != GL_DEBUG_TYPE_OTHER;
-
 	switch (type)
 	{
 	// this is from ScopedDebugGroup
@@ -93,7 +90,25 @@ void APIENTRY on_opengl_error(
 		break;
 	}
 
-	// only display the first 10 (non-important)
+	// ignore non-significant error/warning codes
+	const auto is_important = type != GL_DEBUG_TYPE_OTHER;
+	const bool is_low = severity == GL_DEBUG_SEVERITY_LOW || severity == GL_DEBUG_SEVERITY_NOTIFICATION;
+
+	if (is_important == false && is_low)
+	{
+		/*
+		Tries to hide the following notification:
+		 Buffer object 40 (bound to GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (0),
+		 	GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (1), GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (2),
+			and GL_ARRAY_BUFFER_ARB, usage hint is GL_STREAM_DRAW) will use VIDEO memory as the source
+			for buffer object operations.
+		 Buffer object 41 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is
+		 	GL_STREAM_DRAW) will use VIDEO memory as the source for buffer object operations.
+		 */
+		return;
+	}
+
+	// only display the first 10 notifications
 	static int ErrorCount = 0;
 	if (is_important == false)
 	{
@@ -111,24 +126,6 @@ void APIENTRY on_opengl_error(
 			"sev: " << severity_to_string(severity) << "] "
 			": " << message
 	;
-
-	const bool is_low =
-		severity == GL_DEBUG_SEVERITY_LOW ||
-		severity == GL_DEBUG_SEVERITY_NOTIFICATION;
-
-	if(is_important == false && is_low)
-	{
-		/*
-		Tries to hide the following notification:
-		 Buffer object 40 (bound to GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (0),
-		 	GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (1), GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (2),
-			and GL_ARRAY_BUFFER_ARB, usage hint is GL_STREAM_DRAW) will use VIDEO memory as the source
-			for buffer object operations.
-		 Buffer object 41 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is
-		 	GL_STREAM_DRAW) will use VIDEO memory as the source for buffer object operations.
-		 */
-		return;
-	}
 
 	if (is_low)
 	{
