@@ -116,6 +116,20 @@ void APIENTRY on_opengl_error(
 		severity == GL_DEBUG_SEVERITY_LOW ||
 		severity == GL_DEBUG_SEVERITY_NOTIFICATION;
 
+	if(is_important == false && is_low)
+	{
+		/*
+		Tries to hide the following notification:
+		 Buffer object 40 (bound to GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (0),
+		 	GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (1), GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB (2),
+			and GL_ARRAY_BUFFER_ARB, usage hint is GL_STREAM_DRAW) will use VIDEO memory as the source
+			for buffer object operations.
+		 Buffer object 41 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is
+		 	GL_STREAM_DRAW) will use VIDEO memory as the source for buffer object operations.
+		 */
+		return;
+	}
+
 	if (is_low)
 	{
 		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "%s", to_out.c_str());
