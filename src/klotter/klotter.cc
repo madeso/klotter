@@ -288,6 +288,10 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 
 	LOG_INFO("Loaded OpenGL %d.%d", GLVersion.major, GLVersion.minor);
 
+	///////////////////////////////////////////////////////////////
+	// load opengl debug
+	setup_opengl_debug();
+
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// dear imgui setup
@@ -304,9 +308,7 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 
 
 	///////////////////////////////////////////////////////////////
-	// complete setup
-	setup_opengl_debug();
-
+	// run app
 	const auto exit_code = app_main(rs, make_app, sdl_window);
 
 
