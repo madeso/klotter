@@ -35,7 +35,6 @@ add_library(external::glad ALIAS external_glad)
 ###################################################################################################
 if(EU_SDL_SOURCE_FETCH)
     set(SDL_EXTERN_DIR ${CMAKE_CURRENT_BINARY_DIR}/sdl)
-    set(SDL_VERSION_STRING "SDL2-2.0.9")
     set(SDL_ROOT_DIR "${SDL_EXTERN_DIR}/${SDL_VERSION_STRING}")
     set(SDL_INSTALL_DIR "${SDL_EXTERN_DIR}/install")
     message(STATUS "Will download and build ${SDL_VERSION_STRING} to ${SDL_EXTERN_DIR} and install to ${SDL_INSTALL_DIR} when building")
@@ -45,9 +44,8 @@ if(EU_SDL_SOURCE_FETCH)
         SDL2_external
         DOWNLOAD_EXTRACT_TIMESTAMP TRUE
         URL https://www.libsdl.org/release/${SDL_VERSION_STRING}.tar.gz
-        PREFIX ${SDL_EXTERN_DIR}
-        SOURCE_DIR ${SDL_ROOT_DIR}
-        BINARY_DIR ${SDL_ROOT_DIR}/build
+        PREFIX "${SDL_EXTERN_DIR}/${SDL_VERSION_STRING}"
+        LOG_DIR "${SDL_EXTERN_DIR}/log"
         INSTALL_DIR ${SDL_INSTALL_DIR}
         CMAKE_ARGS
             -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
