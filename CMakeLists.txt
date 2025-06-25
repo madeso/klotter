@@ -2,9 +2,21 @@ cmake_minimum_required(VERSION 3.15)
 set_property(GLOBAL PROPERTY USE_FOLDERS OFF)
 project(klotter CXX C)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+include(cmake/StandardProjectSettings.cmake)
 
 
-# cmake options
+
+###################################################################################################
+# functions
+function(cmake_source_group)
+    source_group("_cmake/pch" REGULAR_EXPRESSION "cmake_pch.[ch]xx$")
+    source_group("_cmake/rules" REGULAR_EXPRESSION "\.rule$")
+    source_group("_cmake" REGULAR_EXPRESSION "CMakeLists\.txt")
+endfunction()
+
+
+###################################################################################################
+# options
 set(DEFAULT_EU_SDL_SOURCE "FindLibrary")
 if(WIN32)
     set(DEFAULT_EU_SDL_SOURCE "FetchContent")
@@ -21,12 +33,10 @@ else()
     message(ERROR "invalid EU_SDL_SOURCE (${EU_SDL_SOURCE})")
 endif()
 
-function(cmake_source_group)
-    source_group("_cmake/pch" REGULAR_EXPRESSION "cmake_pch.[ch]xx$")
-    source_group("_cmake/rules" REGULAR_EXPRESSION "\.rule$")
-    source_group("_cmake" REGULAR_EXPRESSION "CMakeLists\.txt")
-endfunction()
 
+
+###################################################################################################
+# helper libraries
 add_library(edit_and_continue INTERFACE)
 if(MSVC)
     # ZI = add debug information with edit and continue support to the target
@@ -34,23 +44,24 @@ if(MSVC)
     target_compile_options(edit_and_continue INTERFACE "/ZI")
     target_link_options(edit_and_continue INTERFACE "/INCREMENTAL")
 endif()
-
-include(cmake/StandardProjectSettings.cmake)
-include(cmake/CompilerWarnings.cmake)
-include(cmake/Sanitizers.cmake)
+add_library(klotter::edit_and_continue ALIAS edit_and_continue)
 
 add_library(project_options INTERFACE)
-add_library(project_warnings INTERFACE)
-
-target_link_libraries(project_options INTERFACE edit_and_continue)
-
+target_link_libraries(project_options INTERFACE klotter::edit_and_continue)
 target_compile_features(project_options INTERFACE cxx_std_17)
-set_project_warnings(project_warnings)
+include(cmake/Sanitizers.cmake)
 enable_sanitizers(project_options)
-
 add_library(klotter::project_options ALIAS project_options)
+
+add_library(project_warnings INTERFACE)
+include(cmake/CompilerWarnings.cmake)
+set_project_warnings(project_warnings)
 add_library(klotter::project_warnings ALIAS project_warnings)
 
+
+
+###################################################################################################
+# start adding sub folders
 add_subdirectory(external)
 add_subdirectory(src)
 add_subdirectory(examples)
