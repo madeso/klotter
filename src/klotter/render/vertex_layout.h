@@ -86,6 +86,7 @@ struct CompiledVertexTypeList
 	int next_index;
 };
 
+/// @see \ref compile_shader_layout
 struct InstanceProp
 {
 	VertexType type;

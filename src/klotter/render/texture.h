@@ -31,6 +31,7 @@ enum class Transparency
 };
 
 // todo(Gustav): this doesn't do anything except allow code reuse, remove?
+/// Base class for all textures, but only exist due to code reuse and can easily be inlined.
 struct BaseTexture
 {
 	unsigned int id;
@@ -70,7 +71,7 @@ TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY u32 pixel);
 
 
 /// "render to texture" feature
-///	@see FrameBufferBuilder
+///	@see \ref FrameBufferBuilder
 struct FrameBuffer : BaseTexture
 {
 	/// @param f The FBO handle
@@ -99,6 +100,7 @@ enum class DepthBits
 	use_16, use_24, use_32
 };
 
+/// A builder class for the \ref FrameBuffer
 struct FrameBufferBuilder
 {
 	constexpr explicit FrameBufferBuilder(const glm::ivec2& size)

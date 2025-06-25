@@ -29,7 +29,7 @@ struct ShaderProgram
 	);
 
 	/** Destroy the shader if it's loaded.
-	 * @see clear
+	 * @see \ref clear
      */
 	~ShaderProgram();
 

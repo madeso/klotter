@@ -5,6 +5,9 @@
 namespace klotter
 {
 
+// todo(Gustav): Should this be merged with the RenderSettings
+/// Shader compilation options.
+/// @see \ref RenderSettings
 struct ShaderOptions
 {
 	bool use_blinn_phong = true;
@@ -22,6 +25,9 @@ struct ShaderOptions
 	[[nodiscard]] ShaderOptions with_instanced_mat4() const;
 };
 
+// todo(Gustav): Rename to something better like ShaderSource_withLayout
+/// Shader source with the layout that is expected.
+/// @see \ref ShaderSource
 struct VertexShaderSource
 {
 	ShaderVertexAttributes layout;
@@ -29,24 +35,29 @@ struct VertexShaderSource
 	std::string fragment;
 };
 
+// vertex and fragment shader source.
+/// @see \ref VertexShaderSource
 struct ShaderSource
 {
 	std::string vertex;
 	std::string fragment;
 };
 
+/// @see \ref generate_blur
 enum class BlurType
 {
 	horizontal,
 	vertical
 };
 
+/// @see \ref generate_blur
 enum class IsGauss
 {
 	no,
 	yes
 };
 
+/// @see \ref generate_blur
 struct BlurOptions
 {
 	BlurType blur;
