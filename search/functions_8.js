@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['imgui_5fs_5fcurve_5feditor_0',['imgui_s_curve_editor',['../namespaceklotter.html#abe2dd4296f6fc82f6549566932cc0662',1,'klotter']]],
+  ['imgui_5fs_5fcurve_5feditor_0',['imgui_s_curve_editor',['../group__scurcve.html#gabe2dd4296f6fc82f6549566932cc0662',1,'klotter']]],
   ['invert_5fnormals_1',['invert_normals',['../structklotter_1_1geom_1_1Builder.html#a51525175e9d0303d99fe22c89213d482',1,'klotter::geom::Builder']]],
   ['is_5fbound_5ffor_5fshader_2',['is_bound_for_shader',['../namespaceklotter.html#a6f86fb3893caeb7267b725bb433a6b1c',1,'klotter']]],
   ['is_5fflag_5fset_3',['is_flag_set',['../namespaceklotter.html#a97ebef3ce88032d5a9016b09c001d176',1,'klotter']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['c_0',['c',['../structklotter_1_1Face.html#a0e3be30586dc7d66a2d70e1249dacb00',1,'klotter::Face']]],
-  ['calculate_5fs_5fcurve_1',['calculate_s_curve',['../namespaceklotter.html#a3c0cf1d44132258273463050f332f830',1,'klotter']]],
+  ['calculate_5fs_5fcurve_1',['calculate_s_curve',['../group__scurcve.html#ga3c0cf1d44132258273463050f332f830',1,'klotter']]],
   ['camera_2',['Camera',['../structklotter_1_1Camera.html',1,'klotter']]],
   ['camera_3',['camera',['../structklotter_1_1App.html#a0010a1af3138595dffbb2935c9434d07',1,'klotter::App::camera'],['../structklotter_1_1PostProcArg.html#a5f841578f5f3c3ad12f200a179c3c4c1',1,'klotter::PostProcArg::camera']]],
   ['camera_2eh_4',['camera.h',['../camera_8h.html',1,'']]],
@@ -67,6 +67,7 @@ var searchData=
   ['cullface_64',['CullFace',['../group__render.html#ga2da9ff87267808b55c2680259db65b5c',1,'klotter']]],
   ['cullface_2eh_65',['cullface.h',['../cullface_8h.html',1,'']]],
   ['cunsigned_5fint_5fto_5fint_66',['Cunsigned_int_to_int',['../cint_8h.html#a1e7fb62626bf824af41d93896c4a1f54',1,'cint.h']]],
-  ['curve_67',['curve',['../structklotter_1_1PointLight.html#af76b4ef03892681ddea0db8822adcbe5',1,'klotter::PointLight::curve'],['../structklotter_1_1FrustumLight.html#a50008ee8da980eb7cc545fee216237de',1,'klotter::FrustumLight::curve'],['../structklotter_1_1SCurveAndDrag.html#a9cfce39afe3c791abde0b5b62155f6cd',1,'klotter::SCurveAndDrag::curve']]],
-  ['cyan_68',['cyan',['../namespaceklotter_1_1imgui.html#a82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
+  ['curve_67',['S Curve',['../group__scurcve.html',1,'']]],
+  ['curve_68',['curve',['../structklotter_1_1PointLight.html#af76b4ef03892681ddea0db8822adcbe5',1,'klotter::PointLight::curve'],['../structklotter_1_1FrustumLight.html#a50008ee8da980eb7cc545fee216237de',1,'klotter::FrustumLight::curve'],['../structklotter_1_1SCurveAndDrag.html#a9cfce39afe3c791abde0b5b62155f6cd',1,'klotter::SCurveAndDrag::curve']]],
+  ['cyan_69',['cyan',['../namespaceklotter_1_1imgui.html#a82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
 ];

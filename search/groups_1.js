@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['effect_0',['Full Screen Effect',['../group__fse.html',1,'']]]
+  ['curve_0',['S Curve',['../group__scurcve.html',1,'']]]
 ];

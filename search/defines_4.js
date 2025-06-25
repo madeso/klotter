@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['has_0',['HAS',['../preproc_8h.html#ae89f029ce3003d325871a98116b572b7',1,'preproc.h']]],
-  ['hash_5fdef_1',['HASH_DEF',['../hash_8h.html#a102a60c28b17bc852589bbb26135173b',1,'hash.h']]],
-  ['hash_5fdef_5fbegin_2',['HASH_DEF_BEGIN',['../hash_8h.html#a9038dc1dac99b31ae58ae04bee68d416',1,'hash.h']]],
-  ['hash_5fdef_5fend_3',['HASH_DEF_END',['../hash_8h.html#adea525dabdf353ba96abce59e6a5dadd',1,'hash.h']]]
+  ['ff_5fhas_0',['FF_HAS',['../feature__flags_8h.html#a3aff7fe2c32285f262b9184ac9fcf6e2',1,'feature_flags.h']]],
+  ['ff_5fis_5fdisabled_1',['FF_IS_DISABLED',['../feature__flags_8h.html#aa51567ca42a2c68bccf67ed6c875b9eb',1,'feature_flags.h']]],
+  ['ff_5fis_5fenabled_2',['FF_IS_ENABLED',['../feature__flags_8h.html#a96ef6c9c3b50c598dde1d994fb97277a',1,'feature_flags.h']]]
 ];

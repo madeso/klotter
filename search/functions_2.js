@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['calculate_5fs_5fcurve_0',['calculate_s_curve',['../namespaceklotter.html#a3c0cf1d44132258273463050f332f830',1,'klotter']]],
+  ['calculate_5fs_5fcurve_0',['calculate_s_curve',['../group__scurcve.html#ga3c0cf1d44132258273463050f332f830',1,'klotter']]],
   ['cint_5fto_5ffloat_1',['Cint_to_float',['../cint_8h.html#ac4a0af6b7b624ce27574515a4c4dee14',1,'cint.h']]],
   ['cint_5fto_5fglenum_2',['Cint_to_glenum',['../namespaceklotter.html#a01585b62dcb0c11e96702d64fb3cb02f',1,'klotter']]],
   ['cint_5fto_5fgluint_3',['Cint_to_gluint',['../namespaceklotter.html#af31d0af57ce6a0a0ff6b77aab3897f31',1,'klotter']]],

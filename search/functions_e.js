@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s_5fcurve_5ffrom_5finput_0',['s_curve_from_input',['../namespaceklotter.html#ad502f980124ff607cb9564e4562d6a25',1,'klotter']]],
+  ['s_5fcurve_5ffrom_5finput_0',['s_curve_from_input',['../group__scurcve.html#gad502f980124ff607cb9564e4562d6a25',1,'klotter']]],
   ['scale_1',['scale',['../structklotter_1_1geom_1_1Builder.html#aa4bdbcf2bac9913c51e851cd6457b3f6',1,'klotter::geom::Builder']]],
   ['scopeddebuggroup_2',['ScopedDebugGroup',['../structklotter_1_1ScopedDebugGroup.html#af9f5806f21506b84f8102e4aaf232e70',1,'klotter::ScopedDebugGroup::ScopedDebugGroup(const std::string &amp;message, unsigned int id=0)'],['../structklotter_1_1ScopedDebugGroup.html#a47c098e8c13654994c7515d4185fbedb',1,'klotter::ScopedDebugGroup::ScopedDebugGroup(std::string_view message, unsigned int id=0)'],['../structklotter_1_1ScopedDebugGroup.html#aa6d2a557f7ecbb72afe54b196dd512b3',1,'klotter::ScopedDebugGroup::ScopedDebugGroup(ScopedDebugGroup &amp;&amp;)=delete'],['../structklotter_1_1ScopedDebugGroup.html#a2476732d9c40ff0f4bed1e52371f2e52',1,'klotter::ScopedDebugGroup::ScopedDebugGroup(const ScopedDebugGroup &amp;)=delete']]],
   ['set_3',['set',['../structklotter_1_1Bitfield.html#a65f2acf2d4f5b2d557050cc67cfb2347',1,'klotter::Bitfield']]],

@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['scoped_5fdebug_5fgroup_0',['SCOPED_DEBUG_GROUP',['../opengl__utils_8h.html#ad393331531471e5c2b9629a03cb4a3d3',1,'opengl_utils.h']]],
-  ['send_5fdebug_5flabel_1',['SEND_DEBUG_LABEL',['../opengl__labels_8h.html#a8cee29abb7c9caddf9964d4462d42616',1,'opengl_labels.h']]],
-  ['send_5fdebug_5flabel_5fmany_2',['SEND_DEBUG_LABEL_MANY',['../opengl__labels_8h.html#a95a4f5aaa37968ac667c14fbb3a0e05f',1,'opengl_labels.h']]],
-  ['set_5fdebug_5flabel_3',['SET_DEBUG_LABEL',['../opengl__utils_8h.html#a3bc128ee3dd125d5880c96123bd94b57',1,'opengl_utils.h']]],
-  ['set_5fdebug_5flabel_5fnamed_4',['SET_DEBUG_LABEL_NAMED',['../opengl__utils_8h.html#a1ad1aec82d9e68a43fd2638eec356cfb',1,'opengl_utils.h']]]
+  ['log_5ferror_0',['LOG_ERROR',['../log_8h.html#ad4a9117ce894e3319e903142347a0f63',1,'log.h']]],
+  ['log_5finfo_1',['LOG_INFO',['../log_8h.html#a378e28bfcb78d17285210d6bbb70a083',1,'log.h']]]
 ];
