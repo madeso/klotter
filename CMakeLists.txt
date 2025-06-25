@@ -5,7 +5,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/mo
 
 
 # cmake options
-set(DEFAULT_EU_SDL_SOURCE "Library")
+set(DEFAULT_EU_SDL_SOURCE "FindLibrary")
 if(WIN32)
     set(DEFAULT_EU_SDL_SOURCE "FetchContent")
 endif()
@@ -18,7 +18,7 @@ elseif(EU_SDL_SOURCE STREQUAL "FetchContent")
     set(EU_SDL_SOURCE_FETCH ON)
     set(EU_SDL_SOURCE_FIND OFF)
 else()
-    message(ERROR "invalid EU_SDL_SOURCE")
+    message(ERROR "invalid EU_SDL_SOURCE (${EU_SDL_SOURCE})")
 endif()
 
 function(cmake_source_group)
