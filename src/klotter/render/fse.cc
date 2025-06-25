@@ -432,13 +432,13 @@ struct BlurEffect : FactorEffect
 	Uniform blur_size_v;
 	Uniform blur_size_h;
 
-#if HAS(BLUR_USE_GAUSS)
+#if FF_HAS(BLUR_USE_GAUSS)
 	Uniform std_dev_v;
 	Uniform std_dev_h;
 #endif
 
 	float blur_size = 0.02f;
-#if HAS(BLUR_USE_GAUSS)
+#if FF_HAS(BLUR_USE_GAUSS)
 	float std_dev = 0.02f;
 #endif
 
@@ -450,7 +450,7 @@ struct BlurEffect : FactorEffect
 		, hori(std::move(h))
 		, blur_size_v(vert->program->get_uniform("u_blur_size"))
 		, blur_size_h(hori->program->get_uniform("u_blur_size"))
-#if HAS(BLUR_USE_GAUSS)
+#if FF_HAS(BLUR_USE_GAUSS)
 		, std_dev_v(vert->program->get_uniform("u_std_dev"))
 		, std_dev_h(hori->program->get_uniform("u_std_dev"))
 #endif
@@ -467,7 +467,7 @@ struct BlurEffect : FactorEffect
 		}
 
 		ImGui::SliderFloat("Blur size", &blur_size, 0.0f, 0.2f);
-#if HAS(BLUR_USE_GAUSS)
+#if FF_HAS(BLUR_USE_GAUSS)
 		ImGui::SliderFloat("Standard deviation", &std_dev, 0.0f, 0.1f);
 #endif
 	}
@@ -483,7 +483,7 @@ struct BlurEffect : FactorEffect
 		ASSERT(vert->factor);
 		vert->program->set_float(*vert->factor, get_factor());
 		vert->program->set_float(blur_size_v, blur_size);
-#if HAS(BLUR_USE_GAUSS)
+#if FF_HAS(BLUR_USE_GAUSS)
 		vert->program->set_float(std_dev_v, std_dev);
 #endif
 		bind_texture_2d(&a.renderer->pimpl->states, vert->texture, t);
@@ -497,7 +497,7 @@ struct BlurEffect : FactorEffect
 		ASSERT(hori->resolution);
 		hori->program->set_vec2(*hori->resolution, a.window_size);
 		hori->program->set_float(blur_size_h, blur_size);
-#if HAS(BLUR_USE_GAUSS)
+#if FF_HAS(BLUR_USE_GAUSS)
 		hori->program->set_float(std_dev_h, std_dev);
 #endif
 		bind_texture_2d(&a.renderer->pimpl->states, hori->texture, t);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "klotter/preproc.h"
+#include "klotter/feature_flags.h"
 
 namespace klotter
 {
@@ -19,4 +19,4 @@ constexpr int BLUR_SAMPLES = 10;
 
 }  //  namespace klotter
 
-#define BLUR_USE_GAUSS IS_ENABLED
+#define BLUR_USE_GAUSS FF_IS_ENABLED

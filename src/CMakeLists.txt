@@ -85,7 +85,7 @@ set(src_base
     klotter/cpp.cc klotter/cpp.h
 
     klotter/bitfield.h
-    klotter/preproc.h
+    klotter/feature_flags.h
 
     klotter/compiler_warning.h
     klotter/log.h

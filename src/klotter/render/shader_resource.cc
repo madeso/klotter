@@ -327,7 +327,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 	);
 
 	constexpr IsGauss use_gauss =
-#if HAS(BLUR_USE_GAUSS)
+#if FF_HAS(BLUR_USE_GAUSS)
 		IsGauss::yes
 #else
 		IsGauss::no
