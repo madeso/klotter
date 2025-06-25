@@ -1,10 +1,11 @@
 #include "klotter/render/shader_resource.h"
 
-#include "constants.h"
-#include "shader.source.h"
+#include "klotter/feature_flags.h"
 #include "klotter/str.h"
 #include "klotter/cpp.h"
 
+#include "klotter/render/constants.h"
+#include "klotter/render/shader.source.h"
 #include "klotter/render/shader.h"
 #include "klotter/render/camera.h"
 #include "klotter/render/render_settings.h"
@@ -16,6 +17,7 @@
 #include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
 #include "pp.always.frag.glsl.h"
+
 
 namespace klotter
 {

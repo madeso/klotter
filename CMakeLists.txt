@@ -14,6 +14,17 @@ function(cmake_source_group)
     source_group("_cmake" REGULAR_EXPRESSION "CMakeLists\.txt")
 endfunction()
 
+function(target_feature_flags TARGET VIS) # ...targets to enable/disable
+    foreach(NAME IN LISTS ARGN)
+        if(${${NAME}})
+            target_compile_definitions(${TARGET} ${VIS} "-D${NAME}=FF_IS_ENABLED")
+        else()
+            target_compile_definitions(${TARGET} ${VIS} "-D${NAME}=FF_IS_DISABLED")
+        endif()
+    endforeach()
+endfunction()
+
+
 
 ###################################################################################################
 # options
@@ -33,6 +44,8 @@ else()
     message(ERROR "invalid EU_SDL_SOURCE (${EU_SDL_SOURCE})")
 endif()
 
+option(BLUR_USE_GAUSS "Use gauss in blur post-proccessing" TRUE)
+
 
 
 ###################################################################################################
@@ -51,6 +64,9 @@ target_link_libraries(project_options INTERFACE klotter::edit_and_continue)
 target_compile_features(project_options INTERFACE cxx_std_17)
 include(cmake/Sanitizers.cmake)
 enable_sanitizers(project_options)
+target_feature_flags(project_options INTERFACE
+    BLUR_USE_GAUSS
+)
 add_library(klotter::project_options ALIAS project_options)
 
 add_library(project_warnings INTERFACE)

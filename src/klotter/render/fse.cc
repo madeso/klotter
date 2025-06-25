@@ -6,7 +6,7 @@
 #include "klotter/log.h"
 #include "klotter/str.h"
 
-#include "klotter/render/constants.h"
+#include "klotter/feature_flags.h"
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/render.h"
 #include "klotter/render/shader.h"
