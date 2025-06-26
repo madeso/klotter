@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1LoadedShader__Skybox" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::LoadedShader_Skybox</compoundname>
+    <includes refid="shader__resource_8h" local="no">shader_resource.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Skybox_1a3cfd92a23b49f6b61db0132659ac4ab3" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;ShaderProgram&gt; klotter::LoadedShader_Skybox::program</definition>
+        <argsstring></argsstring>
+        <name>program</name>
+        <qualifiedname>klotter::LoadedShader_Skybox::program</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="65" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Skybox_1a585e8b4c4fc29f8c3e16c4baace5774b" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref></type>
+        <definition>CompiledGeomVertexAttributes klotter::LoadedShader_Skybox::geom_layout</definition>
+        <argsstring></argsstring>
+        <name>geom_layout</name>
+        <qualifiedname>klotter::LoadedShader_Skybox::geom_layout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="66" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Skybox_1a6fb6a3159d2c8e3f139e11a7cc84582c" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LoadedShader_Skybox::tex_skybox</definition>
+        <argsstring></argsstring>
+        <name>tex_skybox</name>
+        <qualifiedname>klotter::LoadedShader_Skybox::tex_skybox</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="67" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1LoadedShader__Skybox_1a8087ee41a2ac5ead432b60aa682aff5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::LoadedShader_Skybox::LoadedShader_Skybox</definition>
+        <argsstring>(std::shared_ptr&lt; ShaderProgram &gt; p, CompiledGeomVertexAttributes l, const CameraUniformBuffer &amp;desc)</argsstring>
+        <name>LoadedShader_Skybox</name>
+        <qualifiedname>klotter::LoadedShader_Skybox::LoadedShader_Skybox</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &gt;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref></type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1CameraUniformBuffer" kindref="compound">CameraUniformBuffer</ref> &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="61" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A skybox shader. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>klotter::CompiledGeomVertexAttributes</label>
+        <link refid="structklotter_1_1CompiledGeomVertexAttributes"/>
+      </node>
+      <node id="1">
+        <label>klotter::LoadedShader_Skybox</label>
+        <link refid="structklotter_1_1LoadedShader__Skybox"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>geom_layout</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>tex_skybox</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/shader_resource.h" line="59" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="60" bodyend="68"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1LoadedShader__Skybox_1a585e8b4c4fc29f8c3e16c4baace5774b" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Skybox</scope><name>geom_layout</name></member>
+      <member refid="structklotter_1_1LoadedShader__Skybox_1a8087ee41a2ac5ead432b60aa682aff5f" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Skybox</scope><name>LoadedShader_Skybox</name></member>
+      <member refid="structklotter_1_1LoadedShader__Skybox_1a3cfd92a23b49f6b61db0132659ac4ab3" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Skybox</scope><name>program</name></member>
+      <member refid="structklotter_1_1LoadedShader__Skybox_1a6fb6a3159d2c8e3f139e11a7cc84582c" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Skybox</scope><name>tex_skybox</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

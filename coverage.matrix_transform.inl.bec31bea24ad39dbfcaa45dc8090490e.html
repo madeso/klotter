@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html class="theme-blue" >
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>GCC Code Coverage Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="coverage.css"/>
+  </head>
+  <body>
+    <div class="Layout-main">
+      <div class="Layout-main-centered-lg" style="max-width: 1280px;">
+        <div class="d-flex flex-justify-center">
+          <h1>GCC Code Coverage Report</h1>
+        </div>
+        <hr/>
+        <div class="summary">
+<div>
+    <div class="containter-xl clearfix">
+        <div class="col-sm-12 col-lg-9 float-left d-flex flex-column p-3">
+            <div class="d-flex">
+                <div class="mr-2 color-fg-accent transy-2">
+                    <svg aria-label="Directory" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-file-directory-fill hx_color-icon-directory">
+                        <path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"></path>
+                    </svg>
+                </div>
+                <span>./</span>
+            </div>
+            <div>File: external/glm/glm/ext/matrix_transform.inl</div>
+            <div>Date: 2025-06-26 11:22:15</div>
+        </div>
+        <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
+            <div class="d-flex">
+                <div class="mr-2">Lines:</div>
+                <div class="mr-2" style="margin: auto;">0/30</div>
+                <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
+            </div>
+            <div class="d-flex">
+                <div class="mr-2">Functions:</div>
+                <div class="mr-2" style="margin: auto;">0/4</div>
+                <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
+            </div>
+            <div class="d-flex">
+                <div class="mr-2">Branches:</div>
+                <div class="mr-2" style="margin: auto;">0/38</div>
+                <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        <hr/>
+        <nav>
+<div class="m-3">
+<details>
+  <summary>List of functions</summary>
+  <table class="functionslist text-mono text-small wb-break-word listOfFunctions">
+    <tr class="text-left">
+      <th class="css-truncate css-truncate-target">Function (Line)</th>
+      <th>Call count</th>
+      <th>Line coverage</th>
+      <th>Branch coverage</th>
+      <th>Condition coverage</th>
+      <th>Block coverage</th>
+    </tr>
+    <tr><td><a href="#l145">glm::mat&lt;4, 4, float, (glm::qualifier)0&gt; glm::lookAt&lt;float, (glm::qualifier)0&gt;(glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 145)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l99">glm::mat&lt;4, 4, float, (glm::qualifier)0&gt; glm::lookAtRH&lt;float, (glm::qualifier)0&gt;(glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 99)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l78">glm::mat&lt;4, 4, float, (glm::qualifier)0&gt; glm::scale&lt;float, (glm::qualifier)0&gt;(glm::mat&lt;4, 4, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 78)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l10">glm::mat&lt;4, 4, float, (glm::qualifier)0&gt; glm::translate&lt;float, (glm::qualifier)0&gt;(glm::mat&lt;4, 4, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 10)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+  </table>
+</details>
+</div>
+
+        </nav>
+        <main>
+<div class="Box m-3">
+    <div class="Box-header d-flex flex-space-between">
+    </div>
+    <div style="overflow-x: auto;">
+        <table class="text-mono text-small" style="width:100%;">
+            <tr>
+                <th class="p-2">Line</th>
+                <th class="p-2">Branch</th>
+                <th class="p-2">Exec</th>
+                <th class="p-2 text-left" style="width: 100%;">Source</th>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l1" href="#l1">1</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">namespace glm</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l2" href="#l2">2</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l3" href="#l3">3</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename genType&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l4" href="#l4">4</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType identity()</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l5" href="#l5">5</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l6" href="#l6">6</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		return detail::init_gentype&lt;genType, detail::genTypeTrait&lt;genType&gt;::GENTYPE&gt;::identity();</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l7" href="#l7">7</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l8" href="#l8">8</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l9" href="#l9">9</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename T, qualifier Q&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l10" href="#l10">10</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">	GLM_FUNC_QUALIFIER mat&lt;4, 4, T, Q&gt; translate(mat&lt;4, 4, T, Q&gt; const&amp; m, vec&lt;3, T, Q&gt; const&amp; v)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l11" href="#l11">11</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l12" href="#l12">12</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		mat&lt;4, 4, T, Q&gt; Result(m);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l13" href="#l13">13</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[3] = m[0] * v[0] + m[1] * v[1] + m[2] * v[2] + m[3];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l14" href="#l14">14</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		return Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l15" href="#l15">15</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l16" href="#l16">16</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l17" href="#l17">17</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename T, qualifier Q&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l18" href="#l18">18</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	GLM_FUNC_QUALIFIER mat&lt;4, 4, T, Q&gt; rotate(mat&lt;4, 4, T, Q&gt; const&amp; m, T angle, vec&lt;3, T, Q&gt; const&amp; v)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l19" href="#l19">19</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l20" href="#l20">20</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		T const a = angle;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l21" href="#l21">21</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		T const c = cos(a);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l22" href="#l22">22</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		T const s = sin(a);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l23" href="#l23">23</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l24" href="#l24">24</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		vec&lt;3, T, Q&gt; axis(normalize(v));</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l25" href="#l25">25</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		vec&lt;3, T, Q&gt; temp((T(1) - c) * axis);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l26" href="#l26">26</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l27" href="#l27">27</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		mat&lt;4, 4, T, Q&gt; Rotate;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l28" href="#l28">28</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[0][0] = c + temp[0] * axis[0];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l29" href="#l29">29</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[0][1] = temp[0] * axis[1] + s * axis[2];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l30" href="#l30">30</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[0][2] = temp[0] * axis[2] - s * axis[1];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l31" href="#l31">31</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l32" href="#l32">32</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[1][0] = temp[1] * axis[0] - s * axis[2];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l33" href="#l33">33</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[1][1] = c + temp[1] * axis[1];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l34" href="#l34">34</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[1][2] = temp[1] * axis[2] + s * axis[0];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l35" href="#l35">35</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l36" href="#l36">36</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[2][0] = temp[2] * axis[0] + s * axis[1];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l37" href="#l37">37</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[2][1] = temp[2] * axis[1] - s * axis[0];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l38" href="#l38">38</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Rotate[2][2] = c + temp[2] * axis[2];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l39" href="#l39">39</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l40" href="#l40">40</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		mat&lt;4, 4, T, Q&gt; Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l41" href="#l41">41</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0] = m[0] * Rotate[0][0] + m[1] * Rotate[0][1] + m[2] * Rotate[0][2];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l42" href="#l42">42</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1] = m[0] * Rotate[1][0] + m[1] * Rotate[1][1] + m[2] * Rotate[1][2];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l43" href="#l43">43</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2] = m[0] * Rotate[2][0] + m[1] * Rotate[2][1] + m[2] * Rotate[2][2];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l44" href="#l44">44</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[3] = m[3];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l45" href="#l45">45</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		return Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l46" href="#l46">46</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l47" href="#l47">47</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l48" href="#l48">48</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename T, qualifier Q&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l49" href="#l49">49</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	GLM_FUNC_QUALIFIER mat&lt;4, 4, T, Q&gt; rotate_slow(mat&lt;4, 4, T, Q&gt; const&amp; m, T angle, vec&lt;3, T, Q&gt; const&amp; v)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l50" href="#l50">50</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l51" href="#l51">51</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		T const a = angle;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l52" href="#l52">52</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		T const c = cos(a);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l53" href="#l53">53</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		T const s = sin(a);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l54" href="#l54">54</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		mat&lt;4, 4, T, Q&gt; Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l55" href="#l55">55</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l56" href="#l56">56</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		vec&lt;3, T, Q&gt; axis = normalize(v);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l57" href="#l57">57</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l58" href="#l58">58</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0][0] = c + (static_cast&lt;T&gt;(1) - c)      * axis.x     * axis.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l59" href="#l59">59</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0][1] = (static_cast&lt;T&gt;(1) - c) * axis.x * axis.y + s * axis.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l60" href="#l60">60</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0][2] = (static_cast&lt;T&gt;(1) - c) * axis.x * axis.z - s * axis.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0][3] = static_cast&lt;T&gt;(0);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l63" href="#l63">63</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1][0] = (static_cast&lt;T&gt;(1) - c) * axis.y * axis.x - s * axis.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l64" href="#l64">64</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1][1] = c + (static_cast&lt;T&gt;(1) - c) * axis.y * axis.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l65" href="#l65">65</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1][2] = (static_cast&lt;T&gt;(1) - c) * axis.y * axis.z + s * axis.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l66" href="#l66">66</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1][3] = static_cast&lt;T&gt;(0);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l67" href="#l67">67</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l68" href="#l68">68</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2][0] = (static_cast&lt;T&gt;(1) - c) * axis.z * axis.x + s * axis.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l69" href="#l69">69</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2][1] = (static_cast&lt;T&gt;(1) - c) * axis.z * axis.y - s * axis.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l70" href="#l70">70</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2][2] = c + (static_cast&lt;T&gt;(1) - c) * axis.z * axis.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l71" href="#l71">71</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2][3] = static_cast&lt;T&gt;(0);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l72" href="#l72">72</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l73" href="#l73">73</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[3] = vec&lt;4, T, Q&gt;(0, 0, 0, 1);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l74" href="#l74">74</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		return m * Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l75" href="#l75">75</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l76" href="#l76">76</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l77" href="#l77">77</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename T, qualifier Q&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l78" href="#l78">78</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">	GLM_FUNC_QUALIFIER mat&lt;4, 4, T, Q&gt; scale(mat&lt;4, 4, T, Q&gt; const&amp; m, vec&lt;3, T, Q&gt; const&amp; v)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l79" href="#l79">79</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l80" href="#l80">80</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		mat&lt;4, 4, T, Q&gt; Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l81" href="#l81">81</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[0] = m[0] * v[0];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l82" href="#l82">82</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[1] = m[1] * v[1];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l83" href="#l83">83</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[2] = m[2] * v[2];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l84" href="#l84">84</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[3] = m[3];</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l85" href="#l85">85</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		return Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l86" href="#l86">86</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l87" href="#l87">87</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l88" href="#l88">88</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename T, qualifier Q&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l89" href="#l89">89</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	GLM_FUNC_QUALIFIER mat&lt;4, 4, T, Q&gt; scale_slow(mat&lt;4, 4, T, Q&gt; const&amp; m, vec&lt;3, T, Q&gt; const&amp; v)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l90" href="#l90">90</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l91" href="#l91">91</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		mat&lt;4, 4, T, Q&gt; Result(T(1));</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l92" href="#l92">92</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0][0] = v.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l93" href="#l93">93</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1][1] = v.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l94" href="#l94">94</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2][2] = v.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l95" href="#l95">95</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		return m * Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l96" href="#l96">96</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l97" href="#l97">97</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l98" href="#l98">98</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename T, qualifier Q&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l99" href="#l99">99</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">	GLM_FUNC_QUALIFIER mat&lt;4, 4, T, Q&gt; lookAtRH(vec&lt;3, T, Q&gt; const&amp; eye, vec&lt;3, T, Q&gt; const&amp; center, vec&lt;3, T, Q&gt; const&amp; up)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l100" href="#l100">100</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l101" href="#l101">101</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		vec&lt;3, T, Q&gt; const f(normalize(center - eye));</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l102" href="#l102">102</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		vec&lt;3, T, Q&gt; const s(normalize(cross(f, up)));</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l103" href="#l103">103</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		vec&lt;3, T, Q&gt; const u(cross(s, f));</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l104" href="#l104">104</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l105" href="#l105">105</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		mat&lt;4, 4, T, Q&gt; Result(1);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l106" href="#l106">106</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[0][0] = s.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l107" href="#l107">107</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[1][0] = s.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l108" href="#l108">108</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[2][0] = s.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l109" href="#l109">109</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[0][1] = u.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l110" href="#l110">110</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[1][1] = u.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l111" href="#l111">111</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[2][1] = u.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l112" href="#l112">112</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[0][2] =-f.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l113" href="#l113">113</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[1][2] =-f.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l114" href="#l114">114</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[2][2] =-f.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l115" href="#l115">115</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[3][0] =-dot(s, eye);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l116" href="#l116">116</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[3][1] =-dot(u, eye);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l117" href="#l117">117</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		Result[3][2] = dot(f, eye);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l118" href="#l118">118</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">		return Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l119" href="#l119">119</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l120" href="#l120">120</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l121" href="#l121">121</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename T, qualifier Q&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l122" href="#l122">122</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	GLM_FUNC_QUALIFIER mat&lt;4, 4, T, Q&gt; lookAtLH(vec&lt;3, T, Q&gt; const&amp; eye, vec&lt;3, T, Q&gt; const&amp; center, vec&lt;3, T, Q&gt; const&amp; up)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l123" href="#l123">123</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l124" href="#l124">124</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		vec&lt;3, T, Q&gt; const f(normalize(center - eye));</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l125" href="#l125">125</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		vec&lt;3, T, Q&gt; const s(normalize(cross(up, f)));</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l126" href="#l126">126</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		vec&lt;3, T, Q&gt; const u(cross(f, s));</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l127" href="#l127">127</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l128" href="#l128">128</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		mat&lt;4, 4, T, Q&gt; Result(1);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l129" href="#l129">129</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0][0] = s.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l130" href="#l130">130</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1][0] = s.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l131" href="#l131">131</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2][0] = s.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l132" href="#l132">132</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0][1] = u.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l133" href="#l133">133</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1][1] = u.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l134" href="#l134">134</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2][1] = u.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l135" href="#l135">135</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[0][2] = f.x;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l136" href="#l136">136</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[1][2] = f.y;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l137" href="#l137">137</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[2][2] = f.z;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l138" href="#l138">138</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[3][0] = -dot(s, eye);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l139" href="#l139">139</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[3][1] = -dot(u, eye);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l140" href="#l140">140</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		Result[3][2] = -dot(f, eye);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l141" href="#l141">141</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		return Result;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l142" href="#l142">142</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l143" href="#l143">143</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l144" href="#l144">144</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	template&lt;typename T, qualifier Q&gt;</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l145" href="#l145">145</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">	GLM_FUNC_QUALIFIER mat&lt;4, 4, T, Q&gt; lookAt(vec&lt;3, T, Q&gt; const&amp; eye, vec&lt;3, T, Q&gt; const&amp; center, vec&lt;3, T, Q&gt; const&amp; up)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l146" href="#l146">146</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	{</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l147" href="#l147">147</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		GLM_IF_CONSTEXPR(GLM_CONFIG_CLIP_CONTROL &amp; GLM_CLIP_CONTROL_LH_BIT)</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l148" href="#l148">148</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">			return lookAtLH(eye, center, up);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l149" href="#l149">149</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">		else</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l150" href="#l150">150</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine">			return lookAtRH(eye, center, up);</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l151" href="#l151">151</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">	}</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l152" href="#l152">152</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src ">}//namespace glm</td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l153" href="#l153">153</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+          <hr/>
+        </main>
+        <footer class="text-center">
+          Generated by: <a href="http://gcovr.com/en/8.3">GCOVR (Version 8.3)</a>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

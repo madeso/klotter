@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1BlurOptions" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::BlurOptions</compoundname>
+    <includes refid="shader_8source_8h" local="no">shader.source.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1BlurOptions_1ae4bc15090a18f8500948c9fc3db2bd98" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41" kindref="member">BlurType</ref></type>
+        <definition>BlurType klotter::BlurOptions::blur</definition>
+        <argsstring></argsstring>
+        <name>blur</name>
+        <qualifiedname>klotter::BlurOptions::blur</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="63" column="10" bodyfile="src/klotter/render/shader.source.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1BlurOptions_1a33059a8882525f6d1d82baeaf4c0d10a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int klotter::BlurOptions::sample_count</definition>
+        <argsstring></argsstring>
+        <name>sample_count</name>
+        <qualifiedname>klotter::BlurOptions::sample_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="64" column="5" bodyfile="src/klotter/render/shader.source.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1BlurOptions_1a95c8cd4bd600737931412e2230899dfa" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceklotter_1a3616a1e9adb2f3b4af13a7d9770b92f7" kindref="member">IsGauss</ref></type>
+        <definition>IsGauss klotter::BlurOptions::is_gauss</definition>
+        <argsstring></argsstring>
+        <name>is_gauss</name>
+        <qualifiedname>klotter::BlurOptions::is_gauss</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="65" column="9" bodyfile="src/klotter/render/shader.source.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="namespaceklotter_1a922b5d3cc7e03da98bcab5a44c7a20c3" kindref="member">generate_blur</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="src/klotter/render/shader.source.h" line="61" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="62" bodyend="66"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1BlurOptions_1ae4bc15090a18f8500948c9fc3db2bd98" prot="public" virt="non-virtual"><scope>klotter::BlurOptions</scope><name>blur</name></member>
+      <member refid="structklotter_1_1BlurOptions_1a95c8cd4bd600737931412e2230899dfa" prot="public" virt="non-virtual"><scope>klotter::BlurOptions</scope><name>is_gauss</name></member>
+      <member refid="structklotter_1_1BlurOptions_1a33059a8882525f6d1d82baeaf4c0d10a" prot="public" virt="non-virtual"><scope>klotter::BlurOptions</scope><name>sample_count</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

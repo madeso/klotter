@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="debug_8h" kind="file" language="C++">
+    <compoundname>debug.h</compoundname>
+    <includedby refid="render_8h" local="yes">src/klotter/render/render.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/klotter/klotter.h</label>
+        <link refid="klotter_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/klotter/render/render.h</label>
+        <link refid="render_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1DebugLine" prot="public">klotter::DebugLine</innerclass>
+    <innerclass refid="structklotter_1_1DebugRender" prot="public">klotter::DebugRender</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="structklotter_1_1DebugLine" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1DebugLine" kindref="compound">DebugLine</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13" refid="structklotter_1_1DebugLine_1afa0c9a0ada0ad0186082527930108f73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1DebugLine_1afa0c9a0ada0ad0186082527930108f73" kindref="member">from</ref>;</highlight></codeline>
+<codeline lineno="14" refid="structklotter_1_1DebugLine_1ab28646931b94b77ad1c89dff411a4273" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1DebugLine_1ab28646931b94b77ad1c89dff411a4273" kindref="member">to</ref>;</highlight></codeline>
+<codeline lineno="15" refid="structklotter_1_1DebugLine_1a70cc36e43384bd5b0a2248ab30a6ee79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1DebugLine_1a70cc36e43384bd5b0a2248ab30a6ee79" kindref="member">color</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@see<sp/>Renderer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="structklotter_1_1DebugRender" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1DebugRender" kindref="compound">DebugRender</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22" refid="structklotter_1_1DebugRender_1a4fc7dbe5c91dc159abf7e4d1421d4fcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;DebugLine&gt;<sp/><ref refid="structklotter_1_1DebugRender_1a4fc7dbe5c91dc159abf7e4d1421d4fcf" kindref="member">lines</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="structklotter_1_1DebugRender_1a1d12a005360124457989ff77b4d2e8e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DebugRender_1a1d12a005360124457989ff77b4d2e8e8" kindref="member">add_line</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>from,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>to,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>color);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/debug.h"/>
+  </compounddef>
+</doxygen>
