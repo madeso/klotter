@@ -50,6 +50,7 @@ else()
 endif()
 
 option(BLUR_USE_GAUSS "Use gauss in blur post-proccessing" TRUE)
+message(STATUS "BLUR_USE_GAUSS: ${BLUR_USE_GAUSS}")
 
 
 
