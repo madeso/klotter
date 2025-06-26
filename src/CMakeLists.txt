@@ -150,9 +150,9 @@ set(src_test
     klotter/render/vertex_layout.test.cc
     klotter/render/uniform_buffer.test.cc
 )
-add_executable(test ${src_test})
-set_target_properties(test PROPERTIES FOLDER "Klotter")
-target_link_libraries(test
+add_executable(klotter_test ${src_test})
+set_target_properties(klotter_test PROPERTIES FOLDER "Klotter")
+target_link_libraries(klotter_test
     catchy::catchy
     klotter::klotter
 )

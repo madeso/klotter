@@ -52,6 +52,8 @@ endif()
 option(BLUR_USE_GAUSS "Use gauss in blur post-proccessing" TRUE)
 message(STATUS "BLUR_USE_GAUSS: ${BLUR_USE_GAUSS}")
 
+option(GENERATE_COVERAGE "generate code coverage information" OFF)
+message(STATUS "Generating coverage information: ${GENERATE_COVERAGE}")
 
 
 ###################################################################################################
@@ -73,6 +75,30 @@ enable_sanitizers(project_options)
 target_feature_flags(project_options INTERFACE
     BLUR_USE_GAUSS
 )
+
+if(GENERATE_COVERAGE)
+    # inspired by https://github.com/JoakimSoderberg/coveralls-cmake
+    if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
+        # supported
+    else()
+        message(FATAL_ERROR "Compiler ${CMAKE_C_COMPILER_ID} is not supported!")
+    endif()
+
+    if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
+        message(FATAL_ERROR "Code coverage results with an optimised (non-Debug) build may be misleading!")
+    endif()
+
+    message(STATUS "Coverage enabled")
+
+    # based on
+    # https://github.com/cpp-best-practices/cpp_starter_project/blob/main/cmake/Sanitizers.cmake#L6
+
+    # --coverage is a synonym for -fprofile-arcs -ftest-coverage (when compiling) and -lgcov (when linking).
+    # https://gcc.gnu.org/onlinedocs/gcc-6.2.0/gcc/Instrumentation-Options.html
+    target_compile_options(project_options INTERFACE -fprofile-arcs -ftest-coverage -O0 -g)
+    target_link_libraries(project_options INTERFACE -lgcov)
+endif()
+
 add_library(klotter::project_options ALIAS project_options)
 
 add_library(project_warnings INTERFACE)
@@ -80,6 +106,16 @@ include(cmake/CompilerWarnings.cmake)
 set_project_warnings(project_warnings)
 add_library(klotter::project_warnings ALIAS project_warnings)
 
+
+
+###################################################################################################
+## CTest integration
+include(CTest)
+enable_testing()
+set_target_properties(Continuous PROPERTIES FOLDER "_cmake/tests")
+set_target_properties(Experimental PROPERTIES FOLDER "_cmake/tests")
+set_target_properties(Nightly PROPERTIES FOLDER "_cmake/tests")
+set_target_properties(NightlyMemoryCheck PROPERTIES FOLDER "_cmake/tests")
 
 
 ###################################################################################################

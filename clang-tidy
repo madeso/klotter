@@ -1,0 +1,225 @@
+
+# this file is used by make-clang-tidy.py file
+# to generate .clang-tidy since the checks attribute gets quite long
+# and clang-tidy doesn't provide a good (any) system to handle it
+# so the following is just commented checks attribute
+
+# start clean by removing all options
+# this should hopefully give some errors if we try to run with different
+# clang-formats so if someone is missing a checker we notice (fingers crossed)
+-*
+
+bugprone-*
+
+modernize-*
+-modernize-use-trailing-return-type
+
+performance-
+
+cppcoreguidelines-*
+-cppcoreguidelines-pro-bounds-array-to-pointer-decay
+
+# ignore all gsl related settings, that is just ugly, fix the language instead!
+-cppcoreguidelines-pro-bounds-constant-array-index
+
+misc-*
+-misc-non-private-member-variables-in-classes
+
+readability-*
+-readability-else-after-return
+-readability-simplify-boolean-expr
+-readability-implicit-bool-cast
+-readability-named-parameter
+-readability-inconsistent-declaration-parameter-name
+
+# really? 1.0F ??? no shouting floats thank you
+-readability-uppercase-literal-suffix
+
+# this kinda make sense, but math-code sometimes use magic numbers (2*pi radians for example)
+# and naming 2 here is hard, and doesn't really improve readability so we ignore it for now
+-readability-magic-numbers
+-cppcoreguidelines-avoid-magic-numbers
+
+# sure... but sometimes we need c-arrays
+-cppcoreguidelines-avoid-c-arrays
+-modernize-avoid-c-arrays
+
+# results in lots of false positives
+-misc-include-cleaner
+
+# do while is ok
+-cppcoreguidelines-avoid-do-while
+
+# google are a sensible default
+google-*
+-google-runtime-int
+-google-readability-namespace-comments
+
+# sensible, but we allow using namespace for litteral namespaces so we can use ""_format(...) as if it was a builtin
+-google-global-names-in-headers
+
+# seems sensible but as far as I can tell it fails to detect good recursions (unless it's not supposed to)
+-misc-no-recursion
+
+# perhaps look into removing pointer arithmetic in the future, but not now
+-cppcoreguidelines-pro-bounds-pointer-arithmetic
+
+# might make sense but is pretty ugly
+-modernize-pass-by-value
+
+# sensible, but sometimes implcit is what we want
+-google-explicit-constructor
+
+# somewhat sane but fails totally for tests... and in general, length != complexity
+-google-readability-function-size
+-readability-function-size
+
+# in assert backtrace logic, string manipulation is cosidered vararg?
+-cppcoreguidelines-pro-type-vararg
+
+# globals are sometimes ok
+-cppcoreguidelines-avoid-non-const-global-variables
+
+# makes sense but sometimes it doesn't
+-bugprone-macro-parentheses
+
+# todo(Gustav): enable this again
+-bugprone-easily-swappable-parameters
+
+# warning: do not use static_cast to downcast from a base to a derived class; use dynamic_cast instead
+# makes sense but dynamic cast is ugly
+-cppcoreguidelines-pro-type-static-cast-downcast
+
+# probably useful but way too chatty
+-readability-function-cognitive-complexity
+
+readability-identifier-naming
+
+#################################################################################
+## Temporarily disables to be removed later
+# temporarily: mostly in test files where it's kinda ok
+-google-build-using-namespace
+-modernize-raw-string-literal
+
+
+-cppcoreguidelines-macro-usage
+
+# unions are sometimes exactly what we want... right?
+-cppcoreguidelines-pro-type-union-access
+
+
+# false positives for all main loops (functor that changes the loop variable)
+-bugprone-infinite-loop
+
+# also detects valid cases? are all my cases valid cases?
+# https://github.com/isocpp/CppCoreGuidelines/issues/1681
+-cppcoreguidelines-pro-type-reinterpret-cast
+
+# this is better decided on a case by case basis
+-readability-avoid-nested-conditional-operator
+
+# warning from catch implementations, not really relevant for euph
+-misc-use-anonymous-namespace
+
+# looks neat but why sqrt(2) and not sqrt(6)...?
+-modernize-use-std-numbers
+
+#################################################################################
+# the checks attribute ends here...
+# just regular (yaml) .clang-tidy settings from now on (with lines starting with // stripped away)
+
+END_CHECKS
+
+"CheckOptions": [
+    // todo(Gustav): enable this again
+    {"key": "readability-identifier-length.MinimumVariableNameLength",         "value": "0"},
+
+    // xyz is used as coordinates, _ can used as ignores?
+    // prefer _index postfix to a descriptor instead of ijk
+    // or a _counter postfix when the loop counter isn't used
+    {"key": "readability-identifier-length.MinimumLoopCounterNameLength",      "value": "2"},
+    {"key": "readability-identifier-length.IgnoredLoopCounterNames",           "value": "^[xyz_]$"},
+
+    // todo(Gustav): enable this again
+    {"key": "readability-identifier-length.MinimumParameterNameLength",        "value": "0"},
+    // xyzw: common vector/quat members, t: common template name, id: identification, dt: delta time
+    {"key": "readability-identifier-length.IgnoredParameterNames",             "value": "^[xyzwt]|id|dt$"},
+
+
+    // readability identifier settings
+    // https://clang.llvm.org/extra/clang-tidy/checks/readability-identifier-naming.html
+
+    // UPPER_CASE
+    {"key": "readability-identifier-naming.MacroDefinitionCase",          "value": "UPPER_CASE"},
+
+    // lower_case (for types with operators) or CamelCase (for other types)
+    {"key": "readability-identifier-naming.ClassCase",                    "value": "aNy_CasE"},
+    {"key": "readability-identifier-naming.TypeAliasCase",                "value": "aNy_CasE"},
+    {"key": "readability-identifier-naming.StructCase",                   "value": "aNy_CasE"},
+
+    // CamelCase
+    {"key": "readability-identifier-naming.AbstractClassCase",            "value": "CamelCase"},
+    {"key": "readability-identifier-naming.EnumCase",                     "value": "CamelCase"},
+    {"key": "readability-identifier-naming.TypedefCase",                  "value": "CamelCase"},
+    {"key": "readability-identifier-naming.UnionCase",                    "value": "CamelCase"},
+
+    // template <typename THIS> class Foo {};
+    {"key": "readability-identifier-naming.TemplateParameterCase",        "value": "CamelCase"},
+
+    // template <template <typename> class THIS, int COUNT_params,
+    //       typename... TYPE_parameters>
+    {"key": "readability-identifier-naming.TemplateTemplateParameterCase","value": "CamelCase"},
+
+    // template <template <typename> class TPL_parameter, int COUNT_params,
+    //       typename... THIS>
+    {"key": "readability-identifier-naming.TypeTemplateParameterCase",    "value": "CamelCase"},
+
+    // todo(Gustav): move static member functions here
+
+    // lower_case
+    // template <template <typename> class TPL_parameter, int THIS,
+    //       typename... TYPE_parameters>
+    {"key": "readability-identifier-naming.ValueTemplateParameterCase",   "value": "lower_case"},
+    {"key": "readability-identifier-naming.ClassConstantCase",            "value": "lower_case"},
+    {"key": "readability-identifier-naming.ClassMemberCase",              "value": "lower_case"},
+    {"key": "readability-identifier-naming.ClassMethodCase",              "value": "lower_case"},
+    {"key": "readability-identifier-naming.ConstantCase",                 "value": "lower_case"},
+    {"key": "readability-identifier-naming.ConstantMemberCase",           "value": "lower_case"},
+    {"key": "readability-identifier-naming.ConstantParameterCase",        "value": "lower_case"},
+    {"key": "readability-identifier-naming.ConstantPointerParameterCase", "value": "lower_case"},
+    {"key": "readability-identifier-naming.ConstexprFunctionCase",        "value": "lower_case"},
+    {"key": "readability-identifier-naming.ConstexprMethodCase",          "value": "lower_case"},
+    {"key": "readability-identifier-naming.ConstexprVariableCase",        "value": "lower_case"},
+    {"key": "readability-identifier-naming.EnumConstantCase",             "value": "lower_case"},
+    {"key": "readability-identifier-naming.FunctionCase",                 "value": "lower_case"},
+    {"key": "readability-identifier-naming.GlobalConstantCase",           "value": "lower_case"},
+    {"key": "readability-identifier-naming.GlobalConstantPointerCase",    "value": "lower_case"},
+    {"key": "readability-identifier-naming.GlobalFunctionCase",           "value": "lower_case"},
+    {"key": "readability-identifier-naming.GlobalPointerCase",            "value": "lower_case"},
+    {"key": "readability-identifier-naming.GlobalVariableCase",           "value": "lower_case"},
+    {"key": "readability-identifier-naming.InlineNamespaceCase",          "value": "lower_case"},
+    {"key": "readability-identifier-naming.LocalConstantCase",            "value": "lower_case"},
+    {"key": "readability-identifier-naming.LocalConstantPointerCase",     "value": "lower_case"},
+    {"key": "readability-identifier-naming.LocalPointerCase",             "value": "lower_case"},
+    {"key": "readability-identifier-naming.LocalVariableCase",            "value": "lower_case"},
+    {"key": "readability-identifier-naming.MemberCase",                   "value": "lower_case"},
+    {"key": "readability-identifier-naming.MethodCase",                   "value": "lower_case"},
+    {"key": "readability-identifier-naming.NamespaceCase",                "value": "lower_case"},
+    {"key": "readability-identifier-naming.ParameterCase",                "value": "lower_case"},
+    {"key": "readability-identifier-naming.ParameterPackCase",            "value": "lower_case"},
+    {"key": "readability-identifier-naming.PointerParameterCase",         "value": "lower_case"},
+    {"key": "readability-identifier-naming.PrivateMemberCase",            "value": "lower_case"},
+    {"key": "readability-identifier-naming.PrivateMethodCase",            "value": "lower_case"},
+    {"key": "readability-identifier-naming.ProtectedMemberCase",          "value": "lower_case"},
+    {"key": "readability-identifier-naming.ProtectedMethodCase",          "value": "lower_case"},
+    {"key": "readability-identifier-naming.PublicMemberCase",             "value": "lower_case"},
+    {"key": "readability-identifier-naming.PublicMethodCase",             "value": "lower_case"},
+    {"key": "readability-identifier-naming.ScopedEnumConstantCase",       "value": "lower_case"},
+    {"key": "readability-identifier-naming.StaticConstantCase",           "value": "lower_case"},
+    {"key": "readability-identifier-naming.StaticVariableCase",           "value": "lower_case"},
+    {"key": "readability-identifier-naming.VariableCase",                 "value": "lower_case"},
+    {"key": "readability-identifier-naming.VirtualMethodCase",            "value": "lower_case"},
+
+    // nasty hack: https://github.com/llvm/llvm-project/issues/46097#issuecomment-992626543
+    {"key": "readability-identifier-naming.TypeTemplateParameterIgnoredRegexp", "value": "expr-type"},
+]

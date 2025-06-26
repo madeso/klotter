@@ -1,30 +1,166 @@
-name: Deploy online content
+name: deploy-online-content
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
     build:
-        runs-on: ubuntu-22.04
+        strategy:
+            matrix:
+                gcc: ['14']
+                clang: ['18']
+                build_type: [Debug]
+
+        runs-on: ubuntu-24.04
 
         steps:
         - uses: actions/checkout@v3
           with:
             submodules: recursive
 
+
+
+
+        - name: Install Dependencies
+          run: |
+                sudo apt update
+                sudo apt install -y libsdl2-dev libassimp-dev curl
+                pip3 install wheel setuptools gcovr
+
         - uses: ssciwr/doxygen-install@v1
           with:
             version: "1.13.2"
 
-        - name: Create documentation
+
+        - name: List all installed GCC
+          run: |
+                which gcc
+                echo "*** gcc ***"
+                ls -l /usr/bin/gcc*
+                echo "*** gcov ***"
+                ls -l /usr/bin/gcov*
+
+        - name: Switch to latest GCC
+          run: |
+                sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-${{matrix.gcc}} ${{matrix.gcc}}
+                sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-${{matrix.gcc}} ${{matrix.gcc}}
+
+        - name: Check version
+          run: |
+                gcc --version
+                gcov --version
+
+
+
+
+
+        - name: Create Build Environment
+          run: cmake -E make_directory ${{github.workspace}}/build
+
+        - name: Configure
+          shell: bash
+          working-directory: ${{github.workspace}}/build
+          env:
+                CC: gcc-${{matrix.gcc}}
+                CXX: g++-${{matrix.gcc}}
+          run: cmake -DGENERATE_COVERAGE=ON -DCMAKE_BUILD_TYPE=${{matrix.build_type}} $GITHUB_WORKSPACE
+
+        - name: Build
+          shell: bash
+          working-directory: ${{github.workspace}}/build
+          env:
+                CC: gcc-${{matrix.gcc}}
+                CXX: g++-${{matrix.gcc}}
+          run: time cmake --build . --config ${{matrix.build_type}}
+
+
+
+
+
+
+
+
+        - name: Generate coverage files by running tests
+          shell: bash
+          working-directory: ${{github.workspace}}/build
+          run: |
+                ctest -C ${{matrix.build_type}}
+
+        - name: Print gcovr version
+          shell: bash
+          working-directory: ${{github.workspace}}/build
+          run: gcovr --version
+
+        - name: Generate coverage summary
+          shell: bash
+          working-directory: ${{github.workspace}}/build
+          run: gcovr -v --root ..  --json-summary-pretty --json-summary ../json_summary.json
+
+        - name: Generate coverage html
+          shell: bash
+          working-directory: ${{github.workspace}}/build
+          run: gcovr -v --root .. --html-theme github.blue --html-details ../docs/generated/coverage.html
+
+
+
+
+
+        - name: Build doxygen
+          run: doxygen docs/doxygen.ini
+
+
+
+
+        - name: Generate code city
+          run: dotnet run --project ./tools/buildtools/Workbench/ -- code-city docs/generated/xml docs/generated/code-city.html
+
+
+
+
+        - name: Create Build Environment (for clang)
+          run: |
+                rm -rf ${{github.workspace}}/build
+                cmake -E make_directory ${{github.workspace}}/build
+
+        - name: Configure (for clang)
+          shell: bash
+          working-directory: ${{github.workspace}}/build
+          env:
+                CXX: clang++-${{matrix.clang}}
+          run: cmake -DCMAKE_BUILD_TYPE=${{matrix.build_type}} $GITHUB_WORKSPACE
+
+        - name: Build (for clang)
+          shell: bash
+          working-directory: ${{github.workspace}}/build
+          env:
+                CXX: clang++-${{matrix.clang}}
+          run: time cmake --build . --config ${{matrix.build_type}}
+
+        - name: clang-tidy version
           shell: bash
           working-directory: ${{github.workspace}}
           run: |
-                mkdir -p build/docs
-                doxygen docs/doxygen.ini
+                ls /usr/bin/clang-*
+                clang-tidy-${{matrix.clang}} --version
+                dotnet run --project ./tools/buildtools/Workbench/ -- path clang-tidy list
+                dotnet run --project ./tools/buildtools/Workbench/ -- path clang-tidy set /usr/bin/clang-tidy-${{matrix.clang}}
+                dotnet run --project ./tools/buildtools/Workbench/ -- path clang-tidy list
+
+
+
+        - name: Display clang-tidy
+          run: dotnet run --project ./tools/buildtools/Workbench/ -- clang tidy libs apps --html docs/generated/tidy/
+
+
+        - name: Generate coverage badges
+          if: github.ref == 'refs/heads/main' && (success() || failure())
+          run: |
+                dotnet run --project ./tools/buildtools/Workbench/ -- ls .
+                dotnet run --project ./tools/buildtools/Workbench/ -- badge gcovr json_summary.json docs/generated/
+
 
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
-          if: github.ref == 'refs/heads/main' && (success())
+          if: github.ref == 'refs/heads/main' && (success() || failure())
           with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
-                publish_dir: ./build/docs/html/
+                publish_dir: ./docs/generated/
