@@ -81,3 +81,5 @@ add_library(klotter::project_warnings ALIAS project_warnings)
 add_subdirectory(external)
 add_subdirectory(src)
 add_subdirectory(examples)
+
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT "example")
