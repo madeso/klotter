@@ -7,7 +7,7 @@ jobs:
         strategy:
             matrix:
                 build_type: [Debug, Release]
-                blur_use_gauss: [ON, OFF]
+                blur_use_gauss: [BLUR_USE_GAUSS=ON, BLUR_USE_GAUSS=OFF]
         runs-on: windows-latest
 
         steps:
@@ -17,7 +17,7 @@ jobs:
                   submodules: recursive
 
             - name: Configure CMake
-              run: cmake -S . -B build -DBLUR_USE_GAUSS=${{ matrix.blur_use_gauss }}
+              run: cmake -S . -B build -D${{ matrix.blur_use_gauss }}
 
             - name: Build
               run: cmake --build build --config ${{ matrix.build_type }}
