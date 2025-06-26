@@ -1,0 +1,93 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/render/texture.cc</title>
+</head>
+<body>
+<h1>src/klotter/render/texture.cc</h1>
+<span id='readability-identifier-naming'>&nbsp;</span>
+<hr>
+<h3>warning: invalid case style for constexpr variable &#39;FAILED_TO_LOAD_IMAGE_COLOR&#39;</h3>
+<code>[readability-identifier-naming]</code>
+<p><i>src/klotter/render/texture.cc 23 : 16</i></p>
+<pre>
+   23 |         constexpr u32 FAILED_TO_LOAD_IMAGE_COLOR = 0;
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                       failed_to_load_image_color
+</pre>
+<span id='cppcoreguidelines-init-variables'>&nbsp;</span>
+<hr>
+<h3>warning: variable &#39;texture&#39; is not initialized</h3>
+<code>[cppcoreguidelines-init-variables]</code>
+<p><i>src/klotter/render/texture.cc 28 : 16</i></p>
+<pre>
+   28 |                 unsigned int texture;
+      |                              ^      
+      |                                      = 0
+</pre>
+<span id='readability-implicit-bool-conversion'>&nbsp;</span>
+<hr>
+<h3>warning: implicit conversion &#39;bool&#39; -&gt; &#39;int&#39;</h3>
+<code>[readability-implicit-bool-conversion]</code>
+<p><i>src/klotter/render/texture.cc 141 : 36</i></p>
+<pre>
+  141 |                 stbi_set_flip_vertically_on_load(flip);
+      |                                                  ^   
+      |                                                  static_cast&lt;int&gt;( )
+</pre>
+<hr>
+<h3>warning: variable &#39;fbo&#39; is not initialized</h3>
+<code>[cppcoreguidelines-init-variables]</code>
+<p><i>src/klotter/render/texture.cc 305 : 15</i></p>
+<pre>
+  305 |         unsigned int fbo;
+      |                      ^  
+      |                          = 0
+</pre>
+<hr>
+<h3>warning: implicit conversion &#39;unsigned int&#39; -&gt; &#39;bool&#39;</h3>
+<code>[readability-implicit-bool-conversion]</code>
+<p><i>src/klotter/render/texture.cc 320 : 6</i></p>
+<pre>
+  320 |         if (fbo)
+      |             ^  
+      |                 != 0u
+</pre>
+<hr>
+<h3>warning: implicit conversion &#39;unsigned int&#39; -&gt; &#39;bool&#39;</h3>
+<code>[readability-implicit-bool-conversion]</code>
+<p><i>src/klotter/render/texture.cc 325 : 6</i></p>
+<pre>
+  325 |         if (rbo)
+      |             ^  
+      |                 != 0u
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/render/texture.cc:23:16: warning: invalid case style for constexpr variable 'FAILED_TO_LOAD_IMAGE_COLOR' [readability-identifier-naming]
+   23 |         constexpr u32 FAILED_TO_LOAD_IMAGE_COLOR = 0;
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                       failed_to_load_image_color
+/home/runner/work/klotter/klotter/src/klotter/render/texture.cc:28:16: warning: variable 'texture' is not initialized [cppcoreguidelines-init-variables]
+   28 |                 unsigned int texture;
+      |                              ^      
+      |                                      = 0
+/home/runner/work/klotter/klotter/src/klotter/render/texture.cc:141:36: warning: implicit conversion 'bool' -> 'int' [readability-implicit-bool-conversion]
+  141 |                 stbi_set_flip_vertically_on_load(flip);
+      |                                                  ^   
+      |                                                  static_cast<int>( )
+/home/runner/work/klotter/klotter/src/klotter/render/texture.cc:305:15: warning: variable 'fbo' is not initialized [cppcoreguidelines-init-variables]
+  305 |         unsigned int fbo;
+      |                      ^  
+      |                          = 0
+/home/runner/work/klotter/klotter/src/klotter/render/texture.cc:320:6: warning: implicit conversion 'unsigned int' -> 'bool' [readability-implicit-bool-conversion]
+  320 |         if (fbo)
+      |             ^  
+      |                 != 0u
+/home/runner/work/klotter/klotter/src/klotter/render/texture.cc:325:6: warning: implicit conversion 'unsigned int' -> 'bool' [readability-implicit-bool-conversion]
+  325 |         if (rbo)
+      |             ^  
+      |                 != 0u
+-->
+</body>
+</html>

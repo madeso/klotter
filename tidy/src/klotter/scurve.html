@@ -1,0 +1,144 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/scurve.cc</title>
+</head>
+<body>
+<h1>src/klotter/scurve.cc</h1>
+<span id='readability-identifier-naming'>&nbsp;</span>
+<hr>
+<h3>warning: invalid case style for constexpr variable &#39;mE&#39;</h3>
+<code>[readability-identifier-naming]</code>
+<p><i>src/klotter/scurve.cc 46 : 18</i></p>
+<pre>
+   46 |         constexpr float mE = 0.00001f;  // machine epsilon
+      |                         ^~
+      |                         m_e
+   47 |         return x &lt; t ? t * x / (x + s * (t - x) + mE) : ((1 - t) * (x - 1)) / (1 - x - s * (t - x) + mE) + 1;
+      |                                                   ~~                                                 ~~
+      |                                                   m_e                                                m_e
+</pre>
+<span id='readability-identifier-length'>&nbsp;</span>
+<hr>
+<h3>warning: loop variable name &#39;i&#39; is too short, expected at least 2 characters</h3>
+<code>[readability-identifier-length]</code>
+<p><i>src/klotter/scurve.cc 89 : 19</i></p>
+<pre>
+   89 |         for (std::size_t i = 0; i &lt; max_points + 1; i += 1)
+      |                          ^
+</pre>
+<hr>
+<h3>warning: loop variable name &#39;i&#39; is too short, expected at least 2 characters</h3>
+<code>[readability-identifier-length]</code>
+<p><i>src/klotter/scurve.cc 100 : 20</i></p>
+<pre>
+  100 |                 for (std::size_t i = 0; i &lt; max_points + 1; i += 1)
+      |                                  ^
+</pre>
+<span id='bugprone-branch-clone'>&nbsp;</span>
+<hr>
+<h3>warning: repeated branch body in conditional chain</h3>
+<code>[bugprone-branch-clone]</code>
+<p><i>src/klotter/scurve.cc 124 : 3</i></p>
+<pre>
+  124 |                 T(p.x);
+      |                 ^
+</pre>
+<p>expanded from macro &#39;T&#39;</p>
+<p><i>src/klotter/scurve.cc 120 : 4</i></p>
+<pre>
+  120 |                         return false; \
+      |                         ^
+</pre>
+<p>clone 1 starts here</p>
+<p><i>src/klotter/scurve.cc 124 : 3</i></p>
+<pre>
+  124 |                 T(p.x);
+      |                 ^
+</pre>
+<p>expanded from macro &#39;T&#39;</p>
+<p><i>src/klotter/scurve.cc 122 : 4</i></p>
+<pre>
+  122 |                         return false; \
+      |                         ^
+</pre>
+<hr>
+<h3>warning: repeated branch body in conditional chain</h3>
+<code>[bugprone-branch-clone]</code>
+<p><i>src/klotter/scurve.cc 125 : 3</i></p>
+<pre>
+  125 |                 T(p.y);
+      |                 ^
+</pre>
+<p>expanded from macro &#39;T&#39;</p>
+<p><i>src/klotter/scurve.cc 120 : 4</i></p>
+<pre>
+  120 |                         return false; \
+      |                         ^
+</pre>
+<p>clone 1 starts here</p>
+<p><i>src/klotter/scurve.cc 125 : 3</i></p>
+<pre>
+  125 |                 T(p.y);
+      |                 ^
+</pre>
+<p>expanded from macro &#39;T&#39;</p>
+<p><i>src/klotter/scurve.cc 122 : 4</i></p>
+<pre>
+  122 |                         return false; \
+      |                         ^
+</pre>
+<span id='readability-avoid-unconditional-preprocessor-if'>&nbsp;</span>
+<hr>
+<h3>warning: preprocessor condition is always &#39;false&#39;, consider removing both the condition and its contents</h3>
+<code>[readability-avoid-unconditional-preprocessor-if]</code>
+<p><i>src/klotter/scurve.cc 146 : 2</i></p>
+<pre>
+  146 | #if 0
+      |  ^
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:46:18: warning: invalid case style for constexpr variable 'mE' [readability-identifier-naming]
+   46 |         constexpr float mE = 0.00001f;  // machine epsilon
+      |                         ^~
+      |                         m_e
+   47 |         return x < t ? t * x / (x + s * (t - x) + mE) : ((1 - t) * (x - 1)) / (1 - x - s * (t - x) + mE) + 1;
+      |                                                   ~~                                                 ~~
+      |                                                   m_e                                                m_e
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:89:19: warning: loop variable name 'i' is too short, expected at least 2 characters [readability-identifier-length]
+   89 |         for (std::size_t i = 0; i < max_points + 1; i += 1)
+      |                          ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:100:20: warning: loop variable name 'i' is too short, expected at least 2 characters [readability-identifier-length]
+  100 |                 for (std::size_t i = 0; i < max_points + 1; i += 1)
+      |                                  ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:124:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  124 |                 T(p.x);
+      |                 ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:120:4: note: expanded from macro 'T'
+  120 |                         return false; \
+      |                         ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:124:3: note: clone 1 starts here
+  124 |                 T(p.x);
+      |                 ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:122:4: note: expanded from macro 'T'
+  122 |                         return false; \
+      |                         ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:125:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  125 |                 T(p.y);
+      |                 ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:120:4: note: expanded from macro 'T'
+  120 |                         return false; \
+      |                         ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:125:3: note: clone 1 starts here
+  125 |                 T(p.y);
+      |                 ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:122:4: note: expanded from macro 'T'
+  122 |                         return false; \
+      |                         ^
+/home/runner/work/klotter/klotter/src/klotter/scurve.cc:146:2: warning: preprocessor condition is always 'false', consider removing both the condition and its contents [readability-avoid-unconditional-preprocessor-if]
+  146 | #if 0
+      |  ^
+-->
+</body>
+</html>

@@ -1,0 +1,125 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/render/shader.cc</title>
+</head>
+<body>
+<h1>src/klotter/render/shader.cc</h1>
+<span id='readability-identifier-naming'>&nbsp;</span>
+<hr>
+<h3>warning: invalid case style for constexpr variable &#39;LOG_SIZE&#39;</h3>
+<code>[readability-identifier-naming]</code>
+<p><i>src/klotter/render/shader.cc 18 : 19</i></p>
+<pre>
+   18 | constexpr GLsizei LOG_SIZE = 1024;
+      |                   ^~~~~~~~
+      |                   log_size
+   19 | 
+   20 | bool check_shader_compilation_error(const char* name, unsigned int shader)
+   21 | {
+   22 |         int success = 0;
+   23 |         char log[LOG_SIZE] = {
+      |                  ~~~~~~~~
+      |                  log_size
+   24 |                 0,
+   25 |         };
+   26 |         glGetShaderiv(shader, GL_COMPILE_STATUS, &amp;success);
+   27 | 
+   28 |         if (! success)
+   29 |         {
+   30 |                 glGetShaderInfoLog(shader, LOG_SIZE, nullptr, log);
+      |                                            ~~~~~~~~
+      |                                            log_size
+</pre>
+<span id='readability-implicit-bool-conversion'>&nbsp;</span>
+<hr>
+<h3>warning: implicit conversion &#39;int&#39; -&gt; &#39;bool&#39;</h3>
+<code>[readability-implicit-bool-conversion]</code>
+<p><i>src/klotter/render/shader.cc 28 : 8</i></p>
+<pre>
+   28 |         if (! success)
+      |             ~ ^      
+      |                       == 0
+</pre>
+<hr>
+<h3>warning: implicit conversion &#39;int&#39; -&gt; &#39;bool&#39;</h3>
+<code>[readability-implicit-bool-conversion]</code>
+<p><i>src/klotter/render/shader.cc 45 : 8</i></p>
+<pre>
+   45 |         if (! success)
+      |             ~ ^      
+      |                       == 0
+</pre>
+<span id='readability-make-member-function-const'>&nbsp;</span>
+<hr>
+<h3>warning: method &#39;setup_uniform_block&#39; can be made const</h3>
+<code>[readability-make-member-function-const]</code>
+<p><i>src/klotter/render/shader.cc 318 : 21</i></p>
+<pre>
+  318 | void ShaderProgram::setup_uniform_block(const UniformBufferSetup&amp; setup)
+      |                     ^                                                   
+      |                                                                          const
+</pre>
+<span id='misc-const-correctness'>&nbsp;</span>
+<hr>
+<h3>warning: variable &#39;shader_block_index&#39; of type &#39;unsigned int&#39; can be declared &#39;const&#39;</h3>
+<code>[misc-const-correctness]</code>
+<p><i>src/klotter/render/shader.cc 320 : 2</i></p>
+<pre>
+  320 |         unsigned int shader_block_index = glGetUniformBlockIndex(shader_program, setup.name.c_str());
+      |         ^
+      |                      const 
+</pre>
+<span id='readability-use-anyofallof'>&nbsp;</span>
+<hr>
+<h3>warning: replace loop by &#39;std:: all_of()&#39;</h3>
+<code>[readability-use-anyofallof]</code>
+<p><i>src/klotter/render/shader.cc 359 : 2</i></p>
+<pre>
+  359 |         for (auto t: debug_current_shader_types)
+      |         ^
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/render/shader.cc:18:19: warning: invalid case style for constexpr variable 'LOG_SIZE' [readability-identifier-naming]
+   18 | constexpr GLsizei LOG_SIZE = 1024;
+      |                   ^~~~~~~~
+      |                   log_size
+   19 | 
+   20 | bool check_shader_compilation_error(const char* name, unsigned int shader)
+   21 | {
+   22 |         int success = 0;
+   23 |         char log[LOG_SIZE] = {
+      |                  ~~~~~~~~
+      |                  log_size
+   24 |                 0,
+   25 |         };
+   26 |         glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+   27 | 
+   28 |         if (! success)
+   29 |         {
+   30 |                 glGetShaderInfoLog(shader, LOG_SIZE, nullptr, log);
+      |                                            ~~~~~~~~
+      |                                            log_size
+/home/runner/work/klotter/klotter/src/klotter/render/shader.cc:28:8: warning: implicit conversion 'int' -> 'bool' [readability-implicit-bool-conversion]
+   28 |         if (! success)
+      |             ~ ^      
+      |                       == 0
+/home/runner/work/klotter/klotter/src/klotter/render/shader.cc:45:8: warning: implicit conversion 'int' -> 'bool' [readability-implicit-bool-conversion]
+   45 |         if (! success)
+      |             ~ ^      
+      |                       == 0
+/home/runner/work/klotter/klotter/src/klotter/render/shader.cc:318:21: warning: method 'setup_uniform_block' can be made const [readability-make-member-function-const]
+  318 | void ShaderProgram::setup_uniform_block(const UniformBufferSetup& setup)
+      |                     ^                                                   
+      |                                                                          const
+/home/runner/work/klotter/klotter/src/klotter/render/shader.cc:320:2: warning: variable 'shader_block_index' of type 'unsigned int' can be declared 'const' [misc-const-correctness]
+  320 |         unsigned int shader_block_index = glGetUniformBlockIndex(shader_program, setup.name.c_str());
+      |         ^
+      |                      const 
+/home/runner/work/klotter/klotter/src/klotter/render/shader.cc:359:2: warning: replace loop by 'std::all_of()' [readability-use-anyofallof]
+  359 |         for (auto t: debug_current_shader_types)
+      |         ^
+-->
+</body>
+</html>

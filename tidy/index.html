@@ -6,6 +6,108 @@
 </head>
 <body>
 <h1>Tidy report</h1>
+<h2>Summary</h2>
+<p>90 warnings in 41 files</p>
+<ul>
+<li>14x <code>readability-identifier-length</code></li>
+<ul>
+<li><a href="src/klotter/render/geom.extract.html#readability-identifier-length">src/klotter/render/geom.extract.cc</a></li>
+<li><a href="src/klotter/render/geom.builder.html#readability-identifier-length">src/klotter/render/geom.builder.cc</a></li>
+<li><a href="src/klotter/render/material.html#readability-identifier-length">src/klotter/render/material.cc</a></li>
+<li><a href="src/klotter/scurve.html#readability-identifier-length">src/klotter/scurve.cc</a></li>
+<li><a href="src/klotter/render/shader_resource.html#readability-identifier-length">src/klotter/render/shader_resource.cc</a></li>
+</ul>
+<li>12x <code>readability-identifier-naming</code></li>
+<ul>
+<li><a href="src/klotter/render/geom.builder.html#readability-identifier-naming">src/klotter/render/geom.builder.cc</a></li>
+<li><a href="src/klotter/render/opengl_utils.html#readability-identifier-naming">src/klotter/render/opengl_utils.cc</a></li>
+<li><a href="src/klotter/scurve.html#readability-identifier-naming">src/klotter/scurve.cc</a></li>
+<li><a href="src/klotter/render/shader.html#readability-identifier-naming">src/klotter/render/shader.cc</a></li>
+<li><a href="src/klotter/render/statechanger.html#readability-identifier-naming">src/klotter/render/statechanger.cc</a></li>
+<li><a href="src/klotter/render/texture.html#readability-identifier-naming">src/klotter/render/texture.cc</a></li>
+<li><a href="src/klotter/render/vertex_layout.html#readability-identifier-naming">src/klotter/render/vertex_layout.cc</a></li>
+</ul>
+<li>10x <code>readability-make-member-function-const</code></li>
+<ul>
+<li><a href="src/klotter/render/linebatch.html#readability-make-member-function-const">src/klotter/render/linebatch.cc</a></li>
+<li><a href="src/klotter/render/fse.html#readability-make-member-function-const">src/klotter/render/fse.cc</a></li>
+<li><a href="src/klotter/render/render.html#readability-make-member-function-const">src/klotter/render/render.cc</a></li>
+<li><a href="src/klotter/render/shader_resource.html#readability-make-member-function-const">src/klotter/render/shader_resource.cc</a></li>
+<li><a href="src/klotter/render/shader.html#readability-make-member-function-const">src/klotter/render/shader.cc</a></li>
+</ul>
+<li>10x <code>bugprone-chained-comparison</code></li>
+<ul>
+<li><a href="src/klotter/render/uniform_buffer.test.html#bugprone-chained-comparison">src/klotter/render/uniform_buffer.test.cc</a></li>
+</ul>
+<li>8x <code>bugprone-unchecked-optional-access</code></li>
+<ul>
+<li><a href="src/klotter/render/fse.html#bugprone-unchecked-optional-access">src/klotter/render/fse.cc</a></li>
+<li><a href="src/klotter/render/material.html#bugprone-unchecked-optional-access">src/klotter/render/material.cc</a></li>
+<li><a href="src/klotter/render/render.html#bugprone-unchecked-optional-access">src/klotter/render/render.cc</a></li>
+</ul>
+<li>7x <code>readability-implicit-bool-conversion</code></li>
+<ul>
+<li><a href="src/klotter/render/fse.html#readability-implicit-bool-conversion">src/klotter/render/fse.cc</a></li>
+<li><a href="src/klotter/render/opengl_utils.html#readability-implicit-bool-conversion">src/klotter/render/opengl_utils.cc</a></li>
+<li><a href="src/klotter/render/shader.html#readability-implicit-bool-conversion">src/klotter/render/shader.cc</a></li>
+<li><a href="src/klotter/render/texture.html#readability-implicit-bool-conversion">src/klotter/render/texture.cc</a></li>
+</ul>
+<li>5x <code>readability-braces-around-statements</code></li>
+<ul>
+<li><a href="src/klotter/render/fse.html#readability-braces-around-statements">src/klotter/render/fse.cc</a></li>
+<li><a href="src/klotter/render/opengl_utils.html#readability-braces-around-statements">src/klotter/render/opengl_utils.cc</a></li>
+<li><a href="src/klotter/render/render.html#readability-braces-around-statements">src/klotter/render/render.cc</a></li>
+<li><a href="src/klotter/render/uniform_buffer.html#readability-braces-around-statements">src/klotter/render/uniform_buffer.cc</a></li>
+</ul>
+<li>4x <code>readability-qualified-auto</code></li>
+<ul>
+<li><a href="src/klotter/klotter.html#readability-qualified-auto">src/klotter/klotter.cc</a></li>
+<li><a href="src/klotter/render/render.html#readability-qualified-auto">src/klotter/render/render.cc</a></li>
+</ul>
+<li>4x <code>misc-const-correctness</code></li>
+<ul>
+<li><a href="src/klotter/klotter.html#misc-const-correctness">src/klotter/klotter.cc</a></li>
+<li><a href="src/klotter/render/shader_resource.html#misc-const-correctness">src/klotter/render/shader_resource.cc</a></li>
+<li><a href="src/klotter/render/shader.html#misc-const-correctness">src/klotter/render/shader.cc</a></li>
+<li><a href="src/klotter/render/world.html#misc-const-correctness">src/klotter/render/world.cc</a></li>
+</ul>
+<li>4x <code>cppcoreguidelines-init-variables</code></li>
+<ul>
+<li><a href="src/klotter/render/opengl_utils.html#cppcoreguidelines-init-variables">src/klotter/render/opengl_utils.cc</a></li>
+<li><a href="src/klotter/render/texture.html#cppcoreguidelines-init-variables">src/klotter/render/texture.cc</a></li>
+</ul>
+<li>4x <code>bugprone-branch-clone</code></li>
+<ul>
+<li><a href="src/klotter/scurve.html#bugprone-branch-clone">src/klotter/scurve.cc</a></li>
+<li><a href="src/klotter/render/uniform_buffer.html#bugprone-branch-clone">src/klotter/render/uniform_buffer.cc</a></li>
+</ul>
+<li>3x <code>cppcoreguidelines-prefer-member-initializer</code></li>
+<ul>
+<li><a href="src/klotter/render/linebatch.html#cppcoreguidelines-prefer-member-initializer">src/klotter/render/linebatch.cc</a></li>
+<li><a href="src/klotter/render/fse.html#cppcoreguidelines-prefer-member-initializer">src/klotter/render/fse.cc</a></li>
+</ul>
+<li>1x <code>misc-throw-by-value-catch-by-reference</code></li>
+<ul>
+<li><a href="src/klotter/assert.html#misc-throw-by-value-catch-by-reference">src/klotter/assert.cc</a></li>
+</ul>
+<li>1x <code>cppcoreguidelines-pro-type-member-init</code></li>
+<ul>
+<li><a href="src/klotter/render/geom.extract.html#cppcoreguidelines-pro-type-member-init">src/klotter/render/geom.extract.cc</a></li>
+</ul>
+<li>1x <code>readability-avoid-unconditional-preprocessor-if</code></li>
+<ul>
+<li><a href="src/klotter/scurve.html#readability-avoid-unconditional-preprocessor-if">src/klotter/scurve.cc</a></li>
+</ul>
+<li>1x <code>readability-use-anyofallof</code></li>
+<ul>
+<li><a href="src/klotter/render/shader.html#readability-use-anyofallof">src/klotter/render/shader.cc</a></li>
+</ul>
+<li>1x <code>readability-convert-member-functions-to-static</code></li>
+<ul>
+<li><a href="src/klotter/render/uniform_buffer.html#readability-convert-member-functions-to-static">src/klotter/render/uniform_buffer.cc</a></li>
+</ul>
+</ul>
+<h2>All files</h2>
 <table style="width: 100%">
 <colgroup>
 <col span="1" style="width: 55%;">
@@ -22,7 +124,257 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href=src/klotter/render/fse.html>src/klotter/render/fse.cc</a></td>
+<td style="text-align: end">5</td>
+<td style="text-align: end">13</td>
+<td style="text-align: end">38.7s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/geom.builder.html>src/klotter/render/geom.builder.cc</a></td>
+<td style="text-align: end">2</td>
+<td style="text-align: end">10</td>
+<td style="text-align: end">11.0s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/uniform_buffer.test.html>src/klotter/render/uniform_buffer.test.cc</a></td>
+<td style="text-align: end">1</td>
+<td style="text-align: end">10</td>
+<td style="text-align: end">11.8s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/render.html>src/klotter/render/render.cc</a></td>
+<td style="text-align: end">4</td>
+<td style="text-align: end">7</td>
+<td style="text-align: end">12.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/opengl_utils.html>src/klotter/render/opengl_utils.cc</a></td>
+<td style="text-align: end">4</td>
+<td style="text-align: end">6</td>
+<td style="text-align: end">15.6s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/scurve.html>src/klotter/scurve.cc</a></td>
+<td style="text-align: end">4</td>
+<td style="text-align: end">6</td>
+<td style="text-align: end">9.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/shader.html>src/klotter/render/shader.cc</a></td>
+<td style="text-align: end">5</td>
+<td style="text-align: end">6</td>
+<td style="text-align: end">9.7s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/texture.html>src/klotter/render/texture.cc</a></td>
+<td style="text-align: end">3</td>
+<td style="text-align: end">6</td>
+<td style="text-align: end">9.1s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/shader_resource.html>src/klotter/render/shader_resource.cc</a></td>
+<td style="text-align: end">3</td>
+<td style="text-align: end">5</td>
+<td style="text-align: end">9.8s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/linebatch.html>src/klotter/render/linebatch.cc</a></td>
+<td style="text-align: end">2</td>
+<td style="text-align: end">4</td>
+<td style="text-align: end">10.4s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/material.html>src/klotter/render/material.cc</a></td>
+<td style="text-align: end">2</td>
+<td style="text-align: end">4</td>
+<td style="text-align: end">10.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/uniform_buffer.html>src/klotter/render/uniform_buffer.cc</a></td>
+<td style="text-align: end">3</td>
+<td style="text-align: end">4</td>
+<td style="text-align: end">7.5s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/geom.extract.html>src/klotter/render/geom.extract.cc</a></td>
+<td style="text-align: end">2</td>
+<td style="text-align: end">2</td>
+<td style="text-align: end">7.0s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/klotter.html>src/klotter/klotter.cc</a></td>
+<td style="text-align: end">2</td>
+<td style="text-align: end">2</td>
+<td style="text-align: end">33.4s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/statechanger.html>src/klotter/render/statechanger.cc</a></td>
+<td style="text-align: end">1</td>
+<td style="text-align: end">2</td>
+<td style="text-align: end">7.5s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/assert.html>src/klotter/assert.cc</a></td>
+<td style="text-align: end">1</td>
+<td style="text-align: end">1</td>
+<td style="text-align: end">8.8s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/vertex_layout.html>src/klotter/render/vertex_layout.cc</a></td>
+<td style="text-align: end">1</td>
+<td style="text-align: end">1</td>
+<td style="text-align: end">8.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/world.html>src/klotter/render/world.cc</a></td>
+<td style="text-align: end">1</td>
+<td style="text-align: end">1</td>
+<td style="text-align: end">7.8s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/blend.html>src/klotter/render/blend.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">8.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/colors.html>src/klotter/colors.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">6.6s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/camera.html>src/klotter/render/camera.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">9.8s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/compare.html>src/klotter/render/compare.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">6.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/cpp.html>src/klotter/cpp.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">9.4s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/cullface.html>src/klotter/render/cullface.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">6.3s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/dependency_glm.html>src/klotter/dependency_glm.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">6.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/debug.html>src/klotter/render/debug.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">9.4s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/assets.html>src/klotter/render/assets.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">42.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/dependency_sdl.html>src/klotter/dependency_sdl.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">13.5s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/fullscreen.html>src/klotter/render/fullscreen.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">7.6s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/main.test.html>src/klotter/main.test.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">20.3s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/opengl_labels.html>src/klotter/render/opengl_labels.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">9.7s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/opengl_states.html>src/klotter/render/opengl_states.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">6.5s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/render_settings.html>src/klotter/render/render_settings.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">6.5s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/render.pimpl.html>src/klotter/render/render.pimpl.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">10.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/result.html>src/klotter/result.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">6.1s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/rendermode.html>src/klotter/render/rendermode.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">9.9s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/shader.source.html>src/klotter/render/shader.source.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">11.8s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/stencilaction.html>src/klotter/render/stencilaction.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">9.9s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/str.html>src/klotter/str.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">7.3s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/uniform.html>src/klotter/render/uniform.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">8.2s</td>
+</tr>
+<tr>
+<td><a href=src/klotter/render/vertex_layout.test.html>src/klotter/render/vertex_layout.test.cc</a></td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">0</td>
+<td style="text-align: end">9.9s</td>
+</tr>
 </tbody>
 </table>
+<h3>Timings</h3>
+<p><b>average</b>: 11.5s</p>
+<p><b>max</b>: 42.2s for <a href="src/klotter/render/assets.html">src/klotter/render/assets.cc</a></p>
+<p><b>min</b>: 6.1s for <a href="src/klotter/result.html">src/klotter/result.cc</a></p>
 </body>
 </html>

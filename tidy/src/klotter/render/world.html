@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/render/world.cc</title>
+</head>
+<body>
+<h1>src/klotter/render/world.cc</h1>
+<span id='misc-const-correctness'>&nbsp;</span>
+<hr>
+<h3>warning: variable &#39;temp_data&#39; of type &#39;std::vector&lt;glm:: mat4&gt;&#39; (aka &#39;vector&lt;mat&lt;4, 4, float, defaultp&gt;&gt;&#39;) can be declared &#39;const&#39;</h3>
+<code>[misc-const-correctness]</code>
+<p><i>src/klotter/render/world.cc 177 : 2</i></p>
+<pre>
+  177 |         std::vector&lt;glm::mat4&gt; temp_data(max_instances);
+      |         ^
+      |                                const 
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/render/world.cc:177:2: warning: variable 'temp_data' of type 'std::vector<glm::mat4>' (aka 'vector<mat<4, 4, float, defaultp>>') can be declared 'const' [misc-const-correctness]
+  177 |         std::vector<glm::mat4> temp_data(max_instances);
+      |         ^
+      |                                const 
+-->
+</body>
+</html>

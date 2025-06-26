@@ -1,0 +1,116 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/render/opengl_utils.cc</title>
+</head>
+<body>
+<h1>src/klotter/render/opengl_utils.cc</h1>
+<span id='readability-identifier-naming'>&nbsp;</span>
+<hr>
+<h3>warning: invalid case style for static variable &#39;ErrorCount&#39;</h3>
+<code>[readability-identifier-naming]</code>
+<p><i>src/klotter/render/opengl_utils.cc 112 : 13</i></p>
+<pre>
+  112 |         static int ErrorCount = 0;
+      |                    ^~~~~~~~~~
+      |                    error_count
+  113 |         if (is_important == false)
+  114 |         {
+  115 |                 if (ErrorCount &gt; 10)
+      |                     ~~~~~~~~~~
+      |                     error_count
+  116 |                 {
+  117 |                         return;
+  118 |                 }
+  119 |                 ++ErrorCount;
+      |                   ~~~~~~~~~~
+      |                   error_count
+</pre>
+<span id='readability-implicit-bool-conversion'>&nbsp;</span>
+<hr>
+<h3>warning: implicit conversion &#39;int&#39; -&gt; &#39;bool&#39;</h3>
+<code>[readability-implicit-bool-conversion]</code>
+<p><i>src/klotter/render/opengl_utils.cc 147 : 9</i></p>
+<pre>
+  147 |         return GLAD_GL_KHR_debug;
+      |                ^                
+      |                                  != 0
+</pre>
+<span id='cppcoreguidelines-init-variables'>&nbsp;</span>
+<hr>
+<h3>warning: variable &#39;vbo&#39; is not initialized</h3>
+<code>[cppcoreguidelines-init-variables]</code>
+<p><i>src/klotter/render/opengl_utils.cc 188 : 6</i></p>
+<pre>
+  188 |         u32 vbo;
+      |             ^  
+      |                 = 0
+</pre>
+<hr>
+<h3>warning: variable &#39;vao&#39; is not initialized</h3>
+<code>[cppcoreguidelines-init-variables]</code>
+<p><i>src/klotter/render/opengl_utils.cc 200 : 6</i></p>
+<pre>
+  200 |         u32 vao;
+      |             ^  
+      |                 = 0
+</pre>
+<span id='readability-braces-around-statements'>&nbsp;</span>
+<hr>
+<h3>warning: statement should be inside braces</h3>
+<code>[readability-braces-around-statements]</code>
+<p><i>src/klotter/render/opengl_utils.cc 240 : 26</i></p>
+<pre>
+  240 |     if (!has_khr_debug()) return;
+      |                          ^       
+      |                           {
+</pre>
+<hr>
+<h3>warning: statement should be inside braces</h3>
+<code>[readability-braces-around-statements]</code>
+<p><i>src/klotter/render/opengl_utils.cc 243 : 25</i></p>
+<pre>
+  243 |         if (gl_type == GL_NONE) return;
+      |                                ^       
+      |                                 {
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/render/opengl_utils.cc:112:13: warning: invalid case style for static variable 'ErrorCount' [readability-identifier-naming]
+  112 |         static int ErrorCount = 0;
+      |                    ^~~~~~~~~~
+      |                    error_count
+  113 |         if (is_important == false)
+  114 |         {
+  115 |                 if (ErrorCount > 10)
+      |                     ~~~~~~~~~~
+      |                     error_count
+  116 |                 {
+  117 |                         return;
+  118 |                 }
+  119 |                 ++ErrorCount;
+      |                   ~~~~~~~~~~
+      |                   error_count
+/home/runner/work/klotter/klotter/src/klotter/render/opengl_utils.cc:147:9: warning: implicit conversion 'int' -> 'bool' [readability-implicit-bool-conversion]
+  147 |         return GLAD_GL_KHR_debug;
+      |                ^                
+      |                                  != 0
+/home/runner/work/klotter/klotter/src/klotter/render/opengl_utils.cc:188:6: warning: variable 'vbo' is not initialized [cppcoreguidelines-init-variables]
+  188 |         u32 vbo;
+      |             ^  
+      |                 = 0
+/home/runner/work/klotter/klotter/src/klotter/render/opengl_utils.cc:200:6: warning: variable 'vao' is not initialized [cppcoreguidelines-init-variables]
+  200 |         u32 vao;
+      |             ^  
+      |                 = 0
+/home/runner/work/klotter/klotter/src/klotter/render/opengl_utils.cc:240:26: warning: statement should be inside braces [readability-braces-around-statements]
+  240 |     if (!has_khr_debug()) return;
+      |                          ^       
+      |                           {
+/home/runner/work/klotter/klotter/src/klotter/render/opengl_utils.cc:243:25: warning: statement should be inside braces [readability-braces-around-statements]
+  243 |         if (gl_type == GL_NONE) return;
+      |                                ^       
+      |                                 {
+-->
+</body>
+</html>

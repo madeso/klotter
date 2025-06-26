@@ -23,26 +23,26 @@
                         <path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"></path>
                     </svg>
                 </div>
-                <span>./</span>
+                <span>src/klotter/</span>
             </div>
-            <div>File: src/klotter/render/uniform_buffer.cc</div>
-            <div>Date: 2025-06-26 11:22:15</div>
+            <div>File: render/uniform_buffer.cc</div>
+            <div>Date: 2025-06-26 14:41:44</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
                 <div class="mr-2">Lines:</div>
-                <div class="mr-2" style="margin: auto;">0/95</div>
-                <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
+                <div class="mr-2" style="margin: auto;">51/95</div>
+                <div class="Label--minw"><span class="coverage-low IssueLabel color-fg-on-emphasis mr-1">53.7%</span></div>
             </div>
             <div class="d-flex">
                 <div class="mr-2">Functions:</div>
-                <div class="mr-2" style="margin: auto;">0/14</div>
-                <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
+                <div class="mr-2" style="margin: auto;">6/14</div>
+                <div class="Label--minw"><span class="coverage-low IssueLabel color-fg-on-emphasis mr-1">42.9%</span></div>
             </div>
             <div class="d-flex">
                 <div class="mr-2">Branches:</div>
-                <div class="mr-2" style="margin: auto;">0/124</div>
-                <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
+                <div class="mr-2" style="margin: auto;">51/124</div>
+                <div class="Label--minw"><span class="coverage-low IssueLabel color-fg-on-emphasis mr-1">41.1%</span></div>
             </div>
         </div>
     </div>
@@ -70,12 +70,12 @@
     <tr><td><a href="#l162">klotter::UniformBuffer::set_mat4(klotter::CompiledUniformProp const&amp;, glm::mat&lt;4, 4, float, (glm::qualifier)0&gt; const&amp;) (line 162)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l151">klotter::UniformBuffer::unload() (line 151)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l131">klotter::UniformBuffer::~UniformBuffer() (line 131)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l77">klotter::UniformBufferCompiler::add(klotter::CompiledUniformProp*, klotter::UniformType, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, int) (line 77)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l82">klotter::UniformBufferCompiler::compile(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, klotter::UniformBufferSetup*, int) (line 82)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l33">klotter::calculate_alignment_bytes(int, klotter::UniformProp) (line 33)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l15">klotter::size_of(klotter::UniformProp, bool) (line 15)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l43">klotter::to_source(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::vector&lt;klotter::UniformProp, std::allocator&lt;klotter::UniformProp&gt; &gt; const&amp;) (line 43)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l45">klotter::to_source(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::vector&lt;klotter::UniformProp, std::allocator&lt;klotter::UniformProp&gt; &gt; const&amp;)::{lambda(klotter::UniformType)#1}::operator()(klotter::UniformType) const (line 45)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l77">klotter::UniformBufferCompiler::add(klotter::CompiledUniformProp*, klotter::UniformType, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, int) (line 77)</a></td><td>called 8 times</td><td>100.0%</td><td>33.3%</td><td>-%</td><td>50.0%</td></tr>
+    <tr><td><a href="#l82">klotter::UniformBufferCompiler::compile(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, klotter::UniformBufferSetup*, int) (line 82)</a></td><td>called 2 times</td><td>100.0%</td><td>58.3%</td><td>-%</td><td>72.0%</td></tr>
+    <tr><td><a href="#l33">klotter::calculate_alignment_bytes(int, klotter::UniformProp) (line 33)</a></td><td>called 8 times</td><td>100.0%</td><td>50.0%</td><td>-%</td><td>47.4%</td></tr>
+    <tr><td><a href="#l15">klotter::size_of(klotter::UniformProp, bool) (line 15)</a></td><td>called 16 times</td><td>84.6%</td><td>71.4%</td><td>-%</td><td>65.2%</td></tr>
+    <tr><td><a href="#l43">klotter::to_source(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::vector&lt;klotter::UniformProp, std::allocator&lt;klotter::UniformProp&gt; &gt; const&amp;) (line 43)</a></td><td>called 2 times</td><td>100.0%</td><td>55.0%</td><td>-%</td><td>90.9%</td></tr>
+    <tr><td><a href="#l45">klotter::to_source(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::vector&lt;klotter::UniformProp, std::allocator&lt;klotter::UniformProp&gt; &gt; const&amp;)::{lambda(klotter::UniformType)#1}::operator()(klotter::UniformType) const (line 45)</a></td><td>called 8 times</td><td>70.0%</td><td>50.0%</td><td>-%</td><td>47.1%</td></tr>
   </table>
 </details>
 </div>
@@ -195,8 +195,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l15" href="#l15">15</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">int</span><span class="w"> </span><span class="nf">size_of</span><span class="p">(</span><span class="n">UniformProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">align</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">16</td>
+                <td class="src coveredLine"><span class="kt">int</span><span class="w"> </span><span class="nf">size_of</span><span class="p">(</span><span class="n">UniformProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">align</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l16" href="#l16">16</a></td>
@@ -209,29 +209,44 @@
                 <td class="text-right src linenos"><a class="normal" id="l17" href="#l17">17</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">  </span><span class="c1">// in bytes</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">16</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">  </span><span class="c1">// in bytes</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l18" href="#l18">18</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">16</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l19" href="#l19">19</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">16</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l20" href="#l20">20</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>8/10</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (2 &rightarrow; 3) taken 14 times.</div>
+                            <div class="color-taken-branch">&check; Branch 1 (2 &rightarrow; 4) taken 2 times.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (5 &rightarrow; 6) taken 2 times.</div>
+                            <div class="color-taken-branch">&check; Branch 3 (5 &rightarrow; 7) taken 2 times.</div>
+                            <div class="color-taken-branch">&check; Branch 4 (5 &rightarrow; 8) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 5 (5 &rightarrow; 9) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 6 (5 &rightarrow; 10) taken 2 times.</div>
+                            <div class="color-taken-branch">&check; Branch 7 (5 &rightarrow; 11) taken 2 times.</div>
+                            <div class="color-taken-branch">&check; Branch 8 (5 &rightarrow; 12) taken 6 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 9 (5 &rightarrow; 16) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">prop</span><span class="p">.</span><span class="n">array_count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">prop</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">UniformType</span><span class="o">::</span><span class="n">vec4</span><span class="p">)</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">16</td>
+                <td class="src partialCoveredLine"><span class="w">	</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">prop</span><span class="p">.</span><span class="n">array_count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">prop</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">UniformType</span><span class="o">::</span><span class="n">vec4</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l21" href="#l21">21</a></td>
@@ -244,22 +259,22 @@
                 <td class="text-right src linenos"><a class="normal" id="l22" href="#l22">22</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">bool_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">bool_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l23" href="#l23">23</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">int_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">int_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l24" href="#l24">24</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">float_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">float_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l25" href="#l25">25</a></td>
@@ -272,22 +287,29 @@
                 <td class="text-right src linenos"><a class="normal" id="l26" href="#l26">26</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">vec3</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n4</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">vec3</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n4</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l27" href="#l27">27</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">vec4</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n4</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">vec4</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n4</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l28" href="#l28">28</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (12 &rightarrow; 13) taken 3 times.</div>
+                            <div class="color-taken-branch">&check; Branch 1 (12 &rightarrow; 14) taken 3 times.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">mat4</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">align</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">6</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">mat4</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">align</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l29" href="#l29">29</a></td>
@@ -321,8 +343,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l33" href="#l33">33</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">int</span><span class="w"> </span><span class="nf">calculate_alignment_bytes</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">current_size</span><span class="p">,</span><span class="w"> </span><span class="n">UniformProp</span><span class="w"> </span><span class="n">prop</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="kt">int</span><span class="w"> </span><span class="nf">calculate_alignment_bytes</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">current_size</span><span class="p">,</span><span class="w"> </span><span class="n">UniformProp</span><span class="w"> </span><span class="n">prop</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l34" href="#l34">34</a></td>
@@ -334,44 +356,69 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l35" href="#l35">35</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/4</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (2 &rightarrow; 3) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (2 &rightarrow; 17) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (3 &rightarrow; 4) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (3 &rightarrow; 15) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size_of</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src partialCoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size_of</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l36" href="#l36">36</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_size</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">size</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_size</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">size</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l37" href="#l37">37</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (5 &rightarrow; 6) taken 7 times.</div>
+                            <div class="color-taken-branch">&check; Branch 1 (5 &rightarrow; 7) taken 1 times.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mod</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mod</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l38" href="#l38">38</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">to_add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">1</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">to_add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mod</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l39" href="#l39">39</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>1/4</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-fg-danger">&cross; Branch 0 (7 &rightarrow; 8) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 1 (7 &rightarrow; 13) taken 1 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 2 (11 &rightarrow; 12) not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (11 &rightarrow; 18) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ASSERT</span><span class="p">((</span><span class="n">to_add</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">1</td>
+                <td class="src partialCoveredLine"><span class="w">	</span><span class="n">ASSERT</span><span class="p">((</span><span class="n">to_add</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l40" href="#l40">40</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">to_add</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">1</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">to_add</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l41" href="#l41">41</a></td>
@@ -391,8 +438,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l43" href="#l43">43</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">to_source</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">UniformBufferDescription</span><span class="o">&amp;</span><span class="w"> </span><span class="n">desc</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">to_source</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">UniformBufferDescription</span><span class="o">&amp;</span><span class="w"> </span><span class="n">desc</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l44" href="#l44">44</a></td>
@@ -405,8 +452,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l45" href="#l45">45</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">type_to_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">UniformType</span><span class="w"> </span><span class="n">t</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">type_to_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="n">UniformType</span><span class="w"> </span><span class="n">t</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l46" href="#l46">46</a></td>
@@ -418,9 +465,22 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l47" href="#l47">47</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>5/8</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (2 &rightarrow; 3) taken 1 times.</div>
+                            <div class="color-taken-branch">&check; Branch 1 (2 &rightarrow; 4) taken 1 times.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (2 &rightarrow; 5) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (2 &rightarrow; 6) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 4 (2 &rightarrow; 7) taken 1 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 5 (2 &rightarrow; 8) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 6 (2 &rightarrow; 9) taken 3 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 7 (2 &rightarrow; 10) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">)</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src partialCoveredLine"><span class="w">		</span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l48" href="#l48">48</a></td>
@@ -433,22 +493,22 @@
                 <td class="text-right src linenos"><a class="normal" id="l49" href="#l49">49</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">bool_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;bool&quot;</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">1</td>
+                <td class="src coveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">bool_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;bool&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l50" href="#l50">50</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">int_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;int&quot;</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">1</td>
+                <td class="src coveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">int_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;int&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l51" href="#l51">51</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">float_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;float&quot;</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">float_type</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;float&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l52" href="#l52">52</a></td>
@@ -461,8 +521,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l53" href="#l53">53</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">vec3</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;vec3&quot;</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">1</td>
+                <td class="src coveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">vec3</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;vec3&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l54" href="#l54">54</a></td>
@@ -475,8 +535,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l55" href="#l55">55</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">mat4</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;mat4&quot;</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">3</td>
+                <td class="src coveredLine"><span class="w">		</span><span class="k">case</span><span class="w"> </span><span class="no">UniformType</span><span class="o">::</span><span class="no">mat4</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;mat4&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l56" href="#l56">56</a></td>
@@ -502,16 +562,34 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l59" href="#l59">59</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>1/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (2 &rightarrow; 3) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (2 &rightarrow; 34) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span><span class="w"> </span><span class="n">ss</span><span class="p">;</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src partialCoveredLine"><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span><span class="w"> </span><span class="n">ss</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l60" href="#l60">60</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>3/6</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (3 &rightarrow; 4) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (3 &rightarrow; 32) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (4 &rightarrow; 5) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (4 &rightarrow; 32) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 4 (5 &rightarrow; 6) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 5 (5 &rightarrow; 32) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;layout (std140) uniform &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src partialCoveredLine"><span class="w">	</span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;layout (std140) uniform &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
@@ -523,16 +601,32 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/4</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (6 &rightarrow; 7) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (6 &rightarrow; 32) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (7 &rightarrow; 8) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (7 &rightarrow; 32) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src partialCoveredLine"><span class="w">	   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l63" href="#l63">63</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (23 &rightarrow; 10) taken 8 times.</div>
+                            <div class="color-taken-branch">&check; Branch 1 (23 &rightarrow; 24) taken 2 times.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="o">:</span><span class="w"> </span><span class="n">desc</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">10</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="o">:</span><span class="w"> </span><span class="n">desc</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l64" href="#l64">64</a></td>
@@ -544,16 +638,38 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l65" href="#l65">65</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>5/10</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (11 &rightarrow; 12) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (11 &rightarrow; 31) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (12 &rightarrow; 13) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (12 &rightarrow; 31) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 4 (13 &rightarrow; 14) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 5 (13 &rightarrow; 31) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 6 (14 &rightarrow; 15) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 7 (14 &rightarrow; 31) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 8 (15 &rightarrow; 16) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 9 (15 &rightarrow; 31) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">type_to_string</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">;</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src partialCoveredLine"><span class="w">		</span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">type_to_string</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">type</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l66" href="#l66">66</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (16 &rightarrow; 17) taken 1 times.</div>
+                            <div class="color-taken-branch">&check; Branch 1 (16 &rightarrow; 20) taken 7 times.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">array_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">array_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l67" href="#l67">67</a></td>
@@ -565,9 +681,20 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l68" href="#l68">68</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>3/6</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (17 &rightarrow; 18) taken 1 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (17 &rightarrow; 31) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (18 &rightarrow; 19) taken 1 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (18 &rightarrow; 31) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 4 (19 &rightarrow; 20) taken 1 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 5 (19 &rightarrow; 31) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">array_count</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]&quot;</span><span class="p">;</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">1</td>
+                <td class="src partialCoveredLine"><span class="w">			</span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">array_count</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l69" href="#l69">69</a></td>
@@ -579,9 +706,16 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l70" href="#l70">70</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>1/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (20 &rightarrow; 21) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (20 &rightarrow; 31) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src partialCoveredLine"><span class="w">		</span><span class="n">ss</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l71" href="#l71">71</a></td>
@@ -600,23 +734,39 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l73" href="#l73">73</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/4</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (24 &rightarrow; 25) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (24 &rightarrow; 32) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (25 &rightarrow; 26) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (25 &rightarrow; 32) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src partialCoveredLine"><span class="w">	   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l74" href="#l74">74</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>1/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (26 &rightarrow; 27) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (26 &rightarrow; 32) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">();</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">4</td>
+                <td class="src partialCoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l75" href="#l75">75</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="p">}</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="p">}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l76" href="#l76">76</a></td>
@@ -629,8 +779,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l77" href="#l77">77</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">UniformBufferCompiler::add</span><span class="p">(</span><span class="n">CompiledUniformProp</span><span class="o">*</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">UniformType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">array_count</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">UniformBufferCompiler::add</span><span class="p">(</span><span class="n">CompiledUniformProp</span><span class="o">*</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">UniformType</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">array_count</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l78" href="#l78">78</a></td>
@@ -642,16 +792,27 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l79" href="#l79">79</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/6</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (2 &rightarrow; 3) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (2 &rightarrow; 11) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (3 &rightarrow; 4) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (3 &rightarrow; 6) not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch 4 (8 &rightarrow; 9) not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch 5 (8 &rightarrow; 10) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">props</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">UniformProp</span><span class="p">{</span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">array_count</span><span class="p">});</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src partialCoveredLine"><span class="w">	</span><span class="n">props</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">UniformProp</span><span class="p">{</span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">array_count</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l80" href="#l80">80</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="p">}</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="p">}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l81" href="#l81">81</a></td>
@@ -664,8 +825,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l82" href="#l82">82</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">UniformBufferCompiler::compile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">UniformBufferSetup</span><span class="o">*</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">binding_point</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">UniformBufferCompiler::compile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">UniformBufferSetup</span><span class="o">*</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">binding_point</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l83" href="#l83">83</a></td>
@@ -678,36 +839,50 @@
                 <td class="text-right src linenos"><a class="normal" id="l84" href="#l84">84</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l85" href="#l85">85</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">binding_point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binding_point</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">binding_point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binding_point</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l86" href="#l86">86</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l87" href="#l87">87</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>1/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (3 &rightarrow; 4) taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (3 &rightarrow; 19) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to_source</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">props</span><span class="p">);</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src partialCoveredLine"><span class="w">	</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">to_source</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">props</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l88" href="#l88">88</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/2</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (17 &rightarrow; 8) taken 8 times.</div>
+                            <div class="color-taken-branch">&check; Branch 1 (17 &rightarrow; 18) taken 2 times.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="o">:</span><span class="w"> </span><span class="n">props</span><span class="p">)</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">10</td>
+                <td class="src coveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="o">:</span><span class="w"> </span><span class="n">props</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l89" href="#l89">89</a></td>
@@ -719,30 +894,48 @@
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l90" href="#l90">90</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/4</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (9 &rightarrow; 10) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (9 &rightarrow; 22) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (10 &rightarrow; 11) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (10 &rightarrow; 20) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size_of</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src partialCoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size_of</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l91" href="#l91">91</a></td>
                 <td class="text-right src linenos ws-unset">
+                    <details class="normal details-overlay">
+                        <summary>2/4</summary>
+                        <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
+                            <div class="color-taken-branch">&check; Branch 0 (12 &rightarrow; 13) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 1 (12 &rightarrow; 25) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch 2 (13 &rightarrow; 14) taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch 3 (13 &rightarrow; 23) not taken.</div>
+                        </div>
+                    </details>
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">calculate_alignment_bytes</span><span class="p">(</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span></td>
+                <td class="src partialCoveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src partialCoveredLine"><span class="w">		</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">calculate_alignment_bytes</span><span class="p">(</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l92" href="#l92">92</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="o">*</span><span class="n">p</span><span class="p">.</span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">array_count</span><span class="p">};</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="w">		</span><span class="o">*</span><span class="n">p</span><span class="p">.</span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">array_count</span><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l93" href="#l93">93</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">array_count</span><span class="p">;</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">8</td>
+                <td class="src coveredLine"><span class="w">		</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">size</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">array_count</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l94" href="#l94">94</a></td>
@@ -755,8 +948,8 @@
                 <td class="text-right src linenos"><a class="normal" id="l95" href="#l95">95</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="p">}</span></td>
+                <td class="src coveredLine pr-2 pl-2 color-fg-muted text-right">2</td>
+                <td class="src coveredLine"><span class="p">}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l96" href="#l96">96</a></td>

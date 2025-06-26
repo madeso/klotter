@@ -1,0 +1,105 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/render/render.cc</title>
+</head>
+<body>
+<h1>src/klotter/render/render.cc</h1>
+<span id='readability-make-member-function-const'>&nbsp;</span>
+<hr>
+<h3>warning: method &#39;make_unlit_material&#39; can be made const</h3>
+<code>[readability-make-member-function-const]</code>
+<p><i>src/klotter/render/render.cc 45 : 42</i></p>
+<pre>
+   45 | std::shared_ptr&lt;UnlitMaterial&gt; Renderer::make_unlit_material()
+      |                                          ^                    
+      |                                                                const
+</pre>
+<hr>
+<h3>warning: method &#39;make_default_material&#39; can be made const</h3>
+<code>[readability-make-member-function-const]</code>
+<p><i>src/klotter/render/render.cc 50 : 44</i></p>
+<pre>
+   50 | std::shared_ptr&lt;DefaultMaterial&gt; Renderer::make_default_material()
+      |                                            ^                      
+      |                                                                    const
+</pre>
+<span id='readability-braces-around-statements'>&nbsp;</span>
+<hr>
+<h3>warning: statement should be inside braces</h3>
+<code>[readability-braces-around-statements]</code>
+<p><i>src/klotter/render/render.cc 137 : 26</i></p>
+<pre>
+  137 |         if (debug_lines.empty()) return;
+      |                                 ^       
+      |                                  {
+</pre>
+<span id='readability-qualified-auto'>&nbsp;</span>
+<hr>
+<h3>warning: &#39;auto &amp;m&#39; can be declared as &#39;const auto &amp;m&#39;</h3>
+<code>[readability-qualified-auto]</code>
+<p><i>src/klotter/render/render.cc 180 : 8</i></p>
+<pre>
+  180 |                 for (auto&amp; m: world.meshes)
+      |                      ^
+      |                      const 
+</pre>
+<hr>
+<h3>warning: &#39;auto &amp;m&#39; can be declared as &#39;const auto &amp;m&#39;</h3>
+<code>[readability-qualified-auto]</code>
+<p><i>src/klotter/render/render.cc 213 : 8</i></p>
+<pre>
+  213 |                 for (auto&amp; m: world.instances)
+      |                      ^
+      |                      const 
+</pre>
+<hr>
+<h3>warning: &#39;auto &amp;m&#39; can be declared as &#39;const auto &amp;m&#39;</h3>
+<code>[readability-qualified-auto]</code>
+<p><i>src/klotter/render/render.cc 304 : 8</i></p>
+<pre>
+  304 |                 for (auto&amp; m: world.meshes)
+      |                      ^
+      |                      const 
+</pre>
+<span id='bugprone-unchecked-optional-access'>&nbsp;</span>
+<hr>
+<h3>warning: unchecked access to optional value</h3>
+<code>[bugprone-unchecked-optional-access]</code>
+<p><i>src/klotter/render/render.cc 316 : 51</i></p>
+<pre>
+  316 |                                 shader.program-&gt;set_vec4(shader.tint_color, {*m-&gt;outline, 1});
+      |                                                                               ^
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/render/render.cc:45:42: warning: method 'make_unlit_material' can be made const [readability-make-member-function-const]
+   45 | std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material()
+      |                                          ^                    
+      |                                                                const
+/home/runner/work/klotter/klotter/src/klotter/render/render.cc:50:44: warning: method 'make_default_material' can be made const [readability-make-member-function-const]
+   50 | std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
+      |                                            ^                      
+      |                                                                    const
+/home/runner/work/klotter/klotter/src/klotter/render/render.cc:137:26: warning: statement should be inside braces [readability-braces-around-statements]
+  137 |         if (debug_lines.empty()) return;
+      |                                 ^       
+      |                                  {
+/home/runner/work/klotter/klotter/src/klotter/render/render.cc:180:8: warning: 'auto &m' can be declared as 'const auto &m' [readability-qualified-auto]
+  180 |                 for (auto& m: world.meshes)
+      |                      ^
+      |                      const 
+/home/runner/work/klotter/klotter/src/klotter/render/render.cc:213:8: warning: 'auto &m' can be declared as 'const auto &m' [readability-qualified-auto]
+  213 |                 for (auto& m: world.instances)
+      |                      ^
+      |                      const 
+/home/runner/work/klotter/klotter/src/klotter/render/render.cc:304:8: warning: 'auto &m' can be declared as 'const auto &m' [readability-qualified-auto]
+  304 |                 for (auto& m: world.meshes)
+      |                      ^
+      |                      const 
+/home/runner/work/klotter/klotter/src/klotter/render/render.cc:316:51: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  316 |                                 shader.program->set_vec4(shader.tint_color, {*m->outline, 1});
+      |                                                                               ^
+-->
+</body>
+</html>

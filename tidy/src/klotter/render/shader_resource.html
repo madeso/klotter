@@ -1,0 +1,74 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/render/shader_resource.cc</title>
+</head>
+<body>
+<h1>src/klotter/render/shader_resource.cc</h1>
+<span id='readability-make-member-function-const'>&nbsp;</span>
+<hr>
+<h3>warning: method &#39;set_props&#39; can be made const</h3>
+<code>[readability-make-member-function-const]</code>
+<p><i>src/klotter/render/shader_resource.cc 25 : 27</i></p>
+<pre>
+   25 | void CameraUniformBuffer::set_props(const CompiledCamera&amp; cc)
+      |                           ^                                  
+      |                                                               const
+</pre>
+<span id='readability-identifier-length'>&nbsp;</span>
+<hr>
+<h3>warning: loop variable name &#39;i&#39; is too short, expected at least 2 characters</h3>
+<code>[readability-identifier-length]</code>
+<p><i>src/klotter/render/shader_resource.cc 144 : 11</i></p>
+<pre>
+  144 |         for (int i = 0; i &lt; settings.number_of_directional_lights; i += 1)
+      |                  ^
+</pre>
+<hr>
+<h3>warning: loop variable name &#39;i&#39; is too short, expected at least 2 characters</h3>
+<code>[readability-identifier-length]</code>
+<p><i>src/klotter/render/shader_resource.cc 150 : 11</i></p>
+<pre>
+  150 |         for (int i = 0; i &lt; settings.number_of_point_lights; i += 1)
+      |                  ^
+</pre>
+<hr>
+<h3>warning: loop variable name &#39;i&#39; is too short, expected at least 2 characters</h3>
+<code>[readability-identifier-length]</code>
+<p><i>src/klotter/render/shader_resource.cc 156 : 11</i></p>
+<pre>
+  156 |         for (int i = 0; i &lt; settings.number_of_frustum_lights; i += 1)
+      |                  ^
+</pre>
+<span id='misc-const-correctness'>&nbsp;</span>
+<hr>
+<h3>warning: variable &#39;global_shader_data&#39; of type &#39;BaseShaderData&#39; (aka &#39;vector&lt;VertexType&gt;&#39;) can be declared &#39;const&#39;</h3>
+<code>[misc-const-correctness]</code>
+<p><i>src/klotter/render/shader_resource.cc 262 : 2</i></p>
+<pre>
+  262 |         BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
+      |         ^
+      |                        const 
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/render/shader_resource.cc:25:27: warning: method 'set_props' can be made const [readability-make-member-function-const]
+   25 | void CameraUniformBuffer::set_props(const CompiledCamera& cc)
+      |                           ^                                  
+      |                                                               const
+/home/runner/work/klotter/klotter/src/klotter/render/shader_resource.cc:144:11: warning: loop variable name 'i' is too short, expected at least 2 characters [readability-identifier-length]
+  144 |         for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+      |                  ^
+/home/runner/work/klotter/klotter/src/klotter/render/shader_resource.cc:150:11: warning: loop variable name 'i' is too short, expected at least 2 characters [readability-identifier-length]
+  150 |         for (int i = 0; i < settings.number_of_point_lights; i += 1)
+      |                  ^
+/home/runner/work/klotter/klotter/src/klotter/render/shader_resource.cc:156:11: warning: loop variable name 'i' is too short, expected at least 2 characters [readability-identifier-length]
+  156 |         for (int i = 0; i < settings.number_of_frustum_lights; i += 1)
+      |                  ^
+/home/runner/work/klotter/klotter/src/klotter/render/shader_resource.cc:262:2: warning: variable 'global_shader_data' of type 'BaseShaderData' (aka 'vector<VertexType>') can be declared 'const' [misc-const-correctness]
+  262 |         BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
+      |         ^
+      |                        const 
+-->
+</body>
+</html>
