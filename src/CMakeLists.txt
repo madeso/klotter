@@ -106,6 +106,7 @@ set(src
 )
 
 add_library(klotter STATIC ${src})
+set_target_properties(klotter PROPERTIES FOLDER "Klotter")
 target_link_libraries(klotter
     PUBLIC
         external::sdl2
@@ -135,7 +136,6 @@ source_group("" FILES ${src})
 
 source_group("input" FILES ${src_input})
 source_group("render" FILES ${src_render})
-# source_group("base" FILES ${src_base})
 source_group("pch" FILES ${src_pch})
 source_group("_assets" FILES ${src_assets})
 source_group("shaders" FILES ${shaders})
@@ -150,9 +150,8 @@ set(src_test
     klotter/render/vertex_layout.test.cc
     klotter/render/uniform_buffer.test.cc
 )
-add_executable(test
-    ${src_test}
-)
+add_executable(test ${src_test})
+set_target_properties(test PROPERTIES FOLDER "Klotter")
 target_link_libraries(test
     catchy::catchy
     klotter::klotter

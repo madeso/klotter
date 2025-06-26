@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.15)
-set_property(GLOBAL PROPERTY USE_FOLDERS OFF)
 project(klotter CXX C)
+
+
+###################################################################################################
+# global setup
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "_cmake")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 include(cmake/StandardProjectSettings.cmake)
 

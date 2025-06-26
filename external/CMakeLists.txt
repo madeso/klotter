@@ -18,6 +18,7 @@ add_library(external_glad STATIC
     glad/src/glad.c
     glad/include/glad/glad.h
 )
+set_target_properties(external_glad PROPERTIES FOLDER "External")
 target_include_directories(external_glad SYSTEM
     PUBLIC
         glad/include
@@ -59,6 +60,7 @@ if(EU_SDL_SOURCE_FETCH)
         LOG_BUILD ON
         LOG_INSTALL ON
     )
+    set_target_properties(SDL2_external PROPERTIES FOLDER "External")
 
     add_library(external_sdl2 INTERFACE)
     add_dependencies(external_sdl2 SDL2_external)
@@ -150,6 +152,7 @@ set(dear_imgui_src
     imgui/backends/imgui_impl_opengl3.h
 )
 add_library(dear_imgui STATIC ${dear_imgui_src})
+set_target_properties(dear_imgui PROPERTIES FOLDER "External")
 source_group("" FILES ${dear_imgui_src})
 target_include_directories(dear_imgui SYSTEM
     PUBLIC
