@@ -25,9 +25,13 @@ bool Effect::enabled() const
 
 void Effect::set_enabled(bool n)
 {
-	if (is_enabled == n) return;
+	if (is_enabled == n)
+	{
+		return;
+	}
+
 	is_enabled = n;
-	if (owner)
+	if (owner != nullptr)
 	{
 		owner->dirty = true;
 	}
@@ -43,15 +47,15 @@ struct RenderWorld : RenderSource
 
 	RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> sh, int msaa_samples)
 		: window_size(size)
-	{
-		msaa_buffer = FrameBufferBuilder{size}
+		, msaa_buffer(FrameBufferBuilder{size}
 			.with_msaa(msaa_samples)
 			.with_depth()
 			.with_stencil()
-			.build(USE_TEXTURE_LABEL("msaa buffer"));
-		realized_buffer = FrameBufferBuilder{size}
-			.build(USE_TEXTURE_LABEL("realized msaa buffer"));
-		shader = std::move(sh);
+			.build(USE_TEXTURE_LABEL("msaa buffer")))
+		, realized_buffer(FrameBufferBuilder{size}
+			.build(USE_TEXTURE_LABEL("realized msaa buffer")))
+		, shader(std::move(sh))
+	{
 	}
 
 	void update(const PostProcArg& arg)
@@ -364,7 +368,7 @@ struct SimpleEffect
 	void use_shader(const PostProcArg& a, const FrameBuffer& t) override
 	{
 		shader->program->use();
-		if (shader->factor)
+		if (shader->factor.has_value())
 		{
 			shader->program->set_float(*shader->factor, get_factor());
 		}
@@ -481,7 +485,10 @@ struct BlurEffect : FactorEffect
 	{
 		vert->program->use();
 		ASSERT(vert->factor);
-		vert->program->set_float(*vert->factor, get_factor());
+		if (vert->factor)
+		{
+			vert->program->set_float(*vert->factor, get_factor());
+		}
 		vert->program->set_float(blur_size_v, blur_size);
 #if FF_HAS(BLUR_USE_GAUSS)
 		vert->program->set_float(std_dev_v, std_dev);
@@ -493,9 +500,15 @@ struct BlurEffect : FactorEffect
 	{
 		hori->program->use();
 		ASSERT(hori->factor);
-		hori->program->set_float(*hori->factor, get_factor());
+		if (hori->factor)
+		{
+			hori->program->set_float(*hori->factor, get_factor());
+		}
 		ASSERT(hori->resolution);
-		hori->program->set_vec2(*hori->resolution, a.window_size);
+		if (hori->resolution)
+		{
+			hori->program->set_vec2(*hori->resolution, a.window_size);
+		}
 		hori->program->set_float(blur_size_h, blur_size);
 #if FF_HAS(BLUR_USE_GAUSS)
 		hori->program->set_float(std_dev_h, std_dev);
@@ -534,17 +547,17 @@ void HoriProvider::use_shader(const PostProcArg& a, const FrameBuffer& t)
 	blur->use_hori_shader(a, t);
 }
 
-std::shared_ptr<FactorEffect> Renderer::make_invert_effect()
+std::shared_ptr<FactorEffect> Renderer::make_invert_effect() const
 {
 	return std::make_shared<SimpleEffect>("Invert", pimpl->shaders_resources.pp_invert);
 }
 
-std::shared_ptr<FactorEffect> Renderer::make_grayscale_effect()
+std::shared_ptr<FactorEffect> Renderer::make_grayscale_effect() const
 {
 	return std::make_shared<SimpleEffect>("Grayscale", pimpl->shaders_resources.pp_grayscale);
 }
 
-std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
+std::shared_ptr<FactorEffect> Renderer::make_damage_effect() const
 {
 	auto r = std::make_shared<SimpleEffect>("Damage", pimpl->shaders_resources.pp_damage);
 	r->add_float_drag_prop("u_vignette_radius", 0.13f, 0.01f);
@@ -554,7 +567,7 @@ std::shared_ptr<FactorEffect> Renderer::make_damage_effect()
 	return r;
 }
 
-std::shared_ptr<FactorEffect> Renderer::make_blur_effect()
+std::shared_ptr<FactorEffect> Renderer::make_blur_effect() const
 {
 	return std::make_shared<BlurEffect>("Blur", pimpl->shaders_resources.pp_blurv, pimpl->shaders_resources.pp_blurh);
 }

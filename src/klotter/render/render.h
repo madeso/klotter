@@ -40,10 +40,10 @@ struct Renderer
 	[[nodiscard]] CompiledGeomVertexAttributes unlit_geom_layout() const;
 	[[nodiscard]] CompiledGeomVertexAttributes default_geom_layout() const;
 
-	std::shared_ptr<FactorEffect> make_invert_effect();
-	std::shared_ptr<FactorEffect> make_grayscale_effect();
-	std::shared_ptr<FactorEffect> make_damage_effect();
-	std::shared_ptr<FactorEffect> make_blur_effect();
+	std::shared_ptr<FactorEffect> make_invert_effect() const;
+	std::shared_ptr<FactorEffect> make_grayscale_effect() const;
+	std::shared_ptr<FactorEffect> make_damage_effect() const;
+	std::shared_ptr<FactorEffect> make_blur_effect() const;
 
 	[[nodiscard]] Skybox make_skybox(std::shared_ptr<TextureCubemap> texture) const;
 
