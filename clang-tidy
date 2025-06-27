@@ -124,6 +124,9 @@ readability-identifier-naming
 # looks neat but why sqrt(2) and not sqrt(6)...?
 -modernize-use-std-numbers
 
+# I'm not sure I agree this improves readability.. I'm not against it but not a proponent either
+-readability-use-anyofallof
+
 #################################################################################
 # the checks attribute ends here...
 # just regular (yaml) .clang-tidy settings from now on (with lines starting with // stripped away)
