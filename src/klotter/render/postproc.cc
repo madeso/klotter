@@ -368,17 +368,22 @@ struct SimpleEffect
 	void use_shader(const PostProcArg& a, const FrameBuffer& t) override
 	{
 		shader->program->use();
-		if (shader->factor.has_value())
+
+		const auto& shader_factor = shader->factor;
+		const auto& shader_resolution = shader->resolution;
+		const auto& shader_time = shader->time;
+
+		if (shader_factor)
 		{
-			shader->program->set_float(*shader->factor, get_factor());
+			shader->program->set_float(*shader_factor, get_factor());
 		}
-		if (shader->resolution)
+		if (shader_resolution)
 		{
-			shader->program->set_vec2(*shader->resolution, a.window_size);
+			shader->program->set_vec2(*shader_resolution, a.window_size);
 		}
-		if (shader->time)
+		if (shader_time)
 		{
-			shader->program->set_float(*shader->time, time);
+			shader->program->set_float(*shader_time, time);
 		}
 		for (auto& p: properties)
 		{
