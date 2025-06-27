@@ -22,7 +22,7 @@
 namespace klotter
 {
 
-void CameraUniformBuffer::set_props(const CompiledCamera& cc)
+void CameraUniformBuffer::set_props(const CompiledCamera& cc) // NOLINT(readability-make-member-function-const)
 {
 	buffer->set_mat4(projection_prop, cc.projection);
 	buffer->set_mat4(view_prop, cc.view);
@@ -141,21 +141,21 @@ LoadedShader_Default::LoadedShader_Default(
 	, view_position(program->get_uniform("u_view_position"))
 	, light_ambient_color(program->get_uniform("u_ambient_light"))
 {
-	for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+	for (int index = 0; index < settings.number_of_directional_lights; index += 1)
 	{
-		const std::string base = Str{} << "u_directional_lights[" << i << "].";
+		const std::string base = Str{} << "u_directional_lights[" << index << "].";
 		directional_lights.emplace_back(program.get(), base);
 	}
 
-	for (int i = 0; i < settings.number_of_point_lights; i += 1)
+	for (int index = 0; index < settings.number_of_point_lights; index += 1)
 	{
-		const std::string base = Str{} << "u_point_lights[" << i << "].";
+		const std::string base = Str{} << "u_point_lights[" << index << "].";
 		point_lights.emplace_back(program.get(), base);
 	}
 
-	for (int i = 0; i < settings.number_of_frustum_lights; i += 1)
+	for (int index = 0; index < settings.number_of_frustum_lights; index += 1)
 	{
-		const std::string base = Str{} << "u_frustum_lights[" << i << "].";
+		const std::string base = Str{} << "u_frustum_lights[" << index << "].";
 		frustum_lights.emplace_back(program.get(), base);
 	}
 
@@ -259,7 +259,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		ShaderVertexAttributes{{VertexType::position3, "a_position"}}, skybox_source.vertex, skybox_source.fragment
 	};
 
-	BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
+	const BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
 
 	ShaderOptions unlit_shader_options;
 	unlit_shader_options.use_texture = true;
