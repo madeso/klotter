@@ -43,8 +43,11 @@ SCurve s_curve_from_input(float mx, float my)
 
 float calculate_s_curve(float x, float s, float t)
 {
-	constexpr float mE = 0.00001f;	// machine epsilon
-	return x < t ? t * x / (x + s * (t - x) + mE) : ((1 - t) * (x - 1)) / (1 - x - s * (t - x) + mE) + 1;
+	constexpr float machine_epsilon = 0.00001f;
+	return x < t ?
+		t * x / (x + s * (t - x) + machine_epsilon) :
+		((1 - t) * (x - 1)) / (1 - x - s * (t - x) + machine_epsilon) + 1
+	;
 }
 
 ImVec2 operator+(const ImVec2& lhs, const ImVec2& rhs)
@@ -67,6 +70,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 		return false;
 	}
 
+	// todo(Gustav)L move to a settings struct
 	constexpr float radius = 10.0f;
 	constexpr float dot_radius = 3.0f;
 	constexpr auto button = ImGuiMouseButton_Left;
@@ -86,20 +90,20 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 	draw->AddRectFilled(pos, pos + size, background_color);
 
 	std::array<ImVec2, max_points + 1> points;
-	for (std::size_t i = 0; i < max_points + 1; i += 1)
+	for (std::size_t point_index = 0; point_index < max_points + 1; point_index += 1)
 	{
-		const float srcx = static_cast<float>(i) / static_cast<float>(max_points);
+		const float srcx = static_cast<float>(point_index) / static_cast<float>(max_points);
 		const float x = flip_x ? 1 - srcx : srcx;
 		const float y = calculate_s_curve(srcx, scd->curve.s, scd->curve.t);
-		points[i] = ImVec2{x * size.x, (1 - y) * size.y} + pos;
+		points[point_index] = ImVec2{x * size.x, (1 - y) * size.y} + pos;
 	}
 	draw->AddPolyline(points.data(), max_points + 1, line_color, ImDrawFlags_None, 1.0f);
 
 	if (draw_points)
 	{
-		for (std::size_t i = 0; i < max_points + 1; i += 1)
+		for (std::size_t point_index = 0; point_index < max_points + 1; point_index += 1)
 		{
-			draw->AddCircleFilled(points[i], dot_radius, dot_color);
+			draw->AddCircleFilled(points[point_index], dot_radius, dot_color);
 		}
 	}
 	draw->AddCircleFilled(ImVec2{scd->drag.x * size.x, (1 - scd->drag.y) * size.y} + pos, radius, drag_color);
@@ -116,9 +120,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 #define T(s) \
 	do \
 	{ \
-		if (s < 0.0f) \
-			return false; \
-		else if (s > 1.0f) \
+		if ((s) < 0.0f || (s) > 1.0f) \
 			return false; \
 	} while (false)
 		T(p.x);
