@@ -211,7 +211,7 @@ Uniform ShaderProgram::get_uniform(const std::string& name) const
 	return uni;
 }
 
-void ShaderProgram::set_float(const Uniform& uniform, float value) const
+void ShaderProgram::set_float(const Uniform& uniform, float value)
 {
 	ASSERT(is_shader_bound(shader_program));
 	if (uniform.is_valid() == false)
@@ -224,7 +224,7 @@ void ShaderProgram::set_float(const Uniform& uniform, float value) const
 	glUniform1f(uniform.location, value);
 }
 
-void ShaderProgram::set_vec2(const Uniform& uniform, float x, float y) const
+void ShaderProgram::set_vec2(const Uniform& uniform, float x, float y)
 {
 	ASSERT(is_shader_bound(shader_program));
 	if (uniform.is_valid() == false)
@@ -237,12 +237,12 @@ void ShaderProgram::set_vec2(const Uniform& uniform, float x, float y) const
 	glUniform2f(uniform.location, x, y);
 }
 
-void ShaderProgram::set_vec2(const Uniform& uniform, const glm::vec2& v) const
+void ShaderProgram::set_vec2(const Uniform& uniform, const glm::vec2& v)
 {
 	set_vec2(uniform, v.x, v.y);
 }
 
-void ShaderProgram::set_vec3(const Uniform& uniform, float x, float y, float z) const
+void ShaderProgram::set_vec3(const Uniform& uniform, float x, float y, float z)
 {
 	ASSERT(is_shader_bound(shader_program));
 	if (uniform.is_valid() == false)
@@ -255,12 +255,12 @@ void ShaderProgram::set_vec3(const Uniform& uniform, float x, float y, float z) 
 	glUniform3f(uniform.location, x, y, z);
 }
 
-void ShaderProgram::set_vec3(const Uniform& uniform, const glm::vec3& v) const
+void ShaderProgram::set_vec3(const Uniform& uniform, const glm::vec3& v)
 {
 	set_vec3(uniform, v.x, v.y, v.z);
 }
 
-void ShaderProgram::set_vec4(const Uniform& uniform, float x, float y, float z, float w) const
+void ShaderProgram::set_vec4(const Uniform& uniform, float x, float y, float z, float w)
 {
 	ASSERT(is_shader_bound(shader_program));
 	if (uniform.is_valid() == false)
@@ -273,12 +273,12 @@ void ShaderProgram::set_vec4(const Uniform& uniform, float x, float y, float z, 
 	glUniform4f(uniform.location, x, y, z, w);
 }
 
-void ShaderProgram::set_vec4(const Uniform& uniform, const glm::vec4& v) const
+void ShaderProgram::set_vec4(const Uniform& uniform, const glm::vec4& v)
 {
 	set_vec4(uniform, v.x, v.y, v.z, v.w);
 }
 
-void ShaderProgram::set_texture(const Uniform& uniform) const
+void ShaderProgram::set_texture(const Uniform& uniform)
 {
 	ASSERT(is_shader_bound(shader_program));
 	if (uniform.is_valid() == false)
@@ -291,7 +291,7 @@ void ShaderProgram::set_texture(const Uniform& uniform) const
 	glUniform1i(uniform.location, uniform.texture);
 }
 
-void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat4& mat) const
+void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat4& mat)
 {
 	ASSERT(is_shader_bound(shader_program));
 	if (uniform.is_valid() == false)
@@ -304,7 +304,7 @@ void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat4& mat) const
 	glUniformMatrix4fv(uniform.location, 1, GL_FALSE, glm::value_ptr(mat));
 }
 
-void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
+void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat)
 {
 	ASSERT(is_shader_bound(shader_program));
 	if (uniform.is_valid() == false)
