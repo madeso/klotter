@@ -6,7 +6,7 @@
     <includes local="no">optional</includes>
     <includes refid="colors_8h" local="yes">klotter/colors.h</includes>
     <includes refid="texture_8h" local="yes">klotter/render/texture.h</includes>
-    <includedby refid="render_8h" local="yes">src/klotter/render/render.h</includedby>
+    <includedby refid="renderer_8h" local="yes">src/klotter/render/renderer.h</includedby>
     <includedby refid="world_8h" local="yes">src/klotter/render/world.h</includedby>
     <incdepgraph>
       <node id="4">
@@ -60,14 +60,14 @@
         </childnode>
       </node>
       <node id="2">
-        <label>src/klotter/render/render.h</label>
-        <link refid="render_8h"/>
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="6">
-        <label>src/klotter/render/render.pimpl.h</label>
-        <link refid="render_8pimpl_8h"/>
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
       </node>
       <node id="4">
         <label>src/klotter/render/world.h</label>

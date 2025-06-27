@@ -13,9 +13,9 @@
     <innerclass refid="structklotter_1_1UnlitMaterial" prot="public">klotter::UnlitMaterial</innerclass>
     <innerclass refid="structklotter_1_1DefaultMaterial" prot="public">klotter::DefaultMaterial</innerclass>
     <innerclass refid="structklotter_1_1OpenglStates" prot="public">klotter::OpenglStates</innerclass>
+    <innerclass refid="structklotter_1_1RenderSettings" prot="public">klotter::RenderSettings</innerclass>
     <innerclass refid="structklotter_1_1Renderer" prot="public">klotter::Renderer</innerclass>
     <innerclass refid="structklotter_1_1RendererPimpl" prot="public">klotter::RendererPimpl</innerclass>
-    <innerclass refid="structklotter_1_1RenderSettings" prot="public">klotter::RenderSettings</innerclass>
     <innerclass refid="structklotter_1_1CameraUniformBuffer" prot="public">klotter::CameraUniformBuffer</innerclass>
     <innerclass refid="structklotter_1_1LoadedShader__SingleColor" prot="public">klotter::LoadedShader_SingleColor</innerclass>
     <innerclass refid="structklotter_1_1LoadedShader__Skybox" prot="public">klotter::LoadedShader_Skybox</innerclass>

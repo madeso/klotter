@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klotter: src/klotter/render/render.pimpl.h Source File</title>
+<title>Klotter: src/klotter/render/renderer.pimpl.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,10 +109,10 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">render.pimpl.h</div></div>
+  <div class="headertitle"><div class="title">renderer.pimpl.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="render_8pimpl_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="renderer_8pimpl_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="linebatch_8h.html">klotter/render/linebatch.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="opengl__states_8h.html">klotter/render/opengl_states.h</a>&quot;</span></div>
@@ -147,12 +147,12 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="astructklotter_1_1FullScreenGeom_html"><div class="ttname"><a href="structklotter_1_1FullScreenGeom.html">klotter::FullScreenGeom</a></div><div class="ttdoc">Store the information for how to render a full screen quad.</div><div class="ttdef"><b>Definition</b> fullscreen.h:16</div></div>
 <div class="ttc" id="astructklotter_1_1OpenglStates_html"><div class="ttname"><a href="structklotter_1_1OpenglStates.html">klotter::OpenglStates</a></div><div class="ttdoc">A &quot;cache&quot; for the current open gl state.</div><div class="ttdef"><b>Definition</b> opengl_states.h:32</div></div>
 <div class="ttc" id="astructklotter_1_1RenderSettings_html"><div class="ttname"><a href="structklotter_1_1RenderSettings.html">klotter::RenderSettings</a></div><div class="ttdoc">Startup settings for the renderer.</div><div class="ttdef"><b>Definition</b> render_settings.h:12</div></div>
-<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a146ca5e38bd4c8a717795a173c657e89"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a146ca5e38bd4c8a717795a173c657e89">klotter::RendererPimpl::camera_uniform_buffer</a></div><div class="ttdeci">CameraUniformBuffer camera_uniform_buffer</div><div class="ttdef"><b>Definition</b> render.pimpl.h:18</div></div>
-<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a30fac033e1f7db0bff6ddf2c36728c80"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a30fac033e1f7db0bff6ddf2c36728c80">klotter::RendererPimpl::states</a></div><div class="ttdeci">OpenglStates states</div><div class="ttdef"><b>Definition</b> render.pimpl.h:20</div></div>
-<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a5554e780129b907e7096298bdce2170b"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a5554e780129b907e7096298bdce2170b">klotter::RendererPimpl::debug_drawer</a></div><div class="ttdeci">DebugDrawer debug_drawer</div><div class="ttdef"><b>Definition</b> render.pimpl.h:21</div></div>
+<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a146ca5e38bd4c8a717795a173c657e89"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a146ca5e38bd4c8a717795a173c657e89">klotter::RendererPimpl::camera_uniform_buffer</a></div><div class="ttdeci">CameraUniformBuffer camera_uniform_buffer</div><div class="ttdef"><b>Definition</b> renderer.pimpl.h:18</div></div>
+<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a30fac033e1f7db0bff6ddf2c36728c80"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a30fac033e1f7db0bff6ddf2c36728c80">klotter::RendererPimpl::states</a></div><div class="ttdeci">OpenglStates states</div><div class="ttdef"><b>Definition</b> renderer.pimpl.h:20</div></div>
+<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a5554e780129b907e7096298bdce2170b"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a5554e780129b907e7096298bdce2170b">klotter::RendererPimpl::debug_drawer</a></div><div class="ttdeci">DebugDrawer debug_drawer</div><div class="ttdef"><b>Definition</b> renderer.pimpl.h:21</div></div>
 <div class="ttc" id="astructklotter_1_1RendererPimpl_html_a5589ea5eb933cefc1fd719af2ae2f432"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a5589ea5eb933cefc1fd719af2ae2f432">klotter::RendererPimpl::RendererPimpl</a></div><div class="ttdeci">RendererPimpl(const RenderSettings &amp;set, const FullScreenGeom &amp;full_screen)</div></div>
-<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a81cf9becda0b96defeb78b8f4ccd81bc"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a81cf9becda0b96defeb78b8f4ccd81bc">klotter::RendererPimpl::full_screen_geom</a></div><div class="ttdeci">std::shared_ptr&lt; CompiledGeom &gt; full_screen_geom</div><div class="ttdef"><b>Definition</b> render.pimpl.h:22</div></div>
-<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a8707601c657c0774f0e7022c259f2cd5"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a8707601c657c0774f0e7022c259f2cd5">klotter::RendererPimpl::shaders_resources</a></div><div class="ttdeci">ShaderResource shaders_resources</div><div class="ttdef"><b>Definition</b> render.pimpl.h:19</div></div>
+<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a81cf9becda0b96defeb78b8f4ccd81bc"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a81cf9becda0b96defeb78b8f4ccd81bc">klotter::RendererPimpl::full_screen_geom</a></div><div class="ttdeci">std::shared_ptr&lt; CompiledGeom &gt; full_screen_geom</div><div class="ttdef"><b>Definition</b> renderer.pimpl.h:22</div></div>
+<div class="ttc" id="astructklotter_1_1RendererPimpl_html_a8707601c657c0774f0e7022c259f2cd5"><div class="ttname"><a href="structklotter_1_1RendererPimpl.html#a8707601c657c0774f0e7022c259f2cd5">klotter::RendererPimpl::shaders_resources</a></div><div class="ttdeci">ShaderResource shaders_resources</div><div class="ttdef"><b>Definition</b> renderer.pimpl.h:19</div></div>
 <div class="ttc" id="astructklotter_1_1ShaderResource_html"><div class="ttname"><a href="structklotter_1_1ShaderResource.html">klotter::ShaderResource</a></div><div class="ttdoc">All loaded shaders.</div><div class="ttdef"><b>Definition</b> shader_resource.h:222</div></div>
 <div class="ttc" id="aworld_8h_html"><div class="ttname"><a href="world_8h.html">world.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

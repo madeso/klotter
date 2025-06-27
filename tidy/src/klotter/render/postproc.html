@@ -10,69 +10,36 @@
 <hr>
 <h3>warning: unchecked access to optional value</h3>
 <code>[bugprone-unchecked-optional-access]</code>
-<p><i>src/klotter/render/postproc.cc 373 : 32</i></p>
+<p><i>src/klotter/render/postproc.cc 495 : 30</i></p>
 <pre>
-  373 |                         shader-&gt;program-&gt;set_float(*shader-&gt;factor, get_factor());
-      |                                                     ^
-</pre>
-<hr>
-<h3>warning: unchecked access to optional value</h3>
-<code>[bugprone-unchecked-optional-access]</code>
-<p><i>src/klotter/render/postproc.cc 377 : 31</i></p>
-<pre>
-  377 |                         shader-&gt;program-&gt;set_vec2(*shader-&gt;resolution, a.window_size);
-      |                                                    ^
-</pre>
-<hr>
-<h3>warning: unchecked access to optional value</h3>
-<code>[bugprone-unchecked-optional-access]</code>
-<p><i>src/klotter/render/postproc.cc 381 : 32</i></p>
-<pre>
-  381 |                         shader-&gt;program-&gt;set_float(*shader-&gt;time, time);
-      |                                                     ^
-</pre>
-<hr>
-<h3>warning: unchecked access to optional value</h3>
-<code>[bugprone-unchecked-optional-access]</code>
-<p><i>src/klotter/render/postproc.cc 490 : 30</i></p>
-<pre>
-  490 |                         vert-&gt;program-&gt;set_float(*vert-&gt;factor, get_factor());
+  495 |                         vert-&gt;program-&gt;set_float(*vert-&gt;factor, get_factor());
       |                                                   ^
 </pre>
 <hr>
 <h3>warning: unchecked access to optional value</h3>
 <code>[bugprone-unchecked-optional-access]</code>
-<p><i>src/klotter/render/postproc.cc 505 : 30</i></p>
+<p><i>src/klotter/render/postproc.cc 510 : 30</i></p>
 <pre>
-  505 |                         hori-&gt;program-&gt;set_float(*hori-&gt;factor, get_factor());
+  510 |                         hori-&gt;program-&gt;set_float(*hori-&gt;factor, get_factor());
       |                                                   ^
 </pre>
 <hr>
 <h3>warning: unchecked access to optional value</h3>
 <code>[bugprone-unchecked-optional-access]</code>
-<p><i>src/klotter/render/postproc.cc 510 : 29</i></p>
+<p><i>src/klotter/render/postproc.cc 515 : 29</i></p>
 <pre>
-  510 |                         hori-&gt;program-&gt;set_vec2(*hori-&gt;resolution, a.window_size);
+  515 |                         hori-&gt;program-&gt;set_vec2(*hori-&gt;resolution, a.window_size);
       |                                                  ^
 </pre>
 <!--
-/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:373:32: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
-  373 |                         shader->program->set_float(*shader->factor, get_factor());
-      |                                                     ^
-/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:377:31: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
-  377 |                         shader->program->set_vec2(*shader->resolution, a.window_size);
-      |                                                    ^
-/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:381:32: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
-  381 |                         shader->program->set_float(*shader->time, time);
-      |                                                     ^
-/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:490:30: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
-  490 |                         vert->program->set_float(*vert->factor, get_factor());
+/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:495:30: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  495 |                         vert->program->set_float(*vert->factor, get_factor());
       |                                                   ^
-/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:505:30: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
-  505 |                         hori->program->set_float(*hori->factor, get_factor());
+/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:510:30: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  510 |                         hori->program->set_float(*hori->factor, get_factor());
       |                                                   ^
-/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:510:29: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
-  510 |                         hori->program->set_vec2(*hori->resolution, a.window_size);
+/home/runner/work/klotter/klotter/src/klotter/render/postproc.cc:515:29: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  515 |                         hori->program->set_vec2(*hori->resolution, a.window_size);
       |                                                  ^
 -->
 </body>

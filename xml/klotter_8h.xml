@@ -4,7 +4,7 @@
     <compoundname>klotter.h</compoundname>
     <includes local="no">memory</includes>
     <includes local="yes">imgui.h</includes>
-    <includes refid="render_8h" local="yes">klotter/render/render.h</includes>
+    <includes refid="renderer_8h" local="yes">klotter/render/renderer.h</includes>
     <includes refid="dependency__sdl_8h" local="yes">klotter/dependency_sdl.h</includes>
     <includes refid="camera_8h" local="yes">klotter/render/camera.h</includes>
     <incdepgraph>
@@ -70,9 +70,13 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="13">
+        <label>klotter/render/render_settings.h</label>
+        <link refid="render__settings_8h"/>
+      </node>
       <node id="4">
-        <label>klotter/render/render.h</label>
-        <link refid="render_8h"/>
+        <label>klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
@@ -87,10 +91,6 @@
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-      </node>
-      <node id="13">
-        <label>klotter/render/render_settings.h</label>
-        <link refid="render__settings_8h"/>
       </node>
       <node id="6">
         <label>klotter/render/texture.h</label>
@@ -180,7 +180,7 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;imgui.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="render_8h" kindref="compound">klotter/render/render.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="renderer_8h" kindref="compound">klotter/render/renderer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dependency__sdl_8h" kindref="compound">klotter/dependency_sdl.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="camera_8h" kindref="compound">klotter/render/camera.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>

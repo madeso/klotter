@@ -17,8 +17,8 @@
         </childnode>
       </node>
       <node id="3">
-        <label>src/klotter/render/render.pimpl.h</label>
-        <link refid="render_8pimpl_8h"/>
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespaceklotter">klotter</innernamespace>

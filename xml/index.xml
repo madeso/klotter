@@ -522,8 +522,8 @@
     <member refid="structklotter_1_1Renderer_1a088e263db406085384a2dac04cbc6f81" kind="function"><name>Renderer</name></member>
     <member refid="structklotter_1_1Renderer_1a8ad0477c6c2e0be00ab87ffbf5e219a4" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1Renderer_1a95008c898662faa4a74924eee472573c" kind="function"><name>operator=</name></member>
-    <member refid="structklotter_1_1Renderer_1abc015db1b63017bd38379bcd19f64e2f" kind="function"><name>make_unlit_material</name></member>
-    <member refid="structklotter_1_1Renderer_1af9881e905a29bec077109dc32895ae3e" kind="function"><name>make_default_material</name></member>
+    <member refid="structklotter_1_1Renderer_1ade91c2a35ede1e145068650eeebe3350" kind="function"><name>make_unlit_material</name></member>
+    <member refid="structklotter_1_1Renderer_1a64e9817e792941443e3c7fd50d3bcfeb" kind="function"><name>make_default_material</name></member>
     <member refid="structklotter_1_1Renderer_1a9fae832300d65af1aea9beb8e90ff06c" kind="function"><name>unlit_geom_layout</name></member>
     <member refid="structklotter_1_1Renderer_1a59e52edabd2be10264bc7782ed4fd6a6" kind="function"><name>default_geom_layout</name></member>
     <member refid="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" kind="function"><name>make_invert_effect</name></member>
@@ -1041,11 +1041,11 @@
   </compound>
   <compound refid="postproc_8h" kind="file"><name>postproc.h</name>
   </compound>
-  <compound refid="render_8h" kind="file"><name>render.h</name>
-  </compound>
-  <compound refid="render_8pimpl_8h" kind="file"><name>render.pimpl.h</name>
-  </compound>
   <compound refid="render__settings_8h" kind="file"><name>render_settings.h</name>
+  </compound>
+  <compound refid="renderer_8h" kind="file"><name>renderer.h</name>
+  </compound>
+  <compound refid="renderer_8pimpl_8h" kind="file"><name>renderer.pimpl.h</name>
   </compound>
   <compound refid="rendermode_8h" kind="file"><name>rendermode.h</name>
   </compound>

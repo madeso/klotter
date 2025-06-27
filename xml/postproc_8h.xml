@@ -3,7 +3,7 @@
   <compounddef id="postproc_8h" kind="file" language="C++">
     <compoundname>postproc.h</compoundname>
     <includes refid="texture_8h" local="yes">klotter/render/texture.h</includes>
-    <includedby refid="render_8h" local="yes">src/klotter/render/render.h</includedby>
+    <includedby refid="renderer_8h" local="yes">src/klotter/render/renderer.h</includedby>
     <incdepgraph>
       <node id="3">
         <label>klotter/render/opengl_labels.h</label>
@@ -34,8 +34,8 @@
         </childnode>
       </node>
       <node id="2">
-        <label>src/klotter/render/render.h</label>
-        <link refid="render_8h"/>
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>

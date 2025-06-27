@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="structklotter_1_1Renderer" kind="struct" language="C++" prot="public">
     <compoundname>klotter::Renderer</compoundname>
-    <includes refid="render_8h" local="no">render.h</includes>
+    <includes refid="renderer_8h" local="no">renderer.h</includes>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structklotter_1_1Renderer_1a4003f3fcc5f8bf2524fe1e23b3bb9bff" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref></type>
@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="23" column="16" bodyfile="src/klotter/render/render.h" bodystart="23" bodyend="-1"/>
+        <location file="src/klotter/render/renderer.h" line="23" column="16" bodyfile="src/klotter/render/renderer.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Renderer_1ad108ac29f6eefa4ab05c2797df6f496c" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="24" column="8" bodyfile="src/klotter/render/render.h" bodystart="24" bodyend="-1"/>
+        <location file="src/klotter/render/renderer.h" line="24" column="8" bodyfile="src/klotter/render/renderer.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Renderer_1a041e598e217704db890b9ed76ae70fdd" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1DebugRender" kindref="compound">DebugRender</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="25" column="13" bodyfile="src/klotter/render/render.h" bodystart="25" bodyend="-1"/>
+        <location file="src/klotter/render/renderer.h" line="25" column="13" bodyfile="src/klotter/render/renderer.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Renderer_1a2a3c947386d5278b82c89d59af6ee7a9" prot="public" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structklotter_1_1RendererPimpl" kindref="compound">RendererPimpl</ref> &gt;</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="27" column="17" bodyfile="src/klotter/render/render.h" bodystart="27" bodyend="-1"/>
+        <location file="src/klotter/render/renderer.h" line="27" column="17" bodyfile="src/klotter/render/renderer.h" bodystart="27" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="29" column="10"/>
+        <location file="src/klotter/render/renderer.h" line="29" column="10"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a84a0c241507db1c10f6779a0a06e7019" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="30" column="1"/>
+        <location file="src/klotter/render/renderer.h" line="30" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1ab746b0b937079d7c796a73c50b468dcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="32" column="1"/>
+        <location file="src/klotter/render/renderer.h" line="32" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a088e263db406085384a2dac04cbc6f81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -126,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="33" column="1"/>
+        <location file="src/klotter/render/renderer.h" line="33" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a8ad0477c6c2e0be00ab87ffbf5e219a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="34" column="6"/>
+        <location file="src/klotter/render/renderer.h" line="34" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a95008c898662faa4a74924eee472573c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -160,12 +160,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="35" column="6"/>
+        <location file="src/klotter/render/renderer.h" line="35" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1Renderer_1abc015db1b63017bd38379bcd19f64e2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1Renderer_1ade91c2a35ede1e145068650eeebe3350" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1UnlitMaterial" kindref="compound">UnlitMaterial</ref> &gt;</type>
         <definition>std::shared_ptr&lt; UnlitMaterial &gt; klotter::Renderer::make_unlit_material</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() const</argsstring>
         <name>make_unlit_material</name>
         <qualifiedname>klotter::Renderer::make_unlit_material</qualifiedname>
         <briefdescription>
@@ -174,12 +174,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="37" column="17"/>
+        <location file="src/klotter/render/renderer.h" line="37" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1Renderer_1af9881e905a29bec077109dc32895ae3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1Renderer_1a64e9817e792941443e3c7fd50d3bcfeb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1DefaultMaterial" kindref="compound">DefaultMaterial</ref> &gt;</type>
         <definition>std::shared_ptr&lt; DefaultMaterial &gt; klotter::Renderer::make_default_material</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() const</argsstring>
         <name>make_default_material</name>
         <qualifiedname>klotter::Renderer::make_default_material</qualifiedname>
         <briefdescription>
@@ -188,7 +188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="38" column="17"/>
+        <location file="src/klotter/render/renderer.h" line="38" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a9fae832300d65af1aea9beb8e90ff06c" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref></type>
@@ -202,7 +202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="40" column="31"/>
+        <location file="src/klotter/render/renderer.h" line="40" column="31"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a59e52edabd2be10264bc7782ed4fd6a6" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref></type>
@@ -216,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="41" column="31"/>
+        <location file="src/klotter/render/renderer.h" line="41" column="31"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FactorEffect" kindref="compound">FactorEffect</ref> &gt;</type>
@@ -230,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="43" column="17"/>
+        <location file="src/klotter/render/renderer.h" line="43" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FactorEffect" kindref="compound">FactorEffect</ref> &gt;</type>
@@ -244,7 +244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="44" column="17"/>
+        <location file="src/klotter/render/renderer.h" line="44" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FactorEffect" kindref="compound">FactorEffect</ref> &gt;</type>
@@ -258,7 +258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="45" column="17"/>
+        <location file="src/klotter/render/renderer.h" line="45" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FactorEffect" kindref="compound">FactorEffect</ref> &gt;</type>
@@ -272,7 +272,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="46" column="17"/>
+        <location file="src/klotter/render/renderer.h" line="46" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Skybox" kindref="compound">Skybox</ref></type>
@@ -290,7 +290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="48" column="9"/>
+        <location file="src/klotter/render/renderer.h" line="48" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -305,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="51" column="7"/>
+        <location file="src/klotter/render/renderer.h" line="51" column="7"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1Renderer_1a48524cf82c262c4ee5caa4d8341ea351" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -330,7 +330,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render.h" line="54" column="6"/>
+        <location file="src/klotter/render/renderer.h" line="54" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -365,7 +365,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/render.h" line="21" column="1" bodyfile="src/klotter/render/render.h" bodystart="22" bodyend="55"/>
+    <location file="src/klotter/render/renderer.h" line="21" column="1" bodyfile="src/klotter/render/renderer.h" bodystart="22" bodyend="55"/>
     <listofallmembers>
       <member refid="structklotter_1_1Renderer_1ad108ac29f6eefa4ab05c2797df6f496c" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>assets</name></member>
       <member refid="structklotter_1_1Renderer_1a041e598e217704db890b9ed76ae70fdd" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>debug</name></member>
@@ -373,11 +373,11 @@
       <member refid="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>is_loaded</name></member>
       <member refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_blur_effect</name></member>
       <member refid="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_damage_effect</name></member>
-      <member refid="structklotter_1_1Renderer_1af9881e905a29bec077109dc32895ae3e" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_default_material</name></member>
+      <member refid="structklotter_1_1Renderer_1a64e9817e792941443e3c7fd50d3bcfeb" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_default_material</name></member>
       <member refid="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_grayscale_effect</name></member>
       <member refid="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_invert_effect</name></member>
       <member refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_skybox</name></member>
-      <member refid="structklotter_1_1Renderer_1abc015db1b63017bd38379bcd19f64e2f" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_unlit_material</name></member>
+      <member refid="structklotter_1_1Renderer_1ade91c2a35ede1e145068650eeebe3350" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_unlit_material</name></member>
       <member refid="structklotter_1_1Renderer_1a8ad0477c6c2e0be00ab87ffbf5e219a4" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>operator=</name></member>
       <member refid="structklotter_1_1Renderer_1a95008c898662faa4a74924eee472573c" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>operator=</name></member>
       <member refid="structklotter_1_1Renderer_1a2a3c947386d5278b82c89d59af6ee7a9" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>pimpl</name></member>

@@ -19,9 +19,9 @@
     <innerfile refid="opengl__states_8h">opengl_states.h</innerfile>
     <innerfile refid="opengl__utils_8h">opengl_utils.h</innerfile>
     <innerfile refid="postproc_8h">postproc.h</innerfile>
-    <innerfile refid="render_8h">render.h</innerfile>
-    <innerfile refid="render_8pimpl_8h">render.pimpl.h</innerfile>
     <innerfile refid="render__settings_8h">render_settings.h</innerfile>
+    <innerfile refid="renderer_8h">renderer.h</innerfile>
+    <innerfile refid="renderer_8pimpl_8h">renderer.pimpl.h</innerfile>
     <innerfile refid="rendermode_8h">rendermode.h</innerfile>
     <innerfile refid="shader_8h">shader.h</innerfile>
     <innerfile refid="shader_8source_8h">shader.source.h</innerfile>

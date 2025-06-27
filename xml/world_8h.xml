@@ -7,8 +7,8 @@
     <includes refid="material_8h" local="yes">klotter/render/material.h</includes>
     <includes refid="vertex__layout_8h" local="yes">klotter/render/vertex_layout.h</includes>
     <includedby refid="fullscreen_8h" local="yes">src/klotter/render/fullscreen.h</includedby>
-    <includedby refid="render_8h" local="yes">src/klotter/render/render.h</includedby>
-    <includedby refid="render_8pimpl_8h" local="yes">src/klotter/render/render.pimpl.h</includedby>
+    <includedby refid="renderer_8h" local="yes">src/klotter/render/renderer.h</includedby>
+    <includedby refid="renderer_8pimpl_8h" local="yes">src/klotter/render/renderer.pimpl.h</includedby>
     <incdepgraph>
       <node id="8">
         <label>klotter/colors.h</label>
@@ -93,14 +93,14 @@
         <link refid="fullscreen_8h"/>
       </node>
       <node id="3">
-        <label>src/klotter/render/render.h</label>
-        <link refid="render_8h"/>
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="5">
-        <label>src/klotter/render/render.pimpl.h</label>
-        <link refid="render_8pimpl_8h"/>
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
       </node>
       <node id="1">
         <label>src/klotter/render/world.h</label>

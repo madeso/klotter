@@ -9,7 +9,7 @@
     <includes refid="cullface_8h" local="yes">klotter/render/cullface.h</includes>
     <includes refid="rendermode_8h" local="yes">klotter/render/rendermode.h</includes>
     <includes refid="constants_8h" local="yes">klotter/render/constants.h</includes>
-    <includedby refid="render_8pimpl_8h" local="yes">src/klotter/render/render.pimpl.h</includedby>
+    <includedby refid="renderer_8pimpl_8h" local="yes">src/klotter/render/renderer.pimpl.h</includedby>
     <incdepgraph>
       <node id="3">
         <label>klotter/render/blend.h</label>
@@ -65,8 +65,8 @@
         </childnode>
       </node>
       <node id="2">
-        <label>src/klotter/render/render.pimpl.h</label>
-        <link refid="render_8pimpl_8h"/>
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
       </node>
     </invincdepgraph>
     <innerclass refid="structklotter_1_1OpenglStates" prot="public">klotter::OpenglStates</innerclass>

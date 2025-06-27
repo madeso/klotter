@@ -25,14 +25,14 @@
         <link refid="fullscreen_8h"/>
       </node>
       <node id="4">
-        <label>src/klotter/render/render.h</label>
-        <link refid="render_8h"/>
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="6">
-        <label>src/klotter/render/render.pimpl.h</label>
-        <link refid="render_8pimpl_8h"/>
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
       </node>
       <node id="2">
         <label>src/klotter/render/world.h</label>
