@@ -88,9 +88,9 @@ Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& c
 
 ///
 /// @param longitude_count number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
-/// @param lattitude_count number of lines that go horizontal, parallels to the equator, which is one of those lines
+/// @param latitude_count number of lines that go horizontal, parallels to the equator, which is one of those lines
 Builder create_uv_sphere(
-	float diameter, int longitude_count, int lattitude_count, bool invert, const glm::vec3& color = colors::white
+	float diameter, int longitude_count, int latitude_count, bool invert, const glm::vec3& color = colors::white
 );
 
 /**

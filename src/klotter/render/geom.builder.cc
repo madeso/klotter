@@ -207,11 +207,10 @@ Builder& Builder::invert_normals()
 Builder& Builder::add_face(const std::vector<Vertex>& vertices)
 {
 	// we currently don't support ton-triangular faces so - triangulate it
-	const std::vector<Vertex>::size_type size = vertices.size();
 	[[maybe_unused]] bool added = false;
-	for (std::vector<Vertex>::size_type i = 2; i < size; ++i)
+	for (std::vector<Vertex>::size_type vertex_index = 2; vertex_index < vertices.size(); ++vertex_index)
 	{
-		add_triangle(Triangle{vertices[0], vertices[i - 1], vertices[i]});
+		add_triangle(Triangle{vertices[0], vertices[vertex_index - 1], vertices[vertex_index]});
 		added = true;
 	}
 	assert(added);
@@ -219,12 +218,12 @@ Builder& Builder::add_face(const std::vector<Vertex>& vertices)
 	return *this;
 }
 
-glm::vec3 FromTo(const glm::vec3& f, const glm::vec3& t)
+glm::vec3 from_to(const glm::vec3& f, const glm::vec3& t)
 {
 	return t - f;
 }
 
-glm::vec3 crossNorm(const glm::vec3& lhs, const glm::vec3& rhs)
+glm::vec3 cross_norm(const glm::vec3& lhs, const glm::vec3& rhs)
 {
 	return glm::normalize(glm::cross(lhs, rhs));
 }
@@ -232,40 +231,40 @@ glm::vec3 crossNorm(const glm::vec3& lhs, const glm::vec3& rhs)
 Builder& Builder::replace_with_smooth_normals()
 {
 	// start with empty sum, this will become the smooth normals
-	std::vector<glm::vec3> vertexNormalsSum(positions.size(), glm::vec3(0, 0, 0));
+	auto vertex_normals_sum = std::vector(positions.size(), glm::vec3(0, 0, 0));
 
 
-	for (Triangle& t: triangles)
+	for (Triangle& tri: triangles)
 	{
-		const glm::vec3 p0 = positions[t.v0.position];
-		const glm::vec3 p1 = positions[t.v1.position];
-		const glm::vec3 p2 = positions[t.v2.position];
+		const glm::vec3 p0 = positions[tri.v0.position];
+		const glm::vec3 p1 = positions[tri.v1.position];
+		const glm::vec3 p2 = positions[tri.v2.position];
 
-		const glm::vec3 d0 = FromTo(p1, p0);
-		const glm::vec3 d1 = FromTo(p1, p2);
+		const glm::vec3 d0 = from_to(p1, p0);
+		const glm::vec3 d1 = from_to(p1, p2);
 
-		const glm::vec3 faceNormal = crossNorm(d1, d0);
+		const glm::vec3 face_normal = cross_norm(d1, d0);
 
 
 		auto update_vert = [&](Vertex& vert)
 		{
 			// add face normal to the vertex normal
-			vertexNormalsSum[vert.position] += faceNormal;
+			vertex_normals_sum[vert.position] += face_normal;
 
 			// set the vertex normal to the same index as the position
 			vert.normal = vert.position;
 		};
 
-		update_vert(t.v0);
-		update_vert(t.v1);
-		update_vert(t.v2);
+		update_vert(tri.v0);
+		update_vert(tri.v1);
+		update_vert(tri.v2);
 	}
 
 	//  normalize the sums
 	normals.clear();
-	for (const glm::vec3& normalSum: vertexNormalsSum)
+	for (const glm::vec3& normal_sum: vertex_normals_sum)
 	{
-		normals.push_back(glm::normalize(normalSum));
+		normals.push_back(glm::normalize(normal_sum));
 	}
 	assert(normals.size() == positions.size());
 
@@ -566,10 +565,10 @@ Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& c
 
 
 // based on https://gist.github.com/Pikachuxxxx/5c4c490a7d7679824e0e18af42918efc
-Builder create_uv_sphere(float diameter, int longitudes, int latitudes, bool invert, const glm::vec3& color)
+Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count, bool invert, const glm::vec3& color)
 {
-	assert(longitudes >= 3);
-	assert(latitudes >= 2);
+	assert(longitude_count >= 3);
+	assert(latitude_count >= 2);
 
 	constexpr float pi = 3.14159265358979323846f;
 
@@ -578,25 +577,25 @@ Builder create_uv_sphere(float diameter, int longitudes, int latitudes, bool inv
 
 	const auto radius = diameter / 2;
 
-	const auto delta_lat = pi / Cint_to_float(latitudes);
-	const auto delta_lon = 2 * pi / Cint_to_float(longitudes);
+	const auto delta_lat = pi / Cint_to_float(latitude_count);
+	const auto delta_lon = 2 * pi / Cint_to_float(longitude_count);
 
-	for (int i = 0; i <= latitudes; ++i)
+	for (int latitude_index = 0; latitude_index <= latitude_count; ++latitude_index)
 	{
-		const auto lat_angle = pi / 2 - Cint_to_float(i) * delta_lat;
+		const auto lat_angle = pi / 2 - Cint_to_float(latitude_index) * delta_lat;
 		const auto xy = std::cos(lat_angle);
 		const auto z = std::sin(lat_angle);
 
-		for (int j = 0; j <= longitudes; ++j)
+		for (int longitude_index = 0; longitude_index <= longitude_count; ++longitude_index)
 		{
-			const auto lon_angle = Cint_to_float(j) * delta_lon;
+			const auto lon_angle = Cint_to_float(longitude_index) * delta_lon;
 
 			const auto normal_x = xy * std::cos(lon_angle);
 			const auto normal_y = xy * std::sin(lon_angle);
 			const auto normal_z = z;
 
-			const auto vertex_s = Cint_to_float(j) / Cint_to_float(longitudes);
-			const auto vertex_t = Cint_to_float(i) / Cint_to_float(latitudes);
+			const auto vertex_s = Cint_to_float(longitude_index) / Cint_to_float(longitude_count);
+			const auto vertex_t = Cint_to_float(latitude_index) / Cint_to_float(latitude_count);
 			ret.add_position({radius * normal_x, radius * normal_y, radius * normal_z});
 			ret.add_text_coord({vertex_s, vertex_t});
 
@@ -611,19 +610,19 @@ Builder create_uv_sphere(float diameter, int longitudes, int latitudes, bool inv
 	//  |  / |       |  / |
 	//  | /  |       | /  |
 	//  k2--k2+1     c----d
-	for (Index i = 0; i < static_cast<Index>(latitudes); ++i)
+	for (Index latitude_index = 0; latitude_index < static_cast<Index>(latitude_count); ++latitude_index)
 	{
-		for (Index j = 0; j < static_cast<Index>(longitudes); ++j)
+		for (Index longitude_index = 0; longitude_index < static_cast<Index>(longitude_count); ++longitude_index)
 		{
-			const auto k1 = i * (static_cast<Index>(longitudes) + 1) + j;
-			const auto k2 = k1 + static_cast<Index>(longitudes) + 1;
+			const auto k1 = latitude_index * (static_cast<Index>(longitude_count) + 1) + longitude_index;
+			const auto k2 = k1 + static_cast<Index>(longitude_count) + 1;
 
 			const auto a = k1;
 			const auto b = k1 + 1;
 			const auto c = k2;
 			const auto d = k2 + 1;
 
-			if (i != 0)
+			if (latitude_index != 0)
 			{
 				if (invert)
 				{
@@ -635,7 +634,7 @@ Builder create_uv_sphere(float diameter, int longitudes, int latitudes, bool inv
 				}
 			}
 
-			if (i != static_cast<Index>(latitudes - 1))
+			if (latitude_index != static_cast<Index>(latitude_count - 1))
 			{
 				if (invert)
 				{
