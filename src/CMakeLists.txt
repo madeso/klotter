@@ -48,8 +48,8 @@ set(src_render
     klotter/render/statechanger.cc klotter/render/statechanger.h
     klotter/render/fullscreen.cc klotter/render/fullscreen.h
 
-    klotter/render/render.cc klotter/render/render.h
-    klotter/render/render.pimpl.cc klotter/render/render.pimpl.h
+    klotter/render/renderer.cc klotter/render/renderer.h
+    klotter/render/renderer.pimpl.cc klotter/render/renderer.pimpl.h
     klotter/render/camera.cc klotter/render/camera.h
     klotter/render/opengl_utils.cc klotter/render/opengl_utils.h
     klotter/render/opengl_labels.cc klotter/render/opengl_labels.h

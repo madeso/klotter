@@ -8,11 +8,11 @@
 
 #include "klotter/feature_flags.h"
 #include "klotter/render/opengl_utils.h"
-#include "klotter/render/render.h"
+#include "klotter/render/renderer.h"
 #include "klotter/render/shader.h"
 #include "klotter/render/shader_resource.h"
 #include "klotter/render/statechanger.h"
-#include "klotter/render/render.pimpl.h"
+#include "klotter/render/renderer.pimpl.h"
 
 namespace klotter
 {

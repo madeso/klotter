@@ -1,4 +1,4 @@
-#include "klotter/render/render.h"
+#include "klotter/render/renderer.h"
 
 #include "klotter/log.h"
 
@@ -7,7 +7,7 @@
 #include "klotter/render/geom.builder.h"
 #include "klotter/render/geom.h"
 #include "klotter/render/opengl_utils.h"
-#include "klotter/render/render.pimpl.h"
+#include "klotter/render/renderer.pimpl.h"
 #include "klotter/render/statechanger.h"
 #include "klotter/render/constants.h"
 

@@ -4,7 +4,7 @@
 
 #include "imgui.h"
 
-#include "klotter/render/render.h"
+#include "klotter/render/renderer.h"
 #include "klotter/dependency_sdl.h"
 #include "klotter/render/camera.h"
 
