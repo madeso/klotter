@@ -20,12 +20,12 @@ namespace klotter
 
 namespace
 {
-	constexpr u32 FAILED_TO_LOAD_IMAGE_COLOR = 0;
+	constexpr u32 failed_to_load_image_color = 0;
 	constexpr unsigned int invalid_id = 0;
 
 	unsigned int create_texture()
 	{
-		unsigned int texture;
+		unsigned int texture = 0;
 		glGenTextures(1, &texture);
 		return texture;
 	}
@@ -138,7 +138,7 @@ struct PixelData
 	PixelData(const embedded_binary& image_binary, bool include_transparency, bool flip = true)
 	{
 		int junk_channels = 0;
-		stbi_set_flip_vertically_on_load(flip);
+		stbi_set_flip_vertically_on_load(flip ? 1 : 0);
 
 		pixel_data = stbi_load_from_memory(
 			reinterpret_cast<const unsigned char*>(image_binary.data),
@@ -181,7 +181,7 @@ Texture2d load_image_from_embedded(
 	if (parsed.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load image from image source");
-		return load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) FAILED_TO_LOAD_IMAGE_COLOR, te, trs, t);
+		return load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, te, trs, t);
 	}
 
 	return {SEND_DEBUG_LABEL_MANY(debug_label) parsed.pixel_data, parsed.width, parsed.height, te, trs, t};
@@ -254,7 +254,7 @@ TextureCubemap load_cubemap_from_embedded(
 		|| parsed_front.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) FAILED_TO_LOAD_IMAGE_COLOR);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color);
 	}
 
 	if (parsed_right.width == parsed_left.width && parsed_right.width == parsed_top.width
@@ -266,7 +266,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent width");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) FAILED_TO_LOAD_IMAGE_COLOR);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color);
 	}
 
 	if (parsed_right.height == parsed_left.height && parsed_right.height == parsed_top.height
@@ -278,7 +278,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent height");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) FAILED_TO_LOAD_IMAGE_COLOR);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color);
 	}
 
 	// ok
@@ -302,7 +302,7 @@ TextureCubemap load_cubemap_from_embedded(
 
 unsigned int create_fbo()
 {
-	unsigned int fbo;
+	unsigned int fbo = 0;
 	glGenFramebuffers(1, &fbo);
 	ASSERT(fbo != 0);
 	return fbo;
@@ -317,12 +317,12 @@ FrameBuffer::FrameBuffer(unsigned int f, int w, int h)
 
 FrameBuffer::~FrameBuffer()
 {
-	if (fbo)
+	if (fbo != 0)
 	{
 		glDeleteFramebuffers(1, &fbo);
 		fbo = 0;
 	}
-	if (rbo)
+	if (rbo != 0)
 	{
 		glDeleteRenderbuffers(1, &rbo);
 		rbo = 0;
