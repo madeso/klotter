@@ -15,19 +15,20 @@ namespace klotter
 // internal "header", defined later
 void set_shader_program(unsigned int new_program, const VertexTypes& types);
 
-constexpr GLsizei LOG_SIZE = 1024;
+constexpr GLsizei max_log_length = 1024;
 
 bool check_shader_compilation_error(const char* name, unsigned int shader)
 {
-	int success = 0;
-	char log[LOG_SIZE] = {
+	GLint success = 0;
+	char log[max_log_length] = {
 		0,
 	};
 	glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
 
-	if (! success)
+	if (success == GL_FALSE)
 	{
-		glGetShaderInfoLog(shader, LOG_SIZE, nullptr, log);
+		// todo(Gustav): set last char to 0
+		glGetShaderInfoLog(shader, max_log_length, nullptr, log);
 		LOG_ERROR("%s shader compilation failed\n%s\n", name, log);
 		return false;
 	}
@@ -37,14 +38,15 @@ bool check_shader_compilation_error(const char* name, unsigned int shader)
 
 bool check_shader_link_error(unsigned int program)
 {
-	int success = 0;
-	char log[LOG_SIZE] = {
+	GLint success = 0;
+	char log[max_log_length] = {
 		0,
 	};
 	glGetProgramiv(program, GL_LINK_STATUS, &success);
-	if (! success)
+	if (success == GL_FALSE)
 	{
-		glGetProgramInfoLog(program, LOG_SIZE, nullptr, log);
+		// todo(Gustav): set last char to 0
+		glGetProgramInfoLog(program, max_log_length, nullptr, log);
 		LOG_ERROR("shader linking failed\n%s\n", log);
 		return false;
 	}
@@ -317,7 +319,7 @@ void ShaderProgram::set_mat(const Uniform& uniform, const glm::mat3& mat) const
 
 void ShaderProgram::setup_uniform_block(const UniformBufferSetup& setup)
 {
-	unsigned int shader_block_index = glGetUniformBlockIndex(shader_program, setup.name.c_str());
+	const unsigned int shader_block_index = glGetUniformBlockIndex(shader_program, setup.name.c_str());
 	if (shader_block_index == GL_INVALID_INDEX)
 	{
 		LOG_ERROR("Shader missing uniform block %s", setup.name.c_str());
