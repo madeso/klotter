@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
-  <compounddef id="fse_8h" kind="file" language="C++">
-    <compoundname>fse.h</compoundname>
+  <compounddef id="postproc_8h" kind="file" language="C++">
+    <compoundname>postproc.h</compoundname>
     <includes refid="texture_8h" local="yes">klotter/render/texture.h</includes>
     <includedby refid="render_8h" local="yes">src/klotter/render/render.h</includedby>
     <incdepgraph>
-      <node id="1">
-        <label>src/klotter/render/fse.h</label>
-        <link refid="fse_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
       <node id="3">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/postproc.h</label>
+        <link refid="postproc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>klotter/render/texture.h</label>
@@ -28,8 +28,8 @@
         <link refid="klotter_8h"/>
       </node>
       <node id="1">
-        <label>src/klotter/render/fse.h</label>
-        <link refid="fse_8h"/>
+        <label>src/klotter/render/postproc.h</label>
+        <link refid="postproc_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
       </node>
@@ -189,6 +189,6 @@
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
 <codeline lineno="150"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="src/klotter/render/fse.h"/>
+    <location file="src/klotter/render/postproc.h"/>
   </compounddef>
 </doxygen>

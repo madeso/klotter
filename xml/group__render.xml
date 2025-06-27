@@ -387,7 +387,7 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>Bitmask for what features each fse shader wants. </para>
+<para>Bitmask for what features each postproc shader wants. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>

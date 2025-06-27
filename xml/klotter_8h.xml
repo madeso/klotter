@@ -48,12 +48,6 @@
         <label>klotter/render/debug.h</label>
         <link refid="debug_8h"/>
       </node>
-      <node id="9">
-        <label>klotter/render/fse.h</label>
-        <link refid="fse_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
       <node id="10">
         <label>klotter/render/material.h</label>
         <link refid="material_8h"/>
@@ -69,6 +63,12 @@
       <node id="7">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
+      </node>
+      <node id="9">
+        <label>klotter/render/postproc.h</label>
+        <link refid="postproc_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="4">
         <label>klotter/render/render.h</label>

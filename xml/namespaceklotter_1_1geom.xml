@@ -15,7 +15,7 @@
       <member refid="group__geom-builder_1gaf33b1b06b5a70dcf47a3dfe7cbfc3375" kind="function"><name>create_box</name></member>
       <member refid="group__geom-builder_1gadadd83bd1fcb86e428069505223ba10c" kind="function"><name>create_xz_plane</name></member>
       <member refid="group__geom-builder_1gacc3da38a6c5889a300a1d8769f5c1802" kind="function"><name>create_xy_plane</name></member>
-      <member refid="group__geom-builder_1ga4f80b55431712546da63589dfbd7a699" kind="function"><name>create_uv_sphere</name></member>
+      <member refid="group__geom-builder_1gab6f07e8ea329694599243e6b7185e38b" kind="function"><name>create_uv_sphere</name></member>
     </sectiondef>
     <briefdescription>
     </briefdescription>

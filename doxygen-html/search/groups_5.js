@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['layout_0',['Vertex layout',['../group__vertex-layout.html',1,'']]]
+  ['renderer_0',['Renderer',['../group__render.html',1,'']]]
 ];

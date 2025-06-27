@@ -218,10 +218,10 @@
         </inbodydescription>
         <location file="src/klotter/render/render.h" line="41" column="31"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1Renderer_1a45c6cba0cadd133750fb288b3118c658" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FactorEffect" kindref="compound">FactorEffect</ref> &gt;</type>
         <definition>std::shared_ptr&lt; FactorEffect &gt; klotter::Renderer::make_invert_effect</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() const</argsstring>
         <name>make_invert_effect</name>
         <qualifiedname>klotter::Renderer::make_invert_effect</qualifiedname>
         <briefdescription>
@@ -232,10 +232,10 @@
         </inbodydescription>
         <location file="src/klotter/render/render.h" line="43" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1Renderer_1a1b173fd6a9475f1a87f40a51b9d6deed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FactorEffect" kindref="compound">FactorEffect</ref> &gt;</type>
         <definition>std::shared_ptr&lt; FactorEffect &gt; klotter::Renderer::make_grayscale_effect</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() const</argsstring>
         <name>make_grayscale_effect</name>
         <qualifiedname>klotter::Renderer::make_grayscale_effect</qualifiedname>
         <briefdescription>
@@ -246,10 +246,10 @@
         </inbodydescription>
         <location file="src/klotter/render/render.h" line="44" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1Renderer_1a6b8e0aaf50c1e24aa377bab4cdfda5c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FactorEffect" kindref="compound">FactorEffect</ref> &gt;</type>
         <definition>std::shared_ptr&lt; FactorEffect &gt; klotter::Renderer::make_damage_effect</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() const</argsstring>
         <name>make_damage_effect</name>
         <qualifiedname>klotter::Renderer::make_damage_effect</qualifiedname>
         <briefdescription>
@@ -260,10 +260,10 @@
         </inbodydescription>
         <location file="src/klotter/render/render.h" line="45" column="17"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1Renderer_1a8598eec48eb21841277c8a0bcd52826a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FactorEffect" kindref="compound">FactorEffect</ref> &gt;</type>
         <definition>std::shared_ptr&lt; FactorEffect &gt; klotter::Renderer::make_blur_effect</definition>
-        <argsstring>()</argsstring>
+        <argsstring>() const</argsstring>
         <name>make_blur_effect</name>
         <qualifiedname>klotter::Renderer::make_blur_effect</qualifiedname>
         <briefdescription>
@@ -371,11 +371,11 @@
       <member refid="structklotter_1_1Renderer_1a041e598e217704db890b9ed76ae70fdd" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>debug</name></member>
       <member refid="structklotter_1_1Renderer_1a59e52edabd2be10264bc7782ed4fd6a6" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>default_geom_layout</name></member>
       <member refid="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>is_loaded</name></member>
-      <member refid="structklotter_1_1Renderer_1a8598eec48eb21841277c8a0bcd52826a" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_blur_effect</name></member>
-      <member refid="structklotter_1_1Renderer_1a6b8e0aaf50c1e24aa377bab4cdfda5c5" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_damage_effect</name></member>
+      <member refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_blur_effect</name></member>
+      <member refid="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_damage_effect</name></member>
       <member refid="structklotter_1_1Renderer_1af9881e905a29bec077109dc32895ae3e" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_default_material</name></member>
-      <member refid="structklotter_1_1Renderer_1a1b173fd6a9475f1a87f40a51b9d6deed" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_grayscale_effect</name></member>
-      <member refid="structklotter_1_1Renderer_1a45c6cba0cadd133750fb288b3118c658" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_invert_effect</name></member>
+      <member refid="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_grayscale_effect</name></member>
+      <member refid="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_invert_effect</name></member>
       <member refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_skybox</name></member>
       <member refid="structklotter_1_1Renderer_1abc015db1b63017bd38379bcd19f64e2f" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>make_unlit_material</name></member>
       <member refid="structklotter_1_1Renderer_1a8ad0477c6c2e0be00ab87ffbf5e219a4" prot="public" virt="non-virtual"><scope>klotter::Renderer</scope><name>operator=</name></member>

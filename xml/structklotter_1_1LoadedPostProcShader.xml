@@ -100,7 +100,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>The &quot;base class&quot; for a loaded fse shader. </para>
+<para>The &quot;base class&quot; for a loaded postproc shader. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

@@ -9,7 +9,6 @@
     <innerfile refid="constants_8h">constants.h</innerfile>
     <innerfile refid="cullface_8h">cullface.h</innerfile>
     <innerfile refid="debug_8h">debug.h</innerfile>
-    <innerfile refid="fse_8h">fse.h</innerfile>
     <innerfile refid="fullscreen_8h">fullscreen.h</innerfile>
     <innerfile refid="geom_8builder_8h">geom.builder.h</innerfile>
     <innerfile refid="geom_8extract_8h">geom.extract.h</innerfile>
@@ -19,6 +18,7 @@
     <innerfile refid="opengl__labels_8h">opengl_labels.h</innerfile>
     <innerfile refid="opengl__states_8h">opengl_states.h</innerfile>
     <innerfile refid="opengl__utils_8h">opengl_utils.h</innerfile>
+    <innerfile refid="postproc_8h">postproc.h</innerfile>
     <innerfile refid="render_8h">render.h</innerfile>
     <innerfile refid="render_8pimpl_8h">render.pimpl.h</innerfile>
     <innerfile refid="render__settings_8h">render_settings.h</innerfile>

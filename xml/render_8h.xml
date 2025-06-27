@@ -4,7 +4,7 @@
     <compoundname>render.h</compoundname>
     <includes refid="assets_8h" local="yes">klotter/render/assets.h</includes>
     <includes refid="debug_8h" local="yes">klotter/render/debug.h</includes>
-    <includes refid="fse_8h" local="yes">klotter/render/fse.h</includes>
+    <includes refid="postproc_8h" local="yes">klotter/render/postproc.h</includes>
     <includes refid="material_8h" local="yes">klotter/render/material.h</includes>
     <includes refid="render__settings_8h" local="yes">klotter/render/render_settings.h</includes>
     <includes refid="vertex__layout_8h" local="yes">klotter/render/vertex_layout.h</includes>
@@ -27,12 +27,6 @@
         <label>klotter/render/debug.h</label>
         <link refid="debug_8h"/>
       </node>
-      <node id="7">
-        <label>klotter/render/fse.h</label>
-        <link refid="fse_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
       <node id="8">
         <label>klotter/render/material.h</label>
         <link refid="material_8h"/>
@@ -48,6 +42,12 @@
       <node id="5">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
+      </node>
+      <node id="7">
+        <label>klotter/render/postproc.h</label>
+        <link refid="postproc_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/klotter/render/render.h</label>
@@ -147,7 +147,7 @@
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="assets_8h" kindref="compound">klotter/render/assets.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="debug_8h" kindref="compound">klotter/render/debug.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fse_8h" kindref="compound">klotter/render/fse.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="postproc_8h" kindref="compound">klotter/render/postproc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="material_8h" kindref="compound">klotter/render/material.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="render__settings_8h" kindref="compound">klotter/render/render_settings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="vertex__layout_8h" kindref="compound">klotter/render/vertex_layout.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
@@ -181,10 +181,10 @@
 <codeline lineno="40" refid="structklotter_1_1Renderer_1a9fae832300d65af1aea9beb8e90ff06c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref><sp/><ref refid="structklotter_1_1Renderer_1a9fae832300d65af1aea9beb8e90ff06c" kindref="member">unlit_geom_layout</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="41" refid="structklotter_1_1Renderer_1a59e52edabd2be10264bc7782ed4fd6a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref><sp/><ref refid="structklotter_1_1Renderer_1a59e52edabd2be10264bc7782ed4fd6a6" kindref="member">default_geom_layout</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="structklotter_1_1Renderer_1a45c6cba0cadd133750fb288b3118c658" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a45c6cba0cadd133750fb288b3118c658" kindref="member">make_invert_effect</ref>();</highlight></codeline>
-<codeline lineno="44" refid="structklotter_1_1Renderer_1a1b173fd6a9475f1a87f40a51b9d6deed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a1b173fd6a9475f1a87f40a51b9d6deed" kindref="member">make_grayscale_effect</ref>();</highlight></codeline>
-<codeline lineno="45" refid="structklotter_1_1Renderer_1a6b8e0aaf50c1e24aa377bab4cdfda5c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a6b8e0aaf50c1e24aa377bab4cdfda5c5" kindref="member">make_damage_effect</ref>();</highlight></codeline>
-<codeline lineno="46" refid="structklotter_1_1Renderer_1a8598eec48eb21841277c8a0bcd52826a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a8598eec48eb21841277c8a0bcd52826a" kindref="member">make_blur_effect</ref>();</highlight></codeline>
+<codeline lineno="43" refid="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" kindref="member">make_invert_effect</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44" refid="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" kindref="member">make_grayscale_effect</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45" refid="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" kindref="member">make_damage_effect</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46" refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" kindref="member">make_blur_effect</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48" refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="structklotter_1_1Skybox" kindref="compound">Skybox</ref><sp/><ref refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" kindref="member">make_skybox</ref>(std::shared_ptr&lt;TextureCubemap&gt;<sp/>texture)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>

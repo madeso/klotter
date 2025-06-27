@@ -526,10 +526,10 @@
     <member refid="structklotter_1_1Renderer_1af9881e905a29bec077109dc32895ae3e" kind="function"><name>make_default_material</name></member>
     <member refid="structklotter_1_1Renderer_1a9fae832300d65af1aea9beb8e90ff06c" kind="function"><name>unlit_geom_layout</name></member>
     <member refid="structklotter_1_1Renderer_1a59e52edabd2be10264bc7782ed4fd6a6" kind="function"><name>default_geom_layout</name></member>
-    <member refid="structklotter_1_1Renderer_1a45c6cba0cadd133750fb288b3118c658" kind="function"><name>make_invert_effect</name></member>
-    <member refid="structklotter_1_1Renderer_1a1b173fd6a9475f1a87f40a51b9d6deed" kind="function"><name>make_grayscale_effect</name></member>
-    <member refid="structklotter_1_1Renderer_1a6b8e0aaf50c1e24aa377bab4cdfda5c5" kind="function"><name>make_damage_effect</name></member>
-    <member refid="structklotter_1_1Renderer_1a8598eec48eb21841277c8a0bcd52826a" kind="function"><name>make_blur_effect</name></member>
+    <member refid="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" kind="function"><name>make_invert_effect</name></member>
+    <member refid="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" kind="function"><name>make_grayscale_effect</name></member>
+    <member refid="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" kind="function"><name>make_damage_effect</name></member>
+    <member refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" kind="function"><name>make_blur_effect</name></member>
     <member refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" kind="function"><name>make_skybox</name></member>
     <member refid="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" kind="function"><name>is_loaded</name></member>
     <member refid="structklotter_1_1Renderer_1a48524cf82c262c4ee5caa4d8341ea351" kind="function"><name>render_world</name></member>
@@ -903,7 +903,7 @@
     <member refid="group__geom-builder_1gaf33b1b06b5a70dcf47a3dfe7cbfc3375" kind="function"><name>create_box</name></member>
     <member refid="group__geom-builder_1gadadd83bd1fcb86e428069505223ba10c" kind="function"><name>create_xz_plane</name></member>
     <member refid="group__geom-builder_1gacc3da38a6c5889a300a1d8769f5c1802" kind="function"><name>create_xy_plane</name></member>
-    <member refid="group__geom-builder_1ga4f80b55431712546da63589dfbd7a699" kind="function"><name>create_uv_sphere</name></member>
+    <member refid="group__geom-builder_1gab6f07e8ea329694599243e6b7185e38b" kind="function"><name>create_uv_sphere</name></member>
   </compound>
   <compound refid="namespaceklotter_1_1imgui" kind="namespace"><name>klotter::imgui</name>
     <member refid="namespaceklotter_1_1imgui_1aa9ebfa075a3dfab2438e857c5613eb90" kind="variable"><name>ALPHA</name></member>
@@ -1005,8 +1005,6 @@
   </compound>
   <compound refid="debug_8h" kind="file"><name>debug.h</name>
   </compound>
-  <compound refid="fse_8h" kind="file"><name>fse.h</name>
-  </compound>
   <compound refid="fullscreen_8h" kind="file"><name>fullscreen.h</name>
   </compound>
   <compound refid="geom_8builder_8h" kind="file"><name>geom.builder.h</name>
@@ -1040,6 +1038,8 @@
     <member refid="opengl__utils_8h_1a1a31e7e398f6a2fa20e41c0b5a02cdc4" kind="define"><name>CONCAT_IMPL</name></member>
     <member refid="opengl__utils_8h_1a2f18db18bca26cafa95e9719de4a41ef" kind="define"><name>CONCAT</name></member>
     <member refid="opengl__utils_8h_1ad393331531471e5c2b9629a03cb4a3d3" kind="define"><name>SCOPED_DEBUG_GROUP</name></member>
+  </compound>
+  <compound refid="postproc_8h" kind="file"><name>postproc.h</name>
   </compound>
   <compound refid="render_8h" kind="file"><name>render.h</name>
   </compound>
@@ -1109,7 +1109,7 @@
     <member refid="group__geom-builder_1gaf33b1b06b5a70dcf47a3dfe7cbfc3375" kind="function"><name>create_box</name></member>
     <member refid="group__geom-builder_1gadadd83bd1fcb86e428069505223ba10c" kind="function"><name>create_xz_plane</name></member>
     <member refid="group__geom-builder_1gacc3da38a6c5889a300a1d8769f5c1802" kind="function"><name>create_xy_plane</name></member>
-    <member refid="group__geom-builder_1ga4f80b55431712546da63589dfbd7a699" kind="function"><name>create_uv_sphere</name></member>
+    <member refid="group__geom-builder_1gab6f07e8ea329694599243e6b7185e38b" kind="function"><name>create_uv_sphere</name></member>
     <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
   </compound>
   <compound refid="group__render" kind="group"><name>render</name>
@@ -1200,9 +1200,9 @@
     <member refid="group__render_1ga7c41540b85fbcd00d0dfbe1104d10443" kind="function"><name>render_geom</name></member>
     <member refid="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" kind="function"><name>render_geom_instanced</name></member>
   </compound>
-  <compound refid="group__fse" kind="group"><name>fse</name>
-  </compound>
   <compound refid="group__geom" kind="group"><name>geom</name>
+  </compound>
+  <compound refid="group__postproc" kind="group"><name>postproc</name>
   </compound>
   <compound refid="group__texture" kind="group"><name>texture</name>
     <member refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kind="enum"><name>TextureEdge</name></member>
