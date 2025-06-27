@@ -136,8 +136,8 @@ struct FrameBufferBuilder
 		return *this;
 	}
 
-	// todo(Gustav): reuse buffers created from an earlier FSE build
-	// todo(Gustav): reuse buffers from earlier in the FSE stack, that aren't in use
+	// todo(Gustav): reuse buffers created from an earlier postproc build
+	// todo(Gustav): reuse buffers from earlier in the postproc stack, that aren't in use
 	[[nodiscard]] std::shared_ptr<FrameBuffer> build(DEBUG_LABEL_ARG_SINGLE) const;
 };
 

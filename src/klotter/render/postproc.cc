@@ -1,4 +1,4 @@
-#include "klotter/render/fse.h"
+#include "klotter/render/postproc.h"
 
 #include "imgui.h"
 
@@ -189,12 +189,12 @@ void EffectStack::render(const PostProcArg& arg)
 	// the stack is now compiled
 	// before rendering, update all targets/fbos and present
 	{
-		SCOPED_DEBUG_GROUP("updating fse render_world"sv);
+		SCOPED_DEBUG_GROUP("updating postproc render_world"sv);
 		render_world->update(arg);
 	}
 
 	{
-		SCOPED_DEBUG_GROUP("rendering fse actions"sv);
+		SCOPED_DEBUG_GROUP("rendering postproc actions"sv);
 		for (const auto& action: compiled.targets)
 		{
 			action->update(arg);
@@ -203,7 +203,7 @@ void EffectStack::render(const PostProcArg& arg)
 
 	// render the final image to the screen
 	{
-		SCOPED_DEBUG_GROUP("rendering fse to screen"sv);
+		SCOPED_DEBUG_GROUP("rendering postproc to screen"sv);
 		set_gl_viewport(arg.window_size);
 		compiled.last_source->render(arg);
 	}

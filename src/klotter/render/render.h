@@ -2,7 +2,7 @@
 
 #include "klotter/render/assets.h"
 #include "klotter/render/debug.h"
-#include "klotter/render/fse.h"
+#include "klotter/render/postproc.h"
 #include "klotter/render/material.h"
 #include "klotter/render/render_settings.h"
 #include "klotter/render/vertex_layout.h"

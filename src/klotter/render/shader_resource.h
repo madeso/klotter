@@ -118,7 +118,7 @@ struct FrustumLightUniforms
 	Uniform cookie;
 };
 
-/// Bitmask for what features each fse shader wants.
+/// Bitmask for what features each postproc shader wants.
 enum class PostProcSetup
 {
 	none = 0,
@@ -133,7 +133,7 @@ std::optional<Uniform> get_uniform(
 	ShaderProgram& prog, const std::string& name, PostProcSetup setup, PostProcSetup flag
 );
 
-/// The "base class" for a loaded fse shader.
+/// The "base class" for a loaded postproc shader.
 struct LoadedPostProcShader
 {
 	std::shared_ptr<ShaderProgram> program;

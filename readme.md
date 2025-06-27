@@ -30,7 +30,7 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - frustum culling
 - different worlds (loose octree / portal / etc..)
 - implement "virtual textures" for use in in-game cameras, mirrors, portals and computer screens
-- fse: improve blur shader:
+- postproc: improve blur shader:
   - https://www.ronja-tutorials.com/post/023-postprocessing-blur/
   - https://blog.innogames.com/shader-exploration-the-art-of-blurring/
 - replace hardcoded materials with something more data driven and flexible
@@ -47,11 +47,11 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 
 ### todo: after merging to euphoria
 - implement better outlines that handles more meshes and hoepfully specify outline in screenspace: https://ameye.dev/notes/rendering-outlines/
-- fse: add depth (just a optional additional texture) to simulate depth of field of no-glasses
+- postproc: add depth (just a optional additional texture) to simulate depth of field of no-glasses
 - material: framebuffer distortions to simulate reflection/refraction
 - upgrade debug renderer with basic shapes(shphere, rect) and text
-- fse: add chromatic abberation to simulate damage/drugs
-- add more/improve post processing/fse:
+- postproc: add chromatic abberation to simulate damage/drugs
+- add more/improve post processing:
   - anti aliasing
   - depth of field
   - camera motion blur
@@ -68,7 +68,7 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - river system, with spline and polygon editor, vertex color painting, alpha for joining paths and "flow map" painting (another vertex attribute?)
   https://twitter.com/JasperRLZ/status/1511951178753445896?t=yhT2wJVw8-iJlyBqADf-Yw&s=09
   > A few people were asking me how the dynamic water surface worked. Quite simple! Two sine waves, one going across the river, the other going down the river. With heights and speeds dialed into tasteful values, and some extra texture scrolling, the result is surprisingly dynamic.
-- fse/material: Add shader permutation tool, change options (int slider, enum dropdown, bool) to select current permutation
+- postproc/material: Add shader permutation tool, change options (int slider, enum dropdown, bool) to select current permutation
 - support different light types (cookies, attenuation setups, flickering, frustum spotlights with projections)
 - look into different attenuation algorithms
 - material: use cubemap + color

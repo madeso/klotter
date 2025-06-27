@@ -10,7 +10,7 @@ struct Camera;
 struct World;
 struct RenderWorld;
 
-/** \addtogroup fse Full Screen Effect
+/** \addtogroup postproc Post Processing
  *  @{
 */
 
