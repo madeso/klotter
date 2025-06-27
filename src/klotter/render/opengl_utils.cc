@@ -109,14 +109,14 @@ void APIENTRY on_opengl_debug_output(
 	}
 
 	// only display the first 10 notifications
-	static int ErrorCount = 0;
+	static int error_count = 0;
 	if (is_important == false)
 	{
-		if (ErrorCount > 10)
+		if (error_count > 10)
 		{
 			return;
 		}
-		++ErrorCount;
+		++error_count;
 	}
 
 	const std::string to_out = Str() <<
@@ -144,7 +144,7 @@ void APIENTRY on_opengl_debug_output(
 
 bool has_khr_debug()
 {
-	return GLAD_GL_KHR_debug;
+	return GLAD_GL_KHR_debug != 0;
 }
 
 void setup_opengl_debug()
@@ -185,7 +185,7 @@ GLsizei Csizet_to_glsizei(std::size_t t)
 
 u32 create_buffer()
 {
-	u32 vbo;
+	u32 vbo = 0;
 	glGenBuffers(1, &vbo);
 	return vbo;
 }
@@ -197,7 +197,7 @@ void destroy_buffer(u32 vbo)
 
 u32 create_vertex_array()
 {
-	u32 vao;
+	u32 vao = 0;
 	glGenVertexArrays(1, &vao);
 	return vao;
 }
@@ -237,10 +237,16 @@ GLenum glenum_from_object_type(DebugLabelFor type)
 
 void set_gl_debug_label_with_size(DebugLabelFor type, GLuint object, std::size_t size, const char* label)
 {
-    if (!has_khr_debug()) return;
+	if (! has_khr_debug())
+	{
+		return;
+	}
 
     const auto gl_type = glenum_from_object_type(type);
-	if (gl_type == GL_NONE) return;
+	if (gl_type == GL_NONE)
+	{
+		return;
+	}
 	
 	glObjectLabel(gl_type, object, Csizet_to_glsizei(size), label);
 }
