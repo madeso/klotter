@@ -283,10 +283,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="70" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a9d99321663d5d4e68c16807fb9f966d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1ab89ae54e8f45a2562420f6d000d4dd5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_float</definition>
-        <argsstring>(const Uniform &amp;uniform, float value) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, float value)</argsstring>
         <name>set_float</name>
         <qualifiedname>klotter::ShaderProgram::set_float</qualifiedname>
         <param>
@@ -326,10 +326,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="78" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1abb56d56960bf80bf68778c8609346dfb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a2f68351089117ca8804ae952aadededb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_vec2</definition>
-        <argsstring>(const Uniform &amp;uniform, float x, float y) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, float x, float y)</argsstring>
         <name>set_vec2</name>
         <qualifiedname>klotter::ShaderProgram::set_vec2</qualifiedname>
         <param>
@@ -381,10 +381,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="87" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1ac3eb5cc6808f6ef243f6d11689835894" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a20ae4d0b4e064021fe28ff69a27b3189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_vec2</definition>
-        <argsstring>(const Uniform &amp;uniform, const glm::vec2 &amp;v) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, const glm::vec2 &amp;v)</argsstring>
         <name>set_vec2</name>
         <qualifiedname>klotter::ShaderProgram::set_vec2</qualifiedname>
         <param>
@@ -424,10 +424,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="95" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1ad41db1951bebd3dd97b7cf52608740f1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a92cb584d966760faf7e378f9663aa493" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_vec3</definition>
-        <argsstring>(const Uniform &amp;uniform, float x, float y, float z) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, float x, float y, float z)</argsstring>
         <name>set_vec3</name>
         <qualifiedname>klotter::ShaderProgram::set_vec3</qualifiedname>
         <param>
@@ -491,10 +491,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="105" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a1f4c16c1143d15c9cbeb3f21d072ad27" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a602226781e49cd489d0fed3c0ea281ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_vec3</definition>
-        <argsstring>(const Uniform &amp;uniform, const glm::vec3 &amp;v) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, const glm::vec3 &amp;v)</argsstring>
         <name>set_vec3</name>
         <qualifiedname>klotter::ShaderProgram::set_vec3</qualifiedname>
         <param>
@@ -534,10 +534,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="113" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1ae4b10fe26be42f04c271f33ccd0c8c69" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1aadd41dca11f7497d8dc5759670fcfea2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_vec4</definition>
-        <argsstring>(const Uniform &amp;uniform, float x, float y, float z, float w) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, float x, float y, float z, float w)</argsstring>
         <name>set_vec4</name>
         <qualifiedname>klotter::ShaderProgram::set_vec4</qualifiedname>
         <param>
@@ -613,10 +613,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="124" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1af2fdf53467c4a13f15d11eb4d13a75e1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a9f2731b2367ef643b42feae8bfc64774" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_vec4</definition>
-        <argsstring>(const Uniform &amp;uniform, const glm::vec4 &amp;v) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, const glm::vec4 &amp;v)</argsstring>
         <name>set_vec4</name>
         <qualifiedname>klotter::ShaderProgram::set_vec4</qualifiedname>
         <param>
@@ -656,10 +656,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="132" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1ae1b3acdcd6b4a15d30c07fec5bdbd61d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a4f20cc9b36209835cb7428e14bcbe56f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_texture</definition>
-        <argsstring>(const Uniform &amp;uniform) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform)</argsstring>
         <name>set_texture</name>
         <qualifiedname>klotter::ShaderProgram::set_texture</qualifiedname>
         <param>
@@ -687,10 +687,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="139" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a5350ff187b9af19f903d3d91ba1bf0b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a683f87ad48aed3e849952c7779af1e47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_mat</definition>
-        <argsstring>(const Uniform &amp;uniform, const glm::mat4 &amp;mat) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, const glm::mat4 &amp;mat)</argsstring>
         <name>set_mat</name>
         <qualifiedname>klotter::ShaderProgram::set_mat</qualifiedname>
         <param>
@@ -730,10 +730,10 @@
         </inbodydescription>
         <location file="src/klotter/render/shader.h" line="146" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a89ced20e53a1bd651a87de1c29d52399" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1ShaderProgram_1a9a239119b7688aa1c166c88262e8a1cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::ShaderProgram::set_mat</definition>
-        <argsstring>(const Uniform &amp;uniform, const glm::mat3 &amp;mat) const</argsstring>
+        <argsstring>(const Uniform &amp;uniform, const glm::mat3 &amp;mat)</argsstring>
         <name>set_mat</name>
         <qualifiedname>klotter::ShaderProgram::set_mat</qualifiedname>
         <param>
@@ -816,16 +816,16 @@
       <member refid="structklotter_1_1ShaderProgram_1aa278978e62d69fc703d9dd1f3a3eb1fd" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>is_loaded</name></member>
       <member refid="structklotter_1_1ShaderProgram_1a5575c3ce1eed9c1c24f37912b667be9f" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>operator=</name></member>
       <member refid="structklotter_1_1ShaderProgram_1a3716ecafed56627d2172190890d0c6a7" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>operator=</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1a9d99321663d5d4e68c16807fb9f966d8" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_float</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1a5350ff187b9af19f903d3d91ba1bf0b4" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_mat</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1a89ced20e53a1bd651a87de1c29d52399" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_mat</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1ae1b3acdcd6b4a15d30c07fec5bdbd61d" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_texture</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1abb56d56960bf80bf68778c8609346dfb" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec2</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1ac3eb5cc6808f6ef243f6d11689835894" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec2</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1ad41db1951bebd3dd97b7cf52608740f1" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec3</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1a1f4c16c1143d15c9cbeb3f21d072ad27" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec3</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1ae4b10fe26be42f04c271f33ccd0c8c69" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec4</name></member>
-      <member refid="structklotter_1_1ShaderProgram_1af2fdf53467c4a13f15d11eb4d13a75e1" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec4</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1ab89ae54e8f45a2562420f6d000d4dd5f" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_float</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1a683f87ad48aed3e849952c7779af1e47" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_mat</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1a9a239119b7688aa1c166c88262e8a1cf" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_mat</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1a4f20cc9b36209835cb7428e14bcbe56f" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_texture</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1a2f68351089117ca8804ae952aadededb" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec2</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1a20ae4d0b4e064021fe28ff69a27b3189" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec2</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1a92cb584d966760faf7e378f9663aa493" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec3</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1a602226781e49cd489d0fed3c0ea281ff" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec3</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1aadd41dca11f7497d8dc5759670fcfea2" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec4</name></member>
+      <member refid="structklotter_1_1ShaderProgram_1a9f2731b2367ef643b42feae8bfc64774" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>set_vec4</name></member>
       <member refid="structklotter_1_1ShaderProgram_1acf995e0f3e5b1543aac53c61c00d2aa0" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>setup_uniform_block</name></member>
       <member refid="structklotter_1_1ShaderProgram_1af3084796decc7cdcf7e65f7367c280db" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>shader_program</name></member>
       <member refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>ShaderProgram</name></member>

@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/shader_resource.cc</div>
-            <div>Date: 2025-06-27 17:26:26</div>
+            <div>Date: 2025-06-27 20:28:51</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -272,7 +272,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">CameraUniformBuffer::set_props</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cc</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">CameraUniformBuffer::set_props</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cc</span><span class="p">)</span><span class="w"> </span><span class="c1">// NOLINT(readability-make-member-function-const)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l26" href="#l26">26</a></td>
@@ -1105,7 +1105,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">settings</span><span class="p">.</span><span class="n">number_of_directional_lights</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">settings</span><span class="p">.</span><span class="n">number_of_directional_lights</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l145" href="#l145">145</a></td>
@@ -1119,7 +1119,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Str</span><span class="p">{}</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;u_directional_lights[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;].&quot;</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Str</span><span class="p">{}</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;u_directional_lights[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;].&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l147" href="#l147">147</a></td>
@@ -1147,7 +1147,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">settings</span><span class="p">.</span><span class="n">number_of_point_lights</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">settings</span><span class="p">.</span><span class="n">number_of_point_lights</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l151" href="#l151">151</a></td>
@@ -1161,7 +1161,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Str</span><span class="p">{}</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;u_point_lights[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;].&quot;</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Str</span><span class="p">{}</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;u_point_lights[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;].&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l153" href="#l153">153</a></td>
@@ -1189,7 +1189,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">settings</span><span class="p">.</span><span class="n">number_of_frustum_lights</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">settings</span><span class="p">.</span><span class="n">number_of_frustum_lights</span><span class="p">;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l157" href="#l157">157</a></td>
@@ -1203,7 +1203,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Str</span><span class="p">{}</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;u_frustum_lights[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;].&quot;</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Str</span><span class="p">{}</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;u_frustum_lights[&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;].&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l159" href="#l159">159</a></td>
@@ -1931,7 +1931,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">BaseShaderData</span><span class="w"> </span><span class="n">global_shader_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_vertex_types</span><span class="p">(</span><span class="n">single_color_shader</span><span class="p">.</span><span class="n">layout</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">BaseShaderData</span><span class="w"> </span><span class="n">global_shader_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_vertex_types</span><span class="p">(</span><span class="n">single_color_shader</span><span class="p">.</span><span class="n">layout</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l263" href="#l263">263</a></td>
