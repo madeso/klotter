@@ -30,13 +30,14 @@ void set_optional_mat(
 	ShaderProgram* program, const std::optional<Uniform>& uniform, const std::optional<glm::mat4>& transform
 )
 {
-	if (transform)
+	if (uniform && transform)
 	{
 		program->set_mat(*uniform, *transform);
 	}
 	else
 	{
 		assert(uniform.has_value() == false);
+		assert(transform.has_value() == false);
 	}
 }
 
@@ -159,33 +160,35 @@ void DefaultMaterial::apply_lights(
 	})();
 
 	// todo(Gustav): graph the most influential lights instead of the first N lights
-	for (int i = 0; i < settings.number_of_directional_lights; i += 1)
+	for (int index = 0; index < settings.number_of_directional_lights; index += 1)
 	{
-		const auto& p = Cint_to_sizet(i) < lights.directional_lights.size()
-						  ? lights.directional_lights[Cint_to_sizet(i)]
+		const auto& p = Cint_to_sizet(index) < lights.directional_lights.size()
+						  ? lights.directional_lights[Cint_to_sizet(index)]
 						  : no_directional_light;
-		const auto& u = shader.directional_lights[Cint_to_sizet(i)];
+		const auto& u = shader.directional_lights[Cint_to_sizet(index)];
 		shader.program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
 		shader.program->set_vec3(u.light_specular_color, p.color * p.specular);
 		shader.program->set_vec3(u.dir, p.direction);
 	}
 
-	for (int i = 0; i < settings.number_of_point_lights; i += 1)
+	for (int index = 0; index < settings.number_of_point_lights; index += 1)
 	{
-		const auto& p
-			= Cint_to_sizet(i) < lights.point_lights.size() ? lights.point_lights[Cint_to_sizet(i)] : no_point_light;
-		const auto& u = shader.point_lights[Cint_to_sizet(i)];
+		const auto& p = Cint_to_sizet(index) < lights.point_lights.size()
+			? lights.point_lights[Cint_to_sizet(index)]
+			: no_point_light
+		;
+		const auto& u = shader.point_lights[Cint_to_sizet(index)];
 		shader.program->set_vec3(u.light_diffuse_color, p.color * p.diffuse);
 		shader.program->set_vec3(u.light_specular_color, p.color * p.specular);
 		shader.program->set_vec3(u.light_world, p.position);
 		shader.program->set_vec4(u.light_attenuation, {p.min_range, p.max_range, p.curve.curve.s, p.curve.curve.t});
 	}
 
-	for (int i = 0; i < settings.number_of_frustum_lights; i += 1)
+	for (int index = 0; index < settings.number_of_frustum_lights; index += 1)
 	{
-		const auto& p = Cint_to_sizet(i) < lights.frustum_lights.size() ? lights.frustum_lights[Cint_to_sizet(i)]
+		const auto& p = Cint_to_sizet(index) < lights.frustum_lights.size() ? lights.frustum_lights[Cint_to_sizet(index)]
 																		: no_frustum_light;
-		const auto& u = shader.frustum_lights[Cint_to_sizet(i)];
+		const auto& u = shader.frustum_lights[Cint_to_sizet(index)];
 		shader.program->set_vec3(u.diffuse, p.color * p.diffuse);
 		shader.program->set_vec3(u.specular, p.color * p.specular);
 		shader.program->set_vec3(u.world_pos, p.position);
