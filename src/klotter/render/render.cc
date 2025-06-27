@@ -42,12 +42,12 @@ struct TransparentMesh
 	float squared_distance_to_camera;
 };
 
-std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material()
+std::shared_ptr<UnlitMaterial> Renderer::make_unlit_material() const
 {
 	return std::make_shared<UnlitMaterial>(pimpl->shaders_resources);
 }
 
-std::shared_ptr<DefaultMaterial> Renderer::make_default_material()
+std::shared_ptr<DefaultMaterial> Renderer::make_default_material() const
 {
 	return std::make_shared<DefaultMaterial>(pimpl->shaders_resources);
 }
@@ -134,7 +134,11 @@ void batch_lines(DebugDrawer* drawer, const std::vector<DebugLine>& debug_lines)
 
 void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates* states, DebugDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size)
 {
-	if (debug_lines.empty()) return;
+	if (debug_lines.empty())
+	{
+		return;
+	}
+
 	drawer->line_shader.use();
 	drawer->line_shader.set_mat(drawer->line_projection, compiled_camera.projection);
 	drawer->line_shader.set_mat(drawer->line_view, compiled_camera.view);
@@ -177,13 +181,13 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	if (world.meshes.empty() == false)
 	{
 		SCOPED_DEBUG_GROUP("render basic geom"sv);
-		for (auto& m: world.meshes)
+		for (const auto& mesh: world.meshes)
 		{
 			constexpr auto not_transparent = RenderContext{TransformSource::Uniform, UseTransparency::no};
 
-			if (m->material->is_transparent())
+			if (mesh->material->is_transparent())
 			{
-				transparent_meshes.emplace_back(TransparentMesh{m, glm::length2(camera.position - m->position)});
+				transparent_meshes.emplace_back(TransparentMesh{mesh, glm::length2(camera.position - mesh->position)});
 				continue;
 			}
 			StateChanger{&pimpl->states}
@@ -194,16 +198,16 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				.stencil_mask(0x0)
 				.stencil_func(Compare::always, 1, 0xFF);
 
-			if (m->outline)
+			if (mesh->outline)
 			{
 				StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 			}
-			m->material->use_shader(not_transparent);
-			m->material->set_uniforms(not_transparent, compiled_camera, calc_mesh_transform(m, compiled_camera));
-			m->material->bind_textures(not_transparent, &pimpl->states, &assets);
-			m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
+			mesh->material->use_shader(not_transparent);
+			mesh->material->set_uniforms(not_transparent, compiled_camera, calc_mesh_transform(mesh, compiled_camera));
+			mesh->material->bind_textures(not_transparent, &pimpl->states, &assets);
+			mesh->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
 
-			render_geom(*m->geom);
+			render_geom(*mesh->geom);
 		}
 	}
 
@@ -301,9 +305,9 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	if (has_outlined_meshes)
 	{
 		SCOPED_DEBUG_GROUP("render outline meshes"sv);
-		for (auto& m: world.meshes)
+		for (const auto& mesh: world.meshes)
 		{
-			if (m->outline)
+			if (const auto& mesh_outline = mesh->outline)
 			{
 				StateChanger{&pimpl->states}
 					.stencil_func(Compare::not_equal, 1, 0xFF)
@@ -313,11 +317,11 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 				auto& shader = pimpl->shaders_resources.single_color_shader;
 				shader.program->use();
-				shader.program->set_vec4(shader.tint_color, {*m->outline, 1});
+				shader.program->set_vec4(shader.tint_color, {*mesh_outline, 1});
 
-				shader.program->set_mat(shader.model, calc_mesh_transform(m, compiled_camera) * small_scale_mat);
+				shader.program->set_mat(shader.model, calc_mesh_transform(mesh, compiled_camera) * small_scale_mat);
 
-				render_geom(*m->geom);
+				render_geom(*mesh->geom);
 			}
 		}
 	}

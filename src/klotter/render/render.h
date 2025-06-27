@@ -34,8 +34,8 @@ struct Renderer
 	void operator=(const Renderer&) = delete;
 	void operator=(Renderer&&) = delete;
 
-	std::shared_ptr<UnlitMaterial> make_unlit_material();
-	std::shared_ptr<DefaultMaterial> make_default_material();
+	std::shared_ptr<UnlitMaterial> make_unlit_material() const;
+	std::shared_ptr<DefaultMaterial> make_default_material() const;
 
 	[[nodiscard]] CompiledGeomVertexAttributes unlit_geom_layout() const;
 	[[nodiscard]] CompiledGeomVertexAttributes default_geom_layout() const;
