@@ -143,26 +143,4 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 	return changed;
 }
 
-#if 0
-struct ShittyUnitTest1
-{
-	static constexpr bool feq(float lhs, float rhs)
-	{
-		return std::abs(lhs - rhs) < 0.001f;
-	}
-
-	constexpr ShittyUnitTest1()
-	{
-		const auto middle = s_curve_from_input_c(0.5f, 0.5f);
-		ASSERT(feq(middle.s, 1.0f) && feq(middle.t, 0.75f));
-
-		const auto top_right = s_curve_from_input_c(1.0f, 1.0f);
-		ASSERT(feq(top_right.s, 243.0f) && feq(top_right.t, 0.5f));
-
-		const auto bottom_right = s_curve_from_input_c(1.0f, 0.0f);
-		ASSERT(feq(bottom_right.s, 243.0f) && feq(bottom_right.t, 1.0f));
-	}
-} shitty_unit_test1;
-#endif
-
 }  //  namespace klotter
