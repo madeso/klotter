@@ -39,7 +39,7 @@ void apply(std::optional<bool>* current_state, bool new_state, GLenum gl_type)
 	}
 }
 
-GLenum C(Compare new_state)
+GLenum enum_from_c(Compare new_state)
 {
 	switch (new_state)
 	{
@@ -54,6 +54,22 @@ GLenum C(Compare new_state)
 	default: DIE("Invalid depth func"); return GL_LESS;
 	}
 }
+
+GLenum enum_from_sa (StencilAction sa)
+{
+	switch (sa)
+	{
+	case StencilAction::keep: return GL_KEEP;
+	case StencilAction::zero: return GL_ZERO;
+	case StencilAction::replace: return GL_REPLACE;
+	case StencilAction::increase: return GL_INCR;
+	case StencilAction::increase_wrap: return GL_INCR_WRAP;
+	case StencilAction::decrease: return GL_DECR;
+	case StencilAction::decrease_wrap: return GL_DECR_WRAP;
+	case StencilAction::invert: return GL_INVERT;
+	default: DIE("Invalid stencil action"); return GL_KEEP;
+	}
+};
 
 StateChanger::StateChanger(OpenglStates* s)
 	: states(s)
@@ -91,7 +107,7 @@ StateChanger& StateChanger::depth_func(Compare new_state)
 {
 	if (should_change(&states->depth_func, new_state))
 	{
-		const auto mode = C(new_state);
+		const auto mode = enum_from_c(new_state);
 		glDepthFunc(mode);
 	}
 
@@ -119,7 +135,7 @@ StateChanger& StateChanger::stencil_func(Compare func, i32 ref, u32 mask)
 {
 	if (should_change(&states->stencil_func, {func, ref, mask}))
 	{
-		glStencilFunc(C(func), ref, mask);
+		glStencilFunc(enum_from_c(func), ref, mask);
 	}
 
 	return *this;
@@ -146,27 +162,11 @@ StateChanger& StateChanger::render_mode(RenderMode new_state)
 
 StateChanger& StateChanger::stencil_op(StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass)
 {
-	const auto Csa = [](StencilAction sa) -> GLenum
-	{
-		switch (sa)
-		{
-		case StencilAction::keep: return GL_KEEP;
-		case StencilAction::zero: return GL_ZERO;
-		case StencilAction::replace: return GL_REPLACE;
-		case StencilAction::increase: return GL_INCR;
-		case StencilAction::increase_wrap: return GL_INCR_WRAP;
-		case StencilAction::decrease: return GL_DECR;
-		case StencilAction::decrease_wrap: return GL_DECR_WRAP;
-		case StencilAction::invert: return GL_INVERT;
-		default: DIE("Invalid stencil action"); return GL_KEEP;
-		}
-	};
-
 	if (should_change(&states->stencil_op, {stencil_fail, depth_fail, pass}))
 	{
 		// todo(Gustav): look into using glStencilOpSeparate instead to specify front and back faces
 		// https://registry.khronos.org/OpenGL-Refpages/gl4/html/glStencilOpSeparate.xhtml
-		glStencilOp(Csa(stencil_fail), Csa(depth_fail), Csa(pass));
+		glStencilOp(enum_from_sa(stencil_fail), enum_from_sa(depth_fail), enum_from_sa(pass));
 	}
 
 	return *this;
