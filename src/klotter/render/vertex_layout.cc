@@ -72,7 +72,7 @@ CompiledGeomVertexAttributes get_geom_layout(const CompiledVertexTypeList& l)
 	return {list, l.debug_types};
 }
 
-int ShaderAttributeSize(const VertexType&)
+int calculate_shader_attribute_size(const VertexType&)
 {
 	return 1;
 }
@@ -86,7 +86,7 @@ CompiledVertexTypeList compile_vertex_type_list(const VertexTypeList& list)
 	for (const auto type: list.base_layout)
 	{
 		indices.insert({type, next_index});
-		next_index += ShaderAttributeSize(type);
+		next_index += calculate_shader_attribute_size(type);
 	}
 
 	for (const auto type: list.indices)
@@ -98,7 +98,7 @@ CompiledVertexTypeList compile_vertex_type_list(const VertexTypeList& list)
 		}
 
 		indices.insert({type, next_index});
-		next_index += ShaderAttributeSize(type);
+		next_index += calculate_shader_attribute_size(type);
 	}
 
 	return {indices, {list.indices.begin(), list.indices.end()}, next_index};

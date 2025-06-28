@@ -174,7 +174,6 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	const auto instance_vbo = create_buffer();
 	glBindBuffer(GL_ARRAY_BUFFER, instance_vbo);
 	SET_DEBUG_LABEL_NAMED(instance_vbo, DebugLabelFor::Buffer, Str() << "ARRAY BUF (trans in) " << debug_label);
-	std::vector<glm::mat4> temp_data(max_instances);
 	constexpr auto instance_size = sizeof(float) * 16;
 	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(instance_size * max_instances), nullptr, GL_DYNAMIC_DRAW);
 

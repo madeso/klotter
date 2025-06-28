@@ -20,7 +20,7 @@ void on_assert_failure(std::string_view function, std::string_view reason, std::
 
 	if (is_exception_enabled())
 	{
-		throw text;
+		throw text; // NOLINT(misc-throw-by-value-catch-by-reference)
 	}
 	else
 	{

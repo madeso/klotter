@@ -183,7 +183,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		SCOPED_DEBUG_GROUP("render basic geom"sv);
 		for (const auto& mesh: world.meshes)
 		{
-			constexpr auto not_transparent = RenderContext{TransformSource::Uniform, UseTransparency::no};
+			constexpr auto not_transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::no};
 
 			if (mesh->material->is_transparent())
 			{
@@ -202,10 +202,10 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 			{
 				StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 			}
-			mesh->material->use_shader(not_transparent);
-			mesh->material->set_uniforms(not_transparent, compiled_camera, calc_mesh_transform(mesh, compiled_camera));
-			mesh->material->bind_textures(not_transparent, &pimpl->states, &assets);
-			mesh->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
+			mesh->material->use_shader(not_transparent_context);
+			mesh->material->set_uniforms(not_transparent_context, compiled_camera, calc_mesh_transform(mesh, compiled_camera));
+			mesh->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
+			mesh->material->apply_lights(not_transparent_context, world.lights, settings, &pimpl->states, &assets);
 
 			render_geom(*mesh->geom);
 		}
@@ -214,9 +214,9 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	if (world.instances.empty() == false)
 	{
 		SCOPED_DEBUG_GROUP("render instances"sv);
-		for (auto& m: world.instances)
+		for (const auto& instance: world.instances)
 		{
-			constexpr auto not_transparent = RenderContext{TransformSource::Instanced_mat4, UseTransparency::no};
+			constexpr auto not_transparent_context = RenderContext{TransformSource::Instanced_mat4, UseTransparency::no};
 
 			StateChanger{&pimpl->states}
 				.depth_test(true)
@@ -225,17 +225,17 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				.blending(false)
 				.stencil_mask(0x0)
 				.stencil_func(Compare::always, 1, 0xFF);
-			m->material->use_shader(not_transparent);
-			m->material->set_uniforms(
+			instance->material->use_shader(not_transparent_context);
+			instance->material->set_uniforms(
 				// todo(Gustav): should we really set the model matrix for instanced meshes?
-				not_transparent,
+				not_transparent_context,
 				compiled_camera,
 				std::nullopt
 			);
-			m->material->bind_textures(not_transparent, &pimpl->states, &assets);
-			m->material->apply_lights(not_transparent, world.lights, settings, &pimpl->states, &assets);
+			instance->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
+			instance->material->apply_lights(not_transparent_context, world.lights, settings, &pimpl->states, &assets);
 
-			render_geom_instanced(*m);
+			render_geom_instanced(*instance);
 		}
 	}
 
@@ -275,11 +275,11 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	if (transparent_meshes.empty() == false)
 	{
 		SCOPED_DEBUG_GROUP("render transparent meshes"sv);
-		for (auto& tm: transparent_meshes)
+		for (auto& transparent_mesh: transparent_meshes)
 		{
-			constexpr auto transparent = RenderContext{TransformSource::Uniform, UseTransparency::yes};
+			constexpr auto transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::yes};
 
-			const auto& m = tm.mesh;
+			const auto& mesh = transparent_mesh.mesh;
 			StateChanger{&pimpl->states}
 				.depth_test(true)
 				.depth_mask(true)
@@ -288,16 +288,16 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				.stencil_mask(0x0)
 				.stencil_func(Compare::always, 1, 0xFF);
 
-			if (m->outline)
+			if (mesh->outline)
 			{
 				StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 			}
-			m->material->use_shader(transparent);
-			m->material->set_uniforms(transparent, compiled_camera, calc_mesh_transform(m, compiled_camera));
-			m->material->bind_textures(transparent, &pimpl->states, &assets);
-			m->material->apply_lights(transparent, world.lights, settings, &pimpl->states, &assets);
+			mesh->material->use_shader(transparent_context);
+			mesh->material->set_uniforms(transparent_context, compiled_camera, calc_mesh_transform(mesh, compiled_camera));
+			mesh->material->bind_textures(transparent_context, &pimpl->states, &assets);
+			mesh->material->apply_lights(transparent_context, world.lights, settings, &pimpl->states, &assets);
 
-			render_geom(*m->geom);
+			render_geom(*mesh->geom);
 		}
 	}
 
