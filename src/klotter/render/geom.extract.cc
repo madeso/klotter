@@ -36,12 +36,12 @@ void push_float(ByteBuffer* vv, float f)
 	{
 		float f;
 		char bytes[4];
-	} convert;
+	} convert {};
 
 	convert.f = f;
-	for (int i = 0; i < 4; i += 1)
+	for (int byte_index = 0; byte_index < 4; byte_index += 1)
 	{
-		vv->emplace_back(convert.bytes[i]);
+		vv->emplace_back(convert.bytes[byte_index]);
 	}
 }
 
