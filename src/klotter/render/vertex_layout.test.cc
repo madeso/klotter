@@ -1,4 +1,8 @@
-#include "catch.hpp"
+
+#include "catch2/catch_test_macros.hpp"
+#include "catch2/generators/catch_generators.hpp"
+#include "catch2/matchers/catch_matchers.hpp"
+#include "catch2/matchers/catch_matchers_string.hpp"
 #include "catchy/vectorequals.h"
 
 #include "klotter/render/vertex_layout.h"
@@ -305,7 +309,8 @@ TEST_CASE("vertex_layout_test_get_not_requested", "[vertex_layout]")
 	// not requested variables should assert
 	REQUIRE_THROWS_WITH(
 		compile_shader_layout(layout_compiler, layout_shader_not_requested, std::nullopt),
-		Catch::Contains("Assertion failed") && Catch::Contains("layout wasn't added to the compilation list")
+		Catch::Matchers::ContainsSubstring("Assertion failed")
+			&& Catch::Matchers::ContainsSubstring("layout wasn't added to the compilation list")
 	);
 
 	const auto compiled_layout = compile_shader_layout(layout_compiler, layout_shader_material, std::nullopt);

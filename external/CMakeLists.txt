@@ -1,6 +1,7 @@
 include( ExternalProject )
 
 set(SDL_VERSION_STRING "SDL2-2.0.9") # tar.gz name on sdl release page
+set(CATCH_GIT_TAG v3.7.1)
 
 ###################################################################################################
 ## catchy
@@ -32,6 +33,24 @@ add_library(external::glad ALIAS external_glad)
 
 
 ###################################################################################################
+# Catch2
+###################################################################################################
+FetchContent_Declare(Catch2
+    GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+    GIT_TAG        ${CATCH_GIT_TAG}
+)
+FetchContent_MakeAvailable(Catch2)
+set_target_properties(Catch2 PROPERTIES FOLDER "External")
+add_library(catch_main INTERFACE)
+target_link_libraries(catch_main INTERFACE Catch2::Catch2 )
+add_library(external::catch ALIAS catch_main)
+list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
+include(Catch)
+
+
+
+
+###################################################################################################
 # SDL2
 ###################################################################################################
 if(EU_SDL_SOURCE_FETCH)
@@ -40,7 +59,6 @@ if(EU_SDL_SOURCE_FETCH)
     set(SDL_INSTALL_DIR "${SDL_EXTERN_DIR}/install")
     message(STATUS "Will download and build ${SDL_VERSION_STRING} to ${SDL_EXTERN_DIR} and install to ${SDL_INSTALL_DIR} when building")
 
-    include(ExternalProject)
     ExternalProject_Add(
         SDL2_external
         DOWNLOAD_EXTRACT_TIMESTAMP TRUE

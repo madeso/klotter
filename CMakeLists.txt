@@ -9,7 +9,8 @@ set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "_cmake")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
 include(cmake/StandardProjectSettings.cmake)
 
-
+Include(FetchContent)
+include(ExternalProject)
 
 ###################################################################################################
 # functions
