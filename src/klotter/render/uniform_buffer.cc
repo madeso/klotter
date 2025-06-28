@@ -12,29 +12,35 @@ namespace klotter
 using UniformBufferDescription = std::vector<UniformProp>;
 
 /// returns the size in bytes
-int size_of(UniformProp prop, bool align)
+int size_of(const UniformProp& prop, bool align)
 {
 	constexpr int n = 4;  // in bytes
 	constexpr int n2 = n * 2;
 	constexpr int n4 = n * 4;
 	switch (prop.array_count == 1 ? prop.type : UniformType::vec4)
 	{
-	case UniformType::bool_type: return n;
-	case UniformType::int_type: return n;
-	case UniformType::float_type: return n;
+	case UniformType::bool_type:
+	case UniformType::int_type:
+	case UniformType::float_type:
+		return n;
 	case UniformType::vec2: return n2;
-	case UniformType::vec3: return n4;
-	case UniformType::vec4: return n4;
+	case UniformType::vec3:
+	case UniformType::vec4:
+		return n4;
 	case UniformType::mat4: return n4 * (align ? 1 : 4);
 	default: DIE("invalid uniform type"); return 0;
 	}
 }
 
-int calculate_alignment_bytes(int current_size, UniformProp prop)
+int calculate_alignment_bytes(int current_size, const UniformProp& prop)
 {
 	const auto size = size_of(prop, true);
 	const auto mod = current_size % size;
-	if (mod == 0) return 0;
+	if (mod == 0)
+	{
+		return 0;
+	}
+
 	const auto to_add = size - mod;
 	ASSERT((to_add + mod) % size == 0);
 	return to_add;
@@ -159,7 +165,7 @@ void UniformBuffer::unload()
 	id = 0;
 }
 
-void UniformBuffer::set_mat4(const CompiledUniformProp& prop, const glm::mat4& m)
+void UniformBuffer::set_mat4(const CompiledUniformProp& prop, const glm::mat4& m) // NOLINT(readability-convert-member-functions-to-static)
 {
 	// todo(Gustav): verify that the prop belongs to self
 	ASSERT(prop.type == UniformType::mat4 && prop.array_count == 1);
