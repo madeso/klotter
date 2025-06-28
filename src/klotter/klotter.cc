@@ -258,9 +258,9 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 		return -1;
 	}
 
-	auto sdl_glcontext = SDL_GL_CreateContext(sdl_window);
+	auto* sdl_gl_context = SDL_GL_CreateContext(sdl_window);
 
-	if (sdl_glcontext == nullptr)
+	if (sdl_gl_context == nullptr)
 	{
 		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Could not create gl context: %s", SDL_GetError());
 
@@ -270,15 +270,15 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 		return -1;
 	}
 
-	SDL_GL_MakeCurrent(sdl_window, sdl_glcontext);
+	SDL_GL_MakeCurrent(sdl_window, sdl_gl_context);
 	SDL_GL_SetSwapInterval(1);	// Enable vsync
 
 	if (gladLoadGLLoader(SDL_GL_GetProcAddress) == 0)
 	{
 		SDL_LogCritical(SDL_LOG_CATEGORY_ERROR, "Failed to load OpenGL");
 
-		SDL_GL_DeleteContext(sdl_glcontext);
-		sdl_glcontext = nullptr;
+		SDL_GL_DeleteContext(sdl_gl_context);
+		sdl_gl_context = nullptr;
 
 		SDL_DestroyWindow(sdl_window);
 		sdl_window = nullptr;
@@ -298,11 +298,9 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO();
-	(void) io;
 	ImGui::StyleColorsDark();
 
-	ImGui_ImplSDL2_InitForOpenGL(sdl_window, sdl_glcontext);
+	ImGui_ImplSDL2_InitForOpenGL(sdl_window, sdl_gl_context);
 	ImGui_ImplOpenGL3_Init(glsl_version);
 
 
@@ -320,8 +318,8 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 	ImGui_ImplSDL2_Shutdown();
 	ImGui::DestroyContext();
 
-	SDL_GL_DeleteContext(sdl_glcontext);
-	sdl_glcontext = nullptr;
+	SDL_GL_DeleteContext(sdl_gl_context);
+	sdl_gl_context = nullptr;
 	SDL_DestroyWindow(sdl_window);
 	SDL_Quit();
 
