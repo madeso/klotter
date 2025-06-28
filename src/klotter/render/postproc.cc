@@ -488,11 +488,13 @@ struct BlurEffect : FactorEffect
 
 	void use_vert_shader(const PostProcArg& a, const FrameBuffer& t) const
 	{
+		const auto& factor_uniform = vert->factor;
+
 		vert->program->use();
-		ASSERT(vert->factor);
-		if (vert->factor)
+		ASSERT(factor_uniform);
+		if (factor_uniform)
 		{
-			vert->program->set_float(*vert->factor, get_factor());
+			vert->program->set_float(*factor_uniform, get_factor());
 		}
 		vert->program->set_float(blur_size_v, blur_size);
 #if FF_HAS(BLUR_USE_GAUSS)
@@ -503,16 +505,19 @@ struct BlurEffect : FactorEffect
 
 	void use_hori_shader(const PostProcArg& a, const FrameBuffer& t)
 	{
+		const auto& factor_uniform = hori->factor;
+		const auto& resolution_uniform = hori->resolution;
+
 		hori->program->use();
-		ASSERT(hori->factor);
-		if (hori->factor)
+		ASSERT(factor_uniform);
+		if (factor_uniform)
 		{
-			hori->program->set_float(*hori->factor, get_factor());
+			hori->program->set_float(*factor_uniform, get_factor());
 		}
-		ASSERT(hori->resolution);
-		if (hori->resolution)
+		ASSERT(resolution_uniform);
+		if (resolution_uniform)
 		{
-			hori->program->set_vec2(*hori->resolution, a.window_size);
+			hori->program->set_vec2(*resolution_uniform, a.window_size);
 		}
 		hori->program->set_float(blur_size_h, blur_size);
 #if FF_HAS(BLUR_USE_GAUSS)
