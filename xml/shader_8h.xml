@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="shader_8h" kind="file" language="C++">
+    <compoundname>shader.h</compoundname>
+    <includes local="no">unordered_set</includes>
+    <includes refid="opengl__labels_8h" local="yes">klotter/render/opengl_labels.h</includes>
+    <includes refid="vertex__layout_8h" local="yes">klotter/render/vertex_layout.h</includes>
+    <includes refid="uniform_8h" local="yes">klotter/render/uniform.h</includes>
+    <includedby refid="linebatch_8h" local="yes">src/klotter/render/linebatch.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>klotter/render/opengl_labels.h</label>
+        <link refid="opengl__labels_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/shader.h</label>
+        <link refid="shader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>klotter/render/uniform.h</label>
+        <link refid="uniform_8h"/>
+      </node>
+      <node id="4">
+        <label>klotter/render/vertex_layout.h</label>
+        <link refid="vertex__layout_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>map</label>
+      </node>
+      <node id="7">
+        <label>optional</label>
+      </node>
+      <node id="6">
+        <label>set</label>
+      </node>
+      <node id="2">
+        <label>unordered_set</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/klotter/render/linebatch.h</label>
+        <link refid="linebatch_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/shader.h</label>
+        <link refid="shader_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1ShaderProgram" prot="public">klotter::ShaderProgram</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="opengl__labels_8h" kindref="compound">klotter/render/opengl_labels.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="vertex__layout_8h" kindref="compound">klotter/render/vertex_layout.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uniform_8h" kindref="compound">klotter/render/uniform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1UniformBufferSetup" kindref="compound">UniformBufferSetup</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structklotter_1_1ShaderProgram" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" kindref="member">ShaderProgram</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24" refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" kindref="member">ShaderProgram</ref>(</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>vertex_source,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>fragment_source,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1CompiledShaderVertexAttributes" kindref="compound">CompiledShaderVertexAttributes</ref>&amp;<sp/>layout</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="structklotter_1_1ShaderProgram_1af95702d66323267c513e4dafd89ec16f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProgram_1af95702d66323267c513e4dafd89ec16f" kindref="member">~ShaderProgram</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structklotter_1_1ShaderProgram_1af07ac3e8da2e98fff4366f4994357c11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProgram_1af07ac3e8da2e98fff4366f4994357c11" kindref="member">ShaderProgram</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" kindref="member">ShaderProgram</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structklotter_1_1ShaderProgram_1a5575c3ce1eed9c1c24f37912b667be9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a5575c3ce1eed9c1c24f37912b667be9f" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" kindref="member">ShaderProgram</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structklotter_1_1ShaderProgram_1a61c1ffd3bd1ebba2102572997fb8c51a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProgram_1a61c1ffd3bd1ebba2102572997fb8c51a" kindref="member">ShaderProgram</ref>(<ref refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" kindref="member">ShaderProgram</ref>&amp;&amp;<sp/>other)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="structklotter_1_1ShaderProgram_1a3716ecafed56627d2172190890d0c6a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" kindref="member">ShaderProgram</ref>&amp;<sp/><ref refid="structklotter_1_1ShaderProgram_1a3716ecafed56627d2172190890d0c6a7" kindref="member">operator=</ref>(<ref refid="structklotter_1_1ShaderProgram_1a63148ed42403184ff3ff02becf7c362e" kindref="member">ShaderProgram</ref>&amp;&amp;<sp/>rhs)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="structklotter_1_1ShaderProgram_1a18bffd6cab01c6511de9ecaf2ed2a470" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a18bffd6cab01c6511de9ecaf2ed2a470" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structklotter_1_1ShaderProgram_1aa278978e62d69fc703d9dd1f3a3eb1fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1aa278978e62d69fc703d9dd1f3a3eb1fd" kindref="member">is_loaded</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structklotter_1_1ShaderProgram_1a73e4bc128e29565ba48a973aaa4037b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a73e4bc128e29565ba48a973aaa4037b4" kindref="member">use</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="structklotter_1_1ShaderProgram_1ace564eff29cd0309c6bf3843c5e71c4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1ShaderProgram_1ace564eff29cd0309c6bf3843c5e71c4d" kindref="member">get_uniform</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="structklotter_1_1ShaderProgram_1ab89ae54e8f45a2562420f6d000d4dd5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1ab89ae54e8f45a2562420f6d000d4dd5f" kindref="member">set_float</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="structklotter_1_1ShaderProgram_1a2f68351089117ca8804ae952aadededb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a2f68351089117ca8804ae952aadededb" kindref="member">set_vec2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="structklotter_1_1ShaderProgram_1a20ae4d0b4e064021fe28ff69a27b3189" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a20ae4d0b4e064021fe28ff69a27b3189" kindref="member">set_vec2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec2&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="structklotter_1_1ShaderProgram_1a92cb584d966760faf7e378f9663aa493" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a92cb584d966760faf7e378f9663aa493" kindref="member">set_vec3</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="structklotter_1_1ShaderProgram_1a602226781e49cd489d0fed3c0ea281ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a602226781e49cd489d0fed3c0ea281ff" kindref="member">set_vec3</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="structklotter_1_1ShaderProgram_1aadd41dca11f7497d8dc5759670fcfea2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1aadd41dca11f7497d8dc5759670fcfea2" kindref="member">set_vec4</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>z,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>w);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="structklotter_1_1ShaderProgram_1a9f2731b2367ef643b42feae8bfc64774" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a9f2731b2367ef643b42feae8bfc64774" kindref="member">set_vec4</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec4&amp;<sp/>v);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="structklotter_1_1ShaderProgram_1a4f20cc9b36209835cb7428e14bcbe56f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a4f20cc9b36209835cb7428e14bcbe56f" kindref="member">set_texture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="structklotter_1_1ShaderProgram_1a683f87ad48aed3e849952c7779af1e47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a683f87ad48aed3e849952c7779af1e47" kindref="member">set_mat</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::mat4&amp;<sp/>mat);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="structklotter_1_1ShaderProgram_1a9a239119b7688aa1c166c88262e8a1cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1a9a239119b7688aa1c166c88262e8a1cf" kindref="member">set_mat</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::mat3&amp;<sp/>mat);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="structklotter_1_1ShaderProgram_1acf995e0f3e5b1543aac53c61c00d2aa0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1acf995e0f3e5b1543aac53c61c00d2aa0" kindref="member">setup_uniform_block</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1UniformBufferSetup" kindref="compound">UniformBufferSetup</ref>&amp;<sp/>setup);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="structklotter_1_1ShaderProgram_1af3084796decc7cdcf7e65f7367c280db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProgram_1af3084796decc7cdcf7e65f7367c280db" kindref="member">shader_program</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="162" refid="structklotter_1_1ShaderProgram_1a392454bbe3b7735fc540da4ac287f0d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__vertex-layout_1gaa3eb81233db95fb693918802ac36cc30" kindref="member">VertexTypes</ref><sp/><ref refid="structklotter_1_1ShaderProgram_1a392454bbe3b7735fc540da4ac287f0d7" kindref="member">debug_vertex_types</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170" refid="namespaceklotter_1a3f825575d127751358894415f96c5bf6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a3f825575d127751358894415f96c5bf6" kindref="member">setup_textures</ref>(<ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref>*<sp/>shader,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;Uniform*&gt;&amp;<sp/>uniform_list);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178" refid="namespaceklotter_1a6f86fb3893caeb7267b725bb433a6b1c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a6f86fb3893caeb7267b725bb433a6b1c" kindref="member">is_bound_for_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_set&lt;VertexType&gt;&amp;<sp/>debug_geom_shader_types);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185" refid="namespaceklotter_1a356ef4e2d5e2b61b7d5909081407207a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a356ef4e2d5e2b61b7d5909081407207a" kindref="member">is_shader_bound</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>program);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="namespaceklotter_1ae6578d1bd38afcb9f3c56f0a839e6b59" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1ae6578d1bd38afcb9f3c56f0a839e6b59" kindref="member">clear_shader_program</ref>();</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/shader.h"/>
+  </compounddef>
+</doxygen>

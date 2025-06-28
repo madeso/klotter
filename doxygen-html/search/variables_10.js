@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['t_0',['t',['../structklotter_1_1SCurve.html#a8fcc2c4912246f4284cb2450093f0460',1,'klotter::SCurve']]],
+  ['target_1',['target',['../structklotter_1_1UniformProp.html#ad717ae19fdc4d81cad9e4ce9083720d1',1,'klotter::UniformProp']]],
+  ['targets_2',['targets',['../structklotter_1_1CompiledStack.html#a46d6e36d30b228ff95cc1269e5f450e6',1,'klotter::CompiledStack']]],
+  ['teal_3',['teal',['../namespaceklotter_1_1imgui.html#a3bd6f925dac3f66b4ac6a798ad732e0e',1,'klotter::imgui']]],
+  ['tex_5fdiffuse_4',['tex_diffuse',['../structklotter_1_1LoadedShader__Unlit.html#a47eb0877bdfee9da78598205614a9c9d',1,'klotter::LoadedShader_Unlit::tex_diffuse'],['../structklotter_1_1LoadedShader__Default.html#af67d1691d573e8f477b9cacab5dbedab',1,'klotter::LoadedShader_Default::tex_diffuse']]],
+  ['tex_5femissive_5',['tex_emissive',['../structklotter_1_1LoadedShader__Default.html#a39a8ac6136cec63f1924f0bb7014527c',1,'klotter::LoadedShader_Default']]],
+  ['tex_5fskybox_6',['tex_skybox',['../structklotter_1_1LoadedShader__Skybox.html#a6fb6a3159d2c8e3f139e11a7cc84582c',1,'klotter::LoadedShader_Skybox']]],
+  ['tex_5fspecular_7',['tex_specular',['../structklotter_1_1LoadedShader__Default.html#a1b1538595be9d137cd6158bfa2de9a2e',1,'klotter::LoadedShader_Default']]],
+  ['texcoords_8',['texcoords',['../structklotter_1_1geom_1_1Builder.html#abd7ede50a96f5807c123cb917eecd349',1,'klotter::geom::Builder']]],
+  ['texture_9',['texture',['../structklotter_1_1geom_1_1Vertex.html#ab7010ae753e9318118337b31fa88430f',1,'klotter::geom::Vertex::texture'],['../structklotter_1_1UnlitMaterial.html#a7801e658eb779b80ebca950cab56a54f',1,'klotter::UnlitMaterial::texture'],['../structklotter_1_1LoadedPostProcShader.html#a3b7e1e3c794b587e5eb8013b6916bd6e',1,'klotter::LoadedPostProcShader::texture'],['../structklotter_1_1Uniform.html#a2546427ecf437a68f5170f9eae34f2e8',1,'klotter::Uniform::texture']]],
+  ['texture_5fbound_10',['texture_bound',['../structklotter_1_1OpenglStates.html#a86522266949d8aee0bf4e2b53a9131f2',1,'klotter::OpenglStates']]],
+  ['time_11',['time',['../structklotter_1_1LoadedPostProcShader.html#ab03f315fa28e0bd1f19411d5b625e006',1,'klotter::LoadedPostProcShader']]],
+  ['tint_5fcolor_12',['tint_color',['../structklotter_1_1LoadedShader__SingleColor.html#a17d5f165c10b23aab2d41fdab25123af',1,'klotter::LoadedShader_SingleColor::tint_color'],['../structklotter_1_1LoadedShader__Unlit.html#a0694d3d6da2bd4895af832ef45dab722',1,'klotter::LoadedShader_Unlit::tint_color'],['../structklotter_1_1LoadedShader__Default.html#a2e9464cfadaf8111e035a3aead9e7079',1,'klotter::LoadedShader_Default::tint_color']]],
+  ['to_13',['to',['../structklotter_1_1DebugLine.html#ab28646931b94b77ad1c89dff411a4273',1,'klotter::DebugLine']]],
+  ['transforms_14',['transforms',['../structklotter_1_1MeshInstance__TransformInstanced.html#a96aeca9d8cae1640975fec540074c614',1,'klotter::MeshInstance_TransformInstanced']]],
+  ['transparency_5fshader_15',['transparency_shader',['../structklotter_1_1LoadedShader__Unlit__Container.html#a832f522432bead63aefa3f8873c026a4',1,'klotter::LoadedShader_Unlit_Container::transparency_shader'],['../structklotter_1_1LoadedShader__Default__Container.html#aa1a421a3572f1bb176e9fe113a2db4fe',1,'klotter::LoadedShader_Default_Container::transparency_shader']]],
+  ['transparent_5fcutoff_16',['transparent_cutoff',['../structklotter_1_1ShaderOptions.html#a3dd056451d3e6bbf6c4a7f55fd99f64b',1,'klotter::ShaderOptions']]],
+  ['triangles_17',['triangles',['../structklotter_1_1geom_1_1Builder.html#aa8423efe94121e82d6871d4cb7fd165d',1,'klotter::geom::Builder']]],
+  ['type_18',['type',['../structklotter_1_1ExtractedAttribute.html#a13b00d60b002e83054006e4bdac1300b',1,'klotter::ExtractedAttribute::type'],['../structklotter_1_1CompiledUniformProp.html#ad0771ed847bdf09a532d236f428c2517',1,'klotter::CompiledUniformProp::type'],['../structklotter_1_1UniformProp.html#a177b6a9613314f24f23f84e6a98b196a',1,'klotter::UniformProp::type'],['../structklotter_1_1VertexElementDescription.html#aef49c5f9349cee1038b7182047ac31bf',1,'klotter::VertexElementDescription::type'],['../structklotter_1_1CompiledVertexElement.html#a9706f6b962418c34b078283d552b1dbc',1,'klotter::CompiledVertexElement::type'],['../structklotter_1_1CompiledVertexElementNoName.html#aba7f428b67267b016f8a2ad28a1cf00c',1,'klotter::CompiledVertexElementNoName::type'],['../structklotter_1_1InstanceProp.html#a6099c86f6b1ab7dffa1720edab9b0142',1,'klotter::InstanceProp::type']]]
+];
