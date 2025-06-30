@@ -44,7 +44,7 @@ bool is_equal(const CompiledVertexElementNoName& lhs, const CompiledVertexElemen
 }
 
 catchy::FalseString is_equal(
-	const std::vector<CompiledVertexElement> lhs, const std::vector<CompiledVertexElement>& rhs
+	const std::vector<CompiledVertexElement>& lhs, const std::vector<CompiledVertexElement>& rhs
 )
 {
 	return catchy::VectorEquals(
@@ -69,7 +69,7 @@ catchy::FalseString is_equal(
 }
 
 catchy::FalseString is_equal(
-	const std::vector<CompiledVertexElementNoName> lhs, const std::vector<CompiledVertexElementNoName>& rhs
+	const std::vector<CompiledVertexElementNoName>& lhs, const std::vector<CompiledVertexElementNoName>& rhs
 )
 {
 	return catchy::VectorEquals(
@@ -90,7 +90,7 @@ catchy::FalseString is_equal(
 	);
 }
 
-catchy::FalseString is_equal(const std::vector<VertexType> lhs, const std::vector<VertexType>& rhs)
+catchy::FalseString is_equal(const std::vector<VertexType>& lhs, const std::vector<VertexType>& rhs)
 {
 	return catchy::VectorEquals(
 		lhs,
@@ -157,7 +157,7 @@ TEST_CASE("vertex_layout_test_simple", "[vertex_layout]")
 	));
 }
 
-TEST_CASE("vertex_layout_test_with_custom_layput", "[vertex_layout]")
+TEST_CASE("vertex_layout_test_with_custom_layout", "[vertex_layout]")
 {
 	const auto layout_shader_material = ShaderVertexAttributes{
 		{VertexType::position3, "aPos"},

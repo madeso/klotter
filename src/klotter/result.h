@@ -8,7 +8,7 @@ struct Result
 	std::optional<T> value;
 	std::optional<E> e;
 
-	explicit Result(T&& tt)
+	explicit Result(T tt)
 		: value(std::move(tt))
 	{
 	}

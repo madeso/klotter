@@ -66,14 +66,14 @@ LoadedShader_Unlit::LoadedShader_Unlit(
 	program->setup_uniform_block(desc.setup);
 }
 
-DirectionalLightUniforms::DirectionalLightUniforms(ShaderProgram* program, const std::string& base)
+DirectionalLightUniforms::DirectionalLightUniforms(const ShaderProgram* program, const std::string& base)
 	: light_diffuse_color(program->get_uniform(base + "diffuse"))
 	, light_specular_color(program->get_uniform(base + "specular"))
 	, dir(program->get_uniform(base + "dir"))
 {
 }
 
-PointLightUniforms::PointLightUniforms(ShaderProgram* program, const std::string& base)
+PointLightUniforms::PointLightUniforms(const ShaderProgram* program, const std::string& base)
 	: light_diffuse_color(program->get_uniform(base + "diffuse"))
 	, light_specular_color(program->get_uniform(base + "specular"))
 	, light_attenuation(program->get_uniform(base + "attenuation"))
@@ -81,7 +81,7 @@ PointLightUniforms::PointLightUniforms(ShaderProgram* program, const std::string
 {
 }
 
-FrustumLightUniforms::FrustumLightUniforms(ShaderProgram* program, const std::string& base)
+FrustumLightUniforms::FrustumLightUniforms(const ShaderProgram* program, const std::string& base)
 	: diffuse(program->get_uniform(base + "diffuse"))
 	, specular(program->get_uniform(base + "specular"))
 	, attenuation(program->get_uniform(base + "attenuation"))

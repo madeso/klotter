@@ -15,7 +15,7 @@ namespace klotter::geom
 */
 using Index = u64;
 
-/// A enum describing if a face is one or two-sided 
+/// An enum describing if a face is one or two-sided 
 enum class TwoSided
 {
 	one_sided,
@@ -30,8 +30,8 @@ struct Vertex
 	Index texture;
 	Index color;
 
-	Vertex(Index vnt, Index color);
-	Vertex(Index vertex, Index normal, Index texture, Index color);
+	Vertex(Index pnt, Index clr);
+	Vertex(Index a_position, Index a_normal, Index a_texture, Index a_color);
 };
 
 /// A simple triangle face in a Builder
@@ -42,7 +42,7 @@ struct Triangle
 	Vertex v1;
 	Vertex v2;
 
-	Triangle(const Vertex& v0, const Vertex& v1, const Vertex& v2);
+	Triangle(const Vertex& a, const Vertex& b, const Vertex& c);
 };
 
 /// A helper utility to create a Geom
@@ -62,7 +62,7 @@ struct Builder
 	// todo(Gustav): hrm... perhaps change so we support n-gon instead of just tris and just
 	// triangulate when converting to a geom? the intent would be clearer in the obj dump...
 	Builder& add_triangle(const Triangle& t);
-	Builder& add_quad(bool reverse, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3);
+	Builder& add_quad(bool ccw, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3);
 	Builder& add_face(const std::vector<Vertex>&);
 
 	Builder& replace_with_smooth_normals();
@@ -81,7 +81,7 @@ struct Builder
 	std::vector<glm::vec4> colors;
 };
 
-Builder create_box(float w, float h, float d, bool invert, const glm::vec3& color = colors::white);
+Builder create_box(float x, float y, float z, bool invert, const glm::vec3& color = colors::white);
 Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
 
 Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& color = colors::white);

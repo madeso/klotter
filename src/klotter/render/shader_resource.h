@@ -85,7 +85,7 @@ struct LoadedShader_Unlit
 /// @see \ref DirectionalLight
 struct DirectionalLightUniforms
 {
-	DirectionalLightUniforms(ShaderProgram* program, const std::string& base);
+	DirectionalLightUniforms(const ShaderProgram* program, const std::string& base);
 
 	Uniform light_diffuse_color;
 	Uniform light_specular_color;
@@ -96,7 +96,7 @@ struct DirectionalLightUniforms
 /// @see \ref PointLight
 struct PointLightUniforms
 {
-	PointLightUniforms(ShaderProgram* program, const std::string& base);
+	PointLightUniforms(const ShaderProgram* program, const std::string& base);
 
 	Uniform light_diffuse_color;
 	Uniform light_specular_color;
@@ -108,7 +108,7 @@ struct PointLightUniforms
 /// @see \ref FrustumLight
 struct FrustumLightUniforms
 {
-	FrustumLightUniforms(ShaderProgram* program, const std::string& base);
+	FrustumLightUniforms(const ShaderProgram* program, const std::string& base);
 
 	Uniform diffuse;
 	Uniform specular;
@@ -181,7 +181,7 @@ enum class UseTransparency
 	no
 };
 
-/// Stores information that is uselful when seleting a shader part from a shader container.
+/// Stores information that is useful when selecting a shader part from a shader container.
 struct RenderContext
 {
 	TransformSource model_source;

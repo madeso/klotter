@@ -132,7 +132,7 @@ void RenderTask::update(const PostProcArg& arg)
 
 void EffectStack::update(float dt) const
 {
-	for (auto e: effects)
+	for (const auto& e: effects)
 	{
 		if (e->is_enabled == false)
 		{

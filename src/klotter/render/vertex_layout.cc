@@ -54,6 +54,7 @@ CompiledShaderVertexAttributes compile_shader_layout(
 CompiledGeomVertexAttributes get_geom_layout(const CompiledVertexTypeList& l)
 {
 	std::vector<CompiledVertexElementNoName> list;
+	list.reserve(l.indices.size());
 
 	for (const auto& [first, second]: l.indices)
 	{

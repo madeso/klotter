@@ -6,7 +6,7 @@ namespace klotter
 // ------------------------------------------------------------------------------------------------
 // std utils
 
-// convert a enum class to it's underlying (int) type
+// convert an enum class to it's underlying (int) type
 // src: https://twitter.com/idoccor/status/1314664849276899328
 template<typename E>
 constexpr typename std::underlying_type_t<E> base_cast(E e) noexcept

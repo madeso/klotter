@@ -46,11 +46,11 @@ HASH_DEF_END()
 namespace klotter::geom
 {
 
-Vertex::Vertex(Index pnt, Index a_color)
+Vertex::Vertex(Index pnt, Index clr)
 	: position(pnt)
 	, normal(pnt)
 	, texture(pnt)
-	, color(a_color)
+	, color(clr)
 {
 }
 

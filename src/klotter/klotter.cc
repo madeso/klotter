@@ -12,7 +12,7 @@ namespace klotter
 {
 
 constexpr int start_width = 800;
-constexpr int starth_height = 600;
+constexpr int start_height = 600;
 
 int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl_window)
 {
@@ -32,7 +32,7 @@ int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl
 	bool running = true;
 
 	int window_width = start_width;
-	int window_height = starth_height;
+	int window_height = start_height;
 
 	SDL_GetWindowSize(sdl_window, &window_width, &window_height);
 
@@ -248,7 +248,7 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 		SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED,
 		start_width,
-		starth_height,
+		start_height,
 		SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI
 	);
 

@@ -36,7 +36,7 @@ SCurve s_curve_from_input(float x, float y);
 float calculate_s_curve(float x, float s, float t);
 
 
-bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flipx);
+bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x);
 
 /**
  * @}

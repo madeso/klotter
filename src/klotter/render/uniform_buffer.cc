@@ -129,7 +129,7 @@ UniformBuffer::UniformBuffer(DEBUG_LABEL_ARG_MANY const UniformBufferSetup& setu
 	// Changed to a dynamic draw due to:
 	//	Using glBufferSubData(...) to update a GL_STATIC_DRAW buffer
 	//	Performance Severity: medium
-	// todo(Gustav): profile? provide a hint in a argument?
+	// todo(Gustav): profile? provide a hint in an argument?
 	glBufferData(GL_UNIFORM_BUFFER, setup.size, nullptr, GL_DYNAMIC_DRAW);
 	glBindBufferBase(GL_UNIFORM_BUFFER, Cint_to_gluint(setup.binding_point), id);
 }

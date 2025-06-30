@@ -31,7 +31,7 @@ glm::mat4 create_view_mat(const glm::vec3& pos, const CameraVectors& cv)
 	return glm::lookAt(pos, pos + cv.front, {0.0f, 1.0f, 0.0f});
 }
 
-CompiledCamera compile(const Camera& cam, const glm::ivec2 window_size)
+CompiledCamera compile(const Camera& cam, const glm::ivec2& window_size)
 {
 	const float aspect = static_cast<float>(window_size.x) / static_cast<float>(window_size.y);
 	const auto projection = glm::perspective(glm::radians(cam.fov), aspect, 0.1f, 100.0f);

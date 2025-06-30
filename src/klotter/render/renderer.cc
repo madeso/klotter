@@ -72,6 +72,7 @@ glm::mat4 rot_from_basis(const glm::vec3& a, const glm::vec3& b, const glm::vec3
 	return glm::mat4{glm::vec4{a, 0}, glm::vec4{b, 0}, glm::vec4{c, 0}, glm::vec4{0, 0, 0, 1}};
 }
 
+// todo(Gustav): should functions take shared_ptr?
 glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCamera& cc)
 {
 	const auto calc_fixed_right = [](const glm::vec3& normal, const glm::vec3& up)
