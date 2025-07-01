@@ -66,7 +66,6 @@
     <innerclass refid="structklotter_1_1RenderSettings" prot="public">klotter::RenderSettings</innerclass>
     <innerclass refid="structklotter_1_1RenderSource" prot="public">klotter::RenderSource</innerclass>
     <innerclass refid="structklotter_1_1RenderTask" prot="public">klotter::RenderTask</innerclass>
-    <innerclass refid="structklotter_1_1ScopedDebugGroup" prot="public">klotter::ScopedDebugGroup</innerclass>
     <innerclass refid="structklotter_1_1SCurve" prot="public">klotter::SCurve</innerclass>
     <innerclass refid="structklotter_1_1SCurveAndDrag" prot="public">klotter::SCurveAndDrag</innerclass>
     <innerclass refid="structklotter_1_1ShaderOptions" prot="public">klotter::ShaderOptions</innerclass>
@@ -96,88 +95,6 @@
       <member refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kind="enum"><name>Compare</name></member>
       <member refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kind="enum"><name>CullFace</name></member>
       <member refid="group__geom-builder_1ga09f336a0f9a765edc85ba7fb234aed05" kind="enum"><name>ExtractedAttributeType</name></member>
-      <memberdef kind="enum" id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857" prot="public" static="no" strong="yes">
-        <type></type>
-        <name>DebugLabelFor</name>
-        <qualifiedname>klotter::DebugLabelFor</qualifiedname>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a7e62bc342f41c946868f0ea6f0b712d8" prot="public">
-          <name>Buffer</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857aa88a92f4a0e793589f2341851a15c660" prot="public">
-          <name>Shader</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a95c50c7cc68e399ac5540898dfd06820" prot="public">
-          <name>Program</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ab521b83330c51691d58bbcb59c4df078" prot="public">
-          <name>VertexArray</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d" prot="public">
-          <name>Query</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ac617c3b8678ee8c905d8d7c39bb55e45" prot="public">
-          <name>ProgramPipeline</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a5bca2f066df1fe641b2b779db2a63c0a" prot="public">
-          <name>Sampler</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b" prot="public">
-          <name>Texture</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ada047b502449ef16ccddaec71ea865e1" prot="public">
-          <name>RenderBuffer</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857abb0c68ab40c9ccdc5cfafa8622055efc" prot="public">
-          <name>FrameBuffer</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="26" column="1" bodyfile="src/klotter/render/opengl_utils.h" bodystart="27" bodyend="38"/>
-      </memberdef>
       <member refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kind="enum"><name>RenderMode</name></member>
       <memberdef kind="enum" id="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41" prot="public" static="no" strong="yes">
         <type></type>
@@ -507,7 +424,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="7" column="6" declfile="src/klotter/render/opengl_utils.h" declline="7" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="9" column="6" declfile="src/klotter/render/opengl_utils.h" declline="9" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLenum</type>
@@ -525,7 +442,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="10" column="8" declfile="src/klotter/render/opengl_utils.h" declline="10" declcolumn="8"/>
+        <location file="src/klotter/render/opengl_utils.h" line="12" column="8" declfile="src/klotter/render/opengl_utils.h" declline="12" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLuint</type>
@@ -543,7 +460,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="11" column="8" declfile="src/klotter/render/opengl_utils.h" declline="11" declcolumn="8"/>
+        <location file="src/klotter/render/opengl_utils.h" line="13" column="8" declfile="src/klotter/render/opengl_utils.h" declline="13" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLsizeiptr</type>
@@ -561,7 +478,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="12" column="12" declfile="src/klotter/render/opengl_utils.h" declline="12" declcolumn="12"/>
+        <location file="src/klotter/render/opengl_utils.h" line="14" column="12" declfile="src/klotter/render/opengl_utils.h" declline="14" declcolumn="12"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLsizei</type>
@@ -579,7 +496,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="13" column="9" declfile="src/klotter/render/opengl_utils.h" declline="13" declcolumn="9"/>
+        <location file="src/klotter/render/opengl_utils.h" line="15" column="9" declfile="src/klotter/render/opengl_utils.h" declline="15" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -593,7 +510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="15" column="5" declfile="src/klotter/render/opengl_utils.h" declline="15" declcolumn="5"/>
+        <location file="src/klotter/render/opengl_utils.h" line="17" column="5" declfile="src/klotter/render/opengl_utils.h" declline="17" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a939548cd29b251463ed344cde014e212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -611,7 +528,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="16" column="6" declfile="src/klotter/render/opengl_utils.h" declline="16" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="18" column="6" declfile="src/klotter/render/opengl_utils.h" declline="18" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -625,7 +542,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="18" column="5" declfile="src/klotter/render/opengl_utils.h" declline="18" declcolumn="5"/>
+        <location file="src/klotter/render/opengl_utils.h" line="20" column="5" declfile="src/klotter/render/opengl_utils.h" declline="20" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -643,7 +560,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="19" column="6" declfile="src/klotter/render/opengl_utils.h" declline="19" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="21" column="6" declfile="src/klotter/render/opengl_utils.h" declline="21" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a9c262112545baed06ed5325e9796633d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -661,7 +578,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="21" column="6" declfile="src/klotter/render/opengl_utils.h" declline="21" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="23" column="6" declfile="src/klotter/render/opengl_utils.h" declline="23" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::mat4</type>
@@ -679,59 +596,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="24" column="11" declfile="src/klotter/render/opengl_utils.h" declline="24" declcolumn="11"/>
+        <location file="src/klotter/render/opengl_utils.h" line="26" column="11" declfile="src/klotter/render/opengl_utils.h" declline="26" declcolumn="11"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a35213551f34621dc876fa001cc4ca791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a7befceb30fc99ff7fc48cf45778136e9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void klotter::set_gl_debug_label</definition>
-        <argsstring>(DebugLabelFor type, GLuint object, const std::string &amp;label)</argsstring>
-        <name>set_gl_debug_label</name>
-        <qualifiedname>klotter::set_gl_debug_label</qualifiedname>
-        <param>
-          <type><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857" kindref="member">DebugLabelFor</ref></type>
-          <declname>type</declname>
-        </param>
-        <param>
-          <type>GLuint</type>
-          <declname>object</declname>
-        </param>
-        <param>
-          <type>const std::string &amp;</type>
-          <declname>label</declname>
-        </param>
+        <definition>void klotter::opengl_nop</definition>
+        <argsstring>()</argsstring>
+        <name>opengl_nop</name>
+        <qualifiedname>klotter::opengl_nop</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="40" column="6" declfile="src/klotter/render/opengl_utils.h" declline="40" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a04f3dc2106d2b70075c315918fbc6376" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::set_gl_debug_label</definition>
-        <argsstring>(DebugLabelFor type, GLuint object, std::string_view label)</argsstring>
-        <name>set_gl_debug_label</name>
-        <qualifiedname>klotter::set_gl_debug_label</qualifiedname>
-        <param>
-          <type><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857" kindref="member">DebugLabelFor</ref></type>
-          <declname>type</declname>
-        </param>
-        <param>
-          <type>GLuint</type>
-          <declname>object</declname>
-        </param>
-        <param>
-          <type>std::string_view</type>
-          <declname>label</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="41" column="6" declfile="src/klotter/render/opengl_utils.h" declline="41" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="70" column="16" bodyfile="src/klotter/render/opengl_utils.h" bodystart="70" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a3f825575d127751358894415f96c5bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

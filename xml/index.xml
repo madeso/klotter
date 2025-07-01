@@ -573,15 +573,6 @@
     <member refid="structResult_1aef1257385182062000e093cc7979f46f" kind="function"><name>Result</name></member>
     <member refid="structResult_1a9e40be74c8d6a0617c920987882b86e9" kind="function"><name>operator bool</name></member>
   </compound>
-  <compound refid="structklotter_1_1ScopedDebugGroup" kind="struct"><name>klotter::ScopedDebugGroup</name>
-    <member refid="structklotter_1_1ScopedDebugGroup_1af9f5806f21506b84f8102e4aaf232e70" kind="function"><name>ScopedDebugGroup</name></member>
-    <member refid="structklotter_1_1ScopedDebugGroup_1a47c098e8c13654994c7515d4185fbedb" kind="function"><name>ScopedDebugGroup</name></member>
-    <member refid="structklotter_1_1ScopedDebugGroup_1ad540676e357664663b179720a4e4f71c" kind="function"><name>~ScopedDebugGroup</name></member>
-    <member refid="structklotter_1_1ScopedDebugGroup_1aa6d2a557f7ecbb72afe54b196dd512b3" kind="function"><name>ScopedDebugGroup</name></member>
-    <member refid="structklotter_1_1ScopedDebugGroup_1a2476732d9c40ff0f4bed1e52371f2e52" kind="function"><name>ScopedDebugGroup</name></member>
-    <member refid="structklotter_1_1ScopedDebugGroup_1a6d490039c3cf34722efd9f0213f3c9d7" kind="function"><name>operator=</name></member>
-    <member refid="structklotter_1_1ScopedDebugGroup_1a3b19c2158770406c5dbcd42d1537ed87" kind="function"><name>operator=</name></member>
-  </compound>
   <compound refid="structklotter_1_1SCurve" kind="struct"><name>klotter::SCurve</name>
     <member refid="structklotter_1_1SCurve_1a040ea29b2218cf8c0f9453a72f2bb154" kind="variable"><name>s</name></member>
     <member refid="structklotter_1_1SCurve_1a8fcc2c4912246f4284cb2450093f0460" kind="variable"><name>t</name></member>
@@ -779,17 +770,6 @@
     <member refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kind="enum"><name>Compare</name></member>
     <member refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kind="enum"><name>CullFace</name></member>
     <member refid="group__geom-builder_1ga09f336a0f9a765edc85ba7fb234aed05" kind="enum"><name>ExtractedAttributeType</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857" kind="enum"><name>DebugLabelFor</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a7e62bc342f41c946868f0ea6f0b712d8" kind="enumvalue"><name>Buffer</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857aa88a92f4a0e793589f2341851a15c660" kind="enumvalue"><name>Shader</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a95c50c7cc68e399ac5540898dfd06820" kind="enumvalue"><name>Program</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ab521b83330c51691d58bbcb59c4df078" kind="enumvalue"><name>VertexArray</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d" kind="enumvalue"><name>Query</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ac617c3b8678ee8c905d8d7c39bb55e45" kind="enumvalue"><name>ProgramPipeline</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a5bca2f066df1fe641b2b779db2a63c0a" kind="enumvalue"><name>Sampler</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b" kind="enumvalue"><name>Texture</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ada047b502449ef16ccddaec71ea865e1" kind="enumvalue"><name>RenderBuffer</name></member>
-    <member refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857abb0c68ab40c9ccdc5cfafa8622055efc" kind="enumvalue"><name>FrameBuffer</name></member>
     <member refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kind="enum"><name>RenderMode</name></member>
     <member refid="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41" kind="enum"><name>BlurType</name></member>
     <member refid="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f" kind="enumvalue"><name>horizontal</name></member>
@@ -848,8 +828,7 @@
     <member refid="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" kind="function"><name>destroy_vertex_array</name></member>
     <member refid="namespaceklotter_1a9c262112545baed06ed5325e9796633d" kind="function"><name>set_gl_viewport</name></member>
     <member refid="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" kind="function"><name>get_mesh_rotation_matrix</name></member>
-    <member refid="namespaceklotter_1a35213551f34621dc876fa001cc4ca791" kind="function"><name>set_gl_debug_label</name></member>
-    <member refid="namespaceklotter_1a04f3dc2106d2b70075c315918fbc6376" kind="function"><name>set_gl_debug_label</name></member>
+    <member refid="namespaceklotter_1a7befceb30fc99ff7fc48cf45778136e9" kind="function"><name>opengl_nop</name></member>
     <member refid="namespaceklotter_1a3f825575d127751358894415f96c5bf6" kind="function"><name>setup_textures</name></member>
     <member refid="namespaceklotter_1a6f86fb3893caeb7267b725bb433a6b1c" kind="function"><name>is_bound_for_shader</name></member>
     <member refid="namespaceklotter_1a356ef4e2d5e2b61b7d5909081407207a" kind="function"><name>is_shader_bound</name></member>
@@ -1020,23 +999,16 @@
   <compound refid="opengl__labels_8h" kind="file"><name>opengl_labels.h</name>
     <member refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kind="define"><name>DEBUG_LABEL_ARG_MANY</name></member>
     <member refid="opengl__labels_8h_1ac4e97bba900f55acf1783edf276a4374" kind="define"><name>DEBUG_LABEL_ARG_SINGLE</name></member>
-    <member refid="opengl__labels_8h_1aeea36eca26342f267c128fb7fb39ec85" kind="define"><name>DEBUG_LABEL_EXPLICIT_SINGLE</name></member>
     <member refid="opengl__labels_8h_1afed7fc3411aca190c75d04eaba304acf" kind="define"><name>DEBUG_LABEL_EXPLICIT_MANY</name></member>
-    <member refid="opengl__labels_8h_1a8cee29abb7c9caddf9964d4462d42616" kind="define"><name>SEND_DEBUG_LABEL</name></member>
     <member refid="opengl__labels_8h_1a95a4f5aaa37968ac667c14fbb3a0e05f" kind="define"><name>SEND_DEBUG_LABEL_MANY</name></member>
     <member refid="opengl__labels_8h_1a10eb5091115388a6d2525316155779f8" kind="define"><name>USE_DEBUG_LABEL</name></member>
     <member refid="opengl__labels_8h_1a29b5fd80a12ba3e8016e12479c06e495" kind="define"><name>USE_DEBUG_LABEL_MANY</name></member>
-    <member refid="opengl__labels_8h_1a8320390287baa2e490a3fb3fa1681326" kind="define"><name>USE_TEXTURE_LABEL</name></member>
-    <member refid="opengl__labels_8h_1a89fa891a77177417d5be5241440fd0ac" kind="define"><name>USE_TEXTURE_LABEL_MANY</name></member>
-    <member refid="opengl__labels_8h_1abb82e915504f23330ec5ccaea3372425" kind="define"><name>USE_PROGRAM_LABEL_MANY</name></member>
   </compound>
   <compound refid="opengl__states_8h" kind="file"><name>opengl_states.h</name>
   </compound>
   <compound refid="opengl__utils_8h" kind="file"><name>opengl_utils.h</name>
     <member refid="opengl__utils_8h_1a3bc128ee3dd125d5880c96123bd94b57" kind="define"><name>SET_DEBUG_LABEL</name></member>
     <member refid="opengl__utils_8h_1a1ad1aec82d9e68a43fd2638eec356cfb" kind="define"><name>SET_DEBUG_LABEL_NAMED</name></member>
-    <member refid="opengl__utils_8h_1a1a31e7e398f6a2fa20e41c0b5a02cdc4" kind="define"><name>CONCAT_IMPL</name></member>
-    <member refid="opengl__utils_8h_1a2f18db18bca26cafa95e9719de4a41ef" kind="define"><name>CONCAT</name></member>
     <member refid="opengl__utils_8h_1ad393331531471e5c2b9629a03cb4a3d3" kind="define"><name>SCOPED_DEBUG_GROUP</name></member>
   </compound>
   <compound refid="postproc_8h" kind="file"><name>postproc.h</name>

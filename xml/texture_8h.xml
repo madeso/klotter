@@ -8,9 +8,15 @@
     <includedby refid="postproc_8h" local="yes">src/klotter/render/postproc.h</includedby>
     <includedby refid="texture_8io_8h" local="yes">src/klotter/render/texture.io.h</includedby>
     <incdepgraph>
+      <node id="3">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
       <node id="2">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/klotter/render/texture.h</label>

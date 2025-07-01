@@ -110,22 +110,16 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">opengl_utils.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="feature__flags_8h_source.html">klotter/feature_flags.h</a>&quot;</code><br />
+</div>
 <p><a href="opengl__utils_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1ScopedDebugGroup.html">klotter::ScopedDebugGroup</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html">klotter</a></td></tr>
@@ -137,31 +131,8 @@ Macros</h2></td></tr>
 <tr class="separator:a3bc128ee3dd125d5880c96123bd94b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ad1aec82d9e68a43fd2638eec356cfb" id="r_a1ad1aec82d9e68a43fd2638eec356cfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ad1aec82d9e68a43fd2638eec356cfb">SET_DEBUG_LABEL_NAMED</a>(ID,  FOR,  NAME)</td></tr>
 <tr class="separator:a1ad1aec82d9e68a43fd2638eec356cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a31e7e398f6a2fa20e41c0b5a02cdc4" id="r_a1a31e7e398f6a2fa20e41c0b5a02cdc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a31e7e398f6a2fa20e41c0b5a02cdc4">CONCAT_IMPL</a>(x,  y)</td></tr>
-<tr class="separator:a1a31e7e398f6a2fa20e41c0b5a02cdc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f18db18bca26cafa95e9719de4a41ef" id="r_a2f18db18bca26cafa95e9719de4a41ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f18db18bca26cafa95e9719de4a41ef">CONCAT</a>(x,  y)</td></tr>
-<tr class="separator:a2f18db18bca26cafa95e9719de4a41ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad393331531471e5c2b9629a03cb4a3d3" id="r_ad393331531471e5c2b9629a03cb4a3d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad393331531471e5c2b9629a03cb4a3d3">SCOPED_DEBUG_GROUP</a>(TEXT)</td></tr>
 <tr class="separator:ad393331531471e5c2b9629a03cb4a3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:aebe15a7f13f1c4941f1095804a220857" id="r_aebe15a7f13f1c4941f1095804a220857"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857">klotter::DebugLabelFor</a> { <br />
-&#160;&#160;<a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857a7e62bc342f41c946868f0ea6f0b712d8">klotter::Buffer</a>
-, <a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857aa88a92f4a0e793589f2341851a15c660">klotter::Shader</a>
-, <a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857a95c50c7cc68e399ac5540898dfd06820">klotter::Program</a>
-, <a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857ab521b83330c51691d58bbcb59c4df078">klotter::VertexArray</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d">klotter::Query</a>
-, <a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857ac617c3b8678ee8c905d8d7c39bb55e45">klotter::ProgramPipeline</a>
-, <a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857a5bca2f066df1fe641b2b779db2a63c0a">klotter::Sampler</a>
-, <a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b">klotter::Texture</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857ada047b502449ef16ccddaec71ea865e1">klotter::RenderBuffer</a>
-, <a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857abb0c68ab40c9ccdc5cfafa8622055efc">klotter::FrameBuffer</a>
-<br />
- }</td></tr>
-<tr class="separator:aebe15a7f13f1c4941f1095804a220857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -187,57 +158,10 @@ Functions</h2></td></tr>
 <tr class="separator:a9c262112545baed06ed5325e9796633d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bd81ae1288afd6864048084bd7c4c9d" id="r_a9bd81ae1288afd6864048084bd7c4c9d"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#a9bd81ae1288afd6864048084bd7c4c9d">klotter::get_mesh_rotation_matrix</a> (const glm::vec3 &amp;rotation)</td></tr>
 <tr class="separator:a9bd81ae1288afd6864048084bd7c4c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35213551f34621dc876fa001cc4ca791" id="r_a35213551f34621dc876fa001cc4ca791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#a35213551f34621dc876fa001cc4ca791">klotter::set_gl_debug_label</a> (<a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857">DebugLabelFor</a> type, GLuint object, const std::string &amp;label)</td></tr>
-<tr class="separator:a35213551f34621dc876fa001cc4ca791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f3dc2106d2b70075c315918fbc6376" id="r_a04f3dc2106d2b70075c315918fbc6376"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#a04f3dc2106d2b70075c315918fbc6376">klotter::set_gl_debug_label</a> (<a class="el" href="namespaceklotter.html#aebe15a7f13f1c4941f1095804a220857">DebugLabelFor</a> type, GLuint object, std::string_view label)</td></tr>
-<tr class="separator:a04f3dc2106d2b70075c315918fbc6376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7befceb30fc99ff7fc48cf45778136e9" id="r_a7befceb30fc99ff7fc48cf45778136e9"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#a7befceb30fc99ff7fc48cf45778136e9">klotter::opengl_nop</a> ()</td></tr>
+<tr class="separator:a7befceb30fc99ff7fc48cf45778136e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a2f18db18bca26cafa95e9719de4a41ef" name="a2f18db18bca26cafa95e9719de4a41ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f18db18bca26cafa95e9719de4a41ef">&#9670;&#160;</a></span>CONCAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONCAT</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a1a31e7e398f6a2fa20e41c0b5a02cdc4">CONCAT_IMPL</a>(x, y)</div>
-<div class="ttc" id="aopengl__utils_8h_html_a1a31e7e398f6a2fa20e41c0b5a02cdc4"><div class="ttname"><a href="#a1a31e7e398f6a2fa20e41c0b5a02cdc4">CONCAT_IMPL</a></div><div class="ttdeci">#define CONCAT_IMPL(x, y)</div><div class="ttdef"><b>Definition</b> opengl_utils.h:59</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a1a31e7e398f6a2fa20e41c0b5a02cdc4" name="a1a31e7e398f6a2fa20e41c0b5a02cdc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a31e7e398f6a2fa20e41c0b5a02cdc4">&#9670;&#160;</a></span>CONCAT_IMPL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONCAT_IMPL</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">x##y</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="ad393331531471e5c2b9629a03cb4a3d3" name="ad393331531471e5c2b9629a03cb4a3d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad393331531471e5c2b9629a03cb4a3d3">&#9670;&#160;</a></span>SCOPED_DEBUG_GROUP</h2>
 
@@ -252,8 +176,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">[[maybe_unused]] <span class="keyword">const</span> ScopedDebugGroup <a class="code hl_define" href="#a2f18db18bca26cafa95e9719de4a41ef">CONCAT</a>(sc, __LINE__){TEXT}</div>
-<div class="ttc" id="aopengl__utils_8h_html_a2f18db18bca26cafa95e9719de4a41ef"><div class="ttname"><a href="#a2f18db18bca26cafa95e9719de4a41ef">CONCAT</a></div><div class="ttdeci">#define CONCAT(x, y)</div><div class="ttdef"><b>Definition</b> opengl_utils.h:60</div></div>
+<b>Value:</b><div class="fragment"><div class="line">opengl_nop()</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -275,7 +198,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">set_gl_debug_label(FOR, ID, debug_label)</div>
+<b>Value:</b><div class="fragment"><div class="line">opengl_nop()</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -302,7 +225,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">set_gl_debug_label(FOR, ID, NAME)</div>
+<b>Value:</b><div class="fragment"><div class="line">opengl_nop()</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -13,6 +13,10 @@
         <label>klotter/colors.h</label>
         <link refid="colors_8h"/>
       </node>
+      <node id="7">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
       <node id="1">
         <label>src/klotter/render/material.h</label>
         <link refid="material_8h"/>
@@ -28,6 +32,8 @@
       <node id="6">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="5">
         <label>klotter/render/texture.h</label>

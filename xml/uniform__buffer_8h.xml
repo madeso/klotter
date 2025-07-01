@@ -5,9 +5,15 @@
     <includes refid="opengl__labels_8h" local="yes">klotter/render/opengl_labels.h</includes>
     <includedby refid="shader__resource_8h" local="yes">src/klotter/render/shader_resource.h</includedby>
     <incdepgraph>
+      <node id="3">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
       <node id="2">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/klotter/render/uniform_buffer.h</label>

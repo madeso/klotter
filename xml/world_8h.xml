@@ -14,6 +14,10 @@
         <label>klotter/colors.h</label>
         <link refid="colors_8h"/>
       </node>
+      <node id="11">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
       <node id="5">
         <label>klotter/render/material.h</label>
         <link refid="material_8h"/>
@@ -29,6 +33,8 @@
       <node id="10">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
       <node id="9">
         <label>klotter/render/texture.h</label>
@@ -36,12 +42,12 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="12">
         <label>klotter/render/vertex_layout.h</label>
         <link refid="vertex__layout_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
         <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -55,7 +61,7 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -67,7 +73,7 @@
       <node id="4">
         <label>imgui.h</label>
       </node>
-      <node id="12">
+      <node id="13">
         <label>map</label>
       </node>
       <node id="6">
@@ -76,7 +82,7 @@
       <node id="7">
         <label>optional</label>
       </node>
-      <node id="13">
+      <node id="14">
         <label>set</label>
       </node>
       <node id="2">

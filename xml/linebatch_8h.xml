@@ -5,6 +5,10 @@
     <includes refid="shader_8h" local="yes">klotter/render/shader.h</includes>
     <includedby refid="renderer_8pimpl_8h" local="yes">src/klotter/render/renderer.pimpl.h</includedby>
     <incdepgraph>
+      <node id="5">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
       <node id="1">
         <label>src/klotter/render/linebatch.h</label>
         <link refid="linebatch_8h"/>
@@ -14,6 +18,8 @@
       <node id="4">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>klotter/render/shader.h</label>
@@ -22,32 +28,32 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="10">
         <label>klotter/render/uniform.h</label>
         <link refid="uniform_8h"/>
       </node>
-      <node id="5">
+      <node id="6">
         <label>klotter/render/vertex_layout.h</label>
         <link refid="vertex__layout_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-      </node>
-      <node id="6">
-        <label>map</label>
-      </node>
-      <node id="8">
-        <label>optional</label>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
       <node id="7">
+        <label>map</label>
+      </node>
+      <node id="9">
+        <label>optional</label>
+      </node>
+      <node id="8">
         <label>set</label>
       </node>
       <node id="3">

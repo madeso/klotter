@@ -2,73 +2,59 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="opengl__utils_8h" kind="file" language="C++">
     <compoundname>opengl_utils.h</compoundname>
-    <innerclass refid="structklotter_1_1ScopedDebugGroup" prot="public">klotter::ScopedDebugGroup</innerclass>
+    <includes refid="feature__flags_8h" local="yes">klotter/feature_flags.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/opengl_utils.h</label>
+        <link refid="opengl__utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
     <innernamespace refid="namespaceklotter">klotter</innernamespace>
     <sectiondef kind="define">
       <memberdef kind="define" id="opengl__utils_8h_1a3bc128ee3dd125d5880c96123bd94b57" prot="public" static="no">
         <name>SET_DEBUG_LABEL</name>
         <param><defname>ID</defname></param>
         <param><defname>FOR</defname></param>
-        <initializer>set_gl_debug_label(FOR, ID, debug_label)</initializer>
+        <initializer>opengl_nop()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="42" column="9" bodyfile="src/klotter/render/opengl_utils.h" bodystart="42" bodyend="-1"/>
+        <location file="src/klotter/render/opengl_utils.h" line="74" column="10" bodyfile="src/klotter/render/opengl_utils.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="opengl__utils_8h_1a1ad1aec82d9e68a43fd2638eec356cfb" prot="public" static="no">
         <name>SET_DEBUG_LABEL_NAMED</name>
         <param><defname>ID</defname></param>
         <param><defname>FOR</defname></param>
         <param><defname>NAME</defname></param>
-        <initializer>set_gl_debug_label(FOR, ID, NAME)</initializer>
+        <initializer>opengl_nop()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="43" column="9" bodyfile="src/klotter/render/opengl_utils.h" bodystart="43" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="opengl__utils_8h_1a1a31e7e398f6a2fa20e41c0b5a02cdc4" prot="public" static="no">
-        <name>CONCAT_IMPL</name>
-        <param><defname>x</defname></param>
-        <param><defname>y</defname></param>
-        <initializer>x##y</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="59" column="9" bodyfile="src/klotter/render/opengl_utils.h" bodystart="59" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="opengl__utils_8h_1a2f18db18bca26cafa95e9719de4a41ef" prot="public" static="no">
-        <name>CONCAT</name>
-        <param><defname>x</defname></param>
-        <param><defname>y</defname></param>
-        <initializer><ref refid="opengl__utils_8h_1a1a31e7e398f6a2fa20e41c0b5a02cdc4" kindref="member">CONCAT_IMPL</ref>(x, y)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="60" column="9" bodyfile="src/klotter/render/opengl_utils.h" bodystart="60" bodyend="-1"/>
+        <location file="src/klotter/render/opengl_utils.h" line="75" column="10" bodyfile="src/klotter/render/opengl_utils.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="opengl__utils_8h_1ad393331531471e5c2b9629a03cb4a3d3" prot="public" static="no">
         <name>SCOPED_DEBUG_GROUP</name>
         <param><defname>TEXT</defname></param>
-        <initializer>[[maybe_unused]] const ScopedDebugGroup <ref refid="opengl__utils_8h_1a2f18db18bca26cafa95e9719de4a41ef" kindref="member">CONCAT</ref>(sc, __LINE__){TEXT}</initializer>
+        <initializer>opengl_nop()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="61" column="9" bodyfile="src/klotter/render/opengl_utils.h" bodystart="61" bodyend="-1"/>
+        <location file="src/klotter/render/opengl_utils.h" line="77" column="10" bodyfile="src/klotter/render/opengl_utils.h" bodystart="77" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -78,67 +64,85 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
-<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7" refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" kindref="member">setup_opengl_debug</ref>();</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="feature__flags_8h" kindref="compound">klotter/feature_flags.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10" refid="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" refkind="member"><highlight class="normal">GLenum<sp/><ref refid="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" kindref="member">Cint_to_glenum</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
-<codeline lineno="11" refid="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" refkind="member"><highlight class="normal">GLuint<sp/><ref refid="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" kindref="member">Cint_to_gluint</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
-<codeline lineno="12" refid="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" refkind="member"><highlight class="normal">GLsizeiptr<sp/><ref refid="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" kindref="member">Csizet_to_glsizeiptr</ref>(std::size_t<sp/>t);</highlight></codeline>
-<codeline lineno="13" refid="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" refkind="member"><highlight class="normal">GLsizei<sp/><ref refid="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" kindref="member">Csizet_to_glsizei</ref>(std::size_t<sp/>t);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" refkind="member"><highlight class="normal"><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/><ref refid="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" kindref="member">create_buffer</ref>();</highlight></codeline>
-<codeline lineno="16" refid="namespaceklotter_1a939548cd29b251463ed344cde014e212" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a939548cd29b251463ed344cde014e212" kindref="member">destroy_buffer</ref>(<ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/>vbo);</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18" refid="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" refkind="member"><highlight class="normal"><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/><ref refid="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" kindref="member">create_vertex_array</ref>();</highlight></codeline>
-<codeline lineno="19" refid="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" kindref="member">destroy_vertex_array</ref>(<ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/>vao);</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21" refid="namespaceklotter_1a9c262112545baed06ed5325e9796633d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a9c262112545baed06ed5325e9796633d" kindref="member">set_gl_viewport</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::ivec2&amp;<sp/>sz);</highlight></codeline>
+<codeline lineno="9" refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" kindref="member">setup_opengl_debug</ref>();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" refkind="member"><highlight class="normal">GLenum<sp/><ref refid="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" kindref="member">Cint_to_glenum</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
+<codeline lineno="13" refid="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" refkind="member"><highlight class="normal">GLuint<sp/><ref refid="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" kindref="member">Cint_to_gluint</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
+<codeline lineno="14" refid="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" refkind="member"><highlight class="normal">GLsizeiptr<sp/><ref refid="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" kindref="member">Csizet_to_glsizeiptr</ref>(std::size_t<sp/>t);</highlight></codeline>
+<codeline lineno="15" refid="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" refkind="member"><highlight class="normal">GLsizei<sp/><ref refid="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" kindref="member">Csizet_to_glsizei</ref>(std::size_t<sp/>t);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" refkind="member"><highlight class="normal"><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/><ref refid="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" kindref="member">create_buffer</ref>();</highlight></codeline>
+<codeline lineno="18" refid="namespaceklotter_1a939548cd29b251463ed344cde014e212" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a939548cd29b251463ed344cde014e212" kindref="member">destroy_buffer</ref>(<ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/>vbo);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" refkind="member"><highlight class="normal"><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/><ref refid="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" kindref="member">create_vertex_array</ref>();</highlight></codeline>
+<codeline lineno="21" refid="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" kindref="member">destroy_vertex_array</ref>(<ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/>vao);</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>move<sp/>to<sp/>a<sp/>better<sp/>place</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24" refid="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" refkind="member"><highlight class="normal">glm::mat4<sp/><ref refid="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" kindref="member">get_mesh_rotation_matrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>rotation);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857" kindref="member">DebugLabelFor</ref></highlight></codeline>
-<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="28" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a7e62bc342f41c946868f0ea6f0b712d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a7e62bc342f41c946868f0ea6f0b712d8" kindref="member">Buffer</ref>,</highlight></codeline>
-<codeline lineno="29" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857aa88a92f4a0e793589f2341851a15c660" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857aa88a92f4a0e793589f2341851a15c660" kindref="member">Shader</ref>,</highlight></codeline>
-<codeline lineno="30" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a95c50c7cc68e399ac5540898dfd06820" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a95c50c7cc68e399ac5540898dfd06820" kindref="member">Program</ref>,</highlight></codeline>
-<codeline lineno="31" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ab521b83330c51691d58bbcb59c4df078" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ab521b83330c51691d58bbcb59c4df078" kindref="member">VertexArray</ref>,</highlight></codeline>
-<codeline lineno="32" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a66c1b4c7f3dc385b68a9fa903ccd016d" kindref="member">Query</ref>,</highlight></codeline>
-<codeline lineno="33" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ac617c3b8678ee8c905d8d7c39bb55e45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ac617c3b8678ee8c905d8d7c39bb55e45" kindref="member">ProgramPipeline</ref>,</highlight></codeline>
-<codeline lineno="34" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a5bca2f066df1fe641b2b779db2a63c0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857a5bca2f066df1fe641b2b779db2a63c0a" kindref="member">Sampler</ref>,</highlight></codeline>
-<codeline lineno="35" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857aa3e8ae43188ae76d38f414b2bdb0077b" kindref="member">Texture</ref>,</highlight></codeline>
-<codeline lineno="36" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ada047b502449ef16ccddaec71ea865e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857ada047b502449ef16ccddaec71ea865e1" kindref="member">RenderBuffer</ref>,</highlight></codeline>
-<codeline lineno="37" refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857abb0c68ab40c9ccdc5cfafa8622055efc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref></highlight></codeline>
-<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40" refid="namespaceklotter_1a35213551f34621dc876fa001cc4ca791" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a35213551f34621dc876fa001cc4ca791" kindref="member">set_gl_debug_label</ref>(<ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857" kindref="member">DebugLabelFor</ref><sp/>type,<sp/>GLuint<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>label);</highlight></codeline>
-<codeline lineno="41" refid="namespaceklotter_1a04f3dc2106d2b70075c315918fbc6376" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a35213551f34621dc876fa001cc4ca791" kindref="member">set_gl_debug_label</ref>(<ref refid="namespaceklotter_1aebe15a7f13f1c4941f1095804a220857" kindref="member">DebugLabelFor</ref><sp/>type,<sp/>GLuint<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>std::string_view<sp/>label);</highlight></codeline>
-<codeline lineno="42" refid="opengl__utils_8h_1a3bc128ee3dd125d5880c96123bd94b57" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SET_DEBUG_LABEL(ID,<sp/>FOR)<sp/>set_gl_debug_label(FOR,<sp/>ID,<sp/>debug_label)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="opengl__utils_8h_1a1ad1aec82d9e68a43fd2638eec356cfb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SET_DEBUG_LABEL_NAMED(ID,<sp/>FOR,<sp/>NAME)<sp/>set_gl_debug_label(FOR,<sp/>ID,<sp/>NAME)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>opengl_labels.h<sp/>for<sp/>passing<sp/>the<sp/>labels/names</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="namespaceklotter_1a9c262112545baed06ed5325e9796633d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a9c262112545baed06ed5325e9796633d" kindref="member">set_gl_viewport</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::ivec2&amp;<sp/>sz);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>move<sp/>to<sp/>a<sp/>better<sp/>place</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" refkind="member"><highlight class="normal">glm::mat4<sp/><ref refid="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" kindref="member">get_mesh_rotation_matrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>rotation);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>FF_HAS(ENABLE_GL_DEBUG)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>DebugLabelFor</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Buffer,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Shader,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Program,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VertexArray,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Query,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ProgramPipeline,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Sampler,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Texture,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RenderBuffer,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_gl_debug_label(DebugLabelFor<sp/>type,<sp/>GLuint<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>label);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_gl_debug_label(DebugLabelFor<sp/>type,<sp/>GLuint<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>std::string_view<sp/>label);</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47" refid="structklotter_1_1ScopedDebugGroup" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1ScopedDebugGroup_1af9f5806f21506b84f8102e4aaf232e70" kindref="member">ScopedDebugGroup</ref></highlight></codeline>
-<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="49" refid="structklotter_1_1ScopedDebugGroup_1af9f5806f21506b84f8102e4aaf232e70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1af9f5806f21506b84f8102e4aaf232e70" kindref="member">ScopedDebugGroup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=0);</highlight></codeline>
-<codeline lineno="50" refid="structklotter_1_1ScopedDebugGroup_1a47c098e8c13654994c7515d4185fbedb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1a47c098e8c13654994c7515d4185fbedb" kindref="member">ScopedDebugGroup</ref>(std::string_view<sp/>message,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=0);</highlight></codeline>
-<codeline lineno="51" refid="structklotter_1_1ScopedDebugGroup_1ad540676e357664663b179720a4e4f71c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1ad540676e357664663b179720a4e4f71c" kindref="member">~ScopedDebugGroup</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SET_DEBUG_LABEL(ID,<sp/>FOR)<sp/>set_gl_debug_label(FOR,<sp/>ID,<sp/>debug_label)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SET_DEBUG_LABEL_NAMED(ID,<sp/>FOR,<sp/>NAME)<sp/>set_gl_debug_label(FOR,<sp/>ID,<sp/>NAME)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>See<sp/>opengl_labels.h<sp/>for<sp/>passing<sp/>the<sp/>labels/names</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="structklotter_1_1ScopedDebugGroup_1aa6d2a557f7ecbb72afe54b196dd512b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1aa6d2a557f7ecbb72afe54b196dd512b3" kindref="member">ScopedDebugGroup</ref>(<ref refid="structklotter_1_1ScopedDebugGroup_1af9f5806f21506b84f8102e4aaf232e70" kindref="member">ScopedDebugGroup</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="54" refid="structklotter_1_1ScopedDebugGroup_1a2476732d9c40ff0f4bed1e52371f2e52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1a2476732d9c40ff0f4bed1e52371f2e52" kindref="member">ScopedDebugGroup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1af9f5806f21506b84f8102e4aaf232e70" kindref="member">ScopedDebugGroup</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="55" refid="structklotter_1_1ScopedDebugGroup_1a6d490039c3cf34722efd9f0213f3c9d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1a6d490039c3cf34722efd9f0213f3c9d7" kindref="member">operator=</ref>(<ref refid="structklotter_1_1ScopedDebugGroup_1af9f5806f21506b84f8102e4aaf232e70" kindref="member">ScopedDebugGroup</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="56" refid="structklotter_1_1ScopedDebugGroup_1a3b19c2158770406c5dbcd42d1537ed87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1a3b19c2158770406c5dbcd42d1537ed87" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ScopedDebugGroup_1af9f5806f21506b84f8102e4aaf232e70" kindref="member">ScopedDebugGroup</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ScopedDebugGroup</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>ScopedDebugGroup(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=0);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>ScopedDebugGroup(std::string_view<sp/>message,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=0);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~ScopedDebugGroup();</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59" refid="opengl__utils_8h_1a1a31e7e398f6a2fa20e41c0b5a02cdc4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONCAT_IMPL(x,<sp/>y)<sp/>x##y</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60" refid="opengl__utils_8h_1a2f18db18bca26cafa95e9719de4a41ef" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONCAT(x,<sp/>y)<sp/>CONCAT_IMPL(x,<sp/>y)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="opengl__utils_8h_1ad393331531471e5c2b9629a03cb4a3d3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCOPED_DEBUG_GROUP(TEXT)<sp/>[[maybe_unused]]<sp/>const<sp/>ScopedDebugGroup<sp/>CONCAT(sc,<sp/>__LINE__){TEXT}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ScopedDebugGroup(ScopedDebugGroup&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ScopedDebugGroup(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ScopedDebugGroup&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator=(ScopedDebugGroup&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ScopedDebugGroup&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>CONCAT_IMPL(x,<sp/>y)<sp/>x##y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>CONCAT(x,<sp/>y)<sp/>CONCAT_IMPL(x,<sp/>y)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SCOPED_DEBUG_GROUP(TEXT)<sp/>[[maybe_unused]]<sp/>const<sp/>ScopedDebugGroup<sp/>CONCAT(sc,<sp/>__LINE__){TEXT}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="namespaceklotter_1a7befceb30fc99ff7fc48cf45778136e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a7befceb30fc99ff7fc48cf45778136e9" kindref="member">opengl_nop</ref>()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="opengl__utils_8h_1a3bc128ee3dd125d5880c96123bd94b57" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SET_DEBUG_LABEL(ID,<sp/>FOR)<sp/>opengl_nop()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="opengl__utils_8h_1a1ad1aec82d9e68a43fd2638eec356cfb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SET_DEBUG_LABEL_NAMED(ID,<sp/>FOR,<sp/>NAME)<sp/>opengl_nop()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="opengl__utils_8h_1ad393331531471e5c2b9629a03cb4a3d3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SCOPED_DEBUG_GROUP(TEXT)<sp/>opengl_nop()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/klotter/render/opengl_utils.h"/>
   </compounddef>

@@ -12,8 +12,7 @@ var searchData=
   ['_7ematerial_9',['~Material',['../structklotter_1_1Material.html#abd64872e3d2303186c0a9b5e978e0cd9',1,'klotter::Material']]],
   ['_7erenderer_10',['~Renderer',['../structklotter_1_1Renderer.html#a84a0c241507db1c10f6779a0a06e7019',1,'klotter::Renderer']]],
   ['_7erendersource_11',['~RenderSource',['../structklotter_1_1RenderSource.html#a11b2e79c0400c88412f16971cc3d6e8a',1,'klotter::RenderSource']]],
-  ['_7escopeddebuggroup_12',['~ScopedDebugGroup',['../structklotter_1_1ScopedDebugGroup.html#ad540676e357664663b179720a4e4f71c',1,'klotter::ScopedDebugGroup']]],
-  ['_7eshaderprogram_13',['~ShaderProgram',['../structklotter_1_1ShaderProgram.html#af95702d66323267c513e4dafd89ec16f',1,'klotter::ShaderProgram']]],
-  ['_7eshaderpropertyprovider_14',['~ShaderPropertyProvider',['../structklotter_1_1ShaderPropertyProvider.html#aba7169be559b2c482fa97cfcb0d65561',1,'klotter::ShaderPropertyProvider']]],
-  ['_7euniformbuffer_15',['~UniformBuffer',['../structklotter_1_1UniformBuffer.html#ad1f9ea4158f98ea62ceeff8f77a80f50',1,'klotter::UniformBuffer']]]
+  ['_7eshaderprogram_12',['~ShaderProgram',['../structklotter_1_1ShaderProgram.html#af95702d66323267c513e4dafd89ec16f',1,'klotter::ShaderProgram']]],
+  ['_7eshaderpropertyprovider_13',['~ShaderPropertyProvider',['../structklotter_1_1ShaderPropertyProvider.html#aba7169be559b2c482fa97cfcb0d65561',1,'klotter::ShaderPropertyProvider']]],
+  ['_7euniformbuffer_14',['~UniformBuffer',['../structklotter_1_1UniformBuffer.html#ad1f9ea4158f98ea62ceeff8f77a80f50',1,'klotter::UniformBuffer']]]
 ];
