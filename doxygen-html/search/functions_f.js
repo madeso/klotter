@@ -5,5 +5,5 @@ var searchData=
   ['to_5fgeom_2',['to_geom',['../structklotter_1_1geom_1_1Builder.html#a7a058ba68a600119c137a23ccf8d5ac7',1,'klotter::geom::Builder']]],
   ['to_5fscreen_3',['to_screen',['../group__render.html#ga1fb593a5ecdab295a00f9e999e37ed1b',1,'klotter']]],
   ['toggle_4',['toggle',['../structklotter_1_1Bitfield.html#ab94ddbc38a9f93e907cae3dbdf963f8c',1,'klotter::Bitfield']]],
-  ['triangle_5',['Triangle',['../structklotter_1_1geom_1_1Triangle.html#a336b6881c80aa8e650eaf306a0b6469c',1,'klotter::geom::Triangle']]]
+  ['triangle_5',['Triangle',['../structklotter_1_1geom_1_1Triangle.html#a641838057cab269c13f307482a716b9e',1,'klotter::geom::Triangle']]]
 ];

@@ -48,23 +48,23 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structklotter_1_1geom_1_1Triangle_1a336b6881c80aa8e650eaf306a0b6469c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1geom_1_1Triangle_1a641838057cab269c13f307482a716b9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>klotter::geom::Triangle::Triangle</definition>
-        <argsstring>(const Vertex &amp;v0, const Vertex &amp;v1, const Vertex &amp;v2)</argsstring>
+        <argsstring>(const Vertex &amp;a, const Vertex &amp;b, const Vertex &amp;c)</argsstring>
         <name>Triangle</name>
         <qualifiedname>klotter::geom::Triangle::Triangle</qualifiedname>
         <param>
           <type>const <ref refid="structklotter_1_1geom_1_1Vertex" kindref="compound">Vertex</ref> &amp;</type>
-          <declname>v0</declname>
+          <declname>a</declname>
         </param>
         <param>
           <type>const <ref refid="structklotter_1_1geom_1_1Vertex" kindref="compound">Vertex</ref> &amp;</type>
-          <declname>v1</declname>
+          <declname>b</declname>
         </param>
         <param>
           <type>const <ref refid="structklotter_1_1geom_1_1Vertex" kindref="compound">Vertex</ref> &amp;</type>
-          <declname>v2</declname>
+          <declname>c</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -97,7 +97,7 @@
     </collaborationgraph>
     <location file="src/klotter/render/geom.builder.h" line="38" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="39" bodyend="46"/>
     <listofallmembers>
-      <member refid="structklotter_1_1geom_1_1Triangle_1a336b6881c80aa8e650eaf306a0b6469c" prot="public" virt="non-virtual"><scope>klotter::geom::Triangle</scope><name>Triangle</name></member>
+      <member refid="structklotter_1_1geom_1_1Triangle_1a641838057cab269c13f307482a716b9e" prot="public" virt="non-virtual"><scope>klotter::geom::Triangle</scope><name>Triangle</name></member>
       <member refid="structklotter_1_1geom_1_1Triangle_1a61be1f89bfcc389f270530ec1ac5238d" prot="public" virt="non-virtual"><scope>klotter::geom::Triangle</scope><name>v0</name></member>
       <member refid="structklotter_1_1geom_1_1Triangle_1ad35134c153b48f099577b23dcf0c7f7f" prot="public" virt="non-virtual"><scope>klotter::geom::Triangle</scope><name>v1</name></member>
       <member refid="structklotter_1_1geom_1_1Triangle_1a49c1f90c967a98d15c2330469c330196" prot="public" virt="non-virtual"><scope>klotter::geom::Triangle</scope><name>v2</name></member>

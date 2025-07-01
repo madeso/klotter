@@ -62,19 +62,19 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structklotter_1_1geom_1_1Vertex_1a621a697c425cc746d0d1879b2455ebbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1geom_1_1Vertex_1a4c825af470a38307fa38bfcbd4548384" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>klotter::geom::Vertex::Vertex</definition>
-        <argsstring>(Index vnt, Index color)</argsstring>
+        <argsstring>(Index pnt, Index clr)</argsstring>
         <name>Vertex</name>
         <qualifiedname>klotter::geom::Vertex::Vertex</qualifiedname>
         <param>
           <type><ref refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kindref="member">Index</ref></type>
-          <declname>vnt</declname>
+          <declname>pnt</declname>
         </param>
         <param>
           <type><ref refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kindref="member">Index</ref></type>
-          <declname>color</declname>
+          <declname>clr</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -84,27 +84,27 @@
         </inbodydescription>
         <location file="src/klotter/render/geom.builder.h" line="33" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1geom_1_1Vertex_1afa5ca3044036559f60c3002550692d8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1geom_1_1Vertex_1a6942f1ce03e696e54e9ef900b6e4d5ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>klotter::geom::Vertex::Vertex</definition>
-        <argsstring>(Index vertex, Index normal, Index texture, Index color)</argsstring>
+        <argsstring>(Index a_position, Index a_normal, Index a_texture, Index a_color)</argsstring>
         <name>Vertex</name>
         <qualifiedname>klotter::geom::Vertex::Vertex</qualifiedname>
         <param>
           <type><ref refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kindref="member">Index</ref></type>
-          <declname>vertex</declname>
+          <declname>a_position</declname>
         </param>
         <param>
           <type><ref refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kindref="member">Index</ref></type>
-          <declname>normal</declname>
+          <declname>a_normal</declname>
         </param>
         <param>
           <type><ref refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kindref="member">Index</ref></type>
-          <declname>texture</declname>
+          <declname>a_texture</declname>
         </param>
         <param>
           <type><ref refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kindref="member">Index</ref></type>
-          <declname>color</declname>
+          <declname>a_color</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -126,8 +126,8 @@
       <member refid="structklotter_1_1geom_1_1Vertex_1aad48a57d152f712f8fc85cb4fea0a2c0" prot="public" virt="non-virtual"><scope>klotter::geom::Vertex</scope><name>normal</name></member>
       <member refid="structklotter_1_1geom_1_1Vertex_1a7b3be8a0d832f049ec80ec0305738aa5" prot="public" virt="non-virtual"><scope>klotter::geom::Vertex</scope><name>position</name></member>
       <member refid="structklotter_1_1geom_1_1Vertex_1ab7010ae753e9318118337b31fa88430f" prot="public" virt="non-virtual"><scope>klotter::geom::Vertex</scope><name>texture</name></member>
-      <member refid="structklotter_1_1geom_1_1Vertex_1a621a697c425cc746d0d1879b2455ebbb" prot="public" virt="non-virtual"><scope>klotter::geom::Vertex</scope><name>Vertex</name></member>
-      <member refid="structklotter_1_1geom_1_1Vertex_1afa5ca3044036559f60c3002550692d8d" prot="public" virt="non-virtual"><scope>klotter::geom::Vertex</scope><name>Vertex</name></member>
+      <member refid="structklotter_1_1geom_1_1Vertex_1a4c825af470a38307fa38bfcbd4548384" prot="public" virt="non-virtual"><scope>klotter::geom::Vertex</scope><name>Vertex</name></member>
+      <member refid="structklotter_1_1geom_1_1Vertex_1a6942f1ce03e696e54e9ef900b6e4d5ce" prot="public" virt="non-virtual"><scope>klotter::geom::Vertex</scope><name>Vertex</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

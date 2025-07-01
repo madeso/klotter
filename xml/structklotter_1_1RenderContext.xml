@@ -34,7 +34,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Stores information that is uselful when seleting a shader part from a shader container. </para>
+<para>Stores information that is useful when selecting a shader part from a shader container. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

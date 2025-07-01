@@ -28,7 +28,7 @@ var searchData=
   ['replace_5fwith_5fsmooth_5fnormals_25',['replace_with_smooth_normals',['../structklotter_1_1geom_1_1Builder.html#a0040ee70080e791cf4a27d1450db0b0f',1,'klotter::geom::Builder']]],
   ['resolution_26',['resolution',['../structklotter_1_1LoadedPostProcShader.html#a348e17cb4b1dff61ee1c95d7a3fa68b0',1,'klotter::LoadedPostProcShader::resolution'],['../group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da',1,'klotter::resolution']]],
   ['resolve_5fmultisampled_5fbuffer_27',['resolve_multisampled_buffer',['../group__texture.html#ga2db91a5f624e2dc351118f2d7b0ecf31',1,'klotter']]],
-  ['result_28',['Result',['../structResult.html',1,'Result&lt; T, E &gt;'],['../structResult.html#a09bfef910ff61b121e04b9df35ab8a1a',1,'Result::Result(T &amp;&amp;tt)'],['../structResult.html#aef1257385182062000e093cc7979f46f',1,'Result::Result(const E &amp;ee)']]],
+  ['result_28',['Result',['../structResult.html',1,'Result&lt; T, E &gt;'],['../structResult.html#a5314b530c0634f2fc8c0c464189a5abb',1,'Result::Result(T tt)'],['../structResult.html#aef1257385182062000e093cc7979f46f',1,'Result::Result(const E &amp;ee)']]],
   ['result_29',['result',['../structklotter_1_1HashCombiner.html#a26bf8eb600fcab0bb021b3761e8ad8e2',1,'klotter::HashCombiner']]],
   ['result_2eh_30',['result.h',['../result_8h.html',1,'']]],
   ['rgb_31',['rgb',['../namespaceklotter_1_1colors.html#a6e8e137168aec076ff4447ce7b8e9bb8',1,'klotter::colors']]],

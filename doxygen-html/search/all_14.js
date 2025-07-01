@@ -11,7 +11,7 @@ var searchData=
   ['vec2_8',['vec2',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7',1,'klotter']]],
   ['vec3_9',['vec3',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36',1,'klotter']]],
   ['vec4_10',['vec4',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86',1,'klotter']]],
-  ['vertex_11',['Vertex',['../structklotter_1_1geom_1_1Vertex.html',1,'klotter::geom::Vertex'],['../structklotter_1_1Vertex.html',1,'klotter::Vertex'],['../structklotter_1_1geom_1_1Vertex.html#a621a697c425cc746d0d1879b2455ebbb',1,'klotter::geom::Vertex::Vertex(Index vnt, Index color)'],['../structklotter_1_1geom_1_1Vertex.html#afa5ca3044036559f60c3002550692d8d',1,'klotter::geom::Vertex::Vertex(Index vertex, Index normal, Index texture, Index color)']]],
+  ['vertex_11',['Vertex',['../structklotter_1_1geom_1_1Vertex.html',1,'klotter::geom::Vertex'],['../structklotter_1_1Vertex.html',1,'klotter::Vertex'],['../structklotter_1_1geom_1_1Vertex.html#a4c825af470a38307fa38bfcbd4548384',1,'klotter::geom::Vertex::Vertex(Index pnt, Index clr)'],['../structklotter_1_1geom_1_1Vertex.html#a6942f1ce03e696e54e9ef900b6e4d5ce',1,'klotter::geom::Vertex::Vertex(Index a_position, Index a_normal, Index a_texture, Index a_color)']]],
   ['vertex_12',['vertex',['../structklotter_1_1VertexShaderSource.html#a8f362859d9f3f6f46c10a7a9cabddf7c',1,'klotter::VertexShaderSource::vertex'],['../structklotter_1_1ShaderSource.html#a6b9e1c440250f9b203724b907da93f18',1,'klotter::ShaderSource::vertex']]],
   ['vertex_20layout_13',['Vertex layout',['../group__vertex-layout.html',1,'']]],
   ['vertex_5flayout_2eh_14',['vertex_layout.h',['../vertex__layout_8h.html',1,'']]],

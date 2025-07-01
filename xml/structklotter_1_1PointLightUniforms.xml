@@ -62,14 +62,14 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structklotter_1_1PointLightUniforms_1ab499febb6dc0fe23f39049a2fe14dc18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1PointLightUniforms_1a2fb4ab1678017a603e28e095e3c3fbf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>klotter::PointLightUniforms::PointLightUniforms</definition>
-        <argsstring>(ShaderProgram *program, const std::string &amp;base)</argsstring>
+        <argsstring>(const ShaderProgram *program, const std::string &amp;base)</argsstring>
         <name>PointLightUniforms</name>
         <qualifiedname>klotter::PointLightUniforms::PointLightUniforms</qualifiedname>
         <param>
-          <type><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> *</type>
+          <type>const <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> *</type>
           <declname>program</declname>
         </param>
         <param>
@@ -115,7 +115,7 @@
       <member refid="structklotter_1_1PointLightUniforms_1a374e21f06a53eea2cbad92af032504e1" prot="public" virt="non-virtual"><scope>klotter::PointLightUniforms</scope><name>light_diffuse_color</name></member>
       <member refid="structklotter_1_1PointLightUniforms_1a2904c2abd2d998fcfa02513bcbb0aacb" prot="public" virt="non-virtual"><scope>klotter::PointLightUniforms</scope><name>light_specular_color</name></member>
       <member refid="structklotter_1_1PointLightUniforms_1acec765b11c4d9fd7d54d060eb108911d" prot="public" virt="non-virtual"><scope>klotter::PointLightUniforms</scope><name>light_world</name></member>
-      <member refid="structklotter_1_1PointLightUniforms_1ab499febb6dc0fe23f39049a2fe14dc18" prot="public" virt="non-virtual"><scope>klotter::PointLightUniforms</scope><name>PointLightUniforms</name></member>
+      <member refid="structklotter_1_1PointLightUniforms_1a2fb4ab1678017a603e28e095e3c3fbf7" prot="public" virt="non-virtual"><scope>klotter::PointLightUniforms</scope><name>PointLightUniforms</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

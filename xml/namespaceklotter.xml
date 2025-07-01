@@ -492,7 +492,7 @@
       <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
       <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
       <member refid="group__render_1ga3408f89cc9f18beff9e655676bd9fc1f" kind="function"><name>create_view_mat</name></member>
-      <member refid="group__render_1ga4600d7c8f261b323d75fe6cde1dcbe31" kind="function"><name>compile</name></member>
+      <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
       <member refid="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" kind="function"><name>to_screen</name></member>
       <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
       <memberdef kind="function" id="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1013,7 +1013,7 @@
       <member refid="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" kind="function"><name>render_geom_instanced</name></member>
       <member refid="group__scurcve_1gad502f980124ff607cb9564e4562d6a25" kind="function"><name>s_curve_from_input</name></member>
       <member refid="group__scurcve_1ga3c0cf1d44132258273463050f332f830" kind="function"><name>calculate_s_curve</name></member>
-      <member refid="group__scurcve_1gabe2dd4296f6fc82f6549566932cc0662" kind="function"><name>imgui_s_curve_editor</name></member>
+      <member refid="group__scurcve_1ga1be2991dbb6e7fdb2460296dec1f4504" kind="function"><name>imgui_s_curve_editor</name></member>
     </sectiondef>
     <briefdescription>
     </briefdescription>

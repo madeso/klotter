@@ -74,10 +74,10 @@
         </inbodydescription>
         <location file="src/klotter/scurve.h" line="36" column="7" declfile="src/klotter/scurve.h" declline="36" declcolumn="7"/>
       </memberdef>
-      <memberdef kind="function" id="group__scurcve_1gabe2dd4296f6fc82f6549566932cc0662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__scurcve_1ga1be2991dbb6e7fdb2460296dec1f4504" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool klotter::imgui_s_curve_editor</definition>
-        <argsstring>(const char *title, SCurveAndDrag *scd, bool flipx)</argsstring>
+        <argsstring>(const char *title, SCurveAndDrag *scd, bool flip_x)</argsstring>
         <name>imgui_s_curve_editor</name>
         <qualifiedname>klotter::imgui_s_curve_editor</qualifiedname>
         <param>
@@ -90,7 +90,7 @@
         </param>
         <param>
           <type>bool</type>
-          <declname>flipx</declname>
+          <declname>flip_x</declname>
         </param>
         <briefdescription>
         </briefdescription>

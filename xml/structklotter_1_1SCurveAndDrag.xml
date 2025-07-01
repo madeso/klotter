@@ -39,7 +39,7 @@
 <para>This contains both a <ref refid="structklotter_1_1SCurve" kindref="compound">SCurve</ref> and the ui for editing, game only needs scurve, ui only needs edit. </para>
     </briefdescription>
     <detaileddescription>
-<para>Defaults to a &quot;linear&quot; curve. <simplesect kind="see"><para><ref refid="group__scurcve_1gabe2dd4296f6fc82f6549566932cc0662" kindref="member">imgui_s_curve_editor</ref> </para>
+<para>Defaults to a &quot;linear&quot; curve. <simplesect kind="see"><para><ref refid="group__scurcve_1ga1be2991dbb6e7fdb2460296dec1f4504" kindref="member">imgui_s_curve_editor</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>

@@ -33,7 +33,7 @@ var searchData=
   ['transparency_30',['Transparency',['../group__texture.html#ga3257f86dae0e1a101035a7d4cd2026bc',1,'klotter']]],
   ['transparency_5fshader_31',['transparency_shader',['../structklotter_1_1LoadedShader__Unlit__Container.html#a832f522432bead63aefa3f8873c026a4',1,'klotter::LoadedShader_Unlit_Container::transparency_shader'],['../structklotter_1_1LoadedShader__Default__Container.html#aa1a421a3572f1bb176e9fe113a2db4fe',1,'klotter::LoadedShader_Default_Container::transparency_shader']]],
   ['transparent_5fcutoff_32',['transparent_cutoff',['../structklotter_1_1ShaderOptions.html#a3dd056451d3e6bbf6c4a7f55fd99f64b',1,'klotter::ShaderOptions']]],
-  ['triangle_33',['Triangle',['../structklotter_1_1geom_1_1Triangle.html',1,'klotter::geom::Triangle'],['../structklotter_1_1geom_1_1Triangle.html#a336b6881c80aa8e650eaf306a0b6469c',1,'klotter::geom::Triangle::Triangle()']]],
+  ['triangle_33',['Triangle',['../structklotter_1_1geom_1_1Triangle.html',1,'klotter::geom::Triangle'],['../structklotter_1_1geom_1_1Triangle.html#a641838057cab269c13f307482a716b9e',1,'klotter::geom::Triangle::Triangle()']]],
   ['triangles_34',['triangles',['../structklotter_1_1geom_1_1Builder.html#aa8423efe94121e82d6871d4cb7fd165d',1,'klotter::geom::Builder']]],
   ['tutorial_3a_20blending_35',['nehe tutorial: blending',['..//home/runner/work/klotter/klotter/src/textures/readme.md#autotoc_md3',1,'']]],
   ['two_5fsided_36',['two_sided',['../group__geom-builder.html#ggaeea000e036687f28644e2c966bca3d7bad508e7494fb2417728b99ecbf116c08a',1,'klotter::geom']]],

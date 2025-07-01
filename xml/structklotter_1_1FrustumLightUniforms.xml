@@ -90,14 +90,14 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structklotter_1_1FrustumLightUniforms_1a8853c7aa1207bc1bc79214aa4a9f8685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1FrustumLightUniforms_1ab06a609169ec292dd41407b057b84127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>klotter::FrustumLightUniforms::FrustumLightUniforms</definition>
-        <argsstring>(ShaderProgram *program, const std::string &amp;base)</argsstring>
+        <argsstring>(const ShaderProgram *program, const std::string &amp;base)</argsstring>
         <name>FrustumLightUniforms</name>
         <qualifiedname>klotter::FrustumLightUniforms::FrustumLightUniforms</qualifiedname>
         <param>
-          <type><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> *</type>
+          <type>const <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> *</type>
           <declname>program</declname>
         </param>
         <param>
@@ -144,7 +144,7 @@
       <member refid="structklotter_1_1FrustumLightUniforms_1a9e3f90f06e44606d0d6d1c5caecf995c" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>attenuation</name></member>
       <member refid="structklotter_1_1FrustumLightUniforms_1ab1111ab27945b0f084971b9db2a9973b" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>cookie</name></member>
       <member refid="structklotter_1_1FrustumLightUniforms_1adcfc6ec3d3a9279557a78d009fbeeb02" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>diffuse</name></member>
-      <member refid="structklotter_1_1FrustumLightUniforms_1a8853c7aa1207bc1bc79214aa4a9f8685" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>FrustumLightUniforms</name></member>
+      <member refid="structklotter_1_1FrustumLightUniforms_1ab06a609169ec292dd41407b057b84127" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>FrustumLightUniforms</name></member>
       <member refid="structklotter_1_1FrustumLightUniforms_1a94e66957cc947fbefa3e76841ce3263a" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>specular</name></member>
       <member refid="structklotter_1_1FrustumLightUniforms_1a70bbfbb9f0a74757269f9848070a87c0" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>world_pos</name></member>
       <member refid="structklotter_1_1FrustumLightUniforms_1afc52906ec8254b1167a57f01de5140e0" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>world_to_clip</name></member>

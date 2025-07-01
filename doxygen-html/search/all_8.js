@@ -7,7 +7,7 @@ var searchData=
   ['ib_4',['ib',['../structklotter_1_1LineBatch.html#a22adf043bc55df5ccdd1c10e680339e9',1,'klotter::LineBatch']]],
   ['id_5',['id',['../structklotter_1_1BaseTexture.html#aa0c1c5008e48db75b99c027cf8b80d08',1,'klotter::BaseTexture::id'],['../structklotter_1_1UniformBuffer.html#a7c2ed659d8fdcf1d15166343a4f8f1f7',1,'klotter::UniformBuffer::id']]],
   ['im_5fcolors_2eh_6',['im_colors.h',['../im__colors_8h.html',1,'']]],
-  ['imgui_5fs_5fcurve_5feditor_7',['imgui_s_curve_editor',['../group__scurcve.html#gabe2dd4296f6fc82f6549566932cc0662',1,'klotter']]],
+  ['imgui_5fs_5fcurve_5feditor_7',['imgui_s_curve_editor',['../group__scurcve.html#ga1be2991dbb6e7fdb2460296dec1f4504',1,'klotter']]],
   ['implement_5fmain_8',['IMPLEMENT_MAIN',['../klotter_8h.html#a8c20628131afaadf69938840b3ce9ea7',1,'klotter.h']]],
   ['in_9',['in',['../structklotter_1_1CompiledCamera.html#af8f3aacb0e4384ae60db486c14dfdb60',1,'klotter::CompiledCamera']]],
   ['include_10',['include',['../group__texture.html#gga3257f86dae0e1a101035a7d4cd2026bcad436eb0fd9de10b54a828ce6435f7e81',1,'klotter']]],

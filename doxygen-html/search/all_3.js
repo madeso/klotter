@@ -38,7 +38,7 @@ var searchData=
   ['direction_35',['direction',['../structklotter_1_1DirectionalLight.html#aef91c29677db151b799ed13f1a540deb',1,'klotter::DirectionalLight']]],
   ['directional_5flights_36',['directional_lights',['../structklotter_1_1LoadedShader__Default.html#a67c3fab2355d461a914559f6c571db5b',1,'klotter::LoadedShader_Default::directional_lights'],['../structklotter_1_1Lights.html#a61b2b0f76c7cc5fd6deb52c207043de7',1,'klotter::Lights::directional_lights']]],
   ['directionallight_37',['DirectionalLight',['../structklotter_1_1DirectionalLight.html',1,'klotter']]],
-  ['directionallightuniforms_38',['DirectionalLightUniforms',['../structklotter_1_1DirectionalLightUniforms.html',1,'klotter::DirectionalLightUniforms'],['../structklotter_1_1DirectionalLightUniforms.html#ae40551e4ef0e0d4a75d4028401caafee',1,'klotter::DirectionalLightUniforms::DirectionalLightUniforms()']]],
+  ['directionallightuniforms_38',['DirectionalLightUniforms',['../structklotter_1_1DirectionalLightUniforms.html',1,'klotter::DirectionalLightUniforms'],['../structklotter_1_1DirectionalLightUniforms.html#a91fd8436ad067b9181e18831b5ed382d',1,'klotter::DirectionalLightUniforms::DirectionalLightUniforms()']]],
   ['dirty_39',['dirty',['../structklotter_1_1EffectStack.html#a943bbfc9c0c88cf892b41f28ffede7f0',1,'klotter::EffectStack']]],
   ['disable_5fwarning_5fnonstandard_5fnameless_5fstruct_5funion_40',['DISABLE_WARNING_NONSTANDARD_NAMELESS_STRUCT_UNION',['../compiler__warning_8h.html#acc5db90675b43c4a82786b984d6d1a32',1,'compiler_warning.h']]],
   ['disable_5fwarning_5fpop_41',['DISABLE_WARNING_POP',['../compiler__warning_8h.html#aa38484cb49798c69a90b8a8dcd050087',1,'compiler_warning.h']]],

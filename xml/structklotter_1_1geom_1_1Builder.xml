@@ -254,15 +254,15 @@
         </inbodydescription>
         <location file="src/klotter/render/geom.builder.h" line="64" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1a4d704606049b23d843c5ec5bd2c2d8ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1a1d1bf15d326a7d2a101aedf3d1daa97e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> &amp;</type>
         <definition>Builder &amp; klotter::geom::Builder::add_quad</definition>
-        <argsstring>(bool reverse, const Vertex &amp;v0, const Vertex &amp;v1, const Vertex &amp;v2, const Vertex &amp;v3)</argsstring>
+        <argsstring>(bool ccw, const Vertex &amp;v0, const Vertex &amp;v1, const Vertex &amp;v2, const Vertex &amp;v3)</argsstring>
         <name>add_quad</name>
         <qualifiedname>klotter::geom::Builder::add_quad</qualifiedname>
         <param>
           <type>bool</type>
-          <declname>reverse</declname>
+          <declname>ccw</declname>
         </param>
         <param>
           <type>const <ref refid="structklotter_1_1geom_1_1Vertex" kindref="compound">Vertex</ref> &amp;</type>
@@ -413,7 +413,7 @@
       <member refid="structklotter_1_1geom_1_1Builder_1a108dd5e1bb46cd95cc94662b5ec741b9" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_face</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a170c3028daab22f3d9525886b87ccc20" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_normal</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1ad060993f3073843868929ff6dd65b045" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_position</name></member>
-      <member refid="structklotter_1_1geom_1_1Builder_1a4d704606049b23d843c5ec5bd2c2d8ee" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_quad</name></member>
+      <member refid="structklotter_1_1geom_1_1Builder_1a1d1bf15d326a7d2a101aedf3d1daa97e" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_quad</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a1d23996bf8e3a67534d7b4c0fe5bab4c" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_text_coord</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a2221d13065eb2546d6f454d8f1a04b95" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_triangle</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a60299a973791e852f07984682f69f578" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>colors</name></member>

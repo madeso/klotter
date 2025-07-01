@@ -93,7 +93,7 @@
     <member refid="structklotter_1_1geom_1_1Builder_1af706fa48387cd029fa3f8ce53fdb53a7" kind="function"><name>foa_normal</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a6cd975114cc2a208a083fcb7c3a52aed" kind="function"><name>foa_color</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a2221d13065eb2546d6f454d8f1a04b95" kind="function"><name>add_triangle</name></member>
-    <member refid="structklotter_1_1geom_1_1Builder_1a4d704606049b23d843c5ec5bd2c2d8ee" kind="function"><name>add_quad</name></member>
+    <member refid="structklotter_1_1geom_1_1Builder_1a1d1bf15d326a7d2a101aedf3d1daa97e" kind="function"><name>add_quad</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a108dd5e1bb46cd95cc94662b5ec741b9" kind="function"><name>add_face</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a0040ee70080e791cf4a27d1450db0b0f" kind="function"><name>replace_with_smooth_normals</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1aa6ae34b81a5b711fd60b55ba96a4efa0" kind="function"><name>move</name></member>
@@ -239,7 +239,7 @@
     <member refid="structklotter_1_1DirectionalLightUniforms_1a801338744f0a781c96cea0312853b29b" kind="variable"><name>light_diffuse_color</name></member>
     <member refid="structklotter_1_1DirectionalLightUniforms_1ab80a217f6a0dad1911ca5f03949f5398" kind="variable"><name>light_specular_color</name></member>
     <member refid="structklotter_1_1DirectionalLightUniforms_1a6fc53d6b940a156301c25e7f9b2e4d55" kind="variable"><name>dir</name></member>
-    <member refid="structklotter_1_1DirectionalLightUniforms_1ae40551e4ef0e0d4a75d4028401caafee" kind="function"><name>DirectionalLightUniforms</name></member>
+    <member refid="structklotter_1_1DirectionalLightUniforms_1a91fd8436ad067b9181e18831b5ed382d" kind="function"><name>DirectionalLightUniforms</name></member>
   </compound>
   <compound refid="structklotter_1_1Effect" kind="struct"><name>klotter::Effect</name>
     <member refid="structklotter_1_1Effect_1a9baaf22c08590fd87da53ccb29ff2dcd" kind="friend"><name>EffectStack</name></member>
@@ -336,7 +336,7 @@
     <member refid="structklotter_1_1FrustumLightUniforms_1afc52906ec8254b1167a57f01de5140e0" kind="variable"><name>world_to_clip</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1a70bbfbb9f0a74757269f9848070a87c0" kind="variable"><name>world_pos</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1ab1111ab27945b0f084971b9db2a9973b" kind="variable"><name>cookie</name></member>
-    <member refid="structklotter_1_1FrustumLightUniforms_1a8853c7aa1207bc1bc79214aa4a9f8685" kind="function"><name>FrustumLightUniforms</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1ab06a609169ec292dd41407b057b84127" kind="function"><name>FrustumLightUniforms</name></member>
   </compound>
   <compound refid="structklotter_1_1FullScreenGeom" kind="struct"><name>klotter::FullScreenGeom</name>
     <member refid="structklotter_1_1FullScreenGeom_1afe5a7f37bb741a8ef465064eba35ae38" kind="variable"><name>geom</name></member>
@@ -499,7 +499,7 @@
     <member refid="structklotter_1_1PointLightUniforms_1a2904c2abd2d998fcfa02513bcbb0aacb" kind="variable"><name>light_specular_color</name></member>
     <member refid="structklotter_1_1PointLightUniforms_1aadb098fdd8fbaa45838feac3b98cea9a" kind="variable"><name>light_attenuation</name></member>
     <member refid="structklotter_1_1PointLightUniforms_1acec765b11c4d9fd7d54d060eb108911d" kind="variable"><name>light_world</name></member>
-    <member refid="structklotter_1_1PointLightUniforms_1ab499febb6dc0fe23f39049a2fe14dc18" kind="function"><name>PointLightUniforms</name></member>
+    <member refid="structklotter_1_1PointLightUniforms_1a2fb4ab1678017a603e28e095e3c3fbf7" kind="function"><name>PointLightUniforms</name></member>
   </compound>
   <compound refid="structklotter_1_1PostProcArg" kind="struct"><name>klotter::PostProcArg</name>
     <member refid="structklotter_1_1PostProcArg_1ae521c7b4cb6fef35f2a72569076209df" kind="variable"><name>world</name></member>
@@ -569,7 +569,7 @@
   <compound refid="structResult" kind="struct"><name>Result</name>
     <member refid="structResult_1aaa4cd27503fc72bd303b8821fddb24f0" kind="variable"><name>value</name></member>
     <member refid="structResult_1af75910267946ca1545b492ae2c9bc72e" kind="variable"><name>e</name></member>
-    <member refid="structResult_1a09bfef910ff61b121e04b9df35ab8a1a" kind="function"><name>Result</name></member>
+    <member refid="structResult_1a5314b530c0634f2fc8c0c464189a5abb" kind="function"><name>Result</name></member>
     <member refid="structResult_1aef1257385182062000e093cc7979f46f" kind="function"><name>Result</name></member>
     <member refid="structResult_1a9e40be74c8d6a0617c920987882b86e9" kind="function"><name>operator bool</name></member>
   </compound>
@@ -694,7 +694,7 @@
     <member refid="structklotter_1_1geom_1_1Triangle_1a61be1f89bfcc389f270530ec1ac5238d" kind="variable"><name>v0</name></member>
     <member refid="structklotter_1_1geom_1_1Triangle_1ad35134c153b48f099577b23dcf0c7f7f" kind="variable"><name>v1</name></member>
     <member refid="structklotter_1_1geom_1_1Triangle_1a49c1f90c967a98d15c2330469c330196" kind="variable"><name>v2</name></member>
-    <member refid="structklotter_1_1geom_1_1Triangle_1a336b6881c80aa8e650eaf306a0b6469c" kind="function"><name>Triangle</name></member>
+    <member refid="structklotter_1_1geom_1_1Triangle_1a641838057cab269c13f307482a716b9e" kind="function"><name>Triangle</name></member>
   </compound>
   <compound refid="structklotter_1_1Uniform" kind="struct"><name>klotter::Uniform</name>
     <member refid="structklotter_1_1Uniform_1a701fee8156a72be5f0c83f46b9cb2f1e" kind="variable"><name>name</name></member>
@@ -750,8 +750,8 @@
     <member refid="structklotter_1_1geom_1_1Vertex_1aad48a57d152f712f8fc85cb4fea0a2c0" kind="variable"><name>normal</name></member>
     <member refid="structklotter_1_1geom_1_1Vertex_1ab7010ae753e9318118337b31fa88430f" kind="variable"><name>texture</name></member>
     <member refid="structklotter_1_1geom_1_1Vertex_1ad89c007f85b2acc6a269e1ca53ca9a46" kind="variable"><name>color</name></member>
-    <member refid="structklotter_1_1geom_1_1Vertex_1a621a697c425cc746d0d1879b2455ebbb" kind="function"><name>Vertex</name></member>
-    <member refid="structklotter_1_1geom_1_1Vertex_1afa5ca3044036559f60c3002550692d8d" kind="function"><name>Vertex</name></member>
+    <member refid="structklotter_1_1geom_1_1Vertex_1a4c825af470a38307fa38bfcbd4548384" kind="function"><name>Vertex</name></member>
+    <member refid="structklotter_1_1geom_1_1Vertex_1a6942f1ce03e696e54e9ef900b6e4d5ce" kind="function"><name>Vertex</name></member>
   </compound>
   <compound refid="structklotter_1_1Vertex" kind="struct"><name>klotter::Vertex</name>
     <member refid="structklotter_1_1Vertex_1ab53cfc8cd6d1a6152e31eca6056b30ef" kind="variable"><name>position</name></member>
@@ -834,7 +834,7 @@
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga3408f89cc9f18beff9e655676bd9fc1f" kind="function"><name>create_view_mat</name></member>
-    <member refid="group__render_1ga4600d7c8f261b323d75fe6cde1dcbe31" kind="function"><name>compile</name></member>
+    <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" kind="function"><name>to_screen</name></member>
     <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
     <member refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" kind="function"><name>setup_opengl_debug</name></member>
@@ -883,7 +883,7 @@
     <member refid="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" kind="function"><name>render_geom_instanced</name></member>
     <member refid="group__scurcve_1gad502f980124ff607cb9564e4562d6a25" kind="function"><name>s_curve_from_input</name></member>
     <member refid="group__scurcve_1ga3c0cf1d44132258273463050f332f830" kind="function"><name>calculate_s_curve</name></member>
-    <member refid="group__scurcve_1gabe2dd4296f6fc82f6549566932cc0662" kind="function"><name>imgui_s_curve_editor</name></member>
+    <member refid="group__scurcve_1ga1be2991dbb6e7fdb2460296dec1f4504" kind="function"><name>imgui_s_curve_editor</name></member>
   </compound>
   <compound refid="namespaceklotter_1_1colors" kind="namespace"><name>klotter::colors</name>
     <member refid="namespaceklotter_1_1colors_1a31ced28375c71daf9b639bdcb0e282e8" kind="variable"><name>white</name></member>
@@ -900,7 +900,7 @@
   <compound refid="namespaceklotter_1_1geom" kind="namespace"><name>klotter::geom</name>
     <member refid="group__geom-builder_1gaeea000e036687f28644e2c966bca3d7b" kind="enum"><name>TwoSided</name></member>
     <member refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kind="typedef"><name>Index</name></member>
-    <member refid="group__geom-builder_1gaf33b1b06b5a70dcf47a3dfe7cbfc3375" kind="function"><name>create_box</name></member>
+    <member refid="group__geom-builder_1ga7f89c1b49c137dcdaea6a2dd52a4297d" kind="function"><name>create_box</name></member>
     <member refid="group__geom-builder_1gadadd83bd1fcb86e428069505223ba10c" kind="function"><name>create_xz_plane</name></member>
     <member refid="group__geom-builder_1gacc3da38a6c5889a300a1d8769f5c1802" kind="function"><name>create_xy_plane</name></member>
     <member refid="group__geom-builder_1gab6f07e8ea329694599243e6b7185e38b" kind="function"><name>create_uv_sphere</name></member>
@@ -1106,7 +1106,7 @@
     <member refid="group__geom-builder_1ga09f336a0f9a765edc85ba7fb234aed05" kind="enum"><name>ExtractedAttributeType</name></member>
     <member refid="group__geom-builder_1gga09f336a0f9a765edc85ba7fb234aed05a22ae0e2b89e5e3d477f988cc36d3272b" kind="enumvalue"><name>Float</name></member>
     <member refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kind="typedef"><name>Index</name></member>
-    <member refid="group__geom-builder_1gaf33b1b06b5a70dcf47a3dfe7cbfc3375" kind="function"><name>create_box</name></member>
+    <member refid="group__geom-builder_1ga7f89c1b49c137dcdaea6a2dd52a4297d" kind="function"><name>create_box</name></member>
     <member refid="group__geom-builder_1gadadd83bd1fcb86e428069505223ba10c" kind="function"><name>create_xz_plane</name></member>
     <member refid="group__geom-builder_1gacc3da38a6c5889a300a1d8769f5c1802" kind="function"><name>create_xy_plane</name></member>
     <member refid="group__geom-builder_1gab6f07e8ea329694599243e6b7185e38b" kind="function"><name>create_uv_sphere</name></member>
@@ -1183,7 +1183,7 @@
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga3408f89cc9f18beff9e655676bd9fc1f" kind="function"><name>create_view_mat</name></member>
-    <member refid="group__render_1ga4600d7c8f261b323d75fe6cde1dcbe31" kind="function"><name>compile</name></member>
+    <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" kind="function"><name>to_screen</name></member>
     <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
     <member refid="group__render_1gac2e3012d518484348974e4dc36e3112c" kind="function"><name>get_uniform</name></member>
@@ -1227,7 +1227,7 @@
   <compound refid="group__scurcve" kind="group"><name>scurcve</name>
     <member refid="group__scurcve_1gad502f980124ff607cb9564e4562d6a25" kind="function"><name>s_curve_from_input</name></member>
     <member refid="group__scurcve_1ga3c0cf1d44132258273463050f332f830" kind="function"><name>calculate_s_curve</name></member>
-    <member refid="group__scurcve_1gabe2dd4296f6fc82f6549566932cc0662" kind="function"><name>imgui_s_curve_editor</name></member>
+    <member refid="group__scurcve_1ga1be2991dbb6e7fdb2460296dec1f4504" kind="function"><name>imgui_s_curve_editor</name></member>
   </compound>
   <compound refid="todo" kind="page"><name>todo</name>
   </compound>

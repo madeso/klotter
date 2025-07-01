@@ -118,13 +118,13 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E = std::<span class="keywordtype">string</span>&gt;</div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="structResult.html">    6</a></span><span class="keyword">struct </span><a class="code hl_function" href="structResult.html#a09bfef910ff61b121e04b9df35ab8a1a">Result</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="structResult.html">    6</a></span><span class="keyword">struct </span><a class="code hl_function" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">    8</a></span>    std::optional&lt;T&gt; <a class="code hl_variable" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">value</a>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structResult.html#af75910267946ca1545b492ae2c9bc72e">    9</a></span>    std::optional&lt;E&gt; <a class="code hl_variable" href="structResult.html#af75910267946ca1545b492ae2c9bc72e">e</a>;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structResult.html#a09bfef910ff61b121e04b9df35ab8a1a">   11</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="structResult.html#a09bfef910ff61b121e04b9df35ab8a1a">Result</a>(T&amp;&amp; tt)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">   11</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result</a>(T tt)</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        : <a class="code hl_variable" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">value</a>(std::move(tt))</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
@@ -145,7 +145,7 @@ $(function(){ initResizable(false); });
 </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
 </div>
-<div class="ttc" id="astructResult_html_a09bfef910ff61b121e04b9df35ab8a1a"><div class="ttname"><a href="structResult.html#a09bfef910ff61b121e04b9df35ab8a1a">Result::Result</a></div><div class="ttdeci">Result(T &amp;&amp;tt)</div><div class="ttdef"><b>Definition</b> result.h:11</div></div>
+<div class="ttc" id="astructResult_html_a5314b530c0634f2fc8c0c464189a5abb"><div class="ttname"><a href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result::Result</a></div><div class="ttdeci">Result(T tt)</div><div class="ttdef"><b>Definition</b> result.h:11</div></div>
 <div class="ttc" id="astructResult_html_aaa4cd27503fc72bd303b8821fddb24f0"><div class="ttname"><a href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">Result::value</a></div><div class="ttdeci">std::optional&lt; T &gt; value</div><div class="ttdef"><b>Definition</b> result.h:8</div></div>
 <div class="ttc" id="astructResult_html_aef1257385182062000e093cc7979f46f"><div class="ttname"><a href="structResult.html#aef1257385182062000e093cc7979f46f">Result::Result</a></div><div class="ttdeci">Result(const E &amp;ee)</div><div class="ttdef"><b>Definition</b> result.h:16</div></div>
 <div class="ttc" id="astructResult_html_af75910267946ca1545b492ae2c9bc72e"><div class="ttname"><a href="structResult.html#af75910267946ca1545b492ae2c9bc72e">Result::e</a></div><div class="ttdeci">std::optional&lt; E &gt; e</div><div class="ttdef"><b>Definition</b> result.h:9</div></div>

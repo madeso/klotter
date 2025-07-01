@@ -28,7 +28,7 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>A enum describing if a face is one or two-sided. </para>
+<para>An enum describing if a face is one or two-sided. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -74,23 +74,23 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__geom-builder_1gaf33b1b06b5a70dcf47a3dfe7cbfc3375" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__geom-builder_1ga7f89c1b49c137dcdaea6a2dd52a4297d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Builder</type>
         <definition>Builder klotter::geom::create_box</definition>
-        <argsstring>(float w, float h, float d, bool invert, const glm::vec3 &amp;color=colors::white)</argsstring>
+        <argsstring>(float x, float y, float z, bool invert, const glm::vec3 &amp;color=colors::white)</argsstring>
         <name>create_box</name>
         <qualifiedname>klotter::geom::create_box</qualifiedname>
         <param>
           <type>float</type>
-          <declname>w</declname>
+          <declname>x</declname>
         </param>
         <param>
           <type>float</type>
-          <declname>h</declname>
+          <declname>y</declname>
         </param>
         <param>
           <type>float</type>
-          <declname>d</declname>
+          <declname>z</declname>
         </param>
         <param>
           <type>bool</type>

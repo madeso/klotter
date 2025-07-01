@@ -9,7 +9,7 @@ var searchData=
   ['add_5fline_6',['add_line',['../structklotter_1_1DebugRender.html#a1d12a005360124457989ff77b4d2e8e8',1,'klotter::DebugRender']]],
   ['add_5fnormal_7',['add_normal',['../structklotter_1_1geom_1_1Builder.html#a170c3028daab22f3d9525886b87ccc20',1,'klotter::geom::Builder']]],
   ['add_5fposition_8',['add_position',['../structklotter_1_1geom_1_1Builder.html#ad060993f3073843868929ff6dd65b045',1,'klotter::geom::Builder']]],
-  ['add_5fquad_9',['add_quad',['../structklotter_1_1geom_1_1Builder.html#a4d704606049b23d843c5ec5bd2c2d8ee',1,'klotter::geom::Builder']]],
+  ['add_5fquad_9',['add_quad',['../structklotter_1_1geom_1_1Builder.html#a1d1bf15d326a7d2a101aedf3d1daa97e',1,'klotter::geom::Builder']]],
   ['add_5ftext_5fcoord_10',['add_text_coord',['../structklotter_1_1geom_1_1Builder.html#a1d23996bf8e3a67534d7b4c0fe5bab4c',1,'klotter::geom::Builder']]],
   ['add_5ftriangle_11',['add_triangle',['../structklotter_1_1geom_1_1Builder.html#a2221d13065eb2546d6f454d8f1a04b95',1,'klotter::geom::Builder']]],
   ['almost_5fzero_12',['ALMOST_ZERO',['../namespaceklotter.html#af84f50d2d555a52091dca0e8b0707f8a',1,'klotter']]],
