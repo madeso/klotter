@@ -9,6 +9,7 @@ jobs:
                 cxx: [g++-12, clang++-14]
                 build_type: [Debug, Release]
                 blur_use_gauss: [BLUR_USE_GAUSS=ON, BLUR_USE_GAUSS=OFF]
+                gl_debug: [ENABLE_GL_DEBUG=ON, ENABLE_GL_DEBUG=OFF]
 
         runs-on: ubuntu-22.04
 
@@ -30,7 +31,7 @@ jobs:
           working-directory: ${{github.workspace}}/build
           env:
                 CXX: ${{matrix.cxx}}
-          run: cmake -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -D${{matrix.blur_use_gauss}} $GITHUB_WORKSPACE
+          run: cmake -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -D${{matrix.blur_use_gauss}} -D${{matrix.gl_debug}} $GITHUB_WORKSPACE
 
         - name: Build
           shell: bash

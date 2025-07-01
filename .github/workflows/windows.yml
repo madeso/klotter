@@ -8,6 +8,7 @@ jobs:
             matrix:
                 build_type: [Debug, Release]
                 blur_use_gauss: [BLUR_USE_GAUSS=ON, BLUR_USE_GAUSS=OFF]
+                gl_debug: [ENABLE_GL_DEBUG=ON, ENABLE_GL_DEBUG=OFF]
         runs-on: windows-latest
 
         steps:
@@ -17,7 +18,7 @@ jobs:
                   submodules: recursive
 
             - name: Configure CMake
-              run: cmake -S . -B build -D${{ matrix.blur_use_gauss }}
+              run: cmake -S . -B build -D${{ matrix.blur_use_gauss }} -D${{matrix.gl_debug}}
 
             - name: Build
               run: cmake --build build --config ${{ matrix.build_type }}
