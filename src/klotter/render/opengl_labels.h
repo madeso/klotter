@@ -9,9 +9,3 @@
 
 #define USE_DEBUG_LABEL(name) name
 #define USE_DEBUG_LABEL_MANY(name) name,
-
-// debug labels
-#define USE_TEXTURE_LABEL(name) USE_DEBUG_LABEL(name)
-#define USE_TEXTURE_LABEL_MANY(name) USE_DEBUG_LABEL_MANY(name)
-#define USE_PROGRAM_LABEL_MANY(name) USE_DEBUG_LABEL_MANY(name)
-
