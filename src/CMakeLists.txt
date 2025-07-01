@@ -156,5 +156,6 @@ set_target_properties(test_klotter PROPERTIES FOLDER "Klotter")
 target_link_libraries(test_klotter
     catchy::catchy
     klotter::klotter
+    klotter::project_options
 )
 catch_discover_tests(test_klotter)

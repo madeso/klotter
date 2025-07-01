@@ -56,6 +56,9 @@ message(STATUS "BLUR_USE_GAUSS: ${BLUR_USE_GAUSS}")
 option(GENERATE_COVERAGE "generate code coverage information" OFF)
 message(STATUS "Generating coverage information: ${GENERATE_COVERAGE}")
 
+option(ENABLE_GL_DEBUG "enable opengl debug information" ON)
+message(STATUS "Open GL debug information: ${ENABLE_GL_DEBUG}")
+
 
 ###################################################################################################
 # helper libraries
@@ -75,6 +78,7 @@ include(cmake/Sanitizers.cmake)
 enable_sanitizers(project_options)
 target_feature_flags(project_options INTERFACE
     BLUR_USE_GAUSS
+    ENABLE_GL_DEBUG
 )
 
 if(GENERATE_COVERAGE)

@@ -7,6 +7,7 @@
 namespace klotter
 {
 
+#if FF_HAS(ENABLE_GL_DEBUG)
 const char* opengl_error_to_string(GLenum error_code)
 {
 	switch (error_code)
@@ -146,9 +147,11 @@ bool has_khr_debug()
 {
 	return GLAD_GL_KHR_debug != 0;
 }
+#endif
 
 void setup_opengl_debug()
 {
+#if FF_HAS(ENABLE_GL_DEBUG)
 	if (has_khr_debug())
 	{
 		SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Enabling OpenGL debug output (KHR_debug)");
@@ -161,6 +164,7 @@ void setup_opengl_debug()
 	{
 		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "KHR_debug not available, OpenGL debug output not enabled");
 	}
+#endif
 }
 
 GLenum Cint_to_glenum(int i)
@@ -217,6 +221,7 @@ glm::mat4 get_mesh_rotation_matrix(const glm::vec3& rotation)
 	return glm::yawPitchRoll(rotation.x, rotation.y, rotation.z);
 }
 
+#if FF_HAS(ENABLE_GL_DEBUG)
 GLenum glenum_from_object_type(DebugLabelFor type)
 {
     switch (type)
@@ -280,5 +285,6 @@ ScopedDebugGroup::~ScopedDebugGroup()
 {
     glPopDebugGroup();
 }
+#endif
 
 }  //  namespace klotter
