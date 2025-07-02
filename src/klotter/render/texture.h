@@ -32,7 +32,7 @@ enum class Transparency
 	exclude
 };
 
-/// A single color in a format to load directly into open gl texture(ABGR).
+/// A single color in a format to load directly into open gl texture(ABGR on little endian).
 /// @see \ref color_from_rgba
 enum class SingleColor : std::uint32_t {};
 
