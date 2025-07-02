@@ -107,6 +107,11 @@ jobs:
         - name: Build doxygen
           run: doxygen docs/doxygen.ini
 
+        - name: Build code hero
+          shell: bash
+          working-directory: ${{github.workspace}}
+          run: dotnet run --project ./tools/buildtools/Workbench/ -- hero run-html klotter.hero.json docs/generated/hero/
+
 
 
 
