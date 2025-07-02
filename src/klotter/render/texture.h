@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "klotter/render/opengl_labels.h"
 
 namespace klotter
@@ -30,6 +32,17 @@ enum class Transparency
 	exclude
 };
 
+/// A single color in a format to load directly into open gl texture(ABGR).
+/// @see \ref color_from_rgba
+enum class SingleColor : std::uint32_t {};
+
+constexpr SingleColor color_from_rgba(uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
+	return static_cast<SingleColor>((static_cast<uint32_t>(a) << 24) |
+		   (static_cast<uint32_t>(b) << 16) |
+		   (static_cast<uint32_t>(g) << 8)  |
+		   (static_cast<uint32_t>(r)));
+}
+
 // todo(Gustav): this doesn't do anything except allow code reuse, remove?
 /// Base class for all textures, but only exist due to code reuse and can easily be inlined.
 struct BaseTexture
@@ -54,10 +67,10 @@ struct Texture2d : BaseTexture
 	Texture2d() = delete;
 
 	/// "internal"
-	Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
+	Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, unsigned int pixel_format, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
 };
 
-Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
+Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
 
 struct TextureCubemap : BaseTexture
 {
@@ -66,7 +79,7 @@ struct TextureCubemap : BaseTexture
 	TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height);
 };
 
-TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY u32 pixel);
+TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel);
 
 
 

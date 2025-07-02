@@ -148,9 +148,11 @@ add_library(klotter::klotter ALIAS klotter)
 set(src_test
     klotter/main.test.cc
     klotter/scurve.test.cc
+    klotter/render/texture.test.cc
     klotter/render/vertex_layout.test.cc
     klotter/render/uniform_buffer.test.cc
 )
+source_group("" FILES ${src_test})
 add_executable(test_klotter ${src_test})
 set_target_properties(test_klotter PROPERTIES FOLDER "Klotter")
 target_link_libraries(test_klotter

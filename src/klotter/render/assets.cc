@@ -40,7 +40,7 @@ std::shared_ptr<Texture2d> get_or_load(
 	return *texture;
 }
 
-std::shared_ptr<Texture2d> get_or_create(DEBUG_LABEL_ARG_MANY std::shared_ptr<Texture2d>* texture, u32 pixel_color)
+std::shared_ptr<Texture2d> get_or_create(DEBUG_LABEL_ARG_MANY std::shared_ptr<Texture2d>* texture, SingleColor pixel_color)
 {
 	if (*texture == nullptr)
 	{
@@ -56,12 +56,12 @@ std::shared_ptr<Texture2d> get_or_create(DEBUG_LABEL_ARG_MANY std::shared_ptr<Te
 
 std::shared_ptr<Texture2d> Assets::get_black()
 {
-	return get_or_create(USE_DEBUG_LABEL_MANY("black from pixel") & black, 0x000000FF);
+	return get_or_create(USE_DEBUG_LABEL_MANY("black from pixel") & black, color_from_rgba(0x00, 0x00, 0x00, 0xFF));
 }
 
 std::shared_ptr<Texture2d> Assets::get_white()
 {
-	return get_or_create(USE_DEBUG_LABEL_MANY("white from pixel") & white, 0xFFFFFFFF);
+	return get_or_create(USE_DEBUG_LABEL_MANY("white from pixel") & white, color_from_rgba(0xFF, 0xFF, 0xFF, 0xFF));
 }
 
 // ----------------------------------------------------------------------------

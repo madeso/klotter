@@ -20,7 +20,9 @@ namespace klotter
 
 namespace
 {
-	constexpr u32 failed_to_load_image_color = 0;
+	/// the color of a image that failed to load, html hot-pink
+	constexpr SingleColor failed_to_load_image_color = color_from_rgba(0xFF, 0x69, 0xB4, 0xFF);
+
 	constexpr unsigned int invalid_id = 0;
 
 	unsigned int create_texture()
@@ -97,7 +99,7 @@ void BaseTexture::unload()
 // ------------------------------------------------------------------------------------------------
 // texture 2d
 
-Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency t)
+Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, unsigned int pixel_format, int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency t)
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_2D, id);
@@ -118,7 +120,7 @@ Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, int width, int
 		width,
 		height,
 		0,
-		include_transparency ? GL_RGBA : GL_RGB,
+		pixel_format,
 		GL_UNSIGNED_BYTE,
 		pixel_data
 	);
@@ -184,12 +186,13 @@ Texture2d load_image_from_embedded(
 		return load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, te, trs, t);
 	}
 
-	return {SEND_DEBUG_LABEL_MANY(debug_label) parsed.pixel_data, parsed.width, parsed.height, te, trs, t};
+	const GLenum pixel_format = include_transparency ? GL_RGBA : GL_RGB;
+	return {SEND_DEBUG_LABEL_MANY(debug_label) parsed.pixel_data, pixel_format, parsed.width, parsed.height, te, trs, t};
 }
 
-Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY u32 pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)
+Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)
 {
-	return {SEND_DEBUG_LABEL_MANY(debug_label) & pixel, 1, 1, te, trs, t};
+	return {SEND_DEBUG_LABEL_MANY(debug_label) & pixel, GL_RGBA, 1, 1, te, trs, t};
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -223,7 +226,7 @@ TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& 
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 }
 
-TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY u32 pixel)
+TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel)
 {
 	return {SEND_DEBUG_LABEL_MANY(debug_label) {&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1};
 }
