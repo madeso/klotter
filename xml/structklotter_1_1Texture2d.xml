@@ -17,17 +17,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="54" column="1"/>
+        <location file="src/klotter/render/texture.h" line="67" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1Texture2d_1a94b6f1cbda7356256131c00235635ebe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1Texture2d_1a5417af6ac1a80e18f52b28ffffc62a4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>klotter::Texture2d::Texture2d</definition>
-        <argsstring>(DEBUG_LABEL_ARG_MANY const void *pixel_data, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t)</argsstring>
+        <argsstring>(DEBUG_LABEL_ARG_MANY const void *pixel_data, unsigned int pixel_format, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t)</argsstring>
         <name>Texture2d</name>
         <qualifiedname>klotter::Texture2d::Texture2d</qualifiedname>
         <param>
           <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const void *</type>
           <declname>pixel_data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>pixel_format</declname>
         </param>
         <param>
           <type>int</type>
@@ -56,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="57" column="1"/>
+        <location file="src/klotter/render/texture.h" line="70" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -87,7 +91,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/texture.h" line="52" column="1" bodyfile="src/klotter/render/texture.h" bodystart="53" bodyend="58"/>
+    <location file="src/klotter/render/texture.h" line="65" column="1" bodyfile="src/klotter/render/texture.h" bodystart="66" bodyend="71"/>
     <listofallmembers>
       <member refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>BaseTexture</name></member>
       <member refid="structklotter_1_1BaseTexture_1ad35cb87b78ccdf92e1a5758890b4df48" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>BaseTexture</name></member>
@@ -96,7 +100,7 @@
       <member refid="structklotter_1_1BaseTexture_1a776bb47d4a239ee81aa56b89c0168251" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>operator=</name></member>
       <member refid="structklotter_1_1BaseTexture_1a32f38affc237565a13b2368e8a478264" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>operator=</name></member>
       <member refid="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>Texture2d</name></member>
-      <member refid="structklotter_1_1Texture2d_1a94b6f1cbda7356256131c00235635ebe" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>Texture2d</name></member>
+      <member refid="structklotter_1_1Texture2d_1a5417af6ac1a80e18f52b28ffffc62a4f" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>Texture2d</name></member>
       <member refid="structklotter_1_1BaseTexture_1a6dd65084b3eab03e75daa283d40b701f" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>unload</name></member>
       <member refid="structklotter_1_1BaseTexture_1a60818d0d9e48dacf0f8293dbde6b8c2c" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>~BaseTexture</name></member>
     </listofallmembers>

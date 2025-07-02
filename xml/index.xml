@@ -675,7 +675,7 @@
   </compound>
   <compound refid="structklotter_1_1Texture2d" kind="struct"><name>klotter::Texture2d</name>
     <member refid="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" kind="function"><name>Texture2d</name></member>
-    <member refid="structklotter_1_1Texture2d_1a94b6f1cbda7356256131c00235635ebe" kind="function"><name>Texture2d</name></member>
+    <member refid="structklotter_1_1Texture2d_1a5417af6ac1a80e18f52b28ffffc62a4f" kind="function"><name>Texture2d</name></member>
   </compound>
   <compound refid="structklotter_1_1TextureCubemap" kind="struct"><name>klotter::TextureCubemap</name>
     <member refid="structklotter_1_1TextureCubemap_1aba9fc569dd23d2a5061accda1781d1f6" kind="function"><name>TextureCubemap</name></member>
@@ -784,6 +784,7 @@
     <member refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kind="enum"><name>TextureEdge</name></member>
     <member refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kind="enum"><name>TextureRenderStyle</name></member>
     <member refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kind="enum"><name>Transparency</name></member>
+    <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
     <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
     <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
     <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40afedb2d84cafe20862cb4399751a8a7e3" kind="enumvalue"><name>invalid</name></member>
@@ -844,8 +845,9 @@
     <member refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kind="function"><name>bind_texture_2d</name></member>
     <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
     <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
-    <member refid="group__texture_1gae7e52a0e0f2fb06556cb212c080f1c4c" kind="function"><name>load_image_from_color</name></member>
-    <member refid="group__texture_1ga1935fc707e962dca5b1e45b935fa4a08" kind="function"><name>load_cubemap_from_color</name></member>
+    <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
+    <member refid="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" kind="function"><name>load_image_from_color</name></member>
+    <member refid="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" kind="function"><name>load_cubemap_from_color</name></member>
     <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
     <member refid="namespaceklotter_1a7564cf3dcd4da86f317f1faa37beb1f2" kind="function"><name>load_image_from_embedded</name></member>
     <member refid="namespaceklotter_1aa4142bff7e121332f50f6e6f409366f7" kind="function"><name>load_cubemap_from_embedded</name></member>
@@ -1187,13 +1189,15 @@
     <member refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kind="enum"><name>Transparency</name></member>
     <member refid="group__texture_1gga3257f86dae0e1a101035a7d4cd2026bcad436eb0fd9de10b54a828ce6435f7e81" kind="enumvalue"><name>include</name></member>
     <member refid="group__texture_1gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef" kind="enumvalue"><name>exclude</name></member>
+    <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
     <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849a6ad0a3981fb0e65854a9ef656e3beac4" kind="enumvalue"><name>use_none</name></member>
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849a2b8128f893f047b799dcef08274808e4" kind="enumvalue"><name>use_16</name></member>
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab33abfcb724dd7b2af41c9c87c2a947e" kind="enumvalue"><name>use_24</name></member>
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab58da2c01fd2c34c8f79d446758f5253" kind="enumvalue"><name>use_32</name></member>
-    <member refid="group__texture_1gae7e52a0e0f2fb06556cb212c080f1c4c" kind="function"><name>load_image_from_color</name></member>
-    <member refid="group__texture_1ga1935fc707e962dca5b1e45b935fa4a08" kind="function"><name>load_cubemap_from_color</name></member>
+    <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
+    <member refid="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" kind="function"><name>load_image_from_color</name></member>
+    <member refid="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" kind="function"><name>load_cubemap_from_color</name></member>
     <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
   </compound>
   <compound refid="group__scurcve" kind="group"><name>scurcve</name>

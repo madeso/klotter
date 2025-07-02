@@ -118,6 +118,8 @@
       <node id="27">
         <label>klotter/render/texture.h</label>
         <link refid="texture_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
@@ -158,6 +160,9 @@
         <link refid="scurve_8h"/>
         <childnode refid="23" relation="include">
         </childnode>
+      </node>
+      <node id="28">
+        <label>cstdint</label>
       </node>
       <node id="23">
         <label>imgui.h</label>
