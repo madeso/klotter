@@ -1,6 +1,7 @@
 include( ExternalProject )
 
-set(SDL_VERSION_STRING "SDL2-2.0.9") # tar.gz name on sdl release page
+# todo(Gustav): update from SDL2-2.0.20 to SDL2-2.32.8 (or more modern)
+set(SDL_VERSION_STRING "SDL2-2.0.20") # tar.gz name on sdl release page
 set(CATCH_GIT_TAG v3.7.1)
 
 ###################################################################################################
@@ -68,11 +69,9 @@ if(EU_SDL_SOURCE_FETCH)
         INSTALL_DIR ${SDL_INSTALL_DIR}
         CMAKE_ARGS
             -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
+            -DLIBC=ON
             -DSDL_STATIC=ON
-            -DSDL_BUILD_STATIC=ON
             -DSDL_SHARED=OFF
-            -DSDL_BUILD_SHARED=OFF
-            -DCMAKE_POSITION_INDEPENDENT_CODE=ON
         LOG_DOWNLOAD ON
         LOG_CONFIGURE ON
         LOG_BUILD ON
@@ -88,14 +87,11 @@ if(EU_SDL_SOURCE_FETCH)
     )
     if(WIN32)
         target_link_libraries(external_sdl2 INTERFACE
-            Setupapi.lib
-            Version.lib
-            Winmm.lib
-            Imm32.lib
-            optimized ${SDL_INSTALL_DIR}/lib/SDL2.lib
             optimized ${SDL_INSTALL_DIR}/lib/SDL2main.lib
-            debug ${SDL_INSTALL_DIR}/lib/SDL2d.lib
+            optimized ${SDL_INSTALL_DIR}/lib/SDL2.lib
             debug ${SDL_INSTALL_DIR}/lib/SDL2maind.lib
+            debug ${SDL_INSTALL_DIR}/lib/SDL2d.lib
+            version.lib imm32.lib winmm.lib Setupapi.lib
         )
     else()
         # todo(Gustav): specify debug flag?
