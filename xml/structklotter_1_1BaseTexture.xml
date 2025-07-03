@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="50" column="14" bodyfile="src/klotter/render/texture.h" bodystart="50" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="56" column="14" bodyfile="src/klotter/render/texture.h" bodystart="56" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="52" column="1"/>
+        <location file="src/klotter/render/texture.h" line="58" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BaseTexture_1a60818d0d9e48dacf0f8293dbde6b8c2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="53" column="1"/>
+        <location file="src/klotter/render/texture.h" line="59" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BaseTexture_1ad35cb87b78ccdf92e1a5758890b4df48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="55" column="1"/>
+        <location file="src/klotter/render/texture.h" line="61" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BaseTexture_1a776bb47d4a239ee81aa56b89c0168251" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="56" column="6"/>
+        <location file="src/klotter/render/texture.h" line="62" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BaseTexture_1ac1a681336f0b85638365223b1bf77fdf" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="58" column="1"/>
+        <location file="src/klotter/render/texture.h" line="64" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BaseTexture_1a32f38affc237565a13b2368e8a478264" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="structklotter_1_1BaseTexture" kindref="compound">BaseTexture</ref> &amp;</type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="59" column="13"/>
+        <location file="src/klotter/render/texture.h" line="65" column="13"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BaseTexture_1a6dd65084b3eab03e75daa283d40b701f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="62" column="6"/>
+        <location file="src/klotter/render/texture.h" line="68" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -164,7 +164,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="src/klotter/render/texture.h" line="48" column="1" bodyfile="src/klotter/render/texture.h" bodystart="49" bodyend="63"/>
+    <location file="src/klotter/render/texture.h" line="54" column="1" bodyfile="src/klotter/render/texture.h" bodystart="55" bodyend="69"/>
     <listofallmembers>
       <member refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" prot="public" virt="non-virtual"><scope>klotter::BaseTexture</scope><name>BaseTexture</name></member>
       <member refid="structklotter_1_1BaseTexture_1ad35cb87b78ccdf92e1a5758890b4df48" prot="public" virt="non-virtual"><scope>klotter::BaseTexture</scope><name>BaseTexture</name></member>

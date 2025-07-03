@@ -26,12 +26,12 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: klotter.cc</div>
-            <div>Date: 2025-07-02 09:37:41</div>
+            <div>Date: 2025-07-03 17:28:37</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
                 <div class="mr-2">Lines:</div>
-                <div class="mr-2" style="margin: auto;">0/151</div>
+                <div class="mr-2" style="margin: auto;">0/155</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
             <div class="d-flex">
@@ -41,7 +41,7 @@
             </div>
             <div class="d-flex">
                 <div class="mr-2">Branches:</div>
-                <div class="mr-2" style="margin: auto;">0/106</div>
+                <div class="mr-2" style="margin: auto;">0/112</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
         </div>
@@ -1578,182 +1578,182 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cp">#if defined(__APPLE__)</span></td>
+                <td class="src "><span class="w">	</span><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l215" href="#l215">215</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">// GL 3.2 Core + GLSL 150</span></td>
+                <td class="src "><span class="w">		</span><span class="n">SDL_version</span><span class="w"> </span><span class="n">compiled</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l216" href="#l216">216</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">glsl_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#version 150&quot;</span><span class="p">;</span></td>
+                <td class="src "><span class="w">		</span><span class="n">SDL_version</span><span class="w"> </span><span class="n">linked</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l217" href="#l217">217</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_FLAGS</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG</span><span class="p">);</span><span class="w">	</span><span class="c1">// Always required on Mac</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l218" href="#l218">218</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_PROFILE_MASK</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GL_CONTEXT_PROFILE_CORE</span><span class="p">);</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_VERSION</span><span class="p">(</span><span class="o">&amp;</span><span class="n">compiled</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l219" href="#l219">219</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_MAJOR_VERSION</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_GetVersion</span><span class="p">(</span><span class="o">&amp;</span><span class="n">linked</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l220" href="#l220">220</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_MINOR_VERSION</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l221" href="#l221">221</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cp">#else</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_Log</span><span class="p">(</span><span class="s">&quot;Compiled against SDL version %u.%u.%u ...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">compiled</span><span class="p">.</span><span class="n">major</span><span class="p">,</span><span class="w"> </span><span class="n">compiled</span><span class="p">.</span><span class="n">minor</span><span class="p">,</span><span class="w"> </span><span class="n">compiled</span><span class="p">.</span><span class="n">patch</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l222" href="#l222">222</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">// GL 3.0 + GLSL 130</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_Log</span><span class="p">(</span><span class="s">&quot;Linking against SDL version %u.%u.%u.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linked</span><span class="p">.</span><span class="n">major</span><span class="p">,</span><span class="w"> </span><span class="n">linked</span><span class="p">.</span><span class="n">minor</span><span class="p">,</span><span class="w"> </span><span class="n">linked</span><span class="p">.</span><span class="n">patch</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l223" href="#l223">223</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">glsl_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#version 130&quot;</span><span class="p">;</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="p">}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l224" href="#l224">224</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_FLAGS</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GL_CONTEXT_DEBUG_FLAG</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l225" href="#l225">225</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_PROFILE_MASK</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GL_CONTEXT_PROFILE_CORE</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="cp">#if defined(__APPLE__)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l226" href="#l226">226</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_MAJOR_VERSION</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="c1">// GL 3.2 Core + GLSL 150</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l227" href="#l227">227</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_MINOR_VERSION</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// was 0 in dear imgui example??</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">glsl_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#version 150&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l228" href="#l228">228</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cp">#endif</span></td>
+                <td class="src "><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_FLAGS</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG</span><span class="p">);</span><span class="w">	</span><span class="c1">// Always required on Mac</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l229" href="#l229">229</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_PROFILE_MASK</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GL_CONTEXT_PROFILE_CORE</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l230" href="#l230">230</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_DEPTH_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_MAJOR_VERSION</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l231" href="#l231">231</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_STENCIL_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_MINOR_VERSION</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l232" href="#l232">232</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="cp">#else</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l233" href="#l233">233</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_DOUBLEBUFFER</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="c1">// GL 3.0 + GLSL 130</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l234" href="#l234">234</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_ACCELERATED_VISUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">glsl_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#version 130&quot;</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l235" href="#l235">235</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_FLAGS</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GL_CONTEXT_DEBUG_FLAG</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l236" href="#l236">236</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_RED_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_PROFILE_MASK</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GL_CONTEXT_PROFILE_CORE</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l237" href="#l237">237</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_GREEN_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_MAJOR_VERSION</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l238" href="#l238">238</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_BLUE_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_CONTEXT_MINOR_VERSION</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">  </span><span class="c1">// was 0 in dear imgui example??</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l239" href="#l239">239</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_ALPHA_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="cp">#endif</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l240" href="#l240">240</a></td>
@@ -1766,344 +1766,344 @@
                 <td class="text-right src linenos"><a class="normal" id="l241" href="#l241">241</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_DEPTH_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">24</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l242" href="#l242">242</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_STENCIL_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l243" href="#l243">243</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">////////////////////////////////////////////////////////////////////////////////</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l244" href="#l244">244</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">// create window</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_DOUBLEBUFFER</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l245" href="#l245">245</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_ACCELERATED_VISUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l246" href="#l246">246</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l246" href="#l246">246</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">sdl_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SDL_CreateWindow</span><span class="p">(</span></td>
-            </tr>
-            <tr>
                 <td class="text-right src linenos"><a class="normal" id="l247" href="#l247">247</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">		</span><span class="s">&quot;klotter&quot;</span><span class="p">,</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_RED_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l248" href="#l248">248</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">		</span><span class="n">SDL_WINDOWPOS_UNDEFINED</span><span class="p">,</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_GREEN_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l249" href="#l249">249</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">		</span><span class="n">SDL_WINDOWPOS_UNDEFINED</span><span class="p">,</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_BLUE_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l250" href="#l250">250</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">		</span><span class="n">start_width</span><span class="p">,</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetAttribute</span><span class="p">(</span><span class="n">SDL_GL_ALPHA_SIZE</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l251" href="#l251">251</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">		</span><span class="n">start_height</span><span class="p">,</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l252" href="#l252">252</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">		</span><span class="n">SDL_WINDOW_OPENGL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SDL_WINDOW_RESIZABLE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SDL_WINDOW_ALLOW_HIGHDPI</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l253" href="#l253">253</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">);</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l254" href="#l254">254</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="c1">////////////////////////////////////////////////////////////////////////////////</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l255" href="#l255">255</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sdl_window</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="c1">// create window</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l256" href="#l256">256</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">{</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l257" href="#l257">257</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_LogCritical</span><span class="p">(</span><span class="n">SDL_LOG_CATEGORY_ERROR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Could not create window: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GetError</span><span class="p">());</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">sdl_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SDL_CreateWindow</span><span class="p">(</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l258" href="#l258">258</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">		</span><span class="s">&quot;klotter&quot;</span><span class="p">,</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l259" href="#l259">259</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">}</span></td>
+                <td class="src "><span class="w">		</span><span class="n">SDL_WINDOWPOS_UNDEFINED</span><span class="p">,</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l260" href="#l260">260</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">		</span><span class="n">SDL_WINDOWPOS_UNDEFINED</span><span class="p">,</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l261" href="#l261">261</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">sdl_gl_context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SDL_GL_CreateContext</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">		</span><span class="n">start_width</span><span class="p">,</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l262" href="#l262">262</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">		</span><span class="n">start_height</span><span class="p">,</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l263" href="#l263">263</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sdl_gl_context</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">		</span><span class="n">SDL_WINDOW_OPENGL</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SDL_WINDOW_RESIZABLE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SDL_WINDOW_ALLOW_HIGHDPI</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l264" href="#l264">264</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">{</span></td>
+                <td class="src "><span class="w">	</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l265" href="#l265">265</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_LogCritical</span><span class="p">(</span><span class="n">SDL_LOG_CATEGORY_ERROR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Could not create gl context: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GetError</span><span class="p">());</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l266" href="#l266">266</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l267" href="#l267">267</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l266" href="#l266">266</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_DestroyWindow</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sdl_window</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l267" href="#l267">267</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l268" href="#l268">268</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">sdl_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_LogCritical</span><span class="p">(</span><span class="n">SDL_LOG_CATEGORY_ERROR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Could not create window: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GetError</span><span class="p">());</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l269" href="#l269">269</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l270" href="#l270">270</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="p">}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l271" href="#l271">271</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">}</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l272" href="#l272">272</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">sdl_gl_context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SDL_GL_CreateContext</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l273" href="#l273">273</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_MakeCurrent</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">,</span><span class="w"> </span><span class="n">sdl_gl_context</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l274" href="#l274">274</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetSwapInterval</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">	</span><span class="c1">// Enable vsync</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sdl_gl_context</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l275" href="#l275">275</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l276" href="#l276">276</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gladLoadGLLoader</span><span class="p">(</span><span class="n">SDL_GL_GetProcAddress</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_LogCritical</span><span class="p">(</span><span class="n">SDL_LOG_CATEGORY_ERROR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Could not create gl context: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SDL_GetError</span><span class="p">());</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l277" href="#l277">277</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">{</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l278" href="#l278">278</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_LogCritical</span><span class="p">(</span><span class="n">SDL_LOG_CATEGORY_ERROR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Failed to load OpenGL&quot;</span><span class="p">);</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l279" href="#l279">279</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l280" href="#l280">280</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_GL_DeleteContext</span><span class="p">(</span><span class="n">sdl_gl_context</span><span class="p">);</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l281" href="#l281">281</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">sdl_gl_context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l282" href="#l282">282</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l283" href="#l283">283</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
                 <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_DestroyWindow</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">);</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l284" href="#l284">284</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l279" href="#l279">279</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
                 <td class="src uncoveredLine"><span class="w">		</span><span class="n">sdl_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l285" href="#l285">285</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l280" href="#l280">280</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l286" href="#l286">286</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l281" href="#l281">281</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
                 <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l287" href="#l287">287</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l282" href="#l282">282</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="w">	</span><span class="p">}</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l288" href="#l288">288</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l283" href="#l283">283</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
+                <td class="text-right src linenos"><a class="normal" id="l284" href="#l284">284</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_MakeCurrent</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">,</span><span class="w"> </span><span class="n">sdl_gl_context</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l285" href="#l285">285</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_SetSwapInterval</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">	</span><span class="c1">// Enable vsync</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l286" href="#l286">286</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l287" href="#l287">287</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">gladLoadGLLoader</span><span class="p">(</span><span class="n">SDL_GL_GetProcAddress</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l288" href="#l288">288</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="p">{</span></td>
+            </tr>
+            <tr>
                 <td class="text-right src linenos"><a class="normal" id="l289" href="#l289">289</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Loaded OpenGL %d.%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">GLVersion</span><span class="p">.</span><span class="n">major</span><span class="p">,</span><span class="w"> </span><span class="n">GLVersion</span><span class="p">.</span><span class="n">minor</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_LogCritical</span><span class="p">(</span><span class="n">SDL_LOG_CATEGORY_ERROR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Failed to load OpenGL&quot;</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l290" href="#l290">290</a></td>
@@ -2116,99 +2116,99 @@
                 <td class="text-right src linenos"><a class="normal" id="l291" href="#l291">291</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">///////////////////////////////////////////////////////////////</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_GL_DeleteContext</span><span class="p">(</span><span class="n">sdl_gl_context</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l292" href="#l292">292</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">// load opengl debug</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">sdl_gl_context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l293" href="#l293">293</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_opengl_debug</span><span class="p">();</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l294" href="#l294">294</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">SDL_DestroyWindow</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l295" href="#l295">295</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">sdl_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l296" href="#l296">296</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l297" href="#l297">297</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">// dear imgui setup</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l298" href="#l298">298</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="p">}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l299" href="#l299">299</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">IMGUI_CHECKVERSION</span><span class="p">();</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l300" href="#l300">300</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui</span><span class="o">::</span><span class="n">CreateContext</span><span class="p">();</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l301" href="#l301">301</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui</span><span class="o">::</span><span class="n">StyleColorsDark</span><span class="p">();</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l302" href="#l302">302</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l303" href="#l303">303</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l300" href="#l300">300</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui_ImplSDL2_InitForOpenGL</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">,</span><span class="w"> </span><span class="n">sdl_gl_context</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Loaded OpenGL %d.%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">GLVersion</span><span class="p">.</span><span class="n">major</span><span class="p">,</span><span class="w"> </span><span class="n">GLVersion</span><span class="p">.</span><span class="n">minor</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l301" href="#l301">301</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l302" href="#l302">302</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="c1">///////////////////////////////////////////////////////////////</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l303" href="#l303">303</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="c1">// load opengl debug</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l304" href="#l304">304</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui_ImplOpenGL3_Init</span><span class="p">(</span><span class="n">glsl_version</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_opengl_debug</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l305" href="#l305">305</a></td>
@@ -2229,42 +2229,42 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="c1">/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l308" href="#l308">308</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">///////////////////////////////////////////////////////////////</span></td>
+                <td class="src "><span class="w">	</span><span class="c1">// dear imgui setup</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l309" href="#l309">309</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">// run app</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l310" href="#l310">310</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">exit_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app_main</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span><span class="w"> </span><span class="n">make_app</span><span class="p">,</span><span class="w"> </span><span class="n">sdl_window</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">IMGUI_CHECKVERSION</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l311" href="#l311">311</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui</span><span class="o">::</span><span class="n">CreateContext</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l312" href="#l312">312</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui</span><span class="o">::</span><span class="n">StyleColorsDark</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l313" href="#l313">313</a></td>
@@ -2277,15 +2277,15 @@
                 <td class="text-right src linenos"><a class="normal" id="l314" href="#l314">314</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">/////////////////////////////////////////////////////////////////////////////////////////</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui_ImplSDL2_InitForOpenGL</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">,</span><span class="w"> </span><span class="n">sdl_gl_context</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l315" href="#l315">315</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">// cleanup</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui_ImplOpenGL3_Init</span><span class="p">(</span><span class="n">glsl_version</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l316" href="#l316">316</a></td>
@@ -2298,102 +2298,179 @@
                 <td class="text-right src linenos"><a class="normal" id="l317" href="#l317">317</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui_ImplOpenGL3_Shutdown</span><span class="p">();</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l318" href="#l318">318</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui_ImplSDL2_Shutdown</span><span class="p">();</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l319" href="#l319">319</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui</span><span class="o">::</span><span class="n">DestroyContext</span><span class="p">();</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="c1">///////////////////////////////////////////////////////////////</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l320" href="#l320">320</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="c1">// run app</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l321" href="#l321">321</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_DeleteContext</span><span class="p">(</span><span class="n">sdl_gl_context</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">exit_code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">app_main</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span><span class="w"> </span><span class="n">make_app</span><span class="p">,</span><span class="w"> </span><span class="n">sdl_window</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l322" href="#l322">322</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">sdl_gl_context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l323" href="#l323">323</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_DestroyWindow</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">);</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l324" href="#l324">324</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_Quit</span><span class="p">();</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l325" href="#l325">325</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="c1">/////////////////////////////////////////////////////////////////////////////////////////</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l326" href="#l326">326</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">exit_code</span><span class="p">;</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="c1">// cleanup</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l327" href="#l327">327</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">}</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l328" href="#l328">328</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui_ImplOpenGL3_Shutdown</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l329" href="#l329">329</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui_ImplSDL2_Shutdown</span><span class="p">();</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l330" href="#l330">330</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui</span><span class="o">::</span><span class="n">DestroyContext</span><span class="p">();</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l331" href="#l331">331</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l330" href="#l330">330</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l332" href="#l332">332</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_GL_DeleteContext</span><span class="p">(</span><span class="n">sdl_gl_context</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l333" href="#l333">333</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">sdl_gl_context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l334" href="#l334">334</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_DestroyWindow</span><span class="p">(</span><span class="n">sdl_window</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l335" href="#l335">335</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">SDL_Quit</span><span class="p">();</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l336" href="#l336">336</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l337" href="#l337">337</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">exit_code</span><span class="p">;</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l338" href="#l338">338</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l339" href="#l339">339</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l340" href="#l340">340</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l341" href="#l341">341</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l331" href="#l331">331</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l342" href="#l342">342</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>

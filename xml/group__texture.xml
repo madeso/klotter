@@ -100,7 +100,7 @@
         <name>SingleColor</name>
         <qualifiedname>klotter::SingleColor</qualifiedname>
         <briefdescription>
-<para>A single color in a format to load directly into open gl texture(ABGR). </para>
+<para>A single color in a format to load directly into open gl texture(ABGR on little endian). </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kindref="member">color_from_rgba</ref> </para>
@@ -149,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="110" column="1" bodyfile="src/klotter/render/texture.h" bodystart="111" bodyend="114"/>
+        <location file="src/klotter/render/texture.h" line="116" column="1" bodyfile="src/klotter/render/texture.h" bodystart="117" bodyend="120"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -176,12 +176,49 @@
           <declname>a</declname>
         </param>
         <briefdescription>
+<para>Constructs a <ref refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kindref="member">SingleColor</ref> value from individual red, green, blue, and alpha components. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The red component of the color (0x00 - 0xFF). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The green component of the color (0x00 - 0xFF). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The blue component of the color (0x00 - 0xFF). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alpha (opacity) component of the color (0x00 - 0xFF). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kindref="member">SingleColor</ref> value representing the color composed of the specified RGBA components. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="39" column="23" bodyfile="src/klotter/render/texture.h" bodystart="39" bodyend="44"/>
+        <location file="src/klotter/render/texture.h" line="45" column="23" bodyfile="src/klotter/render/texture.h" bodystart="45" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Texture2d</type>
@@ -211,7 +248,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="73" column="11" declfile="src/klotter/render/texture.h" declline="73" declcolumn="11"/>
+        <location file="src/klotter/render/texture.h" line="79" column="11" declfile="src/klotter/render/texture.h" declline="79" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>TextureCubemap</type>
@@ -229,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="82" column="16" declfile="src/klotter/render/texture.h" declline="82" declcolumn="16"/>
+        <location file="src/klotter/render/texture.h" line="88" column="16" declfile="src/klotter/render/texture.h" declline="88" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -251,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="171" column="6" declfile="src/klotter/render/texture.h" declline="171" declcolumn="6"/>
+        <location file="src/klotter/render/texture.h" line="177" column="6" declfile="src/klotter/render/texture.h" declline="177" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

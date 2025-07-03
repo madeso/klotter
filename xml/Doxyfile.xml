@@ -351,7 +351,9 @@
   </option>
   <option  id='INCLUDE_FILE_PATTERNS' default='yes' type='stringlist'>
   </option>
-  <option  id='PREDEFINED' default='yes' type='stringlist'>
+  <option  id='PREDEFINED' default='no' type='stringlist'>
+    <value><![CDATA[BLUR_USE_GAUSS=FF_IS_ENABLED]]></value>
+    <value><![CDATA[ENABLE_GL_DEBUG=FF_IS_ENABLED]]></value>
   </option>
   <option  id='EXPAND_AS_DEFINED' default='yes' type='stringlist'>
   </option>
