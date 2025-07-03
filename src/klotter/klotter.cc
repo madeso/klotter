@@ -211,6 +211,17 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app)
 		return -1;
 	}
 
+	{
+		SDL_version compiled;
+		SDL_version linked;
+
+		SDL_VERSION(&compiled);
+		SDL_GetVersion(&linked);
+
+		SDL_Log("Compiled against SDL version %u.%u.%u ...\n", compiled.major, compiled.minor, compiled.patch);
+		SDL_Log("Linking against SDL version %u.%u.%u.\n", linked.major, linked.minor, linked.patch);
+	}
+
 #if defined(__APPLE__)
 	// GL 3.2 Core + GLSL 150
 	const char* glsl_version = "#version 150";
