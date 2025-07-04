@@ -62,7 +62,7 @@ if(EU_SDL_SOURCE_FETCH)
     ExternalProject_Add(
         SDL2_external
         DOWNLOAD_EXTRACT_TIMESTAMP TRUE
-        URL https://www.libsdl.org/release/${SDL_VERSION_STRING}.tar.gz
+        URL https://www.libsdl.org/release/${SDL_VERSION_STRING}.zip
         PREFIX "${SDL_EXTERN_DIR}/${SDL_VERSION_STRING}"
         LOG_DIR "${SDL_EXTERN_DIR}/log"
         INSTALL_DIR ${SDL_INSTALL_DIR}
