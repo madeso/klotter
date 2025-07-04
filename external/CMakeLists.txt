@@ -56,7 +56,6 @@ include(Catch)
 ###################################################################################################
 if(EU_SDL_SOURCE_FETCH)
     set(SDL_EXTERN_DIR ${CMAKE_CURRENT_BINARY_DIR}/sdl)
-    set(SDL_ROOT_DIR "${SDL_EXTERN_DIR}/${SDL_VERSION_STRING}")
     set(SDL_INSTALL_DIR "${SDL_EXTERN_DIR}/install")
     message(STATUS "Will download and build ${SDL_VERSION_STRING} to ${SDL_EXTERN_DIR} and install to ${SDL_INSTALL_DIR} when building")
 
