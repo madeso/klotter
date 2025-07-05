@@ -41,16 +41,6 @@
     <member refid="structklotter_1_1BaseTexture_1a32f38affc237565a13b2368e8a478264" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1BaseTexture_1a6dd65084b3eab03e75daa283d40b701f" kind="function"><name>unload</name></member>
   </compound>
-  <compound refid="structklotter_1_1Bitfield" kind="struct"><name>klotter::Bitfield</name>
-    <member refid="structklotter_1_1Bitfield_1a61f3f0a4849672295038622c1012c719" kind="variable"><name>value</name></member>
-    <member refid="structklotter_1_1Bitfield_1ad59d915e908fed3ce56542e96138380d" kind="function"><name>Bitfield</name></member>
-    <member refid="structklotter_1_1Bitfield_1a36ad8dc6e91dc1343d4ca23c51aac0c3" kind="function"><name>Bitfield</name></member>
-    <member refid="structklotter_1_1Bitfield_1a65f2acf2d4f5b2d557050cc67cfb2347" kind="function"><name>set</name></member>
-    <member refid="structklotter_1_1Bitfield_1ab94ddbc38a9f93e907cae3dbdf963f8c" kind="function"><name>toggle</name></member>
-    <member refid="structklotter_1_1Bitfield_1a6d86690a8366e4d9673c6cf6e1ac1c99" kind="function"><name>clear</name></member>
-    <member refid="structklotter_1_1Bitfield_1a0881446179a3bf1d340af648fb228306" kind="function"><name>get</name></member>
-    <member refid="structklotter_1_1Bitfield_1a06574cd21901e9c3b45a0f144b176e9f" kind="function"><name>has_any_values</name></member>
-  </compound>
   <compound refid="structklotter_1_1BlurOptions" kind="struct"><name>klotter::BlurOptions</name>
     <member refid="structklotter_1_1BlurOptions_1ae4bc15090a18f8500948c9fc3db2bd98" kind="variable"><name>blur</name></member>
     <member refid="structklotter_1_1BlurOptions_1a33059a8882525f6d1d82baeaf4c0d10a" kind="variable"><name>sample_count</name></member>
@@ -913,9 +903,6 @@
     <member refid="assert_8h_1ac13d78404c4f2adb1fbffb12abbb7a18" kind="define"><name>DIE</name></member>
     <member refid="assert_8h_1acf344b926260b1dfbcd9b497c635c2e8" kind="function"><name>on_assert_failure</name></member>
     <member refid="assert_8h_1aee5e1bbf8aaba41d55d1018f6f5f700a" kind="function"><name>enable_exception_on_assert</name></member>
-  </compound>
-  <compound refid="bitfield_8h" kind="file"><name>bitfield.h</name>
-    <member refid="bitfield_8h_1ac39733f708d7eb4f35b90ae36c196e89" kind="define"><name>BIT_FIELD</name></member>
   </compound>
   <compound refid="cint_8h" kind="file"><name>cint.h</name>
     <member refid="cint_8h_1ac4a0af6b7b624ce27574515a4c4dee14" kind="function"><name>Cint_to_float</name></member>

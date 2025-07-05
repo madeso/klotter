@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/postproc.h</div>
-            <div>Date: 2025-07-04 18:20:06</div>
+            <div>Date: 2025-07-05 21:19:16</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -62,9 +62,9 @@
       <th>Condition coverage</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l92">klotter::Effect::Effect() (line 92)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l99">klotter::Effect::~Effect() (line 99)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l99">klotter::Effect::~Effect() (line 99)</a></td><td>not called</td><td>100.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l95">klotter::Effect::Effect() (line 95)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l102">klotter::Effect::~Effect() (line 102)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l102">klotter::Effect::~Effect() (line 102)</a></td><td>not called</td><td>100.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l27">klotter::RenderSource::RenderSource() (line 27)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l34">klotter::RenderSource::~RenderSource() (line 34)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l34">klotter::RenderSource::~RenderSource() (line 34)</a></td><td>not called</td><td>100.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
@@ -653,56 +653,56 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">BuildArg</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l82" href="#l82">82</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">{</span></td>
+                <td class="src "><span class="c1">/// Arguments for when building a effect stack.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l83" href="#l83">83</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">CompiledStack</span><span class="o">*</span><span class="w"> </span><span class="n">builder</span><span class="p">;</span></td>
+                <td class="src "><span class="c1">/// @see \ref EffectStack::build</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l84" href="#l84">84</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="w"> </span><span class="n">window_size</span><span class="p">;</span></td>
+                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">BuildArg</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l85" href="#l85">85</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">};</span></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l86" href="#l86">86</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">CompiledStack</span><span class="o">*</span><span class="w"> </span><span class="n">builder</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l87" href="#l87">87</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="w"> </span><span class="n">window_size</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l88" href="#l88">88</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">EffectStack</span><span class="p">;</span></td>
+                <td class="src "><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l89" href="#l89">89</a></td>
@@ -716,273 +716,273 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">Effect</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l91" href="#l91">91</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">{</span></td>
+                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">EffectStack</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l92" href="#l92">92</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">Effect</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l93" href="#l93">93</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">Effect</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l94" href="#l94">94</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">Effect</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Effect</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l95" href="#l95">95</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">Effect</span><span class="p">(</span><span class="n">Effect</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">Effect</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l96" href="#l96">96</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Effect</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l97" href="#l97">97</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Effect</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">Effect</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Effect</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l98" href="#l98">98</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">Effect</span><span class="p">(</span><span class="n">Effect</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l99" href="#l99">99</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Effect</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Effect</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l100" href="#l100">100</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Effect</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l101" href="#l101">101</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">BuildArg</span><span class="o">&amp;</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l102" href="#l102">102</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">update</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Effect</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l103" href="#l103">103</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">gui</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l104" href="#l104">104</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">build</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">BuildArg</span><span class="o">&amp;</span><span class="w"> </span><span class="n">arg</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l105" href="#l105">105</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="nf">enabled</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">update</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l106" href="#l106">106</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">gui</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l107" href="#l107">107</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">   </span><span class="n">protected</span><span class="o">:</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l108" href="#l108">108</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="nf">enabled</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l109" href="#l109">109</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">set_enabled</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l110" href="#l110">110</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">   </span><span class="n">protected</span><span class="o">:</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l111" href="#l111">111</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">   </span><span class="n">private</span><span class="o">:</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l112" href="#l112">112</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">set_enabled</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l113" href="#l113">113</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">friend</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">EffectStack</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l114" href="#l114">114</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">   </span><span class="n">private</span><span class="o">:</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l115" href="#l115">115</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="n">is_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l116" href="#l116">116</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">EffectStack</span><span class="o">*</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nullptr</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">friend</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">EffectStack</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l117" href="#l117">117</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">};</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l118" href="#l118">118</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="n">is_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l119" href="#l119">119</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">FactorEffect</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Effect</span></td>
+                <td class="src "><span class="w">	</span><span class="n">EffectStack</span><span class="o">*</span><span class="w"> </span><span class="n">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nullptr</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l120" href="#l120">120</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">{</span></td>
+                <td class="src "><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l121" href="#l121">121</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">FactorEffect</span><span class="p">();</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l122" href="#l122">122</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">get_factor</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span></td>
+                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">FactorEffect</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Effect</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l123" href="#l123">123</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">set_factor</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">);</span></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l124" href="#l124">124</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">FactorEffect</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l125" href="#l125">125</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">   </span><span class="n">private</span><span class="o">:</span></td>
+                <td class="src "><span class="w">	</span><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">get_factor</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l126" href="#l126">126</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">set_factor</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l127" href="#l127">127</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l128" href="#l128">128</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">};</span></td>
+                <td class="src "><span class="w">   </span><span class="n">private</span><span class="o">:</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l129" href="#l129">129</a></td>
@@ -996,150 +996,171 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="c1">/// The facade of the post-proc framework.</span></td>
+                <td class="src "><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l131" href="#l131">131</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">EffectStack</span></td>
+                <td class="src "><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l132" href="#l132">132</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">{</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l133" href="#l133">133</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="n">dirty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span></td>
+                <td class="src "><span class="c1">/// The facade of the post-proc framework.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l134" href="#l134">134</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">window_size</span><span class="p">;</span></td>
+                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">EffectStack</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l135" href="#l135">135</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Effect</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">effects</span><span class="p">;</span></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l136" href="#l136">136</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">CompiledStack</span><span class="w"> </span><span class="n">compiled</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="kt">bool</span><span class="w"> </span><span class="n">dirty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l137" href="#l137">137</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">window_size</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l138" href="#l138">138</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">RenderWorld</span><span class="o">&gt;</span><span class="w"> </span><span class="n">render_world_ref</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Effect</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">effects</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l139" href="#l139">139</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">CompiledStack</span><span class="w"> </span><span class="n">compiled</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l140" href="#l140">140</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">/// rebuilds stack if dirty, update all targets, then render the last_source</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l141" href="#l141">141</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">PostProcArg</span><span class="o">&amp;</span><span class="w"> </span><span class="n">arg</span><span class="p">);</span></td>
+                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="n">RenderWorld</span><span class="o">&gt;</span><span class="w"> </span><span class="n">render_world_ref</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l142" href="#l142">142</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l143" href="#l143">143</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">gui</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="c1">/// rebuilds stack if dirty, update all targets, then render the last_source</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l144" href="#l144">144</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">};</span></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">PostProcArg</span><span class="o">&amp;</span><span class="w"> </span><span class="n">arg</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l145" href="#l145">145</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">dt</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l146" href="#l146">146</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm">/**</span></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">gui</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l147" href="#l147">147</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * @}</span></td>
+                <td class="src "><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l148" href="#l148">148</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm">*/</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l149" href="#l149">149</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="cm">/**</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l150" href="#l150">150</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+                <td class="src "><span class="cm"> * @}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l151" href="#l151">151</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="cm">*/</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l152" href="#l152">152</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l153" href="#l153">153</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l154" href="#l154">154</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>

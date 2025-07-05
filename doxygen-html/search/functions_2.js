@@ -5,7 +5,7 @@ var searchData=
   ['cint_5fto_5fglenum_2',['Cint_to_glenum',['../namespaceklotter.html#a01585b62dcb0c11e96702d64fb3cb02f',1,'klotter']]],
   ['cint_5fto_5fgluint_3',['Cint_to_gluint',['../namespaceklotter.html#af31d0af57ce6a0a0ff6b77aab3897f31',1,'klotter']]],
   ['cint_5fto_5fsizet_4',['Cint_to_sizet',['../cint_8h.html#a016c6abd38482781ee34eda2ba4a51e0',1,'cint.h']]],
-  ['clear_5',['clear',['../structklotter_1_1Bitfield.html#a6d86690a8366e4d9673c6cf6e1ac1c99',1,'klotter::Bitfield::clear()'],['../structklotter_1_1ShaderProgram.html#a18bffd6cab01c6511de9ecaf2ed2a470',1,'klotter::ShaderProgram::clear()']]],
+  ['clear_5',['clear',['../structklotter_1_1ShaderProgram.html#a18bffd6cab01c6511de9ecaf2ed2a470',1,'klotter::ShaderProgram']]],
   ['clear_5fshader_5fprogram_6',['clear_shader_program',['../namespaceklotter.html#ae6578d1bd38afcb9f3c56f0a839e6b59',1,'klotter']]],
   ['color_5ffrom_5frgba_7',['color_from_rgba',['../group__texture.html#ga263ed688bbd502fd2279d9ceb5bab9bf',1,'klotter']]],
   ['combine_8',['combine',['../structklotter_1_1HashCombiner.html#a65dfeacdc4930769b33d9f68dd509f4a',1,'klotter::HashCombiner']]],

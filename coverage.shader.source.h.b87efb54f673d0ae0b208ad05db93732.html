@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/shader.source.h</div>
-            <div>Date: 2025-07-04 18:20:06</div>
+            <div>Date: 2025-07-05 21:19:16</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -482,108 +482,115 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="c1">/// @see \ref generate_blur</span></td>
+                <td class="src "><span class="c1">/// Options for generating a blur shader source.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">BlurOptions</span></td>
+                <td class="src "><span class="c1">/// @see \ref generate_blur</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">{</span></td>
+                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">BlurOptions</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l63" href="#l63">63</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">BlurType</span><span class="w"> </span><span class="n">blur</span><span class="p">;</span></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l64" href="#l64">64</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">sample_count</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">BlurType</span><span class="w"> </span><span class="n">blur</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l65" href="#l65">65</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">IsGauss</span><span class="w"> </span><span class="n">is_gauss</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="kt">int</span><span class="w"> </span><span class="n">sample_count</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l66" href="#l66">66</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">};</span></td>
+                <td class="src "><span class="w">	</span><span class="n">IsGauss</span><span class="w"> </span><span class="n">is_gauss</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l67" href="#l67">67</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l68" href="#l68">68</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">generate_blur</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">BlurOptions</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">);</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l69" href="#l69">69</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">generate_blur</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">BlurOptions</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l70" href="#l70">70</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">VertexShaderSource</span><span class="w"> </span><span class="nf">load_shader_source</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ShaderOptions</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">uniform_buffer_source</span><span class="p">);</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l71" href="#l71">71</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="n">VertexShaderSource</span><span class="w"> </span><span class="nf">load_shader_source</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ShaderOptions</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">uniform_buffer_source</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l72" href="#l72">72</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">ShaderSource</span><span class="w"> </span><span class="nf">load_skybox_source</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">uniform_buffer_source</span><span class="p">);</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l73" href="#l73">73</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="n">ShaderSource</span><span class="w"> </span><span class="nf">load_skybox_source</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">uniform_buffer_source</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l74" href="#l74">74</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l75" href="#l75">75</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l76" href="#l76">76</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>

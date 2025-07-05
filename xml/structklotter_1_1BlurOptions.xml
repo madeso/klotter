@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="63" column="10" bodyfile="src/klotter/render/shader.source.h" bodystart="63" bodyend="-1"/>
+        <location file="src/klotter/render/shader.source.h" line="64" column="10" bodyfile="src/klotter/render/shader.source.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1BlurOptions_1a33059a8882525f6d1d82baeaf4c0d10a" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="64" column="5" bodyfile="src/klotter/render/shader.source.h" bodystart="64" bodyend="-1"/>
+        <location file="src/klotter/render/shader.source.h" line="65" column="5" bodyfile="src/klotter/render/shader.source.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1BlurOptions_1a95c8cd4bd600737931412e2230899dfa" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceklotter_1a3616a1e9adb2f3b4af13a7d9770b92f7" kindref="member">IsGauss</ref></type>
@@ -44,17 +44,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="65" column="9" bodyfile="src/klotter/render/shader.source.h" bodystart="65" bodyend="-1"/>
+        <location file="src/klotter/render/shader.source.h" line="66" column="9" bodyfile="src/klotter/render/shader.source.h" bodystart="66" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Options for generating a blur shader source. </para>
     </briefdescription>
     <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="namespaceklotter_1a922b5d3cc7e03da98bcab5a44c7a20c3" kindref="member">generate_blur</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="src/klotter/render/shader.source.h" line="61" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="62" bodyend="66"/>
+    <location file="src/klotter/render/shader.source.h" line="62" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="63" bodyend="67"/>
     <listofallmembers>
       <member refid="structklotter_1_1BlurOptions_1ae4bc15090a18f8500948c9fc3db2bd98" prot="public" virt="non-virtual"><scope>klotter::BlurOptions</scope><name>blur</name></member>
       <member refid="structklotter_1_1BlurOptions_1a95c8cd4bd600737931412e2230899dfa" prot="public" virt="non-virtual"><scope>klotter::BlurOptions</scope><name>is_gauss</name></member>

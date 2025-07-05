@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="31" column="5" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="31" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="32" column="5" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledUniformProp_1ad0771ed847bdf09a532d236f428c2517" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40" kindref="member">UniformType</ref></type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="32" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="32" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="33" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledUniformProp_1a44e535c1f090e34eec5929ed073788b0" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -47,14 +47,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="33" column="5" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="33" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="34" column="5" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="34" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A compiled uniform buffer property that can be used in a shader. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/uniform_buffer.h" line="29" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="30" bodyend="34"/>
+    <location file="src/klotter/render/uniform_buffer.h" line="30" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="31" bodyend="35"/>
     <listofallmembers>
       <member refid="structklotter_1_1CompiledUniformProp_1a44e535c1f090e34eec5929ed073788b0" prot="public" virt="non-virtual"><scope>klotter::CompiledUniformProp</scope><name>array_count</name></member>
       <member refid="structklotter_1_1CompiledUniformProp_1a2c8aba9e9b4f650eff67762d5f1f1274" prot="public" virt="non-virtual"><scope>klotter::CompiledUniformProp</scope><name>offset</name></member>

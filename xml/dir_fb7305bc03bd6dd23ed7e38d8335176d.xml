@@ -4,7 +4,6 @@
     <compoundname>src/klotter</compoundname>
     <innerdir refid="dir_ed8e069d0ef105186a164ea7dd41c1e5">src/klotter/render</innerdir>
     <innerfile refid="assert_8h">assert.h</innerfile>
-    <innerfile refid="bitfield_8h">bitfield.h</innerfile>
     <innerfile refid="cint_8h">cint.h</innerfile>
     <innerfile refid="colors_8h">colors.h</innerfile>
     <innerfile refid="compiler__warning_8h">compiler_warning.h</innerfile>

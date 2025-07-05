@@ -5,7 +5,6 @@
     <innerclass refid="structklotter_1_1App" prot="public">klotter::App</innerclass>
     <innerclass refid="structklotter_1_1Assets" prot="public">klotter::Assets</innerclass>
     <innerclass refid="structklotter_1_1BaseTexture" prot="public">klotter::BaseTexture</innerclass>
-    <innerclass refid="structklotter_1_1Bitfield" prot="public">klotter::Bitfield</innerclass>
     <innerclass refid="structklotter_1_1BlurOptions" prot="public">klotter::BlurOptions</innerclass>
     <innerclass refid="structklotter_1_1BoundFbo" prot="public">klotter::BoundFbo</innerclass>
     <innerclass refid="structklotter_1_1BoundUniformBuffer" prot="public">klotter::BoundUniformBuffer</innerclass>
@@ -759,7 +758,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="68" column="13" declfile="src/klotter/render/shader.source.h" declline="68" declcolumn="13"/>
+        <location file="src/klotter/render/shader.source.h" line="69" column="13" declfile="src/klotter/render/shader.source.h" declline="69" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a64c9c7c89ee622da0a56d5e0afc611de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1VertexShaderSource" kindref="compound">VertexShaderSource</ref></type>
@@ -781,7 +780,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="70" column="20" declfile="src/klotter/render/shader.source.h" declline="70" declcolumn="20"/>
+        <location file="src/klotter/render/shader.source.h" line="71" column="20" declfile="src/klotter/render/shader.source.h" declline="71" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ab77d87614fce92926c05c1cf4ac83bfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1ShaderSource" kindref="compound">ShaderSource</ref></type>
@@ -799,7 +798,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="72" column="14" declfile="src/klotter/render/shader.source.h" declline="72" declcolumn="14"/>
+        <location file="src/klotter/render/shader.source.h" line="73" column="14" declfile="src/klotter/render/shader.source.h" declline="73" declcolumn="14"/>
       </memberdef>
       <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
       <member refid="group__render_1gac2e3012d518484348974e4dc36e3112c" kind="function"><name>get_uniform</name></member>
@@ -900,6 +899,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/bitfield.h" line="5" column="1"/>
+    <location file="src/klotter/colors.h" line="3" column="1"/>
   </compounddef>
 </doxygen>

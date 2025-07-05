@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="50" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="50" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="52" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="52" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="47" column="6"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="49" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1UniformBufferCompiler_1a33d59d68781b6da4678ec9202e090281" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -75,14 +75,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="48" column="6"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="50" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/uniform_buffer.h" line="45" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="46" bodyend="51"/>
+    <location file="src/klotter/render/uniform_buffer.h" line="47" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="48" bodyend="53"/>
     <listofallmembers>
       <member refid="structklotter_1_1UniformBufferCompiler_1a1006307a4f7b45ce5b348a19b8b1b474" prot="public" virt="non-virtual"><scope>klotter::UniformBufferCompiler</scope><name>add</name></member>
       <member refid="structklotter_1_1UniformBufferCompiler_1a33d59d68781b6da4678ec9202e090281" prot="public" virt="non-virtual"><scope>klotter::UniformBufferCompiler</scope><name>compile</name></member>

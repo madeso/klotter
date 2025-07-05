@@ -1,12 +1,17 @@
 var searchData=
 [
-  ['imgui_5fs_5fcurve_5feditor_0',['imgui_s_curve_editor',['../group__scurcve.html#ga1be2991dbb6e7fdb2460296dec1f4504',1,'klotter']]],
-  ['invert_5fnormals_1',['invert_normals',['../structklotter_1_1geom_1_1Builder.html#a51525175e9d0303d99fe22c89213d482',1,'klotter::geom::Builder']]],
-  ['is_5fbound_5ffor_5fshader_2',['is_bound_for_shader',['../namespaceklotter.html#a6f86fb3893caeb7267b725bb433a6b1c',1,'klotter']]],
-  ['is_5fflag_5fset_3',['is_flag_set',['../namespaceklotter.html#a97ebef3ce88032d5a9016b09c001d176',1,'klotter']]],
-  ['is_5finstance_5fbased_4',['is_instance_based',['../group__vertex-layout.html#gac498a4f9c32fddd6f300437dec2051ad',1,'klotter']]],
-  ['is_5floaded_5',['is_loaded',['../structklotter_1_1DebugDrawer.html#a9f174f0eef629fd898b53659874267e1',1,'klotter::DebugDrawer::is_loaded()'],['../structklotter_1_1Renderer.html#a49001afb79833f03d22f5ba4cb0c26f3',1,'klotter::Renderer::is_loaded()'],['../structklotter_1_1ShaderProgram.html#aa278978e62d69fc703d9dd1f3a3eb1fd',1,'klotter::ShaderProgram::is_loaded()'],['../structklotter_1_1LoadedShader__Unlit__Container.html#a3905582d205b18ad3e4b4a99d73b6430',1,'klotter::LoadedShader_Unlit_Container::is_loaded()'],['../structklotter_1_1LoadedShader__Default__Container.html#a0434c34afbf1499729ce11688901fbd4',1,'klotter::LoadedShader_Default_Container::is_loaded()'],['../structklotter_1_1ShaderResource.html#a43421a57252a58a738c4df8f318b7dc3',1,'klotter::ShaderResource::is_loaded()']]],
-  ['is_5fshader_5fbound_6',['is_shader_bound',['../namespaceklotter.html#a356ef4e2d5e2b61b7d5909081407207a',1,'klotter']]],
-  ['is_5ftransparent_7',['is_transparent',['../structklotter_1_1Material.html#a1bc8203ffbdf63223113a444dd1cf4a9',1,'klotter::Material::is_transparent()'],['../structklotter_1_1UnlitMaterial.html#a13281148f24bc55c04ba816c9aab8d1e',1,'klotter::UnlitMaterial::is_transparent()'],['../structklotter_1_1DefaultMaterial.html#a908a00a5227daaa63e74bc197fd6e6af',1,'klotter::DefaultMaterial::is_transparent()']]],
-  ['is_5fvalid_8',['is_valid',['../structklotter_1_1Uniform.html#a03304ebcbae54892df11072cccd6f8ef',1,'klotter::Uniform']]]
+  ['line_0',['line',['../structklotter_1_1LineBatch.html#aa9b4393b9e661a565f10309ef61fe405',1,'klotter::LineBatch']]],
+  ['linebatch_1',['LineBatch',['../structklotter_1_1LineBatch.html#a3a43e334bd2c3ebad64c4e3e4af8ff90',1,'klotter::LineBatch::LineBatch(ShaderProgram *)'],['../structklotter_1_1LineBatch.html#a2a5f7384e73b6b919adb76aea2efe60c',1,'klotter::LineBatch::LineBatch(const LineBatch &amp;)=delete'],['../structklotter_1_1LineBatch.html#a964e2420c45c8f92bda5a4e41435fcf0',1,'klotter::LineBatch::LineBatch(LineBatch &amp;&amp;)=delete']]],
+  ['load_5fcubemap_5ffrom_5fcolor_2',['load_cubemap_from_color',['../group__texture.html#gab32ac44b53bbd24e8c9331dae86105d0',1,'klotter']]],
+  ['load_5fcubemap_5ffrom_5fembedded_3',['load_cubemap_from_embedded',['../namespaceklotter.html#aa4142bff7e121332f50f6e6f409366f7',1,'klotter']]],
+  ['load_5fimage_5ffrom_5fcolor_4',['load_image_from_color',['../group__texture.html#ga8da8502bdd8586fa0e76cf89c0629706',1,'klotter']]],
+  ['load_5fimage_5ffrom_5fembedded_5',['load_image_from_embedded',['../namespaceklotter.html#a7564cf3dcd4da86f317f1faa37beb1f2',1,'klotter']]],
+  ['load_5fshader_5fsource_6',['load_shader_source',['../namespaceklotter.html#a64c9c7c89ee622da0a56d5e0afc611de',1,'klotter']]],
+  ['load_5fshaders_7',['load_shaders',['../group__render.html#gaae619e8aae48dd7405f07dfbca0e1505',1,'klotter']]],
+  ['load_5fskybox_5fsource_8',['load_skybox_source',['../namespaceklotter.html#ab77d87614fce92926c05c1cf4ac83bfa',1,'klotter']]],
+  ['loadedpostprocshader_9',['LoadedPostProcShader',['../structklotter_1_1LoadedPostProcShader.html#ab3e27ddc81e87d1ac1cfd7824c97722b',1,'klotter::LoadedPostProcShader']]],
+  ['loadedshader_5fdefault_10',['LoadedShader_Default',['../structklotter_1_1LoadedShader__Default.html#a3e67cf04e788a3c9a079d4b3b423f4c6',1,'klotter::LoadedShader_Default']]],
+  ['loadedshader_5fsinglecolor_11',['LoadedShader_SingleColor',['../structklotter_1_1LoadedShader__SingleColor.html#a78fd1a7a6acfb086b714d9ebafe1374a',1,'klotter::LoadedShader_SingleColor']]],
+  ['loadedshader_5fskybox_12',['LoadedShader_Skybox',['../structklotter_1_1LoadedShader__Skybox.html#a8087ee41a2ac5ead432b60aa682aff5f',1,'klotter::LoadedShader_Skybox']]],
+  ['loadedshader_5funlit_13',['LoadedShader_Unlit',['../structklotter_1_1LoadedShader__Unlit.html#a0b51dc62bde3db127b96b139e2af0163',1,'klotter::LoadedShader_Unlit']]]
 ];
