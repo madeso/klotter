@@ -26,6 +26,7 @@ struct UniformBufferSetup
 	std::string source;
 };
 
+/// A compiled uniform buffer property that can be used in a shader.
 struct CompiledUniformProp
 {
 	int offset = -1;
@@ -34,6 +35,7 @@ struct CompiledUniformProp
 };
 
 /// internal
+/// @see \ref UniformBufferCompiler
 struct UniformProp
 {
 	CompiledUniformProp* target;

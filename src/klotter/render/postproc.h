@@ -78,6 +78,9 @@ struct CompiledStack
 	std::vector<std::shared_ptr<RenderTask>> targets;
 };
 
+
+/// Arguments for when building a effect stack.
+/// @see \ref EffectStack::build
 struct BuildArg
 {
 	CompiledStack* builder;

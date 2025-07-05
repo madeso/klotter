@@ -57,6 +57,7 @@ enum class IsGauss
 	yes
 };
 
+/// Options for generating a blur shader source.
 /// @see \ref generate_blur
 struct BlurOptions
 {

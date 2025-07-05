@@ -7,6 +7,8 @@
 namespace klotter
 {
 
+/// A temporary collection of assets that can be used in the example.
+/// This should be replaced with something way better that this yolo crap.
 struct Assets
 {
 	std::shared_ptr<Texture2d> get_black();
