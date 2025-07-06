@@ -4,9 +4,11 @@
 
 #include "imgui.h"
 
-#include "klotter/render/renderer.h"
-#include "klotter/dependency_sdl.h"
 #include "klotter/render/camera.h"
+#include "klotter/render/renderer.h"
+#include "klotter/render/enable_high_performance_graphics.h"
+
+#include "klotter/dependency_sdl.h"
 
 namespace klotter
 {
@@ -33,4 +35,5 @@ int run_main(const RenderSettings& rs, MakeAppFunction make_app);
 		return klotter::run_main( \
 			APP::get_render_settings(), [](Renderer* r) -> std::unique_ptr<App> { return std::make_unique<APP>(r); } \
 		); \
-	}
+	}\
+	ENABLE_HIGH_PERFORMANCE_GRAPHICS

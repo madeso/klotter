@@ -66,6 +66,8 @@ set(src_render
     klotter/render/uniform_buffer.cc klotter/render/uniform_buffer.h
     klotter/render/linebatch.cc klotter/render/linebatch.h
 
+    klotter/render/enable_high_performance_graphics.h
+
     klotter/render/geom.h
     klotter/render/geom.builder.cc klotter/render/geom.builder.h
     klotter/render/geom.extract.cc klotter/render/geom.extract.h
