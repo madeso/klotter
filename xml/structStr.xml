@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structStr" kind="struct" language="C++" prot="public">
+    <compoundname>Str</compoundname>
+    <includes refid="str_8h" local="no">str.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structStr_1aa315682ec6b061b2e4211000a006596a" prot="public" static="no" mutable="no">
+        <type>std::ostringstream</type>
+        <definition>std::ostringstream Str::ss</definition>
+        <argsstring></argsstring>
+        <name>ss</name>
+        <qualifiedname>Str::ss</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/str.h" line="5" column="20" bodyfile="src/klotter/str.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structStr_1aad92894237e8720e891f45e3191ebddb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="structStr" kindref="compound">Str</ref> &amp;</type>
+        <definition>Str &amp; Str::operator&lt;&lt;</definition>
+        <argsstring>(const T &amp;t)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <qualifiedname>Str::operator&lt;&lt;</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/str.h" line="8" column="1" bodyfile="src/klotter/str.h" bodystart="8" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="structStr_1ae5bcd149c44251ab778610f5dfaff12d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Str::str</definition>
+        <argsstring>() const</argsstring>
+        <name>str</name>
+        <qualifiedname>Str::str</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/str.h" line="14" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structStr_1a84fc71238479b64068900969c02594a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Str::operator std::string</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::string</name>
+        <qualifiedname>Str::string</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/str.h" line="16" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/str.h" line="3" column="1" bodyfile="src/klotter/str.h" bodystart="4" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structStr_1a84fc71238479b64068900969c02594a3" prot="public" virt="non-virtual"><scope>Str</scope><name>operator std::string</name></member>
+      <member refid="structStr_1aad92894237e8720e891f45e3191ebddb" prot="public" virt="non-virtual"><scope>Str</scope><name>operator&lt;&lt;</name></member>
+      <member refid="structStr_1aa315682ec6b061b2e4211000a006596a" prot="public" virt="non-virtual"><scope>Str</scope><name>ss</name></member>
+      <member refid="structStr_1ae5bcd149c44251ab778610f5dfaff12d" prot="public" virt="non-virtual"><scope>Str</scope><name>str</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

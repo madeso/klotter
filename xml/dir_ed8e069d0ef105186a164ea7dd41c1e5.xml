@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_ed8e069d0ef105186a164ea7dd41c1e5" kind="dir">
+    <compoundname>src/klotter/render</compoundname>
+    <innerfile refid="assets_8h">assets.h</innerfile>
+    <innerfile refid="blend_8h">blend.h</innerfile>
+    <innerfile refid="camera_8h">camera.h</innerfile>
+    <innerfile refid="compare_8h">compare.h</innerfile>
+    <innerfile refid="constants_8h">constants.h</innerfile>
+    <innerfile refid="cullface_8h">cullface.h</innerfile>
+    <innerfile refid="debug_8h">debug.h</innerfile>
+    <innerfile refid="enable__high__performance__graphics_8h">enable_high_performance_graphics.h</innerfile>
+    <innerfile refid="fullscreen_8h">fullscreen.h</innerfile>
+    <innerfile refid="geom_8builder_8h">geom.builder.h</innerfile>
+    <innerfile refid="geom_8extract_8h">geom.extract.h</innerfile>
+    <innerfile refid="geom_8h">geom.h</innerfile>
+    <innerfile refid="linebatch_8h">linebatch.h</innerfile>
+    <innerfile refid="material_8h">material.h</innerfile>
+    <innerfile refid="opengl__labels_8h">opengl_labels.h</innerfile>
+    <innerfile refid="opengl__states_8h">opengl_states.h</innerfile>
+    <innerfile refid="opengl__utils_8h">opengl_utils.h</innerfile>
+    <innerfile refid="postproc_8h">postproc.h</innerfile>
+    <innerfile refid="render__settings_8h">render_settings.h</innerfile>
+    <innerfile refid="renderer_8h">renderer.h</innerfile>
+    <innerfile refid="renderer_8pimpl_8h">renderer.pimpl.h</innerfile>
+    <innerfile refid="rendermode_8h">rendermode.h</innerfile>
+    <innerfile refid="shader_8h">shader.h</innerfile>
+    <innerfile refid="shader_8source_8h">shader.source.h</innerfile>
+    <innerfile refid="shader__resource_8h">shader_resource.h</innerfile>
+    <innerfile refid="statechanger_8h">statechanger.h</innerfile>
+    <innerfile refid="stencilaction_8h">stencilaction.h</innerfile>
+    <innerfile refid="texture_8h">texture.h</innerfile>
+    <innerfile refid="texture_8io_8h">texture.io.h</innerfile>
+    <innerfile refid="uniform_8h">uniform.h</innerfile>
+    <innerfile refid="uniform__buffer_8h">uniform_buffer.h</innerfile>
+    <innerfile refid="vertex__layout_8h">vertex_layout.h</innerfile>
+    <innerfile refid="world_8h">world.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/render/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="group__geom-builder" kind="group">
+    <compoundname>geom-builder</compoundname>
+    <title>Geom builder</title>
+    <innerclass refid="structklotter_1_1geom_1_1Vertex" prot="public">klotter::geom::Vertex</innerclass>
+    <innerclass refid="structklotter_1_1geom_1_1Triangle" prot="public">klotter::geom::Triangle</innerclass>
+    <innerclass refid="structklotter_1_1geom_1_1Builder" prot="public">klotter::geom::Builder</innerclass>
+    <innerclass refid="structklotter_1_1ExtractedAttribute" prot="public">klotter::ExtractedAttribute</innerclass>
+    <innerclass refid="structklotter_1_1ExtractedGeom" prot="public">klotter::ExtractedGeom</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__geom-builder_1gaeea000e036687f28644e2c966bca3d7b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>TwoSided</name>
+        <qualifiedname>klotter::geom::TwoSided</qualifiedname>
+        <enumvalue id="group__geom-builder_1ggaeea000e036687f28644e2c966bca3d7baf79c1cf5bdb2893fa5975241da0de3cb" prot="public">
+          <name>one_sided</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__geom-builder_1ggaeea000e036687f28644e2c966bca3d7bad508e7494fb2417728b99ecbf116c08a" prot="public">
+          <name>two_sided</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>An enum describing if a face is one or two-sided. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.builder.h" line="19" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__geom-builder_1ga09f336a0f9a765edc85ba7fb234aed05" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ExtractedAttributeType</name>
+        <qualifiedname>klotter::ExtractedAttributeType</qualifiedname>
+        <enumvalue id="group__geom-builder_1gga09f336a0f9a765edc85ba7fb234aed05a22ae0e2b89e5e3d477f988cc36d3272b" prot="public">
+          <name>Float</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The type of a extracted attribute, like &apos;float&apos;. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.extract.h" line="17" column="1" bodyfile="src/klotter/render/geom.extract.h" bodystart="18" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" prot="public" static="no">
+        <type><ref refid="pch_8public_8h_1a1af9f95651e921615e75917a6dd1b574" kindref="member">u64</ref></type>
+        <definition>using klotter::geom::Index =  u64</definition>
+        <argsstring></argsstring>
+        <name>Index</name>
+        <qualifiedname>klotter::geom::Index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.builder.h" line="16" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__geom-builder_1ga7f89c1b49c137dcdaea6a2dd52a4297d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Builder</type>
+        <definition>Builder klotter::geom::create_box</definition>
+        <argsstring>(float x, float y, float z, bool invert, const glm::vec3 &amp;color=colors::white)</argsstring>
+        <name>create_box</name>
+        <qualifiedname>klotter::geom::create_box</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>invert</declname>
+        </param>
+        <param>
+          <type>const glm::vec3 &amp;</type>
+          <declname>color</declname>
+          <defval>colors::white</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.builder.h" line="84" column="9" declfile="src/klotter/render/geom.builder.h" declline="84" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__geom-builder_1gadadd83bd1fcb86e428069505223ba10c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Builder</type>
+        <definition>Builder klotter::geom::create_xz_plane</definition>
+        <argsstring>(float x, float z, bool invert, const glm::vec3 &amp;color=colors::white)</argsstring>
+        <name>create_xz_plane</name>
+        <qualifiedname>klotter::geom::create_xz_plane</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>invert</declname>
+        </param>
+        <param>
+          <type>const glm::vec3 &amp;</type>
+          <declname>color</declname>
+          <defval>colors::white</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.builder.h" line="85" column="9" declfile="src/klotter/render/geom.builder.h" declline="85" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__geom-builder_1gacc3da38a6c5889a300a1d8769f5c1802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Builder</type>
+        <definition>Builder klotter::geom::create_xy_plane</definition>
+        <argsstring>(float x, float y, TwoSided two_sided, const glm::vec3 &amp;color=colors::white)</argsstring>
+        <name>create_xy_plane</name>
+        <qualifiedname>klotter::geom::create_xy_plane</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>TwoSided</type>
+          <declname>two_sided</declname>
+        </param>
+        <param>
+          <type>const glm::vec3 &amp;</type>
+          <declname>color</declname>
+          <defval>colors::white</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.builder.h" line="87" column="9" declfile="src/klotter/render/geom.builder.h" declline="87" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__geom-builder_1gab6f07e8ea329694599243e6b7185e38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Builder</type>
+        <definition>Builder klotter::geom::create_uv_sphere</definition>
+        <argsstring>(float diameter, int longitude_count, int latitude_count, bool invert, const glm::vec3 &amp;color=colors::white)</argsstring>
+        <name>create_uv_sphere</name>
+        <qualifiedname>klotter::geom::create_uv_sphere</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>diameter</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>longitude_count</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>latitude_count</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>invert</declname>
+        </param>
+        <param>
+          <type>const glm::vec3 &amp;</type>
+          <declname>color</declname>
+          <defval>colors::white</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>longitude_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>latitude_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of lines that go horizontal, parallels to the equator, which is one of those lines </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.builder.h" line="92" column="9" declfile="src/klotter/render/geom.builder.h" declline="92" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ExtractedGeom</type>
+        <definition>ExtractedGeom klotter::extract_geom</definition>
+        <argsstring>(const Geom &amp;geom, const CompiledGeomVertexAttributes &amp;layout)</argsstring>
+        <name>extract_geom</name>
+        <qualifiedname>klotter::extract_geom</qualifiedname>
+        <param>
+          <type>const Geom &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>const CompiledGeomVertexAttributes &amp;</type>
+          <declname>layout</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.extract.h" line="41" column="15" declfile="src/klotter/render/geom.extract.h" declline="41" declcolumn="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

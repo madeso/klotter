@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="texture_8h" kind="file" language="C++">
+    <compoundname>texture.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes refid="opengl__labels_8h" local="yes">klotter/render/opengl_labels.h</includes>
+    <includedby refid="assets_8h" local="yes">src/klotter/render/assets.h</includedby>
+    <includedby refid="material_8h" local="yes">src/klotter/render/material.h</includedby>
+    <includedby refid="postproc_8h" local="yes">src/klotter/render/postproc.h</includedby>
+    <includedby refid="texture_8io_8h" local="yes">src/klotter/render/texture.io.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
+      <node id="3">
+        <label>klotter/render/opengl_labels.h</label>
+        <link refid="opengl__labels_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/texture.h</label>
+        <link refid="texture_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>src/klotter/klotter.h</label>
+        <link refid="klotter_8h"/>
+      </node>
+      <node id="2">
+        <label>src/klotter/render/assets.h</label>
+        <link refid="assets_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/klotter/render/fullscreen.h</label>
+        <link refid="fullscreen_8h"/>
+      </node>
+      <node id="5">
+        <label>src/klotter/render/material.h</label>
+        <link refid="material_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/klotter/render/postproc.h</label>
+        <link refid="postproc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/texture.h</label>
+        <link refid="texture_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>src/klotter/render/texture.io.h</label>
+        <link refid="texture_8io_8h"/>
+      </node>
+      <node id="6">
+        <label>src/klotter/render/world.h</label>
+        <link refid="world_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1BaseTexture" prot="public">klotter::BaseTexture</innerclass>
+    <innerclass refid="structklotter_1_1Texture2d" prot="public">klotter::Texture2d</innerclass>
+    <innerclass refid="structklotter_1_1TextureCubemap" prot="public">klotter::TextureCubemap</innerclass>
+    <innerclass refid="structklotter_1_1FrameBuffer" prot="public">klotter::FrameBuffer</innerclass>
+    <innerclass refid="structklotter_1_1FrameBufferBuilder" prot="public">klotter::FrameBufferBuilder</innerclass>
+    <innerclass refid="structklotter_1_1BoundFbo" prot="public">klotter::BoundFbo</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="opengl__labels_8h" kindref="compound">klotter/render/opengl_labels.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kindref="member">TextureEdge</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="group__texture_1gga975d5c1b5f6b62b122652d21e890346eaa597a055c00d084069e4bb23dc789ac9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1gga975d5c1b5f6b62b122652d21e890346eaa597a055c00d084069e4bb23dc789ac9" kindref="member">clamp</ref>,</highlight></codeline>
+<codeline lineno="17" refid="group__texture_1gga975d5c1b5f6b62b122652d21e890346ea32cf6da134a8b268cf4ab6b79a9a5ad9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1gga975d5c1b5f6b62b122652d21e890346ea32cf6da134a8b268cf4ab6b79a9a5ad9" kindref="member">repeat</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kindref="member">TextureRenderStyle</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23" refid="group__texture_1gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f" kindref="member">pixel</ref>,</highlight></codeline>
+<codeline lineno="24" refid="group__texture_1gga96e6e729a16fb6dbf417daa7e61339caa9967d91df6ff379185f57d9a31b7c782" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1gga96e6e729a16fb6dbf417daa7e61339caa9967d91df6ff379185f57d9a31b7c782" kindref="member">mipmap</ref>,</highlight></codeline>
+<codeline lineno="25" refid="group__texture_1gga96e6e729a16fb6dbf417daa7e61339caa9a932b3cb396238423eb2f33ec17d6aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1gga96e6e729a16fb6dbf417daa7e61339caa9a932b3cb396238423eb2f33ec17d6aa" kindref="member">linear</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kindref="member">Transparency</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31" refid="group__texture_1gga3257f86dae0e1a101035a7d4cd2026bcad436eb0fd9de10b54a828ce6435f7e81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1gga3257f86dae0e1a101035a7d4cd2026bcad436eb0fd9de10b54a828ce6435f7e81" kindref="member">include</ref>,</highlight></codeline>
+<codeline lineno="32" refid="group__texture_1gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef" kindref="member">exclude</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kindref="member">SingleColor</ref><sp/>:<sp/>std::uint32_t<sp/>{};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kindref="member">SingleColor</ref><sp/><ref refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kindref="member">color_from_rgba</ref>(uint8_t<sp/>r,<sp/>uint8_t<sp/>g,<sp/>uint8_t<sp/>b,<sp/>uint8_t<sp/>a)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kindref="member">SingleColor</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">((</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(a)<sp/>&lt;&lt;<sp/>24)<sp/>|</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(b)<sp/>&lt;&lt;<sp/>16)<sp/>|</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(g)<sp/>&lt;&lt;<sp/>8)<sp/><sp/>|</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">uint32_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(r)));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>this<sp/>doesn&apos;t<sp/>do<sp/>anything<sp/>except<sp/>allow<sp/>code<sp/>reuse,<sp/>remove?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="structklotter_1_1BaseTexture" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56" refid="structklotter_1_1BaseTexture_1aa0c1c5008e48db75b99c027cf8b80d08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BaseTexture_1aa0c1c5008e48db75b99c027cf8b80d08" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref>();</highlight></codeline>
+<codeline lineno="59" refid="structklotter_1_1BaseTexture_1a60818d0d9e48dacf0f8293dbde6b8c2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BaseTexture_1a60818d0d9e48dacf0f8293dbde6b8c2c" kindref="member">~BaseTexture</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="structklotter_1_1BaseTexture_1ad35cb87b78ccdf92e1a5758890b4df48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BaseTexture_1ad35cb87b78ccdf92e1a5758890b4df48" kindref="member">BaseTexture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62" refid="structklotter_1_1BaseTexture_1a776bb47d4a239ee81aa56b89c0168251" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BaseTexture_1a776bb47d4a239ee81aa56b89c0168251" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structklotter_1_1BaseTexture_1ac1a681336f0b85638365223b1bf77fdf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BaseTexture_1ac1a681336f0b85638365223b1bf77fdf" kindref="member">BaseTexture</ref>(<ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref>&amp;&amp;)<sp/>noexcept;</highlight></codeline>
+<codeline lineno="65" refid="structklotter_1_1BaseTexture_1a32f38affc237565a13b2368e8a478264" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref>&amp;<sp/>operator=(<ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref>&amp;&amp;)<sp/>noexcept;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="structklotter_1_1BaseTexture_1a6dd65084b3eab03e75daa283d40b701f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BaseTexture_1a6dd65084b3eab03e75daa283d40b701f" kindref="member">unload</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="structklotter_1_1Texture2d" refkind="compound"><highlight class="normal">struct<sp/><ref refid="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" kindref="member">Texture2d</ref><sp/>:<sp/><ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73" refid="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" kindref="member">Texture2d</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="structklotter_1_1Texture2d_1a5417af6ac1a80e18f52b28ffffc62a4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Texture2d_1a5417af6ac1a80e18f52b28ffffc62a4f" kindref="member">Texture2d</ref>(<ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>pixel_data,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pixel_format,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h,<sp/><ref refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kindref="member">TextureEdge</ref><sp/>te,<sp/><ref refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kindref="member">TextureRenderStyle</ref><sp/>trs,<sp/><ref refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kindref="member">Transparency</ref><sp/>t);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1Texture2d" kindref="compound">Texture2d</ref><sp/><ref refid="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" kindref="member">load_image_from_color</ref>(<ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref><sp/><ref refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kindref="member">SingleColor</ref><sp/><ref refid="group__texture_1gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f" kindref="member">pixel</ref>,<sp/><ref refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kindref="member">TextureEdge</ref><sp/>te,<sp/><ref refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kindref="member">TextureRenderStyle</ref><sp/>trs,<sp/><ref refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kindref="member">Transparency</ref><sp/>t);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structklotter_1_1TextureCubemap" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1TextureCubemap_1aba9fc569dd23d2a5061accda1781d1f6" kindref="member">TextureCubemap</ref><sp/>:<sp/><ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83" refid="structklotter_1_1TextureCubemap_1aba9fc569dd23d2a5061accda1781d1f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1TextureCubemap_1aba9fc569dd23d2a5061accda1781d1f6" kindref="member">TextureCubemap</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="structklotter_1_1TextureCubemap_1abe17454182d27ac0d978242b82234474" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1TextureCubemap_1abe17454182d27ac0d978242b82234474" kindref="member">TextureCubemap</ref>(<ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;void*,<sp/>6&gt;&amp;<sp/>pixel_data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref><sp/><ref refid="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" kindref="member">load_cubemap_from_color</ref>(<ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref><sp/><ref refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kindref="member">SingleColor</ref><sp/><ref refid="group__texture_1gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f" kindref="member">pixel</ref>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="structklotter_1_1FrameBuffer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" kindref="member">FrameBuffer</ref><sp/>:<sp/><ref refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" kindref="member">BaseTexture</ref></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99" refid="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" kindref="member">FrameBuffer</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h);</highlight></codeline>
+<codeline lineno="100" refid="structklotter_1_1FrameBuffer_1a602306657cd67730fb9860bbaf4e339d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBuffer_1a602306657cd67730fb9860bbaf4e339d" kindref="member">~FrameBuffer</ref>();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="structklotter_1_1FrameBuffer_1a09179c63fdfa5fd654c53e249d357da9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBuffer_1a09179c63fdfa5fd654c53e249d357da9" kindref="member">FrameBuffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" kindref="member">FrameBuffer</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103" refid="structklotter_1_1FrameBuffer_1ae9e61e8d6bc6040e77bae32b48fb34ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBuffer_1ae9e61e8d6bc6040e77bae32b48fb34ac" kindref="member">FrameBuffer</ref>(<ref refid="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" kindref="member">FrameBuffer</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104" refid="structklotter_1_1FrameBuffer_1a6e01d29e27a5119fb8cf16a2506afa10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a6e01d29e27a5119fb8cf16a2506afa10" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" kindref="member">FrameBuffer</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105" refid="structklotter_1_1FrameBuffer_1a5e7dff4f1676b56c78006df9a291eeb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a5e7dff4f1676b56c78006df9a291eeb4" kindref="member">operator=</ref>(<ref refid="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" kindref="member">FrameBuffer</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="structklotter_1_1FrameBuffer_1a1b2eea3dbfd2f5cba3197b0b5b7b9cc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a1b2eea3dbfd2f5cba3197b0b5b7b9cc0" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="108" refid="structklotter_1_1FrameBuffer_1a6282043d6642874ce13576774e407641" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a6282043d6642874ce13576774e407641" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="structklotter_1_1FrameBuffer_1a7945d2f95265ed1b905a1d823b2a07c1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a7945d2f95265ed1b905a1d823b2a07c1" kindref="member">fbo</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="111" refid="structklotter_1_1FrameBuffer_1a9ca03e3d50dc89689425ede34a751ae8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a9ca03e3d50dc89689425ede34a751ae8" kindref="member">rbo</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="structklotter_1_1FrameBuffer_1a73bb6c9da9dd0228e5d774d00258b521" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer_1a73bb6c9da9dd0228e5d774d00258b521" kindref="member">debug_is_msaa</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kindref="member">DepthBits</ref></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="118" refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849a6ad0a3981fb0e65854a9ef656e3beac4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849a6ad0a3981fb0e65854a9ef656e3beac4" kindref="member">use_none</ref>,</highlight></codeline>
+<codeline lineno="119" refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849a2b8128f893f047b799dcef08274808e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849a2b8128f893f047b799dcef08274808e4" kindref="member">use_16</ref>,<sp/><ref refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab33abfcb724dd7b2af41c9c87c2a947e" kindref="member">use_24</ref>,<sp/><ref refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab58da2c01fd2c34c8f79d446758f5253" kindref="member">use_32</ref></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="structklotter_1_1FrameBufferBuilder" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1FrameBufferBuilder_1a3e5157674b4f8d71cf2cef6c44ad0620" kindref="member">FrameBufferBuilder</ref></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125" refid="structklotter_1_1FrameBufferBuilder_1a3e5157674b4f8d71cf2cef6c44ad0620" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a3e5157674b4f8d71cf2cef6c44ad0620" kindref="member">FrameBufferBuilder</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::ivec2&amp;<sp/>size)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="structklotter_1_1FrameBufferBuilder_1abd3be8a4e6c94d4eb062c83030e8d31f" kindref="member">width</ref>(size.x)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a6cff15400f61967b5a7d5ae860363a12" kindref="member">height</ref>(size.y)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="structklotter_1_1FrameBufferBuilder_1abd3be8a4e6c94d4eb062c83030e8d31f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1abd3be8a4e6c94d4eb062c83030e8d31f" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="132" refid="structklotter_1_1FrameBufferBuilder_1a6cff15400f61967b5a7d5ae860363a12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a6cff15400f61967b5a7d5ae860363a12" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="structklotter_1_1FrameBufferBuilder_1aca3f7b8c2f13b65748c3d95cbdd589bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kindref="member">DepthBits</ref><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1aca3f7b8c2f13b65748c3d95cbdd589bd" kindref="member">include_depth</ref><sp/>=<sp/><ref refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849a6ad0a3981fb0e65854a9ef656e3beac4" kindref="member">DepthBits::use_none</ref>;</highlight></codeline>
+<codeline lineno="135" refid="structklotter_1_1FrameBufferBuilder_1abe6356a9393d070cdd6cbd8455f1493f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1abe6356a9393d070cdd6cbd8455f1493f" kindref="member">include_stencil</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="structklotter_1_1FrameBufferBuilder_1ab281ad34ad7d4faef8a0c859d13c879a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1ab281ad34ad7d4faef8a0c859d13c879a" kindref="member">msaa_samples</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="structklotter_1_1FrameBufferBuilder_1abb13c3b37555723323e059b39814aa4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a3e5157674b4f8d71cf2cef6c44ad0620" kindref="member">FrameBufferBuilder</ref>&amp;<sp/><ref refid="structklotter_1_1FrameBufferBuilder_1abb13c3b37555723323e059b39814aa4a" kindref="member">with_msaa</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>samples)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1ab281ad34ad7d4faef8a0c859d13c879a" kindref="member">msaa_samples</ref><sp/>=<sp/>samples;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="structklotter_1_1FrameBufferBuilder_1a7f81f8a66751a58cbbee4cb7227480c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a3e5157674b4f8d71cf2cef6c44ad0620" kindref="member">FrameBufferBuilder</ref>&amp;<sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a7f81f8a66751a58cbbee4cb7227480c4" kindref="member">with_depth</ref>(<ref refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kindref="member">DepthBits</ref><sp/>bits<sp/>=<sp/><ref refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab33abfcb724dd7b2af41c9c87c2a947e" kindref="member">DepthBits::use_24</ref>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1aca3f7b8c2f13b65748c3d95cbdd589bd" kindref="member">include_depth</ref><sp/>=<sp/>bits;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="structklotter_1_1FrameBufferBuilder_1a1e0802c3d625392894e2f036b855c336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a3e5157674b4f8d71cf2cef6c44ad0620" kindref="member">FrameBufferBuilder</ref>&amp;<sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a1e0802c3d625392894e2f036b855c336" kindref="member">with_stencil</ref>()</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBufferBuilder_1abe6356a9393d070cdd6cbd8455f1493f" kindref="member">include_stencil</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>reuse<sp/>buffers<sp/>created<sp/>from<sp/>an<sp/>earlier<sp/>postproc<sp/>build</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>reuse<sp/>buffers<sp/>from<sp/>earlier<sp/>in<sp/>the<sp/>postproc<sp/>stack,<sp/>that<sp/>aren&apos;t<sp/>in<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="structklotter_1_1FrameBufferBuilder_1a3e589e67aa22e8301710b5308cf9429b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::shared_ptr&lt;FrameBuffer&gt;<sp/><ref refid="structklotter_1_1FrameBufferBuilder_1a3e589e67aa22e8301710b5308cf9429b" kindref="member">build</ref>(<ref refid="opengl__labels_8h_1ac4e97bba900f55acf1783edf276a4374" kindref="member">DEBUG_LABEL_ARG_SINGLE</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="structklotter_1_1BoundFbo" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" kindref="member">BoundFbo</ref></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="166" refid="structklotter_1_1BoundFbo_1afe94d7a00ce51497623dd29f5e006b09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FrameBuffer&gt;<sp/><ref refid="structklotter_1_1BoundFbo_1afe94d7a00ce51497623dd29f5e006b09" kindref="member">fbo</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" kindref="member">BoundFbo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" kindref="member">BoundFbo</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="169" refid="structklotter_1_1BoundFbo_1ad2380dad3d659ad7ace194845af9ca55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BoundFbo_1ad2380dad3d659ad7ace194845af9ca55" kindref="member">BoundFbo</ref>(<ref refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" kindref="member">BoundFbo</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170" refid="structklotter_1_1BoundFbo_1a19f619eb3bedb1f31515f965329002b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BoundFbo_1a19f619eb3bedb1f31515f965329002b1" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" kindref="member">BoundFbo</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171" refid="structklotter_1_1BoundFbo_1a0f3f1de7ce24a05c11bf9b7601c912a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BoundFbo_1a0f3f1de7ce24a05c11bf9b7601c912a4" kindref="member">operator=</ref>(<ref refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" kindref="member">BoundFbo</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="structklotter_1_1BoundFbo_1a7711b6a4637a0baea669081503aa70e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BoundFbo_1a7711b6a4637a0baea669081503aa70e0" kindref="member">BoundFbo</ref>(std::shared_ptr&lt;FrameBuffer&gt;<sp/>f);</highlight></codeline>
+<codeline lineno="174" refid="structklotter_1_1BoundFbo_1a23612705497e98bf4562249ab3c0667c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BoundFbo_1a23612705497e98bf4562249ab3c0667c" kindref="member">~BoundFbo</ref>();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kindref="member">resolve_multisampled_buffer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>&amp;<sp/>src,<sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>*<sp/>dst);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/texture.h"/>
+  </compounddef>
+</doxygen>

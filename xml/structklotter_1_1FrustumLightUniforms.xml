@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1FrustumLightUniforms" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::FrustumLightUniforms</compoundname>
+    <includes refid="shader__resource_8h" local="no">shader_resource.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1FrustumLightUniforms_1adcfc6ec3d3a9279557a78d009fbeeb02" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::FrustumLightUniforms::diffuse</definition>
+        <argsstring></argsstring>
+        <name>diffuse</name>
+        <qualifiedname>klotter::FrustumLightUniforms::diffuse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="113" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrustumLightUniforms_1a94e66957cc947fbefa3e76841ce3263a" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::FrustumLightUniforms::specular</definition>
+        <argsstring></argsstring>
+        <name>specular</name>
+        <qualifiedname>klotter::FrustumLightUniforms::specular</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="114" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrustumLightUniforms_1a9e3f90f06e44606d0d6d1c5caecf995c" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::FrustumLightUniforms::attenuation</definition>
+        <argsstring></argsstring>
+        <name>attenuation</name>
+        <qualifiedname>klotter::FrustumLightUniforms::attenuation</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="115" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrustumLightUniforms_1afc52906ec8254b1167a57f01de5140e0" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::FrustumLightUniforms::world_to_clip</definition>
+        <argsstring></argsstring>
+        <name>world_to_clip</name>
+        <qualifiedname>klotter::FrustumLightUniforms::world_to_clip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="116" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrustumLightUniforms_1a70bbfbb9f0a74757269f9848070a87c0" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::FrustumLightUniforms::world_pos</definition>
+        <argsstring></argsstring>
+        <name>world_pos</name>
+        <qualifiedname>klotter::FrustumLightUniforms::world_pos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="117" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrustumLightUniforms_1ab1111ab27945b0f084971b9db2a9973b" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::FrustumLightUniforms::cookie</definition>
+        <argsstring></argsstring>
+        <name>cookie</name>
+        <qualifiedname>klotter::FrustumLightUniforms::cookie</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="118" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1FrustumLightUniforms_1ab06a609169ec292dd41407b057b84127" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::FrustumLightUniforms::FrustumLightUniforms</definition>
+        <argsstring>(const ShaderProgram *program, const std::string &amp;base)</argsstring>
+        <name>FrustumLightUniforms</name>
+        <qualifiedname>klotter::FrustumLightUniforms::FrustumLightUniforms</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> *</type>
+          <declname>program</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="111" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Uniforms for a frustum light. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structklotter_1_1FrustumLight" kindref="compound">FrustumLight</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::FrustumLightUniforms</label>
+        <link refid="structklotter_1_1FrustumLightUniforms"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>attenuation</edgelabel>
+          <edgelabel>cookie</edgelabel>
+          <edgelabel>diffuse</edgelabel>
+          <edgelabel>specular</edgelabel>
+          <edgelabel>world_pos</edgelabel>
+          <edgelabel>world_to_clip</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/shader_resource.h" line="109" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="110" bodyend="119"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1FrustumLightUniforms_1a9e3f90f06e44606d0d6d1c5caecf995c" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>attenuation</name></member>
+      <member refid="structklotter_1_1FrustumLightUniforms_1ab1111ab27945b0f084971b9db2a9973b" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>cookie</name></member>
+      <member refid="structklotter_1_1FrustumLightUniforms_1adcfc6ec3d3a9279557a78d009fbeeb02" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>diffuse</name></member>
+      <member refid="structklotter_1_1FrustumLightUniforms_1ab06a609169ec292dd41407b057b84127" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>FrustumLightUniforms</name></member>
+      <member refid="structklotter_1_1FrustumLightUniforms_1a94e66957cc947fbefa3e76841ce3263a" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>specular</name></member>
+      <member refid="structklotter_1_1FrustumLightUniforms_1a70bbfbb9f0a74757269f9848070a87c0" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>world_pos</name></member>
+      <member refid="structklotter_1_1FrustumLightUniforms_1afc52906ec8254b1167a57f01de5140e0" prot="public" virt="non-virtual"><scope>klotter::FrustumLightUniforms</scope><name>world_to_clip</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

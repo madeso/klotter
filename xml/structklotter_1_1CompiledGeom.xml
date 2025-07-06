@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1CompiledGeom" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::CompiledGeom</compoundname>
+    <includes refid="world_8h" local="no">world.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a9d480775171d797a0604199ce661b0c1" prot="public" static="no" mutable="no">
+        <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+        <definition>u32 klotter::CompiledGeom::vbo</definition>
+        <argsstring></argsstring>
+        <name>vbo</name>
+        <qualifiedname>klotter::CompiledGeom::vbo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="21" column="5" bodyfile="src/klotter/render/world.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a9c61cb6bfef749b69af91f6802dcb67a" prot="public" static="no" mutable="no">
+        <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+        <definition>u32 klotter::CompiledGeom::vao</definition>
+        <argsstring></argsstring>
+        <name>vao</name>
+        <qualifiedname>klotter::CompiledGeom::vao</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="22" column="5" bodyfile="src/klotter/render/world.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a892b06c701feae6c5b83e3f000096c03" prot="public" static="no" mutable="no">
+        <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+        <definition>u32 klotter::CompiledGeom::ebo</definition>
+        <argsstring></argsstring>
+        <name>ebo</name>
+        <qualifiedname>klotter::CompiledGeom::ebo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="23" column="5" bodyfile="src/klotter/render/world.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a92fc9f0c9c08e6064fa951a7fee6eae2" prot="public" static="no" mutable="no">
+        <type><ref refid="pch_8public_8h_1aec41e5f8e4b7aef2540e84268692fa84" kindref="member">i32</ref></type>
+        <definition>i32 klotter::CompiledGeom::number_of_triangles</definition>
+        <argsstring></argsstring>
+        <name>number_of_triangles</name>
+        <qualifiedname>klotter::CompiledGeom::number_of_triangles</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="24" column="5" bodyfile="src/klotter/render/world.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a9a1d14b0928fda7cdde988fc154f1f0d" prot="public" static="no" mutable="no">
+        <type>std::unordered_set&lt; <ref refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kindref="member">VertexType</ref> &gt;</type>
+        <definition>std::unordered_set&lt;VertexType&gt; klotter::CompiledGeom::debug_types</definition>
+        <argsstring></argsstring>
+        <name>debug_types</name>
+        <qualifiedname>klotter::CompiledGeom::debug_types</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="25" column="20" bodyfile="src/klotter/render/world.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1CompiledGeom_1a6fdc0111b7de9df424a151951ee282d7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::CompiledGeom::CompiledGeom</definition>
+        <argsstring>(u32, u32, u32, const CompiledGeomVertexAttributes &amp;, i32)</argsstring>
+        <name>CompiledGeom</name>
+        <qualifiedname>klotter::CompiledGeom::CompiledGeom</qualifiedname>
+        <param>
+          <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+        </param>
+        <param>
+          <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+        </param>
+        <param>
+          <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="pch_8public_8h_1aec41e5f8e4b7aef2540e84268692fa84" kindref="member">i32</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="27" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1CompiledGeom_1a57733edc24b55c61cb70307fd4c56fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::CompiledGeom::~CompiledGeom</definition>
+        <argsstring>()</argsstring>
+        <name>~CompiledGeom</name>
+        <qualifiedname>klotter::CompiledGeom::~CompiledGeom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="28" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1CompiledGeom_1a391a1776bea02be9cc81c9395931a0a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::CompiledGeom::CompiledGeom</definition>
+        <argsstring>(const CompiledGeom &amp;)=delete</argsstring>
+        <name>CompiledGeom</name>
+        <qualifiedname>klotter::CompiledGeom::CompiledGeom</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1CompiledGeom" kindref="compound">CompiledGeom</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1CompiledGeom_1a10cb045efcc3338701a46f34209bd04c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::CompiledGeom::CompiledGeom</definition>
+        <argsstring>(CompiledGeom &amp;&amp;)=delete</argsstring>
+        <name>CompiledGeom</name>
+        <qualifiedname>klotter::CompiledGeom::CompiledGeom</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1CompiledGeom" kindref="compound">CompiledGeom</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="31" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1CompiledGeom_1adf2ee29bf8ba976ea1f68f81233df21e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::CompiledGeom::operator=</definition>
+        <argsstring>(const CompiledGeom &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>klotter::CompiledGeom::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1CompiledGeom" kindref="compound">CompiledGeom</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="32" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1CompiledGeom_1aec30168aa360f3236b5360e56a696a43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::CompiledGeom::operator=</definition>
+        <argsstring>(CompiledGeom &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>klotter::CompiledGeom::operator=</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1CompiledGeom" kindref="compound">CompiledGeom</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="33" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a <ref refid="structklotter_1_1Geom" kindref="compound">Geom</ref> on the GPU. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/render/world.h" line="19" column="1" bodyfile="src/klotter/render/world.h" bodystart="20" bodyend="34"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1CompiledGeom_1a6fdc0111b7de9df424a151951ee282d7" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>CompiledGeom</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1a391a1776bea02be9cc81c9395931a0a1" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>CompiledGeom</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1a10cb045efcc3338701a46f34209bd04c" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>CompiledGeom</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1a9a1d14b0928fda7cdde988fc154f1f0d" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>debug_types</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1a892b06c701feae6c5b83e3f000096c03" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>ebo</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1a92fc9f0c9c08e6064fa951a7fee6eae2" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>number_of_triangles</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1adf2ee29bf8ba976ea1f68f81233df21e" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1aec30168aa360f3236b5360e56a696a43" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1a9c61cb6bfef749b69af91f6802dcb67a" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>vao</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1a9d480775171d797a0604199ce661b0c1" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>vbo</name></member>
+      <member refid="structklotter_1_1CompiledGeom_1a57733edc24b55c61cb70307fd4c56fb0" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>~CompiledGeom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

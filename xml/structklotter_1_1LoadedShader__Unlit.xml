@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1LoadedShader__Unlit" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::LoadedShader_Unlit</compoundname>
+    <includes refid="shader__resource_8h" local="no">shader_resource.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1ae89bb303b8ae6300dc63f888bb7c0dc3" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;ShaderProgram&gt; klotter::LoadedShader_Unlit::program</definition>
+        <argsstring></argsstring>
+        <name>program</name>
+        <qualifiedname>klotter::LoadedShader_Unlit::program</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="74" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1a0694d3d6da2bd4895af832ef45dab722" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LoadedShader_Unlit::tint_color</definition>
+        <argsstring></argsstring>
+        <name>tint_color</name>
+        <qualifiedname>klotter::LoadedShader_Unlit::tint_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="78" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1a47eb0877bdfee9da78598205614a9c9d" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LoadedShader_Unlit::tex_diffuse</definition>
+        <argsstring></argsstring>
+        <name>tex_diffuse</name>
+        <qualifiedname>klotter::LoadedShader_Unlit::tex_diffuse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="79" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1ae8d72398e26d17b3fdc32ed1a48e63b8" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref> &gt;</type>
+        <definition>std::optional&lt;Uniform&gt; klotter::LoadedShader_Unlit::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <qualifiedname>klotter::LoadedShader_Unlit::model</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="81" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1LoadedShader__Unlit_1a0b51dc62bde3db127b96b139e2af0163" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::LoadedShader_Unlit::LoadedShader_Unlit</definition>
+        <argsstring>(TransformSource model_source, std::shared_ptr&lt; ShaderProgram &gt; p, const CameraUniformBuffer &amp;desc)</argsstring>
+        <name>LoadedShader_Unlit</name>
+        <qualifiedname>klotter::LoadedShader_Unlit::LoadedShader_Unlit</qualifiedname>
+        <param>
+          <type><ref refid="group__render_1gad119e3d8725413aad6d684e0ec1c22aa" kindref="member">TransformSource</ref></type>
+          <declname>model_source</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &gt;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1CameraUniformBuffer" kindref="compound">CameraUniformBuffer</ref> &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="76" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Parts of a loaded unlit shader. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structklotter_1_1LoadedShader__Unlit__Container" kindref="compound">LoadedShader_Unlit_Container</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::LoadedShader_Unlit</label>
+        <link refid="structklotter_1_1LoadedShader__Unlit"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>tex_diffuse</edgelabel>
+          <edgelabel>tint_color</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/shader_resource.h" line="72" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="73" bodyend="82"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1LoadedShader__Unlit_1a0b51dc62bde3db127b96b139e2af0163" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>LoadedShader_Unlit</name></member>
+      <member refid="structklotter_1_1LoadedShader__Unlit_1ae8d72398e26d17b3fdc32ed1a48e63b8" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>model</name></member>
+      <member refid="structklotter_1_1LoadedShader__Unlit_1ae89bb303b8ae6300dc63f888bb7c0dc3" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>program</name></member>
+      <member refid="structklotter_1_1LoadedShader__Unlit_1a47eb0877bdfee9da78598205614a9c9d" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>tex_diffuse</name></member>
+      <member refid="structklotter_1_1LoadedShader__Unlit_1a0694d3d6da2bd4895af832ef45dab722" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>tint_color</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

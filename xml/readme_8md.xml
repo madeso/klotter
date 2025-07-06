@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="readme_8md" kind="file" language="Markdown">
+    <compoundname>readme.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">###<sp/>learnopengl</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Source<sp/>-<sp/>light<sp/>maps](https://learnopengl.com/Lighting/Lighting-maps)</highlight></codeline>
+<codeline><highlight class="normal">[Source<sp/>-<sp/>blending](https://learnopengl.com/Advanced-OpenGL/Blending)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>container_diffuse.png</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>containter_specular.png</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>matrix.jpg</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>grass.jpg</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>kenney<sp/>-<sp/>prototype<sp/>textures</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Source](https://kenney.nl/assets/prototype-textures)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>dark_01.png</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>light_01.png</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>kenney<sp/>-<sp/>particle<sp/>pack</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Source](https://kenney.nl/assets/particle-pack)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>cookie_01.png<sp/>(was<sp/>light_01.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>nehe<sp/>tutorial:<sp/>blending</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Source<sp/>1](https://github.com/pjreddie/NeHe-Tutorials-Using-GLFW/tree/master/data)</highlight></codeline>
+<codeline><highlight class="normal">[Source<sp/>2](https://nehe.gamedev.net/tutorial/blending/16001/)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>glass.png</highlight></codeline>
+    </programlisting>
+    <location file="src/textures/readme.md"/>
+  </compounddef>
+</doxygen>
