@@ -27,11 +27,12 @@ var searchData=
   ['replace_5fwith_5fsmooth_5fnormals_24',['replace_with_smooth_normals',['../structklotter_1_1geom_1_1Builder.html#a0040ee70080e791cf4a27d1450db0b0f',1,'klotter::geom::Builder']]],
   ['resolution_25',['resolution',['../structklotter_1_1LoadedPostProcShader.html#a348e17cb4b1dff61ee1c95d7a3fa68b0',1,'klotter::LoadedPostProcShader::resolution'],['../group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da',1,'klotter::resolution']]],
   ['resolve_5fmultisampled_5fbuffer_26',['resolve_multisampled_buffer',['../group__texture.html#ga2db91a5f624e2dc351118f2d7b0ecf31',1,'klotter']]],
-  ['result_27',['Result',['../structResult.html',1,'Result&lt; T, E &gt;'],['../structResult.html#a5314b530c0634f2fc8c0c464189a5abb',1,'Result::Result(T tt)'],['../structResult.html#aef1257385182062000e093cc7979f46f',1,'Result::Result(const E &amp;ee)']]],
-  ['result_28',['result',['../structklotter_1_1HashCombiner.html#a26bf8eb600fcab0bb021b3761e8ad8e2',1,'klotter::HashCombiner']]],
-  ['result_2eh_29',['result.h',['../result_8h.html',1,'']]],
-  ['rgb_30',['rgb',['../namespaceklotter_1_1colors.html#a6e8e137168aec076ff4447ce7b8e9bb8',1,'klotter::colors']]],
-  ['right_31',['right',['../structklotter_1_1CameraVectors.html#ae12a181bba402aad79fdd391ff41e3da',1,'klotter::CameraVectors']]],
-  ['rotation_32',['rotation',['../structklotter_1_1MeshInstance.html#ad280bee43f221a03ca600c0f6190a118',1,'klotter::MeshInstance']]],
-  ['run_5fmain_33',['run_main',['../namespaceklotter.html#ae8ba8f25677bd8a5d98681f05fd0a162',1,'klotter']]]
+  ['resources_3a_27',['Additional resources:',['../enable__high__performance__graphics_8h.html#autotoc_md1',1,'']]],
+  ['result_28',['Result',['../structResult.html',1,'Result&lt; T, E &gt;'],['../structResult.html#a5314b530c0634f2fc8c0c464189a5abb',1,'Result::Result(T tt)'],['../structResult.html#aef1257385182062000e093cc7979f46f',1,'Result::Result(const E &amp;ee)']]],
+  ['result_29',['result',['../structklotter_1_1HashCombiner.html#a26bf8eb600fcab0bb021b3761e8ad8e2',1,'klotter::HashCombiner']]],
+  ['result_2eh_30',['result.h',['../result_8h.html',1,'']]],
+  ['rgb_31',['rgb',['../namespaceklotter_1_1colors.html#a6e8e137168aec076ff4447ce7b8e9bb8',1,'klotter::colors']]],
+  ['right_32',['right',['../structklotter_1_1CameraVectors.html#ae12a181bba402aad79fdd391ff41e3da',1,'klotter::CameraVectors']]],
+  ['rotation_33',['rotation',['../structklotter_1_1MeshInstance.html#ad280bee43f221a03ca600c0f6190a118',1,'klotter::MeshInstance']]],
+  ['run_5fmain_34',['run_main',['../namespaceklotter.html#ae8ba8f25677bd8a5d98681f05fd0a162',1,'klotter']]]
 ];

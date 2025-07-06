@@ -14,7 +14,7 @@ var searchData=
   ['blend_11',['Blend',['../group__render.html#gac6cdf1ef1b23f9fc7361b5add6bf481b',1,'klotter']]],
   ['blend_2eh_12',['blend.h',['../blend_8h.html',1,'']]],
   ['blend_5fmode_13',['blend_mode',['../structklotter_1_1OpenglStates.html#a4789747bc8bfd5cb450ff49824b919e0',1,'klotter::OpenglStates::blend_mode'],['../structklotter_1_1StateChanger.html#a975a77a826ea9561d27b994f06e94111',1,'klotter::StateChanger::blend_mode()']]],
-  ['blending_14',['blending',['../structklotter_1_1OpenglStates.html#a5de98224948c114a0bf2c0ccb864b1f9',1,'klotter::OpenglStates::blending'],['../structklotter_1_1StateChanger.html#a656b206c64adb701104ddd5d19063d9f',1,'klotter::StateChanger::blending()'],['..//home/runner/work/klotter/klotter/src/textures/readme.md#autotoc_md3',1,'nehe tutorial: blending']]],
+  ['blending_14',['blending',['../structklotter_1_1OpenglStates.html#a5de98224948c114a0bf2c0ccb864b1f9',1,'klotter::OpenglStates::blending'],['../structklotter_1_1StateChanger.html#a656b206c64adb701104ddd5d19063d9f',1,'klotter::StateChanger::blending()'],['..//home/runner/work/klotter/klotter/src/textures/readme.md#autotoc_md5',1,'nehe tutorial: blending']]],
   ['blendmode_15',['BlendMode',['../group__render.html#ga2bf0fb4228d3cf9922870684f4b25e81',1,'klotter']]],
   ['blue_16',['blue',['../namespaceklotter_1_1colors.html#a8df157409e9a6105af965a4b4392a0c4',1,'klotter::colors::blue'],['../namespaceklotter_1_1imgui.html#af411963d263ef598e8c346f0609e059a',1,'klotter::imgui::blue']]],
   ['blue_5fsky_17',['blue_sky',['../namespaceklotter_1_1colors.html#af0a3826da1957c3dd11ca4f159b0e234',1,'klotter::colors']]],
