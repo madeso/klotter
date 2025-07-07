@@ -93,9 +93,13 @@ enum class NormalsFacing
 	Out
 };
 
-///
-/// @param longitude_count number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
-/// @param latitude_count number of lines that go horizontal, parallels to the equator, which is one of those lines
+/// Creates a UV sphere mesh.
+/// @param diameter The diameter of the sphere.
+/// @param longitude_count The number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
+/// @param latitude_count The number of lines that go horizontal, parallels to the equator, which is one of those lines.
+/// @param normals_facing The direction that the normals should face.
+/// @param color The color to apply to the sphere. Defaults to white.
+/// @return A Builder object representing the generated UV sphere mesh.
 Builder create_uv_sphere(
 	float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const glm::vec3& color = colors::white
 );

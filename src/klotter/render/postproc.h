@@ -80,7 +80,7 @@ struct CompiledStack
 
 
 /// Arguments for when building a effect stack.
-/// @see \ref EffectStack::build
+/// @see \ref Effect::build
 struct BuildArg
 {
 	CompiledStack* builder;
