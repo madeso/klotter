@@ -27,12 +27,12 @@ struct LightsSample : Sample
 
 	std::shared_ptr<CompiledGeom> create_cube_geom(
 		DEBUG_LABEL_ARG_MANY
-		float x, float y, float z, bool invert, CompiledGeomVertexAttributes layout
+		float x, float y, float z, klotter::geom::NormalsFacing normals_facing, CompiledGeomVertexAttributes layout
 	)
 	{
-		const auto triangle = geom::create_box(x, y, z, invert, colors::white).to_geom();
-		auto geom = compile_geom(SEND_DEBUG_LABEL_MANY(debug_label) triangle, layout);
-		return geom;
+		const auto geom = geom::create_box(x, y, z, normals_facing, colors::white).to_geom();
+		auto compiled_geom = compile_geom(SEND_DEBUG_LABEL_MANY(debug_label) geom, layout);
+		return compiled_geom;
 	}
 
 	std::shared_ptr<MeshInstance> add_cube(
@@ -83,7 +83,7 @@ struct LightsSample : Sample
 		effects.effects.emplace_back(pp_damage);
 
 		auto light_geom
-			= create_cube_geom(USE_DEBUG_LABEL_MANY("light") 0.25f, 0.25f, 0.25f, false, renderer->unlit_geom_layout());
+			= create_cube_geom(USE_DEBUG_LABEL_MANY("light") 0.25f, 0.25f, 0.25f, geom::NormalsFacing::Out, renderer->unlit_geom_layout());
 		auto light = add_cube(light_geom, light_material);
 		light->position.z = 0.5f;
 
@@ -125,7 +125,7 @@ struct LightsSample : Sample
 			geom::create_uv_sphere(1.0f, 9, 9, geom::NormalsFacing::Out).write_obj("mini-sphere.obj").to_geom(),
 			renderer->default_geom_layout()
 		);
-		auto mini2 = create_cube_geom(USE_DEBUG_LABEL_MANY("mini2") 1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());
+		auto mini2 = create_cube_geom(USE_DEBUG_LABEL_MANY("mini2") 1.0f, 1.0f, 1.0f, geom::NormalsFacing::Out, renderer->default_geom_layout());
 		auto t = renderer->assets.get_light_grid();
 		auto s = renderer->assets.get_white();
 		auto ct = renderer->assets.get_container_diffuse();
@@ -144,7 +144,7 @@ struct LightsSample : Sample
 		// glasses
 		{
 			const auto triangle
-				= geom::create_xy_plane(1.0f, 1.0f, geom::TwoSided::two_sided).to_geom();
+				= geom::create_xy_plane(1.0f, 1.0f, geom::SideCount::two_sided).to_geom();
 			auto geom = compile_geom(USE_DEBUG_LABEL_MANY("glass") triangle, renderer->default_geom_layout());
 
 			auto glass_mat = renderer->make_default_material();
@@ -161,7 +161,7 @@ struct LightsSample : Sample
 		// billboards
 		{
 			const auto billboard_g
-				= geom::create_xy_plane(1.0f, 1.0f, geom::TwoSided::two_sided).to_geom();
+				= geom::create_xy_plane(1.0f, 1.0f, geom::SideCount::two_sided).to_geom();
 			auto billboard_cg = compile_geom(USE_DEBUG_LABEL_MANY("billboard") billboard_g, renderer->default_geom_layout());
 
 			auto grass_mat = renderer->make_default_material();
@@ -197,10 +197,9 @@ struct LightsSample : Sample
 		{
 			constexpr std::size_t instance_count = 50;
 			constexpr float cube_size = 0.75f;
-			constexpr bool invert = false;
 			auto instances_geom = compile_geom_with_transform_instance(
 				USE_DEBUG_LABEL_MANY("instanced box")
-				geom::create_box(cube_size, cube_size, cube_size, invert, colors::white).to_geom(),
+				geom::create_box(cube_size, cube_size, cube_size, geom::NormalsFacing::Out, colors::white).to_geom(),
 				renderer->default_geom_layout(),
 				instance_count
 			);

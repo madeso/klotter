@@ -361,8 +361,9 @@ Builder& Builder::write_obj(const std::string& path)
 
 // ==================================================================================================================================
 
-Builder create_box(float x, float y, float z, bool invert, const glm::vec3& color)
+Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const glm::vec3& color)
 {
+	const auto invert = normals_facing == NormalsFacing::In;
 	Builder b;
 
 	// position and texture coord struct
@@ -499,7 +500,7 @@ Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color)
 	return b;
 }
 
-Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& color)
+Builder create_xy_plane(float x, float y, SideCount two_sided, const glm::vec3& color)
 {
 	Builder b;
 
@@ -547,7 +548,7 @@ Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& c
 	);
 
 	// back
-	if (two_sided == TwoSided::two_sided)
+	if (two_sided == SideCount::two_sided)
 	{
 		add_quad_to_builder(
 			{0, 0, s},

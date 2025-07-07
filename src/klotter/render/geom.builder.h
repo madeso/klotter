@@ -16,10 +16,17 @@ namespace klotter::geom
 using Index = u64;
 
 /// An enum describing if a face is one or two-sided 
-enum class TwoSided
+enum class SideCount
 {
 	one_sided,
 	two_sided
+};
+
+/// The possible directions that normals can face.
+enum class NormalsFacing
+{
+	In,
+	Out
 };
 
 /// A single vertex referencing the shared data in the Builder
@@ -81,17 +88,10 @@ struct Builder
 	std::vector<glm::vec4> colors;
 };
 
-Builder create_box(float x, float y, float z, bool invert, const glm::vec3& color = colors::white);
+Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const glm::vec3& color = colors::white);
 Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
 
-Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& color = colors::white);
-
-/// The possible directions that normals can face.
-enum class NormalsFacing
-{
-	In,
-	Out
-};
+Builder create_xy_plane(float x, float y, SideCount two_sided, const glm::vec3& color = colors::white);
 
 /// Creates a UV sphere mesh.
 /// @param diameter The diameter of the sphere.

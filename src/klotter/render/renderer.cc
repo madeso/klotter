@@ -2,6 +2,8 @@
 
 #include "klotter/log.h"
 
+#include "klotter/log.h"
+
 #include "klotter/render/camera.h"
 #include "klotter/render/fullscreen.h"
 #include "klotter/render/geom.builder.h"
@@ -25,14 +27,13 @@ Renderer::~Renderer() = default;
 Skybox Renderer::make_skybox(std::shared_ptr<TextureCubemap> texture) const
 {
 	constexpr float size = 1.0f;
-	constexpr bool invert = true;
 
 	const auto layout = pimpl->shaders_resources.skybox_shader.geom_layout;
 
-	const auto triangle = geom::create_box(size, size, size, invert, colors::white).to_geom();
+	const auto triangle = geom::create_box(size, size, size, geom::NormalsFacing::In, colors::white).to_geom();
 	auto geom = compile_geom(USE_DEBUG_LABEL_MANY("skybox") triangle, layout);
 
-	LOG_INFO("Creating skybox");
+	LOG_INFO("Created skybox");
 	return {geom, std::move(texture)};
 }
 
