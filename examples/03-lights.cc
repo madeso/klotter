@@ -122,7 +122,7 @@ struct LightsSample : Sample
 
 		auto mini = compile_geom(
 			USE_DEBUG_LABEL_MANY("sphere")
-			geom::create_uv_sphere(1.0f, 9, 9, false).write_obj("mini-sphere.obj").to_geom(),
+			geom::create_uv_sphere(1.0f, 9, 9, geom::NormalsFacing::Out).write_obj("mini-sphere.obj").to_geom(),
 			renderer->default_geom_layout()
 		);
 		auto mini2 = create_cube_geom(USE_DEBUG_LABEL_MANY("mini2") 1.0f, 1.0f, 1.0f, false, renderer->default_geom_layout());

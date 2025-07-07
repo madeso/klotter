@@ -565,7 +565,7 @@ Builder create_xy_plane(float x, float y, TwoSided two_sided, const glm::vec3& c
 
 
 // based on https://gist.github.com/Pikachuxxxx/5c4c490a7d7679824e0e18af42918efc
-Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count, bool invert, const glm::vec3& color)
+Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const glm::vec3& color)
 {
 	assert(longitude_count >= 3);
 	assert(latitude_count >= 2);
@@ -579,6 +579,8 @@ Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count
 
 	const auto delta_lat = pi / Cint_to_float(latitude_count);
 	const auto delta_lon = 2 * pi / Cint_to_float(longitude_count);
+
+	const auto invert = normals_facing == NormalsFacing::In;
 
 	for (int latitude_index = 0; latitude_index <= latitude_count; ++latitude_index)
 	{
