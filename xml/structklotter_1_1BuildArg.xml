@@ -37,7 +37,7 @@
 <para>Arguments for when building a effect stack. </para>
     </briefdescription>
     <detaileddescription>
-<para><simplesect kind="see"><para>EffectStack::build </para>
+<para><simplesect kind="see"><para><ref refid="structklotter_1_1Effect_1a2b91279abfc5154b3f4e2d536a86e6f9" kindref="member">Effect::build</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>

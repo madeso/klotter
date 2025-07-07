@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="41" column="8" bodyfile="src/klotter/render/geom.builder.h" bodystart="41" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="51" column="8" bodyfile="src/klotter/render/geom.builder.h" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1geom_1_1Triangle_1ad35134c153b48f099577b23dcf0c7f7f" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1geom_1_1Vertex" kindref="compound">Vertex</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="42" column="8" bodyfile="src/klotter/render/geom.builder.h" bodystart="42" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="52" column="8" bodyfile="src/klotter/render/geom.builder.h" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1geom_1_1Triangle_1a49c1f90c967a98d15c2330469c330196" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1geom_1_1Vertex" kindref="compound">Vertex</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="43" column="8" bodyfile="src/klotter/render/geom.builder.h" bodystart="43" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="53" column="8" bodyfile="src/klotter/render/geom.builder.h" bodystart="53" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -72,13 +72,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="45" column="1"/>
+        <location file="src/klotter/render/geom.builder.h" line="55" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>A simple triangle face in a <ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref>. </para>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="note"><para>Counter-clockwise order means a front face triangle </para>
+</simplesect>
+</para>
     </detaileddescription>
     <collaborationgraph>
       <node id="1">
@@ -95,7 +98,7 @@
         <link refid="structklotter_1_1geom_1_1Vertex"/>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/geom.builder.h" line="38" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="39" bodyend="46"/>
+    <location file="src/klotter/render/geom.builder.h" line="49" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="50" bodyend="56"/>
     <listofallmembers>
       <member refid="structklotter_1_1geom_1_1Triangle_1a641838057cab269c13f307482a716b9e" prot="public" virt="non-virtual"><scope>klotter::geom::Triangle</scope><name>Triangle</name></member>
       <member refid="structklotter_1_1geom_1_1Triangle_1a61be1f89bfcc389f270530ec1ac5238d" prot="public" virt="non-virtual"><scope>klotter::geom::Triangle</scope><name>v0</name></member>

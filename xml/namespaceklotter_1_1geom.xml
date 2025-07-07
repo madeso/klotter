@@ -6,16 +6,17 @@
     <innerclass refid="structklotter_1_1geom_1_1Triangle" prot="public">klotter::geom::Triangle</innerclass>
     <innerclass refid="structklotter_1_1geom_1_1Vertex" prot="public">klotter::geom::Vertex</innerclass>
     <sectiondef kind="enum">
-      <member refid="group__geom-builder_1gaeea000e036687f28644e2c966bca3d7b" kind="enum"><name>TwoSided</name></member>
+      <member refid="group__geom-builder_1gafd45e29b267702b718a50f2b5552b9dd" kind="enum"><name>SideCount</name></member>
+      <member refid="group__geom-builder_1gaa46e00f69ed77b0f5e8413c5183f428d" kind="enum"><name>NormalsFacing</name></member>
     </sectiondef>
     <sectiondef kind="typedef">
       <member refid="group__geom-builder_1ga8ef3e4cd8bfdfb88214eca1064f11fc0" kind="typedef"><name>Index</name></member>
     </sectiondef>
     <sectiondef kind="func">
-      <member refid="group__geom-builder_1ga7f89c1b49c137dcdaea6a2dd52a4297d" kind="function"><name>create_box</name></member>
+      <member refid="group__geom-builder_1gafeca755f3a11f00fe0617d143ac15412" kind="function"><name>create_box</name></member>
       <member refid="group__geom-builder_1gadadd83bd1fcb86e428069505223ba10c" kind="function"><name>create_xz_plane</name></member>
-      <member refid="group__geom-builder_1gacc3da38a6c5889a300a1d8769f5c1802" kind="function"><name>create_xy_plane</name></member>
-      <member refid="group__geom-builder_1gab6f07e8ea329694599243e6b7185e38b" kind="function"><name>create_uv_sphere</name></member>
+      <member refid="group__geom-builder_1gac24a46e2350ab819811d023c672e645c" kind="function"><name>create_xy_plane</name></member>
+      <member refid="group__geom-builder_1gadc69c97f15c880f2ed072ae2cd4ab61c" kind="function"><name>create_uv_sphere</name></member>
     </sectiondef>
     <briefdescription>
     </briefdescription>

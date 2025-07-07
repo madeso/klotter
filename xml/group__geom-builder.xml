@@ -9,18 +9,18 @@
     <innerclass refid="structklotter_1_1ExtractedAttribute" prot="public">klotter::ExtractedAttribute</innerclass>
     <innerclass refid="structklotter_1_1ExtractedGeom" prot="public">klotter::ExtractedGeom</innerclass>
     <sectiondef kind="enum">
-      <memberdef kind="enum" id="group__geom-builder_1gaeea000e036687f28644e2c966bca3d7b" prot="public" static="no" strong="yes">
+      <memberdef kind="enum" id="group__geom-builder_1gafd45e29b267702b718a50f2b5552b9dd" prot="public" static="no" strong="yes">
         <type></type>
-        <name>TwoSided</name>
-        <qualifiedname>klotter::geom::TwoSided</qualifiedname>
-        <enumvalue id="group__geom-builder_1ggaeea000e036687f28644e2c966bca3d7baf79c1cf5bdb2893fa5975241da0de3cb" prot="public">
+        <name>SideCount</name>
+        <qualifiedname>klotter::geom::SideCount</qualifiedname>
+        <enumvalue id="group__geom-builder_1ggafd45e29b267702b718a50f2b5552b9ddaf79c1cf5bdb2893fa5975241da0de3cb" prot="public">
           <name>one_sided</name>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__geom-builder_1ggaeea000e036687f28644e2c966bca3d7bad508e7494fb2417728b99ecbf116c08a" prot="public">
+        <enumvalue id="group__geom-builder_1ggafd45e29b267702b718a50f2b5552b9ddad508e7494fb2417728b99ecbf116c08a" prot="public">
           <name>two_sided</name>
           <briefdescription>
           </briefdescription>
@@ -34,7 +34,34 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="19" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="20" bodyend="23"/>
+        <location file="src/klotter/render/geom.builder.h" line="22" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__geom-builder_1gaa46e00f69ed77b0f5e8413c5183f428d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>NormalsFacing</name>
+        <qualifiedname>klotter::geom::NormalsFacing</qualifiedname>
+        <enumvalue id="group__geom-builder_1ggaa46e00f69ed77b0f5e8413c5183f428daefeb369cccbd560588a756610865664c" prot="public">
+          <name>In</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__geom-builder_1ggaa46e00f69ed77b0f5e8413c5183f428da7c147cda9e49590f6abe83d118b7353b" prot="public">
+          <name>Out</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The possible directions that normals can face. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/geom.builder.h" line="29" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="30" bodyend="33"/>
       </memberdef>
       <memberdef kind="enum" id="group__geom-builder_1ga09f336a0f9a765edc85ba7fb234aed05" prot="public" static="no" strong="yes">
         <type></type>
@@ -65,19 +92,21 @@
         <name>Index</name>
         <qualifiedname>klotter::geom::Index</qualifiedname>
         <briefdescription>
+<para>A type alias for the index used in the <ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref>. </para>
         </briefdescription>
         <detaileddescription>
+<para>Can reference a position, normal, texture coordinate, color or more. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="16" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="16" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="19" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="19" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__geom-builder_1ga7f89c1b49c137dcdaea6a2dd52a4297d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__geom-builder_1gafeca755f3a11f00fe0617d143ac15412" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Builder</type>
         <definition>Builder klotter::geom::create_box</definition>
-        <argsstring>(float x, float y, float z, bool invert, const glm::vec3 &amp;color=colors::white)</argsstring>
+        <argsstring>(float x, float y, float z, NormalsFacing normals_facing, const glm::vec3 &amp;color=colors::white)</argsstring>
         <name>create_box</name>
         <qualifiedname>klotter::geom::create_box</qualifiedname>
         <param>
@@ -93,8 +122,8 @@
           <declname>z</declname>
         </param>
         <param>
-          <type>bool</type>
-          <declname>invert</declname>
+          <type>NormalsFacing</type>
+          <declname>normals_facing</declname>
         </param>
         <param>
           <type>const glm::vec3 &amp;</type>
@@ -102,12 +131,57 @@
           <defval>colors::white</defval>
         </param>
         <briefdescription>
+<para>Creates a box/cube mesh. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the box (size along the x-axis). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the box (size along the y-axis). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The depth of the box (size along the z-axis). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>normals_facing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specifies the direction the box&apos;s normals are facing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color of the box. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> representing the generated mesh. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="84" column="9" declfile="src/klotter/render/geom.builder.h" declline="84" declcolumn="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="103" column="9" declfile="src/klotter/render/geom.builder.h" declline="103" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__geom-builder_1gadadd83bd1fcb86e428069505223ba10c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Builder</type>
@@ -138,12 +212,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="85" column="9" declfile="src/klotter/render/geom.builder.h" declline="85" declcolumn="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="107" column="9" declfile="src/klotter/render/geom.builder.h" declline="107" declcolumn="9"/>
       </memberdef>
-      <memberdef kind="function" id="group__geom-builder_1gacc3da38a6c5889a300a1d8769f5c1802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__geom-builder_1gac24a46e2350ab819811d023c672e645c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Builder</type>
         <definition>Builder klotter::geom::create_xy_plane</definition>
-        <argsstring>(float x, float y, TwoSided two_sided, const glm::vec3 &amp;color=colors::white)</argsstring>
+        <argsstring>(float x, float y, SideCount two_sided, const glm::vec3 &amp;color=colors::white)</argsstring>
         <name>create_xy_plane</name>
         <qualifiedname>klotter::geom::create_xy_plane</qualifiedname>
         <param>
@@ -155,7 +229,7 @@
           <declname>y</declname>
         </param>
         <param>
-          <type>TwoSided</type>
+          <type>SideCount</type>
           <declname>two_sided</declname>
         </param>
         <param>
@@ -169,12 +243,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="87" column="9" declfile="src/klotter/render/geom.builder.h" declline="87" declcolumn="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="111" column="9" declfile="src/klotter/render/geom.builder.h" declline="111" declcolumn="9"/>
       </memberdef>
-      <memberdef kind="function" id="group__geom-builder_1gab6f07e8ea329694599243e6b7185e38b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__geom-builder_1gadc69c97f15c880f2ed072ae2cd4ab61c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Builder</type>
         <definition>Builder klotter::geom::create_uv_sphere</definition>
-        <argsstring>(float diameter, int longitude_count, int latitude_count, bool invert, const glm::vec3 &amp;color=colors::white)</argsstring>
+        <argsstring>(float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const glm::vec3 &amp;color=colors::white)</argsstring>
         <name>create_uv_sphere</name>
         <qualifiedname>klotter::geom::create_uv_sphere</qualifiedname>
         <param>
@@ -190,8 +264,8 @@
           <declname>latitude_count</declname>
         </param>
         <param>
-          <type>bool</type>
-          <declname>invert</declname>
+          <type>NormalsFacing</type>
+          <declname>normals_facing</declname>
         </param>
         <param>
           <type>const glm::vec3 &amp;</type>
@@ -199,14 +273,23 @@
           <defval>colors::white</defval>
         </param>
         <briefdescription>
+<para>Creates a UV sphere mesh. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
+<parametername>diameter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The diameter of the sphere. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
 <parametername>longitude_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3. </para>
+<para>The number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3. </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -214,15 +297,33 @@
 <parametername>latitude_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>number of lines that go horizontal, parallels to the equator, which is one of those lines </para>
+<para>The number of lines that go horizontal, parallels to the equator, which is one of those lines. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>normals_facing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The direction that the normals should face. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color to apply to the sphere. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
+<simplesect kind="return"><para>A <ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> object representing the generated mesh. </para>
+</simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="92" column="9" declfile="src/klotter/render/geom.builder.h" declline="92" declcolumn="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="122" column="9" declfile="src/klotter/render/geom.builder.h" declline="122" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ExtractedGeom</type>
