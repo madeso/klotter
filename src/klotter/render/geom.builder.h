@@ -13,6 +13,9 @@ namespace klotter::geom
 /** \addtogroup geom-builder
  *  @{
 */
+
+/// A type alias for the index used in the \ref Builder.
+/// Can reference a position, normal, texture coordinate, color or more.
 using Index = u64;
 
 /// An enum describing if a face is one or two-sided 
@@ -42,9 +45,9 @@ struct Vertex
 };
 
 /// A simple triangle face in a Builder
+/// \note Counter-clockwise order means a front face triangle
 struct Triangle
 {
-	// ccw = front facing
 	Vertex v0;
 	Vertex v1;
 	Vertex v2;
@@ -88,18 +91,34 @@ struct Builder
 	std::vector<glm::vec4> colors;
 };
 
+
+
+/// @brief Creates a box/cube mesh.
+/// @param x The width of the box (size along the x-axis).
+/// @param y The height of the box (size along the y-axis).
+/// @param z The depth of the box (size along the z-axis).
+/// @param normals_facing Specifies the direction the box's normals are facing.
+/// @param color The color of the box.
+/// @return A \ref Builder representing the generated mesh.
 Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const glm::vec3& color = colors::white);
+
+
+
 Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
 
+
+
 Builder create_xy_plane(float x, float y, SideCount two_sided, const glm::vec3& color = colors::white);
+
+
 
 /// Creates a UV sphere mesh.
 /// @param diameter The diameter of the sphere.
 /// @param longitude_count The number of lines to go vertical, from pole to pole, aka meridians. Must be at least 3.
 /// @param latitude_count The number of lines that go horizontal, parallels to the equator, which is one of those lines.
 /// @param normals_facing The direction that the normals should face.
-/// @param color The color to apply to the sphere. Defaults to white.
-/// @return A Builder object representing the generated UV sphere mesh.
+/// @param color The color to apply to the sphere.
+/// @return A \ref Builder object representing the generated mesh.
 Builder create_uv_sphere(
 	float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const glm::vec3& color = colors::white
 );
