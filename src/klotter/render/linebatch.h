@@ -5,6 +5,7 @@
 namespace klotter
 {
 
+/// Helper to batch lines for rendering.
 struct LineBatch
 {
 	static constexpr int max_lines = 100;
@@ -27,7 +28,9 @@ struct LineBatch
 	void submit();
 };
 
-struct DebugDrawer
+// todo(Gustav): merge with LineBatch?
+/// A utility to draw 3d lines
+struct LineDrawer
 {
 	ShaderVertexAttributes line_description;
 	CompiledShaderVertexAttributes line_layout;
@@ -39,7 +42,7 @@ struct DebugDrawer
 	Uniform line_gap_size;
 	LineBatch line_batch;
 
-	DebugDrawer();
+	LineDrawer();
 
 	void set_line_to_dash(const glm::vec2& resolution, float dash_size, float gap_size);
 	void set_line_to_solid();

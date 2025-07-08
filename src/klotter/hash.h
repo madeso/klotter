@@ -1,8 +1,29 @@
+
+
+
+
+
 #pragma once
 
 namespace klotter
 {
 
+/** \addtogroup hash Hash-util
+ * This group provides macros to simplify the creation of custom hash functions
+ * for user-defined types and specialization of std::hash for your types.
+ *
+ * Example usage:
+ * ```
+ * HASH_DEF_BEGIN(MyType)
+ *     HASH_DEF(member1)
+ *     HASH_DEF(member2)
+ * HASH_DEF_END()
+ * ```
+ *  @{
+*/
+
+
+/// A utility for combining hash values of multiple objects into a single hash value.
 struct HashCombiner
 {
 	std::size_t result = 17;
@@ -20,8 +41,12 @@ struct HashCombiner
 	}
 };
 
-}  //  namespace klotter
 
+/** Begins the definition of a specialization of std::hash for the given TYPE.
+ * Should be closed by the \ref HASH_DEF_END macro
+ * @param TYPE The user-defined type for which the hash specialization is being created.
+ * \hideinlinesource
+ */
 #define HASH_DEF_BEGIN(TYPE) \
 	template<> \
 	struct std::hash<TYPE> \
@@ -31,9 +56,34 @@ struct HashCombiner
 			return klotter::HashCombiner \
 			{ \
 			}
+
+/** Adds the hash of a member variable to the hash combination.
+ * \hideinlinesource
+ * 
+ * This macro should be used within a \ref HASH_DEF_BEGIN and \ref HASH_DEF_END block to combine
+ * the hash of a specific member variable of the type.
+ * 
+ *
+ * @param NAME The name of the member variable to include in the hash.
+ */
 #define HASH_DEF(NAME) .combine(x.NAME)
+
+/** Ends the definition of the std::hash specialization.
+ *
+ * This macro should be used to close the hash function definition started with
+ * \ref HASH_DEF_BEGIN. It returns the final combined hash value.
+ * 
+ * \hideinlinesource
+ */
 #define HASH_DEF_END() \
 	.result; \
 	} \
 	} \
 	;
+
+/**
+ * @}
+*/
+
+}  //  namespace klotter
+

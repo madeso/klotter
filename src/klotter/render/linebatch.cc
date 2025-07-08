@@ -7,7 +7,7 @@
 
 namespace klotter
 {
-DebugDrawer::DebugDrawer()
+LineDrawer::LineDrawer()
 	// todo(Gustav): exapnd shader with stipple pattern https://stackoverflow.com/questions/52928678/dashed-line-in-opengl3/54543267#54543267
 	// todo(Gustav): move quad_description and quad_layout to a seperate setup
 	: line_description({{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}})
@@ -82,19 +82,19 @@ DebugDrawer::DebugDrawer()
 {
 }
 
-void DebugDrawer::set_line_to_dash(const glm::vec2& resolution, float dash_size, float gap_size)
+void LineDrawer::set_line_to_dash(const glm::vec2& resolution, float dash_size, float gap_size)
 {
 	line_shader.set_vec2(line_resolution, resolution);
 	line_shader.set_float(line_dash_size, dash_size);
 	line_shader.set_float(line_gap_size, gap_size);
 }
 
-void DebugDrawer::set_line_to_solid()
+void LineDrawer::set_line_to_solid()
 {
 	line_shader.set_vec2(line_resolution, {-1.0f, -1.0f});
 }
 
-bool DebugDrawer::is_loaded() const
+bool LineDrawer::is_loaded() const
 {
 	return line_shader.is_loaded();
 }

@@ -14,6 +14,7 @@ struct RenderWorld;
  *  @{
 */
 
+/// Arguments for rendering a post-processing effect.
 struct PostProcArg
 {
 	const World* world;

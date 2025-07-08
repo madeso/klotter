@@ -16,7 +16,7 @@ struct DebugLine
 };
 
 /// Just stores debug render requests and doesn't actually render anything.
-// @see Renderer
+/// @see Renderer
 struct DebugRender
 {
 	std::vector<DebugLine> lines;

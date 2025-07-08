@@ -75,22 +75,21 @@ set(src_render
 
 set(src_base
     klotter/assert.cc klotter/assert.h
+    klotter/cint.h
     klotter/colors.cc klotter/colors.h
+    klotter/compiler_warning.h
+    klotter/cpp.cc klotter/cpp.h
     klotter/dependency_glad.h
     klotter/dependency_glm.h klotter/dependency_glm.cc
     klotter/dependency_sdl.cc klotter/dependency_sdl.h
-    klotter/result.cc klotter/result.h
-    klotter/str.cc klotter/str.h
-    klotter/scurve.cc klotter/scurve.h
-
-    klotter/klotter.cc klotter/klotter.h
-    klotter/cpp.cc klotter/cpp.h
-
     klotter/feature_flags.h
-
-    klotter/compiler_warning.h
+    klotter/hash.h
+    klotter/im_colors.h
+    klotter/klotter.cc klotter/klotter.h
     klotter/log.h
-    klotter/cint.h
+    klotter/result.cc klotter/result.h
+    klotter/scurve.cc klotter/scurve.h
+    klotter/str.cc klotter/str.h
     klotter/undef_windows.h
 )
 

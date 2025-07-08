@@ -123,7 +123,7 @@ glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCam
 	}
 };
 
-void batch_lines(DebugDrawer* drawer, const std::vector<DebugLine>& debug_lines)
+void batch_lines(LineDrawer* drawer, const std::vector<DebugLine>& debug_lines)
 {
 	for (const auto& line: debug_lines)
 	{
@@ -132,7 +132,7 @@ void batch_lines(DebugDrawer* drawer, const std::vector<DebugLine>& debug_lines)
 	drawer->line_batch.submit();
 }
 
-void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates* states, DebugDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size)
+void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates* states, LineDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size)
 {
 	if (debug_lines.empty())
 	{
