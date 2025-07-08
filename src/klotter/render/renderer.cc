@@ -2,8 +2,6 @@
 
 #include "klotter/log.h"
 
-#include "klotter/log.h"
-
 #include "klotter/render/camera.h"
 #include "klotter/render/fullscreen.h"
 #include "klotter/render/geom.builder.h"
