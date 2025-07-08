@@ -51,6 +51,9 @@
 <para>Just stores debug render requests and doesn&apos;t actually render anything. </para>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structklotter_1_1Renderer" kindref="compound">Renderer</ref> </para>
+</simplesect>
+</para>
     </detaileddescription>
     <location file="src/klotter/render/debug.h" line="20" column="1" bodyfile="src/klotter/render/debug.h" bodystart="21" bodyend="25"/>
     <listofallmembers>

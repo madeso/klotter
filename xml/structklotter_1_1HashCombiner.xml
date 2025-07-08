@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="8" column="13" bodyfile="src/klotter/hash.h" bodystart="8" bodyend="-1"/>
+        <location file="src/klotter/hash.h" line="29" column="13" bodyfile="src/klotter/hash.h" bodystart="29" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -42,14 +42,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="11" column="14" bodyfile="src/klotter/hash.h" bodystart="11" bodyend="20"/>
+        <location file="src/klotter/hash.h" line="32" column="14" bodyfile="src/klotter/hash.h" bodystart="32" bodyend="41"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A utility for combining hash values of multiple objects into a single hash value. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/hash.h" line="6" column="1" bodyfile="src/klotter/hash.h" bodystart="7" bodyend="21"/>
+    <location file="src/klotter/hash.h" line="27" column="1" bodyfile="src/klotter/hash.h" bodystart="28" bodyend="42"/>
     <listofallmembers>
       <member refid="structklotter_1_1HashCombiner_1a65dfeacdc4930769b33d9f68dd509f4a" prot="public" virt="non-virtual"><scope>klotter::HashCombiner</scope><name>combine</name></member>
       <member refid="structklotter_1_1HashCombiner_1a26bf8eb600fcab0bb021b3761e8ad8e2" prot="public" virt="non-virtual"><scope>klotter::HashCombiner</scope><name>result</name></member>

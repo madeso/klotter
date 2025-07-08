@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="53" column="13" bodyfile="src/klotter/render/postproc.h" bodystart="53" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="54" column="13" bodyfile="src/klotter/render/postproc.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderTask_1af534f5a17b24351ecfbf908e283e55cd" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1RenderSource" kindref="compound">RenderSource</ref> &gt;</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="54" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="54" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="55" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderTask_1a8ca43f7868156503a51a4f41bf16dda1" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="55" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="55" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="56" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderTask_1a5a5441557c6bb14a03d8dccb531785a9" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1ShaderPropertyProvider" kindref="compound">ShaderPropertyProvider</ref> *</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="56" column="24" bodyfile="src/klotter/render/postproc.h" bodystart="56" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="57" column="24" bodyfile="src/klotter/render/postproc.h" bodystart="57" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="58" column="1"/>
+        <location file="src/klotter/render/postproc.h" line="59" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1RenderTask_1a052fe8fe4d5af2b0b91c2aaca91ec300" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="61" column="6"/>
+        <location file="src/klotter/render/postproc.h" line="62" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1RenderTask_1ad2c4a504a72924f5db7478e6ae667bae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -130,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="64" column="6"/>
+        <location file="src/klotter/render/postproc.h" line="65" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -168,7 +168,7 @@
         <link refid="structklotter_1_1ShaderPropertyProvider"/>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.h" line="51" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="52" bodyend="65"/>
+    <location file="src/klotter/render/postproc.h" line="52" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="53" bodyend="66"/>
     <listofallmembers>
       <member refid="structklotter_1_1RenderTask_1a5a5441557c6bb14a03d8dccb531785a9" prot="public" virt="non-virtual"><scope>klotter::RenderTask</scope><name>effect</name></member>
       <member refid="structklotter_1_1RenderTask_1a8ca43f7868156503a51a4f41bf16dda1" prot="public" virt="non-virtual"><scope>klotter::RenderTask</scope><name>fbo</name></member>

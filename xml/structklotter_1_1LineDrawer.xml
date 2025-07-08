@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1LineDrawer" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::LineDrawer</compoundname>
+    <includes refid="linebatch_8h" local="no">linebatch.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a33fda0109f1f5226fab89e178861bed2" prot="public" static="no" mutable="no">
+        <type><ref refid="group__vertex-layout_1gab14e38875ed51577f61fbbe750a605ea" kindref="member">ShaderVertexAttributes</ref></type>
+        <definition>ShaderVertexAttributes klotter::LineDrawer::line_description</definition>
+        <argsstring></argsstring>
+        <name>line_description</name>
+        <qualifiedname>klotter::LineDrawer::line_description</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="35" column="24" bodyfile="src/klotter/render/linebatch.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a067af94d329ac087fa67948e88c1380b" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1CompiledShaderVertexAttributes" kindref="compound">CompiledShaderVertexAttributes</ref></type>
+        <definition>CompiledShaderVertexAttributes klotter::LineDrawer::line_layout</definition>
+        <argsstring></argsstring>
+        <name>line_layout</name>
+        <qualifiedname>klotter::LineDrawer::line_layout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="36" column="32" bodyfile="src/klotter/render/linebatch.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a8d4c291a8614f031f658ff62a6c7a1a8" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref></type>
+        <definition>ShaderProgram klotter::LineDrawer::line_shader</definition>
+        <argsstring></argsstring>
+        <name>line_shader</name>
+        <qualifiedname>klotter::LineDrawer::line_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="37" column="15" bodyfile="src/klotter/render/linebatch.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1aac32ec512300b5044d1a7a2375aa6861" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LineDrawer::line_projection</definition>
+        <argsstring></argsstring>
+        <name>line_projection</name>
+        <qualifiedname>klotter::LineDrawer::line_projection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="38" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1af82452a0477d962da99d720dae9752fc" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LineDrawer::line_view</definition>
+        <argsstring></argsstring>
+        <name>line_view</name>
+        <qualifiedname>klotter::LineDrawer::line_view</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="39" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1adf593f9cf96d109de4bef3f83eb89ee7" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LineDrawer::line_resolution</definition>
+        <argsstring></argsstring>
+        <name>line_resolution</name>
+        <qualifiedname>klotter::LineDrawer::line_resolution</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="40" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1aef8076c17bfcdb9de0626643d850e687" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LineDrawer::line_dash_size</definition>
+        <argsstring></argsstring>
+        <name>line_dash_size</name>
+        <qualifiedname>klotter::LineDrawer::line_dash_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="41" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1aa228a12df26090cec091be2a54a9546d" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LineDrawer::line_gap_size</definition>
+        <argsstring></argsstring>
+        <name>line_gap_size</name>
+        <qualifiedname>klotter::LineDrawer::line_gap_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="42" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a9e92ee3a442f6f499f7bd5eab0454def" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1LineBatch" kindref="compound">LineBatch</ref></type>
+        <definition>LineBatch klotter::LineDrawer::line_batch</definition>
+        <argsstring></argsstring>
+        <name>line_batch</name>
+        <qualifiedname>klotter::LineDrawer::line_batch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="43" column="11" bodyfile="src/klotter/render/linebatch.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1LineDrawer_1ae877d9de19653d08a1a130962b22af26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::LineDrawer::LineDrawer</definition>
+        <argsstring>()</argsstring>
+        <name>LineDrawer</name>
+        <qualifiedname>klotter::LineDrawer::LineDrawer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::LineDrawer::set_line_to_dash</definition>
+        <argsstring>(const glm::vec2 &amp;resolution, float dash_size, float gap_size)</argsstring>
+        <name>set_line_to_dash</name>
+        <qualifiedname>klotter::LineDrawer::set_line_to_dash</qualifiedname>
+        <param>
+          <type>const glm::vec2 &amp;</type>
+          <declname>resolution</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>dash_size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gap_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="47" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::LineDrawer::set_line_to_solid</definition>
+        <argsstring>()</argsstring>
+        <name>set_line_to_solid</name>
+        <qualifiedname>klotter::LineDrawer::set_line_to_solid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="48" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1LineDrawer_1a260e80f8c6e81e060c65f1cbcc02e988" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool klotter::LineDrawer::is_loaded</definition>
+        <argsstring>() const</argsstring>
+        <name>is_loaded</name>
+        <qualifiedname>klotter::LineDrawer::is_loaded</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="50" column="7"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A utility to draw 3d lines. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>klotter::CompiledShaderVertexAttributes</label>
+        <link refid="structklotter_1_1CompiledShaderVertexAttributes"/>
+      </node>
+      <node id="5">
+        <label>klotter::LineBatch</label>
+        <link refid="structklotter_1_1LineBatch"/>
+      </node>
+      <node id="1">
+        <label>klotter::LineDrawer</label>
+        <link refid="structklotter_1_1LineDrawer"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>line_layout</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>line_shader</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>line_dash_size</edgelabel>
+          <edgelabel>line_gap_size</edgelabel>
+          <edgelabel>line_projection</edgelabel>
+          <edgelabel>line_resolution</edgelabel>
+          <edgelabel>line_view</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>line_batch</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+      </node>
+      <node id="4">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/linebatch.h" line="33" column="1" bodyfile="src/klotter/render/linebatch.h" bodystart="34" bodyend="51"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1LineDrawer_1a260e80f8c6e81e060c65f1cbcc02e988" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>is_loaded</name></member>
+      <member refid="structklotter_1_1LineDrawer_1a9e92ee3a442f6f499f7bd5eab0454def" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_batch</name></member>
+      <member refid="structklotter_1_1LineDrawer_1aef8076c17bfcdb9de0626643d850e687" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_dash_size</name></member>
+      <member refid="structklotter_1_1LineDrawer_1a33fda0109f1f5226fab89e178861bed2" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_description</name></member>
+      <member refid="structklotter_1_1LineDrawer_1aa228a12df26090cec091be2a54a9546d" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_gap_size</name></member>
+      <member refid="structklotter_1_1LineDrawer_1a067af94d329ac087fa67948e88c1380b" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_layout</name></member>
+      <member refid="structklotter_1_1LineDrawer_1aac32ec512300b5044d1a7a2375aa6861" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_projection</name></member>
+      <member refid="structklotter_1_1LineDrawer_1adf593f9cf96d109de4bef3f83eb89ee7" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_resolution</name></member>
+      <member refid="structklotter_1_1LineDrawer_1a8d4c291a8614f031f658ff62a6c7a1a8" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_shader</name></member>
+      <member refid="structklotter_1_1LineDrawer_1af82452a0477d962da99d720dae9752fc" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>line_view</name></member>
+      <member refid="structklotter_1_1LineDrawer_1ae877d9de19653d08a1a130962b22af26" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>LineDrawer</name></member>
+      <member refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>set_line_to_dash</name></member>
+      <member refid="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>set_line_to_solid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

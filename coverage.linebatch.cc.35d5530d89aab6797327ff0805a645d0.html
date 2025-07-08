@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/linebatch.cc</div>
-            <div>Date: 2025-07-07 19:39:38</div>
+            <div>Date: 2025-07-08 21:04:22</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -62,15 +62,15 @@
       <th>Condition coverage</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l10">klotter::DebugDrawer::DebugDrawer() (line 10)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l97">klotter::DebugDrawer::is_loaded() const (line 97)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l85">klotter::DebugDrawer::set_line_to_dash(glm::vec&lt;2, float, (glm::qualifier)0&gt; const&amp;, float, float) (line 85)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l92">klotter::DebugDrawer::set_line_to_solid() (line 92)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l102">klotter::LineBatch::LineBatch(klotter::ShaderProgram*) (line 102)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l123">klotter::LineBatch::LineBatch(klotter::ShaderProgram*)::{lambda(unsigned int)#1}::operator()(unsigned int) const (line 123)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l179">klotter::LineBatch::line(glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 179)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l192">klotter::LineBatch::submit() (line 192)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l156">klotter::LineBatch::~LineBatch() (line 156)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l10">klotter::LineDrawer::LineDrawer() (line 10)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l97">klotter::LineDrawer::is_loaded() const (line 97)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l85">klotter::LineDrawer::set_line_to_dash(glm::vec&lt;2, float, (glm::qualifier)0&gt; const&amp;, float, float) (line 85)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l92">klotter::LineDrawer::set_line_to_solid() (line 92)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l168">klotter::add_vertex(klotter::LineBatch*, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 168)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
   </table>
 </details>
@@ -157,7 +157,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">DebugDrawer</span><span class="o">::</span><span class="n">DebugDrawer</span><span class="p">()</span></td>
+                <td class="src uncoveredLine"><span class="n">LineDrawer</span><span class="o">::</span><span class="n">LineDrawer</span><span class="p">()</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l11" href="#l11">11</a></td>
@@ -682,7 +682,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">DebugDrawer</span><span class="o">::</span><span class="n">set_line_to_dash</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">dash_size</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gap_size</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">LineDrawer</span><span class="o">::</span><span class="n">set_line_to_dash</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">dash_size</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gap_size</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l86" href="#l86">86</a></td>
@@ -731,7 +731,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">DebugDrawer</span><span class="o">::</span><span class="n">set_line_to_solid</span><span class="p">()</span></td>
+                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">LineDrawer</span><span class="o">::</span><span class="n">set_line_to_solid</span><span class="p">()</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l93" href="#l93">93</a></td>
@@ -766,7 +766,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">bool</span><span class="w"> </span><span class="n">DebugDrawer</span><span class="o">::</span><span class="n">is_loaded</span><span class="p">()</span><span class="w"> </span><span class="k">const</span></td>
+                <td class="src uncoveredLine"><span class="kt">bool</span><span class="w"> </span><span class="n">LineDrawer</span><span class="o">::</span><span class="n">is_loaded</span><span class="p">()</span><span class="w"> </span><span class="k">const</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l98" href="#l98">98</a></td>

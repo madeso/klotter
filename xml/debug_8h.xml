@@ -42,7 +42,6 @@
 <codeline lineno="15" refid="structklotter_1_1DebugLine_1a70cc36e43384bd5b0a2248ab30a6ee79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1DebugLine_1a70cc36e43384bd5b0a2248ab30a6ee79" kindref="member">color</ref>;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>@see<sp/>Renderer</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20" refid="structklotter_1_1DebugRender" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1DebugRender" kindref="compound">DebugRender</ref></highlight></codeline>
 <codeline lineno="21"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="22" refid="structklotter_1_1DebugRender_1a4fc7dbe5c91dc159abf7e4d1421d4fcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;DebugLine&gt;<sp/><ref refid="structklotter_1_1DebugRender_1a4fc7dbe5c91dc159abf7e4d1421d4fcf" kindref="member">lines</ref>;</highlight></codeline>

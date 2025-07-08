@@ -177,21 +177,6 @@
     <member refid="structklotter_1_1CompiledVertexTypeList_1af441c2da69bfa9d2452ef070c2337eb6" kind="variable"><name>debug_types</name></member>
     <member refid="structklotter_1_1CompiledVertexTypeList_1a81ac1d595e7cab90a8719966fa235854" kind="variable"><name>next_index</name></member>
   </compound>
-  <compound refid="structklotter_1_1DebugDrawer" kind="struct"><name>klotter::DebugDrawer</name>
-    <member refid="structklotter_1_1DebugDrawer_1a8ac8dff924691152f8ad05c2b2c62a1e" kind="variable"><name>line_description</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1a62a0870a1ceb189b5da6b94b1c9a0568" kind="variable"><name>line_layout</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1a9877955110134aac565599c4f61a224f" kind="variable"><name>line_shader</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1afdc159882038a7a77966dc7acc27cd7f" kind="variable"><name>line_projection</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1a07a44bca587d8da4e0b6e4c56821f56b" kind="variable"><name>line_view</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1a85644abeb6429521f4c77df173682754" kind="variable"><name>line_resolution</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1ac7aaa64315a5c5f23727c11690770bb5" kind="variable"><name>line_dash_size</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1aef8931bfd33acfd4edb09abd50514665" kind="variable"><name>line_gap_size</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1a447fa65bf3ed43b15a05b299819a52bd" kind="variable"><name>line_batch</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1a0a10526ca6e8c9873a38e71290eb729a" kind="function"><name>DebugDrawer</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1ac54f674b3963d5ffc1d1f4b18e0b4af3" kind="function"><name>set_line_to_dash</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1af48a36d75cfe8784b2d3bc0c312cfeaf" kind="function"><name>set_line_to_solid</name></member>
-    <member refid="structklotter_1_1DebugDrawer_1a9f174f0eef629fd898b53659874267e1" kind="function"><name>is_loaded</name></member>
-  </compound>
   <compound refid="structklotter_1_1DebugLine" kind="struct"><name>klotter::DebugLine</name>
     <member refid="structklotter_1_1DebugLine_1afa0c9a0ada0ad0186082527930108f73" kind="variable"><name>from</name></member>
     <member refid="structklotter_1_1DebugLine_1ab28646931b94b77ad1c89dff411a4273" kind="variable"><name>to</name></member>
@@ -368,6 +353,21 @@
     <member refid="structklotter_1_1LineBatch_1aa9b4393b9e661a565f10309ef61fe405" kind="function"><name>line</name></member>
     <member refid="structklotter_1_1LineBatch_1ac11848294301883e840262a2f7be7392" kind="function"><name>submit</name></member>
   </compound>
+  <compound refid="structklotter_1_1LineDrawer" kind="struct"><name>klotter::LineDrawer</name>
+    <member refid="structklotter_1_1LineDrawer_1a33fda0109f1f5226fab89e178861bed2" kind="variable"><name>line_description</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a067af94d329ac087fa67948e88c1380b" kind="variable"><name>line_layout</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a8d4c291a8614f031f658ff62a6c7a1a8" kind="variable"><name>line_shader</name></member>
+    <member refid="structklotter_1_1LineDrawer_1aac32ec512300b5044d1a7a2375aa6861" kind="variable"><name>line_projection</name></member>
+    <member refid="structklotter_1_1LineDrawer_1af82452a0477d962da99d720dae9752fc" kind="variable"><name>line_view</name></member>
+    <member refid="structklotter_1_1LineDrawer_1adf593f9cf96d109de4bef3f83eb89ee7" kind="variable"><name>line_resolution</name></member>
+    <member refid="structklotter_1_1LineDrawer_1aef8076c17bfcdb9de0626643d850e687" kind="variable"><name>line_dash_size</name></member>
+    <member refid="structklotter_1_1LineDrawer_1aa228a12df26090cec091be2a54a9546d" kind="variable"><name>line_gap_size</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a9e92ee3a442f6f499f7bd5eab0454def" kind="variable"><name>line_batch</name></member>
+    <member refid="structklotter_1_1LineDrawer_1ae877d9de19653d08a1a130962b22af26" kind="function"><name>LineDrawer</name></member>
+    <member refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" kind="function"><name>set_line_to_dash</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" kind="function"><name>set_line_to_solid</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a260e80f8c6e81e060c65f1cbcc02e988" kind="function"><name>is_loaded</name></member>
+  </compound>
   <compound refid="structklotter_1_1LoadedPostProcShader" kind="struct"><name>klotter::LoadedPostProcShader</name>
     <member refid="structklotter_1_1LoadedPostProcShader_1ac9c705810b471316ca014926054d9450" kind="variable"><name>program</name></member>
     <member refid="structklotter_1_1LoadedPostProcShader_1a3b7e1e3c794b587e5eb8013b6916bd6e" kind="variable"><name>texture</name></member>
@@ -528,7 +528,7 @@
     <member refid="structklotter_1_1RendererPimpl_1a146ca5e38bd4c8a717795a173c657e89" kind="variable"><name>camera_uniform_buffer</name></member>
     <member refid="structklotter_1_1RendererPimpl_1a8707601c657c0774f0e7022c259f2cd5" kind="variable"><name>shaders_resources</name></member>
     <member refid="structklotter_1_1RendererPimpl_1a30fac033e1f7db0bff6ddf2c36728c80" kind="variable"><name>states</name></member>
-    <member refid="structklotter_1_1RendererPimpl_1a5554e780129b907e7096298bdce2170b" kind="variable"><name>debug_drawer</name></member>
+    <member refid="structklotter_1_1RendererPimpl_1a94bf72a0e910b1795c10682f118a7cba" kind="variable"><name>debug_drawer</name></member>
     <member refid="structklotter_1_1RendererPimpl_1a81cf9becda0b96defeb78b8f4ccd81bc" kind="variable"><name>full_screen_geom</name></member>
     <member refid="structklotter_1_1RendererPimpl_1a5589ea5eb933cefc1fd719af2ae2f432" kind="function"><name>RendererPimpl</name></member>
   </compound>
@@ -933,9 +933,9 @@
     <member refid="feature__flags_8h_1a3aff7fe2c32285f262b9184ac9fcf6e2" kind="define"><name>FF_HAS</name></member>
   </compound>
   <compound refid="hash_8h" kind="file"><name>hash.h</name>
-    <member refid="hash_8h_1a9038dc1dac99b31ae58ae04bee68d416" kind="define"><name>HASH_DEF_BEGIN</name></member>
-    <member refid="hash_8h_1a102a60c28b17bc852589bbb26135173b" kind="define"><name>HASH_DEF</name></member>
-    <member refid="hash_8h_1adea525dabdf353ba96abce59e6a5dadd" kind="define"><name>HASH_DEF_END</name></member>
+    <member refid="group__hash_1ga9038dc1dac99b31ae58ae04bee68d416" kind="define"><name>HASH_DEF_BEGIN</name></member>
+    <member refid="group__hash_1ga102a60c28b17bc852589bbb26135173b" kind="define"><name>HASH_DEF</name></member>
+    <member refid="group__hash_1gadea525dabdf353ba96abce59e6a5dadd" kind="define"><name>HASH_DEF_END</name></member>
   </compound>
   <compound refid="im__colors_8h" kind="file"><name>im_colors.h</name>
   </compound>
@@ -1167,6 +1167,11 @@
     <member refid="group__render_1ga14106c01b64a4fb907c564373ba5e691" kind="function"><name>make_mesh_instance</name></member>
     <member refid="group__render_1ga7c41540b85fbcd00d0dfbe1104d10443" kind="function"><name>render_geom</name></member>
     <member refid="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" kind="function"><name>render_geom_instanced</name></member>
+  </compound>
+  <compound refid="group__hash" kind="group"><name>hash</name>
+    <member refid="group__hash_1ga9038dc1dac99b31ae58ae04bee68d416" kind="define"><name>HASH_DEF_BEGIN</name></member>
+    <member refid="group__hash_1ga102a60c28b17bc852589bbb26135173b" kind="define"><name>HASH_DEF</name></member>
+    <member refid="group__hash_1gadea525dabdf353ba96abce59e6a5dadd" kind="define"><name>HASH_DEF_END</name></member>
   </compound>
   <compound refid="group__geom" kind="group"><name>geom</name>
   </compound>

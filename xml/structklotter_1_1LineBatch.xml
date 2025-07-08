@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="10" column="22" bodyfile="src/klotter/render/linebatch.h" bodystart="10" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="11" column="22" bodyfile="src/klotter/render/linebatch.h" bodystart="11" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="12" column="13" bodyfile="src/klotter/render/linebatch.h" bodystart="12" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="13" column="13" bodyfile="src/klotter/render/linebatch.h" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineBatch_1a77b1d0932ad3d1f80a81174dde3cff92" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="13" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="13" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="14" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineBatch_1a9a850e6ccb0f8c61bfbd7f821db58b51" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="14" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="14" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="15" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineBatch_1a19f223a12164e163ed09156d8797b309" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="15" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="15" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="16" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineBatch_1a22adf043bc55df5ccdd1c10e680339e9" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="16" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="16" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="17" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="17" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="18" column="10"/>
+        <location file="src/klotter/render/linebatch.h" line="19" column="10"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineBatch_1a229d8e1ce0d93e2d4aaed3d05671dcb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -123,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="19" column="1"/>
+        <location file="src/klotter/render/linebatch.h" line="20" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineBatch_1a2a5f7384e73b6b919adb76aea2efe60c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="21" column="1"/>
+        <location file="src/klotter/render/linebatch.h" line="22" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineBatch_1a98534fbc5930a03da96bf29b51aa6fcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="22" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="23" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineBatch_1a964e2420c45c8f92bda5a4e41435fcf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -174,7 +174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="23" column="1"/>
+        <location file="src/klotter/render/linebatch.h" line="24" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineBatch_1a7012ad85755bc7a1153b970279abb66c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -191,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="24" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="25" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineBatch_1aa9b4393b9e661a565f10309ef61fe405" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -217,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="26" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="27" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineBatch_1ac11848294301883e840262a2f7be7392" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -231,14 +231,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="27" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="28" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Helper to batch lines for rendering. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/linebatch.h" line="8" column="1" bodyfile="src/klotter/render/linebatch.h" bodystart="9" bodyend="28"/>
+    <location file="src/klotter/render/linebatch.h" line="9" column="1" bodyfile="src/klotter/render/linebatch.h" bodystart="10" bodyend="29"/>
     <listofallmembers>
       <member refid="structklotter_1_1LineBatch_1a65951c6d9b44662499cd0bfbd268276e" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>data</name></member>
       <member refid="structklotter_1_1LineBatch_1a22adf043bc55df5ccdd1c10e680339e9" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>ib</name></member>

@@ -2,7 +2,7 @@ var searchData=
 [
   ['data_0',['data',['../structklotter_1_1ExtractedGeom.html#a5af092b303ded4f433910bf77add0d1f',1,'klotter::ExtractedGeom::data'],['../structklotter_1_1LineBatch.html#a65951c6d9b44662499cd0bfbd268276e',1,'klotter::LineBatch::data']]],
   ['debug_1',['debug',['../structklotter_1_1Renderer.html#a041e598e217704db890b9ed76ae70fdd',1,'klotter::Renderer']]],
-  ['debug_5fdrawer_2',['debug_drawer',['../structklotter_1_1RendererPimpl.html#a5554e780129b907e7096298bdce2170b',1,'klotter::RendererPimpl']]],
+  ['debug_5fdrawer_2',['debug_drawer',['../structklotter_1_1RendererPimpl.html#a94bf72a0e910b1795c10682f118a7cba',1,'klotter::RendererPimpl']]],
   ['debug_5fis_5fmsaa_3',['debug_is_msaa',['../structklotter_1_1FrameBuffer.html#a73bb6c9da9dd0228e5d774d00258b521',1,'klotter::FrameBuffer']]],
   ['debug_5fshader_5fprogram_4',['debug_shader_program',['../structklotter_1_1Uniform.html#a9939992cfef5650d0db1beda73c8177e',1,'klotter::Uniform']]],
   ['debug_5ftypes_5',['debug_types',['../structklotter_1_1CompiledShaderVertexAttributes.html#a5f9a0c9c028b7fe880257cd1d76c4923',1,'klotter::CompiledShaderVertexAttributes::debug_types'],['../structklotter_1_1CompiledGeomVertexAttributes.html#aa13ab654dece3ce973366b5078d211df',1,'klotter::CompiledGeomVertexAttributes::debug_types'],['../structklotter_1_1CompiledVertexTypeList.html#af441c2da69bfa9d2452ef070c2337eb6',1,'klotter::CompiledVertexTypeList::debug_types'],['../structklotter_1_1CompiledGeom.html#a9a1d14b0928fda7cdde988fc154f1f0d',1,'klotter::CompiledGeom::debug_types'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a602f1dec6a287a78dab82d3ca2e097bf',1,'klotter::CompiledGeom_TransformInstance::debug_types']]],

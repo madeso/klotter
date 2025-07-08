@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="40" column="1"/>
+        <location file="src/klotter/render/postproc.h" line="41" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1ShaderPropertyProvider_1a5ad1b9975ebd7c34c346f6aa245e1d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="42" column="1"/>
+        <location file="src/klotter/render/postproc.h" line="43" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1ShaderPropertyProvider_1aeccea79ab55ae90cd8194fee436e18c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="43" column="1"/>
+        <location file="src/klotter/render/postproc.h" line="44" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1ShaderPropertyProvider_1af5966e224e6b622b971a752d7ae607ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="44" column="6"/>
+        <location file="src/klotter/render/postproc.h" line="45" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1ShaderPropertyProvider_1a95c6d45d17bb4084356a4bb03be6a49c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -84,7 +84,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="45" column="6"/>
+        <location file="src/klotter/render/postproc.h" line="46" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1ShaderPropertyProvider_1aba7169be559b2c482fa97cfcb0d65561" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="47" column="9"/>
+        <location file="src/klotter/render/postproc.h" line="48" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1ShaderPropertyProvider_1abfe8039190d165f78f12cc2cfca72c26" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -120,14 +120,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="48" column="14"/>
+        <location file="src/klotter/render/postproc.h" line="49" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/postproc.h" line="38" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="39" bodyend="49"/>
+    <location file="src/klotter/render/postproc.h" line="39" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="40" bodyend="50"/>
     <listofallmembers>
       <member refid="structklotter_1_1ShaderPropertyProvider_1af5966e224e6b622b971a752d7ae607ca" prot="public" virt="non-virtual"><scope>klotter::ShaderPropertyProvider</scope><name>operator=</name></member>
       <member refid="structklotter_1_1ShaderPropertyProvider_1a95c6d45d17bb4084356a4bb03be6a49c" prot="public" virt="non-virtual"><scope>klotter::ShaderPropertyProvider</scope><name>operator=</name></member>

@@ -22,7 +22,6 @@
     <innerclass refid="structklotter_1_1CompiledVertexElement" prot="public">klotter::CompiledVertexElement</innerclass>
     <innerclass refid="structklotter_1_1CompiledVertexElementNoName" prot="public">klotter::CompiledVertexElementNoName</innerclass>
     <innerclass refid="structklotter_1_1CompiledVertexTypeList" prot="public">klotter::CompiledVertexTypeList</innerclass>
-    <innerclass refid="structklotter_1_1DebugDrawer" prot="public">klotter::DebugDrawer</innerclass>
     <innerclass refid="structklotter_1_1DebugLine" prot="public">klotter::DebugLine</innerclass>
     <innerclass refid="structklotter_1_1DebugRender" prot="public">klotter::DebugRender</innerclass>
     <innerclass refid="structklotter_1_1DefaultMaterial" prot="public">klotter::DefaultMaterial</innerclass>
@@ -44,6 +43,7 @@
     <innerclass refid="structklotter_1_1InstanceProp" prot="public">klotter::InstanceProp</innerclass>
     <innerclass refid="structklotter_1_1Lights" prot="public">klotter::Lights</innerclass>
     <innerclass refid="structklotter_1_1LineBatch" prot="public">klotter::LineBatch</innerclass>
+    <innerclass refid="structklotter_1_1LineDrawer" prot="public">klotter::LineDrawer</innerclass>
     <innerclass refid="structklotter_1_1LoadedPostProcShader" prot="public">klotter::LoadedPostProcShader</innerclass>
     <innerclass refid="structklotter_1_1LoadedShader__Default" prot="public">klotter::LoadedShader_Default</innerclass>
     <innerclass refid="structklotter_1_1LoadedShader__Default__Container" prot="public">klotter::LoadedShader_Default_Container</innerclass>
