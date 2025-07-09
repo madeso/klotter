@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/scurve.h" line="32" column="8" declfile="src/klotter/scurve.h" declline="32" declcolumn="8"/>
+        <location file="src/klotter/scurve.h" line="33" column="8" declfile="src/klotter/scurve.h" declline="33" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="group__scurcve_1ga3c0cf1d44132258273463050f332f830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/scurve.h" line="36" column="7" declfile="src/klotter/scurve.h" declline="36" declcolumn="7"/>
+        <location file="src/klotter/scurve.h" line="37" column="7" declfile="src/klotter/scurve.h" declline="37" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="group__scurcve_1ga1be2991dbb6e7fdb2460296dec1f4504" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -98,14 +98,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/scurve.h" line="39" column="6" declfile="src/klotter/scurve.h" declline="39" declcolumn="6"/>
+        <location file="src/klotter/scurve.h" line="40" column="6" declfile="src/klotter/scurve.h" declline="40" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Discovered in <ulink url="https://x.com/Morusque/status/1352569197499441155">https://x.com/Morusque/status/1352569197499441155</ulink>. </para>
+<para>A tweakable curve similar to easing functions. </para>
     </briefdescription>
     <detaileddescription>
-<para>Expanded in <ulink url="https://arxiv.org/pdf/2010.09714">A Convenient Generalization of Schlick’s Bias and Gain Functions (pdf)</ulink> by Jonathan T. Barron. </para>
+<para>Discovered in <ulink url="https://x.com/Morusque/status/1352569197499441155">https://x.com/Morusque/status/1352569197499441155</ulink>. Expanded in <ulink url="https://arxiv.org/pdf/2010.09714">A Convenient Generalization of Schlick’s Bias and Gain Functions (pdf)</ulink> by Jonathan T. Barron. </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

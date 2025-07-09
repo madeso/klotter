@@ -12,7 +12,7 @@ var searchData=
   ['uniformbuffercompiler_9',['UniformBufferCompiler',['../structklotter_1_1UniformBufferCompiler.html',1,'klotter']]],
   ['uniformbuffersetup_10',['UniformBufferSetup',['../structklotter_1_1UniformBufferSetup.html',1,'klotter']]],
   ['uniformprop_11',['UniformProp',['../structklotter_1_1UniformProp.html',1,'klotter']]],
-  ['uniformtype_12',['UniformType',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40',1,'klotter']]],
+  ['uniformtype_12',['UniformType',['../group__render.html#ga4a0ad326e2184f99dd55593abe721e40',1,'klotter']]],
   ['unlit_5fgeom_5flayout_13',['unlit_geom_layout',['../structklotter_1_1Renderer.html#a9fae832300d65af1aea9beb8e90ff06c',1,'klotter::Renderer']]],
   ['unlit_5fshader_5fcontainer_14',['unlit_shader_container',['../structklotter_1_1ShaderResource.html#a6cd5168ba013a0a024399c947049d62c',1,'klotter::ShaderResource']]],
   ['unlitmaterial_15',['UnlitMaterial',['../structklotter_1_1UnlitMaterial.html',1,'klotter::UnlitMaterial'],['../structklotter_1_1UnlitMaterial.html#abeea77af30a3fe439dcf57f07dee7e30',1,'klotter::UnlitMaterial::UnlitMaterial()']]],

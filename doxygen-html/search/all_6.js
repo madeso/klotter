@@ -24,11 +24,11 @@ var searchData=
   ['get_5fskybox_21',['get_skybox',['../structklotter_1_1Assets.html#a00c23637f1b2b401f37b9b3eb2213645',1,'klotter::Assets']]],
   ['get_5funiform_22',['get_uniform',['../structklotter_1_1ShaderProgram.html#ace564eff29cd0309c6bf3843c5e71c4d',1,'klotter::ShaderProgram::get_uniform()'],['../group__render.html#gac2e3012d518484348974e4dc36e3112c',1,'klotter::get_uniform()']]],
   ['get_5fwhite_23',['get_white',['../structklotter_1_1Assets.html#aa72f0833340b8a6bcfee58ae038df747',1,'klotter::Assets']]],
-  ['grape_24',['grape',['../namespaceklotter_1_1imgui.html#a64da05bfc2889d48883a33cba2f4192c',1,'klotter::imgui']]],
-  ['gray_25',['gray',['../namespaceklotter_1_1imgui.html#a6ca10d7a28e2d394c29a470f94ee790f',1,'klotter::imgui']]],
+  ['grape_24',['grape',['../group__imguicolors.html#ga64da05bfc2889d48883a33cba2f4192c',1,'klotter::imgui']]],
+  ['gray_25',['gray',['../group__imguicolors.html#ga6ca10d7a28e2d394c29a470f94ee790f',1,'klotter::imgui']]],
   ['greater_26',['greater',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a7b8dc4fb0fb55fc8eb69ff080c45ed7e',1,'klotter']]],
   ['greater_5fequal_27',['greater_equal',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a5675102b0e596d9d43bbb0e0f8ea07e2',1,'klotter']]],
-  ['green_28',['green',['../namespaceklotter_1_1imgui.html#a9655f89d578b8314d605515fd2e6e945',1,'klotter::imgui']]],
+  ['green_28',['green',['../group__imguicolors.html#ga9655f89d578b8314d605515fd2e6e945',1,'klotter::imgui']]],
   ['green_5fbluish_29',['green_bluish',['../namespaceklotter_1_1colors.html#aa7f4d5f7f4ce3deb0d03d5e6a0d45192',1,'klotter::colors']]],
   ['gui_30',['gui',['../structklotter_1_1Effect.html#a36c3f6e7b50c297201964c3c20087dd6',1,'klotter::Effect::gui()'],['../structklotter_1_1EffectStack.html#a3bff8502909b4fd618bbe469208c660f',1,'klotter::EffectStack::gui()']]]
 ];

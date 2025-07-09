@@ -11,7 +11,7 @@ var searchData=
   ['light_5fworld_8',['light_world',['../structklotter_1_1PointLightUniforms.html#acec765b11c4d9fd7d54d060eb108911d',1,'klotter::PointLightUniforms']]],
   ['lights_9',['Lights',['../structklotter_1_1Lights.html',1,'klotter']]],
   ['lights_10',['lights',['../structklotter_1_1World.html#a3fbb4f1f21c97a7f1cc7e11bc5f26a0b',1,'klotter::World']]],
-  ['lime_11',['lime',['../namespaceklotter_1_1imgui.html#acbc316ef8105da66f1d268c14463bd7e',1,'klotter::imgui']]],
+  ['lime_11',['lime',['../group__imguicolors.html#gacbc316ef8105da66f1d268c14463bd7e',1,'klotter::imgui']]],
   ['line_12',['line',['../structklotter_1_1LineBatch.html#aa9b4393b9e661a565f10309ef61fe405',1,'klotter::LineBatch::line()'],['../group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a6438c669e0d0de98e6929c2cc0fac474',1,'klotter::line']]],
   ['line_5fbatch_13',['line_batch',['../structklotter_1_1LineDrawer.html#a9e92ee3a442f6f499f7bd5eab0454def',1,'klotter::LineDrawer']]],
   ['line_5fdash_5fsize_14',['line_dash_size',['../structklotter_1_1LineDrawer.html#aef8076c17bfcdb9de0626643d850e687',1,'klotter::LineDrawer']]],

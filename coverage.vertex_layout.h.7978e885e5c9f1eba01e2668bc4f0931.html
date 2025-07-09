@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/vertex_layout.h</div>
-            <div>Date: 2025-07-08 21:04:22</div>
+            <div>Date: 2025-07-09 19:39:49</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -685,178 +685,185 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="c1">/// @see \ref compile_shader_layout</span></td>
+                <td class="src "><span class="c1">/// A property for a shader used in instanced rendering.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l90" href="#l90">90</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">InstanceProp</span></td>
+                <td class="src "><span class="c1">/// @see \ref compile_shader_layout</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l91" href="#l91">91</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">{</span></td>
+                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">InstanceProp</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l92" href="#l92">92</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">VertexType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l93" href="#l93">93</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">VertexType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l94" href="#l94">94</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">};</span></td>
+                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l95" href="#l95">95</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l96" href="#l96">96</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l97" href="#l97">97</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">CompiledShaderVertexAttributes</span><span class="w"> </span><span class="n">compile_shader_layout</span><span class="p">(</span></td>
+                <td class="src "><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l98" href="#l98">98</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledVertexTypeList</span><span class="o">&amp;</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ShaderVertexAttributes</span><span class="o">&amp;</span><span class="w"> </span><span class="n">elements</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">InstanceProp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">instance_prop</span></td>
+                <td class="src "><span class="n">CompiledShaderVertexAttributes</span><span class="w"> </span><span class="n">compile_shader_layout</span><span class="p">(</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l99" href="#l99">99</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">);</span></td>
+                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledVertexTypeList</span><span class="o">&amp;</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ShaderVertexAttributes</span><span class="o">&amp;</span><span class="w"> </span><span class="n">elements</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">InstanceProp</span><span class="o">&gt;</span><span class="w"> </span><span class="n">instance_prop</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l100" href="#l100">100</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l101" href="#l101">101</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l102" href="#l102">102</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">CompiledGeomVertexAttributes</span><span class="w"> </span><span class="n">get_geom_layout</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledVertexTypeList</span><span class="o">&amp;</span><span class="w"> </span><span class="n">l</span><span class="p">);</span></td>
+                <td class="src "><span class="p">[[</span><span class="n">nodiscard</span><span class="p">]]</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l103" href="#l103">103</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="n">CompiledGeomVertexAttributes</span><span class="w"> </span><span class="n">get_geom_layout</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledVertexTypeList</span><span class="o">&amp;</span><span class="w"> </span><span class="n">l</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l104" href="#l104">104</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">CompiledVertexTypeList</span><span class="w"> </span><span class="nf">compile_attribute_layouts</span><span class="p">(</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l105" href="#l105">105</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">VertexType</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">base_layout</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ShaderVertexAttributes</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">descriptions</span></td>
+                <td class="src "><span class="n">CompiledVertexTypeList</span><span class="w"> </span><span class="nf">compile_attribute_layouts</span><span class="p">(</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l106" href="#l106">106</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">);</span></td>
+                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">VertexType</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">base_layout</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ShaderVertexAttributes</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">descriptions</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l107" href="#l107">107</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l108" href="#l108">108</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">CompiledVertexTypeList</span><span class="w"> </span><span class="nf">compile_attribute_layouts</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ShaderVertexAttributes</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">descriptions</span><span class="p">);</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l109" href="#l109">109</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="n">CompiledVertexTypeList</span><span class="w"> </span><span class="nf">compile_attribute_layouts</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ShaderVertexAttributes</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">descriptions</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l110" href="#l110">110</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm">/** @}</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l111" href="#l111">111</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm">*/</span></td>
+                <td class="src "><span class="cm">/** @}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l112" href="#l112">112</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="cm">*/</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l113" href="#l113">113</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l114" href="#l114">114</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l115" href="#l115">115</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>

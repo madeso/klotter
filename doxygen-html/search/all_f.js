@@ -2,7 +2,7 @@ var searchData=
 [
   ['rbo_0',['rbo',['../structklotter_1_1FrameBuffer.html#a9ca03e3d50dc89689425ede34a751ae8',1,'klotter::FrameBuffer']]],
   ['readme_2emd_1',['readme.md',['../readme_8md.html',1,'']]],
-  ['red_2',['red',['../namespaceklotter_1_1imgui.html#a2b7da2e18316f6c2522c96be0d56ada5',1,'klotter::imgui']]],
+  ['red_2',['red',['../group__imguicolors.html#ga2b7da2e18316f6c2522c96be0d56ada5',1,'klotter::imgui']]],
   ['red_5fvermillion_3',['red_vermillion',['../namespaceklotter_1_1colors.html#af79fab421525d6a32a8d55607adfb618',1,'klotter::colors']]],
   ['render_4',['render',['../structklotter_1_1RenderSource.html#a09fe11c60248250aeeaf931bb1f0e2e1',1,'klotter::RenderSource::render()'],['../structklotter_1_1RenderTask.html#a052fe8fe4d5af2b0b91c2aaca91ec300',1,'klotter::RenderTask::render()'],['../structklotter_1_1EffectStack.html#aaf622b94ba48b5950c9324c6d4434c05',1,'klotter::EffectStack::render()']]],
   ['render_5fgeom_5',['render_geom',['../group__render.html#ga7c41540b85fbcd00d0dfbe1104d10443',1,'klotter']]],

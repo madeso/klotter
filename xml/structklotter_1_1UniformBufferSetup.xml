@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="23" column="5" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="23" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="26" column="5" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1UniformBufferSetup_1a138668806c1a68b305bf477067ee1775" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="24" column="5" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="24" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="27" column="5" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1UniformBufferSetup_1a81c5d3945fc9ae2c9a3d820cd973b16e" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="25" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="25" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="28" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1UniformBufferSetup_1a3f33b2c93dc505fa97af10738e35d9a5" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -60,14 +60,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="26" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="26" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="29" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="29" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/uniform_buffer.h" line="21" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="22" bodyend="27"/>
+    <location file="src/klotter/render/uniform_buffer.h" line="24" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="25" bodyend="30"/>
     <listofallmembers>
       <member refid="structklotter_1_1UniformBufferSetup_1a138668806c1a68b305bf477067ee1775" prot="public" virt="non-virtual"><scope>klotter::UniformBufferSetup</scope><name>binding_point</name></member>
       <member refid="structklotter_1_1UniformBufferSetup_1a81c5d3945fc9ae2c9a3d820cd973b16e" prot="public" virt="non-virtual"><scope>klotter::UniformBufferSetup</scope><name>name</name></member>

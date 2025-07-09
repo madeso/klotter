@@ -162,74 +162,7 @@
       <member refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kind="enum"><name>Transparency</name></member>
       <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
       <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
-      <memberdef kind="enum" id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40" prot="public" static="no" strong="yes">
-        <type></type>
-        <name>UniformType</name>
-        <qualifiedname>klotter::UniformType</qualifiedname>
-        <enumvalue id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40afedb2d84cafe20862cb4399751a8a7e3" prot="public">
-          <name>invalid</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a5c3e61d27b2bdaf4ddb98aadc356e863" prot="public">
-          <name>bool_type</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a06d324fffd90570dc177e7d1aabcb4dd" prot="public">
-          <name>int_type</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40afd7170216efb2a7d32648e80919fb0ff" prot="public">
-          <name>float_type</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7" prot="public">
-          <name>vec2</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36" prot="public">
-          <name>vec3</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86" prot="public">
-          <name>vec4</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40abe14b41eb96410ea28b32bc138d885ae" prot="public">
-          <name>mat4</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="9" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="10" bodyend="19"/>
-      </memberdef>
+      <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
       <member refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kind="enum"><name>VertexType</name></member>
       <member refid="group__render_1ga8b35cebf3243809e4ea2b1ab6bb19fce" kind="enum"><name>Billboarding</name></member>
     </sectiondef>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['post_20processing_0',['Post Processing',['../group__postproc.html',1,'']]],
-  ['processing_1',['Post Processing',['../group__postproc.html',1,'']]]
+  ['imgui_20colors_0',['Dear ImGui Colors',['../group__imguicolors.html',1,'']]]
 ];

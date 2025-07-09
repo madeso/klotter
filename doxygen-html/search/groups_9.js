@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['util_0',['Hash-util',['../group__hash.html',1,'']]]
+  ['s_20curve_0',['S Curve',['../group__scurcve.html',1,'']]]
 ];

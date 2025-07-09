@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/scurve.h" line="26" column="8" bodyfile="src/klotter/scurve.h" bodystart="26" bodyend="26"/>
+        <location file="src/klotter/scurve.h" line="27" column="8" bodyfile="src/klotter/scurve.h" bodystart="27" bodyend="27"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1SCurveAndDrag_1af9f3a1c870ff2a610df3cc98d130ea31" prot="public" static="no" mutable="no">
         <type>ImVec2</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/scurve.h" line="27" column="8" bodyfile="src/klotter/scurve.h" bodystart="27" bodyend="27"/>
+        <location file="src/klotter/scurve.h" line="28" column="8" bodyfile="src/klotter/scurve.h" bodystart="28" bodyend="28"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -56,7 +56,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/scurve.h" line="24" column="1" bodyfile="src/klotter/scurve.h" bodystart="25" bodyend="28"/>
+    <location file="src/klotter/scurve.h" line="25" column="1" bodyfile="src/klotter/scurve.h" bodystart="26" bodyend="29"/>
     <listofallmembers>
       <member refid="structklotter_1_1SCurveAndDrag_1a9cfce39afe3c791abde0b5b62155f6cd" prot="public" virt="non-virtual"><scope>klotter::SCurveAndDrag</scope><name>curve</name></member>
       <member refid="structklotter_1_1SCurveAndDrag_1af9f3a1c870ff2a610df3cc98d130ea31" prot="public" virt="non-virtual"><scope>klotter::SCurveAndDrag</scope><name>drag</name></member>

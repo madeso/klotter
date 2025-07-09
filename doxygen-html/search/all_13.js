@@ -8,9 +8,9 @@ var searchData=
   ['vao_5',['vao',['../structklotter_1_1CompiledGeom.html#a9c61cb6bfef749b69af91f6802dcb67a',1,'klotter::CompiledGeom::vao'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a853a5b1e570c8eeece2e23110a45040d',1,'klotter::CompiledGeom_TransformInstance::vao']]],
   ['vb_6',['vb',['../structklotter_1_1LineBatch.html#a19f223a12164e163ed09156d8797b309',1,'klotter::LineBatch']]],
   ['vbo_7',['vbo',['../structklotter_1_1CompiledGeom.html#a9d480775171d797a0604199ce661b0c1',1,'klotter::CompiledGeom::vbo'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a0e178ef0c09b2968213783208092dcf7',1,'klotter::CompiledGeom_TransformInstance::vbo']]],
-  ['vec2_8',['vec2',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7',1,'klotter']]],
-  ['vec3_9',['vec3',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36',1,'klotter']]],
-  ['vec4_10',['vec4',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86',1,'klotter']]],
+  ['vec2_8',['vec2',['../group__render.html#gga4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7',1,'klotter']]],
+  ['vec3_9',['vec3',['../group__render.html#gga4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36',1,'klotter']]],
+  ['vec4_10',['vec4',['../group__render.html#gga4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86',1,'klotter']]],
   ['vertex_11',['Vertex',['../structklotter_1_1geom_1_1Vertex.html',1,'klotter::geom::Vertex'],['../structklotter_1_1Vertex.html',1,'klotter::Vertex'],['../structklotter_1_1geom_1_1Vertex.html#a4c825af470a38307fa38bfcbd4548384',1,'klotter::geom::Vertex::Vertex(Index pnt, Index clr)'],['../structklotter_1_1geom_1_1Vertex.html#a6942f1ce03e696e54e9ef900b6e4d5ce',1,'klotter::geom::Vertex::Vertex(Index a_position, Index a_normal, Index a_texture, Index a_color)']]],
   ['vertex_12',['vertex',['../structklotter_1_1VertexShaderSource.html#a8f362859d9f3f6f46c10a7a9cabddf7c',1,'klotter::VertexShaderSource::vertex'],['../structklotter_1_1ShaderSource.html#a6b9e1c440250f9b203724b907da93f18',1,'klotter::ShaderSource::vertex']]],
   ['vertex_20layout_13',['Vertex layout',['../group__vertex-layout.html',1,'']]],
@@ -24,5 +24,5 @@ var searchData=
   ['view_21',['view',['../structklotter_1_1CompiledCamera.html#a1eb29eda166a30627784a927bc854c47',1,'klotter::CompiledCamera']]],
   ['view_5fposition_22',['view_position',['../structklotter_1_1LoadedShader__Default.html#af42cd69f5c0e974bd7b51627ca1366d3',1,'klotter::LoadedShader_Default']]],
   ['view_5fprop_23',['view_prop',['../structklotter_1_1CameraUniformBuffer.html#ae47677224955f8ae8562a9cb414e33e4',1,'klotter::CameraUniformBuffer']]],
-  ['violet_24',['violet',['../namespaceklotter_1_1imgui.html#ac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
+  ['violet_24',['violet',['../group__imguicolors.html#gac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
 ];

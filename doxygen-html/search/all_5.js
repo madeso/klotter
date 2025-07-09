@@ -15,7 +15,7 @@ var searchData=
   ['ff_5fis_5fenabled_12',['FF_IS_ENABLED',['../feature__flags_8h.html#a96ef6c9c3b50c598dde1d994fb97277a',1,'feature_flags.h']]],
   ['fill_13',['fill',['../group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718aa552c74784b3a82177bca6c8adde0efb',1,'klotter']]],
   ['float_14',['Float',['../group__geom-builder.html#gga09f336a0f9a765edc85ba7fb234aed05a22ae0e2b89e5e3d477f988cc36d3272b',1,'klotter']]],
-  ['float_5ftype_15',['float_type',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40afd7170216efb2a7d32648e80919fb0ff',1,'klotter']]],
+  ['float_5ftype_15',['float_type',['../group__render.html#gga4a0ad326e2184f99dd55593abe721e40afd7170216efb2a7d32648e80919fb0ff',1,'klotter']]],
   ['foa_5fcolor_16',['foa_color',['../structklotter_1_1geom_1_1Builder.html#a6cd975114cc2a208a083fcb7c3a52aed',1,'klotter::geom::Builder']]],
   ['foa_5fnormal_17',['foa_normal',['../structklotter_1_1geom_1_1Builder.html#af706fa48387cd029fa3f8ce53fdb53a7',1,'klotter::geom::Builder']]],
   ['foa_5fposition_18',['foa_position',['../structklotter_1_1geom_1_1Builder.html#ac84dda85ac9ca872b140777fca452c20',1,'klotter::geom::Builder']]],

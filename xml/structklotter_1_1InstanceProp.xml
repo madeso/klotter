@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="92" column="12" bodyfile="src/klotter/render/vertex_layout.h" bodystart="92" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="93" column="12" bodyfile="src/klotter/render/vertex_layout.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1InstanceProp_1aa0229f5fd2f21045c3489a05322c9b1a" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -30,17 +30,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="93" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="93" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="94" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="94" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A property for a shader used in instanced rendering. </para>
     </briefdescription>
     <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="group__vertex-layout_1ga237368f15ea9a44ec4b6b7302d44c312" kindref="member">compile_shader_layout</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="src/klotter/render/vertex_layout.h" line="90" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="91" bodyend="94"/>
+    <location file="src/klotter/render/vertex_layout.h" line="91" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="92" bodyend="95"/>
     <listofallmembers>
       <member refid="structklotter_1_1InstanceProp_1aa0229f5fd2f21045c3489a05322c9b1a" prot="public" virt="non-virtual"><scope>klotter::InstanceProp</scope><name>name</name></member>
       <member refid="structklotter_1_1InstanceProp_1a6099c86f6b1ab7dffa1720edab9b0142" prot="public" virt="non-virtual"><scope>klotter::InstanceProp</scope><name>type</name></member>

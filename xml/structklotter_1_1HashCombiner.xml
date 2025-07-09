@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="29" column="13" bodyfile="src/klotter/hash.h" bodystart="29" bodyend="-1"/>
+        <location file="src/klotter/hash.h" line="32" column="13" bodyfile="src/klotter/hash.h" bodystart="32" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -37,20 +37,27 @@
           <declname>t</declname>
         </param>
         <briefdescription>
+<para>Combines the hash of the given object with the current result. </para>
         </briefdescription>
         <detaileddescription>
+<para>src: <ulink url="https://stackoverflow.com/a/17017281/180307">https://stackoverflow.com/a/17017281/180307</ulink> numbers from: <ulink url="https://stackoverflow.com/a/1646913/180307">https://stackoverflow.com/a/1646913/180307</ulink> <simplesect kind="note"><para>A word of warning, this is (a variation of) the Berstein hash, and because nobody knows why it does well in tests it is not advisable when hashing is critical. See <ulink url="https://github.com/mignon-p/jsw-libs/blob/master/Tutorials/jsw_tut_hashing.md">https://github.com/mignon-p/jsw-libs/blob/master/Tutorials/jsw_tut_hashing.md</ulink> </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="32" column="14" bodyfile="src/klotter/hash.h" bodystart="32" bodyend="41"/>
+        <location file="src/klotter/hash.h" line="43" column="14" bodyfile="src/klotter/hash.h" bodystart="43" bodyend="47"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>A utility for combining hash values of multiple objects into a single hash value. </para>
     </briefdescription>
     <detaileddescription>
+<para><simplesect kind="note"><para>Do not use when hashing is critical. </para>
+</simplesect>
+</para>
     </detaileddescription>
-    <location file="src/klotter/hash.h" line="27" column="1" bodyfile="src/klotter/hash.h" bodystart="28" bodyend="42"/>
+    <location file="src/klotter/hash.h" line="30" column="1" bodyfile="src/klotter/hash.h" bodystart="31" bodyend="48"/>
     <listofallmembers>
       <member refid="structklotter_1_1HashCombiner_1a65dfeacdc4930769b33d9f68dd509f4a" prot="public" virt="non-virtual"><scope>klotter::HashCombiner</scope><name>combine</name></member>
       <member refid="structklotter_1_1HashCombiner_1a26bf8eb600fcab0bb021b3761e8ad8e2" prot="public" virt="non-virtual"><scope>klotter::HashCombiner</scope><name>result</name></member>

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['rbo_0',['rbo',['../structklotter_1_1FrameBuffer.html#a9ca03e3d50dc89689425ede34a751ae8',1,'klotter::FrameBuffer']]],
-  ['red_1',['red',['../namespaceklotter_1_1imgui.html#a2b7da2e18316f6c2522c96be0d56ada5',1,'klotter::imgui']]],
+  ['red_1',['red',['../group__imguicolors.html#ga2b7da2e18316f6c2522c96be0d56ada5',1,'klotter::imgui']]],
   ['red_5fvermillion_2',['red_vermillion',['../namespaceklotter_1_1colors.html#af79fab421525d6a32a8d55607adfb618',1,'klotter::colors']]],
   ['render_5fmode_3',['render_mode',['../structklotter_1_1OpenglStates.html#a25febe869bee7f6251f482106cd7ed9c',1,'klotter::OpenglStates']]],
   ['render_5fworld_5fref_4',['render_world_ref',['../structklotter_1_1EffectStack.html#adfd748607dee4c12c729c56b09e3d5a6',1,'klotter::EffectStack']]],

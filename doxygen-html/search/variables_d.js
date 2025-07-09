@@ -1,7 +1,7 @@
 var searchData=
 [
   ['pimpl_0',['pimpl',['../structklotter_1_1Renderer.html#a2a3c947386d5278b82c89d59af6ee7a9',1,'klotter::Renderer']]],
-  ['pink_1',['pink',['../namespaceklotter_1_1imgui.html#a592fc2fda898296f6faeb8f4f8774a79',1,'klotter::imgui']]],
+  ['pink_1',['pink',['../group__imguicolors.html#ga592fc2fda898296f6faeb8f4f8774a79',1,'klotter::imgui']]],
   ['pitch_2',['pitch',['../structklotter_1_1Camera.html#a239ef16a40798863e933a2b56db8de78',1,'klotter::Camera::pitch'],['../structklotter_1_1FrustumLight.html#aebc136b2b2fc97327f73a56dac889319',1,'klotter::FrustumLight::pitch']]],
   ['point_5flights_3',['point_lights',['../structklotter_1_1LoadedShader__Default.html#ae798dd79cd77cf0754e3964efbacb314',1,'klotter::LoadedShader_Default::point_lights'],['../structklotter_1_1Lights.html#acb7b0f789218068315c8612d1ebe189c',1,'klotter::Lights::point_lights']]],
   ['position_4',['position',['../structklotter_1_1Camera.html#a95a31013fb1a105c79f2df166c099e46',1,'klotter::Camera::position'],['../structklotter_1_1CompiledCamera.html#a27367e1205196de6e8c6c8c66ee56ff9',1,'klotter::CompiledCamera::position'],['../structklotter_1_1geom_1_1Vertex.html#a7b3be8a0d832f049ec80ec0305738aa5',1,'klotter::geom::Vertex::position'],['../structklotter_1_1Vertex.html#ab53cfc8cd6d1a6152e31eca6056b30ef',1,'klotter::Vertex::position'],['../structklotter_1_1MeshInstance.html#ac3ec119b3230fec9b44429d616ba8195',1,'klotter::MeshInstance::position'],['../structklotter_1_1PointLight.html#adb0573784a8adf570ed880587d3d9a1a',1,'klotter::PointLight::position'],['../structklotter_1_1FrustumLight.html#a2f4add6d54de79b60220fb042012da88',1,'klotter::FrustumLight::position']]],

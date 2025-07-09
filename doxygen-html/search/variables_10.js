@@ -3,7 +3,7 @@ var searchData=
   ['t_0',['t',['../structklotter_1_1SCurve.html#a8fcc2c4912246f4284cb2450093f0460',1,'klotter::SCurve']]],
   ['target_1',['target',['../structklotter_1_1UniformProp.html#ad717ae19fdc4d81cad9e4ce9083720d1',1,'klotter::UniformProp']]],
   ['targets_2',['targets',['../structklotter_1_1CompiledStack.html#a46d6e36d30b228ff95cc1269e5f450e6',1,'klotter::CompiledStack']]],
-  ['teal_3',['teal',['../namespaceklotter_1_1imgui.html#a3bd6f925dac3f66b4ac6a798ad732e0e',1,'klotter::imgui']]],
+  ['teal_3',['teal',['../group__imguicolors.html#ga3bd6f925dac3f66b4ac6a798ad732e0e',1,'klotter::imgui']]],
   ['tex_5fdiffuse_4',['tex_diffuse',['../structklotter_1_1LoadedShader__Unlit.html#a47eb0877bdfee9da78598205614a9c9d',1,'klotter::LoadedShader_Unlit::tex_diffuse'],['../structklotter_1_1LoadedShader__Default.html#af67d1691d573e8f477b9cacab5dbedab',1,'klotter::LoadedShader_Default::tex_diffuse']]],
   ['tex_5femissive_5',['tex_emissive',['../structklotter_1_1LoadedShader__Default.html#a39a8ac6136cec63f1924f0bb7014527c',1,'klotter::LoadedShader_Default']]],
   ['tex_5fskybox_6',['tex_skybox',['../structklotter_1_1LoadedShader__Skybox.html#a6fb6a3159d2c8e3f139e11a7cc84582c',1,'klotter::LoadedShader_Skybox']]],

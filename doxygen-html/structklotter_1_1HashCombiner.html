@@ -126,6 +126,7 @@ $(function(){ initResizable(false); });
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a65dfeacdc4930769b33d9f68dd509f4a" id="r_a65dfeacdc4930769b33d9f68dd509f4a"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a65dfeacdc4930769b33d9f68dd509f4a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1HashCombiner.html">HashCombiner</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a65dfeacdc4930769b33d9f68dd509f4a">combine</a> (const T &amp;t)</td></tr>
+<tr class="memdesc:a65dfeacdc4930769b33d9f68dd509f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines the hash of the given object with the current result.  <br /></td></tr>
 <tr class="separator:a65dfeacdc4930769b33d9f68dd509f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -135,6 +136,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A utility for combining hash values of multiple objects into a single hash value. </p>
+<dl class="section note"><dt>Note</dt><dd>Do not use when hashing is critical. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a65dfeacdc4930769b33d9f68dd509f4a" name="a65dfeacdc4930769b33d9f68dd509f4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65dfeacdc4930769b33d9f68dd509f4a">&#9670;&#160;</a></span>combine()</h2>
@@ -160,6 +162,9 @@ template&lt;typename T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Combines the hash of the given object with the current result. </p>
+<p>src: <a href="https://stackoverflow.com/a/17017281/180307">https://stackoverflow.com/a/17017281/180307</a> numbers from: <a href="https://stackoverflow.com/a/1646913/180307">https://stackoverflow.com/a/1646913/180307</a> </p><dl class="section note"><dt>Note</dt><dd>A word of warning, this is (a variation of) the Berstein hash, and because nobody knows why it does well in tests it is not advisable when hashing is critical. See <a href="https://github.com/mignon-p/jsw-libs/blob/master/Tutorials/jsw_tut_hashing.md">https://github.com/mignon-p/jsw-libs/blob/master/Tutorials/jsw_tut_hashing.md</a> </dd></dl>
 
 </div>
 </div>

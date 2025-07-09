@@ -198,6 +198,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1StateChanger.html">klotter::StateChanger</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper class to change both the opengl state and the cache.  <a href="structklotter_1_1StateChanger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1UniformBufferSetup.html">klotter::UniformBufferSetup</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CompiledUniformProp.html">klotter::CompiledUniformProp</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A compiled uniform buffer property that can be used in a shader.  <a href="structklotter_1_1CompiledUniformProp.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1UniformProp.html">klotter::UniformProp</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal  <a href="structklotter_1_1UniformProp.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1UniformBufferCompiler.html">klotter::UniformBufferCompiler</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1UniformBuffer.html">klotter::UniformBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1BoundUniformBuffer.html">klotter::BoundUniformBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CompiledGeom.html">klotter::CompiledGeom</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="structklotter_1_1Geom.html" title="vertices and triangles">Geom</a> on the GPU.  <a href="structklotter_1_1CompiledGeom.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -325,6 +339,19 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:gac7b12ed0e553cee508d8ca86f8c8e84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a0ad326e2184f99dd55593abe721e40" id="r_ga4a0ad326e2184f99dd55593abe721e40"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4a0ad326e2184f99dd55593abe721e40">klotter::UniformType</a> { <br />
+&#160;&#160;<a class="el" href="#gga4a0ad326e2184f99dd55593abe721e40afedb2d84cafe20862cb4399751a8a7e3">klotter::UniformType::invalid</a>
+, <a class="el" href="#gga4a0ad326e2184f99dd55593abe721e40a5c3e61d27b2bdaf4ddb98aadc356e863">klotter::UniformType::bool_type</a>
+, <a class="el" href="#gga4a0ad326e2184f99dd55593abe721e40a06d324fffd90570dc177e7d1aabcb4dd">klotter::UniformType::int_type</a>
+, <a class="el" href="#gga4a0ad326e2184f99dd55593abe721e40afd7170216efb2a7d32648e80919fb0ff">klotter::UniformType::float_type</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7">klotter::UniformType::vec2</a>
+, <a class="el" href="#gga4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36">klotter::UniformType::vec3</a>
+, <a class="el" href="#gga4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86">klotter::UniformType::vec4</a>
+, <a class="el" href="#gga4a0ad326e2184f99dd55593abe721e40abe14b41eb96410ea28b32bc138d885ae">klotter::UniformType::mat4</a>
+<br />
+ }</td></tr>
+<tr class="separator:ga4a0ad326e2184f99dd55593abe721e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8b35cebf3243809e4ea2b1ab6bb19fce" id="r_ga8b35cebf3243809e4ea2b1ab6bb19fce"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8b35cebf3243809e4ea2b1ab6bb19fce">klotter::Billboarding</a> { <br />
 &#160;&#160;<a class="el" href="#gga8b35cebf3243809e4ea2b1ab6bb19fcea334c4a4c42fdb79d7ebc3e73b517e6f8">klotter::Billboarding::none</a>
 , <a class="el" href="#gga8b35cebf3243809e4ea2b1ab6bb19fcea599eba19aa93a929cb8589f148b8a6c4">klotter::Billboarding::screen</a>
@@ -697,6 +724,38 @@ Variables</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728" name="ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728"></a>Instanced_mat4&#160;</td><td class="fielddoc"><p>the model source is provided as a (instanced) mat4 attribute </p>
 </td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga4a0ad326e2184f99dd55593abe721e40" name="ga4a0ad326e2184f99dd55593abe721e40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4a0ad326e2184f99dd55593abe721e40">&#9670;&#160;</a></span>UniformType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ga4a0ad326e2184f99dd55593abe721e40">klotter::UniformType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga4a0ad326e2184f99dd55593abe721e40afedb2d84cafe20862cb4399751a8a7e3" name="gga4a0ad326e2184f99dd55593abe721e40afedb2d84cafe20862cb4399751a8a7e3"></a>invalid&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga4a0ad326e2184f99dd55593abe721e40a5c3e61d27b2bdaf4ddb98aadc356e863" name="gga4a0ad326e2184f99dd55593abe721e40a5c3e61d27b2bdaf4ddb98aadc356e863"></a>bool_type&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga4a0ad326e2184f99dd55593abe721e40a06d324fffd90570dc177e7d1aabcb4dd" name="gga4a0ad326e2184f99dd55593abe721e40a06d324fffd90570dc177e7d1aabcb4dd"></a>int_type&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga4a0ad326e2184f99dd55593abe721e40afd7170216efb2a7d32648e80919fb0ff" name="gga4a0ad326e2184f99dd55593abe721e40afd7170216efb2a7d32648e80919fb0ff"></a>float_type&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7" name="gga4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7"></a>vec2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36" name="gga4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36"></a>vec3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86" name="gga4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86"></a>vec4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga4a0ad326e2184f99dd55593abe721e40abe14b41eb96410ea28b32bc138d885ae" name="gga4a0ad326e2184f99dd55593abe721e40abe14b41eb96410ea28b32bc138d885ae"></a>mat4&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

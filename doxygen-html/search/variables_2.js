@@ -12,5 +12,5 @@ var searchData=
   ['cull_5fface_9',['cull_face',['../structklotter_1_1OpenglStates.html#a89ee7105fbafa9f60684e3c06035f6ba',1,'klotter::OpenglStates']]],
   ['cull_5fface_5fmode_10',['cull_face_mode',['../structklotter_1_1OpenglStates.html#aca8b5650ca44492042e731110c5f4177',1,'klotter::OpenglStates']]],
   ['curve_11',['curve',['../structklotter_1_1PointLight.html#af76b4ef03892681ddea0db8822adcbe5',1,'klotter::PointLight::curve'],['../structklotter_1_1FrustumLight.html#a50008ee8da980eb7cc545fee216237de',1,'klotter::FrustumLight::curve'],['../structklotter_1_1SCurveAndDrag.html#a9cfce39afe3c791abde0b5b62155f6cd',1,'klotter::SCurveAndDrag::curve']]],
-  ['cyan_12',['cyan',['../namespaceklotter_1_1imgui.html#a82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
+  ['cyan_12',['cyan',['../group__imguicolors.html#ga82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
 ];

@@ -5,7 +5,7 @@ var searchData=
   ['pch_2eprivate_2eh_2',['pch.private.h',['../pch_8private_8h.html',1,'']]],
   ['pch_2epublic_2eh_3',['pch.public.h',['../pch_8public_8h.html',1,'']]],
   ['pimpl_4',['pimpl',['../structklotter_1_1Renderer.html#a2a3c947386d5278b82c89d59af6ee7a9',1,'klotter::Renderer']]],
-  ['pink_5',['pink',['../namespaceklotter_1_1imgui.html#a592fc2fda898296f6faeb8f4f8774a79',1,'klotter::imgui']]],
+  ['pink_5',['pink',['../group__imguicolors.html#ga592fc2fda898296f6faeb8f4f8774a79',1,'klotter::imgui']]],
   ['pitch_6',['pitch',['../structklotter_1_1Camera.html#a239ef16a40798863e933a2b56db8de78',1,'klotter::Camera::pitch'],['../structklotter_1_1FrustumLight.html#aebc136b2b2fc97327f73a56dac889319',1,'klotter::FrustumLight::pitch']]],
   ['pixel_7',['pixel',['../group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f',1,'klotter']]],
   ['point_8',['point',['../group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a78ee54aa8f813885fe2fe20d232518b9',1,'klotter']]],

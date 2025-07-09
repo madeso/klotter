@@ -776,15 +776,7 @@
     <member refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kind="enum"><name>Transparency</name></member>
     <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
     <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40afedb2d84cafe20862cb4399751a8a7e3" kind="enumvalue"><name>invalid</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a5c3e61d27b2bdaf4ddb98aadc356e863" kind="enumvalue"><name>bool_type</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a06d324fffd90570dc177e7d1aabcb4dd" kind="enumvalue"><name>int_type</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40afd7170216efb2a7d32648e80919fb0ff" kind="enumvalue"><name>float_type</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7" kind="enumvalue"><name>vec2</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36" kind="enumvalue"><name>vec3</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86" kind="enumvalue"><name>vec4</name></member>
-    <member refid="namespaceklotter_1a4a0ad326e2184f99dd55593abe721e40abe14b41eb96410ea28b32bc138d885ae" kind="enumvalue"><name>mat4</name></member>
+    <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
     <member refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kind="enum"><name>VertexType</name></member>
     <member refid="group__render_1ga8b35cebf3243809e4ea2b1ab6bb19fce" kind="enum"><name>Billboarding</name></member>
     <member refid="namespaceklotter_1a7421aae5c39bf21635e20a1d6011fabd" kind="typedef"><name>MakeAppFunction</name></member>
@@ -878,22 +870,22 @@
     <member refid="group__geom-builder_1gadc69c97f15c880f2ed072ae2cd4ab61c" kind="function"><name>create_uv_sphere</name></member>
   </compound>
   <compound refid="namespaceklotter_1_1imgui" kind="namespace"><name>klotter::imgui</name>
-    <member refid="namespaceklotter_1_1imgui_1aa9ebfa075a3dfab2438e857c5613eb90" kind="variable"><name>ALPHA</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a3bf146ca37035a30171e70de8f9c8e69" kind="variable"><name>white</name></member>
-    <member refid="namespaceklotter_1_1imgui_1af3a643d856ba4ff26ed17eb6cf9163ed" kind="variable"><name>black</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a6ca10d7a28e2d394c29a470f94ee790f" kind="variable"><name>gray</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a2b7da2e18316f6c2522c96be0d56ada5" kind="variable"><name>red</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a592fc2fda898296f6faeb8f4f8774a79" kind="variable"><name>pink</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a64da05bfc2889d48883a33cba2f4192c" kind="variable"><name>grape</name></member>
-    <member refid="namespaceklotter_1_1imgui_1ac5bdda2c8e3ff8f790e81e5c992f2296" kind="variable"><name>violet</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a7af53378e11ed2f4ec0c2ce54b6be954" kind="variable"><name>indigo</name></member>
-    <member refid="namespaceklotter_1_1imgui_1af411963d263ef598e8c346f0609e059a" kind="variable"><name>blue</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a82e168a5311fffe39e9812dd5eff0f9d" kind="variable"><name>cyan</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a3bd6f925dac3f66b4ac6a798ad732e0e" kind="variable"><name>teal</name></member>
-    <member refid="namespaceklotter_1_1imgui_1a9655f89d578b8314d605515fd2e6e945" kind="variable"><name>green</name></member>
-    <member refid="namespaceklotter_1_1imgui_1acbc316ef8105da66f1d268c14463bd7e" kind="variable"><name>lime</name></member>
-    <member refid="namespaceklotter_1_1imgui_1afc89d904b23312ecdf1aed6cd7b137c1" kind="variable"><name>yellow</name></member>
-    <member refid="namespaceklotter_1_1imgui_1ae9f69cc280e1a47e222e63a6be99712a" kind="variable"><name>orange</name></member>
+    <member refid="group__imguicolors_1gaa9ebfa075a3dfab2438e857c5613eb90" kind="variable"><name>ALPHA</name></member>
+    <member refid="group__imguicolors_1ga3bf146ca37035a30171e70de8f9c8e69" kind="variable"><name>white</name></member>
+    <member refid="group__imguicolors_1gaf3a643d856ba4ff26ed17eb6cf9163ed" kind="variable"><name>black</name></member>
+    <member refid="group__imguicolors_1ga6ca10d7a28e2d394c29a470f94ee790f" kind="variable"><name>gray</name></member>
+    <member refid="group__imguicolors_1ga2b7da2e18316f6c2522c96be0d56ada5" kind="variable"><name>red</name></member>
+    <member refid="group__imguicolors_1ga592fc2fda898296f6faeb8f4f8774a79" kind="variable"><name>pink</name></member>
+    <member refid="group__imguicolors_1ga64da05bfc2889d48883a33cba2f4192c" kind="variable"><name>grape</name></member>
+    <member refid="group__imguicolors_1gac5bdda2c8e3ff8f790e81e5c992f2296" kind="variable"><name>violet</name></member>
+    <member refid="group__imguicolors_1ga7af53378e11ed2f4ec0c2ce54b6be954" kind="variable"><name>indigo</name></member>
+    <member refid="group__imguicolors_1gaf411963d263ef598e8c346f0609e059a" kind="variable"><name>blue</name></member>
+    <member refid="group__imguicolors_1ga82e168a5311fffe39e9812dd5eff0f9d" kind="variable"><name>cyan</name></member>
+    <member refid="group__imguicolors_1ga3bd6f925dac3f66b4ac6a798ad732e0e" kind="variable"><name>teal</name></member>
+    <member refid="group__imguicolors_1ga9655f89d578b8314d605515fd2e6e945" kind="variable"><name>green</name></member>
+    <member refid="group__imguicolors_1gacbc316ef8105da66f1d268c14463bd7e" kind="variable"><name>lime</name></member>
+    <member refid="group__imguicolors_1gafc89d904b23312ecdf1aed6cd7b137c1" kind="variable"><name>yellow</name></member>
+    <member refid="group__imguicolors_1gae9f69cc280e1a47e222e63a6be99712a" kind="variable"><name>orange</name></member>
   </compound>
   <compound refid="namespacestd_1_1literals_1_1string__view__literals" kind="namespace"><name>std::literals::string_view_literals</name>
   </compound>
@@ -1138,6 +1130,15 @@
     <member refid="group__render_1ggac7b12ed0e553cee508d8ca86f8c8e84fab0fe2606af48e49fd3746844798eb6a0" kind="enumvalue"><name>decrease</name></member>
     <member refid="group__render_1ggac7b12ed0e553cee508d8ca86f8c8e84faeea8162fd4103d6d9864b893f79150f1" kind="enumvalue"><name>decrease_wrap</name></member>
     <member refid="group__render_1ggac7b12ed0e553cee508d8ca86f8c8e84fa20e57f32ba12b9cd13ebe9ef5e32d949" kind="enumvalue"><name>invert</name></member>
+    <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
+    <member refid="group__render_1gga4a0ad326e2184f99dd55593abe721e40afedb2d84cafe20862cb4399751a8a7e3" kind="enumvalue"><name>invalid</name></member>
+    <member refid="group__render_1gga4a0ad326e2184f99dd55593abe721e40a5c3e61d27b2bdaf4ddb98aadc356e863" kind="enumvalue"><name>bool_type</name></member>
+    <member refid="group__render_1gga4a0ad326e2184f99dd55593abe721e40a06d324fffd90570dc177e7d1aabcb4dd" kind="enumvalue"><name>int_type</name></member>
+    <member refid="group__render_1gga4a0ad326e2184f99dd55593abe721e40afd7170216efb2a7d32648e80919fb0ff" kind="enumvalue"><name>float_type</name></member>
+    <member refid="group__render_1gga4a0ad326e2184f99dd55593abe721e40a87c214e1e77f5e0644a224f3df50fae7" kind="enumvalue"><name>vec2</name></member>
+    <member refid="group__render_1gga4a0ad326e2184f99dd55593abe721e40a97ade28e93c0de60adc075bdbe07ca36" kind="enumvalue"><name>vec3</name></member>
+    <member refid="group__render_1gga4a0ad326e2184f99dd55593abe721e40a1a9028fd802c481a99491a418ca2fe86" kind="enumvalue"><name>vec4</name></member>
+    <member refid="group__render_1gga4a0ad326e2184f99dd55593abe721e40abe14b41eb96410ea28b32bc138d885ae" kind="enumvalue"><name>mat4</name></member>
     <member refid="group__render_1ga8b35cebf3243809e4ea2b1ab6bb19fce" kind="enum"><name>Billboarding</name></member>
     <member refid="group__render_1gga8b35cebf3243809e4ea2b1ab6bb19fcea334c4a4c42fdb79d7ebc3e73b517e6f8" kind="enumvalue"><name>none</name></member>
     <member refid="group__render_1gga8b35cebf3243809e4ea2b1ab6bb19fcea599eba19aa93a929cb8589f148b8a6c4" kind="enumvalue"><name>screen</name></member>
@@ -1172,6 +1173,24 @@
     <member refid="group__hash_1ga9038dc1dac99b31ae58ae04bee68d416" kind="define"><name>HASH_DEF_BEGIN</name></member>
     <member refid="group__hash_1ga102a60c28b17bc852589bbb26135173b" kind="define"><name>HASH_DEF</name></member>
     <member refid="group__hash_1gadea525dabdf353ba96abce59e6a5dadd" kind="define"><name>HASH_DEF_END</name></member>
+  </compound>
+  <compound refid="group__imguicolors" kind="group"><name>imguicolors</name>
+    <member refid="group__imguicolors_1gaa9ebfa075a3dfab2438e857c5613eb90" kind="variable"><name>ALPHA</name></member>
+    <member refid="group__imguicolors_1ga3bf146ca37035a30171e70de8f9c8e69" kind="variable"><name>white</name></member>
+    <member refid="group__imguicolors_1gaf3a643d856ba4ff26ed17eb6cf9163ed" kind="variable"><name>black</name></member>
+    <member refid="group__imguicolors_1ga6ca10d7a28e2d394c29a470f94ee790f" kind="variable"><name>gray</name></member>
+    <member refid="group__imguicolors_1ga2b7da2e18316f6c2522c96be0d56ada5" kind="variable"><name>red</name></member>
+    <member refid="group__imguicolors_1ga592fc2fda898296f6faeb8f4f8774a79" kind="variable"><name>pink</name></member>
+    <member refid="group__imguicolors_1ga64da05bfc2889d48883a33cba2f4192c" kind="variable"><name>grape</name></member>
+    <member refid="group__imguicolors_1gac5bdda2c8e3ff8f790e81e5c992f2296" kind="variable"><name>violet</name></member>
+    <member refid="group__imguicolors_1ga7af53378e11ed2f4ec0c2ce54b6be954" kind="variable"><name>indigo</name></member>
+    <member refid="group__imguicolors_1gaf411963d263ef598e8c346f0609e059a" kind="variable"><name>blue</name></member>
+    <member refid="group__imguicolors_1ga82e168a5311fffe39e9812dd5eff0f9d" kind="variable"><name>cyan</name></member>
+    <member refid="group__imguicolors_1ga3bd6f925dac3f66b4ac6a798ad732e0e" kind="variable"><name>teal</name></member>
+    <member refid="group__imguicolors_1ga9655f89d578b8314d605515fd2e6e945" kind="variable"><name>green</name></member>
+    <member refid="group__imguicolors_1gacbc316ef8105da66f1d268c14463bd7e" kind="variable"><name>lime</name></member>
+    <member refid="group__imguicolors_1gafc89d904b23312ecdf1aed6cd7b137c1" kind="variable"><name>yellow</name></member>
+    <member refid="group__imguicolors_1gae9f69cc280e1a47e222e63a6be99712a" kind="variable"><name>orange</name></member>
   </compound>
   <compound refid="group__geom" kind="group"><name>geom</name>
   </compound>

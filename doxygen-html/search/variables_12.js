@@ -13,5 +13,5 @@ var searchData=
   ['view_10',['view',['../structklotter_1_1CompiledCamera.html#a1eb29eda166a30627784a927bc854c47',1,'klotter::CompiledCamera']]],
   ['view_5fposition_11',['view_position',['../structklotter_1_1LoadedShader__Default.html#af42cd69f5c0e974bd7b51627ca1366d3',1,'klotter::LoadedShader_Default']]],
   ['view_5fprop_12',['view_prop',['../structklotter_1_1CameraUniformBuffer.html#ae47677224955f8ae8562a9cb414e33e4',1,'klotter::CameraUniformBuffer']]],
-  ['violet_13',['violet',['../namespaceklotter_1_1imgui.html#ac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
+  ['violet_13',['violet',['../group__imguicolors.html#gac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
 ];

@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="50" column="9" bodyfile="src/klotter/hash.h" bodystart="50" bodyend="58"/>
+        <location file="src/klotter/hash.h" line="56" column="9" bodyfile="src/klotter/hash.h" bodystart="56" bodyend="64"/>
       </memberdef>
       <memberdef kind="define" id="group__hash_1ga102a60c28b17bc852589bbb26135173b" prot="public" static="no">
         <name>HASH_DEF</name>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="69" column="9" bodyfile="src/klotter/hash.h" bodystart="69" bodyend="-1"/>
+        <location file="src/klotter/hash.h" line="75" column="9" bodyfile="src/klotter/hash.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__hash_1gadea525dabdf353ba96abce59e6a5dadd" prot="public" static="no">
         <name>HASH_DEF_END</name>
@@ -74,13 +74,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="78" column="9" bodyfile="src/klotter/hash.h" bodystart="78" bodyend="82"/>
+        <location file="src/klotter/hash.h" line="84" column="9" bodyfile="src/klotter/hash.h" bodystart="84" bodyend="88"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>This group provides macros to simplify the creation of custom hash functions for user-defined types and specialization of std::hash for your types. </para>
+<para>Helper macros for specializing the std::hash. </para>
     </briefdescription>
     <detaileddescription>
+<para>This group provides a util <ref refid="structklotter_1_1HashCombiner" kindref="compound">HashCombiner</ref> to simplify the creation of hash functions for user-defined types (using std::hash) and macros for specialization of std::hash for custom types.</para>
 <para>Example usage: <programlisting><codeline><highlight class="normal"><ref refid="group__hash_1ga9038dc1dac99b31ae58ae04bee68d416" kindref="member">HASH_DEF_BEGIN</ref>(MyType)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__hash_1ga102a60c28b17bc852589bbb26135173b" kindref="member">HASH_DEF</ref>(member1)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__hash_1ga102a60c28b17bc852589bbb26135173b" kindref="member">HASH_DEF</ref>(member2)</highlight></codeline>

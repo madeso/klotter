@@ -9,7 +9,7 @@ var searchData=
   ['make_5fskybox_6',['make_skybox',['../structklotter_1_1Renderer.html#a6c10f931f84d4c16cdf5ce442ea5db58',1,'klotter::Renderer']]],
   ['make_5funlit_5fmaterial_7',['make_unlit_material',['../structklotter_1_1Renderer.html#ade91c2a35ede1e145068650eeebe3350',1,'klotter::Renderer']]],
   ['makeappfunction_8',['MakeAppFunction',['../namespaceklotter.html#a7421aae5c39bf21635e20a1d6011fabd',1,'klotter']]],
-  ['mat4_9',['mat4',['../namespaceklotter.html#a4a0ad326e2184f99dd55593abe721e40abe14b41eb96410ea28b32bc138d885ae',1,'klotter']]],
+  ['mat4_9',['mat4',['../group__render.html#gga4a0ad326e2184f99dd55593abe721e40abe14b41eb96410ea28b32bc138d885ae',1,'klotter']]],
   ['material_10',['Material',['../structklotter_1_1Material.html',1,'klotter::Material'],['../structklotter_1_1Material.html#a24140b226196668917743a48c1d5361b',1,'klotter::Material::Material()=default'],['../structklotter_1_1Material.html#ace5e0bd7d0fc1daad0f181dc42dfa6af',1,'klotter::Material::Material(const Material &amp;)=delete'],['../structklotter_1_1Material.html#a9775d81964f25d6af45a2a91b46a548f',1,'klotter::Material::Material(Material &amp;&amp;)=delete']]],
   ['material_11',['material',['../structklotter_1_1MeshInstance.html#a4818b54573449973b21a6bd7cb03952d',1,'klotter::MeshInstance::material'],['../structklotter_1_1MeshInstance__TransformInstanced.html#ad01fe393f543e9f9bfb9335621b75395',1,'klotter::MeshInstance_TransformInstanced::material']]],
   ['material_2eh_12',['material.h',['../material_8h.html',1,'']]],

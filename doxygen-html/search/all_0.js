@@ -14,7 +14,7 @@ var searchData=
   ['add_5ftriangle_11',['add_triangle',['../structklotter_1_1geom_1_1Builder.html#a2221d13065eb2546d6f454d8f1a04b95',1,'klotter::geom::Builder']]],
   ['additional_20resources_3a_12',['Additional resources:',['../enable__high__performance__graphics_8h.html#autotoc_md1',1,'']]],
   ['almost_5fzero_13',['ALMOST_ZERO',['../namespaceklotter.html#af84f50d2d555a52091dca0e8b0707f8a',1,'klotter']]],
-  ['alpha_14',['ALPHA',['../namespaceklotter_1_1imgui.html#aa9ebfa075a3dfab2438e857c5613eb90',1,'klotter::imgui']]],
+  ['alpha_14',['ALPHA',['../group__imguicolors.html#gaa9ebfa075a3dfab2438e857c5613eb90',1,'klotter::imgui']]],
   ['alpha_15',['alpha',['../structklotter_1_1UnlitMaterial.html#a4f569b97cfba5e690ae58b220f50acf8',1,'klotter::UnlitMaterial::alpha'],['../structklotter_1_1DefaultMaterial.html#a3c97cf440220d6a37ebeb57e28d082cb',1,'klotter::DefaultMaterial::alpha']]],
   ['alpha_5ftransparency_5flimit_16',['ALPHA_TRANSPARENCY_LIMIT',['../namespaceklotter.html#a6d9726b7a1f0528975dfda6051f71743',1,'klotter']]],
   ['always_17',['always',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69af9f90eeaf400d228facde6bc48da5cfb',1,'klotter']]],
