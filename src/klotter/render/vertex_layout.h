@@ -86,6 +86,7 @@ struct CompiledVertexTypeList
 	int next_index;
 };
 
+/// A property for a shader used in instanced rendering.
 /// @see \ref compile_shader_layout
 struct InstanceProp
 {

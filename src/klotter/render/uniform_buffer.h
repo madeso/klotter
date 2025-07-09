@@ -5,6 +5,9 @@
 namespace klotter
 {
 
+/** \addtogroup render Renderer
+ *  @{
+*/
 
 enum class UniformType
 {
@@ -83,5 +86,9 @@ struct BoundUniformBuffer
 
 	UniformBuffer* buffer;
 };
+
+/**
+ * @}
+*/
 
 }  //  namespace klotter

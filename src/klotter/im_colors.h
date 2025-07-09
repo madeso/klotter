@@ -5,14 +5,24 @@
 namespace klotter::imgui
 {
 
-// "open color" colors
-// https://yeun.github.io/open-color/
+/** \addtogroup imguicolors Dear ImGui Colors
+ * This defines "open color" colors for Dear ImGui.
+ * https://yeun.github.io/open-color/
+ *  @{
+*/
 
+// todo(Gustav): add a dear imgui function to set the theme. perhaps connectable to https://github.com/hundredrabbits/Themes
+
+/// The alpha value for all the colors.
 constexpr ImU32 ALPHA = 0xff;
 
+/// Pure white.
 constexpr ImU32 white = IM_COL32(0xff, 0xff, 0xff, ALPHA);
+
+/// Pure black.
 constexpr ImU32 black = IM_COL32(0x00, 0x00, 0x00, ALPHA);
 
+/// First element is the least gray (almost white), last element is the most gray.
 constexpr std::array<ImU32, 10> gray
 	= {IM_COL32(0xf8, 0xf9, 0xfa, ALPHA),
 	   IM_COL32(0xf1, 0xf3, 0xf5, ALPHA),
@@ -25,6 +35,7 @@ constexpr std::array<ImU32, 10> gray
 	   IM_COL32(0x34, 0x3a, 0x40, ALPHA),
 	   IM_COL32(0x21, 0x25, 0x29, ALPHA)};
 
+/// First element is the least red (almost white), last element is the most red.
 constexpr std::array<ImU32, 10> red
 	= {IM_COL32(0xff, 0xf5, 0xf5, ALPHA),
 	   IM_COL32(0xff, 0xe3, 0xe3, ALPHA),
@@ -37,6 +48,7 @@ constexpr std::array<ImU32, 10> red
 	   IM_COL32(0xe0, 0x31, 0x31, ALPHA),
 	   IM_COL32(0xc9, 0x2a, 0x2a, ALPHA)};
 
+/// First element is the least pink (almost white), last element is the most pink.
 constexpr std::array<ImU32, 10> pink
 	= {IM_COL32(0xff, 0xf0, 0xf6, ALPHA),
 	   IM_COL32(0xff, 0xde, 0xeb, ALPHA),
@@ -49,6 +61,7 @@ constexpr std::array<ImU32, 10> pink
 	   IM_COL32(0xc2, 0x25, 0x5c, ALPHA),
 	   IM_COL32(0xa6, 0x1e, 0x4d, ALPHA)};
 
+/// First element is the least grape (almost white), last element is the most grape.
 constexpr std::array<ImU32, 10> grape
 	= {IM_COL32(0xf8, 0xf0, 0xfc, ALPHA),
 	   IM_COL32(0xf3, 0xd9, 0xfa, ALPHA),
@@ -61,6 +74,7 @@ constexpr std::array<ImU32, 10> grape
 	   IM_COL32(0x9c, 0x36, 0xb5, ALPHA),
 	   IM_COL32(0x86, 0x2e, 0x9c, ALPHA)};
 
+/// First element is the least violet (almost white), last element is the most violet.
 constexpr std::array<ImU32, 10> violet
 	= {IM_COL32(0xf3, 0xf0, 0xff, ALPHA),
 	   IM_COL32(0xe5, 0xdb, 0xff, ALPHA),
@@ -73,6 +87,7 @@ constexpr std::array<ImU32, 10> violet
 	   IM_COL32(0x67, 0x41, 0xd9, ALPHA),
 	   IM_COL32(0x5f, 0x3d, 0xc4, ALPHA)};
 
+/// First element is the least indigo (almost white), last element is the most indigo.
 constexpr std::array<ImU32, 10> indigo
 	= {IM_COL32(0xed, 0xf2, 0xff, ALPHA),
 	   IM_COL32(0xdb, 0xe4, 0xff, ALPHA),
@@ -85,6 +100,7 @@ constexpr std::array<ImU32, 10> indigo
 	   IM_COL32(0x3b, 0x5b, 0xdb, ALPHA),
 	   IM_COL32(0x36, 0x4f, 0xc7, ALPHA)};
 
+/// First element is the least blue (almost white), last element is the most blue.
 constexpr std::array<ImU32, 10> blue
 	= {IM_COL32(0xe7, 0xf5, 0xff, ALPHA),
 	   IM_COL32(0xd0, 0xeb, 0xff, ALPHA),
@@ -97,6 +113,7 @@ constexpr std::array<ImU32, 10> blue
 	   IM_COL32(0x19, 0x71, 0xc2, ALPHA),
 	   IM_COL32(0x18, 0x64, 0xab, ALPHA)};
 
+/// First element is the least cyan (almost white), last element is the most cyan.
 constexpr std::array<ImU32, 10> cyan
 	= {IM_COL32(0xe3, 0xfa, 0xfc, ALPHA),
 	   IM_COL32(0xc5, 0xf6, 0xfa, ALPHA),
@@ -109,6 +126,7 @@ constexpr std::array<ImU32, 10> cyan
 	   IM_COL32(0x0c, 0x85, 0x99, ALPHA),
 	   IM_COL32(0x0b, 0x72, 0x85, ALPHA)};
 
+/// First element is the least teal (almost white), last element is the most teal.
 constexpr std::array<ImU32, 10> teal
 	= {IM_COL32(0xe6, 0xfc, 0xf5, ALPHA),
 	   IM_COL32(0xc3, 0xfa, 0xe8, ALPHA),
@@ -121,6 +139,7 @@ constexpr std::array<ImU32, 10> teal
 	   IM_COL32(0x09, 0x92, 0x68, ALPHA),
 	   IM_COL32(0x08, 0x7f, 0x5b, ALPHA)};
 
+/// First element is the least green (almost white), last element is the most green.
 constexpr std::array<ImU32, 10> green
 	= {IM_COL32(0xeb, 0xfb, 0xee, ALPHA),
 	   IM_COL32(0xd3, 0xf9, 0xd8, ALPHA),
@@ -133,6 +152,7 @@ constexpr std::array<ImU32, 10> green
 	   IM_COL32(0x2f, 0x9e, 0x44, ALPHA),
 	   IM_COL32(0x2b, 0x8a, 0x3e, ALPHA)};
 
+/// First element is the least lime (almost white), last element is the most lime.
 constexpr std::array<ImU32, 10> lime
 	= {IM_COL32(0xf4, 0xfc, 0xe3, ALPHA),
 	   IM_COL32(0xe9, 0xfa, 0xc8, ALPHA),
@@ -145,6 +165,7 @@ constexpr std::array<ImU32, 10> lime
 	   IM_COL32(0x66, 0xa8, 0x0f, ALPHA),
 	   IM_COL32(0x5c, 0x94, 0x0d, ALPHA)};
 
+/// First element is the least yellow (almost white), last element is the most yellow.
 constexpr std::array<ImU32, 10> yellow
 	= {IM_COL32(0xff, 0xf9, 0xdb, ALPHA),
 	   IM_COL32(0xff, 0xf3, 0xbf, ALPHA),
@@ -157,6 +178,7 @@ constexpr std::array<ImU32, 10> yellow
 	   IM_COL32(0xf0, 0x8c, 0x00, ALPHA),
 	   IM_COL32(0xe6, 0x77, 0x00, ALPHA)};
 
+/// First element is the least orange (almost white), last element is the most orange.
 constexpr std::array<ImU32, 10> orange
 	= {IM_COL32(0xff, 0xf4, 0xe6, ALPHA),
 	   IM_COL32(0xff, 0xe8, 0xcc, ALPHA),
@@ -168,5 +190,9 @@ constexpr std::array<ImU32, 10> orange
 	   IM_COL32(0xf7, 0x67, 0x07, ALPHA),
 	   IM_COL32(0xe8, 0x59, 0x0c, ALPHA),
 	   IM_COL32(0xd9, 0x48, 0x0f, ALPHA)};
+
+/**
+ * @}
+*/
 
 }  //  namespace klotter::imgui

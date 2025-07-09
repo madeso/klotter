@@ -6,6 +6,7 @@ namespace klotter
 {
 
 /** \addtogroup scurcve S Curve
+ * \brief A tweakable curve similar to easing functions.
  * Discovered in https://x.com/Morusque/status/1352569197499441155.
  * Expanded in [A Convenient Generalization of Schlick’s Bias and Gain Functions (pdf)](https://arxiv.org/pdf/2010.09714) by Jonathan T. Barron.
  *  @{
