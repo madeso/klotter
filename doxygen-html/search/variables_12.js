@@ -10,8 +10,8 @@ var searchData=
   ['vbo_7',['vbo',['../structklotter_1_1CompiledGeom.html#a9d480775171d797a0604199ce661b0c1',1,'klotter::CompiledGeom::vbo'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a0e178ef0c09b2968213783208092dcf7',1,'klotter::CompiledGeom_TransformInstance::vbo']]],
   ['vertex_8',['vertex',['../structklotter_1_1VertexShaderSource.html#a8f362859d9f3f6f46c10a7a9cabddf7c',1,'klotter::VertexShaderSource::vertex'],['../structklotter_1_1ShaderSource.html#a6b9e1c440250f9b203724b907da93f18',1,'klotter::ShaderSource::vertex']]],
   ['vertices_9',['vertices',['../structklotter_1_1Geom.html#a5f55a031de35199a3bd11ca612a08aae',1,'klotter::Geom']]],
-  ['view_10',['view',['../structklotter_1_1CompiledCamera.html#a1eb29eda166a30627784a927bc854c47',1,'klotter::CompiledCamera']]],
-  ['view_5fposition_11',['view_position',['../structklotter_1_1LoadedShader__Default.html#af42cd69f5c0e974bd7b51627ca1366d3',1,'klotter::LoadedShader_Default']]],
-  ['view_5fprop_12',['view_prop',['../structklotter_1_1CameraUniformBuffer.html#ae47677224955f8ae8562a9cb414e33e4',1,'klotter::CameraUniformBuffer']]],
+  ['view_5ffrom_5fworld_10',['view_from_world',['../structklotter_1_1CompiledCamera.html#a8069b0435d682041843d9af2c4f49f19',1,'klotter::CompiledCamera']]],
+  ['view_5ffrom_5fworld_5funi_11',['view_from_world_uni',['../structklotter_1_1LineDrawer.html#a8268353446742e802b34b01fa62276cc',1,'klotter::LineDrawer::view_from_world_uni'],['../structklotter_1_1CameraUniformBuffer.html#aaae605f9cf97189117b80735ec12b77f',1,'klotter::CameraUniformBuffer::view_from_world_uni']]],
+  ['view_5fposition_5funi_12',['view_position_uni',['../structklotter_1_1LoadedShader__Default.html#ab94e2191d8eb5b45a7b5ecea9baab7c4',1,'klotter::LoadedShader_Default']]],
   ['violet_13',['violet',['../group__imguicolors.html#gac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
 ];

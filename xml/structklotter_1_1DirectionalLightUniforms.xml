@@ -4,12 +4,40 @@
     <compoundname>klotter::DirectionalLightUniforms</compoundname>
     <includes refid="shader__resource_8h" local="no">shader_resource.h</includes>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structklotter_1_1DirectionalLightUniforms_1a801338744f0a781c96cea0312853b29b" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1DirectionalLightUniforms_1a610c577926a1029776914ad6a2d3c733" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
-        <definition>Uniform klotter::DirectionalLightUniforms::light_diffuse_color</definition>
+        <definition>Uniform klotter::DirectionalLightUniforms::light_diffuse_color_uni</definition>
         <argsstring></argsstring>
-        <name>light_diffuse_color</name>
-        <qualifiedname>klotter::DirectionalLightUniforms::light_diffuse_color</qualifiedname>
+        <name>light_diffuse_color_uni</name>
+        <qualifiedname>klotter::DirectionalLightUniforms::light_diffuse_color_uni</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="88" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1DirectionalLightUniforms_1a115063de2d20559239d655e99a54a13f" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::DirectionalLightUniforms::light_specular_color_uni</definition>
+        <argsstring></argsstring>
+        <name>light_specular_color_uni</name>
+        <qualifiedname>klotter::DirectionalLightUniforms::light_specular_color_uni</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="89" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1DirectionalLightUniforms_1aed02f947b82c857ca9f1f91401785d6c" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::DirectionalLightUniforms::dir_uni</definition>
+        <argsstring></argsstring>
+        <name>dir_uni</name>
+        <qualifiedname>klotter::DirectionalLightUniforms::dir_uni</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -17,34 +45,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="90" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="90" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1DirectionalLightUniforms_1ab80a217f6a0dad1911ca5f03949f5398" prot="public" static="no" mutable="no">
-        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
-        <definition>Uniform klotter::DirectionalLightUniforms::light_specular_color</definition>
-        <argsstring></argsstring>
-        <name>light_specular_color</name>
-        <qualifiedname>klotter::DirectionalLightUniforms::light_specular_color</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="91" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="91" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1DirectionalLightUniforms_1a6fc53d6b940a156301c25e7f9b2e4d55" prot="public" static="no" mutable="no">
-        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
-        <definition>Uniform klotter::DirectionalLightUniforms::dir</definition>
-        <argsstring></argsstring>
-        <name>dir</name>
-        <qualifiedname>klotter::DirectionalLightUniforms::dir</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="92" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="92" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="88" column="1"/>
+        <location file="src/klotter/render/shader_resource.h" line="86" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -84,9 +84,9 @@
         <label>klotter::DirectionalLightUniforms</label>
         <link refid="structklotter_1_1DirectionalLightUniforms"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>dir</edgelabel>
-          <edgelabel>light_diffuse_color</edgelabel>
-          <edgelabel>light_specular_color</edgelabel>
+          <edgelabel>dir_uni</edgelabel>
+          <edgelabel>light_diffuse_color_uni</edgelabel>
+          <edgelabel>light_specular_color_uni</edgelabel>
         </childnode>
       </node>
       <node id="2">
@@ -94,12 +94,12 @@
         <link refid="structklotter_1_1Uniform"/>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="86" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="87" bodyend="93"/>
+    <location file="src/klotter/render/shader_resource.h" line="84" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="85" bodyend="91"/>
     <listofallmembers>
-      <member refid="structklotter_1_1DirectionalLightUniforms_1a6fc53d6b940a156301c25e7f9b2e4d55" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>dir</name></member>
+      <member refid="structklotter_1_1DirectionalLightUniforms_1aed02f947b82c857ca9f1f91401785d6c" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>dir_uni</name></member>
       <member refid="structklotter_1_1DirectionalLightUniforms_1a91fd8436ad067b9181e18831b5ed382d" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>DirectionalLightUniforms</name></member>
-      <member refid="structklotter_1_1DirectionalLightUniforms_1a801338744f0a781c96cea0312853b29b" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>light_diffuse_color</name></member>
-      <member refid="structklotter_1_1DirectionalLightUniforms_1ab80a217f6a0dad1911ca5f03949f5398" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>light_specular_color</name></member>
+      <member refid="structklotter_1_1DirectionalLightUniforms_1a610c577926a1029776914ad6a2d3c733" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>light_diffuse_color_uni</name></member>
+      <member refid="structklotter_1_1DirectionalLightUniforms_1a115063de2d20559239d655e99a54a13f" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>light_specular_color_uni</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -32,12 +32,12 @@
         </inbodydescription>
         <location file="src/klotter/render/world.h" line="102" column="17" bodyfile="src/klotter/render/world.h" bodystart="102" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1MeshInstance__TransformInstanced_1a96aeca9d8cae1640975fec540074c614" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1MeshInstance__TransformInstanced_1a35913435778f8c6634d2bc6a4e3ad218" prot="public" static="no" mutable="no">
         <type>std::vector&lt; glm::mat4 &gt;</type>
-        <definition>std::vector&lt;glm::mat4&gt; klotter::MeshInstance_TransformInstanced::transforms</definition>
+        <definition>std::vector&lt;glm::mat4&gt; klotter::MeshInstance_TransformInstanced::world_from_locals</definition>
         <argsstring></argsstring>
-        <name>transforms</name>
-        <qualifiedname>klotter::MeshInstance_TransformInstanced::transforms</qualifiedname>
+        <name>world_from_locals</name>
+        <qualifiedname>klotter::MeshInstance_TransformInstanced::world_from_locals</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -56,7 +56,7 @@
     <listofallmembers>
       <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad14910f961fedc36210d3173fca24ab4" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>geom</name></member>
       <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad01fe393f543e9f9bfb9335621b75395" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>material</name></member>
-      <member refid="structklotter_1_1MeshInstance__TransformInstanced_1a96aeca9d8cae1640975fec540074c614" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>transforms</name></member>
+      <member refid="structklotter_1_1MeshInstance__TransformInstanced_1a35913435778f8c6634d2bc6a4e3ad218" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>world_from_locals</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

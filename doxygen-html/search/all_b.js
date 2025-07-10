@@ -22,9 +22,8 @@ var searchData=
   ['meshinstance_5ftransforminstanced_19',['MeshInstance_TransformInstanced',['../structklotter_1_1MeshInstance__TransformInstanced.html',1,'klotter']]],
   ['min_5frange_20',['min_range',['../structklotter_1_1PointLight.html#a29d07bcec7b9efd1198de1584e75dbae',1,'klotter::PointLight::min_range'],['../structklotter_1_1FrustumLight.html#a5e1f07d1b5f0d7cd4bcd745e417c572f',1,'klotter::FrustumLight::min_range']]],
   ['mipmap_21',['mipmap',['../group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caa9967d91df6ff379185f57d9a31b7c782',1,'klotter']]],
-  ['model_22',['model',['../structklotter_1_1LoadedShader__SingleColor.html#a5285455a32381c580d79d138b0b797de',1,'klotter::LoadedShader_SingleColor::model'],['../structklotter_1_1LoadedShader__Unlit.html#ae8d72398e26d17b3fdc32ed1a48e63b8',1,'klotter::LoadedShader_Unlit::model'],['../structklotter_1_1LoadedShader__Default.html#aafd90bab2ba7185d1edecbee1d408023',1,'klotter::LoadedShader_Default::model']]],
-  ['model_5fsource_23',['model_source',['../structklotter_1_1RenderContext.html#a58b31ed4a728c9bfbc835f39e0fe38d6',1,'klotter::RenderContext']]],
-  ['move_24',['move',['../structklotter_1_1geom_1_1Builder.html#aa6ae34b81a5b711fd60b55ba96a4efa0',1,'klotter::geom::Builder']]],
-  ['msaa_25',['msaa',['../structklotter_1_1RenderSettings.html#a6a280b746dc55c256fccd34cf0fd93cc',1,'klotter::RenderSettings']]],
-  ['msaa_5fsamples_26',['msaa_samples',['../structklotter_1_1FrameBufferBuilder.html#ab281ad34ad7d4faef8a0c859d13c879a',1,'klotter::FrameBufferBuilder']]]
+  ['model_5fsource_22',['model_source',['../structklotter_1_1RenderContext.html#a58b31ed4a728c9bfbc835f39e0fe38d6',1,'klotter::RenderContext']]],
+  ['move_23',['move',['../structklotter_1_1geom_1_1Builder.html#aa6ae34b81a5b711fd60b55ba96a4efa0',1,'klotter::geom::Builder']]],
+  ['msaa_24',['msaa',['../structklotter_1_1RenderSettings.html#a6a280b746dc55c256fccd34cf0fd93cc',1,'klotter::RenderSettings']]],
+  ['msaa_5fsamples_25',['msaa_samples',['../structklotter_1_1FrameBufferBuilder.html#ab281ad34ad7d4faef8a0c859d13c879a',1,'klotter::FrameBufferBuilder']]]
 ];

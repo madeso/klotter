@@ -112,8 +112,8 @@
           <edgelabel>setup</edgelabel>
         </childnode>
         <childnode refid="4" relation="usage">
-          <edgelabel>projection_prop</edgelabel>
-          <edgelabel>view_prop</edgelabel>
+          <edgelabel>clip_from_view_uni</edgelabel>
+          <edgelabel>view_from_world_uni</edgelabel>
         </childnode>
       </node>
       <node id="7">
@@ -136,17 +136,17 @@
         <label>klotter::LineDrawer</label>
         <link refid="structklotter_1_1LineDrawer"/>
         <childnode refid="16" relation="usage">
-          <edgelabel>line_layout</edgelabel>
+          <edgelabel>layout</edgelabel>
         </childnode>
         <childnode refid="17" relation="usage">
-          <edgelabel>line_shader</edgelabel>
+          <edgelabel>shader</edgelabel>
         </childnode>
         <childnode refid="8" relation="usage">
-          <edgelabel>line_dash_size</edgelabel>
-          <edgelabel>line_gap_size</edgelabel>
-          <edgelabel>line_projection</edgelabel>
-          <edgelabel>line_resolution</edgelabel>
-          <edgelabel>line_view</edgelabel>
+          <edgelabel>clip_from_view_uni</edgelabel>
+          <edgelabel>dash_size_uni</edgelabel>
+          <edgelabel>gap_size_uni</edgelabel>
+          <edgelabel>resolution_uni</edgelabel>
+          <edgelabel>view_from_world_uni</edgelabel>
         </childnode>
         <childnode refid="18" relation="usage">
           <edgelabel>line_batch</edgelabel>
@@ -156,16 +156,16 @@
         <label>klotter::LoadedShader_Default</label>
         <link refid="structklotter_1_1LoadedShader__Default"/>
         <childnode refid="8" relation="usage">
-          <edgelabel>ambient_tint</edgelabel>
-          <edgelabel>emissive_factor</edgelabel>
-          <edgelabel>light_ambient_color</edgelabel>
-          <edgelabel>shininess</edgelabel>
-          <edgelabel>specular_color</edgelabel>
-          <edgelabel>tex_diffuse</edgelabel>
-          <edgelabel>tex_emissive</edgelabel>
-          <edgelabel>tex_specular</edgelabel>
-          <edgelabel>tint_color</edgelabel>
-          <edgelabel>view_position</edgelabel>
+          <edgelabel>ambient_tint_uni</edgelabel>
+          <edgelabel>emissive_factor_uni</edgelabel>
+          <edgelabel>light_ambient_color_uni</edgelabel>
+          <edgelabel>shininess_uni</edgelabel>
+          <edgelabel>specular_color_uni</edgelabel>
+          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tex_emissive_uni</edgelabel>
+          <edgelabel>tex_specular_uni</edgelabel>
+          <edgelabel>tint_color_uni</edgelabel>
+          <edgelabel>view_position_uni</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
       </node>
@@ -188,8 +188,8 @@
           <edgelabel>geom_layout</edgelabel>
         </childnode>
         <childnode refid="8" relation="usage">
-          <edgelabel>model</edgelabel>
-          <edgelabel>tint_color</edgelabel>
+          <edgelabel>tint_color_uni</edgelabel>
+          <edgelabel>world_from_local_uni</edgelabel>
         </childnode>
       </node>
       <node id="9">
@@ -199,15 +199,15 @@
           <edgelabel>geom_layout</edgelabel>
         </childnode>
         <childnode refid="8" relation="usage">
-          <edgelabel>tex_skybox</edgelabel>
+          <edgelabel>tex_skybox_uni</edgelabel>
         </childnode>
       </node>
       <node id="11">
         <label>klotter::LoadedShader_Unlit</label>
         <link refid="structklotter_1_1LoadedShader__Unlit"/>
         <childnode refid="8" relation="usage">
-          <edgelabel>tex_diffuse</edgelabel>
-          <edgelabel>tint_color</edgelabel>
+          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tint_color_uni</edgelabel>
         </childnode>
       </node>
       <node id="10">

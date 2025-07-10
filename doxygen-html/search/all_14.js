@@ -11,7 +11,10 @@ var searchData=
   ['world_8',['World',['../structklotter_1_1World.html',1,'klotter']]],
   ['world_9',['world',['../structklotter_1_1PostProcArg.html#ae521c7b4cb6fef35f2a72569076209df',1,'klotter::PostProcArg']]],
   ['world_2eh_10',['world.h',['../world_8h.html',1,'']]],
-  ['world_5fpos_11',['world_pos',['../structklotter_1_1FrustumLightUniforms.html#a70bbfbb9f0a74757269f9848070a87c0',1,'klotter::FrustumLightUniforms']]],
-  ['world_5fto_5fclip_12',['world_to_clip',['../structklotter_1_1FrustumLightUniforms.html#afc52906ec8254b1167a57f01de5140e0',1,'klotter::FrustumLightUniforms']]],
-  ['write_5fobj_13',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
+  ['world_5ffrom_5flocal_5funi_11',['world_from_local_uni',['../structklotter_1_1LoadedShader__SingleColor.html#a2871864eddb63c2d7545c77d93023491',1,'klotter::LoadedShader_SingleColor::world_from_local_uni'],['../structklotter_1_1LoadedShader__Unlit.html#a539d07d5134064aa9e1dcf0ef093c7d2',1,'klotter::LoadedShader_Unlit::world_from_local_uni'],['../structklotter_1_1LoadedShader__Default.html#a19434b2494aa3403a36ee38529e670dd',1,'klotter::LoadedShader_Default::world_from_local_uni']]],
+  ['world_5ffrom_5flocals_12',['world_from_locals',['../structklotter_1_1MeshInstance__TransformInstanced.html#a35913435778f8c6634d2bc6a4e3ad218',1,'klotter::MeshInstance_TransformInstanced']]],
+  ['world_5fpos_5funi_13',['world_pos_uni',['../structklotter_1_1FrustumLightUniforms.html#a5ddcc07c053643551d55f402ec0efd29',1,'klotter::FrustumLightUniforms']]],
+  ['world_5fposition_14',['world_position',['../structklotter_1_1MeshInstance.html#aa66d5c0ed6cd84d457a9c3c48b518ed0',1,'klotter::MeshInstance']]],
+  ['world_5fto_5fclip_5funi_15',['world_to_clip_uni',['../structklotter_1_1FrustumLightUniforms.html#a2270f7c132d437308de376292d6052cf',1,'klotter::FrustumLightUniforms']]],
+  ['write_5fobj_16',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
 ];

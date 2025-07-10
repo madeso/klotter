@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/material.cc</div>
-            <div>Date: 2025-07-09 19:39:49</div>
+            <div>Date: 2025-07-10 17:12:10</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -408,7 +408,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">RenderContext</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">transform</span></td>
+                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">RenderContext</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">world_from_local</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l46" href="#l46">46</a></td>
@@ -436,14 +436,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec4</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">tint_color</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec4</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">tint_color_uni</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l50" href="#l50">50</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">set_optional_mat</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">transform</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">set_optional_mat</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">world_from_local_uni</span><span class="p">,</span><span class="w"> </span><span class="n">world_from_local</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l51" href="#l51">51</a></td>
@@ -520,7 +520,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader_from_container</span><span class="p">(</span><span class="o">*</span><span class="n">shader_container</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">).</span><span class="n">tex_diffuse</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader_from_container</span><span class="p">(</span><span class="o">*</span><span class="n">shader_container</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">).</span><span class="n">tex_diffuse_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
@@ -695,7 +695,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">RenderContext</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">transform</span></td>
+                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="n">RenderContext</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">world_from_local</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l87" href="#l87">87</a></td>
@@ -730,35 +730,35 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec4</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">tint_color</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec4</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">tint_color_uni</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l92" href="#l92">92</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">ambient_tint</span><span class="p">,</span><span class="w"> </span><span class="n">ambient_tint</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">ambient_tint_uni</span><span class="p">,</span><span class="w"> </span><span class="n">ambient_tint</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l93" href="#l93">93</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">specular_color</span><span class="p">,</span><span class="w"> </span><span class="n">specular_color</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">specular_color_uni</span><span class="p">,</span><span class="w"> </span><span class="n">specular_color</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l94" href="#l94">94</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_float</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">shininess</span><span class="p">,</span><span class="w"> </span><span class="n">shininess</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_float</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">shininess_uni</span><span class="p">,</span><span class="w"> </span><span class="n">shininess</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l95" href="#l95">95</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_float</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">emissive_factor</span><span class="p">,</span><span class="w"> </span><span class="n">emissive_factor</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_float</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">emissive_factor_uni</span><span class="p">,</span><span class="w"> </span><span class="n">emissive_factor</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l96" href="#l96">96</a></td>
@@ -772,14 +772,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">set_optional_mat</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">transform</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">set_optional_mat</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">world_from_local_uni</span><span class="p">,</span><span class="w"> </span><span class="n">world_from_local</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l98" href="#l98">98</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">view_position</span><span class="p">,</span><span class="w"> </span><span class="n">cc</span><span class="p">.</span><span class="n">position</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">view_position_uni</span><span class="p">,</span><span class="w"> </span><span class="n">cc</span><span class="p">.</span><span class="n">position</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l99" href="#l99">99</a></td>
@@ -989,21 +989,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_diffuse</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">diffuse</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_diffuse_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">diffuse</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l129" href="#l129">129</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_specular</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">specular</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_specular_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">specular</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l130" href="#l130">130</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_emissive</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_black</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">emissive</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_emissive_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_black</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">emissive</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l131" href="#l131">131</a></td>
@@ -1059,7 +1059,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">light_ambient_color</span><span class="p">,</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">ambient</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">light_ambient_color_uni</span><span class="p">,</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">ambient</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l139" href="#l139">139</a></td>
@@ -1276,21 +1276,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_diffuse_color</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">diffuse</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_diffuse_color_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">diffuse</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l170" href="#l170">170</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_specular_color</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">specular</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_specular_color_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">specular</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l171" href="#l171">171</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">dir</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">direction</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">dir_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">direction</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l172" href="#l172">172</a></td>
@@ -1360,28 +1360,28 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_diffuse_color</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">diffuse</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_diffuse_color_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">diffuse</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l182" href="#l182">182</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_specular_color</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">specular</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_specular_color_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">specular</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l183" href="#l183">183</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_world</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">position</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_world_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">position</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l184" href="#l184">184</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec4</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_attenuation</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">p</span><span class="p">.</span><span class="n">min_range</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">max_range</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">t</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec4</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">light_attenuation_uni</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">p</span><span class="p">.</span><span class="n">min_range</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">max_range</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">t</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l185" href="#l185">185</a></td>
@@ -1437,28 +1437,28 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">diffuse</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">diffuse</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">diffuse_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">diffuse</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l193" href="#l193">193</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">specular</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">specular</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">specular_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">specular</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l194" href="#l194">194</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">world_pos</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">position</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec3</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">world_pos_uni</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">position</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l195" href="#l195">195</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec4</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">attenuation</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">p</span><span class="p">.</span><span class="n">min_range</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">max_range</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">t</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_vec4</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">attenuation_uni</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">p</span><span class="p">.</span><span class="n">min_range</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">max_range</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">curve</span><span class="p">.</span><span class="n">t</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l196" href="#l196">196</a></td>
@@ -1486,7 +1486,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_mat</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">world_to_clip</span><span class="p">,</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">view</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_mat</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">world_to_clip_uni</span><span class="p">,</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">view</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l200" href="#l200">200</a></td>
@@ -1500,7 +1500,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">cookie</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">cookie</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">cookie_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">cookie</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l202" href="#l202">202</a></td>

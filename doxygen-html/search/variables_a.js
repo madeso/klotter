@@ -7,8 +7,7 @@ var searchData=
   ['max_5ftextures_5fsupported_4',['MAX_TEXTURES_SUPPORTED',['../namespaceklotter.html#a43f9bbbce92ceeed2837fcace91d9612',1,'klotter']]],
   ['meshes_5',['meshes',['../structklotter_1_1World.html#adf837f631529619280d72f2093d9d9a7',1,'klotter::World']]],
   ['min_5frange_6',['min_range',['../structklotter_1_1PointLight.html#a29d07bcec7b9efd1198de1584e75dbae',1,'klotter::PointLight::min_range'],['../structklotter_1_1FrustumLight.html#a5e1f07d1b5f0d7cd4bcd745e417c572f',1,'klotter::FrustumLight::min_range']]],
-  ['model_7',['model',['../structklotter_1_1LoadedShader__SingleColor.html#a5285455a32381c580d79d138b0b797de',1,'klotter::LoadedShader_SingleColor::model'],['../structklotter_1_1LoadedShader__Unlit.html#ae8d72398e26d17b3fdc32ed1a48e63b8',1,'klotter::LoadedShader_Unlit::model'],['../structklotter_1_1LoadedShader__Default.html#aafd90bab2ba7185d1edecbee1d408023',1,'klotter::LoadedShader_Default::model']]],
-  ['model_5fsource_8',['model_source',['../structklotter_1_1RenderContext.html#a58b31ed4a728c9bfbc835f39e0fe38d6',1,'klotter::RenderContext']]],
-  ['msaa_9',['msaa',['../structklotter_1_1RenderSettings.html#a6a280b746dc55c256fccd34cf0fd93cc',1,'klotter::RenderSettings']]],
-  ['msaa_5fsamples_10',['msaa_samples',['../structklotter_1_1FrameBufferBuilder.html#ab281ad34ad7d4faef8a0c859d13c879a',1,'klotter::FrameBufferBuilder']]]
+  ['model_5fsource_7',['model_source',['../structklotter_1_1RenderContext.html#a58b31ed4a728c9bfbc835f39e0fe38d6',1,'klotter::RenderContext']]],
+  ['msaa_8',['msaa',['../structklotter_1_1RenderSettings.html#a6a280b746dc55c256fccd34cf0fd93cc',1,'klotter::RenderSettings']]],
+  ['msaa_5fsamples_9',['msaa_samples',['../structklotter_1_1FrameBufferBuilder.html#ab281ad34ad7d4faef8a0c859d13c879a',1,'klotter::FrameBufferBuilder']]]
 ];

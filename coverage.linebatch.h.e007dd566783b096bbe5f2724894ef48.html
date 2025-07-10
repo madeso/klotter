@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/linebatch.h</div>
-            <div>Date: 2025-07-09 19:39:49</div>
+            <div>Date: 2025-07-10 17:12:10</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -251,7 +251,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">line</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">);</span></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="nf">line</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">world_from</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">world_to</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l28" href="#l28">28</a></td>
@@ -307,56 +307,56 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">ShaderVertexAttributes</span><span class="w"> </span><span class="n">line_description</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">ShaderVertexAttributes</span><span class="w"> </span><span class="n">description</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l36" href="#l36">36</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">CompiledShaderVertexAttributes</span><span class="w"> </span><span class="n">line_layout</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">CompiledShaderVertexAttributes</span><span class="w"> </span><span class="n">layout</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l37" href="#l37">37</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">ShaderProgram</span><span class="w"> </span><span class="n">line_shader</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">ShaderProgram</span><span class="w"> </span><span class="n">shader</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l38" href="#l38">38</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">line_projection</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">clip_from_view_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l39" href="#l39">39</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">line_view</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">view_from_world_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l40" href="#l40">40</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">line_resolution</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">resolution_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l41" href="#l41">41</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">line_dash_size</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">dash_size_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l42" href="#l42">42</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">line_gap_size</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">Uniform</span><span class="w"> </span><span class="n">gap_size_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l43" href="#l43">43</a></td>

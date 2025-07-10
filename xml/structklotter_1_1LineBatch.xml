@@ -193,19 +193,19 @@
         </inbodydescription>
         <location file="src/klotter/render/linebatch.h" line="25" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1LineBatch_1aa9b4393b9e661a565f10309ef61fe405" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1LineBatch_1aa378d8e42e95665ad03ee24009ff7afc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::LineBatch::line</definition>
-        <argsstring>(const glm::vec3 &amp;from, const glm::vec3 &amp;to, const glm::vec3 &amp;color)</argsstring>
+        <argsstring>(const glm::vec3 &amp;world_from, const glm::vec3 &amp;world_to, const glm::vec3 &amp;color)</argsstring>
         <name>line</name>
         <qualifiedname>klotter::LineBatch::line</qualifiedname>
         <param>
           <type>const glm::vec3 &amp;</type>
-          <declname>from</declname>
+          <declname>world_from</declname>
         </param>
         <param>
           <type>const glm::vec3 &amp;</type>
-          <declname>to</declname>
+          <declname>world_to</declname>
         </param>
         <param>
           <type>const glm::vec3 &amp;</type>
@@ -243,7 +243,7 @@
     <listofallmembers>
       <member refid="structklotter_1_1LineBatch_1a65951c6d9b44662499cd0bfbd268276e" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>data</name></member>
       <member refid="structklotter_1_1LineBatch_1a22adf043bc55df5ccdd1c10e680339e9" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>ib</name></member>
-      <member refid="structklotter_1_1LineBatch_1aa9b4393b9e661a565f10309ef61fe405" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>line</name></member>
+      <member refid="structklotter_1_1LineBatch_1aa378d8e42e95665ad03ee24009ff7afc" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>line</name></member>
       <member refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>LineBatch</name></member>
       <member refid="structklotter_1_1LineBatch_1a2a5f7384e73b6b919adb76aea2efe60c" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>LineBatch</name></member>
       <member refid="structklotter_1_1LineBatch_1a964e2420c45c8f92bda5a4e41435fcf0" prot="public" virt="non-virtual"><scope>klotter::LineBatch</scope><name>LineBatch</name></member>

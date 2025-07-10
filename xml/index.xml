@@ -102,8 +102,8 @@
   </compound>
   <compound refid="structklotter_1_1CameraUniformBuffer" kind="struct"><name>klotter::CameraUniformBuffer</name>
     <member refid="structklotter_1_1CameraUniformBuffer_1a369782736daee9677a8d7c285cd92fd2" kind="variable"><name>setup</name></member>
-    <member refid="structklotter_1_1CameraUniformBuffer_1a080765e67e6b945e982ce64be285d949" kind="variable"><name>projection_prop</name></member>
-    <member refid="structklotter_1_1CameraUniformBuffer_1ae47677224955f8ae8562a9cb414e33e4" kind="variable"><name>view_prop</name></member>
+    <member refid="structklotter_1_1CameraUniformBuffer_1a2164abaa62bfc7290179e65faf02d1d3" kind="variable"><name>clip_from_view_uni</name></member>
+    <member refid="structklotter_1_1CameraUniformBuffer_1aaae605f9cf97189117b80735ec12b77f" kind="variable"><name>view_from_world_uni</name></member>
     <member refid="structklotter_1_1CameraUniformBuffer_1a46b28bfe4ad5f8155051abfca7ad6652" kind="variable"><name>buffer</name></member>
     <member refid="structklotter_1_1CameraUniformBuffer_1ad2ab011ab7b8a6336fe212bb97425833" kind="function"><name>set_props</name></member>
   </compound>
@@ -113,8 +113,8 @@
     <member refid="structklotter_1_1CameraVectors_1af53d2d059ea34390beb2f73311aa9e7e" kind="variable"><name>up</name></member>
   </compound>
   <compound refid="structklotter_1_1CompiledCamera" kind="struct"><name>klotter::CompiledCamera</name>
-    <member refid="structklotter_1_1CompiledCamera_1a63410377f1a572241ae23dc2b537c255" kind="variable"><name>projection</name></member>
-    <member refid="structklotter_1_1CompiledCamera_1a1eb29eda166a30627784a927bc854c47" kind="variable"><name>view</name></member>
+    <member refid="structklotter_1_1CompiledCamera_1a8649d737ca17ac556fdfe9e8b064e461" kind="variable"><name>clip_from_view</name></member>
+    <member refid="structklotter_1_1CompiledCamera_1a8069b0435d682041843d9af2c4f49f19" kind="variable"><name>view_from_world</name></member>
     <member refid="structklotter_1_1CompiledCamera_1a27367e1205196de6e8c6c8c66ee56ff9" kind="variable"><name>position</name></member>
     <member refid="structklotter_1_1CompiledCamera_1af8f3aacb0e4384ae60db486c14dfdb60" kind="variable"><name>in</name></member>
   </compound>
@@ -211,9 +211,9 @@
     <member refid="structklotter_1_1DirectionalLight_1a9d888ee7d871d459f9e4ed31fea242a9" kind="variable"><name>diffuse</name></member>
   </compound>
   <compound refid="structklotter_1_1DirectionalLightUniforms" kind="struct"><name>klotter::DirectionalLightUniforms</name>
-    <member refid="structklotter_1_1DirectionalLightUniforms_1a801338744f0a781c96cea0312853b29b" kind="variable"><name>light_diffuse_color</name></member>
-    <member refid="structklotter_1_1DirectionalLightUniforms_1ab80a217f6a0dad1911ca5f03949f5398" kind="variable"><name>light_specular_color</name></member>
-    <member refid="structklotter_1_1DirectionalLightUniforms_1a6fc53d6b940a156301c25e7f9b2e4d55" kind="variable"><name>dir</name></member>
+    <member refid="structklotter_1_1DirectionalLightUniforms_1a610c577926a1029776914ad6a2d3c733" kind="variable"><name>light_diffuse_color_uni</name></member>
+    <member refid="structklotter_1_1DirectionalLightUniforms_1a115063de2d20559239d655e99a54a13f" kind="variable"><name>light_specular_color_uni</name></member>
+    <member refid="structklotter_1_1DirectionalLightUniforms_1aed02f947b82c857ca9f1f91401785d6c" kind="variable"><name>dir_uni</name></member>
     <member refid="structklotter_1_1DirectionalLightUniforms_1a91fd8436ad067b9181e18831b5ed382d" kind="function"><name>DirectionalLightUniforms</name></member>
   </compound>
   <compound refid="structklotter_1_1Effect" kind="struct"><name>klotter::Effect</name>
@@ -305,12 +305,12 @@
     <member refid="structklotter_1_1FrustumLight_1a2c2876dc3fb25f516ae33b6005c22fdf" kind="variable"><name>cookie</name></member>
   </compound>
   <compound refid="structklotter_1_1FrustumLightUniforms" kind="struct"><name>klotter::FrustumLightUniforms</name>
-    <member refid="structklotter_1_1FrustumLightUniforms_1adcfc6ec3d3a9279557a78d009fbeeb02" kind="variable"><name>diffuse</name></member>
-    <member refid="structklotter_1_1FrustumLightUniforms_1a94e66957cc947fbefa3e76841ce3263a" kind="variable"><name>specular</name></member>
-    <member refid="structklotter_1_1FrustumLightUniforms_1a9e3f90f06e44606d0d6d1c5caecf995c" kind="variable"><name>attenuation</name></member>
-    <member refid="structklotter_1_1FrustumLightUniforms_1afc52906ec8254b1167a57f01de5140e0" kind="variable"><name>world_to_clip</name></member>
-    <member refid="structklotter_1_1FrustumLightUniforms_1a70bbfbb9f0a74757269f9848070a87c0" kind="variable"><name>world_pos</name></member>
-    <member refid="structklotter_1_1FrustumLightUniforms_1ab1111ab27945b0f084971b9db2a9973b" kind="variable"><name>cookie</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1abc6a374421c4027a3c6240e255613606" kind="variable"><name>diffuse_uni</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1aef2f8f7b7e81312de6e7575a5117e98b" kind="variable"><name>specular_uni</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1ac9fa8cfa2a96ae24f2ab4935cd38162e" kind="variable"><name>attenuation_uni</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1a2270f7c132d437308de376292d6052cf" kind="variable"><name>world_to_clip_uni</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1a5ddcc07c053643551d55f402ec0efd29" kind="variable"><name>world_pos_uni</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1a0bd478d428546cd35f2ad2104f81a042" kind="variable"><name>cookie_uni</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1ab06a609169ec292dd41407b057b84127" kind="function"><name>FrustumLightUniforms</name></member>
   </compound>
   <compound refid="structklotter_1_1FullScreenGeom" kind="struct"><name>klotter::FullScreenGeom</name>
@@ -350,18 +350,18 @@
     <member refid="structklotter_1_1LineBatch_1a98534fbc5930a03da96bf29b51aa6fcc" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1LineBatch_1a964e2420c45c8f92bda5a4e41435fcf0" kind="function"><name>LineBatch</name></member>
     <member refid="structklotter_1_1LineBatch_1a7012ad85755bc7a1153b970279abb66c" kind="function"><name>operator=</name></member>
-    <member refid="structklotter_1_1LineBatch_1aa9b4393b9e661a565f10309ef61fe405" kind="function"><name>line</name></member>
+    <member refid="structklotter_1_1LineBatch_1aa378d8e42e95665ad03ee24009ff7afc" kind="function"><name>line</name></member>
     <member refid="structklotter_1_1LineBatch_1ac11848294301883e840262a2f7be7392" kind="function"><name>submit</name></member>
   </compound>
   <compound refid="structklotter_1_1LineDrawer" kind="struct"><name>klotter::LineDrawer</name>
-    <member refid="structklotter_1_1LineDrawer_1a33fda0109f1f5226fab89e178861bed2" kind="variable"><name>line_description</name></member>
-    <member refid="structklotter_1_1LineDrawer_1a067af94d329ac087fa67948e88c1380b" kind="variable"><name>line_layout</name></member>
-    <member refid="structklotter_1_1LineDrawer_1a8d4c291a8614f031f658ff62a6c7a1a8" kind="variable"><name>line_shader</name></member>
-    <member refid="structklotter_1_1LineDrawer_1aac32ec512300b5044d1a7a2375aa6861" kind="variable"><name>line_projection</name></member>
-    <member refid="structklotter_1_1LineDrawer_1af82452a0477d962da99d720dae9752fc" kind="variable"><name>line_view</name></member>
-    <member refid="structklotter_1_1LineDrawer_1adf593f9cf96d109de4bef3f83eb89ee7" kind="variable"><name>line_resolution</name></member>
-    <member refid="structklotter_1_1LineDrawer_1aef8076c17bfcdb9de0626643d850e687" kind="variable"><name>line_dash_size</name></member>
-    <member refid="structklotter_1_1LineDrawer_1aa228a12df26090cec091be2a54a9546d" kind="variable"><name>line_gap_size</name></member>
+    <member refid="structklotter_1_1LineDrawer_1ab3107f77385148fed2e5b37529c09d22" kind="variable"><name>description</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a04da8258e19e3763976974335c35b50c" kind="variable"><name>layout</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a24ce3da96e78f1d1346fd1af2cf0c341" kind="variable"><name>shader</name></member>
+    <member refid="structklotter_1_1LineDrawer_1ab10a4dbd2654736ffb81d7053ff7b87e" kind="variable"><name>clip_from_view_uni</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a8268353446742e802b34b01fa62276cc" kind="variable"><name>view_from_world_uni</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a02f5813ada4de1104582aed3aac54e07" kind="variable"><name>resolution_uni</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a56d7d08433e9a46ca273996500a73c77" kind="variable"><name>dash_size_uni</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a928c80448b286b86c6052646601b7029" kind="variable"><name>gap_size_uni</name></member>
     <member refid="structklotter_1_1LineDrawer_1a9e92ee3a442f6f499f7bd5eab0454def" kind="variable"><name>line_batch</name></member>
     <member refid="structklotter_1_1LineDrawer_1ae877d9de19653d08a1a130962b22af26" kind="function"><name>LineDrawer</name></member>
     <member refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" kind="function"><name>set_line_to_dash</name></member>
@@ -370,25 +370,25 @@
   </compound>
   <compound refid="structklotter_1_1LoadedPostProcShader" kind="struct"><name>klotter::LoadedPostProcShader</name>
     <member refid="structklotter_1_1LoadedPostProcShader_1ac9c705810b471316ca014926054d9450" kind="variable"><name>program</name></member>
-    <member refid="structklotter_1_1LoadedPostProcShader_1a3b7e1e3c794b587e5eb8013b6916bd6e" kind="variable"><name>texture</name></member>
-    <member refid="structklotter_1_1LoadedPostProcShader_1a83de10c487792edf73adcbbd4231538f" kind="variable"><name>factor</name></member>
-    <member refid="structklotter_1_1LoadedPostProcShader_1a348e17cb4b1dff61ee1c95d7a3fa68b0" kind="variable"><name>resolution</name></member>
-    <member refid="structklotter_1_1LoadedPostProcShader_1ab03f315fa28e0bd1f19411d5b625e006" kind="variable"><name>time</name></member>
+    <member refid="structklotter_1_1LoadedPostProcShader_1a10976256764d1c75d8e69689a6982289" kind="variable"><name>texture_uni</name></member>
+    <member refid="structklotter_1_1LoadedPostProcShader_1a8a4b03defcce03b259e547afb8fdc87c" kind="variable"><name>factor_uni</name></member>
+    <member refid="structklotter_1_1LoadedPostProcShader_1a3ad52ac1878403776878765d66e4a9d6" kind="variable"><name>resolution_uni</name></member>
+    <member refid="structklotter_1_1LoadedPostProcShader_1a99c2cbec10319108c1ffde8f035b6e8b" kind="variable"><name>time_uni</name></member>
     <member refid="structklotter_1_1LoadedPostProcShader_1ab3e27ddc81e87d1ac1cfd7824c97722b" kind="function"><name>LoadedPostProcShader</name></member>
   </compound>
   <compound refid="structklotter_1_1LoadedShader__Default" kind="struct"><name>klotter::LoadedShader_Default</name>
     <member refid="structklotter_1_1LoadedShader__Default_1adb6c4dab68ac21d0ec082b715e6a9003" kind="variable"><name>program</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a2e9464cfadaf8111e035a3aead9e7079" kind="variable"><name>tint_color</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1af67d1691d573e8f477b9cacab5dbedab" kind="variable"><name>tex_diffuse</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a1b1538595be9d137cd6158bfa2de9a2e" kind="variable"><name>tex_specular</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a39a8ac6136cec63f1924f0bb7014527c" kind="variable"><name>tex_emissive</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1aab13f54acefd7936265f7781ec3855c1" kind="variable"><name>ambient_tint</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a5d6b3282427897f684150bf6f1d23f73" kind="variable"><name>specular_color</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a784993d8702f0f1f4f3d497863e556b4" kind="variable"><name>shininess</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a7189f051cfaf7a1d0b9f4a183ad088ec" kind="variable"><name>emissive_factor</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1aafd90bab2ba7185d1edecbee1d408023" kind="variable"><name>model</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1af42cd69f5c0e974bd7b51627ca1366d3" kind="variable"><name>view_position</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a5db9f7215a40897f83eeee017569be55" kind="variable"><name>light_ambient_color</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1aa8bd2208f55eebc41109c66f559a5737" kind="variable"><name>tint_color_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a5703d1a4660382f8f8e5bbc8c162da8c" kind="variable"><name>tex_diffuse_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a7781f195179bc55d1e4e5d7a14042365" kind="variable"><name>tex_specular_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a124844e915fa5e94927f178bed7d8c44" kind="variable"><name>tex_emissive_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a368b22d4833ac751f4015687aaaab671" kind="variable"><name>ambient_tint_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a87987ad8aadd6e42917e44fe9933e5ba" kind="variable"><name>specular_color_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1ab768fd618865565d6bfad53ad5a44c14" kind="variable"><name>shininess_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a385a11e189ac7f0786000ed7c810d751" kind="variable"><name>emissive_factor_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a19434b2494aa3403a36ee38529e670dd" kind="variable"><name>world_from_local_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1ab94e2191d8eb5b45a7b5ecea9baab7c4" kind="variable"><name>view_position_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1aee6221bbb554a57b102e194b40d5eb36" kind="variable"><name>light_ambient_color_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a67c3fab2355d461a914559f6c571db5b" kind="variable"><name>directional_lights</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1ae798dd79cd77cf0754e3964efbacb314" kind="variable"><name>point_lights</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a03e09db0a3440956c276c380fef51067" kind="variable"><name>frustum_lights</name></member>
@@ -404,21 +404,21 @@
   <compound refid="structklotter_1_1LoadedShader__SingleColor" kind="struct"><name>klotter::LoadedShader_SingleColor</name>
     <member refid="structklotter_1_1LoadedShader__SingleColor_1a6e8a455125d60ff6e54d8cbf5a675235" kind="variable"><name>program</name></member>
     <member refid="structklotter_1_1LoadedShader__SingleColor_1a008c62fa6ddc4d90ceb7eb4edf0927a2" kind="variable"><name>geom_layout</name></member>
-    <member refid="structklotter_1_1LoadedShader__SingleColor_1a17d5f165c10b23aab2d41fdab25123af" kind="variable"><name>tint_color</name></member>
-    <member refid="structklotter_1_1LoadedShader__SingleColor_1a5285455a32381c580d79d138b0b797de" kind="variable"><name>model</name></member>
+    <member refid="structklotter_1_1LoadedShader__SingleColor_1a4cb00aa2b75879c67cb884a7a7723e80" kind="variable"><name>tint_color_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__SingleColor_1a2871864eddb63c2d7545c77d93023491" kind="variable"><name>world_from_local_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__SingleColor_1a78fd1a7a6acfb086b714d9ebafe1374a" kind="function"><name>LoadedShader_SingleColor</name></member>
   </compound>
   <compound refid="structklotter_1_1LoadedShader__Skybox" kind="struct"><name>klotter::LoadedShader_Skybox</name>
     <member refid="structklotter_1_1LoadedShader__Skybox_1a3cfd92a23b49f6b61db0132659ac4ab3" kind="variable"><name>program</name></member>
     <member refid="structklotter_1_1LoadedShader__Skybox_1a585e8b4c4fc29f8c3e16c4baace5774b" kind="variable"><name>geom_layout</name></member>
-    <member refid="structklotter_1_1LoadedShader__Skybox_1a6fb6a3159d2c8e3f139e11a7cc84582c" kind="variable"><name>tex_skybox</name></member>
+    <member refid="structklotter_1_1LoadedShader__Skybox_1aa57793ec38a9b60233079b537b75dad5" kind="variable"><name>tex_skybox_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Skybox_1a8087ee41a2ac5ead432b60aa682aff5f" kind="function"><name>LoadedShader_Skybox</name></member>
   </compound>
   <compound refid="structklotter_1_1LoadedShader__Unlit" kind="struct"><name>klotter::LoadedShader_Unlit</name>
     <member refid="structklotter_1_1LoadedShader__Unlit_1ae89bb303b8ae6300dc63f888bb7c0dc3" kind="variable"><name>program</name></member>
-    <member refid="structklotter_1_1LoadedShader__Unlit_1a0694d3d6da2bd4895af832ef45dab722" kind="variable"><name>tint_color</name></member>
-    <member refid="structklotter_1_1LoadedShader__Unlit_1a47eb0877bdfee9da78598205614a9c9d" kind="variable"><name>tex_diffuse</name></member>
-    <member refid="structklotter_1_1LoadedShader__Unlit_1ae8d72398e26d17b3fdc32ed1a48e63b8" kind="variable"><name>model</name></member>
+    <member refid="structklotter_1_1LoadedShader__Unlit_1a25e2aa953efc824eda874f0cfd84b73e" kind="variable"><name>tint_color_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Unlit_1af214443294ee8b96432e1b22bc66cd5c" kind="variable"><name>tex_diffuse_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Unlit_1a539d07d5134064aa9e1dcf0ef093c7d2" kind="variable"><name>world_from_local_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Unlit_1a0b51dc62bde3db127b96b139e2af0163" kind="function"><name>LoadedShader_Unlit</name></member>
   </compound>
   <compound refid="structklotter_1_1LoadedShader__Unlit__Container" kind="struct"><name>klotter::LoadedShader_Unlit_Container</name>
@@ -449,7 +449,7 @@
     <member refid="structklotter_1_1MeshInstance_1a2439d54f6b5a1126740cd2c9e2113713" kind="variable"><name>geom</name></member>
     <member refid="structklotter_1_1MeshInstance_1a4818b54573449973b21a6bd7cb03952d" kind="variable"><name>material</name></member>
     <member refid="structklotter_1_1MeshInstance_1a5c0eb9d92903baa925ee3f3bdf358be6" kind="variable"><name>outline</name></member>
-    <member refid="structklotter_1_1MeshInstance_1ac3ec119b3230fec9b44429d616ba8195" kind="variable"><name>position</name></member>
+    <member refid="structklotter_1_1MeshInstance_1aa66d5c0ed6cd84d457a9c3c48b518ed0" kind="variable"><name>world_position</name></member>
     <member refid="structklotter_1_1MeshInstance_1ad280bee43f221a03ca600c0f6190a118" kind="variable"><name>rotation</name></member>
     <member refid="structklotter_1_1MeshInstance_1aff607bdafdbd54b577438161f1be2d55" kind="variable"><name>billboarding</name></member>
     <member refid="structklotter_1_1MeshInstance_1a432f513dd7171e9439850f04bec18748" kind="function"><name>get_local_axis</name></member>
@@ -457,7 +457,7 @@
   <compound refid="structklotter_1_1MeshInstance__TransformInstanced" kind="struct"><name>klotter::MeshInstance_TransformInstanced</name>
     <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad14910f961fedc36210d3173fca24ab4" kind="variable"><name>geom</name></member>
     <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad01fe393f543e9f9bfb9335621b75395" kind="variable"><name>material</name></member>
-    <member refid="structklotter_1_1MeshInstance__TransformInstanced_1a96aeca9d8cae1640975fec540074c614" kind="variable"><name>transforms</name></member>
+    <member refid="structklotter_1_1MeshInstance__TransformInstanced_1a35913435778f8c6634d2bc6a4e3ad218" kind="variable"><name>world_from_locals</name></member>
   </compound>
   <compound refid="structklotter_1_1OpenglStates" kind="struct"><name>klotter::OpenglStates</name>
     <member refid="structklotter_1_1OpenglStates_1a89ee7105fbafa9f60684e3c06035f6ba" kind="variable"><name>cull_face</name></member>
@@ -485,10 +485,10 @@
     <member refid="structklotter_1_1PointLight_1a184507f9566a51f37c6556c6e3a6fc78" kind="variable"><name>diffuse</name></member>
   </compound>
   <compound refid="structklotter_1_1PointLightUniforms" kind="struct"><name>klotter::PointLightUniforms</name>
-    <member refid="structklotter_1_1PointLightUniforms_1a374e21f06a53eea2cbad92af032504e1" kind="variable"><name>light_diffuse_color</name></member>
-    <member refid="structklotter_1_1PointLightUniforms_1a2904c2abd2d998fcfa02513bcbb0aacb" kind="variable"><name>light_specular_color</name></member>
-    <member refid="structklotter_1_1PointLightUniforms_1aadb098fdd8fbaa45838feac3b98cea9a" kind="variable"><name>light_attenuation</name></member>
-    <member refid="structklotter_1_1PointLightUniforms_1acec765b11c4d9fd7d54d060eb108911d" kind="variable"><name>light_world</name></member>
+    <member refid="structklotter_1_1PointLightUniforms_1ac6a0fc565b6aac9101d51ee80d431abc" kind="variable"><name>light_diffuse_color_uni</name></member>
+    <member refid="structklotter_1_1PointLightUniforms_1a0be2e17c3d55b2297a4ea545310ca426" kind="variable"><name>light_specular_color_uni</name></member>
+    <member refid="structklotter_1_1PointLightUniforms_1a591551fcee95cf78f9fd6687feafa521" kind="variable"><name>light_attenuation_uni</name></member>
+    <member refid="structklotter_1_1PointLightUniforms_1a5c180184d3981740e8bcc87251ee8bd3" kind="variable"><name>light_world_uni</name></member>
     <member refid="structklotter_1_1PointLightUniforms_1a2fb4ab1678017a603e28e095e3c3fbf7" kind="function"><name>PointLightUniforms</name></member>
   </compound>
   <compound refid="structklotter_1_1PostProcArg" kind="struct"><name>klotter::PostProcArg</name>

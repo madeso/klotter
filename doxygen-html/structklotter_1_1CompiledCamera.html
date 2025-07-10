@@ -123,10 +123,10 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a63410377f1a572241ae23dc2b537c255" id="r_a63410377f1a572241ae23dc2b537c255"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63410377f1a572241ae23dc2b537c255">projection</a></td></tr>
-<tr class="separator:a63410377f1a572241ae23dc2b537c255"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eb29eda166a30627784a927bc854c47" id="r_a1eb29eda166a30627784a927bc854c47"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1eb29eda166a30627784a927bc854c47">view</a></td></tr>
-<tr class="separator:a1eb29eda166a30627784a927bc854c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8649d737ca17ac556fdfe9e8b064e461" id="r_a8649d737ca17ac556fdfe9e8b064e461"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8649d737ca17ac556fdfe9e8b064e461">clip_from_view</a></td></tr>
+<tr class="separator:a8649d737ca17ac556fdfe9e8b064e461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8069b0435d682041843d9af2c4f49f19" id="r_a8069b0435d682041843d9af2c4f49f19"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8069b0435d682041843d9af2c4f49f19">view_from_world</a></td></tr>
+<tr class="separator:a8069b0435d682041843d9af2c4f49f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27367e1205196de6e8c6c8c66ee56ff9" id="r_a27367e1205196de6e8c6c8c66ee56ff9"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27367e1205196de6e8c6c8c66ee56ff9">position</a></td></tr>
 <tr class="separator:a27367e1205196de6e8c6c8c66ee56ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8f3aacb0e4384ae60db486c14dfdb60" id="r_af8f3aacb0e4384ae60db486c14dfdb60"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8f3aacb0e4384ae60db486c14dfdb60">in</a></td></tr>
@@ -136,6 +136,20 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>A "compiled" camera for use in rendering. </p>
 <dl class="section see"><dt>See also</dt><dd>compile_camera </dd></dl>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8649d737ca17ac556fdfe9e8b064e461" name="a8649d737ca17ac556fdfe9e8b064e461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8649d737ca17ac556fdfe9e8b064e461">&#9670;&#160;</a></span>clip_from_view</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 klotter::CompiledCamera::clip_from_view</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af8f3aacb0e4384ae60db486c14dfdb60" name="af8f3aacb0e4384ae60db486c14dfdb60"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8f3aacb0e4384ae60db486c14dfdb60">&#9670;&#160;</a></span>in</h2>
 
@@ -164,28 +178,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a63410377f1a572241ae23dc2b537c255" name="a63410377f1a572241ae23dc2b537c255"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63410377f1a572241ae23dc2b537c255">&#9670;&#160;</a></span>projection</h2>
+<a id="a8069b0435d682041843d9af2c4f49f19" name="a8069b0435d682041843d9af2c4f49f19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8069b0435d682041843d9af2c4f49f19">&#9670;&#160;</a></span>view_from_world</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 klotter::CompiledCamera::projection</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1eb29eda166a30627784a927bc854c47" name="a1eb29eda166a30627784a927bc854c47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1eb29eda166a30627784a927bc854c47">&#9670;&#160;</a></span>view</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">glm::mat4 klotter::CompiledCamera::view</td>
+          <td class="memname">glm::mat4 klotter::CompiledCamera::view_from_world</td>
         </tr>
       </table>
 </div><div class="memdoc">

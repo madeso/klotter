@@ -18,12 +18,12 @@
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="32" column="20" bodyfile="src/klotter/render/shader_resource.h" bodystart="32" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1CameraUniformBuffer_1a080765e67e6b945e982ce64be285d949" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1CameraUniformBuffer_1a2164abaa62bfc7290179e65faf02d1d3" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1CompiledUniformProp" kindref="compound">CompiledUniformProp</ref></type>
-        <definition>CompiledUniformProp klotter::CameraUniformBuffer::projection_prop</definition>
+        <definition>CompiledUniformProp klotter::CameraUniformBuffer::clip_from_view_uni</definition>
         <argsstring></argsstring>
-        <name>projection_prop</name>
-        <qualifiedname>klotter::CameraUniformBuffer::projection_prop</qualifiedname>
+        <name>clip_from_view_uni</name>
+        <qualifiedname>klotter::CameraUniformBuffer::clip_from_view_uni</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -32,12 +32,12 @@
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="34" column="21" bodyfile="src/klotter/render/shader_resource.h" bodystart="34" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1CameraUniformBuffer_1ae47677224955f8ae8562a9cb414e33e4" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1CameraUniformBuffer_1aaae605f9cf97189117b80735ec12b77f" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1CompiledUniformProp" kindref="compound">CompiledUniformProp</ref></type>
-        <definition>CompiledUniformProp klotter::CameraUniformBuffer::view_prop</definition>
+        <definition>CompiledUniformProp klotter::CameraUniformBuffer::view_from_world_uni</definition>
         <argsstring></argsstring>
-        <name>view_prop</name>
-        <qualifiedname>klotter::CameraUniformBuffer::view_prop</qualifiedname>
+        <name>view_from_world_uni</name>
+        <qualifiedname>klotter::CameraUniformBuffer::view_from_world_uni</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="39" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="39" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="37" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="37" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="41" column="6"/>
+        <location file="src/klotter/render/shader_resource.h" line="39" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -94,8 +94,8 @@
           <edgelabel>setup</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">
-          <edgelabel>projection_prop</edgelabel>
-          <edgelabel>view_prop</edgelabel>
+          <edgelabel>clip_from_view_uni</edgelabel>
+          <edgelabel>view_from_world_uni</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -107,13 +107,13 @@
         <link refid="structklotter_1_1UniformBufferSetup"/>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="30" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="31" bodyend="42"/>
+    <location file="src/klotter/render/shader_resource.h" line="30" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="31" bodyend="40"/>
     <listofallmembers>
       <member refid="structklotter_1_1CameraUniformBuffer_1a46b28bfe4ad5f8155051abfca7ad6652" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>buffer</name></member>
-      <member refid="structklotter_1_1CameraUniformBuffer_1a080765e67e6b945e982ce64be285d949" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>projection_prop</name></member>
+      <member refid="structklotter_1_1CameraUniformBuffer_1a2164abaa62bfc7290179e65faf02d1d3" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>clip_from_view_uni</name></member>
       <member refid="structklotter_1_1CameraUniformBuffer_1ad2ab011ab7b8a6336fe212bb97425833" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>set_props</name></member>
       <member refid="structklotter_1_1CameraUniformBuffer_1a369782736daee9677a8d7c285cd92fd2" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>setup</name></member>
-      <member refid="structklotter_1_1CameraUniformBuffer_1ae47677224955f8ae8562a9cb414e33e4" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>view_prop</name></member>
+      <member refid="structklotter_1_1CameraUniformBuffer_1aaae605f9cf97189117b80735ec12b77f" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>view_from_world_uni</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

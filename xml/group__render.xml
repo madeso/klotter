@@ -399,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="122" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="123" bodyend="128"/>
+        <location file="src/klotter/render/shader_resource.h" line="120" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="121" bodyend="126"/>
       </memberdef>
       <memberdef kind="enum" id="group__render_1ga3453e147b5d5dff196af8e69e2adfc3b" prot="public" static="no" strong="yes">
         <type></type>
@@ -426,7 +426,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="178" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="179" bodyend="182"/>
+        <location file="src/klotter/render/shader_resource.h" line="176" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="177" bodyend="180"/>
       </memberdef>
       <memberdef kind="enum" id="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" prot="public" static="no" strong="yes">
         <type></type>
@@ -822,7 +822,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="129" column="15" declfile="src/klotter/render/shader_resource.h" declline="129" declcolumn="15"/>
+        <location file="src/klotter/render/shader_resource.h" line="127" column="15" declfile="src/klotter/render/shader_resource.h" declline="127" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1gac2e3012d518484348974e4dc36e3112c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::optional&lt; Uniform &gt;</type>
@@ -852,7 +852,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="132" column="15" declfile="src/klotter/render/shader_resource.h" declline="132" declcolumn="15"/>
+        <location file="src/klotter/render/shader_resource.h" line="130" column="15" declfile="src/klotter/render/shader_resource.h" declline="130" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga520b75edd8118f7827919d7890a3fbd9" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const LoadedShader_Unlit &amp;</type>
@@ -875,7 +875,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="215" column="27" declfile="src/klotter/render/shader_resource.h" declline="215" declcolumn="27"/>
+        <location file="src/klotter/render/shader_resource.h" line="213" column="27" declfile="src/klotter/render/shader_resource.h" declline="213" declcolumn="27"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga8072e6de57f4c7633a25803ddf551385" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const LoadedShader_Default &amp;</type>
@@ -898,7 +898,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="218" column="29" declfile="src/klotter/render/shader_resource.h" declline="218" declcolumn="29"/>
+        <location file="src/klotter/render/shader_resource.h" line="216" column="29" declfile="src/klotter/render/shader_resource.h" declline="216" declcolumn="29"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ShaderResource</type>
@@ -924,7 +924,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="244" column="16" declfile="src/klotter/render/shader_resource.h" declline="244" declcolumn="16"/>
+        <location file="src/klotter/render/shader_resource.h" line="242" column="16" declfile="src/klotter/render/shader_resource.h" declline="242" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1gaf7128958c7209702f57eb63c4cded569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

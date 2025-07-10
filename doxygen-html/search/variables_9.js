@@ -1,23 +1,15 @@
 var searchData=
 [
   ['last_5fsource_0',['last_source',['../structklotter_1_1CompiledStack.html#a442cf553eb97dd8d5921b7a4d5c20bc2',1,'klotter::CompiledStack']]],
-  ['layout_1',['layout',['../structklotter_1_1FullScreenGeom.html#a6d3b1bae3cacf01d171aaf83d6635b95',1,'klotter::FullScreenGeom::layout'],['../structklotter_1_1VertexShaderSource.html#a9d1ce2770a08847fa2b49550f7e70ae7',1,'klotter::VertexShaderSource::layout']]],
-  ['light_5fambient_5fcolor_2',['light_ambient_color',['../structklotter_1_1LoadedShader__Default.html#a5db9f7215a40897f83eeee017569be55',1,'klotter::LoadedShader_Default']]],
-  ['light_5fattenuation_3',['light_attenuation',['../structklotter_1_1PointLightUniforms.html#aadb098fdd8fbaa45838feac3b98cea9a',1,'klotter::PointLightUniforms']]],
-  ['light_5fdiffuse_5fcolor_4',['light_diffuse_color',['../structklotter_1_1DirectionalLightUniforms.html#a801338744f0a781c96cea0312853b29b',1,'klotter::DirectionalLightUniforms::light_diffuse_color'],['../structklotter_1_1PointLightUniforms.html#a374e21f06a53eea2cbad92af032504e1',1,'klotter::PointLightUniforms::light_diffuse_color']]],
-  ['light_5fspecular_5fcolor_5',['light_specular_color',['../structklotter_1_1DirectionalLightUniforms.html#ab80a217f6a0dad1911ca5f03949f5398',1,'klotter::DirectionalLightUniforms::light_specular_color'],['../structklotter_1_1PointLightUniforms.html#a2904c2abd2d998fcfa02513bcbb0aacb',1,'klotter::PointLightUniforms::light_specular_color']]],
-  ['light_5fworld_6',['light_world',['../structklotter_1_1PointLightUniforms.html#acec765b11c4d9fd7d54d060eb108911d',1,'klotter::PointLightUniforms']]],
+  ['layout_1',['layout',['../structklotter_1_1FullScreenGeom.html#a6d3b1bae3cacf01d171aaf83d6635b95',1,'klotter::FullScreenGeom::layout'],['../structklotter_1_1LineDrawer.html#a04da8258e19e3763976974335c35b50c',1,'klotter::LineDrawer::layout'],['../structklotter_1_1VertexShaderSource.html#a9d1ce2770a08847fa2b49550f7e70ae7',1,'klotter::VertexShaderSource::layout']]],
+  ['light_5fambient_5fcolor_5funi_2',['light_ambient_color_uni',['../structklotter_1_1LoadedShader__Default.html#aee6221bbb554a57b102e194b40d5eb36',1,'klotter::LoadedShader_Default']]],
+  ['light_5fattenuation_5funi_3',['light_attenuation_uni',['../structklotter_1_1PointLightUniforms.html#a591551fcee95cf78f9fd6687feafa521',1,'klotter::PointLightUniforms']]],
+  ['light_5fdiffuse_5fcolor_5funi_4',['light_diffuse_color_uni',['../structklotter_1_1DirectionalLightUniforms.html#a610c577926a1029776914ad6a2d3c733',1,'klotter::DirectionalLightUniforms::light_diffuse_color_uni'],['../structklotter_1_1PointLightUniforms.html#ac6a0fc565b6aac9101d51ee80d431abc',1,'klotter::PointLightUniforms::light_diffuse_color_uni']]],
+  ['light_5fspecular_5fcolor_5funi_5',['light_specular_color_uni',['../structklotter_1_1DirectionalLightUniforms.html#a115063de2d20559239d655e99a54a13f',1,'klotter::DirectionalLightUniforms::light_specular_color_uni'],['../structklotter_1_1PointLightUniforms.html#a0be2e17c3d55b2297a4ea545310ca426',1,'klotter::PointLightUniforms::light_specular_color_uni']]],
+  ['light_5fworld_5funi_6',['light_world_uni',['../structklotter_1_1PointLightUniforms.html#a5c180184d3981740e8bcc87251ee8bd3',1,'klotter::PointLightUniforms']]],
   ['lights_7',['lights',['../structklotter_1_1World.html#a3fbb4f1f21c97a7f1cc7e11bc5f26a0b',1,'klotter::World']]],
   ['lime_8',['lime',['../group__imguicolors.html#gacbc316ef8105da66f1d268c14463bd7e',1,'klotter::imgui']]],
   ['line_5fbatch_9',['line_batch',['../structklotter_1_1LineDrawer.html#a9e92ee3a442f6f499f7bd5eab0454def',1,'klotter::LineDrawer']]],
-  ['line_5fdash_5fsize_10',['line_dash_size',['../structklotter_1_1LineDrawer.html#aef8076c17bfcdb9de0626643d850e687',1,'klotter::LineDrawer']]],
-  ['line_5fdescription_11',['line_description',['../structklotter_1_1LineDrawer.html#a33fda0109f1f5226fab89e178861bed2',1,'klotter::LineDrawer']]],
-  ['line_5fgap_5fsize_12',['line_gap_size',['../structklotter_1_1LineDrawer.html#aa228a12df26090cec091be2a54a9546d',1,'klotter::LineDrawer']]],
-  ['line_5flayout_13',['line_layout',['../structklotter_1_1LineDrawer.html#a067af94d329ac087fa67948e88c1380b',1,'klotter::LineDrawer']]],
-  ['line_5fprojection_14',['line_projection',['../structklotter_1_1LineDrawer.html#aac32ec512300b5044d1a7a2375aa6861',1,'klotter::LineDrawer']]],
-  ['line_5fresolution_15',['line_resolution',['../structklotter_1_1LineDrawer.html#adf593f9cf96d109de4bef3f83eb89ee7',1,'klotter::LineDrawer']]],
-  ['line_5fshader_16',['line_shader',['../structklotter_1_1LineDrawer.html#a8d4c291a8614f031f658ff62a6c7a1a8',1,'klotter::LineDrawer']]],
-  ['line_5fview_17',['line_view',['../structklotter_1_1LineDrawer.html#af82452a0477d962da99d720dae9752fc',1,'klotter::LineDrawer']]],
-  ['lines_18',['lines',['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch::lines']]],
-  ['location_19',['location',['../structklotter_1_1Uniform.html#a0a3d653eabb213c1f05a7ca494a5cf27',1,'klotter::Uniform']]]
+  ['lines_10',['lines',['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch::lines']]],
+  ['location_11',['location',['../structklotter_1_1Uniform.html#a0a3d653eabb213c1f05a7ca494a5cf27',1,'klotter::Uniform']]]
 ];

@@ -21,8 +21,8 @@ var searchData=
   ['vertextypes_18',['VertexTypes',['../group__vertex-layout.html#gaa3eb81233db95fb693918802ac36cc30',1,'klotter']]],
   ['vertical_19',['vertical',['../namespaceklotter.html#a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3',1,'klotter']]],
   ['vertices_20',['vertices',['../structklotter_1_1Geom.html#a5f55a031de35199a3bd11ca612a08aae',1,'klotter::Geom']]],
-  ['view_21',['view',['../structklotter_1_1CompiledCamera.html#a1eb29eda166a30627784a927bc854c47',1,'klotter::CompiledCamera']]],
-  ['view_5fposition_22',['view_position',['../structklotter_1_1LoadedShader__Default.html#af42cd69f5c0e974bd7b51627ca1366d3',1,'klotter::LoadedShader_Default']]],
-  ['view_5fprop_23',['view_prop',['../structklotter_1_1CameraUniformBuffer.html#ae47677224955f8ae8562a9cb414e33e4',1,'klotter::CameraUniformBuffer']]],
+  ['view_5ffrom_5fworld_21',['view_from_world',['../structklotter_1_1CompiledCamera.html#a8069b0435d682041843d9af2c4f49f19',1,'klotter::CompiledCamera']]],
+  ['view_5ffrom_5fworld_5funi_22',['view_from_world_uni',['../structklotter_1_1LineDrawer.html#a8268353446742e802b34b01fa62276cc',1,'klotter::LineDrawer::view_from_world_uni'],['../structklotter_1_1CameraUniformBuffer.html#aaae605f9cf97189117b80735ec12b77f',1,'klotter::CameraUniformBuffer::view_from_world_uni']]],
+  ['view_5fposition_5funi_23',['view_position_uni',['../structklotter_1_1LoadedShader__Default.html#ab94e2191d8eb5b45a7b5ecea9baab7c4',1,'klotter::LoadedShader_Default']]],
   ['violet_24',['violet',['../group__imguicolors.html#gac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
 ];

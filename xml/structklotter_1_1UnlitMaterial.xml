@@ -227,8 +227,8 @@
         <label>klotter::LoadedShader_Unlit</label>
         <link refid="structklotter_1_1LoadedShader__Unlit"/>
         <childnode refid="6" relation="usage">
-          <edgelabel>tex_diffuse</edgelabel>
-          <edgelabel>tint_color</edgelabel>
+          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tint_color_uni</edgelabel>
         </childnode>
       </node>
       <node id="3">

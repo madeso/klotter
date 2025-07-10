@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="205" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="205" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="203" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="203" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__Default__Container_1a4e74251a4a67c3fc0b00e2f94907978f" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1LoadedShader__Default" kindref="compound">LoadedShader_Default</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="207" column="22" bodyfile="src/klotter/render/shader_resource.h" bodystart="207" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="205" column="22" bodyfile="src/klotter/render/shader_resource.h" bodystart="205" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__Default__Container_1aa1a421a3572f1bb176e9fe113a2db4fe" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1LoadedShader__Default" kindref="compound">LoadedShader_Default</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="208" column="22" bodyfile="src/klotter/render/shader_resource.h" bodystart="208" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="206" column="22" bodyfile="src/klotter/render/shader_resource.h" bodystart="206" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__Default__Container_1a7de65ffc50eea7432269bc718c55ce53" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1LoadedShader__Default" kindref="compound">LoadedShader_Default</ref></type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="209" column="22" bodyfile="src/klotter/render/shader_resource.h" bodystart="209" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="207" column="22" bodyfile="src/klotter/render/shader_resource.h" bodystart="207" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="211" column="7"/>
+        <location file="src/klotter/render/shader_resource.h" line="209" column="7"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -91,16 +91,16 @@
         <label>klotter::LoadedShader_Default</label>
         <link refid="structklotter_1_1LoadedShader__Default"/>
         <childnode refid="4" relation="usage">
-          <edgelabel>ambient_tint</edgelabel>
-          <edgelabel>emissive_factor</edgelabel>
-          <edgelabel>light_ambient_color</edgelabel>
-          <edgelabel>shininess</edgelabel>
-          <edgelabel>specular_color</edgelabel>
-          <edgelabel>tex_diffuse</edgelabel>
-          <edgelabel>tex_emissive</edgelabel>
-          <edgelabel>tex_specular</edgelabel>
-          <edgelabel>tint_color</edgelabel>
-          <edgelabel>view_position</edgelabel>
+          <edgelabel>ambient_tint_uni</edgelabel>
+          <edgelabel>emissive_factor_uni</edgelabel>
+          <edgelabel>light_ambient_color_uni</edgelabel>
+          <edgelabel>shininess_uni</edgelabel>
+          <edgelabel>specular_color_uni</edgelabel>
+          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tex_emissive_uni</edgelabel>
+          <edgelabel>tex_specular_uni</edgelabel>
+          <edgelabel>tint_color_uni</edgelabel>
+          <edgelabel>view_position_uni</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
       </node>
@@ -121,7 +121,7 @@
         <link refid="structklotter_1_1Uniform"/>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="203" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="204" bodyend="212"/>
+    <location file="src/klotter/render/shader_resource.h" line="201" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="202" bodyend="210"/>
     <listofallmembers>
       <member refid="structklotter_1_1LoadedShader__Default__Container_1a4e74251a4a67c3fc0b00e2f94907978f" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default_Container</scope><name>default_shader</name></member>
       <member refid="structklotter_1_1LoadedShader__Default__Container_1a7de65ffc50eea7432269bc718c55ce53" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default_Container</scope><name>default_shader_instance</name></member>

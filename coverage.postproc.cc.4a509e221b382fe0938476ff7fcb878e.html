@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/postproc.cc</div>
-            <div>Date: 2025-07-09 19:39:49</div>
+            <div>Date: 2025-07-10 17:12:10</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -751,7 +751,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arg</span><span class="p">.</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">realized_buffer</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arg</span><span class="p">.</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">texture_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">realized_buffer</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l91" href="#l91">91</a></td>
@@ -2410,7 +2410,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ASSERT</span><span class="p">(</span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">factor</span><span class="p">.</span><span class="n">has_value</span><span class="p">());</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ASSERT</span><span class="p">(</span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">factor_uni</span><span class="p">.</span><span class="n">has_value</span><span class="p">());</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l328" href="#l328">328</a></td>
@@ -2725,21 +2725,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader_factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">factor</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader_factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">factor_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l373" href="#l373">373</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">resolution</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">resolution_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l374" href="#l374">374</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">time</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">time_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l375" href="#l375">375</a></td>
@@ -2865,7 +2865,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">.</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">.</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="o">-&gt;</span><span class="n">texture_uni</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l393" href="#l393">393</a></td>
@@ -3390,14 +3390,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ASSERT</span><span class="p">(</span><span class="n">vert</span><span class="o">-&gt;</span><span class="n">factor</span><span class="p">.</span><span class="n">has_value</span><span class="p">());</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ASSERT</span><span class="p">(</span><span class="n">vert</span><span class="o">-&gt;</span><span class="n">factor_uni</span><span class="p">.</span><span class="n">has_value</span><span class="p">());</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l468" href="#l468">468</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ASSERT</span><span class="p">(</span><span class="n">hori</span><span class="o">-&gt;</span><span class="n">factor</span><span class="p">.</span><span class="n">has_value</span><span class="p">());</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ASSERT</span><span class="p">(</span><span class="n">hori</span><span class="o">-&gt;</span><span class="n">factor_uni</span><span class="p">.</span><span class="n">has_value</span><span class="p">());</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l469" href="#l469">469</a></td>
@@ -3558,7 +3558,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">factor_uniform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vert</span><span class="o">-&gt;</span><span class="n">factor</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">factor_uniform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vert</span><span class="o">-&gt;</span><span class="n">factor_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l492" href="#l492">492</a></td>
@@ -3642,7 +3642,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">.</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">vert</span><span class="o">-&gt;</span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">.</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">vert</span><span class="o">-&gt;</span><span class="n">texture_uni</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l504" href="#l504">504</a></td>
@@ -3677,14 +3677,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">factor_uniform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hori</span><span class="o">-&gt;</span><span class="n">factor</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">factor_uniform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hori</span><span class="o">-&gt;</span><span class="n">factor_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l509" href="#l509">509</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution_uniform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hori</span><span class="o">-&gt;</span><span class="n">resolution</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution_uniform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hori</span><span class="o">-&gt;</span><span class="n">resolution_uni</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l510" href="#l510">510</a></td>
@@ -3803,7 +3803,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">.</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">hori</span><span class="o">-&gt;</span><span class="n">texture</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">.</span><span class="n">renderer</span><span class="o">-&gt;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">hori</span><span class="o">-&gt;</span><span class="n">texture_uni</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l527" href="#l527">527</a></td>
