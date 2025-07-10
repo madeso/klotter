@@ -72,7 +72,7 @@ glm::mat4 rot_from_basis(const glm::vec3& a, const glm::vec3& b, const glm::vec3
 }
 
 // todo(Gustav): should functions take shared_ptr?
-glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCamera& cc)
+glm::mat4 calc_world_from_local(std::shared_ptr<MeshInstance> m, const CompiledCamera& cc)
 {
 	const auto calc_fixed_right = [](const glm::vec3& normal, const glm::vec3& up)
 	{
@@ -88,14 +88,14 @@ glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCam
 		return rot_from_basis(right, up, new_normal);
 	};
 
-	const auto translation = glm::translate(glm::mat4(1.0f), m->position);
+	const auto translation = glm::translate(glm::mat4(1.0f), m->world_position);
 
 	// todo(Gustav): verify that the billboards are oriented correctly, grass in example 3 is twosided...
 	switch (m->billboarding)
 	{
 	case Billboarding::screen:
 		{
-			const auto rotation = calc_fixed_right(glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0});
+			const auto rotation = calc_fixed_right(glm::normalize(m->world_position - cc.position), glm::vec3{0, 1, 0});
 			return translation * rotation;
 		}
 	case Billboarding::screen_fast:
@@ -106,7 +106,7 @@ glm::mat4 calc_mesh_transform(std::shared_ptr<MeshInstance> m, const CompiledCam
 		}
 	case Billboarding::axial_y:
 		{
-			const auto rotation = calc_fixed_up(glm::normalize(m->position - cc.position), glm::vec3{0, 1, 0});
+			const auto rotation = calc_fixed_up(glm::normalize(m->world_position - cc.position), glm::vec3{0, 1, 0});
 			return translation * rotation;
 		}
 	case Billboarding::axial_y_fast:
@@ -139,9 +139,9 @@ void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates*
 		return;
 	}
 
-	drawer->line_shader.use();
-	drawer->line_shader.set_mat(drawer->line_projection, compiled_camera.projection);
-	drawer->line_shader.set_mat(drawer->line_view, compiled_camera.view);
+	drawer->shader.use();
+	drawer->shader.set_mat(drawer->clip_from_view_uni, compiled_camera.clip_from_view);
+	drawer->shader.set_mat(drawer->view_from_world_uni, compiled_camera.view_from_world);
 	
 	StateChanger{states}.depth_func(Compare::less_equal).depth_test(true);
 	drawer->set_line_to_solid();
@@ -187,7 +187,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 			if (mesh->material->is_transparent())
 			{
-				transparent_meshes.emplace_back(TransparentMesh{mesh, glm::length2(camera.position - mesh->position)});
+				transparent_meshes.emplace_back(TransparentMesh{mesh, glm::length2(camera.position - mesh->world_position)});
 				continue;
 			}
 			StateChanger{&pimpl->states}
@@ -203,7 +203,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 			}
 			mesh->material->use_shader(not_transparent_context);
-			mesh->material->set_uniforms(not_transparent_context, compiled_camera, calc_mesh_transform(mesh, compiled_camera));
+			mesh->material->set_uniforms(not_transparent_context, compiled_camera, calc_world_from_local(mesh, compiled_camera));
 			mesh->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
 			mesh->material->apply_lights(not_transparent_context, world.lights, settings, &pimpl->states, &assets);
 
@@ -261,7 +261,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		auto& shader = pimpl->shaders_resources.skybox_shader;
 
 		shader.program->use();
-		bind_texture_cubemap(&pimpl->states, shader.tex_skybox, *world.skybox.cubemap);
+		bind_texture_cubemap(&pimpl->states, shader.tex_skybox_uni, *world.skybox.cubemap);
 
 		render_geom(*world.skybox.geom);
 	}
@@ -293,7 +293,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 				StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
 			}
 			mesh->material->use_shader(transparent_context);
-			mesh->material->set_uniforms(transparent_context, compiled_camera, calc_mesh_transform(mesh, compiled_camera));
+			mesh->material->set_uniforms(transparent_context, compiled_camera, calc_world_from_local(mesh, compiled_camera));
 			mesh->material->bind_textures(transparent_context, &pimpl->states, &assets);
 			mesh->material->apply_lights(transparent_context, world.lights, settings, &pimpl->states, &assets);
 
@@ -317,9 +317,9 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 				auto& shader = pimpl->shaders_resources.single_color_shader;
 				shader.program->use();
-				shader.program->set_vec4(shader.tint_color, {*mesh_outline, 1});
+				shader.program->set_vec4(shader.tint_color_uni, {*mesh_outline, 1});
 
-				shader.program->set_mat(shader.model, calc_mesh_transform(mesh, compiled_camera) * small_scale_mat);
+				shader.program->set_mat(shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera) * small_scale_mat);
 
 				render_geom(*mesh->geom);
 			}

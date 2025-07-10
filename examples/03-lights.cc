@@ -57,7 +57,7 @@ struct LightsSample : Sample
 		material->specular = specular;
 
 		auto cube = add_cube(geom, material);
-		cube->position = p;
+		cube->world_position = p;
 
 		cubes.emplace_back(cube);
 
@@ -85,7 +85,7 @@ struct LightsSample : Sample
 		auto light_geom
 			= create_cube_geom(USE_DEBUG_LABEL_MANY("light") 0.25f, 0.25f, 0.25f, geom::NormalsFacing::Out, renderer->unlit_geom_layout());
 		auto light = add_cube(light_geom, light_material);
-		light->position.z = 0.5f;
+		light->world_position.z = 0.5f;
 
 		// skybox
 		world.skybox = renderer->make_skybox(renderer->assets.get_skybox());
@@ -107,7 +107,7 @@ struct LightsSample : Sample
 
 		// point light
 		world.lights.point_lights.emplace_back();
-		world.lights.point_lights[0].position = light->position;
+		world.lights.point_lights[0].position = light->world_position;
 		world.lights.point_lights[0].diffuse = 0.4f;
 		world.lights.point_lights[0].specular = world.lights.point_lights[0].diffuse;
 
@@ -152,10 +152,10 @@ struct LightsSample : Sample
 			glass_mat->alpha = 0.3f;
 
 			auto glass = add_cube(geom, glass_mat);
-			glass->position = {0.0f, 0.0f, 1.0f};
+			glass->world_position = {0.0f, 0.0f, 1.0f};
 
 			glass = add_cube(geom, glass_mat);
-			glass->position = {0.0f, 0.0f, -1.0f};
+			glass->world_position = {0.0f, 0.0f, -1.0f};
 		}
 
 		// billboards
@@ -169,11 +169,11 @@ struct LightsSample : Sample
 			grass_mat->specular_color = colors::black;
 
 			auto glass = add_cube(billboard_cg, grass_mat);
-			glass->position = {1.0f, 0.0f, 0.0f};
+			glass->world_position = {1.0f, 0.0f, 0.0f};
 			glass->billboarding = Billboarding::axial_y;
 
 			glass = add_cube(billboard_cg, grass_mat);
-			glass->position = {-1.0f, 0.0f, -1.0f};
+			glass->world_position = {-1.0f, 0.0f, -1.0f};
 			glass->billboarding = Billboarding::axial_y_fast;
 		}
 
@@ -190,7 +190,7 @@ struct LightsSample : Sample
 			material->specular = renderer->assets.get_white();
 
 			auto plane = add_cube(plane_geom, material);
-			plane->position = {0.0f, -3.0f, 0.0f};
+			plane->world_position = {0.0f, -3.0f, 0.0f};
 		}
 
 		// instances
@@ -218,7 +218,7 @@ struct LightsSample : Sample
 			{
 				for(int j=0; j<10; j+=1)
 				{
-					instances->transforms.emplace_back(mk({Cint_to_float(i), Cint_to_float(j), -4}, {Cint_to_float(i)/10.0f * 90.0f, Cint_to_float(j)/10.0f * 90.0f, 0}));
+					instances->world_from_locals.emplace_back(mk({Cint_to_float(i), Cint_to_float(j), -4}, {Cint_to_float(i)/10.0f * 90.0f, Cint_to_float(j)/10.0f * 90.0f, 0}));
 				}
 			}
 

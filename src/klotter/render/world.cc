@@ -226,16 +226,16 @@ void render_geom_instanced(const MeshInstance_TransformInstanced& instanced)
 {
 	auto* geom = instanced.geom.get();
 	ASSERT(is_bound_for_shader(geom->debug_types));
-	ASSERT(! instanced.transforms.empty());
+	ASSERT(! instanced.world_from_locals.empty());
 
-	for (std::size_t start_index = 0; start_index < instanced.transforms.size();
+	for (std::size_t start_index = 0; start_index < instanced.world_from_locals.size();
 		 start_index += instanced.geom->max_instances)
 	{
 		const std::size_t step_size
-			= std::min(instanced.transforms.size() - start_index, instanced.geom->max_instances);
+			= std::min(instanced.world_from_locals.size() - start_index, instanced.geom->max_instances);
 		glBindBuffer(GL_ARRAY_BUFFER, instanced.geom->instance_vbo);
 		glBufferSubData(
-			GL_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(glm::mat4) * step_size), &instanced.transforms[start_index]
+			GL_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(glm::mat4) * step_size), &instanced.world_from_locals[start_index]
 		);
 
 		glBindVertexArray(geom->vao);
@@ -244,7 +244,7 @@ void render_geom_instanced(const MeshInstance_TransformInstanced& instanced)
 			geom->number_of_triangles * 3,
 			GL_UNSIGNED_INT,
 			nullptr,
-			Csizet_to_glsizei(instanced.transforms.size())
+			Csizet_to_glsizei(instanced.world_from_locals.size())
 		);
 	}
 }

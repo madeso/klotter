@@ -34,8 +34,8 @@ struct Camera
 /// @see compile_camera
 struct CompiledCamera
 {
-	glm::mat4 projection;
-	glm::mat4 view;
+	glm::mat4 clip_from_view;
+	glm::mat4 view_from_world;
 	glm::vec3 position;
 	glm::vec3 in;
 };

@@ -31,10 +31,8 @@ struct CameraUniformBuffer
 {
 	UniformBufferSetup setup;
 
-	CompiledUniformProp projection_prop;
-	CompiledUniformProp view_prop;
-
-	// this replaces the u_projection and u_view matrices
+	CompiledUniformProp clip_from_view_uni;
+	CompiledUniformProp view_from_world_uni;
 
 	std::unique_ptr<UniformBuffer> buffer;
 
@@ -51,8 +49,8 @@ struct LoadedShader_SingleColor
 
 	std::shared_ptr<ShaderProgram> program;
 	CompiledGeomVertexAttributes geom_layout;
-	Uniform tint_color;
-	Uniform model;
+	Uniform tint_color_uni;
+	Uniform world_from_local_uni;
 };
 
 /// A skybox shader.
@@ -64,7 +62,7 @@ struct LoadedShader_Skybox
 
 	std::shared_ptr<ShaderProgram> program;
 	CompiledGeomVertexAttributes geom_layout;
-	Uniform tex_skybox;
+	Uniform tex_skybox_uni;
 };
 
 /// Parts of a loaded unlit shader
@@ -75,10 +73,10 @@ struct LoadedShader_Unlit
 
 	explicit LoadedShader_Unlit(TransformSource model_source, std::shared_ptr<ShaderProgram> p, const CameraUniformBuffer& desc);
 
-	Uniform tint_color;
-	Uniform tex_diffuse;
+	Uniform tint_color_uni;
+	Uniform tex_diffuse_uni;
 
-	std::optional<Uniform> model;
+	std::optional<Uniform> world_from_local_uni;
 };
 
 /// Uniform for a directional light.
@@ -87,9 +85,9 @@ struct DirectionalLightUniforms
 {
 	DirectionalLightUniforms(const ShaderProgram* program, const std::string& base);
 
-	Uniform light_diffuse_color;
-	Uniform light_specular_color;
-	Uniform dir;
+	Uniform light_diffuse_color_uni;
+	Uniform light_specular_color_uni;
+	Uniform dir_uni;
 };
 
 /// Uniforms for a point light.
@@ -98,10 +96,10 @@ struct PointLightUniforms
 {
 	PointLightUniforms(const ShaderProgram* program, const std::string& base);
 
-	Uniform light_diffuse_color;
-	Uniform light_specular_color;
-	Uniform light_attenuation;
-	Uniform light_world;
+	Uniform light_diffuse_color_uni;
+	Uniform light_specular_color_uni;
+	Uniform light_attenuation_uni;
+	Uniform light_world_uni;
 };
 
 /// Uniforms for a frustum light.
@@ -110,12 +108,12 @@ struct FrustumLightUniforms
 {
 	FrustumLightUniforms(const ShaderProgram* program, const std::string& base);
 
-	Uniform diffuse;
-	Uniform specular;
-	Uniform attenuation;
-	Uniform world_to_clip;
-	Uniform world_pos;
-	Uniform cookie;
+	Uniform diffuse_uni;
+	Uniform specular_uni;
+	Uniform attenuation_uni;
+	Uniform world_to_clip_uni;
+	Uniform world_pos_uni;
+	Uniform cookie_uni;
 };
 
 /// Bitmask for what features each postproc shader wants.
@@ -137,10 +135,10 @@ std::optional<Uniform> get_uniform(
 struct LoadedPostProcShader
 {
 	std::shared_ptr<ShaderProgram> program;
-	Uniform texture;
-	std::optional<Uniform> factor;
-	std::optional<Uniform> resolution;
-	std::optional<Uniform> time;
+	Uniform texture_uni;
+	std::optional<Uniform> factor_uni;
+	std::optional<Uniform> resolution_uni;
+	std::optional<Uniform> time_uni;
 
 	explicit LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, PostProcSetup setup);
 };
@@ -155,19 +153,19 @@ struct LoadedShader_Default
 		TransformSource model_source, std::shared_ptr<ShaderProgram> p, const RenderSettings& settings, const CameraUniformBuffer& desc
 	);
 
-	Uniform tint_color;
-	Uniform tex_diffuse;
-	Uniform tex_specular;
-	Uniform tex_emissive;
-	Uniform ambient_tint;
-	Uniform specular_color;
-	Uniform shininess;
-	Uniform emissive_factor;
+	Uniform tint_color_uni;
+	Uniform tex_diffuse_uni;
+	Uniform tex_specular_uni;
+	Uniform tex_emissive_uni;
+	Uniform ambient_tint_uni;
+	Uniform specular_color_uni;
+	Uniform shininess_uni;
+	Uniform emissive_factor_uni;
 
-	std::optional<Uniform> model;
+	std::optional<Uniform> world_from_local_uni;
 
-	Uniform view_position;
-	Uniform light_ambient_color;
+	Uniform view_position_uni;
+	Uniform light_ambient_color_uni;
 
 	std::vector<DirectionalLightUniforms> directional_lights;
 	std::vector<PointLightUniforms> point_lights;

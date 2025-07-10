@@ -24,7 +24,7 @@ struct LineBatch
 	LineBatch(LineBatch&&) = delete;
 	void operator=(LineBatch&&) = delete;
 
-	void line(const glm::vec3& from, const glm::vec3& to, const glm::vec3& color);
+	void line(const glm::vec3& world_from, const glm::vec3& world_to, const glm::vec3& color);
 	void submit();
 };
 
@@ -32,14 +32,14 @@ struct LineBatch
 /// A utility to draw 3d lines
 struct LineDrawer
 {
-	ShaderVertexAttributes line_description;
-	CompiledShaderVertexAttributes line_layout;
-	ShaderProgram line_shader;
-	Uniform line_projection;
-	Uniform line_view;
-	Uniform line_resolution;
-	Uniform line_dash_size;
-	Uniform line_gap_size;
+	ShaderVertexAttributes description;
+	CompiledShaderVertexAttributes layout;
+	ShaderProgram shader;
+	Uniform clip_from_view_uni;
+	Uniform view_from_world_uni;
+	Uniform resolution_uni;
+	Uniform dash_size_uni;
+	Uniform gap_size_uni;
 	LineBatch line_batch;
 
 	LineDrawer();

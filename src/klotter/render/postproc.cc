@@ -87,7 +87,7 @@ struct RenderWorld : RenderSource
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		shader->program->use();
-		bind_texture_2d(&arg.renderer->pimpl->states, shader->texture, *realized_buffer);
+		bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *realized_buffer);
 
 		render_geom(*arg.renderer->pimpl->full_screen_geom);
 	}
@@ -324,7 +324,7 @@ struct SimpleEffect
 		: name(std::move(n))
 		, shader(std::move(s))
 	{
-		ASSERT(shader->factor.has_value());
+		ASSERT(shader->factor_uni.has_value());
 	}
 
 	void add_float_drag_prop(const std::string& prop_name, float value, float speed)
@@ -369,9 +369,9 @@ struct SimpleEffect
 	{
 		shader->program->use();
 
-		const auto& shader_factor = shader->factor;
-		const auto& shader_resolution = shader->resolution;
-		const auto& shader_time = shader->time;
+		const auto& shader_factor = shader->factor_uni;
+		const auto& shader_resolution = shader->resolution_uni;
+		const auto& shader_time = shader->time_uni;
 
 		if (shader_factor)
 		{
@@ -389,7 +389,7 @@ struct SimpleEffect
 		{
 			p->use(a, *shader->program);
 		}
-		bind_texture_2d(&a.renderer->pimpl->states, shader->texture, t);
+		bind_texture_2d(&a.renderer->pimpl->states, shader->texture_uni, t);
 	}
 
 	void build(const BuildArg& arg) override
@@ -464,8 +464,8 @@ struct BlurEffect : FactorEffect
 		, std_dev_h(hori->program->get_uniform("u_std_dev"))
 #endif
 	{
-		ASSERT(vert->factor.has_value());
-		ASSERT(hori->factor.has_value());
+		ASSERT(vert->factor_uni.has_value());
+		ASSERT(hori->factor_uni.has_value());
 	}
 
 	void gui() override
@@ -488,7 +488,7 @@ struct BlurEffect : FactorEffect
 
 	void use_vert_shader(const PostProcArg& a, const FrameBuffer& t) const
 	{
-		const auto& factor_uniform = vert->factor;
+		const auto& factor_uniform = vert->factor_uni;
 
 		vert->program->use();
 		ASSERT(factor_uniform);
@@ -500,13 +500,13 @@ struct BlurEffect : FactorEffect
 #if FF_HAS(BLUR_USE_GAUSS)
 		vert->program->set_float(std_dev_v, std_dev);
 #endif
-		bind_texture_2d(&a.renderer->pimpl->states, vert->texture, t);
+		bind_texture_2d(&a.renderer->pimpl->states, vert->texture_uni, t);
 	}
 
 	void use_hori_shader(const PostProcArg& a, const FrameBuffer& t)
 	{
-		const auto& factor_uniform = hori->factor;
-		const auto& resolution_uniform = hori->resolution;
+		const auto& factor_uniform = hori->factor_uni;
+		const auto& resolution_uniform = hori->resolution_uni;
 
 		hori->program->use();
 		ASSERT(factor_uniform);
@@ -523,7 +523,7 @@ struct BlurEffect : FactorEffect
 #if FF_HAS(BLUR_USE_GAUSS)
 		hori->program->set_float(std_dev_h, std_dev);
 #endif
-		bind_texture_2d(&a.renderer->pimpl->states, hori->texture, t);
+		bind_texture_2d(&a.renderer->pimpl->states, hori->texture_uni, t);
 	}
 
 	void build(const BuildArg& arg) override

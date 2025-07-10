@@ -19,6 +19,6 @@ out vec3 v_tex_normal;
 // code
 void main()
 {
-    gl_Position = (u_projection * mat4(mat3(u_view)) * vec4(a_position.xyz, 1.0)).xyww;
+    gl_Position = (u_clip_from_view * mat4(mat3(u_view_from_world)) * vec4(a_position.xyz, 1.0)).xyww;
     v_tex_normal = a_position.xyz;
 }

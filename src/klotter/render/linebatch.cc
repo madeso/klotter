@@ -10,17 +10,17 @@ namespace klotter
 LineDrawer::LineDrawer()
 	// todo(Gustav): exapnd shader with stipple pattern https://stackoverflow.com/questions/52928678/dashed-line-in-opengl3/54543267#54543267
 	// todo(Gustav): move quad_description and quad_layout to a seperate setup
-	: line_description({{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}})
-	, line_layout(compile_shader_layout(compile_attribute_layouts({line_description}), line_description, std::nullopt))
-	, line_shader(
+	: description({{VertexType::position3, "a_world_position"}, {VertexType::color3, "a_color"}})
+	, layout(compile_shader_layout(compile_attribute_layouts({description}), description, std::nullopt))
+	, shader(
 		  USE_DEBUG_LABEL_MANY("debug line")
 		  R"glsl(
 			#version 430 core
-			in vec3 a_position;
+			in vec3 a_world_position;
 			in vec3 a_color;
 
-			uniform mat4 u_projection;
-			uniform mat4 u_view;
+			uniform mat4 u_clip_from_view;
+			uniform mat4 u_view_from_world;
 			uniform vec2  u_resolution;
 
 			out vec4 v_color;
@@ -30,7 +30,7 @@ LineDrawer::LineDrawer()
 			void main()
 			{
 				v_color = vec4(a_color, 1.0);
-				vec4 pos = u_projection * u_view * vec4(a_position.xyz, 1.0);
+				vec4 pos = u_clip_from_view * u_view_from_world * vec4(a_world_position.xyz, 1.0);
 				gl_Position = pos;
 				v_vert_pos = ((pos.xy / pos.w) + 1)/2.0 * u_resolution;
 				v_start_pos = v_vert_pos;
@@ -71,32 +71,32 @@ LineDrawer::LineDrawer()
 				}
 			}
 		)glsl",
-		  line_layout
+		  layout
 	  )
-	, line_projection(line_shader.get_uniform("u_projection"))
-	, line_view(line_shader.get_uniform("u_view"))
-	, line_resolution(line_shader.get_uniform("u_resolution"))
-	, line_dash_size(line_shader.get_uniform("u_dash_size"))
-	, line_gap_size(line_shader.get_uniform("u_gap_size"))
-	, line_batch(&line_shader)
+	, clip_from_view_uni(shader.get_uniform("u_clip_from_view"))
+	, view_from_world_uni(shader.get_uniform("u_view_from_world"))
+	, resolution_uni(shader.get_uniform("u_resolution"))
+	, dash_size_uni(shader.get_uniform("u_dash_size"))
+	, gap_size_uni(shader.get_uniform("u_gap_size"))
+	, line_batch(&shader)
 {
 }
 
 void LineDrawer::set_line_to_dash(const glm::vec2& resolution, float dash_size, float gap_size)
 {
-	line_shader.set_vec2(line_resolution, resolution);
-	line_shader.set_float(line_dash_size, dash_size);
-	line_shader.set_float(line_gap_size, gap_size);
+	shader.set_vec2(resolution_uni, resolution);
+	shader.set_float(dash_size_uni, dash_size);
+	shader.set_float(gap_size_uni, gap_size);
 }
 
 void LineDrawer::set_line_to_solid()
 {
-	line_shader.set_vec2(line_resolution, {-1.0f, -1.0f});
+	shader.set_vec2(resolution_uni, {-1.0f, -1.0f});
 }
 
 bool LineDrawer::is_loaded() const
 {
-	return line_shader.is_loaded();
+	return shader.is_loaded();
 }
 
 LineBatch::LineBatch(ShaderProgram* shader)
@@ -165,18 +165,19 @@ LineBatch::~LineBatch()
 	destroy_vertex_array(va);
 }
 
-void add_vertex(LineBatch* batch, const glm::vec3& position, const glm::vec3& color)
+// todo(Gustav): move into the line function?
+void add_vertex(LineBatch* batch, const glm::vec3& world_position, const glm::vec3& color)
 {
-	batch->data.push_back(position.x);
-	batch->data.push_back(position.y);
-	batch->data.push_back(position.z);
+	batch->data.push_back(world_position.x);
+	batch->data.push_back(world_position.y);
+	batch->data.push_back(world_position.z);
 
 	batch->data.push_back(color.x);
 	batch->data.push_back(color.y);
 	batch->data.push_back(color.z);
 }
 
-void LineBatch::line(const glm::vec3& from, const glm::vec3& to, const glm::vec3& color)
+void LineBatch::line(const glm::vec3& world_from, const glm::vec3& world_to, const glm::vec3& color)
 {
 	if (lines == max_lines)
 	{
@@ -185,8 +186,8 @@ void LineBatch::line(const glm::vec3& from, const glm::vec3& to, const glm::vec3
 
 	lines += 1;
 
-	add_vertex(this, from, color);
-	add_vertex(this, to, color);
+	add_vertex(this, world_from, color);
+	add_vertex(this, world_to, color);
 }
 
 void LineBatch::submit()
@@ -197,6 +198,7 @@ void LineBatch::submit()
 	}
 
 	// this assumes set_model_projection_view has been called
+	// todo(Gustav): where is this code? can it be moved here?
 
 	glBindVertexArray(va);
 

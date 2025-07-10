@@ -15,10 +15,10 @@ in vec2 a_tex_coord;
 {{uniform_buffer_source}}
 
 {{#use_instancing}}
-in mat4 u_model; // hacky way to define a attribute :/
+in mat4 u_world_from_local; // hacky way to define a attribute :/
 {{/use_instancing}}
 {{^use_instancing}}
-uniform mat4 u_model;
+uniform mat4 u_world_from_local;
 {{/use_instancing}}
 
 
@@ -36,11 +36,11 @@ out vec2 v_tex_coord;
 // code
 void main()
 {
-    gl_Position = u_projection * u_view * u_model * vec4(a_position.xyz, 1.0);
+    gl_Position = u_clip_from_view * u_view_from_world * u_world_from_local * vec4(a_position.xyz, 1.0);
 
 {{#use_lights}}
-    v_worldspace = vec3(u_model * vec4(a_position.xyz, 1.0));
-    v_normal = mat3(transpose(inverse(u_model))) * a_normal; // move to cpu
+    v_worldspace = vec3(u_world_from_local * vec4(a_position.xyz, 1.0));
+    v_normal = mat3(transpose(inverse(u_world_from_local))) * a_normal; // move to cpu
 {{/use_lights}}
     v_color = a_color;
     v_tex_coord = a_tex_coord;

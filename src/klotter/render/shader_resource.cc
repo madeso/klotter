@@ -24,8 +24,8 @@ namespace klotter
 
 void CameraUniformBuffer::set_props(const CompiledCamera& cc) // NOLINT(readability-make-member-function-const)
 {
-	buffer->set_mat4(projection_prop, cc.projection);
-	buffer->set_mat4(view_prop, cc.view);
+	buffer->set_mat4(clip_from_view_uni, cc.clip_from_view);
+	buffer->set_mat4(view_from_world_uni, cc.view_from_world);
 }
 
 LoadedShader_SingleColor::LoadedShader_SingleColor(
@@ -33,8 +33,8 @@ LoadedShader_SingleColor::LoadedShader_SingleColor(
 )
 	: program(std::move(p))
 	, geom_layout(std::move(l))
-	, tint_color(program->get_uniform("u_material.diffuse_tint"))
-	, model(program->get_uniform("u_model"))
+	, tint_color_uni(program->get_uniform("u_material.diffuse_tint"))
+	, world_from_local_uni(program->get_uniform("u_world_from_local"))
 {
 	program->setup_uniform_block(desc.setup);
 }
@@ -44,9 +44,9 @@ LoadedShader_Skybox::LoadedShader_Skybox(
 )
 	: program(std::move(p))
 	, geom_layout(std::move(l))
-	, tex_skybox(program->get_uniform("u_skybox_tex"))
+	, tex_skybox_uni(program->get_uniform("u_skybox_tex"))
 {
-	setup_textures(program.get(), {&tex_skybox});
+	setup_textures(program.get(), {&tex_skybox_uni});
 	program->setup_uniform_block(desc.setup);
 }
 
@@ -56,38 +56,38 @@ LoadedShader_Unlit::LoadedShader_Unlit(
 	const CameraUniformBuffer& desc
 )
 	: program(std::move(p))
-	, tint_color(program->get_uniform("u_material.diffuse_tint"))
-	, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
-	, model(
-		  model_source == TransformSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_model")} : std::nullopt
+	, tint_color_uni(program->get_uniform("u_material.diffuse_tint"))
+	, tex_diffuse_uni(program->get_uniform("u_material.diffuse_tex"))
+	, world_from_local_uni(
+		  model_source == TransformSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_world_from_local")} : std::nullopt
 	  )
 {
-	setup_textures(program.get(), {&tex_diffuse});
+	setup_textures(program.get(), {&tex_diffuse_uni});
 	program->setup_uniform_block(desc.setup);
 }
 
 DirectionalLightUniforms::DirectionalLightUniforms(const ShaderProgram* program, const std::string& base)
-	: light_diffuse_color(program->get_uniform(base + "diffuse"))
-	, light_specular_color(program->get_uniform(base + "specular"))
-	, dir(program->get_uniform(base + "dir"))
+	: light_diffuse_color_uni(program->get_uniform(base + "diffuse"))
+	, light_specular_color_uni(program->get_uniform(base + "specular"))
+	, dir_uni(program->get_uniform(base + "dir"))
 {
 }
 
 PointLightUniforms::PointLightUniforms(const ShaderProgram* program, const std::string& base)
-	: light_diffuse_color(program->get_uniform(base + "diffuse"))
-	, light_specular_color(program->get_uniform(base + "specular"))
-	, light_attenuation(program->get_uniform(base + "attenuation"))
-	, light_world(program->get_uniform(base + "world_pos"))
+	: light_diffuse_color_uni(program->get_uniform(base + "diffuse"))
+	, light_specular_color_uni(program->get_uniform(base + "specular"))
+	, light_attenuation_uni(program->get_uniform(base + "attenuation"))
+	, light_world_uni(program->get_uniform(base + "world_pos"))
 {
 }
 
 FrustumLightUniforms::FrustumLightUniforms(const ShaderProgram* program, const std::string& base)
-	: diffuse(program->get_uniform(base + "diffuse"))
-	, specular(program->get_uniform(base + "specular"))
-	, attenuation(program->get_uniform(base + "attenuation"))
-	, world_to_clip(program->get_uniform(base + "world_to_clip"))
-	, world_pos(program->get_uniform(base + "world_pos"))
-	, cookie(program->get_uniform(base + "cookie"))
+	: diffuse_uni(program->get_uniform(base + "diffuse"))
+	, specular_uni(program->get_uniform(base + "specular"))
+	, attenuation_uni(program->get_uniform(base + "attenuation"))
+	, world_to_clip_uni(program->get_uniform(base + "world_to_clip"))
+	, world_pos_uni(program->get_uniform(base + "world_pos"))
+	, cookie_uni(program->get_uniform(base + "cookie"))
 {
 }
 
@@ -112,12 +112,12 @@ std::optional<Uniform> get_uniform(
 
 LoadedPostProcShader::LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, PostProcSetup setup)
 	: program(std::move(s))
-	, texture(program->get_uniform("u_texture"))
-	, factor(get_uniform(*program, "u_factor", setup, PostProcSetup::factor))
-	, resolution(get_uniform(*program, "u_resolution", setup, PostProcSetup::resolution))
-	, time(get_uniform(*program, "u_time", setup, PostProcSetup::time))
+	, texture_uni(program->get_uniform("u_texture"))
+	, factor_uni(get_uniform(*program, "u_factor", setup, PostProcSetup::factor))
+	, resolution_uni(get_uniform(*program, "u_resolution", setup, PostProcSetup::resolution))
+	, time_uni(get_uniform(*program, "u_time", setup, PostProcSetup::time))
 {
-	setup_textures(program.get(), {&texture});
+	setup_textures(program.get(), {&texture_uni});
 }
 
 LoadedShader_Default::LoadedShader_Default(
@@ -127,19 +127,19 @@ LoadedShader_Default::LoadedShader_Default(
 	const CameraUniformBuffer& desc
 )
 	: program(std::move(p))
-	, tint_color(program->get_uniform("u_material.diffuse_tint"))
-	, tex_diffuse(program->get_uniform("u_material.diffuse_tex"))
-	, tex_specular(program->get_uniform("u_material.specular_tex"))
-	, tex_emissive(program->get_uniform("u_material.emissive_tex"))
-	, ambient_tint(program->get_uniform("u_material.ambient_tint"))
-	, specular_color(program->get_uniform("u_material.specular_tint"))
-	, shininess(program->get_uniform("u_material.shininess"))
-	, emissive_factor(program->get_uniform("u_material.emissive_factor"))
-	, model(
-		  model_source == TransformSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_model")} : std::nullopt
+	, tint_color_uni(program->get_uniform("u_material.diffuse_tint"))
+	, tex_diffuse_uni(program->get_uniform("u_material.diffuse_tex"))
+	, tex_specular_uni(program->get_uniform("u_material.specular_tex"))
+	, tex_emissive_uni(program->get_uniform("u_material.emissive_tex"))
+	, ambient_tint_uni(program->get_uniform("u_material.ambient_tint"))
+	, specular_color_uni(program->get_uniform("u_material.specular_tint"))
+	, shininess_uni(program->get_uniform("u_material.shininess"))
+	, emissive_factor_uni(program->get_uniform("u_material.emissive_factor"))
+	, world_from_local_uni(
+		  model_source == TransformSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_world_from_local")} : std::nullopt
 	  )
-	, view_position(program->get_uniform("u_view_position"))
-	, light_ambient_color(program->get_uniform("u_ambient_light"))
+	, view_position_uni(program->get_uniform("u_view_position"))
+	, light_ambient_color_uni(program->get_uniform("u_ambient_light"))
 {
 	for (int index = 0; index < settings.number_of_directional_lights; index += 1)
 	{
@@ -159,10 +159,10 @@ LoadedShader_Default::LoadedShader_Default(
 		frustum_lights.emplace_back(program.get(), base);
 	}
 
-	std::vector<Uniform*> textures = {&tex_diffuse, &tex_specular, &tex_emissive};
+	std::vector<Uniform*> textures = {&tex_diffuse_uni, &tex_specular_uni, &tex_emissive_uni};
 	for (auto& fl: frustum_lights)
 	{
-		textures.emplace_back(&fl.cookie);
+		textures.emplace_back(&fl.cookie_uni);
 	}
 
 	setup_textures(program.get(), textures);
@@ -237,7 +237,7 @@ LoadedShader load_shader(DEBUG_LABEL_ARG_MANY const BaseShaderData& base_layout,
 	std::optional<InstanceProp> instance_prop;
 	switch (model_source)
 	{
-	case TransformSource::Instanced_mat4: instance_prop = InstanceProp{VertexType::instance_transform, "u_model"}; break;
+	case TransformSource::Instanced_mat4: instance_prop = InstanceProp{VertexType::instance_transform, "u_world_from_local"}; break;
 	case TransformSource::Uniform: break;
 	default: assert(false && "unhandled ModelSource");
 	}

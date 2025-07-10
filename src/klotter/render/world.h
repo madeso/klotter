@@ -86,7 +86,7 @@ struct MeshInstance
 
 	std::optional<glm::vec3> outline;
 
-	glm::vec3 position = glm::vec3{0.0f};
+	glm::vec3 world_position = glm::vec3{0.0f};
 	glm::vec3 rotation = glm::vec3{0.0f};  ///< yaw pitch roll
 	Billboarding billboarding = Billboarding::none;	 ///< if not none, rotation is ignored
 
@@ -103,7 +103,7 @@ struct MeshInstance_TransformInstanced
 
 	//todo(Gustav): add outline
 
-	std::vector<glm::mat4> transforms;
+	std::vector<glm::mat4> world_from_locals;
 };
 
 std::shared_ptr<MeshInstance_TransformInstanced> make_mesh_instance(
