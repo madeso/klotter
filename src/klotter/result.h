@@ -2,6 +2,8 @@
 
 #include <optional>
 
+// todo(Gustav): remove and upgrade to cpp 23 that has improved api https://devblogs.microsoft.com/cppblog/cpp23s-optional-and-expected/
+/// A poor man's std::expected.
 template<typename T, typename E = std::string>
 struct Result
 {

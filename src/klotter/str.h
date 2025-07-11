@@ -1,5 +1,14 @@
 #pragma once
 
+/** A poor man's fmt::format
+
+ Example usage:
+
+ ```cpp
+ std::string s = Str{} << "Hello, world! " << 42;
+ ```
+
+*/
 struct Str
 {
 	std::ostringstream ss;

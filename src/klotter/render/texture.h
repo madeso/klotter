@@ -68,6 +68,7 @@ struct BaseTexture
 	void unload();
 };
 
+/// A 3d image texture.
 struct Texture2d : BaseTexture
 {
 	Texture2d() = delete;
@@ -78,6 +79,8 @@ struct Texture2d : BaseTexture
 
 Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
 
+/// A cubemap texture.
+/// USeful for skybox rendering or faking reflections from a (static) scene.
 struct TextureCubemap : BaseTexture
 {
 	TextureCubemap() = delete;
@@ -113,6 +116,7 @@ struct FrameBuffer : BaseTexture
 	bool debug_is_msaa = false;
 };
 
+/// The number of bits to use for the depth buffer.
 enum class DepthBits
 {
 	use_none,
