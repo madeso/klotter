@@ -144,12 +144,13 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
+<para>The number of bits to use for the depth buffer. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="116" column="1" bodyfile="src/klotter/render/texture.h" bodystart="117" bodyend="120"/>
+        <location file="src/klotter/render/texture.h" line="120" column="1" bodyfile="src/klotter/render/texture.h" bodystart="121" bodyend="124"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -248,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="79" column="11" declfile="src/klotter/render/texture.h" declline="79" declcolumn="11"/>
+        <location file="src/klotter/render/texture.h" line="80" column="11" declfile="src/klotter/render/texture.h" declline="80" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>TextureCubemap</type>
@@ -266,7 +267,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="88" column="16" declfile="src/klotter/render/texture.h" declline="88" declcolumn="16"/>
+        <location file="src/klotter/render/texture.h" line="91" column="16" declfile="src/klotter/render/texture.h" declline="91" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -288,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="177" column="6" declfile="src/klotter/render/texture.h" declline="177" declcolumn="6"/>
+        <location file="src/klotter/render/texture.h" line="181" column="6" declfile="src/klotter/render/texture.h" declline="181" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

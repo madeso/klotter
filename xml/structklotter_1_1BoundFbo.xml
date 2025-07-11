@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="166" column="17" bodyfile="src/klotter/render/texture.h" bodystart="166" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="170" column="17" bodyfile="src/klotter/render/texture.h" bodystart="170" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="168" column="1"/>
+        <location file="src/klotter/render/texture.h" line="172" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BoundFbo_1ad2380dad3d659ad7ace194845af9ca55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="169" column="1"/>
+        <location file="src/klotter/render/texture.h" line="173" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BoundFbo_1a19f619eb3bedb1f31515f965329002b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="170" column="6"/>
+        <location file="src/klotter/render/texture.h" line="174" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BoundFbo_1a0f3f1de7ce24a05c11bf9b7601c912a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="171" column="6"/>
+        <location file="src/klotter/render/texture.h" line="175" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BoundFbo_1a7711b6a4637a0baea669081503aa70e0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="173" column="10"/>
+        <location file="src/klotter/render/texture.h" line="177" column="10"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BoundFbo_1a23612705497e98bf4562249ab3c0667c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="174" column="1"/>
+        <location file="src/klotter/render/texture.h" line="178" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -126,7 +126,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/texture.h" line="164" column="1" bodyfile="src/klotter/render/texture.h" bodystart="165" bodyend="175"/>
+    <location file="src/klotter/render/texture.h" line="168" column="1" bodyfile="src/klotter/render/texture.h" bodystart="169" bodyend="179"/>
     <listofallmembers>
       <member refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>BoundFbo</name></member>
       <member refid="structklotter_1_1BoundFbo_1ad2380dad3d659ad7ace194845af9ca55" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>BoundFbo</name></member>

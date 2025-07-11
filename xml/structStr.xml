@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/str.h" line="5" column="20" bodyfile="src/klotter/str.h" bodystart="5" bodyend="-1"/>
+        <location file="src/klotter/str.h" line="14" column="20" bodyfile="src/klotter/str.h" bodystart="14" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/str.h" line="8" column="1" bodyfile="src/klotter/str.h" bodystart="8" bodyend="12"/>
+        <location file="src/klotter/str.h" line="17" column="1" bodyfile="src/klotter/str.h" bodystart="17" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="structStr_1ae5bcd149c44251ab778610f5dfaff12d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/str.h" line="14" column="13"/>
+        <location file="src/klotter/str.h" line="23" column="13"/>
       </memberdef>
       <memberdef kind="function" id="structStr_1a84fc71238479b64068900969c02594a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -69,14 +69,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/str.h" line="16" column="1"/>
+        <location file="src/klotter/str.h" line="25" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A poor man&apos;s fmt::format. </para>
     </briefdescription>
     <detaileddescription>
+<para>Example usage:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">std::string<sp/>s<sp/>=<sp/>Str{}<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Hello,<sp/>world!<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>42;</highlight></codeline>
+</programlisting> </para>
     </detaileddescription>
-    <location file="src/klotter/str.h" line="3" column="1" bodyfile="src/klotter/str.h" bodystart="4" bodyend="17"/>
+    <location file="src/klotter/str.h" line="12" column="1" bodyfile="src/klotter/str.h" bodystart="13" bodyend="26"/>
     <listofallmembers>
       <member refid="structStr_1a84fc71238479b64068900969c02594a3" prot="public" virt="non-virtual"><scope>Str</scope><name>operator std::string</name></member>
       <member refid="structStr_1aad92894237e8720e891f45e3191ebddb" prot="public" virt="non-virtual"><scope>Str</scope><name>operator&lt;&lt;</name></member>

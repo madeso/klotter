@@ -25,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/result.h" line="8" column="15" bodyfile="src/klotter/result.h" bodystart="8" bodyend="-1"/>
+        <location file="src/klotter/result.h" line="10" column="15" bodyfile="src/klotter/result.h" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structResult_1af75910267946ca1545b492ae2c9bc72e" prot="public" static="no" mutable="no">
         <type>std::optional&lt; E &gt;</type>
@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/result.h" line="9" column="15" bodyfile="src/klotter/result.h" bodystart="9" bodyend="-1"/>
+        <location file="src/klotter/result.h" line="11" column="15" bodyfile="src/klotter/result.h" bodystart="11" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/result.h" line="11" column="10" bodyfile="src/klotter/result.h" bodystart="11" bodyend="14"/>
+        <location file="src/klotter/result.h" line="13" column="10" bodyfile="src/klotter/result.h" bodystart="13" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="structResult_1aef1257385182062000e093cc7979f46f" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/result.h" line="16" column="10" bodyfile="src/klotter/result.h" bodystart="16" bodyend="19"/>
+        <location file="src/klotter/result.h" line="18" column="10" bodyfile="src/klotter/result.h" bodystart="18" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="structResult_1a9e40be74c8d6a0617c920987882b86e9" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
@@ -91,14 +91,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/result.h" line="21" column="10" bodyfile="src/klotter/result.h" bodystart="21" bodyend="24"/>
+        <location file="src/klotter/result.h" line="23" column="10" bodyfile="src/klotter/result.h" bodystart="23" bodyend="26"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A poor man&apos;s std::expected. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/result.h" line="6" column="1" bodyfile="src/klotter/result.h" bodystart="7" bodyend="25"/>
+    <location file="src/klotter/result.h" line="8" column="1" bodyfile="src/klotter/result.h" bodystart="9" bodyend="27"/>
     <listofallmembers>
       <member refid="structResult_1af75910267946ca1545b492ae2c9bc72e" prot="public" virt="non-virtual"><scope>Result</scope><name>e</name></member>
       <member refid="structResult_1a9e40be74c8d6a0617c920987882b86e9" prot="public" virt="non-virtual"><scope>Result</scope><name>operator bool</name></member>

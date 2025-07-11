@@ -113,6 +113,9 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>A poor man's fmt::format.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="str_8h_source.html">str.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -130,7 +133,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aa315682ec6b061b2e4211000a006596a" id="r_aa315682ec6b061b2e4211000a006596a"><td class="memItemLeft" align="right" valign="top">std::ostringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa315682ec6b061b2e4211000a006596a">ss</a></td></tr>
 <tr class="separator:aa315682ec6b061b2e4211000a006596a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A poor man's fmt::format. </p>
+<p>Example usage:</p>
+<div class="fragment"><div class="line">std::string s = <a class="code hl_struct" href="structStr.html">Str</a>{} &lt;&lt; <span class="stringliteral">&quot;Hello, world! &quot;</span> &lt;&lt; 42;</div>
+<div class="ttc" id="astructStr_html"><div class="ttname"><a href="structStr.html">Str</a></div><div class="ttdoc">A poor man&#39;s fmt::format.</div><div class="ttdef"><b>Definition</b> str.h:13</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a84fc71238479b64068900969c02594a3" name="a84fc71238479b64068900969c02594a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84fc71238479b64068900969c02594a3">&#9670;&#160;</a></span>operator std::string()</h2>
 

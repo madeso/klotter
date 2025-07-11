@@ -116,39 +116,40 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E = std::<span class="keywordtype">string</span>&gt;</div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="structResult.html">    6</a></span><span class="keyword">struct </span><a class="code hl_function" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">    8</a></span>    std::optional&lt;T&gt; <a class="code hl_variable" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">value</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structResult.html#af75910267946ca1545b492ae2c9bc72e">    9</a></span>    std::optional&lt;E&gt; <a class="code hl_variable" href="structResult.html#af75910267946ca1545b492ae2c9bc72e">e</a>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">   11</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result</a>(T tt)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        : <a class="code hl_variable" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">value</a>(std::move(tt))</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// todo(Gustav): remove and upgrade to cpp 23 that has improved api https://devblogs.microsoft.com/cppblog/cpp23s-optional-and-expected/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E = std::<span class="keywordtype">string</span>&gt;</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structResult.html">    8</a></span><span class="keyword">struct </span><a class="code hl_function" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">   10</a></span>    std::optional&lt;T&gt; <a class="code hl_variable" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">value</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structResult.html#af75910267946ca1545b492ae2c9bc72e">   11</a></span>    std::optional&lt;E&gt; <a class="code hl_variable" href="structResult.html#af75910267946ca1545b492ae2c9bc72e">e</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">   13</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result</a>(T tt)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        : <a class="code hl_variable" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">value</a>(std::move(tt))</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structResult.html#aef1257385182062000e093cc7979f46f">   16</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="structResult.html#aef1257385182062000e093cc7979f46f">Result</a>(<span class="keyword">const</span> E&amp; ee)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        : <a class="code hl_variable" href="structResult.html#af75910267946ca1545b492ae2c9bc72e">e</a>(ee)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structResult.html#aef1257385182062000e093cc7979f46f">   18</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="structResult.html#aef1257385182062000e093cc7979f46f">Result</a>(<span class="keyword">const</span> E&amp; ee)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        : <a class="code hl_variable" href="structResult.html#af75910267946ca1545b492ae2c9bc72e">e</a>(ee)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structResult.html#a9e40be74c8d6a0617c920987882b86e9">   21</a></span>    <span class="keyword">explicit</span> <span class="keyword">operator</span> bool()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">value</a>.has_value();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structResult.html#a9e40be74c8d6a0617c920987882b86e9">   23</a></span>    <span class="keyword">explicit</span> <span class="keyword">operator</span> bool()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">value</a>.has_value();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
 </div>
-<div class="ttc" id="astructResult_html_a5314b530c0634f2fc8c0c464189a5abb"><div class="ttname"><a href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result::Result</a></div><div class="ttdeci">Result(T tt)</div><div class="ttdef"><b>Definition</b> result.h:11</div></div>
-<div class="ttc" id="astructResult_html_aaa4cd27503fc72bd303b8821fddb24f0"><div class="ttname"><a href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">Result::value</a></div><div class="ttdeci">std::optional&lt; T &gt; value</div><div class="ttdef"><b>Definition</b> result.h:8</div></div>
-<div class="ttc" id="astructResult_html_aef1257385182062000e093cc7979f46f"><div class="ttname"><a href="structResult.html#aef1257385182062000e093cc7979f46f">Result::Result</a></div><div class="ttdeci">Result(const E &amp;ee)</div><div class="ttdef"><b>Definition</b> result.h:16</div></div>
-<div class="ttc" id="astructResult_html_af75910267946ca1545b492ae2c9bc72e"><div class="ttname"><a href="structResult.html#af75910267946ca1545b492ae2c9bc72e">Result::e</a></div><div class="ttdeci">std::optional&lt; E &gt; e</div><div class="ttdef"><b>Definition</b> result.h:9</div></div>
+<div class="ttc" id="astructResult_html_a5314b530c0634f2fc8c0c464189a5abb"><div class="ttname"><a href="structResult.html#a5314b530c0634f2fc8c0c464189a5abb">Result::Result</a></div><div class="ttdeci">Result(T tt)</div><div class="ttdef"><b>Definition</b> result.h:13</div></div>
+<div class="ttc" id="astructResult_html_aaa4cd27503fc72bd303b8821fddb24f0"><div class="ttname"><a href="structResult.html#aaa4cd27503fc72bd303b8821fddb24f0">Result::value</a></div><div class="ttdeci">std::optional&lt; T &gt; value</div><div class="ttdef"><b>Definition</b> result.h:10</div></div>
+<div class="ttc" id="astructResult_html_aef1257385182062000e093cc7979f46f"><div class="ttname"><a href="structResult.html#aef1257385182062000e093cc7979f46f">Result::Result</a></div><div class="ttdeci">Result(const E &amp;ee)</div><div class="ttdef"><b>Definition</b> result.h:18</div></div>
+<div class="ttc" id="astructResult_html_af75910267946ca1545b492ae2c9bc72e"><div class="ttname"><a href="structResult.html#af75910267946ca1545b492ae2c9bc72e">Result::e</a></div><div class="ttdeci">std::optional&lt; E &gt; e</div><div class="ttdef"><b>Definition</b> result.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
