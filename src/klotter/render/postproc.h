@@ -23,40 +23,46 @@ struct PostProcArg
 	Renderer* renderer;
 };
 
+/// A source that can be rendered to a framebuffer or a screen.
+/// Pretty much always a "render world" call or the output of an existing \ref RenderTextureWithShader.
 struct RenderSource
 {
 	RenderSource() = default;
+	virtual ~RenderSource() = default;
 
 	RenderSource(const RenderSource&) = delete;
 	RenderSource(RenderSource&&) = delete;
 	void operator=(const RenderSource&) = delete;
 	void operator=(RenderSource&&) = delete;
 
-	virtual ~RenderSource() = default;
 	virtual void render(const PostProcArg& arg) = 0;
 };
 
+/// A functor that sends properties/uniforms to the shader.
+/// First and foremost this would the used texture/fbo, but it could also be other uniforms like time, resolution, etc.
 struct ShaderPropertyProvider
 {
 	ShaderPropertyProvider() = default;
+	virtual ~ShaderPropertyProvider() = default;
 
 	ShaderPropertyProvider(const ShaderPropertyProvider&) = delete;
 	ShaderPropertyProvider(ShaderPropertyProvider&&) = delete;
 	void operator=(const ShaderPropertyProvider&) = delete;
 	void operator=(ShaderPropertyProvider&&) = delete;
 
-	virtual ~ShaderPropertyProvider() = default;
 	virtual void use_shader(const PostProcArg& a, const FrameBuffer& t) = 0;
 };
 
-struct RenderTask : RenderSource
+/// Applies a shader to the output of another source.
+/// This is done using a framebuffer that is rendered to a quad with the shader applied.
+struct RenderTextureWithShader : RenderSource
 {
 	std::string name;
 	std::shared_ptr<RenderSource> source;
 	std::shared_ptr<FrameBuffer> fbo;
 	ShaderPropertyProvider* effect;
 
-	RenderTask(std::string n, std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e);
+	RenderTextureWithShader(std::string n, std::shared_ptr<RenderSource> s, std::shared_ptr<FrameBuffer> f, ShaderPropertyProvider* e);
 
 	/// render internal fbo to a quad with a shader
 	void render(const PostProcArg& arg) override;
@@ -76,7 +82,7 @@ struct CompiledStack
 	/// start with a simple world, but depending on the current effect list, could be more...
 	std::shared_ptr<RenderSource> last_source;
 
-	std::vector<std::shared_ptr<RenderTask>> targets;
+	std::vector<std::shared_ptr<RenderTextureWithShader>> targets;
 };
 
 
@@ -91,16 +97,18 @@ struct BuildArg
 
 struct EffectStack;
 
+/// A effect that can be toggled.
+/// Common effects are: blur, bloom, color grading, etc.
+/// Most effects from https://lettier.github.io/3d-game-shaders-for-beginners/index.html would be implemented as effects.
 struct Effect
 {
 	Effect() = default;
+	virtual ~Effect() = default;
 
 	Effect(const Effect&) = delete;
 	Effect(Effect&&) = delete;
 	void operator=(const Effect&) = delete;
 	void operator=(Effect&&) = delete;
-
-	virtual ~Effect() = default;
 
 	virtual void build(const BuildArg& arg) = 0;
 	virtual void update(float dt) = 0;
@@ -120,6 +128,8 @@ struct Effect
 	EffectStack* owner = nullptr;
 };
 
+/// A special effect where the effect can be eased into existence.
+/// Setting it to 0 will disable the effect, setting it anything above will enable it.
 struct FactorEffect : Effect
 {
 	FactorEffect();
@@ -151,4 +161,4 @@ struct EffectStack
  * @}
 */
 
-}  //  namespace klotter
+}

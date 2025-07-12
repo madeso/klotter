@@ -44,6 +44,7 @@ set(src_render
     klotter/render/world.cc klotter/render/world.h
     klotter/render/debug.cc klotter/render/debug.h
     klotter/render/postproc.cc klotter/render/postproc.h
+    klotter/render/postproc.internal.cc klotter/render/postproc.internal.h
     klotter/render/shader_resource.cc klotter/render/shader_resource.h
     klotter/render/statechanger.cc klotter/render/statechanger.h
     klotter/render/fullscreen.cc klotter/render/fullscreen.h
