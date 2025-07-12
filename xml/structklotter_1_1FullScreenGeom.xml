@@ -55,15 +55,64 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
+      <node id="3">
+        <label>klotter::CompiledGeom</label>
+        <link refid="structklotter_1_1CompiledGeom"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
         <label>klotter::CompiledShaderVertexAttributes</label>
         <link refid="structklotter_1_1CompiledShaderVertexAttributes"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>klotter::CompiledVertexElement</label>
+        <link refid="structklotter_1_1CompiledVertexElement"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
       </node>
       <node id="1">
         <label>klotter::FullScreenGeom</label>
         <link refid="structklotter_1_1FullScreenGeom"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
           <edgelabel>layout</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::CompiledGeom &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::string</label>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::unordered_set&lt; VertexType &gt;</label>
+      </node>
+      <node id="10">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; klotter::CompiledVertexElement &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

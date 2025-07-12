@@ -256,10 +256,34 @@
 </para>
     </detaileddescription>
     <collaborationgraph>
+      <node id="9">
+        <label>klotter::DirectionalLightUniforms</label>
+        <link refid="structklotter_1_1DirectionalLightUniforms"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>dir_uni</edgelabel>
+          <edgelabel>light_diffuse_color_uni</edgelabel>
+          <edgelabel>light_specular_color_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>klotter::FrustumLightUniforms</label>
+        <link refid="structklotter_1_1FrustumLightUniforms"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>attenuation_uni</edgelabel>
+          <edgelabel>cookie_uni</edgelabel>
+          <edgelabel>diffuse_uni</edgelabel>
+          <edgelabel>specular_uni</edgelabel>
+          <edgelabel>world_pos_uni</edgelabel>
+          <edgelabel>world_to_clip_uni</edgelabel>
+        </childnode>
+      </node>
       <node id="1">
         <label>klotter::LoadedShader_Default</label>
         <link refid="structklotter_1_1LoadedShader__Default"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
           <edgelabel>ambient_tint_uni</edgelabel>
           <edgelabel>emissive_factor_uni</edgelabel>
           <edgelabel>light_ambient_color_uni</edgelabel>
@@ -272,10 +296,74 @@
           <edgelabel>view_position_uni</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>directional_lights</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>point_lights</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>frustum_lights</edgelabel>
+        </childnode>
       </node>
-      <node id="2">
+      <node id="11">
+        <label>klotter::PointLightUniforms</label>
+        <link refid="structklotter_1_1PointLightUniforms"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>light_attenuation_uni</edgelabel>
+          <edgelabel>light_diffuse_color_uni</edgelabel>
+          <edgelabel>light_specular_color_uni</edgelabel>
+          <edgelabel>light_world_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
         <label>klotter::Uniform</label>
         <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::string</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="8">
+        <label>std::vector&lt; klotter::DirectionalLightUniforms &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::vector&lt; klotter::FrustumLightUniforms &gt;</label>
+        <childnode refid="13" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::vector&lt; klotter::PointLightUniforms &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="src/klotter/render/shader_resource.h" line="148" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="149" bodyend="173"/>

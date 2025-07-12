@@ -5,10 +5,13 @@
     <innerclass refid="structklotter_1_1App" prot="public">klotter::App</innerclass>
     <innerclass refid="structklotter_1_1Assets" prot="public">klotter::Assets</innerclass>
     <innerclass refid="structklotter_1_1BaseTexture" prot="public">klotter::BaseTexture</innerclass>
+    <innerclass refid="structklotter_1_1BlurEffect" prot="public">klotter::BlurEffect</innerclass>
     <innerclass refid="structklotter_1_1BlurOptions" prot="public">klotter::BlurOptions</innerclass>
+    <innerclass refid="structklotter_1_1BlurVerticalProvider" prot="public">klotter::BlurVerticalProvider</innerclass>
     <innerclass refid="structklotter_1_1BoundFbo" prot="public">klotter::BoundFbo</innerclass>
     <innerclass refid="structklotter_1_1BoundUniformBuffer" prot="public">klotter::BoundUniformBuffer</innerclass>
     <innerclass refid="structklotter_1_1BuildArg" prot="public">klotter::BuildArg</innerclass>
+    <innerclass refid="structklotter_1_1BurHorizontalProvider" prot="public">klotter::BurHorizontalProvider</innerclass>
     <innerclass refid="structklotter_1_1Camera" prot="public">klotter::Camera</innerclass>
     <innerclass refid="structklotter_1_1CameraUniformBuffer" prot="public">klotter::CameraUniformBuffer</innerclass>
     <innerclass refid="structklotter_1_1CameraVectors" prot="public">klotter::CameraVectors</innerclass>
@@ -33,6 +36,8 @@
     <innerclass refid="structklotter_1_1ExtractedGeom" prot="public">klotter::ExtractedGeom</innerclass>
     <innerclass refid="structklotter_1_1Face" prot="public">klotter::Face</innerclass>
     <innerclass refid="structklotter_1_1FactorEffect" prot="public">klotter::FactorEffect</innerclass>
+    <innerclass refid="structklotter_1_1FloatDragShaderProp" prot="public">klotter::FloatDragShaderProp</innerclass>
+    <innerclass refid="structklotter_1_1FloatSliderShaderProp" prot="public">klotter::FloatSliderShaderProp</innerclass>
     <innerclass refid="structklotter_1_1FrameBuffer" prot="public">klotter::FrameBuffer</innerclass>
     <innerclass refid="structklotter_1_1FrameBufferBuilder" prot="public">klotter::FrameBufferBuilder</innerclass>
     <innerclass refid="structklotter_1_1FrustumLight" prot="public">klotter::FrustumLight</innerclass>
@@ -64,14 +69,17 @@
     <innerclass refid="structklotter_1_1RendererPimpl" prot="public">klotter::RendererPimpl</innerclass>
     <innerclass refid="structklotter_1_1RenderSettings" prot="public">klotter::RenderSettings</innerclass>
     <innerclass refid="structklotter_1_1RenderSource" prot="public">klotter::RenderSource</innerclass>
-    <innerclass refid="structklotter_1_1RenderTask" prot="public">klotter::RenderTask</innerclass>
+    <innerclass refid="structklotter_1_1RenderTextureWithShader" prot="public">klotter::RenderTextureWithShader</innerclass>
+    <innerclass refid="structklotter_1_1RenderWorld" prot="public">klotter::RenderWorld</innerclass>
     <innerclass refid="structklotter_1_1SCurve" prot="public">klotter::SCurve</innerclass>
     <innerclass refid="structklotter_1_1SCurveAndDrag" prot="public">klotter::SCurveAndDrag</innerclass>
     <innerclass refid="structklotter_1_1ShaderOptions" prot="public">klotter::ShaderOptions</innerclass>
     <innerclass refid="structklotter_1_1ShaderProgram" prot="public">klotter::ShaderProgram</innerclass>
+    <innerclass refid="structklotter_1_1ShaderProp" prot="public">klotter::ShaderProp</innerclass>
     <innerclass refid="structklotter_1_1ShaderPropertyProvider" prot="public">klotter::ShaderPropertyProvider</innerclass>
     <innerclass refid="structklotter_1_1ShaderResource" prot="public">klotter::ShaderResource</innerclass>
     <innerclass refid="structklotter_1_1ShaderSource" prot="public">klotter::ShaderSource</innerclass>
+    <innerclass refid="structklotter_1_1SimpleEffect" prot="public">klotter::SimpleEffect</innerclass>
     <innerclass refid="structklotter_1_1Skybox" prot="public">klotter::Skybox</innerclass>
     <innerclass refid="structklotter_1_1StateChanger" prot="public">klotter::StateChanger</innerclass>
     <innerclass refid="structklotter_1_1Texture2d" prot="public">klotter::Texture2d</innerclass>

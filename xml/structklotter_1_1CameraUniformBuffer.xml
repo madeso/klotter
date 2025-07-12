@@ -93,18 +93,43 @@
         <childnode refid="2" relation="usage">
           <edgelabel>setup</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>clip_from_view_uni</edgelabel>
           <edgelabel>view_from_world_uni</edgelabel>
         </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
       </node>
-      <node id="3">
+      <node id="5">
         <label>klotter::CompiledUniformProp</label>
         <link refid="structklotter_1_1CompiledUniformProp"/>
+      </node>
+      <node id="7">
+        <label>klotter::UniformBuffer</label>
+        <link refid="structklotter_1_1UniformBuffer"/>
       </node>
       <node id="2">
         <label>klotter::UniformBufferSetup</label>
         <link refid="structklotter_1_1UniformBufferSetup"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>name</edgelabel>
+          <edgelabel>source</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::unique_ptr&lt; klotter::UniformBuffer &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="src/klotter/render/shader_resource.h" line="30" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="31" bodyend="40"/>

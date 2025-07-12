@@ -52,6 +52,50 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>klotter::CompiledGeom_TransformInstance</label>
+        <link refid="structklotter_1_1CompiledGeom__TransformInstance"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>klotter::Material</label>
+        <link refid="structklotter_1_1Material"/>
+      </node>
+      <node id="1">
+        <label>klotter::MeshInstance_TransformInstanced</label>
+        <link refid="structklotter_1_1MeshInstance__TransformInstanced"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>world_from_locals</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::CompiledGeom_TransformInstance &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::shared_ptr&lt; klotter::Material &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::unordered_set&lt; VertexType &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; glm::mat4 &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/world.h" line="99" column="1" bodyfile="src/klotter/render/world.h" bodystart="100" bodyend="107"/>
     <listofallmembers>
       <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad14910f961fedc36210d3173fca24ab4" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>geom</name></member>

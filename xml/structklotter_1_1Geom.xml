@@ -38,6 +38,38 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>klotter::Face</label>
+        <link refid="structklotter_1_1Face"/>
+      </node>
+      <node id="1">
+        <label>klotter::Geom</label>
+        <link refid="structklotter_1_1Geom"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>vertices</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>faces</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::Vertex</label>
+        <link refid="structklotter_1_1Vertex"/>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; klotter::Face &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; klotter::Vertex &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/geom.h" line="28" column="1" bodyfile="src/klotter/render/geom.h" bodystart="29" bodyend="32"/>
     <listofallmembers>
       <member refid="structklotter_1_1Geom_1a3ba55b3acd271e9a124450251f4b0b21" prot="public" virt="non-virtual"><scope>klotter::Geom</scope><name>faces</name></member>

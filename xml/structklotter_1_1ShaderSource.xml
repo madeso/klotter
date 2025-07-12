@@ -40,6 +40,24 @@
 </simplesect>
 </para>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::ShaderSource</label>
+        <link refid="structklotter_1_1ShaderSource"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>fragment</edgelabel>
+          <edgelabel>vertex</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/shader.source.h" line="40" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="41" bodyend="44"/>
     <listofallmembers>
       <member refid="structklotter_1_1ShaderSource_1a48a2e03510fe5f1f42060b9cb1a71966" prot="public" virt="non-virtual"><scope>klotter::ShaderSource</scope><name>fragment</name></member>

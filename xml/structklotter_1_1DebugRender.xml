@@ -55,6 +55,25 @@
 </simplesect>
 </para>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>klotter::DebugLine</label>
+        <link refid="structklotter_1_1DebugLine"/>
+      </node>
+      <node id="1">
+        <label>klotter::DebugRender</label>
+        <link refid="structklotter_1_1DebugRender"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>lines</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; klotter::DebugLine &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/debug.h" line="20" column="1" bodyfile="src/klotter/render/debug.h" bodystart="21" bodyend="25"/>
     <listofallmembers>
       <member refid="structklotter_1_1DebugRender_1a1d12a005360124457989ff77b4d2e8e8" prot="public" virt="non-virtual"><scope>klotter::DebugRender</scope><name>add_line</name></member>

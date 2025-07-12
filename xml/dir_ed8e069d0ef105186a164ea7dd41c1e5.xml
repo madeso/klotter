@@ -20,6 +20,7 @@
     <innerfile refid="opengl__states_8h">opengl_states.h</innerfile>
     <innerfile refid="opengl__utils_8h">opengl_utils.h</innerfile>
     <innerfile refid="postproc_8h">postproc.h</innerfile>
+    <innerfile refid="postproc_8internal_8h">postproc.internal.h</innerfile>
     <innerfile refid="render__settings_8h">render_settings.h</innerfile>
     <innerfile refid="renderer_8h">renderer.h</innerfile>
     <innerfile refid="renderer_8pimpl_8h">renderer.pimpl.h</innerfile>

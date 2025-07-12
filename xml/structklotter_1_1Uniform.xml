@@ -128,6 +128,23 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/uniform.h" line="8" column="1" bodyfile="src/klotter/render/uniform.h" bodystart="9" bodyend="21"/>
     <listofallmembers>
       <member refid="structklotter_1_1Uniform_1a9939992cfef5650d0db1beda73c8177e" prot="public" virt="non-virtual"><scope>klotter::Uniform</scope><name>debug_shader_program</name></member>

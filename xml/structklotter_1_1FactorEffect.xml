@@ -3,6 +3,8 @@
   <compounddef id="structklotter_1_1FactorEffect" kind="struct" language="C++" prot="public">
     <compoundname>klotter::FactorEffect</compoundname>
     <basecompoundref refid="structklotter_1_1Effect" prot="public" virt="non-virtual">klotter::Effect</basecompoundref>
+    <derivedcompoundref refid="structklotter_1_1BlurEffect" prot="public" virt="non-virtual">klotter::BlurEffect</derivedcompoundref>
+    <derivedcompoundref refid="structklotter_1_1SimpleEffect" prot="public" virt="non-virtual">klotter::SimpleEffect</derivedcompoundref>
     <includes refid="postproc_8h" local="no">postproc.h</includes>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="structklotter_1_1FactorEffect_1a880486d2f9189208937b562e6dc59a21" prot="private" static="no" mutable="no">
@@ -18,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="131" column="7" bodyfile="src/klotter/render/postproc.h" bodystart="131" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="141" column="7" bodyfile="src/klotter/render/postproc.h" bodystart="141" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -34,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="125" column="1"/>
+        <location file="src/klotter/render/postproc.h" line="135" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FactorEffect_1aca46890ef629cf7495b2e8f8b7dc9349" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -48,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="126" column="8"/>
+        <location file="src/klotter/render/postproc.h" line="136" column="8"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FactorEffect_1a8e7f0594c2c1fde00083e4d48c9dbd44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -66,14 +68,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="127" column="6"/>
+        <location file="src/klotter/render/postproc.h" line="137" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A special effect where the effect can be eased into existence. </para>
     </briefdescription>
     <detaileddescription>
+<para>Setting it to 0 will disable the effect, setting it anything above will enable it. </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>klotter::BlurEffect</label>
+        <link refid="structklotter_1_1BlurEffect"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>klotter::Effect</label>
         <link refid="structklotter_1_1Effect"/>
@@ -82,6 +92,12 @@
         <label>klotter::FactorEffect</label>
         <link refid="structklotter_1_1FactorEffect"/>
         <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter::SimpleEffect</label>
+        <link refid="structklotter_1_1SimpleEffect"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
@@ -97,7 +113,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.h" line="123" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="124" bodyend="132"/>
+    <location file="src/klotter/render/postproc.h" line="133" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="134" bodyend="142"/>
     <listofallmembers>
       <member refid="structklotter_1_1Effect_1a2b91279abfc5154b3f4e2d536a86e6f9" prot="public" virt="pure-virtual"><scope>klotter::FactorEffect</scope><name>build</name></member>
       <member refid="structklotter_1_1Effect_1a8e7175ac2393958842f6260823e24258" prot="public" virt="non-virtual"><scope>klotter::FactorEffect</scope><name>Effect</name></member>

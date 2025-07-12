@@ -190,11 +190,18 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="6">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
       <node id="1">
         <label>klotter::FrustumLight</label>
         <link refid="structklotter_1_1FrustumLight"/>
         <childnode refid="2" relation="usage">
           <edgelabel>curve</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>cookie</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -206,6 +213,18 @@
         <link refid="structklotter_1_1SCurveAndDrag"/>
         <childnode refid="3" relation="usage">
           <edgelabel>curve</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>klotter::Texture2d</label>
+        <link refid="structklotter_1_1Texture2d"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::shared_ptr&lt; klotter::Texture2d &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

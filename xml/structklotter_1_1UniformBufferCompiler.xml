@@ -82,6 +82,43 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>klotter::CompiledUniformProp</label>
+        <link refid="structklotter_1_1CompiledUniformProp"/>
+      </node>
+      <node id="1">
+        <label>klotter::UniformBufferCompiler</label>
+        <link refid="structklotter_1_1UniformBufferCompiler"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>props</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::UniformProp</label>
+        <link refid="structklotter_1_1UniformProp"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>target</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::string</label>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; klotter::UniformProp &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/uniform_buffer.h" line="50" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="51" bodyend="56"/>
     <listofallmembers>
       <member refid="structklotter_1_1UniformBufferCompiler_1a1006307a4f7b45ce5b348a19b8b1b474" prot="public" virt="non-virtual"><scope>klotter::UniformBufferCompiler</scope><name>add</name></member>

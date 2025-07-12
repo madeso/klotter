@@ -81,23 +81,69 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
+      <node id="5">
         <label>klotter::CompiledGeomVertexAttributes</label>
         <link refid="structklotter_1_1CompiledGeomVertexAttributes"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>klotter::CompiledVertexElementNoName</label>
+        <link refid="structklotter_1_1CompiledVertexElementNoName"/>
       </node>
       <node id="1">
         <label>klotter::LoadedShader_Skybox</label>
         <link refid="structklotter_1_1LoadedShader__Skybox"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
           <edgelabel>geom_layout</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>tex_skybox_uni</edgelabel>
         </childnode>
       </node>
       <node id="3">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
         <label>klotter::Uniform</label>
         <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::string</label>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; klotter::CompiledVertexElementNoName &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="src/klotter/render/shader_resource.h" line="57" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="58" bodyend="66"/>

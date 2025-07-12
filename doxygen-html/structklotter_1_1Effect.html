@@ -118,6 +118,9 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>A effect that can be toggled.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="postproc_8h_source.html">postproc.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for klotter::Effect:</div>
@@ -125,7 +128,9 @@ Inheritance diagram for klotter::Effect:</div>
  <div class="center">
   <img src="structklotter_1_1Effect.png" usemap="#klotter::Effect_map" alt=""/>
   <map id="klotter::Effect_map" name="klotter::Effect_map">
-<area href="structklotter_1_1FactorEffect.html" alt="klotter::FactorEffect" shape="rect" coords="0,56,122,80"/>
+<area href="structklotter_1_1FactorEffect.html" title="A special effect where the effect can be eased into existence." alt="klotter::FactorEffect" shape="rect" coords="66,56,188,80"/>
+<area href="structklotter_1_1BlurEffect.html" title="A blur effect split into a vertical and horizontal blur step." alt="klotter::BlurEffect" shape="rect" coords="0,112,122,136"/>
+<area href="structklotter_1_1SimpleEffect.html" title="A effect that only performs a single step." alt="klotter::SimpleEffect" shape="rect" coords="132,112,254,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -133,6 +138,8 @@ Inheritance diagram for klotter::Effect:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e7175ac2393958842f6260823e24258" id="r_a8e7175ac2393958842f6260823e24258"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e7175ac2393958842f6260823e24258">Effect</a> ()=default</td></tr>
 <tr class="separator:a8e7175ac2393958842f6260823e24258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a098603548d6ee2c1f5f6179921b13f48" id="r_a098603548d6ee2c1f5f6179921b13f48"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a098603548d6ee2c1f5f6179921b13f48">~Effect</a> ()=default</td></tr>
+<tr class="separator:a098603548d6ee2c1f5f6179921b13f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aade7618d0f39f5e2ae74837304ce7c22" id="r_aade7618d0f39f5e2ae74837304ce7c22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aade7618d0f39f5e2ae74837304ce7c22">Effect</a> (const <a class="el" href="structklotter_1_1Effect.html">Effect</a> &amp;)=delete</td></tr>
 <tr class="separator:aade7618d0f39f5e2ae74837304ce7c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5194abdfbb67f4333b87291577ce018" id="r_ad5194abdfbb67f4333b87291577ce018"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5194abdfbb67f4333b87291577ce018">Effect</a> (<a class="el" href="structklotter_1_1Effect.html">Effect</a> &amp;&amp;)=delete</td></tr>
@@ -141,8 +148,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a23439a8d3b0ac3bc3afad62f7d1476ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a195e79789200af0a6aa112a28f78dace" id="r_a195e79789200af0a6aa112a28f78dace"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a195e79789200af0a6aa112a28f78dace">operator=</a> (<a class="el" href="structklotter_1_1Effect.html">Effect</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a195e79789200af0a6aa112a28f78dace"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a098603548d6ee2c1f5f6179921b13f48" id="r_a098603548d6ee2c1f5f6179921b13f48"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a098603548d6ee2c1f5f6179921b13f48">~Effect</a> ()=default</td></tr>
-<tr class="separator:a098603548d6ee2c1f5f6179921b13f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b91279abfc5154b3f4e2d536a86e6f9" id="r_a2b91279abfc5154b3f4e2d536a86e6f9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b91279abfc5154b3f4e2d536a86e6f9">build</a> (const <a class="el" href="structklotter_1_1BuildArg.html">BuildArg</a> &amp;arg)=0</td></tr>
 <tr class="separator:a2b91279abfc5154b3f4e2d536a86e6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc39fdba773e59c79338ee7486da0b5e" id="r_afc39fdba773e59c79338ee7486da0b5e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc39fdba773e59c79338ee7486da0b5e">update</a> (float dt)=0</td></tr>
@@ -162,7 +167,10 @@ Friends</h2></td></tr>
 <tr class="memitem:a9baaf22c08590fd87da53ccb29ff2dcd" id="r_a9baaf22c08590fd87da53ccb29ff2dcd"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9baaf22c08590fd87da53ccb29ff2dcd">EffectStack</a></td></tr>
 <tr class="separator:a9baaf22c08590fd87da53ccb29ff2dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A effect that can be toggled. </p>
+<p>Common effects are: blur, bloom, color grading, etc. Most effects from <a href="https://lettier.github.io/3d-game-shaders-for-beginners/index.html">https://lettier.github.io/3d-game-shaders-for-beginners/index.html</a> would be implemented as effects. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8e7175ac2393958842f6260823e24258" name="a8e7175ac2393958842f6260823e24258"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e7175ac2393958842f6260823e24258">&#9670;&#160;</a></span>Effect() <span class="overload">[1/3]</span></h2>
 
@@ -182,6 +190,31 @@ Friends</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a098603548d6ee2c1f5f6179921b13f48" name="a098603548d6ee2c1f5f6179921b13f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a098603548d6ee2c1f5f6179921b13f48">&#9670;&#160;</a></span>~Effect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual klotter::Effect::~Effect </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -238,31 +271,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a098603548d6ee2c1f5f6179921b13f48" name="a098603548d6ee2c1f5f6179921b13f48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a098603548d6ee2c1f5f6179921b13f48">&#9670;&#160;</a></span>~Effect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual klotter::Effect::~Effect </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2b91279abfc5154b3f4e2d536a86e6f9" name="a2b91279abfc5154b3f4e2d536a86e6f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b91279abfc5154b3f4e2d536a86e6f9">&#9670;&#160;</a></span>build()</h2>
@@ -286,6 +294,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="structklotter_1_1BlurEffect.html#a0356951b19bace87a7602025903b93b2">klotter::BlurEffect</a>, and <a class="el" href="structklotter_1_1SimpleEffect.html#a9a701df51e5ab86983e49e0c5b418899">klotter::SimpleEffect</a>.</p>
 
 </div>
 </div>
@@ -328,6 +338,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="structklotter_1_1BlurEffect.html#a908e727a56870b36f9a8d30f065dc23d">klotter::BlurEffect</a>, and <a class="el" href="structklotter_1_1SimpleEffect.html#a92f883dc6a86125695728259f7530001">klotter::SimpleEffect</a>.</p>
 
 </div>
 </div>
@@ -428,6 +440,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="structklotter_1_1BlurEffect.html#a45afc4bcb234120be489dcd71678e6bc">klotter::BlurEffect</a>, and <a class="el" href="structklotter_1_1SimpleEffect.html#a92b9960c5dd9db2641289942c771502e">klotter::SimpleEffect</a>.</p>
 
 </div>
 </div>

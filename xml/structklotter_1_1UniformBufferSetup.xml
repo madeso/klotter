@@ -67,6 +67,24 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::UniformBufferSetup</label>
+        <link refid="structklotter_1_1UniformBufferSetup"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+          <edgelabel>source</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/uniform_buffer.h" line="24" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="25" bodyend="30"/>
     <listofallmembers>
       <member refid="structklotter_1_1UniformBufferSetup_1a138668806c1a68b305bf477067ee1775" prot="public" virt="non-virtual"><scope>klotter::UniformBufferSetup</scope><name>binding_point</name></member>

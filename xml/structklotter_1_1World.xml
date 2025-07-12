@@ -68,22 +68,210 @@
 <para>This is also sometimes known as a scene. </para>
     </detaileddescription>
     <collaborationgraph>
-      <node id="2">
+      <node id="27">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="6">
+        <label>klotter::CompiledGeom</label>
+        <link refid="structklotter_1_1CompiledGeom"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>klotter::CompiledGeom_TransformInstance</label>
+        <link refid="structklotter_1_1CompiledGeom__TransformInstance"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>klotter::DirectionalLight</label>
+        <link refid="structklotter_1_1DirectionalLight"/>
+      </node>
+      <node id="24">
+        <label>klotter::FrustumLight</label>
+        <link refid="structklotter_1_1FrustumLight"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>cookie</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
         <label>klotter::Lights</label>
         <link refid="structklotter_1_1Lights"/>
+        <childnode refid="17" relation="usage">
+          <edgelabel>directional_lights</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>point_lights</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>frustum_lights</edgelabel>
+        </childnode>
       </node>
-      <node id="3">
+      <node id="9">
+        <label>klotter::Material</label>
+        <link refid="structklotter_1_1Material"/>
+      </node>
+      <node id="4">
+        <label>klotter::MeshInstance</label>
+        <link refid="structklotter_1_1MeshInstance"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>klotter::MeshInstance_TransformInstanced</label>
+        <link refid="structklotter_1_1MeshInstance__TransformInstanced"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>world_from_locals</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>klotter::PointLight</label>
+        <link refid="structklotter_1_1PointLight"/>
+        <childnode refid="21" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>klotter::SCurve</label>
+        <link refid="structklotter_1_1SCurve"/>
+      </node>
+      <node id="21">
+        <label>klotter::SCurveAndDrag</label>
+        <link refid="structklotter_1_1SCurveAndDrag"/>
+        <childnode refid="22" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
         <label>klotter::Skybox</label>
         <link refid="structklotter_1_1Skybox"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>cubemap</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>klotter::Texture2d</label>
+        <link refid="structklotter_1_1Texture2d"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>klotter::TextureCubemap</label>
+        <link refid="structklotter_1_1TextureCubemap"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="1">
         <label>klotter::World</label>
         <link refid="structklotter_1_1World"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>meshes</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>instances</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
           <edgelabel>lights</edgelabel>
         </childnode>
-        <childnode refid="3" relation="usage">
+        <childnode refid="28" relation="usage">
           <edgelabel>skybox</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::shared_ptr&lt; klotter::CompiledGeom &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::shared_ptr&lt; klotter::CompiledGeom_TransformInstance &gt;</label>
+        <childnode refid="14" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::shared_ptr&lt; klotter::Material &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::shared_ptr&lt; klotter::MeshInstance &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>std::shared_ptr&lt; klotter::MeshInstance_TransformInstanced &gt;</label>
+        <childnode refid="12" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>std::shared_ptr&lt; klotter::Texture2d &gt;</label>
+        <childnode refid="26" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>std::shared_ptr&lt; klotter::TextureCubemap &gt;</label>
+        <childnode refid="30" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::unordered_set&lt; VertexType &gt;</label>
+      </node>
+      <node id="15">
+        <label>std::vector&lt; glm::mat4 &gt;</label>
+      </node>
+      <node id="17">
+        <label>std::vector&lt; klotter::DirectionalLight &gt;</label>
+        <childnode refid="18" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>std::vector&lt; klotter::FrustumLight &gt;</label>
+        <childnode refid="24" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>std::vector&lt; klotter::PointLight &gt;</label>
+        <childnode refid="20" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; std::shared_ptr&lt; klotter::MeshInstance &gt; &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::vector&lt; std::shared_ptr&lt; klotter::MeshInstance_TransformInstanced &gt; &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

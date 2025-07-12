@@ -57,7 +57,7 @@
   <option  id='AUTOLINK_SUPPORT' default='yes' type='bool'><value>YES</value></option>
   <option  id='AUTOLINK_IGNORE_WORDS' default='yes' type='stringlist'>
   </option>
-  <option  id='BUILTIN_STL_SUPPORT' default='yes' type='bool'><value>NO</value></option>
+  <option  id='BUILTIN_STL_SUPPORT' default='no' type='bool'><value>YES</value></option>
   <option  id='CPP_CLI_SUPPORT' default='yes' type='bool'><value>NO</value></option>
   <option  id='SIP_SUPPORT' default='yes' type='bool'><value>NO</value></option>
   <option  id='IDL_PROPERTY_SUPPORT' default='yes' type='bool'><value>YES</value></option>
@@ -177,9 +177,11 @@
     <value><![CDATA[*.ucf]]></value>
     <value><![CDATA[*.qsf]]></value>
     <value><![CDATA[*.ice]]></value>
+    <value><![CDATA[*.md]]></value>
   </option>
   <option  id='RECURSIVE' default='no' type='bool'><value>YES</value></option>
-  <option  id='EXCLUDE' default='yes' type='stringlist'>
+  <option  id='EXCLUDE' default='no' type='stringlist'>
+    <value><![CDATA[src/textures]]></value>
   </option>
   <option  id='EXCLUDE_SYMLINKS' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXCLUDE_PATTERNS' default='yes' type='stringlist'>

@@ -206,6 +206,18 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::OpenglStates</label>
+        <link refid="structklotter_1_1OpenglStates"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>texture_bound</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::array&lt; std::optional&lt; unsigned int &gt;, MAX_TEXTURES_SUPPORTED &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/opengl_states.h" line="31" column="1" bodyfile="src/klotter/render/opengl_states.h" bodystart="32" bodyend="52"/>
     <listofallmembers>
       <member refid="structklotter_1_1OpenglStates_1abc35a8245c75899fbf5242809bf19c69" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>active_texture</name></member>

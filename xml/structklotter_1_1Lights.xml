@@ -82,6 +82,87 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="12">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="3">
+        <label>klotter::DirectionalLight</label>
+        <link refid="structklotter_1_1DirectionalLight"/>
+      </node>
+      <node id="9">
+        <label>klotter::FrustumLight</label>
+        <link refid="structklotter_1_1FrustumLight"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>cookie</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>klotter::Lights</label>
+        <link refid="structklotter_1_1Lights"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>directional_lights</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>point_lights</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>frustum_lights</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>klotter::PointLight</label>
+        <link refid="structklotter_1_1PointLight"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>klotter::SCurve</label>
+        <link refid="structklotter_1_1SCurve"/>
+      </node>
+      <node id="6">
+        <label>klotter::SCurveAndDrag</label>
+        <link refid="structklotter_1_1SCurveAndDrag"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>curve</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>klotter::Texture2d</label>
+        <link refid="structklotter_1_1Texture2d"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::shared_ptr&lt; klotter::Texture2d &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; klotter::DirectionalLight &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::vector&lt; klotter::FrustumLight &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; klotter::PointLight &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/world.h" line="161" column="1" bodyfile="src/klotter/render/world.h" bodystart="162" bodyend="169"/>
     <listofallmembers>
       <member refid="structklotter_1_1Lights_1ad8ca55a3a70c4b053f146e9d88d82175" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>ambient</name></member>

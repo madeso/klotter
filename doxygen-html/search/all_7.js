@@ -7,5 +7,7 @@ var searchData=
   ['hash_5fdef_5fend_4',['HASH_DEF_END',['../group__hash.html#gadea525dabdf353ba96abce59e6a5dadd',1,'hash.h']]],
   ['hashcombiner_5',['HashCombiner',['../structklotter_1_1HashCombiner.html',1,'klotter']]],
   ['height_6',['height',['../structklotter_1_1FrameBuffer.html#a6282043d6642874ce13576774e407641',1,'klotter::FrameBuffer::height'],['../structklotter_1_1FrameBufferBuilder.html#a6cff15400f61967b5a7d5ae860363a12',1,'klotter::FrameBufferBuilder::height']]],
-  ['horizontal_7',['horizontal',['../namespaceklotter.html#a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f',1,'klotter']]]
+  ['hori_7',['hori',['../structklotter_1_1BlurEffect.html#a797295631c7220e0afda1135f8e94e61',1,'klotter::BlurEffect']]],
+  ['hori_5fp_8',['hori_p',['../structklotter_1_1BlurEffect.html#abb8ab5ec73719ee4e1bbe7a3a2b443e4',1,'klotter::BlurEffect']]],
+  ['horizontal_9',['horizontal',['../namespaceklotter.html#a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f',1,'klotter']]]
 ];

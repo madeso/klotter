@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="87" column="15" bodyfile="src/klotter/render/postproc.h" bodystart="87" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="93" column="15" bodyfile="src/klotter/render/postproc.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1BuildArg_1a3db0e7328f926a793438016339563e24" prot="public" static="no" mutable="no">
         <type>glm::ivec2</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="88" column="12" bodyfile="src/klotter/render/postproc.h" bodystart="88" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="94" column="12" bodyfile="src/klotter/render/postproc.h" bodystart="94" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -42,6 +42,10 @@
 </para>
     </detaileddescription>
     <collaborationgraph>
+      <node id="12">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
       <node id="1">
         <label>klotter::BuildArg</label>
         <link refid="structklotter_1_1BuildArg"/>
@@ -52,9 +56,79 @@
       <node id="2">
         <label>klotter::CompiledStack</label>
         <link refid="structklotter_1_1CompiledStack"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>last_source</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>targets</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>klotter::FrameBuffer</label>
+        <link refid="structklotter_1_1FrameBuffer"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter::RenderSource</label>
+        <link refid="structklotter_1_1RenderSource"/>
+      </node>
+      <node id="7">
+        <label>klotter::RenderTextureWithShader</label>
+        <link refid="structklotter_1_1RenderTextureWithShader"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>fbo</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>effect</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>klotter::ShaderPropertyProvider</label>
+        <link refid="structklotter_1_1ShaderPropertyProvider"/>
+      </node>
+      <node id="9">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="10">
+        <label>std::shared_ptr&lt; klotter::FrameBuffer &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::shared_ptr&lt; klotter::RenderSource &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::shared_ptr&lt; klotter::RenderTextureWithShader &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::string</label>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; std::shared_ptr&lt; klotter::RenderTextureWithShader &gt; &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.h" line="85" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="86" bodyend="89"/>
+    <location file="src/klotter/render/postproc.h" line="91" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="92" bodyend="95"/>
     <listofallmembers>
       <member refid="structklotter_1_1BuildArg_1ae4684359223ba3b80efb252682c90fc7" prot="public" virt="non-virtual"><scope>klotter::BuildArg</scope><name>builder</name></member>
       <member refid="structklotter_1_1BuildArg_1a3db0e7328f926a793438016339563e24" prot="public" virt="non-virtual"><scope>klotter::BuildArg</scope><name>window_size</name></member>

@@ -80,6 +80,38 @@
 <para><programlisting filename=".cpp"><codeline><highlight class="normal">std::string<sp/>s<sp/>=<sp/>Str{}<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Hello,<sp/>world!<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>42;</highlight></codeline>
 </programlisting> </para>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Str</label>
+        <link refid="structStr"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>ss</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_ios&lt; Char &gt;</label>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_ostream&lt; Char &gt;</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_ostringstream&lt; Char &gt;</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::ios_base</label>
+      </node>
+      <node id="2">
+        <label>std::ostringstream</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/str.h" line="12" column="1" bodyfile="src/klotter/str.h" bodystart="13" bodyend="26"/>
     <listofallmembers>
       <member refid="structStr_1a84fc71238479b64068900969c02594a3" prot="public" virt="non-virtual"><scope>Str</scope><name>operator std::string</name></member>

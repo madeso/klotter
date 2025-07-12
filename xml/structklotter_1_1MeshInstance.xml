@@ -115,6 +115,44 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>klotter::CompiledGeom</label>
+        <link refid="structklotter_1_1CompiledGeom"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>klotter::Material</label>
+        <link refid="structklotter_1_1Material"/>
+      </node>
+      <node id="1">
+        <label>klotter::MeshInstance</label>
+        <link refid="structklotter_1_1MeshInstance"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::CompiledGeom &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::shared_ptr&lt; klotter::Material &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::unordered_set&lt; VertexType &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/world.h" line="82" column="1" bodyfile="src/klotter/render/world.h" bodystart="83" bodyend="94"/>
     <listofallmembers>
       <member refid="structklotter_1_1MeshInstance_1aff607bdafdbd54b577438161f1be2d55" prot="public" virt="non-virtual"><scope>klotter::MeshInstance</scope><name>billboarding</name></member>

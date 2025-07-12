@@ -80,6 +80,37 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>klotter::ExtractedAttribute</label>
+        <link refid="structklotter_1_1ExtractedAttribute"/>
+      </node>
+      <node id="1">
+        <label>klotter::ExtractedGeom</label>
+        <link refid="structklotter_1_1ExtractedGeom"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>attributes</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>indices</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; klotter::ExtractedAttribute &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; u32 &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/geom.extract.h" line="31" column="1" bodyfile="src/klotter/render/geom.extract.h" bodystart="32" bodyend="39"/>
     <listofallmembers>
       <member refid="structklotter_1_1ExtractedGeom_1a3cbaafe9a579da47c3437d7d62112ee2" prot="public" virt="non-virtual"><scope>klotter::ExtractedGeom</scope><name>attributes</name></member>

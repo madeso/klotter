@@ -227,6 +227,18 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::CompiledGeom_TransformInstance</label>
+        <link refid="structklotter_1_1CompiledGeom__TransformInstance"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::unordered_set&lt; VertexType &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/world.h" line="37" column="1" bodyfile="src/klotter/render/world.h" bodystart="38" bodyend="55"/>
     <listofallmembers>
       <member refid="structklotter_1_1CompiledGeom__TransformInstance_1a8588c6433084ee7a97669d100678f3ca" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom_TransformInstance</scope><name>CompiledGeom_TransformInstance</name></member>

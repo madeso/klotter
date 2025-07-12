@@ -407,6 +407,53 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::geom::Builder</label>
+        <link refid="structklotter_1_1geom_1_1Builder"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>triangles</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>normals</edgelabel>
+          <edgelabel>positions</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>texcoords</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>colors</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::geom::Triangle</label>
+        <link refid="structklotter_1_1geom_1_1Triangle"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>v0</edgelabel>
+          <edgelabel>v1</edgelabel>
+          <edgelabel>v2</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter::geom::Vertex</label>
+        <link refid="structklotter_1_1geom_1_1Vertex"/>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; glm::vec2 &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; glm::vec3 &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; glm::vec4 &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; klotter::geom::Triangle &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/geom.builder.h" line="59" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="60" bodyend="92"/>
     <listofallmembers>
       <member refid="structklotter_1_1geom_1_1Builder_1ab4601163cdc114970ed8f8561ebc3804" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_color</name></member>

@@ -169,14 +169,58 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3">
+      <node id="6">
         <label>klotter::CompiledGeomVertexAttributes</label>
         <link refid="structklotter_1_1CompiledGeomVertexAttributes"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
       </node>
-      <node id="9">
+      <node id="8">
+        <label>klotter::CompiledVertexElementNoName</label>
+        <link refid="structklotter_1_1CompiledVertexElementNoName"/>
+      </node>
+      <node id="18">
+        <label>klotter::DirectionalLightUniforms</label>
+        <link refid="structklotter_1_1DirectionalLightUniforms"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>dir_uni</edgelabel>
+          <edgelabel>light_diffuse_color_uni</edgelabel>
+          <edgelabel>light_specular_color_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>klotter::FrustumLightUniforms</label>
+        <link refid="structklotter_1_1FrustumLightUniforms"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>attenuation_uni</edgelabel>
+          <edgelabel>cookie_uni</edgelabel>
+          <edgelabel>diffuse_uni</edgelabel>
+          <edgelabel>specular_uni</edgelabel>
+          <edgelabel>world_pos_uni</edgelabel>
+          <edgelabel>world_to_clip_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>klotter::LoadedPostProcShader</label>
+        <link refid="structklotter_1_1LoadedPostProcShader"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>texture_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
         <label>klotter::LoadedShader_Default</label>
         <link refid="structklotter_1_1LoadedShader__Default"/>
-        <childnode refid="4" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
           <edgelabel>ambient_tint_uni</edgelabel>
           <edgelabel>emissive_factor_uni</edgelabel>
           <edgelabel>light_ambient_color_uni</edgelabel>
@@ -189,14 +233,23 @@
           <edgelabel>view_position_uni</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>directional_lights</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>point_lights</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>frustum_lights</edgelabel>
+        </childnode>
       </node>
-      <node id="8">
+      <node id="15">
         <label>klotter::LoadedShader_Default_Container</label>
         <link refid="structklotter_1_1LoadedShader__Default__Container"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>geom_layout</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>default_shader</edgelabel>
           <edgelabel>default_shader_instance</edgelabel>
           <edgelabel>transparency_shader</edgelabel>
@@ -206,40 +259,66 @@
         <label>klotter::LoadedShader_SingleColor</label>
         <link refid="structklotter_1_1LoadedShader__SingleColor"/>
         <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
           <edgelabel>geom_layout</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>tint_color_uni</edgelabel>
           <edgelabel>world_from_local_uni</edgelabel>
         </childnode>
       </node>
-      <node id="5">
+      <node id="12">
         <label>klotter::LoadedShader_Skybox</label>
         <link refid="structklotter_1_1LoadedShader__Skybox"/>
         <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
           <edgelabel>geom_layout</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>tex_skybox_uni</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="14">
         <label>klotter::LoadedShader_Unlit</label>
         <link refid="structklotter_1_1LoadedShader__Unlit"/>
-        <childnode refid="4" relation="usage">
+        <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
           <edgelabel>tex_diffuse_uni</edgelabel>
           <edgelabel>tint_color_uni</edgelabel>
         </childnode>
       </node>
-      <node id="6">
+      <node id="13">
         <label>klotter::LoadedShader_Unlit_Container</label>
         <link refid="structklotter_1_1LoadedShader__Unlit__Container"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>geom_layout</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>default_shader</edgelabel>
           <edgelabel>transparency_shader</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>klotter::PointLightUniforms</label>
+        <link refid="structklotter_1_1PointLightUniforms"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>light_attenuation_uni</edgelabel>
+          <edgelabel>light_diffuse_color_uni</edgelabel>
+          <edgelabel>light_specular_color_uni</edgelabel>
+          <edgelabel>light_world_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
         </childnode>
       </node>
       <node id="1">
@@ -248,19 +327,77 @@
         <childnode refid="2" relation="usage">
           <edgelabel>single_color_shader</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>skybox_shader</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>unlit_shader_container</edgelabel>
         </childnode>
-        <childnode refid="8" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>default_shader_container</edgelabel>
         </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>pp_always</edgelabel>
+          <edgelabel>pp_blurh</edgelabel>
+          <edgelabel>pp_blurv</edgelabel>
+          <edgelabel>pp_damage</edgelabel>
+          <edgelabel>pp_grayscale</edgelabel>
+          <edgelabel>pp_invert</edgelabel>
+        </childnode>
       </node>
-      <node id="4">
+      <node id="9">
         <label>klotter::Uniform</label>
         <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="23">
+        <label>std::shared_ptr&lt; klotter::LoadedPostProcShader &gt;</label>
+        <childnode refid="24" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::string</label>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; klotter::CompiledVertexElementNoName &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>std::vector&lt; klotter::DirectionalLightUniforms &gt;</label>
+        <childnode refid="18" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>std::vector&lt; klotter::FrustumLightUniforms &gt;</label>
+        <childnode refid="22" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>std::vector&lt; klotter::PointLightUniforms &gt;</label>
+        <childnode refid="20" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="src/klotter/render/shader_resource.h" line="219" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="220" bodyend="240"/>

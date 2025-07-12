@@ -116,12 +116,28 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>A functor that sends properties/uniforms to the shader.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="postproc_8h_source.html">postproc.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for klotter::ShaderPropertyProvider:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="structklotter_1_1ShaderPropertyProvider.png" usemap="#klotter::ShaderPropertyProvider_map" alt=""/>
+  <map id="klotter::ShaderPropertyProvider_map" name="klotter::ShaderPropertyProvider_map">
+<area href="structklotter_1_1BlurVerticalProvider.html" title="A shader property for the vertical blur step." alt="klotter::BlurVerticalProvider" shape="rect" coords="0,56,191,80"/>
+<area href="structklotter_1_1BurHorizontalProvider.html" title="A shader property for the horizontal blur step." alt="klotter::BurHorizontalProvider" shape="rect" coords="201,56,392,80"/>
+<area href="structklotter_1_1SimpleEffect.html" title="A effect that only performs a single step." alt="klotter::SimpleEffect" shape="rect" coords="402,56,593,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a4ec231816c208cfd36842fee34f71e" id="r_a7a4ec231816c208cfd36842fee34f71e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a4ec231816c208cfd36842fee34f71e">ShaderPropertyProvider</a> ()=default</td></tr>
 <tr class="separator:a7a4ec231816c208cfd36842fee34f71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7169be559b2c482fa97cfcb0d65561" id="r_aba7169be559b2c482fa97cfcb0d65561"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba7169be559b2c482fa97cfcb0d65561">~ShaderPropertyProvider</a> ()=default</td></tr>
+<tr class="separator:aba7169be559b2c482fa97cfcb0d65561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ad1b9975ebd7c34c346f6aa245e1d9f" id="r_a5ad1b9975ebd7c34c346f6aa245e1d9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ad1b9975ebd7c34c346f6aa245e1d9f">ShaderPropertyProvider</a> (const <a class="el" href="structklotter_1_1ShaderPropertyProvider.html">ShaderPropertyProvider</a> &amp;)=delete</td></tr>
 <tr class="separator:a5ad1b9975ebd7c34c346f6aa245e1d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeccea79ab55ae90cd8194fee436e18c5" id="r_aeccea79ab55ae90cd8194fee436e18c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeccea79ab55ae90cd8194fee436e18c5">ShaderPropertyProvider</a> (<a class="el" href="structklotter_1_1ShaderPropertyProvider.html">ShaderPropertyProvider</a> &amp;&amp;)=delete</td></tr>
@@ -130,12 +146,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af5966e224e6b622b971a752d7ae607ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95c6d45d17bb4084356a4bb03be6a49c" id="r_a95c6d45d17bb4084356a4bb03be6a49c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95c6d45d17bb4084356a4bb03be6a49c">operator=</a> (<a class="el" href="structklotter_1_1ShaderPropertyProvider.html">ShaderPropertyProvider</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a95c6d45d17bb4084356a4bb03be6a49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba7169be559b2c482fa97cfcb0d65561" id="r_aba7169be559b2c482fa97cfcb0d65561"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba7169be559b2c482fa97cfcb0d65561">~ShaderPropertyProvider</a> ()=default</td></tr>
-<tr class="separator:aba7169be559b2c482fa97cfcb0d65561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe8039190d165f78f12cc2cfca72c26" id="r_abfe8039190d165f78f12cc2cfca72c26"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfe8039190d165f78f12cc2cfca72c26">use_shader</a> (const <a class="el" href="structklotter_1_1PostProcArg.html">PostProcArg</a> &amp;a, const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;t)=0</td></tr>
 <tr class="separator:abfe8039190d165f78f12cc2cfca72c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A functor that sends properties/uniforms to the shader. </p>
+<p>First and foremost this would the used texture/fbo, but it could also be other uniforms like time, resolution, etc. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7a4ec231816c208cfd36842fee34f71e" name="a7a4ec231816c208cfd36842fee34f71e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a4ec231816c208cfd36842fee34f71e">&#9670;&#160;</a></span>ShaderPropertyProvider() <span class="overload">[1/3]</span></h2>
 
@@ -155,6 +172,31 @@ Public Member Functions</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba7169be559b2c482fa97cfcb0d65561" name="aba7169be559b2c482fa97cfcb0d65561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7169be559b2c482fa97cfcb0d65561">&#9670;&#160;</a></span>~ShaderPropertyProvider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual klotter::ShaderPropertyProvider::~ShaderPropertyProvider </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -205,31 +247,6 @@ Public Member Functions</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel delete">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aba7169be559b2c482fa97cfcb0d65561" name="aba7169be559b2c482fa97cfcb0d65561"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba7169be559b2c482fa97cfcb0d65561">&#9670;&#160;</a></span>~ShaderPropertyProvider()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual klotter::ShaderPropertyProvider::~ShaderPropertyProvider </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span><span class="mlabel default">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -313,6 +330,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="structklotter_1_1BlurVerticalProvider.html#ae76c06e50d23d0583c03a047a41c9df8">klotter::BlurVerticalProvider</a>, <a class="el" href="structklotter_1_1BurHorizontalProvider.html#a651985b314335f55904c6634943647d1">klotter::BurHorizontalProvider</a>, and <a class="el" href="structklotter_1_1SimpleEffect.html#ae62e28532a810fb93998bf1303a167b3">klotter::SimpleEffect</a>.</p>
 
 </div>
 </div>

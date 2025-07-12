@@ -8,6 +8,10 @@
         <label>src/klotter/klotter.h</label>
         <link refid="klotter_8h"/>
       </node>
+      <node id="4">
+        <label>src/klotter/render/postproc.internal.h</label>
+        <link refid="postproc_8internal_8h"/>
+      </node>
       <node id="1">
         <label>src/klotter/render/render_settings.h</label>
         <link refid="render__settings_8h"/>
@@ -18,6 +22,8 @@
         <label>src/klotter/render/renderer.h</label>
         <link refid="renderer_8h"/>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

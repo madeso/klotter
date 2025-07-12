@@ -41,6 +41,23 @@
 </simplesect>
 </para>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::InstanceProp</label>
+        <link refid="structklotter_1_1InstanceProp"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/vertex_layout.h" line="91" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="92" bodyend="95"/>
     <listofallmembers>
       <member refid="structklotter_1_1InstanceProp_1aa0229f5fd2f21045c3489a05322c9b1a" prot="public" virt="non-virtual"><scope>klotter::InstanceProp</scope><name>name</name></member>

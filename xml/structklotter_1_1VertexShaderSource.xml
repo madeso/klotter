@@ -55,6 +55,30 @@
 </simplesect>
 </para>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::VertexShaderSource</label>
+        <link refid="structklotter_1_1VertexShaderSource"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>layout</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>fragment</edgelabel>
+          <edgelabel>vertex</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; VertexElementDescription &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/shader.source.h" line="31" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="32" bodyend="36"/>
     <listofallmembers>
       <member refid="structklotter_1_1VertexShaderSource_1aa8ef4a3e5dfdd632e2b3ca67f2d969bf" prot="public" virt="non-virtual"><scope>klotter::VertexShaderSource</scope><name>fragment</name></member>

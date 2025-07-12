@@ -219,14 +219,31 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="16">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
       <node id="4">
         <label>klotter::CompiledGeomVertexAttributes</label>
         <link refid="structklotter_1_1CompiledGeomVertexAttributes"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
       </node>
-      <node id="5">
+      <node id="6">
+        <label>klotter::CompiledVertexElementNoName</label>
+        <link refid="structklotter_1_1CompiledVertexElementNoName"/>
+      </node>
+      <node id="8">
         <label>klotter::LoadedShader_Unlit</label>
         <link refid="structklotter_1_1LoadedShader__Unlit"/>
-        <childnode refid="6" relation="usage">
+        <childnode refid="9" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
           <edgelabel>tex_diffuse_uni</edgelabel>
           <edgelabel>tint_color_uni</edgelabel>
         </childnode>
@@ -237,7 +254,7 @@
         <childnode refid="4" relation="usage">
           <edgelabel>geom_layout</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>default_shader</edgelabel>
           <edgelabel>transparency_shader</edgelabel>
         </childnode>
@@ -246,9 +263,25 @@
         <label>klotter::Material</label>
         <link refid="structklotter_1_1Material"/>
       </node>
-      <node id="6">
+      <node id="10">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>klotter::Texture2d</label>
+        <link refid="structklotter_1_1Texture2d"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
         <label>klotter::Uniform</label>
         <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
       </node>
       <node id="1">
         <label>klotter::UnlitMaterial</label>
@@ -257,6 +290,38 @@
         </childnode>
         <childnode refid="3" relation="usage">
           <edgelabel>shader_container</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>texture</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="9">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="10" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>std::shared_ptr&lt; klotter::Texture2d &gt;</label>
+        <childnode refid="15" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::string</label>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; klotter::CompiledVertexElementNoName &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

@@ -399,6 +399,9 @@
       <node id="2">
         <label>klotter::OpenglStates</label>
         <link refid="structklotter_1_1OpenglStates"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>texture_bound</edgelabel>
+        </childnode>
       </node>
       <node id="1">
         <label>klotter::StateChanger</label>
@@ -406,6 +409,9 @@
         <childnode refid="2" relation="usage">
           <edgelabel>states</edgelabel>
         </childnode>
+      </node>
+      <node id="3">
+        <label>std::array&lt; std::optional&lt; unsigned int &gt;, MAX_TEXTURES_SUPPORTED &gt;</label>
       </node>
     </collaborationgraph>
     <location file="src/klotter/render/statechanger.h" line="22" column="1" bodyfile="src/klotter/render/statechanger.h" bodystart="23" bodyend="58"/>

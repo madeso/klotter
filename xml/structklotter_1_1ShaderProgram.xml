@@ -808,6 +808,18 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/shader.h" line="16" column="1" bodyfile="src/klotter/render/shader.h" bodystart="17" bodyend="163"/>
     <listofallmembers>
       <member refid="structklotter_1_1ShaderProgram_1a18bffd6cab01c6511de9ecaf2ed2a470" prot="public" virt="non-virtual"><scope>klotter::ShaderProgram</scope><name>clear</name></member>

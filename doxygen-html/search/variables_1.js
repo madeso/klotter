@@ -8,8 +8,11 @@ var searchData=
   ['blending_5',['blending',['../structklotter_1_1OpenglStates.html#a5de98224948c114a0bf2c0ccb864b1f9',1,'klotter::OpenglStates']]],
   ['blue_6',['blue',['../namespaceklotter_1_1colors.html#a8df157409e9a6105af965a4b4392a0c4',1,'klotter::colors::blue'],['../group__imguicolors.html#gaf411963d263ef598e8c346f0609e059a',1,'klotter::imgui::blue']]],
   ['blue_5fsky_7',['blue_sky',['../namespaceklotter_1_1colors.html#af0a3826da1957c3dd11ca4f159b0e234',1,'klotter::colors']]],
-  ['blur_8',['blur',['../structklotter_1_1BlurOptions.html#ae4bc15090a18f8500948c9fc3db2bd98',1,'klotter::BlurOptions']]],
+  ['blur_8',['blur',['../structklotter_1_1BlurVerticalProvider.html#a165eca67e7a8993daf1b9ea6bedfd159',1,'klotter::BlurVerticalProvider::blur'],['../structklotter_1_1BurHorizontalProvider.html#a000ac79ebf9859bab795d9de4ca9d32a',1,'klotter::BurHorizontalProvider::blur'],['../structklotter_1_1BlurOptions.html#ae4bc15090a18f8500948c9fc3db2bd98',1,'klotter::BlurOptions::blur']]],
   ['blur_5fsamples_9',['BLUR_SAMPLES',['../namespaceklotter.html#a095e93aa73a0f90b24c3e84cc8fe2afe',1,'klotter']]],
-  ['buffer_10',['buffer',['../structklotter_1_1CameraUniformBuffer.html#a46b28bfe4ad5f8155051abfca7ad6652',1,'klotter::CameraUniformBuffer::buffer'],['../structklotter_1_1BoundUniformBuffer.html#aa5d78460694529bcc7bdc2f36242cd08',1,'klotter::BoundUniformBuffer::buffer']]],
-  ['builder_11',['builder',['../structklotter_1_1BuildArg.html#ae4684359223ba3b80efb252682c90fc7',1,'klotter::BuildArg']]]
+  ['blur_5fsize_10',['blur_size',['../structklotter_1_1BlurEffect.html#a0d0d5116bbf127075c35856b8b821206',1,'klotter::BlurEffect']]],
+  ['blur_5fsize_5fh_11',['blur_size_h',['../structklotter_1_1BlurEffect.html#a3d07e97e13ef71c3bfb3521cae6b7ef5',1,'klotter::BlurEffect']]],
+  ['blur_5fsize_5fv_12',['blur_size_v',['../structklotter_1_1BlurEffect.html#aca5d985c5ad836e8ef80af5968a2c2cc',1,'klotter::BlurEffect']]],
+  ['buffer_13',['buffer',['../structklotter_1_1CameraUniformBuffer.html#a46b28bfe4ad5f8155051abfca7ad6652',1,'klotter::CameraUniformBuffer::buffer'],['../structklotter_1_1BoundUniformBuffer.html#aa5d78460694529bcc7bdc2f36242cd08',1,'klotter::BoundUniformBuffer::buffer']]],
+  ['builder_14',['builder',['../structklotter_1_1BuildArg.html#ae4684359223ba3b80efb252682c90fc7',1,'klotter::BuildArg']]]
 ];

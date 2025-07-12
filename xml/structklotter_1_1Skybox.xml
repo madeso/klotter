@@ -40,6 +40,50 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="3">
+        <label>klotter::CompiledGeom</label>
+        <link refid="structklotter_1_1CompiledGeom"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>klotter::Skybox</label>
+        <link refid="structklotter_1_1Skybox"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>cubemap</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>klotter::TextureCubemap</label>
+        <link refid="structklotter_1_1TextureCubemap"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::CompiledGeom &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::shared_ptr&lt; klotter::TextureCubemap &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::unordered_set&lt; VertexType &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/world.h" line="172" column="1" bodyfile="src/klotter/render/world.h" bodystart="173" bodyend="176"/>
     <listofallmembers>
       <member refid="structklotter_1_1Skybox_1a0b52d43c85b813bfa90059abe97319b0" prot="public" virt="non-virtual"><scope>klotter::Skybox</scope><name>cubemap</name></member>

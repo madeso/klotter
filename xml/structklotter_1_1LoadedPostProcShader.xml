@@ -109,12 +109,42 @@
         <label>klotter::LoadedPostProcShader</label>
         <link refid="structklotter_1_1LoadedPostProcShader"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
           <edgelabel>texture_uni</edgelabel>
         </childnode>
       </node>
-      <node id="2">
+      <node id="3">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
         <label>klotter::Uniform</label>
         <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::string</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
     <location file="src/klotter/render/shader_resource.h" line="135" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="136" bodyend="144"/>

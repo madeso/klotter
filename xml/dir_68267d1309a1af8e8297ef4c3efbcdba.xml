@@ -3,7 +3,6 @@
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
     <innerdir refid="dir_fb7305bc03bd6dd23ed7e38d8335176d">src/klotter</innerdir>
-    <innerdir refid="dir_0a15cfbbecb5f97b1f4d0d4d1ae63ab7">src/textures</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

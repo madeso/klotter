@@ -5,6 +5,7 @@
     <includes refid="uniform_8h" local="yes">klotter/render/uniform.h</includes>
     <includes refid="uniform__buffer_8h" local="yes">klotter/render/uniform_buffer.h</includes>
     <includes refid="vertex__layout_8h" local="yes">klotter/render/vertex_layout.h</includes>
+    <includedby refid="postproc_8internal_8h" local="yes">src/klotter/render/postproc.internal.h</includedby>
     <includedby refid="renderer_8pimpl_8h" local="yes">src/klotter/render/renderer.pimpl.h</includedby>
     <incdepgraph>
       <node id="5">
@@ -59,6 +60,10 @@
     </incdepgraph>
     <invincdepgraph>
       <node id="2">
+        <label>src/klotter/render/postproc.internal.h</label>
+        <link refid="postproc_8internal_8h"/>
+      </node>
+      <node id="3">
         <label>src/klotter/render/renderer.pimpl.h</label>
         <link refid="renderer_8pimpl_8h"/>
       </node>
@@ -66,6 +71,8 @@
         <label>src/klotter/render/shader_resource.h</label>
         <link refid="shader__resource_8h"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

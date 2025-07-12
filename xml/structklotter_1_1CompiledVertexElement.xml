@@ -52,6 +52,23 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::CompiledVertexElement</label>
+        <link refid="structklotter_1_1CompiledVertexElement"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/vertex_layout.h" line="51" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="52" bodyend="56"/>
     <listofallmembers>
       <member refid="structklotter_1_1CompiledVertexElement_1a9af8e87a9efdfcc2828d975379507f2a" prot="public" virt="non-virtual"><scope>klotter::CompiledVertexElement</scope><name>index</name></member>

@@ -80,6 +80,17 @@
         <childnode refid="2" relation="usage">
           <edgelabel>target</edgelabel>
         </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="src/klotter/render/uniform_buffer.h" line="42" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="43" bodyend="48"/>

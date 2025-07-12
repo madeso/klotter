@@ -193,6 +193,18 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::CompiledGeom</label>
+        <link refid="structklotter_1_1CompiledGeom"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::unordered_set&lt; VertexType &gt;</label>
+      </node>
+    </collaborationgraph>
     <location file="src/klotter/render/world.h" line="19" column="1" bodyfile="src/klotter/render/world.h" bodystart="20" bodyend="34"/>
     <listofallmembers>
       <member refid="structklotter_1_1CompiledGeom_1a6fdc0111b7de9df424a151951ee282d7" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>CompiledGeom</name></member>

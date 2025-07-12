@@ -41,10 +41,31 @@
     <member refid="structklotter_1_1BaseTexture_1a32f38affc237565a13b2368e8a478264" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1BaseTexture_1a6dd65084b3eab03e75daa283d40b701f" kind="function"><name>unload</name></member>
   </compound>
+  <compound refid="structklotter_1_1BlurEffect" kind="struct"><name>klotter::BlurEffect</name>
+    <member refid="structklotter_1_1BlurEffect_1a21e926298e2ee9222bb3ac58d566298f" kind="variable"><name>name</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a4619799774fcac1b4fb0293b7403f8ab" kind="variable"><name>vert_p</name></member>
+    <member refid="structklotter_1_1BlurEffect_1abb8ab5ec73719ee4e1bbe7a3a2b443e4" kind="variable"><name>hori_p</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a987f9b83de4e9c7935207f5da9776736" kind="variable"><name>vert</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a797295631c7220e0afda1135f8e94e61" kind="variable"><name>hori</name></member>
+    <member refid="structklotter_1_1BlurEffect_1aca5d985c5ad836e8ef80af5968a2c2cc" kind="variable"><name>blur_size_v</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a3d07e97e13ef71c3bfb3521cae6b7ef5" kind="variable"><name>blur_size_h</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a0d0d5116bbf127075c35856b8b821206" kind="variable"><name>blur_size</name></member>
+    <member refid="structklotter_1_1BlurEffect_1affbde21f293970b31de1aa33bf1f5803" kind="function"><name>BlurEffect</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a908e727a56870b36f9a8d30f065dc23d" kind="function"><name>gui</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a45afc4bcb234120be489dcd71678e6bc" kind="function"><name>update</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a9109b05e863cb40e4a7feb409e545750" kind="function"><name>use_vert_shader</name></member>
+    <member refid="structklotter_1_1BlurEffect_1af1403aa0519290c0384080c8aa5e3f15" kind="function"><name>use_hori_shader</name></member>
+    <member refid="structklotter_1_1BlurEffect_1a0356951b19bace87a7602025903b93b2" kind="function"><name>build</name></member>
+  </compound>
   <compound refid="structklotter_1_1BlurOptions" kind="struct"><name>klotter::BlurOptions</name>
     <member refid="structklotter_1_1BlurOptions_1ae4bc15090a18f8500948c9fc3db2bd98" kind="variable"><name>blur</name></member>
     <member refid="structklotter_1_1BlurOptions_1a33059a8882525f6d1d82baeaf4c0d10a" kind="variable"><name>sample_count</name></member>
     <member refid="structklotter_1_1BlurOptions_1a95c8cd4bd600737931412e2230899dfa" kind="variable"><name>is_gauss</name></member>
+  </compound>
+  <compound refid="structklotter_1_1BlurVerticalProvider" kind="struct"><name>klotter::BlurVerticalProvider</name>
+    <member refid="structklotter_1_1BlurVerticalProvider_1a165eca67e7a8993daf1b9ea6bedfd159" kind="variable"><name>blur</name></member>
+    <member refid="structklotter_1_1BlurVerticalProvider_1aa9f8d9494a386b6d400c2f0e2ebe66df" kind="function"><name>BlurVerticalProvider</name></member>
+    <member refid="structklotter_1_1BlurVerticalProvider_1ae76c06e50d23d0583c03a047a41c9df8" kind="function"><name>use_shader</name></member>
   </compound>
   <compound refid="structklotter_1_1BoundFbo" kind="struct"><name>klotter::BoundFbo</name>
     <member refid="structklotter_1_1BoundFbo_1afe94d7a00ce51497623dd29f5e006b09" kind="variable"><name>fbo</name></member>
@@ -91,6 +112,11 @@
     <member refid="structklotter_1_1geom_1_1Builder_1a51525175e9d0303d99fe22c89213d482" kind="function"><name>invert_normals</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a7a058ba68a600119c137a23ccf8d5ac7" kind="function"><name>to_geom</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a37ee459d444ec29573ccee3240fa9a24" kind="function"><name>write_obj</name></member>
+  </compound>
+  <compound refid="structklotter_1_1BurHorizontalProvider" kind="struct"><name>klotter::BurHorizontalProvider</name>
+    <member refid="structklotter_1_1BurHorizontalProvider_1a000ac79ebf9859bab795d9de4ca9d32a" kind="variable"><name>blur</name></member>
+    <member refid="structklotter_1_1BurHorizontalProvider_1a5645460d8e0a3ed1189d5df37c422d18" kind="function"><name>BurHorizontalProvider</name></member>
+    <member refid="structklotter_1_1BurHorizontalProvider_1a651985b314335f55904c6634943647d1" kind="function"><name>use_shader</name></member>
   </compound>
   <compound refid="structklotter_1_1Camera" kind="struct"><name>klotter::Camera</name>
     <member refid="structklotter_1_1Camera_1a44876819aa360977eb57fbc806766656" kind="variable"><name>fov</name></member>
@@ -156,7 +182,7 @@
   </compound>
   <compound refid="structklotter_1_1CompiledStack" kind="struct"><name>klotter::CompiledStack</name>
     <member refid="structklotter_1_1CompiledStack_1a442cf553eb97dd8d5921b7a4d5c20bc2" kind="variable"><name>last_source</name></member>
-    <member refid="structklotter_1_1CompiledStack_1a46d6e36d30b228ff95cc1269e5f450e6" kind="variable"><name>targets</name></member>
+    <member refid="structklotter_1_1CompiledStack_1a4aa34b63e2f3e0a71124d411e355bacd" kind="variable"><name>targets</name></member>
   </compound>
   <compound refid="structklotter_1_1CompiledUniformProp" kind="struct"><name>klotter::CompiledUniformProp</name>
     <member refid="structklotter_1_1CompiledUniformProp_1a2c8aba9e9b4f650eff67762d5f1f1274" kind="variable"><name>offset</name></member>
@@ -221,11 +247,11 @@
     <member refid="structklotter_1_1Effect_1a111edd29dcb24caf495f3b593c010e8a" kind="variable"><name>is_enabled</name></member>
     <member refid="structklotter_1_1Effect_1afc0724d94b5f8350793231357a479de6" kind="variable"><name>owner</name></member>
     <member refid="structklotter_1_1Effect_1a8e7175ac2393958842f6260823e24258" kind="function"><name>Effect</name></member>
+    <member refid="structklotter_1_1Effect_1a098603548d6ee2c1f5f6179921b13f48" kind="function"><name>~Effect</name></member>
     <member refid="structklotter_1_1Effect_1aade7618d0f39f5e2ae74837304ce7c22" kind="function"><name>Effect</name></member>
     <member refid="structklotter_1_1Effect_1ad5194abdfbb67f4333b87291577ce018" kind="function"><name>Effect</name></member>
     <member refid="structklotter_1_1Effect_1a23439a8d3b0ac3bc3afad62f7d1476ef" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1Effect_1a195e79789200af0a6aa112a28f78dace" kind="function"><name>operator=</name></member>
-    <member refid="structklotter_1_1Effect_1a098603548d6ee2c1f5f6179921b13f48" kind="function"><name>~Effect</name></member>
     <member refid="structklotter_1_1Effect_1a2b91279abfc5154b3f4e2d536a86e6f9" kind="function"><name>build</name></member>
     <member refid="structklotter_1_1Effect_1afc39fdba773e59c79338ee7486da0b5e" kind="function"><name>update</name></member>
     <member refid="structklotter_1_1Effect_1a36c3f6e7b50c297201964c3c20087dd6" kind="function"><name>gui</name></member>
@@ -264,6 +290,25 @@
     <member refid="structklotter_1_1FactorEffect_1a20c51552c66bf6c1e49d615a5021d4bd" kind="function"><name>FactorEffect</name></member>
     <member refid="structklotter_1_1FactorEffect_1aca46890ef629cf7495b2e8f8b7dc9349" kind="function"><name>get_factor</name></member>
     <member refid="structklotter_1_1FactorEffect_1a8e7f0594c2c1fde00083e4d48c9dbd44" kind="function"><name>set_factor</name></member>
+  </compound>
+  <compound refid="structklotter_1_1FloatDragShaderProp" kind="struct"><name>klotter::FloatDragShaderProp</name>
+    <member refid="structklotter_1_1FloatDragShaderProp_1ad10f394f5c2c446a3c950ee2034ef354" kind="variable"><name>uniform</name></member>
+    <member refid="structklotter_1_1FloatDragShaderProp_1a76c568c7ad974995cf7c69f39df3ca9b" kind="variable"><name>name</name></member>
+    <member refid="structklotter_1_1FloatDragShaderProp_1a6664119eb134454d8ef61979bbbc73fb" kind="variable"><name>value</name></member>
+    <member refid="structklotter_1_1FloatDragShaderProp_1ad36bed4fdaba81b5be72b49eeb43bb7e" kind="variable"><name>speed</name></member>
+    <member refid="structklotter_1_1FloatDragShaderProp_1a620fa2284c7fc037975a2fc20c90e18d" kind="function"><name>FloatDragShaderProp</name></member>
+    <member refid="structklotter_1_1FloatDragShaderProp_1ad8e027bad1146322a226b0502e324553" kind="function"><name>use</name></member>
+    <member refid="structklotter_1_1FloatDragShaderProp_1a60dc7807aa6bec5cef5de6c425e3f3d2" kind="function"><name>gui</name></member>
+  </compound>
+  <compound refid="structklotter_1_1FloatSliderShaderProp" kind="struct"><name>klotter::FloatSliderShaderProp</name>
+    <member refid="structklotter_1_1FloatSliderShaderProp_1a921d30c4c7caff395f87eae689094cb1" kind="variable"><name>uniform</name></member>
+    <member refid="structklotter_1_1FloatSliderShaderProp_1a620879ab8993dffafbebb2b846143dd2" kind="variable"><name>name</name></member>
+    <member refid="structklotter_1_1FloatSliderShaderProp_1a34eaecd8ec3a52fa9a146a17fbab666d" kind="variable"><name>value</name></member>
+    <member refid="structklotter_1_1FloatSliderShaderProp_1af00913195f8b2d1df24399babe2e4670" kind="variable"><name>min</name></member>
+    <member refid="structklotter_1_1FloatSliderShaderProp_1a8414339be4d0247e5440fe1a3c578f4b" kind="variable"><name>max</name></member>
+    <member refid="structklotter_1_1FloatSliderShaderProp_1a594675312b454da4b4a06c9fcced5338" kind="function"><name>FloatSliderShaderProp</name></member>
+    <member refid="structklotter_1_1FloatSliderShaderProp_1a0163d7e00d82aa251a1d29c382b2967e" kind="function"><name>use</name></member>
+    <member refid="structklotter_1_1FloatSliderShaderProp_1a31aea0b3e9f3216b724b8f1b84a3c605" kind="function"><name>gui</name></member>
   </compound>
   <compound refid="structklotter_1_1FrameBuffer" kind="struct"><name>klotter::FrameBuffer</name>
     <member refid="structklotter_1_1FrameBuffer_1a1b2eea3dbfd2f5cba3197b0b5b7b9cc0" kind="variable"><name>width</name></member>
@@ -540,21 +585,30 @@
   </compound>
   <compound refid="structklotter_1_1RenderSource" kind="struct"><name>klotter::RenderSource</name>
     <member refid="structklotter_1_1RenderSource_1a7bbdf727aee83637ea11695272907a31" kind="function"><name>RenderSource</name></member>
+    <member refid="structklotter_1_1RenderSource_1a11b2e79c0400c88412f16971cc3d6e8a" kind="function"><name>~RenderSource</name></member>
     <member refid="structklotter_1_1RenderSource_1a1fbc3febe5e3d46202efebdac885dd5c" kind="function"><name>RenderSource</name></member>
     <member refid="structklotter_1_1RenderSource_1ade2acc705758ca5458b8415f4e2716b3" kind="function"><name>RenderSource</name></member>
     <member refid="structklotter_1_1RenderSource_1a573f81ac792964127141bfe9d9d19f2a" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1RenderSource_1a282b41ce7fa0a6e06d49c5c8983eb0d6" kind="function"><name>operator=</name></member>
-    <member refid="structklotter_1_1RenderSource_1a11b2e79c0400c88412f16971cc3d6e8a" kind="function"><name>~RenderSource</name></member>
     <member refid="structklotter_1_1RenderSource_1a09fe11c60248250aeeaf931bb1f0e2e1" kind="function"><name>render</name></member>
   </compound>
-  <compound refid="structklotter_1_1RenderTask" kind="struct"><name>klotter::RenderTask</name>
-    <member refid="structklotter_1_1RenderTask_1a3bd6acd8a111d9dbd55f2b90c3bcdc33" kind="variable"><name>name</name></member>
-    <member refid="structklotter_1_1RenderTask_1af534f5a17b24351ecfbf908e283e55cd" kind="variable"><name>source</name></member>
-    <member refid="structklotter_1_1RenderTask_1a8ca43f7868156503a51a4f41bf16dda1" kind="variable"><name>fbo</name></member>
-    <member refid="structklotter_1_1RenderTask_1a5a5441557c6bb14a03d8dccb531785a9" kind="variable"><name>effect</name></member>
-    <member refid="structklotter_1_1RenderTask_1a1d8645ff2139e71ffbde73cd3f36c726" kind="function"><name>RenderTask</name></member>
-    <member refid="structklotter_1_1RenderTask_1a052fe8fe4d5af2b0b91c2aaca91ec300" kind="function"><name>render</name></member>
-    <member refid="structklotter_1_1RenderTask_1ad2c4a504a72924f5db7478e6ae667bae" kind="function"><name>update</name></member>
+  <compound refid="structklotter_1_1RenderTextureWithShader" kind="struct"><name>klotter::RenderTextureWithShader</name>
+    <member refid="structklotter_1_1RenderTextureWithShader_1ac5de1a3fa4f68ba53aad41fd85388f7d" kind="variable"><name>name</name></member>
+    <member refid="structklotter_1_1RenderTextureWithShader_1a09fb02631c3a68491b2eaeda70a7f6eb" kind="variable"><name>source</name></member>
+    <member refid="structklotter_1_1RenderTextureWithShader_1a0ae8bab66cf61e303741ee950ab8303d" kind="variable"><name>fbo</name></member>
+    <member refid="structklotter_1_1RenderTextureWithShader_1a11982aa89c5401cd9235959bd8a96beb" kind="variable"><name>effect</name></member>
+    <member refid="structklotter_1_1RenderTextureWithShader_1aff7be13082c2aed0d2e2db9d77123b09" kind="function"><name>RenderTextureWithShader</name></member>
+    <member refid="structklotter_1_1RenderTextureWithShader_1ae9721966d78654a54078a7b159180dd5" kind="function"><name>render</name></member>
+    <member refid="structklotter_1_1RenderTextureWithShader_1a5ed90bcae50cd19bf1b21450e04c40f5" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="structklotter_1_1RenderWorld" kind="struct"><name>klotter::RenderWorld</name>
+    <member refid="structklotter_1_1RenderWorld_1a93e35103ec16f4e85876bc457d3b5b0b" kind="variable"><name>window_size</name></member>
+    <member refid="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" kind="variable"><name>msaa_buffer</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" kind="variable"><name>realized_buffer</name></member>
+    <member refid="structklotter_1_1RenderWorld_1ab237d3cc1297486fa9db215d12465476" kind="variable"><name>shader</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a3f4a8e79693902c657c5c3145a04a0c3" kind="function"><name>RenderWorld</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" kind="function"><name>update</name></member>
+    <member refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" kind="function"><name>render</name></member>
   </compound>
   <compound refid="structResult" kind="struct"><name>Result</name>
     <member refid="structResult_1aaa4cd27503fc72bd303b8821fddb24f0" kind="variable"><name>value</name></member>
@@ -608,13 +662,23 @@
     <member refid="structklotter_1_1ShaderProgram_1a9a239119b7688aa1c166c88262e8a1cf" kind="function"><name>set_mat</name></member>
     <member refid="structklotter_1_1ShaderProgram_1acf995e0f3e5b1543aac53c61c00d2aa0" kind="function"><name>setup_uniform_block</name></member>
   </compound>
+  <compound refid="structklotter_1_1ShaderProp" kind="struct"><name>klotter::ShaderProp</name>
+    <member refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kind="function"><name>ShaderProp</name></member>
+    <member refid="structklotter_1_1ShaderProp_1adfe6c1570dc234838d121d2e9b515223" kind="function"><name>ShaderProp</name></member>
+    <member refid="structklotter_1_1ShaderProp_1a0de3a9acf2218f6171779ee84e6a31fb" kind="function"><name>ShaderProp</name></member>
+    <member refid="structklotter_1_1ShaderProp_1a6b417085805c23b107f89f0bf57a0959" kind="function"><name>operator=</name></member>
+    <member refid="structklotter_1_1ShaderProp_1a8b1fc90f5a3e0f2605d36e7d0cbcfaa7" kind="function"><name>operator=</name></member>
+    <member refid="structklotter_1_1ShaderProp_1a3b2afd1a1a741fee9ae837da87a49332" kind="function"><name>~ShaderProp</name></member>
+    <member refid="structklotter_1_1ShaderProp_1a26bcff51c572a232c0c8470a2a478f5e" kind="function"><name>use</name></member>
+    <member refid="structklotter_1_1ShaderProp_1a5881c9f48139157903842901f6165c28" kind="function"><name>gui</name></member>
+  </compound>
   <compound refid="structklotter_1_1ShaderPropertyProvider" kind="struct"><name>klotter::ShaderPropertyProvider</name>
     <member refid="structklotter_1_1ShaderPropertyProvider_1a7a4ec231816c208cfd36842fee34f71e" kind="function"><name>ShaderPropertyProvider</name></member>
+    <member refid="structklotter_1_1ShaderPropertyProvider_1aba7169be559b2c482fa97cfcb0d65561" kind="function"><name>~ShaderPropertyProvider</name></member>
     <member refid="structklotter_1_1ShaderPropertyProvider_1a5ad1b9975ebd7c34c346f6aa245e1d9f" kind="function"><name>ShaderPropertyProvider</name></member>
     <member refid="structklotter_1_1ShaderPropertyProvider_1aeccea79ab55ae90cd8194fee436e18c5" kind="function"><name>ShaderPropertyProvider</name></member>
     <member refid="structklotter_1_1ShaderPropertyProvider_1af5966e224e6b622b971a752d7ae607ca" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1ShaderPropertyProvider_1a95c6d45d17bb4084356a4bb03be6a49c" kind="function"><name>operator=</name></member>
-    <member refid="structklotter_1_1ShaderPropertyProvider_1aba7169be559b2c482fa97cfcb0d65561" kind="function"><name>~ShaderPropertyProvider</name></member>
     <member refid="structklotter_1_1ShaderPropertyProvider_1abfe8039190d165f78f12cc2cfca72c26" kind="function"><name>use_shader</name></member>
   </compound>
   <compound refid="structklotter_1_1ShaderResource" kind="struct"><name>klotter::ShaderResource</name>
@@ -633,6 +697,19 @@
   <compound refid="structklotter_1_1ShaderSource" kind="struct"><name>klotter::ShaderSource</name>
     <member refid="structklotter_1_1ShaderSource_1a6b9e1c440250f9b203724b907da93f18" kind="variable"><name>vertex</name></member>
     <member refid="structklotter_1_1ShaderSource_1a48a2e03510fe5f1f42060b9cb1a71966" kind="variable"><name>fragment</name></member>
+  </compound>
+  <compound refid="structklotter_1_1SimpleEffect" kind="struct"><name>klotter::SimpleEffect</name>
+    <member refid="structklotter_1_1SimpleEffect_1a54faefb8903be9d6632b6c46480d4d8e" kind="variable"><name>name</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1a3b0db69f934eb0a04439d37da6022aae" kind="variable"><name>shader</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1ab9ce3c18226e5a4fcfca70bc35bcea27" kind="variable"><name>properties</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1a00a31874597c071d487222993b1254af" kind="variable"><name>time</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1a59d2eedda1246a07369c1515bf46a3f7" kind="function"><name>SimpleEffect</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1aeb461dabc8e7c4f556e15462289bdf5e" kind="function"><name>add_float_drag_prop</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1ab923af34ed39a1ead379001243630521" kind="function"><name>add_float_slider_prop</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1a92f883dc6a86125695728259f7530001" kind="function"><name>gui</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1a92b9960c5dd9db2641289942c771502e" kind="function"><name>update</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1ae62e28532a810fb93998bf1303a167b3" kind="function"><name>use_shader</name></member>
+    <member refid="structklotter_1_1SimpleEffect_1a9a701df51e5ab86983e49e0c5b418899" kind="function"><name>build</name></member>
   </compound>
   <compound refid="structklotter_1_1Skybox" kind="struct"><name>klotter::Skybox</name>
     <member refid="structklotter_1_1Skybox_1a7445eed37dea92e56a90fa647e83af82" kind="variable"><name>geom</name></member>
@@ -887,6 +964,8 @@
     <member refid="group__imguicolors_1gafc89d904b23312ecdf1aed6cd7b137c1" kind="variable"><name>yellow</name></member>
     <member refid="group__imguicolors_1gae9f69cc280e1a47e222e63a6be99712a" kind="variable"><name>orange</name></member>
   </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
   <compound refid="namespacestd_1_1literals_1_1string__view__literals" kind="namespace"><name>std::literals::string_view_literals</name>
   </compound>
   <compound refid="topics_8h" kind="file"><name>topics.h</name>
@@ -998,6 +1077,8 @@
   </compound>
   <compound refid="postproc_8h" kind="file"><name>postproc.h</name>
   </compound>
+  <compound refid="postproc_8internal_8h" kind="file"><name>postproc.internal.h</name>
+  </compound>
   <compound refid="render__settings_8h" kind="file"><name>render_settings.h</name>
   </compound>
   <compound refid="renderer_8h" kind="file"><name>renderer.h</name>
@@ -1035,8 +1116,6 @@
   <compound refid="str_8h" kind="file"><name>str.h</name>
   </compound>
   <compound refid="undef__windows_8h" kind="file"><name>undef_windows.h</name>
-  </compound>
-  <compound refid="readme_8md" kind="file"><name>readme.md</name>
   </compound>
   <compound refid="group__vertex-layout" kind="group"><name>vertex-layout</name>
     <member refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kind="enum"><name>VertexType</name></member>
@@ -1234,7 +1313,5 @@
   <compound refid="dir_ed8e069d0ef105186a164ea7dd41c1e5" kind="dir"><name>src/klotter/render</name>
   </compound>
   <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
-  </compound>
-  <compound refid="dir_0a15cfbbecb5f97b1f4d0d4d1ae63ab7" kind="dir"><name>src/textures</name>
   </compound>
 </doxygenindex>
