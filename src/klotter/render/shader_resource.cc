@@ -16,7 +16,7 @@
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
-#include "pp.always.frag.glsl.h"
+#include "pp.realize.frag.glsl.h"
 
 
 namespace klotter
@@ -201,7 +201,7 @@ bool ShaderResource::is_loaded() const
 {
 	return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded() && unlit_shader_container.is_loaded()
 		&& default_shader_container.is_loaded() && pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
-		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_always->program->is_loaded();
+		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_realize->program->is_loaded();
 }
 
 using BaseShaderData = std::vector<VertexType>;
@@ -355,10 +355,10 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		PostProcSetup::factor | PostProcSetup::resolution
 	);
 
-	auto pp_always = std::make_shared<LoadedPostProcShader>(
+	auto pp_realize = std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
-			USE_DEBUG_LABEL_MANY("pp always")
-			std::string{PP_VERT_GLSL}, std::string{PP_ALWAYS_FRAG_GLSL}, full_screen.layout
+			USE_DEBUG_LABEL_MANY("pp realize")
+			std::string{PP_VERT_GLSL}, std::string{PP_REALIZE_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::none
 	);
@@ -389,7 +389,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		pp_damage,
 		pp_blurv,
 		pp_blurh,
-		pp_always
+		pp_realize
 	};
 }
 

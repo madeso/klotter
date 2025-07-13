@@ -233,7 +233,7 @@ struct ShaderResource
 	std::shared_ptr<LoadedPostProcShader> pp_blurh;
 
 	/// the realization shader that is always run
-	std::shared_ptr<LoadedPostProcShader> pp_always;
+	std::shared_ptr<LoadedPostProcShader> pp_realize;
 
 	/// verify that the shaders are loaded
 	[[nodiscard]] bool is_loaded() const;

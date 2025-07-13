@@ -184,7 +184,7 @@ void EffectStack::render(const PostProcArg& arg)
 		compiled.targets.clear();
 
 		auto created_world
-			= std::make_shared<RenderWorld>(arg.window_size, arg.renderer->pimpl->shaders_resources.pp_always, arg.renderer->settings.msaa);
+			= std::make_shared<RenderWorld>(arg.window_size, arg.renderer->pimpl->shaders_resources.pp_realize, arg.renderer->settings.msaa);
 		compiled.last_source = created_world;
 		render_world_ref = created_world;
 		render_world = created_world;

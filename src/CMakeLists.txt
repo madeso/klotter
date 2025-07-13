@@ -6,7 +6,7 @@ set(shaders
     klotter/render/shaders/pp.grayscale.frag.glsl
     klotter/render/shaders/pp.damage.frag.glsl
     klotter/render/shaders/pp.blur.frag.glsl
-    klotter/render/shaders/pp.always.frag.glsl
+    klotter/render/shaders/pp.realize.frag.glsl
     klotter/render/shaders/skybox.vert.glsl
     klotter/render/shaders/skybox.frag.glsl
 )
