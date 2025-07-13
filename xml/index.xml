@@ -691,7 +691,7 @@
     <member refid="structklotter_1_1ShaderResource_1aa149d11a09f21cb8ef31e2e6a029a7c5" kind="variable"><name>pp_damage</name></member>
     <member refid="structklotter_1_1ShaderResource_1a0a37be05607f2204c84b6454552c176b" kind="variable"><name>pp_blurv</name></member>
     <member refid="structklotter_1_1ShaderResource_1a62e158ef1f413d38d6e1628183de2b34" kind="variable"><name>pp_blurh</name></member>
-    <member refid="structklotter_1_1ShaderResource_1ad3138f9a0e247eaffb43ff60e7a29891" kind="variable"><name>pp_always</name></member>
+    <member refid="structklotter_1_1ShaderResource_1aabc58d1050e66fa117eef222364822e6" kind="variable"><name>pp_realize</name></member>
     <member refid="structklotter_1_1ShaderResource_1a43421a57252a58a738c4df8f318b7dc3" kind="function"><name>is_loaded</name></member>
   </compound>
   <compound refid="structklotter_1_1ShaderSource" kind="struct"><name>klotter::ShaderSource</name>

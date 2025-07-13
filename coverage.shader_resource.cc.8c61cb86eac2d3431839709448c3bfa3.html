@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/shader_resource.cc</div>
-            <div>Date: 2025-07-12 19:41:35</div>
+            <div>Date: 2025-07-13 20:58:59</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -230,7 +230,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pp.always.frag.glsl.h&quot;</span></td>
+                <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pp.realize.frag.glsl.h&quot;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l20" href="#l20">20</a></td>
@@ -1525,7 +1525,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pp_blurv</span><span class="o">-&gt;</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">is_loaded</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pp_blurh</span><span class="o">-&gt;</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">is_loaded</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pp_always</span><span class="o">-&gt;</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">is_loaded</span><span class="p">();</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pp_blurv</span><span class="o">-&gt;</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">is_loaded</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pp_blurh</span><span class="o">-&gt;</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">is_loaded</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pp_realize</span><span class="o">-&gt;</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">is_loaded</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l205" href="#l205">205</a></td>
@@ -2603,7 +2603,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">pp_always</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">LoadedPostProcShader</span><span class="o">&gt;</span><span class="p">(</span></td>
+                <td class="src "><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">pp_realize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">LoadedPostProcShader</span><span class="o">&gt;</span><span class="p">(</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l359" href="#l359">359</a></td>
@@ -2617,14 +2617,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="n">USE_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="s">&quot;pp always&quot;</span><span class="p">)</span></td>
+                <td class="src "><span class="w">			</span><span class="n">USE_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="s">&quot;pp realize&quot;</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l361" href="#l361">361</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">{</span><span class="n">PP_VERT_GLSL</span><span class="p">},</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">{</span><span class="n">PP_ALWAYS_FRAG_GLSL</span><span class="p">},</span><span class="w"> </span><span class="n">full_screen</span><span class="p">.</span><span class="n">layout</span></td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">{</span><span class="n">PP_VERT_GLSL</span><span class="p">},</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">{</span><span class="n">PP_REALIZE_FRAG_GLSL</span><span class="p">},</span><span class="w"> </span><span class="n">full_screen</span><span class="p">.</span><span class="n">layout</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l362" href="#l362">362</a></td>
@@ -2841,7 +2841,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">		</span><span class="n">pp_always</span></td>
+                <td class="src "><span class="w">		</span><span class="n">pp_realize</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l393" href="#l393">393</a></td>

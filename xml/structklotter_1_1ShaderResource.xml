@@ -130,12 +130,12 @@
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="233" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="233" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1ad3138f9a0e247eaffb43ff60e7a29891" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1aabc58d1050e66fa117eef222364822e6" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
-        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ShaderResource::pp_always</definition>
+        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ShaderResource::pp_realize</definition>
         <argsstring></argsstring>
-        <name>pp_always</name>
-        <qualifiedname>klotter::ShaderResource::pp_always</qualifiedname>
+        <name>pp_realize</name>
+        <qualifiedname>klotter::ShaderResource::pp_realize</qualifiedname>
         <briefdescription>
 <para>the realization shader that is always run </para>
         </briefdescription>
@@ -337,12 +337,12 @@
           <edgelabel>default_shader_container</edgelabel>
         </childnode>
         <childnode refid="23" relation="usage">
-          <edgelabel>pp_always</edgelabel>
           <edgelabel>pp_blurh</edgelabel>
           <edgelabel>pp_blurv</edgelabel>
           <edgelabel>pp_damage</edgelabel>
           <edgelabel>pp_grayscale</edgelabel>
           <edgelabel>pp_invert</edgelabel>
+          <edgelabel>pp_realize</edgelabel>
         </childnode>
       </node>
       <node id="9">
@@ -404,12 +404,12 @@
     <listofallmembers>
       <member refid="structklotter_1_1ShaderResource_1a5c273cf873385756fa75f944c4d74e08" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>default_shader_container</name></member>
       <member refid="structklotter_1_1ShaderResource_1a43421a57252a58a738c4df8f318b7dc3" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>is_loaded</name></member>
-      <member refid="structklotter_1_1ShaderResource_1ad3138f9a0e247eaffb43ff60e7a29891" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_always</name></member>
       <member refid="structklotter_1_1ShaderResource_1a62e158ef1f413d38d6e1628183de2b34" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_blurh</name></member>
       <member refid="structklotter_1_1ShaderResource_1a0a37be05607f2204c84b6454552c176b" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_blurv</name></member>
       <member refid="structklotter_1_1ShaderResource_1aa149d11a09f21cb8ef31e2e6a029a7c5" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_damage</name></member>
       <member refid="structklotter_1_1ShaderResource_1a3b63ca1d92d088405aac4b3a819e71c6" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_grayscale</name></member>
       <member refid="structklotter_1_1ShaderResource_1a42791e44344f358c3a6163b1b36e7a94" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_invert</name></member>
+      <member refid="structklotter_1_1ShaderResource_1aabc58d1050e66fa117eef222364822e6" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_realize</name></member>
       <member refid="structklotter_1_1ShaderResource_1ae8c6c5ddd6c4420cf6c0b45b7af33774" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>single_color_shader</name></member>
       <member refid="structklotter_1_1ShaderResource_1a602b3aabff75e850fcf2763f6d9337cd" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>skybox_shader</name></member>
       <member refid="structklotter_1_1ShaderResource_1a6cd5168ba013a0a024399c947049d62c" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>unlit_shader_container</name></member>

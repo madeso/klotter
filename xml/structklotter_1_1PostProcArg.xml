@@ -468,12 +468,12 @@
           <edgelabel>default_shader_container</edgelabel>
         </childnode>
         <childnode refid="68" relation="usage">
-          <edgelabel>pp_always</edgelabel>
           <edgelabel>pp_blurh</edgelabel>
           <edgelabel>pp_blurv</edgelabel>
           <edgelabel>pp_damage</edgelabel>
           <edgelabel>pp_grayscale</edgelabel>
           <edgelabel>pp_invert</edgelabel>
+          <edgelabel>pp_realize</edgelabel>
         </childnode>
       </node>
       <node id="29">
