@@ -15,12 +15,6 @@ float square(float x)
 
 SCurve s_curve_from_input(float mx, float my)
 {
-	// s curve
-	// Colugo's curve editor: https://twitter.com/ColugoMusic/status/1363071439679729665?s=20
-	// https://www.desmos.com/calculator/ibek4vkdiw
-	// which is based off of Yann van der Cruyssen's sCurve formula: https://twitter.com/Morusque/status/1352569197499441155
-	// which is based off of this paper: https://arxiv.org/pdf/2010.09714.pdf
-
 	const auto p0 = mx;
 	// gustav addition: switch p1 to match curve to xy
 	const auto p1 = mx > 0.5f ? my : 1 - my;
@@ -36,17 +30,17 @@ SCurve s_curve_from_input(float mx, float my)
 	{
 		return std::pow(3.0f, x);
 	};
-	const auto s = a(10 * (q0 - 0.5f));
-	const auto t = 0.5f + (0.5f * (1.0f - q1));
-	return {s, t};
+	const auto slope = a(10 * (q0 - 0.5f));
+	const auto threshold = 0.5f + (0.5f * (1.0f - q1));
+	return {slope, threshold};
 }
 
-float calculate_s_curve(float x, float s, float t)
+float calculate_s_curve(float x, float slope, float threshold)
 {
 	constexpr float machine_epsilon = 0.00001f;
-	return x < t ?
-		t * x / (x + s * (t - x) + machine_epsilon) :
-		((1 - t) * (x - 1)) / (1 - x - s * (t - x) + machine_epsilon) + 1
+	return x < threshold ?
+		threshold * x / (x + slope * (threshold - x) + machine_epsilon) :
+		((1 - threshold) * (x - 1)) / (1 - x - slope * (threshold - x) + machine_epsilon) + 1
 	;
 }
 
@@ -62,7 +56,7 @@ ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
 
 bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 {
-	ImGui::Text("%s (%f %f)", title, static_cast<double>(scd->curve.s), static_cast<double>(scd->curve.t));
+	ImGui::Text("%s (%f %f)", title, static_cast<double>(scd->curve.slope), static_cast<double>(scd->curve.threshold));
 	if (ImGui::BeginChild(title, ImVec2{100, 100}, false, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
 		== false)
 	{
@@ -94,7 +88,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 	{
 		const float srcx = static_cast<float>(point_index) / static_cast<float>(max_points);
 		const float x = flip_x ? 1 - srcx : srcx;
-		const float y = calculate_s_curve(srcx, scd->curve.s, scd->curve.t);
+		const float y = calculate_s_curve(srcx, scd->curve.slope, scd->curve.threshold);
 		points[point_index] = ImVec2{x * size.x, (1 - y) * size.y} + pos;
 	}
 	draw->AddPolyline(points.data(), max_points + 1, line_color, ImDrawFlags_None, 1.0f);

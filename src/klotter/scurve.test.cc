@@ -73,10 +73,10 @@ catchy::FalseString is_equal(const SCurve& lhs, SCurve rhs)
 	constexpr float machine_epsilon = 0.001f;
 	return Equaler{lhs, rhs}
 		.add(
-			"s", [](const SCurve& s) { return s.s; }, machine_epsilon
+			"s", [](const SCurve& s) { return s.slope; }, machine_epsilon
 		)
 		.add(
-			"t", [](const SCurve& s) { return s.t; }, machine_epsilon
+			"t", [](const SCurve& s) { return s.threshold; }, machine_epsilon
 		)
 		.resolve();
 }
