@@ -93,7 +93,7 @@ float calculate_attenuation(vec4 att, float distance)
     float min_dist = att.x;
     float max_dist = att.y;
     float scale = (distance - min_dist) / (max_dist - min_dist); // 0 at min, 1 at max
-    float attenuation = 1.0 - calculate_s_curve(clamp(scale, 0, 1), att.z, att.w);
+    float attenuation = calculate_s_curve(1.0 - clamp(scale, 0, 1), att.z, att.w);
     return attenuation; // 1 at min, 0 at max
 }
 
