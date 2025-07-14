@@ -54,58 +54,49 @@ ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
 	return {lhs.x - rhs.x, lhs.y - rhs.y};
 }
 
-bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
+bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x, const ScurveImguiSettings& settings)
 {
 	ImGui::Text("%s (%f %f)", title, static_cast<double>(scd->curve.slope), static_cast<double>(scd->curve.threshold));
-	if (ImGui::BeginChild(title, ImVec2{100, 100}, false, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
+	if (ImGui::BeginChild(title, settings.widget_size, settings.widget_border, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
 		== false)
 	{
 		ImGui::EndChild();
 		return false;
 	}
 
-	// todo(Gustav)L move to a settings struct
-	constexpr float radius = 10.0f;
-	constexpr float dot_radius = 3.0f;
-	constexpr auto button = ImGuiMouseButton_Left;
-	constexpr std::size_t max_points = 20;
-	constexpr auto dot_color = IM_COL32(0, 100, 0, 255);
-	constexpr auto background_color = IM_COL32(50, 50, 50, 255);
-	constexpr auto line_color = IM_COL32(100, 100, 100, 255);
-	constexpr auto drag_color = IM_COL32(100, 0, 0, 255);
-	constexpr auto draw_points = false;
+	constexpr std::size_t num_points = 21;
 
 	bool changed = false;
 
-	const auto pos = ImGui::GetWindowPos();
-	const auto size = ImGui::GetWindowSize();
+	const auto widget_position = ImGui::GetWindowPos();
+	const auto widget_size = ImGui::GetWindowSize();
 
 	auto* draw = ImGui::GetWindowDrawList();
-	draw->AddRectFilled(pos, pos + size, background_color);
+	draw->AddRectFilled(widget_position, widget_position + widget_size, settings.background_color);
 
-	std::array<ImVec2, max_points + 1> points;
-	for (std::size_t point_index = 0; point_index < max_points + 1; point_index += 1)
+	std::array<ImVec2, num_points> points;
+	for (std::size_t point_index = 0; point_index < num_points; point_index += 1)
 	{
-		const float srcx = static_cast<float>(point_index) / static_cast<float>(max_points);
+		const float srcx = static_cast<float>(point_index) / static_cast<float>(num_points - 1); // -1 here to include 1.0f when evaluating the curve
 		const float x = flip_x ? 1 - srcx : srcx;
 		const float y = calculate_s_curve(srcx, scd->curve.slope, scd->curve.threshold);
-		points[point_index] = ImVec2{x * size.x, (1 - y) * size.y} + pos;
+		points[point_index] = ImVec2{x * widget_size.x, (1 - y) * widget_size.y} + widget_position;
 	}
-	draw->AddPolyline(points.data(), max_points + 1, line_color, ImDrawFlags_None, 1.0f);
+	draw->AddPolyline(points.data(), num_points, settings.line_color, ImDrawFlags_None, 1.0f);
 
-	if (draw_points)
+	if (settings.draw_points)
 	{
-		for (std::size_t point_index = 0; point_index < max_points + 1; point_index += 1)
+		for (std::size_t point_index = 0; point_index < num_points; point_index += 1)
 		{
-			draw->AddCircleFilled(points[point_index], dot_radius, dot_color);
+			draw->AddCircleFilled(points[point_index], settings.point_radius, settings.point_color);
 		}
 	}
-	draw->AddCircleFilled(ImVec2{scd->drag.x * size.x, (1 - scd->drag.y) * size.y} + pos, radius, drag_color);
+	draw->AddCircleFilled(ImVec2{scd->drag.x * widget_size.x, (1 - scd->drag.y) * widget_size.y} + widget_position, settings.drag_radius, settings.drag_color);
 
-	const auto t01 = [&pos, &size](const ImVec2& mp)
+	const auto t01 = [&widget_position, &widget_size](const ImVec2& mp)
 	{
-		const auto x = (mp.x - pos.x) / size.x;
-		const auto y = 1 - ((mp.y - pos.y) / size.y);
+		const auto x = (mp.x - widget_position.x) / widget_size.x;
+		const auto y = 1 - ((mp.y - widget_position.y) / widget_size.y);
 		return ImVec2{x, y};
 	};
 
@@ -123,9 +114,9 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x)
 #undef T
 	};
 
-	if (ImGui::IsMouseDown(button) && within01(t01(ImGui::GetIO().MouseClickedPos[button])))
+	if (ImGui::IsMouseDown(settings.button) && within01(t01(ImGui::GetIO().MouseClickedPos[settings.button])))
 	{
-		// mouse is down and started inside the component
+		// mouse is down and drag started inside the component
 		const auto mp = ImGui::GetMousePos();
 		const auto n = t01(mp);
 		scd->drag.x = std::min(1.0f, std::max(n.x, 0.0f));

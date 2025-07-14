@@ -19,13 +19,13 @@ struct SCurve
 	float threshold; ///< [0,1]
 };
 
-/// This contains both a \ref SCurve and the ui for editing, game only needs scurve, ui only needs edit.
+/// This contains both a \ref SCurve and the ui for editing.
 /// Defaults to a "linear" curve.
 /// @see \ref imgui_s_curve_editor
 struct SCurveAndDrag
 {
-	SCurve curve = {1.0f, 0.75f};
-	ImVec2 drag = {0.5f, 0.5f};
+	SCurve curve = {1.0f, 0.75f}; ///< the actual curve, game only
+	ImVec2 drag = {0.5f, 0.5f}; ///< the gui data
 };
 
 
@@ -43,7 +43,27 @@ SCurve s_curve_from_input(float x, float y);
 float calculate_s_curve(float x, float slope, float threshold);
 
 
-bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x);
+struct ScurveImguiSettings
+{
+	bool widget_border = false;	 ///< draw a border around the widget
+	ImVec2 widget_size = ImVec2{100, 100};	///< size of the widget
+
+	float drag_radius = 10.0f;
+	ImU32 drag_color = IM_COL32(100, 0, 0, 255);
+
+	float point_radius = 3.0f;
+	ImU32 point_color = IM_COL32(0, 100, 0, 255);
+	bool draw_points = false;
+
+	ImGuiMouseButton_ button = ImGuiMouseButton_Left;
+	
+	ImU32 background_color = IM_COL32(50, 50, 50, 255);
+	ImU32 line_color = IM_COL32(100, 100, 100, 255);
+
+	std::size_t num_points = 21;  ///< number of points to draw, more points means smoother curve, but more expensive
+};
+
+bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x, const ScurveImguiSettings& settings);
 
 /**
  * @}

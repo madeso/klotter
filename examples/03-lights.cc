@@ -380,7 +380,7 @@ struct LightsSample : Sample
 				pl.specular = pl.diffuse;
 			}
 			min_max(&pl.min_range, &pl.max_range);
-			imgui_s_curve_editor("att", &pl.curve, true);
+			imgui_s_curve_editor("att", &pl.curve, true, {});
 			ImGui::PopID();
 		}
 
@@ -414,7 +414,7 @@ struct LightsSample : Sample
 			ImGui::DragFloat("fov", &fl.fov, 0.1f);
 			ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
 			min_max(&fl.min_range, &fl.max_range);
-			imgui_s_curve_editor("att", &fl.curve, true);
+			imgui_s_curve_editor("att", &fl.curve, true, {});
 		}
 		ImGui::PopID();
 	}
