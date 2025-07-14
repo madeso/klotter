@@ -181,7 +181,7 @@ void DefaultMaterial::apply_lights(
 		shader.program->set_vec3(u.light_diffuse_color_uni, p.color * p.diffuse);
 		shader.program->set_vec3(u.light_specular_color_uni, p.color * p.specular);
 		shader.program->set_vec3(u.light_world_uni, p.position);
-		shader.program->set_vec4(u.light_attenuation_uni, {p.min_range, p.max_range, p.curve.curve.slope, p.curve.curve.threshold});
+		shader.program->set_vec4(u.light_attenuation_uni, {p.min_range, p.max_range, p.curve.slope, p.curve.threshold});
 	}
 
 	for (int index = 0; index < settings.number_of_frustum_lights; index += 1)
@@ -192,7 +192,7 @@ void DefaultMaterial::apply_lights(
 		shader.program->set_vec3(u.diffuse_uni, p.color * p.diffuse);
 		shader.program->set_vec3(u.specular_uni, p.color * p.specular);
 		shader.program->set_vec3(u.world_pos_uni, p.position);
-		shader.program->set_vec4(u.attenuation_uni, {p.min_range, p.max_range, p.curve.curve.slope, p.curve.curve.threshold});
+		shader.program->set_vec4(u.attenuation_uni, {p.min_range, p.max_range, p.curve.slope, p.curve.threshold});
 
 		const auto view = create_view_mat(p.position, create_vectors(p.yaw, p.pitch));
 		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);

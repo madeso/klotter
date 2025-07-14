@@ -3,6 +3,7 @@
 #include "klotter/assert.h"
 #include <cmath>
 
+#include "cint.h"
 #include "imgui.h"
 
 namespace klotter
@@ -54,9 +55,9 @@ ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
 	return {lhs.x - rhs.x, lhs.y - rhs.y};
 }
 
-bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x, const ScurveImguiSettings& settings)
+bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui, bool flip_x, const SCurveImguiSettings& settings)
 {
-	ImGui::Text("%s (%f %f)", title, static_cast<double>(scd->curve.slope), static_cast<double>(scd->curve.threshold));
+	ImGui::Text("%s (%f %f)", title, static_cast<double>(curve->slope), static_cast<double>(curve->threshold));
 	if (ImGui::BeginChild(title, settings.widget_size, settings.widget_border, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
 		== false)
 	{
@@ -64,7 +65,7 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x, co
 		return false;
 	}
 
-	constexpr std::size_t num_points = 21;
+	auto& points = gui->point_cache;
 
 	bool changed = false;
 
@@ -74,24 +75,28 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x, co
 	auto* draw = ImGui::GetWindowDrawList();
 	draw->AddRectFilled(widget_position, widget_position + widget_size, settings.background_color);
 
-	std::array<ImVec2, num_points> points;
-	for (std::size_t point_index = 0; point_index < num_points; point_index += 1)
+	
+	if (points.max_size() != settings.num_points)
 	{
-		const float srcx = static_cast<float>(point_index) / static_cast<float>(num_points - 1); // -1 here to include 1.0f when evaluating the curve
+		points.resize(settings.num_points);
+	}
+	for (std::size_t point_index = 0; point_index < settings.num_points; point_index += 1)
+	{
+		const float srcx = static_cast<float>(point_index) / static_cast<float>(settings.num_points - 1); // -1 here to include 1.0f when evaluating the curve
 		const float x = flip_x ? 1 - srcx : srcx;
-		const float y = calculate_s_curve(srcx, scd->curve.slope, scd->curve.threshold);
+		const float y = calculate_s_curve(srcx, curve->slope, curve->threshold);
 		points[point_index] = ImVec2{x * widget_size.x, (1 - y) * widget_size.y} + widget_position;
 	}
-	draw->AddPolyline(points.data(), num_points, settings.line_color, ImDrawFlags_None, 1.0f);
+	draw->AddPolyline(points.data(), Csizet_to_int(settings.num_points), settings.line_color, ImDrawFlags_None, 1.0f);
 
 	if (settings.draw_points)
 	{
-		for (std::size_t point_index = 0; point_index < num_points; point_index += 1)
+		for (std::size_t point_index = 0; point_index < settings.num_points; point_index += 1)
 		{
 			draw->AddCircleFilled(points[point_index], settings.point_radius, settings.point_color);
 		}
 	}
-	draw->AddCircleFilled(ImVec2{scd->drag.x * widget_size.x, (1 - scd->drag.y) * widget_size.y} + widget_position, settings.drag_radius, settings.drag_color);
+	draw->AddCircleFilled(ImVec2{gui->drag.x * widget_size.x, (1 - gui->drag.y) * widget_size.y} + widget_position, settings.drag_radius, settings.drag_color);
 
 	const auto t01 = [&widget_position, &widget_size](const ImVec2& mp)
 	{
@@ -119,9 +124,9 @@ bool imgui_s_curve_editor(const char* title, SCurveAndDrag* scd, bool flip_x, co
 		// mouse is down and drag started inside the component
 		const auto mp = ImGui::GetMousePos();
 		const auto n = t01(mp);
-		scd->drag.x = std::min(1.0f, std::max(n.x, 0.0f));
-		scd->drag.y = std::min(1.0f, std::max(n.y, 0.0f));
-		scd->curve = s_curve_from_input(flip_x ? 1 - scd->drag.x : scd->drag.x, scd->drag.y);
+		gui->drag.x = std::min(1.0f, std::max(n.x, 0.0f));
+		gui->drag.y = std::min(1.0f, std::max(n.y, 0.0f));
+		*curve = s_curve_from_input(flip_x ? 1 - gui->drag.x : gui->drag.x, gui->drag.y);
 		changed = true;
 	}
 

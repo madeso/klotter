@@ -247,6 +247,9 @@ struct LightsSample : Sample
 	glm::ivec2 ws;
 	glm::vec2 wp;
 
+	std::vector<SCurveGuiState> point_light_curves;
+	SCurveGuiState frustum_light_curve;
+
 	void on_render(
 		const glm::ivec2& window_size,
 		klotter::Renderer* renderer,
@@ -368,6 +371,7 @@ struct LightsSample : Sample
 			ImGui::PopID();
 		}
 
+		point_light_curves.resize(world.lights.point_lights.size());
 		for (int point_light_index = 0;
 			 point_light_index < Csizet_to_int(world.lights.point_lights.size());
 			 point_light_index += 1)
@@ -380,7 +384,7 @@ struct LightsSample : Sample
 				pl.specular = pl.diffuse;
 			}
 			min_max(&pl.min_range, &pl.max_range);
-			imgui_s_curve_editor("att", &pl.curve, true, {});
+			imgui_s_curve_editor("att", &pl.curve, &point_light_curves[point_light_index], true, {});
 			ImGui::PopID();
 		}
 
@@ -414,7 +418,7 @@ struct LightsSample : Sample
 			ImGui::DragFloat("fov", &fl.fov, 0.1f);
 			ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
 			min_max(&fl.min_range, &fl.max_range);
-			imgui_s_curve_editor("att", &fl.curve, true, {});
+			imgui_s_curve_editor("att", &fl.curve, &frustum_light_curve, true, {});
 		}
 		ImGui::PopID();
 	}
