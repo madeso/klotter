@@ -6,6 +6,7 @@
 
 #include <cmath>
 
+#include "klotter/imgui.theme.h"
 #include "klotter/render/geom.h"
 
 using namespace klotter;
@@ -297,6 +298,7 @@ struct LightsSample : Sample
 
 	void on_gui(klotter::Camera* camera) override
 	{
+		klotter::test_themes();
 		const float FAC_SPEED = 0.01f;
 		{
 			auto factor = pp_invert->get_factor();

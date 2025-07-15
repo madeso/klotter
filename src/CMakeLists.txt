@@ -92,6 +92,8 @@ set(src_base
     klotter/scurve.cc klotter/scurve.h
     klotter/str.cc klotter/str.h
     klotter/undef_windows.h
+
+    klotter/imgui.theme.cc klotter/imgui.theme.h
 )
 
 set(src_pch
