@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1FrameBuffer" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::FrameBuffer</compoundname>
+    <basecompoundref refid="structklotter_1_1BaseTexture" prot="public" virt="non-virtual">klotter::BaseTexture</basecompoundref>
+    <includes refid="texture_8h" local="no">texture.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1FrameBuffer_1a1b2eea3dbfd2f5cba3197b0b5b7b9cc0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int klotter::FrameBuffer::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>klotter::FrameBuffer::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="110" column="5" bodyfile="src/klotter/render/texture.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrameBuffer_1a6282043d6642874ce13576774e407641" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int klotter::FrameBuffer::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>klotter::FrameBuffer::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="111" column="5" bodyfile="src/klotter/render/texture.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrameBuffer_1a7945d2f95265ed1b905a1d823b2a07c1" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int klotter::FrameBuffer::fbo</definition>
+        <argsstring></argsstring>
+        <name>fbo</name>
+        <qualifiedname>klotter::FrameBuffer::fbo</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="113" column="14" bodyfile="src/klotter/render/texture.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrameBuffer_1a9ca03e3d50dc89689425ede34a751ae8" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int klotter::FrameBuffer::rbo</definition>
+        <argsstring></argsstring>
+        <name>rbo</name>
+        <qualifiedname>klotter::FrameBuffer::rbo</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="114" column="14" bodyfile="src/klotter/render/texture.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrameBuffer_1a73bb6c9da9dd0228e5d774d00258b521" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool klotter::FrameBuffer::debug_is_msaa</definition>
+        <argsstring></argsstring>
+        <name>debug_is_msaa</name>
+        <qualifiedname>klotter::FrameBuffer::debug_is_msaa</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="116" column="6" bodyfile="src/klotter/render/texture.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::FrameBuffer::FrameBuffer</definition>
+        <argsstring>(unsigned int f, int w, int h)</argsstring>
+        <name>FrameBuffer</name>
+        <qualifiedname>klotter::FrameBuffer::FrameBuffer</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The FBO handle </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the texture width </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the texture height </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="102" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1FrameBuffer_1a602306657cd67730fb9860bbaf4e339d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::FrameBuffer::~FrameBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~FrameBuffer</name>
+        <qualifiedname>klotter::FrameBuffer::~FrameBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="103" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1FrameBuffer_1a09179c63fdfa5fd654c53e249d357da9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::FrameBuffer::FrameBuffer</definition>
+        <argsstring>(const FrameBuffer &amp;)=delete</argsstring>
+        <name>FrameBuffer</name>
+        <qualifiedname>klotter::FrameBuffer::FrameBuffer</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1FrameBuffer_1ae9e61e8d6bc6040e77bae32b48fb34ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::FrameBuffer::FrameBuffer</definition>
+        <argsstring>(FrameBuffer &amp;&amp;)=delete</argsstring>
+        <name>FrameBuffer</name>
+        <qualifiedname>klotter::FrameBuffer::FrameBuffer</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1FrameBuffer_1a6e01d29e27a5119fb8cf16a2506afa10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::FrameBuffer::operator=</definition>
+        <argsstring>(const FrameBuffer &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>klotter::FrameBuffer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="107" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1FrameBuffer_1a5e7dff4f1676b56c78006df9a291eeb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::FrameBuffer::operator=</definition>
+        <argsstring>(FrameBuffer &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>klotter::FrameBuffer::operator=</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="108" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>&quot;render to texture&quot; feature </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structklotter_1_1FrameBufferBuilder" kindref="compound">FrameBufferBuilder</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="1">
+        <label>klotter::FrameBuffer</label>
+        <link refid="structklotter_1_1FrameBuffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="1">
+        <label>klotter::FrameBuffer</label>
+        <link refid="structklotter_1_1FrameBuffer"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/texture.h" line="97" column="1" bodyfile="src/klotter/render/texture.h" bodystart="98" bodyend="117"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>BaseTexture</name></member>
+      <member refid="structklotter_1_1BaseTexture_1ad35cb87b78ccdf92e1a5758890b4df48" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>BaseTexture</name></member>
+      <member refid="structklotter_1_1BaseTexture_1ac1a681336f0b85638365223b1bf77fdf" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>BaseTexture</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a73bb6c9da9dd0228e5d774d00258b521" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>debug_is_msaa</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a7945d2f95265ed1b905a1d823b2a07c1" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>fbo</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a8450b449b540c024574013e1ead16f47" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>FrameBuffer</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a09179c63fdfa5fd654c53e249d357da9" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>FrameBuffer</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1ae9e61e8d6bc6040e77bae32b48fb34ac" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>FrameBuffer</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a6282043d6642874ce13576774e407641" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>height</name></member>
+      <member refid="structklotter_1_1BaseTexture_1aa0c1c5008e48db75b99c027cf8b80d08" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>id</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a6e01d29e27a5119fb8cf16a2506afa10" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a5e7dff4f1676b56c78006df9a291eeb4" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1BaseTexture_1a776bb47d4a239ee81aa56b89c0168251" prot="public" virt="non-virtual" ambiguityscope="klotter::BaseTexture::"><scope>klotter::FrameBuffer</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1BaseTexture_1a32f38affc237565a13b2368e8a478264" prot="public" virt="non-virtual" ambiguityscope="klotter::BaseTexture::"><scope>klotter::FrameBuffer</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a9ca03e3d50dc89689425ede34a751ae8" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>rbo</name></member>
+      <member refid="structklotter_1_1BaseTexture_1a6dd65084b3eab03e75daa283d40b701f" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>unload</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a1b2eea3dbfd2f5cba3197b0b5b7b9cc0" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>width</name></member>
+      <member refid="structklotter_1_1BaseTexture_1a60818d0d9e48dacf0f8293dbde6b8c2c" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>~BaseTexture</name></member>
+      <member refid="structklotter_1_1FrameBuffer_1a602306657cd67730fb9860bbaf4e339d" prot="public" virt="non-virtual"><scope>klotter::FrameBuffer</scope><name>~FrameBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

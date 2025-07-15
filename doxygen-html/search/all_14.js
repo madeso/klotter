@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['white_0',['white',['../namespaceklotter_1_1colors.html#a31ced28375c71daf9b639bdcb0e282e8',1,'klotter::colors::white'],['../group__imguicolors.html#ga3bf146ca37035a30171e70de8f9c8e69',1,'klotter::imgui::white']]],
+  ['widget_5fborder_1',['widget_border',['../structklotter_1_1SCurveImguiSettings.html#a8230b6db647ca138608e3c231f69d993',1,'klotter::SCurveImguiSettings']]],
+  ['widget_5fsize_2',['widget_size',['../structklotter_1_1SCurveImguiSettings.html#a97bec8de74ff2f48bdc3425827ee1331',1,'klotter::SCurveImguiSettings']]],
+  ['width_3',['width',['../structklotter_1_1FrameBuffer.html#a1b2eea3dbfd2f5cba3197b0b5b7b9cc0',1,'klotter::FrameBuffer::width'],['../structklotter_1_1FrameBufferBuilder.html#abd3be8a4e6c94d4eb062c83030e8d31f',1,'klotter::FrameBufferBuilder::width']]],
+  ['window_5fsize_4',['window_size',['../structklotter_1_1PostProcArg.html#af8b4768a61672c5d15f7dbd363bef215',1,'klotter::PostProcArg::window_size'],['../structklotter_1_1BuildArg.html#a3db0e7328f926a793438016339563e24',1,'klotter::BuildArg::window_size'],['../structklotter_1_1EffectStack.html#a69f6d22d0045f408054bd97ed6a67c66',1,'klotter::EffectStack::window_size'],['../structklotter_1_1RenderWorld.html#a93e35103ec16f4e85876bc457d3b5b0b',1,'klotter::RenderWorld::window_size']]],
+  ['with_5fdepth_5',['with_depth',['../structklotter_1_1FrameBufferBuilder.html#a7f81f8a66751a58cbbee4cb7227480c4',1,'klotter::FrameBufferBuilder']]],
+  ['with_5finstanced_5fmat4_6',['with_instanced_mat4',['../structklotter_1_1ShaderOptions.html#a7d0cecc1742fc49875515b8193589add',1,'klotter::ShaderOptions']]],
+  ['with_5fmsaa_7',['with_msaa',['../structklotter_1_1FrameBufferBuilder.html#abb13c3b37555723323e059b39814aa4a',1,'klotter::FrameBufferBuilder']]],
+  ['with_5fstencil_8',['with_stencil',['../structklotter_1_1FrameBufferBuilder.html#a1e0802c3d625392894e2f036b855c336',1,'klotter::FrameBufferBuilder']]],
+  ['with_5ftransparent_5fcutoff_9',['with_transparent_cutoff',['../structklotter_1_1ShaderOptions.html#a824c6abd7ff4c7ebfbcc15364a68455c',1,'klotter::ShaderOptions']]],
+  ['world_10',['World',['../structklotter_1_1World.html',1,'klotter']]],
+  ['world_11',['world',['../structklotter_1_1PostProcArg.html#ae521c7b4cb6fef35f2a72569076209df',1,'klotter::PostProcArg']]],
+  ['world_2eh_12',['world.h',['../world_8h.html',1,'']]],
+  ['world_5ffrom_5flocal_5funi_13',['world_from_local_uni',['../structklotter_1_1LoadedShader__SingleColor.html#a2871864eddb63c2d7545c77d93023491',1,'klotter::LoadedShader_SingleColor::world_from_local_uni'],['../structklotter_1_1LoadedShader__Unlit.html#a539d07d5134064aa9e1dcf0ef093c7d2',1,'klotter::LoadedShader_Unlit::world_from_local_uni'],['../structklotter_1_1LoadedShader__Default.html#a19434b2494aa3403a36ee38529e670dd',1,'klotter::LoadedShader_Default::world_from_local_uni']]],
+  ['world_5ffrom_5flocals_14',['world_from_locals',['../structklotter_1_1MeshInstance__TransformInstanced.html#a35913435778f8c6634d2bc6a4e3ad218',1,'klotter::MeshInstance_TransformInstanced']]],
+  ['world_5fpos_5funi_15',['world_pos_uni',['../structklotter_1_1FrustumLightUniforms.html#a5ddcc07c053643551d55f402ec0efd29',1,'klotter::FrustumLightUniforms']]],
+  ['world_5fposition_16',['world_position',['../structklotter_1_1MeshInstance.html#aa66d5c0ed6cd84d457a9c3c48b518ed0',1,'klotter::MeshInstance']]],
+  ['world_5fto_5fclip_5funi_17',['world_to_clip_uni',['../structklotter_1_1FrustumLightUniforms.html#a2270f7c132d437308de376292d6052cf',1,'klotter::FrustumLightUniforms']]],
+  ['write_5fobj_18',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
+];
