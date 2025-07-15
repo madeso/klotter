@@ -206,7 +206,7 @@ struct LightsSample : Sample
 			);
 			auto material = renderer->make_default_material();
 			material->diffuse = renderer->assets.get_glass();
-			
+
 			auto instances = make_mesh_instance(instances_geom, material);
 
 			const auto mk = [](const glm::vec3& pos, const glm::vec3& rot) {
@@ -386,7 +386,7 @@ struct LightsSample : Sample
 				pl.specular = pl.diffuse;
 			}
 			min_max(&pl.min_range, &pl.max_range);
-			imgui_s_curve_editor("att", &pl.curve, &point_light_curves[point_light_index], true, {});
+			imgui_s_curve_editor("att", &pl.curve, &point_light_curves[Cint_to_sizet(point_light_index)], true, {});
 			ImGui::PopID();
 		}
 
