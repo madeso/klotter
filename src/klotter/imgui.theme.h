@@ -2,8 +2,14 @@
 
 #include "imgui.h"
 
+#include "klotter/feature_flags.h"
+
 namespace klotter
 {
+
+void test_themes();
+
+#if FF_HAS(ENABLE_THEMES)
 
 /// 100 rabbits theme.
 /// https://github.com/hundredrabbits/Themes
@@ -81,5 +87,7 @@ void setup_imgui_theme_tonetfal();
 void setup_imgui_theme_codz01();
 void setup_imgui_theme_wpsimon();
 void setup_imgui_theme_adia();
+
+#endif
 
 }  //  namespace klotter

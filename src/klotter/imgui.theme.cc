@@ -5,6 +5,8 @@
 namespace klotter
 {
 
+#if FF_HAS(ENABLE_THEMES)
+
 Theme Theme::default_theme()
 {
 	Theme r;
@@ -1411,6 +1413,14 @@ void setup_imgui_theme_adia()
 	);
 	*/
 }
+
+#else
+
+void test_themes()
+{
+}
+
+#endif
 
 }  //  namespace klotter
 
