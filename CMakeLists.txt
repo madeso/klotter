@@ -63,6 +63,11 @@ option(ENABLE_THEMES "test themes" OFF)
 message(STATUS "Test themes: ${ENABLE_THEMES}")
 
 
+option(ENABLE_GAMMA_CORRECTION "enable gamma correction" ON)
+message(STATUS "Gamma correction: ${ENABLE_GAMMA_CORRECTION}")
+
+
+
 ###################################################################################################
 # helper libraries
 add_library(edit_and_continue INTERFACE)
@@ -83,6 +88,7 @@ target_feature_flags(project_options INTERFACE
     BLUR_USE_GAUSS
     ENABLE_GL_DEBUG
     ENABLE_THEMES
+    ENABLE_GAMMA_CORRECTION
 )
 
 if(GENERATE_COVERAGE)
