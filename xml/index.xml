@@ -761,63 +761,6 @@
     <member refid="structklotter_1_1TextureCubemap_1aba9fc569dd23d2a5061accda1781d1f6" kind="function"><name>TextureCubemap</name></member>
     <member refid="structklotter_1_1TextureCubemap_1abe17454182d27ac0d978242b82234474" kind="function"><name>TextureCubemap</name></member>
   </compound>
-  <compound refid="structklotter_1_1Theme" kind="struct"><name>klotter::Theme</name>
-    <member refid="structklotter_1_1Theme_1a60a4a26974318e0ebbd20f22cff0873a" kind="variable"><name>background</name></member>
-    <member refid="structklotter_1_1Theme_1ac5fbd06042d4794bc011223669057ceb" kind="variable"><name>f_high</name></member>
-    <member refid="structklotter_1_1Theme_1afa4374c8198db83e74ad1d27d2f182bb" kind="variable"><name>f_med</name></member>
-    <member refid="structklotter_1_1Theme_1ac4a346a4a814bbf53170fe5cb27b413b" kind="variable"><name>f_low</name></member>
-    <member refid="structklotter_1_1Theme_1abaeb894c8cb7d727edf6a864c8f3ac28" kind="variable"><name>f_inv</name></member>
-    <member refid="structklotter_1_1Theme_1a44f2a17ae9d1688233fba302dc72f18d" kind="variable"><name>b_high</name></member>
-    <member refid="structklotter_1_1Theme_1a1dcaae2943d629b196d55b6d64374dd2" kind="variable"><name>b_med</name></member>
-    <member refid="structklotter_1_1Theme_1a327d10786067e0c9966c8b201f37a37d" kind="variable"><name>b_low</name></member>
-    <member refid="structklotter_1_1Theme_1a5dbe138adb7c8b138466ad0de0afec66" kind="variable"><name>b_inv</name></member>
-    <member refid="structklotter_1_1Theme_1aa2bbf7815761ac93252938a2b503585f" kind="function"><name>default_theme</name></member>
-    <member refid="structklotter_1_1Theme_1aa8cd56c6918426d496191026b3afd428" kind="function"><name>apollo</name></member>
-    <member refid="structklotter_1_1Theme_1a9969011753eea096b03b6d021d57e155" kind="function"><name>battlestation</name></member>
-    <member refid="structklotter_1_1Theme_1a07a62374a9205b62d7b372ddcc06f6c8" kind="function"><name>berry</name></member>
-    <member refid="structklotter_1_1Theme_1ac9bb4c156545ba162643a719a20dab38" kind="function"><name>bigtime</name></member>
-    <member refid="structklotter_1_1Theme_1ae2143e0a946c2bff3e47e1bbae574f6f" kind="function"><name>boysenberry</name></member>
-    <member refid="structklotter_1_1Theme_1a56a1b8ec3cb51ecf10762806ef3bbd39" kind="function"><name>coal</name></member>
-    <member refid="structklotter_1_1Theme_1a23fbdafd35ba5641753d9d415002dde4" kind="function"><name>cobalt</name></member>
-    <member refid="structklotter_1_1Theme_1a6b9e1d09667920aae2b184cd94ea4095" kind="function"><name>commodore</name></member>
-    <member refid="structklotter_1_1Theme_1a57dd63f3dfc6b34f40c2b12b96d8300f" kind="function"><name>forestlawn</name></member>
-    <member refid="structklotter_1_1Theme_1ae1b9132e590bccb7e5e5c3b17333adc5" kind="function"><name>frameio</name></member>
-    <member refid="structklotter_1_1Theme_1a9508c4a6f7d06aeed9f8a71a90603887" kind="function"><name>gameboy</name></member>
-    <member refid="structklotter_1_1Theme_1a76e3cdfa2c606fba2d25cb540f280383" kind="function"><name>garden</name></member>
-    <member refid="structklotter_1_1Theme_1a5ebbcaf97e4ebadb6806265fd0091bdd" kind="function"><name>gotham</name></member>
-    <member refid="structklotter_1_1Theme_1a555d6dec8d575cd7d0fe3da295371779" kind="function"><name>haxe</name></member>
-    <member refid="structklotter_1_1Theme_1af9d47277b1ec0eab77b5efaadf80a97e" kind="function"><name>isotope</name></member>
-    <member refid="structklotter_1_1Theme_1a22e9acee3d7cd52bf3f94ca628d908c5" kind="function"><name>kawaii</name></member>
-    <member refid="structklotter_1_1Theme_1a6cd16ae1728834db01a0602e91b87fc8" kind="function"><name>laundry</name></member>
-    <member refid="structklotter_1_1Theme_1a292ea40a96fa2fe79fa04408ef4156f5" kind="function"><name>lotus</name></member>
-    <member refid="structklotter_1_1Theme_1af38eedb8809c99157cec38bf3159ba4e" kind="function"><name>mahou</name></member>
-    <member refid="structklotter_1_1Theme_1a57ddf3329f32ac8401e32c9e40f2185d" kind="function"><name>marble</name></member>
-    <member refid="structklotter_1_1Theme_1a247af58cc5756f856b5f7333bc875ac5" kind="function"><name>murata</name></member>
-    <member refid="structklotter_1_1Theme_1a47a3277bc3bb66bd36e1448a4b4d7246" kind="function"><name>muzieca</name></member>
-    <member refid="structklotter_1_1Theme_1a2a9ec5038a8e77d4c6bdd8b54c9f8e12" kind="function"><name>nightowl</name></member>
-    <member refid="structklotter_1_1Theme_1a6f6f2c6354807ce26367add7d3730e1e" kind="function"><name>ninetynine</name></member>
-    <member refid="structklotter_1_1Theme_1a498585f626514a1f25b3fbfe24efbc21" kind="function"><name>noir</name></member>
-    <member refid="structklotter_1_1Theme_1afafb6c0c4c0d1f85d158bb0c9f4c893d" kind="function"><name>nord</name></member>
-    <member refid="structklotter_1_1Theme_1ae865f6270e762c72db626408865cd2f8" kind="function"><name>obsidian</name></member>
-    <member refid="structklotter_1_1Theme_1addddc3f504f79df955878fb99c8d2d88" kind="function"><name>op1</name></member>
-    <member refid="structklotter_1_1Theme_1afbf2463b7af22466ea1c1e27c506eeba" kind="function"><name>orca</name></member>
-    <member refid="structklotter_1_1Theme_1a336107b6d5254e29a20dc4fb4dce2242" kind="function"><name>pawbin</name></member>
-    <member refid="structklotter_1_1Theme_1ab5b3569a179ab321c0a951d5f642c11a" kind="function"><name>pico8</name></member>
-    <member refid="structklotter_1_1Theme_1ac48412387f1e4670593f9ac91cea047a" kind="function"><name>polivoks</name></member>
-    <member refid="structklotter_1_1Theme_1a953d96da654e2e32ffce9c603556590d" kind="function"><name>rainonwires</name></member>
-    <member refid="structklotter_1_1Theme_1abaf5346c80778be017f7a44eb68e9a3b" kind="function"><name>roguelight</name></member>
-    <member refid="structklotter_1_1Theme_1ade7f5221c514f0125783005d62216a43" kind="function"><name>sk</name></member>
-    <member refid="structklotter_1_1Theme_1ae2e9b549158335596c09719ba391a469" kind="function"><name>snow</name></member>
-    <member refid="structklotter_1_1Theme_1afe0174d89eff59002183309c7feb12f6" kind="function"><name>solarised_dark</name></member>
-    <member refid="structklotter_1_1Theme_1af66e33a1c877eec57d9fdd54acb37d4b" kind="function"><name>solarised_light</name></member>
-    <member refid="structklotter_1_1Theme_1a7b201c90f6aac5d8e6348bdf11b301d4" kind="function"><name>sonicpi</name></member>
-    <member refid="structklotter_1_1Theme_1a93c2e9e0298d5869155e053596a16937" kind="function"><name>soyuz</name></member>
-    <member refid="structklotter_1_1Theme_1a7a86e2b64d3708449811417a177bc3ec" kind="function"><name>tape</name></member>
-    <member refid="structklotter_1_1Theme_1ab6349ecbdccbb352ed7d93874f8896ab" kind="function"><name>teenage</name></member>
-    <member refid="structklotter_1_1Theme_1a3c0c2424aa7ae5f3f1c670d6f8d4084b" kind="function"><name>teletext</name></member>
-    <member refid="structklotter_1_1Theme_1a4474f34dac140ba1c9115ea0d569388e" kind="function"><name>vacuui</name></member>
-    <member refid="structklotter_1_1Theme_1a646135dd6428e04f1fd40dfdaf677f04" kind="function"><name>zenburn</name></member>
-  </compound>
   <compound refid="structklotter_1_1geom_1_1Triangle" kind="struct"><name>klotter::geom::Triangle</name>
     <member refid="structklotter_1_1geom_1_1Triangle_1a61be1f89bfcc389f270530ec1ac5238d" kind="variable"><name>v0</name></member>
     <member refid="structklotter_1_1geom_1_1Triangle_1ad35134c153b48f099577b23dcf0c7f7f" kind="variable"><name>v1</name></member>
@@ -941,15 +884,6 @@
     <member refid="namespaceklotter_1aafbf3062eca044adc3d6d3cf54778a51" kind="function"><name>base_cast</name></member>
     <member refid="namespaceklotter_1a97ebef3ce88032d5a9016b09c001d176" kind="function"><name>is_flag_set</name></member>
     <member refid="namespaceklotter_1a70c3ecdc0214c61c6277dda3f1f5f963" kind="function"><name>test_themes</name></member>
-    <member refid="namespaceklotter_1a9064841754aa583eb749999e2d478147" kind="function"><name>setup_imgui_theme</name></member>
-    <member refid="namespaceklotter_1aa03bb6e0151e4f82443466b772e25877" kind="function"><name>setup_imgui_theme_itmago</name></member>
-    <member refid="namespaceklotter_1a801df6f3c5d1a80fc78792f43524a0e0" kind="function"><name>setup_imgui_theme_purple</name></member>
-    <member refid="namespaceklotter_1a0f11b1d86f1d3ca7fee0fd5ec8a97a10" kind="function"><name>setup_imgui_theme_qy8q</name></member>
-    <member refid="namespaceklotter_1a67781cc718e6532b30b8d0822b0b7b58" kind="function"><name>setup_imgui_theme_simv0</name></member>
-    <member refid="namespaceklotter_1aa793e3534a73ad9a5ef45b4e361bb022" kind="function"><name>setup_imgui_theme_tonetfal</name></member>
-    <member refid="namespaceklotter_1ada94c4e91fb2bd613e3a7748307cd0a7" kind="function"><name>setup_imgui_theme_codz01</name></member>
-    <member refid="namespaceklotter_1acc29d545d7bfc80f7441cceb0d7be578" kind="function"><name>setup_imgui_theme_wpsimon</name></member>
-    <member refid="namespaceklotter_1a6c82dea3a6375ed4bb636b5432274ccc" kind="function"><name>setup_imgui_theme_adia</name></member>
     <member refid="namespaceklotter_1ae8ba8f25677bd8a5d98681f05fd0a162" kind="function"><name>run_main</name></member>
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>

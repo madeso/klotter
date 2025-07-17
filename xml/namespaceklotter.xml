@@ -85,7 +85,6 @@
     <innerclass refid="structklotter_1_1StateChanger" prot="public">klotter::StateChanger</innerclass>
     <innerclass refid="structklotter_1_1Texture2d" prot="public">klotter::Texture2d</innerclass>
     <innerclass refid="structklotter_1_1TextureCubemap" prot="public">klotter::TextureCubemap</innerclass>
-    <innerclass refid="structklotter_1_1Theme" prot="public">klotter::Theme</innerclass>
     <innerclass refid="structklotter_1_1Uniform" prot="public">klotter::Uniform</innerclass>
     <innerclass refid="structklotter_1_1UniformBuffer" prot="public">klotter::UniformBuffer</innerclass>
     <innerclass refid="structklotter_1_1UniformBufferCompiler" prot="public">klotter::UniformBufferCompiler</innerclass>
@@ -339,137 +338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="72" column="6" declfile="src/klotter/imgui.theme.h" declline="72" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a9064841754aa583eb749999e2d478147" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme</definition>
-        <argsstring>(const Theme &amp;theme)</argsstring>
-        <name>setup_imgui_theme</name>
-        <qualifiedname>klotter::setup_imgui_theme</qualifiedname>
-        <param>
-          <type>const <ref refid="structklotter_1_1Theme" kindref="compound">Theme</ref> &amp;</type>
-          <declname>theme</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="74" column="6" declfile="src/klotter/imgui.theme.h" declline="74" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1aa03bb6e0151e4f82443466b772e25877" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme_itmago</definition>
-        <argsstring>()</argsstring>
-        <name>setup_imgui_theme_itmago</name>
-        <qualifiedname>klotter::setup_imgui_theme_itmago</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="76" column="6" declfile="src/klotter/imgui.theme.h" declline="76" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a801df6f3c5d1a80fc78792f43524a0e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme_purple</definition>
-        <argsstring>()</argsstring>
-        <name>setup_imgui_theme_purple</name>
-        <qualifiedname>klotter::setup_imgui_theme_purple</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="77" column="6" declfile="src/klotter/imgui.theme.h" declline="77" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a0f11b1d86f1d3ca7fee0fd5ec8a97a10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme_qy8q</definition>
-        <argsstring>()</argsstring>
-        <name>setup_imgui_theme_qy8q</name>
-        <qualifiedname>klotter::setup_imgui_theme_qy8q</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="78" column="6" declfile="src/klotter/imgui.theme.h" declline="78" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a67781cc718e6532b30b8d0822b0b7b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme_simv0</definition>
-        <argsstring>()</argsstring>
-        <name>setup_imgui_theme_simv0</name>
-        <qualifiedname>klotter::setup_imgui_theme_simv0</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="79" column="6" declfile="src/klotter/imgui.theme.h" declline="79" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1aa793e3534a73ad9a5ef45b4e361bb022" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme_tonetfal</definition>
-        <argsstring>()</argsstring>
-        <name>setup_imgui_theme_tonetfal</name>
-        <qualifiedname>klotter::setup_imgui_theme_tonetfal</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="80" column="6" declfile="src/klotter/imgui.theme.h" declline="80" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1ada94c4e91fb2bd613e3a7748307cd0a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme_codz01</definition>
-        <argsstring>()</argsstring>
-        <name>setup_imgui_theme_codz01</name>
-        <qualifiedname>klotter::setup_imgui_theme_codz01</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="81" column="6" declfile="src/klotter/imgui.theme.h" declline="81" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1acc29d545d7bfc80f7441cceb0d7be578" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme_wpsimon</definition>
-        <argsstring>()</argsstring>
-        <name>setup_imgui_theme_wpsimon</name>
-        <qualifiedname>klotter::setup_imgui_theme_wpsimon</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="82" column="6" declfile="src/klotter/imgui.theme.h" declline="82" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a6c82dea3a6375ed4bb636b5432274ccc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::setup_imgui_theme_adia</definition>
-        <argsstring>()</argsstring>
-        <name>setup_imgui_theme_adia</name>
-        <qualifiedname>klotter::setup_imgui_theme_adia</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/imgui.theme.h" line="83" column="6" declfile="src/klotter/imgui.theme.h" declline="83" declcolumn="6"/>
+        <location file="src/klotter/imgui.theme.h" line="10" column="6" declfile="src/klotter/imgui.theme.h" declline="10" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ae8ba8f25677bd8a5d98681f05fd0a162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
