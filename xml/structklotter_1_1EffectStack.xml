@@ -214,7 +214,10 @@
           <edgelabel>realized_buffer</edgelabel>
         </childnode>
         <childnode refid="19" relation="usage">
-          <edgelabel>shader</edgelabel>
+          <edgelabel>realize_shader</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>gamma_uniform</edgelabel>
         </childnode>
       </node>
       <node id="22">

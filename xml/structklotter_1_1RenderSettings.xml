@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="13" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="13" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="14" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderSettings_1af9dc73fb0a1285f9d63cd41d46bdd875" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="14" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="14" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="15" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a27006cbef64a158e5c4d310d07107e19" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="15" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="15" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="16" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -62,7 +62,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="17" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="17" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="18" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::RenderSettings::gamma</definition>
+        <argsstring></argsstring>
+        <name>gamma</name>
+        <qualifiedname>klotter::RenderSettings::gamma</qualifiedname>
+        <initializer>= 2.2f</initializer>
+        <briefdescription>
+<para>The gamma correction value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The renderer doesn&apos;t need to restart when this value has changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/render_settings.h" line="22" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="22" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -70,8 +87,9 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/render_settings.h" line="11" column="1" bodyfile="src/klotter/render/render_settings.h" bodystart="12" bodyend="18"/>
+    <location file="src/klotter/render/render_settings.h" line="12" column="1" bodyfile="src/klotter/render/render_settings.h" bodystart="13" bodyend="23"/>
     <listofallmembers>
+      <member refid="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>gamma</name></member>
       <member refid="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>msaa</name></member>
       <member refid="structklotter_1_1RenderSettings_1a35a5d2af4f7e7e2d90d372b9f2f14e92" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_directional_lights</name></member>
       <member refid="structklotter_1_1RenderSettings_1a27006cbef64a158e5c4d310d07107e19" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_frustum_lights</name></member>

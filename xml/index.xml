@@ -582,6 +582,7 @@
     <member refid="structklotter_1_1RenderSettings_1af9dc73fb0a1285f9d63cd41d46bdd875" kind="variable"><name>number_of_point_lights</name></member>
     <member refid="structklotter_1_1RenderSettings_1a27006cbef64a158e5c4d310d07107e19" kind="variable"><name>number_of_frustum_lights</name></member>
     <member refid="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" kind="variable"><name>msaa</name></member>
+    <member refid="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" kind="variable"><name>gamma</name></member>
   </compound>
   <compound refid="structklotter_1_1RenderSource" kind="struct"><name>klotter::RenderSource</name>
     <member refid="structklotter_1_1RenderSource_1a7bbdf727aee83637ea11695272907a31" kind="function"><name>RenderSource</name></member>
@@ -605,8 +606,9 @@
     <member refid="structklotter_1_1RenderWorld_1a93e35103ec16f4e85876bc457d3b5b0b" kind="variable"><name>window_size</name></member>
     <member refid="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" kind="variable"><name>msaa_buffer</name></member>
     <member refid="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" kind="variable"><name>realized_buffer</name></member>
-    <member refid="structklotter_1_1RenderWorld_1ab237d3cc1297486fa9db215d12465476" kind="variable"><name>shader</name></member>
-    <member refid="structklotter_1_1RenderWorld_1a3f4a8e79693902c657c5c3145a04a0c3" kind="function"><name>RenderWorld</name></member>
+    <member refid="structklotter_1_1RenderWorld_1afd687a50e44caa95be21e438c1e41f1d" kind="variable"><name>realize_shader</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a820cffdbaf12ecac4bb21c8393f971af" kind="variable"><name>gamma_uniform</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a72ee05fdb5ee6a4d82848f4da22d8048" kind="function"><name>RenderWorld</name></member>
     <member refid="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" kind="function"><name>update</name></member>
     <member refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" kind="function"><name>render</name></member>
   </compound>
