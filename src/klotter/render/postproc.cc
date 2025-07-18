@@ -46,7 +46,7 @@ void Effect::set_enabled(bool n)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // RenderWorld
 
-RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> sh, int msaa_samples)
+RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples)
 	: window_size(size)
 	, msaa_buffer(FrameBufferBuilder{size}
 		.with_msaa(msaa_samples)
@@ -55,7 +55,8 @@ RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcSh
 		.build(USE_DEBUG_LABEL("msaa buffer")))
 	, realized_buffer(FrameBufferBuilder{size}
 		.build(USE_DEBUG_LABEL("realized msaa buffer")))
-	, shader(std::move(sh))
+	, realize_shader(std::move(re_sh))
+	, gamma_uniform(realize_shader->program->get_uniform("u_gamma"))
 {
 }
 
@@ -87,8 +88,16 @@ void RenderWorld::render(const PostProcArg& arg)
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	shader->program->use();
-	bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *realized_buffer);
+	realize_shader->program->use();
+	const auto gamma_value =
+#if FF_HAS(ENABLE_GAMMA_CORRECTION)
+		arg.renderer->settings.gamma
+#else
+		-1.0f
+#endif
+	;
+	realize_shader->program->set_float(gamma_uniform, gamma_value);
+	bind_texture_2d(&arg.renderer->pimpl->states, realize_shader->texture_uni, *realized_buffer);
 
 	render_geom(*arg.renderer->pimpl->full_screen_geom);
 }

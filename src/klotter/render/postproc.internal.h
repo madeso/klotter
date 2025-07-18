@@ -22,9 +22,10 @@ struct RenderWorld : RenderSource
 
 	std::shared_ptr<FrameBuffer> msaa_buffer;
 	std::shared_ptr<FrameBuffer> realized_buffer;
-	std::shared_ptr<LoadedPostProcShader> shader;
+	std::shared_ptr<LoadedPostProcShader> realize_shader;
+	Uniform gamma_uniform;
 
-	RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> sh, int msaa_samples);
+	RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples);
 
 	void update(const PostProcArg& arg);
 
