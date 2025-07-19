@@ -32,6 +32,19 @@ enum class Transparency
 	exclude
 };
 
+enum class ColorData
+{
+	/// Apply transformations to the color data. Texture is a diffuse/albedo map, created with human eyes on a monitor in sRGB space.
+	color_data,
+
+	// todo(Gustav): should this be more specific so we could define better default colors if the load fails?
+	/// Don't apply transformations to the color data. Texture is a normal/roughness/ao/specular map or similar and created by a software in linear space.
+	non_color_data,
+
+	/// Explicitly don't care about the color data but same as \ref non_color_data.
+	dont_care
+};
+
 /// A single color in a format to load directly into open gl texture(ABGR on little endian).
 /// @see \ref color_from_rgba
 enum class SingleColor : std::uint32_t {};
@@ -74,10 +87,10 @@ struct Texture2d : BaseTexture
 	Texture2d() = delete;
 
 	/// "internal"
-	Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, unsigned int pixel_format, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t);
+	Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, unsigned int pixel_format, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd);
 };
 
-Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t);
+Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd);
 
 /// A cubemap texture.
 /// USeful for skybox rendering or faking reflections from a (static) scene.
@@ -85,10 +98,10 @@ struct TextureCubemap : BaseTexture
 {
 	TextureCubemap() = delete;
 
-	TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height);
+	TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height, ColorData cd);
 };
 
-TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel);
+TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, ColorData cd);
 
 
 

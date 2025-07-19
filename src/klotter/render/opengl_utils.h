@@ -9,6 +9,9 @@ namespace klotter
 void setup_opengl_debug();
 
 
+float linear_from_srgb(float value, float gamma = 2.2f);
+glm::vec4 linear_from_srgb(const glm::vec4& value, float gamma = 2.2f);
+
 GLenum Cint_to_glenum(int i);
 GLuint Cint_to_gluint(int i);
 GLsizeiptr Csizet_to_glsizeiptr(std::size_t t);

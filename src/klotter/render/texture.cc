@@ -55,6 +55,20 @@ namespace
 		default: DIE("Invalid texture render style"); return {GL_NEAREST, GL_NEAREST};
 		}
 	}
+
+	GLint internal_format_from_color_data(Transparency t, ColorData cd)
+	{
+		const auto include_transparency = t == Transparency::include;
+		switch(cd)
+		{
+		case ColorData::color_data: return include_transparency ? GL_SRGB_ALPHA : GL_SRGB;
+		case ColorData::dont_care:
+		case ColorData::non_color_data: return include_transparency ? GL_RGBA : GL_RGB;
+		default:
+			DIE("Invalid color data type");
+			return GL_RGBA;
+		}
+	}
 }  //  namespace
 
 // ------------------------------------------------------------------------------------------------
@@ -99,7 +113,7 @@ void BaseTexture::unload()
 // ------------------------------------------------------------------------------------------------
 // texture 2d
 
-Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, unsigned int pixel_format, int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency t)
+Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, unsigned int pixel_format, int width, int height, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd)
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_2D, id);
@@ -111,12 +125,10 @@ Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, unsigned int p
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter.min);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filter.mag);
 
-	const auto include_transparency = t == Transparency::include;
-
 	glTexImage2D(
 		GL_TEXTURE_2D,
 		0,
-		include_transparency ? GL_RGBA : GL_RGB,
+		internal_format_from_color_data(t, cd),
 		width,
 		height,
 		0,
@@ -174,7 +186,7 @@ struct PixelData
 };
 
 Texture2d load_image_from_embedded(
-	DEBUG_LABEL_ARG_MANY const embedded_binary& image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t
+	DEBUG_LABEL_ARG_MANY const embedded_binary& image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd
 )
 {
 	const auto include_transparency = t == Transparency::include;
@@ -183,22 +195,22 @@ Texture2d load_image_from_embedded(
 	if (parsed.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load image from image source");
-		return load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, te, trs, t);
+		return load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, te, trs, t, cd);
 	}
 
 	const GLenum pixel_format = include_transparency ? GL_RGBA : GL_RGB;
-	return {SEND_DEBUG_LABEL_MANY(debug_label) parsed.pixel_data, pixel_format, parsed.width, parsed.height, te, trs, t};
+	return {SEND_DEBUG_LABEL_MANY(debug_label) parsed.pixel_data, pixel_format, parsed.width, parsed.height, te, trs, t, cd};
 }
 
-Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)
+Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd)
 {
-	return {SEND_DEBUG_LABEL_MANY(debug_label) & pixel, GL_RGBA, 1, 1, te, trs, t};
+	return {SEND_DEBUG_LABEL_MANY(debug_label) & pixel, GL_RGBA, 1, 1, te, trs, t, cd};
 }
 
 // ------------------------------------------------------------------------------------------------
 // cubemap
 
-TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height)
+TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height, ColorData cd)
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_CUBE_MAP, id);
@@ -209,7 +221,7 @@ TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& 
 		glTexImage2D(
 			static_cast<GLenum>(GL_TEXTURE_CUBE_MAP_POSITIVE_X + index),
 			0,
-			GL_RGB,
+			internal_format_from_color_data(Transparency::exclude, cd),
 			width,
 			height,
 			0,
@@ -226,9 +238,9 @@ TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& 
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 }
 
-TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel)
+TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, ColorData cd)
 {
-	return {SEND_DEBUG_LABEL_MANY(debug_label) {&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1};
+	return {SEND_DEBUG_LABEL_MANY(debug_label) {&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1, cd};
 }
 
 TextureCubemap load_cubemap_from_embedded(
@@ -238,7 +250,8 @@ TextureCubemap load_cubemap_from_embedded(
 	const embedded_binary& image_top,
 	const embedded_binary& image_bottom,
 	const embedded_binary& image_back,
-	const embedded_binary& image_front
+	const embedded_binary& image_front,
+	ColorData cd
 )
 {
 	constexpr auto include_transparency = false;
@@ -257,7 +270,7 @@ TextureCubemap load_cubemap_from_embedded(
 		|| parsed_front.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
 	}
 
 	if (parsed_right.width == parsed_left.width && parsed_right.width == parsed_top.width
@@ -269,7 +282,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent width");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
 	}
 
 	if (parsed_right.height == parsed_left.height && parsed_right.height == parsed_top.height
@@ -281,7 +294,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent height");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color);
+		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
 	}
 
 	// ok
@@ -294,7 +307,8 @@ TextureCubemap load_cubemap_from_embedded(
 		 parsed_front.pixel_data,
 		 parsed_back.pixel_data},
 		parsed_right.width,
-		parsed_right.height
+		parsed_right.height,
+		cd
 	};
 }
 

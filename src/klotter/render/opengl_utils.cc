@@ -15,12 +15,12 @@ const char* opengl_error_to_string(GLenum error_code)
 	case GL_INVALID_ENUM: return "INVALID_ENUM";
 	case GL_INVALID_VALUE: return "INVALID_VALUE";
 	case GL_INVALID_OPERATION: return "INVALID_OPERATION";
-#ifdef GL_STACK_OVERFLOW
+	#ifdef GL_STACK_OVERFLOW
 	case GL_STACK_OVERFLOW: return "STACK_OVERFLOW";
-#endif
-#ifdef GL_STACK_UNDERFLOW
+	#endif
+	#ifdef GL_STACK_UNDERFLOW
 	case GL_STACK_UNDERFLOW: return "STACK_UNDERFLOW";
-#endif
+	#endif
 	case GL_OUT_OF_MEMORY: return "OUT_OF_MEMORY";
 	case GL_INVALID_FRAMEBUFFER_OPERATION: return "INVALID_FRAMEBUFFER_OPERATION";
 	default: return "UNKNOWN";
@@ -85,10 +85,8 @@ void APIENTRY on_opengl_debug_output(
 	{
 	// this is from ScopedDebugGroup
 	case GL_DEBUG_TYPE_PUSH_GROUP:
-	case GL_DEBUG_TYPE_POP_GROUP:
-		return;
-	default:
-		break;
+	case GL_DEBUG_TYPE_POP_GROUP: return;
+	default: break;
 	}
 
 	// ignore non-significant error/warning codes
@@ -120,13 +118,19 @@ void APIENTRY on_opengl_debug_output(
 		++error_count;
 	}
 
-	const std::string to_out = Str() <<
-		"OpenGL #" << id << " ["
-			"src: "<< source_to_string(source) << " | "
-			"type: " << type_to_string(type) << " | "
-			"sev: " << severity_to_string(severity) << "] "
-			": " << message
-	;
+	const std::string to_out = Str() << "OpenGL #" << id
+									 << " ["
+										"src: "
+									 << source_to_string(source)
+									 << " | "
+										"type: "
+									 << type_to_string(type)
+									 << " | "
+										"sev: "
+									 << severity_to_string(severity)
+									 << "] "
+										": "
+									 << message;
 
 	if (is_low)
 	{
@@ -165,6 +169,22 @@ void setup_opengl_debug()
 		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "KHR_debug not available, OpenGL debug output not enabled");
 	}
 #endif
+}
+
+float linear_from_srgb(float value, float gamma)
+{
+	return std::pow(value, gamma);
+}
+
+glm::vec4 linear_from_srgb(const glm::vec4& value, float gamma)
+{
+	return
+	{
+		linear_from_srgb(value.r, gamma),
+		linear_from_srgb(value.g, gamma),
+		linear_from_srgb(value.b, gamma),
+		value.a
+	};
 }
 
 GLenum Cint_to_glenum(int i)
