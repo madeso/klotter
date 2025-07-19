@@ -526,6 +526,11 @@ Enumerations</h2></td></tr>
 , <a class="el" href="group__texture.html#gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef">Transparency::exclude</a>
  }</td></tr>
 <tr class="separator:ga3257f86dae0e1a101035a7d4cd2026bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga573ffb425f764bc26601e3883fce43cf" id="r_ga573ffb425f764bc26601e3883fce43cf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> { <a class="el" href="group__texture.html#gga573ffb425f764bc26601e3883fce43cfa87e5906f8e7e87a41a1632fbb9897103">ColorData::color_data</a>
+, <a class="el" href="group__texture.html#gga573ffb425f764bc26601e3883fce43cfa305f7fe2fe08b4d3c0244267c8428bfc">ColorData::non_color_data</a>
+, <a class="el" href="group__texture.html#gga573ffb425f764bc26601e3883fce43cfabe7bbe0cf3947e795861f1fa966bab58">ColorData::dont_care</a>
+ }</td></tr>
+<tr class="separator:ga573ffb425f764bc26601e3883fce43cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9733fe97e5e653625387fead61ef06a3" id="r_ga9733fe97e5e653625387fead61ef06a3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> : std::uint32_t </td></tr>
 <tr class="memdesc:ga9733fe97e5e653625387fead61ef06a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single color in a format to load directly into open gl texture(ABGR on little endian).  <a href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">More...</a><br /></td></tr>
 <tr class="separator:ga9733fe97e5e653625387fead61ef06a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -605,6 +610,10 @@ Functions</h2></td></tr>
 <tr class="separator:ga4758c0c17511f831624a7cc7dbac8f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8063f4d09d3914dd0d4a926bb113e56b" id="r_a8063f4d09d3914dd0d4a926bb113e56b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8063f4d09d3914dd0d4a926bb113e56b">setup_opengl_debug</a> ()</td></tr>
 <tr class="separator:a8063f4d09d3914dd0d4a926bb113e56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8978611a7d7036015eb5bd1cde482adc" id="r_a8978611a7d7036015eb5bd1cde482adc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8978611a7d7036015eb5bd1cde482adc">linear_from_srgb</a> (float value, float gamma=2.2f)</td></tr>
+<tr class="separator:a8978611a7d7036015eb5bd1cde482adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252a0e9a32ab34cbe96fcd2ff997e80e" id="r_a252a0e9a32ab34cbe96fcd2ff997e80e"><td class="memItemLeft" align="right" valign="top">glm::vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a252a0e9a32ab34cbe96fcd2ff997e80e">linear_from_srgb</a> (const glm::vec4 &amp;value, float gamma=2.2f)</td></tr>
+<tr class="separator:a252a0e9a32ab34cbe96fcd2ff997e80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01585b62dcb0c11e96702d64fb3cb02f" id="r_a01585b62dcb0c11e96702d64fb3cb02f"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01585b62dcb0c11e96702d64fb3cb02f">Cint_to_glenum</a> (int i)</td></tr>
 <tr class="separator:a01585b62dcb0c11e96702d64fb3cb02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af31d0af57ce6a0a0ff6b77aab3897f31" id="r_af31d0af57ce6a0a0ff6b77aab3897f31"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af31d0af57ce6a0a0ff6b77aab3897f31">Cint_to_gluint</a> (int i)</td></tr>
@@ -666,16 +675,16 @@ Functions</h2></td></tr>
 <tr class="memitem:ga263ed688bbd502fd2279d9ceb5bab9bf" id="r_ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#ga263ed688bbd502fd2279d9ceb5bab9bf">color_from_rgba</a> (uint8_t r, uint8_t g, uint8_t b, uint8_t a)</td></tr>
 <tr class="memdesc:ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> value from individual red, green, blue, and alpha components.  <br /></td></tr>
 <tr class="separator:ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8da8502bdd8586fa0e76cf89c0629706" id="r_ga8da8502bdd8586fa0e76cf89c0629706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#ga8da8502bdd8586fa0e76cf89c0629706">load_image_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>, <a class="el" href="group__texture.html#ga975d5c1b5f6b62b122652d21e890346e">TextureEdge</a> te, <a class="el" href="group__texture.html#ga96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a> trs, <a class="el" href="group__texture.html#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a> t)</td></tr>
-<tr class="separator:ga8da8502bdd8586fa0e76cf89c0629706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab32ac44b53bbd24e8c9331dae86105d0" id="r_gab32ac44b53bbd24e8c9331dae86105d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#gab32ac44b53bbd24e8c9331dae86105d0">load_cubemap_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>)</td></tr>
-<tr class="separator:gab32ac44b53bbd24e8c9331dae86105d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c06f9cfdcfa6e0c973ff899e5a916ff" id="r_ga5c06f9cfdcfa6e0c973ff899e5a916ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#ga5c06f9cfdcfa6e0c973ff899e5a916ff">load_image_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>, <a class="el" href="group__texture.html#ga975d5c1b5f6b62b122652d21e890346e">TextureEdge</a> te, <a class="el" href="group__texture.html#ga96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a> trs, <a class="el" href="group__texture.html#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a> t, <a class="el" href="group__texture.html#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> cd)</td></tr>
+<tr class="separator:ga5c06f9cfdcfa6e0c973ff899e5a916ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac294a067af5e2b530a3cf9c2fdd303f0" id="r_gac294a067af5e2b530a3cf9c2fdd303f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#gac294a067af5e2b530a3cf9c2fdd303f0">load_cubemap_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>, <a class="el" href="group__texture.html#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> cd)</td></tr>
+<tr class="separator:gac294a067af5e2b530a3cf9c2fdd303f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2db91a5f624e2dc351118f2d7b0ecf31" id="r_ga2db91a5f624e2dc351118f2d7b0ecf31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#ga2db91a5f624e2dc351118f2d7b0ecf31">resolve_multisampled_buffer</a> (const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;src, <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> *dst)</td></tr>
 <tr class="separator:ga2db91a5f624e2dc351118f2d7b0ecf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7564cf3dcd4da86f317f1faa37beb1f2" id="r_a7564cf3dcd4da86f317f1faa37beb1f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7564cf3dcd4da86f317f1faa37beb1f2">load_image_from_embedded</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const embedded_binary &amp;image_binary, <a class="el" href="group__texture.html#ga975d5c1b5f6b62b122652d21e890346e">TextureEdge</a> te, <a class="el" href="group__texture.html#ga96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a> trs, <a class="el" href="group__texture.html#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a> t)</td></tr>
-<tr class="separator:a7564cf3dcd4da86f317f1faa37beb1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4142bff7e121332f50f6e6f409366f7" id="r_aa4142bff7e121332f50f6e6f409366f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4142bff7e121332f50f6e6f409366f7">load_cubemap_from_embedded</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const embedded_binary &amp;image_right, const embedded_binary &amp;image_left, const embedded_binary &amp;image_top, const embedded_binary &amp;image_bottom, const embedded_binary &amp;image_back, const embedded_binary &amp;image_front)</td></tr>
-<tr class="separator:aa4142bff7e121332f50f6e6f409366f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1156efb8b28797f795987665d554aea3" id="r_a1156efb8b28797f795987665d554aea3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1156efb8b28797f795987665d554aea3">load_image_from_embedded</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const embedded_binary &amp;image_binary, <a class="el" href="group__texture.html#ga975d5c1b5f6b62b122652d21e890346e">TextureEdge</a> te, <a class="el" href="group__texture.html#ga96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a> trs, <a class="el" href="group__texture.html#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a> t, <a class="el" href="group__texture.html#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> cd)</td></tr>
+<tr class="separator:a1156efb8b28797f795987665d554aea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13de4179633ea5c58f6bda9892efde71" id="r_a13de4179633ea5c58f6bda9892efde71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13de4179633ea5c58f6bda9892efde71">load_cubemap_from_embedded</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const embedded_binary &amp;image_right, const embedded_binary &amp;image_left, const embedded_binary &amp;image_top, const embedded_binary &amp;image_bottom, const embedded_binary &amp;image_back, const embedded_binary &amp;image_front, <a class="el" href="group__texture.html#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> cd)</td></tr>
+<tr class="separator:a13de4179633ea5c58f6bda9892efde71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac498a4f9c32fddd6f300437dec2051ad" id="r_gac498a4f9c32fddd6f300437dec2051ad"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vertex-layout.html#gac498a4f9c32fddd6f300437dec2051ad">is_instance_based</a> (<a class="el" href="group__vertex-layout.html#gad736ea89c0534627057463235feb9189">VertexType</a> v)</td></tr>
 <tr class="separator:gac498a4f9c32fddd6f300437dec2051ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga237368f15ea9a44ec4b6b7302d44c312" id="r_ga237368f15ea9a44ec4b6b7302d44c312"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledShaderVertexAttributes.html">CompiledShaderVertexAttributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vertex-layout.html#ga237368f15ea9a44ec4b6b7302d44c312">compile_shader_layout</a> (const <a class="el" href="structklotter_1_1CompiledVertexTypeList.html">CompiledVertexTypeList</a> &amp;l, const <a class="el" href="group__vertex-layout.html#gab14e38875ed51577f61fbbe750a605ea">ShaderVertexAttributes</a> &amp;elements, std::optional&lt; <a class="el" href="structklotter_1_1InstanceProp.html">InstanceProp</a> &gt; instance_prop)</td></tr>
@@ -1101,8 +1110,50 @@ template&lt;typename E&gt; </div>
 
 </div>
 </div>
-<a id="aa4142bff7e121332f50f6e6f409366f7" name="aa4142bff7e121332f50f6e6f409366f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4142bff7e121332f50f6e6f409366f7">&#9670;&#160;</a></span>load_cubemap_from_embedded()</h2>
+<a id="a252a0e9a32ab34cbe96fcd2ff997e80e" name="a252a0e9a32ab34cbe96fcd2ff997e80e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a252a0e9a32ab34cbe96fcd2ff997e80e">&#9670;&#160;</a></span>linear_from_srgb() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec4 klotter::linear_from_srgb </td>
+          <td>(</td>
+          <td class="paramtype">const glm::vec4 &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>gamma</em></span><span class="paramdefsep"> = </span><span class="paramdefval">2.2f</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8978611a7d7036015eb5bd1cde482adc" name="a8978611a7d7036015eb5bd1cde482adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8978611a7d7036015eb5bd1cde482adc">&#9670;&#160;</a></span>linear_from_srgb() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float klotter::linear_from_srgb </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>gamma</em></span><span class="paramdefsep"> = </span><span class="paramdefval">2.2f</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13de4179633ea5c58f6bda9892efde71" name="a13de4179633ea5c58f6bda9892efde71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13de4179633ea5c58f6bda9892efde71">&#9670;&#160;</a></span>load_cubemap_from_embedded()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1135,15 +1186,20 @@ template&lt;typename E&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const embedded_binary &amp;</td>          <td class="paramname"><span class="paramname"><em>image_front</em></span>&#160;)</td>
+          <td class="paramtype">const embedded_binary &amp;</td>          <td class="paramname"><span class="paramname"><em>image_front</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__texture.html#ga573ffb425f764bc26601e3883fce43cf">ColorData</a></td>          <td class="paramname"><span class="paramname"><em>cd</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a7564cf3dcd4da86f317f1faa37beb1f2" name="a7564cf3dcd4da86f317f1faa37beb1f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7564cf3dcd4da86f317f1faa37beb1f2">&#9670;&#160;</a></span>load_image_from_embedded()</h2>
+<a id="a1156efb8b28797f795987665d554aea3" name="a1156efb8b28797f795987665d554aea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1156efb8b28797f795987665d554aea3">&#9670;&#160;</a></span>load_image_from_embedded()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1166,7 +1222,12 @@ template&lt;typename E&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__texture.html#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__texture.html#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__texture.html#ga573ffb425f764bc26601e3883fce43cf">ColorData</a></td>          <td class="paramname"><span class="paramname"><em>cd</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

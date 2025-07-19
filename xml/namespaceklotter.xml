@@ -169,6 +169,7 @@
       <member refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kind="enum"><name>TextureEdge</name></member>
       <member refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kind="enum"><name>TextureRenderStyle</name></member>
       <member refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kind="enum"><name>Transparency</name></member>
+      <member refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kind="enum"><name>ColorData</name></member>
       <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
       <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
       <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
@@ -382,6 +383,52 @@
         </inbodydescription>
         <location file="src/klotter/render/opengl_utils.h" line="9" column="6" declfile="src/klotter/render/opengl_utils.h" declline="9" declcolumn="6"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a8978611a7d7036015eb5bd1cde482adc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float klotter::linear_from_srgb</definition>
+        <argsstring>(float value, float gamma=2.2f)</argsstring>
+        <name>linear_from_srgb</name>
+        <qualifiedname>klotter::linear_from_srgb</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gamma</declname>
+          <defval>2.2f</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="12" column="7" declfile="src/klotter/render/opengl_utils.h" declline="12" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a252a0e9a32ab34cbe96fcd2ff997e80e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>glm::vec4</type>
+        <definition>glm::vec4 klotter::linear_from_srgb</definition>
+        <argsstring>(const glm::vec4 &amp;value, float gamma=2.2f)</argsstring>
+        <name>linear_from_srgb</name>
+        <qualifiedname>klotter::linear_from_srgb</qualifiedname>
+        <param>
+          <type>const glm::vec4 &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gamma</declname>
+          <defval>2.2f</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="13" column="11" declfile="src/klotter/render/opengl_utils.h" declline="13" declcolumn="11"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLenum</type>
         <definition>GLenum klotter::Cint_to_glenum</definition>
@@ -398,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="12" column="8" declfile="src/klotter/render/opengl_utils.h" declline="12" declcolumn="8"/>
+        <location file="src/klotter/render/opengl_utils.h" line="15" column="8" declfile="src/klotter/render/opengl_utils.h" declline="15" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLuint</type>
@@ -416,7 +463,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="13" column="8" declfile="src/klotter/render/opengl_utils.h" declline="13" declcolumn="8"/>
+        <location file="src/klotter/render/opengl_utils.h" line="16" column="8" declfile="src/klotter/render/opengl_utils.h" declline="16" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLsizeiptr</type>
@@ -434,7 +481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="14" column="12" declfile="src/klotter/render/opengl_utils.h" declline="14" declcolumn="12"/>
+        <location file="src/klotter/render/opengl_utils.h" line="17" column="12" declfile="src/klotter/render/opengl_utils.h" declline="17" declcolumn="12"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLsizei</type>
@@ -452,7 +499,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="15" column="9" declfile="src/klotter/render/opengl_utils.h" declline="15" declcolumn="9"/>
+        <location file="src/klotter/render/opengl_utils.h" line="18" column="9" declfile="src/klotter/render/opengl_utils.h" declline="18" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -466,7 +513,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="17" column="5" declfile="src/klotter/render/opengl_utils.h" declline="17" declcolumn="5"/>
+        <location file="src/klotter/render/opengl_utils.h" line="20" column="5" declfile="src/klotter/render/opengl_utils.h" declline="20" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a939548cd29b251463ed344cde014e212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -484,7 +531,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="18" column="6" declfile="src/klotter/render/opengl_utils.h" declline="18" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="21" column="6" declfile="src/klotter/render/opengl_utils.h" declline="21" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -498,7 +545,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="20" column="5" declfile="src/klotter/render/opengl_utils.h" declline="20" declcolumn="5"/>
+        <location file="src/klotter/render/opengl_utils.h" line="23" column="5" declfile="src/klotter/render/opengl_utils.h" declline="23" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -516,7 +563,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="21" column="6" declfile="src/klotter/render/opengl_utils.h" declline="21" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="24" column="6" declfile="src/klotter/render/opengl_utils.h" declline="24" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a9c262112545baed06ed5325e9796633d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -534,7 +581,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="23" column="6" declfile="src/klotter/render/opengl_utils.h" declline="23" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="26" column="6" declfile="src/klotter/render/opengl_utils.h" declline="26" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::mat4</type>
@@ -552,7 +599,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="26" column="11" declfile="src/klotter/render/opengl_utils.h" declline="26" declcolumn="11"/>
+        <location file="src/klotter/render/opengl_utils.h" line="29" column="11" declfile="src/klotter/render/opengl_utils.h" declline="29" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a7befceb30fc99ff7fc48cf45778136e9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -566,7 +613,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="70" column="16" bodyfile="src/klotter/render/opengl_utils.h" bodystart="70" bodyend="72"/>
+        <location file="src/klotter/render/opengl_utils.h" line="73" column="16" bodyfile="src/klotter/render/opengl_utils.h" bodystart="73" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a3f825575d127751358894415f96c5bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -765,13 +812,13 @@
       <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
       <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
       <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
-      <member refid="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" kind="function"><name>load_image_from_color</name></member>
-      <member refid="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" kind="function"><name>load_cubemap_from_color</name></member>
+      <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
+      <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
       <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
-      <memberdef kind="function" id="namespaceklotter_1a7564cf3dcd4da86f317f1faa37beb1f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a1156efb8b28797f795987665d554aea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Texture2d" kindref="compound">Texture2d</ref></type>
         <definition>Texture2d klotter::load_image_from_embedded</definition>
-        <argsstring>(DEBUG_LABEL_ARG_MANY const embedded_binary &amp;image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t)</argsstring>
+        <argsstring>(DEBUG_LABEL_ARG_MANY const embedded_binary &amp;image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd)</argsstring>
         <name>load_image_from_embedded</name>
         <qualifiedname>klotter::load_image_from_embedded</qualifiedname>
         <param>
@@ -790,6 +837,10 @@
           <type><ref refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kindref="member">Transparency</ref></type>
           <declname>t</declname>
         </param>
+        <param>
+          <type><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref></type>
+          <declname>cd</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -798,10 +849,10 @@
         </inbodydescription>
         <location file="src/klotter/render/texture.io.h" line="10" column="11" declfile="src/klotter/render/texture.io.h" declline="10" declcolumn="11"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1aa4142bff7e121332f50f6e6f409366f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a13de4179633ea5c58f6bda9892efde71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref></type>
         <definition>TextureCubemap klotter::load_cubemap_from_embedded</definition>
-        <argsstring>(DEBUG_LABEL_ARG_MANY const embedded_binary &amp;image_right, const embedded_binary &amp;image_left, const embedded_binary &amp;image_top, const embedded_binary &amp;image_bottom, const embedded_binary &amp;image_back, const embedded_binary &amp;image_front)</argsstring>
+        <argsstring>(DEBUG_LABEL_ARG_MANY const embedded_binary &amp;image_right, const embedded_binary &amp;image_left, const embedded_binary &amp;image_top, const embedded_binary &amp;image_bottom, const embedded_binary &amp;image_back, const embedded_binary &amp;image_front, ColorData cd)</argsstring>
         <name>load_cubemap_from_embedded</name>
         <qualifiedname>klotter::load_cubemap_from_embedded</qualifiedname>
         <param>
@@ -827,6 +878,10 @@
         <param>
           <type>const embedded_binary &amp;</type>
           <declname>image_front</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref></type>
+          <declname>cd</declname>
         </param>
         <briefdescription>
         </briefdescription>

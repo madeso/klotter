@@ -757,11 +757,11 @@
   </compound>
   <compound refid="structklotter_1_1Texture2d" kind="struct"><name>klotter::Texture2d</name>
     <member refid="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" kind="function"><name>Texture2d</name></member>
-    <member refid="structklotter_1_1Texture2d_1a5417af6ac1a80e18f52b28ffffc62a4f" kind="function"><name>Texture2d</name></member>
+    <member refid="structklotter_1_1Texture2d_1a240d184f7b79894ec4c3948285ee3e7b" kind="function"><name>Texture2d</name></member>
   </compound>
   <compound refid="structklotter_1_1TextureCubemap" kind="struct"><name>klotter::TextureCubemap</name>
     <member refid="structklotter_1_1TextureCubemap_1aba9fc569dd23d2a5061accda1781d1f6" kind="function"><name>TextureCubemap</name></member>
-    <member refid="structklotter_1_1TextureCubemap_1abe17454182d27ac0d978242b82234474" kind="function"><name>TextureCubemap</name></member>
+    <member refid="structklotter_1_1TextureCubemap_1ae6b2fe3a04bbfd5f2db26be8641356c7" kind="function"><name>TextureCubemap</name></member>
   </compound>
   <compound refid="structklotter_1_1geom_1_1Triangle" kind="struct"><name>klotter::geom::Triangle</name>
     <member refid="structklotter_1_1geom_1_1Triangle_1a61be1f89bfcc389f270530ec1ac5238d" kind="variable"><name>v0</name></member>
@@ -866,6 +866,7 @@
     <member refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kind="enum"><name>TextureEdge</name></member>
     <member refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kind="enum"><name>TextureRenderStyle</name></member>
     <member refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kind="enum"><name>Transparency</name></member>
+    <member refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kind="enum"><name>ColorData</name></member>
     <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
     <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
     <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
@@ -894,6 +895,8 @@
     <member refid="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" kind="function"><name>to_screen</name></member>
     <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
     <member refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" kind="function"><name>setup_opengl_debug</name></member>
+    <member refid="namespaceklotter_1a8978611a7d7036015eb5bd1cde482adc" kind="function"><name>linear_from_srgb</name></member>
+    <member refid="namespaceklotter_1a252a0e9a32ab34cbe96fcd2ff997e80e" kind="function"><name>linear_from_srgb</name></member>
     <member refid="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" kind="function"><name>Cint_to_glenum</name></member>
     <member refid="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" kind="function"><name>Cint_to_gluint</name></member>
     <member refid="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" kind="function"><name>Csizet_to_glsizeiptr</name></member>
@@ -921,11 +924,11 @@
     <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
     <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
     <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
-    <member refid="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" kind="function"><name>load_image_from_color</name></member>
-    <member refid="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" kind="function"><name>load_cubemap_from_color</name></member>
+    <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
+    <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
     <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
-    <member refid="namespaceklotter_1a7564cf3dcd4da86f317f1faa37beb1f2" kind="function"><name>load_image_from_embedded</name></member>
-    <member refid="namespaceklotter_1aa4142bff7e121332f50f6e6f409366f7" kind="function"><name>load_cubemap_from_embedded</name></member>
+    <member refid="namespaceklotter_1a1156efb8b28797f795987665d554aea3" kind="function"><name>load_image_from_embedded</name></member>
+    <member refid="namespaceklotter_1a13de4179633ea5c58f6bda9892efde71" kind="function"><name>load_cubemap_from_embedded</name></member>
     <member refid="group__vertex-layout_1gac498a4f9c32fddd6f300437dec2051ad" kind="function"><name>is_instance_based</name></member>
     <member refid="group__vertex-layout_1ga237368f15ea9a44ec4b6b7302d44c312" kind="function"><name>compile_shader_layout</name></member>
     <member refid="group__vertex-layout_1gaafa6ccef1474d9837601f1f46c18e10d" kind="function"><name>get_geom_layout</name></member>
@@ -1304,6 +1307,10 @@
     <member refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kind="enum"><name>Transparency</name></member>
     <member refid="group__texture_1gga3257f86dae0e1a101035a7d4cd2026bcad436eb0fd9de10b54a828ce6435f7e81" kind="enumvalue"><name>include</name></member>
     <member refid="group__texture_1gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef" kind="enumvalue"><name>exclude</name></member>
+    <member refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kind="enum"><name>ColorData</name></member>
+    <member refid="group__texture_1gga573ffb425f764bc26601e3883fce43cfa87e5906f8e7e87a41a1632fbb9897103" kind="enumvalue"><name>color_data</name></member>
+    <member refid="group__texture_1gga573ffb425f764bc26601e3883fce43cfa305f7fe2fe08b4d3c0244267c8428bfc" kind="enumvalue"><name>non_color_data</name></member>
+    <member refid="group__texture_1gga573ffb425f764bc26601e3883fce43cfabe7bbe0cf3947e795861f1fa966bab58" kind="enumvalue"><name>dont_care</name></member>
     <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
     <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849a6ad0a3981fb0e65854a9ef656e3beac4" kind="enumvalue"><name>use_none</name></member>
@@ -1311,8 +1318,8 @@
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab33abfcb724dd7b2af41c9c87c2a947e" kind="enumvalue"><name>use_24</name></member>
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab58da2c01fd2c34c8f79d446758f5253" kind="enumvalue"><name>use_32</name></member>
     <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
-    <member refid="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" kind="function"><name>load_image_from_color</name></member>
-    <member refid="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" kind="function"><name>load_cubemap_from_color</name></member>
+    <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
+    <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
     <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
   </compound>
   <compound refid="group__scurcve" kind="group"><name>scurcve</name>

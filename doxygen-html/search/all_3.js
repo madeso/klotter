@@ -44,10 +44,11 @@ var searchData=
   ['disable_5fwarning_5fnonstandard_5fnameless_5fstruct_5funion_41',['DISABLE_WARNING_NONSTANDARD_NAMELESS_STRUCT_UNION',['../compiler__warning_8h.html#acc5db90675b43c4a82786b984d6d1a32',1,'compiler_warning.h']]],
   ['disable_5fwarning_5fpop_42',['DISABLE_WARNING_POP',['../compiler__warning_8h.html#aa38484cb49798c69a90b8a8dcd050087',1,'compiler_warning.h']]],
   ['disable_5fwarning_5fpush_43',['DISABLE_WARNING_PUSH',['../compiler__warning_8h.html#a24b263e8b4b7f2ebc6534700f8157a48',1,'compiler_warning.h']]],
-  ['drag_44',['drag',['../structklotter_1_1SCurveGuiState.html#a72718db76c89b9a18bac530c461aa8d6',1,'klotter::SCurveGuiState']]],
-  ['drag_5fcolor_45',['drag_color',['../structklotter_1_1SCurveImguiSettings.html#af3f175b069e2aec5c1a3bb56f1395245',1,'klotter::SCurveImguiSettings']]],
-  ['drag_5fradius_46',['drag_radius',['../structklotter_1_1SCurveImguiSettings.html#a4123894fee2dc6ec8a1ffd24ccfd558e',1,'klotter::SCurveImguiSettings']]],
-  ['draw_5fpoints_47',['draw_points',['../structklotter_1_1SCurveImguiSettings.html#a881dc3d42c615c71ed9ed62b5eb4cd59',1,'klotter::SCurveImguiSettings']]],
-  ['dst_5falpha_48',['dst_alpha',['../group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481bab71b79d6bf971b9dd2ee1d43565ab344',1,'klotter']]],
-  ['dst_5fcolor_49',['dst_color',['../group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481baeadd61e269579f1d602a06d9ae0972e3',1,'klotter']]]
+  ['dont_5fcare_44',['dont_care',['../group__texture.html#gga573ffb425f764bc26601e3883fce43cfabe7bbe0cf3947e795861f1fa966bab58',1,'klotter']]],
+  ['drag_45',['drag',['../structklotter_1_1SCurveGuiState.html#a72718db76c89b9a18bac530c461aa8d6',1,'klotter::SCurveGuiState']]],
+  ['drag_5fcolor_46',['drag_color',['../structklotter_1_1SCurveImguiSettings.html#af3f175b069e2aec5c1a3bb56f1395245',1,'klotter::SCurveImguiSettings']]],
+  ['drag_5fradius_47',['drag_radius',['../structklotter_1_1SCurveImguiSettings.html#a4123894fee2dc6ec8a1ffd24ccfd558e',1,'klotter::SCurveImguiSettings']]],
+  ['draw_5fpoints_48',['draw_points',['../structklotter_1_1SCurveImguiSettings.html#a881dc3d42c615c71ed9ed62b5eb4cd59',1,'klotter::SCurveImguiSettings']]],
+  ['dst_5falpha_49',['dst_alpha',['../group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481bab71b79d6bf971b9dd2ee1d43565ab344',1,'klotter']]],
+  ['dst_5fcolor_50',['dst_color',['../group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481baeadd61e269579f1d602a06d9ae0972e3',1,'klotter']]]
 ];

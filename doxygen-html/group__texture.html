@@ -149,6 +149,11 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef">klotter::Transparency::exclude</a>
  }</td></tr>
 <tr class="separator:ga3257f86dae0e1a101035a7d4cd2026bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga573ffb425f764bc26601e3883fce43cf" id="r_ga573ffb425f764bc26601e3883fce43cf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga573ffb425f764bc26601e3883fce43cf">klotter::ColorData</a> { <a class="el" href="#gga573ffb425f764bc26601e3883fce43cfa87e5906f8e7e87a41a1632fbb9897103">klotter::ColorData::color_data</a>
+, <a class="el" href="#gga573ffb425f764bc26601e3883fce43cfa305f7fe2fe08b4d3c0244267c8428bfc">klotter::ColorData::non_color_data</a>
+, <a class="el" href="#gga573ffb425f764bc26601e3883fce43cfabe7bbe0cf3947e795861f1fa966bab58">klotter::ColorData::dont_care</a>
+ }</td></tr>
+<tr class="separator:ga573ffb425f764bc26601e3883fce43cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9733fe97e5e653625387fead61ef06a3" id="r_ga9733fe97e5e653625387fead61ef06a3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">klotter::SingleColor</a> : std::uint32_t </td></tr>
 <tr class="memdesc:ga9733fe97e5e653625387fead61ef06a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single color in a format to load directly into open gl texture(ABGR on little endian).  <a href="#ga9733fe97e5e653625387fead61ef06a3">More...</a><br /></td></tr>
 <tr class="separator:ga9733fe97e5e653625387fead61ef06a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,15 +170,45 @@ Functions</h2></td></tr>
 <tr class="memitem:ga263ed688bbd502fd2279d9ceb5bab9bf" id="r_ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga263ed688bbd502fd2279d9ceb5bab9bf">klotter::color_from_rgba</a> (uint8_t r, uint8_t g, uint8_t b, uint8_t a)</td></tr>
 <tr class="memdesc:ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> value from individual red, green, blue, and alpha components.  <br /></td></tr>
 <tr class="separator:ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8da8502bdd8586fa0e76cf89c0629706" id="r_ga8da8502bdd8586fa0e76cf89c0629706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8da8502bdd8586fa0e76cf89c0629706">klotter::load_image_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>, <a class="el" href="#ga975d5c1b5f6b62b122652d21e890346e">TextureEdge</a> te, <a class="el" href="#ga96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a> trs, <a class="el" href="#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a> t)</td></tr>
-<tr class="separator:ga8da8502bdd8586fa0e76cf89c0629706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab32ac44b53bbd24e8c9331dae86105d0" id="r_gab32ac44b53bbd24e8c9331dae86105d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab32ac44b53bbd24e8c9331dae86105d0">klotter::load_cubemap_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>)</td></tr>
-<tr class="separator:gab32ac44b53bbd24e8c9331dae86105d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c06f9cfdcfa6e0c973ff899e5a916ff" id="r_ga5c06f9cfdcfa6e0c973ff899e5a916ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5c06f9cfdcfa6e0c973ff899e5a916ff">klotter::load_image_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>, <a class="el" href="#ga975d5c1b5f6b62b122652d21e890346e">TextureEdge</a> te, <a class="el" href="#ga96e6e729a16fb6dbf417daa7e61339ca">TextureRenderStyle</a> trs, <a class="el" href="#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a> t, <a class="el" href="#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> cd)</td></tr>
+<tr class="separator:ga5c06f9cfdcfa6e0c973ff899e5a916ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac294a067af5e2b530a3cf9c2fdd303f0" id="r_gac294a067af5e2b530a3cf9c2fdd303f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac294a067af5e2b530a3cf9c2fdd303f0">klotter::load_cubemap_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>, <a class="el" href="#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> cd)</td></tr>
+<tr class="separator:gac294a067af5e2b530a3cf9c2fdd303f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2db91a5f624e2dc351118f2d7b0ecf31" id="r_ga2db91a5f624e2dc351118f2d7b0ecf31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2db91a5f624e2dc351118f2d7b0ecf31">klotter::resolve_multisampled_buffer</a> (const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;src, <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> *dst)</td></tr>
 <tr class="separator:ga2db91a5f624e2dc351118f2d7b0ecf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga573ffb425f764bc26601e3883fce43cf" name="ga573ffb425f764bc26601e3883fce43cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga573ffb425f764bc26601e3883fce43cf">&#9670;&#160;</a></span>ColorData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#ga573ffb425f764bc26601e3883fce43cf">klotter::ColorData</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga573ffb425f764bc26601e3883fce43cfa87e5906f8e7e87a41a1632fbb9897103" name="gga573ffb425f764bc26601e3883fce43cfa87e5906f8e7e87a41a1632fbb9897103"></a>color_data&#160;</td><td class="fielddoc"><p>Apply transformations to the color data. Texture is a diffuse/albedo map, created with human eyes on a monitor in sRGB space. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga573ffb425f764bc26601e3883fce43cfa305f7fe2fe08b4d3c0244267c8428bfc" name="gga573ffb425f764bc26601e3883fce43cfa305f7fe2fe08b4d3c0244267c8428bfc"></a>non_color_data&#160;</td><td class="fielddoc"><p>Don't apply transformations to the color data. Texture is a normal/roughness/ao/specular map or similar and created by a software in linear space. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga573ffb425f764bc26601e3883fce43cfabe7bbe0cf3947e795861f1fa966bab58" name="gga573ffb425f764bc26601e3883fce43cfabe7bbe0cf3947e795861f1fa966bab58"></a>dont_care&#160;</td><td class="fielddoc"><p>Explicitly don't care about the color data but same as <a class="el" href="#gga573ffb425f764bc26601e3883fce43cfa305f7fe2fe08b4d3c0244267c8428bfc">non_color_data</a>. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="gad4a5a90c6e8064ff314642d5cd089849" name="gad4a5a90c6e8064ff314642d5cd089849"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gad4a5a90c6e8064ff314642d5cd089849">&#9670;&#160;</a></span>DepthBits</h2>
 
@@ -360,8 +395,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gab32ac44b53bbd24e8c9331dae86105d0" name="gab32ac44b53bbd24e8c9331dae86105d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab32ac44b53bbd24e8c9331dae86105d0">&#9670;&#160;</a></span>load_cubemap_from_color()</h2>
+<a id="gac294a067af5e2b530a3cf9c2fdd303f0" name="gac294a067af5e2b530a3cf9c2fdd303f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac294a067af5e2b530a3cf9c2fdd303f0">&#9670;&#160;</a></span>load_cubemap_from_color()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,16 +404,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a> klotter::load_cubemap_from_color </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a></td>          <td class="paramname"><span class="paramname"><em>pixel</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a></td>          <td class="paramname"><span class="paramname"><em>pixel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="#ga573ffb425f764bc26601e3883fce43cf">ColorData</a></td>          <td class="paramname"><span class="paramname"><em>cd</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ga8da8502bdd8586fa0e76cf89c0629706" name="ga8da8502bdd8586fa0e76cf89c0629706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8da8502bdd8586fa0e76cf89c0629706">&#9670;&#160;</a></span>load_image_from_color()</h2>
+<a id="ga5c06f9cfdcfa6e0c973ff899e5a916ff" name="ga5c06f9cfdcfa6e0c973ff899e5a916ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5c06f9cfdcfa6e0c973ff899e5a916ff">&#9670;&#160;</a></span>load_image_from_color()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -401,7 +440,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#ga3257f86dae0e1a101035a7d4cd2026bc">Transparency</a></td>          <td class="paramname"><span class="paramname"><em>t</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ga573ffb425f764bc26601e3883fce43cf">ColorData</a></td>          <td class="paramname"><span class="paramname"><em>cd</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

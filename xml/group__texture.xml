@@ -95,6 +95,42 @@
         </inbodydescription>
         <location file="src/klotter/render/texture.h" line="29" column="1" bodyfile="src/klotter/render/texture.h" bodystart="30" bodyend="33"/>
       </memberdef>
+      <memberdef kind="enum" id="group__texture_1ga573ffb425f764bc26601e3883fce43cf" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ColorData</name>
+        <qualifiedname>klotter::ColorData</qualifiedname>
+        <enumvalue id="group__texture_1gga573ffb425f764bc26601e3883fce43cfa87e5906f8e7e87a41a1632fbb9897103" prot="public">
+          <name>color_data</name>
+          <briefdescription>
+<para>Apply transformations to the color data. Texture is a diffuse/albedo map, created with human eyes on a monitor in sRGB space. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__texture_1gga573ffb425f764bc26601e3883fce43cfa305f7fe2fe08b4d3c0244267c8428bfc" prot="public">
+          <name>non_color_data</name>
+          <briefdescription>
+<para>Don&apos;t apply transformations to the color data. Texture is a normal/roughness/ao/specular map or similar and created by a software in linear space. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__texture_1gga573ffb425f764bc26601e3883fce43cfabe7bbe0cf3947e795861f1fa966bab58" prot="public">
+          <name>dont_care</name>
+          <briefdescription>
+<para>Explicitly don&apos;t care about the color data but same as <ref refid="group__texture_1gga573ffb425f764bc26601e3883fce43cfa305f7fe2fe08b4d3c0244267c8428bfc" kindref="member">non_color_data</ref>. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="35" column="1" bodyfile="src/klotter/render/texture.h" bodystart="36" bodyend="46"/>
+      </memberdef>
       <memberdef kind="enum" id="group__texture_1ga9733fe97e5e653625387fead61ef06a3" prot="public" static="no" strong="yes">
         <type>std::uint32_t</type>
         <name>SingleColor</name>
@@ -109,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="37" column="1" bodyfile="src/klotter/render/texture.h" bodystart="37" bodyend="37"/>
+        <location file="src/klotter/render/texture.h" line="50" column="1" bodyfile="src/klotter/render/texture.h" bodystart="50" bodyend="50"/>
       </memberdef>
       <memberdef kind="enum" id="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" prot="public" static="no" strong="yes">
         <type></type>
@@ -150,7 +186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="120" column="1" bodyfile="src/klotter/render/texture.h" bodystart="121" bodyend="124"/>
+        <location file="src/klotter/render/texture.h" line="133" column="1" bodyfile="src/klotter/render/texture.h" bodystart="134" bodyend="137"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -219,12 +255,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="45" column="23" bodyfile="src/klotter/render/texture.h" bodystart="45" bodyend="50"/>
+        <location file="src/klotter/render/texture.h" line="58" column="23" bodyfile="src/klotter/render/texture.h" bodystart="58" bodyend="63"/>
       </memberdef>
-      <memberdef kind="function" id="group__texture_1ga8da8502bdd8586fa0e76cf89c0629706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Texture2d</type>
         <definition>Texture2d klotter::load_image_from_color</definition>
-        <argsstring>(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t)</argsstring>
+        <argsstring>(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd)</argsstring>
         <name>load_image_from_color</name>
         <qualifiedname>klotter::load_image_from_color</qualifiedname>
         <param>
@@ -243,23 +279,9 @@
           <type>Transparency</type>
           <declname>t</declname>
         </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="80" column="11" declfile="src/klotter/render/texture.h" declline="80" declcolumn="11"/>
-      </memberdef>
-      <memberdef kind="function" id="group__texture_1gab32ac44b53bbd24e8c9331dae86105d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>TextureCubemap</type>
-        <definition>TextureCubemap klotter::load_cubemap_from_color</definition>
-        <argsstring>(DEBUG_LABEL_ARG_MANY SingleColor pixel)</argsstring>
-        <name>load_cubemap_from_color</name>
-        <qualifiedname>klotter::load_cubemap_from_color</qualifiedname>
         <param>
-          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> SingleColor</type>
-          <declname>pixel</declname>
+          <type>ColorData</type>
+          <declname>cd</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -267,7 +289,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="91" column="16" declfile="src/klotter/render/texture.h" declline="91" declcolumn="16"/>
+        <location file="src/klotter/render/texture.h" line="93" column="11" declfile="src/klotter/render/texture.h" declline="93" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TextureCubemap</type>
+        <definition>TextureCubemap klotter::load_cubemap_from_color</definition>
+        <argsstring>(DEBUG_LABEL_ARG_MANY SingleColor pixel, ColorData cd)</argsstring>
+        <name>load_cubemap_from_color</name>
+        <qualifiedname>klotter::load_cubemap_from_color</qualifiedname>
+        <param>
+          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> SingleColor</type>
+          <declname>pixel</declname>
+        </param>
+        <param>
+          <type>ColorData</type>
+          <declname>cd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="104" column="16" declfile="src/klotter/render/texture.h" declline="104" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -289,7 +333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="181" column="6" declfile="src/klotter/render/texture.h" declline="181" declcolumn="6"/>
+        <location file="src/klotter/render/texture.h" line="194" column="6" declfile="src/klotter/render/texture.h" declline="194" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

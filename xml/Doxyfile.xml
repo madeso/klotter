@@ -356,6 +356,8 @@
   <option  id='PREDEFINED' default='no' type='stringlist'>
     <value><![CDATA[BLUR_USE_GAUSS=FF_IS_ENABLED]]></value>
     <value><![CDATA[ENABLE_GL_DEBUG=FF_IS_ENABLED]]></value>
+    <value><![CDATA[ENABLE_THEMES=FF_IS_DISABLED]]></value>
+    <value><![CDATA[ENABLE_GAMMA_CORRECTION=FF_IS_ENABLED]]></value>
   </option>
   <option  id='EXPAND_AS_DEFINED' default='yes' type='stringlist'>
   </option>
