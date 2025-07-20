@@ -46,14 +46,19 @@ void Effect::set_enabled(bool n)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // RenderWorld
 
+// todo(Gustav): should this be a user config option? evaluate higher/lower bits
+constexpr ColorBitsPerPixel render_world_color_bits_per_pixel = ColorBitsPerPixel::use_16;
+
 RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples)
 	: window_size(size)
 	, msaa_buffer(FrameBufferBuilder{size}
 		.with_msaa(msaa_samples)
+		.with_color_bits(render_world_color_bits_per_pixel)
 		.with_depth()
 		.with_stencil()
 		.build(USE_DEBUG_LABEL("msaa buffer")))
 	, realized_buffer(FrameBufferBuilder{size}
+		.with_color_bits(render_world_color_bits_per_pixel)
 		.build(USE_DEBUG_LABEL("realized msaa buffer")))
 	, realize_shader(std::move(re_sh))
 	, gamma_uniform(realize_shader->program->get_uniform("u_gamma"))

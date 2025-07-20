@@ -369,6 +369,21 @@ GLenum determine_fbo_internal_format(DepthBits depth, bool add_stencil)
 	}
 }
 
+GLint internal_format_from_color_bpp(ColorBitsPerPixel texture_bits, Transparency trans)
+{
+	const auto include_transparency = trans == Transparency::include;
+
+	switch (texture_bits)
+	{
+	case ColorBitsPerPixel::use_8: return include_transparency ? GL_RGBA : GL_RGB;
+	case ColorBitsPerPixel::use_16: return include_transparency ? GL_RGBA16F : GL_RGB16F;
+	case ColorBitsPerPixel::use_32: return include_transparency ? GL_RGBA32F : GL_RGB32F;
+	default:
+		DIE("Invalid texture bits value");
+		return GL_RGB;
+	}
+}
+
 std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) const
 {
 	const auto te = TextureEdge::clamp;
@@ -395,14 +410,13 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 		glTexParameteri(target, GL_TEXTURE_MIN_FILTER, filter.min);
 		glTexParameteri(target, GL_TEXTURE_MAG_FILTER, filter.mag);
 	}
-	const auto include_transparency = trans == Transparency::include;
 
 	if (is_msaa)
 	{
 		glTexImage2DMultisample(
 			target,
 			msaa_samples,
-			include_transparency ? GL_RGBA : GL_RGB,
+			internal_format_from_color_bpp(color_bits_per_pixel, trans),
 			width,
 			height,
 			GL_TRUE
@@ -413,11 +427,12 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 		glTexImage2D(
 			target,
 			0,
-			include_transparency ? GL_RGBA : GL_RGB,
+			internal_format_from_color_bpp(color_bits_per_pixel, trans),
 			width,
 			height,
 			0,
-			include_transparency ? GL_RGBA : GL_RGB,
+			// todo(Gustav): since we pass null as the data, the type doesn't matter... right?
+			GL_RGB,
 			GL_UNSIGNED_BYTE,
 			nullptr
 		);

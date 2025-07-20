@@ -136,6 +136,12 @@ enum class DepthBits
 	use_16, use_24, use_32
 };
 
+/// The number of bits/pixel to use for the color buffer.
+enum class ColorBitsPerPixel
+{
+	use_8, use_16, use_32
+};
+
 /// A builder class for the \ref FrameBuffer
 struct FrameBufferBuilder
 {
@@ -148,6 +154,7 @@ struct FrameBufferBuilder
 	int width;
 	int height;
 
+	ColorBitsPerPixel color_bits_per_pixel = ColorBitsPerPixel::use_8;
 	DepthBits include_depth = DepthBits::use_none;
 	bool include_stencil = false;
 
@@ -163,6 +170,12 @@ struct FrameBufferBuilder
 	constexpr FrameBufferBuilder& with_depth(DepthBits bits = DepthBits::use_24)
 	{
 		include_depth = bits;
+		return *this;
+	}
+
+	constexpr FrameBufferBuilder& with_color_bits(ColorBitsPerPixel bits)
+	{
+		color_bits_per_pixel = bits;
 		return *this;
 	}
 
