@@ -88,8 +88,7 @@ struct Builder
 	std::vector<glm::vec3> positions;
 	std::vector<glm::vec3> normals;
 	std::vector<glm::vec2> texcoords;
-	std::vector<glm::vec4> colors; ///< in linear space
-	//todo(Gustav): rename colors to make it apparent that it is in linear space
+	std::vector<glm::vec4> lin_colors; ///< in linear space
 };
 
 

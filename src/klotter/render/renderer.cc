@@ -127,7 +127,7 @@ void batch_lines(LineDrawer* drawer, const std::vector<DebugLine>& debug_lines)
 {
 	for (const auto& line: debug_lines)
 	{
-		drawer->line_batch.line(line.from, line.to, line.color);
+		drawer->line_batch.line(line.from, line.to, line.lin_color);
 	}
 	drawer->line_batch.submit();
 }

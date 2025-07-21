@@ -14,8 +14,7 @@ struct DebugLine
 {
 	glm::vec3 from;
 	glm::vec3 to;
-	glm::vec3 color; ///< linear color space
-	// todo(Gustav): rename this to make it more apparent
+	glm::vec3 lin_color; ///< linear color space
 };
 
 /// Just stores debug render requests and doesn't actually render anything.

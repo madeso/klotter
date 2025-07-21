@@ -127,7 +127,7 @@ Index Builder::add_normal(const glm::vec3& norm)
 
 Index Builder::add_color(const glm::vec4& c)
 {
-	return add_vec(&colors, c);
+	return add_vec(&lin_colors, c);
 }
 
 Index Builder::foa_text_coord(const glm::vec2& v, float max_diff)
@@ -147,7 +147,7 @@ Index Builder::foa_normal(const glm::vec3& norm, float max_diff)
 
 Index Builder::foa_color(const glm::vec4& c, float max_diff)
 {
-	return find_or_add_vec(&colors, c, max_diff);
+	return find_or_add_vec(&lin_colors, c, max_diff);
 }
 
 Builder& Builder::add_triangle(const Triangle& t)
@@ -291,7 +291,7 @@ Geom Builder::to_geom() const
 		{
 			const glm::vec3 pos = positions[c.position];
 			const glm::vec2 text = texcoords.empty() ? glm::vec2(0, 0) : texcoords[c.texture];
-			const glm::vec4 col = colors.empty() ? glm::vec4{linear_from_srgb(colors::white), 1.0f} : colors[c.color];
+			const glm::vec4 col = lin_colors.empty() ? glm::vec4{linear_from_srgb(colors::white), 1.0f} : lin_colors[c.color];
 			const glm::vec3 normal = normals.empty() == false ? normals[c.normal] : glm::vec3(1, 0, 0);
 			const auto ind = vertices.size();
 			vertices.emplace_back(klotter::Vertex{pos, normal, text, col});
