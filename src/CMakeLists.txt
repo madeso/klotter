@@ -72,12 +72,13 @@ set(src_render
     klotter/render/geom.h
     klotter/render/geom.builder.cc klotter/render/geom.builder.h
     klotter/render/geom.extract.cc klotter/render/geom.extract.h
+
+    klotter/render/color.cc klotter/render/color.h
 )
 
 set(src_base
     klotter/assert.cc klotter/assert.h
     klotter/cint.h
-    klotter/colors.cc klotter/colors.h
     klotter/compiler_warning.h
     klotter/cpp.cc klotter/cpp.h
     klotter/dependency_glad.h

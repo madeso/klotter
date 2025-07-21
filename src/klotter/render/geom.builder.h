@@ -1,6 +1,6 @@
 #pragma once
 
-#include "klotter/colors.h"
+#include "klotter/render/color.h"
 
 namespace klotter
 {
@@ -88,7 +88,8 @@ struct Builder
 	std::vector<glm::vec3> positions;
 	std::vector<glm::vec3> normals;
 	std::vector<glm::vec2> texcoords;
-	std::vector<glm::vec4> colors;
+	std::vector<glm::vec4> colors; ///< in linear space
+	//todo(Gustav): rename colors to make it apparent that it is in linear space
 };
 
 
@@ -100,15 +101,15 @@ struct Builder
 /// @param normals_facing Specifies the direction the box's normals are facing.
 /// @param color The color of the box.
 /// @return A \ref Builder representing the generated mesh.
-Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const glm::vec3& color = colors::white);
+Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const Color& color = colors::white);
 
 
 
-Builder create_xz_plane(float x, float z, bool invert, const glm::vec3& color = colors::white);
+Builder create_xz_plane(float x, float z, bool invert, const Color& color = colors::white);
 
 
 
-Builder create_xy_plane(float x, float y, SideCount two_sided, const glm::vec3& color = colors::white);
+Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& color = colors::white);
 
 
 
@@ -120,7 +121,7 @@ Builder create_xy_plane(float x, float y, SideCount two_sided, const glm::vec3& 
 /// @param color The color to apply to the sphere.
 /// @return A \ref Builder object representing the generated mesh.
 Builder create_uv_sphere(
-	float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const glm::vec3& color = colors::white
+	float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const Color& color = colors::white
 );
 
 /**

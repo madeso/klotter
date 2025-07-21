@@ -1,5 +1,7 @@
 #pragma once
 
+#include "klotter/render/color.h"
+
 namespace klotter
 {
 
@@ -12,7 +14,8 @@ struct DebugLine
 {
 	glm::vec3 from;
 	glm::vec3 to;
-	glm::vec3 color;
+	glm::vec3 color; ///< linear color space
+	// todo(Gustav): rename this to make it more apparent
 };
 
 /// Just stores debug render requests and doesn't actually render anything.
@@ -21,7 +24,7 @@ struct DebugRender
 {
 	std::vector<DebugLine> lines;
 
-	void add_line(const glm::vec3& from, const glm::vec3& to, const glm::vec3& color);
+	void add_line(const glm::vec3& from, const glm::vec3& to, const Color& color);
 };
 
 /**

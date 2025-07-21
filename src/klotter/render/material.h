@@ -3,7 +3,7 @@
 #include <memory>
 #include <optional>
 
-#include "klotter/colors.h"
+#include "klotter/render/color.h"
 #include "klotter/render/texture.h"
 
 namespace klotter
@@ -49,7 +49,7 @@ struct Material
 struct UnlitMaterial : Material
 {
 	const LoadedShader_Unlit_Container* shader_container;
-	glm::vec3 color = colors::white;
+	Color color = colors::white;
 	float alpha = 1.0f;
 	std::shared_ptr<Texture2d> texture;
 
@@ -68,11 +68,11 @@ struct UnlitMaterial : Material
 struct DefaultMaterial : Material
 {
 	const LoadedShader_Default_Container* shader_container = nullptr;
-	glm::vec3 color = colors::white;
+	Color color = colors::white;
 	float alpha = 1.0f;
 
-	glm::vec3 ambient_tint = colors::white;
-	glm::vec3 specular_color = colors::white;
+	Color ambient_tint = colors::white;
+	Color specular_color = colors::white;
 	float shininess = 32.0f;
 	float emissive_factor = 0.0f;
 

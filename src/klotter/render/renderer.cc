@@ -317,7 +317,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 				auto& shader = pimpl->shaders_resources.single_color_shader;
 				shader.program->use();
-				shader.program->set_vec4(shader.tint_color_uni, {*mesh_outline, 1});
+				shader.program->set_vec4(shader.tint_color_uni, {linear_from_srgb(*mesh_outline), 1});
 
 				shader.program->set_mat(shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera) * small_scale_mat);
 

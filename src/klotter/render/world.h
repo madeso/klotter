@@ -84,7 +84,7 @@ struct MeshInstance
 	std::shared_ptr<CompiledGeom> geom;
 	std::shared_ptr<Material> material;
 
-	std::optional<glm::vec3> outline;
+	std::optional<Color> outline;
 
 	glm::vec3 world_position = glm::vec3{0.0f};
 	glm::vec3 rotation = glm::vec3{0.0f};  ///< yaw pitch roll
@@ -119,7 +119,7 @@ struct DirectionalLight
 {
 	glm::vec3 direction = {1.0f, 0.0f, 0.0f};
 
-	glm::vec3 color = colors::white;
+	Color color = colors::white;
 	float specular = 1.0f;
 	float diffuse = 1.0f;
 };
@@ -132,7 +132,8 @@ struct PointLight
 	float max_range = 20.0f;
 	SCurve curve;  ///< curve and ui, needs to be trimmed down for actual renderer
 
-	glm::vec3 color = colors::white;
+	Color color = colors::white;
+	// todo(Gustav): rename this to strength or intensity... what best describes this?
 	float specular = 1.0f;
 	float diffuse = 1.0f;
 };
@@ -150,7 +151,7 @@ struct FrustumLight
 	float max_range = 20.0f;
 	SCurve curve;  ///< curve and ui, needs to be trimmed down for actual renderer
 
-	glm::vec3 color = colors::white;
+	Color color = colors::white;
 	float specular = 1.0f;
 	float diffuse = 1.0f;
 
@@ -160,7 +161,7 @@ struct FrustumLight
 /// All lights in a world.
 struct Lights
 {
-	glm::vec3 color = colors::white;
+	Color color = colors::white;
 	float ambient = 0.2f;
 
 	std::vector<DirectionalLight> directional_lights;
