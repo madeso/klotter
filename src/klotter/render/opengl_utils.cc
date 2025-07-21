@@ -173,6 +173,9 @@ void setup_opengl_debug()
 
 float linear_from_srgb(float value, float gamma)
 {
+	// converts from gamma space to linear space
+
+	// todo(Gustav): is this srgb or a basic gamma2 transformation? what's the difference? verify all code usage!
 	return std::pow(value, gamma);
 }
 
