@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1OpenglStates" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::OpenglStates</compoundname>
+    <includes refid="opengl__states_8h" local="no">opengl_states.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a89ee7105fbafa9f60684e3c06035f6ba" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::OpenglStates::cull_face</definition>
+        <argsstring></argsstring>
+        <name>cull_face</name>
+        <qualifiedname>klotter::OpenglStates::cull_face</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="33" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1aca8b5650ca44492042e731110c5f4177" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kindref="member">CullFace</ref> &gt;</type>
+        <definition>std::optional&lt;CullFace&gt; klotter::OpenglStates::cull_face_mode</definition>
+        <argsstring></argsstring>
+        <name>cull_face_mode</name>
+        <qualifiedname>klotter::OpenglStates::cull_face_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="34" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a5de98224948c114a0bf2c0ccb864b1f9" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::OpenglStates::blending</definition>
+        <argsstring></argsstring>
+        <name>blending</name>
+        <qualifiedname>klotter::OpenglStates::blending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="36" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a4789747bc8bfd5cb450ff49824b919e0" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1ga2bf0fb4228d3cf9922870684f4b25e81" kindref="member">BlendMode</ref> &gt;</type>
+        <definition>std::optional&lt;BlendMode&gt; klotter::OpenglStates::blend_mode</definition>
+        <argsstring></argsstring>
+        <name>blend_mode</name>
+        <qualifiedname>klotter::OpenglStates::blend_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="37" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a8442f7d639433cd010d7762c4840e32e" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::OpenglStates::depth_test</definition>
+        <argsstring></argsstring>
+        <name>depth_test</name>
+        <qualifiedname>klotter::OpenglStates::depth_test</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="39" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a62492eb93fad0b62e25746dd9519b3ab" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::OpenglStates::depth_mask</definition>
+        <argsstring></argsstring>
+        <name>depth_mask</name>
+        <qualifiedname>klotter::OpenglStates::depth_mask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="40" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a594056223592f160701bcaae4d02806f" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kindref="member">Compare</ref> &gt;</type>
+        <definition>std::optional&lt;Compare&gt; klotter::OpenglStates::depth_func</definition>
+        <argsstring></argsstring>
+        <name>depth_func</name>
+        <qualifiedname>klotter::OpenglStates::depth_func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="41" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a68cdfa7a0607de2cb1841ae79261653e" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::OpenglStates::stencil_test</definition>
+        <argsstring></argsstring>
+        <name>stencil_test</name>
+        <qualifiedname>klotter::OpenglStates::stencil_test</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="43" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a90695fe8cd6640b6d9ee540d4f583bca" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref> &gt;</type>
+        <definition>std::optional&lt;u32&gt; klotter::OpenglStates::stencil_mask</definition>
+        <argsstring></argsstring>
+        <name>stencil_mask</name>
+        <qualifiedname>klotter::OpenglStates::stencil_mask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="44" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a25febe869bee7f6251f482106cd7ed9c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kindref="member">RenderMode</ref> &gt;</type>
+        <definition>std::optional&lt;RenderMode&gt; klotter::OpenglStates::render_mode</definition>
+        <argsstring></argsstring>
+        <name>render_mode</name>
+        <qualifiedname>klotter::OpenglStates::render_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="46" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1af00a0141580a5e0169bb9cfa44b355b2" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1gad39dccc38e66e47ae52ef347a685cf07" kindref="member">StencilFunc</ref> &gt;</type>
+        <definition>std::optional&lt;StencilFunc&gt; klotter::OpenglStates::stencil_func</definition>
+        <argsstring></argsstring>
+        <name>stencil_func</name>
+        <qualifiedname>klotter::OpenglStates::stencil_func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="47" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1af1e8ecdb450e36a413e6b35ce753c352" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1ga1c638300d3c0acd1ab75efc88f4aa741" kindref="member">StencilOp</ref> &gt;</type>
+        <definition>std::optional&lt;StencilOp&gt; klotter::OpenglStates::stencil_op</definition>
+        <argsstring></argsstring>
+        <name>stencil_op</name>
+        <qualifiedname>klotter::OpenglStates::stencil_op</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="48" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1abc35a8245c75899fbf5242809bf19c69" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; int &gt;</type>
+        <definition>std::optional&lt;int&gt; klotter::OpenglStates::active_texture</definition>
+        <argsstring></argsstring>
+        <name>active_texture</name>
+        <qualifiedname>klotter::OpenglStates::active_texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="50" column="15" bodyfile="src/klotter/render/opengl_states.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OpenglStates_1a86522266949d8aee0bf4e2b53a9131f2" prot="public" static="no" mutable="no">
+        <type>std::array&lt; std::optional&lt; unsigned int &gt;, <ref refid="namespaceklotter_1a43f9bbbce92ceeed2837fcace91d9612" kindref="member">MAX_TEXTURES_SUPPORTED</ref> &gt;</type>
+        <definition>std::array&lt;std::optional&lt;unsigned int&gt;, MAX_TEXTURES_SUPPORTED&gt; klotter::OpenglStates::texture_bound</definition>
+        <argsstring></argsstring>
+        <name>texture_bound</name>
+        <qualifiedname>klotter::OpenglStates::texture_bound</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_states.h" line="51" column="12" bodyfile="src/klotter/render/opengl_states.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A &quot;cache&quot; for the current open gl state. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::OpenglStates</label>
+        <link refid="structklotter_1_1OpenglStates"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>texture_bound</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::array&lt; std::optional&lt; unsigned int &gt;, MAX_TEXTURES_SUPPORTED &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/opengl_states.h" line="31" column="1" bodyfile="src/klotter/render/opengl_states.h" bodystart="32" bodyend="52"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1OpenglStates_1abc35a8245c75899fbf5242809bf19c69" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>active_texture</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a4789747bc8bfd5cb450ff49824b919e0" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>blend_mode</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a5de98224948c114a0bf2c0ccb864b1f9" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>blending</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a89ee7105fbafa9f60684e3c06035f6ba" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>cull_face</name></member>
+      <member refid="structklotter_1_1OpenglStates_1aca8b5650ca44492042e731110c5f4177" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>cull_face_mode</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a594056223592f160701bcaae4d02806f" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>depth_func</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a62492eb93fad0b62e25746dd9519b3ab" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>depth_mask</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a8442f7d639433cd010d7762c4840e32e" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>depth_test</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a25febe869bee7f6251f482106cd7ed9c" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>render_mode</name></member>
+      <member refid="structklotter_1_1OpenglStates_1af00a0141580a5e0169bb9cfa44b355b2" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>stencil_func</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a90695fe8cd6640b6d9ee540d4f583bca" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>stencil_mask</name></member>
+      <member refid="structklotter_1_1OpenglStates_1af1e8ecdb450e36a413e6b35ce753c352" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>stencil_op</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a68cdfa7a0607de2cb1841ae79261653e" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>stencil_test</name></member>
+      <member refid="structklotter_1_1OpenglStates_1a86522266949d8aee0bf4e2b53a9131f2" prot="public" virt="non-virtual"><scope>klotter::OpenglStates</scope><name>texture_bound</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

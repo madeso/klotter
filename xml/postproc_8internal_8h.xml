@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="postproc_8internal_8h" kind="file" language="C++">
+    <compoundname>postproc.internal.h</compoundname>
+    <includes refid="postproc_8h" local="yes">klotter/render/postproc.h</includes>
+    <includes refid="feature__flags_8h" local="yes">klotter/feature_flags.h</includes>
+    <includes refid="renderer_8h" local="yes">klotter/render/renderer.h</includes>
+    <includes refid="shader_8h" local="yes">klotter/render/shader.h</includes>
+    <includes refid="shader__resource_8h" local="yes">klotter/render/shader_resource.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
+      <node id="8">
+        <label>klotter/render/assets.h</label>
+        <link refid="assets_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>klotter/render/color.h</label>
+        <link refid="color_8h"/>
+      </node>
+      <node id="10">
+        <label>klotter/render/debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>klotter/render/material.h</label>
+        <link refid="material_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>klotter/render/opengl_labels.h</label>
+        <link refid="opengl__labels_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter/render/postproc.h</label>
+        <link refid="postproc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/postproc.internal.h</label>
+        <link refid="postproc_8internal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>klotter/render/render_settings.h</label>
+        <link refid="render__settings_8h"/>
+      </node>
+      <node id="7">
+        <label>klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>klotter/render/shader.h</label>
+        <link refid="shader_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>klotter/render/shader_resource.h</label>
+        <link refid="shader__resource_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter/render/texture.h</label>
+        <link refid="texture_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>klotter/render/uniform.h</label>
+        <link refid="uniform_8h"/>
+      </node>
+      <node id="25">
+        <label>klotter/render/uniform_buffer.h</label>
+        <link refid="uniform__buffer_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>klotter/render/vertex_layout.h</label>
+        <link refid="vertex__layout_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>klotter/render/world.h</label>
+        <link refid="world_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>klotter/scurve.h</label>
+        <link refid="scurve_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>cstdint</label>
+      </node>
+      <node id="21">
+        <label>imgui.h</label>
+      </node>
+      <node id="16">
+        <label>map</label>
+      </node>
+      <node id="9">
+        <label>memory</label>
+      </node>
+      <node id="13">
+        <label>optional</label>
+      </node>
+      <node id="17">
+        <label>set</label>
+      </node>
+      <node id="19">
+        <label>unordered_set</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structklotter_1_1RenderWorld" prot="public">klotter::RenderWorld</innerclass>
+    <innerclass refid="structklotter_1_1ShaderProp" prot="public">klotter::ShaderProp</innerclass>
+    <innerclass refid="structklotter_1_1FloatDragShaderProp" prot="public">klotter::FloatDragShaderProp</innerclass>
+    <innerclass refid="structklotter_1_1FloatSliderShaderProp" prot="public">klotter::FloatSliderShaderProp</innerclass>
+    <innerclass refid="structklotter_1_1SimpleEffect" prot="public">klotter::SimpleEffect</innerclass>
+    <innerclass refid="structklotter_1_1BlurVerticalProvider" prot="public">klotter::BlurVerticalProvider</innerclass>
+    <innerclass refid="structklotter_1_1BurHorizontalProvider" prot="public">klotter::BurHorizontalProvider</innerclass>
+    <innerclass refid="structklotter_1_1BlurEffect" prot="public">klotter::BlurEffect</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="postproc_8h" kindref="compound">klotter/render/postproc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="feature__flags_8h" kindref="compound">klotter/feature_flags.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="renderer_8h" kindref="compound">klotter/render/renderer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shader_8h" kindref="compound">klotter/render/shader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shader__resource_8h" kindref="compound">klotter/render/shader_resource.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="structklotter_1_1RenderWorld" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1RenderWorld_1a72ee05fdb5ee6a4d82848f4da22d8048" kindref="member">RenderWorld</ref><sp/>:<sp/><ref refid="structklotter_1_1RenderSource_1a7bbdf727aee83637ea11695272907a31" kindref="member">RenderSource</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21" refid="structklotter_1_1RenderWorld_1a93e35103ec16f4e85876bc457d3b5b0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::ivec2<sp/><ref refid="structklotter_1_1RenderWorld_1a93e35103ec16f4e85876bc457d3b5b0b" kindref="member">window_size</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FrameBuffer&gt;<sp/><ref refid="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" kindref="member">msaa_buffer</ref>;</highlight></codeline>
+<codeline lineno="24" refid="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FrameBuffer&gt;<sp/><ref refid="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" kindref="member">realized_buffer</ref>;</highlight></codeline>
+<codeline lineno="25" refid="structklotter_1_1RenderWorld_1afd687a50e44caa95be21e438c1e41f1d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;LoadedPostProcShader&gt;<sp/><ref refid="structklotter_1_1RenderWorld_1afd687a50e44caa95be21e438c1e41f1d" kindref="member">realize_shader</ref>;</highlight></codeline>
+<codeline lineno="26" refid="structklotter_1_1RenderWorld_1a820cffdbaf12ecac4bb21c8393f971af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1RenderWorld_1a820cffdbaf12ecac4bb21c8393f971af" kindref="member">gamma_uniform</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="structklotter_1_1RenderWorld_1a72ee05fdb5ee6a4d82848f4da22d8048" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1RenderWorld_1a72ee05fdb5ee6a4d82848f4da22d8048" kindref="member">RenderWorld</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::ivec2<sp/>size,<sp/>std::shared_ptr&lt;LoadedPostProcShader&gt;<sp/>re_sh,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>msaa_samples);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" kindref="member">update</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;<sp/>arg);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" kindref="member">render</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;<sp/>arg)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structklotter_1_1ShaderProp" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kindref="member">ShaderProp</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39" refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kindref="member">ShaderProp</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40" refid="structklotter_1_1ShaderProp_1adfe6c1570dc234838d121d2e9b515223" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProp_1adfe6c1570dc234838d121d2e9b515223" kindref="member">ShaderProp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kindref="member">ShaderProp</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41" refid="structklotter_1_1ShaderProp_1a0de3a9acf2218f6171779ee84e6a31fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProp_1a0de3a9acf2218f6171779ee84e6a31fb" kindref="member">ShaderProp</ref>(<ref refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kindref="member">ShaderProp</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42" refid="structklotter_1_1ShaderProp_1a6b417085805c23b107f89f0bf57a0959" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProp_1a6b417085805c23b107f89f0bf57a0959" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kindref="member">ShaderProp</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43" refid="structklotter_1_1ShaderProp_1a8b1fc90f5a3e0f2605d36e7d0cbcfaa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProp_1a8b1fc90f5a3e0f2605d36e7d0cbcfaa7" kindref="member">operator=</ref>(<ref refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kindref="member">ShaderProp</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structklotter_1_1ShaderProp_1a3b2afd1a1a741fee9ae837da87a49332" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProp_1a3b2afd1a1a741fee9ae837da87a49332" kindref="member">~ShaderProp</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="structklotter_1_1ShaderProp_1a26bcff51c572a232c0c8470a2a478f5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProp_1a26bcff51c572a232c0c8470a2a478f5e" kindref="member">use</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;<sp/>a,<sp/><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref>&amp;<sp/>shader)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="48" refid="structklotter_1_1ShaderProp_1a5881c9f48139157903842901f6165c28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderProp_1a5881c9f48139157903842901f6165c28" kindref="member">gui</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structklotter_1_1FloatDragShaderProp" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1FloatDragShaderProp_1a620fa2284c7fc037975a2fc20c90e18d" kindref="member">FloatDragShaderProp</ref><sp/>:<sp/><ref refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kindref="member">ShaderProp</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54" refid="structklotter_1_1FloatDragShaderProp_1ad10f394f5c2c446a3c950ee2034ef354" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1FloatDragShaderProp_1ad10f394f5c2c446a3c950ee2034ef354" kindref="member">uniform</ref>;</highlight></codeline>
+<codeline lineno="55" refid="structklotter_1_1FloatDragShaderProp_1a76c568c7ad974995cf7c69f39df3ca9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structklotter_1_1FloatDragShaderProp_1a76c568c7ad974995cf7c69f39df3ca9b" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="56" refid="structklotter_1_1FloatDragShaderProp_1a6664119eb134454d8ef61979bbbc73fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatDragShaderProp_1a6664119eb134454d8ef61979bbbc73fb" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="57" refid="structklotter_1_1FloatDragShaderProp_1ad36bed4fdaba81b5be72b49eeb43bb7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatDragShaderProp_1ad36bed4fdaba81b5be72b49eeb43bb7e" kindref="member">speed</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="structklotter_1_1FloatDragShaderProp_1a620fa2284c7fc037975a2fc20c90e18d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FloatDragShaderProp_1a620fa2284c7fc037975a2fc20c90e18d" kindref="member">FloatDragShaderProp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref>&amp;<sp/>shader,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>v,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>s);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="structklotter_1_1FloatDragShaderProp_1ad8e027bad1146322a226b0502e324553" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatDragShaderProp_1ad8e027bad1146322a226b0502e324553" kindref="member">use</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;,<sp/><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref>&amp;<sp/>shader)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="structklotter_1_1FloatDragShaderProp_1a60dc7807aa6bec5cef5de6c425e3f3d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatDragShaderProp_1a60dc7807aa6bec5cef5de6c425e3f3d2" kindref="member">gui</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="structklotter_1_1FloatSliderShaderProp" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1FloatSliderShaderProp_1a594675312b454da4b4a06c9fcced5338" kindref="member">FloatSliderShaderProp</ref><sp/>:<sp/><ref refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" kindref="member">ShaderProp</ref></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69" refid="structklotter_1_1FloatSliderShaderProp_1a921d30c4c7caff395f87eae689094cb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1FloatSliderShaderProp_1a921d30c4c7caff395f87eae689094cb1" kindref="member">uniform</ref>;</highlight></codeline>
+<codeline lineno="70" refid="structklotter_1_1FloatSliderShaderProp_1a620879ab8993dffafbebb2b846143dd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structklotter_1_1FloatSliderShaderProp_1a620879ab8993dffafbebb2b846143dd2" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="71" refid="structklotter_1_1FloatSliderShaderProp_1a34eaecd8ec3a52fa9a146a17fbab666d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatSliderShaderProp_1a34eaecd8ec3a52fa9a146a17fbab666d" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="72" refid="structklotter_1_1FloatSliderShaderProp_1af00913195f8b2d1df24399babe2e4670" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatSliderShaderProp_1af00913195f8b2d1df24399babe2e4670" kindref="member">min</ref>;</highlight></codeline>
+<codeline lineno="73" refid="structklotter_1_1FloatSliderShaderProp_1a8414339be4d0247e5440fe1a3c578f4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatSliderShaderProp_1a8414339be4d0247e5440fe1a3c578f4b" kindref="member">max</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="structklotter_1_1FloatSliderShaderProp_1a594675312b454da4b4a06c9fcced5338" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FloatSliderShaderProp_1a594675312b454da4b4a06c9fcced5338" kindref="member">FloatSliderShaderProp</ref>(</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref>&amp;<sp/>shader,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>n,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>v,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>mi,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ma</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="structklotter_1_1FloatSliderShaderProp_1a0163d7e00d82aa251a1d29c382b2967e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatSliderShaderProp_1a0163d7e00d82aa251a1d29c382b2967e" kindref="member">use</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;,<sp/><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref>&amp;<sp/>shader)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structklotter_1_1FloatSliderShaderProp_1a31aea0b3e9f3216b724b8f1b84a3c605" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FloatSliderShaderProp_1a31aea0b3e9f3216b724b8f1b84a3c605" kindref="member">gui</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="structklotter_1_1SimpleEffect" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1SimpleEffect_1a59d2eedda1246a07369c1515bf46a3f7" kindref="member">SimpleEffect</ref></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="structklotter_1_1FactorEffect_1a20c51552c66bf6c1e49d615a5021d4bd" kindref="member">FactorEffect</ref></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/><ref refid="structklotter_1_1ShaderPropertyProvider_1a7a4ec231816c208cfd36842fee34f71e" kindref="member">ShaderPropertyProvider</ref></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90" refid="structklotter_1_1SimpleEffect_1a54faefb8903be9d6632b6c46480d4d8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structklotter_1_1SimpleEffect_1a54faefb8903be9d6632b6c46480d4d8e" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="91" refid="structklotter_1_1SimpleEffect_1a3b0db69f934eb0a04439d37da6022aae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;LoadedPostProcShader&gt;<sp/><ref refid="structklotter_1_1SimpleEffect_1a3b0db69f934eb0a04439d37da6022aae" kindref="member">shader</ref>;</highlight></codeline>
+<codeline lineno="92" refid="structklotter_1_1SimpleEffect_1ab9ce3c18226e5a4fcfca70bc35bcea27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::shared_ptr&lt;ShaderProp&gt;&gt;<sp/><ref refid="structklotter_1_1SimpleEffect_1ab9ce3c18226e5a4fcfca70bc35bcea27" kindref="member">properties</ref>;</highlight></codeline>
+<codeline lineno="93" refid="structklotter_1_1SimpleEffect_1a00a31874597c071d487222993b1254af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1SimpleEffect_1a00a31874597c071d487222993b1254af" kindref="member">time</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="structklotter_1_1SimpleEffect_1a59d2eedda1246a07369c1515bf46a3f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1SimpleEffect_1a59d2eedda1246a07369c1515bf46a3f7" kindref="member">SimpleEffect</ref>(std::string<sp/>n,<sp/>std::shared_ptr&lt;LoadedPostProcShader&gt;<sp/>s);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="structklotter_1_1SimpleEffect_1aeb461dabc8e7c4f556e15462289bdf5e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1SimpleEffect_1aeb461dabc8e7c4f556e15462289bdf5e" kindref="member">add_float_drag_prop</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prop_name,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="structklotter_1_1SimpleEffect_1ab923af34ed39a1ead379001243630521" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1SimpleEffect_1ab923af34ed39a1ead379001243630521" kindref="member">add_float_slider_prop</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prop_name,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>min,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>max);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="structklotter_1_1SimpleEffect_1a92f883dc6a86125695728259f7530001" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1SimpleEffect_1a92f883dc6a86125695728259f7530001" kindref="member">gui</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="structklotter_1_1SimpleEffect_1a92b9960c5dd9db2641289942c771502e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1SimpleEffect_1a92b9960c5dd9db2641289942c771502e" kindref="member">update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dt)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="structklotter_1_1SimpleEffect_1ae62e28532a810fb93998bf1303a167b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1SimpleEffect_1ae62e28532a810fb93998bf1303a167b3" kindref="member">use_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>&amp;<sp/>t)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="structklotter_1_1SimpleEffect_1a9a701df51e5ab86983e49e0c5b418899" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1SimpleEffect_1a9a701df51e5ab86983e49e0c5b418899" kindref="member">build</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BuildArg" kindref="compound">BuildArg</ref>&amp;<sp/>arg)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1BlurEffect" kindref="compound">BlurEffect</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="structklotter_1_1BlurVerticalProvider" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1BlurVerticalProvider_1aa9f8d9494a386b6d400c2f0e2ebe66df" kindref="member">BlurVerticalProvider</ref><sp/>:<sp/><ref refid="structklotter_1_1ShaderPropertyProvider_1a7a4ec231816c208cfd36842fee34f71e" kindref="member">ShaderPropertyProvider</ref></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115" refid="structklotter_1_1BlurVerticalProvider_1aa9f8d9494a386b6d400c2f0e2ebe66df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BlurVerticalProvider_1aa9f8d9494a386b6d400c2f0e2ebe66df" kindref="member">BlurVerticalProvider</ref>(<ref refid="structklotter_1_1BlurEffect" kindref="compound">BlurEffect</ref>*<sp/>b);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="structklotter_1_1BlurVerticalProvider_1a165eca67e7a8993daf1b9ea6bedfd159" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BlurEffect" kindref="compound">BlurEffect</ref>*<sp/><ref refid="structklotter_1_1BlurVerticalProvider_1a165eca67e7a8993daf1b9ea6bedfd159" kindref="member">blur</ref>;</highlight></codeline>
+<codeline lineno="118" refid="structklotter_1_1BlurVerticalProvider_1ae76c06e50d23d0583c03a047a41c9df8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BlurVerticalProvider_1ae76c06e50d23d0583c03a047a41c9df8" kindref="member">use_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>&amp;<sp/>t)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="structklotter_1_1BurHorizontalProvider" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1BurHorizontalProvider_1a5645460d8e0a3ed1189d5df37c422d18" kindref="member">BurHorizontalProvider</ref><sp/>:<sp/><ref refid="structklotter_1_1ShaderPropertyProvider_1a7a4ec231816c208cfd36842fee34f71e" kindref="member">ShaderPropertyProvider</ref></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124" refid="structklotter_1_1BurHorizontalProvider_1a5645460d8e0a3ed1189d5df37c422d18" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BurHorizontalProvider_1a5645460d8e0a3ed1189d5df37c422d18" kindref="member">BurHorizontalProvider</ref>(<ref refid="structklotter_1_1BlurEffect" kindref="compound">BlurEffect</ref>*<sp/>b);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="structklotter_1_1BurHorizontalProvider_1a000ac79ebf9859bab795d9de4ca9d32a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BlurEffect" kindref="compound">BlurEffect</ref>*<sp/><ref refid="structklotter_1_1BurHorizontalProvider_1a000ac79ebf9859bab795d9de4ca9d32a" kindref="member">blur</ref>;</highlight></codeline>
+<codeline lineno="127" refid="structklotter_1_1BurHorizontalProvider_1a651985b314335f55904c6634943647d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BurHorizontalProvider_1a651985b314335f55904c6634943647d1" kindref="member">use_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>&amp;<sp/>t)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="structklotter_1_1BlurEffect" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1BlurEffect_1affbde21f293970b31de1aa33bf1f5803" kindref="member">BlurEffect</ref><sp/>:<sp/><ref refid="structklotter_1_1FactorEffect_1a20c51552c66bf6c1e49d615a5021d4bd" kindref="member">FactorEffect</ref></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133" refid="structklotter_1_1BlurEffect_1a21e926298e2ee9222bb3ac58d566298f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structklotter_1_1BlurEffect_1a21e926298e2ee9222bb3ac58d566298f" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="134" refid="structklotter_1_1BlurEffect_1a4619799774fcac1b4fb0293b7403f8ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BlurVerticalProvider" kindref="compound">BlurVerticalProvider</ref><sp/><ref refid="structklotter_1_1BlurEffect_1a4619799774fcac1b4fb0293b7403f8ab" kindref="member">vert_p</ref>;</highlight></codeline>
+<codeline lineno="135" refid="structklotter_1_1BlurEffect_1abb8ab5ec73719ee4e1bbe7a3a2b443e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BurHorizontalProvider" kindref="compound">BurHorizontalProvider</ref><sp/><ref refid="structklotter_1_1BlurEffect_1abb8ab5ec73719ee4e1bbe7a3a2b443e4" kindref="member">hori_p</ref>;</highlight></codeline>
+<codeline lineno="136" refid="structklotter_1_1BlurEffect_1a987f9b83de4e9c7935207f5da9776736" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;LoadedPostProcShader&gt;<sp/><ref refid="structklotter_1_1BlurEffect_1a987f9b83de4e9c7935207f5da9776736" kindref="member">vert</ref>;</highlight></codeline>
+<codeline lineno="137" refid="structklotter_1_1BlurEffect_1a797295631c7220e0afda1135f8e94e61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;LoadedPostProcShader&gt;<sp/><ref refid="structklotter_1_1BlurEffect_1a797295631c7220e0afda1135f8e94e61" kindref="member">hori</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="structklotter_1_1BlurEffect_1aca5d985c5ad836e8ef80af5968a2c2cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1BlurEffect_1aca5d985c5ad836e8ef80af5968a2c2cc" kindref="member">blur_size_v</ref>;</highlight></codeline>
+<codeline lineno="140" refid="structklotter_1_1BlurEffect_1a3d07e97e13ef71c3bfb3521cae6b7ef5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1BlurEffect_1a3d07e97e13ef71c3bfb3521cae6b7ef5" kindref="member">blur_size_h</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>FF_HAS(BLUR_USE_GAUSS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/>std_dev_v;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/>std_dev_h;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="structklotter_1_1BlurEffect_1a0d0d5116bbf127075c35856b8b821206" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BlurEffect_1a0d0d5116bbf127075c35856b8b821206" kindref="member">blur_size</ref><sp/>=<sp/>0.02f;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>FF_HAS(BLUR_USE_GAUSS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>std_dev<sp/>=<sp/>0.02f;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="structklotter_1_1BlurEffect_1affbde21f293970b31de1aa33bf1f5803" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1BlurEffect_1affbde21f293970b31de1aa33bf1f5803" kindref="member">BlurEffect</ref>(std::string<sp/>n,<sp/>std::shared_ptr&lt;LoadedPostProcShader&gt;<sp/>v,<sp/>std::shared_ptr&lt;LoadedPostProcShader&gt;<sp/>h);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="structklotter_1_1BlurEffect_1a908e727a56870b36f9a8d30f065dc23d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BlurEffect_1a908e727a56870b36f9a8d30f065dc23d" kindref="member">gui</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="structklotter_1_1BlurEffect_1a45afc4bcb234120be489dcd71678e6bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BlurEffect_1a45afc4bcb234120be489dcd71678e6bc" kindref="member">update</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="structklotter_1_1BlurEffect_1a9109b05e863cb40e4a7feb409e545750" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BlurEffect_1a9109b05e863cb40e4a7feb409e545750" kindref="member">use_vert_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>&amp;<sp/>t)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="structklotter_1_1BlurEffect_1af1403aa0519290c0384080c8aa5e3f15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BlurEffect_1af1403aa0519290c0384080c8aa5e3f15" kindref="member">use_hori_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref>&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>&amp;<sp/>t);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="structklotter_1_1BlurEffect_1a0356951b19bace87a7602025903b93b2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BlurEffect_1a0356951b19bace87a7602025903b93b2" kindref="member">build</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1BuildArg" kindref="compound">BuildArg</ref>&amp;<sp/>arg)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/postproc.internal.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1Texture2d" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::Texture2d</compoundname>
+    <basecompoundref refid="structklotter_1_1BaseTexture" prot="public" virt="non-virtual">klotter::BaseTexture</basecompoundref>
+    <includes refid="texture_8h" local="no">texture.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::Texture2d::Texture2d</definition>
+        <argsstring>()=delete</argsstring>
+        <name>Texture2d</name>
+        <qualifiedname>klotter::Texture2d::Texture2d</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="87" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Texture2d_1a240d184f7b79894ec4c3948285ee3e7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::Texture2d::Texture2d</definition>
+        <argsstring>(DEBUG_LABEL_ARG_MANY const void *pixel_data, unsigned int pixel_format, int w, int h, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd)</argsstring>
+        <name>Texture2d</name>
+        <qualifiedname>klotter::Texture2d::Texture2d</qualifiedname>
+        <param>
+          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const void *</type>
+          <declname>pixel_data</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>pixel_format</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kindref="member">TextureEdge</ref></type>
+          <declname>te</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kindref="member">TextureRenderStyle</ref></type>
+          <declname>trs</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kindref="member">Transparency</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref></type>
+          <declname>cd</declname>
+        </param>
+        <briefdescription>
+<para>&quot;internal&quot; </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="90" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A 3d image texture. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="1">
+        <label>klotter::Texture2d</label>
+        <link refid="structklotter_1_1Texture2d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="1">
+        <label>klotter::Texture2d</label>
+        <link refid="structklotter_1_1Texture2d"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/texture.h" line="85" column="1" bodyfile="src/klotter/render/texture.h" bodystart="86" bodyend="91"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1BaseTexture_1afc6838fbc7dd686dd5949dce59ab93d4" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>BaseTexture</name></member>
+      <member refid="structklotter_1_1BaseTexture_1ad35cb87b78ccdf92e1a5758890b4df48" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>BaseTexture</name></member>
+      <member refid="structklotter_1_1BaseTexture_1ac1a681336f0b85638365223b1bf77fdf" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>BaseTexture</name></member>
+      <member refid="structklotter_1_1BaseTexture_1aa0c1c5008e48db75b99c027cf8b80d08" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>id</name></member>
+      <member refid="structklotter_1_1BaseTexture_1a776bb47d4a239ee81aa56b89c0168251" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1BaseTexture_1a32f38affc237565a13b2368e8a478264" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>Texture2d</name></member>
+      <member refid="structklotter_1_1Texture2d_1a240d184f7b79894ec4c3948285ee3e7b" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>Texture2d</name></member>
+      <member refid="structklotter_1_1BaseTexture_1a6dd65084b3eab03e75daa283d40b701f" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>unload</name></member>
+      <member refid="structklotter_1_1BaseTexture_1a60818d0d9e48dacf0f8293dbde6b8c2c" prot="public" virt="non-virtual"><scope>klotter::Texture2d</scope><name>~BaseTexture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

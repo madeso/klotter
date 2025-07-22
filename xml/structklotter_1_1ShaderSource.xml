@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1ShaderSource" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::ShaderSource</compoundname>
+    <includes refid="shader_8source_8h" local="no">shader.source.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1ShaderSource_1a6b9e1c440250f9b203724b907da93f18" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string klotter::ShaderSource::vertex</definition>
+        <argsstring></argsstring>
+        <name>vertex</name>
+        <qualifiedname>klotter::ShaderSource::vertex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="42" column="13" bodyfile="src/klotter/render/shader.source.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderSource_1a48a2e03510fe5f1f42060b9cb1a71966" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string klotter::ShaderSource::fragment</definition>
+        <argsstring></argsstring>
+        <name>fragment</name>
+        <qualifiedname>klotter::ShaderSource::fragment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="43" column="13" bodyfile="src/klotter/render/shader.source.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="structklotter_1_1VertexShaderSource" kindref="compound">VertexShaderSource</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::ShaderSource</label>
+        <link refid="structklotter_1_1ShaderSource"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>fragment</edgelabel>
+          <edgelabel>vertex</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/shader.source.h" line="40" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="41" bodyend="44"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1ShaderSource_1a48a2e03510fe5f1f42060b9cb1a71966" prot="public" virt="non-virtual"><scope>klotter::ShaderSource</scope><name>fragment</name></member>
+      <member refid="structklotter_1_1ShaderSource_1a6b9e1c440250f9b203724b907da93f18" prot="public" virt="non-virtual"><scope>klotter::ShaderSource</scope><name>vertex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
