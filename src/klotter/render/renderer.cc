@@ -123,16 +123,16 @@ glm::mat4 calc_world_from_local(std::shared_ptr<MeshInstance> m, const CompiledC
 	}
 };
 
-void batch_lines(LineDrawer* drawer, const std::vector<DebugLine>& debug_lines)
+void batch_lines(LineDrawer* drawer, const std::vector<DebugLine>& debug_lines, float gamma)
 {
 	for (const auto& line: debug_lines)
 	{
-		drawer->line_batch.line(line.from, line.to, line.lin_color);
+		drawer->line_batch.line(line.from, line.to, linear_from_srgb(line.color, gamma));
 	}
 	drawer->line_batch.submit();
 }
 
-void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates* states, LineDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size)
+void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates* states, LineDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size, float gamma)
 {
 	if (debug_lines.empty())
 	{
@@ -145,11 +145,11 @@ void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates*
 	
 	StateChanger{states}.depth_func(Compare::less_equal).depth_test(true);
 	drawer->set_line_to_solid();
-	batch_lines(drawer, debug_lines);
+	batch_lines(drawer, debug_lines, gamma);
 
 	StateChanger{states}.depth_func(Compare::greater).depth_test(true);
 	drawer->set_line_to_dash({window_size.x, window_size.y}, 20.0f, 20.0f);
-	batch_lines(drawer, debug_lines);
+	batch_lines(drawer, debug_lines, gamma);
 }
 
 void Renderer::render_world(const glm::ivec2& window_size, const World& world, const Camera& camera)
@@ -183,7 +183,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		SCOPED_DEBUG_GROUP("render basic geom"sv);
 		for (const auto& mesh: world.meshes)
 		{
-			constexpr auto not_transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::no};
+			const auto not_transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::no, settings.gamma};
 
 			if (mesh->material->is_transparent())
 			{
@@ -216,7 +216,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		SCOPED_DEBUG_GROUP("render instances"sv);
 		for (const auto& instance: world.instances)
 		{
-			constexpr auto not_transparent_context = RenderContext{TransformSource::Instanced_mat4, UseTransparency::no};
+			const auto not_transparent_context = RenderContext{TransformSource::Instanced_mat4, UseTransparency::no, settings.gamma};
 
 			StateChanger{&pimpl->states}
 				.depth_test(true)
@@ -242,7 +242,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	if (debug.lines.empty() == false)
 	{
 		SCOPED_DEBUG_GROUP("render debug lines"sv);
-		render_debug_lines(debug.lines, &pimpl->states, &pimpl->debug_drawer, compiled_camera, window_size);
+		render_debug_lines(debug.lines, &pimpl->states, &pimpl->debug_drawer, compiled_camera, window_size, settings.gamma);
 		debug.lines.clear();
 	}
 
@@ -277,7 +277,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		SCOPED_DEBUG_GROUP("render transparent meshes"sv);
 		for (auto& transparent_mesh: transparent_meshes)
 		{
-			constexpr auto transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::yes};
+			const auto transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::yes, settings.gamma};
 
 			const auto& mesh = transparent_mesh.mesh;
 			StateChanger{&pimpl->states}
@@ -317,7 +317,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 				auto& shader = pimpl->shaders_resources.single_color_shader;
 				shader.program->use();
-				shader.program->set_vec4(shader.tint_color_uni, {linear_from_srgb(*mesh_outline), 1});
+				shader.program->set_vec4(shader.tint_color_uni, {linear_from_srgb(*mesh_outline, settings.gamma), 1});
 
 				shader.program->set_mat(shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera) * small_scale_mat);
 

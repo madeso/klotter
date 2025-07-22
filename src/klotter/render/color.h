@@ -17,8 +17,8 @@ struct Color
 	{}
 };
 
-float linear_from_srgb(float value, float gamma = 2.2f);
-glm::vec3 linear_from_srgb(const Color& value, float gamma = 2.2f);
+float linear_from_srgb(float value, float gamma);
+glm::vec3 linear_from_srgb(const Color& value, float gamma);
 
 }
 

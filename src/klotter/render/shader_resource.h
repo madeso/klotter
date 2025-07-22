@@ -184,6 +184,13 @@ struct RenderContext
 {
 	TransformSource model_source;
 	UseTransparency use_transparency;
+	float gamma; ///< gamma from the rendering settings
+
+	constexpr RenderContext(TransformSource s, UseTransparency t, float g)
+		: model_source(s)
+		, use_transparency(t)
+		, gamma(g)
+	{}
 };
 
 /// A unlit shader.

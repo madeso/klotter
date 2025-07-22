@@ -46,7 +46,7 @@ void UnlitMaterial::set_uniforms(
 )
 {
 	const auto& shader = shader_from_container(*shader_container, rc);
-	shader.program->set_vec4(shader.tint_color_uni, {linear_from_srgb(color), alpha});
+	shader.program->set_vec4(shader.tint_color_uni, {linear_from_srgb(color, rc.gamma), alpha});
 	set_optional_mat(shader.program.get(), shader.world_from_local_uni, world_from_local);
 }
 
@@ -88,9 +88,9 @@ void DefaultMaterial::set_uniforms(
 {
 	const auto& shader = shader_from_container(*shader_container, rc);
 
-	shader.program->set_vec4(shader.tint_color_uni, {linear_from_srgb(color), alpha});
-	shader.program->set_vec3(shader.ambient_tint_uni, linear_from_srgb(ambient_tint));
-	shader.program->set_vec3(shader.specular_color_uni, linear_from_srgb(specular_color));
+	shader.program->set_vec4(shader.tint_color_uni, {linear_from_srgb(color, rc.gamma), alpha});
+	shader.program->set_vec3(shader.ambient_tint_uni, linear_from_srgb(ambient_tint, rc.gamma));
+	shader.program->set_vec3(shader.specular_color_uni, linear_from_srgb(specular_color, rc.gamma));
 	shader.program->set_float(shader.shininess_uni, shininess);
 	shader.program->set_float(shader.emissive_factor_uni, emissive_factor);
 
@@ -135,7 +135,7 @@ void DefaultMaterial::apply_lights(
 )
 {
 	const auto& shader = shader_from_container(*shader_container, rc);
-	shader.program->set_vec3(shader.light_ambient_color_uni, linear_from_srgb(lights.color) * lights.ambient);
+	shader.program->set_vec3(shader.light_ambient_color_uni, linear_from_srgb(lights.color, rc.gamma) * lights.ambient);
 
 	constexpr auto no_directional_light = ([]() {
 		DirectionalLight p;
@@ -166,8 +166,8 @@ void DefaultMaterial::apply_lights(
 						  ? lights.directional_lights[Cint_to_sizet(index)]
 						  : no_directional_light;
 		const auto& u = shader.directional_lights[Cint_to_sizet(index)];
-		shader.program->set_vec3(u.light_diffuse_color_uni, linear_from_srgb(p.color) * p.diffuse);
-		shader.program->set_vec3(u.light_specular_color_uni, linear_from_srgb(p.color) * p.specular);
+		shader.program->set_vec3(u.light_diffuse_color_uni, linear_from_srgb(p.color, settings.gamma) * p.diffuse);
+		shader.program->set_vec3(u.light_specular_color_uni, linear_from_srgb(p.color, settings.gamma) * p.specular);
 		shader.program->set_vec3(u.dir_uni, p.direction);
 	}
 
@@ -178,8 +178,8 @@ void DefaultMaterial::apply_lights(
 			: no_point_light
 		;
 		const auto& u = shader.point_lights[Cint_to_sizet(index)];
-		shader.program->set_vec3(u.light_diffuse_color_uni, linear_from_srgb(p.color) * p.diffuse);
-		shader.program->set_vec3(u.light_specular_color_uni, linear_from_srgb(p.color) * p.specular);
+		shader.program->set_vec3(u.light_diffuse_color_uni, linear_from_srgb(p.color, settings.gamma) * p.diffuse);
+		shader.program->set_vec3(u.light_specular_color_uni, linear_from_srgb(p.color, settings.gamma) * p.specular);
 		shader.program->set_vec3(u.light_world_uni, p.position);
 		shader.program->set_vec4(u.light_attenuation_uni, {p.min_range, p.max_range, p.curve.slope, p.curve.threshold});
 	}
@@ -189,8 +189,8 @@ void DefaultMaterial::apply_lights(
 		const auto& p = Cint_to_sizet(index) < lights.frustum_lights.size() ? lights.frustum_lights[Cint_to_sizet(index)]
 																		: no_frustum_light;
 		const auto& u = shader.frustum_lights[Cint_to_sizet(index)];
-		shader.program->set_vec3(u.diffuse_uni, linear_from_srgb(p.color) * p.diffuse);
-		shader.program->set_vec3(u.specular_uni, linear_from_srgb(p.color) * p.specular);
+		shader.program->set_vec3(u.diffuse_uni, linear_from_srgb(p.color, settings.gamma) * p.diffuse);
+		shader.program->set_vec3(u.specular_uni, linear_from_srgb(p.color, settings.gamma) * p.specular);
 		shader.program->set_vec3(u.world_pos_uni, p.position);
 		shader.program->set_vec4(u.attenuation_uni, {p.min_range, p.max_range, p.curve.slope, p.curve.threshold});
 
