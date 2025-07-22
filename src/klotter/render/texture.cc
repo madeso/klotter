@@ -369,7 +369,9 @@ GLenum determine_fbo_internal_format(DepthBits depth, bool add_stencil)
 	}
 }
 
-GLint internal_format_from_color_bpp(ColorBitsPerPixel texture_bits, Transparency trans)
+// this is templated because opengl can't decide if the internfal format is a GLint or GLenum
+template<typename R>
+R internal_format_from_color_bpp(ColorBitsPerPixel texture_bits, Transparency trans)
 {
 	const auto include_transparency = trans == Transparency::include;
 
@@ -416,7 +418,7 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 		glTexImage2DMultisample(
 			target,
 			msaa_samples,
-			internal_format_from_color_bpp(color_bits_per_pixel, trans),
+			internal_format_from_color_bpp<GLenum>(color_bits_per_pixel, trans),
 			width,
 			height,
 			GL_TRUE
@@ -427,7 +429,7 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 		glTexImage2D(
 			target,
 			0,
-			internal_format_from_color_bpp(color_bits_per_pixel, trans),
+			internal_format_from_color_bpp<GLint>(color_bits_per_pixel, trans),
 			width,
 			height,
 			0,
