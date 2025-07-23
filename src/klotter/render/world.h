@@ -120,8 +120,8 @@ struct DirectionalLight
 	glm::vec3 direction = {1.0f, 0.0f, 0.0f};
 
 	Color color = colors::white;
-	float specular = 1.0f;
-	float diffuse = 1.0f;
+	float specular_strength = 1.0f;
+	float diffuse_strength = 1.0f;
 };
 
 /// A point light.
@@ -134,8 +134,8 @@ struct PointLight
 
 	Color color = colors::white;
 	// todo(Gustav): rename this to strength or intensity... what best describes this?
-	float specular = 1.0f;
-	float diffuse = 1.0f;
+	float specular_strength = 1.0f;
+	float diffuse_strength = 1.0f;
 };
 
 /// Like a spotlight but can be positioned with a transform, supports light cookies and can use a "viewfrustom" when culling.
@@ -152,8 +152,8 @@ struct FrustumLight
 	SCurve curve;  ///< curve and ui, needs to be trimmed down for actual renderer
 
 	Color color = colors::white;
-	float specular = 1.0f;
-	float diffuse = 1.0f;
+	float specular_strength = 1.0f;
+	float diffuse_strength = 1.0f;
 
 	std::shared_ptr<Texture2d> cookie;	// if null, pure white is used
 };
@@ -162,7 +162,7 @@ struct FrustumLight
 struct Lights
 {
 	Color color = colors::white;
-	float ambient = 0.2f;
+	float ambient_strength = 0.2f;
 
 	std::vector<DirectionalLight> directional_lights;
 	std::vector<PointLight> point_lights;

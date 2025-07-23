@@ -92,7 +92,7 @@ struct LightsSample : Sample
 		world.skybox = renderer->make_skybox(renderer->assets.get_skybox());
 
 		// ambient
-		world.lights.ambient = 0.1f;
+		world.lights.ambient_strength = 0.1f;
 
 
 		// directional
@@ -101,23 +101,23 @@ struct LightsSample : Sample
 			auto& dili = world.lights.directional_lights[0];
 			dili.direction = {-1.0f, -1.0f, -1.0f};
 			dili.direction = glm::normalize(dili.direction);
-			dili.diffuse = 0.1f;
-			dili.specular = dili.diffuse;
+			dili.diffuse_strength = 0.1f;
+			dili.specular_strength = dili.diffuse_strength;
 			dili.color = colors::red_vermillion;
 		}
 
 		// point light
 		world.lights.point_lights.emplace_back();
 		world.lights.point_lights[0].position = light->world_position;
-		world.lights.point_lights[0].diffuse = 0.4f;
-		world.lights.point_lights[0].specular = world.lights.point_lights[0].diffuse;
+		world.lights.point_lights[0].diffuse_strength = 0.4f;
+		world.lights.point_lights[0].specular_strength = world.lights.point_lights[0].diffuse_strength;
 
 		// frustum
 		{
 			world.lights.frustum_lights.emplace_back();
 			auto& fl = world.lights.frustum_lights[0];
-			fl.diffuse = 0.4f;
-			fl.specular = fl.diffuse;
+			fl.diffuse_strength = 0.4f;
+			fl.specular_strength = fl.diffuse_strength;
 			fl.cookie = renderer->assets.get_cookie();
 		}
 
@@ -336,7 +336,7 @@ struct LightsSample : Sample
 		ImGui::DragInt2("ws", glm::value_ptr(ws));
 		ImGui::DragFloat2("wp", glm::value_ptr(wp));
 
-		ImGui::DragFloat("Ambient", &world.lights.ambient, FAC_SPEED, 0.0f, 1.0f);
+		ImGui::DragFloat("Ambient", &world.lights.ambient_strength, FAC_SPEED, 0.0f, 1.0f);
 
 		{
 			// outline
@@ -366,9 +366,9 @@ struct LightsSample : Sample
 		{
 			ImGui::PushID(dir_light_index);
 			auto& dl = world.lights.directional_lights[Cint_to_sizet(dir_light_index)];
-			if (ImGui::DragFloat("Directional", &dl.diffuse, FAC_SPEED, 0.0f, 1.0f))
+			if (ImGui::DragFloat("Directional", &dl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
 			{
-				dl.specular = dl.diffuse;
+				dl.specular_strength = dl.diffuse_strength;
 			}
 			ImGui::PopID();
 		}
@@ -381,9 +381,9 @@ struct LightsSample : Sample
 			auto& pl = world.lights.point_lights[Cint_to_sizet(point_light_index)];
 			ImGui::PushID(point_light_index);
 
-			if (ImGui::DragFloat("Point", &pl.diffuse, FAC_SPEED, 0.0f, 1.0f))
+			if (ImGui::DragFloat("Point", &pl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
 			{
-				pl.specular = pl.diffuse;
+				pl.specular_strength = pl.diffuse_strength;
 			}
 			min_max(&pl.min_range, &pl.max_range);
 			imgui_s_curve_editor("att", &pl.curve, &point_light_curves[Cint_to_sizet(point_light_index)], true, {});
@@ -413,9 +413,9 @@ struct LightsSample : Sample
 					"ypr (%f %f)", static_cast<double>(fl.pitch), static_cast<double>(fl.yaw)
 				);
 			}
-			if (ImGui::DragFloat("Frustum", &fl.diffuse, FAC_SPEED, 0.0f, 1.0f))
+			if (ImGui::DragFloat("Frustum", &fl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
 			{
-				fl.specular = fl.diffuse;
+				fl.specular_strength = fl.diffuse_strength;
 			}
 			ImGui::DragFloat("fov", &fl.fov, 0.1f);
 			ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
