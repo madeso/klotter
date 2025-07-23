@@ -239,8 +239,8 @@
   <compound refid="structklotter_1_1DirectionalLight" kind="struct"><name>klotter::DirectionalLight</name>
     <member refid="structklotter_1_1DirectionalLight_1aef91c29677db151b799ed13f1a540deb" kind="variable"><name>direction</name></member>
     <member refid="structklotter_1_1DirectionalLight_1a70136f59509a5683d7131e79e850ed24" kind="variable"><name>color</name></member>
-    <member refid="structklotter_1_1DirectionalLight_1acbdfdd248a92961d3c37c2759b460b44" kind="variable"><name>specular</name></member>
-    <member refid="structklotter_1_1DirectionalLight_1a9d888ee7d871d459f9e4ed31fea242a9" kind="variable"><name>diffuse</name></member>
+    <member refid="structklotter_1_1DirectionalLight_1a9b4bfe875fa89fd44ee20b5e6fa2f3d9" kind="variable"><name>specular_strength</name></member>
+    <member refid="structklotter_1_1DirectionalLight_1ab5ec90854317662801faf7f3f3ef2340" kind="variable"><name>diffuse_strength</name></member>
   </compound>
   <compound refid="structklotter_1_1DirectionalLightUniforms" kind="struct"><name>klotter::DirectionalLightUniforms</name>
     <member refid="structklotter_1_1DirectionalLightUniforms_1a610c577926a1029776914ad6a2d3c733" kind="variable"><name>light_diffuse_color_uni</name></member>
@@ -353,8 +353,8 @@
     <member refid="structklotter_1_1FrustumLight_1a10e1ddb1e11147f5a0e32d306be95b94" kind="variable"><name>max_range</name></member>
     <member refid="structklotter_1_1FrustumLight_1a54a594d10d1c00fd6cbc6c2aa000deef" kind="variable"><name>curve</name></member>
     <member refid="structklotter_1_1FrustumLight_1a088739f97d4c04c1c2441bc463aa76a6" kind="variable"><name>color</name></member>
-    <member refid="structklotter_1_1FrustumLight_1a8840617d050ded3d51752dcb1b9101c2" kind="variable"><name>specular</name></member>
-    <member refid="structklotter_1_1FrustumLight_1ac1cb45ac15b2592b0221101a2554f977" kind="variable"><name>diffuse</name></member>
+    <member refid="structklotter_1_1FrustumLight_1a1b6694e894778f1e7bd450d43921591b" kind="variable"><name>specular_strength</name></member>
+    <member refid="structklotter_1_1FrustumLight_1af8924ca4e0740a9d1e792dc42d974d8e" kind="variable"><name>diffuse_strength</name></member>
     <member refid="structklotter_1_1FrustumLight_1a2c2876dc3fb25f516ae33b6005c22fdf" kind="variable"><name>cookie</name></member>
   </compound>
   <compound refid="structklotter_1_1FrustumLightUniforms" kind="struct"><name>klotter::FrustumLightUniforms</name>
@@ -385,7 +385,7 @@
   </compound>
   <compound refid="structklotter_1_1Lights" kind="struct"><name>klotter::Lights</name>
     <member refid="structklotter_1_1Lights_1ae7adc2eb1ce75c3e3c92f6e88be2bb21" kind="variable"><name>color</name></member>
-    <member refid="structklotter_1_1Lights_1ad8ca55a3a70c4b053f146e9d88d82175" kind="variable"><name>ambient</name></member>
+    <member refid="structklotter_1_1Lights_1a890e9d1377f243ecabc96b1cf61a5ad7" kind="variable"><name>ambient_strength</name></member>
     <member refid="structklotter_1_1Lights_1a61b2b0f76c7cc5fd6deb52c207043de7" kind="variable"><name>directional_lights</name></member>
     <member refid="structklotter_1_1Lights_1acb7b0f789218068315c8612d1ebe189c" kind="variable"><name>point_lights</name></member>
     <member refid="structklotter_1_1Lights_1aa1be9e01f131119d7fe7aed807a69464" kind="variable"><name>frustum_lights</name></member>
@@ -534,8 +534,8 @@
     <member refid="structklotter_1_1PointLight_1a39b47df35963b4a18efa5abf68c09f77" kind="variable"><name>max_range</name></member>
     <member refid="structklotter_1_1PointLight_1ac0d003441d29d18c8f09a1a2106af1d6" kind="variable"><name>curve</name></member>
     <member refid="structklotter_1_1PointLight_1a450380d7db060b4a7c93886e9db6eaa6" kind="variable"><name>color</name></member>
-    <member refid="structklotter_1_1PointLight_1a6cdfbdc7c066592361b51c4dbfaef003" kind="variable"><name>specular</name></member>
-    <member refid="structklotter_1_1PointLight_1a184507f9566a51f37c6556c6e3a6fc78" kind="variable"><name>diffuse</name></member>
+    <member refid="structklotter_1_1PointLight_1a46ba96dd5b810c7232a2d84a63462fa9" kind="variable"><name>specular_strength</name></member>
+    <member refid="structklotter_1_1PointLight_1ac94ccb541980db50f5c2622172efbf2a" kind="variable"><name>diffuse_strength</name></member>
   </compound>
   <compound refid="structklotter_1_1PointLightUniforms" kind="struct"><name>klotter::PointLightUniforms</name>
     <member refid="structklotter_1_1PointLightUniforms_1ac6a0fc565b6aac9101d51ee80d431abc" kind="variable"><name>light_diffuse_color_uni</name></member>

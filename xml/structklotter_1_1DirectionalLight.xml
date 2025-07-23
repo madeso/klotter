@@ -34,12 +34,12 @@
         </inbodydescription>
         <location file="src/klotter/render/world.h" line="122" column="7" bodyfile="src/klotter/render/world.h" bodystart="122" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1DirectionalLight_1acbdfdd248a92961d3c37c2759b460b44" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1DirectionalLight_1a9b4bfe875fa89fd44ee20b5e6fa2f3d9" prot="public" static="no" mutable="no">
         <type>float</type>
-        <definition>float klotter::DirectionalLight::specular</definition>
+        <definition>float klotter::DirectionalLight::specular_strength</definition>
         <argsstring></argsstring>
-        <name>specular</name>
-        <qualifiedname>klotter::DirectionalLight::specular</qualifiedname>
+        <name>specular_strength</name>
+        <qualifiedname>klotter::DirectionalLight::specular_strength</qualifiedname>
         <initializer>= 1.0f</initializer>
         <briefdescription>
         </briefdescription>
@@ -49,12 +49,12 @@
         </inbodydescription>
         <location file="src/klotter/render/world.h" line="123" column="7" bodyfile="src/klotter/render/world.h" bodystart="123" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1DirectionalLight_1a9d888ee7d871d459f9e4ed31fea242a9" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1DirectionalLight_1ab5ec90854317662801faf7f3f3ef2340" prot="public" static="no" mutable="no">
         <type>float</type>
-        <definition>float klotter::DirectionalLight::diffuse</definition>
+        <definition>float klotter::DirectionalLight::diffuse_strength</definition>
         <argsstring></argsstring>
-        <name>diffuse</name>
-        <qualifiedname>klotter::DirectionalLight::diffuse</qualifiedname>
+        <name>diffuse_strength</name>
+        <qualifiedname>klotter::DirectionalLight::diffuse_strength</qualifiedname>
         <initializer>= 1.0f</initializer>
         <briefdescription>
         </briefdescription>
@@ -86,9 +86,9 @@
     <location file="src/klotter/render/world.h" line="118" column="1" bodyfile="src/klotter/render/world.h" bodystart="119" bodyend="125"/>
     <listofallmembers>
       <member refid="structklotter_1_1DirectionalLight_1a70136f59509a5683d7131e79e850ed24" prot="public" virt="non-virtual"><scope>klotter::DirectionalLight</scope><name>color</name></member>
-      <member refid="structklotter_1_1DirectionalLight_1a9d888ee7d871d459f9e4ed31fea242a9" prot="public" virt="non-virtual"><scope>klotter::DirectionalLight</scope><name>diffuse</name></member>
+      <member refid="structklotter_1_1DirectionalLight_1ab5ec90854317662801faf7f3f3ef2340" prot="public" virt="non-virtual"><scope>klotter::DirectionalLight</scope><name>diffuse_strength</name></member>
       <member refid="structklotter_1_1DirectionalLight_1aef91c29677db151b799ed13f1a540deb" prot="public" virt="non-virtual"><scope>klotter::DirectionalLight</scope><name>direction</name></member>
-      <member refid="structklotter_1_1DirectionalLight_1acbdfdd248a92961d3c37c2759b460b44" prot="public" virt="non-virtual"><scope>klotter::DirectionalLight</scope><name>specular</name></member>
+      <member refid="structklotter_1_1DirectionalLight_1a9b4bfe875fa89fd44ee20b5e6fa2f3d9" prot="public" virt="non-virtual"><scope>klotter::DirectionalLight</scope><name>specular_strength</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

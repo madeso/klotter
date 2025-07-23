@@ -20,7 +20,7 @@ var searchData=
   ['alpha_17',['alpha',['../structklotter_1_1UnlitMaterial.html#a4f569b97cfba5e690ae58b220f50acf8',1,'klotter::UnlitMaterial::alpha'],['../structklotter_1_1DefaultMaterial.html#a3c97cf440220d6a37ebeb57e28d082cb',1,'klotter::DefaultMaterial::alpha']]],
   ['alpha_5ftransparency_5flimit_18',['ALPHA_TRANSPARENCY_LIMIT',['../namespaceklotter.html#a6d9726b7a1f0528975dfda6051f71743',1,'klotter']]],
   ['always_19',['always',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69af9f90eeaf400d228facde6bc48da5cfb',1,'klotter']]],
-  ['ambient_20',['ambient',['../structklotter_1_1Lights.html#ad8ca55a3a70c4b053f146e9d88d82175',1,'klotter::Lights']]],
+  ['ambient_5fstrength_20',['ambient_strength',['../structklotter_1_1Lights.html#a890e9d1377f243ecabc96b1cf61a5ad7',1,'klotter::Lights']]],
   ['ambient_5ftint_21',['ambient_tint',['../structklotter_1_1DefaultMaterial.html#a2a4d5452dd452e0161072c26313755f6',1,'klotter::DefaultMaterial']]],
   ['ambient_5ftint_5funi_22',['ambient_tint_uni',['../structklotter_1_1LoadedShader__Default.html#a368b22d4833ac751f4015687aaaab671',1,'klotter::LoadedShader_Default']]],
   ['app_23',['App',['../structklotter_1_1App.html',1,'klotter']]],

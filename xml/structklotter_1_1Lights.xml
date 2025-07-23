@@ -19,12 +19,12 @@
         </inbodydescription>
         <location file="src/klotter/render/world.h" line="164" column="7" bodyfile="src/klotter/render/world.h" bodystart="164" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1Lights_1ad8ca55a3a70c4b053f146e9d88d82175" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1Lights_1a890e9d1377f243ecabc96b1cf61a5ad7" prot="public" static="no" mutable="no">
         <type>float</type>
-        <definition>float klotter::Lights::ambient</definition>
+        <definition>float klotter::Lights::ambient_strength</definition>
         <argsstring></argsstring>
-        <name>ambient</name>
-        <qualifiedname>klotter::Lights::ambient</qualifiedname>
+        <name>ambient_strength</name>
+        <qualifiedname>klotter::Lights::ambient_strength</qualifiedname>
         <initializer>= 0.2f</initializer>
         <briefdescription>
         </briefdescription>
@@ -174,7 +174,7 @@
     </collaborationgraph>
     <location file="src/klotter/render/world.h" line="162" column="1" bodyfile="src/klotter/render/world.h" bodystart="163" bodyend="170"/>
     <listofallmembers>
-      <member refid="structklotter_1_1Lights_1ad8ca55a3a70c4b053f146e9d88d82175" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>ambient</name></member>
+      <member refid="structklotter_1_1Lights_1a890e9d1377f243ecabc96b1cf61a5ad7" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>ambient_strength</name></member>
       <member refid="structklotter_1_1Lights_1ae7adc2eb1ce75c3e3c92f6e88be2bb21" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>color</name></member>
       <member refid="structklotter_1_1Lights_1a61b2b0f76c7cc5fd6deb52c207043de7" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>directional_lights</name></member>
       <member refid="structklotter_1_1Lights_1aa1be9e01f131119d7fe7aed807a69464" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>frustum_lights</name></member>
