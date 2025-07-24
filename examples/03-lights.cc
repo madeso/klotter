@@ -245,8 +245,8 @@ struct LightsSample : Sample
 		}
 	}
 
-	glm::ivec2 ws;
-	glm::vec2 wp;
+	glm::ivec2 last_window_size;
+	glm::vec2 projected_target;
 
 	std::vector<SCurveGuiState> point_light_curves;
 	SCurveGuiState frustum_light_curve;
@@ -267,8 +267,8 @@ struct LightsSample : Sample
 			fl.pitch = camera->pitch;
 		}
 		const auto target = glm::vec3{10.0f, 10.0f, 10.0f};
-		ws = window_size;
-		wp = to_screen(compile(*camera, window_size), target, window_size);
+		last_window_size = window_size;
+		projected_target = to_screen(compile(*camera, window_size), target, window_size);
 		renderer->debug.add_line(
 			glm::vec3{0, 0, 0},
 			target,
@@ -333,11 +333,13 @@ struct LightsSample : Sample
 		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
 		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());
 		ImGui::LabelText("yaw", "%s", (Str{} << camera->yaw).str().c_str());
-		ImGui::DragInt2("ws", glm::value_ptr(ws));
-		ImGui::DragFloat2("wp", glm::value_ptr(wp));
+		ImGui::LabelText("window size", "%d | %d", last_window_size.x, last_window_size.y);
+		ImGui::LabelText("projected target", "%f | %f", projected_target.x, projected_target.y);
 
-		ImGui::DragFloat("Ambient", &world.lights.ambient_strength, FAC_SPEED, 0.0f, 1.0f);
+		ImGui::SeparatorText("Ambient lights");
+		ImGui::DragFloat("Ambient strength", &world.lights.ambient_strength, FAC_SPEED, 0.0f, 1.0f);
 
+		ImGui::SeparatorText("Outline");
 		{
 			// outline
 			static int index = 2;
@@ -360,6 +362,7 @@ struct LightsSample : Sample
 			}
 		}
 
+		ImGui::SeparatorText("Directional");
 		for (int dir_light_index = 0;
 			 dir_light_index < Csizet_to_int(world.lights.directional_lights.size());
 			 dir_light_index += 1)
@@ -373,6 +376,7 @@ struct LightsSample : Sample
 			ImGui::PopID();
 		}
 
+		ImGui::SeparatorText("Pointlights");
 		point_light_curves.resize(world.lights.point_lights.size());
 		for (int point_light_index = 0;
 			 point_light_index < Csizet_to_int(world.lights.point_lights.size());
@@ -390,6 +394,7 @@ struct LightsSample : Sample
 			ImGui::PopID();
 		}
 
+		ImGui::SeparatorText("Frustum");
 		ImGui::PushID("frustum lights");
 		{
 			ImGui::Checkbox("Follow player", &follow_player);

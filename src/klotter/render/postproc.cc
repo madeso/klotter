@@ -346,7 +346,7 @@ void SimpleEffect::gui()
 
 	int index = 0;
 
-	if (ImGui::CollapsingHeader(name.c_str()) == false)
+	if (ImGui::TreeNode(name.c_str()) == false)
 	{
 		return;
 	}
@@ -358,6 +358,8 @@ void SimpleEffect::gui()
 		ImGui::PopID();
 		index += 1;
 	}
+
+	ImGui::TreePop();
 }
 
 void SimpleEffect::update(float dt)
@@ -462,7 +464,7 @@ BlurEffect::BlurEffect(std::string n, std::shared_ptr<LoadedPostProcShader> v, s
 
 void BlurEffect::gui()
 {
-	if (ImGui::CollapsingHeader(name.c_str()) == false)
+	if (ImGui::TreeNode(name.c_str()) == false)
 	{
 		return;
 	}
@@ -471,6 +473,8 @@ void BlurEffect::gui()
 #if FF_HAS(BLUR_USE_GAUSS)
 	ImGui::SliderFloat("Standard deviation", &std_dev, 0.0f, 0.1f);
 #endif
+
+	ImGui::TreePop();
 }
 
 void BlurEffect::update(float)
