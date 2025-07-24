@@ -69,19 +69,9 @@ void EndButtonGroup()
 	ImGui::PopStyleColor(3);
 }
 
-void SampleApp::on_gui(klotter::Renderer* renderer)
+void SampleApp::on_gui(klotter::Renderer*)
 {
 	ImGui::Begin("Sample switcher");
-
-	for (std::size_t si = 0; si < samples.size(); si += 1)
-	{
-		BeginButtonGroup(si, selected_sample);
-		if (ImGui::Button(samples[si].name.c_str()))
-		{
-			set_selected_sample(renderer, si);
-		}
-		EndButtonGroup();
-	}
 
 	if (active_sample)
 	{
