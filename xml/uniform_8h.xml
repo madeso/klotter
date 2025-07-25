@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="uniform_8h" kind="file" language="C++">
+    <compoundname>uniform.h</compoundname>
+    <includedby refid="shader_8h" local="yes">src/klotter/render/shader.h</includedby>
+    <includedby refid="shader__resource_8h" local="yes">src/klotter/render/shader_resource.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/klotter/render/linebatch.h</label>
+        <link refid="linebatch_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/klotter/render/postproc.internal.h</label>
+        <link refid="postproc_8internal_8h"/>
+      </node>
+      <node id="4">
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
+      </node>
+      <node id="2">
+        <label>src/klotter/render/shader.h</label>
+        <link refid="shader_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/klotter/render/shader_resource.h</label>
+        <link refid="shader__resource_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/uniform.h</label>
+        <link refid="uniform_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1Uniform" prot="public">klotter::Uniform</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="structklotter_1_1Uniform" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1Uniform_1ae92165c2777bb0ec48e24ffde3742e4d" kindref="member">Uniform</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10" refid="structklotter_1_1Uniform_1a701fee8156a72be5f0c83f46b9cb2f1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structklotter_1_1Uniform_1a701fee8156a72be5f0c83f46b9cb2f1e" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&lt;unknown&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11" refid="structklotter_1_1Uniform_1a0a3d653eabb213c1f05a7ca494a5cf27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform_1a0a3d653eabb213c1f05a7ca494a5cf27" kindref="member">location</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="12" refid="structklotter_1_1Uniform_1a9939992cfef5650d0db1beda73c8177e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform_1a9939992cfef5650d0db1beda73c8177e" kindref="member">debug_shader_program</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="13" refid="structklotter_1_1Uniform_1a2546427ecf437a68f5170f9eae34f2e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform_1a2546427ecf437a68f5170f9eae34f2e8" kindref="member">texture</ref><sp/>=<sp/>-1;<sp/><sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structklotter_1_1Uniform_1ae92165c2777bb0ec48e24ffde3742e4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform_1ae92165c2777bb0ec48e24ffde3742e4d" kindref="member">Uniform</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="structklotter_1_1Uniform_1ac7e507c27683ef81a905bb0425f1bf8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform_1ac7e507c27683ef81a905bb0425f1bf8b" kindref="member">Uniform</ref>(std::string<sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sp);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="structklotter_1_1Uniform_1a03304ebcbae54892df11072cccd6f8ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform_1a03304ebcbae54892df11072cccd6f8ef" kindref="member">is_valid</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/uniform.h"/>
+  </compounddef>
+</doxygen>

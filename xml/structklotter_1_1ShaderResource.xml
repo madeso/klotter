@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1ShaderResource" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::ShaderResource</compoundname>
+    <includes refid="shader__resource_8h" local="no">shader_resource.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1ae8c6c5ddd6c4420cf6c0b45b7af33774" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1LoadedShader__SingleColor" kindref="compound">LoadedShader_SingleColor</ref></type>
+        <definition>LoadedShader_SingleColor klotter::ShaderResource::single_color_shader</definition>
+        <argsstring></argsstring>
+        <name>single_color_shader</name>
+        <qualifiedname>klotter::ShaderResource::single_color_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="228" column="26" bodyfile="src/klotter/render/shader_resource.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1a602b3aabff75e850fcf2763f6d9337cd" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1LoadedShader__Skybox" kindref="compound">LoadedShader_Skybox</ref></type>
+        <definition>LoadedShader_Skybox klotter::ShaderResource::skybox_shader</definition>
+        <argsstring></argsstring>
+        <name>skybox_shader</name>
+        <qualifiedname>klotter::ShaderResource::skybox_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="229" column="21" bodyfile="src/klotter/render/shader_resource.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1a6cd5168ba013a0a024399c947049d62c" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1LoadedShader__Unlit__Container" kindref="compound">LoadedShader_Unlit_Container</ref></type>
+        <definition>LoadedShader_Unlit_Container klotter::ShaderResource::unlit_shader_container</definition>
+        <argsstring></argsstring>
+        <name>unlit_shader_container</name>
+        <qualifiedname>klotter::ShaderResource::unlit_shader_container</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="231" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1a5c273cf873385756fa75f944c4d74e08" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1LoadedShader__Default__Container" kindref="compound">LoadedShader_Default_Container</ref></type>
+        <definition>LoadedShader_Default_Container klotter::ShaderResource::default_shader_container</definition>
+        <argsstring></argsstring>
+        <name>default_shader_container</name>
+        <qualifiedname>klotter::ShaderResource::default_shader_container</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="232" column="32" bodyfile="src/klotter/render/shader_resource.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1a42791e44344f358c3a6163b1b36e7a94" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ShaderResource::pp_invert</definition>
+        <argsstring></argsstring>
+        <name>pp_invert</name>
+        <qualifiedname>klotter::ShaderResource::pp_invert</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="236" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1a3b63ca1d92d088405aac4b3a819e71c6" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ShaderResource::pp_grayscale</definition>
+        <argsstring></argsstring>
+        <name>pp_grayscale</name>
+        <qualifiedname>klotter::ShaderResource::pp_grayscale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="237" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1aa149d11a09f21cb8ef31e2e6a029a7c5" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ShaderResource::pp_damage</definition>
+        <argsstring></argsstring>
+        <name>pp_damage</name>
+        <qualifiedname>klotter::ShaderResource::pp_damage</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="238" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1a0a37be05607f2204c84b6454552c176b" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ShaderResource::pp_blurv</definition>
+        <argsstring></argsstring>
+        <name>pp_blurv</name>
+        <qualifiedname>klotter::ShaderResource::pp_blurv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="239" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1a62e158ef1f413d38d6e1628183de2b34" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ShaderResource::pp_blurh</definition>
+        <argsstring></argsstring>
+        <name>pp_blurh</name>
+        <qualifiedname>klotter::ShaderResource::pp_blurh</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="240" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ShaderResource_1aabc58d1050e66fa117eef222364822e6" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ShaderResource::pp_realize</definition>
+        <argsstring></argsstring>
+        <name>pp_realize</name>
+        <qualifiedname>klotter::ShaderResource::pp_realize</qualifiedname>
+        <briefdescription>
+<para>the realization shader that is always run </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="243" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1ShaderResource_1a43421a57252a58a738c4df8f318b7dc3" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool klotter::ShaderResource::is_loaded</definition>
+        <argsstring>() const</argsstring>
+        <name>is_loaded</name>
+        <qualifiedname>klotter::ShaderResource::is_loaded</qualifiedname>
+        <briefdescription>
+<para>verify that the shaders are loaded </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="246" column="7"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>All loaded shaders. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>klotter::CompiledGeomVertexAttributes</label>
+        <link refid="structklotter_1_1CompiledGeomVertexAttributes"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>klotter::CompiledVertexElementNoName</label>
+        <link refid="structklotter_1_1CompiledVertexElementNoName"/>
+      </node>
+      <node id="18">
+        <label>klotter::DirectionalLightUniforms</label>
+        <link refid="structklotter_1_1DirectionalLightUniforms"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>dir_uni</edgelabel>
+          <edgelabel>light_diffuse_color_uni</edgelabel>
+          <edgelabel>light_specular_color_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>klotter::FrustumLightUniforms</label>
+        <link refid="structklotter_1_1FrustumLightUniforms"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>attenuation_uni</edgelabel>
+          <edgelabel>cookie_uni</edgelabel>
+          <edgelabel>diffuse_uni</edgelabel>
+          <edgelabel>specular_uni</edgelabel>
+          <edgelabel>world_pos_uni</edgelabel>
+          <edgelabel>world_to_clip_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>klotter::LoadedPostProcShader</label>
+        <link refid="structklotter_1_1LoadedPostProcShader"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>texture_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>klotter::LoadedShader_Default</label>
+        <link refid="structklotter_1_1LoadedShader__Default"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>ambient_tint_uni</edgelabel>
+          <edgelabel>emissive_factor_uni</edgelabel>
+          <edgelabel>light_ambient_color_uni</edgelabel>
+          <edgelabel>shininess_uni</edgelabel>
+          <edgelabel>specular_color_uni</edgelabel>
+          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tex_emissive_uni</edgelabel>
+          <edgelabel>tex_specular_uni</edgelabel>
+          <edgelabel>tint_color_uni</edgelabel>
+          <edgelabel>view_position_uni</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>directional_lights</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>point_lights</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>frustum_lights</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>klotter::LoadedShader_Default_Container</label>
+        <link refid="structklotter_1_1LoadedShader__Default__Container"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>geom_layout</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>default_shader</edgelabel>
+          <edgelabel>default_shader_instance</edgelabel>
+          <edgelabel>transparency_shader</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::LoadedShader_SingleColor</label>
+        <link refid="structklotter_1_1LoadedShader__SingleColor"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>geom_layout</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>tint_color_uni</edgelabel>
+          <edgelabel>world_from_local_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>klotter::LoadedShader_Skybox</label>
+        <link refid="structklotter_1_1LoadedShader__Skybox"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>geom_layout</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>tex_skybox_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>klotter::LoadedShader_Unlit</label>
+        <link refid="structklotter_1_1LoadedShader__Unlit"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tint_color_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>klotter::LoadedShader_Unlit_Container</label>
+        <link refid="structklotter_1_1LoadedShader__Unlit__Container"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>geom_layout</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>default_shader</edgelabel>
+          <edgelabel>transparency_shader</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>klotter::PointLightUniforms</label>
+        <link refid="structklotter_1_1PointLightUniforms"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>light_attenuation_uni</edgelabel>
+          <edgelabel>light_diffuse_color_uni</edgelabel>
+          <edgelabel>light_specular_color_uni</edgelabel>
+          <edgelabel>light_world_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>klotter::ShaderResource</label>
+        <link refid="structklotter_1_1ShaderResource"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>single_color_shader</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>skybox_shader</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>unlit_shader_container</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>default_shader_container</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>pp_blurh</edgelabel>
+          <edgelabel>pp_blurv</edgelabel>
+          <edgelabel>pp_damage</edgelabel>
+          <edgelabel>pp_grayscale</edgelabel>
+          <edgelabel>pp_invert</edgelabel>
+          <edgelabel>pp_realize</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="23">
+        <label>std::shared_ptr&lt; klotter::LoadedPostProcShader &gt;</label>
+        <childnode refid="24" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::string</label>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; klotter::CompiledVertexElementNoName &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>std::vector&lt; klotter::DirectionalLightUniforms &gt;</label>
+        <childnode refid="18" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>std::vector&lt; klotter::FrustumLightUniforms &gt;</label>
+        <childnode refid="22" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>std::vector&lt; klotter::PointLightUniforms &gt;</label>
+        <childnode refid="20" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/shader_resource.h" line="226" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="227" bodyend="247"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1ShaderResource_1a5c273cf873385756fa75f944c4d74e08" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>default_shader_container</name></member>
+      <member refid="structklotter_1_1ShaderResource_1a43421a57252a58a738c4df8f318b7dc3" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>is_loaded</name></member>
+      <member refid="structklotter_1_1ShaderResource_1a62e158ef1f413d38d6e1628183de2b34" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_blurh</name></member>
+      <member refid="structklotter_1_1ShaderResource_1a0a37be05607f2204c84b6454552c176b" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_blurv</name></member>
+      <member refid="structklotter_1_1ShaderResource_1aa149d11a09f21cb8ef31e2e6a029a7c5" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_damage</name></member>
+      <member refid="structklotter_1_1ShaderResource_1a3b63ca1d92d088405aac4b3a819e71c6" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_grayscale</name></member>
+      <member refid="structklotter_1_1ShaderResource_1a42791e44344f358c3a6163b1b36e7a94" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_invert</name></member>
+      <member refid="structklotter_1_1ShaderResource_1aabc58d1050e66fa117eef222364822e6" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>pp_realize</name></member>
+      <member refid="structklotter_1_1ShaderResource_1ae8c6c5ddd6c4420cf6c0b45b7af33774" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>single_color_shader</name></member>
+      <member refid="structklotter_1_1ShaderResource_1a602b3aabff75e850fcf2763f6d9337cd" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>skybox_shader</name></member>
+      <member refid="structklotter_1_1ShaderResource_1a6cd5168ba013a0a024399c947049d62c" prot="public" virt="non-virtual"><scope>klotter::ShaderResource</scope><name>unlit_shader_container</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1StateChanger" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::StateChanger</compoundname>
+    <includes refid="statechanger_8h" local="no">statechanger.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1StateChanger_1aee93777d716b4aa71e478ac0798168c9" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref> *</type>
+        <definition>OpenglStates* klotter::StateChanger::states</definition>
+        <argsstring></argsstring>
+        <name>states</name>
+        <qualifiedname>klotter::StateChanger::states</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="24" column="14" bodyfile="src/klotter/render/statechanger.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::StateChanger::StateChanger</definition>
+        <argsstring>(OpenglStates *s)</argsstring>
+        <name>StateChanger</name>
+        <qualifiedname>klotter::StateChanger::StateChanger</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="26" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a41280644fa164a17e213a1025c7168d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::cull_face</definition>
+        <argsstring>(bool new_state)</argsstring>
+        <name>cull_face</name>
+        <qualifiedname>klotter::StateChanger::cull_face</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="28" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a656b206c64adb701104ddd5d19063d9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::blending</definition>
+        <argsstring>(bool new_state)</argsstring>
+        <name>blending</name>
+        <qualifiedname>klotter::StateChanger::blending</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="29" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a70cb029500702452e680e238a41c19c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::depth_test</definition>
+        <argsstring>(bool new_state)</argsstring>
+        <name>depth_test</name>
+        <qualifiedname>klotter::StateChanger::depth_test</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="30" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a6a3130055e1a4b9fb10f03bc03d19e61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::depth_mask</definition>
+        <argsstring>(bool new_state)</argsstring>
+        <name>depth_mask</name>
+        <qualifiedname>klotter::StateChanger::depth_mask</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="31" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a9b71fd449755c790d84e17f5807bd98b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::depth_func</definition>
+        <argsstring>(Compare new_state)</argsstring>
+        <name>depth_func</name>
+        <qualifiedname>klotter::StateChanger::depth_func</qualifiedname>
+        <param>
+          <type><ref refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kindref="member">Compare</ref></type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="32" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1ab9b21b1f81a47ab53c0fc868cb03a5c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::stencil_test</definition>
+        <argsstring>(bool new_state)</argsstring>
+        <name>stencil_test</name>
+        <qualifiedname>klotter::StateChanger::stencil_test</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="33" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a71c569b580b89d7c5979bcb041c44be5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::stencil_mask</definition>
+        <argsstring>(u32 new_state)</argsstring>
+        <name>stencil_mask</name>
+        <qualifiedname>klotter::StateChanger::stencil_mask</qualifiedname>
+        <param>
+          <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+<para>Set a bitmask that is ANDed with the stencil value about to be written to the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="36" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a526cf05c48c5b7d9d617e30a665bed70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::stencil_func</definition>
+        <argsstring>(Compare func, i32 ref, u32 mask)</argsstring>
+        <name>stencil_func</name>
+        <qualifiedname>klotter::StateChanger::stencil_func</qualifiedname>
+        <param>
+          <type><ref refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kindref="member">Compare</ref></type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type><ref refid="pch_8public_8h_1aec41e5f8e4b7aef2540e84268692fa84" kindref="member">i32</ref></type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+          <declname>mask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stencil test function that determines whether a fragment passes or is discarded. This test function is applied to the stored stencil value and the ref value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ref</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the reference value for the stencil test. The stencil buffer&apos;s content is compared to this value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mask that is ANDed with both the reference value and the stored stencil value before the test compares them. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="44" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a4460dfe9a996fd2d47f4986fef9a763d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::render_mode</definition>
+        <argsstring>(RenderMode new_state)</argsstring>
+        <name>render_mode</name>
+        <qualifiedname>klotter::StateChanger::render_mode</qualifiedname>
+        <param>
+          <type><ref refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kindref="member">RenderMode</ref></type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="45" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1ad9fd74dfef0eb9ada6a0d781d29bc076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::stencil_op</definition>
+        <argsstring>(StencilAction stencil_fail, StencilAction depth_fail, StencilAction pass)</argsstring>
+        <name>stencil_op</name>
+        <qualifiedname>klotter::StateChanger::stencil_op</qualifiedname>
+        <param>
+          <type><ref refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kindref="member">StencilAction</ref></type>
+          <declname>stencil_fail</declname>
+        </param>
+        <param>
+          <type><ref refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kindref="member">StencilAction</ref></type>
+          <declname>depth_fail</declname>
+        </param>
+        <param>
+          <type><ref refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kindref="member">StencilAction</ref></type>
+          <declname>pass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stencil_fail</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>action to take if the stencil test fails. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth_fail</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>action to take if the stencil test passes, but the depth test fails. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>action to take if both the stencil and the depth test pass. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="52" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a15a745b044fb2f29909d93a22d48d176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::cull_face_mode</definition>
+        <argsstring>(CullFace new_state)</argsstring>
+        <name>cull_face_mode</name>
+        <qualifiedname>klotter::StateChanger::cull_face_mode</qualifiedname>
+        <param>
+          <type><ref refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kindref="member">CullFace</ref></type>
+          <declname>new_state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="53" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a975a77a826ea9561d27b994f06e94111" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::blend_mode</definition>
+        <argsstring>(Blend src, Blend dst)</argsstring>
+        <name>blend_mode</name>
+        <qualifiedname>klotter::StateChanger::blend_mode</qualifiedname>
+        <param>
+          <type><ref refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kindref="member">Blend</ref></type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kindref="member">Blend</ref></type>
+          <declname>dst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="54" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1abbae49c8836d55354a1ffd300ba59ee5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::activate_texture</definition>
+        <argsstring>(int new_texture)</argsstring>
+        <name>activate_texture</name>
+        <qualifiedname>klotter::StateChanger::activate_texture</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>new_texture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="55" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1af057b4d787af6e9a053047b6fd4e8599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::bind_texture_2d</definition>
+        <argsstring>(int slot, unsigned int texture)</argsstring>
+        <name>bind_texture_2d</name>
+        <qualifiedname>klotter::StateChanger::bind_texture_2d</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>texture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="56" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1StateChanger_1a4a02c0cede714c6681d356d47f624856" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1StateChanger" kindref="compound">StateChanger</ref> &amp;</type>
+        <definition>StateChanger &amp; klotter::StateChanger::bind_texture_cubemap</definition>
+        <argsstring>(int slot, unsigned int texture)</argsstring>
+        <name>bind_texture_cubemap</name>
+        <qualifiedname>klotter::StateChanger::bind_texture_cubemap</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>texture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/statechanger.h" line="57" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A helper class to change both the opengl state and the cache. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>klotter::OpenglStates</label>
+        <link refid="structklotter_1_1OpenglStates"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>texture_bound</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>klotter::StateChanger</label>
+        <link refid="structklotter_1_1StateChanger"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>states</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::array&lt; std::optional&lt; unsigned int &gt;, MAX_TEXTURES_SUPPORTED &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/statechanger.h" line="22" column="1" bodyfile="src/klotter/render/statechanger.h" bodystart="23" bodyend="58"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1StateChanger_1abbae49c8836d55354a1ffd300ba59ee5" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>activate_texture</name></member>
+      <member refid="structklotter_1_1StateChanger_1af057b4d787af6e9a053047b6fd4e8599" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>bind_texture_2d</name></member>
+      <member refid="structklotter_1_1StateChanger_1a4a02c0cede714c6681d356d47f624856" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>bind_texture_cubemap</name></member>
+      <member refid="structklotter_1_1StateChanger_1a975a77a826ea9561d27b994f06e94111" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>blend_mode</name></member>
+      <member refid="structklotter_1_1StateChanger_1a656b206c64adb701104ddd5d19063d9f" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>blending</name></member>
+      <member refid="structklotter_1_1StateChanger_1a41280644fa164a17e213a1025c7168d2" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>cull_face</name></member>
+      <member refid="structklotter_1_1StateChanger_1a15a745b044fb2f29909d93a22d48d176" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>cull_face_mode</name></member>
+      <member refid="structklotter_1_1StateChanger_1a9b71fd449755c790d84e17f5807bd98b" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>depth_func</name></member>
+      <member refid="structklotter_1_1StateChanger_1a6a3130055e1a4b9fb10f03bc03d19e61" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>depth_mask</name></member>
+      <member refid="structklotter_1_1StateChanger_1a70cb029500702452e680e238a41c19c7" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>depth_test</name></member>
+      <member refid="structklotter_1_1StateChanger_1a4460dfe9a996fd2d47f4986fef9a763d" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>render_mode</name></member>
+      <member refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>StateChanger</name></member>
+      <member refid="structklotter_1_1StateChanger_1aee93777d716b4aa71e478ac0798168c9" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>states</name></member>
+      <member refid="structklotter_1_1StateChanger_1a526cf05c48c5b7d9d617e30a665bed70" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>stencil_func</name></member>
+      <member refid="structklotter_1_1StateChanger_1a71c569b580b89d7c5979bcb041c44be5" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>stencil_mask</name></member>
+      <member refid="structklotter_1_1StateChanger_1ad9fd74dfef0eb9ada6a0d781d29bc076" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>stencil_op</name></member>
+      <member refid="structklotter_1_1StateChanger_1ab9b21b1f81a47ab53c0fc868cb03a5c3" prot="public" virt="non-virtual"><scope>klotter::StateChanger</scope><name>stencil_test</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

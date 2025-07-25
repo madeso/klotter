@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1LoadedShader__SingleColor" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::LoadedShader_SingleColor</compoundname>
+    <includes refid="shader__resource_8h" local="no">shader_resource.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__SingleColor_1a6e8a455125d60ff6e54d8cbf5a675235" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;ShaderProgram&gt; klotter::LoadedShader_SingleColor::program</definition>
+        <argsstring></argsstring>
+        <name>program</name>
+        <qualifiedname>klotter::LoadedShader_SingleColor::program</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="50" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__SingleColor_1a008c62fa6ddc4d90ceb7eb4edf0927a2" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref></type>
+        <definition>CompiledGeomVertexAttributes klotter::LoadedShader_SingleColor::geom_layout</definition>
+        <argsstring></argsstring>
+        <name>geom_layout</name>
+        <qualifiedname>klotter::LoadedShader_SingleColor::geom_layout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="51" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__SingleColor_1a4cb00aa2b75879c67cb884a7a7723e80" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LoadedShader_SingleColor::tint_color_uni</definition>
+        <argsstring></argsstring>
+        <name>tint_color_uni</name>
+        <qualifiedname>klotter::LoadedShader_SingleColor::tint_color_uni</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="52" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__SingleColor_1a2871864eddb63c2d7545c77d93023491" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::LoadedShader_SingleColor::world_from_local_uni</definition>
+        <argsstring></argsstring>
+        <name>world_from_local_uni</name>
+        <qualifiedname>klotter::LoadedShader_SingleColor::world_from_local_uni</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="53" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1LoadedShader__SingleColor_1a78fd1a7a6acfb086b714d9ebafe1374a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::LoadedShader_SingleColor::LoadedShader_SingleColor</definition>
+        <argsstring>(std::shared_ptr&lt; ShaderProgram &gt; p, CompiledGeomVertexAttributes l, const CameraUniformBuffer &amp;desc)</argsstring>
+        <name>LoadedShader_SingleColor</name>
+        <qualifiedname>klotter::LoadedShader_SingleColor::LoadedShader_SingleColor</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &gt;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref></type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1CameraUniformBuffer" kindref="compound">CameraUniformBuffer</ref> &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="46" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A single color shader. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>klotter::CompiledGeomVertexAttributes</label>
+        <link refid="structklotter_1_1CompiledGeomVertexAttributes"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>klotter::CompiledVertexElementNoName</label>
+        <link refid="structklotter_1_1CompiledVertexElementNoName"/>
+      </node>
+      <node id="1">
+        <label>klotter::LoadedShader_SingleColor</label>
+        <link refid="structklotter_1_1LoadedShader__SingleColor"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>geom_layout</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>tint_color_uni</edgelabel>
+          <edgelabel>world_from_local_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::string</label>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; klotter::CompiledVertexElementNoName &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/shader_resource.h" line="44" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="45" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1LoadedShader__SingleColor_1a008c62fa6ddc4d90ceb7eb4edf0927a2" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_SingleColor</scope><name>geom_layout</name></member>
+      <member refid="structklotter_1_1LoadedShader__SingleColor_1a78fd1a7a6acfb086b714d9ebafe1374a" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_SingleColor</scope><name>LoadedShader_SingleColor</name></member>
+      <member refid="structklotter_1_1LoadedShader__SingleColor_1a6e8a455125d60ff6e54d8cbf5a675235" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_SingleColor</scope><name>program</name></member>
+      <member refid="structklotter_1_1LoadedShader__SingleColor_1a4cb00aa2b75879c67cb884a7a7723e80" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_SingleColor</scope><name>tint_color_uni</name></member>
+      <member refid="structklotter_1_1LoadedShader__SingleColor_1a2871864eddb63c2d7545c77d93023491" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_SingleColor</scope><name>world_from_local_uni</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
