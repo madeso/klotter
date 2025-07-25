@@ -14,6 +14,11 @@ using namespace klotter;
 namespace examples
 {
 
+static void imgui_label(const char* const label, const std::string& text)
+{
+	ImGui::LabelText(label, "%s", text.c_str());
+}
+
 struct LightsSample : Sample
 {
 	World world;
@@ -331,10 +336,10 @@ struct LightsSample : Sample
 		effects.gui();
 
 		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
-		ImGui::LabelText("pitch", "%s", (Str{} << camera->pitch).str().c_str());
-		ImGui::LabelText("yaw", "%s", (Str{} << camera->yaw).str().c_str());
-		ImGui::LabelText("window size", "%d | %d", last_window_size.x, last_window_size.y);
-		ImGui::LabelText("projected target", "%f | %f", projected_target.x, projected_target.y);
+		imgui_label("pitch", Str{} << camera->pitch);
+		imgui_label("yaw", Str{} << camera->yaw);
+		imgui_label("window size", Str{} << last_window_size.x << " | " << last_window_size.y);
+		imgui_label("projected target", Str{} << projected_target.x << " | " << projected_target.y);
 
 		ImGui::SeparatorText("Ambient lights");
 		ImGui::DragFloat("Ambient strength", &world.lights.ambient_strength, FAC_SPEED, 0.0f, 1.0f);
