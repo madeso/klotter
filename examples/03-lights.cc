@@ -250,6 +250,7 @@ struct LightsSample : Sample
 		}
 	}
 
+	int selected_instance_index = 2;
 	glm::ivec2 last_window_size;
 	glm::vec2 projected_target;
 
@@ -271,14 +272,13 @@ struct LightsSample : Sample
 			fl.yaw = camera->yaw;
 			fl.pitch = camera->pitch;
 		}
-		const auto target = glm::vec3{10.0f, 10.0f, 10.0f};
-		last_window_size = window_size;
-		projected_target = to_screen(compile(*camera, window_size), target, window_size);
-		renderer->debug.add_line(
-			glm::vec3{0, 0, 0},
-			target,
-			klotter::colors::orange
-		);
+		if (is_valid_instance_index(selected_instance_index))
+		{
+			const auto target = world.meshes[Cint_to_sizet(selected_instance_index)]->world_position;
+			last_window_size = window_size;
+			projected_target = to_screen(compile(*camera, window_size), target, window_size);
+			renderer->debug.add_line(glm::vec3{0, 0, 0}, target, klotter::colors::orange);
+		}
 		anim += dt * 0.25f;
 		apply_animation();
 		effects.render({&world, window_size, camera, renderer});
@@ -299,6 +299,11 @@ struct LightsSample : Sample
 		{
 			*max_range = std::max(*max_range, *min_range + 0.01f);
 		}
+	}
+
+	bool is_valid_instance_index(int index)
+	{
+		return index >= 0 && Cint_to_sizet(index) < world.meshes.size();
 	}
 
 	void on_gui(klotter::Camera* camera) override
@@ -346,12 +351,10 @@ struct LightsSample : Sample
 
 		ImGui::SeparatorText("Outline");
 		{
-			// outline
-			static int index = 2;
-			ImGui::SliderInt("Index", &index, 0, Csizet_to_int(world.meshes.size()) - 1);
-			if (index >= 0 && Cint_to_sizet(index) < world.meshes.size())
+			ImGui::SliderInt("Index", &selected_instance_index, 0, Csizet_to_int(world.meshes.size()) - 1);
+			if (is_valid_instance_index(selected_instance_index))
 			{
-				auto& inst = world.meshes[Cint_to_sizet(index)];
+				auto& inst = world.meshes[Cint_to_sizet(selected_instance_index)];
 				bool check = inst->outline.has_value();
 				if (ImGui::Checkbox("outline?", &check))
 				{
