@@ -162,7 +162,7 @@ struct FrustumLight
 struct Lights
 {
 	Color color = colors::white;
-	float ambient_strength = 0.2f;
+	float ambient_strength = 0.029f;
 
 	std::vector<DirectionalLight> directional_lights;
 	std::vector<PointLight> point_lights;

@@ -97,7 +97,7 @@ struct LightsSample : Sample
 		world.skybox = renderer->make_skybox(renderer->assets.get_skybox());
 
 		// ambient
-		world.lights.ambient_strength = 0.1f;
+		world.lights.ambient_strength = 0.007f;
 
 
 		// directional
@@ -106,7 +106,7 @@ struct LightsSample : Sample
 			auto& dili = world.lights.directional_lights[0];
 			dili.direction = {-1.0f, -1.0f, -1.0f};
 			dili.direction = glm::normalize(dili.direction);
-			dili.diffuse_strength = 0.1f;
+			dili.diffuse_strength = 0.007f;
 			dili.specular_strength = dili.diffuse_strength;
 			dili.color = colors::red_vermillion;
 		}
@@ -114,14 +114,17 @@ struct LightsSample : Sample
 		// point light
 		world.lights.point_lights.emplace_back();
 		world.lights.point_lights[0].position = light->world_position;
-		world.lights.point_lights[0].diffuse_strength = 0.4f;
+		world.lights.point_lights[0].diffuse_strength = 0.133f;
 		world.lights.point_lights[0].specular_strength = world.lights.point_lights[0].diffuse_strength;
 
 		// frustum
 		{
 			world.lights.frustum_lights.emplace_back();
 			auto& fl = world.lights.frustum_lights[0];
-			fl.diffuse_strength = 0.4f;
+			fl.diffuse_strength = 0.40f;
+			fl.min_range = 10.0f;
+			fl.max_range = 40.0f;
+			fl.fov = 20;
 			fl.specular_strength = fl.diffuse_strength;
 			fl.cookie = renderer->assets.get_cookie();
 		}
