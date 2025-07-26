@@ -25,7 +25,7 @@
         <argsstring></argsstring>
         <name>ambient_strength</name>
         <qualifiedname>klotter::Lights::ambient_strength</qualifiedname>
-        <initializer>= 0.2f</initializer>
+        <initializer>= 0.029f</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
