@@ -396,7 +396,7 @@ struct LightsSample : Sample
 			auto& pl = world.lights.point_lights[Cint_to_sizet(point_light_index)];
 			ImGui::PushID(point_light_index);
 
-			if (ImGui::DragFloat("Point", &pl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
+			if (ImGui::DragFloat("Point strength", &pl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
 			{
 				pl.specular_strength = pl.diffuse_strength;
 			}
@@ -429,7 +429,7 @@ struct LightsSample : Sample
 					"ypr (%f %f)", static_cast<double>(fl.pitch), static_cast<double>(fl.yaw)
 				);
 			}
-			if (ImGui::DragFloat("Frustum", &fl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
+			if (ImGui::DragFloat("Frustum strength", &fl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
 			{
 				fl.specular_strength = fl.diffuse_strength;
 			}
