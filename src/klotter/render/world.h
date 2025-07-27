@@ -133,7 +133,6 @@ struct PointLight
 	SCurve curve;  ///< curve and ui, needs to be trimmed down for actual renderer
 
 	Color color = colors::white;
-	// todo(Gustav): rename this to strength or intensity... what best describes this?
 	float specular_strength = 1.0f;
 	float diffuse_strength = 1.0f;
 };
