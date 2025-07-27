@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="175" column="17" bodyfile="src/klotter/render/world.h" bodystart="175" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="174" column="17" bodyfile="src/klotter/render/world.h" bodystart="174" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Skybox_1a0b52d43c85b813bfa90059abe97319b0" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref> &gt;</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="176" column="17" bodyfile="src/klotter/render/world.h" bodystart="176" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="175" column="17" bodyfile="src/klotter/render/world.h" bodystart="175" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -84,7 +84,7 @@
         <label>std::unordered_set&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/world.h" line="173" column="1" bodyfile="src/klotter/render/world.h" bodystart="174" bodyend="177"/>
+    <location file="src/klotter/render/world.h" line="172" column="1" bodyfile="src/klotter/render/world.h" bodystart="173" bodyend="176"/>
     <listofallmembers>
       <member refid="structklotter_1_1Skybox_1a0b52d43c85b813bfa90059abe97319b0" prot="public" virt="non-virtual"><scope>klotter::Skybox</scope><name>cubemap</name></member>
       <member refid="structklotter_1_1Skybox_1a7445eed37dea92e56a90fa647e83af82" prot="public" virt="non-virtual"><scope>klotter::Skybox</scope><name>geom</name></member>
