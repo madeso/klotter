@@ -313,6 +313,7 @@ struct LightsSample : Sample
 	{
 		klotter::test_themes();
 		const float FAC_SPEED = 0.01f;
+		const float MAX_LIGHT = 100.0f;
 		{
 			auto factor = pp_invert->get_factor();
 			if (ImGui::SliderFloat("invert", &factor, 0.0f, 1.0f))
@@ -380,7 +381,7 @@ struct LightsSample : Sample
 		{
 			ImGui::PushID(dir_light_index);
 			auto& dl = world.lights.directional_lights[Cint_to_sizet(dir_light_index)];
-			if (ImGui::DragFloat("Directional", &dl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
+			if (ImGui::DragFloat("Directional", &dl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
 			{
 				dl.specular_strength = dl.diffuse_strength;
 			}
@@ -396,7 +397,7 @@ struct LightsSample : Sample
 			auto& pl = world.lights.point_lights[Cint_to_sizet(point_light_index)];
 			ImGui::PushID(point_light_index);
 
-			if (ImGui::DragFloat("Point strength", &pl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
+			if (ImGui::DragFloat("Point strength", &pl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
 			{
 				pl.specular_strength = pl.diffuse_strength;
 			}
@@ -429,7 +430,7 @@ struct LightsSample : Sample
 					"ypr (%f %f)", static_cast<double>(fl.pitch), static_cast<double>(fl.yaw)
 				);
 			}
-			if (ImGui::DragFloat("Frustum strength", &fl.diffuse_strength, FAC_SPEED, 0.0f, 1.0f))
+			if (ImGui::DragFloat("Frustum strength", &fl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
 			{
 				fl.specular_strength = fl.diffuse_strength;
 			}
