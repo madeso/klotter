@@ -20,6 +20,8 @@ struct Color
 float linear_from_srgb(float value, float gamma);
 glm::vec3 linear_from_srgb(const Color& value, float gamma);
 
+bool simple_gamma_slider(const char* label, float* gamma, float curve = 1.5f, float min_gamma = 1.6f, float max_gamma = 2.8f);
+
 }
 
 namespace klotter::colors

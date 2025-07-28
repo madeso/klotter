@@ -1,5 +1,9 @@
 #include "klotter/render/color.h"
 
+#include "imgui.h"
+
+#include <cmath>
+
 namespace klotter
 {
 
@@ -19,6 +23,23 @@ glm::vec3 linear_from_srgb(const Color& value, float gamma)
 		linear_from_srgb(value.g, gamma),
 		linear_from_srgb(value.b, gamma)
 	};
+}
+
+
+bool simple_gamma_slider(const char* label, float* gamma, float curve, float min_gamma, float max_gamma)
+{
+	const auto gamma_range = max_gamma - min_gamma;
+	const auto t = (*gamma - min_gamma) / (gamma_range);
+
+	auto slider_value = std::pow(t, 1.0f / curve);
+	if (ImGui::SliderFloat(label, &slider_value, 0.0f, 1.0f) == false)
+	{
+		return false;
+	}
+
+	const auto perceptual = std::pow(slider_value, curve);
+	*gamma = min_gamma + perceptual * gamma_range;
+	return true;
 }
 
 }

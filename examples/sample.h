@@ -13,7 +13,7 @@ struct Sample
 	virtual void on_render(
 		const glm::ivec2& window_size, klotter::Renderer* ren, klotter::Camera* cam, float dt
 	) = 0;
-	virtual void on_gui(klotter::Camera* cam) = 0;
+	virtual void on_gui(klotter::Renderer*, klotter::Camera* cam) = 0;
 };
 
 struct DefinedSample

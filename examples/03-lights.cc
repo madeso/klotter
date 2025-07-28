@@ -309,9 +309,12 @@ struct LightsSample : Sample
 		return index >= 0 && Cint_to_sizet(index) < world.meshes.size();
 	}
 
-	void on_gui(klotter::Camera* camera) override
+	void on_gui(klotter::Renderer* renderer, klotter::Camera* camera) override
 	{
 		klotter::test_themes();
+
+		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma);
+
 		const float FAC_SPEED = 0.01f;
 		const float MAX_LIGHT = 100.0f;
 		{

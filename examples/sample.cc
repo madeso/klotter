@@ -69,13 +69,13 @@ void EndButtonGroup()
 	ImGui::PopStyleColor(3);
 }
 
-void SampleApp::on_gui(klotter::Renderer*)
+void SampleApp::on_gui(klotter::Renderer* renderer)
 {
 	ImGui::Begin("Sample switcher");
 
 	if (active_sample)
 	{
-		samples[*active_sample].created_sample->on_gui(&camera);
+		samples[*active_sample].created_sample->on_gui(renderer, &camera);
 	}
 
 	ImGui::End();
