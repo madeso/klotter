@@ -28,6 +28,11 @@ glm::vec3 linear_from_srgb(const Color& value, float gamma)
 
 bool simple_gamma_slider(const char* label, float* gamma, float curve, float min_gamma, float max_gamma)
 {
+	if (curve < 0.0f)
+	{
+		return ImGui::SliderFloat(label, gamma, min_gamma, max_gamma);
+	}
+
 	const auto gamma_range = max_gamma - min_gamma;
 	const auto t = (*gamma - min_gamma) / (gamma_range);
 

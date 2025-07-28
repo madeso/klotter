@@ -313,7 +313,7 @@ struct LightsSample : Sample
 	{
 		klotter::test_themes();
 
-		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma);
+		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
 
 		const float FAC_SPEED = 0.01f;
 		const float MAX_LIGHT = 100.0f;
