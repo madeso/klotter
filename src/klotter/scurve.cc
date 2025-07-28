@@ -66,7 +66,7 @@ ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
 	return {lhs.x - rhs.x, lhs.y - rhs.y};
 }
 
-bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui, bool flip_x, const SCurveImguiSettings& settings, bool force_init_curve)
+bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui, FlipX flip_x, const SCurveImguiSettings& settings, bool force_init_curve)
 {
 	ImGui::Text("%s (%f %f)", title, static_cast<double>(curve->slope), static_cast<double>(curve->threshold));
 	if (ImGui::BeginChild(title, settings.widget_size, settings.widget_border, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
@@ -94,7 +94,7 @@ bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui,
 	for (std::size_t point_index = 0; point_index < settings.num_points; point_index += 1)
 	{
 		const float srcx = static_cast<float>(point_index) / static_cast<float>(settings.num_points - 1); // -1 here to include 1.0f when evaluating the curve
-		const float x = flip_x ? 1 - srcx : srcx;
+		const float x = flip_x == FlipX::yes? 1 - srcx : srcx;
 		const float y = calculate_s_curve(srcx, curve->slope, curve->threshold);
 		points[point_index] = ImVec2{x * widget_size.x, (1 - y) * widget_size.y} + widget_position;
 	}
@@ -142,7 +142,7 @@ bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui,
 
 	if (changed || force_init_curve)
 	{
-		*curve = s_curve_from_input(flip_x ? 1 - gui->drag.x : gui->drag.x, gui->drag.y);
+		*curve = s_curve_from_input(flip_x == FlipX::yes ? 1 - gui->drag.x : gui->drag.x, gui->drag.y);
 	}
 
 	ImGui::EndChild();

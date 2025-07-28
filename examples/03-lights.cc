@@ -405,7 +405,7 @@ struct LightsSample : Sample
 			}
 			min_max(&pl.min_range, &pl.max_range);
 			auto& ui_curve = point_light_curves[Cint_to_sizet(point_light_index)];
-			imgui_s_curve_editor("att", &pl.curve, &ui_curve, true, {}, is_first_frame);
+			imgui_s_curve_editor("att", &pl.curve, &ui_curve, FlipX::yes, {}, is_first_frame);
 			ImGui::PopID();
 		}
 
@@ -441,7 +441,7 @@ struct LightsSample : Sample
 			ImGui::DragFloat("fov", &fl.fov, 0.1f);
 			ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
 			min_max(&fl.min_range, &fl.max_range);
-			imgui_s_curve_editor("att", &fl.curve, &frustum_light_curve, true, {}, is_first_frustum_frame);
+			imgui_s_curve_editor("att", &fl.curve, &frustum_light_curve, FlipX::yes, {}, is_first_frustum_frame);
 			is_first_frustum_frame = false;
 		}
 		ImGui::PopID();

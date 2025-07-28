@@ -79,8 +79,12 @@ struct SCurveImguiSettings
 	std::size_t num_points = 21;  ///< number of points to draw, more points means smoother curve, but more expensive
 };
 
-// todo(Gustav): change flip_x to enum
-bool imgui_s_curve_editor(const char* title, SCurve* scurve, SCurveGuiState* gui, bool flip_x, const SCurveImguiSettings& settings, bool force_init_curve);
+enum class FlipX
+{
+	no, yes
+};
+
+bool imgui_s_curve_editor(const char* title, SCurve* scurve, SCurveGuiState* gui, FlipX flip_x, const SCurveImguiSettings& settings, bool force_init_curve);
 
 /**
  * @}
