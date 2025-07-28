@@ -247,7 +247,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	}
 
 	// render skybox
-	if (world.skybox.cubemap != nullptr && world.skybox.geom != nullptr)
+	if (world.skybox && world.skybox->cubemap != nullptr && world.skybox->geom != nullptr)
 	{
 		SCOPED_DEBUG_GROUP("render skybox"sv);
 		StateChanger{&pimpl->states}
@@ -261,9 +261,9 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		auto& shader = pimpl->shaders_resources.skybox_shader;
 
 		shader.program->use();
-		bind_texture_cubemap(&pimpl->states, shader.tex_skybox_uni, *world.skybox.cubemap);
+		bind_texture_cubemap(&pimpl->states, shader.tex_skybox_uni, *world.skybox->cubemap);
 
-		render_geom(*world.skybox.geom);
+		render_geom(*world.skybox->geom);
 	}
 
 	std::sort(
