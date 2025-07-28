@@ -160,7 +160,7 @@ struct FrustumLight
 /// All lights in a world.
 struct Lights
 {
-	Color color = colors::white;
+	Color ambient_color = colors::white;
 	float ambient_strength = 0.029f;
 
 	std::vector<DirectionalLight> directional_lights;

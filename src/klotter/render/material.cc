@@ -135,7 +135,7 @@ void DefaultMaterial::apply_lights(
 )
 {
 	const auto& shader = shader_from_container(*shader_container, rc);
-	shader.program->set_vec3(shader.light_ambient_color_uni, linear_from_srgb(lights.color, rc.gamma) * lights.ambient_strength);
+	shader.program->set_vec3(shader.light_ambient_color_uni, linear_from_srgb(lights.ambient_color, rc.gamma) * lights.ambient_strength);
 
 	constexpr auto no_directional_light = ([]() {
 		DirectionalLight p;

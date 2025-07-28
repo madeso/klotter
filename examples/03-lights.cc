@@ -19,6 +19,11 @@ static void imgui_label(const char* const label, const std::string& text)
 	ImGui::LabelText(label, "%s", text.c_str());
 }
 
+static void imgui_color(const char* const label, klotter::Color* color)
+{
+	ImGui::ColorEdit3(label, &color->r);
+}
+
 struct LightsSample : Sample
 {
 	World world;
@@ -353,9 +358,6 @@ struct LightsSample : Sample
 		imgui_label("window size", Str{} << last_window_size.x << " | " << last_window_size.y);
 		imgui_label("projected target", Str{} << projected_target.x << " | " << projected_target.y);
 
-		ImGui::SeparatorText("Ambient lights");
-		ImGui::DragFloat("Ambient strength", &world.lights.ambient_strength, FAC_SPEED, 0.0f, 1.0f);
-
 		ImGui::SeparatorText("Outline");
 		{
 			ImGui::SliderInt("Index", &selected_instance_index, 0, Csizet_to_int(world.meshes.size()) - 1);
@@ -377,6 +379,10 @@ struct LightsSample : Sample
 			}
 		}
 
+		ImGui::SeparatorText("Ambient lights");
+		ImGui::DragFloat("Ambient strength", &world.lights.ambient_strength, FAC_SPEED, 0.0f, 1.0f);
+		imgui_color("Ambient color", &world.lights.ambient_color);
+
 		ImGui::SeparatorText("Directional lights");
 		for (int dir_light_index = 0;
 			 dir_light_index < Csizet_to_int(world.lights.directional_lights.size());
@@ -384,10 +390,11 @@ struct LightsSample : Sample
 		{
 			ImGui::PushID(dir_light_index);
 			auto& dl = world.lights.directional_lights[Cint_to_sizet(dir_light_index)];
-			if (ImGui::DragFloat("Directional", &dl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
+			if (ImGui::DragFloat("Strength", &dl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
 			{
 				dl.specular_strength = dl.diffuse_strength;
 			}
+			imgui_color("Color", &dl.color);
 			ImGui::PopID();
 		}
 
@@ -402,10 +409,11 @@ struct LightsSample : Sample
 			auto& pl = world.lights.point_lights[Cint_to_sizet(point_light_index)];
 			ImGui::PushID(point_light_index);
 
-			if (ImGui::DragFloat("Point strength", &pl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
+			if (ImGui::DragFloat("Strength", &pl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
 			{
 				pl.specular_strength = pl.diffuse_strength;
 			}
+			imgui_color("Color", &pl.color);
 			min_max(&pl.min_range, &pl.max_range);
 			auto& ui_curve = point_light_curves[Cint_to_sizet(point_light_index)];
 			imgui_s_curve_editor("att", &pl.curve, &ui_curve, FlipX::yes, {}, is_first_frame);
@@ -441,6 +449,7 @@ struct LightsSample : Sample
 			{
 				fl.specular_strength = fl.diffuse_strength;
 			}
+			imgui_color("Color", &fl.color);
 			ImGui::DragFloat("fov", &fl.fov, 0.1f);
 			ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
 			min_max(&fl.min_range, &fl.max_range);
