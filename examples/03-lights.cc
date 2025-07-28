@@ -258,7 +258,7 @@ struct LightsSample : Sample
 	glm::vec2 projected_target;
 
 	std::vector<SCurveGuiState> point_light_curves;
-	SCurveGuiState frustum_light_curve;
+	SCurveGuiState frustum_light_curve = SCurveGuiState::light_curve();
 
 	void on_render(
 		const glm::ivec2& window_size,
@@ -374,7 +374,7 @@ struct LightsSample : Sample
 			}
 		}
 
-		ImGui::SeparatorText("Directional");
+		ImGui::SeparatorText("Directional lights");
 		for (int dir_light_index = 0;
 			 dir_light_index < Csizet_to_int(world.lights.directional_lights.size());
 			 dir_light_index += 1)
@@ -388,12 +388,14 @@ struct LightsSample : Sample
 			ImGui::PopID();
 		}
 
-		ImGui::SeparatorText("Pointlights");
-		point_light_curves.resize(world.lights.point_lights.size());
+		ImGui::SeparatorText("Point lights");
+		const auto old_point_size = point_light_curves.size();
+		point_light_curves.resize(world.lights.point_lights.size(), SCurveGuiState::light_curve());
 		for (int point_light_index = 0;
 			 point_light_index < Csizet_to_int(world.lights.point_lights.size());
 			 point_light_index += 1)
 		{
+			const auto is_first_frame = Cint_to_sizet(point_light_index) >= old_point_size;
 			auto& pl = world.lights.point_lights[Cint_to_sizet(point_light_index)];
 			ImGui::PushID(point_light_index);
 
@@ -402,13 +404,15 @@ struct LightsSample : Sample
 				pl.specular_strength = pl.diffuse_strength;
 			}
 			min_max(&pl.min_range, &pl.max_range);
-			imgui_s_curve_editor("att", &pl.curve, &point_light_curves[Cint_to_sizet(point_light_index)], true, {});
+			auto& ui_curve = point_light_curves[Cint_to_sizet(point_light_index)];
+			imgui_s_curve_editor("att", &pl.curve, &ui_curve, true, {}, is_first_frame);
 			ImGui::PopID();
 		}
 
-		ImGui::SeparatorText("Frustum");
+		ImGui::SeparatorText("Frustum lights");
 		ImGui::PushID("frustum lights");
 		{
+			static bool is_first_frustum_frame = true;
 			ImGui::Checkbox("Follow player", &follow_player);
 			auto& fl = world.lights.frustum_lights[0];
 
@@ -437,7 +441,8 @@ struct LightsSample : Sample
 			ImGui::DragFloat("fov", &fl.fov, 0.1f);
 			ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
 			min_max(&fl.min_range, &fl.max_range);
-			imgui_s_curve_editor("att", &fl.curve, &frustum_light_curve, true, {});
+			imgui_s_curve_editor("att", &fl.curve, &frustum_light_curve, true, {}, is_first_frustum_frame);
+			is_first_frustum_frame = false;
 		}
 		ImGui::PopID();
 	}

@@ -17,12 +17,30 @@ struct SCurve
 {
 	float slope = 1.0f;	 ///< >=0
 	float threshold = 0.75f;  ///< [0,1]
+
+	constexpr SCurve() = default;
+
+	constexpr SCurve(float s, float t)
+		: slope(s)
+		, threshold(t)
+	{}
+
+	constexpr static SCurve light_curve()
+	{
+		return {5.0f, 1.0f};
+	}
 };
 
 /// Represents the GUI state for an S-curve.
 struct SCurveGuiState
 {
 	ImVec2 drag = {0.5f, 0.5f};	 ///< the gui data
+
+	constexpr SCurveGuiState() = default;
+	SCurveGuiState(float x, float y);
+
+	static SCurveGuiState light_curve();
+
 	std::vector<ImVec2> point_cache;
 };
 
@@ -61,7 +79,8 @@ struct SCurveImguiSettings
 	std::size_t num_points = 21;  ///< number of points to draw, more points means smoother curve, but more expensive
 };
 
-bool imgui_s_curve_editor(const char* title, SCurve* scurve, SCurveGuiState* gui, bool flip_x, const SCurveImguiSettings& settings);
+// todo(Gustav): change flip_x to enum
+bool imgui_s_curve_editor(const char* title, SCurve* scurve, SCurveGuiState* gui, bool flip_x, const SCurveImguiSettings& settings, bool force_init_curve);
 
 /**
  * @}

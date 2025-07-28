@@ -130,7 +130,7 @@ struct PointLight
 	glm::vec3 position = {0.0f, 0.0f, 0.0f};
 	float min_range = 10.0f;
 	float max_range = 20.0f;
-	SCurve curve;  ///< curve and ui, needs to be trimmed down for actual renderer
+	SCurve curve = SCurve::light_curve();	///< curve and ui, needs to be trimmed down for actual renderer
 
 	Color color = colors::white;
 	float specular_strength = 1.0f;
@@ -148,7 +148,7 @@ struct FrustumLight
 
 	float min_range = 10.0f;
 	float max_range = 20.0f;
-	SCurve curve;  ///< curve and ui, needs to be trimmed down for actual renderer
+	SCurve curve = SCurve::light_curve();  ///< curve and ui, needs to be trimmed down for actual renderer
 
 	Color color = colors::white;
 	float specular_strength = 1.0f;

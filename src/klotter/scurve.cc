@@ -9,6 +9,17 @@
 namespace klotter
 {
 
+SCurveGuiState::SCurveGuiState(float x, float y)
+	: drag(x, y)
+{
+}
+
+SCurveGuiState SCurveGuiState::light_curve()
+{
+	return {0.2f, 0.0f};
+}
+
+
 float square(float x)
 {
 	return x * x;
@@ -55,7 +66,7 @@ ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
 	return {lhs.x - rhs.x, lhs.y - rhs.y};
 }
 
-bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui, bool flip_x, const SCurveImguiSettings& settings)
+bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui, bool flip_x, const SCurveImguiSettings& settings, bool force_init_curve)
 {
 	ImGui::Text("%s (%f %f)", title, static_cast<double>(curve->slope), static_cast<double>(curve->threshold));
 	if (ImGui::BeginChild(title, settings.widget_size, settings.widget_border, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
@@ -126,8 +137,12 @@ bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui,
 		const auto n = t01(mp);
 		gui->drag.x = std::min(1.0f, std::max(n.x, 0.0f));
 		gui->drag.y = std::min(1.0f, std::max(n.y, 0.0f));
-		*curve = s_curve_from_input(flip_x ? 1 - gui->drag.x : gui->drag.x, gui->drag.y);
 		changed = true;
+	}
+
+	if (changed || force_init_curve)
+	{
+		*curve = s_curve_from_input(flip_x ? 1 - gui->drag.x : gui->drag.x, gui->drag.y);
 	}
 
 	ImGui::EndChild();
