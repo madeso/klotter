@@ -94,14 +94,7 @@ void RenderWorld::render(const PostProcArg& arg)
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	realize_shader->program->use();
-	const auto gamma_value =
-#if FF_HAS(ENABLE_GAMMA_CORRECTION)
-		arg.renderer->settings.gamma
-#else
-		-1.0f
-#endif
-	;
-	realize_shader->program->set_float(gamma_uniform, gamma_value);
+	realize_shader->program->set_float(gamma_uniform, arg.renderer->settings.gamma);
 	bind_texture_2d(&arg.renderer->pimpl->states, realize_shader->texture_uni, *realized_buffer);
 
 	render_geom(*arg.renderer->pimpl->full_screen_geom);
