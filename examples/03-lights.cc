@@ -320,6 +320,7 @@ struct LightsSample : Sample
 	{
 		klotter::test_themes();
 
+		ImGui::SeparatorText("Rendering");
 		bool has_skybox = world.skybox.has_value();
 		if (ImGui::Checkbox("Skybox", &has_skybox))
 		{
@@ -336,6 +337,7 @@ struct LightsSample : Sample
 		imgui_color("Clear color", &world.clear_color);
 		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
 
+		ImGui::SeparatorText("Effects");
 		const float FAC_SPEED = 0.01f;
 		const float MAX_LIGHT = 100.0f;
 		{
@@ -368,6 +370,7 @@ struct LightsSample : Sample
 		}
 		effects.gui();
 
+		ImGui::SeparatorText("Stats");
 		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
 		imgui_label("pitch", Str{} << camera->pitch);
 		imgui_label("yaw", Str{} << camera->yaw);
