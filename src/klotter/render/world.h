@@ -183,6 +183,7 @@ struct World
 	std::vector<std::shared_ptr<MeshInstance_TransformInstanced>> instances;
 	Lights lights;
 
+	Color clear_color = colors::black;
 	std::optional<Skybox> skybox;
 };
 

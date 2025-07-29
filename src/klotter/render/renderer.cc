@@ -168,7 +168,8 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		.stencil_op(StencilAction::keep, StencilAction::replace, StencilAction::replace)
 		.blend_mode(Blend::src_alpha, Blend::one_minus_src_alpha);
 
-	glClearColor(0, 0, 0, 1.0f);
+	const auto clear_color = linear_from_srgb(world.clear_color, settings.gamma);
+	glClearColor(clear_color.r, clear_color.g, clear_color.b, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 	const auto compiled_camera = compile(camera, window_size);

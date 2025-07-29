@@ -77,6 +77,7 @@ struct LightsSample : Sample
 
 	std::shared_ptr<UnlitMaterial> light_material;
 	bool follow_player = true;
+	Skybox skybox;
 
 	LightsSample(Renderer* renderer, Camera* camera)
 		: pp_invert(renderer->make_invert_effect())
@@ -84,6 +85,7 @@ struct LightsSample : Sample
 		, pp_damage(renderer->make_damage_effect())
 		, pp_blur(renderer->make_blur_effect())
 		, light_material(renderer->make_unlit_material())
+		, skybox(renderer->make_skybox(renderer->assets.get_skybox()))
 	{
 		camera->pitch = 15;
 		camera->yaw = -50;
@@ -99,7 +101,7 @@ struct LightsSample : Sample
 		light->world_position.z = 0.5f;
 
 		// skybox
-		world.skybox = renderer->make_skybox(renderer->assets.get_skybox());
+		world.skybox = skybox;
 
 		// ambient
 		world.lights.ambient_strength = 0.007f;
@@ -318,6 +320,20 @@ struct LightsSample : Sample
 	{
 		klotter::test_themes();
 
+		bool has_skybox = world.skybox.has_value();
+		if (ImGui::Checkbox("Skybox", &has_skybox))
+		{
+			if (has_skybox)
+			{
+				world.skybox = skybox;
+			}
+			else
+			{
+				world.skybox = std::nullopt;
+			}
+		}
+
+		imgui_color("Clear color", &world.clear_color);
 		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
 
 		const float FAC_SPEED = 0.01f;
