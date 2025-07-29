@@ -33,6 +33,7 @@ bool simple_gamma_slider(const char* label, float* gamma, float curve, float min
 		return ImGui::SliderFloat(label, gamma, min_gamma, max_gamma);
 	}
 
+	// todo(Gustav): is this the correct way? it doesn't feel exactly right but perhaps that's just dear imgui
 	const auto gamma_range = max_gamma - min_gamma;
 	const auto t = (*gamma - min_gamma) / (gamma_range);
 
