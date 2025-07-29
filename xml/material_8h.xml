@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="material_8h" kind="file" language="C++">
+    <compoundname>material.h</compoundname>
+    <includes local="no">memory</includes>
+    <includes local="no">optional</includes>
+    <includes refid="color_8h" local="yes">klotter/render/color.h</includes>
+    <includes refid="texture_8h" local="yes">klotter/render/texture.h</includes>
+    <includedby refid="renderer_8h" local="yes">src/klotter/render/renderer.h</includedby>
+    <includedby refid="world_8h" local="yes">src/klotter/render/world.h</includedby>
+    <incdepgraph>
+      <node id="8">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
+      <node id="4">
+        <label>klotter/render/color.h</label>
+        <link refid="color_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/material.h</label>
+        <link refid="material_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>klotter/render/opengl_labels.h</label>
+        <link refid="opengl__labels_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>klotter/render/texture.h</label>
+        <link refid="texture_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="2">
+        <label>memory</label>
+      </node>
+      <node id="3">
+        <label>optional</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/klotter/klotter.h</label>
+        <link refid="klotter_8h"/>
+      </node>
+      <node id="6">
+        <label>src/klotter/render/fullscreen.h</label>
+        <link refid="fullscreen_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/material.h</label>
+        <link refid="material_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/klotter/render/postproc.internal.h</label>
+        <link refid="postproc_8internal_8h"/>
+      </node>
+      <node id="2">
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
+      </node>
+      <node id="5">
+        <label>src/klotter/render/world.h</label>
+        <link refid="world_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1Material" prot="public">klotter::Material</innerclass>
+    <innerclass refid="structklotter_1_1UnlitMaterial" prot="public">klotter::UnlitMaterial</innerclass>
+    <innerclass refid="structklotter_1_1DefaultMaterial" prot="public">klotter::DefaultMaterial</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="color_8h" kindref="compound">klotter/render/color.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="texture_8h" kindref="compound">klotter/render/texture.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1LoadedShader__Default__Container" kindref="compound">LoadedShader_Default_Container</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1LoadedShader__Unlit__Container" kindref="compound">LoadedShader_Unlit_Container</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1Lights" kindref="compound">Lights</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1ShaderResource" kindref="compound">ShaderResource</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="structklotter_1_1Material" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kindref="member">Material</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30" refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kindref="member">Material</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31" refid="structklotter_1_1Material_1abd64872e3d2303186c0a9b5e978e0cd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1abd64872e3d2303186c0a9b5e978e0cd9" kindref="member">~Material</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="structklotter_1_1Material_1ace5e0bd7d0fc1daad0f181dc42dfa6af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Material_1ace5e0bd7d0fc1daad0f181dc42dfa6af" kindref="member">Material</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kindref="member">Material</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34" refid="structklotter_1_1Material_1a9775d81964f25d6af45a2a91b46a548f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Material_1a9775d81964f25d6af45a2a91b46a548f" kindref="member">Material</ref>(<ref refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kindref="member">Material</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35" refid="structklotter_1_1Material_1ae6b0e38e5f74eddf5abf05563946719b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1ae6b0e38e5f74eddf5abf05563946719b" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kindref="member">Material</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36" refid="structklotter_1_1Material_1af6386229d9bf2a00f8d43173388a11a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1af6386229d9bf2a00f8d43173388a11a7" kindref="member">operator=</ref>(<ref refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kindref="member">Material</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="structklotter_1_1Material_1acc7a0623867b0770e101cdcca4c294ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1acc7a0623867b0770e101cdcca4c294ce" kindref="member">use_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39" refid="structklotter_1_1Material_1aefed8390f6292db10e329947cbfc8927" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1aefed8390f6292db10e329947cbfc8927" kindref="member">set_uniforms</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::optional&lt;glm::mat4&gt;&amp;)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="40" refid="structklotter_1_1Material_1ad85a4d46e7cef0f29370c1c70db495be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1ad85a4d46e7cef0f29370c1c70db495be" kindref="member">bind_textures</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref>*<sp/>assets)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41" refid="structklotter_1_1Material_1a54c02acb7ce2d5c1ab8637a819a52d76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1a54c02acb7ce2d5c1ab8637a819a52d76" kindref="member">apply_lights</ref>(</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Lights" kindref="compound">Lights</ref>&amp;<sp/>lights,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref>&amp;<sp/>settings,<sp/><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref>*<sp/>assets</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structklotter_1_1Material_1a1bc8203ffbdf63223113a444dd1cf4a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Material_1a1bc8203ffbdf63223113a444dd1cf4a9" kindref="member">is_transparent</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="structklotter_1_1UnlitMaterial" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1UnlitMaterial_1abeea77af30a3fe439dcf57f07dee7e30" kindref="member">UnlitMaterial</ref><sp/>:<sp/><ref refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kindref="member">Material</ref></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51" refid="structklotter_1_1UnlitMaterial_1a1324344df38382e9ebe569901cad360f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LoadedShader__Unlit__Container" kindref="compound">LoadedShader_Unlit_Container</ref>*<sp/><ref refid="structklotter_1_1UnlitMaterial_1a1324344df38382e9ebe569901cad360f" kindref="member">shader_container</ref>;</highlight></codeline>
+<codeline lineno="52" refid="structklotter_1_1UnlitMaterial_1a1e38676e4d67d940b9ceea11b7768046" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Color" kindref="compound">Color</ref><sp/><ref refid="structklotter_1_1UnlitMaterial_1a1e38676e4d67d940b9ceea11b7768046" kindref="member">color</ref><sp/>=<sp/><ref refid="namespaceklotter_1_1colors_1a31ced28375c71daf9b639bdcb0e282e8" kindref="member">colors::white</ref>;</highlight></codeline>
+<codeline lineno="53" refid="structklotter_1_1UnlitMaterial_1a4f569b97cfba5e690ae58b220f50acf8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1UnlitMaterial_1a4f569b97cfba5e690ae58b220f50acf8" kindref="member">alpha</ref><sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="54" refid="structklotter_1_1UnlitMaterial_1a7801e658eb779b80ebca950cab56a54f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2d&gt;<sp/><ref refid="structklotter_1_1UnlitMaterial_1a7801e658eb779b80ebca950cab56a54f" kindref="member">texture</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="structklotter_1_1UnlitMaterial_1abeea77af30a3fe439dcf57f07dee7e30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1UnlitMaterial_1abeea77af30a3fe439dcf57f07dee7e30" kindref="member">UnlitMaterial</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderResource" kindref="compound">ShaderResource</ref>&amp;<sp/>resource);</highlight></codeline>
+<codeline lineno="57" refid="structklotter_1_1UnlitMaterial_1a24a10994b33c725dc865ac96d8a6bdc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1UnlitMaterial_1a24a10994b33c725dc865ac96d8a6bdc8" kindref="member">use_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58" refid="structklotter_1_1UnlitMaterial_1a943b628224cf9d4eab243c7a344961a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1UnlitMaterial_1a943b628224cf9d4eab243c7a344961a1" kindref="member">set_uniforms</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::optional&lt;glm::mat4&gt;&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59" refid="structklotter_1_1UnlitMaterial_1a4a647c9b677bbb4ee9a36333eb42cc8c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1UnlitMaterial_1a4a647c9b677bbb4ee9a36333eb42cc8c" kindref="member">bind_textures</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref>*<sp/>assets)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60" refid="structklotter_1_1UnlitMaterial_1a08cab92f0b59a39ae2adb6cfa51ca7e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1UnlitMaterial_1a08cab92f0b59a39ae2adb6cfa51ca7e1" kindref="member">apply_lights</ref>(</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Lights" kindref="compound">Lights</ref>&amp;<sp/>lights,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref>&amp;<sp/>settings,<sp/><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref>*<sp/>assets</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="structklotter_1_1UnlitMaterial_1a13281148f24bc55c04ba816c9aab8d1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1UnlitMaterial_1a13281148f24bc55c04ba816c9aab8d1e" kindref="member">is_transparent</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="structklotter_1_1DefaultMaterial" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1DefaultMaterial_1a3330cba4bf44bfe72783e8555f7b0f77" kindref="member">DefaultMaterial</ref><sp/>:<sp/><ref refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kindref="member">Material</ref></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70" refid="structklotter_1_1DefaultMaterial_1af2fcf3b902871b551a45783e6f7b75db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LoadedShader__Default__Container" kindref="compound">LoadedShader_Default_Container</ref>*<sp/><ref refid="structklotter_1_1DefaultMaterial_1af2fcf3b902871b551a45783e6f7b75db" kindref="member">shader_container</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71" refid="structklotter_1_1DefaultMaterial_1ad53da27e6bb49aaa633a81fdba97e8c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Color" kindref="compound">Color</ref><sp/><ref refid="structklotter_1_1DefaultMaterial_1ad53da27e6bb49aaa633a81fdba97e8c5" kindref="member">color</ref><sp/>=<sp/><ref refid="namespaceklotter_1_1colors_1a31ced28375c71daf9b639bdcb0e282e8" kindref="member">colors::white</ref>;</highlight></codeline>
+<codeline lineno="72" refid="structklotter_1_1DefaultMaterial_1a3c97cf440220d6a37ebeb57e28d082cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1a3c97cf440220d6a37ebeb57e28d082cb" kindref="member">alpha</ref><sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="structklotter_1_1DefaultMaterial_1a2a4d5452dd452e0161072c26313755f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Color" kindref="compound">Color</ref><sp/><ref refid="structklotter_1_1DefaultMaterial_1a2a4d5452dd452e0161072c26313755f6" kindref="member">ambient_tint</ref><sp/>=<sp/><ref refid="namespaceklotter_1_1colors_1a31ced28375c71daf9b639bdcb0e282e8" kindref="member">colors::white</ref>;</highlight></codeline>
+<codeline lineno="75" refid="structklotter_1_1DefaultMaterial_1ab3b6329d3397d40b553a340a43ceda8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Color" kindref="compound">Color</ref><sp/><ref refid="structklotter_1_1DefaultMaterial_1ab3b6329d3397d40b553a340a43ceda8d" kindref="member">specular_color</ref><sp/>=<sp/><ref refid="namespaceklotter_1_1colors_1a31ced28375c71daf9b639bdcb0e282e8" kindref="member">colors::white</ref>;</highlight></codeline>
+<codeline lineno="76" refid="structklotter_1_1DefaultMaterial_1a3a93fa530b29586a9797f1d32220ce9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1a3a93fa530b29586a9797f1d32220ce9f" kindref="member">shininess</ref><sp/>=<sp/>32.0f;</highlight></codeline>
+<codeline lineno="77" refid="structklotter_1_1DefaultMaterial_1a1a567363b2fe120cf5e9174e2e2e3deb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1a1a567363b2fe120cf5e9174e2e2e3deb" kindref="member">emissive_factor</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="structklotter_1_1DefaultMaterial_1a634af18cef72c794f0d7348e83c194b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2d&gt;<sp/><ref refid="structklotter_1_1DefaultMaterial_1a634af18cef72c794f0d7348e83c194b6" kindref="member">diffuse</ref>;</highlight></codeline>
+<codeline lineno="80" refid="structklotter_1_1DefaultMaterial_1a4b4a53d708a80ee402a742965f1e58f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2d&gt;<sp/><ref refid="structklotter_1_1DefaultMaterial_1a4b4a53d708a80ee402a742965f1e58f2" kindref="member">specular</ref>;</highlight></codeline>
+<codeline lineno="81" refid="structklotter_1_1DefaultMaterial_1a898d25a64155b2ff3393cf59406ea934" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Texture2d&gt;<sp/><ref refid="structklotter_1_1DefaultMaterial_1a898d25a64155b2ff3393cf59406ea934" kindref="member">emissive</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="structklotter_1_1DefaultMaterial_1a3330cba4bf44bfe72783e8555f7b0f77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1a3330cba4bf44bfe72783e8555f7b0f77" kindref="member">DefaultMaterial</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1ShaderResource" kindref="compound">ShaderResource</ref>&amp;<sp/>resource);</highlight></codeline>
+<codeline lineno="84" refid="structklotter_1_1DefaultMaterial_1afcb65bb4df7f01d99dc756c3a7aecbb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1afcb65bb4df7f01d99dc756c3a7aecbb1" kindref="member">use_shader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85" refid="structklotter_1_1DefaultMaterial_1a0e86acb1ff001c929d35a5654e667259" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1a0e86acb1ff001c929d35a5654e667259" kindref="member">set_uniforms</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::optional&lt;glm::mat4&gt;&amp;)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86" refid="structklotter_1_1DefaultMaterial_1ad2b6a047d7b0440e03426f2fd5561f0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1ad2b6a047d7b0440e03426f2fd5561f0b" kindref="member">bind_textures</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref>*<sp/>assets)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87" refid="structklotter_1_1DefaultMaterial_1a07358b6eb7c2082fc2b93ab146d4f64f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1a07358b6eb7c2082fc2b93ab146d4f64f" kindref="member">apply_lights</ref>(</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Lights" kindref="compound">Lights</ref>&amp;<sp/>lights,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref>&amp;<sp/>settings,<sp/><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref>*<sp/>assets</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="structklotter_1_1DefaultMaterial_1a908a00a5227daaa63e74bc197fd6e6af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1DefaultMaterial_1a908a00a5227daaa63e74bc197fd6e6af" kindref="member">is_transparent</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/material.h"/>
+  </compounddef>
+</doxygen>

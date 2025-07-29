@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1InstanceProp" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::InstanceProp</compoundname>
+    <includes refid="vertex__layout_8h" local="no">vertex_layout.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1InstanceProp_1a6099c86f6b1ab7dffa1720edab9b0142" prot="public" static="no" mutable="no">
+        <type><ref refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kindref="member">VertexType</ref></type>
+        <definition>VertexType klotter::InstanceProp::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>klotter::InstanceProp::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/vertex_layout.h" line="93" column="12" bodyfile="src/klotter/render/vertex_layout.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1InstanceProp_1aa0229f5fd2f21045c3489a05322c9b1a" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string klotter::InstanceProp::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>klotter::InstanceProp::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/vertex_layout.h" line="94" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A property for a shader used in instanced rendering. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__vertex-layout_1ga237368f15ea9a44ec4b6b7302d44c312" kindref="member">compile_shader_layout</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::InstanceProp</label>
+        <link refid="structklotter_1_1InstanceProp"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::string</label>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/vertex_layout.h" line="91" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="92" bodyend="95"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1InstanceProp_1aa0229f5fd2f21045c3489a05322c9b1a" prot="public" virt="non-virtual"><scope>klotter::InstanceProp</scope><name>name</name></member>
+      <member refid="structklotter_1_1InstanceProp_1a6099c86f6b1ab7dffa1720edab9b0142" prot="public" virt="non-virtual"><scope>klotter::InstanceProp</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
