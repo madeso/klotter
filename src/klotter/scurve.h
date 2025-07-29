@@ -36,7 +36,7 @@ struct SCurveGuiState
 {
 	ImVec2 drag = {0.5f, 0.5f};	 ///< the gui data
 
-	constexpr SCurveGuiState() = default;
+	SCurveGuiState() = default;
 	SCurveGuiState(float x, float y);
 
 	static SCurveGuiState light_curve();
@@ -72,7 +72,7 @@ struct SCurveImguiSettings
 	bool draw_points = false;
 
 	ImGuiMouseButton_ button = ImGuiMouseButton_Left;
-	
+
 	ImU32 background_color = IM_COL32(50, 50, 50, 255);
 	ImU32 line_color = IM_COL32(100, 100, 100, 255);
 
