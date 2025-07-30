@@ -7,5 +7,7 @@ var searchData=
   ['elements_4',['elements',['../structklotter_1_1CompiledShaderVertexAttributes.html#af04505096c36afa76e0ae0fe19bfdbee',1,'klotter::CompiledShaderVertexAttributes::elements'],['../structklotter_1_1CompiledGeomVertexAttributes.html#a60ba041fe5f742bce8ae8022f3c88161',1,'klotter::CompiledGeomVertexAttributes::elements']]],
   ['emissive_5',['emissive',['../structklotter_1_1DefaultMaterial.html#a898d25a64155b2ff3393cf59406ea934',1,'klotter::DefaultMaterial']]],
   ['emissive_5ffactor_6',['emissive_factor',['../structklotter_1_1DefaultMaterial.html#a1a567363b2fe120cf5e9174e2e2e3deb',1,'klotter::DefaultMaterial']]],
-  ['emissive_5ffactor_5funi_7',['emissive_factor_uni',['../structklotter_1_1LoadedShader__Default.html#a385a11e189ac7f0786000ed7c810d751',1,'klotter::LoadedShader_Default']]]
+  ['emissive_5ffactor_5funi_7',['emissive_factor_uni',['../structklotter_1_1LoadedShader__Default.html#a385a11e189ac7f0786000ed7c810d751',1,'klotter::LoadedShader_Default']]],
+  ['exposure_8',['exposure',['../structklotter_1_1RenderWorld.html#a414cf6368bd7c9982cc5901440e99e77',1,'klotter::RenderWorld']]],
+  ['exposure_5funiform_9',['exposure_uniform',['../structklotter_1_1RenderWorld.html#a0676b0a41da2c25ecb23063b80c4a0b4',1,'klotter::RenderWorld']]]
 ];

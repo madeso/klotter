@@ -217,6 +217,7 @@
           <edgelabel>realize_shader</edgelabel>
         </childnode>
         <childnode refid="24" relation="usage">
+          <edgelabel>exposure_uniform</edgelabel>
           <edgelabel>gamma_uniform</edgelabel>
         </childnode>
       </node>

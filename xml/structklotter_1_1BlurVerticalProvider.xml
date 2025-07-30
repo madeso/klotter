@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="117" column="12" bodyfile="src/klotter/render/postproc.internal.h" bodystart="117" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="123" column="12" bodyfile="src/klotter/render/postproc.internal.h" bodystart="123" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="115" column="10"/>
+        <location file="src/klotter/render/postproc.internal.h" line="121" column="10"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1BlurVerticalProvider_1ae76c06e50d23d0583c03a047a41c9df8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="118" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="124" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -184,7 +184,7 @@
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.internal.h" line="113" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="114" bodyend="119"/>
+    <location file="src/klotter/render/postproc.internal.h" line="119" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="120" bodyend="125"/>
     <listofallmembers>
       <member refid="structklotter_1_1BlurVerticalProvider_1a165eca67e7a8993daf1b9ea6bedfd159" prot="public" virt="non-virtual"><scope>klotter::BlurVerticalProvider</scope><name>blur</name></member>
       <member refid="structklotter_1_1BlurVerticalProvider_1aa9f8d9494a386b6d400c2f0e2ebe66df" prot="public" virt="non-virtual"><scope>klotter::BlurVerticalProvider</scope><name>BlurVerticalProvider</name></member>
