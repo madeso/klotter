@@ -46,7 +46,7 @@ void Effect::set_enabled(bool n)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // RenderWorld
 
-// todo(Gustav): should this be a user config option? evaluate higher/lower bits
+// todo(Gustav): should this be a user config option? evaluate higher/lower bits, probably 16 or 32 since it needs to be floating point for hdr
 constexpr ColorBitsPerPixel render_world_color_bits_per_pixel = ColorBitsPerPixel::use_16;
 
 RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples)
@@ -62,6 +62,7 @@ RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcSh
 		.build(USE_DEBUG_LABEL("realized msaa buffer")))
 	, realize_shader(std::move(re_sh))
 	, gamma_uniform(realize_shader->program->get_uniform("u_gamma"))
+	, exposure_uniform(realize_shader->program->get_uniform("u_exposure"))
 {
 }
 
@@ -95,9 +96,16 @@ void RenderWorld::render(const PostProcArg& arg)
 
 	realize_shader->program->use();
 	realize_shader->program->set_float(gamma_uniform, arg.renderer->settings.gamma);
+	realize_shader->program->set_float(exposure_uniform, use_hdr ? exposure : -1.0f);
 	bind_texture_2d(&arg.renderer->pimpl->states, realize_shader->texture_uni, *realized_buffer);
 
 	render_geom(*arg.renderer->pimpl->full_screen_geom);
+}
+
+void RenderWorld::gui()
+{
+	ImGui::Checkbox("HDR", &use_hdr);
+	ImGui::SliderFloat("Exposure", &exposure, 0.01f, 20.0f);
 }
 
 
@@ -230,6 +238,11 @@ void EffectStack::render(const PostProcArg& arg)
 
 void EffectStack::gui() const
 {
+	if (const auto rw = render_world_ref.lock(); rw)
+	{
+		rw->gui();
+	}
+
 	int index = 0;
 	for (const auto& e: effects)
 	{
