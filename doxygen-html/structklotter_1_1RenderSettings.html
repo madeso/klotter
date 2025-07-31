@@ -130,6 +130,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a27006cbef64a158e5c4d310d07107e19" id="r_a27006cbef64a158e5c4d310d07107e19"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27006cbef64a158e5c4d310d07107e19">number_of_frustum_lights</a> = 5</td></tr>
 <tr class="separator:a27006cbef64a158e5c4d310d07107e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a280b746dc55c256fccd34cf0fd93cc" id="r_a6a280b746dc55c256fccd34cf0fd93cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a280b746dc55c256fccd34cf0fd93cc">msaa</a> = 4</td></tr>
+<tr class="memdesc:a6a280b746dc55c256fccd34cf0fd93cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of msaa samples to use.  <br /></td></tr>
 <tr class="separator:a6a280b746dc55c256fccd34cf0fd93cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1306eea262ecc033ee14b08916ebf859" id="r_a1306eea262ecc033ee14b08916ebf859"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1306eea262ecc033ee14b08916ebf859">gamma</a> = 2.2f</td></tr>
 <tr class="memdesc:a1306eea262ecc033ee14b08916ebf859"><td class="mdescLeft">&#160;</td><td class="mdescRight">The gamma correction value.  <br /></td></tr>
@@ -166,6 +167,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Number of msaa samples to use. </p>
+<p>The renderer doesn't need to restart when this value has changed. The effect stack needs to be rebuilt, but that should happen automatically. </p>
 
 </div>
 </div>
