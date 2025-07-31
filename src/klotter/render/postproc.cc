@@ -191,15 +191,17 @@ void EffectStack::render(const PostProcArg& arg)
 	}
 
 	// if dirty, update the compiled state
-	if (dirty)
+	const auto latest_msaa = arg.renderer->settings.msaa;
+	if (dirty || last_msaa != latest_msaa)
 	{
 		dirty = false;
+		last_msaa = latest_msaa;
 		LOG_INFO("Building effects stack");
 
 		compiled.targets.clear();
 
 		auto created_world
-			= std::make_shared<RenderWorld>(arg.window_size, arg.renderer->pimpl->shaders_resources.pp_realize, arg.renderer->settings.msaa);
+			= std::make_shared<RenderWorld>(arg.window_size, arg.renderer->pimpl->shaders_resources.pp_realize, latest_msaa);
 		compiled.last_source = created_world;
 		render_world_ref = created_world;
 		render_world = created_world;

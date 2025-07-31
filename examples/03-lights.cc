@@ -321,6 +321,17 @@ struct LightsSample : Sample
 		klotter::test_themes();
 
 		ImGui::SeparatorText("Rendering");
+		{
+			if (ImGui::Button("No MSAA"))
+			{
+				renderer->settings.msaa = 0;
+			}
+			ImGui::SameLine();
+			if (ImGui::Button("MSAA x4"))
+			{
+				renderer->settings.msaa = 4;
+			}
+		}
 		bool has_skybox = world.skybox.has_value();
 		if (ImGui::Checkbox("Skybox", &has_skybox))
 		{
