@@ -25,7 +25,7 @@ static void imgui_color(const char* const label, klotter::Color* color)
 	ImGui::ColorEdit3(label, &color->r);
 }
 
-static void begin_button_for_group(bool is_first, bool is_selected)
+static bool imgui_group_button(const char* label, bool is_first, bool is_selected)
 {
 	const auto& color = is_selected ? klotter::imgui::red : klotter::imgui::gray;
 	ImGui::PushStyleColor(ImGuiCol_Button, color[6]);
@@ -36,12 +36,13 @@ static void begin_button_for_group(bool is_first, bool is_selected)
 	{
 		ImGui::SameLine();
 	}
-}
 
-void end_button_for_group()
-{
+	const auto result = ImGui::Button(label);
+
 	ImGui::PopStyleVar();
 	ImGui::PopStyleColor(3);
+
+	return result;
 }
 
 struct LightsSample : Sample
@@ -361,12 +362,10 @@ struct LightsSample : Sample
 			{
 				const auto sett = all_settings[sett_index];
 
-				begin_button_for_group(sett_index == 0, renderer->settings.msaa == sett.value);
-				if (ImGui::Button(sett.label))
+				if (imgui_group_button(sett.label, sett_index == 0, renderer->settings.msaa == sett.value))
 				{
 					renderer->settings.msaa = sett.value;
 				}
-				end_button_for_group();
 			}
 			ImGui::SameLine();
 			ImGui::Text("MSAA");
