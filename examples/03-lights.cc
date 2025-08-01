@@ -353,8 +353,9 @@ struct LightsSample : Sample
 				{}
 			};
 
-			constexpr std::size_t all_count = 2;
-			constexpr std::array<MSaaSetting, all_count> all_settings = {MSaaSetting{"No MSAA", 0}, MSaaSetting{"MSAA x4", 4}};
+			constexpr std::size_t all_count = 4;
+			constexpr std::array<MSaaSetting, all_count> all_settings
+				= {MSaaSetting{"No", 0}, MSaaSetting{"x2", 2}, MSaaSetting{"x4", 4}, MSaaSetting{"x8", 8}};
 
 			for (std::size_t sett_index=0; sett_index < all_count; sett_index +=1)
 			{
@@ -367,6 +368,8 @@ struct LightsSample : Sample
 				}
 				end_button_for_group();
 			}
+			ImGui::SameLine();
+			ImGui::Text("MSAA");
 		}
 		bool has_skybox = world.skybox.has_value();
 		if (ImGui::Checkbox("Skybox", &has_skybox))
