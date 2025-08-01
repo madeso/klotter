@@ -1,7 +1,5 @@
 #include "sample.h"
 
-#include "klotter/im_colors.h"
-
 namespace examples
 {
 
@@ -47,26 +45,6 @@ void SampleApp::on_render(const glm::ivec2& window_size, klotter::Renderer* rend
 	{
 		samples[*active_sample].created_sample->on_render(window_size, renderer, &camera, dt);
 	}
-}
-
-void BeginButtonGroup(std::size_t si, std::optional<std::size_t> selected_sample)
-{
-	const auto is_selected = selected_sample && si == *selected_sample;
-	const auto& color = is_selected ? klotter::imgui::red : klotter::imgui::gray;
-	ImGui::PushStyleColor(ImGuiCol_Button, color[6]);
-	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, color[7]);
-	ImGui::PushStyleColor(ImGuiCol_ButtonActive, color[5]);
-	ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, {0.0f, 0.0f});
-	if (si != 0)
-	{
-		ImGui::SameLine();
-	}
-}
-
-void EndButtonGroup()
-{
-	ImGui::PopStyleVar();
-	ImGui::PopStyleColor(3);
 }
 
 void SampleApp::on_gui(klotter::Renderer* renderer)

@@ -8,6 +8,7 @@
 
 #include "klotter/imgui.theme.h"
 #include "klotter/render/geom.h"
+#include "klotter/im_colors.h"
 
 using namespace klotter;
 
@@ -22,6 +23,25 @@ static void imgui_label(const char* const label, const std::string& text)
 static void imgui_color(const char* const label, klotter::Color* color)
 {
 	ImGui::ColorEdit3(label, &color->r);
+}
+
+static void begin_button_for_group(bool is_first, bool is_selected)
+{
+	const auto& color = is_selected ? klotter::imgui::red : klotter::imgui::gray;
+	ImGui::PushStyleColor(ImGuiCol_Button, color[6]);
+	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, color[7]);
+	ImGui::PushStyleColor(ImGuiCol_ButtonActive, color[5]);
+	ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, {0.0f, 0.0f});
+	if (is_first == false)
+	{
+		ImGui::SameLine();
+	}
+}
+
+void end_button_for_group()
+{
+	ImGui::PopStyleVar();
+	ImGui::PopStyleColor(3);
 }
 
 struct LightsSample : Sample
@@ -322,14 +342,30 @@ struct LightsSample : Sample
 
 		ImGui::SeparatorText("Rendering");
 		{
-			if (ImGui::Button("No MSAA"))
+			struct MSaaSetting
 			{
-				renderer->settings.msaa = 0;
-			}
-			ImGui::SameLine();
-			if (ImGui::Button("MSAA x4"))
+				const char* label;
+				int value;
+
+				constexpr MSaaSetting(const char* l, int v)
+					: label(l)
+					, value(v)
+				{}
+			};
+
+			constexpr std::size_t all_count = 2;
+			constexpr std::array<MSaaSetting, all_count> all_settings = {MSaaSetting{"No MSAA", 0}, MSaaSetting{"MSAA x4", 4}};
+
+			for (std::size_t sett_index=0; sett_index < all_count; sett_index +=1)
 			{
-				renderer->settings.msaa = 4;
+				const auto sett = all_settings[sett_index];
+
+				begin_button_for_group(sett_index == 0, renderer->settings.msaa == sett.value);
+				if (ImGui::Button(sett.label))
+				{
+					renderer->settings.msaa = sett.value;
+				}
+				end_button_for_group();
 			}
 		}
 		bool has_skybox = world.skybox.has_value();
