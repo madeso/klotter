@@ -151,6 +151,8 @@ struct EffectStack
 	CompiledStack compiled;
 
 	// render world settings
+	// todo(Gustav): is it useful to disable hdr rendering or should that just be removed?
+	// todo(Gustav): move exposure to a better place?
 	bool use_hdr = true;
 	float exposure = 1.0f;
 
