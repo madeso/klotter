@@ -29,7 +29,7 @@ var searchData=
   ['use_5fblinn_5fphong_26',['use_blinn_phong',['../structklotter_1_1ShaderOptions.html#a82219aa56babe230c959a8715122a4e8',1,'klotter::ShaderOptions']]],
   ['use_5fdebug_5flabel_27',['USE_DEBUG_LABEL',['../opengl__labels_8h.html#a10eb5091115388a6d2525316155779f8',1,'opengl_labels.h']]],
   ['use_5fdebug_5flabel_5fmany_28',['USE_DEBUG_LABEL_MANY',['../opengl__labels_8h.html#a29b5fd80a12ba3e8016e12479c06e495',1,'opengl_labels.h']]],
-  ['use_5fhdr_29',['use_hdr',['../structklotter_1_1RenderWorld.html#a05c235b7f1a91403400e20376de5f6fa',1,'klotter::RenderWorld']]],
+  ['use_5fhdr_29',['use_hdr',['../structklotter_1_1EffectStack.html#aeac7678584313570bb2642cd51a07759',1,'klotter::EffectStack::use_hdr'],['../structklotter_1_1RenderWorld.html#a5c1c9291f9d87e3fb1e80e93be6b0796',1,'klotter::RenderWorld::use_hdr']]],
   ['use_5fhori_5fshader_30',['use_hori_shader',['../structklotter_1_1BlurEffect.html#af1403aa0519290c0384080c8aa5e3f15',1,'klotter::BlurEffect']]],
   ['use_5finstancing_31',['use_instancing',['../structklotter_1_1ShaderOptions.html#a17d6ad6992bb59a5003261b8565172db',1,'klotter::ShaderOptions']]],
   ['use_5flights_32',['use_lights',['../structklotter_1_1ShaderOptions.html#aca2a16f5f74d2173ad16e3190ece623c',1,'klotter::ShaderOptions']]],

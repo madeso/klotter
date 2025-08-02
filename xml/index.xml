@@ -270,10 +270,12 @@
     <member refid="structklotter_1_1EffectStack_1a69f6d22d0045f408054bd97ed6a67c66" kind="variable"><name>window_size</name></member>
     <member refid="structklotter_1_1EffectStack_1a9e333bc5482652c2e731dc4362575d34" kind="variable"><name>effects</name></member>
     <member refid="structklotter_1_1EffectStack_1a99d2b4b2f9ddce5da16bf4d088978bd6" kind="variable"><name>compiled</name></member>
+    <member refid="structklotter_1_1EffectStack_1aeac7678584313570bb2642cd51a07759" kind="variable"><name>use_hdr</name></member>
+    <member refid="structklotter_1_1EffectStack_1ae1b4343dbc50a5ae1b08aaf3efc20b68" kind="variable"><name>exposure</name></member>
     <member refid="structklotter_1_1EffectStack_1adfd748607dee4c12c729c56b09e3d5a6" kind="variable"><name>render_world_ref</name></member>
     <member refid="structklotter_1_1EffectStack_1aaf622b94ba48b5950c9324c6d4434c05" kind="function"><name>render</name></member>
     <member refid="structklotter_1_1EffectStack_1a045d1a84ab1f0e78ac4382191f521c75" kind="function"><name>update</name></member>
-    <member refid="structklotter_1_1EffectStack_1a3bff8502909b4fd618bbe469208c660f" kind="function"><name>gui</name></member>
+    <member refid="structklotter_1_1EffectStack_1a225f24c131243c23e9a22598a9765fb1" kind="function"><name>gui</name></member>
   </compound>
   <compound refid="structklotter_1_1ExtractedAttribute" kind="struct"><name>klotter::ExtractedAttribute</name>
     <member refid="structklotter_1_1ExtractedAttribute_1a13b00d60b002e83054006e4bdac1300b" kind="variable"><name>type</name></member>
@@ -615,14 +617,14 @@
   </compound>
   <compound refid="structklotter_1_1RenderWorld" kind="struct"><name>klotter::RenderWorld</name>
     <member refid="structklotter_1_1RenderWorld_1a93e35103ec16f4e85876bc457d3b5b0b" kind="variable"><name>window_size</name></member>
-    <member refid="structklotter_1_1RenderWorld_1a05c235b7f1a91403400e20376de5f6fa" kind="variable"><name>use_hdr</name></member>
-    <member refid="structklotter_1_1RenderWorld_1a414cf6368bd7c9982cc5901440e99e77" kind="variable"><name>exposure</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a5c1c9291f9d87e3fb1e80e93be6b0796" kind="variable"><name>use_hdr</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a0c96c544429ce3d6905ed01fe02b7805" kind="variable"><name>exposure</name></member>
     <member refid="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" kind="variable"><name>msaa_buffer</name></member>
     <member refid="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" kind="variable"><name>realized_buffer</name></member>
     <member refid="structklotter_1_1RenderWorld_1afd687a50e44caa95be21e438c1e41f1d" kind="variable"><name>realize_shader</name></member>
     <member refid="structklotter_1_1RenderWorld_1a820cffdbaf12ecac4bb21c8393f971af" kind="variable"><name>gamma_uniform</name></member>
     <member refid="structklotter_1_1RenderWorld_1a0676b0a41da2c25ecb23063b80c4a0b4" kind="variable"><name>exposure_uniform</name></member>
-    <member refid="structklotter_1_1RenderWorld_1a72ee05fdb5ee6a4d82848f4da22d8048" kind="function"><name>RenderWorld</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a84936dbfbbf5785f9b9bd40fa504b3d6" kind="function"><name>RenderWorld</name></member>
     <member refid="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" kind="function"><name>update</name></member>
     <member refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" kind="function"><name>render</name></member>
     <member refid="structklotter_1_1RenderWorld_1ae8cc6b1309ad7159af104a5194decce1" kind="function"><name>gui</name></member>

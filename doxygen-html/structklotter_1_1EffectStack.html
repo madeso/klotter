@@ -129,8 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaf622b94ba48b5950c9324c6d4434c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a045d1a84ab1f0e78ac4382191f521c75" id="r_a045d1a84ab1f0e78ac4382191f521c75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a045d1a84ab1f0e78ac4382191f521c75">update</a> (float dt) const</td></tr>
 <tr class="separator:a045d1a84ab1f0e78ac4382191f521c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bff8502909b4fd618bbe469208c660f" id="r_a3bff8502909b4fd618bbe469208c660f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bff8502909b4fd618bbe469208c660f">gui</a> () const</td></tr>
-<tr class="separator:a3bff8502909b4fd618bbe469208c660f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225f24c131243c23e9a22598a9765fb1" id="r_a225f24c131243c23e9a22598a9765fb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a225f24c131243c23e9a22598a9765fb1">gui</a> ()</td></tr>
+<tr class="separator:a225f24c131243c23e9a22598a9765fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -144,14 +144,18 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9e333bc5482652c2e731dc4362575d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d2b4b2f9ddce5da16bf4d088978bd6" id="r_a99d2b4b2f9ddce5da16bf4d088978bd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledStack.html">CompiledStack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99d2b4b2f9ddce5da16bf4d088978bd6">compiled</a></td></tr>
 <tr class="separator:a99d2b4b2f9ddce5da16bf4d088978bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac7678584313570bb2642cd51a07759" id="r_aeac7678584313570bb2642cd51a07759"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeac7678584313570bb2642cd51a07759">use_hdr</a> = true</td></tr>
+<tr class="separator:aeac7678584313570bb2642cd51a07759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b4343dbc50a5ae1b08aaf3efc20b68" id="r_ae1b4343dbc50a5ae1b08aaf3efc20b68"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1b4343dbc50a5ae1b08aaf3efc20b68">exposure</a> = 1.0f</td></tr>
+<tr class="separator:ae1b4343dbc50a5ae1b08aaf3efc20b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfd748607dee4c12c729c56b09e3d5a6" id="r_adfd748607dee4c12c729c56b09e3d5a6"><td class="memItemLeft" align="right" valign="top">std::weak_ptr&lt; <a class="el" href="structklotter_1_1RenderWorld.html">RenderWorld</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfd748607dee4c12c729c56b09e3d5a6">render_world_ref</a></td></tr>
 <tr class="separator:adfd748607dee4c12c729c56b09e3d5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The facade of the post-proc framework. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3bff8502909b4fd618bbe469208c660f" name="a3bff8502909b4fd618bbe469208c660f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bff8502909b4fd618bbe469208c660f">&#9670;&#160;</a></span>gui()</h2>
+<a id="a225f24c131243c23e9a22598a9765fb1" name="a225f24c131243c23e9a22598a9765fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a225f24c131243c23e9a22598a9765fb1">&#9670;&#160;</a></span>gui()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +164,7 @@ Public Attributes</h2></td></tr>
           <td class="memname">void klotter::EffectStack::gui </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -246,6 +250,20 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae1b4343dbc50a5ae1b08aaf3efc20b68" name="ae1b4343dbc50a5ae1b08aaf3efc20b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1b4343dbc50a5ae1b08aaf3efc20b68">&#9670;&#160;</a></span>exposure</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float klotter::EffectStack::exposure = 1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a11d7d313f0205c4f881979dd5506264c" name="a11d7d313f0205c4f881979dd5506264c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11d7d313f0205c4f881979dd5506264c">&#9670;&#160;</a></span>last_msaa</h2>
 
@@ -268,6 +286,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::weak_ptr&lt;<a class="el" href="structklotter_1_1RenderWorld.html">RenderWorld</a>&gt; klotter::EffectStack::render_world_ref</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeac7678584313570bb2642cd51a07759" name="aeac7678584313570bb2642cd51a07759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac7678584313570bb2642cd51a07759">&#9670;&#160;</a></span>use_hdr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool klotter::EffectStack::use_hdr = true</td>
         </tr>
       </table>
 </div><div class="memdoc">

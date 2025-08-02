@@ -5,7 +5,7 @@ var searchData=
   ['up_2',['UP',['../group__render.html#ga86f2208b879c568d1ee1e6e771c0caa1',1,'klotter']]],
   ['up_3',['up',['../structklotter_1_1CameraVectors.html#af53d2d059ea34390beb2f73311aa9e7e',1,'klotter::CameraVectors']]],
   ['use_5fblinn_5fphong_4',['use_blinn_phong',['../structklotter_1_1ShaderOptions.html#a82219aa56babe230c959a8715122a4e8',1,'klotter::ShaderOptions']]],
-  ['use_5fhdr_5',['use_hdr',['../structklotter_1_1RenderWorld.html#a05c235b7f1a91403400e20376de5f6fa',1,'klotter::RenderWorld']]],
+  ['use_5fhdr_5',['use_hdr',['../structklotter_1_1EffectStack.html#aeac7678584313570bb2642cd51a07759',1,'klotter::EffectStack::use_hdr'],['../structklotter_1_1RenderWorld.html#a5c1c9291f9d87e3fb1e80e93be6b0796',1,'klotter::RenderWorld::use_hdr']]],
   ['use_5finstancing_6',['use_instancing',['../structklotter_1_1ShaderOptions.html#a17d6ad6992bb59a5003261b8565172db',1,'klotter::ShaderOptions']]],
   ['use_5flights_7',['use_lights',['../structklotter_1_1ShaderOptions.html#aca2a16f5f74d2173ad16e3190ece623c',1,'klotter::ShaderOptions']]],
   ['use_5ftexture_8',['use_texture',['../structklotter_1_1ShaderOptions.html#a5a82c2357b48240169bd49d29200c408',1,'klotter::ShaderOptions']]],

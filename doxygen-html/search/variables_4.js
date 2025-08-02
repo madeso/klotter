@@ -8,6 +8,6 @@ var searchData=
   ['emissive_5',['emissive',['../structklotter_1_1DefaultMaterial.html#a898d25a64155b2ff3393cf59406ea934',1,'klotter::DefaultMaterial']]],
   ['emissive_5ffactor_6',['emissive_factor',['../structklotter_1_1DefaultMaterial.html#a1a567363b2fe120cf5e9174e2e2e3deb',1,'klotter::DefaultMaterial']]],
   ['emissive_5ffactor_5funi_7',['emissive_factor_uni',['../structklotter_1_1LoadedShader__Default.html#a385a11e189ac7f0786000ed7c810d751',1,'klotter::LoadedShader_Default']]],
-  ['exposure_8',['exposure',['../structklotter_1_1RenderWorld.html#a414cf6368bd7c9982cc5901440e99e77',1,'klotter::RenderWorld']]],
+  ['exposure_8',['exposure',['../structklotter_1_1EffectStack.html#ae1b4343dbc50a5ae1b08aaf3efc20b68',1,'klotter::EffectStack::exposure'],['../structklotter_1_1RenderWorld.html#a0c96c544429ce3d6905ed01fe02b7805',1,'klotter::RenderWorld::exposure']]],
   ['exposure_5funiform_9',['exposure_uniform',['../structklotter_1_1RenderWorld.html#a0676b0a41da2c25ecb23063b80c4a0b4',1,'klotter::RenderWorld']]]
 ];
