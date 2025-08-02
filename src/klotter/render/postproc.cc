@@ -49,8 +49,10 @@ void Effect::set_enabled(bool n)
 // todo(Gustav): should this be a user config option? evaluate higher/lower bits, probably 16 or 32 since it needs to be floating point for hdr
 constexpr ColorBitsPerPixel render_world_color_bits_per_pixel = ColorBitsPerPixel::use_16;
 
-RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples)
+RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples, bool* h, float* e)
 	: window_size(size)
+	, use_hdr(h)
+	, exposure(e)
 	, msaa_buffer(FrameBufferBuilder{size}
 		.with_msaa(msaa_samples)
 		.with_color_bits(render_world_color_bits_per_pixel)
@@ -64,6 +66,8 @@ RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcSh
 	, gamma_uniform(realize_shader->program->get_uniform("u_gamma"))
 	, exposure_uniform(realize_shader->program->get_uniform("u_exposure"))
 {
+	ASSERT(use_hdr);
+	ASSERT(exposure);
 }
 
 void RenderWorld::update(const PostProcArg& arg)
@@ -94,9 +98,12 @@ void RenderWorld::render(const PostProcArg& arg)
 	glClearColor(0, 0, 0, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	ASSERT(use_hdr);
+	ASSERT(exposure);
+
 	realize_shader->program->use();
 	realize_shader->program->set_float(gamma_uniform, arg.renderer->settings.gamma);
-	realize_shader->program->set_float(exposure_uniform, use_hdr ? exposure : -1.0f);
+	realize_shader->program->set_float(exposure_uniform, *use_hdr ? *exposure : -1.0f);
 	bind_texture_2d(&arg.renderer->pimpl->states, realize_shader->texture_uni, *realized_buffer);
 
 	render_geom(*arg.renderer->pimpl->full_screen_geom);
@@ -104,8 +111,7 @@ void RenderWorld::render(const PostProcArg& arg)
 
 void RenderWorld::gui()
 {
-	ImGui::Checkbox("HDR", &use_hdr);
-	ImGui::SliderFloat("Exposure", &exposure, 0.01f, 20.0f);
+	// todo(Gustav): remove gui function? since it's not in use anymore
 }
 
 
@@ -201,7 +207,7 @@ void EffectStack::render(const PostProcArg& arg)
 		compiled.targets.clear();
 
 		auto created_world
-			= std::make_shared<RenderWorld>(arg.window_size, arg.renderer->pimpl->shaders_resources.pp_realize, latest_msaa);
+			= std::make_shared<RenderWorld>(arg.window_size, arg.renderer->pimpl->shaders_resources.pp_realize, latest_msaa, &use_hdr, &exposure);
 		compiled.last_source = created_world;
 		render_world_ref = created_world;
 		render_world = created_world;
@@ -238,8 +244,11 @@ void EffectStack::render(const PostProcArg& arg)
 	}
 }
 
-void EffectStack::gui() const
+void EffectStack::gui()
 {
+	ImGui::Checkbox("HDR", &use_hdr);
+	ImGui::SliderFloat("Exposure", &exposure, 0.01f, 20.0f);
+
 	if (const auto rw = render_world_ref.lock(); rw)
 	{
 		rw->gui();

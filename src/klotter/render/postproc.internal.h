@@ -20,8 +20,8 @@ struct RenderWorld : RenderSource
 {
 	glm::ivec2 window_size;
 
-	bool use_hdr = true;
-	float exposure = 1.0f;
+	bool* use_hdr;
+	float* exposure;
 
 	std::shared_ptr<FrameBuffer> msaa_buffer;
 	std::shared_ptr<FrameBuffer> realized_buffer;
@@ -29,7 +29,7 @@ struct RenderWorld : RenderSource
 	Uniform gamma_uniform;
 	Uniform exposure_uniform;
 
-	RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples);
+	RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples, bool* h, float* e);
 
 	void update(const PostProcArg& arg);
 

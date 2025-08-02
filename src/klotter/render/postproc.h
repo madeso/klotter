@@ -150,12 +150,16 @@ struct EffectStack
 	std::vector<std::shared_ptr<Effect>> effects;
 	CompiledStack compiled;
 
+	// render world settings
+	bool use_hdr = true;
+	float exposure = 1.0f;
+
 	std::weak_ptr<RenderWorld> render_world_ref;
 
 	/// rebuilds stack if dirty, update all targets, then render the last_source
 	void render(const PostProcArg& arg);
 	void update(float dt) const;
-	void gui() const;
+	void gui();
 };
 
 /**
