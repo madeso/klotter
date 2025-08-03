@@ -197,11 +197,18 @@ bool LoadedShader_Default_Container::is_loaded() const
 	return default_shader.program->is_loaded() && transparency_shader.program->is_loaded();
 }
 
+RealizeShader::RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh)
+	: shader(sh)
+	, gamma_uniform(shader->program->get_uniform("u_gamma"))
+	, exposure_uniform(shader->program->get_uniform("u_exposure"))
+{
+}
+
 bool ShaderResource::is_loaded() const
 {
 	return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded() && unlit_shader_container.is_loaded()
 		&& default_shader_container.is_loaded() && pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
-		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_realize->program->is_loaded();
+		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_realize.shader->program->is_loaded();
 }
 
 using BaseShaderData = std::vector<VertexType>;
@@ -355,13 +362,13 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		PostProcSetup::factor | PostProcSetup::resolution
 	);
 
-	auto pp_realize = std::make_shared<LoadedPostProcShader>(
+	auto pp_realize = RealizeShader{std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
 			USE_DEBUG_LABEL_MANY("pp realize")
 			std::string{PP_VERT_GLSL}, std::string{PP_REALIZE_FRAG_GLSL}, full_screen.layout
 		),
 		PostProcSetup::none
-	);
+	)};
 
 	auto loaded_single_color = load_shader(
 		USE_DEBUG_LABEL_MANY("single color") global_shader_data, single_color_shader, TransformSource::Uniform

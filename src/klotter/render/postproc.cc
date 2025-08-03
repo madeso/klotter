@@ -49,7 +49,7 @@ void Effect::set_enabled(bool n)
 // todo(Gustav): should this be a user config option? evaluate higher/lower bits, probably 16 or 32 since it needs to be floating point for hdr
 constexpr ColorBitsPerPixel render_world_color_bits_per_pixel = ColorBitsPerPixel::use_16;
 
-RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcShader> re_sh, int msaa_samples, bool* h, float* e)
+RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, int msaa_samples, bool* h, float* e)
 	: window_size(size)
 	, use_hdr(h)
 	, exposure(e)
@@ -62,9 +62,7 @@ RenderWorld::RenderWorld(const glm::ivec2 size, std::shared_ptr<LoadedPostProcSh
 	, realized_buffer(FrameBufferBuilder{size}
 		.with_color_bits(render_world_color_bits_per_pixel)
 		.build(USE_DEBUG_LABEL("realized msaa buffer")))
-	, realize_shader(std::move(re_sh))
-	, gamma_uniform(realize_shader->program->get_uniform("u_gamma"))
-	, exposure_uniform(realize_shader->program->get_uniform("u_exposure"))
+	, realize_shader(re_sh)
 {
 	ASSERT(use_hdr);
 	ASSERT(exposure);
@@ -101,10 +99,10 @@ void RenderWorld::render(const PostProcArg& arg)
 	ASSERT(use_hdr);
 	ASSERT(exposure);
 
-	realize_shader->program->use();
-	realize_shader->program->set_float(gamma_uniform, arg.renderer->settings.gamma);
-	realize_shader->program->set_float(exposure_uniform, *use_hdr ? *exposure : -1.0f);
-	bind_texture_2d(&arg.renderer->pimpl->states, realize_shader->texture_uni, *realized_buffer);
+	realize_shader->shader->program->use();
+	realize_shader->shader->program->set_float(realize_shader->gamma_uniform, arg.renderer->settings.gamma);
+	realize_shader->shader->program->set_float(realize_shader->exposure_uniform, *use_hdr ? *exposure : -1.0f);
+	bind_texture_2d(&arg.renderer->pimpl->states, realize_shader->shader->texture_uni, *realized_buffer);
 
 	render_geom(*arg.renderer->pimpl->full_screen_geom);
 }
@@ -207,7 +205,7 @@ void EffectStack::render(const PostProcArg& arg)
 		compiled.targets.clear();
 
 		auto created_world
-			= std::make_shared<RenderWorld>(arg.window_size, arg.renderer->pimpl->shaders_resources.pp_realize, latest_msaa, &use_hdr, &exposure);
+			= std::make_shared<RenderWorld>(arg.window_size, &arg.renderer->pimpl->shaders_resources.pp_realize, latest_msaa, &use_hdr, &exposure);
 		compiled.last_source = created_world;
 		render_world_ref = created_world;
 		render_world = created_world;

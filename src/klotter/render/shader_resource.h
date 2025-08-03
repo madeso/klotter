@@ -222,6 +222,14 @@ struct LoadedShader_Default_Container
 /// Select the correct sub shader from a container.
 [[nodiscard]] const LoadedShader_Default& shader_from_container(const LoadedShader_Default_Container& container, const RenderContext& rc);
 
+struct RealizeShader
+{
+	explicit RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh);
+	std::shared_ptr<LoadedPostProcShader> shader;
+	Uniform gamma_uniform;
+	Uniform exposure_uniform;
+};
+
 /// All loaded shaders.
 struct ShaderResource
 {
@@ -240,7 +248,7 @@ struct ShaderResource
 	std::shared_ptr<LoadedPostProcShader> pp_blurh;
 
 	/// the realization shader that is always run
-	std::shared_ptr<LoadedPostProcShader> pp_realize;
+	RealizeShader pp_realize;
 
 	/// verify that the shaders are loaded
 	[[nodiscard]] bool is_loaded() const;
