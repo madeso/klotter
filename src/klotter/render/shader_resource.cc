@@ -22,11 +22,15 @@
 namespace klotter
 {
 
+
+
 void CameraUniformBuffer::set_props(const CompiledCamera& cc) // NOLINT(readability-make-member-function-const)
 {
 	buffer->set_mat4(clip_from_view_uni, cc.clip_from_view);
 	buffer->set_mat4(view_from_world_uni, cc.view_from_world);
 }
+
+
 
 LoadedShader_SingleColor::LoadedShader_SingleColor(
 	std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l, const CameraUniformBuffer& desc
@@ -39,6 +43,8 @@ LoadedShader_SingleColor::LoadedShader_SingleColor(
 	program->setup_uniform_block(desc.setup);
 }
 
+
+
 LoadedShader_Skybox::LoadedShader_Skybox(
 	std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l, const CameraUniformBuffer& desc
 )
@@ -49,6 +55,8 @@ LoadedShader_Skybox::LoadedShader_Skybox(
 	setup_textures(program.get(), {&tex_skybox_uni});
 	program->setup_uniform_block(desc.setup);
 }
+
+
 
 LoadedShader_Unlit::LoadedShader_Unlit(
 	TransformSource model_source,
@@ -66,12 +74,16 @@ LoadedShader_Unlit::LoadedShader_Unlit(
 	program->setup_uniform_block(desc.setup);
 }
 
+
+
 DirectionalLightUniforms::DirectionalLightUniforms(const ShaderProgram* program, const std::string& base)
 	: light_diffuse_color_uni(program->get_uniform(base + "diffuse"))
 	, light_specular_color_uni(program->get_uniform(base + "specular"))
 	, dir_uni(program->get_uniform(base + "dir"))
 {
 }
+
+
 
 PointLightUniforms::PointLightUniforms(const ShaderProgram* program, const std::string& base)
 	: light_diffuse_color_uni(program->get_uniform(base + "diffuse"))
@@ -80,6 +92,8 @@ PointLightUniforms::PointLightUniforms(const ShaderProgram* program, const std::
 	, light_world_uni(program->get_uniform(base + "world_pos"))
 {
 }
+
+
 
 FrustumLightUniforms::FrustumLightUniforms(const ShaderProgram* program, const std::string& base)
 	: diffuse_uni(program->get_uniform(base + "diffuse"))
@@ -91,10 +105,14 @@ FrustumLightUniforms::FrustumLightUniforms(const ShaderProgram* program, const s
 {
 }
 
+
+
 PostProcSetup operator|(PostProcSetup lhs, PostProcSetup rhs)
 {
 	return static_cast<PostProcSetup>(base_cast(lhs) | base_cast(rhs));
 }
+
+
 
 std::optional<Uniform> get_uniform(
 	ShaderProgram& prog, const std::string& name, PostProcSetup setup, PostProcSetup flag
@@ -110,6 +128,8 @@ std::optional<Uniform> get_uniform(
 	}
 }
 
+
+
 LoadedPostProcShader::LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, PostProcSetup setup)
 	: program(std::move(s))
 	, texture_uni(program->get_uniform("u_texture"))
@@ -119,6 +139,8 @@ LoadedPostProcShader::LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, Pos
 {
 	setup_textures(program.get(), {&texture_uni});
 }
+
+
 
 LoadedShader_Default::LoadedShader_Default(
 	TransformSource model_source,
@@ -169,14 +191,18 @@ LoadedShader_Default::LoadedShader_Default(
 	program->setup_uniform_block(desc.setup);
 }
 
-const LoadedShader_Unlit& shader_from_container(const LoadedShader_Unlit_Container& container, const RenderContext& rc)
-{
-	return rc.use_transparency == UseTransparency::yes ? container.transparency_shader : container.default_shader;
-}
+
 
 bool LoadedShader_Unlit_Container::is_loaded() const
 {
 	return default_shader.program->is_loaded() && transparency_shader.program->is_loaded();
+}
+
+
+
+const LoadedShader_Unlit& shader_from_container(const LoadedShader_Unlit_Container& container, const RenderContext& rc)
+{
+	return rc.use_transparency == UseTransparency::yes ? container.transparency_shader : container.default_shader;
 }
 
 const LoadedShader_Default& shader_from_container(const LoadedShader_Default_Container& container, const RenderContext& rc)
@@ -192,10 +218,16 @@ const LoadedShader_Default& shader_from_container(const LoadedShader_Default_Con
 	}
 }
 
+
+
+
 bool LoadedShader_Default_Container::is_loaded() const
 {
 	return default_shader.program->is_loaded() && transparency_shader.program->is_loaded();
 }
+
+
+
 
 RealizeShader::RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh)
 	: shader(sh)
@@ -211,7 +243,11 @@ bool ShaderResource::is_loaded() const
 		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_realize.shader->program->is_loaded();
 }
 
+
+
 using BaseShaderData = std::vector<VertexType>;
+
+
 
 BaseShaderData get_vertex_types(const ShaderVertexAttributes& va)
 {
@@ -222,6 +258,7 @@ BaseShaderData get_vertex_types(const ShaderVertexAttributes& va)
 	}
 	return ret;
 }
+
 
 
 // todo(Gustav): should this be a tuple instead? this way the members are named
@@ -235,6 +272,8 @@ struct LoadedShader
 	std::shared_ptr<ShaderProgram> program;
 	CompiledGeomVertexAttributes geom_layout;
 };
+
+
 
 LoadedShader load_shader(DEBUG_LABEL_ARG_MANY const BaseShaderData& base_layout, const VertexShaderSource& source, TransformSource model_source)
 {
@@ -255,6 +294,8 @@ LoadedShader load_shader(DEBUG_LABEL_ARG_MANY const BaseShaderData& base_layout,
 
 	return {program, geom_layout};
 }
+
+
 
 ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSettings& settings, const FullScreenGeom& full_screen)
 {
@@ -399,5 +440,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		pp_realize
 	};
 }
+
+
 
 }  //  namespace klotter
