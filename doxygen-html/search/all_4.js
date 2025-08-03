@@ -17,7 +17,7 @@ var searchData=
   ['equal_14',['equal',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a465289687a70db7aa7217cc240c29f0f',1,'klotter']]],
   ['exclude_15',['exclude',['../group__texture.html#gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef',1,'klotter']]],
   ['exposure_16',['exposure',['../structklotter_1_1EffectStack.html#ae1b4343dbc50a5ae1b08aaf3efc20b68',1,'klotter::EffectStack::exposure'],['../structklotter_1_1RenderWorld.html#a0c96c544429ce3d6905ed01fe02b7805',1,'klotter::RenderWorld::exposure']]],
-  ['exposure_5funiform_17',['exposure_uniform',['../structklotter_1_1RenderWorld.html#a0676b0a41da2c25ecb23063b80c4a0b4',1,'klotter::RenderWorld']]],
+  ['exposure_5funiform_17',['exposure_uniform',['../structklotter_1_1RealizeShader.html#a1dc6b3833c4e5a03fe9d1b1673527fd2',1,'klotter::RealizeShader']]],
   ['extract_5fgeom_18',['extract_geom',['../group__geom-builder.html#ga4758c0c17511f831624a7cc7dbac8f74',1,'klotter']]],
   ['extractedattribute_19',['ExtractedAttribute',['../structklotter_1_1ExtractedAttribute.html',1,'klotter']]],
   ['extractedattributetype_20',['ExtractedAttributeType',['../group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05',1,'klotter']]],

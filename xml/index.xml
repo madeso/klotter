@@ -553,6 +553,12 @@
     <member refid="structklotter_1_1PostProcArg_1a5f841578f5f3c3ad12f200a179c3c4c1" kind="variable"><name>camera</name></member>
     <member refid="structklotter_1_1PostProcArg_1afb6209a69a9db4f6779c43290d6cc32c" kind="variable"><name>renderer</name></member>
   </compound>
+  <compound refid="structklotter_1_1RealizeShader" kind="struct"><name>klotter::RealizeShader</name>
+    <member refid="structklotter_1_1RealizeShader_1a6a002fc5f56fde819f15394e4442ea84" kind="variable"><name>shader</name></member>
+    <member refid="structklotter_1_1RealizeShader_1a1fc28d6fb77c06dbd8c606987b62c7be" kind="variable"><name>gamma_uniform</name></member>
+    <member refid="structklotter_1_1RealizeShader_1a1dc6b3833c4e5a03fe9d1b1673527fd2" kind="variable"><name>exposure_uniform</name></member>
+    <member refid="structklotter_1_1RealizeShader_1aee58e144b2a299453b3e7177d458fae6" kind="function"><name>RealizeShader</name></member>
+  </compound>
   <compound refid="structklotter_1_1RenderContext" kind="struct"><name>klotter::RenderContext</name>
     <member refid="structklotter_1_1RenderContext_1a58b31ed4a728c9bfbc835f39e0fe38d6" kind="variable"><name>model_source</name></member>
     <member refid="structklotter_1_1RenderContext_1adfe2c953d814742376a8c64af73f0a26" kind="variable"><name>use_transparency</name></member>
@@ -621,10 +627,8 @@
     <member refid="structklotter_1_1RenderWorld_1a0c96c544429ce3d6905ed01fe02b7805" kind="variable"><name>exposure</name></member>
     <member refid="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" kind="variable"><name>msaa_buffer</name></member>
     <member refid="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" kind="variable"><name>realized_buffer</name></member>
-    <member refid="structklotter_1_1RenderWorld_1afd687a50e44caa95be21e438c1e41f1d" kind="variable"><name>realize_shader</name></member>
-    <member refid="structklotter_1_1RenderWorld_1a820cffdbaf12ecac4bb21c8393f971af" kind="variable"><name>gamma_uniform</name></member>
-    <member refid="structklotter_1_1RenderWorld_1a0676b0a41da2c25ecb23063b80c4a0b4" kind="variable"><name>exposure_uniform</name></member>
-    <member refid="structklotter_1_1RenderWorld_1a84936dbfbbf5785f9b9bd40fa504b3d6" kind="function"><name>RenderWorld</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a4d57a0d535387b761cc66e2389128328" kind="variable"><name>realize_shader</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a0110e8d46ae6a9ac7a266b18e090f536" kind="function"><name>RenderWorld</name></member>
     <member refid="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" kind="function"><name>update</name></member>
     <member refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" kind="function"><name>render</name></member>
     <member refid="structklotter_1_1RenderWorld_1ae8cc6b1309ad7159af104a5194decce1" kind="function"><name>gui</name></member>
@@ -729,7 +733,7 @@
     <member refid="structklotter_1_1ShaderResource_1aa149d11a09f21cb8ef31e2e6a029a7c5" kind="variable"><name>pp_damage</name></member>
     <member refid="structklotter_1_1ShaderResource_1a0a37be05607f2204c84b6454552c176b" kind="variable"><name>pp_blurv</name></member>
     <member refid="structklotter_1_1ShaderResource_1a62e158ef1f413d38d6e1628183de2b34" kind="variable"><name>pp_blurh</name></member>
-    <member refid="structklotter_1_1ShaderResource_1aabc58d1050e66fa117eef222364822e6" kind="variable"><name>pp_realize</name></member>
+    <member refid="structklotter_1_1ShaderResource_1a0f45d24d332cb8545cc3cd8f9abb8841" kind="variable"><name>pp_realize</name></member>
     <member refid="structklotter_1_1ShaderResource_1a43421a57252a58a738c4df8f318b7dc3" kind="function"><name>is_loaded</name></member>
   </compound>
   <compound refid="structklotter_1_1ShaderSource" kind="struct"><name>klotter::ShaderSource</name>

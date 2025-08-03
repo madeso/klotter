@@ -65,6 +65,7 @@
     <innerclass refid="structklotter_1_1PointLight" prot="public">klotter::PointLight</innerclass>
     <innerclass refid="structklotter_1_1PointLightUniforms" prot="public">klotter::PointLightUniforms</innerclass>
     <innerclass refid="structklotter_1_1PostProcArg" prot="public">klotter::PostProcArg</innerclass>
+    <innerclass refid="structklotter_1_1RealizeShader" prot="public">klotter::RealizeShader</innerclass>
     <innerclass refid="structklotter_1_1RenderContext" prot="public">klotter::RenderContext</innerclass>
     <innerclass refid="structklotter_1_1Renderer" prot="public">klotter::Renderer</innerclass>
     <innerclass refid="structklotter_1_1RendererPimpl" prot="public">klotter::RendererPimpl</innerclass>

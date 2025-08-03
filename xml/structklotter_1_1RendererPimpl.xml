@@ -119,10 +119,10 @@
           <edgelabel>buffer</edgelabel>
         </childnode>
       </node>
-      <node id="41">
+      <node id="42">
         <label>klotter::CompiledGeom</label>
         <link refid="structklotter_1_1CompiledGeom"/>
-        <childnode refid="42" relation="usage">
+        <childnode refid="43" relation="usage">
           <edgelabel>debug_types</edgelabel>
         </childnode>
       </node>
@@ -136,10 +136,10 @@
           <edgelabel>debug_types</edgelabel>
         </childnode>
       </node>
-      <node id="35">
+      <node id="36">
         <label>klotter::CompiledShaderVertexAttributes</label>
         <link refid="structklotter_1_1CompiledShaderVertexAttributes"/>
-        <childnode refid="36" relation="usage">
+        <childnode refid="37" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
         <childnode refid="13" relation="usage">
@@ -150,7 +150,7 @@
         <label>klotter::CompiledUniformProp</label>
         <link refid="structklotter_1_1CompiledUniformProp"/>
       </node>
-      <node id="37">
+      <node id="38">
         <label>klotter::CompiledVertexElement</label>
         <link refid="structklotter_1_1CompiledVertexElement"/>
         <childnode refid="4" relation="usage">
@@ -182,20 +182,20 @@
           <edgelabel>world_to_clip_uni</edgelabel>
         </childnode>
       </node>
-      <node id="38">
+      <node id="39">
         <label>klotter::LineBatch</label>
         <link refid="structklotter_1_1LineBatch"/>
-        <childnode refid="39" relation="usage">
+        <childnode refid="40" relation="usage">
           <edgelabel>data</edgelabel>
         </childnode>
       </node>
-      <node id="33">
+      <node id="34">
         <label>klotter::LineDrawer</label>
         <link refid="structklotter_1_1LineDrawer"/>
-        <childnode refid="34" relation="usage">
+        <childnode refid="35" relation="usage">
           <edgelabel>description</edgelabel>
         </childnode>
-        <childnode refid="35" relation="usage">
+        <childnode refid="36" relation="usage">
           <edgelabel>layout</edgelabel>
         </childnode>
         <childnode refid="12" relation="usage">
@@ -208,7 +208,7 @@
           <edgelabel>resolution_uni</edgelabel>
           <edgelabel>view_from_world_uni</edgelabel>
         </childnode>
-        <childnode refid="38" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>line_batch</edgelabel>
         </childnode>
       </node>
@@ -312,10 +312,10 @@
           <edgelabel>transparency_shader</edgelabel>
         </childnode>
       </node>
-      <node id="31">
+      <node id="32">
         <label>klotter::OpenglStates</label>
         <link refid="structklotter_1_1OpenglStates"/>
-        <childnode refid="32" relation="usage">
+        <childnode refid="33" relation="usage">
           <edgelabel>texture_bound</edgelabel>
         </childnode>
       </node>
@@ -329,6 +329,17 @@
           <edgelabel>light_world_uni</edgelabel>
         </childnode>
       </node>
+      <node id="31">
+        <label>klotter::RealizeShader</label>
+        <link refid="structklotter_1_1RealizeShader"/>
+        <childnode refid="29" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>exposure_uniform</edgelabel>
+          <edgelabel>gamma_uniform</edgelabel>
+        </childnode>
+      </node>
       <node id="1">
         <label>klotter::RendererPimpl</label>
         <link refid="structklotter_1_1RendererPimpl"/>
@@ -338,13 +349,13 @@
         <childnode refid="9" relation="usage">
           <edgelabel>shaders_resources</edgelabel>
         </childnode>
-        <childnode refid="31" relation="usage">
+        <childnode refid="32" relation="usage">
           <edgelabel>states</edgelabel>
         </childnode>
-        <childnode refid="33" relation="usage">
+        <childnode refid="34" relation="usage">
           <edgelabel>debug_drawer</edgelabel>
         </childnode>
-        <childnode refid="40" relation="usage">
+        <childnode refid="41" relation="usage">
           <edgelabel>full_screen_geom</edgelabel>
         </childnode>
       </node>
@@ -376,6 +387,8 @@
           <edgelabel>pp_damage</edgelabel>
           <edgelabel>pp_grayscale</edgelabel>
           <edgelabel>pp_invert</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
           <edgelabel>pp_realize</edgelabel>
         </childnode>
       </node>
@@ -398,15 +411,15 @@
           <edgelabel>source</edgelabel>
         </childnode>
       </node>
-      <node id="32">
+      <node id="33">
         <label>std::array&lt; std::optional&lt; unsigned int &gt;, MAX_TEXTURES_SUPPORTED &gt;</label>
       </node>
       <node id="5">
         <label>std::basic_string&lt; Char &gt;</label>
       </node>
-      <node id="40">
+      <node id="41">
         <label>std::shared_ptr&lt; klotter::CompiledGeom &gt;</label>
-        <childnode refid="41" relation="usage">
+        <childnode refid="42" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -433,21 +446,21 @@
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="42">
+      <node id="43">
         <label>std::unordered_set&lt; VertexType &gt;</label>
       </node>
-      <node id="34">
+      <node id="35">
         <label>std::vector&lt; VertexElementDescription &gt;</label>
       </node>
       <node id="13">
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
-      <node id="39">
+      <node id="40">
         <label>std::vector&lt; float &gt;</label>
       </node>
-      <node id="36">
+      <node id="37">
         <label>std::vector&lt; klotter::CompiledVertexElement &gt;</label>
-        <childnode refid="37" relation="usage">
+        <childnode refid="38" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>

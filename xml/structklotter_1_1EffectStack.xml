@@ -217,14 +217,25 @@
         <childnode refid="15" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="20">
+      <node id="21">
         <label>klotter::LoadedPostProcShader</label>
         <link refid="structklotter_1_1LoadedPostProcShader"/>
-        <childnode refid="21" relation="usage">
+        <childnode refid="22" relation="usage">
           <edgelabel>program</edgelabel>
         </childnode>
-        <childnode refid="24" relation="usage">
+        <childnode refid="25" relation="usage">
           <edgelabel>texture_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>klotter::RealizeShader</label>
+        <link refid="structklotter_1_1RealizeShader"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>exposure_uniform</edgelabel>
+          <edgelabel>gamma_uniform</edgelabel>
         </childnode>
       </node>
       <node id="7">
@@ -261,15 +272,11 @@
         <childnode refid="19" relation="usage">
           <edgelabel>realize_shader</edgelabel>
         </childnode>
-        <childnode refid="24" relation="usage">
-          <edgelabel>exposure_uniform</edgelabel>
-          <edgelabel>gamma_uniform</edgelabel>
-        </childnode>
       </node>
-      <node id="22">
+      <node id="23">
         <label>klotter::ShaderProgram</label>
         <link refid="structklotter_1_1ShaderProgram"/>
-        <childnode refid="23" relation="usage">
+        <childnode refid="24" relation="usage">
           <edgelabel>debug_vertex_types</edgelabel>
         </childnode>
       </node>
@@ -277,7 +284,7 @@
         <label>klotter::ShaderPropertyProvider</label>
         <link refid="structklotter_1_1ShaderPropertyProvider"/>
       </node>
-      <node id="24">
+      <node id="25">
         <label>klotter::Uniform</label>
         <link refid="structklotter_1_1Uniform"/>
         <childnode refid="11" relation="usage">
@@ -299,9 +306,9 @@
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="19">
+      <node id="20">
         <label>std::shared_ptr&lt; klotter::LoadedPostProcShader &gt;</label>
-        <childnode refid="20" relation="usage">
+        <childnode refid="21" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -317,9 +324,9 @@
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="21">
+      <node id="22">
         <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
-        <childnode refid="22" relation="usage">
+        <childnode refid="23" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
@@ -328,7 +335,7 @@
         <childnode refid="12" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="23">
+      <node id="24">
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
       <node id="2">

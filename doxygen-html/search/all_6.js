@@ -2,7 +2,7 @@ var searchData=
 [
   ['g_0',['g',['../structklotter_1_1Color.html#a31f3eb783747ea347239f9244f0e6294',1,'klotter::Color']]],
   ['gamma_1',['gamma',['../structklotter_1_1RenderSettings.html#a1306eea262ecc033ee14b08916ebf859',1,'klotter::RenderSettings::gamma'],['../structklotter_1_1RenderContext.html#abce13a97463ff43689c0f9637bf6ecb8',1,'klotter::RenderContext::gamma']]],
-  ['gamma_5funiform_2',['gamma_uniform',['../structklotter_1_1RenderWorld.html#a820cffdbaf12ecac4bb21c8393f971af',1,'klotter::RenderWorld']]],
+  ['gamma_5funiform_2',['gamma_uniform',['../structklotter_1_1RealizeShader.html#a1fc28d6fb77c06dbd8c606987b62c7be',1,'klotter::RealizeShader']]],
   ['gap_5fsize_5funi_3',['gap_size_uni',['../structklotter_1_1LineDrawer.html#a928c80448b286b86c6052646601b7029',1,'klotter::LineDrawer']]],
   ['generate_5fblur_4',['generate_blur',['../namespaceklotter.html#a922b5d3cc7e03da98bcab5a44c7a20c3',1,'klotter']]],
   ['geom_5',['Geom',['../structklotter_1_1Geom.html',1,'klotter::Geom'],['../group__geom.html',1,'Geom']]],

@@ -33,7 +33,7 @@ var searchData=
   ['setup_5fopengl_5fdebug_30',['setup_opengl_debug',['../namespaceklotter.html#a8063f4d09d3914dd0d4a926bb113e56b',1,'klotter']]],
   ['setup_5ftextures_31',['setup_textures',['../namespaceklotter.html#a3f825575d127751358894415f96c5bf6',1,'klotter']]],
   ['setup_5funiform_5fblock_32',['setup_uniform_block',['../structklotter_1_1ShaderProgram.html#acf995e0f3e5b1543aac53c61c00d2aa0',1,'klotter::ShaderProgram']]],
-  ['shader_33',['shader',['../structklotter_1_1LineDrawer.html#a24ce3da96e78f1d1346fd1af2cf0c341',1,'klotter::LineDrawer::shader'],['../structklotter_1_1SimpleEffect.html#a3b0db69f934eb0a04439d37da6022aae',1,'klotter::SimpleEffect::shader']]],
+  ['shader_33',['shader',['../structklotter_1_1LineDrawer.html#a24ce3da96e78f1d1346fd1af2cf0c341',1,'klotter::LineDrawer::shader'],['../structklotter_1_1SimpleEffect.html#a3b0db69f934eb0a04439d37da6022aae',1,'klotter::SimpleEffect::shader'],['../structklotter_1_1RealizeShader.html#a6a002fc5f56fde819f15394e4442ea84',1,'klotter::RealizeShader::shader']]],
   ['shader_2eh_34',['shader.h',['../shader_8h.html',1,'']]],
   ['shader_2esource_2eh_35',['shader.source.h',['../shader_8source_8h.html',1,'']]],
   ['shader_5fcontainer_36',['shader_container',['../structklotter_1_1UnlitMaterial.html#a1324344df38382e9ebe569901cad360f',1,'klotter::UnlitMaterial::shader_container'],['../structklotter_1_1DefaultMaterial.html#af2fcf3b902871b551a45783e6f7b75db',1,'klotter::DefaultMaterial::shader_container']]],

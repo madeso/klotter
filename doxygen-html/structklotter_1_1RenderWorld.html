@@ -133,8 +133,8 @@ Inheritance diagram for klotter::RenderWorld:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a84936dbfbbf5785f9b9bd40fa504b3d6" id="r_a84936dbfbbf5785f9b9bd40fa504b3d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84936dbfbbf5785f9b9bd40fa504b3d6">RenderWorld</a> (const glm::ivec2 size, std::shared_ptr&lt; <a class="el" href="structklotter_1_1LoadedPostProcShader.html">LoadedPostProcShader</a> &gt; re_sh, int msaa_samples, bool *h, float *e)</td></tr>
-<tr class="separator:a84936dbfbbf5785f9b9bd40fa504b3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0110e8d46ae6a9ac7a266b18e090f536" id="r_a0110e8d46ae6a9ac7a266b18e090f536"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0110e8d46ae6a9ac7a266b18e090f536">RenderWorld</a> (const glm::ivec2 size, <a class="el" href="structklotter_1_1RealizeShader.html">RealizeShader</a> *re_sh, int msaa_samples, bool *h, float *e)</td></tr>
+<tr class="separator:a0110e8d46ae6a9ac7a266b18e090f536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b673214ee06737e64fd065c9987fb20" id="r_a0b673214ee06737e64fd065c9987fb20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b673214ee06737e64fd065c9987fb20">update</a> (const <a class="el" href="structklotter_1_1PostProcArg.html">PostProcArg</a> &amp;arg)</td></tr>
 <tr class="separator:a0b673214ee06737e64fd065c9987fb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa71e960bb1aaffe030d568f98695a518" id="r_aa71e960bb1aaffe030d568f98695a518"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71e960bb1aaffe030d568f98695a518">render</a> (const <a class="el" href="structklotter_1_1PostProcArg.html">PostProcArg</a> &amp;arg) override</td></tr>
@@ -167,18 +167,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ae92b2cb5948a39ba863df9109a4fbb62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8a70eb89a367316486fcd3b276a99c" id="r_a8e8a70eb89a367316486fcd3b276a99c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8a70eb89a367316486fcd3b276a99c">realized_buffer</a></td></tr>
 <tr class="separator:a8e8a70eb89a367316486fcd3b276a99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd687a50e44caa95be21e438c1e41f1d" id="r_afd687a50e44caa95be21e438c1e41f1d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1LoadedPostProcShader.html">LoadedPostProcShader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd687a50e44caa95be21e438c1e41f1d">realize_shader</a></td></tr>
-<tr class="separator:afd687a50e44caa95be21e438c1e41f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a820cffdbaf12ecac4bb21c8393f971af" id="r_a820cffdbaf12ecac4bb21c8393f971af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a820cffdbaf12ecac4bb21c8393f971af">gamma_uniform</a></td></tr>
-<tr class="separator:a820cffdbaf12ecac4bb21c8393f971af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0676b0a41da2c25ecb23063b80c4a0b4" id="r_a0676b0a41da2c25ecb23063b80c4a0b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0676b0a41da2c25ecb23063b80c4a0b4">exposure_uniform</a></td></tr>
-<tr class="separator:a0676b0a41da2c25ecb23063b80c4a0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d57a0d535387b761cc66e2389128328" id="r_a4d57a0d535387b761cc66e2389128328"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1RealizeShader.html">RealizeShader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d57a0d535387b761cc66e2389128328">realize_shader</a></td></tr>
+<tr class="separator:a4d57a0d535387b761cc66e2389128328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A source that "just" renders the world. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a84936dbfbbf5785f9b9bd40fa504b3d6" name="a84936dbfbbf5785f9b9bd40fa504b3d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84936dbfbbf5785f9b9bd40fa504b3d6">&#9670;&#160;</a></span>RenderWorld()</h2>
+<a id="a0110e8d46ae6a9ac7a266b18e090f536" name="a0110e8d46ae6a9ac7a266b18e090f536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0110e8d46ae6a9ac7a266b18e090f536">&#9670;&#160;</a></span>RenderWorld()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,7 +187,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structklotter_1_1LoadedPostProcShader.html">LoadedPostProcShader</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>re_sh</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1RealizeShader.html">RealizeShader</a> *</td>          <td class="paramname"><span class="paramname"><em>re_sh</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -290,34 +286,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0676b0a41da2c25ecb23063b80c4a0b4" name="a0676b0a41da2c25ecb23063b80c4a0b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0676b0a41da2c25ecb23063b80c4a0b4">&#9670;&#160;</a></span>exposure_uniform</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a> klotter::RenderWorld::exposure_uniform</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a820cffdbaf12ecac4bb21c8393f971af" name="a820cffdbaf12ecac4bb21c8393f971af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a820cffdbaf12ecac4bb21c8393f971af">&#9670;&#160;</a></span>gamma_uniform</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a> klotter::RenderWorld::gamma_uniform</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae92b2cb5948a39ba863df9109a4fbb62" name="ae92b2cb5948a39ba863df9109a4fbb62"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae92b2cb5948a39ba863df9109a4fbb62">&#9670;&#160;</a></span>msaa_buffer</h2>
 
@@ -332,14 +300,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="afd687a50e44caa95be21e438c1e41f1d" name="afd687a50e44caa95be21e438c1e41f1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd687a50e44caa95be21e438c1e41f1d">&#9670;&#160;</a></span>realize_shader</h2>
+<a id="a4d57a0d535387b761cc66e2389128328" name="a4d57a0d535387b761cc66e2389128328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d57a0d535387b761cc66e2389128328">&#9670;&#160;</a></span>realize_shader</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="structklotter_1_1LoadedPostProcShader.html">LoadedPostProcShader</a>&gt; klotter::RenderWorld::realize_shader</td>
+          <td class="memname"><a class="el" href="structklotter_1_1RealizeShader.html">RealizeShader</a>* klotter::RenderWorld::realize_shader</td>
         </tr>
       </table>
 </div><div class="memdoc">
