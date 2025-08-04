@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="94" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="94" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="101" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1SimpleEffect_1a3b0db69f934eb0a04439d37da6022aae" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="95" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="95" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="102" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1SimpleEffect_1ab9ce3c18226e5a4fcfca70bc35bcea27" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProp" kindref="compound">ShaderProp</ref> &gt; &gt;</type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="96" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="96" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="103" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1SimpleEffect_1a00a31874597c071d487222993b1254af" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="97" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="97" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="104" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="104" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="99" column="1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="106" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1SimpleEffect_1aeb461dabc8e7c4f556e15462289bdf5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="101" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="108" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1SimpleEffect_1ab923af34ed39a1ead379001243630521" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="103" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="110" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1SimpleEffect_1a92f883dc6a86125695728259f7530001" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -156,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="105" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="112" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1SimpleEffect_1a92b9960c5dd9db2641289942c771502e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -175,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="107" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="114" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1SimpleEffect_1ae62e28532a810fb93998bf1303a167b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="109" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="116" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1SimpleEffect_1a9a701df51e5ab86983e49e0c5b418899" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -217,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="111" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="118" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -346,7 +346,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.internal.h" line="90" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="93" bodyend="112"/>
+    <location file="src/klotter/render/postproc.internal.h" line="97" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="100" bodyend="119"/>
     <listofallmembers>
       <member refid="structklotter_1_1SimpleEffect_1aeb461dabc8e7c4f556e15462289bdf5e" prot="public" virt="non-virtual"><scope>klotter::SimpleEffect</scope><name>add_float_drag_prop</name></member>
       <member refid="structklotter_1_1SimpleEffect_1ab923af34ed39a1ead379001243630521" prot="public" virt="non-virtual"><scope>klotter::SimpleEffect</scope><name>add_float_slider_prop</name></member>

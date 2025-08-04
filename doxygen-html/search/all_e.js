@@ -26,12 +26,13 @@ var searchData=
   ['pp_5fblurh_23',['pp_blurh',['../structklotter_1_1ShaderResource.html#a62e158ef1f413d38d6e1628183de2b34',1,'klotter::ShaderResource']]],
   ['pp_5fblurv_24',['pp_blurv',['../structklotter_1_1ShaderResource.html#a0a37be05607f2204c84b6454552c176b',1,'klotter::ShaderResource']]],
   ['pp_5fdamage_25',['pp_damage',['../structklotter_1_1ShaderResource.html#aa149d11a09f21cb8ef31e2e6a029a7c5',1,'klotter::ShaderResource']]],
-  ['pp_5fgrayscale_26',['pp_grayscale',['../structklotter_1_1ShaderResource.html#a3b63ca1d92d088405aac4b3a819e71c6',1,'klotter::ShaderResource']]],
-  ['pp_5finvert_27',['pp_invert',['../structklotter_1_1ShaderResource.html#a42791e44344f358c3a6163b1b36e7a94',1,'klotter::ShaderResource']]],
-  ['pp_5frealize_28',['pp_realize',['../structklotter_1_1ShaderResource.html#a0f45d24d332cb8545cc3cd8f9abb8841',1,'klotter::ShaderResource']]],
-  ['processing_29',['Post Processing',['../group__postproc.html',1,'']]],
-  ['program_30',['program',['../structklotter_1_1LoadedShader__SingleColor.html#a6e8a455125d60ff6e54d8cbf5a675235',1,'klotter::LoadedShader_SingleColor::program'],['../structklotter_1_1LoadedShader__Skybox.html#a3cfd92a23b49f6b61db0132659ac4ab3',1,'klotter::LoadedShader_Skybox::program'],['../structklotter_1_1LoadedShader__Unlit.html#ae89bb303b8ae6300dc63f888bb7c0dc3',1,'klotter::LoadedShader_Unlit::program'],['../structklotter_1_1LoadedPostProcShader.html#ac9c705810b471316ca014926054d9450',1,'klotter::LoadedPostProcShader::program'],['../structklotter_1_1LoadedShader__Default.html#adb6c4dab68ac21d0ec082b715e6a9003',1,'klotter::LoadedShader_Default::program']]],
-  ['properties_31',['properties',['../structklotter_1_1SimpleEffect.html#ab9ce3c18226e5a4fcfca70bc35bcea27',1,'klotter::SimpleEffect']]],
-  ['props_32',['props',['../structklotter_1_1UniformBufferCompiler.html#a6a819ceefb6a2e7b5ea6724caee4a062',1,'klotter::UniformBufferCompiler']]],
-  ['purple_5fredish_33',['purple_redish',['../namespaceklotter_1_1colors.html#a85f76551fac15db7625c76a904130c86',1,'klotter::colors']]]
+  ['pp_5fextract_26',['pp_extract',['../structklotter_1_1ShaderResource.html#a321e028f3d5a1639e73315835b196ca6',1,'klotter::ShaderResource']]],
+  ['pp_5fgrayscale_27',['pp_grayscale',['../structklotter_1_1ShaderResource.html#a3b63ca1d92d088405aac4b3a819e71c6',1,'klotter::ShaderResource']]],
+  ['pp_5finvert_28',['pp_invert',['../structklotter_1_1ShaderResource.html#a42791e44344f358c3a6163b1b36e7a94',1,'klotter::ShaderResource']]],
+  ['pp_5frealize_29',['pp_realize',['../structklotter_1_1ShaderResource.html#a0f45d24d332cb8545cc3cd8f9abb8841',1,'klotter::ShaderResource']]],
+  ['processing_30',['Post Processing',['../group__postproc.html',1,'']]],
+  ['program_31',['program',['../structklotter_1_1LoadedShader__SingleColor.html#a6e8a455125d60ff6e54d8cbf5a675235',1,'klotter::LoadedShader_SingleColor::program'],['../structklotter_1_1LoadedShader__Skybox.html#a3cfd92a23b49f6b61db0132659ac4ab3',1,'klotter::LoadedShader_Skybox::program'],['../structklotter_1_1LoadedShader__Unlit.html#ae89bb303b8ae6300dc63f888bb7c0dc3',1,'klotter::LoadedShader_Unlit::program'],['../structklotter_1_1LoadedPostProcShader.html#ac9c705810b471316ca014926054d9450',1,'klotter::LoadedPostProcShader::program'],['../structklotter_1_1LoadedShader__Default.html#adb6c4dab68ac21d0ec082b715e6a9003',1,'klotter::LoadedShader_Default::program']]],
+  ['properties_32',['properties',['../structklotter_1_1SimpleEffect.html#ab9ce3c18226e5a4fcfca70bc35bcea27',1,'klotter::SimpleEffect']]],
+  ['props_33',['props',['../structklotter_1_1UniformBufferCompiler.html#a6a819ceefb6a2e7b5ea6724caee4a062',1,'klotter::UniformBufferCompiler']]],
+  ['purple_5fredish_34',['purple_redish',['../namespaceklotter_1_1colors.html#a85f76551fac15db7625c76a904130c86',1,'klotter::colors']]]
 ];

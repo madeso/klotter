@@ -78,5 +78,6 @@ var searchData=
   ['cunsigned_5fint_5fto_5fint_75',['Cunsigned_int_to_int',['../cint_8h.html#a1e7fb62626bf824af41d93896c4a1f54',1,'cint.h']]],
   ['curve_76',['S-Curve',['../group__scurcve.html',1,'']]],
   ['curve_77',['curve',['../structklotter_1_1PointLight.html#ac0d003441d29d18c8f09a1a2106af1d6',1,'klotter::PointLight::curve'],['../structklotter_1_1FrustumLight.html#a54a594d10d1c00fd6cbc6c2aa000deef',1,'klotter::FrustumLight::curve']]],
-  ['cyan_78',['cyan',['../group__imguicolors.html#ga82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
+  ['cutoff_5funiform_78',['cutoff_uniform',['../structklotter_1_1ExtractShader.html#ac2145f587c7304542d1ee2ffafe19d07',1,'klotter::ExtractShader']]],
+  ['cyan_79',['cyan',['../group__imguicolors.html#ga82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
 ];

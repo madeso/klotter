@@ -83,14 +83,32 @@
         </inbodydescription>
         <location file="src/klotter/render/render_settings.h" line="25" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="25" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::RenderSettings::bloom_cutoff</definition>
+        <argsstring></argsstring>
+        <name>bloom_cutoff</name>
+        <qualifiedname>klotter::RenderSettings::bloom_cutoff</qualifiedname>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+<para>The bloom cutoff value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If brightness goes over this value, it will contribute to the bloom. The renderer doesn&apos;t need to restart when this value has changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/render_settings.h" line="30" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Startup settings for the renderer. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/render_settings.h" line="12" column="1" bodyfile="src/klotter/render/render_settings.h" bodystart="13" bodyend="26"/>
+    <location file="src/klotter/render/render_settings.h" line="12" column="1" bodyfile="src/klotter/render/render_settings.h" bodystart="13" bodyend="31"/>
     <listofallmembers>
+      <member refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>bloom_cutoff</name></member>
       <member refid="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>gamma</name></member>
       <member refid="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>msaa</name></member>
       <member refid="structklotter_1_1RenderSettings_1a35a5d2af4f7e7e2d90d372b9f2f14e92" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_directional_lights</name></member>

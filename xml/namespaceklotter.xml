@@ -5,6 +5,7 @@
     <innerclass refid="structklotter_1_1App" prot="public">klotter::App</innerclass>
     <innerclass refid="structklotter_1_1Assets" prot="public">klotter::Assets</innerclass>
     <innerclass refid="structklotter_1_1BaseTexture" prot="public">klotter::BaseTexture</innerclass>
+    <innerclass refid="structklotter_1_1BloomRender" prot="public">klotter::BloomRender</innerclass>
     <innerclass refid="structklotter_1_1BlurEffect" prot="public">klotter::BlurEffect</innerclass>
     <innerclass refid="structklotter_1_1BlurOptions" prot="public">klotter::BlurOptions</innerclass>
     <innerclass refid="structklotter_1_1BlurVerticalProvider" prot="public">klotter::BlurVerticalProvider</innerclass>
@@ -35,6 +36,7 @@
     <innerclass refid="structklotter_1_1EffectStack" prot="public">klotter::EffectStack</innerclass>
     <innerclass refid="structklotter_1_1ExtractedAttribute" prot="public">klotter::ExtractedAttribute</innerclass>
     <innerclass refid="structklotter_1_1ExtractedGeom" prot="public">klotter::ExtractedGeom</innerclass>
+    <innerclass refid="structklotter_1_1ExtractShader" prot="public">klotter::ExtractShader</innerclass>
     <innerclass refid="structklotter_1_1Face" prot="public">klotter::Face</innerclass>
     <innerclass refid="structklotter_1_1FactorEffect" prot="public">klotter::FactorEffect</innerclass>
     <innerclass refid="structklotter_1_1FloatDragShaderProp" prot="public">klotter::FloatDragShaderProp</innerclass>

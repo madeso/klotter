@@ -10,14 +10,25 @@
 <hr>
 <h3>warning: rvalue reference parameter &#39;sh&#39; is never moved from inside the function body</h3>
 <code>[cppcoreguidelines-rvalue-reference-param-not-moved]</code>
-<p><i>src/klotter/render/shader_resource.cc 232 : 70</i></p>
+<p><i>src/klotter/render/shader_resource.cc 233 : 70</i></p>
 <pre>
-  232 | RealizeShader::RealizeShader(std::shared_ptr&lt;LoadedPostProcShader&gt;&amp;&amp; sh)
+  233 | RealizeShader::RealizeShader(std::shared_ptr&lt;LoadedPostProcShader&gt;&amp;&amp; sh)
+      |                                                                      ^
+</pre>
+<hr>
+<h3>warning: rvalue reference parameter &#39;sh&#39; is never moved from inside the function body</h3>
+<code>[cppcoreguidelines-rvalue-reference-param-not-moved]</code>
+<p><i>src/klotter/render/shader_resource.cc 242 : 70</i></p>
+<pre>
+  242 | ExtractShader::ExtractShader(std::shared_ptr&lt;LoadedPostProcShader&gt;&amp;&amp; sh)
       |                                                                      ^
 </pre>
 <!--
-/home/runner/work/klotter/klotter/src/klotter/render/shader_resource.cc:232:70: warning: rvalue reference parameter 'sh' is never moved from inside the function body [cppcoreguidelines-rvalue-reference-param-not-moved]
-  232 | RealizeShader::RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh)
+/home/runner/work/klotter/klotter/src/klotter/render/shader_resource.cc:233:70: warning: rvalue reference parameter 'sh' is never moved from inside the function body [cppcoreguidelines-rvalue-reference-param-not-moved]
+  233 | RealizeShader::RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh)
+      |                                                                      ^
+/home/runner/work/klotter/klotter/src/klotter/render/shader_resource.cc:242:70: warning: rvalue reference parameter 'sh' is never moved from inside the function body [cppcoreguidelines-rvalue-reference-param-not-moved]
+  242 | ExtractShader::ExtractShader(std::shared_ptr<LoadedPostProcShader>&& sh)
       |                                                                      ^
 -->
 </body>

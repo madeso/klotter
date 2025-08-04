@@ -12,6 +12,7 @@
     <innerclass refid="structklotter_1_1Effect" prot="public">klotter::Effect</innerclass>
     <innerclass refid="structklotter_1_1FactorEffect" prot="public">klotter::FactorEffect</innerclass>
     <innerclass refid="structklotter_1_1EffectStack" prot="public">klotter::EffectStack</innerclass>
+    <innerclass refid="structklotter_1_1BloomRender" prot="public">klotter::BloomRender</innerclass>
     <innerclass refid="structklotter_1_1RenderWorld" prot="public">klotter::RenderWorld</innerclass>
     <innerclass refid="structklotter_1_1ShaderProp" prot="public">klotter::ShaderProp</innerclass>
     <innerclass refid="structklotter_1_1FloatDragShaderProp" prot="public">klotter::FloatDragShaderProp</innerclass>

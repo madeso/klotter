@@ -50,10 +50,12 @@
 <codeline lineno="21" refid="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" kindref="member">msaa</ref><sp/>=<sp/>4;</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25" refid="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" kindref="member">gamma</ref><sp/>=<sp/>2.2f;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" kindref="member">bloom_cutoff</ref><sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/klotter/render/render_settings.h"/>
   </compounddef>
