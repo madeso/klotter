@@ -2,6 +2,7 @@ set(shaders
     klotter/render/shaders/default_shader.vert.glsl
     klotter/render/shaders/default_shader.frag.glsl
     klotter/render/shaders/pp.vert.glsl
+    klotter/render/shaders/pp.extract.frag.glsl
     klotter/render/shaders/pp.invert.frag.glsl
     klotter/render/shaders/pp.grayscale.frag.glsl
     klotter/render/shaders/pp.damage.frag.glsl

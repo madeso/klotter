@@ -383,12 +383,14 @@ struct LightsSample : Sample
 			}
 		}
 
-		imgui_color("Clear color", &world.clear_color);
-		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
-
-		ImGui::SeparatorText("Effects");
 		const float FAC_SPEED = 0.01f;
 		const float MAX_LIGHT = 100.0f;
+
+		imgui_color("Clear color", &world.clear_color);
+		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
+		ImGui::DragFloat("Bloom cutoff", &renderer->settings.bloom_cutoff, FAC_SPEED);
+
+		ImGui::SeparatorText("Effects");
 		{
 			auto factor = pp_invert->get_factor();
 			if (ImGui::SliderFloat("invert", &factor, 0.0f, 1.0f))

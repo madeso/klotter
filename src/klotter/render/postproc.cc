@@ -49,7 +49,17 @@ void Effect::set_enabled(bool n)
 // todo(Gustav): should this be a user config option? evaluate higher/lower bits, probably 16 or 32 since it needs to be floating point for hdr
 constexpr ColorBitsPerPixel render_world_color_bits_per_pixel = ColorBitsPerPixel::use_16;
 
-RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, int msaa_samples, bool* h, float* e)
+std::optional<BloomRender> build_bloom(const glm::ivec2& size, ExtractShader* sh)
+{
+	if (sh == nullptr) { return std::nullopt; }
+
+	auto bloom_buffer = FrameBufferBuilder{size}
+		 .build(USE_DEBUG_LABEL("bloom extraction buffer"));
+
+	return BloomRender{sh, bloom_buffer};
+}
+
+RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractShader* ex_sh, int msaa_samples, bool* h, float* e)
 	: window_size(size)
 	, use_hdr(h)
 	, exposure(e)
@@ -63,6 +73,7 @@ RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, int msaa_s
 		.with_color_bits(render_world_color_bits_per_pixel)
 		.build(USE_DEBUG_LABEL("realized msaa buffer")))
 	, realize_shader(re_sh)
+	, bloom_render(build_bloom(size, ex_sh))
 {
 	ASSERT(use_hdr);
 	ASSERT(exposure);
@@ -78,8 +89,40 @@ void RenderWorld::update(const PostProcArg& arg)
 	}
 
 	// copy msaa buffer to realized
-	SCOPED_DEBUG_GROUP("resolving msaa buffer"sv);
-	resolve_multisampled_buffer(*msaa_buffer, realized_buffer.get());
+	{
+		SCOPED_DEBUG_GROUP("resolving msaa buffer"sv);
+		resolve_multisampled_buffer(*msaa_buffer, realized_buffer.get());
+	}
+
+	// extract overexposed
+	if (bloom_render.has_value())
+	{
+		SCOPED_DEBUG_GROUP("extracting to overexposed buffer"sv);
+		StateChanger{&arg.renderer->pimpl->states}
+			.cull_face(false)
+			.stencil_test(false)
+			.depth_test(false)
+			.depth_mask(false)
+			.blending(false);
+
+		glClearColor(0, 0, 0, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		auto bound = BoundFbo{bloom_render->bloom_buffer};
+
+		{
+			const auto& container = bloom_render->extract_shader;
+			const auto& shader = container->shader;
+			const auto& program = shader->program;
+			program->use();
+			program->set_float(container->cutoff_uniform, arg.renderer->settings.bloom_cutoff);
+			bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *realized_buffer);
+
+			render_geom(*arg.renderer->pimpl->full_screen_geom);
+		}
+	}
+
+	// blur overexposed using ping-pong gaussian blur
 }
 
 void RenderWorld::render(const PostProcArg& arg)
@@ -99,12 +142,17 @@ void RenderWorld::render(const PostProcArg& arg)
 	ASSERT(use_hdr);
 	ASSERT(exposure);
 
-	realize_shader->shader->program->use();
-	realize_shader->shader->program->set_float(realize_shader->gamma_uniform, arg.renderer->settings.gamma);
-	realize_shader->shader->program->set_float(realize_shader->exposure_uniform, *use_hdr ? *exposure : -1.0f);
-	bind_texture_2d(&arg.renderer->pimpl->states, realize_shader->shader->texture_uni, *realized_buffer);
-
-	render_geom(*arg.renderer->pimpl->full_screen_geom);
+	{
+		const auto& container = realize_shader;
+		const auto& shader = container->shader;
+		const auto& program = shader->program;
+		program->use();
+		program->set_float(container->gamma_uniform, arg.renderer->settings.gamma);
+		program->set_float(container->exposure_uniform, *use_hdr ? *exposure : -1.0f);
+		bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *realized_buffer);
+	
+		render_geom(*arg.renderer->pimpl->full_screen_geom);
+	}
 }
 
 void RenderWorld::gui()
@@ -204,8 +252,14 @@ void EffectStack::render(const PostProcArg& arg)
 
 		compiled.targets.clear();
 
-		auto created_world
-			= std::make_shared<RenderWorld>(arg.window_size, &arg.renderer->pimpl->shaders_resources.pp_realize, latest_msaa, &use_hdr, &exposure);
+		auto created_world = std::make_shared<RenderWorld>(
+			arg.window_size,
+			&arg.renderer->pimpl->shaders_resources.pp_realize,
+			&arg.renderer->pimpl->shaders_resources.pp_extract,
+			latest_msaa,
+			&use_hdr,
+			&exposure
+		);
 		compiled.last_source = created_world;
 		render_world_ref = created_world;
 		render_world = created_world;

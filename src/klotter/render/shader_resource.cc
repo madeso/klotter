@@ -16,6 +16,7 @@
 #include "pp.grayscale.frag.glsl.h"
 #include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
+#include "pp.extract.frag.glsl.h"
 #include "pp.realize.frag.glsl.h"
 
 
@@ -236,6 +237,16 @@ RealizeShader::RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh)
 {
 }
 
+
+
+ExtractShader::ExtractShader(std::shared_ptr<LoadedPostProcShader>&& sh)
+	: shader(sh)
+	, cutoff_uniform(shader->program->get_uniform("u_cutoff"))
+{
+}
+
+
+
 bool ShaderResource::is_loaded() const
 {
 	return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded() && unlit_shader_container.is_loaded()
@@ -410,6 +421,14 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		),
 		PostProcSetup::none
 	)};
+	auto pp_extract = ExtractShader{std::make_shared<LoadedPostProcShader>(
+		std::make_shared<ShaderProgram>(
+			USE_DEBUG_LABEL_MANY("pp extract") std::string{PP_VERT_GLSL},
+			std::string{PP_EXTRACT_FRAG_GLSL},
+			full_screen.layout
+		),
+		PostProcSetup::none
+	)};
 
 	auto loaded_single_color = load_shader(
 		USE_DEBUG_LABEL_MANY("single color") global_shader_data, single_color_shader, TransformSource::Uniform
@@ -437,7 +456,8 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		pp_damage,
 		pp_blurv,
 		pp_blurh,
-		pp_realize
+		pp_realize,
+		pp_extract
 	};
 }
 

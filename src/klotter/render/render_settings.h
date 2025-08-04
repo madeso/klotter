@@ -23,6 +23,11 @@ struct RenderSettings
 	/// The gamma correction value.
 	/// The renderer doesn't need to restart when this value has changed.
 	float gamma = 2.2f;
+
+	/// The bloom cutoff value.
+	/// If brightness goes over this value, it will contribute to the bloom.
+	/// The renderer doesn't need to restart when this value has changed.
+	float bloom_cutoff = 1.0f;
 };
 
 /**
