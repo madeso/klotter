@@ -1,9 +1,9 @@
 #include "klotter/render/uniform_buffer.h"
 
-#include "opengl_labels.h"
 #include "klotter/assert.h"
 #include "klotter/str.h"
 
+#include "klotter/render/opengl_labels.h"
 #include "klotter/render/opengl_utils.h"
 
 namespace klotter

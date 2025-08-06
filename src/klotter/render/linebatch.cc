@@ -1,4 +1,4 @@
-#include "linebatch.h"
+#include "klotter/render/linebatch.h"
 
 #include "klotter/assert.h"
 #include "klotter/dependency_glad.h"
