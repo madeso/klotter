@@ -1,37 +1,53 @@
 ﻿{
   "includes": [
+
+    // always start a cc file with the corresponding header file
     [
       "^\"klotter/render/{file_stem}\\.h\"$",
       "^\"klotter/{file_stem}\\.h\"$"
     ],
-    [
-      "^\"klotter/render/[a-zA-Z_.]+\\.h\"$"
-    ],
+
+    // prefer to include common before specific
     [
       "^\"klotter/[a-zA-Z_.]+\\.h\"$"
     ],
     [
-      "^\"catch.hpp\"$"
+      "^\"klotter/render/[a-zA-Z_.]+\\.h\"$"
+    ],
+
+    // external dependencies and the header that undefs preprocessors
+    // if a external header requires undef, it should be in a dependency header
+    [
+      {"regex": "^\"klotter/dependency_[a-z]+\\.h\"$", "rank": 1}
     ],
     [
+      "^\"catch2/.*\"$"
+    ],
+    [
+      "^\"mustache/.*\"$",
       "^\"glad\\.h\"$",
       "^\"imgui",
       "^\"glm/",
       "^\"SDL[_a-zA-Z]*\\.h\"$",
       "^\"stb_image\\.h\"$",
       "^\"glad/glad\\.h\"$",
-      "^\"klotter/dependency_[a-z]+\\.h\"$",
       "^\"catchy/[a-z]+\\.h\"$",
       "^\"embed/types\\.h\"$"
     ],
     [
       {"regex": "^\"klotter/undef_windows\\.h\"$", "rank": 1}
     ],
-    [
-      "\\.png\\.h\"$"
-    ],
+
+    // cpp standard library
     [
       "^<[a-zA-Z_]+>$"
+    ],
+
+    // embedded resources
+    [
+      "\\.png\\.h\"$",
+      ".*\\.glsl\\.h",
+      ".*\\.jpg\\.h"
     ]
   ]
 }
