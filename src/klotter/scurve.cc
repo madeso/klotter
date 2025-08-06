@@ -1,10 +1,13 @@
 #include "klotter/scurve.h"
 
-#include "klotter/assert.h"
 #include <cmath>
 
-#include "cint.h"
 #include "imgui.h"
+
+#include "klotter/cint.h"
+#include "klotter/assert.h"
+
+#include "klotter/render/ui.h"
 
 namespace klotter
 {
@@ -54,16 +57,6 @@ float calculate_s_curve(float x, float slope, float threshold)
 		threshold * x / (x + slope * (threshold - x) + machine_epsilon) :
 		((1 - threshold) * (x - 1)) / (1 - x - slope * (threshold - x) + machine_epsilon) + 1
 	;
-}
-
-ImVec2 operator+(const ImVec2& lhs, const ImVec2& rhs)
-{
-	return {lhs.x + rhs.x, lhs.y + rhs.y};
-}
-
-ImVec2 operator-(const ImVec2& lhs, const ImVec2& rhs)
-{
-	return {lhs.x - rhs.x, lhs.y - rhs.y};
 }
 
 bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui, FlipX flip_x, const SCurveImguiSettings& settings, bool force_init_curve)

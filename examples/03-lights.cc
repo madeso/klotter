@@ -1,14 +1,15 @@
-#include "klotter/render/geom.builder.h"
-#include "klotter/str.h"
-#include "klotter/cint.h"
-
 #include "sample.h"
 
 #include <cmath>
 
+#include "klotter/str.h"
+#include "klotter/cint.h"
 #include "klotter/imgui.theme.h"
-#include "klotter/render/geom.h"
 #include "klotter/im_colors.h"
+
+#include "klotter/render/geom.builder.h"
+#include "klotter/render/geom.h"
+#include "klotter/render/ui.h"
 
 using namespace klotter;
 

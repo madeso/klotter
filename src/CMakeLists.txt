@@ -33,7 +33,6 @@ embed(src_assets
 )
 
 set(src_render
-
     klotter/render/rendermode.cc klotter/render/rendermode.h
     klotter/render/cullface.cc klotter/render/cullface.h
     klotter/render/blend.cc klotter/render/blend.h
@@ -69,6 +68,8 @@ set(src_render
     klotter/render/linebatch.cc klotter/render/linebatch.h
 
     klotter/render/enable_high_performance_graphics.h
+
+    klotter/render/ui.cc klotter/render/ui.h
 
     klotter/render/geom.h
     klotter/render/geom.builder.cc klotter/render/geom.builder.h
