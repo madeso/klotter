@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="statechanger_8h" kind="file" language="C++">
+    <compoundname>statechanger.h</compoundname>
+    <includes refid="blend_8h" local="yes">klotter/render/blend.h</includes>
+    <includes refid="compare_8h" local="yes">klotter/render/compare.h</includes>
+    <includes refid="cullface_8h" local="yes">klotter/render/cullface.h</includes>
+    <includes refid="rendermode_8h" local="yes">klotter/render/rendermode.h</includes>
+    <includes refid="stencilaction_8h" local="yes">klotter/render/stencilaction.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>klotter/render/blend.h</label>
+        <link refid="blend_8h"/>
+      </node>
+      <node id="3">
+        <label>klotter/render/compare.h</label>
+        <link refid="compare_8h"/>
+      </node>
+      <node id="4">
+        <label>klotter/render/cullface.h</label>
+        <link refid="cullface_8h"/>
+      </node>
+      <node id="5">
+        <label>klotter/render/rendermode.h</label>
+        <link refid="rendermode_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/statechanger.h</label>
+        <link refid="statechanger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>klotter/render/stencilaction.h</label>
+        <link refid="stencilaction_8h"/>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structklotter_1_1StateChanger" prot="public">klotter::StateChanger</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="blend_8h" kindref="compound">klotter/render/blend.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="compare_8h" kindref="compound">klotter/render/compare.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cullface_8h" kindref="compound">klotter/render/cullface.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rendermode_8h" kindref="compound">klotter/render/rendermode.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stencilaction_8h" kindref="compound">klotter/render/stencilaction.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1Texture2d" kindref="compound">Texture2d</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structklotter_1_1StateChanger" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24" refid="structklotter_1_1StateChanger_1aee93777d716b4aa71e478ac0798168c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/><ref refid="structklotter_1_1StateChanger_1aee93777d716b4aa71e478ac0798168c9" kindref="member">states</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>(<ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>s);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="structklotter_1_1StateChanger_1a41280644fa164a17e213a1025c7168d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a41280644fa164a17e213a1025c7168d2" kindref="member">cull_face</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>new_state);</highlight></codeline>
+<codeline lineno="29" refid="structklotter_1_1StateChanger_1a656b206c64adb701104ddd5d19063d9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a656b206c64adb701104ddd5d19063d9f" kindref="member">blending</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>new_state);</highlight></codeline>
+<codeline lineno="30" refid="structklotter_1_1StateChanger_1a70cb029500702452e680e238a41c19c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a70cb029500702452e680e238a41c19c7" kindref="member">depth_test</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>new_state);</highlight></codeline>
+<codeline lineno="31" refid="structklotter_1_1StateChanger_1a6a3130055e1a4b9fb10f03bc03d19e61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a6a3130055e1a4b9fb10f03bc03d19e61" kindref="member">depth_mask</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>new_state);</highlight></codeline>
+<codeline lineno="32" refid="structklotter_1_1StateChanger_1a9b71fd449755c790d84e17f5807bd98b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a9b71fd449755c790d84e17f5807bd98b" kindref="member">depth_func</ref>(<ref refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kindref="member">Compare</ref><sp/>new_state);</highlight></codeline>
+<codeline lineno="33" refid="structklotter_1_1StateChanger_1ab9b21b1f81a47ab53c0fc868cb03a5c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1ab9b21b1f81a47ab53c0fc868cb03a5c3" kindref="member">stencil_test</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>new_state);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="structklotter_1_1StateChanger_1a71c569b580b89d7c5979bcb041c44be5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a71c569b580b89d7c5979bcb041c44be5" kindref="member">stencil_mask</ref>(<ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/>new_state);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="structklotter_1_1StateChanger_1a526cf05c48c5b7d9d617e30a665bed70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a526cf05c48c5b7d9d617e30a665bed70" kindref="member">stencil_func</ref>(<ref refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kindref="member">Compare</ref><sp/>func,<sp/><ref refid="pch_8public_8h_1aec41e5f8e4b7aef2540e84268692fa84" kindref="member">i32</ref><sp/>ref,<sp/><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/>mask);</highlight></codeline>
+<codeline lineno="45" refid="structklotter_1_1StateChanger_1a4460dfe9a996fd2d47f4986fef9a763d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a4460dfe9a996fd2d47f4986fef9a763d" kindref="member">render_mode</ref>(<ref refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kindref="member">RenderMode</ref><sp/>new_state);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structklotter_1_1StateChanger_1ad9fd74dfef0eb9ada6a0d781d29bc076" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1ad9fd74dfef0eb9ada6a0d781d29bc076" kindref="member">stencil_op</ref>(<ref refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kindref="member">StencilAction</ref><sp/>stencil_fail,<sp/><ref refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kindref="member">StencilAction</ref><sp/>depth_fail,<sp/><ref refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kindref="member">StencilAction</ref><sp/>pass);</highlight></codeline>
+<codeline lineno="53" refid="structklotter_1_1StateChanger_1a15a745b044fb2f29909d93a22d48d176" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a15a745b044fb2f29909d93a22d48d176" kindref="member">cull_face_mode</ref>(<ref refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kindref="member">CullFace</ref><sp/>new_state);</highlight></codeline>
+<codeline lineno="54" refid="structklotter_1_1StateChanger_1a975a77a826ea9561d27b994f06e94111" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a975a77a826ea9561d27b994f06e94111" kindref="member">blend_mode</ref>(<ref refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kindref="member">Blend</ref><sp/>src,<sp/><ref refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kindref="member">Blend</ref><sp/>dst);</highlight></codeline>
+<codeline lineno="55" refid="structklotter_1_1StateChanger_1abbae49c8836d55354a1ffd300ba59ee5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1abbae49c8836d55354a1ffd300ba59ee5" kindref="member">activate_texture</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_texture);</highlight></codeline>
+<codeline lineno="56" refid="structklotter_1_1StateChanger_1af057b4d787af6e9a053047b6fd4e8599" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1af057b4d787af6e9a053047b6fd4e8599" kindref="member">bind_texture_2d</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>slot,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>texture);</highlight></codeline>
+<codeline lineno="57" refid="structklotter_1_1StateChanger_1a4a02c0cede714c6681d356d47f624856" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kindref="member">StateChanger</ref>&amp;<sp/><ref refid="structklotter_1_1StateChanger_1a4a02c0cede714c6681d356d47f624856" kindref="member">bind_texture_cubemap</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>slot,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>texture);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="group__render_1gaf7128958c7209702f57eb63c4cded569" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kindref="member">bind_texture_2d</ref>(<ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Texture2d" kindref="compound">Texture2d</ref>&amp;<sp/>texture);</highlight></codeline>
+<codeline lineno="61" refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kindref="member">bind_texture_2d</ref>(<ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>&amp;<sp/>texture);</highlight></codeline>
+<codeline lineno="62" refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kindref="member">bind_texture_cubemap</ref>(<ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref>*<sp/>states,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref>&amp;<sp/>uniform,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref>&amp;<sp/>texture);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/statechanger.h"/>
+  </compounddef>
+</doxygen>

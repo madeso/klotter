@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="render__settings_8h" kind="file" language="C++">
+    <compoundname>render_settings.h</compoundname>
+    <includedby refid="renderer_8h" local="yes">src/klotter/render/renderer.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/klotter/klotter.h</label>
+        <link refid="klotter_8h"/>
+      </node>
+      <node id="4">
+        <label>src/klotter/render/postproc.internal.h</label>
+        <link refid="postproc_8internal_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/render_settings.h</label>
+        <link refid="render__settings_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1RenderSettings" prot="public">klotter::RenderSettings</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>figure<sp/>out<sp/>what<sp/>values<sp/>should<sp/>force<sp/>the<sp/>renderer<sp/>to<sp/>restart.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="structklotter_1_1RenderSettings" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14" refid="structklotter_1_1RenderSettings_1a35a5d2af4f7e7e2d90d372b9f2f14e92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1a35a5d2af4f7e7e2d90d372b9f2f14e92" kindref="member">number_of_directional_lights</ref><sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="15" refid="structklotter_1_1RenderSettings_1af9dc73fb0a1285f9d63cd41d46bdd875" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1af9dc73fb0a1285f9d63cd41d46bdd875" kindref="member">number_of_point_lights</ref><sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="16" refid="structklotter_1_1RenderSettings_1a27006cbef64a158e5c4d310d07107e19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1a27006cbef64a158e5c4d310d07107e19" kindref="member">number_of_frustum_lights</ref><sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" kindref="member">msaa</ref><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" kindref="member">gamma</ref><sp/>=<sp/>2.2f;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" kindref="member">bloom_cutoff</ref><sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/render_settings.h"/>
+  </compounddef>
+</doxygen>

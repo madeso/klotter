@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="linebatch_8h" kind="file" language="C++">
+    <compoundname>linebatch.h</compoundname>
+    <includes refid="shader_8h" local="yes">klotter/render/shader.h</includes>
+    <includedby refid="renderer_8pimpl_8h" local="yes">src/klotter/render/renderer.pimpl.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/linebatch.h</label>
+        <link refid="linebatch_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter/render/opengl_labels.h</label>
+        <link refid="opengl__labels_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter/render/shader.h</label>
+        <link refid="shader_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>klotter/render/uniform.h</label>
+        <link refid="uniform_8h"/>
+      </node>
+      <node id="6">
+        <label>klotter/render/vertex_layout.h</label>
+        <link refid="vertex__layout_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>map</label>
+      </node>
+      <node id="9">
+        <label>optional</label>
+      </node>
+      <node id="8">
+        <label>set</label>
+      </node>
+      <node id="10">
+        <label>unordered_set</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/klotter/render/linebatch.h</label>
+        <link refid="linebatch_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1LineBatch" prot="public">klotter::LineBatch</innerclass>
+    <innerclass refid="structklotter_1_1LineDrawer" prot="public">klotter::LineDrawer</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shader_8h" kindref="compound">klotter/render/shader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="structklotter_1_1LineBatch" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" kindref="member">LineBatch</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11" refid="structklotter_1_1LineBatch_1a92bf75ea92012d1888b90546d9d3e134" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1a92bf75ea92012d1888b90546d9d3e134" kindref="member">max_lines</ref><sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="structklotter_1_1LineBatch_1a65951c6d9b44662499cd0bfbd268276e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;float&gt;<sp/><ref refid="structklotter_1_1LineBatch_1a65951c6d9b44662499cd0bfbd268276e" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="14" refid="structklotter_1_1LineBatch_1a77b1d0932ad3d1f80a81174dde3cff92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1a77b1d0932ad3d1f80a81174dde3cff92" kindref="member">lines</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="15" refid="structklotter_1_1LineBatch_1a9a850e6ccb0f8c61bfbd7f821db58b51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/><ref refid="structklotter_1_1LineBatch_1a9a850e6ccb0f8c61bfbd7f821db58b51" kindref="member">va</ref>;</highlight></codeline>
+<codeline lineno="16" refid="structklotter_1_1LineBatch_1a19f223a12164e163ed09156d8797b309" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/><ref refid="structklotter_1_1LineBatch_1a19f223a12164e163ed09156d8797b309" kindref="member">vb</ref>;</highlight></codeline>
+<codeline lineno="17" refid="structklotter_1_1LineBatch_1a22adf043bc55df5ccdd1c10e680339e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref><sp/><ref refid="structklotter_1_1LineBatch_1a22adf043bc55df5ccdd1c10e680339e9" kindref="member">ib</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" kindref="member">LineBatch</ref>(<ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref>*);</highlight></codeline>
+<codeline lineno="20" refid="structklotter_1_1LineBatch_1a229d8e1ce0d93e2d4aaed3d05671dcb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1LineBatch_1a229d8e1ce0d93e2d4aaed3d05671dcb9" kindref="member">~LineBatch</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structklotter_1_1LineBatch_1a2a5f7384e73b6b919adb76aea2efe60c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1LineBatch_1a2a5f7384e73b6b919adb76aea2efe60c" kindref="member">LineBatch</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" kindref="member">LineBatch</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23" refid="structklotter_1_1LineBatch_1a98534fbc5930a03da96bf29b51aa6fcc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1a98534fbc5930a03da96bf29b51aa6fcc" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" kindref="member">LineBatch</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24" refid="structklotter_1_1LineBatch_1a964e2420c45c8f92bda5a4e41435fcf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1LineBatch_1a964e2420c45c8f92bda5a4e41435fcf0" kindref="member">LineBatch</ref>(<ref refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" kindref="member">LineBatch</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25" refid="structklotter_1_1LineBatch_1a7012ad85755bc7a1153b970279abb66c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1a7012ad85755bc7a1153b970279abb66c" kindref="member">operator=</ref>(<ref refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" kindref="member">LineBatch</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="structklotter_1_1LineBatch_1aa378d8e42e95665ad03ee24009ff7afc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1aa378d8e42e95665ad03ee24009ff7afc" kindref="member">line</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>world_from,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>world_to,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>color);</highlight></codeline>
+<codeline lineno="28" refid="structklotter_1_1LineBatch_1ac11848294301883e840262a2f7be7392" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineBatch_1ac11848294301883e840262a2f7be7392" kindref="member">submit</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>merge<sp/>with<sp/>LineBatch?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="structklotter_1_1LineDrawer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1LineDrawer_1ae877d9de19653d08a1a130962b22af26" kindref="member">LineDrawer</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35" refid="structklotter_1_1LineDrawer_1ab3107f77385148fed2e5b37529c09d22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__vertex-layout_1gab14e38875ed51577f61fbbe750a605ea" kindref="member">ShaderVertexAttributes</ref><sp/><ref refid="structklotter_1_1LineDrawer_1ab3107f77385148fed2e5b37529c09d22" kindref="member">description</ref>;</highlight></codeline>
+<codeline lineno="36" refid="structklotter_1_1LineDrawer_1a04da8258e19e3763976974335c35b50c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1CompiledShaderVertexAttributes" kindref="compound">CompiledShaderVertexAttributes</ref><sp/><ref refid="structklotter_1_1LineDrawer_1a04da8258e19e3763976974335c35b50c" kindref="member">layout</ref>;</highlight></codeline>
+<codeline lineno="37" refid="structklotter_1_1LineDrawer_1a24ce3da96e78f1d1346fd1af2cf0c341" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref><sp/><ref refid="structklotter_1_1LineDrawer_1a24ce3da96e78f1d1346fd1af2cf0c341" kindref="member">shader</ref>;</highlight></codeline>
+<codeline lineno="38" refid="structklotter_1_1LineDrawer_1ab10a4dbd2654736ffb81d7053ff7b87e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1LineDrawer_1ab10a4dbd2654736ffb81d7053ff7b87e" kindref="member">clip_from_view_uni</ref>;</highlight></codeline>
+<codeline lineno="39" refid="structklotter_1_1LineDrawer_1a8268353446742e802b34b01fa62276cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1LineDrawer_1a8268353446742e802b34b01fa62276cc" kindref="member">view_from_world_uni</ref>;</highlight></codeline>
+<codeline lineno="40" refid="structklotter_1_1LineDrawer_1a02f5813ada4de1104582aed3aac54e07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1LineDrawer_1a02f5813ada4de1104582aed3aac54e07" kindref="member">resolution_uni</ref>;</highlight></codeline>
+<codeline lineno="41" refid="structklotter_1_1LineDrawer_1a56d7d08433e9a46ca273996500a73c77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1LineDrawer_1a56d7d08433e9a46ca273996500a73c77" kindref="member">dash_size_uni</ref>;</highlight></codeline>
+<codeline lineno="42" refid="structklotter_1_1LineDrawer_1a928c80448b286b86c6052646601b7029" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref><sp/><ref refid="structklotter_1_1LineDrawer_1a928c80448b286b86c6052646601b7029" kindref="member">gap_size_uni</ref>;</highlight></codeline>
+<codeline lineno="43" refid="structklotter_1_1LineDrawer_1a9e92ee3a442f6f499f7bd5eab0454def" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1LineBatch" kindref="compound">LineBatch</ref><sp/><ref refid="structklotter_1_1LineDrawer_1a9e92ee3a442f6f499f7bd5eab0454def" kindref="member">line_batch</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structklotter_1_1LineDrawer_1ae877d9de19653d08a1a130962b22af26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1LineDrawer_1ae877d9de19653d08a1a130962b22af26" kindref="member">LineDrawer</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" kindref="member">set_line_to_dash</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec2&amp;<sp/><ref refid="group__render_1gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da" kindref="member">resolution</ref>,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dash_size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>gap_size);</highlight></codeline>
+<codeline lineno="48" refid="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" kindref="member">set_line_to_solid</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="structklotter_1_1LineDrawer_1a260e80f8c6e81e060c65f1cbcc02e988" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1LineDrawer_1a260e80f8c6e81e060c65f1cbcc02e988" kindref="member">is_loaded</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/linebatch.h"/>
+  </compounddef>
+</doxygen>

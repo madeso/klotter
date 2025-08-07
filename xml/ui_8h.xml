@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="ui_8h" kind="file" language="C++">
+    <compoundname>ui.h</compoundname>
+    <includes local="yes">imgui.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/klotter/render/ui.h</label>
+        <link refid="ui_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>imgui.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;imgui.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespaceklotter_1ae50f370f003f260d3e17d7ce55aefafd" refkind="member"><highlight class="normal">ImVec2<sp/><ref refid="namespaceklotter_1ae50f370f003f260d3e17d7ce55aefafd" kindref="member">operator+</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImVec2&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImVec2&amp;<sp/>rhs);</highlight></codeline>
+<codeline lineno="12" refid="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" refkind="member"><highlight class="normal">ImVec2<sp/><ref refid="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" kindref="member">operator-</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImVec2&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImVec2&amp;<sp/>rhs);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" refkind="member"><highlight class="normal">ImVec2<sp/><ref refid="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" kindref="member">calculate_region</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImVec2&amp;<sp/>mouse_pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImVec2&amp;<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImVec2&amp;<sp/>my_tex,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImVec2&amp;<sp/>widget_size,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>region_sz);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="namespaceklotter_1a097b19b90783477eca0bb931a3ad7692" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a097b19b90783477eca0bb931a3ad7692" kindref="member">imgui_text</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>str);</highlight></codeline>
+<codeline lineno="18" refid="namespaceklotter_1a876b1901b34bbd4af4fe0152ea366e97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a876b1901b34bbd4af4fe0152ea366e97" kindref="member">imgui_image</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>&amp;<sp/>img);</highlight></codeline>
+<codeline lineno="19" refid="namespaceklotter_1a6308c1c02eba0c354d9b8f5621f63162" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a6308c1c02eba0c354d9b8f5621f63162" kindref="member">simple_gamma_slider</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>label,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>gamma,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>curve<sp/>=<sp/>1.5f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>min_gamma<sp/>=<sp/>1.6f,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>max_gamma<sp/>=<sp/>2.8f);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/ui.h"/>
+  </compounddef>
+</doxygen>

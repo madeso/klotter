@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="renderer_8h" kind="file" language="C++">
+    <compoundname>renderer.h</compoundname>
+    <includes refid="assets_8h" local="yes">klotter/render/assets.h</includes>
+    <includes refid="debug_8h" local="yes">klotter/render/debug.h</includes>
+    <includes refid="postproc_8h" local="yes">klotter/render/postproc.h</includes>
+    <includes refid="material_8h" local="yes">klotter/render/material.h</includes>
+    <includes refid="render__settings_8h" local="yes">klotter/render/render_settings.h</includes>
+    <includes refid="vertex__layout_8h" local="yes">klotter/render/vertex_layout.h</includes>
+    <includes refid="world_8h" local="yes">klotter/render/world.h</includes>
+    <includedby refid="klotter_8h" local="yes">src/klotter/klotter.h</includedby>
+    <includedby refid="postproc_8internal_8h" local="yes">src/klotter/render/postproc.internal.h</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
+      <node id="2">
+        <label>klotter/render/assets.h</label>
+        <link refid="assets_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>klotter/render/color.h</label>
+        <link refid="color_8h"/>
+      </node>
+      <node id="8">
+        <label>klotter/render/debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>klotter/render/material.h</label>
+        <link refid="material_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter/render/opengl_labels.h</label>
+        <link refid="opengl__labels_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>klotter/render/postproc.h</label>
+        <link refid="postproc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>klotter/render/render_settings.h</label>
+        <link refid="render__settings_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter/render/texture.h</label>
+        <link refid="texture_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>klotter/render/vertex_layout.h</label>
+        <link refid="vertex__layout_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>klotter/render/world.h</label>
+        <link refid="world_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>klotter/scurve.h</label>
+        <link refid="scurve_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstdint</label>
+      </node>
+      <node id="19">
+        <label>imgui.h</label>
+      </node>
+      <node id="15">
+        <label>map</label>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="12">
+        <label>optional</label>
+      </node>
+      <node id="16">
+        <label>set</label>
+      </node>
+      <node id="20">
+        <label>unordered_set</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/klotter/klotter.h</label>
+        <link refid="klotter_8h"/>
+      </node>
+      <node id="3">
+        <label>src/klotter/render/postproc.internal.h</label>
+        <link refid="postproc_8internal_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1Renderer" prot="public">klotter::Renderer</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="assets_8h" kindref="compound">klotter/render/assets.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="debug_8h" kindref="compound">klotter/render/debug.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="postproc_8h" kindref="compound">klotter/render/postproc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="material_8h" kindref="compound">klotter/render/material.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="render__settings_8h" kindref="compound">klotter/render/render_settings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="vertex__layout_8h" kindref="compound">klotter/render/vertex_layout.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="world_8h" kindref="compound">klotter/render/world.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1RendererPimpl" kindref="compound">RendererPimpl</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="structklotter_1_1Renderer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1Renderer_1ad5a6f1e81638462af81153f65f17b967" kindref="member">Renderer</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23" refid="structklotter_1_1Renderer_1a4003f3fcc5f8bf2524fe1e23b3bb9bff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref><sp/><ref refid="structklotter_1_1Renderer_1a4003f3fcc5f8bf2524fe1e23b3bb9bff" kindref="member">settings</ref>;</highlight></codeline>
+<codeline lineno="24" refid="structklotter_1_1Renderer_1ad108ac29f6eefa4ab05c2797df6f496c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref><sp/><ref refid="structklotter_1_1Renderer_1ad108ac29f6eefa4ab05c2797df6f496c" kindref="member">assets</ref>;</highlight></codeline>
+<codeline lineno="25" refid="structklotter_1_1Renderer_1a041e598e217704db890b9ed76ae70fdd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1DebugRender" kindref="compound">DebugRender</ref><sp/><ref refid="structklotter_1_1Renderer_1a041e598e217704db890b9ed76ae70fdd" kindref="member">debug</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="structklotter_1_1Renderer_1a2a3c947386d5278b82c89d59af6ee7a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;RendererPimpl&gt;<sp/><ref refid="structklotter_1_1Renderer_1a2a3c947386d5278b82c89d59af6ee7a9" kindref="member">pimpl</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="structklotter_1_1Renderer_1ad5a6f1e81638462af81153f65f17b967" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Renderer_1ad5a6f1e81638462af81153f65f17b967" kindref="member">Renderer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref>&amp;<sp/><ref refid="structklotter_1_1Renderer_1a4003f3fcc5f8bf2524fe1e23b3bb9bff" kindref="member">settings</ref>);</highlight></codeline>
+<codeline lineno="30" refid="structklotter_1_1Renderer_1a84a0c241507db1c10f6779a0a06e7019" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Renderer_1a84a0c241507db1c10f6779a0a06e7019" kindref="member">~Renderer</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structklotter_1_1Renderer_1ab746b0b937079d7c796a73c50b468dcb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Renderer_1ab746b0b937079d7c796a73c50b468dcb" kindref="member">Renderer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Renderer_1ad5a6f1e81638462af81153f65f17b967" kindref="member">Renderer</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33" refid="structklotter_1_1Renderer_1a088e263db406085384a2dac04cbc6f81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1Renderer_1a088e263db406085384a2dac04cbc6f81" kindref="member">Renderer</ref>(<ref refid="structklotter_1_1Renderer_1ad5a6f1e81638462af81153f65f17b967" kindref="member">Renderer</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34" refid="structklotter_1_1Renderer_1a8ad0477c6c2e0be00ab87ffbf5e219a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Renderer_1a8ad0477c6c2e0be00ab87ffbf5e219a4" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Renderer_1ad5a6f1e81638462af81153f65f17b967" kindref="member">Renderer</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35" refid="structklotter_1_1Renderer_1a95008c898662faa4a74924eee472573c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Renderer_1a95008c898662faa4a74924eee472573c" kindref="member">operator=</ref>(<ref refid="structklotter_1_1Renderer_1ad5a6f1e81638462af81153f65f17b967" kindref="member">Renderer</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structklotter_1_1Renderer_1ade91c2a35ede1e145068650eeebe3350" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;UnlitMaterial&gt;<sp/><ref refid="structklotter_1_1Renderer_1ade91c2a35ede1e145068650eeebe3350" kindref="member">make_unlit_material</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38" refid="structklotter_1_1Renderer_1a64e9817e792941443e3c7fd50d3bcfeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;DefaultMaterial&gt;<sp/><ref refid="structklotter_1_1Renderer_1a64e9817e792941443e3c7fd50d3bcfeb" kindref="member">make_default_material</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structklotter_1_1Renderer_1a9fae832300d65af1aea9beb8e90ff06c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref><sp/><ref refid="structklotter_1_1Renderer_1a9fae832300d65af1aea9beb8e90ff06c" kindref="member">unlit_geom_layout</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41" refid="structklotter_1_1Renderer_1a59e52edabd2be10264bc7782ed4fd6a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref><sp/><ref refid="structklotter_1_1Renderer_1a59e52edabd2be10264bc7782ed4fd6a6" kindref="member">default_geom_layout</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a4c1c7030d3569a433b31a2c501143e47" kindref="member">make_invert_effect</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44" refid="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1ae20631a1fa40c300046db20a41f234f6" kindref="member">make_grayscale_effect</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45" refid="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a1f8377eb4c1b66a3de23123a7f917db5" kindref="member">make_damage_effect</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46" refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;FactorEffect&gt;<sp/><ref refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" kindref="member">make_blur_effect</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="structklotter_1_1Skybox" kindref="compound">Skybox</ref><sp/><ref refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" kindref="member">make_skybox</ref>(std::shared_ptr&lt;TextureCubemap&gt;<sp/>texture)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" kindref="member">is_loaded</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="structklotter_1_1Renderer_1a48524cf82c262c4ee5caa4d8341ea351" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Renderer_1a48524cf82c262c4ee5caa4d8341ea351" kindref="member">render_world</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::ivec2&amp;<sp/>window_size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1World" kindref="compound">World</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Camera" kindref="compound">Camera</ref>&amp;);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/renderer.h"/>
+  </compounddef>
+</doxygen>

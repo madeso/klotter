@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CodeCity</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <style>
+            body {
+                background-color: #bfe3dd;
+                color: #000;
+                margin: 0;
+            }
+            a {
+                color: #2983ff;
+            }
+            #info {
+                position: absolute;
+                top: 0px;
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                text-align: center;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                pointer-events: none;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <div id="info">
+            Hello world
+        </div>
+        <script type="importmap">
+            {
+                "imports": {
+                  "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+                  "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+                }
+            }
+        </script>
+        <script type="module">
+            import * as THREE from 'three';
+            import Stats from 'three/addons/libs/stats.module.js';
+            import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+            const container = document.getElementById( 'container' );
+            const renderer = new THREE.WebGLRenderer( { antialias: true } );
+            renderer.setPixelRatio( window.devicePixelRatio );
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            container.appendChild( renderer.domElement );
+            const scene = new THREE.Scene();
+            const MakeCube = (name, color, sx, sy, sz, x, y, z) => {
+                const geometry = new THREE.BoxGeometry(sx, sy, sz);
+                const material = new THREE.MeshLambertMaterial( { color: color } );
+                const cube = new THREE.Mesh( geometry, material );
+                cube.position.x = x;
+                cube.position.y = y;
+                cube.position.z = z;
+                cube.name = name;
+                scene.add(cube);
+            };
+            scene.background = new THREE.Color( 0xbfe3dd );
+            const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000);
+            camera.position.set(141, 2.5, 44 );
+            const controls = new OrbitControls( camera, renderer.domElement )
+            controls.target.set(70.5, 0, 22 );
+            const dirLight1 = new THREE.DirectionalLight( 0xffffff, 3 );
+            dirLight1.position.set( 1, 1, 1 );
+            scene.add( dirLight1 );
+            const dirLight2 = new THREE.DirectionalLight( 0x002288, 3 );
+            dirLight2.position.set( - 1, - 1, - 1 );
+            scene.add( dirLight2 );
+            const ambientLight = new THREE.AmbientLight( 0x555555 );
+            scene.add( ambientLight );
+            MakeCube("klotter", 0x7731ef, 130, 4, 44, 65, 2, 22);
+            MakeCube("klotter::colors", 0x68172f, 2, 4, 2, 2, 6, 2);
+            MakeCube("klotter::geom", 0xc2f499, 15, 4, 13, 10.5, 6, 7.5);
+            MakeCube("klotter::geom::Builder", 0x0d7b0e, 7, 19, 7, 7.5, 17.5, 5.5);
+            MakeCube("klotter::geom::Triangle", 0xb5a496, 5, 3, 5, 13.5, 9.5, 4.5);
+            MakeCube("klotter::geom::Vertex", 0x51dd7b, 6, 4, 6, 14, 10, 10);
+            MakeCube("klotter::imgui", 0x48bffc, 2, 4, 2, 19, 6, 2);
+            MakeCube("klotter::App", 0x39eb2e, 3, 6, 3, 21.5, 7, 2.5);
+            MakeCube("klotter::Assets", 0x69ff28, 13, 13, 13, 29.5, 10.5, 7.5);
+            MakeCube("klotter::BaseTexture", 0x08ca89, 3, 9, 3, 37.5, 8.5, 2.5);
+            MakeCube("klotter::BloomRender", 0x702ebc, 4, 2, 4, 41, 5, 3);
+            MakeCube("klotter::BlurEffect", 0xd0144c, 10, 8, 10, 48, 8, 6);
+            MakeCube("klotter::BlurOptions", 0x3cad25, 5, 2, 5, 55.5, 5, 3.5);
+            MakeCube("klotter::BlurVerticalProvider", 0xc1a6fa, 3, 4, 3, 59.5, 6, 2.5);
+            MakeCube("klotter::BoundFbo", 0xb6e3f0, 3, 8, 3, 62.5, 8, 2.5);
+            MakeCube("klotter::BoundUniformBuffer", 0x1923d1, 3, 8, 3, 65.5, 8, 2.5);
+            MakeCube("klotter::BuildArg", 0x39ae94, 4, 2, 4, 69, 5, 3);
+            MakeCube("klotter::BurHorizontalProvider", 0xc232d4, 3, 4, 3, 72.5, 6, 2.5);
+            MakeCube("klotter::Camera", 0xf2b99c, 8, 2, 8, 78, 5, 5);
+            MakeCube("klotter::CameraUniformBuffer", 0xcfe3ec, 6, 3, 6, 85, 5.5, 4);
+            MakeCube("klotter::CameraVectors", 0x59b17d, 5, 2, 5, 90.5, 5, 3.5);
+            MakeCube("klotter::Color", 0x12a60e, 5, 3, 5, 95.5, 5.5, 3.5);
+            MakeCube("klotter::CompiledCamera", 0xb447ab, 6, 2, 6, 101, 5, 4);
+            MakeCube("klotter::CompiledGeom", 0x838ee5, 7, 8, 7, 107.5, 8, 4.5);
+            MakeCube("klotter::CompiledGeom_TransformInstance", 0xddcdd5, 9, 8, 9, 115.5, 8, 5.5);
+            MakeCube("klotter::CompiledGeomVertexAttributes", 0xbe1db5, 4, 2, 4, 122, 5, 3);
+            MakeCube("klotter::CompiledShaderVertexAttributes", 0xa7751f, 4, 2, 4, 126, 5, 3);
+            MakeCube("klotter::CompiledStack", 0xeeb9c5, 4, 2, 4, 20, 5, 6);
+            MakeCube("klotter::CompiledUniformProp", 0x81b42b, 5, 2, 5, 60.5, 5, 6.5);
+            MakeCube("klotter::CompiledVertexElement", 0x2a4195, 5, 2, 5, 38.5, 5, 7.5);
+            MakeCube("klotter::CompiledVertexElementNoName", 0x3a9661, 4, 2, 4, 65, 5, 6);
+            MakeCube("klotter::CompiledVertexTypeList", 0xab68c3, 5, 2, 5, 69.5, 5, 7.5);
+            MakeCube("klotter::DebugLine", 0xed02f7, 5, 2, 5, 122.5, 5, 7.5);
+            MakeCube("klotter::DebugRender", 0x59b2e2, 3, 3, 3, 126.5, 5.5, 6.5);
+            MakeCube("klotter::DefaultMaterial", 0x406954, 12, 8, 12, 88, 8, 13);
+            MakeCube("klotter::DirectionalLight", 0x03a160, 6, 2, 6, 97, 5, 10);
+            MakeCube("klotter::DirectionalLightUniforms", 0xaa12b8, 5, 3, 5, 55.5, 5.5, 8.5);
+            MakeCube("klotter::Effect", 0x41e858, 4, 13, 4, 102, 10.5, 9);
+            MakeCube("klotter::EffectStack", 0xaa0024, 10, 5, 10, 77, 6.5, 14);
+            MakeCube("klotter::ExtractedAttribute", 0x0daf06, 5, 2, 5, 20.5, 5, 10.5);
+            MakeCube("klotter::ExtractedGeom", 0x16e072, 7, 2, 7, 107.5, 5, 11.5);
+            MakeCube("klotter::ExtractShader", 0xf22eaf, 4, 3, 4, 65, 5.5, 10);
+            MakeCube("klotter::Face", 0xc0ab7d, 5, 2, 5, 60.5, 5, 11.5);
+            MakeCube("klotter::FactorEffect", 0x87e628, 3, 5, 3, 126.5, 6.5, 9.5);
+            MakeCube("klotter::FloatDragShaderProp", 0x1b15d2, 6, 5, 6, 39, 6.5, 13);
+            MakeCube("klotter::FloatSliderShaderProp", 0x630b8a, 7, 5, 7, 114.5, 6.5, 13.5);
+            MakeCube("klotter::FrameBuffer", 0x1f0dd5, 7, 8, 7, 121.5, 8, 13.5);
+            MakeCube("klotter::FrameBufferBuilder", 0x170f0f, 8, 8, 8, 46, 8, 15);
+            MakeCube("klotter::FrustumLight", 0x5fda0a, 14, 2, 14, 8, 5, 21);
+            MakeCube("klotter::FrustumLightUniforms", 0x07c9a4, 8, 3, 8, 54, 5.5, 15);
+            MakeCube("klotter::FullScreenGeom", 0x07e1af, 4, 3, 4, 69, 5.5, 12);
+            MakeCube("klotter::Geom", 0xb8dbc7, 4, 2, 4, 102, 5, 13);
+            MakeCube("klotter::HashCombiner", 0xa31871, 3, 3, 3, 126.5, 5.5, 12.5);
+            MakeCube("klotter::InstanceProp", 0xc1c90b, 4, 2, 4, 65, 5, 14);
+            MakeCube("klotter::Lights", 0x87c59a, 7, 2, 7, 18.5, 5, 17.5);
+            MakeCube("klotter::LineBatch", 0x875c65, 8, 10, 8, 26, 9, 18);
+            MakeCube("klotter::LineDrawer", 0x33f09e, 11, 6, 11, 99.5, 7, 20.5);
+            MakeCube("klotter::LoadedPostProcShader", 0x3ddc36, 7, 3, 7, 33.5, 5.5, 19.5);
+            MakeCube("klotter::LoadedShader_Default", 0xa267ff, 17, 3, 17, 113.5, 5.5, 25.5);
+            MakeCube("klotter::LoadedShader_Default_Container", 0xe8ab78, 6, 3, 6, 61, 5.5, 19);
+            MakeCube("klotter::LoadedShader_SingleColor", 0x6e0ed6, 6, 3, 6, 67, 5.5, 19);
+            MakeCube("klotter::LoadedShader_Skybox", 0x391c5d, 5, 3, 5, 39.5, 5.5, 18.5);
+            MakeCube("klotter::LoadedShader_Unlit", 0x92bb72, 6, 3, 6, 125, 5.5, 20);
+            MakeCube("klotter::LoadedShader_Unlit_Container", 0xe852b9, 5, 3, 5, 44.5, 5.5, 21.5);
+            MakeCube("klotter::LocalAxis", 0x80f054, 5, 2, 5, 49.5, 5, 21.5);
+            MakeCube("klotter::Material", 0x741070, 2, 13, 2, 71, 10.5, 15);
+            MakeCube("klotter::MeshInstance", 0x6389ef, 8, 3, 8, 74, 5.5, 23);
+            MakeCube("klotter::MeshInstance_TransformInstanced", 0x8d2953, 5, 2, 5, 54.5, 5, 21.5);
+            MakeCube("klotter::OpenglStates", 0x7faaa2, 16, 2, 16, 86, 5, 27);
+            MakeCube("klotter::PointLight", 0x93a964, 9, 2, 9, 19.5, 5, 26.5);
+            MakeCube("klotter::PointLightUniforms", 0x2a13d0, 6, 3, 6, 27, 5.5, 25);
+            MakeCube("klotter::PostProcArg", 0x947d06, 6, 2, 6, 60, 5, 25);
+            MakeCube("klotter::RealizeShader", 0x6cf438, 5, 3, 5, 39.5, 5.5, 23.5);
+            MakeCube("klotter::RenderContext", 0xee4bda, 5, 3, 5, 65.5, 5.5, 24.5);
+            MakeCube("klotter::Renderer", 0x0ef191, 6, 19, 6, 33, 13.5, 26);
+            MakeCube("klotter::RendererPimpl", 0x48029c, 7, 3, 7, 125.5, 5.5, 26.5);
+            MakeCube("klotter::RenderSettings", 0x2e3e62, 8, 2, 8, 46, 5, 28);
+            MakeCube("klotter::RenderSource", 0x6fd021, 2, 9, 2, 69, 8.5, 23);
+            MakeCube("klotter::RenderTextureWithShader", 0x077532, 6, 5, 6, 53, 6.5, 27);
+            MakeCube("klotter::RenderWorld", 0xe943e6, 9, 6, 9, 98.5, 7, 30.5);
+            MakeCube("klotter::SCurve", 0x919833, 4, 5, 4, 38, 6.5, 28);
+            MakeCube("klotter::SCurveGuiState", 0x884a12, 4, 5, 4, 65, 6.5, 29);
+            MakeCube("klotter::SCurveImguiSettings", 0x6e98c0, 13, 2, 13, 7.5, 5, 34.5);
+            MakeCube("klotter::ShaderOptions", 0x7d2b00, 10, 4, 10, 72, 6, 32);
+            MakeCube("klotter::ShaderProgram", 0x47f03e, 4, 23, 4, 26, 15.5, 30);
+            MakeCube("klotter::ShaderProp", 0x81dcee, 2, 10, 2, 41, 9, 27);
+            MakeCube("klotter::ShaderPropertyProvider", 0xf7d05e, 2, 9, 2, 104, 8.5, 27);
+            MakeCube("klotter::ShaderResource", 0x36cb67, 13, 3, 13, 34.5, 5.5, 36.5);
+            MakeCube("klotter::ShaderSource", 0x33b8ac, 4, 2, 4, 58, 5, 30);
+            MakeCube("klotter::SimpleEffect", 0x5426ac, 6, 9, 6, 53, 8.5, 33);
+            MakeCube("klotter::Skybox", 0xfa1c77, 4, 2, 4, 124, 5, 32);
+            MakeCube("klotter::StateChanger", 0x57e9f3, 3, 18, 3, 61.5, 13, 29.5);
+            MakeCube("klotter::Texture2d", 0x7c06ca, 2, 4, 2, 104, 6, 29);
+            MakeCube("klotter::TextureCubemap", 0x5a73aa, 2, 4, 2, 104, 6, 31);
+            MakeCube("klotter::Uniform", 0x46ef05, 6, 5, 6, 17, 6.5, 34);
+            MakeCube("klotter::UniformBuffer", 0x70563a, 3, 10, 3, 127.5, 9, 31.5);
+            MakeCube("klotter::UniformBufferCompiler", 0x9f6545, 3, 4, 3, 21.5, 6, 32.5);
+            MakeCube("klotter::UniformBufferSetup", 0x6163d9, 6, 2, 6, 63, 5, 34);
+            MakeCube("klotter::UniformProp", 0xac2902, 6, 2, 6, 44, 5, 35);
+            MakeCube("klotter::UnlitMaterial", 0x922c99, 6, 8, 6, 23, 8, 37);
+            MakeCube("klotter::Vertex", 0xd0c8d9, 6, 2, 6, 106, 5, 37);
+            MakeCube("klotter::VertexElementDescription", 0x32102b, 4, 2, 4, 58, 5, 34);
+            MakeCube("klotter::VertexShaderSource", 0xee293f, 5, 2, 5, 111.5, 5, 36.5);
+            MakeCube("klotter::World", 0xfffa36, 7, 2, 7, 117.5, 5, 37.5);
+            MakeCube("std", 0xd04350, 2, 4, 2, 131, 2, 1);
+            MakeCube("std::literals::string_view_literals", 0x0dfd41, 2, 4, 2, 133, 2, 1);
+            MakeCube("Result", 0x8e159a, 4, 5, 4, 136, 2.5, 2);
+            MakeCube("Str", 0xaf44ac, 3, 5, 3, 139.5, 2.5, 1.5);
+            let inter = null;
+            const pointer = new THREE.Vector2();
+            const raycaster = new THREE.Raycaster();
+            function onPointerMove(event) {
+                pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+                pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+            }
+            document.addEventListener('mousemove', onPointerMove);
+            const intersect = () => {
+                raycaster.setFromCamera( pointer, camera );
+                const intersects = raycaster.intersectObjects( scene.children, false );
+                if (intersects.length > 0)
+                {
+                    const newInter = intersects[0].object;
+                    if (inter != newInter)
+                    {
+                        if (inter) inter.material.emissive.setHex( inter.currentHex );
+                        inter = newInter;
+                        inter.currentHex = inter.material.emissive.getHex();
+                        inter.material.emissive.setHex( 0xff0000 );
+                        info.innerHTML = inter.name
+                    }
+                }
+                else
+                {
+                    if (inter)
+                    {
+                        inter.material.emissive.setHex( inter.currentHex );
+                        info.innerHTML = "";
+                    }
+                    inter = null;
+                }
+            };
+            const clock = new THREE.Clock();
+            window.onresize = function () {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize( window.innerWidth, window.innerHeight );
+            };
+            function animate() {
+                requestAnimationFrame( animate );
+                controls.update();
+                intersect();
+                renderer.render( scene, camera );
+            }
+            animate();
+        </script>
+    </body>
+</html>

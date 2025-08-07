@@ -1,0 +1,1071 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceklotter" kind="namespace" language="C++">
+    <compoundname>klotter</compoundname>
+    <innerclass refid="structklotter_1_1App" prot="public">klotter::App</innerclass>
+    <innerclass refid="structklotter_1_1Assets" prot="public">klotter::Assets</innerclass>
+    <innerclass refid="structklotter_1_1BaseTexture" prot="public">klotter::BaseTexture</innerclass>
+    <innerclass refid="structklotter_1_1BloomRender" prot="public">klotter::BloomRender</innerclass>
+    <innerclass refid="structklotter_1_1BlurEffect" prot="public">klotter::BlurEffect</innerclass>
+    <innerclass refid="structklotter_1_1BlurOptions" prot="public">klotter::BlurOptions</innerclass>
+    <innerclass refid="structklotter_1_1BlurVerticalProvider" prot="public">klotter::BlurVerticalProvider</innerclass>
+    <innerclass refid="structklotter_1_1BoundFbo" prot="public">klotter::BoundFbo</innerclass>
+    <innerclass refid="structklotter_1_1BoundUniformBuffer" prot="public">klotter::BoundUniformBuffer</innerclass>
+    <innerclass refid="structklotter_1_1BuildArg" prot="public">klotter::BuildArg</innerclass>
+    <innerclass refid="structklotter_1_1BurHorizontalProvider" prot="public">klotter::BurHorizontalProvider</innerclass>
+    <innerclass refid="structklotter_1_1Camera" prot="public">klotter::Camera</innerclass>
+    <innerclass refid="structklotter_1_1CameraUniformBuffer" prot="public">klotter::CameraUniformBuffer</innerclass>
+    <innerclass refid="structklotter_1_1CameraVectors" prot="public">klotter::CameraVectors</innerclass>
+    <innerclass refid="structklotter_1_1Color" prot="public">klotter::Color</innerclass>
+    <innerclass refid="structklotter_1_1CompiledCamera" prot="public">klotter::CompiledCamera</innerclass>
+    <innerclass refid="structklotter_1_1CompiledGeom" prot="public">klotter::CompiledGeom</innerclass>
+    <innerclass refid="structklotter_1_1CompiledGeom__TransformInstance" prot="public">klotter::CompiledGeom_TransformInstance</innerclass>
+    <innerclass refid="structklotter_1_1CompiledGeomVertexAttributes" prot="public">klotter::CompiledGeomVertexAttributes</innerclass>
+    <innerclass refid="structklotter_1_1CompiledShaderVertexAttributes" prot="public">klotter::CompiledShaderVertexAttributes</innerclass>
+    <innerclass refid="structklotter_1_1CompiledStack" prot="public">klotter::CompiledStack</innerclass>
+    <innerclass refid="structklotter_1_1CompiledUniformProp" prot="public">klotter::CompiledUniformProp</innerclass>
+    <innerclass refid="structklotter_1_1CompiledVertexElement" prot="public">klotter::CompiledVertexElement</innerclass>
+    <innerclass refid="structklotter_1_1CompiledVertexElementNoName" prot="public">klotter::CompiledVertexElementNoName</innerclass>
+    <innerclass refid="structklotter_1_1CompiledVertexTypeList" prot="public">klotter::CompiledVertexTypeList</innerclass>
+    <innerclass refid="structklotter_1_1DebugLine" prot="public">klotter::DebugLine</innerclass>
+    <innerclass refid="structklotter_1_1DebugRender" prot="public">klotter::DebugRender</innerclass>
+    <innerclass refid="structklotter_1_1DefaultMaterial" prot="public">klotter::DefaultMaterial</innerclass>
+    <innerclass refid="structklotter_1_1DirectionalLight" prot="public">klotter::DirectionalLight</innerclass>
+    <innerclass refid="structklotter_1_1DirectionalLightUniforms" prot="public">klotter::DirectionalLightUniforms</innerclass>
+    <innerclass refid="structklotter_1_1Effect" prot="public">klotter::Effect</innerclass>
+    <innerclass refid="structklotter_1_1EffectStack" prot="public">klotter::EffectStack</innerclass>
+    <innerclass refid="structklotter_1_1ExtractedAttribute" prot="public">klotter::ExtractedAttribute</innerclass>
+    <innerclass refid="structklotter_1_1ExtractedGeom" prot="public">klotter::ExtractedGeom</innerclass>
+    <innerclass refid="structklotter_1_1ExtractShader" prot="public">klotter::ExtractShader</innerclass>
+    <innerclass refid="structklotter_1_1Face" prot="public">klotter::Face</innerclass>
+    <innerclass refid="structklotter_1_1FactorEffect" prot="public">klotter::FactorEffect</innerclass>
+    <innerclass refid="structklotter_1_1FloatDragShaderProp" prot="public">klotter::FloatDragShaderProp</innerclass>
+    <innerclass refid="structklotter_1_1FloatSliderShaderProp" prot="public">klotter::FloatSliderShaderProp</innerclass>
+    <innerclass refid="structklotter_1_1FrameBuffer" prot="public">klotter::FrameBuffer</innerclass>
+    <innerclass refid="structklotter_1_1FrameBufferBuilder" prot="public">klotter::FrameBufferBuilder</innerclass>
+    <innerclass refid="structklotter_1_1FrustumLight" prot="public">klotter::FrustumLight</innerclass>
+    <innerclass refid="structklotter_1_1FrustumLightUniforms" prot="public">klotter::FrustumLightUniforms</innerclass>
+    <innerclass refid="structklotter_1_1FullScreenGeom" prot="public">klotter::FullScreenGeom</innerclass>
+    <innerclass refid="structklotter_1_1Geom" prot="public">klotter::Geom</innerclass>
+    <innerclass refid="structklotter_1_1HashCombiner" prot="public">klotter::HashCombiner</innerclass>
+    <innerclass refid="structklotter_1_1InstanceProp" prot="public">klotter::InstanceProp</innerclass>
+    <innerclass refid="structklotter_1_1Lights" prot="public">klotter::Lights</innerclass>
+    <innerclass refid="structklotter_1_1LineBatch" prot="public">klotter::LineBatch</innerclass>
+    <innerclass refid="structklotter_1_1LineDrawer" prot="public">klotter::LineDrawer</innerclass>
+    <innerclass refid="structklotter_1_1LoadedPostProcShader" prot="public">klotter::LoadedPostProcShader</innerclass>
+    <innerclass refid="structklotter_1_1LoadedShader__Default" prot="public">klotter::LoadedShader_Default</innerclass>
+    <innerclass refid="structklotter_1_1LoadedShader__Default__Container" prot="public">klotter::LoadedShader_Default_Container</innerclass>
+    <innerclass refid="structklotter_1_1LoadedShader__SingleColor" prot="public">klotter::LoadedShader_SingleColor</innerclass>
+    <innerclass refid="structklotter_1_1LoadedShader__Skybox" prot="public">klotter::LoadedShader_Skybox</innerclass>
+    <innerclass refid="structklotter_1_1LoadedShader__Unlit" prot="public">klotter::LoadedShader_Unlit</innerclass>
+    <innerclass refid="structklotter_1_1LoadedShader__Unlit__Container" prot="public">klotter::LoadedShader_Unlit_Container</innerclass>
+    <innerclass refid="structklotter_1_1LocalAxis" prot="public">klotter::LocalAxis</innerclass>
+    <innerclass refid="structklotter_1_1Material" prot="public">klotter::Material</innerclass>
+    <innerclass refid="structklotter_1_1MeshInstance" prot="public">klotter::MeshInstance</innerclass>
+    <innerclass refid="structklotter_1_1MeshInstance__TransformInstanced" prot="public">klotter::MeshInstance_TransformInstanced</innerclass>
+    <innerclass refid="structklotter_1_1OpenglStates" prot="public">klotter::OpenglStates</innerclass>
+    <innerclass refid="structklotter_1_1PointLight" prot="public">klotter::PointLight</innerclass>
+    <innerclass refid="structklotter_1_1PointLightUniforms" prot="public">klotter::PointLightUniforms</innerclass>
+    <innerclass refid="structklotter_1_1PostProcArg" prot="public">klotter::PostProcArg</innerclass>
+    <innerclass refid="structklotter_1_1RealizeShader" prot="public">klotter::RealizeShader</innerclass>
+    <innerclass refid="structklotter_1_1RenderContext" prot="public">klotter::RenderContext</innerclass>
+    <innerclass refid="structklotter_1_1Renderer" prot="public">klotter::Renderer</innerclass>
+    <innerclass refid="structklotter_1_1RendererPimpl" prot="public">klotter::RendererPimpl</innerclass>
+    <innerclass refid="structklotter_1_1RenderSettings" prot="public">klotter::RenderSettings</innerclass>
+    <innerclass refid="structklotter_1_1RenderSource" prot="public">klotter::RenderSource</innerclass>
+    <innerclass refid="structklotter_1_1RenderTextureWithShader" prot="public">klotter::RenderTextureWithShader</innerclass>
+    <innerclass refid="structklotter_1_1RenderWorld" prot="public">klotter::RenderWorld</innerclass>
+    <innerclass refid="structklotter_1_1SCurve" prot="public">klotter::SCurve</innerclass>
+    <innerclass refid="structklotter_1_1SCurveGuiState" prot="public">klotter::SCurveGuiState</innerclass>
+    <innerclass refid="structklotter_1_1SCurveImguiSettings" prot="public">klotter::SCurveImguiSettings</innerclass>
+    <innerclass refid="structklotter_1_1ShaderOptions" prot="public">klotter::ShaderOptions</innerclass>
+    <innerclass refid="structklotter_1_1ShaderProgram" prot="public">klotter::ShaderProgram</innerclass>
+    <innerclass refid="structklotter_1_1ShaderProp" prot="public">klotter::ShaderProp</innerclass>
+    <innerclass refid="structklotter_1_1ShaderPropertyProvider" prot="public">klotter::ShaderPropertyProvider</innerclass>
+    <innerclass refid="structklotter_1_1ShaderResource" prot="public">klotter::ShaderResource</innerclass>
+    <innerclass refid="structklotter_1_1ShaderSource" prot="public">klotter::ShaderSource</innerclass>
+    <innerclass refid="structklotter_1_1SimpleEffect" prot="public">klotter::SimpleEffect</innerclass>
+    <innerclass refid="structklotter_1_1Skybox" prot="public">klotter::Skybox</innerclass>
+    <innerclass refid="structklotter_1_1StateChanger" prot="public">klotter::StateChanger</innerclass>
+    <innerclass refid="structklotter_1_1Texture2d" prot="public">klotter::Texture2d</innerclass>
+    <innerclass refid="structklotter_1_1TextureCubemap" prot="public">klotter::TextureCubemap</innerclass>
+    <innerclass refid="structklotter_1_1Uniform" prot="public">klotter::Uniform</innerclass>
+    <innerclass refid="structklotter_1_1UniformBuffer" prot="public">klotter::UniformBuffer</innerclass>
+    <innerclass refid="structklotter_1_1UniformBufferCompiler" prot="public">klotter::UniformBufferCompiler</innerclass>
+    <innerclass refid="structklotter_1_1UniformBufferSetup" prot="public">klotter::UniformBufferSetup</innerclass>
+    <innerclass refid="structklotter_1_1UniformProp" prot="public">klotter::UniformProp</innerclass>
+    <innerclass refid="structklotter_1_1UnlitMaterial" prot="public">klotter::UnlitMaterial</innerclass>
+    <innerclass refid="structklotter_1_1Vertex" prot="public">klotter::Vertex</innerclass>
+    <innerclass refid="structklotter_1_1VertexElementDescription" prot="public">klotter::VertexElementDescription</innerclass>
+    <innerclass refid="structklotter_1_1VertexShaderSource" prot="public">klotter::VertexShaderSource</innerclass>
+    <innerclass refid="structklotter_1_1World" prot="public">klotter::World</innerclass>
+    <innernamespace refid="namespaceklotter_1_1colors">klotter::colors</innernamespace>
+    <innernamespace refid="namespaceklotter_1_1geom">klotter::geom</innernamespace>
+    <innernamespace refid="namespaceklotter_1_1imgui">klotter::imgui</innernamespace>
+    <sectiondef kind="enum">
+      <member refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kind="enum"><name>Blend</name></member>
+      <member refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kind="enum"><name>Compare</name></member>
+      <member refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kind="enum"><name>CullFace</name></member>
+      <member refid="group__geom-builder_1ga09f336a0f9a765edc85ba7fb234aed05" kind="enum"><name>ExtractedAttributeType</name></member>
+      <member refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kind="enum"><name>RenderMode</name></member>
+      <memberdef kind="enum" id="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>BlurType</name>
+        <qualifiedname>klotter::BlurType</qualifiedname>
+        <enumvalue id="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f" prot="public">
+          <name>horizontal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3" prot="public">
+          <name>vertical</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="namespaceklotter_1a922b5d3cc7e03da98bcab5a44c7a20c3" kindref="member">generate_blur</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="47" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceklotter_1a3616a1e9adb2f3b4af13a7d9770b92f7" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>IsGauss</name>
+        <qualifiedname>klotter::IsGauss</qualifiedname>
+        <enumvalue id="namespaceklotter_1a3616a1e9adb2f3b4af13a7d9770b92f7a7fa3b767c460b54a2be4d49030b349c7" prot="public">
+          <name>no</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceklotter_1a3616a1e9adb2f3b4af13a7d9770b92f7aa6105c0a611b41b08f1209506350279e" prot="public">
+          <name>yes</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="namespaceklotter_1a922b5d3cc7e03da98bcab5a44c7a20c3" kindref="member">generate_blur</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="54" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <member refid="group__render_1gad119e3d8725413aad6d684e0ec1c22aa" kind="enum"><name>TransformSource</name></member>
+      <member refid="group__render_1ga358c9176a5069a7059c1497704cd2875" kind="enum"><name>PostProcSetup</name></member>
+      <member refid="group__render_1ga3453e147b5d5dff196af8e69e2adfc3b" kind="enum"><name>UseTransparency</name></member>
+      <member refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kind="enum"><name>StencilAction</name></member>
+      <member refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kind="enum"><name>TextureEdge</name></member>
+      <member refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kind="enum"><name>TextureRenderStyle</name></member>
+      <member refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kind="enum"><name>Transparency</name></member>
+      <member refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kind="enum"><name>ColorData</name></member>
+      <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
+      <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
+      <member refid="group__texture_1ga1d677cc4a3cecec32f8e90f3ae62bf95" kind="enum"><name>ColorBitsPerPixel</name></member>
+      <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
+      <member refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kind="enum"><name>VertexType</name></member>
+      <member refid="group__render_1ga8b35cebf3243809e4ea2b1ab6bb19fce" kind="enum"><name>Billboarding</name></member>
+      <member refid="group__scurcve_1ga7a4fe911cc44a05ac1a942d3fabbbc78" kind="enum"><name>FlipX</name></member>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceklotter_1a7421aae5c39bf21635e20a1d6011fabd" prot="public" static="no">
+        <type>std::unique_ptr&lt; <ref refid="structklotter_1_1App" kindref="compound">App</ref> &gt;(*)(<ref refid="structklotter_1_1Renderer" kindref="compound">Renderer</ref> *)</type>
+        <definition>using klotter::MakeAppFunction =  std::unique_ptr&lt;App&gt; (*)(Renderer*)</definition>
+        <argsstring></argsstring>
+        <name>MakeAppFunction</name>
+        <qualifiedname>klotter::MakeAppFunction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/klotter.h" line="27" column="1" bodyfile="src/klotter/klotter.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <member refid="group__render_1ga2bf0fb4228d3cf9922870684f4b25e81" kind="typedef"><name>BlendMode</name></member>
+      <member refid="group__render_1gad39dccc38e66e47ae52ef347a685cf07" kind="typedef"><name>StencilFunc</name></member>
+      <member refid="group__render_1ga1c638300d3c0acd1ab75efc88f4aa741" kind="typedef"><name>StencilOp</name></member>
+      <member refid="group__vertex-layout_1gab14e38875ed51577f61fbbe750a605ea" kind="typedef"><name>ShaderVertexAttributes</name></member>
+      <member refid="group__vertex-layout_1gaa3eb81233db95fb693918802ac36cc30" kind="typedef"><name>VertexTypes</name></member>
+    </sectiondef>
+    <sectiondef kind="var">
+      <member refid="group__render_1ga86f2208b879c568d1ee1e6e771c0caa1" kind="variable"><name>UP</name></member>
+      <memberdef kind="variable" id="namespaceklotter_1a43f9bbbce92ceeed2837fcace91d9612" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t klotter::MAX_TEXTURES_SUPPORTED</definition>
+        <argsstring></argsstring>
+        <name>MAX_TEXTURES_SUPPORTED</name>
+        <qualifiedname>klotter::MAX_TEXTURES_SUPPORTED</qualifiedname>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/constants.h" line="7" column="23" bodyfile="src/klotter/render/constants.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1af84f50d2d555a52091dca0e8b0707f8a" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>float</type>
+        <definition>float klotter::ALMOST_ZERO</definition>
+        <argsstring></argsstring>
+        <name>ALMOST_ZERO</name>
+        <qualifiedname>klotter::ALMOST_ZERO</qualifiedname>
+        <initializer>= 0.01f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/constants.h" line="9" column="17" bodyfile="src/klotter/render/constants.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1a6d9726b7a1f0528975dfda6051f71743" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>float</type>
+        <definition>float klotter::ALPHA_TRANSPARENCY_LIMIT</definition>
+        <argsstring></argsstring>
+        <name>ALPHA_TRANSPARENCY_LIMIT</name>
+        <qualifiedname>klotter::ALPHA_TRANSPARENCY_LIMIT</qualifiedname>
+        <initializer>= 1.0f - <ref refid="namespaceklotter_1af84f50d2d555a52091dca0e8b0707f8a" kindref="member">ALMOST_ZERO</ref></initializer>
+        <briefdescription>
+<para>if alpha goes above this limit, it is no longer considered transparent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/constants.h" line="14" column="17" bodyfile="src/klotter/render/constants.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1a6560e226d59ab07f92a3c0d1a4fd99bc" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OUTLINE_SCALE</definition>
+        <argsstring></argsstring>
+        <name>OUTLINE_SCALE</name>
+        <qualifiedname>klotter::OUTLINE_SCALE</qualifiedname>
+        <initializer>= 1.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/constants.h" line="16" column="17" bodyfile="src/klotter/render/constants.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1a095e93aa73a0f90b24c3e84cc8fe2afe" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int klotter::BLUR_SAMPLES</definition>
+        <argsstring></argsstring>
+        <name>BLUR_SAMPLES</name>
+        <qualifiedname>klotter::BLUR_SAMPLES</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/constants.h" line="18" column="15" bodyfile="src/klotter/render/constants.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceklotter_1aafbf3062eca044adc3d6d3cf54778a51" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename E</type>
+          </param>
+        </templateparamlist>
+        <type>std::underlying_type_t&lt; E &gt;</type>
+        <definition>std::underlying_type_t&lt; E &gt; klotter::base_cast</definition>
+        <argsstring>(E e) noexcept</argsstring>
+        <name>base_cast</name>
+        <qualifiedname>klotter::base_cast</qualifiedname>
+        <param>
+          <type>E</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/cpp.h" line="12" column="43" bodyfile="src/klotter/cpp.h" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a97ebef3ce88032d5a9016b09c001d176" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename E</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool klotter::is_flag_set</definition>
+        <argsstring>(E var, E flag)</argsstring>
+        <name>is_flag_set</name>
+        <qualifiedname>klotter::is_flag_set</qualifiedname>
+        <param>
+          <type>E</type>
+          <declname>var</declname>
+        </param>
+        <param>
+          <type>E</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/cpp.h" line="18" column="16" bodyfile="src/klotter/cpp.h" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a70c3ecdc0214c61c6277dda3f1f5f963" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::test_themes</definition>
+        <argsstring>()</argsstring>
+        <name>test_themes</name>
+        <qualifiedname>klotter::test_themes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/imgui.theme.h" line="10" column="6" declfile="src/klotter/imgui.theme.h" declline="10" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1ae8ba8f25677bd8a5d98681f05fd0a162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int klotter::run_main</definition>
+        <argsstring>(const RenderSettings &amp;rs, MakeAppFunction make_app)</argsstring>
+        <name>run_main</name>
+        <qualifiedname>klotter::run_main</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref> &amp;</type>
+          <declname>rs</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceklotter_1a7421aae5c39bf21635e20a1d6011fabd" kindref="member">MakeAppFunction</ref></type>
+          <declname>make_app</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/klotter.h" line="28" column="5" declfile="src/klotter/klotter.h" declline="28" declcolumn="5"/>
+      </memberdef>
+      <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
+      <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
+      <member refid="group__render_1ga3408f89cc9f18beff9e655676bd9fc1f" kind="function"><name>create_view_mat</name></member>
+      <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
+      <member refid="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" kind="function"><name>to_screen</name></member>
+      <memberdef kind="function" id="namespaceklotter_1a8655e92bbc13aff3832b4fed06e62fb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float klotter::linear_from_srgb</definition>
+        <argsstring>(float value, float gamma)</argsstring>
+        <name>linear_from_srgb</name>
+        <qualifiedname>klotter::linear_from_srgb</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gamma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="20" column="7" declfile="src/klotter/render/color.h" declline="20" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a16fc6bb5ae9c482d07217873f345e25e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 klotter::linear_from_srgb</definition>
+        <argsstring>(const Color &amp;value, float gamma)</argsstring>
+        <name>linear_from_srgb</name>
+        <qualifiedname>klotter::linear_from_srgb</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gamma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="21" column="11" declfile="src/klotter/render/color.h" declline="21" declcolumn="11"/>
+      </memberdef>
+      <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
+      <memberdef kind="function" id="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::setup_opengl_debug</definition>
+        <argsstring>()</argsstring>
+        <name>setup_opengl_debug</name>
+        <qualifiedname>klotter::setup_opengl_debug</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="9" column="6" declfile="src/klotter/render/opengl_utils.h" declline="9" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLenum</type>
+        <definition>GLenum klotter::Cint_to_glenum</definition>
+        <argsstring>(int i)</argsstring>
+        <name>Cint_to_glenum</name>
+        <qualifiedname>klotter::Cint_to_glenum</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="11" column="8" declfile="src/klotter/render/opengl_utils.h" declline="11" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLuint</type>
+        <definition>GLuint klotter::Cint_to_gluint</definition>
+        <argsstring>(int i)</argsstring>
+        <name>Cint_to_gluint</name>
+        <qualifiedname>klotter::Cint_to_gluint</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="12" column="8" declfile="src/klotter/render/opengl_utils.h" declline="12" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLsizeiptr</type>
+        <definition>GLsizeiptr klotter::Csizet_to_glsizeiptr</definition>
+        <argsstring>(std::size_t t)</argsstring>
+        <name>Csizet_to_glsizeiptr</name>
+        <qualifiedname>klotter::Csizet_to_glsizeiptr</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="13" column="12" declfile="src/klotter/render/opengl_utils.h" declline="13" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GLsizei</type>
+        <definition>GLsizei klotter::Csizet_to_glsizei</definition>
+        <argsstring>(std::size_t t)</argsstring>
+        <name>Csizet_to_glsizei</name>
+        <qualifiedname>klotter::Csizet_to_glsizei</qualifiedname>
+        <param>
+          <type>std::size_t</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="14" column="9" declfile="src/klotter/render/opengl_utils.h" declline="14" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+        <definition>u32 klotter::create_buffer</definition>
+        <argsstring>()</argsstring>
+        <name>create_buffer</name>
+        <qualifiedname>klotter::create_buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="16" column="5" declfile="src/klotter/render/opengl_utils.h" declline="16" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a939548cd29b251463ed344cde014e212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::destroy_buffer</definition>
+        <argsstring>(u32 vbo)</argsstring>
+        <name>destroy_buffer</name>
+        <qualifiedname>klotter::destroy_buffer</qualifiedname>
+        <param>
+          <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+          <declname>vbo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="17" column="6" declfile="src/klotter/render/opengl_utils.h" declline="17" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+        <definition>u32 klotter::create_vertex_array</definition>
+        <argsstring>()</argsstring>
+        <name>create_vertex_array</name>
+        <qualifiedname>klotter::create_vertex_array</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="19" column="5" declfile="src/klotter/render/opengl_utils.h" declline="19" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::destroy_vertex_array</definition>
+        <argsstring>(u32 vao)</argsstring>
+        <name>destroy_vertex_array</name>
+        <qualifiedname>klotter::destroy_vertex_array</qualifiedname>
+        <param>
+          <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
+          <declname>vao</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="20" column="6" declfile="src/klotter/render/opengl_utils.h" declline="20" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a9c262112545baed06ed5325e9796633d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::set_gl_viewport</definition>
+        <argsstring>(const glm::ivec2 &amp;sz)</argsstring>
+        <name>set_gl_viewport</name>
+        <qualifiedname>klotter::set_gl_viewport</qualifiedname>
+        <param>
+          <type>const glm::ivec2 &amp;</type>
+          <declname>sz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="22" column="6" declfile="src/klotter/render/opengl_utils.h" declline="22" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>glm::mat4</type>
+        <definition>glm::mat4 klotter::get_mesh_rotation_matrix</definition>
+        <argsstring>(const glm::vec3 &amp;rotation)</argsstring>
+        <name>get_mesh_rotation_matrix</name>
+        <qualifiedname>klotter::get_mesh_rotation_matrix</qualifiedname>
+        <param>
+          <type>const glm::vec3 &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="25" column="11" declfile="src/klotter/render/opengl_utils.h" declline="25" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a7befceb30fc99ff7fc48cf45778136e9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::opengl_nop</definition>
+        <argsstring>()</argsstring>
+        <name>opengl_nop</name>
+        <qualifiedname>klotter::opengl_nop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/opengl_utils.h" line="69" column="16" bodyfile="src/klotter/render/opengl_utils.h" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a3f825575d127751358894415f96c5bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::setup_textures</definition>
+        <argsstring>(ShaderProgram *shader, const std::vector&lt; Uniform * &gt; &amp;uniform_list)</argsstring>
+        <name>setup_textures</name>
+        <qualifiedname>klotter::setup_textures</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> *</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref> * &gt; &amp;</type>
+          <declname>uniform_list</declname>
+        </param>
+        <briefdescription>
+<para>Sets up textures for a shader program. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the shader to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uniform_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the uniforms to associate with texture units </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The shader must be bound before calling this function. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.h" line="170" column="6" declfile="src/klotter/render/shader.h" declline="170" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a6f86fb3893caeb7267b725bb433a6b1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool klotter::is_bound_for_shader</definition>
+        <argsstring>(const std::unordered_set&lt; VertexType &gt; &amp;debug_geom_shader_types)</argsstring>
+        <name>is_bound_for_shader</name>
+        <qualifiedname>klotter::is_bound_for_shader</qualifiedname>
+        <param>
+          <type>const std::unordered_set&lt; <ref refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kindref="member">VertexType</ref> &gt; &amp;</type>
+          <declname>debug_geom_shader_types</declname>
+        </param>
+        <briefdescription>
+<para>Verifies if the current shader matches the required vertex types. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>debug_geom_shader_types</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Required set of vertex types </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if all required types are present; otherwise, <computeroutput>false</computeroutput>. </para>
+</simplesect>
+<simplesect kind="note"><para>The shader must be bound before calling this function. </para>
+</simplesect>
+<simplesect kind="note"><para>Internal function, should only be available in debug builds </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.h" line="178" column="6" declfile="src/klotter/render/shader.h" declline="178" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a356ef4e2d5e2b61b7d5909081407207a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool klotter::is_shader_bound</definition>
+        <argsstring>(unsigned int program)</argsstring>
+        <name>is_shader_bound</name>
+        <qualifiedname>klotter::is_shader_bound</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>program</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a specific shader program is currently active. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>program</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the id of the shader program to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the program is active; otherwise, <computeroutput>false</computeroutput>. </para>
+</simplesect>
+<simplesect kind="note"><para>Internal function, should only be available in debug builds </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.h" line="185" column="6" declfile="src/klotter/render/shader.h" declline="185" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1ae6578d1bd38afcb9f3c56f0a839e6b59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::clear_shader_program</definition>
+        <argsstring>()</argsstring>
+        <name>clear_shader_program</name>
+        <qualifiedname>klotter::clear_shader_program</qualifiedname>
+        <briefdescription>
+<para>Clears the current open gl shader program binding. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.h" line="189" column="6" declfile="src/klotter/render/shader.h" declline="189" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a922b5d3cc7e03da98bcab5a44c7a20c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string klotter::generate_blur</definition>
+        <argsstring>(std::string_view src, const BlurOptions &amp;options)</argsstring>
+        <name>generate_blur</name>
+        <qualifiedname>klotter::generate_blur</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1BlurOptions" kindref="compound">BlurOptions</ref> &amp;</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="69" column="13" declfile="src/klotter/render/shader.source.h" declline="69" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a64c9c7c89ee622da0a56d5e0afc611de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1VertexShaderSource" kindref="compound">VertexShaderSource</ref></type>
+        <definition>VertexShaderSource klotter::load_shader_source</definition>
+        <argsstring>(const ShaderOptions &amp;options, const std::string &amp;uniform_buffer_source)</argsstring>
+        <name>load_shader_source</name>
+        <qualifiedname>klotter::load_shader_source</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1ShaderOptions" kindref="compound">ShaderOptions</ref> &amp;</type>
+          <declname>options</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uniform_buffer_source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="71" column="20" declfile="src/klotter/render/shader.source.h" declline="71" declcolumn="20"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1ab77d87614fce92926c05c1cf4ac83bfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1ShaderSource" kindref="compound">ShaderSource</ref></type>
+        <definition>ShaderSource klotter::load_skybox_source</definition>
+        <argsstring>(const std::string &amp;uniform_buffer_source)</argsstring>
+        <name>load_skybox_source</name>
+        <qualifiedname>klotter::load_skybox_source</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>uniform_buffer_source</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader.source.h" line="73" column="14" declfile="src/klotter/render/shader.source.h" declline="73" declcolumn="14"/>
+      </memberdef>
+      <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
+      <member refid="group__render_1gac2e3012d518484348974e4dc36e3112c" kind="function"><name>get_uniform</name></member>
+      <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
+      <member refid="group__render_1ga8072e6de57f4c7633a25803ddf551385" kind="function"><name>shader_from_container</name></member>
+      <member refid="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" kind="function"><name>load_shaders</name></member>
+      <member refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kind="function"><name>bind_texture_2d</name></member>
+      <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
+      <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
+      <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
+      <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
+      <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
+      <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
+      <memberdef kind="function" id="namespaceklotter_1a1156efb8b28797f795987665d554aea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Texture2d" kindref="compound">Texture2d</ref></type>
+        <definition>Texture2d klotter::load_image_from_embedded</definition>
+        <argsstring>(DEBUG_LABEL_ARG_MANY const embedded_binary &amp;image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd)</argsstring>
+        <name>load_image_from_embedded</name>
+        <qualifiedname>klotter::load_image_from_embedded</qualifiedname>
+        <param>
+          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const embedded_binary &amp;</type>
+          <declname>image_binary</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kindref="member">TextureEdge</ref></type>
+          <declname>te</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kindref="member">TextureRenderStyle</ref></type>
+          <declname>trs</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kindref="member">Transparency</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref></type>
+          <declname>cd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.io.h" line="11" column="11" declfile="src/klotter/render/texture.io.h" declline="11" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a13de4179633ea5c58f6bda9892efde71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref></type>
+        <definition>TextureCubemap klotter::load_cubemap_from_embedded</definition>
+        <argsstring>(DEBUG_LABEL_ARG_MANY const embedded_binary &amp;image_right, const embedded_binary &amp;image_left, const embedded_binary &amp;image_top, const embedded_binary &amp;image_bottom, const embedded_binary &amp;image_back, const embedded_binary &amp;image_front, ColorData cd)</argsstring>
+        <name>load_cubemap_from_embedded</name>
+        <qualifiedname>klotter::load_cubemap_from_embedded</qualifiedname>
+        <param>
+          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const embedded_binary &amp;</type>
+          <declname>image_right</declname>
+        </param>
+        <param>
+          <type>const embedded_binary &amp;</type>
+          <declname>image_left</declname>
+        </param>
+        <param>
+          <type>const embedded_binary &amp;</type>
+          <declname>image_top</declname>
+        </param>
+        <param>
+          <type>const embedded_binary &amp;</type>
+          <declname>image_bottom</declname>
+        </param>
+        <param>
+          <type>const embedded_binary &amp;</type>
+          <declname>image_back</declname>
+        </param>
+        <param>
+          <type>const embedded_binary &amp;</type>
+          <declname>image_front</declname>
+        </param>
+        <param>
+          <type><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref></type>
+          <declname>cd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.io.h" line="16" column="16" declfile="src/klotter/render/texture.io.h" declline="16" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1ae50f370f003f260d3e17d7ce55aefafd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ImVec2</type>
+        <definition>ImVec2 klotter::operator+</definition>
+        <argsstring>(const ImVec2 &amp;lhs, const ImVec2 &amp;rhs)</argsstring>
+        <name>operator+</name>
+        <qualifiedname>klotter::operator+</qualifiedname>
+        <param>
+          <type>const ImVec2 &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const ImVec2 &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/ui.h" line="11" column="8" declfile="src/klotter/render/ui.h" declline="11" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ImVec2</type>
+        <definition>ImVec2 klotter::operator-</definition>
+        <argsstring>(const ImVec2 &amp;lhs, const ImVec2 &amp;rhs)</argsstring>
+        <name>operator-</name>
+        <qualifiedname>klotter::operator-</qualifiedname>
+        <param>
+          <type>const ImVec2 &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const ImVec2 &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/ui.h" line="12" column="8" declfile="src/klotter/render/ui.h" declline="12" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ImVec2</type>
+        <definition>ImVec2 klotter::calculate_region</definition>
+        <argsstring>(const ImVec2 &amp;mouse_pos, const ImVec2 &amp;pos, const ImVec2 &amp;my_tex, const ImVec2 &amp;widget_size, float region_sz)</argsstring>
+        <name>calculate_region</name>
+        <qualifiedname>klotter::calculate_region</qualifiedname>
+        <param>
+          <type>const ImVec2 &amp;</type>
+          <declname>mouse_pos</declname>
+        </param>
+        <param>
+          <type>const ImVec2 &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const ImVec2 &amp;</type>
+          <declname>my_tex</declname>
+        </param>
+        <param>
+          <type>const ImVec2 &amp;</type>
+          <declname>widget_size</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>region_sz</declname>
+        </param>
+        <briefdescription>
+<para>exposed for testing purposes </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/ui.h" line="15" column="8" declfile="src/klotter/render/ui.h" declline="15" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a097b19b90783477eca0bb931a3ad7692" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::imgui_text</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>imgui_text</name>
+        <qualifiedname>klotter::imgui_text</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/ui.h" line="17" column="6" declfile="src/klotter/render/ui.h" declline="17" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a876b1901b34bbd4af4fe0152ea366e97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::imgui_image</definition>
+        <argsstring>(const FrameBuffer &amp;img)</argsstring>
+        <name>imgui_image</name>
+        <qualifiedname>klotter::imgui_image</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/ui.h" line="18" column="6" declfile="src/klotter/render/ui.h" declline="18" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a6308c1c02eba0c354d9b8f5621f63162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool klotter::simple_gamma_slider</definition>
+        <argsstring>(const char *label, float *gamma, float curve=1.5f, float min_gamma=1.6f, float max_gamma=2.8f)</argsstring>
+        <name>simple_gamma_slider</name>
+        <qualifiedname>klotter::simple_gamma_slider</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>label</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>gamma</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>curve</declname>
+          <defval>1.5f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>min_gamma</declname>
+          <defval>1.6f</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>max_gamma</declname>
+          <defval>2.8f</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/ui.h" line="19" column="6" declfile="src/klotter/render/ui.h" declline="19" declcolumn="6"/>
+      </memberdef>
+      <member refid="group__vertex-layout_1gac498a4f9c32fddd6f300437dec2051ad" kind="function"><name>is_instance_based</name></member>
+      <member refid="group__vertex-layout_1ga237368f15ea9a44ec4b6b7302d44c312" kind="function"><name>compile_shader_layout</name></member>
+      <member refid="group__vertex-layout_1gaafa6ccef1474d9837601f1f46c18e10d" kind="function"><name>get_geom_layout</name></member>
+      <member refid="group__vertex-layout_1gaf098cc3fc06209c4e177a1536d21660c" kind="function"><name>compile_attribute_layouts</name></member>
+      <member refid="group__vertex-layout_1ga32dd8d711a7c3af2bef87c46aa863269" kind="function"><name>compile_attribute_layouts</name></member>
+      <member refid="group__render_1ga32f679ec0675359820f93cfb44c2fc48" kind="function"><name>compile_geom</name></member>
+      <member refid="group__render_1ga5b8a0dd10d8f433def90492f9f0ef96d" kind="function"><name>compile_geom_with_transform_instance</name></member>
+      <member refid="group__render_1gab1c7bfa5f2902fc511ab0ef72a8d3f6b" kind="function"><name>make_mesh_instance</name></member>
+      <member refid="group__render_1ga14106c01b64a4fb907c564373ba5e691" kind="function"><name>make_mesh_instance</name></member>
+      <member refid="group__render_1ga7c41540b85fbcd00d0dfbe1104d10443" kind="function"><name>render_geom</name></member>
+      <member refid="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" kind="function"><name>render_geom_instanced</name></member>
+      <member refid="group__scurcve_1gad502f980124ff607cb9564e4562d6a25" kind="function"><name>s_curve_from_input</name></member>
+      <member refid="group__scurcve_1ga2c2164653e472f2eb8c12ab361bc7b8a" kind="function"><name>calculate_s_curve</name></member>
+      <member refid="group__scurcve_1ga053ee1a8fe68689ff1ef5b8d2488bc55" kind="function"><name>imgui_s_curve_editor</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/cpp.h" line="3" column="1"/>
+  </compounddef>
+</doxygen>
