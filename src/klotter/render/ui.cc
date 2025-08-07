@@ -1,5 +1,7 @@
 #include "klotter/render/ui.h"
 
+#include "klotter/str.h"
+
 #include "klotter/render/texture.h"
 
 namespace klotter
@@ -45,7 +47,10 @@ ImVec2 calculate_region(const ImVec2& mouse_pos, const ImVec2& pos, const ImVec2
 	return {region_x, region_y};
 }
 
-
+void imgui_text(const std::string& str)
+{
+    ImGui::Text("%s", str.c_str());
+}
 
 static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 {
@@ -54,7 +59,7 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 	constexpr float hover_scale = 4.0f;
 	const auto& io = ImGui::GetIO();
 
-	ImGui::Text("%.0fx%.0f", texture_size.x, texture_size.y);
+	imgui_text(Str{} << texture_size.x << "x" << texture_size.y);
 
 	const auto max_size = ImGui::GetContentRegionAvail();
 	const auto scale = std::min(max_size.x / texture_size.x, max_size.y / texture_size.y);
@@ -79,8 +84,8 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 
 		ImGui::BeginTooltip();
 		// todo(Gustav): can we display pixel value instead of where we are looking? is the region important information?
-		ImGui::Text("Min: (%.2f, %.2f)", region.x, region.y);
-		ImGui::Text("Max: (%.2f, %.2f)", region.x + region_size, region.y + region_size);
+		imgui_text(Str{} << "UL: " << region.x << " " << region.y);
+		imgui_text(Str{} << "LR: " << region.x + region_size << " " << region.y + region_size);
 		ImGui::Image(texture_id, ImVec2(region_size * hover_scale, region_size * hover_scale), uv0, uv1, tint_col, border_col);
 		ImGui::EndTooltip();
 	}
