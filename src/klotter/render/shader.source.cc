@@ -1,15 +1,14 @@
-#include "klotter/render/shader.source.h"
-
-#include "klotter/log.h"
+﻿#include "klotter/log.h"
 #include "klotter/str.h"
+
+#include "klotter/render/shader.source.h"
 
 #include "mustache/mustache.hpp"
 
-#include "default_shader.vert.glsl.h"
 #include "default_shader.frag.glsl.h"
-
-#include "skybox.vert.glsl.h"
+#include "default_shader.vert.glsl.h"
 #include "skybox.frag.glsl.h"
+#include "skybox.vert.glsl.h"
 
 namespace klotter
 {

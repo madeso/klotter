@@ -1,14 +1,13 @@
-#pragma once
-
-#include <optional>
+﻿#pragma once
 
 #include "klotter/render/blend.h"
 #include "klotter/render/compare.h"
-#include "klotter/render/stencilaction.h"
+#include "klotter/render/constants.h"
 #include "klotter/render/cullface.h"
 #include "klotter/render/rendermode.h"
+#include "klotter/render/stencilaction.h"
 
-#include "klotter/render/constants.h"
+#include <optional>
 
 namespace klotter
 {

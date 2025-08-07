@@ -1,7 +1,8 @@
-#include "catch2/catch_test_macros.hpp"
-#include "catchy/falsestring.h"
+﻿#include "klotter/scurve.h"
 
-#include "klotter/scurve.h"
+#include "catch2/catch_test_macros.hpp"
+
+#include "catchy/falsestring.h"
 
 template<typename T>
 struct Equaler

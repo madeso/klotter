@@ -1,6 +1,4 @@
-#include "klotter/render/texture.h"
-
-#include "stb_image.h"
+﻿#include "klotter/render/texture.h"
 
 #include "klotter/assert.h"
 #include "klotter/cint.h"
@@ -9,6 +7,8 @@
 
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/texture.io.h"
+
+#include "stb_image.h"
 
 
 namespace klotter

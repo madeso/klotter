@@ -1,6 +1,4 @@
-#include <utility>
-
-#include "klotter/render/world.h"
+﻿#include "klotter/render/world.h"
 
 #include "klotter/assert.h"
 #include "klotter/str.h"
@@ -9,6 +7,8 @@
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/shader.h"
 #include "klotter/render/vertex_layout.h"
+
+#include <utility>
 
 namespace klotter
 {

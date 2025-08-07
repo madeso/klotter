@@ -1,10 +1,10 @@
-#pragma once
-#include <unordered_set>
-
+﻿#pragma once
 #include "klotter/scurve.h"
 
 #include "klotter/render/material.h"
 #include "klotter/render/vertex_layout.h"
+
+#include <unordered_set>
 
 namespace klotter
 {

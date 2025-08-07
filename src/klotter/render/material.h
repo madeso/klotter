@@ -1,10 +1,10 @@
-#pragma once
-
-#include <memory>
-#include <optional>
+﻿#pragma once
 
 #include "klotter/render/color.h"
 #include "klotter/render/texture.h"
+
+#include <memory>
+#include <optional>
 
 namespace klotter
 {

@@ -1,6 +1,6 @@
-#include "catch2/catch_test_macros.hpp"
+﻿#include "klotter/render/texture.h"
 
-#include "klotter/render/texture.h"
+#include "catch2/catch_test_macros.hpp"
 
 using namespace klotter;
 

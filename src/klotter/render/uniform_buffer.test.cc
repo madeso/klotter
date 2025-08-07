@@ -1,7 +1,8 @@
-#include "catch2/catch_test_macros.hpp"
-#include "catchy/stringeq.h"
+﻿#include "klotter/render/uniform_buffer.h"
 
-#include "klotter/render/uniform_buffer.h"
+#include "catch2/catch_test_macros.hpp"
+
+#include "catchy/stringeq.h"
 
 
 using namespace klotter;

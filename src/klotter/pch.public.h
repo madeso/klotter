@@ -1,5 +1,8 @@
 // public header file for the precompiled header
 
+// in favor of euphoria base library
+#include "klotter/dependency_glm.h"
+
 #include <cstdint>
 
 #include <unordered_map>
@@ -14,10 +17,6 @@
 
 #include <sstream>
 #include <memory>
-
-
-// in favor of euphoria base library
-#include "klotter/dependency_glm.h"
 
 
 using f32 = float;

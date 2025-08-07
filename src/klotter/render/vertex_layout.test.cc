@@ -1,11 +1,12 @@
+﻿
+#include "klotter/render/vertex_layout.h"
 
 #include "catch2/catch_test_macros.hpp"
 #include "catch2/generators/catch_generators.hpp"
-#include "catch2/matchers/catch_matchers.hpp"
 #include "catch2/matchers/catch_matchers_string.hpp"
-#include "catchy/vectorequals.h"
+#include "catch2/matchers/catch_matchers.hpp"
 
-#include "klotter/render/vertex_layout.h"
+#include "catchy/vectorequals.h"
 
 using namespace klotter;
 

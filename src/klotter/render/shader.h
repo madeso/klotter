@@ -1,10 +1,10 @@
-#pragma once
-
-#include <unordered_set>
+﻿#pragma once
 
 #include "klotter/render/opengl_labels.h"
-#include "klotter/render/vertex_layout.h"
 #include "klotter/render/uniform.h"
+#include "klotter/render/vertex_layout.h"
+
+#include <unordered_set>
 
 namespace klotter
 {

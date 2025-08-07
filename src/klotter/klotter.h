@@ -1,14 +1,14 @@
-#pragma once
+﻿#pragma once
 
-#include <memory>
+#include "klotter/render/camera.h"
+#include "klotter/render/enable_high_performance_graphics.h"
+#include "klotter/render/renderer.h"
+
+#include "klotter/dependency_sdl.h"
 
 #include "imgui.h"
 
-#include "klotter/render/camera.h"
-#include "klotter/render/renderer.h"
-#include "klotter/render/enable_high_performance_graphics.h"
-
-#include "klotter/dependency_sdl.h"
+#include <memory>
 
 namespace klotter
 {

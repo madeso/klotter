@@ -1,8 +1,8 @@
-#pragma once
-
-#include <memory>
+﻿#pragma once
 
 #include "klotter/render/texture.h"
+
+#include <memory>
 
 namespace klotter
 {

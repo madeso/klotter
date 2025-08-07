@@ -1,7 +1,8 @@
-#pragma once
+﻿#pragma once
+
+#include "klotter/render/texture.h"
 
 #include "embed/types.h"
-#include "klotter/render/texture.h"
 
 namespace klotter
 {

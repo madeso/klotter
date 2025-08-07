@@ -1,8 +1,9 @@
-#include "klotter/render/opengl_utils.h"
+﻿#include "klotter/render/opengl_utils.h"
 
 #include "klotter/assert.h"
-#include "klotter/dependency_sdl.h"
 #include "klotter/str.h"
+
+#include "klotter/dependency_sdl.h"
 
 namespace klotter
 {

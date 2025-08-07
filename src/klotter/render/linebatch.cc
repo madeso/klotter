@@ -1,9 +1,10 @@
-#include "klotter/render/linebatch.h"
+﻿#include "klotter/render/linebatch.h"
 
 #include "klotter/assert.h"
-#include "klotter/dependency_glad.h"
 
 #include "klotter/render/opengl_utils.h"
+
+#include "klotter/dependency_glad.h"
 
 namespace klotter
 {

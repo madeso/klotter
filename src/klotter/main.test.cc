@@ -1,6 +1,6 @@
-#include "catch2/catch_session.hpp"
+﻿#include "klotter/assert.h"
 
-#include "klotter/assert.h"
+#include "catch2/catch_session.hpp"
 
 int main(int argc, char* argv[])
 {

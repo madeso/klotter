@@ -1,8 +1,7 @@
-#include "klotter/render/renderer.pimpl.h"
-
-#include "klotter/log.h"
+﻿#include "klotter/log.h"
 
 #include "klotter/render/fullscreen.h"
+#include "klotter/render/renderer.pimpl.h"
 #include "klotter/render/shader_resource.h"
 
 namespace klotter

@@ -1,12 +1,14 @@
-#include "klotter/klotter.h"
-#include "klotter/dependency_glad.h"
-#include "klotter/render/opengl_utils.h"
-
-#include "imgui.h"
-#include "imgui_impl_sdl2.h"
-#include "imgui_impl_opengl3.h"
+﻿#include "klotter/klotter.h"
 
 #include "klotter/log.h"
+
+#include "klotter/render/opengl_utils.h"
+
+#include "klotter/dependency_glad.h"
+
+#include "imgui_impl_opengl3.h"
+#include "imgui_impl_sdl2.h"
+#include "imgui.h"
 
 namespace klotter
 {

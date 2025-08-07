@@ -1,9 +1,9 @@
-#include "klotter/render/geom.extract.h"
+﻿#include "klotter/render/geom.h"
 
-#include "klotter/cint.h"
 #include "klotter/assert.h"
+#include "klotter/cint.h"
 
-#include "klotter/render/geom.h"
+#include "klotter/render/geom.extract.h"
 #include "klotter/render/vertex_layout.h"
 
 #include <numeric>

@@ -1,13 +1,13 @@
-#include "klotter/scurve.h"
+﻿#include "klotter/scurve.h"
 
-#include <cmath>
+#include "klotter/assert.h"
+#include "klotter/cint.h"
+
+#include "klotter/render/ui.h"
 
 #include "imgui.h"
 
-#include "klotter/cint.h"
-#include "klotter/assert.h"
-
-#include "klotter/render/ui.h"
+#include <cmath>
 
 namespace klotter
 {
