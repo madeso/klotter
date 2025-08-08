@@ -95,7 +95,7 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 
 static ImTextureID imgui_texture_from(unsigned int texture)
 {
-	std::int64_t id = texture;
+	const std::int64_t id = texture;
 	return reinterpret_cast<ImTextureID>(id);
 }
 

@@ -231,7 +231,7 @@ bool LoadedShader_Default_Container::is_loaded() const
 
 
 RealizeShader::RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh)
-	: shader(sh)
+	: shader(std::move(sh))
 	, gamma_uniform(shader->program->get_uniform("u_gamma"))
 	, exposure_uniform(shader->program->get_uniform("u_exposure"))
 {
@@ -240,7 +240,7 @@ RealizeShader::RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh)
 
 
 ExtractShader::ExtractShader(std::shared_ptr<LoadedPostProcShader>&& sh)
-	: shader(sh)
+	: shader(std::move(sh))
 	, cutoff_uniform(shader->program->get_uniform("u_cutoff"))
 {
 }
