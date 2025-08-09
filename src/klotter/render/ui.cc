@@ -52,11 +52,25 @@ void imgui_text(const std::string& str)
     ImGui::Text("%s", str.c_str());
 }
 
+static void image_tooltip(ImTextureID texture_id, const ImVec2 texture_size, const float& region_size, const float& hover_scale,
+	const ImVec2 mouse_pos, const ImVec2 widget_size, const ImVec2 pos, const ImVec4 tint_col, const ImVec4 border_col)
+{
+	const auto region = calculate_region(mouse_pos, pos, texture_size, widget_size, region_size);
+	const auto flipped_region_y = texture_size.y - region.y;
+	const auto uv0 = ImVec2{region.x / texture_size.x, (flipped_region_y + region_size) / texture_size.y};
+	const auto uv1 = ImVec2{(region.x + region_size) / texture_size.x, (flipped_region_y) / texture_size.y};
+
+	// todo(Gustav): can we display pixel value instead of where we are looking? is the region important information?
+	imgui_text(Str{} << "UL: " << region.x << " " << region.y);
+	imgui_text(Str{} << "LR: " << region.x + region_size << " " << region.y + region_size);
+	ImGui::Image(texture_id, ImVec2(region_size * hover_scale, region_size * hover_scale), uv0, uv1, tint_col, border_col);
+}
+
 static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 {
 	// todo(Gustav): make the arguments widget_size and zoom level AND make them configurable (with scrolling)
-	constexpr float region_size = 32.0f;
-	constexpr float hover_scale = 4.0f;
+	static float region_size = 32.0f;
+	static float hover_scale = 4.0f;
 	const auto& io = ImGui::GetIO();
 
 	imgui_text(Str{} << texture_size.x << "x" << texture_size.y);
@@ -74,19 +88,27 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 	constexpr auto uv_max = ImVec2{1.0f, 0.0f};	 // Lower-right
 	constexpr auto tint_col = ImVec4{1.0f, 1.0f, 1.0f, 1.0f};
 	const auto border_col = ImGui::GetStyleColorVec4(ImGuiCol_Border);
+
+	static ImVec2 latest_tooltip;
+
+	constexpr const char* const popup_id = "image config popup";
+
+	if (ImGui::BeginPopupContextItem(popup_id))  // <-- use last item id as popup id
+	{
+		ImGui::DragFloat("Size", &region_size, 0.001f);
+		ImGui::DragFloat("Scale", &hover_scale, 0.001f);
+		image_tooltip(texture_id, texture_size, region_size, hover_scale, latest_tooltip, widget_size, pos, tint_col, border_col);
+		if (ImGui::Button("Close")) ImGui::CloseCurrentPopup();
+		ImGui::EndPopup();
+	}
 	ImGui::Image(texture_id, widget_size, uv_min, uv_max, tint_col, border_col);
+	ImGui::OpenPopupOnItemClick(popup_id, ImGuiPopupFlags_MouseButtonRight);
+	
 	if (ImGui::IsItemHovered())
 	{
-		const auto region = calculate_region(io.MousePos, pos, texture_size, widget_size, region_size);
-		const auto flipped_region_y = texture_size.y - region.y;
-		const auto uv0 = ImVec2{region.x / texture_size.x, (flipped_region_y + region_size) / texture_size.y};
-		const auto uv1 = ImVec2{(region.x + region_size) / texture_size.x, (flipped_region_y) / texture_size.y};
-
+		latest_tooltip = io.MousePos;
 		ImGui::BeginTooltip();
-		// todo(Gustav): can we display pixel value instead of where we are looking? is the region important information?
-		imgui_text(Str{} << "UL: " << region.x << " " << region.y);
-		imgui_text(Str{} << "LR: " << region.x + region_size << " " << region.y + region_size);
-		ImGui::Image(texture_id, ImVec2(region_size * hover_scale, region_size * hover_scale), uv0, uv1, tint_col, border_col);
+		image_tooltip(texture_id, texture_size, region_size, hover_scale, io.MousePos, widget_size, pos, tint_col, border_col);
 		ImGui::EndTooltip();
 	}
 }
