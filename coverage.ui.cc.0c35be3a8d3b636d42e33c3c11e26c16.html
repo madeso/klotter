@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/ui.cc</div>
-            <div>Date: 2025-08-09 07:18:09</div>
+            <div>Date: 2025-08-11 14:14:29</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -485,7 +485,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">image_tooltip</span><span class="p">(</span><span class="n">ImTextureID</span><span class="w"> </span><span class="n">texture_id</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ImVec2</span><span class="w"> </span><span class="n">texture_size</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">&amp;</span><span class="w"> </span><span class="n">region_size</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hover_scale</span><span class="p">,</span></td>
+                <td class="src uncoveredLine"><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">image_tooltip</span><span class="p">(</span><span class="n">ImTextureID</span><span class="w"> </span><span class="n">texture_id</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ImVec2</span><span class="w"> </span><span class="n">texture_size</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">&amp;</span><span class="w"> </span><span class="n">region_size</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hover_size</span><span class="p">,</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l56" href="#l56">56</a></td>
@@ -520,14 +520,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">uv0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImVec2</span><span class="p">{</span><span class="n">region</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">texture_size</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">flipped_region_y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">region_size</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">texture_size</span><span class="p">.</span><span class="n">y</span><span class="p">};</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">uv0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImVec2</span><span class="p">{</span><span class="n">region</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">texture_size</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">flipped_region_y</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">texture_size</span><span class="p">.</span><span class="n">y</span><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">uv1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImVec2</span><span class="p">{(</span><span class="n">region</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">region_size</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">texture_size</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">flipped_region_y</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">texture_size</span><span class="p">.</span><span class="n">y</span><span class="p">};</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">uv1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImVec2</span><span class="p">{(</span><span class="n">region</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">region_size</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">texture_size</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">flipped_region_y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">region_size</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">texture_size</span><span class="p">.</span><span class="n">y</span><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
@@ -562,7 +562,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui</span><span class="o">::</span><span class="n">Image</span><span class="p">(</span><span class="n">texture_id</span><span class="p">,</span><span class="w"> </span><span class="n">ImVec2</span><span class="p">(</span><span class="n">region_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">hover_scale</span><span class="p">,</span><span class="w"> </span><span class="n">region_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">hover_scale</span><span class="p">),</span><span class="w"> </span><span class="n">uv0</span><span class="p">,</span><span class="w"> </span><span class="n">uv1</span><span class="p">,</span><span class="w"> </span><span class="n">tint_col</span><span class="p">,</span><span class="w"> </span><span class="n">border_col</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">ImGui</span><span class="o">::</span><span class="n">Image</span><span class="p">(</span><span class="n">texture_id</span><span class="p">,</span><span class="w"> </span><span class="n">ImVec2</span><span class="p">(</span><span class="n">hover_size</span><span class="p">,</span><span class="w"> </span><span class="n">hover_size</span><span class="p">),</span><span class="w"> </span><span class="n">uv0</span><span class="p">,</span><span class="w"> </span><span class="n">uv1</span><span class="p">,</span><span class="w"> </span><span class="n">tint_col</span><span class="p">,</span><span class="w"> </span><span class="n">border_col</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l67" href="#l67">67</a></td>
@@ -611,7 +611,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hover_scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0f</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hover_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">128.0f</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l74" href="#l74">74</a></td>
@@ -786,21 +786,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">DragFloat</span><span class="p">(</span><span class="s">&quot;Size&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">region_size</span><span class="p">,</span><span class="w"> </span><span class="mf">0.001f</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">DragFloat</span><span class="p">(</span><span class="s">&quot;Size&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">region_size</span><span class="p">,</span><span class="w"> </span><span class="mf">0.01f</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l99" href="#l99">99</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">DragFloat</span><span class="p">(</span><span class="s">&quot;Scale&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hover_scale</span><span class="p">,</span><span class="w"> </span><span class="mf">0.001f</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">DragFloat</span><span class="p">(</span><span class="s">&quot;Scale&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hover_size</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l100" href="#l100">100</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">image_tooltip</span><span class="p">(</span><span class="n">texture_id</span><span class="p">,</span><span class="w"> </span><span class="n">texture_size</span><span class="p">,</span><span class="w"> </span><span class="n">region_size</span><span class="p">,</span><span class="w"> </span><span class="n">hover_scale</span><span class="p">,</span><span class="w"> </span><span class="n">latest_tooltip</span><span class="p">,</span><span class="w"> </span><span class="n">widget_size</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">tint_col</span><span class="p">,</span><span class="w"> </span><span class="n">border_col</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">image_tooltip</span><span class="p">(</span><span class="n">texture_id</span><span class="p">,</span><span class="w"> </span><span class="n">texture_size</span><span class="p">,</span><span class="w"> </span><span class="n">region_size</span><span class="p">,</span><span class="w"> </span><span class="n">hover_size</span><span class="p">,</span><span class="w"> </span><span class="n">latest_tooltip</span><span class="p">,</span><span class="w"> </span><span class="n">widget_size</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">tint_col</span><span class="p">,</span><span class="w"> </span><span class="n">border_col</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l101" href="#l101">101</a></td>
@@ -877,7 +877,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">image_tooltip</span><span class="p">(</span><span class="n">texture_id</span><span class="p">,</span><span class="w"> </span><span class="n">texture_size</span><span class="p">,</span><span class="w"> </span><span class="n">region_size</span><span class="p">,</span><span class="w"> </span><span class="n">hover_scale</span><span class="p">,</span><span class="w"> </span><span class="n">io</span><span class="p">.</span><span class="n">MousePos</span><span class="p">,</span><span class="w"> </span><span class="n">widget_size</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">tint_col</span><span class="p">,</span><span class="w"> </span><span class="n">border_col</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">image_tooltip</span><span class="p">(</span><span class="n">texture_id</span><span class="p">,</span><span class="w"> </span><span class="n">texture_size</span><span class="p">,</span><span class="w"> </span><span class="n">region_size</span><span class="p">,</span><span class="w"> </span><span class="n">hover_size</span><span class="p">,</span><span class="w"> </span><span class="n">io</span><span class="p">.</span><span class="n">MousePos</span><span class="p">,</span><span class="w"> </span><span class="n">widget_size</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">tint_col</span><span class="p">,</span><span class="w"> </span><span class="n">border_col</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l112" href="#l112">112</a></td>
