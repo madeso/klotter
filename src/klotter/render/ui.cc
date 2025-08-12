@@ -98,7 +98,10 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 		ImGui::DragFloat("Size", &region_size, 0.01f);
 		ImGui::DragFloat("Scale", &hover_size, 1.0f);
 		image_tooltip(texture_id, texture_size, region_size, hover_size, latest_tooltip, widget_size, pos, tint_col, border_col);
-		if (ImGui::Button("Close")) ImGui::CloseCurrentPopup();
+		if (ImGui::Button("Close"))
+		{
+			ImGui::CloseCurrentPopup();
+		}
 		ImGui::EndPopup();
 	}
 	ImGui::Image(texture_id, widget_size, uv_min, uv_max, tint_col, border_col);
