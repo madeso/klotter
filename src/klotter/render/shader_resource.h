@@ -242,6 +242,15 @@ struct ExtractShader
 	Uniform cutoff_uniform;
 };
 
+struct PingPongBlurShader
+{
+	explicit PingPongBlurShader(std::shared_ptr<LoadedPostProcShader>&& sh);
+
+	std::shared_ptr<LoadedPostProcShader> shader;
+	Uniform is_horizontal_uniform;
+};
+
+
 /// All loaded shaders.
 struct ShaderResource
 {
@@ -262,6 +271,7 @@ struct ShaderResource
 	/// the realization shader that is always run
 	RealizeShader pp_realize;
 	ExtractShader pp_extract;
+	PingPongBlurShader pp_ping;
 
 	/// verify that the shaders are loaded
 	[[nodiscard]] bool is_loaded() const;

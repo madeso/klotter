@@ -19,6 +19,9 @@ struct BloomRender
 {
 	ExtractShader* extract_shader;
 	std::shared_ptr<FrameBuffer> bloom_buffer;
+
+	PingPongBlurShader* ping_pong_shader;
+	std::array<std::shared_ptr<FrameBuffer>, 2> ping_pong_buffer;
 };
 
 /// @brief A source that "just" renders the world.
@@ -34,7 +37,7 @@ struct RenderWorld : RenderSource
 	RealizeShader* realize_shader;
 	std::optional<BloomRender> bloom_render;
 
-	RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractShader* ex_sh, int msaa_samples, bool* h, float* e);
+	RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractShader* ex_sh, PingPongBlurShader* ping_sh, int msaa_samples, bool* h, float* e);
 
 	void update(const PostProcArg& arg);
 

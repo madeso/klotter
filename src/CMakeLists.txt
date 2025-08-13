@@ -8,6 +8,7 @@ set(shaders
     klotter/render/shaders/pp.damage.frag.glsl
     klotter/render/shaders/pp.blur.frag.glsl
     klotter/render/shaders/pp.realize.frag.glsl
+    klotter/render/shaders/pp.ping_pong_blur.frag.glsl
     klotter/render/shaders/skybox.vert.glsl
     klotter/render/shaders/skybox.frag.glsl
 )

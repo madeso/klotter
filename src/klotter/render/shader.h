@@ -77,6 +77,14 @@ struct ShaderProgram
      */
 	void set_float(const Uniform& uniform, float value);
 
+
+    /** Sets a uniform boolean value.
+     * @param uniform the target uniform
+     * @param value the value
+     * @note The shader must be bound before calling this method
+     */
+	void set_bool(const Uniform& uniform, bool value);
+
 	/** Sets a uniform 2d vector.
 	 * Does nothing if the uniform is a zombie.
      * @param uniform the target uniform

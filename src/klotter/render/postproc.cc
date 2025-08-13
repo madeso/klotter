@@ -50,17 +50,22 @@ void Effect::set_enabled(bool n)
 // todo(Gustav): should this be a user config option? evaluate higher/lower bits, probably 16 or 32 since it needs to be floating point for hdr
 constexpr ColorBitsPerPixel render_world_color_bits_per_pixel = ColorBitsPerPixel::use_16;
 
-std::optional<BloomRender> build_bloom(const glm::ivec2& size, ExtractShader* sh)
+std::optional<BloomRender> build_bloom(const glm::ivec2& size, ExtractShader* sh, PingPongBlurShader* ping_sh)
 {
 	if (sh == nullptr) { return std::nullopt; }
 
 	auto bloom_buffer = FrameBufferBuilder{size}
 		 .build(USE_DEBUG_LABEL("bloom extraction buffer"));
 
-	return BloomRender{sh, bloom_buffer};
+	auto ping_one = FrameBufferBuilder{size}
+		 .build(USE_DEBUG_LABEL("ping-pong bloom buffer one"));
+	auto ping_two = FrameBufferBuilder{size}
+		 .build(USE_DEBUG_LABEL("ping-pong bloom buffer two"));
+
+	return BloomRender{sh, bloom_buffer, ping_sh, {ping_one, ping_two}};
 }
 
-RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractShader* ex_sh, int msaa_samples, bool* h, float* e)
+RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractShader* ex_sh, PingPongBlurShader* ping_sh, int msaa_samples, bool* h, float* e)
 	: window_size(size)
 	, use_hdr(h)
 	, exposure(e)
@@ -74,7 +79,7 @@ RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractSha
 		.with_color_bits(render_world_color_bits_per_pixel)
 		.build(USE_DEBUG_LABEL("realized msaa buffer")))
 	, realize_shader(re_sh)
-	, bloom_render(build_bloom(size, ex_sh))
+	, bloom_render(build_bloom(size, ex_sh, ping_sh))
 {
 	ASSERT(use_hdr);
 	ASSERT(exposure);
@@ -98,28 +103,77 @@ void RenderWorld::update(const PostProcArg& arg)
 	// extract overexposed
 	if (bloom_render.has_value())
 	{
-		SCOPED_DEBUG_GROUP("extracting to overexposed buffer"sv);
-		StateChanger{&arg.renderer->pimpl->states}
-			.cull_face(false)
-			.stencil_test(false)
-			.depth_test(false)
-			.depth_mask(false)
-			.blending(false);
-
-		glClearColor(0, 0, 0, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
-		auto bound = BoundFbo{bloom_render->bloom_buffer};
-
+		// extract overexposed pixels
 		{
-			const auto& container = bloom_render->extract_shader;
-			const auto& shader = container->shader;
-			const auto& program = shader->program;
-			program->use();
-			program->set_float(container->cutoff_uniform, arg.renderer->settings.bloom_cutoff);
-			bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *realized_buffer);
+			SCOPED_DEBUG_GROUP("extracting to overexposed buffer"sv);
+			StateChanger{&arg.renderer->pimpl->states}
+				.cull_face(false)
+				.stencil_test(false)
+				.depth_test(false)
+				.depth_mask(false)
+				.blending(false);
 
-			render_geom(*arg.renderer->pimpl->full_screen_geom);
+			glClearColor(0, 0, 0, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);
+
+			// todo(Gustav): why bind this late... shouldn't this be first???
+			auto bound = BoundFbo{bloom_render->bloom_buffer};
+
+			{
+				const auto& container = bloom_render->extract_shader;
+				const auto& shader = container->shader;
+				const auto& program = shader->program;
+				program->use();
+				program->set_float(container->cutoff_uniform, arg.renderer->settings.bloom_cutoff);
+				bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *realized_buffer);
+
+				render_geom(*arg.renderer->pimpl->full_screen_geom);
+			}
+		}
+
+		// blur the buffers
+		{
+			SCOPED_DEBUG_GROUP("blur extracted pixels for bloom"sv);
+			bool is_horizontal = true;
+			for (int blur_iteration = 0; blur_iteration < arg.renderer->settings.bloom_blur_steps; blur_iteration += 1)
+			{
+				const auto is_first_iteration = blur_iteration == 0;
+
+				const std::size_t source_index = is_horizontal ? 1 : 0;
+				const std::size_t target_index = is_horizontal ? 0 : 1;
+
+				SCOPED_DEBUG_GROUP(
+					Str{} << "blur pass #" << blur_iteration << " ("
+						<< (is_horizontal ? "hori" : "vert") << ", "
+						<< (is_first_iteration ? "first" : "after") << ")"
+				);
+				auto bound = BoundFbo{bloom_render->ping_pong_buffer[target_index]};
+				StateChanger{&arg.renderer->pimpl->states}
+					.cull_face(false)
+					.stencil_test(false)
+					.depth_test(false)
+					.depth_mask(false)
+					.blending(false);
+
+				glClearColor(0, 0, 0, 1.0f);
+				glClear(GL_COLOR_BUFFER_BIT);
+
+				{
+					const auto& container = bloom_render->ping_pong_shader;
+					const auto& shader = container->shader;
+					const auto& program = shader->program;
+					program->use();
+					program->set_bool(container->is_horizontal_uniform, is_horizontal);
+
+					auto& src_texture = is_first_iteration ? bloom_render->bloom_buffer
+												  : bloom_render->ping_pong_buffer[source_index];
+					bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *src_texture);
+
+					render_geom(*arg.renderer->pimpl->full_screen_geom);
+				}
+
+				is_horizontal = ! is_horizontal;
+			}
 		}
 	}
 
@@ -163,6 +217,9 @@ void RenderWorld::gui()
 	if (bloom_render && bloom_render->bloom_buffer)
 	{
 		imgui_image(*bloom_render->bloom_buffer);
+
+		imgui_image(*bloom_render->ping_pong_buffer[0]);
+		imgui_image(*bloom_render->ping_pong_buffer[1]);
 	}
 }
 
@@ -262,6 +319,7 @@ void EffectStack::render(const PostProcArg& arg)
 			arg.window_size,
 			&arg.renderer->pimpl->shaders_resources.pp_realize,
 			&arg.renderer->pimpl->shaders_resources.pp_extract,
+			&arg.renderer->pimpl->shaders_resources.pp_ping,
 			latest_msaa,
 			&use_hdr,
 			&exposure

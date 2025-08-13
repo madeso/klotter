@@ -224,6 +224,19 @@ void ShaderProgram::set_float(const Uniform& uniform, float value) // NOLINT(rea
 	glUniform1f(uniform.location, value);
 }
 
+void ShaderProgram::set_bool(const Uniform& uniform, bool value)  // NOLINT(readability-make-member-function-const)
+{
+	ASSERT(is_shader_bound(shader_program));
+	if (uniform.is_valid() == false)
+	{
+		return;
+	}
+	ASSERT(uniform.debug_shader_program == shader_program);
+
+	ASSERT(uniform.texture == -1 && "uniform is a texture not a float");
+	glUniform1i(uniform.location, value ? 1 : 0);
+}
+
 void ShaderProgram::set_vec2(const Uniform& uniform, float x, float y) // NOLINT(readability-make-member-function-const)
 {
 	ASSERT(is_shader_bound(shader_program));

@@ -17,6 +17,7 @@
 #include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
 #include "pp.extract.frag.glsl.h"
+#include "pp.ping_pong_blur.frag.glsl.h"
 #include "pp.realize.frag.glsl.h"
 
 
@@ -245,6 +246,12 @@ ExtractShader::ExtractShader(std::shared_ptr<LoadedPostProcShader>&& sh)
 {
 }
 
+PingPongBlurShader::PingPongBlurShader(std::shared_ptr<LoadedPostProcShader>&& sh)
+	: shader(std::move(sh))
+	, is_horizontal_uniform(shader->program->get_uniform("u_is_horizontal"))
+{
+}
+
 
 
 bool ShaderResource::is_loaded() const
@@ -429,6 +436,14 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		),
 		PostProcSetup::none
 	)};
+	auto pp_ping = PingPongBlurShader{std::make_shared<LoadedPostProcShader>(
+		std::make_shared<ShaderProgram>(
+			USE_DEBUG_LABEL_MANY("pp ping-pong") std::string{PP_VERT_GLSL},
+			std::string{PP_PING_PONG_BLUR_FRAG_GLSL},
+			full_screen.layout
+		),
+		PostProcSetup::none
+	)};
 
 	auto loaded_single_color = load_shader(
 		USE_DEBUG_LABEL_MANY("single color") global_shader_data, single_color_shader, TransformSource::Uniform
@@ -457,7 +472,8 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		pp_blurv,
 		pp_blurh,
 		pp_realize,
-		pp_extract
+		pp_extract,
+		pp_ping
 	};
 }
 

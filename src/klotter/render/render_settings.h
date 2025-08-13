@@ -28,6 +28,10 @@ struct RenderSettings
 	/// If brightness goes over this value, it will contribute to the bloom.
 	/// The renderer doesn't need to restart when this value has changed.
 	float bloom_cutoff = 1.0f;
+
+	/// how any steps of bloom blur to perform.
+	/// The renderer doesn't need to restart when this value has changed.
+	int bloom_blur_steps = 10;
 };
 
 /**

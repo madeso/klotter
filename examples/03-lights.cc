@@ -390,6 +390,7 @@ struct LightsSample : Sample
 		imgui_color("Clear color", &world.clear_color);
 		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
 		ImGui::DragFloat("Bloom cutoff", &renderer->settings.bloom_cutoff, FAC_SPEED);
+		ImGui::DragInt("Bloom blur steps", &renderer->settings.bloom_blur_steps);
 
 		ImGui::SeparatorText("Effects");
 		{
