@@ -69,19 +69,15 @@ static void image_tooltip(ImTextureID texture_id, const ImVec2 texture_size, con
 static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 {
 	// todo(Gustav): make the arguments widget_size and zoom level AND make them configurable (with scrolling)
+	static float widget_height = 100.0f;
 	static float region_size = 32.0f;
 	static float hover_size = 128.0f;
 	const auto& io = ImGui::GetIO();
 
 	imgui_text(Str{} << texture_size.x << "x" << texture_size.y);
 
-	const auto max_size = ImGui::GetContentRegionAvail();
-	const auto scale = std::min(max_size.x / texture_size.x, max_size.y / texture_size.y);
-	const auto widget_size = ImVec2
-	{
-		std::max(10.0f, texture_size.x * scale),
-		std::max(10.0f, texture_size.y * scale)
-	};
+	const auto widget_width = (texture_size.x / texture_size.y) * widget_height;
+	const auto widget_size = ImVec2{widget_width, widget_height};
 
 	const auto pos = ImGui::GetCursorScreenPos();
 	constexpr auto uv_min = ImVec2{0.0f, 1.0f};	 // Top-left
@@ -95,6 +91,7 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 
 	if (ImGui::BeginPopupContextItem(popup_id))  // <-- use last item id as popup id
 	{
+		ImGui::DragFloat("Base", &widget_height, 1.0f);
 		ImGui::DragFloat("Size", &region_size, 0.01f);
 		ImGui::DragFloat("Scale", &hover_size, 1.0f);
 		image_tooltip(texture_id, texture_size, region_size, hover_size, latest_tooltip, widget_size, pos, tint_col, border_col);
