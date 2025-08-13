@@ -10,5 +10,6 @@ var searchData=
   ['indigo_7',['indigo',['../group__imguicolors.html#ga7af53378e11ed2f4ec0c2ce54b6be954',1,'klotter::imgui']]],
   ['instance_5fvbo_8',['instance_vbo',['../structklotter_1_1CompiledGeom__TransformInstance.html#ab5f7094925a36f1a915bbb22a51d6759',1,'klotter::CompiledGeom_TransformInstance']]],
   ['instances_9',['instances',['../structklotter_1_1World.html#a42950d49b98dc3304ea9a25ddbf83c9f',1,'klotter::World']]],
-  ['is_5fgauss_10',['is_gauss',['../structklotter_1_1BlurOptions.html#a95c8cd4bd600737931412e2230899dfa',1,'klotter::BlurOptions']]]
+  ['is_5fgauss_10',['is_gauss',['../structklotter_1_1BlurOptions.html#a95c8cd4bd600737931412e2230899dfa',1,'klotter::BlurOptions']]],
+  ['is_5fhorizontal_5funiform_11',['is_horizontal_uniform',['../structklotter_1_1PingPongBlurShader.html#afba0c910c25cb3ee95c7bf59cec659d8',1,'klotter::PingPongBlurShader']]]
 ];

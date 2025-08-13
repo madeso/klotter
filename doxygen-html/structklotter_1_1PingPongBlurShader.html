@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klotter: klotter::BloomRender Struct Reference</title>
+<title>Klotter: klotter::PingPongBlurShader Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,82 +104,82 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1BloomRender.html">BloomRender</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1PingPongBlurShader.html">PingPongBlurShader</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structklotter_1_1BloomRender-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">klotter::BloomRender Struct Reference<div class="ingroups"><a class="el" href="group__postproc.html">Post Processing</a></div></div></div>
+<a href="structklotter_1_1PingPongBlurShader-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">klotter::PingPongBlurShader Struct Reference<div class="ingroups"><a class="el" href="group__render.html">Renderer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="postproc_8internal_8h_source.html">postproc.internal.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="shader__resource_8h_source.html">shader_resource.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7115fe9b53e77ab1bade3284365f70e1" id="r_a7115fe9b53e77ab1bade3284365f70e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7115fe9b53e77ab1bade3284365f70e1">PingPongBlurShader</a> (std::shared_ptr&lt; <a class="el" href="structklotter_1_1LoadedPostProcShader.html">LoadedPostProcShader</a> &gt; &amp;&amp;sh)</td></tr>
+<tr class="separator:a7115fe9b53e77ab1bade3284365f70e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8e9a87e5eb677a0530b4857f7de633f2" id="r_a8e9a87e5eb677a0530b4857f7de633f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1ExtractShader.html">ExtractShader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e9a87e5eb677a0530b4857f7de633f2">extract_shader</a></td></tr>
-<tr class="separator:a8e9a87e5eb677a0530b4857f7de633f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d971d1ca0cdc8eea850f4c008729101" id="r_a1d971d1ca0cdc8eea850f4c008729101"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d971d1ca0cdc8eea850f4c008729101">bloom_buffer</a></td></tr>
-<tr class="separator:a1d971d1ca0cdc8eea850f4c008729101"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38d3ba543d3b0af12408795decc301db" id="r_a38d3ba543d3b0af12408795decc301db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1PingPongBlurShader.html">PingPongBlurShader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38d3ba543d3b0af12408795decc301db">ping_pong_shader</a></td></tr>
-<tr class="separator:a38d3ba543d3b0af12408795decc301db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf57133837ca2ba11f1814835e8ec5c8" id="r_acf57133837ca2ba11f1814835e8ec5c8"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf57133837ca2ba11f1814835e8ec5c8">ping_pong_buffer</a></td></tr>
-<tr class="separator:acf57133837ca2ba11f1814835e8ec5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4489466c7f677289c52d3e3b8220916" id="r_aa4489466c7f677289c52d3e3b8220916"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1LoadedPostProcShader.html">LoadedPostProcShader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4489466c7f677289c52d3e3b8220916">shader</a></td></tr>
+<tr class="separator:aa4489466c7f677289c52d3e3b8220916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba0c910c25cb3ee95c7bf59cec659d8" id="r_afba0c910c25cb3ee95c7bf59cec659d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afba0c910c25cb3ee95c7bf59cec659d8">is_horizontal_uniform</a></td></tr>
+<tr class="separator:afba0c910c25cb3ee95c7bf59cec659d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7115fe9b53e77ab1bade3284365f70e1" name="a7115fe9b53e77ab1bade3284365f70e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7115fe9b53e77ab1bade3284365f70e1">&#9670;&#160;</a></span>PingPongBlurShader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">klotter::PingPongBlurShader::PingPongBlurShader </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="structklotter_1_1LoadedPostProcShader.html">LoadedPostProcShader</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>sh</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1d971d1ca0cdc8eea850f4c008729101" name="a1d971d1ca0cdc8eea850f4c008729101"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d971d1ca0cdc8eea850f4c008729101">&#9670;&#160;</a></span>bloom_buffer</h2>
+<a id="afba0c910c25cb3ee95c7bf59cec659d8" name="afba0c910c25cb3ee95c7bf59cec659d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba0c910c25cb3ee95c7bf59cec659d8">&#9670;&#160;</a></span>is_horizontal_uniform</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a>&gt; klotter::BloomRender::bloom_buffer</td>
+          <td class="memname"><a class="el" href="structklotter_1_1Uniform.html">Uniform</a> klotter::PingPongBlurShader::is_horizontal_uniform</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a8e9a87e5eb677a0530b4857f7de633f2" name="a8e9a87e5eb677a0530b4857f7de633f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e9a87e5eb677a0530b4857f7de633f2">&#9670;&#160;</a></span>extract_shader</h2>
+<a id="aa4489466c7f677289c52d3e3b8220916" name="aa4489466c7f677289c52d3e3b8220916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4489466c7f677289c52d3e3b8220916">&#9670;&#160;</a></span>shader</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1ExtractShader.html">ExtractShader</a>* klotter::BloomRender::extract_shader</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acf57133837ca2ba11f1814835e8ec5c8" name="acf57133837ca2ba11f1814835e8ec5c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf57133837ca2ba11f1814835e8ec5c8">&#9670;&#160;</a></span>ping_pong_buffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::array&lt;std::shared_ptr&lt;<a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a>&gt;, 2&gt; klotter::BloomRender::ping_pong_buffer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a38d3ba543d3b0af12408795decc301db" name="a38d3ba543d3b0af12408795decc301db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38d3ba543d3b0af12408795decc301db">&#9670;&#160;</a></span>ping_pong_shader</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1PingPongBlurShader.html">PingPongBlurShader</a>* klotter::BloomRender::ping_pong_shader</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="structklotter_1_1LoadedPostProcShader.html">LoadedPostProcShader</a>&gt; klotter::PingPongBlurShader::shader</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -187,7 +187,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/klotter/render/<a class="el" href="postproc_8internal_8h_source.html">postproc.internal.h</a></li>
+<li>src/klotter/render/<a class="el" href="shader__resource_8h_source.html">shader_resource.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

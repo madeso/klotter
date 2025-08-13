@@ -32,6 +32,34 @@
         </inbodydescription>
         <location file="src/klotter/render/postproc.internal.h" line="21" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="21" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1BloomRender_1a38d3ba543d3b0af12408795decc301db" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1PingPongBlurShader" kindref="compound">PingPongBlurShader</ref> *</type>
+        <definition>PingPongBlurShader* klotter::BloomRender::ping_pong_shader</definition>
+        <argsstring></argsstring>
+        <name>ping_pong_shader</name>
+        <qualifiedname>klotter::BloomRender::ping_pong_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="23" column="20" bodyfile="src/klotter/render/postproc.internal.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1BloomRender_1acf57133837ca2ba11f1814835e8ec5c8" prot="public" static="no" mutable="no">
+        <type>std::array&lt; std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;, 2 &gt;</type>
+        <definition>std::array&lt;std::shared_ptr&lt;FrameBuffer&gt;, 2&gt; klotter::BloomRender::ping_pong_buffer</definition>
+        <argsstring></argsstring>
+        <name>ping_pong_buffer</name>
+        <qualifiedname>klotter::BloomRender::ping_pong_buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="24" column="12" bodyfile="src/klotter/render/postproc.internal.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -50,6 +78,12 @@
         </childnode>
         <childnode refid="11" relation="usage">
           <edgelabel>bloom_buffer</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>ping_pong_shader</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>ping_pong_buffer</edgelabel>
         </childnode>
       </node>
       <node id="2">
@@ -78,6 +112,16 @@
           <edgelabel>texture_uni</edgelabel>
         </childnode>
       </node>
+      <node id="14">
+        <label>klotter::PingPongBlurShader</label>
+        <link refid="structklotter_1_1PingPongBlurShader"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>is_horizontal_uniform</edgelabel>
+        </childnode>
+      </node>
       <node id="6">
         <label>klotter::ShaderProgram</label>
         <link refid="structklotter_1_1ShaderProgram"/>
@@ -90,6 +134,12 @@
         <link refid="structklotter_1_1Uniform"/>
         <childnode refid="9" relation="usage">
           <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>std::array&lt; std::shared_ptr&lt; klotter::FrameBuffer &gt;, 2 &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
         </childnode>
       </node>
       <node id="10">
@@ -122,10 +172,12 @@
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.internal.h" line="18" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="19" bodyend="22"/>
+    <location file="src/klotter/render/postproc.internal.h" line="18" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="19" bodyend="25"/>
     <listofallmembers>
       <member refid="structklotter_1_1BloomRender_1a1d971d1ca0cdc8eea850f4c008729101" prot="public" virt="non-virtual"><scope>klotter::BloomRender</scope><name>bloom_buffer</name></member>
       <member refid="structklotter_1_1BloomRender_1a8e9a87e5eb677a0530b4857f7de633f2" prot="public" virt="non-virtual"><scope>klotter::BloomRender</scope><name>extract_shader</name></member>
+      <member refid="structklotter_1_1BloomRender_1acf57133837ca2ba11f1814835e8ec5c8" prot="public" virt="non-virtual"><scope>klotter::BloomRender</scope><name>ping_pong_buffer</name></member>
+      <member refid="structklotter_1_1BloomRender_1a38d3ba543d3b0af12408795decc301db" prot="public" virt="non-virtual"><scope>klotter::BloomRender</scope><name>ping_pong_shader</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

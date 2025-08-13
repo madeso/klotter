@@ -133,8 +133,8 @@ Inheritance diagram for klotter::RenderWorld:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab7c18026191a345243fda5975f0012e4" id="r_ab7c18026191a345243fda5975f0012e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7c18026191a345243fda5975f0012e4">RenderWorld</a> (const glm::ivec2 size, <a class="el" href="structklotter_1_1RealizeShader.html">RealizeShader</a> *re_sh, <a class="el" href="structklotter_1_1ExtractShader.html">ExtractShader</a> *ex_sh, int msaa_samples, bool *h, float *e)</td></tr>
-<tr class="separator:ab7c18026191a345243fda5975f0012e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a592967237f97acd126fca9aba57fa470" id="r_a592967237f97acd126fca9aba57fa470"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a592967237f97acd126fca9aba57fa470">RenderWorld</a> (const glm::ivec2 size, <a class="el" href="structklotter_1_1RealizeShader.html">RealizeShader</a> *re_sh, <a class="el" href="structklotter_1_1ExtractShader.html">ExtractShader</a> *ex_sh, <a class="el" href="structklotter_1_1PingPongBlurShader.html">PingPongBlurShader</a> *ping_sh, int msaa_samples, bool *h, float *e)</td></tr>
+<tr class="separator:a592967237f97acd126fca9aba57fa470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b673214ee06737e64fd065c9987fb20" id="r_a0b673214ee06737e64fd065c9987fb20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b673214ee06737e64fd065c9987fb20">update</a> (const <a class="el" href="structklotter_1_1PostProcArg.html">PostProcArg</a> &amp;arg)</td></tr>
 <tr class="separator:a0b673214ee06737e64fd065c9987fb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa71e960bb1aaffe030d568f98695a518" id="r_aa71e960bb1aaffe030d568f98695a518"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa71e960bb1aaffe030d568f98695a518">render</a> (const <a class="el" href="structklotter_1_1PostProcArg.html">PostProcArg</a> &amp;arg) override</td></tr>
@@ -175,8 +175,8 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A source that "just" renders the world. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab7c18026191a345243fda5975f0012e4" name="ab7c18026191a345243fda5975f0012e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7c18026191a345243fda5975f0012e4">&#9670;&#160;</a></span>RenderWorld()</h2>
+<a id="a592967237f97acd126fca9aba57fa470" name="a592967237f97acd126fca9aba57fa470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a592967237f97acd126fca9aba57fa470">&#9670;&#160;</a></span>RenderWorld()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,6 +195,11 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structklotter_1_1ExtractShader.html">ExtractShader</a> *</td>          <td class="paramname"><span class="paramname"><em>ex_sh</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1PingPongBlurShader.html">PingPongBlurShader</a> *</td>          <td class="paramname"><span class="paramname"><em>ping_sh</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

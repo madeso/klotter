@@ -30,6 +30,7 @@
     <innerclass refid="structklotter_1_1LoadedShader__Default__Container" prot="public">klotter::LoadedShader_Default_Container</innerclass>
     <innerclass refid="structklotter_1_1RealizeShader" prot="public">klotter::RealizeShader</innerclass>
     <innerclass refid="structklotter_1_1ExtractShader" prot="public">klotter::ExtractShader</innerclass>
+    <innerclass refid="structklotter_1_1PingPongBlurShader" prot="public">klotter::PingPongBlurShader</innerclass>
     <innerclass refid="structklotter_1_1ShaderResource" prot="public">klotter::ShaderResource</innerclass>
     <innerclass refid="structklotter_1_1StateChanger" prot="public">klotter::StateChanger</innerclass>
     <innerclass refid="structklotter_1_1UniformBufferSetup" prot="public">klotter::UniformBufferSetup</innerclass>
@@ -926,7 +927,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="270" column="16" declfile="src/klotter/render/shader_resource.h" declline="270" declcolumn="16"/>
+        <location file="src/klotter/render/shader_resource.h" line="280" column="16" declfile="src/klotter/render/shader_resource.h" declline="280" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1gaf7128958c7209702f57eb63c4cded569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

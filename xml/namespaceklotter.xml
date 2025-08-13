@@ -64,6 +64,7 @@
     <innerclass refid="structklotter_1_1MeshInstance" prot="public">klotter::MeshInstance</innerclass>
     <innerclass refid="structklotter_1_1MeshInstance__TransformInstanced" prot="public">klotter::MeshInstance_TransformInstanced</innerclass>
     <innerclass refid="structklotter_1_1OpenglStates" prot="public">klotter::OpenglStates</innerclass>
+    <innerclass refid="structklotter_1_1PingPongBlurShader" prot="public">klotter::PingPongBlurShader</innerclass>
     <innerclass refid="structklotter_1_1PointLight" prot="public">klotter::PointLight</innerclass>
     <innerclass refid="structklotter_1_1PointLightUniforms" prot="public">klotter::PointLightUniforms</innerclass>
     <innerclass refid="structklotter_1_1PostProcArg" prot="public">klotter::PostProcArg</innerclass>
@@ -660,7 +661,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.h" line="170" column="6" declfile="src/klotter/render/shader.h" declline="170" declcolumn="6"/>
+        <location file="src/klotter/render/shader.h" line="178" column="6" declfile="src/klotter/render/shader.h" declline="178" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6f86fb3893caeb7267b725bb433a6b1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -695,7 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.h" line="178" column="6" declfile="src/klotter/render/shader.h" declline="178" declcolumn="6"/>
+        <location file="src/klotter/render/shader.h" line="186" column="6" declfile="src/klotter/render/shader.h" declline="186" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a356ef4e2d5e2b61b7d5909081407207a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -728,7 +729,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.h" line="185" column="6" declfile="src/klotter/render/shader.h" declline="185" declcolumn="6"/>
+        <location file="src/klotter/render/shader.h" line="193" column="6" declfile="src/klotter/render/shader.h" declline="193" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ae6578d1bd38afcb9f3c56f0a839e6b59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -743,7 +744,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.h" line="189" column="6" declfile="src/klotter/render/shader.h" declline="189" declcolumn="6"/>
+        <location file="src/klotter/render/shader.h" line="197" column="6" declfile="src/klotter/render/shader.h" declline="197" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a922b5d3cc7e03da98bcab5a44c7a20c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
