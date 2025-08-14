@@ -66,7 +66,7 @@ static void image_tooltip(ImTextureID texture_id, const ImVec2 texture_size, con
 	ImGui::Image(texture_id, ImVec2(hover_size, hover_size), uv0, uv1, tint_col, border_col);
 }
 
-static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
+static void imgui_image(const char* name, ImTextureID texture_id, const ImVec2 texture_size)
 {
 	// todo(Gustav): make the arguments widget_size and zoom level AND make them configurable (with scrolling)
 	static float widget_height = 100.0f;
@@ -74,7 +74,7 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 	static float hover_size = 128.0f;
 	const auto& io = ImGui::GetIO();
 
-	imgui_text(Str{} << texture_size.x << "x" << texture_size.y);
+	imgui_text(Str{} << name << ": " << texture_size.x << "x" << texture_size.y);
 
 	const auto widget_width = (texture_size.x / texture_size.y) * widget_height;
 	const auto widget_size = ImVec2{widget_width, widget_height};
@@ -86,10 +86,14 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 	const auto border_col = ImGui::GetStyleColorVec4(ImGuiCol_Border);
 
 	static ImVec2 latest_tooltip;
+	static ImGuiID current_id = 0;
 
 	constexpr const char* const popup_id = "image config popup";
 
-	if (ImGui::BeginPopupContextItem(popup_id))  // <-- use last item id as popup id
+	ImGui::Image(texture_id, widget_size, uv_min, uv_max, tint_col, border_col);
+	const auto id = ImGui::GetID(name);
+
+	if (id == current_id && ImGui::BeginPopupContextItem(popup_id))
 	{
 		ImGui::DragFloat("Base", &widget_height, 1.0f);
 		ImGui::DragFloat("Size", &region_size, 0.01f);
@@ -101,11 +105,11 @@ static void imgui_image(ImTextureID texture_id, const ImVec2 texture_size)
 		}
 		ImGui::EndPopup();
 	}
-	ImGui::Image(texture_id, widget_size, uv_min, uv_max, tint_col, border_col);
 	ImGui::OpenPopupOnItemClick(popup_id, ImGuiPopupFlags_MouseButtonRight);
 	
 	if (ImGui::IsItemHovered())
 	{
+		current_id = id;
 		latest_tooltip = io.MousePos;
 		ImGui::BeginTooltip();
 		image_tooltip(texture_id, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, tint_col, border_col);
@@ -123,9 +127,9 @@ static ImTextureID imgui_texture_from(unsigned int texture)
 
 
 
-void imgui_image(const FrameBuffer& img)
+void imgui_image(const char* name, const FrameBuffer& img)
 {
-	imgui_image(imgui_texture_from(img.id), {static_cast<float>(img.width), static_cast<float>(img.height)});
+	imgui_image(name, imgui_texture_from(img.id), {static_cast<float>(img.width), static_cast<float>(img.height)});
 }
 
 
