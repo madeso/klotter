@@ -985,7 +985,7 @@
     <member refid="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" kind="function"><name>operator-</name></member>
     <member refid="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" kind="function"><name>calculate_region</name></member>
     <member refid="namespaceklotter_1a097b19b90783477eca0bb931a3ad7692" kind="function"><name>imgui_text</name></member>
-    <member refid="namespaceklotter_1a876b1901b34bbd4af4fe0152ea366e97" kind="function"><name>imgui_image</name></member>
+    <member refid="namespaceklotter_1a7c0a15c13797891f0a83daf98c4d42ec" kind="function"><name>imgui_image</name></member>
     <member refid="namespaceklotter_1a6308c1c02eba0c354d9b8f5621f63162" kind="function"><name>simple_gamma_slider</name></member>
     <member refid="group__vertex-layout_1gac498a4f9c32fddd6f300437dec2051ad" kind="function"><name>is_instance_based</name></member>
     <member refid="group__vertex-layout_1ga237368f15ea9a44ec4b6b7302d44c312" kind="function"><name>compile_shader_layout</name></member>

@@ -993,12 +993,16 @@
         </inbodydescription>
         <location file="src/klotter/render/ui.h" line="17" column="6" declfile="src/klotter/render/ui.h" declline="17" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a876b1901b34bbd4af4fe0152ea366e97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a7c0a15c13797891f0a83daf98c4d42ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::imgui_image</definition>
-        <argsstring>(const FrameBuffer &amp;img)</argsstring>
+        <argsstring>(const char *name, const FrameBuffer &amp;img)</argsstring>
         <name>imgui_image</name>
         <qualifiedname>klotter::imgui_image</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
         <param>
           <type>const <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &amp;</type>
           <declname>img</declname>

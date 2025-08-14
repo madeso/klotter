@@ -9,7 +9,7 @@ var searchData=
   ['im_5fcolors_2eh_6',['im_colors.h',['../im__colors_8h.html',1,'']]],
   ['imgui_20colors_7',['Dear ImGui Colors',['../group__imguicolors.html',1,'']]],
   ['imgui_2etheme_2eh_8',['imgui.theme.h',['../imgui_8theme_8h.html',1,'']]],
-  ['imgui_5fimage_9',['imgui_image',['../namespaceklotter.html#a876b1901b34bbd4af4fe0152ea366e97',1,'klotter']]],
+  ['imgui_5fimage_9',['imgui_image',['../namespaceklotter.html#a7c0a15c13797891f0a83daf98c4d42ec',1,'klotter']]],
   ['imgui_5fs_5fcurve_5feditor_10',['imgui_s_curve_editor',['../group__scurcve.html#ga053ee1a8fe68689ff1ef5b8d2488bc55',1,'klotter']]],
   ['imgui_5ftext_11',['imgui_text',['../namespaceklotter.html#a097b19b90783477eca0bb931a3ad7692',1,'klotter']]],
   ['implement_5fmain_12',['IMPLEMENT_MAIN',['../klotter_8h.html#a8c20628131afaadf69938840b3ce9ea7',1,'klotter.h']]],
