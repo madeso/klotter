@@ -231,11 +231,13 @@ bool LoadedShader_Default_Container::is_loaded() const
 
 
 
-RealizeShader::RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh)
-	: shader(std::move(sh))
-	, gamma_uniform(shader->program->get_uniform("u_gamma"))
-	, exposure_uniform(shader->program->get_uniform("u_exposure"))
+RealizeShader::RealizeShader(std::shared_ptr<ShaderProgram> s)
+	: program(std::move(s))
+	, texture_uni(program->get_uniform("u_texture"))
+	, gamma_uniform(program->get_uniform("u_gamma"))
+	, exposure_uniform(program->get_uniform("u_exposure"))
 {
+	setup_textures(program.get(), {&texture_uni});
 }
 
 
@@ -258,7 +260,7 @@ bool ShaderResource::is_loaded() const
 {
 	return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded() && unlit_shader_container.is_loaded()
 		&& default_shader_container.is_loaded() && pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
-		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_realize.shader->program->is_loaded();
+		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_realize.program->is_loaded();
 }
 
 
@@ -421,13 +423,10 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		PostProcSetup::factor | PostProcSetup::resolution
 	);
 
-	auto pp_realize = RealizeShader{std::make_shared<LoadedPostProcShader>(
-		std::make_shared<ShaderProgram>(
+	auto pp_realize = RealizeShader{std::make_shared<ShaderProgram>(
 			USE_DEBUG_LABEL_MANY("pp realize")
 			std::string{PP_VERT_GLSL}, std::string{PP_REALIZE_FRAG_GLSL}, full_screen.layout
-		),
-		PostProcSetup::none
-	)};
+		)};
 	auto pp_extract = ExtractShader{std::make_shared<LoadedPostProcShader>(
 		std::make_shared<ShaderProgram>(
 			USE_DEBUG_LABEL_MANY("pp extract") std::string{PP_VERT_GLSL},

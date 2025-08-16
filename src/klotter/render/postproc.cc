@@ -199,12 +199,11 @@ void RenderWorld::render(const PostProcArg& arg)
 
 	{
 		const auto& container = realize_shader;
-		const auto& shader = container->shader;
-		const auto& program = shader->program;
+		const auto& program = container->program;
 		program->use();
 		program->set_float(container->gamma_uniform, arg.renderer->settings.gamma);
 		program->set_float(container->exposure_uniform, *use_hdr ? *exposure : -1.0f);
-		bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *realized_buffer);
+		bind_texture_2d(&arg.renderer->pimpl->states, container->texture_uni, *realized_buffer);
 	
 		render_geom(*arg.renderer->pimpl->full_screen_geom);
 	}

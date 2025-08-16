@@ -226,9 +226,11 @@ struct LoadedShader_Default_Container
 /// The shader data for composing a rendered image.
 struct RealizeShader
 {
-	explicit RealizeShader(std::shared_ptr<LoadedPostProcShader>&& sh);
+	explicit RealizeShader(std::shared_ptr<ShaderProgram> s);
 
-	std::shared_ptr<LoadedPostProcShader> shader;
+	std::shared_ptr<ShaderProgram> program;
+	Uniform texture_uni;
+
 	Uniform gamma_uniform;
 	Uniform exposure_uniform;
 };
