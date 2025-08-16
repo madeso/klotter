@@ -36,6 +36,7 @@ struct RenderWorld : RenderSource
 	std::shared_ptr<FrameBuffer> realized_buffer;
 	RealizeShader* realize_shader;
 	std::optional<BloomRender> bloom_render;
+	std::size_t last_bloom_blur_index;
 
 	RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractShader* ex_sh, PingPongBlurShader* ping_sh, int msaa_samples, bool* h, float* e);
 

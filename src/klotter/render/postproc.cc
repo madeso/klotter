@@ -80,6 +80,7 @@ RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractSha
 		.build(USE_DEBUG_LABEL("realized msaa buffer")))
 	, realize_shader(re_sh)
 	, bloom_render(build_bloom(size, ex_sh, ping_sh))
+	, last_bloom_blur_index(0)
 {
 	ASSERT(use_hdr);
 	ASSERT(exposure);
@@ -141,6 +142,7 @@ void RenderWorld::update(const PostProcArg& arg)
 
 				const std::size_t source_index = is_horizontal ? 1 : 0;
 				const std::size_t target_index = is_horizontal ? 0 : 1;
+				last_bloom_blur_index = target_index;
 
 				SCOPED_DEBUG_GROUP(
 					Str{} << "blur pass #" << blur_iteration << " ("
@@ -203,7 +205,12 @@ void RenderWorld::render(const PostProcArg& arg)
 		program->use();
 		program->set_float(container->gamma_uniform, arg.renderer->settings.gamma);
 		program->set_float(container->exposure_uniform, *use_hdr ? *exposure : -1.0f);
+		program->set_bool(container->use_blur_uniform, bloom_render.has_value());
 		bind_texture_2d(&arg.renderer->pimpl->states, container->texture_uni, *realized_buffer);
+		if (bloom_render.has_value())
+		{
+			bind_texture_2d(&arg.renderer->pimpl->states, container->blurred_bloom_uniform, *bloom_render->ping_pong_buffer[last_bloom_blur_index]);
+		}
 	
 		render_geom(*arg.renderer->pimpl->full_screen_geom);
 	}

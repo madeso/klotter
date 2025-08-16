@@ -234,10 +234,12 @@ bool LoadedShader_Default_Container::is_loaded() const
 RealizeShader::RealizeShader(std::shared_ptr<ShaderProgram> s)
 	: program(std::move(s))
 	, texture_uni(program->get_uniform("u_texture"))
+	, blurred_bloom_uniform(program->get_uniform("u_blurred_bloom"))
+	, use_blur_uniform(program->get_uniform("u_use_blur"))
 	, gamma_uniform(program->get_uniform("u_gamma"))
 	, exposure_uniform(program->get_uniform("u_exposure"))
 {
-	setup_textures(program.get(), {&texture_uni});
+	setup_textures(program.get(), {&texture_uni, &blurred_bloom_uniform});
 }
 
 

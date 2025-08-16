@@ -1,6 +1,9 @@
 #version 330 core
 
 uniform sampler2D u_texture;
+uniform sampler2D u_blurred_bloom;
+
+uniform bool u_use_blur;
 uniform float u_gamma;
 uniform float u_exposure;
 
@@ -13,6 +16,13 @@ void main()
     vec4 sampled = texture(u_texture, v_tex_coord);
     float alpha = sampled.a;
     vec3 color = sampled.rgb;
+
+    if(u_use_blur)
+    {
+        vec3 blur = texture(u_blurred_bloom, v_tex_coord).rgb;
+        color += blur;
+    }
+
     if(u_exposure > 0.0f)
     {
         // todo(Gustav): add more tonemapping

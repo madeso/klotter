@@ -230,7 +230,9 @@ struct RealizeShader
 
 	std::shared_ptr<ShaderProgram> program;
 	Uniform texture_uni;
+	Uniform blurred_bloom_uniform;
 
+	Uniform use_blur_uniform;
 	Uniform gamma_uniform;
 	Uniform exposure_uniform;
 };
