@@ -352,12 +352,15 @@
       <node id="31">
         <label>klotter::RealizeShader</label>
         <link refid="structklotter_1_1RealizeShader"/>
-        <childnode refid="29" relation="usage">
-          <edgelabel>shader</edgelabel>
+        <childnode refid="11" relation="usage">
+          <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="17" relation="usage">
+          <edgelabel>blurred_bloom_uniform</edgelabel>
           <edgelabel>exposure_uniform</edgelabel>
           <edgelabel>gamma_uniform</edgelabel>
+          <edgelabel>texture_uni</edgelabel>
+          <edgelabel>use_blur_uniform</edgelabel>
         </childnode>
       </node>
       <node id="1">

@@ -4,12 +4,12 @@
     <compoundname>klotter::RealizeShader</compoundname>
     <includes refid="shader__resource_8h" local="no">shader_resource.h</includes>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a6a002fc5f56fde819f15394e4442ea84" prot="public" static="no" mutable="no">
-        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
-        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::RealizeShader::shader</definition>
+      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a75aa26510623936bca8fac9bb31aead0" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;ShaderProgram&gt; klotter::RealizeShader::program</definition>
         <argsstring></argsstring>
-        <name>shader</name>
-        <qualifiedname>klotter::RealizeShader::shader</qualifiedname>
+        <name>program</name>
+        <qualifiedname>klotter::RealizeShader::program</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -17,6 +17,48 @@
         <inbodydescription>
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="231" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a35dd6d6784210f4bb77f8e03fa423475" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::RealizeShader::texture_uni</definition>
+        <argsstring></argsstring>
+        <name>texture_uni</name>
+        <qualifiedname>klotter::RealizeShader::texture_uni</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="232" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1aac3772c8a653fda07125d4080e242932" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::RealizeShader::blurred_bloom_uniform</definition>
+        <argsstring></argsstring>
+        <name>blurred_bloom_uniform</name>
+        <qualifiedname>klotter::RealizeShader::blurred_bloom_uniform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="233" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a67c18653a5bd20289cb8f2040883713a" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::RealizeShader::use_blur_uniform</definition>
+        <argsstring></argsstring>
+        <name>use_blur_uniform</name>
+        <qualifiedname>klotter::RealizeShader::use_blur_uniform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="235" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="235" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a1fc28d6fb77c06dbd8c606987b62c7be" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -30,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="232" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="232" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="236" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="236" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a1dc6b3833c4e5a03fe9d1b1673527fd2" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -44,19 +86,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="233" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="233" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="237" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="237" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structklotter_1_1RealizeShader_1aee58e144b2a299453b3e7177d458fae6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1RealizeShader_1a554e91cbf25dd39fc6bb1c20f3886546" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>klotter::RealizeShader::RealizeShader</definition>
-        <argsstring>(std::shared_ptr&lt; LoadedPostProcShader &gt; &amp;&amp;sh)</argsstring>
+        <argsstring>(std::shared_ptr&lt; ShaderProgram &gt; s)</argsstring>
         <name>RealizeShader</name>
         <qualifiedname>klotter::RealizeShader::RealizeShader</qualifiedname>
         <param>
-          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt; &amp;&amp;</type>
-          <declname>sh</declname>
+          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &gt;</type>
+          <declname>s</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -73,71 +115,61 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3">
-        <label>klotter::LoadedPostProcShader</label>
-        <link refid="structklotter_1_1LoadedPostProcShader"/>
-        <childnode refid="4" relation="usage">
-          <edgelabel>program</edgelabel>
-        </childnode>
-        <childnode refid="7" relation="usage">
-          <edgelabel>texture_uni</edgelabel>
-        </childnode>
-      </node>
       <node id="1">
         <label>klotter::RealizeShader</label>
         <link refid="structklotter_1_1RealizeShader"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>shader</edgelabel>
+          <edgelabel>program</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="5" relation="usage">
+          <edgelabel>blurred_bloom_uniform</edgelabel>
           <edgelabel>exposure_uniform</edgelabel>
           <edgelabel>gamma_uniform</edgelabel>
+          <edgelabel>texture_uni</edgelabel>
+          <edgelabel>use_blur_uniform</edgelabel>
         </childnode>
       </node>
-      <node id="5">
+      <node id="3">
         <label>klotter::ShaderProgram</label>
         <link refid="structklotter_1_1ShaderProgram"/>
-        <childnode refid="6" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>debug_vertex_types</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="5">
         <label>klotter::Uniform</label>
         <link refid="structklotter_1_1Uniform"/>
-        <childnode refid="8" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="9">
+      <node id="7">
         <label>std::basic_string&lt; Char &gt;</label>
       </node>
       <node id="2">
-        <label>std::shared_ptr&lt; klotter::LoadedPostProcShader &gt;</label>
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
         <childnode refid="3" relation="usage">
           <edgelabel>ptr</edgelabel>
         </childnode>
       </node>
-      <node id="4">
-        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
-        <childnode refid="5" relation="usage">
-          <edgelabel>ptr</edgelabel>
-        </childnode>
-      </node>
-      <node id="8">
-        <label>std::string</label>
-        <childnode refid="9" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="6">
+        <label>std::string</label>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="227" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="228" bodyend="234"/>
+    <location file="src/klotter/render/shader_resource.h" line="227" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="228" bodyend="238"/>
     <listofallmembers>
+      <member refid="structklotter_1_1RealizeShader_1aac3772c8a653fda07125d4080e242932" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>blurred_bloom_uniform</name></member>
       <member refid="structklotter_1_1RealizeShader_1a1dc6b3833c4e5a03fe9d1b1673527fd2" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>exposure_uniform</name></member>
       <member refid="structklotter_1_1RealizeShader_1a1fc28d6fb77c06dbd8c606987b62c7be" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>gamma_uniform</name></member>
-      <member refid="structklotter_1_1RealizeShader_1aee58e144b2a299453b3e7177d458fae6" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>RealizeShader</name></member>
-      <member refid="structklotter_1_1RealizeShader_1a6a002fc5f56fde819f15394e4442ea84" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>shader</name></member>
+      <member refid="structklotter_1_1RealizeShader_1a75aa26510623936bca8fac9bb31aead0" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>program</name></member>
+      <member refid="structklotter_1_1RealizeShader_1a554e91cbf25dd39fc6bb1c20f3886546" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>RealizeShader</name></member>
+      <member refid="structklotter_1_1RealizeShader_1a35dd6d6784210f4bb77f8e03fa423475" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>texture_uni</name></member>
+      <member refid="structklotter_1_1RealizeShader_1a67c18653a5bd20289cb8f2040883713a" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>use_blur_uniform</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

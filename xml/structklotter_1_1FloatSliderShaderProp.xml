@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="83" column="9" bodyfile="src/klotter/render/postproc.internal.h" bodystart="83" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="84" column="9" bodyfile="src/klotter/render/postproc.internal.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1a620879ab8993dffafbebb2b846143dd2" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="84" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="84" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="85" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1a34eaecd8ec3a52fa9a146a17fbab666d" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="85" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="85" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="86" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1af00913195f8b2d1df24399babe2e4670" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="86" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="86" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="87" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1a8414339be4d0247e5440fe1a3c578f4b" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="87" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="87" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="88" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="88" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="89" column="1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="90" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FloatSliderShaderProp_1a0163d7e00d82aa251a1d29c382b2967e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="93" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="94" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FloatSliderShaderProp_1a31aea0b3e9f3216b724b8f1b84a3c605" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="95" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="96" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -199,7 +199,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.internal.h" line="81" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="82" bodyend="96"/>
+    <location file="src/klotter/render/postproc.internal.h" line="82" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="83" bodyend="97"/>
     <listofallmembers>
       <member refid="structklotter_1_1FloatSliderShaderProp_1a594675312b454da4b4a06c9fcced5338" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>FloatSliderShaderProp</name></member>
       <member refid="structklotter_1_1FloatSliderShaderProp_1a31aea0b3e9f3216b724b8f1b84a3c605" prot="public" virt="virtual"><scope>klotter::FloatSliderShaderProp</scope><name>gui</name></member>

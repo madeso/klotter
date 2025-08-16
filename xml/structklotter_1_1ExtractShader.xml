@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="241" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="241" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="245" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="245" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1ExtractShader_1ac2145f587c7304542d1ee2ffafe19d07" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="242" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="242" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="246" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="246" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="239" column="10"/>
+        <location file="src/klotter/render/shader_resource.h" line="243" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -117,7 +117,7 @@
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="237" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="238" bodyend="243"/>
+    <location file="src/klotter/render/shader_resource.h" line="241" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="242" bodyend="247"/>
     <listofallmembers>
       <member refid="structklotter_1_1ExtractShader_1ac2145f587c7304542d1ee2ffafe19d07" prot="public" virt="non-virtual"><scope>klotter::ExtractShader</scope><name>cutoff_uniform</name></member>
       <member refid="structklotter_1_1ExtractShader_1a440af25fd231083600036959f8c95326" prot="public" virt="non-virtual"><scope>klotter::ExtractShader</scope><name>ExtractShader</name></member>

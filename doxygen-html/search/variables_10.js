@@ -10,7 +10,7 @@ var searchData=
   ['texcoords_7',['texcoords',['../structklotter_1_1geom_1_1Builder.html#abd7ede50a96f5807c123cb917eecd349',1,'klotter::geom::Builder']]],
   ['texture_8',['texture',['../structklotter_1_1geom_1_1Vertex.html#ab7010ae753e9318118337b31fa88430f',1,'klotter::geom::Vertex::texture'],['../structklotter_1_1UnlitMaterial.html#a7801e658eb779b80ebca950cab56a54f',1,'klotter::UnlitMaterial::texture'],['../structklotter_1_1Uniform.html#a2546427ecf437a68f5170f9eae34f2e8',1,'klotter::Uniform::texture']]],
   ['texture_5fbound_9',['texture_bound',['../structklotter_1_1OpenglStates.html#a86522266949d8aee0bf4e2b53a9131f2',1,'klotter::OpenglStates']]],
-  ['texture_5funi_10',['texture_uni',['../structklotter_1_1LoadedPostProcShader.html#a10976256764d1c75d8e69689a6982289',1,'klotter::LoadedPostProcShader']]],
+  ['texture_5funi_10',['texture_uni',['../structklotter_1_1LoadedPostProcShader.html#a10976256764d1c75d8e69689a6982289',1,'klotter::LoadedPostProcShader::texture_uni'],['../structklotter_1_1RealizeShader.html#a35dd6d6784210f4bb77f8e03fa423475',1,'klotter::RealizeShader::texture_uni']]],
   ['threshold_11',['threshold',['../structklotter_1_1SCurve.html#a320a7b49516a92878efb2f4ece195c32',1,'klotter::SCurve']]],
   ['time_12',['time',['../structklotter_1_1SimpleEffect.html#a00a31874597c071d487222993b1254af',1,'klotter::SimpleEffect']]],
   ['time_5funi_13',['time_uni',['../structklotter_1_1LoadedPostProcShader.html#a99c2cbec10319108c1ffde8f035b6e8b',1,'klotter::LoadedPostProcShader']]],

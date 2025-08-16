@@ -927,7 +927,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="280" column="16" declfile="src/klotter/render/shader_resource.h" declline="280" declcolumn="16"/>
+        <location file="src/klotter/render/shader_resource.h" line="284" column="16" declfile="src/klotter/render/shader_resource.h" declline="284" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1gaf7128958c7209702f57eb63c4cded569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

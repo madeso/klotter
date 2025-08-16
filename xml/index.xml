@@ -570,10 +570,13 @@
     <member refid="structklotter_1_1PostProcArg_1afb6209a69a9db4f6779c43290d6cc32c" kind="variable"><name>renderer</name></member>
   </compound>
   <compound refid="structklotter_1_1RealizeShader" kind="struct"><name>klotter::RealizeShader</name>
-    <member refid="structklotter_1_1RealizeShader_1a6a002fc5f56fde819f15394e4442ea84" kind="variable"><name>shader</name></member>
+    <member refid="structklotter_1_1RealizeShader_1a75aa26510623936bca8fac9bb31aead0" kind="variable"><name>program</name></member>
+    <member refid="structklotter_1_1RealizeShader_1a35dd6d6784210f4bb77f8e03fa423475" kind="variable"><name>texture_uni</name></member>
+    <member refid="structklotter_1_1RealizeShader_1aac3772c8a653fda07125d4080e242932" kind="variable"><name>blurred_bloom_uniform</name></member>
+    <member refid="structklotter_1_1RealizeShader_1a67c18653a5bd20289cb8f2040883713a" kind="variable"><name>use_blur_uniform</name></member>
     <member refid="structklotter_1_1RealizeShader_1a1fc28d6fb77c06dbd8c606987b62c7be" kind="variable"><name>gamma_uniform</name></member>
     <member refid="structklotter_1_1RealizeShader_1a1dc6b3833c4e5a03fe9d1b1673527fd2" kind="variable"><name>exposure_uniform</name></member>
-    <member refid="structklotter_1_1RealizeShader_1aee58e144b2a299453b3e7177d458fae6" kind="function"><name>RealizeShader</name></member>
+    <member refid="structklotter_1_1RealizeShader_1a554e91cbf25dd39fc6bb1c20f3886546" kind="function"><name>RealizeShader</name></member>
   </compound>
   <compound refid="structklotter_1_1RenderContext" kind="struct"><name>klotter::RenderContext</name>
     <member refid="structklotter_1_1RenderContext_1a58b31ed4a728c9bfbc835f39e0fe38d6" kind="variable"><name>model_source</name></member>
@@ -647,6 +650,7 @@
     <member refid="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" kind="variable"><name>realized_buffer</name></member>
     <member refid="structklotter_1_1RenderWorld_1a4d57a0d535387b761cc66e2389128328" kind="variable"><name>realize_shader</name></member>
     <member refid="structklotter_1_1RenderWorld_1a25bb231d5ce892d16237affabba27d61" kind="variable"><name>bloom_render</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a50b93c67171958ea83a5acffb927909d" kind="variable"><name>last_bloom_blur_index</name></member>
     <member refid="structklotter_1_1RenderWorld_1a592967237f97acd126fca9aba57fa470" kind="function"><name>RenderWorld</name></member>
     <member refid="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" kind="function"><name>update</name></member>
     <member refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" kind="function"><name>render</name></member>
