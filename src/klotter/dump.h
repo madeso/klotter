@@ -2,7 +2,15 @@
 
 namespace svg
 {
-    constexpr std::string_view black = "black";
+    // bang-wong color palette
+    constexpr std::string_view black = "#000000";
+	constexpr std::string_view orange = "#e69f00";
+	constexpr std::string_view sky_blue = "#56b4e9";
+	constexpr std::string_view bluish_green = "#009e73";
+	constexpr std::string_view yellow = "#f0e442";
+    constexpr std::string_view blue = "#0072b2";
+    constexpr std::string_view vermillion = "#d55e00";
+    constexpr std::string_view reddish_purple = "#cc79a7";
 }
 
 struct SvgLine

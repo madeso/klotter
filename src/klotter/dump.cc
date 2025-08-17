@@ -54,7 +54,7 @@ Svg& Svg::add_line(const std::vector<glm::vec2>& points, std::string_view color)
 	return *this;
 }
 
-void Svg::write(const std::string& file_path, float spacing)
+void Svg::write(const std::string& file_path, float space)
 {
     std::ofstream ofs(file_path);
 
@@ -63,18 +63,39 @@ void Svg::write(const std::string& file_path, float spacing)
 
 	float width = 800;
 	float height = 600;
+    constexpr int stroke_width = 3;
 
-    ofs << "<svg preserveAspectRatio=\"meet\" xmlns=\"http://www.w3.org/2000/svg\" width=\"" << width
-        << "\" height=\"" << height << "\" viewBox=\""
-        << (bb.min.x - spacing) << " " << (bb.min.y - spacing) << " " << (bb.max.x + spacing) << " " << (bb.max.y + spacing) << "\">\n";
+    constexpr std::string_view html_background = "gray";
+    constexpr std::string_view canvas_color = "white";
+
+    const auto offset = bb.min;
+    const auto scale = std::min((width-space*2) / size.x, (height-space*2) / size.y);
+
+    const auto dx = offset.x * scale;
+    const auto dy = offset.y * scale;
+    const auto px = [=](float x) -> float { return static_cast<float>(space) + dx + x * scale; };
+    const auto py = [=](float y) -> float { return static_cast<float>(height) - (static_cast<float>(space) + dy + y * scale); };
+
+    ofs << "<html style=\"height: 100%\">\n";
+    ofs << "<body style=\"background-color:" << html_background << "; height: 100%\">\n";
+    ofs << "<div style=\"display: grid; grid-template-columns: 1fr auto 1fr; grid-template-rows: 1fr auto 1fr; width:100%; height:100%\">\n";
+    ofs << "<div style=\"grid-row-start: 2; grid-column-start: 2;\">\n";
+    ofs << "<svg width=\""  << width << "\" height=\"" << height << "\">\n";
+    ofs << "<rect width=\"" << width << "\" height=\"" << height << "\""
+            " style=\"fill:" << canvas_color << ";stroke-width:0\" />\n";
 
     for(const auto& line: lines)
     {
-        ofs << "<polyline fill=\"none\" stroke=\"" << line.color << "\" stroke-width=\"1\" points=\"";
+        ofs << "<polyline fill=\"none\" stroke=\"" << line.color << "\" stroke-width=\"" << stroke_width << "px\" points=\"";
         for (const auto& p : line.points) {
-            ofs << p.x << "," << p.y << " ";
+            ofs << px(p.x) << "," << py(p.y) << " ";
         }
         ofs << "\" />\n";
     }
+    
     ofs << "</svg>\n";
+    ofs << "</div>\n";
+    ofs << "</div>\n";
+    ofs << "</body>\n";
+    ofs << "</html>\n";
 }
