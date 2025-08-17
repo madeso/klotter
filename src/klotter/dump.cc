@@ -31,33 +31,47 @@ struct AABB2
 	}
 };
 
-std::optional<AABB2> calc_bounding_box(const std::vector<glm::vec2>& points)
+std::optional<AABB2> calc_bounding_box(const Svg& svg)
 {
-	if (points.empty()) return std::nullopt;
+	if (svg.lines.empty()) return std::nullopt;
 
-	auto r = AABB2{points[0]};
-	for (const auto& p: points)
-	{
-		r.include(p);
-	}
+	auto r = AABB2{svg.lines[0].points[0]};
+
+    for(const auto& line: svg.lines)
+    {
+        for (const auto& p: line.points)
+        {
+            r.include(p);
+        }
+    }
 
 	return r;
 }
 
-void write_svg(const std::string& file_path, const std::vector<glm::vec2>& points, float spacing)
+Svg& Svg::add_line(const std::vector<glm::vec2>& points, std::string_view color)
+{
+	lines.push_back(SvgLine{color, points});
+	return *this;
+}
+
+void Svg::write(const std::string& file_path, float spacing)
 {
     std::ofstream ofs(file_path);
 
-	const auto bb = calc_bounding_box(points).value_or(AABB2{{0.0f, 0.0f}});
+	const auto bb = calc_bounding_box(*this).value_or(AABB2{{0.0f, 0.0f}});
 	const auto size = bb.calc_size();
 
     ofs << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"" << (size.x + spacing*2)
         << "\" height=\"" << (size.y + spacing*2) << "\" viewBox=\""
         << (bb.min.x - spacing) << " " << (bb.min.y - spacing) << " " << (bb.max.x + spacing) << " " << (bb.max.y + spacing) << "\">\n";
-    ofs << "<polyline fill=\"none\" stroke=\"black\" stroke-width=\"1\" points=\"";
-    for (const auto& p : points) {
-        ofs << p.x << "," << p.y << " ";
+
+    for(const auto& line: lines)
+    {
+        ofs << "<polyline fill=\"none\" stroke=\"" << line.color << "\" stroke-width=\"1\" points=\"";
+        for (const auto& p : line.points) {
+            ofs << p.x << "," << p.y << " ";
+        }
+        ofs << "\" />\n";
     }
-    ofs << "\" />\n";
     ofs << "</svg>\n";
 }
