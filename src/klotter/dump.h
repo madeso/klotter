@@ -13,6 +13,24 @@ namespace svg
     constexpr std::string_view reddish_purple = "#cc79a7";
 }
 
+struct PlotRange
+{
+	float start;
+	float end;
+	float step;
+};
+
+template<typename F>
+std::vector<glm::vec2> plot_line(const PlotRange& p, F f)
+{
+	std::vector<glm::vec2> points;
+	for (float x = p.start; x <= p.end; x += p.step)
+	{
+		points.emplace_back(x, f(x));
+	}
+	return points;
+}
+
 struct SvgLine
 {
     std::string_view color;
