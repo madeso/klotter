@@ -61,8 +61,11 @@ void Svg::write(const std::string& file_path, float spacing)
 	const auto bb = calc_bounding_box(*this).value_or(AABB2{{0.0f, 0.0f}});
 	const auto size = bb.calc_size();
 
-    ofs << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"" << (size.x + spacing*2)
-        << "\" height=\"" << (size.y + spacing*2) << "\" viewBox=\""
+	float width = 800;
+	float height = 600;
+
+    ofs << "<svg preserveAspectRatio=\"meet\" xmlns=\"http://www.w3.org/2000/svg\" width=\"" << width
+        << "\" height=\"" << height << "\" viewBox=\""
         << (bb.min.x - spacing) << " " << (bb.min.y - spacing) << " " << (bb.max.x + spacing) << " " << (bb.max.y + spacing) << "\">\n";
 
     for(const auto& line: lines)
