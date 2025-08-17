@@ -8,12 +8,13 @@ var searchData=
   ['vao_5',['vao',['../structklotter_1_1CompiledGeom.html#a9c61cb6bfef749b69af91f6802dcb67a',1,'klotter::CompiledGeom::vao'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a853a5b1e570c8eeece2e23110a45040d',1,'klotter::CompiledGeom_TransformInstance::vao']]],
   ['vb_6',['vb',['../structklotter_1_1LineBatch.html#a19f223a12164e163ed09156d8797b309',1,'klotter::LineBatch']]],
   ['vbo_7',['vbo',['../structklotter_1_1CompiledGeom.html#a9d480775171d797a0604199ce661b0c1',1,'klotter::CompiledGeom::vbo'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a0e178ef0c09b2968213783208092dcf7',1,'klotter::CompiledGeom_TransformInstance::vbo']]],
-  ['vert_8',['vert',['../structklotter_1_1BlurEffect.html#a987f9b83de4e9c7935207f5da9776736',1,'klotter::BlurEffect']]],
-  ['vert_5fp_9',['vert_p',['../structklotter_1_1BlurEffect.html#a4619799774fcac1b4fb0293b7403f8ab',1,'klotter::BlurEffect']]],
-  ['vertex_10',['vertex',['../structklotter_1_1VertexShaderSource.html#a8f362859d9f3f6f46c10a7a9cabddf7c',1,'klotter::VertexShaderSource::vertex'],['../structklotter_1_1ShaderSource.html#a6b9e1c440250f9b203724b907da93f18',1,'klotter::ShaderSource::vertex']]],
-  ['vertices_11',['vertices',['../structklotter_1_1Geom.html#a5f55a031de35199a3bd11ca612a08aae',1,'klotter::Geom']]],
-  ['view_5ffrom_5fworld_12',['view_from_world',['../structklotter_1_1CompiledCamera.html#a8069b0435d682041843d9af2c4f49f19',1,'klotter::CompiledCamera']]],
-  ['view_5ffrom_5fworld_5funi_13',['view_from_world_uni',['../structklotter_1_1LineDrawer.html#a8268353446742e802b34b01fa62276cc',1,'klotter::LineDrawer::view_from_world_uni'],['../structklotter_1_1CameraUniformBuffer.html#aaae605f9cf97189117b80735ec12b77f',1,'klotter::CameraUniformBuffer::view_from_world_uni']]],
-  ['view_5fposition_5funi_14',['view_position_uni',['../structklotter_1_1LoadedShader__Default.html#ab94e2191d8eb5b45a7b5ecea9baab7c4',1,'klotter::LoadedShader_Default']]],
-  ['violet_15',['violet',['../group__imguicolors.html#gac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
+  ['vermillion_8',['vermillion',['../namespacesvg.html#aafb8a48a5244e78109e971b73400358e',1,'svg']]],
+  ['vert_9',['vert',['../structklotter_1_1BlurEffect.html#a987f9b83de4e9c7935207f5da9776736',1,'klotter::BlurEffect']]],
+  ['vert_5fp_10',['vert_p',['../structklotter_1_1BlurEffect.html#a4619799774fcac1b4fb0293b7403f8ab',1,'klotter::BlurEffect']]],
+  ['vertex_11',['vertex',['../structklotter_1_1VertexShaderSource.html#a8f362859d9f3f6f46c10a7a9cabddf7c',1,'klotter::VertexShaderSource::vertex'],['../structklotter_1_1ShaderSource.html#a6b9e1c440250f9b203724b907da93f18',1,'klotter::ShaderSource::vertex']]],
+  ['vertices_12',['vertices',['../structklotter_1_1Geom.html#a5f55a031de35199a3bd11ca612a08aae',1,'klotter::Geom']]],
+  ['view_5ffrom_5fworld_13',['view_from_world',['../structklotter_1_1CompiledCamera.html#a8069b0435d682041843d9af2c4f49f19',1,'klotter::CompiledCamera']]],
+  ['view_5ffrom_5fworld_5funi_14',['view_from_world_uni',['../structklotter_1_1LineDrawer.html#a8268353446742e802b34b01fa62276cc',1,'klotter::LineDrawer::view_from_world_uni'],['../structklotter_1_1CameraUniformBuffer.html#aaae605f9cf97189117b80735ec12b77f',1,'klotter::CameraUniformBuffer::view_from_world_uni']]],
+  ['view_5fposition_5funi_15',['view_position_uni',['../structklotter_1_1LoadedShader__Default.html#ab94e2191d8eb5b45a7b5ecea9baab7c4',1,'klotter::LoadedShader_Default']]],
+  ['violet_16',['violet',['../group__imguicolors.html#gac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
 ];

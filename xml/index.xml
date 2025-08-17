@@ -547,6 +547,11 @@
     <member refid="structklotter_1_1PingPongBlurShader_1afba0c910c25cb3ee95c7bf59cec659d8" kind="variable"><name>is_horizontal_uniform</name></member>
     <member refid="structklotter_1_1PingPongBlurShader_1a7115fe9b53e77ab1bade3284365f70e1" kind="function"><name>PingPongBlurShader</name></member>
   </compound>
+  <compound refid="structPlotRange" kind="struct"><name>PlotRange</name>
+    <member refid="structPlotRange_1a3ed06b9824af4a36190845b075f20658" kind="variable"><name>start</name></member>
+    <member refid="structPlotRange_1aae56ef81c1da0462b1ea13595713818a" kind="variable"><name>end</name></member>
+    <member refid="structPlotRange_1a3ce32efc8597c15695c3cd6990ab1cfe" kind="variable"><name>step</name></member>
+  </compound>
   <compound refid="structklotter_1_1PointLight" kind="struct"><name>klotter::PointLight</name>
     <member refid="structklotter_1_1PointLight_1adb0573784a8adf570ed880587d3d9a1a" kind="variable"><name>position</name></member>
     <member refid="structklotter_1_1PointLight_1a29d07bcec7b9efd1198de1584e75dbae" kind="variable"><name>min_range</name></member>
@@ -808,6 +813,15 @@
     <member refid="structStr_1ae5bcd149c44251ab778610f5dfaff12d" kind="function"><name>str</name></member>
     <member refid="structStr_1a84fc71238479b64068900969c02594a3" kind="function"><name>operator std::string</name></member>
   </compound>
+  <compound refid="structSvg" kind="struct"><name>Svg</name>
+    <member refid="structSvg_1ac6e350c3e8a110dc77e004b5bd415a7d" kind="variable"><name>lines</name></member>
+    <member refid="structSvg_1ab11a40259f86ff4bf7372fabbb0c5354" kind="function"><name>add_line</name></member>
+    <member refid="structSvg_1a4c48cf4dd61080d58bab289ddceddf98" kind="function"><name>write</name></member>
+  </compound>
+  <compound refid="structSvgLine" kind="struct"><name>SvgLine</name>
+    <member refid="structSvgLine_1a7e89c7079405003305da33a697687d0b" kind="variable"><name>color</name></member>
+    <member refid="structSvgLine_1a76bf588e50b5bde6d87d9549d6acee7f" kind="variable"><name>points</name></member>
+  </compound>
   <compound refid="structklotter_1_1Texture2d" kind="struct"><name>klotter::Texture2d</name>
     <member refid="structklotter_1_1Texture2d_1a1fa326c2283a36db37ce414241170637" kind="function"><name>Texture2d</name></member>
     <member refid="structklotter_1_1Texture2d_1a240d184f7b79894ec4c3948285ee3e7b" kind="function"><name>Texture2d</name></member>
@@ -1049,6 +1063,16 @@
   </compound>
   <compound refid="namespacestd_1_1literals_1_1string__view__literals" kind="namespace"><name>std::literals::string_view_literals</name>
   </compound>
+  <compound refid="namespacesvg" kind="namespace"><name>svg</name>
+    <member refid="namespacesvg_1a144a301c78eebaeeafe0310491bab985" kind="variable"><name>black</name></member>
+    <member refid="namespacesvg_1a3a884137493ea364ea2efa84604404dd" kind="variable"><name>orange</name></member>
+    <member refid="namespacesvg_1ac071d0ceb3a22d5b415c37c50bd94c62" kind="variable"><name>sky_blue</name></member>
+    <member refid="namespacesvg_1ac195755e6719ff7caaed1bb9d802f173" kind="variable"><name>bluish_green</name></member>
+    <member refid="namespacesvg_1aee358cf276fafda794264c2f6849bcec" kind="variable"><name>yellow</name></member>
+    <member refid="namespacesvg_1a5c20a783b7c14cc484b05482ba1ad114" kind="variable"><name>blue</name></member>
+    <member refid="namespacesvg_1aafb8a48a5244e78109e971b73400358e" kind="variable"><name>vermillion</name></member>
+    <member refid="namespacesvg_1a77d6e5012f32a5531daaae30ea8a163e" kind="variable"><name>reddish_purple</name></member>
+  </compound>
   <compound refid="topics_8h" kind="file"><name>topics.h</name>
   </compound>
   <compound refid="assert_8h" kind="file"><name>assert.h</name>
@@ -1076,6 +1100,9 @@
   <compound refid="dependency__glm_8h" kind="file"><name>dependency_glm.h</name>
   </compound>
   <compound refid="dependency__sdl_8h" kind="file"><name>dependency_sdl.h</name>
+  </compound>
+  <compound refid="dump_8h" kind="file"><name>dump.h</name>
+    <member refid="dump_8h_1a3ec0c1a817bf397046a03ef55c13c9de" kind="function"><name>plot_line</name></member>
   </compound>
   <compound refid="feature__flags_8h" kind="file"><name>feature_flags.h</name>
     <member refid="feature__flags_8h_1a96ef6c9c3b50c598dde1d994fb97277a" kind="define"><name>FF_IS_ENABLED</name></member>

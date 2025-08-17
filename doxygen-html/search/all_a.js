@@ -24,7 +24,7 @@ var searchData=
   ['linebatch_21',['LineBatch',['../structklotter_1_1LineBatch.html',1,'klotter::LineBatch'],['../structklotter_1_1LineBatch.html#a3a43e334bd2c3ebad64c4e3e4af8ff90',1,'klotter::LineBatch::LineBatch(ShaderProgram *)'],['../structklotter_1_1LineBatch.html#a2a5f7384e73b6b919adb76aea2efe60c',1,'klotter::LineBatch::LineBatch(const LineBatch &amp;)=delete'],['../structklotter_1_1LineBatch.html#a964e2420c45c8f92bda5a4e41435fcf0',1,'klotter::LineBatch::LineBatch(LineBatch &amp;&amp;)=delete']]],
   ['linebatch_2eh_22',['linebatch.h',['../linebatch_8h.html',1,'']]],
   ['linedrawer_23',['LineDrawer',['../structklotter_1_1LineDrawer.html',1,'klotter::LineDrawer'],['../structklotter_1_1LineDrawer.html#ae877d9de19653d08a1a130962b22af26',1,'klotter::LineDrawer::LineDrawer()']]],
-  ['lines_24',['lines',['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch::lines']]],
+  ['lines_24',['lines',['../structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d',1,'Svg::lines'],['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch::lines']]],
   ['list_25',['Todo List',['../todo.html',1,'']]],
   ['load_5fcubemap_5ffrom_5fcolor_26',['load_cubemap_from_color',['../group__texture.html#gac294a067af5e2b530a3cf9c2fdd303f0',1,'klotter']]],
   ['load_5fcubemap_5ffrom_5fembedded_27',['load_cubemap_from_embedded',['../namespaceklotter.html#a13de4179633ea5c58f6bda9892efde71',1,'klotter']]],

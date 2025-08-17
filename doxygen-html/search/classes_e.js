@@ -12,5 +12,7 @@ var searchData=
   ['simpleeffect_9',['SimpleEffect',['../structklotter_1_1SimpleEffect.html',1,'klotter']]],
   ['skybox_10',['Skybox',['../structklotter_1_1Skybox.html',1,'klotter']]],
   ['statechanger_11',['StateChanger',['../structklotter_1_1StateChanger.html',1,'klotter']]],
-  ['str_12',['Str',['../structStr.html',1,'']]]
+  ['str_12',['Str',['../structStr.html',1,'']]],
+  ['svg_13',['Svg',['../structSvg.html',1,'']]],
+  ['svgline_14',['SvgLine',['../structSvgLine.html',1,'']]]
 ];

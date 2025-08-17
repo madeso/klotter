@@ -1,0 +1,67 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/dump.cc</title>
+</head>
+<body>
+<h1>src/klotter/dump.cc</h1>
+<span id='modernize-use-nodiscard'>&nbsp;</span>
+<hr>
+<h3>warning: function &#39;calc_size&#39; should be marked [[nodiscard]]</h3>
+<code>[modernize-use-nodiscard]</code>
+<p><i>src/klotter/dump.cc 28 : 2</i></p>
+<pre>
+   28 |         glm::vec2 calc_size() const
+      |         ^
+      |         [[nodiscard]] 
+</pre>
+<span id='readability-braces-around-statements'>&nbsp;</span>
+<hr>
+<h3>warning: statement should be inside braces</h3>
+<code>[readability-braces-around-statements]</code>
+<p><i>src/klotter/dump.cc 36 : 24</i></p>
+<pre>
+   36 |         if (svg.lines.empty()) return std::nullopt;
+      |                               ^                    
+      |                                {
+</pre>
+<span id='misc-const-correctness'>&nbsp;</span>
+<hr>
+<h3>warning: variable &#39;width&#39; of type &#39;float&#39; can be declared &#39;const&#39;</h3>
+<code>[misc-const-correctness]</code>
+<p><i>src/klotter/dump.cc 64 : 2</i></p>
+<pre>
+   64 |         float width = 800;
+      |         ^
+      |               const 
+</pre>
+<hr>
+<h3>warning: variable &#39;height&#39; of type &#39;float&#39; can be declared &#39;const&#39;</h3>
+<code>[misc-const-correctness]</code>
+<p><i>src/klotter/dump.cc 65 : 2</i></p>
+<pre>
+   65 |         float height = 600;
+      |         ^
+      |               const 
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/dump.cc:28:2: warning: function 'calc_size' should be marked [[nodiscard]] [modernize-use-nodiscard]
+   28 |         glm::vec2 calc_size() const
+      |         ^
+      |         [[nodiscard]] 
+/home/runner/work/klotter/klotter/src/klotter/dump.cc:36:24: warning: statement should be inside braces [readability-braces-around-statements]
+   36 |         if (svg.lines.empty()) return std::nullopt;
+      |                               ^                    
+      |                                {
+/home/runner/work/klotter/klotter/src/klotter/dump.cc:64:2: warning: variable 'width' of type 'float' can be declared 'const' [misc-const-correctness]
+   64 |         float width = 800;
+      |         ^
+      |               const 
+/home/runner/work/klotter/klotter/src/klotter/dump.cc:65:2: warning: variable 'height' of type 'float' can be declared 'const' [misc-const-correctness]
+   65 |         float height = 600;
+      |         ^
+      |               const 
+-->
+</body>
+</html>

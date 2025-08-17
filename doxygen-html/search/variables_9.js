@@ -14,6 +14,6 @@ var searchData=
   ['lin_5fcolors_11',['lin_colors',['../structklotter_1_1geom_1_1Builder.html#aebac05a07388fa568e1dcdc43d4065bb',1,'klotter::geom::Builder']]],
   ['line_5fbatch_12',['line_batch',['../structklotter_1_1LineDrawer.html#a9e92ee3a442f6f499f7bd5eab0454def',1,'klotter::LineDrawer']]],
   ['line_5fcolor_13',['line_color',['../structklotter_1_1SCurveImguiSettings.html#a0252dda4c60f6ad85152e086117c9167',1,'klotter::SCurveImguiSettings']]],
-  ['lines_14',['lines',['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch::lines']]],
+  ['lines_14',['lines',['../structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d',1,'Svg::lines'],['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch::lines']]],
   ['location_15',['location',['../structklotter_1_1Uniform.html#a0a3d653eabb213c1f05a7ca494a5cf27',1,'klotter::Uniform']]]
 ];

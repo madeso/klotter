@@ -6,5 +6,6 @@ var searchData=
   ['with_5fmsaa_3',['with_msaa',['../structklotter_1_1FrameBufferBuilder.html#abb13c3b37555723323e059b39814aa4a',1,'klotter::FrameBufferBuilder']]],
   ['with_5fstencil_4',['with_stencil',['../structklotter_1_1FrameBufferBuilder.html#a1e0802c3d625392894e2f036b855c336',1,'klotter::FrameBufferBuilder']]],
   ['with_5ftransparent_5fcutoff_5',['with_transparent_cutoff',['../structklotter_1_1ShaderOptions.html#a824c6abd7ff4c7ebfbcc15364a68455c',1,'klotter::ShaderOptions']]],
-  ['write_5fobj_6',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
+  ['write_6',['write',['../structSvg.html#a4c48cf4dd61080d58bab289ddceddf98',1,'Svg']]],
+  ['write_5fobj_7',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
 ];

@@ -10,6 +10,7 @@
     <innerfile refid="dependency__glad_8h">dependency_glad.h</innerfile>
     <innerfile refid="dependency__glm_8h">dependency_glm.h</innerfile>
     <innerfile refid="dependency__sdl_8h">dependency_sdl.h</innerfile>
+    <innerfile refid="dump_8h">dump.h</innerfile>
     <innerfile refid="feature__flags_8h">feature_flags.h</innerfile>
     <innerfile refid="hash_8h">hash.h</innerfile>
     <innerfile refid="im__colors_8h">im_colors.h</innerfile>

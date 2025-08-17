@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="56" column="9" bodyfile="src/klotter/hash.h" bodystart="56" bodyend="64"/>
+        <location file="src/klotter/hash.h" line="51" column="9" bodyfile="src/klotter/hash.h" bodystart="51" bodyend="59"/>
       </memberdef>
       <memberdef kind="define" id="group__hash_1ga102a60c28b17bc852589bbb26135173b" prot="public" static="no">
         <name>HASH_DEF</name>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="75" column="9" bodyfile="src/klotter/hash.h" bodystart="75" bodyend="-1"/>
+        <location file="src/klotter/hash.h" line="70" column="9" bodyfile="src/klotter/hash.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__hash_1gadea525dabdf353ba96abce59e6a5dadd" prot="public" static="no">
         <name>HASH_DEF_END</name>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/hash.h" line="84" column="9" bodyfile="src/klotter/hash.h" bodystart="84" bodyend="88"/>
+        <location file="src/klotter/hash.h" line="79" column="9" bodyfile="src/klotter/hash.h" bodystart="79" bodyend="83"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
