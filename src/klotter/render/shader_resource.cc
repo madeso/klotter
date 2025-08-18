@@ -247,6 +247,7 @@ RealizeShader::RealizeShader(std::shared_ptr<ShaderProgram> s)
 ExtractShader::ExtractShader(std::shared_ptr<LoadedPostProcShader>&& sh)
 	: shader(std::move(sh))
 	, cutoff_uniform(shader->program->get_uniform("u_cutoff"))
+	, softness_uniform(shader->program->get_uniform("u_softness"))
 {
 }
 

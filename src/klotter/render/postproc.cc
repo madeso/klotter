@@ -126,6 +126,7 @@ void RenderWorld::update(const PostProcArg& arg)
 				const auto& program = shader->program;
 				program->use();
 				program->set_float(container->cutoff_uniform, arg.renderer->settings.bloom_cutoff);
+				program->set_float(container->softness_uniform, arg.renderer->settings.bloom_softness);
 				bind_texture_2d(&arg.renderer->pimpl->states, shader->texture_uni, *realized_buffer);
 
 				render_geom(*arg.renderer->pimpl->full_screen_geom);

@@ -29,6 +29,11 @@ struct RenderSettings
 	/// The renderer doesn't need to restart when this value has changed.
 	float bloom_cutoff = 1.0f;
 
+	/// The bloom softness.
+	/// Also called knee, 0=no softness, 1=max softness.
+	/// The renderer doesn't need to restart when this value has changed.
+	float bloom_softness = 0.25f;
+
 	/// how any steps of bloom blur to perform.
 	/// The renderer doesn't need to restart when this value has changed.
 	int bloom_blur_steps = 10;

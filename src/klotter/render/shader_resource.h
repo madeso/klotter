@@ -244,6 +244,7 @@ struct ExtractShader
 
 	std::shared_ptr<LoadedPostProcShader> shader;
 	Uniform cutoff_uniform;
+	Uniform softness_uniform;
 };
 
 struct PingPongBlurShader

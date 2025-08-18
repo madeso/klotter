@@ -11,6 +11,7 @@
 #include "klotter/render/geom.h"
 #include "klotter/render/ui.h"
 
+
 using namespace klotter;
 
 namespace examples
@@ -390,6 +391,7 @@ struct LightsSample : Sample
 		imgui_color("Clear color", &world.clear_color);
 		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
 		ImGui::DragFloat("Bloom cutoff", &renderer->settings.bloom_cutoff, FAC_SPEED);
+		ImGui::SliderFloat("Softness", &renderer->settings.bloom_softness, 0.0f, 1.0f);
 		ImGui::DragInt("Bloom blur steps", &renderer->settings.bloom_blur_steps);
 
 		ImGui::SeparatorText("Effects");
