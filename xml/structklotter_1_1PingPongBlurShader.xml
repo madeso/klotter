@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="253" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="253" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="254" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="254" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PingPongBlurShader_1afba0c910c25cb3ee95c7bf59cec659d8" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="254" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="254" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="255" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="255" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="251" column="10"/>
+        <location file="src/klotter/render/shader_resource.h" line="252" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -116,7 +116,7 @@
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="249" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="250" bodyend="255"/>
+    <location file="src/klotter/render/shader_resource.h" line="250" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="251" bodyend="256"/>
     <listofallmembers>
       <member refid="structklotter_1_1PingPongBlurShader_1afba0c910c25cb3ee95c7bf59cec659d8" prot="public" virt="non-virtual"><scope>klotter::PingPongBlurShader</scope><name>is_horizontal_uniform</name></member>
       <member refid="structklotter_1_1PingPongBlurShader_1a7115fe9b53e77ab1bade3284365f70e1" prot="public" virt="non-virtual"><scope>klotter::PingPongBlurShader</scope><name>PingPongBlurShader</name></member>

@@ -94,6 +94,7 @@
         </childnode>
         <childnode refid="8" relation="usage">
           <edgelabel>cutoff_uniform</edgelabel>
+          <edgelabel>softness_uniform</edgelabel>
         </childnode>
       </node>
       <node id="12">

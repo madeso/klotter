@@ -138,6 +138,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a3a8c008ef8627b7389ac2d49403aa399" id="r_a3a8c008ef8627b7389ac2d49403aa399"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a8c008ef8627b7389ac2d49403aa399">bloom_cutoff</a> = 1.0f</td></tr>
 <tr class="memdesc:a3a8c008ef8627b7389ac2d49403aa399"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bloom cutoff value.  <br /></td></tr>
 <tr class="separator:a3a8c008ef8627b7389ac2d49403aa399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19fc5937643ba57c79be581814f86bd" id="r_ae19fc5937643ba57c79be581814f86bd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae19fc5937643ba57c79be581814f86bd">bloom_softness</a> = 0.25f</td></tr>
+<tr class="memdesc:ae19fc5937643ba57c79be581814f86bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bloom softness.  <br /></td></tr>
+<tr class="separator:ae19fc5937643ba57c79be581814f86bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9309a180ccfe2eb5e5679b6c46782c4c" id="r_a9309a180ccfe2eb5e5679b6c46782c4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9309a180ccfe2eb5e5679b6c46782c4c">bloom_blur_steps</a> = 10</td></tr>
 <tr class="memdesc:a9309a180ccfe2eb5e5679b6c46782c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">how any steps of bloom blur to perform.  <br /></td></tr>
 <tr class="separator:a9309a180ccfe2eb5e5679b6c46782c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,6 +179,23 @@ Public Attributes</h2></td></tr>
 
 <p>The bloom cutoff value. </p>
 <p>If brightness goes over this value, it will contribute to the bloom. The renderer doesn't need to restart when this value has changed. </p>
+
+</div>
+</div>
+<a id="ae19fc5937643ba57c79be581814f86bd" name="ae19fc5937643ba57c79be581814f86bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19fc5937643ba57c79be581814f86bd">&#9670;&#160;</a></span>bloom_softness</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float klotter::RenderSettings::bloom_softness = 0.25f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The bloom softness. </p>
+<p>Also called knee, 0=no softness, 1=max softness. The renderer doesn't need to restart when this value has changed. </p>
 
 </div>
 </div>
