@@ -25,7 +25,7 @@ struct AABB2
 		max.y = std::max(p.y, max.y);
 	}
 
-	glm::vec2 calc_size() const
+	[[nodiscard]] glm::vec2 calc_size() const
 	{
 		return max - min;
 	}
@@ -33,7 +33,10 @@ struct AABB2
 
 std::optional<AABB2> calc_bounding_box(const Svg& svg)
 {
-	if (svg.lines.empty()) return std::nullopt;
+	if (svg.lines.empty())
+	{
+		return std::nullopt;
+	}
 
 	auto r = AABB2{svg.lines[0].points[0]};
 
@@ -56,17 +59,17 @@ Svg& Svg::add_line(const std::vector<glm::vec2>& points, std::string_view color)
 
 void Svg::write(const std::string& file_path, float space)
 {
+    // todo(Gustav): move to argument/settings
+	constexpr float width = 800;
+	constexpr float height = 600;
+	constexpr int stroke_width = 3;
+	constexpr std::string_view html_background = "gray";
+	constexpr std::string_view canvas_color = "white";
+
     std::ofstream ofs(file_path);
 
 	const auto bb = calc_bounding_box(*this).value_or(AABB2{{0.0f, 0.0f}});
 	const auto size = bb.calc_size();
-
-	float width = 800;
-	float height = 600;
-    constexpr int stroke_width = 3;
-
-    constexpr std::string_view html_background = "gray";
-    constexpr std::string_view canvas_color = "white";
 
     const auto offset = bb.min;
     const auto scale = std::min((width-space*2) / size.x, (height-space*2) / size.y);
@@ -88,6 +91,7 @@ void Svg::write(const std::string& file_path, float space)
     {
         ofs << "<polyline fill=\"none\" stroke=\"" << line.color << "\" stroke-width=\"" << stroke_width << "px\" points=\"";
         for (const auto& p : line.points) {
+            // todo(Gustav): this transforms the points... can we use a viewbox or a transform instead and perhaps just scale the line thickness and (future) texts instead?
             ofs << px(p.x) << "," << py(p.y) << " ";
         }
         ofs << "\" />\n";
