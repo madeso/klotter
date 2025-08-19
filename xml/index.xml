@@ -378,7 +378,7 @@
     <member refid="structklotter_1_1FrustumLightUniforms_1ac9fa8cfa2a96ae24f2ab4935cd38162e" kind="variable"><name>attenuation_uni</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1a2270f7c132d437308de376292d6052cf" kind="variable"><name>world_to_clip_uni</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1a5ddcc07c053643551d55f402ec0efd29" kind="variable"><name>world_pos_uni</name></member>
-    <member refid="structklotter_1_1FrustumLightUniforms_1a0bd478d428546cd35f2ad2104f81a042" kind="variable"><name>cookie_uni</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1adb04e178b8d0066242483bb6b650db07" kind="variable"><name>tex_cookie_uniform</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1ab06a609169ec292dd41407b057b84127" kind="function"><name>FrustumLightUniforms</name></member>
   </compound>
   <compound refid="structklotter_1_1FullScreenGeom" kind="struct"><name>klotter::FullScreenGeom</name>
@@ -438,7 +438,7 @@
   </compound>
   <compound refid="structklotter_1_1LoadedPostProcShader" kind="struct"><name>klotter::LoadedPostProcShader</name>
     <member refid="structklotter_1_1LoadedPostProcShader_1ac9c705810b471316ca014926054d9450" kind="variable"><name>program</name></member>
-    <member refid="structklotter_1_1LoadedPostProcShader_1a10976256764d1c75d8e69689a6982289" kind="variable"><name>texture_uni</name></member>
+    <member refid="structklotter_1_1LoadedPostProcShader_1a6c49f381ffdc87c39b1313437f8c3058" kind="variable"><name>tex_input_uniform</name></member>
     <member refid="structklotter_1_1LoadedPostProcShader_1a8a4b03defcce03b259e547afb8fdc87c" kind="variable"><name>factor_uni</name></member>
     <member refid="structklotter_1_1LoadedPostProcShader_1a3ad52ac1878403776878765d66e4a9d6" kind="variable"><name>resolution_uni</name></member>
     <member refid="structklotter_1_1LoadedPostProcShader_1a99c2cbec10319108c1ffde8f035b6e8b" kind="variable"><name>time_uni</name></member>
@@ -447,9 +447,9 @@
   <compound refid="structklotter_1_1LoadedShader__Default" kind="struct"><name>klotter::LoadedShader_Default</name>
     <member refid="structklotter_1_1LoadedShader__Default_1adb6c4dab68ac21d0ec082b715e6a9003" kind="variable"><name>program</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1aa8bd2208f55eebc41109c66f559a5737" kind="variable"><name>tint_color_uni</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a5703d1a4660382f8f8e5bbc8c162da8c" kind="variable"><name>tex_diffuse_uni</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a7781f195179bc55d1e4e5d7a14042365" kind="variable"><name>tex_specular_uni</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1a124844e915fa5e94927f178bed7d8c44" kind="variable"><name>tex_emissive_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a73763e3123237cc0683535fef73562f6" kind="variable"><name>tex_diffuse_uniform</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1ab9ba3c0f80294ef6eaed886e671773cb" kind="variable"><name>tex_specular_uniform</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a4f3ec2079a8354cca66539291c901687" kind="variable"><name>tex_emissive_uniform</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a368b22d4833ac751f4015687aaaab671" kind="variable"><name>ambient_tint_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a87987ad8aadd6e42917e44fe9933e5ba" kind="variable"><name>specular_color_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1ab768fd618865565d6bfad53ad5a44c14" kind="variable"><name>shininess_uni</name></member>
@@ -479,13 +479,13 @@
   <compound refid="structklotter_1_1LoadedShader__Skybox" kind="struct"><name>klotter::LoadedShader_Skybox</name>
     <member refid="structklotter_1_1LoadedShader__Skybox_1a3cfd92a23b49f6b61db0132659ac4ab3" kind="variable"><name>program</name></member>
     <member refid="structklotter_1_1LoadedShader__Skybox_1a585e8b4c4fc29f8c3e16c4baace5774b" kind="variable"><name>geom_layout</name></member>
-    <member refid="structklotter_1_1LoadedShader__Skybox_1aa57793ec38a9b60233079b537b75dad5" kind="variable"><name>tex_skybox_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Skybox_1a8c617ea67c3778404e15c130f98ec279" kind="variable"><name>tex_skybox_uniform</name></member>
     <member refid="structklotter_1_1LoadedShader__Skybox_1a8087ee41a2ac5ead432b60aa682aff5f" kind="function"><name>LoadedShader_Skybox</name></member>
   </compound>
   <compound refid="structklotter_1_1LoadedShader__Unlit" kind="struct"><name>klotter::LoadedShader_Unlit</name>
     <member refid="structklotter_1_1LoadedShader__Unlit_1ae89bb303b8ae6300dc63f888bb7c0dc3" kind="variable"><name>program</name></member>
     <member refid="structklotter_1_1LoadedShader__Unlit_1a25e2aa953efc824eda874f0cfd84b73e" kind="variable"><name>tint_color_uni</name></member>
-    <member refid="structklotter_1_1LoadedShader__Unlit_1af214443294ee8b96432e1b22bc66cd5c" kind="variable"><name>tex_diffuse_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Unlit_1ac45048f65bd4828a40e739ff09533220" kind="variable"><name>tex_diffuse_uniform</name></member>
     <member refid="structklotter_1_1LoadedShader__Unlit_1a539d07d5134064aa9e1dcf0ef093c7d2" kind="variable"><name>world_from_local_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Unlit_1a0b51dc62bde3db127b96b139e2af0163" kind="function"><name>LoadedShader_Unlit</name></member>
   </compound>
@@ -577,8 +577,8 @@
   </compound>
   <compound refid="structklotter_1_1RealizeShader" kind="struct"><name>klotter::RealizeShader</name>
     <member refid="structklotter_1_1RealizeShader_1a75aa26510623936bca8fac9bb31aead0" kind="variable"><name>program</name></member>
-    <member refid="structklotter_1_1RealizeShader_1a35dd6d6784210f4bb77f8e03fa423475" kind="variable"><name>texture_uni</name></member>
-    <member refid="structklotter_1_1RealizeShader_1aac3772c8a653fda07125d4080e242932" kind="variable"><name>blurred_bloom_uniform</name></member>
+    <member refid="structklotter_1_1RealizeShader_1a7c0873de1e3da95481a315dd93971246" kind="variable"><name>tex_input_uniform</name></member>
+    <member refid="structklotter_1_1RealizeShader_1a372444a1a67a10940b0a794e92203b1e" kind="variable"><name>tex_blurred_bloom_uniform</name></member>
     <member refid="structklotter_1_1RealizeShader_1a67c18653a5bd20289cb8f2040883713a" kind="variable"><name>use_blur_uniform</name></member>
     <member refid="structklotter_1_1RealizeShader_1a1fc28d6fb77c06dbd8c606987b62c7be" kind="variable"><name>gamma_uniform</name></member>
     <member refid="structklotter_1_1RealizeShader_1a1dc6b3833c4e5a03fe9d1b1673527fd2" kind="variable"><name>exposure_uniform</name></member>

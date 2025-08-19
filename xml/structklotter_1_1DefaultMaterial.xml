@@ -363,9 +363,9 @@
         <link refid="structklotter_1_1FrustumLightUniforms"/>
         <childnode refid="11" relation="usage">
           <edgelabel>attenuation_uni</edgelabel>
-          <edgelabel>cookie_uni</edgelabel>
           <edgelabel>diffuse_uni</edgelabel>
           <edgelabel>specular_uni</edgelabel>
+          <edgelabel>tex_cookie_uniform</edgelabel>
           <edgelabel>world_pos_uni</edgelabel>
           <edgelabel>world_to_clip_uni</edgelabel>
         </childnode>
@@ -382,9 +382,9 @@
           <edgelabel>light_ambient_color_uni</edgelabel>
           <edgelabel>shininess_uni</edgelabel>
           <edgelabel>specular_color_uni</edgelabel>
-          <edgelabel>tex_diffuse_uni</edgelabel>
-          <edgelabel>tex_emissive_uni</edgelabel>
-          <edgelabel>tex_specular_uni</edgelabel>
+          <edgelabel>tex_diffuse_uniform</edgelabel>
+          <edgelabel>tex_emissive_uniform</edgelabel>
+          <edgelabel>tex_specular_uniform</edgelabel>
           <edgelabel>tint_color_uni</edgelabel>
           <edgelabel>view_position_uni</edgelabel>
           <edgelabel>...</edgelabel>

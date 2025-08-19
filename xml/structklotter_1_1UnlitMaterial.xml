@@ -248,7 +248,7 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="11" relation="usage">
-          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tex_diffuse_uniform</edgelabel>
           <edgelabel>tint_color_uni</edgelabel>
         </childnode>
       </node>

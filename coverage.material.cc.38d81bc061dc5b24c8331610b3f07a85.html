@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/material.cc</div>
-            <div>Date: 2025-08-18 17:45:39</div>
+            <div>Date: 2025-08-19 17:25:34</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -520,7 +520,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader_from_container</span><span class="p">(</span><span class="o">*</span><span class="n">shader_container</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">).</span><span class="n">tex_diffuse_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader_from_container</span><span class="p">(</span><span class="o">*</span><span class="n">shader_container</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">).</span><span class="n">tex_diffuse_uniform</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">t</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
@@ -989,21 +989,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_diffuse_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">diffuse</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_diffuse_uniform</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">diffuse</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l129" href="#l129">129</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_specular_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">specular</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_specular_uniform</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">specular</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l130" href="#l130">130</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_emissive_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_black</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">emissive</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">tex_emissive_uniform</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_black</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">emissive</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l131" href="#l131">131</a></td>
@@ -1500,7 +1500,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">cookie_uni</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">cookie</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">bind_texture_2d</span><span class="p">(</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">tex_cookie_uniform</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">get_or_white</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">cookie</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l202" href="#l202">202</a></td>

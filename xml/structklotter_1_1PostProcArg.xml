@@ -205,9 +205,9 @@
         <link refid="structklotter_1_1FrustumLightUniforms"/>
         <childnode refid="53" relation="usage">
           <edgelabel>attenuation_uni</edgelabel>
-          <edgelabel>cookie_uni</edgelabel>
           <edgelabel>diffuse_uni</edgelabel>
           <edgelabel>specular_uni</edgelabel>
+          <edgelabel>tex_cookie_uniform</edgelabel>
           <edgelabel>world_pos_uni</edgelabel>
           <edgelabel>world_to_clip_uni</edgelabel>
         </childnode>
@@ -265,7 +265,7 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="53" relation="usage">
-          <edgelabel>texture_uni</edgelabel>
+          <edgelabel>tex_input_uniform</edgelabel>
         </childnode>
       </node>
       <node id="58">
@@ -280,9 +280,9 @@
           <edgelabel>light_ambient_color_uni</edgelabel>
           <edgelabel>shininess_uni</edgelabel>
           <edgelabel>specular_color_uni</edgelabel>
-          <edgelabel>tex_diffuse_uni</edgelabel>
-          <edgelabel>tex_emissive_uni</edgelabel>
-          <edgelabel>tex_specular_uni</edgelabel>
+          <edgelabel>tex_diffuse_uniform</edgelabel>
+          <edgelabel>tex_emissive_uniform</edgelabel>
+          <edgelabel>tex_specular_uniform</edgelabel>
           <edgelabel>tint_color_uni</edgelabel>
           <edgelabel>view_position_uni</edgelabel>
           <edgelabel>...</edgelabel>
@@ -333,7 +333,7 @@
           <edgelabel>geom_layout</edgelabel>
         </childnode>
         <childnode refid="53" relation="usage">
-          <edgelabel>tex_skybox_uni</edgelabel>
+          <edgelabel>tex_skybox_uniform</edgelabel>
         </childnode>
       </node>
       <node id="56">
@@ -343,7 +343,7 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="53" relation="usage">
-          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tex_diffuse_uniform</edgelabel>
           <edgelabel>tint_color_uni</edgelabel>
         </childnode>
       </node>
@@ -442,10 +442,10 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="53" relation="usage">
-          <edgelabel>blurred_bloom_uniform</edgelabel>
           <edgelabel>exposure_uniform</edgelabel>
           <edgelabel>gamma_uniform</edgelabel>
-          <edgelabel>texture_uni</edgelabel>
+          <edgelabel>tex_blurred_bloom_uniform</edgelabel>
+          <edgelabel>tex_input_uniform</edgelabel>
           <edgelabel>use_blur_uniform</edgelabel>
         </childnode>
       </node>

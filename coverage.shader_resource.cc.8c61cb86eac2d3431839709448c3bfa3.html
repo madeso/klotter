@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/shader_resource.cc</div>
-            <div>Date: 2025-08-18 17:45:39</div>
+            <div>Date: 2025-08-19 17:25:34</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -485,7 +485,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_skybox_uni</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_skybox_tex&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_skybox_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_skybox_tex&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l56" href="#l56">56</a></td>
@@ -499,7 +499,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_textures</span><span class="p">(</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">tex_skybox_uni</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_textures</span><span class="p">(</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">tex_skybox_uniform</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l58" href="#l58">58</a></td>
@@ -590,7 +590,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_diffuse_uni</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_material.diffuse_tex&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_diffuse_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_material.diffuse_tex&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l71" href="#l71">71</a></td>
@@ -625,7 +625,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_textures</span><span class="p">(</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">tex_diffuse_uni</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_textures</span><span class="p">(</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">tex_diffuse_uniform</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l76" href="#l76">76</a></td>
@@ -842,7 +842,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">cookie_uni</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="n">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;cookie&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_cookie_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="n">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;cookie&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l107" href="#l107">107</a></td>
@@ -1059,7 +1059,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">texture_uni</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_texture&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_input_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_texture&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l138" href="#l138">138</a></td>
@@ -1094,7 +1094,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_textures</span><span class="p">(</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">texture_uni</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_textures</span><span class="p">(</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">tex_input_uniform</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l143" href="#l143">143</a></td>
@@ -1185,21 +1185,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_diffuse_uni</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_material.diffuse_tex&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_diffuse_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_material.diffuse_tex&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l156" href="#l156">156</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_specular_uni</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_material.specular_tex&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_specular_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_material.specular_tex&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l157" href="#l157">157</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_emissive_uni</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_material.emissive_tex&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_emissive_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_material.emissive_tex&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l158" href="#l158">158</a></td>
@@ -1402,7 +1402,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">textures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">tex_diffuse_uni</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tex_specular_uni</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tex_emissive_uni</span><span class="p">};</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Uniform</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">textures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">tex_diffuse_uniform</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tex_specular_uniform</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tex_emissive_uniform</span><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l187" href="#l187">187</a></td>
@@ -1423,7 +1423,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">textures</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fl</span><span class="p">.</span><span class="n">cookie_uni</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">textures</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fl</span><span class="p">.</span><span class="n">tex_cookie_uniform</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l190" href="#l190">190</a></td>
@@ -1752,14 +1752,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">texture_uni</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_texture&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_input_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_texture&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l237" href="#l237">237</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">blurred_bloom_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_blurred_bloom&quot;</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="p">,</span><span class="w"> </span><span class="n">tex_blurred_bloom_uniform</span><span class="p">(</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">get_uniform</span><span class="p">(</span><span class="s">&quot;u_blurred_bloom&quot;</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l238" href="#l238">238</a></td>
@@ -1794,7 +1794,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_textures</span><span class="p">(</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">texture_uni</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">blurred_bloom_uniform</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">setup_textures</span><span class="p">(</span><span class="n">program</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">tex_input_uniform</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tex_blurred_bloom_uniform</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l243" href="#l243">243</a></td>

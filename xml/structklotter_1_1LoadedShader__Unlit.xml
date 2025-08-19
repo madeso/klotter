@@ -32,12 +32,12 @@
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="76" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="76" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1af214443294ee8b96432e1b22bc66cd5c" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1ac45048f65bd4828a40e739ff09533220" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
-        <definition>Uniform klotter::LoadedShader_Unlit::tex_diffuse_uni</definition>
+        <definition>Uniform klotter::LoadedShader_Unlit::tex_diffuse_uniform</definition>
         <argsstring></argsstring>
-        <name>tex_diffuse_uni</name>
-        <qualifiedname>klotter::LoadedShader_Unlit::tex_diffuse_uni</qualifiedname>
+        <name>tex_diffuse_uniform</name>
+        <qualifiedname>klotter::LoadedShader_Unlit::tex_diffuse_uniform</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -105,7 +105,7 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
-          <edgelabel>tex_diffuse_uni</edgelabel>
+          <edgelabel>tex_diffuse_uniform</edgelabel>
           <edgelabel>tint_color_uni</edgelabel>
         </childnode>
       </node>
@@ -145,7 +145,7 @@
     <listofallmembers>
       <member refid="structklotter_1_1LoadedShader__Unlit_1a0b51dc62bde3db127b96b139e2af0163" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>LoadedShader_Unlit</name></member>
       <member refid="structklotter_1_1LoadedShader__Unlit_1ae89bb303b8ae6300dc63f888bb7c0dc3" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>program</name></member>
-      <member refid="structklotter_1_1LoadedShader__Unlit_1af214443294ee8b96432e1b22bc66cd5c" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>tex_diffuse_uni</name></member>
+      <member refid="structklotter_1_1LoadedShader__Unlit_1ac45048f65bd4828a40e739ff09533220" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>tex_diffuse_uniform</name></member>
       <member refid="structklotter_1_1LoadedShader__Unlit_1a25e2aa953efc824eda874f0cfd84b73e" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>tint_color_uni</name></member>
       <member refid="structklotter_1_1LoadedShader__Unlit_1a539d07d5134064aa9e1dcf0ef093c7d2" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>world_from_local_uni</name></member>
     </listofallmembers>

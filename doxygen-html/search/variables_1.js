@@ -20,8 +20,7 @@ var searchData=
   ['blur_5fsize_17',['blur_size',['../structklotter_1_1BlurEffect.html#a0d0d5116bbf127075c35856b8b821206',1,'klotter::BlurEffect']]],
   ['blur_5fsize_5fh_18',['blur_size_h',['../structklotter_1_1BlurEffect.html#a3d07e97e13ef71c3bfb3521cae6b7ef5',1,'klotter::BlurEffect']]],
   ['blur_5fsize_5fv_19',['blur_size_v',['../structklotter_1_1BlurEffect.html#aca5d985c5ad836e8ef80af5968a2c2cc',1,'klotter::BlurEffect']]],
-  ['blurred_5fbloom_5funiform_20',['blurred_bloom_uniform',['../structklotter_1_1RealizeShader.html#aac3772c8a653fda07125d4080e242932',1,'klotter::RealizeShader']]],
-  ['buffer_21',['buffer',['../structklotter_1_1CameraUniformBuffer.html#a46b28bfe4ad5f8155051abfca7ad6652',1,'klotter::CameraUniformBuffer::buffer'],['../structklotter_1_1BoundUniformBuffer.html#aa5d78460694529bcc7bdc2f36242cd08',1,'klotter::BoundUniformBuffer::buffer']]],
-  ['builder_22',['builder',['../structklotter_1_1BuildArg.html#ae4684359223ba3b80efb252682c90fc7',1,'klotter::BuildArg']]],
-  ['button_23',['button',['../structklotter_1_1SCurveImguiSettings.html#ad11e876840cb921b354bd6c664316b8d',1,'klotter::SCurveImguiSettings']]]
+  ['buffer_20',['buffer',['../structklotter_1_1CameraUniformBuffer.html#a46b28bfe4ad5f8155051abfca7ad6652',1,'klotter::CameraUniformBuffer::buffer'],['../structklotter_1_1BoundUniformBuffer.html#aa5d78460694529bcc7bdc2f36242cd08',1,'klotter::BoundUniformBuffer::buffer']]],
+  ['builder_21',['builder',['../structklotter_1_1BuildArg.html#ae4684359223ba3b80efb252682c90fc7',1,'klotter::BuildArg']]],
+  ['button_22',['button',['../structklotter_1_1SCurveImguiSettings.html#ad11e876840cb921b354bd6c664316b8d',1,'klotter::SCurveImguiSettings']]]
 ];

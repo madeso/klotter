@@ -10,12 +10,11 @@ var searchData=
   ['color_5fbits_5fper_5fpixel_7',['color_bits_per_pixel',['../structklotter_1_1FrameBufferBuilder.html#afbbcb8888ef61ff4b6a84e1c1f2a1585',1,'klotter::FrameBufferBuilder']]],
   ['compiled_8',['compiled',['../structklotter_1_1EffectStack.html#a99d2b4b2f9ddce5da16bf4d088978bd6',1,'klotter::EffectStack']]],
   ['cookie_9',['cookie',['../structklotter_1_1FrustumLight.html#a2c2876dc3fb25f516ae33b6005c22fdf',1,'klotter::FrustumLight']]],
-  ['cookie_5funi_10',['cookie_uni',['../structklotter_1_1FrustumLightUniforms.html#a0bd478d428546cd35f2ad2104f81a042',1,'klotter::FrustumLightUniforms']]],
-  ['count_11',['count',['../structklotter_1_1ExtractedAttribute.html#a54a83941efe28b657cc235f2ea8af662',1,'klotter::ExtractedAttribute']]],
-  ['cubemap_12',['cubemap',['../structklotter_1_1Skybox.html#a0b52d43c85b813bfa90059abe97319b0',1,'klotter::Skybox']]],
-  ['cull_5fface_13',['cull_face',['../structklotter_1_1OpenglStates.html#a89ee7105fbafa9f60684e3c06035f6ba',1,'klotter::OpenglStates']]],
-  ['cull_5fface_5fmode_14',['cull_face_mode',['../structklotter_1_1OpenglStates.html#aca8b5650ca44492042e731110c5f4177',1,'klotter::OpenglStates']]],
-  ['curve_15',['curve',['../structklotter_1_1PointLight.html#ac0d003441d29d18c8f09a1a2106af1d6',1,'klotter::PointLight::curve'],['../structklotter_1_1FrustumLight.html#a54a594d10d1c00fd6cbc6c2aa000deef',1,'klotter::FrustumLight::curve']]],
-  ['cutoff_5funiform_16',['cutoff_uniform',['../structklotter_1_1ExtractShader.html#ac2145f587c7304542d1ee2ffafe19d07',1,'klotter::ExtractShader']]],
-  ['cyan_17',['cyan',['../group__imguicolors.html#ga82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
+  ['count_10',['count',['../structklotter_1_1ExtractedAttribute.html#a54a83941efe28b657cc235f2ea8af662',1,'klotter::ExtractedAttribute']]],
+  ['cubemap_11',['cubemap',['../structklotter_1_1Skybox.html#a0b52d43c85b813bfa90059abe97319b0',1,'klotter::Skybox']]],
+  ['cull_5fface_12',['cull_face',['../structklotter_1_1OpenglStates.html#a89ee7105fbafa9f60684e3c06035f6ba',1,'klotter::OpenglStates']]],
+  ['cull_5fface_5fmode_13',['cull_face_mode',['../structklotter_1_1OpenglStates.html#aca8b5650ca44492042e731110c5f4177',1,'klotter::OpenglStates']]],
+  ['curve_14',['curve',['../structklotter_1_1PointLight.html#ac0d003441d29d18c8f09a1a2106af1d6',1,'klotter::PointLight::curve'],['../structklotter_1_1FrustumLight.html#a54a594d10d1c00fd6cbc6c2aa000deef',1,'klotter::FrustumLight::curve']]],
+  ['cutoff_5funiform_15',['cutoff_uniform',['../structklotter_1_1ExtractShader.html#ac2145f587c7304542d1ee2ffafe19d07',1,'klotter::ExtractShader']]],
+  ['cyan_16',['cyan',['../group__imguicolors.html#ga82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
 ];

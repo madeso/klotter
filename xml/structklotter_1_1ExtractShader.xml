@@ -91,7 +91,7 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
-          <edgelabel>texture_uni</edgelabel>
+          <edgelabel>tex_input_uniform</edgelabel>
         </childnode>
       </node>
       <node id="5">

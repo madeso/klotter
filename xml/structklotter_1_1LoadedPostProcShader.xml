@@ -18,12 +18,12 @@
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="137" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="137" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1LoadedPostProcShader_1a10976256764d1c75d8e69689a6982289" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1LoadedPostProcShader_1a6c49f381ffdc87c39b1313437f8c3058" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
-        <definition>Uniform klotter::LoadedPostProcShader::texture_uni</definition>
+        <definition>Uniform klotter::LoadedPostProcShader::tex_input_uniform</definition>
         <argsstring></argsstring>
-        <name>texture_uni</name>
-        <qualifiedname>klotter::LoadedPostProcShader::texture_uni</qualifiedname>
+        <name>tex_input_uniform</name>
+        <qualifiedname>klotter::LoadedPostProcShader::tex_input_uniform</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -112,7 +112,7 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
-          <edgelabel>texture_uni</edgelabel>
+          <edgelabel>tex_input_uniform</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -153,7 +153,7 @@
       <member refid="structklotter_1_1LoadedPostProcShader_1ab3e27ddc81e87d1ac1cfd7824c97722b" prot="public" virt="non-virtual"><scope>klotter::LoadedPostProcShader</scope><name>LoadedPostProcShader</name></member>
       <member refid="structklotter_1_1LoadedPostProcShader_1ac9c705810b471316ca014926054d9450" prot="public" virt="non-virtual"><scope>klotter::LoadedPostProcShader</scope><name>program</name></member>
       <member refid="structklotter_1_1LoadedPostProcShader_1a3ad52ac1878403776878765d66e4a9d6" prot="public" virt="non-virtual"><scope>klotter::LoadedPostProcShader</scope><name>resolution_uni</name></member>
-      <member refid="structklotter_1_1LoadedPostProcShader_1a10976256764d1c75d8e69689a6982289" prot="public" virt="non-virtual"><scope>klotter::LoadedPostProcShader</scope><name>texture_uni</name></member>
+      <member refid="structklotter_1_1LoadedPostProcShader_1a6c49f381ffdc87c39b1313437f8c3058" prot="public" virt="non-virtual"><scope>klotter::LoadedPostProcShader</scope><name>tex_input_uniform</name></member>
       <member refid="structklotter_1_1LoadedPostProcShader_1a99c2cbec10319108c1ffde8f035b6e8b" prot="public" virt="non-virtual"><scope>klotter::LoadedPostProcShader</scope><name>time_uni</name></member>
     </listofallmembers>
   </compounddef>

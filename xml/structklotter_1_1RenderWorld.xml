@@ -248,10 +248,10 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="10" relation="usage">
-          <edgelabel>blurred_bloom_uniform</edgelabel>
           <edgelabel>exposure_uniform</edgelabel>
           <edgelabel>gamma_uniform</edgelabel>
-          <edgelabel>texture_uni</edgelabel>
+          <edgelabel>tex_blurred_bloom_uniform</edgelabel>
+          <edgelabel>tex_input_uniform</edgelabel>
           <edgelabel>use_blur_uniform</edgelabel>
         </childnode>
       </node>

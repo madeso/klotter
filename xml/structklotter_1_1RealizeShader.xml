@@ -18,12 +18,12 @@
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="231" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="231" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a35dd6d6784210f4bb77f8e03fa423475" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a7c0873de1e3da95481a315dd93971246" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
-        <definition>Uniform klotter::RealizeShader::texture_uni</definition>
+        <definition>Uniform klotter::RealizeShader::tex_input_uniform</definition>
         <argsstring></argsstring>
-        <name>texture_uni</name>
-        <qualifiedname>klotter::RealizeShader::texture_uni</qualifiedname>
+        <name>tex_input_uniform</name>
+        <qualifiedname>klotter::RealizeShader::tex_input_uniform</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -32,12 +32,12 @@
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="232" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="232" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1aac3772c8a653fda07125d4080e242932" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1RealizeShader_1a372444a1a67a10940b0a794e92203b1e" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
-        <definition>Uniform klotter::RealizeShader::blurred_bloom_uniform</definition>
+        <definition>Uniform klotter::RealizeShader::tex_blurred_bloom_uniform</definition>
         <argsstring></argsstring>
-        <name>blurred_bloom_uniform</name>
-        <qualifiedname>klotter::RealizeShader::blurred_bloom_uniform</qualifiedname>
+        <name>tex_blurred_bloom_uniform</name>
+        <qualifiedname>klotter::RealizeShader::tex_blurred_bloom_uniform</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -122,10 +122,10 @@
           <edgelabel>program</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
-          <edgelabel>blurred_bloom_uniform</edgelabel>
           <edgelabel>exposure_uniform</edgelabel>
           <edgelabel>gamma_uniform</edgelabel>
-          <edgelabel>texture_uni</edgelabel>
+          <edgelabel>tex_blurred_bloom_uniform</edgelabel>
+          <edgelabel>tex_input_uniform</edgelabel>
           <edgelabel>use_blur_uniform</edgelabel>
         </childnode>
       </node>
@@ -163,12 +163,12 @@
     </collaborationgraph>
     <location file="src/klotter/render/shader_resource.h" line="227" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="228" bodyend="238"/>
     <listofallmembers>
-      <member refid="structklotter_1_1RealizeShader_1aac3772c8a653fda07125d4080e242932" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>blurred_bloom_uniform</name></member>
       <member refid="structklotter_1_1RealizeShader_1a1dc6b3833c4e5a03fe9d1b1673527fd2" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>exposure_uniform</name></member>
       <member refid="structklotter_1_1RealizeShader_1a1fc28d6fb77c06dbd8c606987b62c7be" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>gamma_uniform</name></member>
       <member refid="structklotter_1_1RealizeShader_1a75aa26510623936bca8fac9bb31aead0" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>program</name></member>
       <member refid="structklotter_1_1RealizeShader_1a554e91cbf25dd39fc6bb1c20f3886546" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>RealizeShader</name></member>
-      <member refid="structklotter_1_1RealizeShader_1a35dd6d6784210f4bb77f8e03fa423475" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>texture_uni</name></member>
+      <member refid="structklotter_1_1RealizeShader_1a372444a1a67a10940b0a794e92203b1e" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>tex_blurred_bloom_uniform</name></member>
+      <member refid="structklotter_1_1RealizeShader_1a7c0873de1e3da95481a315dd93971246" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>tex_input_uniform</name></member>
       <member refid="structklotter_1_1RealizeShader_1a67c18653a5bd20289cb8f2040883713a" prot="public" virt="non-virtual"><scope>klotter::RealizeShader</scope><name>use_blur_uniform</name></member>
     </listofallmembers>
   </compounddef>
