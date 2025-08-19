@@ -262,7 +262,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		auto& shader = pimpl->shaders_resources.skybox_shader;
 
 		shader.program->use();
-		bind_texture_cubemap(&pimpl->states, shader.tex_skybox_uni, *world.skybox->cubemap);
+		bind_texture_cubemap(&pimpl->states, shader.tex_skybox_uniform, *world.skybox->cubemap);
 
 		render_geom(*world.skybox->geom);
 	}

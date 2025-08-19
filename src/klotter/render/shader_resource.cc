@@ -52,9 +52,9 @@ LoadedShader_Skybox::LoadedShader_Skybox(
 )
 	: program(std::move(p))
 	, geom_layout(std::move(l))
-	, tex_skybox_uni(program->get_uniform("u_skybox_tex"))
+	, tex_skybox_uniform(program->get_uniform("u_skybox_tex"))
 {
-	setup_textures(program.get(), {&tex_skybox_uni});
+	setup_textures(program.get(), {&tex_skybox_uniform});
 	program->setup_uniform_block(desc.setup);
 }
 
@@ -67,12 +67,12 @@ LoadedShader_Unlit::LoadedShader_Unlit(
 )
 	: program(std::move(p))
 	, tint_color_uni(program->get_uniform("u_material.diffuse_tint"))
-	, tex_diffuse_uni(program->get_uniform("u_material.diffuse_tex"))
+	, tex_diffuse_uniform(program->get_uniform("u_material.diffuse_tex"))
 	, world_from_local_uni(
 		  model_source == TransformSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_world_from_local")} : std::nullopt
 	  )
 {
-	setup_textures(program.get(), {&tex_diffuse_uni});
+	setup_textures(program.get(), {&tex_diffuse_uniform});
 	program->setup_uniform_block(desc.setup);
 }
 
@@ -103,7 +103,7 @@ FrustumLightUniforms::FrustumLightUniforms(const ShaderProgram* program, const s
 	, attenuation_uni(program->get_uniform(base + "attenuation"))
 	, world_to_clip_uni(program->get_uniform(base + "world_to_clip"))
 	, world_pos_uni(program->get_uniform(base + "world_pos"))
-	, cookie_uni(program->get_uniform(base + "cookie"))
+	, tex_cookie_uniform(program->get_uniform(base + "cookie"))
 {
 }
 
@@ -134,12 +134,12 @@ std::optional<Uniform> get_uniform(
 
 LoadedPostProcShader::LoadedPostProcShader(std::shared_ptr<ShaderProgram> s, PostProcSetup setup)
 	: program(std::move(s))
-	, texture_uni(program->get_uniform("u_texture"))
+	, tex_input_uniform(program->get_uniform("u_texture"))
 	, factor_uni(get_uniform(*program, "u_factor", setup, PostProcSetup::factor))
 	, resolution_uni(get_uniform(*program, "u_resolution", setup, PostProcSetup::resolution))
 	, time_uni(get_uniform(*program, "u_time", setup, PostProcSetup::time))
 {
-	setup_textures(program.get(), {&texture_uni});
+	setup_textures(program.get(), {&tex_input_uniform});
 }
 
 
@@ -152,9 +152,9 @@ LoadedShader_Default::LoadedShader_Default(
 )
 	: program(std::move(p))
 	, tint_color_uni(program->get_uniform("u_material.diffuse_tint"))
-	, tex_diffuse_uni(program->get_uniform("u_material.diffuse_tex"))
-	, tex_specular_uni(program->get_uniform("u_material.specular_tex"))
-	, tex_emissive_uni(program->get_uniform("u_material.emissive_tex"))
+	, tex_diffuse_uniform(program->get_uniform("u_material.diffuse_tex"))
+	, tex_specular_uniform(program->get_uniform("u_material.specular_tex"))
+	, tex_emissive_uniform(program->get_uniform("u_material.emissive_tex"))
 	, ambient_tint_uni(program->get_uniform("u_material.ambient_tint"))
 	, specular_color_uni(program->get_uniform("u_material.specular_tint"))
 	, shininess_uni(program->get_uniform("u_material.shininess"))
@@ -183,10 +183,10 @@ LoadedShader_Default::LoadedShader_Default(
 		frustum_lights.emplace_back(program.get(), base);
 	}
 
-	std::vector<Uniform*> textures = {&tex_diffuse_uni, &tex_specular_uni, &tex_emissive_uni};
+	std::vector<Uniform*> textures = {&tex_diffuse_uniform, &tex_specular_uniform, &tex_emissive_uniform};
 	for (auto& fl: frustum_lights)
 	{
-		textures.emplace_back(&fl.cookie_uni);
+		textures.emplace_back(&fl.tex_cookie_uniform);
 	}
 
 	setup_textures(program.get(), textures);
@@ -233,13 +233,13 @@ bool LoadedShader_Default_Container::is_loaded() const
 
 RealizeShader::RealizeShader(std::shared_ptr<ShaderProgram> s)
 	: program(std::move(s))
-	, texture_uni(program->get_uniform("u_texture"))
-	, blurred_bloom_uniform(program->get_uniform("u_blurred_bloom"))
+	, tex_input_uniform(program->get_uniform("u_texture"))
+	, tex_blurred_bloom_uniform(program->get_uniform("u_blurred_bloom"))
 	, use_blur_uniform(program->get_uniform("u_use_blur"))
 	, gamma_uniform(program->get_uniform("u_gamma"))
 	, exposure_uniform(program->get_uniform("u_exposure"))
 {
-	setup_textures(program.get(), {&texture_uni, &blurred_bloom_uniform});
+	setup_textures(program.get(), {&tex_input_uniform, &tex_blurred_bloom_uniform});
 }
 
 

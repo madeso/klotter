@@ -58,7 +58,7 @@ void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states,
 		t = assets->get_white();
 	}
 
-	bind_texture_2d(states, shader_from_container(*shader_container, rc).tex_diffuse_uni, *t);
+	bind_texture_2d(states, shader_from_container(*shader_container, rc).tex_diffuse_uniform, *t);
 }
 
 void UnlitMaterial::apply_lights(const RenderContext&, const Lights&, const RenderSettings&, OpenglStates*, Assets*)
@@ -125,9 +125,9 @@ std::shared_ptr<Texture2d> get_or_black(Assets* assets, std::shared_ptr<Texture2
 void DefaultMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
 {
 	const auto& shader = shader_from_container(*shader_container, rc);
-	bind_texture_2d(states, shader.tex_diffuse_uni, *get_or_white(assets, diffuse));
-	bind_texture_2d(states, shader.tex_specular_uni, *get_or_white(assets, specular));
-	bind_texture_2d(states, shader.tex_emissive_uni, *get_or_black(assets, emissive));
+	bind_texture_2d(states, shader.tex_diffuse_uniform, *get_or_white(assets, diffuse));
+	bind_texture_2d(states, shader.tex_specular_uniform, *get_or_white(assets, specular));
+	bind_texture_2d(states, shader.tex_emissive_uniform, *get_or_black(assets, emissive));
 }
 
 void DefaultMaterial::apply_lights(
@@ -198,7 +198,7 @@ void DefaultMaterial::apply_lights(
 		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);
 		shader.program->set_mat(u.world_to_clip_uni, projection * view);
 
-		bind_texture_2d(states, u.cookie_uni, *get_or_white(assets, p.cookie));
+		bind_texture_2d(states, u.tex_cookie_uniform, *get_or_white(assets, p.cookie));
 	}
 }
 

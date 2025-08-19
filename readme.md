@@ -73,3 +73,9 @@ Klotter in swedish could be translated as doodle, graffiti or scribbling.
 - look into different attenuation algorithms
 - material: use cubemap + color
 - replace opengl with different "drivers"
+
+# coding convention
+
+* use `from` functions instead of `to` functions
+* all uniforms have `_uniform` suffix
+* texture uniforms have `tex_` prefix

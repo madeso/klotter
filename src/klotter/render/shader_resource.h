@@ -62,7 +62,7 @@ struct LoadedShader_Skybox
 
 	std::shared_ptr<ShaderProgram> program;
 	CompiledGeomVertexAttributes geom_layout;
-	Uniform tex_skybox_uni;
+	Uniform tex_skybox_uniform;
 };
 
 /// Parts of a loaded unlit shader
@@ -74,7 +74,7 @@ struct LoadedShader_Unlit
 	explicit LoadedShader_Unlit(TransformSource model_source, std::shared_ptr<ShaderProgram> p, const CameraUniformBuffer& desc);
 
 	Uniform tint_color_uni;
-	Uniform tex_diffuse_uni;
+	Uniform tex_diffuse_uniform;
 
 	std::optional<Uniform> world_from_local_uni;
 };
@@ -113,7 +113,7 @@ struct FrustumLightUniforms
 	Uniform attenuation_uni;
 	Uniform world_to_clip_uni;
 	Uniform world_pos_uni;
-	Uniform cookie_uni;
+	Uniform tex_cookie_uniform;
 };
 
 /// Bitmask for what features each postproc shader wants.
@@ -135,7 +135,7 @@ std::optional<Uniform> get_uniform(
 struct LoadedPostProcShader
 {
 	std::shared_ptr<ShaderProgram> program;
-	Uniform texture_uni;
+	Uniform tex_input_uniform;
 	std::optional<Uniform> factor_uni;
 	std::optional<Uniform> resolution_uni;
 	std::optional<Uniform> time_uni;
@@ -154,9 +154,9 @@ struct LoadedShader_Default
 	);
 
 	Uniform tint_color_uni;
-	Uniform tex_diffuse_uni;
-	Uniform tex_specular_uni;
-	Uniform tex_emissive_uni;
+	Uniform tex_diffuse_uniform;
+	Uniform tex_specular_uniform;
+	Uniform tex_emissive_uniform;
 	Uniform ambient_tint_uni;
 	Uniform specular_color_uni;
 	Uniform shininess_uni;
@@ -229,8 +229,8 @@ struct RealizeShader
 	explicit RealizeShader(std::shared_ptr<ShaderProgram> s);
 
 	std::shared_ptr<ShaderProgram> program;
-	Uniform texture_uni;
-	Uniform blurred_bloom_uniform;
+	Uniform tex_input_uniform;
+	Uniform tex_blurred_bloom_uniform;
 
 	Uniform use_blur_uniform;
 	Uniform gamma_uniform;
