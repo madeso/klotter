@@ -1,7 +1,6 @@
-#include "sample.h"
-
 #include <cmath>
 
+#include "klotter/klotter.h"
 #include "klotter/str.h"
 #include "klotter/cint.h"
 #include "klotter/imgui.theme.h"
@@ -47,7 +46,7 @@ static bool imgui_group_button(const char* label, bool is_first, bool is_selecte
 	return result;
 }
 
-struct LightsSample : Sample
+struct LightsSample : klotter::App
 {
 	World world;
 	EffectStack effects;
@@ -58,6 +57,12 @@ struct LightsSample : Sample
 
 	std::vector<std::shared_ptr<MeshInstance>> cubes;
 	float anim = 0.0f;
+
+	static klotter::RenderSettings get_render_settings()
+	{
+		// use default
+		return klotter::RenderSettings{};
+	}
 
 	std::shared_ptr<CompiledGeom> create_cube_geom(
 		DEBUG_LABEL_ARG_MANY
@@ -102,7 +107,7 @@ struct LightsSample : Sample
 	bool follow_player = true;
 	Skybox skybox;
 
-	LightsSample(Renderer* renderer, Camera* camera)
+	LightsSample(Renderer* renderer)
 		: pp_invert(renderer->make_invert_effect())
 		, pp_grayscale(renderer->make_grayscale_effect())
 		, pp_damage(renderer->make_damage_effect())
@@ -110,8 +115,8 @@ struct LightsSample : Sample
 		, light_material(renderer->make_unlit_material())
 		, skybox(renderer->make_skybox(renderer->assets.get_skybox()))
 	{
-		camera->pitch = 15;
-		camera->yaw = -50;
+		camera.pitch = 15;
+		camera.yaw = -50;
 
 		effects.effects.emplace_back(pp_invert);
 		effects.effects.emplace_back(pp_grayscale);
@@ -293,7 +298,6 @@ struct LightsSample : Sample
 	void on_render(
 		const glm::ivec2& window_size,
 		klotter::Renderer* renderer,
-		klotter::Camera* camera,
 		float dt
 	) override
 	{
@@ -301,20 +305,24 @@ struct LightsSample : Sample
 		auto& fl = world.lights.frustum_lights[0];
 		if (follow_player)
 		{
-			fl.position = camera->position;
-			fl.yaw = camera->yaw;
-			fl.pitch = camera->pitch;
+			fl.position = camera.position;
+			fl.yaw = camera.yaw;
+			fl.pitch = camera.pitch;
 		}
 		if (is_valid_instance_index(selected_instance_index))
 		{
 			const auto target = world.meshes[Cint_to_sizet(selected_instance_index)]->world_position;
 			last_window_size = window_size;
-			projected_target = to_screen(compile(*camera, window_size), target, window_size);
+			projected_target = to_screen(compile(camera, window_size), target, window_size);
 			renderer->debug.add_line(glm::vec3{0, 0, 0}, target, klotter::colors::orange);
 		}
 		anim += dt * 0.25f;
 		apply_animation();
-		effects.render({&world, window_size, camera, renderer});
+		effects.render({&world, window_size, &camera, renderer});
+	}
+
+	void on_frame(Renderer*) override
+	{
 	}
 
 	static void min_max(float* min_range, float* max_range)
@@ -339,8 +347,10 @@ struct LightsSample : Sample
 		return index >= 0 && Cint_to_sizet(index) < world.meshes.size();
 	}
 
-	void on_gui(klotter::Renderer* renderer, klotter::Camera* camera) override
+	void on_gui(klotter::Renderer* renderer) override
 	{
+		ImGui::Begin("Sample switcher");
+
 		klotter::test_themes();
 
 		ImGui::SeparatorText("Rendering");
@@ -426,9 +436,9 @@ struct LightsSample : Sample
 		effects.gui();
 
 		ImGui::SeparatorText("Stats");
-		ImGui::DragFloat3("position", glm::value_ptr(camera->position));
-		imgui_label("pitch", Str{} << camera->pitch);
-		imgui_label("yaw", Str{} << camera->yaw);
+		ImGui::DragFloat3("position", glm::value_ptr(camera.position));
+		imgui_label("pitch", Str{} << camera.pitch);
+		imgui_label("yaw", Str{} << camera.yaw);
 		imgui_label("window size", Str{} << last_window_size.x << " | " << last_window_size.y);
 		imgui_label("projected target", Str{} << projected_target.x << " | " << projected_target.y);
 
@@ -531,12 +541,14 @@ struct LightsSample : Sample
 			is_first_frustum_frame = false;
 		}
 		ImGui::PopID();
+
+
+		ImGui::End();
+
+		ImGui::ShowDemoWindow(nullptr);
 	}
 };
 
-void add_sample_lights(SampleApp* app)
-{
-	app->add_sample<LightsSample>("Lights");
-}
-
 }  //  namespace examples
+
+IMPLEMENT_MAIN(examples::LightsSample)

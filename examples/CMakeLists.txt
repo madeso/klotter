@@ -1,9 +1,5 @@
 set(src
-    main.cc
     03-lights.cc
-
-    sample.cc
-    sample.h
 )
 
 add_executable(example ${src})
