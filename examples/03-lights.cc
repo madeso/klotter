@@ -46,6 +46,9 @@ static bool imgui_group_button(const char* label, bool is_first, bool is_selecte
 	return result;
 }
 
+constexpr float FAC_SPEED = 0.01f;
+constexpr float MAX_LIGHT = 100.0f;
+
 struct LightsSample : klotter::App
 {
 	World world;
@@ -347,64 +350,102 @@ struct LightsSample : klotter::App
 		return index >= 0 && Cint_to_sizet(index) < world.meshes.size();
 	}
 
-	void on_gui(klotter::Renderer* renderer) override
+	void gui_ambient_light()
 	{
-		ImGui::Begin("Sample switcher");
+		ImGui::DragFloat("Ambient strength", &world.lights.ambient_strength, FAC_SPEED, 0.0f, 1.0f);
+		imgui_color("Ambient color", &world.lights.ambient_color);
+	}
 
-		klotter::test_themes();
-
-		ImGui::SeparatorText("Rendering");
+	void gui_direction_light(DirectionalLight& dl)
+	{
+		if (ImGui::DragFloat("Strength", &dl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
 		{
-			struct MSaaSetting
-			{
-				const char* label;
-				int value;
-
-				constexpr MSaaSetting(const char* l, int v)
-					: label(l)
-					, value(v)
-				{}
-			};
-
-			constexpr std::size_t all_count = 4;
-			constexpr std::array<MSaaSetting, all_count> all_settings
-				= {MSaaSetting{"No", 0}, MSaaSetting{"x2", 2}, MSaaSetting{"x4", 4}, MSaaSetting{"x8", 8}};
-
-			for (std::size_t sett_index=0; sett_index < all_count; sett_index +=1)
-			{
-				const auto sett = all_settings[sett_index];
-
-				if (imgui_group_button(sett.label, sett_index == 0, renderer->settings.msaa == sett.value))
-				{
-					renderer->settings.msaa = sett.value;
-				}
-			}
-			ImGui::SameLine();
-			ImGui::Text("MSAA");
+			dl.specular_strength = dl.diffuse_strength;
 		}
-		bool has_skybox = world.skybox.has_value();
-		if (ImGui::Checkbox("Skybox", &has_skybox))
+		imgui_color("Color", &dl.color);
+	}
+
+	void gui_point_light(const bool is_first_frame, PointLight& pl, SCurveGuiState& ui_curve)
+	{
+		if (ImGui::DragFloat("Strength", &pl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
 		{
-			if (has_skybox)
-			{
-				world.skybox = skybox;
-			}
-			else
-			{
-				world.skybox = std::nullopt;
-			}
+			pl.specular_strength = pl.diffuse_strength;
 		}
+		imgui_color("Color", &pl.color);
+		min_max(&pl.min_range, &pl.max_range);
+		imgui_s_curve_editor("att", &pl.curve, &ui_curve, FlipX::yes, {}, is_first_frame);
+	}
 
-		const float FAC_SPEED = 0.01f;
-		const float MAX_LIGHT = 100.0f;
+	void gui_all_direction_lights()
+	{
+		for (int dir_light_index = 0;
+		     dir_light_index < Csizet_to_int(world.lights.directional_lights.size());
+		     dir_light_index += 1)
+		{
+			ImGui::PushID(dir_light_index);
+			gui_direction_light(world.lights.directional_lights[Cint_to_sizet(dir_light_index)]);
+			ImGui::PopID();
+		}
+	}
 
-		imgui_color("Clear color", &world.clear_color);
-		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
-		ImGui::DragFloat("Bloom cutoff", &renderer->settings.bloom_cutoff, FAC_SPEED);
-		ImGui::SliderFloat("Softness", &renderer->settings.bloom_softness, 0.0f, 1.0f);
-		ImGui::DragInt("Bloom blur steps", &renderer->settings.bloom_blur_steps);
+	void gui_all_point_lights()
+	{
+		const auto old_point_size = point_light_curves.size();
+		point_light_curves.resize(world.lights.point_lights.size(), SCurveGuiState::light_curve());
+		for (int point_light_index = 0;
+		     point_light_index < Csizet_to_int(world.lights.point_lights.size());
+		     point_light_index += 1)
+		{
+			const auto is_first_frame = Cint_to_sizet(point_light_index) >= old_point_size;
 
-		ImGui::SeparatorText("Effects");
+			ImGui::PushID(point_light_index);
+			gui_point_light(
+				is_first_frame,
+				world.lights.point_lights[Cint_to_sizet(point_light_index)],
+				point_light_curves[Cint_to_sizet(point_light_index)]
+			);
+			ImGui::PopID();
+		}
+	}
+
+	void gui_all_frustum_lights()
+	{
+		static bool is_first_frustum_frame = true;
+		ImGui::Checkbox("Follow player", &follow_player);
+		auto& fl = world.lights.frustum_lights[0];
+
+		if (follow_player == false)
+		{
+			ImGui::DragFloat3("position", glm::value_ptr(fl.position));
+			ImGui::DragFloat("yaw", &fl.yaw);
+			ImGui::DragFloat("pitch", &fl.pitch);
+		}
+		else
+		{
+			ImGui::Text(
+				"position (%f %f %f)",
+				static_cast<double>(fl.position.x),
+				static_cast<double>(fl.position.y),
+				static_cast<double>(fl.position.z)
+			);
+			ImGui::Text(
+				"ypr (%f %f)", static_cast<double>(fl.pitch), static_cast<double>(fl.yaw)
+			);
+		}
+		if (ImGui::DragFloat("Frustum strength", &fl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
+		{
+			fl.specular_strength = fl.diffuse_strength;
+		}
+		imgui_color("Color", &fl.color);
+		ImGui::DragFloat("fov", &fl.fov, 0.1f);
+		ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
+		min_max(&fl.min_range, &fl.max_range);
+		imgui_s_curve_editor("att", &fl.curve, &frustum_light_curve, FlipX::yes, {}, is_first_frustum_frame);
+		is_first_frustum_frame = false;
+	}
+
+	void gui_effects_factors()
+	{
 		{
 			auto factor = pp_invert->get_factor();
 			if (ImGui::SliderFloat("invert", &factor, 0.0f, 1.0f))
@@ -433,6 +474,94 @@ struct LightsSample : klotter::App
 				pp_damage->set_factor(factor);
 			}
 		}
+	}
+
+	void gui_msaa(klotter::Renderer* renderer)
+	{
+		struct MSaaSetting
+		{
+			const char* label;
+			int value;
+
+			constexpr MSaaSetting(const char* l, int v)
+				: label(l)
+				  , value(v)
+			{}
+		};
+
+		constexpr std::size_t all_count = 4;
+		constexpr std::array<MSaaSetting, all_count> all_settings
+			= {MSaaSetting{"No", 0}, MSaaSetting{"x2", 2}, MSaaSetting{"x4", 4}, MSaaSetting{"x8", 8}};
+
+		for (std::size_t sett_index=0; sett_index < all_count; sett_index +=1)
+		{
+			const auto sett = all_settings[sett_index];
+
+			if (imgui_group_button(sett.label, sett_index == 0, renderer->settings.msaa == sett.value))
+			{
+				renderer->settings.msaa = sett.value;
+			}
+		}
+		ImGui::SameLine();
+		ImGui::Text("MSAA");
+	}
+
+	void gui_outline_toggle()
+	{
+		ImGui::SliderInt("Index", &selected_instance_index, 0, Csizet_to_int(world.meshes.size()) - 1);
+		if (is_valid_instance_index(selected_instance_index))
+		{
+			auto& inst = world.meshes[Cint_to_sizet(selected_instance_index)];
+			bool check = inst->outline.has_value();
+			if (ImGui::Checkbox("outline?", &check))
+			{
+				if (inst->outline)
+				{
+					inst->outline = std::nullopt;
+				}
+				else
+				{
+					inst->outline = colors::blue_sky;
+				}
+			}
+		}
+	}
+
+	void gui_skybox()
+	{
+		bool has_skybox = world.skybox.has_value();
+		if (ImGui::Checkbox("Skybox", &has_skybox))
+		{
+			if (has_skybox)
+			{
+				world.skybox = skybox;
+			}
+			else
+			{
+				world.skybox = std::nullopt;
+			}
+		}
+	}
+
+	void on_gui(klotter::Renderer* renderer) override
+	{
+		ImGui::Begin("Sample switcher");
+
+		klotter::test_themes();
+
+		ImGui::SeparatorText("Rendering");
+		gui_msaa(renderer);
+
+		gui_skybox();
+
+		imgui_color("Clear color", &world.clear_color);
+		simple_gamma_slider("Gamma/Brightness", &renderer->settings.gamma, -1.0f);
+		ImGui::DragFloat("Bloom cutoff", &renderer->settings.bloom_cutoff, FAC_SPEED);
+		ImGui::SliderFloat("Softness", &renderer->settings.bloom_softness, 0.0f, 1.0f);
+		ImGui::DragInt("Bloom blur steps", &renderer->settings.bloom_blur_steps);
+
+		ImGui::SeparatorText("Effects");
+		gui_effects_factors();
 		effects.gui();
 
 		ImGui::SeparatorText("Stats");
@@ -443,103 +572,26 @@ struct LightsSample : klotter::App
 		imgui_label("projected target", Str{} << projected_target.x << " | " << projected_target.y);
 
 		ImGui::SeparatorText("Outline");
-		{
-			ImGui::SliderInt("Index", &selected_instance_index, 0, Csizet_to_int(world.meshes.size()) - 1);
-			if (is_valid_instance_index(selected_instance_index))
-			{
-				auto& inst = world.meshes[Cint_to_sizet(selected_instance_index)];
-				bool check = inst->outline.has_value();
-				if (ImGui::Checkbox("outline?", &check))
-				{
-					if (inst->outline)
-					{
-						inst->outline = std::nullopt;
-					}
-					else
-					{
-						inst->outline = colors::blue_sky;
-					}
-				}
-			}
-		}
+		gui_outline_toggle();
 
 		ImGui::SeparatorText("Ambient lights");
-		ImGui::DragFloat("Ambient strength", &world.lights.ambient_strength, FAC_SPEED, 0.0f, 1.0f);
-		imgui_color("Ambient color", &world.lights.ambient_color);
+		ImGui::PushID("ambient lights");
+		gui_ambient_light();
+		ImGui::PopID();
 
 		ImGui::SeparatorText("Directional lights");
-		for (int dir_light_index = 0;
-			 dir_light_index < Csizet_to_int(world.lights.directional_lights.size());
-			 dir_light_index += 1)
-		{
-			ImGui::PushID(dir_light_index);
-			auto& dl = world.lights.directional_lights[Cint_to_sizet(dir_light_index)];
-			if (ImGui::DragFloat("Strength", &dl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
-			{
-				dl.specular_strength = dl.diffuse_strength;
-			}
-			imgui_color("Color", &dl.color);
-			ImGui::PopID();
-		}
+		ImGui::PushID("directional lights");
+		gui_all_direction_lights();
+		ImGui::PopID();
 
 		ImGui::SeparatorText("Point lights");
-		const auto old_point_size = point_light_curves.size();
-		point_light_curves.resize(world.lights.point_lights.size(), SCurveGuiState::light_curve());
-		for (int point_light_index = 0;
-			 point_light_index < Csizet_to_int(world.lights.point_lights.size());
-			 point_light_index += 1)
-		{
-			const auto is_first_frame = Cint_to_sizet(point_light_index) >= old_point_size;
-			auto& pl = world.lights.point_lights[Cint_to_sizet(point_light_index)];
-			ImGui::PushID(point_light_index);
-
-			if (ImGui::DragFloat("Strength", &pl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
-			{
-				pl.specular_strength = pl.diffuse_strength;
-			}
-			imgui_color("Color", &pl.color);
-			min_max(&pl.min_range, &pl.max_range);
-			auto& ui_curve = point_light_curves[Cint_to_sizet(point_light_index)];
-			imgui_s_curve_editor("att", &pl.curve, &ui_curve, FlipX::yes, {}, is_first_frame);
-			ImGui::PopID();
-		}
+		ImGui::PushID("point lights");
+		gui_all_point_lights();
+		ImGui::PopID();
 
 		ImGui::SeparatorText("Frustum lights");
 		ImGui::PushID("frustum lights");
-		{
-			static bool is_first_frustum_frame = true;
-			ImGui::Checkbox("Follow player", &follow_player);
-			auto& fl = world.lights.frustum_lights[0];
-
-			if (follow_player == false)
-			{
-				ImGui::DragFloat3("position", glm::value_ptr(fl.position));
-				ImGui::DragFloat("yaw", &fl.yaw);
-				ImGui::DragFloat("pitch", &fl.pitch);
-			}
-			else
-			{
-				ImGui::Text(
-					"position (%f %f %f)",
-					static_cast<double>(fl.position.x),
-					static_cast<double>(fl.position.y),
-					static_cast<double>(fl.position.z)
-				);
-				ImGui::Text(
-					"ypr (%f %f)", static_cast<double>(fl.pitch), static_cast<double>(fl.yaw)
-				);
-			}
-			if (ImGui::DragFloat("Frustum strength", &fl.diffuse_strength, FAC_SPEED, 0.0f, MAX_LIGHT))
-			{
-				fl.specular_strength = fl.diffuse_strength;
-			}
-			imgui_color("Color", &fl.color);
-			ImGui::DragFloat("fov", &fl.fov, 0.1f);
-			ImGui::DragFloat("aspect", &fl.aspect, 0.001f);
-			min_max(&fl.min_range, &fl.max_range);
-			imgui_s_curve_editor("att", &fl.curve, &frustum_light_curve, FlipX::yes, {}, is_first_frustum_frame);
-			is_first_frustum_frame = false;
-		}
+		gui_all_frustum_lights();
 		ImGui::PopID();
 
 
