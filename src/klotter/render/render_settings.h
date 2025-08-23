@@ -15,6 +15,11 @@ struct RenderSettings
 	int number_of_point_lights = 5;
 	int number_of_frustum_lights = 5;
 
+	/// Should bloom be used?
+	/// The renderer doesn't need to restart when this value has changed.
+	/// The effect stack needs to be rebuilt, but that should happen automatically.
+	bool use_bloom = true;
+
 	/// Number of msaa samples to use.
 	/// The renderer doesn't need to restart when this value has changed.
 	/// The effect stack needs to be rebuilt, but that should happen automatically.

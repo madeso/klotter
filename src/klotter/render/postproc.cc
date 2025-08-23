@@ -314,7 +314,9 @@ void EffectStack::render(const PostProcArg& arg)
 
 	// if dirty, update the compiled state
 	const auto latest_msaa = arg.renderer->settings.msaa;
-	if (dirty || last_msaa != latest_msaa)
+	const auto has_bloom = render_world && render_world->bloom_render.has_value();
+	const auto latest_bloom = arg.renderer->settings.use_bloom;
+	if (dirty || last_msaa != latest_msaa || has_bloom != latest_bloom)
 	{
 		dirty = false;
 		last_msaa = latest_msaa;
@@ -325,8 +327,8 @@ void EffectStack::render(const PostProcArg& arg)
 		auto created_world = std::make_shared<RenderWorld>(
 			arg.window_size,
 			&arg.renderer->pimpl->shaders_resources.pp_realize,
-			&arg.renderer->pimpl->shaders_resources.pp_extract,
-			&arg.renderer->pimpl->shaders_resources.pp_ping,
+			latest_bloom ? &arg.renderer->pimpl->shaders_resources.pp_extract : nullptr,
+			latest_bloom ? &arg.renderer->pimpl->shaders_resources.pp_ping : nullptr,
 			latest_msaa,
 			&use_hdr,
 			&exposure
