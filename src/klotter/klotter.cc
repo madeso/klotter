@@ -175,7 +175,14 @@ int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl
 		}
 
 
+		// render
+		{
+			SCOPED_DEBUG_GROUP("Render App"sv);
+			app->on_render({window_width, window_height}, &renderer, dt);
+		}
+
 		// imgui windows
+		// note: rendering might delete textures used in gui, do gui building and rendering close together
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplSDL2_NewFrame();
 		ImGui::NewFrame();
@@ -183,13 +190,6 @@ int app_main(const RenderSettings& rs, MakeAppFunction make_app, SDL_Window* sdl
 		app->on_gui(&renderer);
 
 		ImGui::Render();
-
-
-		// render
-		{
-			SCOPED_DEBUG_GROUP("Render App"sv);
-			app->on_render({window_width, window_height}, &renderer, dt);
-		}
 
 		{
 			SCOPED_DEBUG_GROUP("DearImGui rendering"sv);
