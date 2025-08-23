@@ -625,6 +625,7 @@
     <member refid="structklotter_1_1RenderSettings_1a35a5d2af4f7e7e2d90d372b9f2f14e92" kind="variable"><name>number_of_directional_lights</name></member>
     <member refid="structklotter_1_1RenderSettings_1af9dc73fb0a1285f9d63cd41d46bdd875" kind="variable"><name>number_of_point_lights</name></member>
     <member refid="structklotter_1_1RenderSettings_1a27006cbef64a158e5c4d310d07107e19" kind="variable"><name>number_of_frustum_lights</name></member>
+    <member refid="structklotter_1_1RenderSettings_1aba675c055c2e67f7622b35299261ebb8" kind="variable"><name>use_bloom</name></member>
     <member refid="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" kind="variable"><name>msaa</name></member>
     <member refid="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" kind="variable"><name>gamma</name></member>
     <member refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" kind="variable"><name>bloom_cutoff</name></member>

@@ -49,6 +49,23 @@
         </inbodydescription>
         <location file="src/klotter/render/render_settings.h" line="16" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="16" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RenderSettings_1aba675c055c2e67f7622b35299261ebb8" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool klotter::RenderSettings::use_bloom</definition>
+        <argsstring></argsstring>
+        <name>use_bloom</name>
+        <qualifiedname>klotter::RenderSettings::use_bloom</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Should bloom be used? </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The renderer doesn&apos;t need to restart when this value has changed. The effect stack needs to be rebuilt, but that should happen automatically. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/render_settings.h" line="21" column="6" bodyfile="src/klotter/render/render_settings.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a6a280b746dc55c256fccd34cf0fd93cc" prot="public" static="no" mutable="no">
         <type>int</type>
         <definition>int klotter::RenderSettings::msaa</definition>
@@ -64,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="21" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="21" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="26" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a1306eea262ecc033ee14b08916ebf859" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -81,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="25" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="25" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="30" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -98,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="30" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="30" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="35" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderSettings_1ae19fc5937643ba57c79be581814f86bd" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -115,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="35" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="35" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="40" column="7" bodyfile="src/klotter/render/render_settings.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a9309a180ccfe2eb5e5679b6c46782c4c" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -132,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/render_settings.h" line="39" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="39" bodyend="-1"/>
+        <location file="src/klotter/render/render_settings.h" line="44" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="44" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -140,7 +157,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/render_settings.h" line="12" column="1" bodyfile="src/klotter/render/render_settings.h" bodystart="13" bodyend="40"/>
+    <location file="src/klotter/render/render_settings.h" line="12" column="1" bodyfile="src/klotter/render/render_settings.h" bodystart="13" bodyend="45"/>
     <listofallmembers>
       <member refid="structklotter_1_1RenderSettings_1a9309a180ccfe2eb5e5679b6c46782c4c" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>bloom_blur_steps</name></member>
       <member refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>bloom_cutoff</name></member>
@@ -150,6 +167,7 @@
       <member refid="structklotter_1_1RenderSettings_1a35a5d2af4f7e7e2d90d372b9f2f14e92" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_directional_lights</name></member>
       <member refid="structklotter_1_1RenderSettings_1a27006cbef64a158e5c4d310d07107e19" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_frustum_lights</name></member>
       <member refid="structklotter_1_1RenderSettings_1af9dc73fb0a1285f9d63cd41d46bdd875" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_point_lights</name></member>
+      <member refid="structklotter_1_1RenderSettings_1aba675c055c2e67f7622b35299261ebb8" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>use_bloom</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
