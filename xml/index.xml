@@ -664,13 +664,6 @@
     <member refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" kind="function"><name>render</name></member>
     <member refid="structklotter_1_1RenderWorld_1ae8cc6b1309ad7159af104a5194decce1" kind="function"><name>gui</name></member>
   </compound>
-  <compound refid="structResult" kind="struct"><name>Result</name>
-    <member refid="structResult_1aaa4cd27503fc72bd303b8821fddb24f0" kind="variable"><name>value</name></member>
-    <member refid="structResult_1af75910267946ca1545b492ae2c9bc72e" kind="variable"><name>e</name></member>
-    <member refid="structResult_1a5314b530c0634f2fc8c0c464189a5abb" kind="function"><name>Result</name></member>
-    <member refid="structResult_1aef1257385182062000e093cc7979f46f" kind="function"><name>Result</name></member>
-    <member refid="structResult_1a9e40be74c8d6a0617c920987882b86e9" kind="function"><name>operator bool</name></member>
-  </compound>
   <compound refid="structklotter_1_1SCurve" kind="struct"><name>klotter::SCurve</name>
     <member refid="structklotter_1_1SCurve_1af457354e2e258c569bb9007f05de1044" kind="variable"><name>slope</name></member>
     <member refid="structklotter_1_1SCurve_1a320a7b49516a92878efb2f4ece195c32" kind="variable"><name>threshold</name></member>
@@ -1223,8 +1216,6 @@
   <compound refid="vertex__layout_8h" kind="file"><name>vertex_layout.h</name>
   </compound>
   <compound refid="world_8h" kind="file"><name>world.h</name>
-  </compound>
-  <compound refid="result_8h" kind="file"><name>result.h</name>
   </compound>
   <compound refid="scurve_8h" kind="file"><name>scurve.h</name>
   </compound>

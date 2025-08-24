@@ -19,7 +19,6 @@
     <innerfile refid="log_8h">log.h</innerfile>
     <innerfile refid="pch_8private_8h">pch.private.h</innerfile>
     <innerfile refid="pch_8public_8h">pch.public.h</innerfile>
-    <innerfile refid="result_8h">result.h</innerfile>
     <innerfile refid="scurve_8h">scurve.h</innerfile>
     <innerfile refid="str_8h">str.h</innerfile>
     <innerfile refid="undef__windows_8h">undef_windows.h</innerfile>

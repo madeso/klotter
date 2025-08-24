@@ -7,6 +7,5 @@ var searchData=
   ['rendersettings_4',['RenderSettings',['../structklotter_1_1RenderSettings.html',1,'klotter']]],
   ['rendersource_5',['RenderSource',['../structklotter_1_1RenderSource.html',1,'klotter']]],
   ['rendertexturewithshader_6',['RenderTextureWithShader',['../structklotter_1_1RenderTextureWithShader.html',1,'klotter']]],
-  ['renderworld_7',['RenderWorld',['../structklotter_1_1RenderWorld.html',1,'klotter']]],
-  ['result_8',['Result',['../structResult.html',1,'']]]
+  ['renderworld_7',['RenderWorld',['../structklotter_1_1RenderWorld.html',1,'klotter']]]
 ];

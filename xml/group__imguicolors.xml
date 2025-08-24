@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="17" column="17" bodyfile="src/klotter/im_colors.h" bodystart="17" bodyend="-1"/>
+        <location file="src/klotter/im_colors.h" line="15" column="17" bodyfile="src/klotter/im_colors.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga3bf146ca37035a30171e70de8f9c8e69" prot="public" static="no" constexpr="yes" mutable="no">
         <type>ImU32</type>
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="20" column="17" bodyfile="src/klotter/im_colors.h" bodystart="20" bodyend="-1"/>
+        <location file="src/klotter/im_colors.h" line="18" column="17" bodyfile="src/klotter/im_colors.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1gaf3a643d856ba4ff26ed17eb6cf9163ed" prot="public" static="no" constexpr="yes" mutable="no">
         <type>ImU32</type>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="23" column="17" bodyfile="src/klotter/im_colors.h" bodystart="23" bodyend="-1"/>
+        <location file="src/klotter/im_colors.h" line="21" column="17" bodyfile="src/klotter/im_colors.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga6ca10d7a28e2d394c29a470f94ee790f" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="26" column="22" bodyfile="src/klotter/im_colors.h" bodystart="27" bodyend="36"/>
+        <location file="src/klotter/im_colors.h" line="24" column="22" bodyfile="src/klotter/im_colors.h" bodystart="25" bodyend="34"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga2b7da2e18316f6c2522c96be0d56ada5" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="39" column="22" bodyfile="src/klotter/im_colors.h" bodystart="40" bodyend="49"/>
+        <location file="src/klotter/im_colors.h" line="37" column="22" bodyfile="src/klotter/im_colors.h" bodystart="38" bodyend="47"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga592fc2fda898296f6faeb8f4f8774a79" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="52" column="22" bodyfile="src/klotter/im_colors.h" bodystart="53" bodyend="62"/>
+        <location file="src/klotter/im_colors.h" line="50" column="22" bodyfile="src/klotter/im_colors.h" bodystart="51" bodyend="60"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga64da05bfc2889d48883a33cba2f4192c" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="65" column="22" bodyfile="src/klotter/im_colors.h" bodystart="66" bodyend="75"/>
+        <location file="src/klotter/im_colors.h" line="63" column="22" bodyfile="src/klotter/im_colors.h" bodystart="64" bodyend="73"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1gac5bdda2c8e3ff8f790e81e5c992f2296" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -175,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="78" column="22" bodyfile="src/klotter/im_colors.h" bodystart="79" bodyend="88"/>
+        <location file="src/klotter/im_colors.h" line="76" column="22" bodyfile="src/klotter/im_colors.h" bodystart="77" bodyend="86"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga7af53378e11ed2f4ec0c2ce54b6be954" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="91" column="22" bodyfile="src/klotter/im_colors.h" bodystart="92" bodyend="101"/>
+        <location file="src/klotter/im_colors.h" line="89" column="22" bodyfile="src/klotter/im_colors.h" bodystart="90" bodyend="99"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1gaf411963d263ef598e8c346f0609e059a" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -225,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="104" column="22" bodyfile="src/klotter/im_colors.h" bodystart="105" bodyend="114"/>
+        <location file="src/klotter/im_colors.h" line="102" column="22" bodyfile="src/klotter/im_colors.h" bodystart="103" bodyend="112"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga82e168a5311fffe39e9812dd5eff0f9d" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="117" column="22" bodyfile="src/klotter/im_colors.h" bodystart="118" bodyend="127"/>
+        <location file="src/klotter/im_colors.h" line="115" column="22" bodyfile="src/klotter/im_colors.h" bodystart="116" bodyend="125"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga3bd6f925dac3f66b4ac6a798ad732e0e" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="130" column="22" bodyfile="src/klotter/im_colors.h" bodystart="131" bodyend="140"/>
+        <location file="src/klotter/im_colors.h" line="128" column="22" bodyfile="src/klotter/im_colors.h" bodystart="129" bodyend="138"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1ga9655f89d578b8314d605515fd2e6e945" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -300,7 +300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="143" column="22" bodyfile="src/klotter/im_colors.h" bodystart="144" bodyend="153"/>
+        <location file="src/klotter/im_colors.h" line="141" column="22" bodyfile="src/klotter/im_colors.h" bodystart="142" bodyend="151"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1gacbc316ef8105da66f1d268c14463bd7e" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -325,7 +325,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="156" column="22" bodyfile="src/klotter/im_colors.h" bodystart="157" bodyend="166"/>
+        <location file="src/klotter/im_colors.h" line="154" column="22" bodyfile="src/klotter/im_colors.h" bodystart="155" bodyend="164"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1gafc89d904b23312ecdf1aed6cd7b137c1" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -350,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="169" column="22" bodyfile="src/klotter/im_colors.h" bodystart="170" bodyend="179"/>
+        <location file="src/klotter/im_colors.h" line="167" column="22" bodyfile="src/klotter/im_colors.h" bodystart="168" bodyend="177"/>
       </memberdef>
       <memberdef kind="variable" id="group__imguicolors_1gae9f69cc280e1a47e222e63a6be99712a" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::array&lt; ImU32, 10 &gt;</type>
@@ -375,7 +375,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/im_colors.h" line="182" column="22" bodyfile="src/klotter/im_colors.h" bodystart="183" bodyend="192"/>
+        <location file="src/klotter/im_colors.h" line="180" column="22" bodyfile="src/klotter/im_colors.h" bodystart="181" bodyend="190"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
