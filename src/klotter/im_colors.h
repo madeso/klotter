@@ -11,8 +11,6 @@ namespace klotter::imgui
  *  @{
 */
 
-// todo(Gustav): add a dear imgui function to set the theme. perhaps connectable to https://github.com/hundredrabbits/Themes
-
 /// The alpha value for all the colors.
 constexpr ImU32 ALPHA = 0xff;
 
