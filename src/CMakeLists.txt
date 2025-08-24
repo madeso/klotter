@@ -92,7 +92,6 @@ set(src_base
     klotter/im_colors.h
     klotter/klotter.cc klotter/klotter.h
     klotter/log.h
-    klotter/result.cc klotter/result.h
     klotter/scurve.cc klotter/scurve.h
     klotter/str.cc klotter/str.h
     klotter/undef_windows.h
