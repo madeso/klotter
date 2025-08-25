@@ -12,8 +12,7 @@ var searchData=
   ['rendersource_9',['RenderSource',['../structklotter_1_1RenderSource.html#a7bbdf727aee83637ea11695272907a31',1,'klotter::RenderSource::RenderSource()=default'],['../structklotter_1_1RenderSource.html#a1fbc3febe5e3d46202efebdac885dd5c',1,'klotter::RenderSource::RenderSource(const RenderSource &amp;)=delete'],['../structklotter_1_1RenderSource.html#ade2acc705758ca5458b8415f4e2716b3',1,'klotter::RenderSource::RenderSource(RenderSource &amp;&amp;)=delete']]],
   ['rendertexturewithshader_10',['RenderTextureWithShader',['../structklotter_1_1RenderTextureWithShader.html#aff7be13082c2aed0d2e2db9d77123b09',1,'klotter::RenderTextureWithShader']]],
   ['renderworld_11',['RenderWorld',['../structklotter_1_1RenderWorld.html#a592967237f97acd126fca9aba57fa470',1,'klotter::RenderWorld']]],
-  ['replace_5fwith_5fsmooth_5fnormals_12',['replace_with_smooth_normals',['../structklotter_1_1geom_1_1Builder.html#a0040ee70080e791cf4a27d1450db0b0f',1,'klotter::geom::Builder']]],
-  ['resolve_5fmultisampled_5fbuffer_13',['resolve_multisampled_buffer',['../group__texture.html#ga2db91a5f624e2dc351118f2d7b0ecf31',1,'klotter']]],
-  ['rgb_14',['rgb',['../namespaceklotter_1_1colors.html#a084841f5ac61fab0097a9dd0cff4d5dc',1,'klotter::colors']]],
-  ['run_5fmain_15',['run_main',['../namespaceklotter.html#ae8ba8f25677bd8a5d98681f05fd0a162',1,'klotter']]]
+  ['resolve_5fmultisampled_5fbuffer_12',['resolve_multisampled_buffer',['../group__texture.html#ga2db91a5f624e2dc351118f2d7b0ecf31',1,'klotter']]],
+  ['rgb_13',['rgb',['../namespaceklotter_1_1colors.html#a084841f5ac61fab0097a9dd0cff4d5dc',1,'klotter::colors']]],
+  ['run_5fmain_14',['run_main',['../namespaceklotter.html#ae8ba8f25677bd8a5d98681f05fd0a162',1,'klotter']]]
 ];

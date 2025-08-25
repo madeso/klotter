@@ -109,18 +109,17 @@
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>rename<sp/>to<sp/>something<sp/>better...<sp/>I<sp/>don&apos;t<sp/>like<sp/>that<sp/>it&apos;s<sp/>Geom::geom</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>switch<sp/>to<sp/>a<sp/>full<sp/>screen<sp/>triangle<sp/>instead</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="structklotter_1_1FullScreenGeom" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1FullScreenGeom_1a55753c215cb88a040da3e21b585f9d3a" kindref="member">FullScreenGeom</ref></highlight></codeline>
-<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="17" refid="structklotter_1_1FullScreenGeom_1afe5a7f37bb741a8ef465064eba35ae38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;CompiledGeom&gt;<sp/><ref refid="structklotter_1_1FullScreenGeom_1afe5a7f37bb741a8ef465064eba35ae38" kindref="member">geom</ref>;</highlight></codeline>
-<codeline lineno="18" refid="structklotter_1_1FullScreenGeom_1a6d3b1bae3cacf01d171aaf83d6635b95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1CompiledShaderVertexAttributes" kindref="compound">CompiledShaderVertexAttributes</ref><sp/><ref refid="structklotter_1_1FullScreenGeom_1a6d3b1bae3cacf01d171aaf83d6635b95" kindref="member">layout</ref>;</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20" refid="structklotter_1_1FullScreenGeom_1a55753c215cb88a040da3e21b585f9d3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FullScreenGeom_1a55753c215cb88a040da3e21b585f9d3a" kindref="member">FullScreenGeom</ref>();</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>switch<sp/>to<sp/>a<sp/>full<sp/>screen<sp/>triangle<sp/>instead</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="structklotter_1_1FullScreenGeom" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1FullScreenGeom_1a55753c215cb88a040da3e21b585f9d3a" kindref="member">FullScreenGeom</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="structklotter_1_1FullScreenGeom_1afe5a7f37bb741a8ef465064eba35ae38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;CompiledGeom&gt;<sp/><ref refid="structklotter_1_1FullScreenGeom_1afe5a7f37bb741a8ef465064eba35ae38" kindref="member">geom</ref>;</highlight></codeline>
+<codeline lineno="17" refid="structklotter_1_1FullScreenGeom_1a6d3b1bae3cacf01d171aaf83d6635b95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1CompiledShaderVertexAttributes" kindref="compound">CompiledShaderVertexAttributes</ref><sp/><ref refid="structklotter_1_1FullScreenGeom_1a6d3b1bae3cacf01d171aaf83d6635b95" kindref="member">layout</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="structklotter_1_1FullScreenGeom_1a55753c215cb88a040da3e21b585f9d3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FullScreenGeom_1a55753c215cb88a040da3e21b585f9d3a" kindref="member">FullScreenGeom</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/klotter/render/fullscreen.h"/>
   </compounddef>

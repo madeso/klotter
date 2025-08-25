@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/fullscreen.h" line="17" column="17" bodyfile="src/klotter/render/fullscreen.h" bodystart="17" bodyend="-1"/>
+        <location file="src/klotter/render/fullscreen.h" line="16" column="17" bodyfile="src/klotter/render/fullscreen.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FullScreenGeom_1a6d3b1bae3cacf01d171aaf83d6635b95" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1CompiledShaderVertexAttributes" kindref="compound">CompiledShaderVertexAttributes</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/fullscreen.h" line="18" column="32" bodyfile="src/klotter/render/fullscreen.h" bodystart="18" bodyend="-1"/>
+        <location file="src/klotter/render/fullscreen.h" line="17" column="32" bodyfile="src/klotter/render/fullscreen.h" bodystart="17" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/fullscreen.h" line="20" column="1"/>
+        <location file="src/klotter/render/fullscreen.h" line="19" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -116,7 +116,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/fullscreen.h" line="15" column="1" bodyfile="src/klotter/render/fullscreen.h" bodystart="16" bodyend="21"/>
+    <location file="src/klotter/render/fullscreen.h" line="14" column="1" bodyfile="src/klotter/render/fullscreen.h" bodystart="15" bodyend="20"/>
     <listofallmembers>
       <member refid="structklotter_1_1FullScreenGeom_1a55753c215cb88a040da3e21b585f9d3a" prot="public" virt="non-virtual"><scope>klotter::FullScreenGeom</scope><name>FullScreenGeom</name></member>
       <member refid="structklotter_1_1FullScreenGeom_1afe5a7f37bb741a8ef465064eba35ae38" prot="public" virt="non-virtual"><scope>klotter::FullScreenGeom</scope><name>geom</name></member>

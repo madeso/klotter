@@ -181,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="103" column="9" declfile="src/klotter/render/geom.builder.h" declline="103" declcolumn="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="100" column="9" declfile="src/klotter/render/geom.builder.h" declline="100" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__geom-builder_1ga0a86d7790b159d07b143c60cdbd8cc05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Builder</type>
@@ -212,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="107" column="9" declfile="src/klotter/render/geom.builder.h" declline="107" declcolumn="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="104" column="9" declfile="src/klotter/render/geom.builder.h" declline="104" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__geom-builder_1gafb656dc8ee5b50fd74b4c310f992c691" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Builder</type>
@@ -243,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="111" column="9" declfile="src/klotter/render/geom.builder.h" declline="111" declcolumn="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="108" column="9" declfile="src/klotter/render/geom.builder.h" declline="108" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__geom-builder_1ga5c81b57290bcdc4cda11281c3d39675e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Builder</type>
@@ -323,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="122" column="9" declfile="src/klotter/render/geom.builder.h" declline="122" declcolumn="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="119" column="9" declfile="src/klotter/render/geom.builder.h" declline="119" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ExtractedGeom</type>

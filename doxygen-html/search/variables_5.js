@@ -1,7 +1,7 @@
 var searchData=
 [
   ['face_5fsize_0',['face_size',['../structklotter_1_1ExtractedGeom.html#a67e920511535f50ccfb21e34b497f886',1,'klotter::ExtractedGeom']]],
-  ['faces_1',['faces',['../structklotter_1_1Geom.html#a3ba55b3acd271e9a124450251f4b0b21',1,'klotter::Geom']]],
+  ['faces_1',['faces',['../structklotter_1_1geom_1_1Builder.html#a0aff2697c481b360afbbc9c1216c24f0',1,'klotter::geom::Builder::faces'],['../structklotter_1_1Geom.html#a3ba55b3acd271e9a124450251f4b0b21',1,'klotter::Geom::faces']]],
   ['factor_5funi_2',['factor_uni',['../structklotter_1_1LoadedPostProcShader.html#a8a4b03defcce03b259e547afb8fdc87c',1,'klotter::LoadedPostProcShader']]],
   ['far_3',['far',['../structklotter_1_1Camera.html#aa5580be75db05bc2a99273caf62b3394',1,'klotter::Camera']]],
   ['fbo_4',['fbo',['../structklotter_1_1RenderTextureWithShader.html#a0ae8bab66cf61e303741ee950ab8303d',1,'klotter::RenderTextureWithShader::fbo'],['../structklotter_1_1FrameBuffer.html#a7945d2f95265ed1b905a1d823b2a07c1',1,'klotter::FrameBuffer::fbo'],['../structklotter_1_1BoundFbo.html#afe94d7a00ce51497623dd29f5e006b09',1,'klotter::BoundFbo::fbo']]],

@@ -4,7 +4,7 @@ var searchData=
   ['f64_1',['f64',['../pch_8public_8h.html#abc2f107791bd7c1d49ecf0f168c085a3',1,'pch.public.h']]],
   ['face_2',['Face',['../structklotter_1_1Face.html',1,'klotter']]],
   ['face_5fsize_3',['face_size',['../structklotter_1_1ExtractedGeom.html#a67e920511535f50ccfb21e34b497f886',1,'klotter::ExtractedGeom']]],
-  ['faces_4',['faces',['../structklotter_1_1Geom.html#a3ba55b3acd271e9a124450251f4b0b21',1,'klotter::Geom']]],
+  ['faces_4',['faces',['../structklotter_1_1geom_1_1Builder.html#a0aff2697c481b360afbbc9c1216c24f0',1,'klotter::geom::Builder::faces'],['../structklotter_1_1Geom.html#a3ba55b3acd271e9a124450251f4b0b21',1,'klotter::Geom::faces']]],
   ['factor_5',['factor',['../group__render.html#gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d',1,'klotter']]],
   ['factor_5funi_6',['factor_uni',['../structklotter_1_1LoadedPostProcShader.html#a8a4b03defcce03b259e547afb8fdc87c',1,'klotter::LoadedPostProcShader']]],
   ['factoreffect_7',['FactorEffect',['../structklotter_1_1FactorEffect.html',1,'klotter::FactorEffect'],['../structklotter_1_1FactorEffect.html#a20c51552c66bf6c1e49d615a5021d4bd',1,'klotter::FactorEffect::FactorEffect()']]],

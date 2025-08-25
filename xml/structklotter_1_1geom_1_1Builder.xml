@@ -4,19 +4,19 @@
     <compoundname>klotter::geom::Builder</compoundname>
     <includes refid="geom_8builder_8h" local="no">geom.builder.h</includes>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structklotter_1_1geom_1_1Builder_1aa8423efe94121e82d6871d4cb7fd165d" prot="public" static="no" mutable="no">
-        <type>std::vector&lt; <ref refid="structklotter_1_1geom_1_1Triangle" kindref="compound">Triangle</ref> &gt;</type>
-        <definition>std::vector&lt;Triangle&gt; klotter::geom::Builder::triangles</definition>
+      <memberdef kind="variable" id="structklotter_1_1geom_1_1Builder_1a0aff2697c481b360afbbc9c1216c24f0" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; <ref refid="structklotter_1_1geom_1_1Vertex" kindref="compound">Vertex</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;Vertex&gt; &gt; klotter::geom::Builder::faces</definition>
         <argsstring></argsstring>
-        <name>triangles</name>
-        <qualifiedname>klotter::geom::Builder::triangles</qualifiedname>
+        <name>faces</name>
+        <qualifiedname>klotter::geom::Builder::faces</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="87" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="87" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="84" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1geom_1_1Builder_1addd4f3e3ec10d6acf9b67252fff6dc76" prot="public" static="no" mutable="no">
         <type>std::vector&lt; glm::vec3 &gt;</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="88" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="88" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="85" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1geom_1_1Builder_1ad5e29e244afbfed443acb7947449f285" prot="public" static="no" mutable="no">
         <type>std::vector&lt; glm::vec3 &gt;</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="89" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="89" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="86" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1geom_1_1Builder_1abd7ede50a96f5807c123cb917eecd349" prot="public" static="no" mutable="no">
         <type>std::vector&lt; glm::vec2 &gt;</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="90" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="90" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="87" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1geom_1_1Builder_1aebac05a07388fa568e1dcdc43d4065bb" prot="public" static="no" mutable="no">
         <type>std::vector&lt; glm::vec4 &gt;</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="91" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="91" bodyend="-1"/>
+        <location file="src/klotter/render/geom.builder.h" line="88" column="13" bodyfile="src/klotter/render/geom.builder.h" bodystart="88" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -253,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="74" column="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="72" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1a1d1bf15d326a7d2a101aedf3d1daa97e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> &amp;</type>
@@ -287,7 +287,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="75" column="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="73" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1a108dd5e1bb46cd95cc94662b5ec741b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> &amp;</type>
@@ -304,21 +304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="76" column="9"/>
-      </memberdef>
-      <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1a0040ee70080e791cf4a27d1450db0b0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> &amp;</type>
-        <definition>Builder &amp; klotter::geom::Builder::replace_with_smooth_normals</definition>
-        <argsstring>()</argsstring>
-        <name>replace_with_smooth_normals</name>
-        <qualifiedname>klotter::geom::Builder::replace_with_smooth_normals</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="78" column="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="74" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1aa6ae34b81a5b711fd60b55ba96a4efa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> &amp;</type>
@@ -336,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="79" column="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="76" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1aa4bdbcf2bac9913c51e851cd6457b3f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> &amp;</type>
@@ -354,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="80" column="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="77" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1a51525175e9d0303d99fe22c89213d482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> &amp;</type>
@@ -368,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="81" column="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="78" column="9"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1a7a058ba68a600119c137a23ccf8d5ac7" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Geom" kindref="compound">Geom</ref></type>
@@ -382,7 +368,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="83" column="7"/>
+        <location file="src/klotter/render/geom.builder.h" line="80" column="7"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1geom_1_1Builder_1a37ee459d444ec29573ccee3240fa9a24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1geom_1_1Builder" kindref="compound">Builder</ref> &amp;</type>
@@ -400,7 +386,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/geom.builder.h" line="85" column="9"/>
+        <location file="src/klotter/render/geom.builder.h" line="82" column="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -413,49 +399,33 @@
         <label>klotter::geom::Builder</label>
         <link refid="structklotter_1_1geom_1_1Builder"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>triangles</edgelabel>
+          <edgelabel>faces</edgelabel>
         </childnode>
-        <childnode refid="5" relation="usage">
+        <childnode refid="3" relation="usage">
           <edgelabel>normals</edgelabel>
           <edgelabel>positions</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>texcoords</edgelabel>
         </childnode>
-        <childnode refid="7" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>lin_colors</edgelabel>
         </childnode>
       </node>
-      <node id="3">
-        <label>klotter::geom::Triangle</label>
-        <link refid="structklotter_1_1geom_1_1Triangle"/>
-        <childnode refid="4" relation="usage">
-          <edgelabel>v0</edgelabel>
-          <edgelabel>v1</edgelabel>
-          <edgelabel>v2</edgelabel>
-        </childnode>
-      </node>
       <node id="4">
-        <label>klotter::geom::Vertex</label>
-        <link refid="structklotter_1_1geom_1_1Vertex"/>
-      </node>
-      <node id="6">
         <label>std::vector&lt; glm::vec2 &gt;</label>
       </node>
-      <node id="5">
+      <node id="3">
         <label>std::vector&lt; glm::vec3 &gt;</label>
       </node>
-      <node id="7">
+      <node id="5">
         <label>std::vector&lt; glm::vec4 &gt;</label>
       </node>
       <node id="2">
-        <label>std::vector&lt; klotter::geom::Triangle &gt;</label>
-        <childnode refid="3" relation="usage">
-          <edgelabel>elements</edgelabel>
-        </childnode>
+        <label>std::vector&lt; std::vector&lt; klotter::geom::Vertex &gt; &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/geom.builder.h" line="59" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="60" bodyend="92"/>
+    <location file="src/klotter/render/geom.builder.h" line="59" column="1" bodyfile="src/klotter/render/geom.builder.h" bodystart="60" bodyend="89"/>
     <listofallmembers>
       <member refid="structklotter_1_1geom_1_1Builder_1ab4601163cdc114970ed8f8561ebc3804" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_color</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a108dd5e1bb46cd95cc94662b5ec741b9" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_face</name></member>
@@ -464,6 +434,7 @@
       <member refid="structklotter_1_1geom_1_1Builder_1a1d1bf15d326a7d2a101aedf3d1daa97e" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_quad</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a1d23996bf8e3a67534d7b4c0fe5bab4c" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_text_coord</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a2221d13065eb2546d6f454d8f1a04b95" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>add_triangle</name></member>
+      <member refid="structklotter_1_1geom_1_1Builder_1a0aff2697c481b360afbbc9c1216c24f0" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>faces</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a6cd975114cc2a208a083fcb7c3a52aed" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>foa_color</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1af706fa48387cd029fa3f8ce53fdb53a7" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>foa_normal</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1ac84dda85ac9ca872b140777fca452c20" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>foa_position</name></member>
@@ -473,11 +444,9 @@
       <member refid="structklotter_1_1geom_1_1Builder_1aa6ae34b81a5b711fd60b55ba96a4efa0" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>move</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1ad5e29e244afbfed443acb7947449f285" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>normals</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1addd4f3e3ec10d6acf9b67252fff6dc76" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>positions</name></member>
-      <member refid="structklotter_1_1geom_1_1Builder_1a0040ee70080e791cf4a27d1450db0b0f" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>replace_with_smooth_normals</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1aa4bdbcf2bac9913c51e851cd6457b3f6" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>scale</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1abd7ede50a96f5807c123cb917eecd349" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>texcoords</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a7a058ba68a600119c137a23ccf8d5ac7" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>to_geom</name></member>
-      <member refid="structklotter_1_1geom_1_1Builder_1aa8423efe94121e82d6871d4cb7fd165d" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>triangles</name></member>
       <member refid="structklotter_1_1geom_1_1Builder_1a37ee459d444ec29573ccee3240fa9a24" prot="public" virt="non-virtual"><scope>klotter::geom::Builder</scope><name>write_obj</name></member>
     </listofallmembers>
   </compounddef>

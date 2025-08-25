@@ -146,8 +146,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1d1bf15d326a7d2a101aedf3d1daa97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a108dd5e1bb46cd95cc94662b5ec741b9" id="r_a108dd5e1bb46cd95cc94662b5ec741b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1geom_1_1Builder.html">Builder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a108dd5e1bb46cd95cc94662b5ec741b9">add_face</a> (const std::vector&lt; <a class="el" href="structklotter_1_1geom_1_1Vertex.html">Vertex</a> &gt; &amp;)</td></tr>
 <tr class="separator:a108dd5e1bb46cd95cc94662b5ec741b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0040ee70080e791cf4a27d1450db0b0f" id="r_a0040ee70080e791cf4a27d1450db0b0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1geom_1_1Builder.html">Builder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0040ee70080e791cf4a27d1450db0b0f">replace_with_smooth_normals</a> ()</td></tr>
-<tr class="separator:a0040ee70080e791cf4a27d1450db0b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6ae34b81a5b711fd60b55ba96a4efa0" id="r_aa6ae34b81a5b711fd60b55ba96a4efa0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1geom_1_1Builder.html">Builder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6ae34b81a5b711fd60b55ba96a4efa0">move</a> (const glm::vec3 &amp;dir)</td></tr>
 <tr class="separator:aa6ae34b81a5b711fd60b55ba96a4efa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4bdbcf2bac9913c51e851cd6457b3f6" id="r_aa4bdbcf2bac9913c51e851cd6457b3f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1geom_1_1Builder.html">Builder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4bdbcf2bac9913c51e851cd6457b3f6">scale</a> (float scale)</td></tr>
@@ -161,8 +159,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa8423efe94121e82d6871d4cb7fd165d" id="r_aa8423efe94121e82d6871d4cb7fd165d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structklotter_1_1geom_1_1Triangle.html">Triangle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8423efe94121e82d6871d4cb7fd165d">triangles</a></td></tr>
-<tr class="separator:aa8423efe94121e82d6871d4cb7fd165d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aff2697c481b360afbbc9c1216c24f0" id="r_a0aff2697c481b360afbbc9c1216c24f0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="structklotter_1_1geom_1_1Vertex.html">Vertex</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0aff2697c481b360afbbc9c1216c24f0">faces</a></td></tr>
+<tr class="separator:a0aff2697c481b360afbbc9c1216c24f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addd4f3e3ec10d6acf9b67252fff6dc76" id="r_addd4f3e3ec10d6acf9b67252fff6dc76"><td class="memItemLeft" align="right" valign="top">std::vector&lt; glm::vec3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#addd4f3e3ec10d6acf9b67252fff6dc76">positions</a></td></tr>
 <tr class="separator:addd4f3e3ec10d6acf9b67252fff6dc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5e29e244afbfed443acb7947449f285" id="r_ad5e29e244afbfed443acb7947449f285"><td class="memItemLeft" align="right" valign="top">std::vector&lt; glm::vec3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5e29e244afbfed443acb7947449f285">normals</a></td></tr>
@@ -432,23 +430,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0040ee70080e791cf4a27d1450db0b0f" name="a0040ee70080e791cf4a27d1450db0b0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0040ee70080e791cf4a27d1450db0b0f">&#9670;&#160;</a></span>replace_with_smooth_normals()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1geom_1_1Builder.html">Builder</a> &amp; klotter::geom::Builder::replace_with_smooth_normals </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aa4bdbcf2bac9913c51e851cd6457b3f6" name="aa4bdbcf2bac9913c51e851cd6457b3f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4bdbcf2bac9913c51e851cd6457b3f6">&#9670;&#160;</a></span>scale()</h2>
 
@@ -509,6 +490,20 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0aff2697c481b360afbbc9c1216c24f0" name="a0aff2697c481b360afbbc9c1216c24f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aff2697c481b360afbbc9c1216c24f0">&#9670;&#160;</a></span>faces</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;<a class="el" href="structklotter_1_1geom_1_1Vertex.html">Vertex</a>&gt; &gt; klotter::geom::Builder::faces</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aebac05a07388fa568e1dcdc43d4065bb" name="aebac05a07388fa568e1dcdc43d4065bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebac05a07388fa568e1dcdc43d4065bb">&#9670;&#160;</a></span>lin_colors</h2>
 
@@ -561,20 +556,6 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;glm::vec2&gt; klotter::geom::Builder::texcoords</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa8423efe94121e82d6871d4cb7fd165d" name="aa8423efe94121e82d6871d4cb7fd165d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8423efe94121e82d6871d4cb7fd165d">&#9670;&#160;</a></span>triangles</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structklotter_1_1geom_1_1Triangle.html">Triangle</a>&gt; klotter::geom::Builder::triangles</td>
         </tr>
       </table>
 </div><div class="memdoc">

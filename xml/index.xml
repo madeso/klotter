@@ -96,7 +96,7 @@
     <member refid="structklotter_1_1BuildArg_1a3db0e7328f926a793438016339563e24" kind="variable"><name>window_size</name></member>
   </compound>
   <compound refid="structklotter_1_1geom_1_1Builder" kind="struct"><name>klotter::geom::Builder</name>
-    <member refid="structklotter_1_1geom_1_1Builder_1aa8423efe94121e82d6871d4cb7fd165d" kind="variable"><name>triangles</name></member>
+    <member refid="structklotter_1_1geom_1_1Builder_1a0aff2697c481b360afbbc9c1216c24f0" kind="variable"><name>faces</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1addd4f3e3ec10d6acf9b67252fff6dc76" kind="variable"><name>positions</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1ad5e29e244afbfed443acb7947449f285" kind="variable"><name>normals</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1abd7ede50a96f5807c123cb917eecd349" kind="variable"><name>texcoords</name></member>
@@ -112,7 +112,6 @@
     <member refid="structklotter_1_1geom_1_1Builder_1a2221d13065eb2546d6f454d8f1a04b95" kind="function"><name>add_triangle</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a1d1bf15d326a7d2a101aedf3d1daa97e" kind="function"><name>add_quad</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a108dd5e1bb46cd95cc94662b5ec741b9" kind="function"><name>add_face</name></member>
-    <member refid="structklotter_1_1geom_1_1Builder_1a0040ee70080e791cf4a27d1450db0b0f" kind="function"><name>replace_with_smooth_normals</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1aa6ae34b81a5b711fd60b55ba96a4efa0" kind="function"><name>move</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1aa4bdbcf2bac9913c51e851cd6457b3f6" kind="function"><name>scale</name></member>
     <member refid="structklotter_1_1geom_1_1Builder_1a51525175e9d0303d99fe22c89213d482" kind="function"><name>invert_normals</name></member>
