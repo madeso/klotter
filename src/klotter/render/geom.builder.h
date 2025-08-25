@@ -69,13 +69,10 @@ struct Builder
 	Index foa_normal(const glm::vec3& norm, float max_diff);
 	Index foa_color(const glm::vec4& color, float max_diff);
 
-	// todo(Gustav): hrm... perhaps change so we support n-gon instead of just tris and just
-	// triangulate when converting to a geom? the intent would be clearer in the obj dump...
 	Builder& add_triangle(const Triangle& t);
 	Builder& add_quad(bool ccw, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3);
 	Builder& add_face(const std::vector<Vertex>&);
 
-	Builder& replace_with_smooth_normals();
 	Builder& move(const glm::vec3& dir);
 	Builder& scale(float scale);
 	Builder& invert_normals();
@@ -84,7 +81,7 @@ struct Builder
 
 	Builder& write_obj(const std::string& path);
 
-	std::vector<Triangle> triangles;
+	std::vector<std::vector<Vertex>> faces; // each face needs to have 3 or more vertices
 	std::vector<glm::vec3> positions;
 	std::vector<glm::vec3> normals;
 	std::vector<glm::vec2> texcoords;

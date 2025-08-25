@@ -152,12 +152,13 @@ Index Builder::foa_color(const glm::vec4& c, float max_diff)
 
 Builder& Builder::add_triangle(const Triangle& t)
 {
-	triangles.emplace_back(t);
+	add_face(std::vector{t.v0, t.v1, t.v2});
 	return *this;
 }
 
 Builder& Builder::add_quad(bool ccw, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3)
 {
+	// todo(Gustav): add quad face instead of 2 triangles
 	if (ccw)
 	{
 		// add counter clock wise
@@ -206,15 +207,8 @@ Builder& Builder::invert_normals()
 
 Builder& Builder::add_face(const std::vector<Vertex>& vertices)
 {
-	// we currently don't support ton-triangular faces so - triangulate it
-	[[maybe_unused]] bool added = false;
-	for (std::vector<Vertex>::size_type vertex_index = 2; vertex_index < vertices.size(); ++vertex_index)
-	{
-		add_triangle(Triangle{vertices[0], vertices[vertex_index - 1], vertices[vertex_index]});
-		added = true;
-	}
-	assert(added);
-
+	ASSERT(vertices.size() >= 3);
+	faces.emplace_back(vertices);
 	return *this;
 }
 
@@ -228,56 +222,13 @@ glm::vec3 cross_norm(const glm::vec3& lhs, const glm::vec3& rhs)
 	return glm::normalize(glm::cross(lhs, rhs));
 }
 
-Builder& Builder::replace_with_smooth_normals()
-{
-	// start with empty sum, this will become the smooth normals
-	auto vertex_normals_sum = std::vector(positions.size(), glm::vec3(0, 0, 0));
-
-
-	for (Triangle& tri: triangles)
-	{
-		const glm::vec3 p0 = positions[tri.v0.position];
-		const glm::vec3 p1 = positions[tri.v1.position];
-		const glm::vec3 p2 = positions[tri.v2.position];
-
-		const glm::vec3 d0 = from_to(p1, p0);
-		const glm::vec3 d1 = from_to(p1, p2);
-
-		const glm::vec3 face_normal = cross_norm(d1, d0);
-
-
-		auto update_vert = [&](Vertex& vert)
-		{
-			// add face normal to the vertex normal
-			vertex_normals_sum[vert.position] += face_normal;
-
-			// set the vertex normal to the same index as the position
-			vert.normal = vert.position;
-		};
-
-		update_vert(tri.v0);
-		update_vert(tri.v1);
-		update_vert(tri.v2);
-	}
-
-	//  normalize the sums
-	normals.clear();
-	for (const glm::vec3& normal_sum: vertex_normals_sum)
-	{
-		normals.push_back(glm::normalize(normal_sum));
-	}
-	assert(normals.size() == positions.size());
-
-	return *this;
-}
-
 Geom Builder::to_geom() const
 {
 	std::unordered_map<Combo, u32> combinations;
 
 	// foreach triangle
-	std::vector<klotter::Vertex> vertices;
-	std::vector<klotter::Face> faces;
+	std::vector<klotter::Vertex> final_vertices;
+	std::vector<klotter::Face> final_tris;
 
 	auto convert_vert = [&](const Vertex& vert) -> u32
 	{
@@ -296,24 +247,34 @@ Geom Builder::to_geom() const
 			const glm::vec2 text = texcoords.empty() ? glm::vec2(0, 0) : texcoords[c.texture];
 			const glm::vec4 col = lin_colors.empty() ? glm::vec4{linear_missing_color, 1.0f} : lin_colors[c.color];
 			const glm::vec3 normal = normals.empty() == false ? normals[c.normal] : glm::vec3(1, 0, 0);
-			const auto ind = vertices.size();
-			vertices.emplace_back(klotter::Vertex{pos, normal, text, col});
+			const auto ind = final_vertices.size();
+			final_vertices.emplace_back(klotter::Vertex{pos, normal, text, col});
 			combinations.insert({c, Csizet_to_u32(ind)});
 			return Csizet_to_u32(ind);
 		}
 	};
 
-	for (const Triangle& tri: triangles)
+	for (auto& src_face: faces)
 	{
-		const auto v0 = convert_vert(tri.v0);
-		const auto v1 = convert_vert(tri.v1);
-		const auto v2 = convert_vert(tri.v2);
+		const auto v0 = convert_vert(src_face[0]);
 
-		// add triangle to geom
-		faces.emplace_back(Face{v0, v1, v2});
+		// for a quad (4 vertices):
+		//  (start) (index) (index+1)
+		//     0       1       2
+		//     0       2       3
+		// ----------------------------
+		//     0       3       4 (error)
+		for (std::size_t triangle_base = 1; triangle_base < src_face.size()-1; triangle_base += 1)
+		{
+			const auto v1 = convert_vert(src_face[triangle_base]);
+			const auto v2 = convert_vert(src_face[triangle_base+1]);
+
+			// add triangle to geom
+			final_tris.emplace_back(Face{v0, v1, v2});
+		}
 	}
 
-	return {std::move(vertices), std::move(faces)};
+	return {std::move(final_vertices), std::move(final_tris)};
 }
 
 Builder& Builder::write_obj(const std::string& path)
@@ -347,11 +308,10 @@ Builder& Builder::write_obj(const std::string& path)
 	f << '\n';
 
 	f << "# Triangles\n";
-	for (const auto& p: triangles)
+	for (const auto& face: faces)
 	{
 		f << "f";
-		const std::array<Vertex, 3> t{p.v0, p.v1, p.v2};
-		for (const auto& v: t)
+		for (const auto& v: face)
 		{
 			f << ' ' << (v.position + 1) << '/' << (v.texture + 1) << '/' << (v.normal + 1);
 		}
@@ -364,6 +324,7 @@ Builder& Builder::write_obj(const std::string& path)
 
 // ==================================================================================================================================
 
+// todo(Gustav): make this a default argument...?
 /// we assume that when building a mesh, this is the gamma they use for colors.
 constexpr float artist_gamma = 2.2f;
 
