@@ -158,18 +158,15 @@ Builder& Builder::add_triangle(const Triangle& t)
 
 Builder& Builder::add_quad(bool ccw, const Vertex& v0, const Vertex& v1, const Vertex& v2, const Vertex& v3)
 {
-	// todo(Gustav): add quad face instead of 2 triangles
 	if (ccw)
 	{
 		// add counter clock wise
-		add_triangle(Triangle(v0, v1, v2));
-		add_triangle(Triangle(v0, v2, v3));
+		add_face({v0, v1, v2, v3});
 	}
 	else
 	{
 		// add clock wise
-		add_triangle(Triangle(v2, v1, v0));
-		add_triangle(Triangle(v3, v2, v0));
+		add_face({v0, v3, v2, v1});
 	}
 
 	return *this;
