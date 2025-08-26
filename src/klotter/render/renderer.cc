@@ -127,9 +127,9 @@ void batch_lines(LineDrawer* drawer, const std::vector<DebugLine>& debug_lines, 
 {
 	for (const auto& line: debug_lines)
 	{
-		drawer->line_batch.line(line.from, line.to, linear_from_srgb(line.color, gamma));
+		drawer->line(line.from, line.to, linear_from_srgb(line.color, gamma));
 	}
-	drawer->line_batch.submit();
+	drawer->submit();
 }
 
 void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates* states, LineDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size, float gamma)
