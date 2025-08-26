@@ -404,23 +404,8 @@
     <member refid="structklotter_1_1Lights_1acb7b0f789218068315c8612d1ebe189c" kind="variable"><name>point_lights</name></member>
     <member refid="structklotter_1_1Lights_1aa1be9e01f131119d7fe7aed807a69464" kind="variable"><name>frustum_lights</name></member>
   </compound>
-  <compound refid="structklotter_1_1LineBatch" kind="struct"><name>klotter::LineBatch</name>
-    <member refid="structklotter_1_1LineBatch_1a92bf75ea92012d1888b90546d9d3e134" kind="variable"><name>max_lines</name></member>
-    <member refid="structklotter_1_1LineBatch_1a65951c6d9b44662499cd0bfbd268276e" kind="variable"><name>data</name></member>
-    <member refid="structklotter_1_1LineBatch_1a77b1d0932ad3d1f80a81174dde3cff92" kind="variable"><name>lines</name></member>
-    <member refid="structklotter_1_1LineBatch_1a9a850e6ccb0f8c61bfbd7f821db58b51" kind="variable"><name>va</name></member>
-    <member refid="structklotter_1_1LineBatch_1a19f223a12164e163ed09156d8797b309" kind="variable"><name>vb</name></member>
-    <member refid="structklotter_1_1LineBatch_1a22adf043bc55df5ccdd1c10e680339e9" kind="variable"><name>ib</name></member>
-    <member refid="structklotter_1_1LineBatch_1a3a43e334bd2c3ebad64c4e3e4af8ff90" kind="function"><name>LineBatch</name></member>
-    <member refid="structklotter_1_1LineBatch_1a229d8e1ce0d93e2d4aaed3d05671dcb9" kind="function"><name>~LineBatch</name></member>
-    <member refid="structklotter_1_1LineBatch_1a2a5f7384e73b6b919adb76aea2efe60c" kind="function"><name>LineBatch</name></member>
-    <member refid="structklotter_1_1LineBatch_1a98534fbc5930a03da96bf29b51aa6fcc" kind="function"><name>operator=</name></member>
-    <member refid="structklotter_1_1LineBatch_1a964e2420c45c8f92bda5a4e41435fcf0" kind="function"><name>LineBatch</name></member>
-    <member refid="structklotter_1_1LineBatch_1a7012ad85755bc7a1153b970279abb66c" kind="function"><name>operator=</name></member>
-    <member refid="structklotter_1_1LineBatch_1aa378d8e42e95665ad03ee24009ff7afc" kind="function"><name>line</name></member>
-    <member refid="structklotter_1_1LineBatch_1ac11848294301883e840262a2f7be7392" kind="function"><name>submit</name></member>
-  </compound>
   <compound refid="structklotter_1_1LineDrawer" kind="struct"><name>klotter::LineDrawer</name>
+    <member refid="structklotter_1_1LineDrawer_1add28dca813cb377204af56c0b622c51a" kind="variable"><name>max_lines</name></member>
     <member refid="structklotter_1_1LineDrawer_1ab3107f77385148fed2e5b37529c09d22" kind="variable"><name>description</name></member>
     <member refid="structklotter_1_1LineDrawer_1a04da8258e19e3763976974335c35b50c" kind="variable"><name>layout</name></member>
     <member refid="structklotter_1_1LineDrawer_1a24ce3da96e78f1d1346fd1af2cf0c341" kind="variable"><name>shader</name></member>
@@ -429,10 +414,21 @@
     <member refid="structklotter_1_1LineDrawer_1a02f5813ada4de1104582aed3aac54e07" kind="variable"><name>resolution_uni</name></member>
     <member refid="structklotter_1_1LineDrawer_1a56d7d08433e9a46ca273996500a73c77" kind="variable"><name>dash_size_uni</name></member>
     <member refid="structklotter_1_1LineDrawer_1a928c80448b286b86c6052646601b7029" kind="variable"><name>gap_size_uni</name></member>
-    <member refid="structklotter_1_1LineDrawer_1a9e92ee3a442f6f499f7bd5eab0454def" kind="variable"><name>line_batch</name></member>
+    <member refid="structklotter_1_1LineDrawer_1ad1680ed33fc503cadfcd57fae81ca1a3" kind="variable"><name>data</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a42a8f38af53a8d69b818d92cf20b0191" kind="variable"><name>lines</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a52c18c43c89566f13ab8478dec427eb4" kind="variable"><name>va</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a7beef0fd9940b73c8023a0c2f9af54c4" kind="variable"><name>vb</name></member>
+    <member refid="structklotter_1_1LineDrawer_1ae8e58810b7de9d3ce4412945bd16a2ac" kind="variable"><name>ib</name></member>
     <member refid="structklotter_1_1LineDrawer_1ae877d9de19653d08a1a130962b22af26" kind="function"><name>LineDrawer</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a4f17c58c2075ae05dab7de0529c2c2da" kind="function"><name>~LineDrawer</name></member>
+    <member refid="structklotter_1_1LineDrawer_1abbc2ae539180f5d3fa3eee0a7dcf7332" kind="function"><name>LineDrawer</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a8dc53cf38161c20c3270727abc7aaef0" kind="function"><name>operator=</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a96a7fd083431391a4921c021704ef508" kind="function"><name>LineDrawer</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a0f84f06c60cd5c1e06fee643b2ebeaae" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" kind="function"><name>set_line_to_dash</name></member>
     <member refid="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" kind="function"><name>set_line_to_solid</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a27d1f010952138d24f987e721d28c590" kind="function"><name>line</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a5d3831830d3d1c9365782985b54942a9" kind="function"><name>submit</name></member>
     <member refid="structklotter_1_1LineDrawer_1a260e80f8c6e81e060c65f1cbcc02e988" kind="function"><name>is_loaded</name></member>
   </compound>
   <compound refid="structklotter_1_1LoadedPostProcShader" kind="struct"><name>klotter::LoadedPostProcShader</name>

@@ -15,7 +15,7 @@ var searchData=
   ['material_2eh_12',['material.h',['../material_8h.html',1,'']]],
   ['max_13',['max',['../structklotter_1_1FloatSliderShaderProp.html#a8414339be4d0247e5440fe1a3c578f4b',1,'klotter::FloatSliderShaderProp']]],
   ['max_5finstances_14',['max_instances',['../structklotter_1_1CompiledGeom__TransformInstance.html#a9de640e8a144dd1fddade070be005083',1,'klotter::CompiledGeom_TransformInstance']]],
-  ['max_5flines_15',['max_lines',['../structklotter_1_1LineBatch.html#a92bf75ea92012d1888b90546d9d3e134',1,'klotter::LineBatch']]],
+  ['max_5flines_15',['max_lines',['../structklotter_1_1LineDrawer.html#add28dca813cb377204af56c0b622c51a',1,'klotter::LineDrawer']]],
   ['max_5frange_16',['max_range',['../structklotter_1_1PointLight.html#a39b47df35963b4a18efa5abf68c09f77',1,'klotter::PointLight::max_range'],['../structklotter_1_1FrustumLight.html#a10e1ddb1e11147f5a0e32d306be95b94',1,'klotter::FrustumLight::max_range']]],
   ['max_5ftextures_5fsupported_17',['MAX_TEXTURES_SUPPORTED',['../namespaceklotter.html#a43f9bbbce92ceeed2837fcace91d9612',1,'klotter']]],
   ['meshes_18',['meshes',['../structklotter_1_1World.html#adf837f631529619280d72f2093d9d9a7',1,'klotter::World']]],

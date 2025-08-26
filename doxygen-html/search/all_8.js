@@ -4,7 +4,7 @@ var searchData=
   ['i32_1',['i32',['../pch_8public_8h.html#aec41e5f8e4b7aef2540e84268692fa84',1,'pch.public.h']]],
   ['i64_2',['i64',['../pch_8public_8h.html#a86025ec3a0bc201ca893caac2cb2acbd',1,'pch.public.h']]],
   ['i8_3',['i8',['../pch_8public_8h.html#a196513547113c3f96a078ee3e658a6ef',1,'pch.public.h']]],
-  ['ib_4',['ib',['../structklotter_1_1LineBatch.html#a22adf043bc55df5ccdd1c10e680339e9',1,'klotter::LineBatch']]],
+  ['ib_4',['ib',['../structklotter_1_1LineDrawer.html#ae8e58810b7de9d3ce4412945bd16a2ac',1,'klotter::LineDrawer']]],
   ['id_5',['id',['../structklotter_1_1BaseTexture.html#aa0c1c5008e48db75b99c027cf8b80d08',1,'klotter::BaseTexture::id'],['../structklotter_1_1UniformBuffer.html#a7c2ed659d8fdcf1d15166343a4f8f1f7',1,'klotter::UniformBuffer::id']]],
   ['im_5fcolors_2eh_6',['im_colors.h',['../im__colors_8h.html',1,'']]],
   ['imgui_20colors_7',['Dear ImGui Colors',['../group__imguicolors.html',1,'']]],

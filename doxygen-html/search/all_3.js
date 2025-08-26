@@ -1,7 +1,7 @@
 var searchData=
 [
   ['dash_5fsize_5funi_0',['dash_size_uni',['../structklotter_1_1LineDrawer.html#a56d7d08433e9a46ca273996500a73c77',1,'klotter::LineDrawer']]],
-  ['data_1',['data',['../structklotter_1_1ExtractedGeom.html#a5af092b303ded4f433910bf77add0d1f',1,'klotter::ExtractedGeom::data'],['../structklotter_1_1LineBatch.html#a65951c6d9b44662499cd0bfbd268276e',1,'klotter::LineBatch::data']]],
+  ['data_1',['data',['../structklotter_1_1ExtractedGeom.html#a5af092b303ded4f433910bf77add0d1f',1,'klotter::ExtractedGeom::data'],['../structklotter_1_1LineDrawer.html#ad1680ed33fc503cadfcd57fae81ca1a3',1,'klotter::LineDrawer::data']]],
   ['dear_20imgui_20colors_2',['Dear ImGui Colors',['../group__imguicolors.html',1,'']]],
   ['debug_3',['debug',['../structklotter_1_1Renderer.html#a041e598e217704db890b9ed76ae70fdd',1,'klotter::Renderer']]],
   ['debug_2eh_4',['debug.h',['../debug_8h.html',1,'']]],

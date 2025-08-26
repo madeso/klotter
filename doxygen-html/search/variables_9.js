@@ -12,8 +12,7 @@ var searchData=
   ['lights_9',['lights',['../structklotter_1_1World.html#a3fbb4f1f21c97a7f1cc7e11bc5f26a0b',1,'klotter::World']]],
   ['lime_10',['lime',['../group__imguicolors.html#gacbc316ef8105da66f1d268c14463bd7e',1,'klotter::imgui']]],
   ['lin_5fcolors_11',['lin_colors',['../structklotter_1_1geom_1_1Builder.html#aebac05a07388fa568e1dcdc43d4065bb',1,'klotter::geom::Builder']]],
-  ['line_5fbatch_12',['line_batch',['../structklotter_1_1LineDrawer.html#a9e92ee3a442f6f499f7bd5eab0454def',1,'klotter::LineDrawer']]],
-  ['line_5fcolor_13',['line_color',['../structklotter_1_1SCurveImguiSettings.html#a0252dda4c60f6ad85152e086117c9167',1,'klotter::SCurveImguiSettings']]],
-  ['lines_14',['lines',['../structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d',1,'Svg::lines'],['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineBatch.html#a77b1d0932ad3d1f80a81174dde3cff92',1,'klotter::LineBatch::lines']]],
-  ['location_15',['location',['../structklotter_1_1Uniform.html#a0a3d653eabb213c1f05a7ca494a5cf27',1,'klotter::Uniform']]]
+  ['line_5fcolor_12',['line_color',['../structklotter_1_1SCurveImguiSettings.html#a0252dda4c60f6ad85152e086117c9167',1,'klotter::SCurveImguiSettings']]],
+  ['lines_13',['lines',['../structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d',1,'Svg::lines'],['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineDrawer.html#a42a8f38af53a8d69b818d92cf20b0191',1,'klotter::LineDrawer::lines']]],
+  ['location_14',['location',['../structklotter_1_1Uniform.html#a0a3d653eabb213c1f05a7ca494a5cf27',1,'klotter::Uniform']]]
 ];

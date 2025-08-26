@@ -93,7 +93,7 @@ var searchData=
   ['str_90',['str',['../structStr.html#ae5bcd149c44251ab778610f5dfaff12d',1,'Str']]],
   ['str_2eh_91',['str.h',['../str_8h.html',1,'']]],
   ['stride_92',['stride',['../structklotter_1_1ExtractedGeom.html#a88aa2dea435a4e337465450b863fe03f',1,'klotter::ExtractedGeom']]],
-  ['submit_93',['submit',['../structklotter_1_1LineBatch.html#ac11848294301883e840262a2f7be7392',1,'klotter::LineBatch']]],
+  ['submit_93',['submit',['../structklotter_1_1LineDrawer.html#a5d3831830d3d1c9365782985b54942a9',1,'klotter::LineDrawer']]],
   ['svg_94',['Svg',['../structSvg.html',1,'']]],
   ['svg_95',['svg',['../namespacesvg.html',1,'']]],
   ['svgline_96',['SvgLine',['../structSvgLine.html',1,'']]]

@@ -8,7 +8,7 @@ var searchData=
   ['_7ecompiledgeom_5ftransforminstance_5',['~CompiledGeom_TransformInstance',['../structklotter_1_1CompiledGeom__TransformInstance.html#a752e9f860b2a97c6982af43fefc1faff',1,'klotter::CompiledGeom_TransformInstance']]],
   ['_7eeffect_6',['~Effect',['../structklotter_1_1Effect.html#a098603548d6ee2c1f5f6179921b13f48',1,'klotter::Effect']]],
   ['_7eframebuffer_7',['~FrameBuffer',['../structklotter_1_1FrameBuffer.html#a602306657cd67730fb9860bbaf4e339d',1,'klotter::FrameBuffer']]],
-  ['_7elinebatch_8',['~LineBatch',['../structklotter_1_1LineBatch.html#a229d8e1ce0d93e2d4aaed3d05671dcb9',1,'klotter::LineBatch']]],
+  ['_7elinedrawer_8',['~LineDrawer',['../structklotter_1_1LineDrawer.html#a4f17c58c2075ae05dab7de0529c2c2da',1,'klotter::LineDrawer']]],
   ['_7ematerial_9',['~Material',['../structklotter_1_1Material.html#abd64872e3d2303186c0a9b5e978e0cd9',1,'klotter::Material']]],
   ['_7erenderer_10',['~Renderer',['../structklotter_1_1Renderer.html#a84a0c241507db1c10f6779a0a06e7019',1,'klotter::Renderer']]],
   ['_7erendersource_11',['~RenderSource',['../structklotter_1_1RenderSource.html#a11b2e79c0400c88412f16971cc3d6e8a',1,'klotter::RenderSource']]],

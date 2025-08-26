@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ib_0',['ib',['../structklotter_1_1LineBatch.html#a22adf043bc55df5ccdd1c10e680339e9',1,'klotter::LineBatch']]],
+  ['ib_0',['ib',['../structklotter_1_1LineDrawer.html#ae8e58810b7de9d3ce4412945bd16a2ac',1,'klotter::LineDrawer']]],
   ['id_1',['id',['../structklotter_1_1BaseTexture.html#aa0c1c5008e48db75b99c027cf8b80d08',1,'klotter::BaseTexture::id'],['../structklotter_1_1UniformBuffer.html#a7c2ed659d8fdcf1d15166343a4f8f1f7',1,'klotter::UniformBuffer::id']]],
   ['in_2',['in',['../structklotter_1_1CompiledCamera.html#af8f3aacb0e4384ae60db486c14dfdb60',1,'klotter::CompiledCamera']]],
   ['include_5fdepth_3',['include_depth',['../structklotter_1_1FrameBufferBuilder.html#aca3f7b8c2f13b65748c3d95cbdd589bd',1,'klotter::FrameBufferBuilder']]],

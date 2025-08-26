@@ -34,5 +34,5 @@ var searchData=
   ['stencil_5fop_31',['stencil_op',['../structklotter_1_1StateChanger.html#ad9fd74dfef0eb9ada6a0d781d29bc076',1,'klotter::StateChanger']]],
   ['stencil_5ftest_32',['stencil_test',['../structklotter_1_1StateChanger.html#ab9b21b1f81a47ab53c0fc868cb03a5c3',1,'klotter::StateChanger']]],
   ['str_33',['str',['../structStr.html#ae5bcd149c44251ab778610f5dfaff12d',1,'Str']]],
-  ['submit_34',['submit',['../structklotter_1_1LineBatch.html#ac11848294301883e840262a2f7be7392',1,'klotter::LineBatch']]]
+  ['submit_34',['submit',['../structklotter_1_1LineDrawer.html#a5d3831830d3d1c9365782985b54942a9',1,'klotter::LineDrawer']]]
 ];

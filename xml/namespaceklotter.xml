@@ -50,7 +50,6 @@
     <innerclass refid="structklotter_1_1HashCombiner" prot="public">klotter::HashCombiner</innerclass>
     <innerclass refid="structklotter_1_1InstanceProp" prot="public">klotter::InstanceProp</innerclass>
     <innerclass refid="structklotter_1_1Lights" prot="public">klotter::Lights</innerclass>
-    <innerclass refid="structklotter_1_1LineBatch" prot="public">klotter::LineBatch</innerclass>
     <innerclass refid="structklotter_1_1LineDrawer" prot="public">klotter::LineDrawer</innerclass>
     <innerclass refid="structklotter_1_1LoadedPostProcShader" prot="public">klotter::LoadedPostProcShader</innerclass>
     <innerclass refid="structklotter_1_1LoadedShader__Default" prot="public">klotter::LoadedShader_Default</innerclass>
