@@ -324,12 +324,8 @@ Builder& Builder::write_obj(const std::string& path)
 // todo(Gustav): make this a default argument...?
 /// we assume that when building a mesh, this is the gamma they use for colors.
 constexpr float artist_gamma = 2.2f;
-
-Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const Color& color)
+namespace local
 {
-	const auto invert = normals_facing == NormalsFacing::In;
-	Builder b;
-
 	// position and texture coord struct
 	struct Pt
 	{
@@ -337,7 +333,7 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 		glm::vec2 tex;
 	};
 
-	const auto add_quad_to_builder = [&](glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
+	void add_quad_to_builder(Builder& b, bool invert, const Color& color, glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
 	{
 		constexpr float pd = 0.1f;
 		constexpr float td = 0.01f;
@@ -351,6 +347,63 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 
 		b.add_quad(invert, v0, v1, v2, v3);
 	};
+}
+
+
+namespace local2
+{
+	// position and texture coord struct
+	struct Pt
+	{
+		glm::vec3 pos;
+		glm::vec2 tex;
+	};
+
+	void add_quad_to_builder(Builder& b, bool invert, const Color& color, glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
+	{
+		constexpr float pd = 0.1f;
+		constexpr float td = 0.01f;
+		const auto ci = b.foa_color({linear_from_srgb(color, artist_gamma), 1.0f}, 0.001f);
+		const auto no = b.add_normal(normal);
+
+		const auto v0 = Vertex{b.foa_position(p0.pos, pd), no, b.foa_text_coord(p0.tex, td), ci};
+		const auto v1 = Vertex{b.foa_position(p1.pos, pd), no, b.foa_text_coord(p1.tex, td), ci};
+		const auto v2 = Vertex{b.foa_position(p2.pos, pd), no, b.foa_text_coord(p2.tex, td), ci};
+		const auto v3 = Vertex{b.foa_position(p3.pos, pd), no, b.foa_text_coord(p3.tex, td), ci};
+
+		b.add_quad(invert, v0, v1, v2, v3);
+	};
+}  //  namespace local2
+
+namespace local3
+{
+	// position and texture coord struct
+	struct Pt
+	{
+		glm::vec3 pos;
+		glm::vec2 tex;
+	};
+
+	void add_quad_to_builder(Builder& b, bool invert, const Color& color, glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
+	{
+		constexpr float pd = 0.1f;
+		constexpr float td = 0.01f;
+		const auto ci = b.foa_color({linear_from_srgb(color, artist_gamma), 1.0f}, 0.001f);
+		const auto no = b.add_normal(normal);
+
+		const auto v0 = Vertex{b.foa_position(p0.pos, pd), no, b.foa_text_coord(p0.tex, td), ci};
+		const auto v1 = Vertex{b.foa_position(p1.pos, pd), no, b.foa_text_coord(p1.tex, td), ci};
+		const auto v2 = Vertex{b.foa_position(p2.pos, pd), no, b.foa_text_coord(p2.tex, td), ci};
+		const auto v3 = Vertex{b.foa_position(p3.pos, pd), no, b.foa_text_coord(p3.tex, td), ci};
+
+		b.add_quad(invert, v0, v1, v2, v3);
+	};
+}
+
+Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const Color& color)
+{
+	const auto invert = normals_facing == NormalsFacing::In;
+	Builder b;
 
 	// texel scale
 	const float ts = 1.0f;
@@ -363,7 +416,7 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 	const float s = invert ? -1.0f : 1.0f;
 
 	// front
-	add_quad_to_builder(
+	local::add_quad_to_builder(b, invert, color,
 		{0, 0, -s},
 		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
 		{{hx, -hy, -hz}, {x * ts, 0.0f}},
@@ -372,7 +425,7 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 	);
 
 	// back
-	add_quad_to_builder(
+	local::add_quad_to_builder(b, invert, color,
 		{0, 0, s},
 		{{-hx, -hy, hz}, {0.0f, 0.0f}},
 		{{-hx, hy, hz}, {0.0f, y * ts}},
@@ -381,7 +434,7 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 	);
 
 	// left
-	add_quad_to_builder(
+	local::add_quad_to_builder(b, invert, color,
 		{-s, 0, 0},
 		{{-hx, hy, -hz}, {y * ts, 0.0f}},
 		{{-hx, hy, hz}, {y * ts, z * ts}},
@@ -390,7 +443,7 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 	);
 
 	// right
-	add_quad_to_builder(
+	local::add_quad_to_builder(b, invert, color,
 		{s, 0, 0},
 		{{hx, hy, hz}, {z * ts, y * ts}},
 		{{hx, hy, -hz}, {0.0f, y * ts}},
@@ -399,7 +452,7 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 	);
 
 	// bottom
-	add_quad_to_builder(
+	local::add_quad_to_builder(b, invert, color,
 		{0, -s, 0},
 		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
 		{{-hx, -hy, hz}, {0.0f, z * ts}},
@@ -408,7 +461,7 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 	);
 
 	// top
-	add_quad_to_builder(
+	local::add_quad_to_builder(b, invert, color,
 		{0, s, 0},
 		{{-hx, hy, -hz}, {0.0f, 0.0f}},
 		{{hx, hy, -hz}, {x * ts, 0.0f}},
@@ -423,28 +476,6 @@ Builder create_xz_plane(float x, float z, bool invert, const Color& color)
 {
 	Builder b;
 
-	// position and texture coord struct
-	struct Pt
-	{
-		glm::vec3 pos;
-		glm::vec2 tex;
-	};
-
-	const auto add_quad_to_builder = [&](glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
-	{
-		constexpr float pd = 0.1f;
-		constexpr float td = 0.01f;
-		const auto ci = b.foa_color({linear_from_srgb(color, artist_gamma), 1.0f}, 0.001f);
-		const auto no = b.add_normal(normal);
-
-		const auto v0 = Vertex{b.foa_position(p0.pos, pd), no, b.foa_text_coord(p0.tex, td), ci};
-		const auto v1 = Vertex{b.foa_position(p1.pos, pd), no, b.foa_text_coord(p1.tex, td), ci};
-		const auto v2 = Vertex{b.foa_position(p2.pos, pd), no, b.foa_text_coord(p2.tex, td), ci};
-		const auto v3 = Vertex{b.foa_position(p3.pos, pd), no, b.foa_text_coord(p3.tex, td), ci};
-
-		b.add_quad(invert, v0, v1, v2, v3);
-	};
-
 	// texel scale
 	const float ts = 1.0f;
 
@@ -453,7 +484,7 @@ Builder create_xz_plane(float x, float z, bool invert, const Color& color)
 	const float hz = z * 0.5f;
 
 	const float s = invert ? -1.0f : 1.0f;
-	add_quad_to_builder(
+	local2::add_quad_to_builder(b, invert, color,
 		{0, s, 0},
 		{{-hx, 0.0f, -hz}, {0.0f, 0.0f}},
 		{{hx, 0.0f, -hz}, {x * ts, 0.0f}},
@@ -464,33 +495,12 @@ Builder create_xz_plane(float x, float z, bool invert, const Color& color)
 	return b;
 }
 
+
 Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& color)
 {
 	Builder b;
 
-	// position and texture coord struct
-	struct Pt
-	{
-		glm::vec3 pos;
-		glm::vec2 tex;
-	};
-
 	const bool invert = false;
-
-	const auto add_quad_to_builder = [&](glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
-	{
-		constexpr float pd = 0.1f;
-		constexpr float td = 0.01f;
-		const auto ci = b.foa_color({linear_from_srgb(color, artist_gamma), 1.0f}, 0.001f);
-		const auto no = b.add_normal(normal);
-
-		const auto v0 = Vertex{b.foa_position(p0.pos, pd), no, b.foa_text_coord(p0.tex, td), ci};
-		const auto v1 = Vertex{b.foa_position(p1.pos, pd), no, b.foa_text_coord(p1.tex, td), ci};
-		const auto v2 = Vertex{b.foa_position(p2.pos, pd), no, b.foa_text_coord(p2.tex, td), ci};
-		const auto v3 = Vertex{b.foa_position(p3.pos, pd), no, b.foa_text_coord(p3.tex, td), ci};
-
-		b.add_quad(invert, v0, v1, v2, v3);
-	};
 
 	// texel scale
 	const float ts = 1.0f;
@@ -503,7 +513,7 @@ Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& colo
 	const float s = invert ? -1.0f : 1.0f;
 
 	// front
-	add_quad_to_builder(
+	local3::add_quad_to_builder(b, invert, color,
 		{0, 0, -s},
 		{{-hx, -hy, hz}, {0.0f, 0.0f}},
 		{{hx, -hy, hz}, {ts, 0.0f}},
@@ -514,7 +524,7 @@ Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& colo
 	// back
 	if (two_sided == SideCount::two_sided)
 	{
-		add_quad_to_builder(
+		local3::add_quad_to_builder(b, invert, color,
 			{0, 0, s},
 			{{-hx, -hy, hz}, {0.0f, 0.0f}},
 			{{-hx, hy, hz}, {0.0f, ts}},
