@@ -88,6 +88,7 @@ LineDrawer::LineDrawer()
 	glBindVertexArray(va);
 	SET_DEBUG_LABEL_NAMED(va, DebugLabelFor::VertexArray, "VERT line batch"sv);
 
+	// todo(Gustav): what is vertex count? vec3 per vertex or vertices per line? this system is very confusing
 	constexpr auto vertex_count = 2;
 	constexpr auto float_per_vertex = 3;
 	constexpr auto float_count = vertex_count * float_per_vertex;
