@@ -27,8 +27,8 @@ bool check_shader_compilation_error(const char* name, unsigned int shader)
 
 	if (success == GL_FALSE)
 	{
-		// todo(Gustav): set last char to 0
 		glGetShaderInfoLog(shader, max_log_length, nullptr, log);
+		log[max_log_length-1] = '\0';
 		LOG_ERROR("%s shader compilation failed\n%s\n", name, log);
 		return false;
 	}
@@ -45,8 +45,8 @@ bool check_shader_link_error(unsigned int program)
 	glGetProgramiv(program, GL_LINK_STATUS, &success);
 	if (success == GL_FALSE)
 	{
-		// todo(Gustav): set last char to 0
 		glGetProgramInfoLog(program, max_log_length, nullptr, log);
+		log[max_log_length - 1] = '\0';
 		LOG_ERROR("shader linking failed\n%s\n", log);
 		return false;
 	}
