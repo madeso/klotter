@@ -151,6 +151,7 @@ cmake_source_group()
 
 add_library(klotter::klotter ALIAS klotter)
 
+# =================================================================================================
 
 set(src_test
     klotter/main.test.cc
@@ -169,3 +170,17 @@ target_link_libraries(test_klotter
     klotter::project_options
 )
 catch_discover_tests(test_klotter)
+
+# =================================================================================================
+
+function(add_sample APP FILE)
+    source_group("" FILES ${FILE})
+    add_executable(${APP} ${FILE})
+    set_target_properties(${APP} PROPERTIES FOLDER "Samples")
+    target_link_libraries(${APP}
+        klotter::klotter
+        klotter::project_options
+    )
+endfunction()
+
+add_sample(sample_dump "klotter/dump.main.cc")
