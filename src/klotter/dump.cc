@@ -125,18 +125,50 @@ void Svg::write(const std::string& file_path, float space)
 	ofs << "const height = " << height << ";\n";
 
     ofs << R"js(
+    const hover = document.getElementById('hover');
+    const svg = document.getElementById('svg');
+
     const px = x => (x - (space + dx)) / scale;
     const py = y => (-(y-height)-space-dy)/scale;
 
-    const hover = document.getElementById('hover');
+    const d2 = (lhs, rhs) => {
+        const dx = lhs.x - rhs.x;
+        const dy = lhs.y - rhs.y;
+        return dx*dx + dy*dy;
+    }
+
+    const closest = (polyline, p) => {
+        const points = Array.from(polyline.points);
+        let closest = null;
+        let smallest = 0;
+        for(const src of points) {
+            const d = d2(p, src);
+            if(!closest || smallest > d) {
+                closest = src;
+                smallest = d;
+            }
+        }
+        return [closest, Math.sqrt(smallest)]
+    };
+
+    const lines = Array.from(svg.children).filter(x => x.tagName === 'polyline');
+    console.log(lines);
+    console.log(closest(lines[0], {x: 100, y:100}));
+
     const display_hover = (ev) => {
 		hover.style.display = 'block';
-        hover.innerHTML = '' + px(ev.offsetX) + ' x ' + py(ev.offsetY);
+        let html = '' + px(ev.offsetX) + ' x ' + py(ev.offsetY);
+        for(const poly of lines) {
+            const [p, dist] = closest(poly, {x: ev.offsetX, y: ev.offsetY});
+            if(dist > 10) continue;
+            html += '<br /><span style="color:' + poly.attributes.stroke.value + '"">' +
+                px(p.x) + ' x ' + py(p.y) + '</span>';
+        }
+        hover.innerHTML = html;
 		hover.style.left = (ev.clientX + 10) + 'px';
         hover.style.top = (ev.clientY + 10) + 'px';
     };
     
-    const svg = document.getElementById('svg');
     svg.addEventListener('mouseenter', display_hover);
     svg.addEventListener('mousemove', display_hover);
     svg.addEventListener('mouseleave', (ev) => {
