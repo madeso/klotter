@@ -79,11 +79,12 @@ void Svg::write(const std::string& file_path, float space)
     const auto px = [=](float x) -> float { return static_cast<float>(space) + dx + x * scale; };
     const auto py = [=](float y) -> float { return static_cast<float>(height) - (static_cast<float>(space) + dy + y * scale); };
 
+    ofs << "<!DOCTYPE html>\n";
     ofs << "<html style=\"height: 100%\">\n";
     ofs << "<body style=\"background-color:" << html_background << "; height: 100%\">\n";
     ofs << "<div style=\"display: grid; grid-template-columns: 1fr auto 1fr; grid-template-rows: 1fr auto 1fr; width:100%; height:100%\">\n";
-    ofs << "<div style=\"grid-row-start: 2; grid-column-start: 2;\">\n";
-    ofs << "<svg width=\""  << width << "\" height=\"" << height << "\">\n";
+    ofs << "<div style=\"grid-row-start: 2; grid-column-start: 2; position: relative;\">\n";
+    ofs << "<svg id=\"svg\" width=\""  << width << "\" height=\"" << height << "\">\n";
     ofs << "<rect width=\"" << width << "\" height=\"" << height << "\""
             " style=\"fill:" << canvas_color << ";stroke-width:0\" />\n";
 
@@ -98,8 +99,51 @@ void Svg::write(const std::string& file_path, float space)
     }
     
     ofs << "</svg>\n";
+	ofs << "</div>\n";
     ofs << "</div>\n";
-    ofs << "</div>\n";
+	ofs << "<p style=\"position: fixed;"
+		" top: 0;"
+		" left: 0;"
+		" margin: 0;"
+		" padding: 2px 6px;"
+		" background: rgba(255,255,255,0.95);"
+		" border: 1px solid #888;"
+		" border-radius: 4px;"
+		" font-family: monospace;"
+		" font-size: 14px;"
+		" pointer-events: none;"
+		" display: none;"
+		" z-index: 10;"
+		"\"  id=\"hover\" />\n";
+
+    ofs << "<script type=\"text/javascript\">\n";
+	ofs << "const dx = " << dx << ";\n";
+	ofs << "const dy = " << dy << ";\n";
+	ofs << "const scale = " << scale << ";\n";
+	ofs << "const space = " << space << ";\n";
+	ofs << "const width = " << width << ";\n";
+	ofs << "const height = " << height << ";\n";
+
+    ofs << R"js(
+    const px = x => (x - (space + dx)) / scale;
+    const py = y => (-(y-height)-space-dy)/scale;
+
+    const hover = document.getElementById('hover');
+    const display_hover = (ev) => {
+		hover.style.display = 'block';
+        hover.innerHTML = '' + px(ev.offsetX) + ' x ' + py(ev.offsetY);
+		hover.style.left = (ev.clientX + 10) + 'px';
+        hover.style.top = (ev.clientY + 10) + 'px';
+    };
+    
+    const svg = document.getElementById('svg');
+    svg.addEventListener('mouseenter', display_hover);
+    svg.addEventListener('mousemove', display_hover);
+    svg.addEventListener('mouseleave', (ev) => {
+        hover.style.display = 'none';
+    });
+    )js";
+    ofs << "</script>\n";
     ofs << "</body>\n";
     ofs << "</html>\n";
 }
