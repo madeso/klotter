@@ -32,7 +32,7 @@ auto plot_func(float softness)
 
 int main()
 {
-    std::vector<glm::vec2> house = {
+    const std::vector<glm::vec2> house = {
         {0.0f, 0.0f},   // bottom left
         {4.0f, 0.0f},   // bottom right
         {4.0f, 3.0f},   // top right

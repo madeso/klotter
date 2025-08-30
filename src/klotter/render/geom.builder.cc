@@ -251,7 +251,7 @@ Geom Builder::to_geom() const
 		}
 	};
 
-	for (auto& src_face: faces)
+	for (const auto& src_face: faces)
 	{
 		const auto v0 = convert_vert(src_face[0]);
 
