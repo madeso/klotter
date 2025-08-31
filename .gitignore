@@ -8,3 +8,5 @@ docs/generated/doxygen-html
 docs/generated/xml
 docs/generated/codecity.html
 
+# winmerge backup files
+*.bak
