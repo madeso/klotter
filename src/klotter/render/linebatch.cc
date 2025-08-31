@@ -6,6 +6,8 @@
 
 #include "klotter/dependency_glad.h"
 
+constexpr auto vertices_per_line = 2;
+
 namespace klotter
 {
 LineDrawer::LineDrawer()
@@ -88,13 +90,13 @@ LineDrawer::LineDrawer()
 	glBindVertexArray(va);
 	SET_DEBUG_LABEL_NAMED(va, DebugLabelFor::VertexArray, "VERT line batch"sv);
 
-	// todo(Gustav): what is vertex count? vec3 per vertex or vertices per line? this system is very confusing
-	constexpr auto vertex_count = 2;
-	constexpr auto float_per_vertex = 3;
-	constexpr auto float_count = vertex_count * float_per_vertex;
-	constexpr auto vertex_size = float_count * sizeof(float);
-	constexpr auto max_vertices = vertex_count * max_lines;
-	constexpr auto max_indices = vertex_count * max_lines;
+	constexpr auto attributes_per_vertex = 2;
+	constexpr auto float_per_attribute = 3;
+
+	constexpr auto floats_per_vertex = float_per_attribute * attributes_per_vertex;
+	constexpr auto vertex_size = floats_per_vertex * sizeof(float);
+	constexpr auto max_vertices = vertices_per_line * max_lines;
+	constexpr auto max_indices = vertices_per_line * max_lines;
 
 	glBindBuffer(GL_ARRAY_BUFFER, vb);
 	SET_DEBUG_LABEL_NAMED(vb, DebugLabelFor::Buffer, "ARR BUF line batch"sv);
@@ -114,14 +116,14 @@ LineDrawer::LineDrawer()
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, vertex_size, relative_offset(offset));
 	offset += 3;
-	ASSERT(offset == float_count);
+	ASSERT(offset == floats_per_vertex);
 
 	std::vector<u32> indices;
 	indices.reserve(max_indices);
 
 	for (auto quad_index = 0; quad_index < max_lines; quad_index += 1)
 	{
-		const auto base = quad_index * 2;
+		const auto base = quad_index * vertices_per_line;
 		indices.emplace_back(base + 0);
 		indices.emplace_back(base + 1);
 	}
@@ -204,7 +206,7 @@ void LineDrawer::submit()
 	glBufferSubData(
 		GL_ARRAY_BUFFER, 0, static_cast<GLsizeiptr>(sizeof(float) * data.size()), static_cast<const void*>(data.data())
 	);
-	glDrawElements(GL_LINES, 2 * lines, GL_UNSIGNED_INT, nullptr);
+	glDrawElements(GL_LINES, vertices_per_line * lines, GL_UNSIGNED_INT, nullptr);
 
 	data.resize(0);
 	lines = 0;
