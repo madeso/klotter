@@ -167,6 +167,8 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:gac498a4f9c32fddd6f300437dec2051ad" id="r_gac498a4f9c32fddd6f300437dec2051ad"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac498a4f9c32fddd6f300437dec2051ad">klotter::is_instance_based</a> (<a class="el" href="#gad736ea89c0534627057463235feb9189">VertexType</a> v)</td></tr>
 <tr class="separator:gac498a4f9c32fddd6f300437dec2051ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga930a511a1263566c1155f47dd193e47c" id="r_ga930a511a1263566c1155f47dd193e47c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="#gad736ea89c0534627057463235feb9189">VertexType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga930a511a1263566c1155f47dd193e47c">klotter::find_duplicates</a> (const <a class="el" href="#gab14e38875ed51577f61fbbe750a605ea">ShaderVertexAttributes</a> &amp;items)</td></tr>
+<tr class="separator:ga930a511a1263566c1155f47dd193e47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga237368f15ea9a44ec4b6b7302d44c312" id="r_ga237368f15ea9a44ec4b6b7302d44c312"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledShaderVertexAttributes.html">CompiledShaderVertexAttributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga237368f15ea9a44ec4b6b7302d44c312">klotter::compile_shader_layout</a> (const <a class="el" href="structklotter_1_1CompiledVertexTypeList.html">CompiledVertexTypeList</a> &amp;l, const <a class="el" href="#gab14e38875ed51577f61fbbe750a605ea">ShaderVertexAttributes</a> &amp;elements, std::optional&lt; <a class="el" href="structklotter_1_1InstanceProp.html">InstanceProp</a> &gt; instance_prop)</td></tr>
 <tr class="separator:ga237368f15ea9a44ec4b6b7302d44c312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaafa6ccef1474d9837601f1f46c18e10d" id="r_gaafa6ccef1474d9837601f1f46c18e10d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaafa6ccef1474d9837601f1f46c18e10d">klotter::get_geom_layout</a> (const <a class="el" href="structklotter_1_1CompiledVertexTypeList.html">CompiledVertexTypeList</a> &amp;l)</td></tr>
@@ -191,6 +193,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Describes all vertex inputs a shader requires like <code>[vec3 position, vec3 normal, vec2 uv]</code> </p>
+<dl class="section note"><dt>Note</dt><dd>It's invalid for this to contain duplicates, use <a class="el" href="#ga930a511a1263566c1155f47dd193e47c">find_duplicates</a> to find duplicates </dd></dl>
 
 </div>
 </div>
@@ -313,6 +316,23 @@ Functions</h2></td></tr>
 <span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga930a511a1263566c1155f47dd193e47c" name="ga930a511a1263566c1155f47dd193e47c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga930a511a1263566c1155f47dd193e47c">&#9670;&#160;</a></span>find_duplicates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="#gad736ea89c0534627057463235feb9189">VertexType</a> &gt; klotter::find_duplicates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#gab14e38875ed51577f61fbbe750a605ea">ShaderVertexAttributes</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>

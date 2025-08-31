@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="53" column="12" bodyfile="src/klotter/render/vertex_layout.h" bodystart="53" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="56" column="12" bodyfile="src/klotter/render/vertex_layout.h" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledVertexElement_1a1b18f4da87d5a0b23e493d2eb1a4e66f" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="54" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="54" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="57" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledVertexElement_1a9af8e87a9efdfcc2828d975379507f2a" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="55" column="5" bodyfile="src/klotter/render/vertex_layout.h" bodystart="55" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="58" column="5" bodyfile="src/klotter/render/vertex_layout.h" bodystart="58" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -69,7 +69,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/vertex_layout.h" line="51" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="52" bodyend="56"/>
+    <location file="src/klotter/render/vertex_layout.h" line="54" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="55" bodyend="59"/>
     <listofallmembers>
       <member refid="structklotter_1_1CompiledVertexElement_1a9af8e87a9efdfcc2828d975379507f2a" prot="public" virt="non-virtual"><scope>klotter::CompiledVertexElement</scope><name>index</name></member>
       <member refid="structklotter_1_1CompiledVertexElement_1a1b18f4da87d5a0b23e493d2eb1a4e66f" prot="public" virt="non-virtual"><scope>klotter::CompiledVertexElement</scope><name>name</name></member>
