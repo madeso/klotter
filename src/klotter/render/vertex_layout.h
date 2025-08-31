@@ -45,7 +45,10 @@ struct VertexElementDescription
 };
 
 /// Describes all vertex inputs a shader requires like `[vec3 position, vec3 normal, vec2 uv]`
+/// \note It's invalid for this to contain duplicates, use \ref find_duplicates to find duplicates
 using ShaderVertexAttributes = std::vector<VertexElementDescription>;
+
+std::vector<VertexType> find_duplicates(const ShaderVertexAttributes& items);
 
 /// A realized VertexElementDescription like `vec3 position` at gl shader position 3
 struct CompiledVertexElement

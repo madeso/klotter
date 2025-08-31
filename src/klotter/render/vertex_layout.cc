@@ -6,6 +6,22 @@ namespace klotter
 {
 
 
+std::vector<VertexType> find_duplicates(const ShaderVertexAttributes& attributes)
+{
+	std::vector<VertexType> ret;
+	
+	std::set<VertexType> seen;
+	for (const auto& att : attributes)
+	{
+		if (seen.insert(att.type).second == false)
+		{
+			ret.emplace_back(att.type);
+		}
+	}
+
+	return ret;
+}
+
 /** A list of things we need to extract from the Geom when compiling */
 struct VertexTypeList
 {
@@ -113,6 +129,8 @@ CompiledVertexTypeList compile_attribute_layouts(
 
 	for (const auto& d: descriptions)
 	{
+		const auto duplicates = find_duplicates(d);
+		ASSERT(duplicates.empty() && "ShaderVertexAttributes has duplicate types");
 		list.add(d);
 	}
 

@@ -128,6 +128,28 @@ catchy::FalseString is_equal(const CompiledGeomVertexAttributes& lhs, const Comp
 }
 }  //  namespace
 
+TEST_CASE("vertex_layout_duplicates", "[vertex_layout]")
+{
+	const auto layout_shader_material = ShaderVertexAttributes{
+		{VertexType::position3, "aPos"},
+		{VertexType::normal3, "aNormal"},
+		{VertexType::color4, "aColor"},
+		{VertexType::texture2, "aTexCoord"}
+	};
+	const auto none = find_duplicates(layout_shader_material);
+	CHECK(none.size() == 0);
+
+	const auto bad_material = ShaderVertexAttributes{
+		{VertexType::position3, "aPos"},
+		{VertexType::normal3, "aNormal"},
+		{VertexType::color4, "aColor"},
+		{VertexType::normal3, "aNormalAgain"}
+	};
+	const auto one = find_duplicates(bad_material);
+	REQUIRE(one.size() == 1);
+	REQUIRE(one[0] == VertexType::normal3);
+}
+
 TEST_CASE("vertex_layout_test_simple", "[vertex_layout]")
 {
 	const auto layout_shader_material = ShaderVertexAttributes{
