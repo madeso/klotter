@@ -172,7 +172,10 @@ vec3 calculate_frustum_light(
     vec2 ndc = clip_coord.xy / clip_coord.w;
     // look up cookie texture and transform [-1, 1] ndc to [0, 1] uv
     float cookie = texture(pl.cookie, (ndc.xy / 2.0) + 0.5).r;
-    float factor = extract_frustum_light_factor(ndc) * cookie;
+
+    float diff = max(dot(normal, light_direction), 0.0);
+
+    float factor = diff * extract_frustum_light_factor(ndc) * cookie;
 
     // diffuse color
     vec3 diffuse_color = factor * (u_material.diffuse_tint.rgb * base_color * pl.diffuse);
