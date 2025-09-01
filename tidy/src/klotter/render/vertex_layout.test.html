@@ -6,58 +6,7 @@
 </head>
 <body>
 <h1>src/klotter/render/vertex_layout.test.cc</h1>
-<span id='readability-container-size-empty'>&nbsp;</span>
-<hr>
-<h3>warning: the &#39;empty&#39; method should be used to check for emptiness instead of &#39;size&#39;</h3>
-<code>[readability-container-size-empty]</code>
-<p><i>src/klotter/render/vertex_layout.test.cc 140 : 8</i></p>
-<pre>
-  140 |         CHECK(none.size() == 0);
-      |               ^~~~~~~~~~~~~~~~
-      |               none.empty()
-</pre>
-<p>expanded from macro &#39;CHECK&#39;</p>
-<p><i>build/_deps/catch2-src/src/catch2/catch_test_macros.hpp 134 : 99</i></p>
-<pre>
-  134 |   #define CHECK( ... ) INTERNAL_CATCH_TEST( &quot;CHECK&quot;, Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
-      |                                                                                                   ^
-</pre>
-<p>expanded from macro &#39;INTERNAL_CATCH_TEST&#39;</p>
-<p><i>build/_deps/catch2-src/src/catch2/internal/catch_test_macro_impl.hpp 45 : 40</i></p>
-<pre>
-   45 |         CATCH_INTERNAL_IGNORE_BUT_WARN(__VA_ARGS__); \
-      |                                        ^
-</pre>
-<p>expanded from macro &#39;CATCH_INTERNAL_IGNORE_BUT_WARN&#39;</p>
-<p><i>build/_deps/catch2-src/src/catch2/internal/catch_compiler_capabilities.hpp 114 : 76</i></p>
-<pre>
-  114 | #    define CATCH_INTERNAL_IGNORE_BUT_WARN(...) (void)__builtin_constant_p(__VA_ARGS__) /* NOLINT(cppcoreguidelines-pro-type-vararg, hicpp-vararg) */
-      |                                                                            ^
-</pre>
-<hr>
-<h3>note: method &#39;vector&#39;:: empty() defined here</h3>
-<p><i>../../../../../usr/include/c++/14/bits/stl_vector.h 1090 : 7</i></p>
-<pre>
- 1090 |       empty() const _GLIBCXX_NOEXCEPT
-      |       ^
-</pre>
 <!--
-/home/runner/work/klotter/klotter/src/klotter/render/vertex_layout.test.cc:140:8: warning: the 'empty' method should be used to check for emptiness instead of 'size' [readability-container-size-empty]
-  140 |         CHECK(none.size() == 0);
-      |               ^~~~~~~~~~~~~~~~
-      |               none.empty()
-/home/runner/work/klotter/klotter/build/_deps/catch2-src/src/catch2/../catch2/catch_test_macros.hpp:134:99: note: expanded from macro 'CHECK'
-  134 |   #define CHECK( ... ) INTERNAL_CATCH_TEST( "CHECK", Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
-      |                                                                                                   ^
-/home/runner/work/klotter/klotter/build/_deps/catch2-src/src/catch2/../catch2/internal/catch_test_macro_impl.hpp:45:40: note: expanded from macro 'INTERNAL_CATCH_TEST'
-   45 |         CATCH_INTERNAL_IGNORE_BUT_WARN(__VA_ARGS__); \
-      |                                        ^
-/home/runner/work/klotter/klotter/build/_deps/catch2-src/src/catch2/../catch2/internal/catch_compiler_capabilities.hpp:114:76: note: expanded from macro 'CATCH_INTERNAL_IGNORE_BUT_WARN'
-  114 | #    define CATCH_INTERNAL_IGNORE_BUT_WARN(...) (void)__builtin_constant_p(__VA_ARGS__) /* NOLINT(cppcoreguidelines-pro-type-vararg, hicpp-vararg) */
-      |                                                                            ^
-/usr/bin/../lib/gcc/x86_64-linux-gnu/14/../../../../include/c++/14/bits/stl_vector.h:1090:7: note: method 'vector'::empty() defined here
- 1090 |       empty() const _GLIBCXX_NOEXCEPT
-      |       ^
 -->
 </body>
 </html>
