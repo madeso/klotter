@@ -137,7 +137,7 @@ TEST_CASE("vertex_layout_duplicates", "[vertex_layout]")
 		{VertexType::texture2, "aTexCoord"}
 	};
 	const auto none = find_duplicates(layout_shader_material);
-	CHECK(none.size() == 0);
+	CHECK(none.empty());
 
 	const auto bad_material = ShaderVertexAttributes{
 		{VertexType::position3, "aPos"},
