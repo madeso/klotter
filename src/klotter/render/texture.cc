@@ -25,6 +25,7 @@ namespace
 
 	constexpr unsigned int invalid_id = 0;
 
+	[[nodiscard]]
 	unsigned int create_texture()
 	{
 		unsigned int texture = 0;
@@ -45,6 +46,7 @@ namespace
 		GLint mag;
 	};
 
+	[[nodiscard]]
 	MinMagFilter min_mag_from_trs(TextureRenderStyle trs)
 	{
 		switch (trs)
@@ -56,6 +58,7 @@ namespace
 		}
 	}
 
+	[[nodiscard]]
 	GLint internal_format_from_color_data(Transparency t, ColorData cd)
 	{
 		const auto include_transparency = t == Transparency::include;
@@ -185,6 +188,7 @@ struct PixelData
 	void operator=(PixelData&&) = delete;
 };
 
+[[nodiscard]]
 Texture2d load_image_from_embedded(
 	DEBUG_LABEL_ARG_MANY const embedded_binary& image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd
 )
@@ -202,6 +206,7 @@ Texture2d load_image_from_embedded(
 	return {SEND_DEBUG_LABEL_MANY(debug_label) parsed.pixel_data, pixel_format, parsed.width, parsed.height, te, trs, t, cd};
 }
 
+[[nodiscard]]
 Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd)
 {
 	return {SEND_DEBUG_LABEL_MANY(debug_label) & pixel, GL_RGBA, 1, 1, te, trs, t, cd};
@@ -238,11 +243,13 @@ TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& 
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 }
 
+[[nodiscard]]
 TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, ColorData cd)
 {
 	return {SEND_DEBUG_LABEL_MANY(debug_label) {&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1, cd};
 }
 
+[[nodiscard]]
 TextureCubemap load_cubemap_from_embedded(
 	DEBUG_LABEL_ARG_MANY
 	const embedded_binary& image_right,
@@ -270,7 +277,7 @@ TextureCubemap load_cubemap_from_embedded(
 		|| parsed_front.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
+		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
 	}
 
 	if (parsed_right.width == parsed_left.width && parsed_right.width == parsed_top.width
@@ -282,7 +289,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent width");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
+		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
 	}
 
 	if (parsed_right.height == parsed_left.height && parsed_right.height == parsed_top.height
@@ -294,7 +301,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent height");
-		load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
+		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
 	}
 
 	// ok
@@ -316,7 +323,7 @@ TextureCubemap load_cubemap_from_embedded(
 // ------------------------------------------------------------------------------------------------
 // framebuffer
 
-
+[[nodiscard]]
 unsigned int create_fbo()
 {
 	unsigned int fbo = 0;
@@ -357,6 +364,7 @@ BoundFbo::~BoundFbo()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
+[[nodiscard]]
 GLenum determine_fbo_internal_format(DepthBits depth, bool add_stencil)
 {
 	switch (depth)

@@ -7,12 +7,13 @@
 namespace klotter
 {
 
-
+[[nodiscard]]
 Texture2d load_image_from_embedded(
 	DEBUG_LABEL_ARG_MANY 
 	const embedded_binary& image_binary, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd
 );
 
+[[nodiscard]]
 TextureCubemap load_cubemap_from_embedded(
 	DEBUG_LABEL_ARG_MANY 
 	const embedded_binary& image_right,
