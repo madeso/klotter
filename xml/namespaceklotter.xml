@@ -304,7 +304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/cpp.h" line="12" column="43" bodyfile="src/klotter/cpp.h" bodystart="12" bodyend="15"/>
+        <location file="src/klotter/cpp.h" line="14" column="43" bodyfile="src/klotter/cpp.h" bodystart="14" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a97ebef3ce88032d5a9016b09c001d176" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -331,7 +331,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/cpp.h" line="18" column="16" bodyfile="src/klotter/cpp.h" bodystart="18" bodyend="21"/>
+        <location file="src/klotter/cpp.h" line="20" column="16" bodyfile="src/klotter/cpp.h" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a4a67687653b9d07fea6a68bc8dd16ba8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool klotter::all_equal</definition>
+        <argsstring>(const T &amp;t)</argsstring>
+        <name>all_equal</name>
+        <qualifiedname>klotter::all_equal</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/cpp.h" line="26" column="6" bodyfile="src/klotter/cpp.h" bodystart="26" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a70c3ecdc0214c61c6277dda3f1f5f963" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1071,6 +1094,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/cpp.h" line="3" column="1"/>
+    <location file="src/klotter/cpp.h" line="5" column="1"/>
   </compounddef>
 </doxygen>

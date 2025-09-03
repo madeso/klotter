@@ -947,6 +947,7 @@
     <member refid="namespaceklotter_1a095e93aa73a0f90b24c3e84cc8fe2afe" kind="variable"><name>BLUR_SAMPLES</name></member>
     <member refid="namespaceklotter_1aafbf3062eca044adc3d6d3cf54778a51" kind="function"><name>base_cast</name></member>
     <member refid="namespaceklotter_1a97ebef3ce88032d5a9016b09c001d176" kind="function"><name>is_flag_set</name></member>
+    <member refid="namespaceklotter_1a4a67687653b9d07fea6a68bc8dd16ba8" kind="function"><name>all_equal</name></member>
     <member refid="namespaceklotter_1a70c3ecdc0214c61c6277dda3f1f5f963" kind="function"><name>test_themes</name></member>
     <member refid="namespaceklotter_1ae8ba8f25677bd8a5d98681f05fd0a162" kind="function"><name>run_main</name></member>
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
