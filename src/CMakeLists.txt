@@ -156,6 +156,7 @@ add_library(klotter::klotter ALIAS klotter)
 set(src_test
     klotter/main.test.cc
     klotter/scurve.test.cc
+    klotter/cpp.test.cc
     klotter/render/texture.test.cc
     klotter/render/ui.test.cc
     klotter/render/vertex_layout.test.cc

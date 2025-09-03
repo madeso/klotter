@@ -4,6 +4,7 @@
 #include "klotter/cint.h"
 #include "klotter/log.h"
 #include "klotter/str.h"
+#include "klotter/cpp.h"
 
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/texture.io.h"
@@ -280,9 +281,10 @@ TextureCubemap load_cubemap_from_embedded(
 		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
 	}
 
-	if (parsed_right.width == parsed_left.width && parsed_right.width == parsed_top.width
-		&& parsed_right.width == parsed_bottom.width && parsed_right.width == parsed_back.width
-		&& parsed_right.width == parsed_front.width)
+	if (all_equal(std::array{
+		parsed_right.width, parsed_left.width,
+		parsed_top.width, parsed_bottom.width,
+		parsed_back.width, parsed_front.width}))
 	{
 		// width ok
 	}
@@ -292,9 +294,10 @@ TextureCubemap load_cubemap_from_embedded(
 		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
 	}
 
-	if (parsed_right.height == parsed_left.height && parsed_right.height == parsed_top.height
-		&& parsed_right.height == parsed_bottom.height && parsed_right.height == parsed_back.height
-		&& parsed_right.height == parsed_front.height)
+	if (all_equal(std::array{
+		parsed_right.height, parsed_left.height,
+		parsed_top.height, parsed_bottom.height,
+		parsed_back.height, parsed_front.height}))
 	{
 		// height ok
 	}
