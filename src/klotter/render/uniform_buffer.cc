@@ -46,9 +46,9 @@ int calculate_alignment_bytes(int current_size, const UniformProp& prop)
 	return to_add;
 }
 
-std::string to_source(const std::string& name, const UniformBufferDescription& desc)
+std::string source_from(const std::string& name, const UniformBufferDescription& desc)
 {
-	const auto type_to_string = [](UniformType t)
+	const auto string_from_type = [](UniformType t)
 	{
 		switch (t)
 		{
@@ -68,7 +68,7 @@ std::string to_source(const std::string& name, const UniformBufferDescription& d
 	   << "\n";
 	for (const auto& p: desc)
 	{
-		ss << "\t" << type_to_string(p.type) << " " << p.name;
+		ss << "\t" << string_from_type(p.type) << " " << p.name;
 		if (p.array_count > 1)
 		{
 			ss << "[" << p.array_count << "]";
@@ -85,19 +85,22 @@ void UniformBufferCompiler::add(CompiledUniformProp* target, UniformType type, c
 	props.emplace_back(UniformProp{target, type, name, array_count});
 }
 
-void UniformBufferCompiler::compile(const std::string& name, UniformBufferSetup* target, int binding_point)
+UniformBufferSetup UniformBufferCompiler::compile(const std::string& name, int binding_point) const
 {
-	target->size = 0;
-	target->binding_point = binding_point;
-	target->name = name;
-	target->source = to_source(name, props);
+	UniformBufferSetup target;
+	target.size = 0;
+	target.binding_point = binding_point;
+	target.name = name;
+	target.source = source_from(name, props);
 	for (const auto& p: props)
 	{
 		const auto size = size_of(p, false);
-		target->size += calculate_alignment_bytes(target->size, p);
-		*p.target = {target->size, p.type, p.array_count};
-		target->size += size * p.array_count;
+		target.size += calculate_alignment_bytes(target.size, p);
+		*p.target = {target.size, p.type, p.array_count};
+		target.size += size * p.array_count;
 	}
+
+	return target;
 }
 
 namespace
@@ -131,7 +134,7 @@ UniformBuffer::UniformBuffer(DEBUG_LABEL_ARG_MANY const UniformBufferSetup& setu
 	//	Performance Severity: medium
 	// todo(Gustav): profile? provide a hint in an argument?
 	glBufferData(GL_UNIFORM_BUFFER, setup.size, nullptr, GL_DYNAMIC_DRAW);
-	glBindBufferBase(GL_UNIFORM_BUFFER, Cint_to_gluint(setup.binding_point), id);
+	glBindBufferBase(GL_UNIFORM_BUFFER, gluint_from_int(setup.binding_point), id);
 }
 
 UniformBuffer::~UniformBuffer()

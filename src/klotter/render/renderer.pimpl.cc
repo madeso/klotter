@@ -21,7 +21,7 @@ CameraUniformBuffer make_camera_uniform_buffer_desc()
 		UniformBufferCompiler compiler;
 		compiler.add(&camera_uniform_buffer.clip_from_view_uni, UniformType::mat4, "u_clip_from_view");
 		compiler.add(&camera_uniform_buffer.view_from_world_uni, UniformType::mat4, "u_view_from_world");
-		compiler.compile("Camera", &camera_uniform_buffer.setup, 0);
+		camera_uniform_buffer.setup = compiler.compile("Camera", 0);
 	}
 
 	camera_uniform_buffer.buffer = std::make_unique<UniformBuffer>(USE_DEBUG_LABEL_MANY("camera uniform buffer") camera_uniform_buffer.setup);

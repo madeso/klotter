@@ -230,7 +230,7 @@ StateChanger& StateChanger::activate_texture(int new_texture)
 {
 	if (should_change(&states->active_texture, new_texture))
 	{
-		glActiveTexture(Cint_to_glenum(GL_TEXTURE0 + new_texture));
+		glActiveTexture(glenum_from_int(GL_TEXTURE0 + new_texture));
 	}
 	return *this;
 }
@@ -238,7 +238,7 @@ StateChanger& StateChanger::activate_texture(int new_texture)
 StateChanger& StateChanger::bind_texture_2d(int slot, unsigned int texture)
 {
 	ASSERT(slot == states->active_texture);
-	if (should_change(&states->texture_bound[Cint_to_sizet(slot)], texture))
+	if (should_change(&states->texture_bound[sizet_from_int(slot)], texture))
 	{
 		glBindTexture(GL_TEXTURE_2D, texture);
 	}
@@ -248,7 +248,7 @@ StateChanger& StateChanger::bind_texture_2d(int slot, unsigned int texture)
 StateChanger& StateChanger::bind_texture_cubemap(int slot, unsigned int texture)
 {
 	ASSERT(slot == states->active_texture);
-	if (should_change(&states->texture_bound[Cint_to_sizet(slot)], texture))
+	if (should_change(&states->texture_bound[sizet_from_int(slot)], texture))
 	{
 		glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
 	}

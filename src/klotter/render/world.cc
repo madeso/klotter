@@ -66,7 +66,7 @@ std::shared_ptr<CompiledGeom> compile_geom(DEBUG_LABEL_ARG_MANY const Geom& geom
 	const auto vbo = create_buffer();
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	SET_DEBUG_LABEL_NAMED(vbo, DebugLabelFor::Buffer, Str() << "ARR BUF " << debug_label);
-	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, glsizeiptr_from_sizet(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
 
 	const auto get_type = [](const ExtractedAttribute& extracted) -> GLenum
 	{
@@ -84,14 +84,14 @@ std::shared_ptr<CompiledGeom> compile_geom(DEBUG_LABEL_ARG_MANY const Geom& geom
 	{
 		constexpr auto normalize = false;
 		glVertexAttribPointer(
-			Cint_to_gluint(attrib_location),
+			gluint_from_int(attrib_location),
 			att.count,
 			get_type(att),
 			normalize ? GL_TRUE : GL_FALSE,
-			Csizet_to_glsizei(stride),
+			glsizei_from_sizet(stride),
 			reinterpret_cast<void*>(offset)
 		);
-		glEnableVertexAttribArray(Cint_to_gluint(attrib_location));
+		glEnableVertexAttribArray(gluint_from_int(attrib_location));
 
 		attrib_location += 1;
 		offset += att.size;
@@ -104,7 +104,7 @@ std::shared_ptr<CompiledGeom> compile_geom(DEBUG_LABEL_ARG_MANY const Geom& geom
 
 	glBufferData(
 		GL_ELEMENT_ARRAY_BUFFER,
-		Csizet_to_glsizeiptr(sizeof(u32) * ex.indices.size()),
+		glsizeiptr_from_sizet(sizeof(u32) * ex.indices.size()),
 		ex.indices.data(),
 		GL_STATIC_DRAW
 	);
@@ -138,7 +138,7 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	const auto vbo = create_buffer();
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	SET_DEBUG_LABEL_NAMED(vbo, DebugLabelFor::Buffer, Str() << "ARR BUF (in) " << debug_label);
-	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, glsizeiptr_from_sizet(ex.data.size()), ex.data.data(), GL_STATIC_DRAW);
 
 	const auto get_type = [](const ExtractedAttribute& extracted) -> GLenum
 	{
@@ -156,14 +156,14 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	{
 		constexpr auto normalize = false;
 		glVertexAttribPointer(
-			Cint_to_gluint(attrib_location),
+			gluint_from_int(attrib_location),
 			att.count,
 			get_type(att),
 			normalize ? GL_TRUE : GL_FALSE,
-			Csizet_to_glsizei(stride),
+			glsizei_from_sizet(stride),
 			reinterpret_cast<void*>(offset)
 		);
-		glEnableVertexAttribArray(Cint_to_gluint(attrib_location));
+		glEnableVertexAttribArray(gluint_from_int(attrib_location));
 
 		attrib_location += 1;
 		offset += att.size;
@@ -175,11 +175,11 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	glBindBuffer(GL_ARRAY_BUFFER, instance_vbo);
 	SET_DEBUG_LABEL_NAMED(instance_vbo, DebugLabelFor::Buffer, Str() << "ARRAY BUF (trans in) " << debug_label);
 	constexpr auto instance_size = sizeof(float) * 16;
-	glBufferData(GL_ARRAY_BUFFER, Csizet_to_glsizeiptr(instance_size * max_instances), nullptr, GL_DYNAMIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, glsizeiptr_from_sizet(instance_size * max_instances), nullptr, GL_DYNAMIC_DRAW);
 
 	for (int matrix = 0; matrix < 4; matrix += 1)
 	{
-		const auto attribute = Cint_to_gluint(attrib_location + matrix);
+		const auto attribute = gluint_from_int(attrib_location + matrix);
 		glVertexAttribPointer(
 			attribute,
 			4,
@@ -197,7 +197,7 @@ std::shared_ptr<CompiledGeom_TransformInstance> compile_geom_with_transform_inst
 	SET_DEBUG_LABEL_NAMED(ebo, DebugLabelFor::Buffer, Str() << "IND BUF (in) " << debug_label);
 	glBufferData(
 		GL_ELEMENT_ARRAY_BUFFER,
-		Csizet_to_glsizeiptr(sizeof(u32) * ex.indices.size()),
+		glsizeiptr_from_sizet(sizeof(u32) * ex.indices.size()),
 		ex.indices.data(),
 		GL_STATIC_DRAW
 	);
@@ -235,7 +235,7 @@ void render_geom_instanced(const MeshInstance_TransformInstanced& instanced)
 			= std::min(instanced.world_from_locals.size() - start_index, instanced.geom->max_instances);
 		glBindBuffer(GL_ARRAY_BUFFER, instanced.geom->instance_vbo);
 		glBufferSubData(
-			GL_ARRAY_BUFFER, 0, Csizet_to_glsizeiptr(sizeof(glm::mat4) * step_size), &instanced.world_from_locals[start_index]
+			GL_ARRAY_BUFFER, 0, glsizeiptr_from_sizet(sizeof(glm::mat4) * step_size), &instanced.world_from_locals[start_index]
 		);
 
 		glBindVertexArray(geom->vao);
@@ -244,7 +244,7 @@ void render_geom_instanced(const MeshInstance_TransformInstanced& instanced)
 			geom->number_of_triangles * 3,
 			GL_UNSIGNED_INT,
 			nullptr,
-			Csizet_to_glsizei(instanced.world_from_locals.size())
+			glsizei_from_sizet(instanced.world_from_locals.size())
 		);
 	}
 }

@@ -50,14 +50,14 @@ CameraVectors create_vectors(const Camera& camera);
 CameraVectors create_vectors(float yaw, float pitch);
 
 // todo(Gustav): the meaning of this function is unclear... move closer to usage or remove?
-glm::mat4 create_view_mat(const glm::vec3& pos, const CameraVectors& cv);
+glm::mat4 create_view_from_world_mat(const glm::vec3& pos, const CameraVectors& cv);
 
 /// "Compile" a camera so it can be used in rendering.
 CompiledCamera compile(const Camera&, const glm::ivec2& window_size);
 
 // todo(Gustav): also include depth, what happens if the position is behind?
 /// Calculate the screen coordinate of a 3d world position.
-glm::vec2 to_screen(const CompiledCamera& cam, const glm::vec3& pos, const glm::vec2& resolution);
+glm::vec2 screen_from_world(const CompiledCamera& cam, const glm::vec3& world_pos, const glm::vec2& resolution);
 
 /**
 @}

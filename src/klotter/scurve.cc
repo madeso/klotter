@@ -92,7 +92,7 @@ bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui,
 		const float y = calculate_s_curve(srcx, curve->slope, curve->threshold);
 		points[point_index] = ImVec2{x * widget_size.x, (1 - y) * widget_size.y} + widget_position;
 	}
-	draw->AddPolyline(points.data(), Csizet_to_int(settings.num_points), settings.line_color, ImDrawFlags_None, 1.0f);
+	draw->AddPolyline(points.data(), int_from_sizet(settings.num_points), settings.line_color, ImDrawFlags_None, 1.0f);
 
 	if (settings.draw_points)
 	{

@@ -50,7 +50,9 @@ struct UniformProp
 struct UniformBufferCompiler
 {
 	void add(CompiledUniformProp* target, UniformType type, const std::string& name, int array_count = 1);
-	void compile(const std::string& name, UniformBufferSetup* target, int binding_point);
+
+	[[nodiscard]]
+	UniformBufferSetup compile(const std::string& name, int binding_point) const;
 
 	std::vector<UniformProp> props;
 };

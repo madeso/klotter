@@ -265,7 +265,7 @@ struct LightsSample : klotter::App
 			{
 				for(int j=0; j<10; j+=1)
 				{
-					instances->world_from_locals.emplace_back(mk({Cint_to_float(i), Cint_to_float(j), -4}, {Cint_to_float(i)/10.0f * 90.0f, Cint_to_float(j)/10.0f * 90.0f, 0}));
+					instances->world_from_locals.emplace_back(mk({float_from_int(i), float_from_int(j), -4}, {float_from_int(i)/10.0f * 90.0f, float_from_int(j)/10.0f * 90.0f, 0}));
 				}
 			}
 
@@ -314,9 +314,9 @@ struct LightsSample : klotter::App
 		}
 		if (is_valid_instance_index(selected_instance_index))
 		{
-			const auto target = world.meshes[Cint_to_sizet(selected_instance_index)]->world_position;
+			const auto target = world.meshes[sizet_from_int(selected_instance_index)]->world_position;
 			last_window_size = window_size;
-			projected_target = to_screen(compile(camera, window_size), target, window_size);
+			projected_target = screen_from_world(compile(camera, window_size), target, window_size);
 			renderer->debug.add_line(glm::vec3{0, 0, 0}, target, klotter::colors::orange);
 		}
 		anim += dt * 0.25f;
@@ -347,7 +347,7 @@ struct LightsSample : klotter::App
 
 	bool is_valid_instance_index(int index)
 	{
-		return index >= 0 && Cint_to_sizet(index) < world.meshes.size();
+		return index >= 0 && sizet_from_int(index) < world.meshes.size();
 	}
 
 	void gui_ambient_light()
@@ -379,11 +379,11 @@ struct LightsSample : klotter::App
 	void gui_all_direction_lights()
 	{
 		for (int dir_light_index = 0;
-		     dir_light_index < Csizet_to_int(world.lights.directional_lights.size());
+		     dir_light_index < int_from_sizet(world.lights.directional_lights.size());
 		     dir_light_index += 1)
 		{
 			ImGui::PushID(dir_light_index);
-			gui_direction_light(world.lights.directional_lights[Cint_to_sizet(dir_light_index)]);
+			gui_direction_light(world.lights.directional_lights[sizet_from_int(dir_light_index)]);
 			ImGui::PopID();
 		}
 	}
@@ -393,16 +393,16 @@ struct LightsSample : klotter::App
 		const auto old_point_size = point_light_curves.size();
 		point_light_curves.resize(world.lights.point_lights.size(), SCurveGuiState::light_curve());
 		for (int point_light_index = 0;
-		     point_light_index < Csizet_to_int(world.lights.point_lights.size());
+		     point_light_index < int_from_sizet(world.lights.point_lights.size());
 		     point_light_index += 1)
 		{
-			const auto is_first_frame = Cint_to_sizet(point_light_index) >= old_point_size;
+			const auto is_first_frame = sizet_from_int(point_light_index) >= old_point_size;
 
 			ImGui::PushID(point_light_index);
 			gui_point_light(
 				is_first_frame,
-				world.lights.point_lights[Cint_to_sizet(point_light_index)],
-				point_light_curves[Cint_to_sizet(point_light_index)]
+				world.lights.point_lights[sizet_from_int(point_light_index)],
+				point_light_curves[sizet_from_int(point_light_index)]
 			);
 			ImGui::PopID();
 		}
@@ -508,10 +508,10 @@ struct LightsSample : klotter::App
 
 	void gui_outline_toggle()
 	{
-		ImGui::SliderInt("Index", &selected_instance_index, 0, Csizet_to_int(world.meshes.size()) - 1);
+		ImGui::SliderInt("Index", &selected_instance_index, 0, int_from_sizet(world.meshes.size()) - 1);
 		if (is_valid_instance_index(selected_instance_index))
 		{
-			auto& inst = world.meshes[Cint_to_sizet(selected_instance_index)];
+			auto& inst = world.meshes[sizet_from_int(selected_instance_index)];
 			bool check = inst->outline.has_value();
 			if (ImGui::Checkbox("outline?", &check))
 			{

@@ -162,10 +162,10 @@ void DefaultMaterial::apply_lights(
 	// todo(Gustav): graph the most influential lights instead of the first N lights
 	for (int index = 0; index < settings.number_of_directional_lights; index += 1)
 	{
-		const auto& p = Cint_to_sizet(index) < lights.directional_lights.size()
-						  ? lights.directional_lights[Cint_to_sizet(index)]
+		const auto& p = sizet_from_int(index) < lights.directional_lights.size()
+						  ? lights.directional_lights[sizet_from_int(index)]
 						  : no_directional_light;
-		const auto& u = shader.directional_lights[Cint_to_sizet(index)];
+		const auto& u = shader.directional_lights[sizet_from_int(index)];
 		shader.program->set_vec3(u.light_diffuse_color_uni, linear_from_srgb(p.color, settings.gamma) * p.diffuse_strength);
 		shader.program->set_vec3(u.light_specular_color_uni, linear_from_srgb(p.color, settings.gamma) * p.specular_strength);
 		shader.program->set_vec3(u.dir_uni, p.direction);
@@ -173,11 +173,11 @@ void DefaultMaterial::apply_lights(
 
 	for (int index = 0; index < settings.number_of_point_lights; index += 1)
 	{
-		const auto& p = Cint_to_sizet(index) < lights.point_lights.size()
-			? lights.point_lights[Cint_to_sizet(index)]
+		const auto& p = sizet_from_int(index) < lights.point_lights.size()
+			? lights.point_lights[sizet_from_int(index)]
 			: no_point_light
 		;
-		const auto& u = shader.point_lights[Cint_to_sizet(index)];
+		const auto& u = shader.point_lights[sizet_from_int(index)];
 		shader.program->set_vec3(u.light_diffuse_color_uni, linear_from_srgb(p.color, settings.gamma) * p.diffuse_strength);
 		shader.program->set_vec3(u.light_specular_color_uni, linear_from_srgb(p.color, settings.gamma) * p.specular_strength);
 		shader.program->set_vec3(u.light_world_uni, p.position);
@@ -186,17 +186,17 @@ void DefaultMaterial::apply_lights(
 
 	for (int index = 0; index < settings.number_of_frustum_lights; index += 1)
 	{
-		const auto& p = Cint_to_sizet(index) < lights.frustum_lights.size() ? lights.frustum_lights[Cint_to_sizet(index)]
+		const auto& p = sizet_from_int(index) < lights.frustum_lights.size() ? lights.frustum_lights[sizet_from_int(index)]
 																		: no_frustum_light;
-		const auto& u = shader.frustum_lights[Cint_to_sizet(index)];
+		const auto& u = shader.frustum_lights[sizet_from_int(index)];
 		shader.program->set_vec3(u.diffuse_uni, linear_from_srgb(p.color, settings.gamma) * p.diffuse_strength);
 		shader.program->set_vec3(u.specular_uni, linear_from_srgb(p.color, settings.gamma) * p.specular_strength);
 		shader.program->set_vec3(u.world_pos_uni, p.position);
 		shader.program->set_vec4(u.attenuation_uni, {p.min_range, p.max_range, p.curve.slope, p.curve.threshold});
 
-		const auto view = create_view_mat(p.position, create_vectors(p.yaw, p.pitch));
-		const auto projection = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);
-		shader.program->set_mat(u.world_to_clip_uni, projection * view);
+		const auto view_from_world = create_view_from_world_mat(p.position, create_vectors(p.yaw, p.pitch));
+		const auto clip_from_view = glm::perspective(glm::radians(p.fov), p.aspect, 0.1f, p.max_range);
+		shader.program->set_mat(u.clip_from_world_uni, clip_from_view * view_from_world);
 
 		bind_texture_2d(states, u.tex_cookie_uniform, *get_or_white(assets, p.cookie));
 	}

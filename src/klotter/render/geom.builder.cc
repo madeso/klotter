@@ -246,8 +246,8 @@ Geom Builder::to_geom() const
 			const glm::vec3 normal = normals.empty() == false ? normals[c.normal] : glm::vec3(1, 0, 0);
 			const auto ind = final_vertices.size();
 			final_vertices.emplace_back(klotter::Vertex{pos, normal, text, col});
-			combinations.insert({c, Csizet_to_u32(ind)});
-			return Csizet_to_u32(ind);
+			combinations.insert({c, u32_from_sizet(ind)});
+			return u32_from_sizet(ind);
 		}
 	};
 
@@ -501,27 +501,27 @@ Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count
 
 	const auto radius = diameter / 2;
 
-	const auto delta_lat = pi / Cint_to_float(latitude_count);
-	const auto delta_lon = 2 * pi / Cint_to_float(longitude_count);
+	const auto delta_lat = pi / float_from_int(latitude_count);
+	const auto delta_lon = 2 * pi / float_from_int(longitude_count);
 
 	const auto invert = normals_facing == NormalsFacing::In;
 
 	for (int latitude_index = 0; latitude_index <= latitude_count; ++latitude_index)
 	{
-		const auto lat_angle = pi / 2 - Cint_to_float(latitude_index) * delta_lat;
+		const auto lat_angle = pi / 2 - float_from_int(latitude_index) * delta_lat;
 		const auto xy = std::cos(lat_angle);
 		const auto z = std::sin(lat_angle);
 
 		for (int longitude_index = 0; longitude_index <= longitude_count; ++longitude_index)
 		{
-			const auto lon_angle = Cint_to_float(longitude_index) * delta_lon;
+			const auto lon_angle = float_from_int(longitude_index) * delta_lon;
 
 			const auto normal_x = xy * std::cos(lon_angle);
 			const auto normal_y = xy * std::sin(lon_angle);
 			const auto normal_z = z;
 
-			const auto vertex_s = Cint_to_float(longitude_index) / Cint_to_float(longitude_count);
-			const auto vertex_t = Cint_to_float(latitude_index) / Cint_to_float(latitude_count);
+			const auto vertex_s = float_from_int(longitude_index) / float_from_int(longitude_count);
+			const auto vertex_t = float_from_int(latitude_index) / float_from_int(latitude_count);
 			ret.add_position({radius * normal_x, radius * normal_y, radius * normal_z});
 			ret.add_text_coord({vertex_s, vertex_t});
 

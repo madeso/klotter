@@ -101,7 +101,7 @@ FrustumLightUniforms::FrustumLightUniforms(const ShaderProgram* program, const s
 	: diffuse_uni(program->get_uniform(base + "diffuse"))
 	, specular_uni(program->get_uniform(base + "specular"))
 	, attenuation_uni(program->get_uniform(base + "attenuation"))
-	, world_to_clip_uni(program->get_uniform(base + "world_to_clip"))
+	, clip_from_world_uni(program->get_uniform(base + "clip_from_world"))
 	, world_pos_uni(program->get_uniform(base + "world_pos"))
 	, tex_cookie_uniform(program->get_uniform(base + "cookie"))
 {

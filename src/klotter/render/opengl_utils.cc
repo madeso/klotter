@@ -9,7 +9,7 @@ namespace klotter
 {
 
 #if FF_HAS(ENABLE_GL_DEBUG)
-const char* opengl_error_to_string(GLenum error_code)
+const char* string_from_opengl_error_enum(GLenum error_code)
 {
 	switch (error_code)
 	{
@@ -30,7 +30,7 @@ const char* opengl_error_to_string(GLenum error_code)
 
 namespace
 {
-	const char* source_to_string(GLenum source)
+	const char* string_from_debug_source(GLenum source)
 	{
 		switch (source)
 		{
@@ -44,7 +44,7 @@ namespace
 		}
 	}
 
-	const char* type_to_string(GLenum type)
+	const char* string_from_debug_type(GLenum type)
 	{
 		switch (type)
 		{
@@ -58,7 +58,7 @@ namespace
 		}
 	}
 
-	const char* severity_to_string(GLenum severity)
+	const char* string_from_debug_severity(GLenum severity)
 	{
 		switch (severity)
 		{
@@ -122,13 +122,13 @@ void APIENTRY on_opengl_debug_output(
 	const std::string to_out = Str() << "OpenGL #" << id
 									 << " ["
 										"src: "
-									 << source_to_string(source)
+									 << string_from_debug_source(source)
 									 << " | "
 										"type: "
-									 << type_to_string(type)
+									 << string_from_debug_type(type)
 									 << " | "
 										"sev: "
-									 << severity_to_string(severity)
+									 << string_from_debug_severity(severity)
 									 << "] "
 										": "
 									 << message;
@@ -172,22 +172,22 @@ void setup_opengl_debug()
 #endif
 }
 
-GLenum Cint_to_glenum(int i)
+GLenum glenum_from_int(int i)
 {
 	return static_cast<GLenum>(i);
 }
 
-GLuint Cint_to_gluint(int i)
+GLuint gluint_from_int(int i)
 {
 	return static_cast<GLuint>(i);
 }
 
-GLsizeiptr Csizet_to_glsizeiptr(std::size_t t)
+GLsizeiptr glsizeiptr_from_sizet(std::size_t t)
 {
 	return static_cast<GLsizeiptr>(t);
 }
 
-GLsizei Csizet_to_glsizei(std::size_t t)
+GLsizei glsizei_from_sizet(std::size_t t)
 {
 	return static_cast<GLsizei>(t);
 }
@@ -258,7 +258,7 @@ void set_gl_debug_label_with_size(DebugLabelFor type, GLuint object, std::size_t
 		return;
 	}
 	
-	glObjectLabel(gl_type, object, Csizet_to_glsizei(size), label);
+	glObjectLabel(gl_type, object, glsizei_from_sizet(size), label);
 }
 
 void set_gl_debug_label(DebugLabelFor type, GLuint object, const std::string& label)
@@ -273,7 +273,7 @@ void set_gl_debug_label(DebugLabelFor type, GLuint object, std::string_view labe
 
 void push_debug_group(unsigned int id, std::size_t size, const char* label)
 {
-	glPushDebugGroup(GL_DEBUG_SOURCE_APPLICATION, id, Csizet_to_glsizei(size), label);
+	glPushDebugGroup(GL_DEBUG_SOURCE_APPLICATION, id, glsizei_from_sizet(size), label);
 }
 
 ScopedDebugGroup::ScopedDebugGroup(const std::string& message, unsigned int id)

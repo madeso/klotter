@@ -26,7 +26,7 @@ TEST_CASE("uniform_buffer_test_simple", "[uniform_buffer]")
 		compiler.add(&values, UniformType::float_type, "values", 3);
 		compiler.add(&boolean, UniformType::bool_type, "boolean");
 		compiler.add(&integer, UniformType::int_type, "integer");
-		compiler.compile("Test", &setup, 0);
+		setup = compiler.compile("Test", 0);
 	}
 
 	CHECK(value.offset == 0);
@@ -48,7 +48,7 @@ TEST_CASE("uniform_buffer_test_basic_mat", "[uniform_buffer]")
 		UniformBufferCompiler compiler;
 		compiler.add(&projection, UniformType::mat4, "projection");
 		compiler.add(&view, UniformType::mat4, "view");
-		compiler.compile("D", &setup, 0);
+		setup = compiler.compile("D", 0);
 	}
 
 	CHECK(projection.offset == 0);

@@ -57,7 +57,7 @@ bool check_shader_link_error(unsigned int program)
 void upload_shader_source(unsigned int shader, std::string_view source)
 {
 	const char* const s = source.data();
-	const int length = Csizet_to_int(source.length());	// should be GLint
+	const int length = int_from_sizet(source.length());	// should be GLint
 	glShaderSource(shader, 1, &s, &length);
 }
 
@@ -65,7 +65,7 @@ void bind_shader_attribute_location(unsigned int shader_program, const CompiledS
 {
 	for (const auto& b: layout.elements)
 	{
-		glBindAttribLocation(shader_program, Cint_to_gluint(b.index), b.name.c_str());
+		glBindAttribLocation(shader_program, gluint_from_int(b.index), b.name.c_str());
 	}
 }
 
@@ -338,7 +338,7 @@ void ShaderProgram::setup_uniform_block(const UniformBufferSetup& setup) // NOLI
 		LOG_ERROR("Shader missing uniform block %s", setup.name.c_str());
 		return;
 	}
-	glUniformBlockBinding(shader_program, shader_block_index, Cint_to_gluint(setup.binding_point));
+	glUniformBlockBinding(shader_program, shader_block_index, gluint_from_int(setup.binding_point));
 }
 
 void setup_textures(ShaderProgram* shader, const std::vector<Uniform*>& uniform_list)

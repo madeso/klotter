@@ -21,8 +21,8 @@ namespace klotter
 
 namespace
 {
-	/// the color of a image that failed to load, html hot-pink
-	constexpr SingleColor failed_to_load_image_color = color_from_rgba(0xFF, 0x69, 0xB4, 0xFF);
+	/// the color of an image that failed to load, html hot-pink
+	constexpr SingleColor image_load_failure_color = color_from_rgba(0xFF, 0x69, 0xB4, 0xFF);
 
 	constexpr unsigned int invalid_id = 0;
 
@@ -160,7 +160,7 @@ struct PixelData
 
 		pixel_data = stbi_load_from_memory(
 			reinterpret_cast<const unsigned char*>(image_binary.data),
-			Cunsigned_int_to_int(image_binary.size),
+			int_from_unsigned_int(image_binary.size),
 			&width,
 			&height,
 			&junk_channels,
@@ -200,7 +200,7 @@ Texture2d load_image_from_embedded(
 	if (parsed.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load image from image source");
-		return load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, te, trs, t, cd);
+		return load_image_from_color(SEND_DEBUG_LABEL_MANY(debug_label) image_load_failure_color, te, trs, t, cd);
 	}
 
 	const GLenum pixel_format = include_transparency ? GL_RGBA : GL_RGB;
@@ -278,7 +278,7 @@ TextureCubemap load_cubemap_from_embedded(
 		|| parsed_front.pixel_data == nullptr)
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
-		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
+		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) image_load_failure_color, cd);
 	}
 
 	if (all_equal(std::array{
@@ -291,7 +291,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent width");
-		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
+		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) image_load_failure_color, cd);
 	}
 
 	if (all_equal(std::array{
@@ -304,7 +304,7 @@ TextureCubemap load_cubemap_from_embedded(
 	else
 	{
 		LOG_ERROR("ERROR: cubemap has inconsistent height");
-		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) failed_to_load_image_color, cd);
+		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) image_load_failure_color, cd);
 	}
 
 	// ok

@@ -50,7 +50,7 @@ struct FrustumLight
     vec3 specular;
     vec4 attenuation; // min max s t
 
-    mat4 world_to_clip;
+    mat4 clip_from_world;
     vec3 world_pos; // for specular calc
 
     sampler2D cookie;
@@ -168,7 +168,7 @@ vec3 calculate_frustum_light(
     vec3 light_direction = normalize(pl.world_pos - v_worldspace);
     vec3 reflect_direction = reflect(-light_direction, normal);
 
-    vec4 clip_coord = pl.world_to_clip * vec4(v_worldspace, 1.0);
+    vec4 clip_coord = pl.clip_from_world * vec4(v_worldspace, 1.0);
     vec2 ndc = clip_coord.xy / clip_coord.w;
     // look up cookie texture and transform [-1, 1] ndc to [0, 1] uv
     float cookie = texture(pl.cookie, (ndc.xy / 2.0) + 0.5).r;

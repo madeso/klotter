@@ -111,7 +111,7 @@ struct FrustumLightUniforms
 	Uniform diffuse_uni;
 	Uniform specular_uni;
 	Uniform attenuation_uni;
-	Uniform world_to_clip_uni;
+	Uniform clip_from_world_uni;
 	Uniform world_pos_uni;
 	Uniform tex_cookie_uniform;
 };
