@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="55" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="55" bodyend="-1"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="57" column="13" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="57" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -51,19 +51,15 @@
         </inbodydescription>
         <location file="src/klotter/render/uniform_buffer.h" line="52" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1UniformBufferCompiler_1a33d59d68781b6da4678ec9202e090281" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void klotter::UniformBufferCompiler::compile</definition>
-        <argsstring>(const std::string &amp;name, UniformBufferSetup *target, int binding_point)</argsstring>
+      <memberdef kind="function" id="structklotter_1_1UniformBufferCompiler_1ac1ab50817713dc4f6121a821c4e7efe6" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1UniformBufferSetup" kindref="compound">UniformBufferSetup</ref></type>
+        <definition>UniformBufferSetup klotter::UniformBufferCompiler::compile</definition>
+        <argsstring>(const std::string &amp;name, int binding_point) const</argsstring>
         <name>compile</name>
         <qualifiedname>klotter::UniformBufferCompiler::compile</qualifiedname>
         <param>
           <type>const std::string &amp;</type>
           <declname>name</declname>
-        </param>
-        <param>
-          <type><ref refid="structklotter_1_1UniformBufferSetup" kindref="compound">UniformBufferSetup</ref> *</type>
-          <declname>target</declname>
         </param>
         <param>
           <type>int</type>
@@ -75,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/uniform_buffer.h" line="53" column="6"/>
+        <location file="src/klotter/render/uniform_buffer.h" line="55" column="20"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -119,10 +115,10 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/uniform_buffer.h" line="50" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="51" bodyend="56"/>
+    <location file="src/klotter/render/uniform_buffer.h" line="50" column="1" bodyfile="src/klotter/render/uniform_buffer.h" bodystart="51" bodyend="58"/>
     <listofallmembers>
       <member refid="structklotter_1_1UniformBufferCompiler_1a1006307a4f7b45ce5b348a19b8b1b474" prot="public" virt="non-virtual"><scope>klotter::UniformBufferCompiler</scope><name>add</name></member>
-      <member refid="structklotter_1_1UniformBufferCompiler_1a33d59d68781b6da4678ec9202e090281" prot="public" virt="non-virtual"><scope>klotter::UniformBufferCompiler</scope><name>compile</name></member>
+      <member refid="structklotter_1_1UniformBufferCompiler_1ac1ab50817713dc4f6121a821c4e7efe6" prot="public" virt="non-virtual"><scope>klotter::UniformBufferCompiler</scope><name>compile</name></member>
       <member refid="structklotter_1_1UniformBufferCompiler_1a6a819ceefb6a2e7b5ea6724caee4a062" prot="public" virt="non-virtual"><scope>klotter::UniformBufferCompiler</scope><name>props</name></member>
     </listofallmembers>
   </compounddef>

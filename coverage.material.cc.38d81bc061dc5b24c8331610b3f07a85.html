@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/material.cc</div>
-            <div>Date: 2025-09-03 15:03:09</div>
+            <div>Date: 2025-09-04 15:01:30</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -1248,14 +1248,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">directional_lights</span><span class="p">.</span><span class="n">size</span><span class="p">()</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">directional_lights</span><span class="p">.</span><span class="n">size</span><span class="p">()</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l166" href="#l166">166</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">						  </span><span class="o">?</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">directional_lights</span><span class="p">[</span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span></td>
+                <td class="src uncoveredLine"><span class="w">						  </span><span class="o">?</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">directional_lights</span><span class="p">[</span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l167" href="#l167">167</a></td>
@@ -1269,7 +1269,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">directional_lights</span><span class="p">[</span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)];</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">directional_lights</span><span class="p">[</span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)];</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l169" href="#l169">169</a></td>
@@ -1325,14 +1325,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">point_lights</span><span class="p">.</span><span class="n">size</span><span class="p">()</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">point_lights</span><span class="p">.</span><span class="n">size</span><span class="p">()</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l177" href="#l177">177</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="o">?</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">point_lights</span><span class="p">[</span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span></td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="o">?</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">point_lights</span><span class="p">[</span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l178" href="#l178">178</a></td>
@@ -1353,7 +1353,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">point_lights</span><span class="p">[</span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)];</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">point_lights</span><span class="p">[</span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)];</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l181" href="#l181">181</a></td>
@@ -1416,7 +1416,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">frustum_lights</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">frustum_lights</span><span class="p">[</span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">frustum_lights</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">lights</span><span class="p">.</span><span class="n">frustum_lights</span><span class="p">[</span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l190" href="#l190">190</a></td>
@@ -1430,7 +1430,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">frustum_lights</span><span class="p">[</span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">index</span><span class="p">)];</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shader</span><span class="p">.</span><span class="n">frustum_lights</span><span class="p">[</span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">index</span><span class="p">)];</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l192" href="#l192">192</a></td>
@@ -1472,21 +1472,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_view_mat</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">create_vectors</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">yaw</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">pitch</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">view_from_world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_view_from_world_mat</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">create_vectors</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">yaw</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">pitch</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l198" href="#l198">198</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">perspective</span><span class="p">(</span><span class="n">glm</span><span class="o">::</span><span class="n">radians</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">fov</span><span class="p">),</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">aspect</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">max_range</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">clip_from_view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">perspective</span><span class="p">(</span><span class="n">glm</span><span class="o">::</span><span class="n">radians</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">fov</span><span class="p">),</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">aspect</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">max_range</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l199" href="#l199">199</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_mat</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">world_to_clip_uni</span><span class="p">,</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">view</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_mat</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">clip_from_world_uni</span><span class="p">,</span><span class="w"> </span><span class="n">clip_from_view</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">view_from_world</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l200" href="#l200">200</a></td>

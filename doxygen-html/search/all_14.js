@@ -18,7 +18,6 @@ var searchData=
   ['world_5ffrom_5flocals_15',['world_from_locals',['../structklotter_1_1MeshInstance__TransformInstanced.html#a35913435778f8c6634d2bc6a4e3ad218',1,'klotter::MeshInstance_TransformInstanced']]],
   ['world_5fpos_5funi_16',['world_pos_uni',['../structklotter_1_1FrustumLightUniforms.html#a5ddcc07c053643551d55f402ec0efd29',1,'klotter::FrustumLightUniforms']]],
   ['world_5fposition_17',['world_position',['../structklotter_1_1MeshInstance.html#aa66d5c0ed6cd84d457a9c3c48b518ed0',1,'klotter::MeshInstance']]],
-  ['world_5fto_5fclip_5funi_18',['world_to_clip_uni',['../structklotter_1_1FrustumLightUniforms.html#a2270f7c132d437308de376292d6052cf',1,'klotter::FrustumLightUniforms']]],
-  ['write_19',['write',['../structSvg.html#a4c48cf4dd61080d58bab289ddceddf98',1,'Svg']]],
-  ['write_5fobj_20',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
+  ['write_18',['write',['../structSvg.html#a4c48cf4dd61080d58bab289ddceddf98',1,'Svg']]],
+  ['write_5fobj_19',['write_obj',['../structklotter_1_1geom_1_1Builder.html#a37ee459d444ec29573ccee3240fa9a24',1,'klotter::geom::Builder']]]
 ];

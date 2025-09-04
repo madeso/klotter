@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/camera.h</div>
-            <div>Date: 2025-09-03 15:03:09</div>
+            <div>Date: 2025-09-04 15:01:30</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -433,7 +433,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="nf">create_view_mat</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CameraVectors</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cv</span><span class="p">);</span></td>
+                <td class="src "><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="nf">create_view_from_world_mat</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CameraVectors</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cv</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l54" href="#l54">54</a></td>
@@ -482,7 +482,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="w"> </span><span class="nf">to_screen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cam</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span></td>
+                <td class="src "><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="w"> </span><span class="nf">screen_from_world</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cam</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">world_pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>

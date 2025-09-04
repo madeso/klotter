@@ -115,44 +115,44 @@ $(function(){ initResizable(false); });
 <a href="cint_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="cint_8h.html#ac4a0af6b7b624ce27574515a4c4dee14">    3</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_function" href="cint_8h.html#ac4a0af6b7b624ce27574515a4c4dee14">Cint_to_float</a>(<span class="keywordtype">int</span> i)</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="cint_8h.html#a1c14e1e7e2bf7a8ebc7b72447deafa95">    3</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_function" href="cint_8h.html#a1c14e1e7e2bf7a8ebc7b72447deafa95">float_from_int</a>(<span class="keywordtype">int</span> i)</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i);</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>}</div>
 </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="cint_8h.html#a016c6abd38482781ee34eda2ba4a51e0">    8</a></span><span class="keyword">constexpr</span> std::size_t <a class="code hl_function" href="cint_8h.html#a016c6abd38482781ee34eda2ba4a51e0">Cint_to_sizet</a>(<span class="keywordtype">int</span> i)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="cint_8h.html#a9097907fede91ff15df8ec70ae803abd">    8</a></span><span class="keyword">constexpr</span> std::size_t <a class="code hl_function" href="cint_8h.html#a9097907fede91ff15df8ec70ae803abd">sizet_from_int</a>(<span class="keywordtype">int</span> i)</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(i);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
 </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="cint_8h.html#a01b3b8e0df41484e0ae28b3829ea3359">   13</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> <a class="code hl_function" href="cint_8h.html#a01b3b8e0df41484e0ae28b3829ea3359">Csizet_to_u32</a>(std::size_t i)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="cint_8h.html#a0859cc0b074c7defa4ca70b54d320307">   13</a></span><span class="keyword">constexpr</span> <a class="code hl_typedef" href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> <a class="code hl_function" href="cint_8h.html#a0859cc0b074c7defa4ca70b54d320307">u32_from_sizet</a>(std::size_t i)</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a><span class="keyword">&gt;</span>(i);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="cint_8h.html#a3435682dd39119e67b0dfa427b562fe8">   18</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="cint_8h.html#a3435682dd39119e67b0dfa427b562fe8">Csizet_to_int</a>(std::size_t i)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="cint_8h.html#a32202edc61fafefffa86632eb352ac10">   18</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="cint_8h.html#a32202edc61fafefffa86632eb352ac10">int_from_sizet</a>(std::size_t i)</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(i);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="cint_8h.html#a1e7fb62626bf824af41d93896c4a1f54">   23</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="cint_8h.html#a1e7fb62626bf824af41d93896c4a1f54">Cunsigned_int_to_int</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="cint_8h.html#a423473248d51a6dd8417046918a01876">   23</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="cint_8h.html#a423473248d51a6dd8417046918a01876">int_from_unsigned_int</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(i);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="ttc" id="acint_8h_html_a016c6abd38482781ee34eda2ba4a51e0"><div class="ttname"><a href="cint_8h.html#a016c6abd38482781ee34eda2ba4a51e0">Cint_to_sizet</a></div><div class="ttdeci">constexpr std::size_t Cint_to_sizet(int i)</div><div class="ttdef"><b>Definition</b> cint.h:8</div></div>
-<div class="ttc" id="acint_8h_html_a01b3b8e0df41484e0ae28b3829ea3359"><div class="ttname"><a href="cint_8h.html#a01b3b8e0df41484e0ae28b3829ea3359">Csizet_to_u32</a></div><div class="ttdeci">constexpr u32 Csizet_to_u32(std::size_t i)</div><div class="ttdef"><b>Definition</b> cint.h:13</div></div>
-<div class="ttc" id="acint_8h_html_a1e7fb62626bf824af41d93896c4a1f54"><div class="ttname"><a href="cint_8h.html#a1e7fb62626bf824af41d93896c4a1f54">Cunsigned_int_to_int</a></div><div class="ttdeci">constexpr int Cunsigned_int_to_int(unsigned int i)</div><div class="ttdef"><b>Definition</b> cint.h:23</div></div>
-<div class="ttc" id="acint_8h_html_a3435682dd39119e67b0dfa427b562fe8"><div class="ttname"><a href="cint_8h.html#a3435682dd39119e67b0dfa427b562fe8">Csizet_to_int</a></div><div class="ttdeci">constexpr int Csizet_to_int(std::size_t i)</div><div class="ttdef"><b>Definition</b> cint.h:18</div></div>
-<div class="ttc" id="acint_8h_html_ac4a0af6b7b624ce27574515a4c4dee14"><div class="ttname"><a href="cint_8h.html#ac4a0af6b7b624ce27574515a4c4dee14">Cint_to_float</a></div><div class="ttdeci">constexpr float Cint_to_float(int i)</div><div class="ttdef"><b>Definition</b> cint.h:3</div></div>
+<div class="ttc" id="acint_8h_html_a0859cc0b074c7defa4ca70b54d320307"><div class="ttname"><a href="cint_8h.html#a0859cc0b074c7defa4ca70b54d320307">u32_from_sizet</a></div><div class="ttdeci">constexpr u32 u32_from_sizet(std::size_t i)</div><div class="ttdef"><b>Definition</b> cint.h:13</div></div>
+<div class="ttc" id="acint_8h_html_a1c14e1e7e2bf7a8ebc7b72447deafa95"><div class="ttname"><a href="cint_8h.html#a1c14e1e7e2bf7a8ebc7b72447deafa95">float_from_int</a></div><div class="ttdeci">constexpr float float_from_int(int i)</div><div class="ttdef"><b>Definition</b> cint.h:3</div></div>
+<div class="ttc" id="acint_8h_html_a32202edc61fafefffa86632eb352ac10"><div class="ttname"><a href="cint_8h.html#a32202edc61fafefffa86632eb352ac10">int_from_sizet</a></div><div class="ttdeci">constexpr int int_from_sizet(std::size_t i)</div><div class="ttdef"><b>Definition</b> cint.h:18</div></div>
+<div class="ttc" id="acint_8h_html_a423473248d51a6dd8417046918a01876"><div class="ttname"><a href="cint_8h.html#a423473248d51a6dd8417046918a01876">int_from_unsigned_int</a></div><div class="ttdeci">constexpr int int_from_unsigned_int(unsigned int i)</div><div class="ttdef"><b>Definition</b> cint.h:23</div></div>
+<div class="ttc" id="acint_8h_html_a9097907fede91ff15df8ec70ae803abd"><div class="ttname"><a href="cint_8h.html#a9097907fede91ff15df8ec70ae803abd">sizet_from_int</a></div><div class="ttdeci">constexpr std::size_t sizet_from_int(int i)</div><div class="ttdef"><b>Definition</b> cint.h:8</div></div>
 <div class="ttc" id="apch_8public_8h_html_a70c1fcc1a4e96af8f6580f708657cd41"><div class="ttname"><a href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> pch.public.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

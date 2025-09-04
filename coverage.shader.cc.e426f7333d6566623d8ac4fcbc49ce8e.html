@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/shader.cc</div>
-            <div>Date: 2025-09-03 15:03:09</div>
+            <div>Date: 2025-09-04 15:01:30</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -529,7 +529,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Csizet_to_int</span><span class="p">(</span><span class="n">source</span><span class="p">.</span><span class="n">length</span><span class="p">());</span><span class="w">	</span><span class="c1">// should be GLint</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">int_from_sizet</span><span class="p">(</span><span class="n">source</span><span class="p">.</span><span class="n">length</span><span class="p">());</span><span class="w">	</span><span class="c1">// should be GLint</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
@@ -585,7 +585,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glBindAttribLocation</span><span class="p">(</span><span class="n">shader_program</span><span class="p">,</span><span class="w"> </span><span class="n">Cint_to_gluint</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">index</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glBindAttribLocation</span><span class="p">(</span><span class="n">shader_program</span><span class="p">,</span><span class="w"> </span><span class="n">gluint_from_int</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">index</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l69" href="#l69">69</a></td>
@@ -2496,7 +2496,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glUniformBlockBinding</span><span class="p">(</span><span class="n">shader_program</span><span class="p">,</span><span class="w"> </span><span class="n">shader_block_index</span><span class="p">,</span><span class="w"> </span><span class="n">Cint_to_gluint</span><span class="p">(</span><span class="n">setup</span><span class="p">.</span><span class="n">binding_point</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glUniformBlockBinding</span><span class="p">(</span><span class="n">shader_program</span><span class="p">,</span><span class="w"> </span><span class="n">shader_block_index</span><span class="p">,</span><span class="w"> </span><span class="n">gluint_from_int</span><span class="p">(</span><span class="n">setup</span><span class="p">.</span><span class="n">binding_point</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l342" href="#l342">342</a></td>

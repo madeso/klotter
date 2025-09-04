@@ -111,11 +111,11 @@
         <link refid="structklotter_1_1FrustumLightUniforms"/>
         <childnode refid="9" relation="usage">
           <edgelabel>attenuation_uni</edgelabel>
+          <edgelabel>clip_from_world_uni</edgelabel>
           <edgelabel>diffuse_uni</edgelabel>
           <edgelabel>specular_uni</edgelabel>
           <edgelabel>tex_cookie_uniform</edgelabel>
           <edgelabel>world_pos_uni</edgelabel>
-          <edgelabel>world_to_clip_uni</edgelabel>
         </childnode>
       </node>
       <node id="6">

@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/opengl_utils.cc</div>
-            <div>Date: 2025-09-03 15:03:09</div>
+            <div>Date: 2025-09-04 15:01:30</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -62,13 +62,9 @@
       <th>Condition coverage</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l61">klotter::(anonymous namespace)::severity_to_string(unsigned int) (line 61)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l33">klotter::(anonymous namespace)::source_to_string(unsigned int) (line 33)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l47">klotter::(anonymous namespace)::type_to_string(unsigned int) (line 47)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l175">klotter::Cint_to_glenum(int) (line 175)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l180">klotter::Cint_to_gluint(int) (line 180)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l190">klotter::Csizet_to_glsizei(unsigned long) (line 190)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l185">klotter::Csizet_to_glsizeiptr(unsigned long) (line 185)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l61">klotter::(anonymous namespace)::string_from_debug_severity(unsigned int) (line 61)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l33">klotter::(anonymous namespace)::string_from_debug_source(unsigned int) (line 33)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l47">klotter::(anonymous namespace)::string_from_debug_type(unsigned int) (line 47)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l279">klotter::ScopedDebugGroup::ScopedDebugGroup(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, unsigned int) (line 279)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l284">klotter::ScopedDebugGroup::ScopedDebugGroup(std::basic_string_view&lt;char, std::char_traits&lt;char&gt; &gt;, unsigned int) (line 284)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l289">klotter::ScopedDebugGroup::~ScopedDebugGroup() (line 289)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
@@ -77,16 +73,20 @@
     <tr><td><a href="#l202">klotter::destroy_buffer(unsigned int) (line 202)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l214">klotter::destroy_vertex_array(unsigned int) (line 214)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l224">klotter::get_mesh_rotation_matrix(glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 224)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l175">klotter::glenum_from_int(int) (line 175)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l230">klotter::glenum_from_object_type(klotter::DebugLabelFor) (line 230)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l190">klotter::glsizei_from_sizet(unsigned long) (line 190)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l185">klotter::glsizeiptr_from_sizet(unsigned long) (line 185)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l180">klotter::gluint_from_int(int) (line 180)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l151">klotter::has_khr_debug() (line 151)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l75">klotter::on_opengl_debug_output(unsigned int, unsigned int, unsigned int, unsigned int, int, char const*, void const*) (line 75)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l12">klotter::opengl_error_to_string(unsigned int) (line 12)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l274">klotter::push_debug_group(unsigned int, unsigned long, char const*) (line 274)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l264">klotter::set_gl_debug_label(klotter::DebugLabelFor, unsigned int, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) (line 264)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l269">klotter::set_gl_debug_label(klotter::DebugLabelFor, unsigned int, std::basic_string_view&lt;char, std::char_traits&lt;char&gt; &gt;) (line 269)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l248">klotter::set_gl_debug_label_with_size(klotter::DebugLabelFor, unsigned int, unsigned long, char const*) (line 248)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l219">klotter::set_gl_viewport(glm::vec&lt;2, int, (glm::qualifier)0&gt; const&amp;) (line 219)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l157">klotter::setup_opengl_debug() (line 157)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l12">klotter::string_from_opengl_error_enum(unsigned int) (line 12)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
   </table>
 </details>
 </div>
@@ -186,7 +186,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">opengl_error_to_string</span><span class="p">(</span><span class="n">GLenum</span><span class="w"> </span><span class="n">error_code</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">string_from_opengl_error_enum</span><span class="p">(</span><span class="n">GLenum</span><span class="w"> </span><span class="n">error_code</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l13" href="#l13">13</a></td>
@@ -333,7 +333,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">source_to_string</span><span class="p">(</span><span class="n">GLenum</span><span class="w"> </span><span class="n">source</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">string_from_debug_source</span><span class="p">(</span><span class="n">GLenum</span><span class="w"> </span><span class="n">source</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l34" href="#l34">34</a></td>
@@ -431,7 +431,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">type_to_string</span><span class="p">(</span><span class="n">GLenum</span><span class="w"> </span><span class="n">type</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">string_from_debug_type</span><span class="p">(</span><span class="n">GLenum</span><span class="w"> </span><span class="n">type</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l48" href="#l48">48</a></td>
@@ -529,7 +529,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">severity_to_string</span><span class="p">(</span><span class="n">GLenum</span><span class="w"> </span><span class="n">severity</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="nf">string_from_debug_severity</span><span class="p">(</span><span class="n">GLenum</span><span class="w"> </span><span class="n">severity</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
@@ -977,7 +977,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">									 </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">source_to_string</span><span class="p">(</span><span class="n">source</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">									 </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">string_from_debug_source</span><span class="p">(</span><span class="n">source</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l126" href="#l126">126</a></td>
@@ -998,7 +998,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">									 </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">type_to_string</span><span class="p">(</span><span class="n">type</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">									 </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">string_from_debug_type</span><span class="p">(</span><span class="n">type</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l129" href="#l129">129</a></td>
@@ -1019,7 +1019,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">									 </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">severity_to_string</span><span class="p">(</span><span class="n">severity</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">									 </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">string_from_debug_severity</span><span class="p">(</span><span class="n">severity</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l132" href="#l132">132</a></td>
@@ -1327,7 +1327,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">GLenum</span><span class="w"> </span><span class="n">Cint_to_glenum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="n">GLenum</span><span class="w"> </span><span class="n">glenum_from_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l176" href="#l176">176</a></td>
@@ -1362,7 +1362,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">GLuint</span><span class="w"> </span><span class="n">Cint_to_gluint</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="n">GLuint</span><span class="w"> </span><span class="n">gluint_from_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l181" href="#l181">181</a></td>
@@ -1397,7 +1397,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">GLsizeiptr</span><span class="w"> </span><span class="n">Csizet_to_glsizeiptr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">t</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="n">GLsizeiptr</span><span class="w"> </span><span class="n">glsizeiptr_from_sizet</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">t</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l186" href="#l186">186</a></td>
@@ -1432,7 +1432,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">GLsizei</span><span class="w"> </span><span class="n">Csizet_to_glsizei</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">t</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="n">GLsizei</span><span class="w"> </span><span class="n">glsizei_from_sizet</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">t</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l191" href="#l191">191</a></td>
@@ -1929,7 +1929,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glObjectLabel</span><span class="p">(</span><span class="n">gl_type</span><span class="p">,</span><span class="w"> </span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="n">Csizet_to_glsizei</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">label</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glObjectLabel</span><span class="p">(</span><span class="n">gl_type</span><span class="p">,</span><span class="w"> </span><span class="n">object</span><span class="p">,</span><span class="w"> </span><span class="n">glsizei_from_sizet</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">label</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l262" href="#l262">262</a></td>
@@ -2034,7 +2034,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glPushDebugGroup</span><span class="p">(</span><span class="n">GL_DEBUG_SOURCE_APPLICATION</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Csizet_to_glsizei</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">label</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glPushDebugGroup</span><span class="p">(</span><span class="n">GL_DEBUG_SOURCE_APPLICATION</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">glsizei_from_sizet</span><span class="p">(</span><span class="n">size</span><span class="p">),</span><span class="w"> </span><span class="n">label</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l277" href="#l277">277</a></td>

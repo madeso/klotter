@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/texture.cc</div>
-            <div>Date: 2025-09-03 15:03:09</div>
+            <div>Date: 2025-09-04 15:01:30</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -272,14 +272,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="c1">/// the color of a image that failed to load, html hot-pink</span></td>
+                <td class="src "><span class="w">	</span><span class="c1">/// the color of an image that failed to load, html hot-pink</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l25" href="#l25">25</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="n">SingleColor</span><span class="w"> </span><span class="n">failed_to_load_image_color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color_from_rgba</span><span class="p">(</span><span class="mh">0xFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0x69</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">);</span></td>
+                <td class="src "><span class="w">	</span><span class="k">constexpr</span><span class="w"> </span><span class="n">SingleColor</span><span class="w"> </span><span class="n">image_load_failure_color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color_from_rgba</span><span class="p">(</span><span class="mh">0xFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0x69</span><span class="p">,</span><span class="w"> </span><span class="mh">0xB4</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l26" href="#l26">26</a></td>
@@ -1245,7 +1245,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">Cunsigned_int_to_int</span><span class="p">(</span><span class="n">image_binary</span><span class="p">.</span><span class="n">size</span><span class="p">),</span></td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="n">int_from_unsigned_int</span><span class="p">(</span><span class="n">image_binary</span><span class="p">.</span><span class="n">size</span><span class="p">),</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l164" href="#l164">164</a></td>
@@ -1525,7 +1525,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">load_image_from_color</span><span class="p">(</span><span class="n">SEND_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="n">debug_label</span><span class="p">)</span><span class="w"> </span><span class="n">failed_to_load_image_color</span><span class="p">,</span><span class="w"> </span><span class="n">te</span><span class="p">,</span><span class="w"> </span><span class="n">trs</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">cd</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">load_image_from_color</span><span class="p">(</span><span class="n">SEND_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="n">debug_label</span><span class="p">)</span><span class="w"> </span><span class="n">image_load_failure_color</span><span class="p">,</span><span class="w"> </span><span class="n">te</span><span class="p">,</span><span class="w"> </span><span class="n">trs</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">cd</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l204" href="#l204">204</a></td>
@@ -2071,7 +2071,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">load_cubemap_from_color</span><span class="p">(</span><span class="n">SEND_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="n">debug_label</span><span class="p">)</span><span class="w"> </span><span class="n">failed_to_load_image_color</span><span class="p">,</span><span class="w"> </span><span class="n">cd</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">load_cubemap_from_color</span><span class="p">(</span><span class="n">SEND_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="n">debug_label</span><span class="p">)</span><span class="w"> </span><span class="n">image_load_failure_color</span><span class="p">,</span><span class="w"> </span><span class="n">cd</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l282" href="#l282">282</a></td>
@@ -2162,7 +2162,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">load_cubemap_from_color</span><span class="p">(</span><span class="n">SEND_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="n">debug_label</span><span class="p">)</span><span class="w"> </span><span class="n">failed_to_load_image_color</span><span class="p">,</span><span class="w"> </span><span class="n">cd</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">load_cubemap_from_color</span><span class="p">(</span><span class="n">SEND_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="n">debug_label</span><span class="p">)</span><span class="w"> </span><span class="n">image_load_failure_color</span><span class="p">,</span><span class="w"> </span><span class="n">cd</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l295" href="#l295">295</a></td>
@@ -2253,7 +2253,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">load_cubemap_from_color</span><span class="p">(</span><span class="n">SEND_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="n">debug_label</span><span class="p">)</span><span class="w"> </span><span class="n">failed_to_load_image_color</span><span class="p">,</span><span class="w"> </span><span class="n">cd</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">load_cubemap_from_color</span><span class="p">(</span><span class="n">SEND_DEBUG_LABEL_MANY</span><span class="p">(</span><span class="n">debug_label</span><span class="p">)</span><span class="w"> </span><span class="n">image_load_failure_color</span><span class="p">,</span><span class="w"> </span><span class="n">cd</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l308" href="#l308">308</a></td>

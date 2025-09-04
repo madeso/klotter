@@ -734,12 +734,12 @@
         </inbodydescription>
         <location file="src/klotter/render/camera.h" line="50" column="15" declfile="src/klotter/render/camera.h" declline="50" declcolumn="15"/>
       </memberdef>
-      <memberdef kind="function" id="group__render_1ga3408f89cc9f18beff9e655676bd9fc1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::mat4</type>
-        <definition>glm::mat4 klotter::create_view_mat</definition>
+        <definition>glm::mat4 klotter::create_view_from_world_mat</definition>
         <argsstring>(const glm::vec3 &amp;pos, const CameraVectors &amp;cv)</argsstring>
-        <name>create_view_mat</name>
-        <qualifiedname>klotter::create_view_mat</qualifiedname>
+        <name>create_view_from_world_mat</name>
+        <qualifiedname>klotter::create_view_from_world_mat</qualifiedname>
         <param>
           <type>const glm::vec3 &amp;</type>
           <declname>pos</declname>
@@ -778,19 +778,19 @@
         </inbodydescription>
         <location file="src/klotter/render/camera.h" line="56" column="16" declfile="src/klotter/render/camera.h" declline="56" declcolumn="16"/>
       </memberdef>
-      <memberdef kind="function" id="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::vec2</type>
-        <definition>glm::vec2 klotter::to_screen</definition>
-        <argsstring>(const CompiledCamera &amp;cam, const glm::vec3 &amp;pos, const glm::vec2 &amp;resolution)</argsstring>
-        <name>to_screen</name>
-        <qualifiedname>klotter::to_screen</qualifiedname>
+        <definition>glm::vec2 klotter::screen_from_world</definition>
+        <argsstring>(const CompiledCamera &amp;cam, const glm::vec3 &amp;world_pos, const glm::vec2 &amp;resolution)</argsstring>
+        <name>screen_from_world</name>
+        <qualifiedname>klotter::screen_from_world</qualifiedname>
         <param>
           <type>const CompiledCamera &amp;</type>
           <declname>cam</declname>
         </param>
         <param>
           <type>const glm::vec3 &amp;</type>
-          <declname>pos</declname>
+          <declname>world_pos</declname>
         </param>
         <param>
           <type>const glm::vec2 &amp;</type>

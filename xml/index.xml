@@ -375,7 +375,7 @@
     <member refid="structklotter_1_1FrustumLightUniforms_1abc6a374421c4027a3c6240e255613606" kind="variable"><name>diffuse_uni</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1aef2f8f7b7e81312de6e7575a5117e98b" kind="variable"><name>specular_uni</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1ac9fa8cfa2a96ae24f2ab4935cd38162e" kind="variable"><name>attenuation_uni</name></member>
-    <member refid="structklotter_1_1FrustumLightUniforms_1a2270f7c132d437308de376292d6052cf" kind="variable"><name>world_to_clip_uni</name></member>
+    <member refid="structklotter_1_1FrustumLightUniforms_1ab3d41d319872fe7e7bd7cf54a906bd44" kind="variable"><name>clip_from_world_uni</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1a5ddcc07c053643551d55f402ec0efd29" kind="variable"><name>world_pos_uni</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1adb04e178b8d0066242483bb6b650db07" kind="variable"><name>tex_cookie_uniform</name></member>
     <member refid="structklotter_1_1FrustumLightUniforms_1ab06a609169ec292dd41407b057b84127" kind="function"><name>FrustumLightUniforms</name></member>
@@ -850,7 +850,7 @@
   <compound refid="structklotter_1_1UniformBufferCompiler" kind="struct"><name>klotter::UniformBufferCompiler</name>
     <member refid="structklotter_1_1UniformBufferCompiler_1a6a819ceefb6a2e7b5ea6724caee4a062" kind="variable"><name>props</name></member>
     <member refid="structklotter_1_1UniformBufferCompiler_1a1006307a4f7b45ce5b348a19b8b1b474" kind="function"><name>add</name></member>
-    <member refid="structklotter_1_1UniformBufferCompiler_1a33d59d68781b6da4678ec9202e090281" kind="function"><name>compile</name></member>
+    <member refid="structklotter_1_1UniformBufferCompiler_1ac1ab50817713dc4f6121a821c4e7efe6" kind="function"><name>compile</name></member>
   </compound>
   <compound refid="structklotter_1_1UniformBufferSetup" kind="struct"><name>klotter::UniformBufferSetup</name>
     <member refid="structklotter_1_1UniformBufferSetup_1a4dd7230c77d6877d730e2a4fa45462f8" kind="variable"><name>size</name></member>
@@ -952,17 +952,17 @@
     <member refid="namespaceklotter_1ae8ba8f25677bd8a5d98681f05fd0a162" kind="function"><name>run_main</name></member>
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
-    <member refid="group__render_1ga3408f89cc9f18beff9e655676bd9fc1f" kind="function"><name>create_view_mat</name></member>
+    <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
     <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
-    <member refid="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" kind="function"><name>to_screen</name></member>
+    <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
     <member refid="namespaceklotter_1a8655e92bbc13aff3832b4fed06e62fb1" kind="function"><name>linear_from_srgb</name></member>
     <member refid="namespaceklotter_1a16fc6bb5ae9c482d07217873f345e25e" kind="function"><name>linear_from_srgb</name></member>
     <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
     <member refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" kind="function"><name>setup_opengl_debug</name></member>
-    <member refid="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" kind="function"><name>Cint_to_glenum</name></member>
-    <member refid="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" kind="function"><name>Cint_to_gluint</name></member>
-    <member refid="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" kind="function"><name>Csizet_to_glsizeiptr</name></member>
-    <member refid="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" kind="function"><name>Csizet_to_glsizei</name></member>
+    <member refid="namespaceklotter_1ad8e391c995de185fccf27218b510d64c" kind="function"><name>glenum_from_int</name></member>
+    <member refid="namespaceklotter_1a39a1f0561a351daea1f54fe4668f13b5" kind="function"><name>gluint_from_int</name></member>
+    <member refid="namespaceklotter_1a9d876cb69f1c84348365ee0532e917a3" kind="function"><name>glsizeiptr_from_sizet</name></member>
+    <member refid="namespaceklotter_1a1ca0c6c0baa5f5bef547de0ae2e1b599" kind="function"><name>glsizei_from_sizet</name></member>
     <member refid="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" kind="function"><name>create_buffer</name></member>
     <member refid="namespaceklotter_1a939548cd29b251463ed344cde014e212" kind="function"><name>destroy_buffer</name></member>
     <member refid="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" kind="function"><name>create_vertex_array</name></member>
@@ -1075,11 +1075,11 @@
     <member refid="assert_8h_1aee5e1bbf8aaba41d55d1018f6f5f700a" kind="function"><name>enable_exception_on_assert</name></member>
   </compound>
   <compound refid="cint_8h" kind="file"><name>cint.h</name>
-    <member refid="cint_8h_1ac4a0af6b7b624ce27574515a4c4dee14" kind="function"><name>Cint_to_float</name></member>
-    <member refid="cint_8h_1a016c6abd38482781ee34eda2ba4a51e0" kind="function"><name>Cint_to_sizet</name></member>
-    <member refid="cint_8h_1a01b3b8e0df41484e0ae28b3829ea3359" kind="function"><name>Csizet_to_u32</name></member>
-    <member refid="cint_8h_1a3435682dd39119e67b0dfa427b562fe8" kind="function"><name>Csizet_to_int</name></member>
-    <member refid="cint_8h_1a1e7fb62626bf824af41d93896c4a1f54" kind="function"><name>Cunsigned_int_to_int</name></member>
+    <member refid="cint_8h_1a1c14e1e7e2bf7a8ebc7b72447deafa95" kind="function"><name>float_from_int</name></member>
+    <member refid="cint_8h_1a9097907fede91ff15df8ec70ae803abd" kind="function"><name>sizet_from_int</name></member>
+    <member refid="cint_8h_1a0859cc0b074c7defa4ca70b54d320307" kind="function"><name>u32_from_sizet</name></member>
+    <member refid="cint_8h_1a32202edc61fafefffa86632eb352ac10" kind="function"><name>int_from_sizet</name></member>
+    <member refid="cint_8h_1a423473248d51a6dd8417046918a01876" kind="function"><name>int_from_unsigned_int</name></member>
   </compound>
   <compound refid="compiler__warning_8h" kind="file"><name>compiler_warning.h</name>
     <member refid="compiler__warning_8h_1a24b263e8b4b7f2ebc6534700f8157a48" kind="define"><name>DISABLE_WARNING_PUSH</name></member>
@@ -1334,9 +1334,9 @@
     <member refid="group__render_1ga86f2208b879c568d1ee1e6e771c0caa1" kind="variable"><name>UP</name></member>
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
-    <member refid="group__render_1ga3408f89cc9f18beff9e655676bd9fc1f" kind="function"><name>create_view_mat</name></member>
+    <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
     <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
-    <member refid="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" kind="function"><name>to_screen</name></member>
+    <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
     <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
     <member refid="group__render_1gac2e3012d518484348974e4dc36e3112c" kind="function"><name>get_uniform</name></member>
     <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>

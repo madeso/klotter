@@ -9,6 +9,5 @@ var searchData=
   ['world_5ffrom_5flocal_5funi_6',['world_from_local_uni',['../structklotter_1_1LoadedShader__SingleColor.html#a2871864eddb63c2d7545c77d93023491',1,'klotter::LoadedShader_SingleColor::world_from_local_uni'],['../structklotter_1_1LoadedShader__Unlit.html#a539d07d5134064aa9e1dcf0ef093c7d2',1,'klotter::LoadedShader_Unlit::world_from_local_uni'],['../structklotter_1_1LoadedShader__Default.html#a19434b2494aa3403a36ee38529e670dd',1,'klotter::LoadedShader_Default::world_from_local_uni']]],
   ['world_5ffrom_5flocals_7',['world_from_locals',['../structklotter_1_1MeshInstance__TransformInstanced.html#a35913435778f8c6634d2bc6a4e3ad218',1,'klotter::MeshInstance_TransformInstanced']]],
   ['world_5fpos_5funi_8',['world_pos_uni',['../structklotter_1_1FrustumLightUniforms.html#a5ddcc07c053643551d55f402ec0efd29',1,'klotter::FrustumLightUniforms']]],
-  ['world_5fposition_9',['world_position',['../structklotter_1_1MeshInstance.html#aa66d5c0ed6cd84d457a9c3c48b518ed0',1,'klotter::MeshInstance']]],
-  ['world_5fto_5fclip_5funi_10',['world_to_clip_uni',['../structklotter_1_1FrustumLightUniforms.html#a2270f7c132d437308de376292d6052cf',1,'klotter::FrustumLightUniforms']]]
+  ['world_5fposition_9',['world_position',['../structklotter_1_1MeshInstance.html#aa66d5c0ed6cd84d457a9c3c48b518ed0',1,'klotter::MeshInstance']]]
 ];

@@ -380,14 +380,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ga531baa4b9f91162f31830d9dd415d002" id="r_ga531baa4b9f91162f31830d9dd415d002"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga531baa4b9f91162f31830d9dd415d002">klotter::create_vectors</a> (float yaw, float pitch)</td></tr>
 <tr class="memdesc:ga531baa4b9f91162f31830d9dd415d002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture the local space of a "camera" us ing only the rotation.  <br /></td></tr>
 <tr class="separator:ga531baa4b9f91162f31830d9dd415d002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3408f89cc9f18beff9e655676bd9fc1f" id="r_ga3408f89cc9f18beff9e655676bd9fc1f"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3408f89cc9f18beff9e655676bd9fc1f">klotter::create_view_mat</a> (const glm::vec3 &amp;pos, const <a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> &amp;cv)</td></tr>
-<tr class="separator:ga3408f89cc9f18beff9e655676bd9fc1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ceb6e1d2428afc0bd213b454601023a" id="r_ga3ceb6e1d2428afc0bd213b454601023a"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ceb6e1d2428afc0bd213b454601023a">klotter::create_view_from_world_mat</a> (const glm::vec3 &amp;pos, const <a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> &amp;cv)</td></tr>
+<tr class="separator:ga3ceb6e1d2428afc0bd213b454601023a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga877a3ed04c88761bdfb420e7d4190be4" id="r_ga877a3ed04c88761bdfb420e7d4190be4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga877a3ed04c88761bdfb420e7d4190be4">klotter::compile</a> (const <a class="el" href="structklotter_1_1Camera.html">Camera</a> &amp;, const glm::ivec2 &amp;window_size)</td></tr>
 <tr class="memdesc:ga877a3ed04c88761bdfb420e7d4190be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Compile" a camera so it can be used in rendering.  <br /></td></tr>
 <tr class="separator:ga877a3ed04c88761bdfb420e7d4190be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1fb593a5ecdab295a00f9e999e37ed1b" id="r_ga1fb593a5ecdab295a00f9e999e37ed1b"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1fb593a5ecdab295a00f9e999e37ed1b">klotter::to_screen</a> (const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;cam, const glm::vec3 &amp;pos, const glm::vec2 &amp;<a class="el" href="#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">resolution</a>)</td></tr>
-<tr class="memdesc:ga1fb593a5ecdab295a00f9e999e37ed1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the screen coordinate of a 3d world position.  <br /></td></tr>
-<tr class="separator:ga1fb593a5ecdab295a00f9e999e37ed1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96a0f5ab096cbed0b9ebdc24ac13e7ca" id="r_ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga96a0f5ab096cbed0b9ebdc24ac13e7ca">klotter::screen_from_world</a> (const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;cam, const glm::vec3 &amp;world_pos, const glm::vec2 &amp;<a class="el" href="#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">resolution</a>)</td></tr>
+<tr class="memdesc:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the screen coordinate of a 3d world position.  <br /></td></tr>
+<tr class="separator:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8f2a36f8af7bbc5fc841e84b35e5bcfa" id="r_ga8f2a36f8af7bbc5fc841e84b35e5bcfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8f2a36f8af7bbc5fc841e84b35e5bcfa">klotter::operator|</a> (<a class="el" href="#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> lhs, <a class="el" href="#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> rhs)</td></tr>
 <tr class="separator:ga8f2a36f8af7bbc5fc841e84b35e5bcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac2e3012d518484348974e4dc36e3112c" id="r_gac2e3012d518484348974e4dc36e3112c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac2e3012d518484348974e4dc36e3112c">klotter::get_uniform</a> (<a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp;prog, const std::string &amp;name, <a class="el" href="#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> setup, <a class="el" href="#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> flag)</td></tr>
@@ -987,14 +987,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga3408f89cc9f18beff9e655676bd9fc1f" name="ga3408f89cc9f18beff9e655676bd9fc1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3408f89cc9f18beff9e655676bd9fc1f">&#9670;&#160;</a></span>create_view_mat()</h2>
+<a id="ga3ceb6e1d2428afc0bd213b454601023a" name="ga3ceb6e1d2428afc0bd213b454601023a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ceb6e1d2428afc0bd213b454601023a">&#9670;&#160;</a></span>create_view_from_world_mat()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::mat4 klotter::create_view_mat </td>
+          <td class="memname">glm::mat4 klotter::create_view_from_world_mat </td>
           <td>(</td>
           <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
@@ -1162,6 +1162,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ga96a0f5ab096cbed0b9ebdc24ac13e7ca" name="ga96a0f5ab096cbed0b9ebdc24ac13e7ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96a0f5ab096cbed0b9ebdc24ac13e7ca">&#9670;&#160;</a></span>screen_from_world()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec2 klotter::screen_from_world </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cam</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>world_pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::vec2 &amp;</td>          <td class="paramname"><span class="paramname"><em>resolution</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the screen coordinate of a 3d world position. </p>
+
+</div>
+</div>
 <a id="ga8072e6de57f4c7633a25803ddf551385" name="ga8072e6de57f4c7633a25803ddf551385"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8072e6de57f4c7633a25803ddf551385">&#9670;&#160;</a></span>shader_from_container() <span class="overload">[1/2]</span></h2>
 
@@ -1221,34 +1249,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Select the correct sub shader from a container. </p>
-
-</div>
-</div>
-<a id="ga1fb593a5ecdab295a00f9e999e37ed1b" name="ga1fb593a5ecdab295a00f9e999e37ed1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1fb593a5ecdab295a00f9e999e37ed1b">&#9670;&#160;</a></span>to_screen()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">glm::vec2 klotter::to_screen </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cam</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const glm::vec2 &amp;</td>          <td class="paramname"><span class="paramname"><em>resolution</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculate the screen coordinate of a 3d world position. </p>
 
 </div>
 </div>

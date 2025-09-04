@@ -26,22 +26,22 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/camera.cc</div>
-            <div>Date: 2025-09-03 15:03:09</div>
+            <div>Date: 2025-09-04 15:01:30</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
                 <div class="mr-2">Lines:</div>
-                <div class="mr-2" style="margin: auto;">0/24</div>
+                <div class="mr-2" style="margin: auto;">0/26</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
             <div class="d-flex">
                 <div class="mr-2">Functions:</div>
-                <div class="mr-2" style="margin: auto;">0/6</div>
+                <div class="mr-2" style="margin: auto;">0/7</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
             <div class="d-flex">
                 <div class="mr-2">Branches:</div>
-                <div class="mr-2" style="margin: auto;">0/22</div>
+                <div class="mr-2" style="margin: auto;">0/24</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
         </div>
@@ -65,9 +65,10 @@
     <tr><td><a href="#l34">klotter::compile(klotter::Camera const&amp;, glm::vec&lt;2, int, (glm::qualifier)0&gt; const&amp;) (line 34)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l10">klotter::create_vectors(float, float) (line 10)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l24">klotter::create_vectors(klotter::Camera const&amp;) (line 24)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l29">klotter::create_view_mat(glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, klotter::CameraVectors const&amp;) (line 29)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l45">klotter::to_screen(klotter::CompiledCamera const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;2, float, (glm::qualifier)0&gt; const&amp;) (line 45)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l49">klotter::to_screen(klotter::CompiledCamera const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;2, float, (glm::qualifier)0&gt; const&amp;)::{lambda(float)#1}::operator()(float) const (line 49)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l29">klotter::create_view_from_world_mat(glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, klotter::CameraVectors const&amp;) (line 29)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l47">klotter::r01_from_r11(float) (line 47)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l52">klotter::screen_from_clip(glm::vec&lt;2, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;4, float, (glm::qualifier)0&gt; const&amp;) (line 52)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l58">klotter::screen_from_world(klotter::CompiledCamera const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;2, float, (glm::qualifier)0&gt; const&amp;) (line 58)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
   </table>
 </details>
 </div>
@@ -286,7 +287,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="nf">create_view_mat</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CameraVectors</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cv</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="w"> </span><span class="nf">create_view_from_world_mat</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CameraVectors</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cv</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l30" href="#l30">30</a></td>
@@ -342,7 +343,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">perspective</span><span class="p">(</span><span class="n">glm</span><span class="o">::</span><span class="n">radians</span><span class="p">(</span><span class="n">cam</span><span class="p">.</span><span class="n">fov</span><span class="p">),</span><span class="w"> </span><span class="n">aspect</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">,</span><span class="w"> </span><span class="mf">100.0f</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">clip_from_view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">perspective</span><span class="p">(</span><span class="n">glm</span><span class="o">::</span><span class="n">radians</span><span class="p">(</span><span class="n">cam</span><span class="p">.</span><span class="n">fov</span><span class="p">),</span><span class="w"> </span><span class="n">aspect</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">,</span><span class="w"> </span><span class="mf">100.0f</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l38" href="#l38">38</a></td>
@@ -363,7 +364,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_view_mat</span><span class="p">(</span><span class="n">cam</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">camera_space</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">view_from_world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_view_from_world_mat</span><span class="p">(</span><span class="n">cam</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">camera_space</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l41" href="#l41">41</a></td>
@@ -377,7 +378,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="p">{</span><span class="n">projection</span><span class="p">,</span><span class="w"> </span><span class="n">view</span><span class="p">,</span><span class="w"> </span><span class="n">cam</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">camera_space</span><span class="p">.</span><span class="n">front</span><span class="p">};</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="p">{</span><span class="n">clip_from_view</span><span class="p">,</span><span class="w"> </span><span class="n">view_from_world</span><span class="p">,</span><span class="w"> </span><span class="n">cam</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">camera_space</span><span class="p">.</span><span class="n">front</span><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l43" href="#l43">43</a></td>
@@ -397,88 +398,144 @@
                 <td class="text-right src linenos"><a class="normal" id="l45" href="#l45">45</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="w"> </span><span class="nf">to_screen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cam</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution</span><span class="p">)</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="cm">/** Convert from -1..1 to 0..1</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l46" href="#l46">46</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">{</span></td>
+                <td class="src "><span class="cm"> */</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l47" href="#l47">47</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">clip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cam</span><span class="p">.</span><span class="n">clip_from_view</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cam</span><span class="p">.</span><span class="n">view_from_world</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec4</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="kt">float</span><span class="w"> </span><span class="nf">r01_from_r11</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l48" href="#l48">48</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">ndc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="n">clip</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">clip</span><span class="p">.</span><span class="n">w</span><span class="p">;</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l49" href="#l49">49</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l50" href="#l50">50</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">{</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l51" href="#l51">51</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2.0f</span><span class="p">;</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l52" href="#l52">52</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">};</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l53" href="#l53">53</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="p">{</span><span class="n">c</span><span class="p">(</span><span class="n">ndc</span><span class="p">.</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="n">ndc</span><span class="p">.</span><span class="n">y</span><span class="p">)}</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">resolution</span><span class="p">;</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l54" href="#l54">54</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="p">}</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l55" href="#l55">55</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l51" href="#l51">51</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
+                <td class="text-right src linenos"><a class="normal" id="l52" href="#l52">52</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="w"> </span><span class="nf">screen_from_clip</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec4</span><span class="o">&amp;</span><span class="w"> </span><span class="n">clip_pos</span><span class="p">)</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l53" href="#l53">53</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">{</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l54" href="#l54">54</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">ndc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="p">(</span><span class="n">clip_pos</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">clip_pos</span><span class="p">.</span><span class="n">w</span><span class="p">;</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l55" href="#l55">55</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="p">{</span><span class="n">r01_from_r11</span><span class="p">(</span><span class="n">ndc</span><span class="p">.</span><span class="n">x</span><span class="p">),</span><span class="w"> </span><span class="n">r01_from_r11</span><span class="p">(</span><span class="n">ndc</span><span class="p">.</span><span class="n">y</span><span class="p">)}</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">resolution</span><span class="p">;</span></td>
+            </tr>
+            <tr>
                 <td class="text-right src linenos"><a class="normal" id="l56" href="#l56">56</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l57" href="#l57">57</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l58" href="#l58">58</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="w"> </span><span class="nf">screen_from_world</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">cam</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">world_pos</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">resolution</span><span class="p">)</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l59" href="#l59">59</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">{</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l60" href="#l60">60</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">clip_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cam</span><span class="p">.</span><span class="n">clip_from_view</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cam</span><span class="p">.</span><span class="n">view_from_world</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec4</span><span class="p">(</span><span class="n">world_pos</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">screen_from_clip</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span><span class="w"> </span><span class="n">clip_pos</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l63" href="#l63">63</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l64" href="#l64">64</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l57" href="#l57">57</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l65" href="#l65">65</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>

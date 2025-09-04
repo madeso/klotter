@@ -394,9 +394,9 @@
       </memberdef>
       <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
       <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
-      <member refid="group__render_1ga3408f89cc9f18beff9e655676bd9fc1f" kind="function"><name>create_view_mat</name></member>
+      <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
       <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
-      <member refid="group__render_1ga1fb593a5ecdab295a00f9e999e37ed1b" kind="function"><name>to_screen</name></member>
+      <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
       <memberdef kind="function" id="namespaceklotter_1a8655e92bbc13aff3832b4fed06e62fb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
         <definition>float klotter::linear_from_srgb</definition>
@@ -456,12 +456,12 @@
         </inbodydescription>
         <location file="src/klotter/render/opengl_utils.h" line="9" column="6" declfile="src/klotter/render/opengl_utils.h" declline="9" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a01585b62dcb0c11e96702d64fb3cb02f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1ad8e391c995de185fccf27218b510d64c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLenum</type>
-        <definition>GLenum klotter::Cint_to_glenum</definition>
+        <definition>GLenum klotter::glenum_from_int</definition>
         <argsstring>(int i)</argsstring>
-        <name>Cint_to_glenum</name>
-        <qualifiedname>klotter::Cint_to_glenum</qualifiedname>
+        <name>glenum_from_int</name>
+        <qualifiedname>klotter::glenum_from_int</qualifiedname>
         <param>
           <type>int</type>
           <declname>i</declname>
@@ -474,12 +474,12 @@
         </inbodydescription>
         <location file="src/klotter/render/opengl_utils.h" line="11" column="8" declfile="src/klotter/render/opengl_utils.h" declline="11" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1af31d0af57ce6a0a0ff6b77aab3897f31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a39a1f0561a351daea1f54fe4668f13b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLuint</type>
-        <definition>GLuint klotter::Cint_to_gluint</definition>
+        <definition>GLuint klotter::gluint_from_int</definition>
         <argsstring>(int i)</argsstring>
-        <name>Cint_to_gluint</name>
-        <qualifiedname>klotter::Cint_to_gluint</qualifiedname>
+        <name>gluint_from_int</name>
+        <qualifiedname>klotter::gluint_from_int</qualifiedname>
         <param>
           <type>int</type>
           <declname>i</declname>
@@ -492,12 +492,12 @@
         </inbodydescription>
         <location file="src/klotter/render/opengl_utils.h" line="12" column="8" declfile="src/klotter/render/opengl_utils.h" declline="12" declcolumn="8"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a39b3d4b9e03ecb5fdeee532561b67f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a9d876cb69f1c84348365ee0532e917a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLsizeiptr</type>
-        <definition>GLsizeiptr klotter::Csizet_to_glsizeiptr</definition>
+        <definition>GLsizeiptr klotter::glsizeiptr_from_sizet</definition>
         <argsstring>(std::size_t t)</argsstring>
-        <name>Csizet_to_glsizeiptr</name>
-        <qualifiedname>klotter::Csizet_to_glsizeiptr</qualifiedname>
+        <name>glsizeiptr_from_sizet</name>
+        <qualifiedname>klotter::glsizeiptr_from_sizet</qualifiedname>
         <param>
           <type>std::size_t</type>
           <declname>t</declname>
@@ -510,12 +510,12 @@
         </inbodydescription>
         <location file="src/klotter/render/opengl_utils.h" line="13" column="12" declfile="src/klotter/render/opengl_utils.h" declline="13" declcolumn="12"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a74b93fdf6b89120f7b81a7e8e1054efd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a1ca0c6c0baa5f5bef547de0ae2e1b599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLsizei</type>
-        <definition>GLsizei klotter::Csizet_to_glsizei</definition>
+        <definition>GLsizei klotter::glsizei_from_sizet</definition>
         <argsstring>(std::size_t t)</argsstring>
-        <name>Csizet_to_glsizei</name>
-        <qualifiedname>klotter::Csizet_to_glsizei</qualifiedname>
+        <name>glsizei_from_sizet</name>
+        <qualifiedname>klotter::glsizei_from_sizet</qualifiedname>
         <param>
           <type>std::size_t</type>
           <declname>t</declname>

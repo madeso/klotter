@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/statechanger.cc</div>
-            <div>Date: 2025-09-03 15:03:09</div>
+            <div>Date: 2025-09-04 15:01:30</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -1742,7 +1742,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">Cint_to_glenum</span><span class="p">(</span><span class="n">GL_TEXTURE0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">new_texture</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">glenum_from_int</span><span class="p">(</span><span class="n">GL_TEXTURE0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">new_texture</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l234" href="#l234">234</a></td>
@@ -1798,7 +1798,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">should_change</span><span class="p">(</span><span class="o">&amp;</span><span class="n">states</span><span class="o">-&gt;</span><span class="n">texture_bound</span><span class="p">[</span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">slot</span><span class="p">)],</span><span class="w"> </span><span class="n">texture</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">should_change</span><span class="p">(</span><span class="o">&amp;</span><span class="n">states</span><span class="o">-&gt;</span><span class="n">texture_bound</span><span class="p">[</span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">slot</span><span class="p">)],</span><span class="w"> </span><span class="n">texture</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l242" href="#l242">242</a></td>
@@ -1868,7 +1868,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">should_change</span><span class="p">(</span><span class="o">&amp;</span><span class="n">states</span><span class="o">-&gt;</span><span class="n">texture_bound</span><span class="p">[</span><span class="n">Cint_to_sizet</span><span class="p">(</span><span class="n">slot</span><span class="p">)],</span><span class="w"> </span><span class="n">texture</span><span class="p">))</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">should_change</span><span class="p">(</span><span class="o">&amp;</span><span class="n">states</span><span class="o">-&gt;</span><span class="n">texture_bound</span><span class="p">[</span><span class="n">sizet_from_int</span><span class="p">(</span><span class="n">slot</span><span class="p">)],</span><span class="w"> </span><span class="n">texture</span><span class="p">))</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l252" href="#l252">252</a></td>

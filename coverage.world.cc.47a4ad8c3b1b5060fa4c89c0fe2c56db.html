@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/world.cc</div>
-            <div>Date: 2025-09-03 15:03:09</div>
+            <div>Date: 2025-09-04 15:01:30</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -573,7 +573,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="w"> </span><span class="n">Csizet_to_glsizeiptr</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">()),</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">GL_STATIC_DRAW</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="w"> </span><span class="n">glsizeiptr_from_sizet</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">()),</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">GL_STATIC_DRAW</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l70" href="#l70">70</a></td>
@@ -699,7 +699,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="n">Cint_to_gluint</span><span class="p">(</span><span class="n">attrib_location</span><span class="p">),</span></td>
+                <td class="src "><span class="w">			</span><span class="n">gluint_from_int</span><span class="p">(</span><span class="n">attrib_location</span><span class="p">),</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l88" href="#l88">88</a></td>
@@ -727,7 +727,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="n">Csizet_to_glsizei</span><span class="p">(</span><span class="n">stride</span><span class="p">),</span></td>
+                <td class="src "><span class="w">			</span><span class="n">glsizei_from_sizet</span><span class="p">(</span><span class="n">stride</span><span class="p">),</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l92" href="#l92">92</a></td>
@@ -748,7 +748,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">Cint_to_gluint</span><span class="p">(</span><span class="n">attrib_location</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">gluint_from_int</span><span class="p">(</span><span class="n">attrib_location</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l95" href="#l95">95</a></td>
@@ -839,7 +839,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">Csizet_to_glsizeiptr</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">u32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">indices</span><span class="p">.</span><span class="n">size</span><span class="p">()),</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glsizeiptr_from_sizet</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">u32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">indices</span><span class="p">.</span><span class="n">size</span><span class="p">()),</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l108" href="#l108">108</a></td>
@@ -1077,7 +1077,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="w"> </span><span class="n">Csizet_to_glsizeiptr</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">()),</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">GL_STATIC_DRAW</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="w"> </span><span class="n">glsizeiptr_from_sizet</span><span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">()),</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">GL_STATIC_DRAW</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l142" href="#l142">142</a></td>
@@ -1203,7 +1203,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="n">Cint_to_gluint</span><span class="p">(</span><span class="n">attrib_location</span><span class="p">),</span></td>
+                <td class="src "><span class="w">			</span><span class="n">gluint_from_int</span><span class="p">(</span><span class="n">attrib_location</span><span class="p">),</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l160" href="#l160">160</a></td>
@@ -1231,7 +1231,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="n">Csizet_to_glsizei</span><span class="p">(</span><span class="n">stride</span><span class="p">),</span></td>
+                <td class="src "><span class="w">			</span><span class="n">glsizei_from_sizet</span><span class="p">(</span><span class="n">stride</span><span class="p">),</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l164" href="#l164">164</a></td>
@@ -1252,7 +1252,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">Cint_to_gluint</span><span class="p">(</span><span class="n">attrib_location</span><span class="p">));</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">gluint_from_int</span><span class="p">(</span><span class="n">attrib_location</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l167" href="#l167">167</a></td>
@@ -1336,7 +1336,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="w"> </span><span class="n">Csizet_to_glsizeiptr</span><span class="p">(</span><span class="n">instance_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">max_instances</span><span class="p">),</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">GL_DYNAMIC_DRAW</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">glBufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="w"> </span><span class="n">glsizeiptr_from_sizet</span><span class="p">(</span><span class="n">instance_size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">max_instances</span><span class="p">),</span><span class="w"> </span><span class="k">nullptr</span><span class="p">,</span><span class="w"> </span><span class="n">GL_DYNAMIC_DRAW</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l179" href="#l179">179</a></td>
@@ -1364,7 +1364,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cint_to_gluint</span><span class="p">(</span><span class="n">attrib_location</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matrix</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">attribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gluint_from_int</span><span class="p">(</span><span class="n">attrib_location</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matrix</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l183" href="#l183">183</a></td>
@@ -1490,7 +1490,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">Csizet_to_glsizeiptr</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">u32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">indices</span><span class="p">.</span><span class="n">size</span><span class="p">()),</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">glsizeiptr_from_sizet</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">u32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">indices</span><span class="p">.</span><span class="n">size</span><span class="p">()),</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l201" href="#l201">201</a></td>
@@ -1756,7 +1756,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">Csizet_to_glsizeiptr</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">step_size</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">instanced</span><span class="p">.</span><span class="n">world_from_locals</span><span class="p">[</span><span class="n">start_index</span><span class="p">]</span></td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">glsizeiptr_from_sizet</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">step_size</span><span class="p">),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">instanced</span><span class="p">.</span><span class="n">world_from_locals</span><span class="p">[</span><span class="n">start_index</span><span class="p">]</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l239" href="#l239">239</a></td>
@@ -1819,7 +1819,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="n">Csizet_to_glsizei</span><span class="p">(</span><span class="n">instanced</span><span class="p">.</span><span class="n">world_from_locals</span><span class="p">.</span><span class="n">size</span><span class="p">())</span></td>
+                <td class="src "><span class="w">			</span><span class="n">glsizei_from_sizet</span><span class="p">(</span><span class="n">instanced</span><span class="p">.</span><span class="n">world_from_locals</span><span class="p">.</span><span class="n">size</span><span class="p">())</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l248" href="#l248">248</a></td>

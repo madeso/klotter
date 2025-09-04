@@ -621,14 +621,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ga531baa4b9f91162f31830d9dd415d002" id="r_ga531baa4b9f91162f31830d9dd415d002"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga531baa4b9f91162f31830d9dd415d002">create_vectors</a> (float yaw, float pitch)</td></tr>
 <tr class="memdesc:ga531baa4b9f91162f31830d9dd415d002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture the local space of a "camera" us ing only the rotation.  <br /></td></tr>
 <tr class="separator:ga531baa4b9f91162f31830d9dd415d002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3408f89cc9f18beff9e655676bd9fc1f" id="r_ga3408f89cc9f18beff9e655676bd9fc1f"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga3408f89cc9f18beff9e655676bd9fc1f">create_view_mat</a> (const glm::vec3 &amp;pos, const <a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> &amp;cv)</td></tr>
-<tr class="separator:ga3408f89cc9f18beff9e655676bd9fc1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ceb6e1d2428afc0bd213b454601023a" id="r_ga3ceb6e1d2428afc0bd213b454601023a"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga3ceb6e1d2428afc0bd213b454601023a">create_view_from_world_mat</a> (const glm::vec3 &amp;pos, const <a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> &amp;cv)</td></tr>
+<tr class="separator:ga3ceb6e1d2428afc0bd213b454601023a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga877a3ed04c88761bdfb420e7d4190be4" id="r_ga877a3ed04c88761bdfb420e7d4190be4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga877a3ed04c88761bdfb420e7d4190be4">compile</a> (const <a class="el" href="structklotter_1_1Camera.html">Camera</a> &amp;, const glm::ivec2 &amp;window_size)</td></tr>
 <tr class="memdesc:ga877a3ed04c88761bdfb420e7d4190be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Compile" a camera so it can be used in rendering.  <br /></td></tr>
 <tr class="separator:ga877a3ed04c88761bdfb420e7d4190be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1fb593a5ecdab295a00f9e999e37ed1b" id="r_ga1fb593a5ecdab295a00f9e999e37ed1b"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga1fb593a5ecdab295a00f9e999e37ed1b">to_screen</a> (const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;cam, const glm::vec3 &amp;pos, const glm::vec2 &amp;<a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">resolution</a>)</td></tr>
-<tr class="memdesc:ga1fb593a5ecdab295a00f9e999e37ed1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the screen coordinate of a 3d world position.  <br /></td></tr>
-<tr class="separator:ga1fb593a5ecdab295a00f9e999e37ed1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96a0f5ab096cbed0b9ebdc24ac13e7ca" id="r_ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga96a0f5ab096cbed0b9ebdc24ac13e7ca">screen_from_world</a> (const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;cam, const glm::vec3 &amp;world_pos, const glm::vec2 &amp;<a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">resolution</a>)</td></tr>
+<tr class="memdesc:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the screen coordinate of a 3d world position.  <br /></td></tr>
+<tr class="separator:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8655e92bbc13aff3832b4fed06e62fb1" id="r_a8655e92bbc13aff3832b4fed06e62fb1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8655e92bbc13aff3832b4fed06e62fb1">linear_from_srgb</a> (float value, float gamma)</td></tr>
 <tr class="separator:a8655e92bbc13aff3832b4fed06e62fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16fc6bb5ae9c482d07217873f345e25e" id="r_a16fc6bb5ae9c482d07217873f345e25e"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16fc6bb5ae9c482d07217873f345e25e">linear_from_srgb</a> (const <a class="el" href="structklotter_1_1Color.html">Color</a> &amp;value, float gamma)</td></tr>
@@ -637,14 +637,14 @@ Functions</h2></td></tr>
 <tr class="separator:ga4758c0c17511f831624a7cc7dbac8f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8063f4d09d3914dd0d4a926bb113e56b" id="r_a8063f4d09d3914dd0d4a926bb113e56b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8063f4d09d3914dd0d4a926bb113e56b">setup_opengl_debug</a> ()</td></tr>
 <tr class="separator:a8063f4d09d3914dd0d4a926bb113e56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01585b62dcb0c11e96702d64fb3cb02f" id="r_a01585b62dcb0c11e96702d64fb3cb02f"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01585b62dcb0c11e96702d64fb3cb02f">Cint_to_glenum</a> (int i)</td></tr>
-<tr class="separator:a01585b62dcb0c11e96702d64fb3cb02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af31d0af57ce6a0a0ff6b77aab3897f31" id="r_af31d0af57ce6a0a0ff6b77aab3897f31"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af31d0af57ce6a0a0ff6b77aab3897f31">Cint_to_gluint</a> (int i)</td></tr>
-<tr class="separator:af31d0af57ce6a0a0ff6b77aab3897f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39b3d4b9e03ecb5fdeee532561b67f78" id="r_a39b3d4b9e03ecb5fdeee532561b67f78"><td class="memItemLeft" align="right" valign="top">GLsizeiptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39b3d4b9e03ecb5fdeee532561b67f78">Csizet_to_glsizeiptr</a> (std::size_t t)</td></tr>
-<tr class="separator:a39b3d4b9e03ecb5fdeee532561b67f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74b93fdf6b89120f7b81a7e8e1054efd" id="r_a74b93fdf6b89120f7b81a7e8e1054efd"><td class="memItemLeft" align="right" valign="top">GLsizei&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74b93fdf6b89120f7b81a7e8e1054efd">Csizet_to_glsizei</a> (std::size_t t)</td></tr>
-<tr class="separator:a74b93fdf6b89120f7b81a7e8e1054efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e391c995de185fccf27218b510d64c" id="r_ad8e391c995de185fccf27218b510d64c"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8e391c995de185fccf27218b510d64c">glenum_from_int</a> (int i)</td></tr>
+<tr class="separator:ad8e391c995de185fccf27218b510d64c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a1f0561a351daea1f54fe4668f13b5" id="r_a39a1f0561a351daea1f54fe4668f13b5"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39a1f0561a351daea1f54fe4668f13b5">gluint_from_int</a> (int i)</td></tr>
+<tr class="separator:a39a1f0561a351daea1f54fe4668f13b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d876cb69f1c84348365ee0532e917a3" id="r_a9d876cb69f1c84348365ee0532e917a3"><td class="memItemLeft" align="right" valign="top">GLsizeiptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d876cb69f1c84348365ee0532e917a3">glsizeiptr_from_sizet</a> (std::size_t t)</td></tr>
+<tr class="separator:a9d876cb69f1c84348365ee0532e917a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca0c6c0baa5f5bef547de0ae2e1b599" id="r_a1ca0c6c0baa5f5bef547de0ae2e1b599"><td class="memItemLeft" align="right" valign="top">GLsizei&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ca0c6c0baa5f5bef547de0ae2e1b599">glsizei_from_sizet</a> (std::size_t t)</td></tr>
+<tr class="separator:a1ca0c6c0baa5f5bef547de0ae2e1b599"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c289ace2f2ad87891be1f0825aa3893" id="r_a6c289ace2f2ad87891be1f0825aa3893"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c289ace2f2ad87891be1f0825aa3893">create_buffer</a> ()</td></tr>
 <tr class="separator:a6c289ace2f2ad87891be1f0825aa3893"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a939548cd29b251463ed344cde014e212" id="r_a939548cd29b251463ed344cde014e212"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a939548cd29b251463ed344cde014e212">destroy_buffer</a> (<a class="el" href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> vbo)</td></tr>
@@ -925,40 +925,6 @@ template&lt;typename E&gt; </div>
 
 </div>
 </div>
-<a id="a01585b62dcb0c11e96702d64fb3cb02f" name="a01585b62dcb0c11e96702d64fb3cb02f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01585b62dcb0c11e96702d64fb3cb02f">&#9670;&#160;</a></span>Cint_to_glenum()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLenum klotter::Cint_to_glenum </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af31d0af57ce6a0a0ff6b77aab3897f31" name="af31d0af57ce6a0a0ff6b77aab3897f31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af31d0af57ce6a0a0ff6b77aab3897f31">&#9670;&#160;</a></span>Cint_to_gluint()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLuint klotter::Cint_to_gluint </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae6578d1bd38afcb9f3c56f0a839e6b59" name="ae6578d1bd38afcb9f3c56f0a839e6b59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6578d1bd38afcb9f3c56f0a839e6b59">&#9670;&#160;</a></span>clear_shader_program()</h2>
 
@@ -1005,40 +971,6 @@ template&lt;typename E&gt; </div>
           <td class="memname"><a class="el" href="pch_8public_8h.html#a70c1fcc1a4e96af8f6580f708657cd41">u32</a> klotter::create_vertex_array </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a74b93fdf6b89120f7b81a7e8e1054efd" name="a74b93fdf6b89120f7b81a7e8e1054efd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74b93fdf6b89120f7b81a7e8e1054efd">&#9670;&#160;</a></span>Csizet_to_glsizei()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLsizei klotter::Csizet_to_glsizei </td>
-          <td>(</td>
-          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a39b3d4b9e03ecb5fdeee532561b67f78" name="a39b3d4b9e03ecb5fdeee532561b67f78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39b3d4b9e03ecb5fdeee532561b67f78">&#9670;&#160;</a></span>Csizet_to_glsizeiptr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLsizeiptr klotter::Csizet_to_glsizeiptr </td>
-          <td>(</td>
-          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1111,6 +1043,74 @@ template&lt;typename E&gt; </div>
           <td class="memname">glm::mat4 klotter::get_mesh_rotation_matrix </td>
           <td>(</td>
           <td class="paramtype">const glm::vec3 &amp;</td>          <td class="paramname"><span class="paramname"><em>rotation</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8e391c995de185fccf27218b510d64c" name="ad8e391c995de185fccf27218b510d64c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e391c995de185fccf27218b510d64c">&#9670;&#160;</a></span>glenum_from_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum klotter::glenum_from_int </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ca0c6c0baa5f5bef547de0ae2e1b599" name="a1ca0c6c0baa5f5bef547de0ae2e1b599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca0c6c0baa5f5bef547de0ae2e1b599">&#9670;&#160;</a></span>glsizei_from_sizet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLsizei klotter::glsizei_from_sizet </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d876cb69f1c84348365ee0532e917a3" name="a9d876cb69f1c84348365ee0532e917a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d876cb69f1c84348365ee0532e917a3">&#9670;&#160;</a></span>glsizeiptr_from_sizet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLsizeiptr klotter::glsizeiptr_from_sizet </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39a1f0561a351daea1f54fe4668f13b5" name="a39a1f0561a351daea1f54fe4668f13b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39a1f0561a351daea1f54fe4668f13b5">&#9670;&#160;</a></span>gluint_from_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint klotter::gluint_from_int </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
