@@ -4,12 +4,12 @@
     <compoundname>klotter::EffectStack</compoundname>
     <includes refid="postproc_8h" local="no">postproc.h</includes>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structklotter_1_1EffectStack_1a11d7d313f0205c4f881979dd5506264c" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1ae97d74e9a542183e6de3e7a3185315ad" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int klotter::EffectStack::last_msaa</definition>
+        <definition>int klotter::EffectStack::current_msaa_setting</definition>
         <argsstring></argsstring>
-        <name>last_msaa</name>
-        <qualifiedname>klotter::EffectStack::last_msaa</qualifiedname>
+        <name>current_msaa_setting</name>
+        <qualifiedname>klotter::EffectStack::current_msaa_setting</qualifiedname>
         <initializer>= -1</initializer>
         <briefdescription>
         </briefdescription>
@@ -347,11 +347,11 @@
     <location file="src/klotter/render/postproc.h" line="145" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="146" bodyend="165"/>
     <listofallmembers>
       <member refid="structklotter_1_1EffectStack_1a99d2b4b2f9ddce5da16bf4d088978bd6" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>compiled</name></member>
+      <member refid="structklotter_1_1EffectStack_1ae97d74e9a542183e6de3e7a3185315ad" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>current_msaa_setting</name></member>
       <member refid="structklotter_1_1EffectStack_1a943bbfc9c0c88cf892b41f28ffede7f0" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>dirty</name></member>
       <member refid="structklotter_1_1EffectStack_1a9e333bc5482652c2e731dc4362575d34" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>effects</name></member>
       <member refid="structklotter_1_1EffectStack_1ae1b4343dbc50a5ae1b08aaf3efc20b68" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>exposure</name></member>
       <member refid="structklotter_1_1EffectStack_1a225f24c131243c23e9a22598a9765fb1" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>gui</name></member>
-      <member refid="structklotter_1_1EffectStack_1a11d7d313f0205c4f881979dd5506264c" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>last_msaa</name></member>
       <member refid="structklotter_1_1EffectStack_1aaf622b94ba48b5950c9324c6d4434c05" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>render</name></member>
       <member refid="structklotter_1_1EffectStack_1adfd748607dee4c12c729c56b09e3d5a6" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>render_world_ref</name></member>
       <member refid="structklotter_1_1EffectStack_1a045d1a84ab1f0e78ac4382191f521c75" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>update</name></member>

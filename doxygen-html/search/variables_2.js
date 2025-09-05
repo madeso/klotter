@@ -15,7 +15,8 @@ var searchData=
   ['cubemap_12',['cubemap',['../structklotter_1_1Skybox.html#a0b52d43c85b813bfa90059abe97319b0',1,'klotter::Skybox']]],
   ['cull_5fface_13',['cull_face',['../structklotter_1_1OpenglStates.html#a89ee7105fbafa9f60684e3c06035f6ba',1,'klotter::OpenglStates']]],
   ['cull_5fface_5fmode_14',['cull_face_mode',['../structklotter_1_1OpenglStates.html#aca8b5650ca44492042e731110c5f4177',1,'klotter::OpenglStates']]],
-  ['curve_15',['curve',['../structklotter_1_1PointLight.html#ac0d003441d29d18c8f09a1a2106af1d6',1,'klotter::PointLight::curve'],['../structklotter_1_1FrustumLight.html#a54a594d10d1c00fd6cbc6c2aa000deef',1,'klotter::FrustumLight::curve']]],
-  ['cutoff_5funiform_16',['cutoff_uniform',['../structklotter_1_1ExtractShader.html#ac2145f587c7304542d1ee2ffafe19d07',1,'klotter::ExtractShader']]],
-  ['cyan_17',['cyan',['../group__imguicolors.html#ga82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
+  ['current_5fmsaa_5fsetting_15',['current_msaa_setting',['../structklotter_1_1EffectStack.html#ae97d74e9a542183e6de3e7a3185315ad',1,'klotter::EffectStack']]],
+  ['curve_16',['curve',['../structklotter_1_1PointLight.html#ac0d003441d29d18c8f09a1a2106af1d6',1,'klotter::PointLight::curve'],['../structklotter_1_1FrustumLight.html#a54a594d10d1c00fd6cbc6c2aa000deef',1,'klotter::FrustumLight::curve']]],
+  ['cutoff_5funiform_17',['cutoff_uniform',['../structklotter_1_1ExtractShader.html#ac2145f587c7304542d1ee2ffafe19d07',1,'klotter::ExtractShader']]],
+  ['cyan_18',['cyan',['../group__imguicolors.html#ga82e168a5311fffe39e9812dd5eff0f9d',1,'klotter::imgui']]]
 ];
