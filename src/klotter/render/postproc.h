@@ -144,7 +144,7 @@ struct FactorEffect : Effect
 /// The facade of the post-proc framework.
 struct EffectStack
 {
-	int last_msaa = -1;
+	int current_msaa_setting = -1;
 	bool dirty = true;
 	std::optional<glm::ivec2> window_size;
 	std::vector<std::shared_ptr<Effect>> effects;

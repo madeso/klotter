@@ -290,7 +290,8 @@ void EffectStack::update(float dt) const
 
 void EffectStack::render(const PostProcArg& arg)
 {
-	// set the owner, if any new then we are dirty
+	// todo(Gustav): owners are only used when we have added an effect and the effect can change dirty flag
+	// make this a requirement when creating the effect instead and remove this loop?
 	for (const auto& e: effects)
 	{
 		if (e->owner != this)
@@ -312,14 +313,28 @@ void EffectStack::render(const PostProcArg& arg)
 		dirty = true;
 	}
 
+	{
+		const auto latest_msaa = arg.renderer->settings.msaa;
+		if (current_msaa_setting != latest_msaa)
+		{
+			current_msaa_setting = latest_msaa;
+			dirty = true;
+		}
+	}
+
+	const auto should_use_bloom = arg.renderer->settings.use_bloom;
+	{
+		const auto is_currently_using_bloom = render_world && render_world->bloom_render.has_value();
+		if (is_currently_using_bloom != should_use_bloom)
+		{
+			dirty = true;
+		}
+	}
+
 	// if dirty, update the compiled state
-	const auto latest_msaa = arg.renderer->settings.msaa;
-	const auto has_bloom = render_world && render_world->bloom_render.has_value();
-	const auto latest_bloom = arg.renderer->settings.use_bloom;
-	if (dirty || last_msaa != latest_msaa || has_bloom != latest_bloom)
+	if (dirty)
 	{
 		dirty = false;
-		last_msaa = latest_msaa;
 		LOG_INFO("Building effects stack");
 
 		compiled.targets.clear();
@@ -327,9 +342,9 @@ void EffectStack::render(const PostProcArg& arg)
 		auto created_world = std::make_shared<RenderWorld>(
 			arg.window_size,
 			&arg.renderer->pimpl->shaders_resources.pp_realize,
-			latest_bloom ? &arg.renderer->pimpl->shaders_resources.pp_extract : nullptr,
-			latest_bloom ? &arg.renderer->pimpl->shaders_resources.pp_ping : nullptr,
-			latest_msaa,
+			should_use_bloom ? &arg.renderer->pimpl->shaders_resources.pp_extract : nullptr,
+			should_use_bloom ? &arg.renderer->pimpl->shaders_resources.pp_ping : nullptr,
+			current_msaa_setting,
 			&use_hdr,
 			&exposure
 		);
