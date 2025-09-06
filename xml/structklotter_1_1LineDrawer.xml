@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="12" column="22" bodyfile="src/klotter/render/linebatch.h" bodystart="12" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="14" column="22" bodyfile="src/klotter/render/linebatch.h" bodystart="14" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="14" column="24" bodyfile="src/klotter/render/linebatch.h" bodystart="14" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="16" column="24" bodyfile="src/klotter/render/linebatch.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a04da8258e19e3763976974335c35b50c" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1CompiledShaderVertexAttributes" kindref="compound">CompiledShaderVertexAttributes</ref></type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="15" column="32" bodyfile="src/klotter/render/linebatch.h" bodystart="15" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="17" column="32" bodyfile="src/klotter/render/linebatch.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a24ce3da96e78f1d1346fd1af2cf0c341" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref></type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="16" column="15" bodyfile="src/klotter/render/linebatch.h" bodystart="16" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="18" column="15" bodyfile="src/klotter/render/linebatch.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1ab10a4dbd2654736ffb81d7053ff7b87e" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="17" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="17" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="19" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a8268353446742e802b34b01fa62276cc" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="18" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="18" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="20" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a02f5813ada4de1104582aed3aac54e07" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="19" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="19" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="21" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a56d7d08433e9a46ca273996500a73c77" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="20" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="20" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="22" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a928c80448b286b86c6052646601b7029" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="21" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="21" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="23" column="9" bodyfile="src/klotter/render/linebatch.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1ad1680ed33fc503cadfcd57fae81ca1a3" prot="public" static="no" mutable="no">
         <type>std::vector&lt; float &gt;</type>
@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="23" column="13" bodyfile="src/klotter/render/linebatch.h" bodystart="23" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="25" column="13" bodyfile="src/klotter/render/linebatch.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a42a8f38af53a8d69b818d92cf20b0191" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -160,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="24" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="24" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="26" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a52c18c43c89566f13ab8478dec427eb4" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -174,7 +174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="25" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="25" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="27" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1a7beef0fd9940b73c8023a0c2f9af54c4" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -188,7 +188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="26" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="26" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="28" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LineDrawer_1ae8e58810b7de9d3ce4412945bd16a2ac" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -202,7 +202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="27" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="27" bodyend="-1"/>
+        <location file="src/klotter/render/linebatch.h" line="29" column="5" bodyfile="src/klotter/render/linebatch.h" bodystart="29" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -218,7 +218,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="29" column="1"/>
+        <location file="src/klotter/render/linebatch.h" line="31" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1a4f17c58c2075ae05dab7de0529c2c2da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -232,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="30" column="1"/>
+        <location file="src/klotter/render/linebatch.h" line="32" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1abbc2ae539180f5d3fa3eee0a7dcf7332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -249,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="32" column="1"/>
+        <location file="src/klotter/render/linebatch.h" line="34" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1a8dc53cf38161c20c3270727abc7aaef0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -266,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="33" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="35" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1a96a7fd083431391a4921c021704ef508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -283,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="34" column="1"/>
+        <location file="src/klotter/render/linebatch.h" line="36" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1a0f84f06c60cd5c1e06fee643b2ebeaae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -300,7 +300,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="35" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="37" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1LineDrawer_1aff6d49567156644731eb342450946439" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::LineDrawer::set_camera</definition>
+        <argsstring>(const CompiledCamera &amp;cc)</argsstring>
+        <name>set_camera</name>
+        <qualifiedname>klotter::LineDrawer::set_camera</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref> &amp;</type>
+          <declname>cc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/linebatch.h" line="39" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -326,7 +344,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="37" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="40" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -340,7 +358,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="38" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="41" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1a27d1f010952138d24f987e721d28c590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -366,7 +384,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="39" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="42" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1a5d3831830d3d1c9365782985b54942a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -380,7 +398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="40" column="6"/>
+        <location file="src/klotter/render/linebatch.h" line="43" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1LineDrawer_1a260e80f8c6e81e060c65f1cbcc02e988" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -394,7 +412,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/linebatch.h" line="42" column="7"/>
+        <location file="src/klotter/render/linebatch.h" line="45" column="7"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -482,7 +500,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/linebatch.h" line="10" column="1" bodyfile="src/klotter/render/linebatch.h" bodystart="11" bodyend="43"/>
+    <location file="src/klotter/render/linebatch.h" line="12" column="1" bodyfile="src/klotter/render/linebatch.h" bodystart="13" bodyend="46"/>
     <listofallmembers>
       <member refid="structklotter_1_1LineDrawer_1ab10a4dbd2654736ffb81d7053ff7b87e" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>clip_from_view_uni</name></member>
       <member refid="structklotter_1_1LineDrawer_1a56d7d08433e9a46ca273996500a73c77" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>dash_size_uni</name></member>
@@ -501,6 +519,7 @@
       <member refid="structklotter_1_1LineDrawer_1a8dc53cf38161c20c3270727abc7aaef0" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>operator=</name></member>
       <member refid="structklotter_1_1LineDrawer_1a0f84f06c60cd5c1e06fee643b2ebeaae" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>operator=</name></member>
       <member refid="structklotter_1_1LineDrawer_1a02f5813ada4de1104582aed3aac54e07" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>resolution_uni</name></member>
+      <member refid="structklotter_1_1LineDrawer_1aff6d49567156644731eb342450946439" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>set_camera</name></member>
       <member refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>set_line_to_dash</name></member>
       <member refid="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>set_line_to_solid</name></member>
       <member refid="structklotter_1_1LineDrawer_1a24ce3da96e78f1d1346fd1af2cf0c341" prot="public" virt="non-virtual"><scope>klotter::LineDrawer</scope><name>shader</name></member>

@@ -425,6 +425,7 @@
     <member refid="structklotter_1_1LineDrawer_1a8dc53cf38161c20c3270727abc7aaef0" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1LineDrawer_1a96a7fd083431391a4921c021704ef508" kind="function"><name>LineDrawer</name></member>
     <member refid="structklotter_1_1LineDrawer_1a0f84f06c60cd5c1e06fee643b2ebeaae" kind="function"><name>operator=</name></member>
+    <member refid="structklotter_1_1LineDrawer_1aff6d49567156644731eb342450946439" kind="function"><name>set_camera</name></member>
     <member refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" kind="function"><name>set_line_to_dash</name></member>
     <member refid="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" kind="function"><name>set_line_to_solid</name></member>
     <member refid="structklotter_1_1LineDrawer_1a27d1f010952138d24f987e721d28c590" kind="function"><name>line</name></member>
