@@ -140,8 +140,7 @@ void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates*
 	}
 
 	drawer->shader.use();
-	drawer->shader.set_mat(drawer->clip_from_view_uni, compiled_camera.clip_from_view);
-	drawer->shader.set_mat(drawer->view_from_world_uni, compiled_camera.view_from_world);
+	drawer->set_camera(compiled_camera);
 	
 	StateChanger{states}.depth_func(Compare::less_equal).depth_test(true);
 	drawer->set_line_to_solid();

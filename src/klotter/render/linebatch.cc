@@ -3,6 +3,7 @@
 #include "klotter/assert.h"
 
 #include "klotter/render/opengl_utils.h"
+#include "klotter/render/camera.h"
 
 #include "klotter/dependency_glad.h"
 
@@ -190,6 +191,12 @@ void LineDrawer::line(const glm::vec3& world_from, const glm::vec3& world_to, co
 	add_vertex(world_to);
 }
 
+void LineDrawer::set_camera(const CompiledCamera& compiled_camera)
+{
+	shader.set_mat(clip_from_view_uni, compiled_camera.clip_from_view);
+	shader.set_mat(view_from_world_uni, compiled_camera.view_from_world);
+}
+
 void LineDrawer::submit()
 {
 	if (lines == 0)
@@ -197,8 +204,7 @@ void LineDrawer::submit()
 		return;
 	}
 
-	// this assumes set_model_projection_view has been called
-	// todo(Gustav): where is this code? can it be moved here?
+	// note: this assumes set_camera has been called
 
 	glBindVertexArray(va);
 
