@@ -261,6 +261,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	render_solids(settings, compiled_camera, window_size, world, &transparent_meshes, pimpl.get(), debug, &assets);
 
+	// todo(Gustav): should this be done at the start of the update so the renderer can be "const"
 	debug.lines.clear();
 
 	// render skybox
