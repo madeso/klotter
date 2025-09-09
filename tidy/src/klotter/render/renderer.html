@@ -6,42 +6,7 @@
 </head>
 <body>
 <h1>src/klotter/render/renderer.cc</h1>
-<span id='readability-implicit-bool-conversion'>&nbsp;</span>
-<hr>
-<h3>warning: implicit conversion &#39;std:: vector&lt;TransparentMesh&gt; *&#39; -&gt; &#39;bool&#39;</h3>
-<code>[readability-implicit-bool-conversion]</code>
-<p><i>src/klotter/render/renderer.cc 169 : 9</i></p>
-<pre>
-  169 |                                 if (transparent_meshes) transparent_meshes-&gt;emplace_back(
-      |                                     ^                 
-      |                                                        != nullptr
-</pre>
-<span id='google-readability-braces-around-statements'>&nbsp;</span>
-<span id='readability-braces-around-statements'>&nbsp;</span>
-<hr>
-<h3>warning: statement should be inside braces</h3>
-<code>[google-readability-braces-around-statements,readability-braces-around-statements]</code>
-<p><i>src/klotter/render/renderer.cc 169 : 28</i></p>
-<pre>
-  169 |                                 if (transparent_meshes) transparent_meshes-&gt;emplace_back(
-      |                                                        ^
-      |                                                         {
-  170 |                                         TransparentMesh{mesh, glm::length2(compiled_camera.position - mesh-&gt;world_position)}
-  171 |                                 );
-      |                                   
-</pre>
 <!--
-/home/runner/work/klotter/klotter/src/klotter/render/renderer.cc:169:9: warning: implicit conversion 'std::vector<TransparentMesh> *' -> 'bool' [readability-implicit-bool-conversion]
-  169 |                                 if (transparent_meshes) transparent_meshes->emplace_back(
-      |                                     ^                 
-      |                                                        != nullptr
-/home/runner/work/klotter/klotter/src/klotter/render/renderer.cc:169:28: warning: statement should be inside braces [google-readability-braces-around-statements,readability-braces-around-statements]
-  169 |                                 if (transparent_meshes) transparent_meshes->emplace_back(
-      |                                                        ^
-      |                                                         {
-  170 |                                         TransparentMesh{mesh, glm::length2(compiled_camera.position - mesh->world_position)}
-  171 |                                 );
-      |                                   
 -->
 </body>
 </html>
