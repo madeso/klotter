@@ -166,9 +166,12 @@ void render_solids(
 
 			if (mesh->material->is_transparent())
 			{
-				if (transparent_meshes) transparent_meshes->emplace_back(
+				if (transparent_meshes == nullptr) { continue; }
+				
+				transparent_meshes->emplace_back(
 					TransparentMesh{mesh, glm::length2(compiled_camera.position - mesh->world_position)}
 				);
+				
 				continue;
 			}
 			StateChanger{&pimpl->states}
