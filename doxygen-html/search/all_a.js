@@ -24,7 +24,7 @@ var searchData=
   ['lines_21',['lines',['../structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d',1,'Svg::lines'],['../structklotter_1_1DebugRender.html#a4fc7dbe5c91dc159abf7e4d1421d4fcf',1,'klotter::DebugRender::lines'],['../structklotter_1_1LineDrawer.html#a42a8f38af53a8d69b818d92cf20b0191',1,'klotter::LineDrawer::lines']]],
   ['list_22',['Todo List',['../todo.html',1,'']]],
   ['load_5fcubemap_5ffrom_5fcolor_23',['load_cubemap_from_color',['../group__texture.html#gac294a067af5e2b530a3cf9c2fdd303f0',1,'klotter']]],
-  ['load_5fcubemap_5ffrom_5fembedded_24',['load_cubemap_from_embedded',['../namespaceklotter.html#a13de4179633ea5c58f6bda9892efde71',1,'klotter']]],
+  ['load_5fcubemap_5ffrom_5fembedded_24',['load_cubemap_from_embedded',['../namespaceklotter.html#acd555519564d1ce4f59d10c19e1cefc5',1,'klotter']]],
   ['load_5fimage_5ffrom_5fcolor_25',['load_image_from_color',['../group__texture.html#ga5c06f9cfdcfa6e0c973ff899e5a916ff',1,'klotter']]],
   ['load_5fimage_5ffrom_5fembedded_26',['load_image_from_embedded',['../namespaceklotter.html#a1156efb8b28797f795987665d554aea3',1,'klotter']]],
   ['load_5fshader_5fsource_27',['load_shader_source',['../namespaceklotter.html#a64c9c7c89ee622da0a56d5e0afc611de',1,'klotter']]],

@@ -59,20 +59,15 @@
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>embedded_binary&amp;<sp/>image_binary,<sp/><ref refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kindref="member">TextureEdge</ref><sp/>te,<sp/><ref refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kindref="member">TextureRenderStyle</ref><sp/>trs,<sp/><ref refid="group__texture_1ga3257f86dae0e1a101035a7d4cd2026bc" kindref="member">Transparency</ref><sp/>t,<sp/><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref><sp/>cd</highlight></codeline>
 <codeline lineno="14"><highlight class="normal">);</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal">[[nodiscard]]</highlight></codeline>
-<codeline lineno="17" refid="namespaceklotter_1a13de4179633ea5c58f6bda9892efde71" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref><sp/><ref refid="namespaceklotter_1a13de4179633ea5c58f6bda9892efde71" kindref="member">load_cubemap_from_embedded</ref>(</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref><sp/></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>embedded_binary&amp;<sp/>image_right,</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>embedded_binary&amp;<sp/>image_left,</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>embedded_binary&amp;<sp/>image_top,</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>embedded_binary&amp;<sp/>image_bottom,</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>embedded_binary&amp;<sp/>image_back,</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>embedded_binary&amp;<sp/>image_front,</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref><sp/>cd</highlight></codeline>
-<codeline lineno="26"><highlight class="normal">);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">[[nodiscard]]</highlight></codeline>
+<codeline lineno="20" refid="namespaceklotter_1acd555519564d1ce4f59d10c19e1cefc5" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref><sp/><ref refid="namespaceklotter_1acd555519564d1ce4f59d10c19e1cefc5" kindref="member">load_cubemap_from_embedded</ref>(</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;embedded_binary,<sp/>6&gt;&amp;<sp/>images,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref><sp/>cd</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/klotter/render/texture.io.h"/>
   </compounddef>

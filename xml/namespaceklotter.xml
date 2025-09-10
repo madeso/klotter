@@ -356,6 +356,29 @@
         </inbodydescription>
         <location file="src/klotter/cpp.h" line="26" column="6" bodyfile="src/klotter/cpp.h" bodystart="26" bodyend="29"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1ae84745cac2edbb4e71539cb02d5a9d24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool klotter::any_is_null</definition>
+        <argsstring>(const T &amp;array)</argsstring>
+        <name>any_is_null</name>
+        <qualifiedname>klotter::any_is_null</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>array</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/cpp.h" line="32" column="6" bodyfile="src/klotter/cpp.h" bodystart="32" bodyend="42"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a70c3ecdc0214c61c6277dda3f1f5f963" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::test_themes</definition>
@@ -876,35 +899,15 @@
         </inbodydescription>
         <location file="src/klotter/render/texture.io.h" line="11" column="11" declfile="src/klotter/render/texture.io.h" declline="11" declcolumn="11"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a13de4179633ea5c58f6bda9892efde71" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1acd555519564d1ce4f59d10c19e1cefc5" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref></type>
         <definition>TextureCubemap klotter::load_cubemap_from_embedded</definition>
-        <argsstring>(DEBUG_LABEL_ARG_MANY const embedded_binary &amp;image_right, const embedded_binary &amp;image_left, const embedded_binary &amp;image_top, const embedded_binary &amp;image_bottom, const embedded_binary &amp;image_back, const embedded_binary &amp;image_front, ColorData cd)</argsstring>
+        <argsstring>(DEBUG_LABEL_ARG_MANY const std::array&lt; embedded_binary, 6 &gt; &amp;images, ColorData cd)</argsstring>
         <name>load_cubemap_from_embedded</name>
         <qualifiedname>klotter::load_cubemap_from_embedded</qualifiedname>
         <param>
-          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const embedded_binary &amp;</type>
-          <declname>image_right</declname>
-        </param>
-        <param>
-          <type>const embedded_binary &amp;</type>
-          <declname>image_left</declname>
-        </param>
-        <param>
-          <type>const embedded_binary &amp;</type>
-          <declname>image_top</declname>
-        </param>
-        <param>
-          <type>const embedded_binary &amp;</type>
-          <declname>image_bottom</declname>
-        </param>
-        <param>
-          <type>const embedded_binary &amp;</type>
-          <declname>image_back</declname>
-        </param>
-        <param>
-          <type>const embedded_binary &amp;</type>
-          <declname>image_front</declname>
+          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const std::array&lt; embedded_binary, 6 &gt; &amp;</type>
+          <declname>images</declname>
         </param>
         <param>
           <type><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref></type>
@@ -913,10 +916,20 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>images</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>images in the following order: right, left, top, bottom, back and front </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.io.h" line="17" column="16" declfile="src/klotter/render/texture.io.h" declline="17" declcolumn="16"/>
+        <location file="src/klotter/render/texture.io.h" line="20" column="16" declfile="src/klotter/render/texture.io.h" declline="20" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ae50f370f003f260d3e17d7ce55aefafd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ImVec2</type>
