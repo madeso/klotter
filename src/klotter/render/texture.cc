@@ -273,9 +273,10 @@ TextureCubemap load_cubemap_from_embedded(
 	const auto parsed_front = PixelData{image_front, include_transparency, flip};
 
 	// is loaded ok
-	if (parsed_right.pixel_data == nullptr || parsed_left.pixel_data == nullptr || parsed_top.pixel_data == nullptr
-		|| parsed_bottom.pixel_data == nullptr || parsed_back.pixel_data == nullptr
-		|| parsed_front.pixel_data == nullptr)
+	if (any_is_null(std::array{
+		parsed_right.pixel_data, parsed_left.pixel_data,
+		parsed_top.pixel_data, parsed_bottom.pixel_data,
+		parsed_back.pixel_data, parsed_front.pixel_data}))
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
 		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) image_load_failure_color, cd);
