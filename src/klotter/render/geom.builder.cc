@@ -333,17 +333,17 @@ namespace
 		glm::vec2 tex;
 	};
 
-	void add_quad_to_builder(Builder& b, bool invert, const Color& color, glm::vec3 normal, Pt p0, Pt p1, Pt p2, Pt p3)
+	void add_quad_to_builder(Builder& b, bool invert, const Color& color, glm::vec3 normal, const std::array<Pt, 4>& p)
 	{
 		constexpr float pd = 0.1f;
 		constexpr float td = 0.01f;
 		const auto ci = b.foa_color({linear_from_srgb(color, artist_gamma), 1.0f}, 0.001f);
 		const auto no = b.add_normal(normal);
 
-		const auto v0 = Vertex{b.foa_position(p0.pos, pd), no, b.foa_text_coord(p0.tex, td), ci};
-		const auto v1 = Vertex{b.foa_position(p1.pos, pd), no, b.foa_text_coord(p1.tex, td), ci};
-		const auto v2 = Vertex{b.foa_position(p2.pos, pd), no, b.foa_text_coord(p2.tex, td), ci};
-		const auto v3 = Vertex{b.foa_position(p3.pos, pd), no, b.foa_text_coord(p3.tex, td), ci};
+		const auto v0 = Vertex{b.foa_position(p[0].pos, pd), no, b.foa_text_coord(p[0].tex, td), ci};
+		const auto v1 = Vertex{b.foa_position(p[1].pos, pd), no, b.foa_text_coord(p[1].tex, td), ci};
+		const auto v2 = Vertex{b.foa_position(p[2].pos, pd), no, b.foa_text_coord(p[2].tex, td), ci};
+		const auto v3 = Vertex{b.foa_position(p[3].pos, pd), no, b.foa_text_coord(p[3].tex, td), ci};
 
 		b.add_quad(invert, v0, v1, v2, v3);
 	}
@@ -365,57 +365,63 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 	const float s = invert ? -1.0f : 1.0f;
 
 	// front
-	add_quad_to_builder(b, invert, color,
-		{0, 0, -s},
-		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
-		{{hx, -hy, -hz}, {x * ts, 0.0f}},
-		{{hx, hy, -hz}, {x * ts, y * ts}},
-		{{-hx, hy, -hz}, {0.0f, y * ts}}
+	add_quad_to_builder(b, invert, color, {0, 0, -s},
+		{
+			Pt{{-hx, -hy, -hz}, {0.0f, 0.0f}},
+			Pt{{hx, -hy, -hz}, {x * ts, 0.0f}},
+			Pt{{hx, hy, -hz}, {x * ts, y * ts}},
+			Pt{{-hx, hy, -hz}, {0.0f, y * ts}}
+		}
 	);
 
 	// back
-	add_quad_to_builder(b, invert, color,
-		{0, 0, s},
-		{{-hx, -hy, hz}, {0.0f, 0.0f}},
-		{{-hx, hy, hz}, {0.0f, y * ts}},
-		{{hx, hy, hz}, {x * ts, y * ts}},
-		{{hx, -hy, hz}, {x * ts, 0.0f}}
+	add_quad_to_builder(b, invert, color, {0, 0, s},
+		{
+			Pt{{-hx, -hy, hz}, {0.0f, 0.0f}},
+			Pt{{-hx, hy, hz}, {0.0f, y * ts}},
+			Pt{{hx, hy, hz}, {x * ts, y * ts}},
+			Pt{{hx, -hy, hz}, {x * ts, 0.0f}}
+		}
 	);
 
 	// left
-	add_quad_to_builder(b, invert, color,
-		{-s, 0, 0},
-		{{-hx, hy, -hz}, {y * ts, 0.0f}},
-		{{-hx, hy, hz}, {y * ts, z * ts}},
-		{{-hx, -hy, hz}, {0.0f, z * ts}},
-		{{-hx, -hy, -hz}, {0.0f, 0.0f}}
+	add_quad_to_builder(b, invert, color,{-s, 0, 0},
+		{
+			Pt{{-hx, hy, -hz}, {y * ts, 0.0f}},
+			Pt{{-hx, hy, hz}, {y * ts, z * ts}},
+			Pt{{-hx, -hy, hz}, {0.0f, z * ts}},
+			Pt{{-hx, -hy, -hz}, {0.0f, 0.0f}}
+		}
 	);
 
 	// right
-	add_quad_to_builder(b, invert, color,
-		{s, 0, 0},
-		{{hx, hy, hz}, {z * ts, y * ts}},
-		{{hx, hy, -hz}, {0.0f, y * ts}},
-		{{hx, -hy, -hz}, {0.0f, 0.0f}},
-		{{hx, -hy, hz}, {z * ts, 0.0f}}
+	add_quad_to_builder(b, invert, color,{s, 0, 0},
+		{
+			Pt{{hx, hy, hz}, {z * ts, y * ts}},
+			Pt{{hx, hy, -hz}, {0.0f, y * ts}},
+			Pt{{hx, -hy, -hz}, {0.0f, 0.0f}},
+			Pt{{hx, -hy, hz}, {z * ts, 0.0f}}
+		}
 	);
 
 	// bottom
-	add_quad_to_builder(b, invert, color,
-		{0, -s, 0},
-		{{-hx, -hy, -hz}, {0.0f, 0.0f}},
-		{{-hx, -hy, hz}, {0.0f, z * ts}},
-		{{hx, -hy, hz}, {x * ts, z * ts}},
-		{{hx, -hy, -hz}, {x * ts, 0.0f}}
+	add_quad_to_builder(b, invert, color,{0, -s, 0},
+		{
+			Pt{{-hx, -hy, -hz}, {0.0f, 0.0f}},
+			Pt{{-hx, -hy, hz}, {0.0f, z * ts}},
+			Pt{{hx, -hy, hz}, {x * ts, z * ts}},
+			Pt{{hx, -hy, -hz}, {x * ts, 0.0f}}
+		}
 	);
 
 	// top
-	add_quad_to_builder(b, invert, color,
-		{0, s, 0},
-		{{-hx, hy, -hz}, {0.0f, 0.0f}},
-		{{hx, hy, -hz}, {x * ts, 0.0f}},
-		{{hx, hy, hz}, {x * ts, z * ts}},
-		{{-hx, hy, hz}, {0.0f, z * ts}}
+	add_quad_to_builder(b, invert, color,{0, s, 0},
+		{
+			Pt{{-hx, hy, -hz}, {0.0f, 0.0f}},
+			Pt{{hx, hy, -hz}, {x * ts, 0.0f}},
+			Pt{{hx, hy, hz}, {x * ts, z * ts}},
+			Pt{{-hx, hy, hz}, {0.0f, z * ts}}
+		}
 	);
 
 	return b;
@@ -433,12 +439,13 @@ Builder create_xz_plane(float x, float z, bool invert, const Color& color)
 	const float hz = z * 0.5f;
 
 	const float s = invert ? -1.0f : 1.0f;
-	add_quad_to_builder(b, invert, color,
-		{0, s, 0},
-		{{-hx, 0.0f, -hz}, {0.0f, 0.0f}},
-		{{hx, 0.0f, -hz}, {x * ts, 0.0f}},
-		{{hx, 0.0f, hz}, {x * ts, z * ts}},
-		{{-hx, 0.0f, hz}, {0.0f, z * ts}}
+	add_quad_to_builder(b, invert, color,{0, s, 0},
+		{
+			Pt{{-hx, 0.0f, -hz}, {0.0f, 0.0f}},
+			Pt{{hx, 0.0f, -hz}, {x * ts, 0.0f}},
+			Pt{{hx, 0.0f, hz}, {x * ts, z * ts}},
+			Pt{{-hx, 0.0f, hz}, {0.0f, z * ts}}
+		}
 	);
 
 	return b;
@@ -462,23 +469,25 @@ Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& colo
 	const float s = invert ? -1.0f : 1.0f;
 
 	// front
-	add_quad_to_builder(b, invert, color,
-		{0, 0, -s},
-		{{-hx, -hy, hz}, {0.0f, 0.0f}},
-		{{hx, -hy, hz}, {ts, 0.0f}},
-		{{hx, hy, hz}, {ts, ts}},
-		{{-hx, hy, hz}, {0.0f, ts}}
+	add_quad_to_builder(b, invert, color,{0, 0, -s},
+		{
+			Pt{{-hx, -hy, hz}, {0.0f, 0.0f}},
+			Pt{{hx, -hy, hz}, {ts, 0.0f}},
+			Pt{{hx, hy, hz}, {ts, ts}},
+			Pt{{-hx, hy, hz}, {0.0f, ts}}
+		}
 	);
 
 	// back
 	if (two_sided == SideCount::two_sided)
 	{
-		add_quad_to_builder(b, invert, color,
-			{0, 0, s},
-			{{-hx, -hy, hz}, {0.0f, 0.0f}},
-			{{-hx, hy, hz}, {0.0f, ts}},
-			{{hx, hy, hz}, {ts, ts}},
-			{{hx, -hy, hz}, {ts, 0.0f}}
+		add_quad_to_builder(b, invert, color,{0, 0, s},
+			{
+				Pt{{-hx, -hy, hz}, {0.0f, 0.0f}},
+				Pt{{-hx, hy, hz}, {0.0f, ts}},
+				Pt{{hx, hy, hz}, {ts, ts}},
+				Pt{{hx, -hy, hz}, {ts, 0.0f}}
+			}
 		);
 	}
 
