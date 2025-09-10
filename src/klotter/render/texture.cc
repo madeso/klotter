@@ -250,27 +250,23 @@ TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, C
 	return {SEND_DEBUG_LABEL_MANY(debug_label) {&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1, cd};
 }
 
+// right, left, top, bottom, back, front,
 [[nodiscard]]
 TextureCubemap load_cubemap_from_embedded(
 	DEBUG_LABEL_ARG_MANY
-	const embedded_binary& image_right,
-	const embedded_binary& image_left,
-	const embedded_binary& image_top,
-	const embedded_binary& image_bottom,
-	const embedded_binary& image_back,
-	const embedded_binary& image_front,
+	const std::array<embedded_binary, 6>& images,
 	ColorData cd
 )
 {
 	constexpr auto include_transparency = false;
 	constexpr auto flip = false;
 
-	const auto parsed_right = PixelData{image_right, include_transparency, flip};
-	const auto parsed_left = PixelData{image_left, include_transparency, flip};
-	const auto parsed_top = PixelData{image_top, include_transparency, flip};
-	const auto parsed_bottom = PixelData{image_bottom, include_transparency, flip};
-	const auto parsed_back = PixelData{image_back, include_transparency, flip};
-	const auto parsed_front = PixelData{image_front, include_transparency, flip};
+	const auto parsed_right = PixelData{images[0], include_transparency, flip};
+	const auto parsed_left = PixelData{images[1], include_transparency, flip};
+	const auto parsed_top = PixelData{images[2], include_transparency, flip};
+	const auto parsed_bottom = PixelData{images[3], include_transparency, flip};
+	const auto parsed_back = PixelData{images[4], include_transparency, flip};
+	const auto parsed_front = PixelData{images[5], include_transparency, flip};
 
 	// is loaded ok
 	if (any_is_null(std::array{
