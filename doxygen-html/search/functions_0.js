@@ -12,7 +12,5 @@ var searchData=
   ['add_5fquad_9',['add_quad',['../structklotter_1_1geom_1_1Builder.html#a1d1bf15d326a7d2a101aedf3d1daa97e',1,'klotter::geom::Builder']]],
   ['add_5ftext_5fcoord_10',['add_text_coord',['../structklotter_1_1geom_1_1Builder.html#a1d23996bf8e3a67534d7b4c0fe5bab4c',1,'klotter::geom::Builder']]],
   ['add_5ftriangle_11',['add_triangle',['../structklotter_1_1geom_1_1Builder.html#a2221d13065eb2546d6f454d8f1a04b95',1,'klotter::geom::Builder']]],
-  ['all_5fequal_12',['all_equal',['../namespaceklotter.html#a4a67687653b9d07fea6a68bc8dd16ba8',1,'klotter']]],
-  ['any_5fis_5fnull_13',['any_is_null',['../namespaceklotter.html#ae84745cac2edbb4e71539cb02d5a9d24',1,'klotter']]],
-  ['apply_5flights_14',['apply_lights',['../structklotter_1_1Material.html#a54c02acb7ce2d5c1ab8637a819a52d76',1,'klotter::Material::apply_lights()'],['../structklotter_1_1UnlitMaterial.html#a08cab92f0b59a39ae2adb6cfa51ca7e1',1,'klotter::UnlitMaterial::apply_lights()'],['../structklotter_1_1DefaultMaterial.html#a07358b6eb7c2082fc2b93ab146d4f64f',1,'klotter::DefaultMaterial::apply_lights()']]]
+  ['apply_5flights_12',['apply_lights',['../structklotter_1_1Material.html#a54c02acb7ce2d5c1ab8637a819a52d76',1,'klotter::Material::apply_lights()'],['../structklotter_1_1UnlitMaterial.html#a08cab92f0b59a39ae2adb6cfa51ca7e1',1,'klotter::UnlitMaterial::apply_lights()'],['../structklotter_1_1DefaultMaterial.html#a07358b6eb7c2082fc2b93ab146d4f64f',1,'klotter::DefaultMaterial::apply_lights()']]]
 ];

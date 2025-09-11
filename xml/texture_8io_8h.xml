@@ -60,9 +60,9 @@
 <codeline lineno="14"><highlight class="normal">);</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal">[[nodiscard]]</highlight></codeline>
-<codeline lineno="20" refid="namespaceklotter_1acd555519564d1ce4f59d10c19e1cefc5" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref><sp/><ref refid="namespaceklotter_1acd555519564d1ce4f59d10c19e1cefc5" kindref="member">load_cubemap_from_embedded</ref>(</highlight></codeline>
+<codeline lineno="20" refid="namespaceklotter_1af82d4ce7672a21ad965ac46e5a17ccea" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1TextureCubemap" kindref="compound">TextureCubemap</ref><sp/><ref refid="namespaceklotter_1af82d4ce7672a21ad965ac46e5a17ccea" kindref="member">load_cubemap_from_embedded</ref>(</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref><sp/></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;embedded_binary,<sp/>6&gt;&amp;<sp/>images,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::array&lt;embedded_binary,<sp/>cubemap_size&gt;&amp;<sp/>images,</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__texture_1ga573ffb425f764bc26601e3883fce43cf" kindref="member">ColorData</ref><sp/>cd</highlight></codeline>
 <codeline lineno="24"><highlight class="normal">);</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>

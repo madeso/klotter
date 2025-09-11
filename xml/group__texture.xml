@@ -186,7 +186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="133" column="1" bodyfile="src/klotter/render/texture.h" bodystart="134" bodyend="137"/>
+        <location file="src/klotter/render/texture.h" line="137" column="1" bodyfile="src/klotter/render/texture.h" bodystart="138" bodyend="141"/>
       </memberdef>
       <memberdef kind="enum" id="group__texture_1ga1d677cc4a3cecec32f8e90f3ae62bf95" prot="public" static="no" strong="yes">
         <type></type>
@@ -220,7 +220,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="140" column="1" bodyfile="src/klotter/render/texture.h" bodystart="141" bodyend="143"/>
+        <location file="src/klotter/render/texture.h" line="144" column="1" bodyfile="src/klotter/render/texture.h" bodystart="145" bodyend="147"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="group__texture_1ga10216e8af0ed877194fd22899e5b058b" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t klotter::cubemap_size</definition>
+        <argsstring></argsstring>
+        <name>cubemap_size</name>
+        <qualifiedname>klotter::cubemap_size</qualifiedname>
+        <initializer>= 6</initializer>
+        <briefdescription>
+<para>0=right, 1=left, 2=top, 3=bottom, 4=back, 5=front </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="97" column="23" bodyfile="src/klotter/render/texture.h" bodystart="97" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -345,7 +363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="104" column="16" declfile="src/klotter/render/texture.h" declline="104" declcolumn="16"/>
+        <location file="src/klotter/render/texture.h" line="108" column="16" declfile="src/klotter/render/texture.h" declline="108" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -367,7 +385,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="207" column="6" declfile="src/klotter/render/texture.h" declline="207" declcolumn="6"/>
+        <location file="src/klotter/render/texture.h" line="211" column="6" declfile="src/klotter/render/texture.h" declline="211" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

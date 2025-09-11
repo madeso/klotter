@@ -5,7 +5,7 @@ var searchData=
   ['linear_5ffrom_5fsrgb_2',['linear_from_srgb',['../namespaceklotter.html#a8655e92bbc13aff3832b4fed06e62fb1',1,'klotter::linear_from_srgb(float value, float gamma)'],['../namespaceklotter.html#a16fc6bb5ae9c482d07217873f345e25e',1,'klotter::linear_from_srgb(const Color &amp;value, float gamma)']]],
   ['linedrawer_3',['LineDrawer',['../structklotter_1_1LineDrawer.html#ae877d9de19653d08a1a130962b22af26',1,'klotter::LineDrawer::LineDrawer()'],['../structklotter_1_1LineDrawer.html#abbc2ae539180f5d3fa3eee0a7dcf7332',1,'klotter::LineDrawer::LineDrawer(const LineDrawer &amp;)=delete'],['../structklotter_1_1LineDrawer.html#a96a7fd083431391a4921c021704ef508',1,'klotter::LineDrawer::LineDrawer(LineDrawer &amp;&amp;)=delete']]],
   ['load_5fcubemap_5ffrom_5fcolor_4',['load_cubemap_from_color',['../group__texture.html#gac294a067af5e2b530a3cf9c2fdd303f0',1,'klotter']]],
-  ['load_5fcubemap_5ffrom_5fembedded_5',['load_cubemap_from_embedded',['../namespaceklotter.html#acd555519564d1ce4f59d10c19e1cefc5',1,'klotter']]],
+  ['load_5fcubemap_5ffrom_5fembedded_5',['load_cubemap_from_embedded',['../namespaceklotter.html#af82d4ce7672a21ad965ac46e5a17ccea',1,'klotter']]],
   ['load_5fimage_5ffrom_5fcolor_6',['load_image_from_color',['../group__texture.html#ga5c06f9cfdcfa6e0c973ff899e5a916ff',1,'klotter']]],
   ['load_5fimage_5ffrom_5fembedded_7',['load_image_from_embedded',['../namespaceklotter.html#a1156efb8b28797f795987665d554aea3',1,'klotter']]],
   ['load_5fshader_5fsource_8',['load_shader_source',['../namespaceklotter.html#a64c9c7c89ee622da0a56d5e0afc611de',1,'klotter']]],

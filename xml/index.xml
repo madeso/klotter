@@ -820,7 +820,7 @@
   </compound>
   <compound refid="structklotter_1_1TextureCubemap" kind="struct"><name>klotter::TextureCubemap</name>
     <member refid="structklotter_1_1TextureCubemap_1aba9fc569dd23d2a5061accda1781d1f6" kind="function"><name>TextureCubemap</name></member>
-    <member refid="structklotter_1_1TextureCubemap_1ae6b2fe3a04bbfd5f2db26be8641356c7" kind="function"><name>TextureCubemap</name></member>
+    <member refid="structklotter_1_1TextureCubemap_1a1127bd5f991781bc3ed0f37de662cbd9" kind="function"><name>TextureCubemap</name></member>
   </compound>
   <compound refid="structklotter_1_1geom_1_1Triangle" kind="struct"><name>klotter::geom::Triangle</name>
     <member refid="structklotter_1_1geom_1_1Triangle_1a61be1f89bfcc389f270530ec1ac5238d" kind="variable"><name>v0</name></member>
@@ -946,10 +946,9 @@
     <member refid="namespaceklotter_1a6d9726b7a1f0528975dfda6051f71743" kind="variable"><name>ALPHA_TRANSPARENCY_LIMIT</name></member>
     <member refid="namespaceklotter_1a6560e226d59ab07f92a3c0d1a4fd99bc" kind="variable"><name>OUTLINE_SCALE</name></member>
     <member refid="namespaceklotter_1a095e93aa73a0f90b24c3e84cc8fe2afe" kind="variable"><name>BLUR_SAMPLES</name></member>
+    <member refid="group__texture_1ga10216e8af0ed877194fd22899e5b058b" kind="variable"><name>cubemap_size</name></member>
     <member refid="namespaceklotter_1aafbf3062eca044adc3d6d3cf54778a51" kind="function"><name>base_cast</name></member>
     <member refid="namespaceklotter_1a97ebef3ce88032d5a9016b09c001d176" kind="function"><name>is_flag_set</name></member>
-    <member refid="namespaceklotter_1a4a67687653b9d07fea6a68bc8dd16ba8" kind="function"><name>all_equal</name></member>
-    <member refid="namespaceklotter_1ae84745cac2edbb4e71539cb02d5a9d24" kind="function"><name>any_is_null</name></member>
     <member refid="namespaceklotter_1a70c3ecdc0214c61c6277dda3f1f5f963" kind="function"><name>test_themes</name></member>
     <member refid="namespaceklotter_1ae8ba8f25677bd8a5d98681f05fd0a162" kind="function"><name>run_main</name></member>
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
@@ -992,7 +991,7 @@
     <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
     <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
     <member refid="namespaceklotter_1a1156efb8b28797f795987665d554aea3" kind="function"><name>load_image_from_embedded</name></member>
-    <member refid="namespaceklotter_1acd555519564d1ce4f59d10c19e1cefc5" kind="function"><name>load_cubemap_from_embedded</name></member>
+    <member refid="namespaceklotter_1af82d4ce7672a21ad965ac46e5a17ccea" kind="function"><name>load_cubemap_from_embedded</name></member>
     <member refid="namespaceklotter_1ae50f370f003f260d3e17d7ce55aefafd" kind="function"><name>operator+</name></member>
     <member refid="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" kind="function"><name>operator-</name></member>
     <member refid="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" kind="function"><name>calculate_region</name></member>
@@ -1406,6 +1405,7 @@
     <member refid="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95a9b898fcf422b2b9616148b3f3d1fa101" kind="enumvalue"><name>use_8</name></member>
     <member refid="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95a2b8128f893f047b799dcef08274808e4" kind="enumvalue"><name>use_16</name></member>
     <member refid="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95ab58da2c01fd2c34c8f79d446758f5253" kind="enumvalue"><name>use_32</name></member>
+    <member refid="group__texture_1ga10216e8af0ed877194fd22899e5b058b" kind="variable"><name>cubemap_size</name></member>
     <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
     <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
     <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
