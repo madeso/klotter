@@ -22,23 +22,4 @@ constexpr bool is_flag_set(E var, E flag)
 	return (base_cast(var) & base_cast(flag)) > 0;
 }
 
-template<typename T>
-bool all_equal(const T& t)
-{
-	return std::adjacent_find( std::begin(t), std::end(t), std::not_equal_to<>() ) == std::end(t);
-}
-
-template<typename T>
-bool any_is_null(const T& array)
-{
-	for (const auto* ptr: array)
-	{
-		if (ptr == nullptr)
-		{
-			return true;
-		}
-	}
-	return false;
-}
-
 }  //  namespace klotter

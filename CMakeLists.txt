@@ -76,7 +76,7 @@ add_library(klotter::edit_and_continue ALIAS edit_and_continue)
 
 add_library(project_options INTERFACE)
 target_link_libraries(project_options INTERFACE klotter::edit_and_continue)
-target_compile_features(project_options INTERFACE cxx_std_17)
+target_compile_features(project_options INTERFACE cxx_std_20)
 include(cmake/Sanitizers.cmake)
 enable_sanitizers(project_options)
 target_feature_flags(project_options INTERFACE

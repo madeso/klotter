@@ -11,6 +11,9 @@
 
 #include "stb_image.h"
 
+#include <ranges>
+#include <algorithm>
+
 
 namespace klotter
 {
@@ -261,27 +264,27 @@ TextureCubemap load_cubemap_from_embedded(
 	constexpr auto include_transparency = false;
 	constexpr auto flip = false;
 
-	const auto parsed_right = PixelData{images[0], include_transparency, flip};
-	const auto parsed_left = PixelData{images[1], include_transparency, flip};
-	const auto parsed_top = PixelData{images[2], include_transparency, flip};
-	const auto parsed_bottom = PixelData{images[3], include_transparency, flip};
-	const auto parsed_back = PixelData{images[4], include_transparency, flip};
-	const auto parsed_front = PixelData{images[5], include_transparency, flip};
+	const auto parsed
+		= images
+		| std::views::transform([](const embedded_binary& img) { return PixelData{img, include_transparency, flip}; });
+
+	const auto image_width = parsed[0].width;
+	const auto image_height = parsed[0].height;
 
 	// is loaded ok
-	if (any_is_null(std::array{
-		parsed_right.pixel_data, parsed_left.pixel_data,
-		parsed_top.pixel_data, parsed_bottom.pixel_data,
-		parsed_back.pixel_data, parsed_front.pixel_data}))
+	if (std::ranges::any_of(
+			parsed  | std::views::transform([](const auto& x) { return x.pixel_data;}),
+			[](auto* ptr) { return ptr == nullptr; }
+		))
 	{
 		LOG_ERROR("ERROR: Failed to load some cubemap from image source");
 		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) image_load_failure_color, cd);
 	}
 
-	if (all_equal(std::array{
-		parsed_right.width, parsed_left.width,
-		parsed_top.width, parsed_bottom.width,
-		parsed_back.width, parsed_front.width}))
+	if (std::ranges::all_of(
+			parsed | std::views::transform([](const auto& x) { return x.width; }),
+			[=](const int w) { return w == image_width; }
+		))
 	{
 		// width ok
 	}
@@ -291,10 +294,10 @@ TextureCubemap load_cubemap_from_embedded(
 		return load_cubemap_from_color(SEND_DEBUG_LABEL_MANY(debug_label) image_load_failure_color, cd);
 	}
 
-	if (all_equal(std::array{
-		parsed_right.height, parsed_left.height,
-		parsed_top.height, parsed_bottom.height,
-		parsed_back.height, parsed_front.height}))
+	if (std::ranges::all_of(
+			parsed | std::views::transform([](const auto& x) { return x.height; }),
+			[=](const int h) { return h == image_height; }
+		))
 	{
 		// height ok
 	}
@@ -307,14 +310,16 @@ TextureCubemap load_cubemap_from_embedded(
 	// ok
 	return {
 		SEND_DEBUG_LABEL_MANY(debug_label)
-		{parsed_right.pixel_data,
-		 parsed_left.pixel_data,
-		 parsed_top.pixel_data,
-		 parsed_bottom.pixel_data,
-		 parsed_front.pixel_data,
-		 parsed_back.pixel_data},
-		parsed_right.width,
-		parsed_right.height,
+		{
+			parsed[0].pixel_data,
+			parsed[1].pixel_data,
+			parsed[2].pixel_data,
+			parsed[3].pixel_data,
+			parsed[4].pixel_data,
+			parsed[5].pixel_data
+		},
+		image_width,
+		image_height,
 		cd
 	};
 }

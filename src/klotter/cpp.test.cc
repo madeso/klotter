@@ -4,10 +4,6 @@
 
 using namespace klotter;
 
-TEST_CASE("check_equal", "[cpp]")
+TEST_CASE("cpp_todo", "[cpp]")
 {
-    CHECK(all_equal(std::array{5, 5, 5}));
-	CHECK(all_equal(std::array{2, 2, 2}));
-    CHECK_FALSE(all_equal(std::array{1, 2, 3}));
-    CHECK_FALSE(all_equal(std::array{3, 2, 1}));
 }
