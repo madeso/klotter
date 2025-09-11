@@ -219,13 +219,13 @@ Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureE
 // ------------------------------------------------------------------------------------------------
 // cubemap
 
-TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height, ColorData cd)
+TextureCubemap::TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, cubemap_size>& pixel_data, int width, int height, ColorData cd)
 {
 	// todo(Gustav): use states
 	glBindTexture(GL_TEXTURE_CUBE_MAP, id);
 	SET_DEBUG_LABEL_NAMED(id, DebugLabelFor::Texture, Str() << "TEXTURE CUBEMAP " << debug_label);
 
-	for (size_t index = 0; index < 6; index += 1)
+	for (size_t index = 0; index < cubemap_size; index += 1)
 	{
 		glTexImage2D(
 			static_cast<GLenum>(GL_TEXTURE_CUBE_MAP_POSITIVE_X + index),
@@ -253,11 +253,10 @@ TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, C
 	return {SEND_DEBUG_LABEL_MANY(debug_label) {&pixel, &pixel, &pixel, &pixel, &pixel, &pixel}, 1, 1, cd};
 }
 
-// right, left, top, bottom, back, front,
 [[nodiscard]]
 TextureCubemap load_cubemap_from_embedded(
 	DEBUG_LABEL_ARG_MANY
-	const std::array<embedded_binary, 6>& images,
+	const std::array<embedded_binary, cubemap_size>& images,
 	ColorData cd
 )
 {

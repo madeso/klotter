@@ -19,7 +19,7 @@ Texture2d load_image_from_embedded(
 [[nodiscard]]
 TextureCubemap load_cubemap_from_embedded(
 	DEBUG_LABEL_ARG_MANY 
-	const std::array<embedded_binary, 6>& images,
+	const std::array<embedded_binary, cubemap_size>& images,
 	ColorData cd
 );
 

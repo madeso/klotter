@@ -92,13 +92,17 @@ struct Texture2d : BaseTexture
 
 Texture2d load_image_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, TextureEdge te, TextureRenderStyle trs, Transparency t, ColorData cd);
 
+// todo(Gustav): turn into an enum?
+/// 0=right, 1=left, 2=top, 3=bottom, 4=back, 5=front
+constexpr std::size_t cubemap_size = 6;
+
 /// A cubemap texture.
 /// USeful for skybox rendering or faking reflections from a (static) scene.
 struct TextureCubemap : BaseTexture
 {
 	TextureCubemap() = delete;
 
-	TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, 6>& pixel_data, int width, int height, ColorData cd);
+	TextureCubemap(DEBUG_LABEL_ARG_MANY const std::array<void*, cubemap_size>& pixel_data, int width, int height, ColorData cd);
 };
 
 TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, ColorData cd);
