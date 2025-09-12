@@ -263,17 +263,9 @@ TextureCubemap load_cubemap_from_embedded(
 	constexpr auto include_transparency = false;
 	constexpr auto flip = false;
 
-	// const auto parsed
-	// 	= images
-	// 	| std::views::transform([](const embedded_binary& img) { return PixelData{img, include_transparency, flip}; });
-	std::array<PixelData, cubemap_size> parsed = {
-        PixelData{images[0], include_transparency, flip},
-        PixelData{images[1], include_transparency, flip},
-        PixelData{images[2], include_transparency, flip},
-        PixelData{images[3], include_transparency, flip},
-        PixelData{images[4], include_transparency, flip},
-        PixelData{images[5], include_transparency, flip}
-    };
+	const auto parsed
+		= images
+		| std::views::transform([](const embedded_binary& img) { return PixelData{img, include_transparency, flip}; });
 
 	const auto image_width = parsed[0].width;
 	const auto image_height = parsed[0].height;
