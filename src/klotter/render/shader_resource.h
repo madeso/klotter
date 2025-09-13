@@ -126,11 +126,6 @@ enum class PostProcSetup
 };
 PostProcSetup operator|(PostProcSetup lhs, PostProcSetup rhs);
 
-// todo(Gustav): why is this exposed? remove?
-std::optional<Uniform> get_uniform(
-	ShaderProgram& prog, const std::string& name, PostProcSetup setup, PostProcSetup flag
-);
-
 /// The "base class" for a loaded postproc shader.
 struct LoadedPostProcShader
 {
