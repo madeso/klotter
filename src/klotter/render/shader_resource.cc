@@ -324,7 +324,6 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 {
 	const auto single_color_shader = load_shader_source({}, desc.setup.source);
 
-	// todo(Gustav): fix skybox shader
 	const auto skybox_source = load_skybox_source(desc.setup.source);
 	const auto skybox_shader = VertexShaderSource{
 		ShaderVertexAttributes{{VertexType::position3, "a_position"}}, skybox_source.vertex, skybox_source.fragment
@@ -454,7 +453,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		= load_shader(USE_DEBUG_LABEL_MANY("skybox"){}, skybox_shader, TransformSource::Uniform);
 
 	return {
-		// todo(Gustav): not really happy with sending "the same" argument twice
+		// todo(Gustav): not really happy with sending "the same" argument twice, loaded_X.program and loaded_X.geom_layout
 		LoadedShader_SingleColor{std::move(loaded_single_color.program), loaded_single_color.geom_layout, desc},
 		LoadedShader_Skybox{std::move(loaded_skybox_shader.program), loaded_skybox_shader.geom_layout, desc},
 		LoadedShader_Unlit_Container{
