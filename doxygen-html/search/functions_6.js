@@ -15,7 +15,7 @@ var searchData=
   ['get_5fmatrix_12',['get_matrix',['../structklotter_1_1Assets.html#af788dcba6c4f2a6ab7e44c4be2dc8791',1,'klotter::Assets']]],
   ['get_5fmesh_5frotation_5fmatrix_13',['get_mesh_rotation_matrix',['../namespaceklotter.html#a9bd81ae1288afd6864048084bd7c4c9d',1,'klotter']]],
   ['get_5fskybox_14',['get_skybox',['../structklotter_1_1Assets.html#a00c23637f1b2b401f37b9b3eb2213645',1,'klotter::Assets']]],
-  ['get_5funiform_15',['get_uniform',['../structklotter_1_1ShaderProgram.html#ace564eff29cd0309c6bf3843c5e71c4d',1,'klotter::ShaderProgram::get_uniform()'],['../group__render.html#gac2e3012d518484348974e4dc36e3112c',1,'klotter::get_uniform()']]],
+  ['get_5funiform_15',['get_uniform',['../structklotter_1_1ShaderProgram.html#ace564eff29cd0309c6bf3843c5e71c4d',1,'klotter::ShaderProgram']]],
   ['get_5fwhite_16',['get_white',['../structklotter_1_1Assets.html#aa72f0833340b8a6bcfee58ae038df747',1,'klotter::Assets']]],
   ['glenum_5ffrom_5fint_17',['glenum_from_int',['../namespaceklotter.html#ad8e391c995de185fccf27218b510d64c',1,'klotter']]],
   ['glsizei_5ffrom_5fsizet_18',['glsizei_from_sizet',['../namespaceklotter.html#a1ca0c6c0baa5f5bef547de0ae2e1b599',1,'klotter']]],

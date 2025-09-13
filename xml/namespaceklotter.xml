@@ -84,6 +84,7 @@
     <innerclass refid="structklotter_1_1ShaderPropertyProvider" prot="public">klotter::ShaderPropertyProvider</innerclass>
     <innerclass refid="structklotter_1_1ShaderResource" prot="public">klotter::ShaderResource</innerclass>
     <innerclass refid="structklotter_1_1ShaderSource" prot="public">klotter::ShaderSource</innerclass>
+    <innerclass refid="structklotter_1_1ShaderSource__withLayout" prot="public">klotter::ShaderSource_withLayout</innerclass>
     <innerclass refid="structklotter_1_1SimpleEffect" prot="public">klotter::SimpleEffect</innerclass>
     <innerclass refid="structklotter_1_1Skybox" prot="public">klotter::Skybox</innerclass>
     <innerclass refid="structklotter_1_1StateChanger" prot="public">klotter::StateChanger</innerclass>
@@ -97,7 +98,6 @@
     <innerclass refid="structklotter_1_1UnlitMaterial" prot="public">klotter::UnlitMaterial</innerclass>
     <innerclass refid="structklotter_1_1Vertex" prot="public">klotter::Vertex</innerclass>
     <innerclass refid="structklotter_1_1VertexElementDescription" prot="public">klotter::VertexElementDescription</innerclass>
-    <innerclass refid="structklotter_1_1VertexShaderSource" prot="public">klotter::VertexShaderSource</innerclass>
     <innerclass refid="structklotter_1_1World" prot="public">klotter::World</innerclass>
     <innernamespace refid="namespaceklotter_1_1colors">klotter::colors</innernamespace>
     <innernamespace refid="namespaceklotter_1_1geom">klotter::geom</innernamespace>
@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="47" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="48" bodyend="51"/>
+        <location file="src/klotter/render/shader.source.h" line="46" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="47" bodyend="50"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceklotter_1a3616a1e9adb2f3b4af13a7d9770b92f7" prot="public" static="no" strong="yes">
         <type></type>
@@ -164,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="54" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="55" bodyend="58"/>
+        <location file="src/klotter/render/shader.source.h" line="53" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="54" bodyend="57"/>
       </memberdef>
       <member refid="group__render_1gad119e3d8725413aad6d684e0ec1c22aa" kind="enum"><name>TransformSource</name></member>
       <member refid="group__render_1ga358c9176a5069a7059c1497704cd2875" kind="enum"><name>PostProcSetup</name></member>
@@ -766,11 +766,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="69" column="13" declfile="src/klotter/render/shader.source.h" declline="69" declcolumn="13"/>
+        <location file="src/klotter/render/shader.source.h" line="68" column="13" declfile="src/klotter/render/shader.source.h" declline="68" declcolumn="13"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a64c9c7c89ee622da0a56d5e0afc611de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structklotter_1_1VertexShaderSource" kindref="compound">VertexShaderSource</ref></type>
-        <definition>VertexShaderSource klotter::load_shader_source</definition>
+      <memberdef kind="function" id="namespaceklotter_1ac791fb4c896293314ab4bc3e6257fbcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1ShaderSource__withLayout" kindref="compound">ShaderSource_withLayout</ref></type>
+        <definition>ShaderSource_withLayout klotter::load_shader_source</definition>
         <argsstring>(const ShaderOptions &amp;options, const std::string &amp;uniform_buffer_source)</argsstring>
         <name>load_shader_source</name>
         <qualifiedname>klotter::load_shader_source</qualifiedname>
@@ -788,7 +788,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="71" column="20" declfile="src/klotter/render/shader.source.h" declline="71" declcolumn="20"/>
+        <location file="src/klotter/render/shader.source.h" line="70" column="25" declfile="src/klotter/render/shader.source.h" declline="70" declcolumn="25"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ab77d87614fce92926c05c1cf4ac83bfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1ShaderSource" kindref="compound">ShaderSource</ref></type>
@@ -806,10 +806,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="73" column="14" declfile="src/klotter/render/shader.source.h" declline="73" declcolumn="14"/>
+        <location file="src/klotter/render/shader.source.h" line="72" column="14" declfile="src/klotter/render/shader.source.h" declline="72" declcolumn="14"/>
       </memberdef>
       <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
-      <member refid="group__render_1gac2e3012d518484348974e4dc36e3112c" kind="function"><name>get_uniform</name></member>
       <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
       <member refid="group__render_1ga8072e6de57f4c7633a25803ddf551385" kind="function"><name>shader_from_container</name></member>
       <member refid="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" kind="function"><name>load_shaders</name></member>

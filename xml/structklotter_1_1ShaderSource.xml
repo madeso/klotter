@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="42" column="13" bodyfile="src/klotter/render/shader.source.h" bodystart="42" bodyend="-1"/>
+        <location file="src/klotter/render/shader.source.h" line="41" column="13" bodyfile="src/klotter/render/shader.source.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1ShaderSource_1a48a2e03510fe5f1f42060b9cb1a71966" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -30,13 +30,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader.source.h" line="43" column="13" bodyfile="src/klotter/render/shader.source.h" bodystart="43" bodyend="-1"/>
+        <location file="src/klotter/render/shader.source.h" line="42" column="13" bodyfile="src/klotter/render/shader.source.h" bodystart="42" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="structklotter_1_1VertexShaderSource" kindref="compound">VertexShaderSource</ref> </para>
+<para><simplesect kind="see"><para>VertexShaderSource </para>
 </simplesect>
 </para>
     </detaileddescription>
@@ -58,7 +58,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader.source.h" line="40" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="41" bodyend="44"/>
+    <location file="src/klotter/render/shader.source.h" line="39" column="1" bodyfile="src/klotter/render/shader.source.h" bodystart="40" bodyend="43"/>
     <listofallmembers>
       <member refid="structklotter_1_1ShaderSource_1a48a2e03510fe5f1f42060b9cb1a71966" prot="public" virt="non-virtual"><scope>klotter::ShaderSource</scope><name>fragment</name></member>
       <member refid="structklotter_1_1ShaderSource_1a6b9e1c440250f9b203724b907da93f18" prot="public" virt="non-virtual"><scope>klotter::ShaderSource</scope><name>vertex</name></member>

@@ -763,6 +763,11 @@
     <member refid="structklotter_1_1ShaderSource_1a6b9e1c440250f9b203724b907da93f18" kind="variable"><name>vertex</name></member>
     <member refid="structklotter_1_1ShaderSource_1a48a2e03510fe5f1f42060b9cb1a71966" kind="variable"><name>fragment</name></member>
   </compound>
+  <compound refid="structklotter_1_1ShaderSource__withLayout" kind="struct"><name>klotter::ShaderSource_withLayout</name>
+    <member refid="structklotter_1_1ShaderSource__withLayout_1a74f580f6ed5ac7a42a8abbc545f3f3c7" kind="variable"><name>layout</name></member>
+    <member refid="structklotter_1_1ShaderSource__withLayout_1aac692ba1345ceaf0c763d523f9ec1afd" kind="variable"><name>vertex</name></member>
+    <member refid="structklotter_1_1ShaderSource__withLayout_1ad3c8f31d0432c9a95eb65c19fef97fa3" kind="variable"><name>fragment</name></member>
+  </compound>
   <compound refid="structklotter_1_1SimpleEffect" kind="struct"><name>klotter::SimpleEffect</name>
     <member refid="structklotter_1_1SimpleEffect_1a54faefb8903be9d6632b6c46480d4d8e" kind="variable"><name>name</name></member>
     <member refid="structklotter_1_1SimpleEffect_1a3b0db69f934eb0a04439d37da6022aae" kind="variable"><name>shader</name></member>
@@ -895,11 +900,6 @@
     <member refid="structklotter_1_1VertexElementDescription_1aef49c5f9349cee1038b7182047ac31bf" kind="variable"><name>type</name></member>
     <member refid="structklotter_1_1VertexElementDescription_1ad0817fefcef3f41a2c4ad66555e45019" kind="variable"><name>name</name></member>
   </compound>
-  <compound refid="structklotter_1_1VertexShaderSource" kind="struct"><name>klotter::VertexShaderSource</name>
-    <member refid="structklotter_1_1VertexShaderSource_1a9d1ce2770a08847fa2b49550f7e70ae7" kind="variable"><name>layout</name></member>
-    <member refid="structklotter_1_1VertexShaderSource_1a8f362859d9f3f6f46c10a7a9cabddf7c" kind="variable"><name>vertex</name></member>
-    <member refid="structklotter_1_1VertexShaderSource_1aa8ef4a3e5dfdd632e2b3ca67f2d969bf" kind="variable"><name>fragment</name></member>
-  </compound>
   <compound refid="structklotter_1_1World" kind="struct"><name>klotter::World</name>
     <member refid="structklotter_1_1World_1adf837f631529619280d72f2093d9d9a7" kind="variable"><name>meshes</name></member>
     <member refid="structklotter_1_1World_1a42950d49b98dc3304ea9a25ddbf83c9f" kind="variable"><name>instances</name></member>
@@ -976,10 +976,9 @@
     <member refid="namespaceklotter_1a356ef4e2d5e2b61b7d5909081407207a" kind="function"><name>is_shader_bound</name></member>
     <member refid="namespaceklotter_1ae6578d1bd38afcb9f3c56f0a839e6b59" kind="function"><name>clear_shader_program</name></member>
     <member refid="namespaceklotter_1a922b5d3cc7e03da98bcab5a44c7a20c3" kind="function"><name>generate_blur</name></member>
-    <member refid="namespaceklotter_1a64c9c7c89ee622da0a56d5e0afc611de" kind="function"><name>load_shader_source</name></member>
+    <member refid="namespaceklotter_1ac791fb4c896293314ab4bc3e6257fbcd" kind="function"><name>load_shader_source</name></member>
     <member refid="namespaceklotter_1ab77d87614fce92926c05c1cf4ac83bfa" kind="function"><name>load_skybox_source</name></member>
     <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
-    <member refid="group__render_1gac2e3012d518484348974e4dc36e3112c" kind="function"><name>get_uniform</name></member>
     <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1ga8072e6de57f4c7633a25803ddf551385" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" kind="function"><name>load_shaders</name></member>
@@ -1339,7 +1338,6 @@
     <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
     <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
-    <member refid="group__render_1gac2e3012d518484348974e4dc36e3112c" kind="function"><name>get_uniform</name></member>
     <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1ga8072e6de57f4c7633a25803ddf551385" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" kind="function"><name>load_shaders</name></member>

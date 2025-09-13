@@ -367,6 +367,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1ShaderSource.html">ShaderSource</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1ShaderSource__withLayout.html">ShaderSource_withLayout</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shader source with the layout that is expected.  <a href="structklotter_1_1ShaderSource__withLayout.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1SimpleEffect.html">SimpleEffect</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A effect that only performs a single step.  <a href="structklotter_1_1SimpleEffect.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -402,9 +405,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1VertexElementDescription.html">VertexElementDescription</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A not-yet-realised binding to a shader variable like <code>vec3 position</code>  <a href="structklotter_1_1VertexElementDescription.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1VertexShaderSource.html">VertexShaderSource</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shader source with the layout that is expected.  <a href="structklotter_1_1VertexShaderSource.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1World.html">World</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of objects to render.  <a href="structklotter_1_1World.html#details">More...</a><br /></td></tr>
@@ -670,14 +670,12 @@ Functions</h2></td></tr>
 <tr class="separator:ae6578d1bd38afcb9f3c56f0a839e6b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a922b5d3cc7e03da98bcab5a44c7a20c3" id="r_a922b5d3cc7e03da98bcab5a44c7a20c3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a922b5d3cc7e03da98bcab5a44c7a20c3">generate_blur</a> (std::string_view src, const <a class="el" href="structklotter_1_1BlurOptions.html">BlurOptions</a> &amp;options)</td></tr>
 <tr class="separator:a922b5d3cc7e03da98bcab5a44c7a20c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64c9c7c89ee622da0a56d5e0afc611de" id="r_a64c9c7c89ee622da0a56d5e0afc611de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1VertexShaderSource.html">VertexShaderSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64c9c7c89ee622da0a56d5e0afc611de">load_shader_source</a> (const <a class="el" href="structklotter_1_1ShaderOptions.html">ShaderOptions</a> &amp;options, const std::string &amp;uniform_buffer_source)</td></tr>
-<tr class="separator:a64c9c7c89ee622da0a56d5e0afc611de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac791fb4c896293314ab4bc3e6257fbcd" id="r_ac791fb4c896293314ab4bc3e6257fbcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1ShaderSource__withLayout.html">ShaderSource_withLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac791fb4c896293314ab4bc3e6257fbcd">load_shader_source</a> (const <a class="el" href="structklotter_1_1ShaderOptions.html">ShaderOptions</a> &amp;options, const std::string &amp;uniform_buffer_source)</td></tr>
+<tr class="separator:ac791fb4c896293314ab4bc3e6257fbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab77d87614fce92926c05c1cf4ac83bfa" id="r_ab77d87614fce92926c05c1cf4ac83bfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1ShaderSource.html">ShaderSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab77d87614fce92926c05c1cf4ac83bfa">load_skybox_source</a> (const std::string &amp;uniform_buffer_source)</td></tr>
 <tr class="separator:ab77d87614fce92926c05c1cf4ac83bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8f2a36f8af7bbc5fc841e84b35e5bcfa" id="r_ga8f2a36f8af7bbc5fc841e84b35e5bcfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__render.html#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga8f2a36f8af7bbc5fc841e84b35e5bcfa">operator|</a> (<a class="el" href="group__render.html#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> lhs, <a class="el" href="group__render.html#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> rhs)</td></tr>
 <tr class="separator:ga8f2a36f8af7bbc5fc841e84b35e5bcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2e3012d518484348974e4dc36e3112c" id="r_gac2e3012d518484348974e4dc36e3112c"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gac2e3012d518484348974e4dc36e3112c">get_uniform</a> (<a class="el" href="structklotter_1_1ShaderProgram.html">ShaderProgram</a> &amp;prog, const std::string &amp;name, <a class="el" href="group__render.html#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> setup, <a class="el" href="group__render.html#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> flag)</td></tr>
-<tr class="separator:gac2e3012d518484348974e4dc36e3112c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga520b75edd8118f7827919d7890a3fbd9" id="r_ga520b75edd8118f7827919d7890a3fbd9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga520b75edd8118f7827919d7890a3fbd9">shader_from_container</a> (const <a class="el" href="structklotter_1_1LoadedShader__Unlit__Container.html">LoadedShader_Unlit_Container</a> &amp;container, const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;rc)</td></tr>
 <tr class="memdesc:ga520b75edd8118f7827919d7890a3fbd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the correct sub shader from a container.  <br /></td></tr>
 <tr class="separator:ga520b75edd8118f7827919d7890a3fbd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1345,14 +1343,14 @@ template&lt;typename E&gt; </div>
 
 </div>
 </div>
-<a id="a64c9c7c89ee622da0a56d5e0afc611de" name="a64c9c7c89ee622da0a56d5e0afc611de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64c9c7c89ee622da0a56d5e0afc611de">&#9670;&#160;</a></span>load_shader_source()</h2>
+<a id="ac791fb4c896293314ab4bc3e6257fbcd" name="ac791fb4c896293314ab4bc3e6257fbcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac791fb4c896293314ab4bc3e6257fbcd">&#9670;&#160;</a></span>load_shader_source()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structklotter_1_1VertexShaderSource.html">VertexShaderSource</a> klotter::load_shader_source </td>
+          <td class="memname"><a class="el" href="structklotter_1_1ShaderSource__withLayout.html">ShaderSource_withLayout</a> klotter::load_shader_source </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structklotter_1_1ShaderOptions.html">ShaderOptions</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>options</em></span>, </td>
         </tr>
