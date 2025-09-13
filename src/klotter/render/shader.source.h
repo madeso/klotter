@@ -25,10 +25,9 @@ struct ShaderOptions
 	[[nodiscard]] ShaderOptions with_instanced_mat4() const;
 };
 
-// todo(Gustav): Rename to something better like ShaderSource_withLayout
 /// Shader source with the layout that is expected.
 /// @see \ref ShaderSource
-struct VertexShaderSource
+struct ShaderSource_withLayout
 {
 	ShaderVertexAttributes layout;
 	std::string vertex;
@@ -68,7 +67,7 @@ struct BlurOptions
 
 std::string generate_blur(std::string_view src, const BlurOptions& options);
 
-VertexShaderSource load_shader_source(const ShaderOptions& options, const std::string& uniform_buffer_source);
+ShaderSource_withLayout load_shader_source(const ShaderOptions& options, const std::string& uniform_buffer_source);
 
 ShaderSource load_skybox_source(const std::string& uniform_buffer_source);
 

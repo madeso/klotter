@@ -84,7 +84,7 @@ std::string generate(std::string_view str, const std::string& uniform_buffer_sou
 	return input.render(data);
 }
 
-VertexShaderSource load_shader_source(const ShaderOptions& options, const std::string& uniform_buffer_source)
+ShaderSource_withLayout load_shader_source(const ShaderOptions& options, const std::string& uniform_buffer_source)
 {
 	auto layout = ShaderVertexAttributes{{VertexType::position3, "a_position"}, {VertexType::color3, "a_color"}};
 
@@ -98,7 +98,7 @@ VertexShaderSource load_shader_source(const ShaderOptions& options, const std::s
 		layout.emplace_back(VertexElementDescription{VertexType::normal3, "a_normal"});
 	}
 
-	return VertexShaderSource{
+	return ShaderSource_withLayout{
 		layout,
 		generate(DEFAULT_SHADER_VERT_GLSL, options, uniform_buffer_source),
 		generate(DEFAULT_SHADER_FRAG_GLSL, options, uniform_buffer_source)

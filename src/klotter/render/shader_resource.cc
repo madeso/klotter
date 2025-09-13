@@ -298,7 +298,7 @@ struct LoadedShader
 
 
 
-LoadedShader load_shader(DEBUG_LABEL_ARG_MANY const BaseShaderData& base_layout, const VertexShaderSource& source, TransformSource model_source)
+LoadedShader load_shader(DEBUG_LABEL_ARG_MANY const BaseShaderData& base_layout, const ShaderSource_withLayout& source, TransformSource model_source)
 {
 	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
 	const auto geom_layout = get_geom_layout(layout_compiler);
@@ -325,7 +325,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 	const auto single_color_shader = load_shader_source({}, desc.setup.source);
 
 	const auto skybox_source = load_skybox_source(desc.setup.source);
-	const auto skybox_shader = VertexShaderSource{
+	const auto skybox_shader = ShaderSource_withLayout{
 		ShaderVertexAttributes{{VertexType::position3, "a_position"}}, skybox_source.vertex, skybox_source.fragment
 	};
 
