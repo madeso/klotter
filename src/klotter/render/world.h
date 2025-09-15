@@ -117,7 +117,8 @@ void render_geom_instanced(const MeshInstance_TransformInstanced& instanced);
 /// A directional light,
 struct DirectionalLight
 {
-	glm::vec3 direction = {1.0f, 0.0f, 0.0f};
+	float pitch = 0;
+	float yaw = 0;
 
 	Color color = colors::white;
 	float specular_strength = 1.0f;
@@ -162,6 +163,9 @@ struct Lights
 {
 	Color ambient_color = colors::white;
 	float ambient_strength = 0.029f;
+
+	glm::vec3 shadow_offset = {0.0f, 10.0f, 0.0f};
+	float shadow_size = 100.0f;
 
 	std::vector<DirectionalLight> directional_lights;
 	std::vector<PointLight> point_lights;

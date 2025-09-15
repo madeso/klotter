@@ -142,8 +142,8 @@ struct LightsSample : klotter::App
 		{
 			world.lights.directional_lights.emplace_back();
 			auto& dili = world.lights.directional_lights[0];
-			dili.direction = {-1.0f, -1.0f, -1.0f};
-			dili.direction = glm::normalize(dili.direction);
+			dili.pitch = -45.0f;
+			dili.yaw = 45.0f;
 			dili.diffuse_strength = 0.007f;
 			dili.specular_strength = dili.diffuse_strength;
 			dili.color = colors::red_vermillion;
@@ -362,6 +362,8 @@ struct LightsSample : klotter::App
 		{
 			dl.specular_strength = dl.diffuse_strength;
 		}
+		ImGui::DragFloat("Pitch", &dl.pitch, FAC_SPEED);
+		ImGui::DragFloat("Yaw", &dl.yaw, FAC_SPEED);
 		imgui_color("Color", &dl.color);
 	}
 
@@ -378,6 +380,8 @@ struct LightsSample : klotter::App
 
 	void gui_all_direction_lights()
 	{
+		ImGui::DragFloat("Shadow size", &world.lights.shadow_size, FAC_SPEED);
+		ImGui::DragFloat3("Shadow offset", glm::value_ptr(world.lights.shadow_offset), FAC_SPEED);
 		for (int dir_light_index = 0;
 		     dir_light_index < int_from_sizet(world.lights.directional_lights.size());
 		     dir_light_index += 1)

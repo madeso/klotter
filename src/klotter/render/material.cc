@@ -168,7 +168,8 @@ void DefaultMaterial::apply_lights(
 		const auto& u = shader.directional_lights[sizet_from_int(index)];
 		shader.program->set_vec3(u.light_diffuse_color_uni, linear_from_srgb(p.color, settings.gamma) * p.diffuse_strength);
 		shader.program->set_vec3(u.light_specular_color_uni, linear_from_srgb(p.color, settings.gamma) * p.specular_strength);
-		shader.program->set_vec3(u.dir_uni, p.direction);
+		const auto vectors = create_vectors(p.yaw, p.pitch);
+		shader.program->set_vec3(u.dir_uni, vectors.front);
 	}
 
 	for (int index = 0; index < settings.number_of_point_lights; index += 1)

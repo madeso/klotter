@@ -235,11 +235,11 @@ void render_solids(
 	}
 }
 
-void Renderer::render_world(const glm::ivec2& window_size, const World& world, const Camera& camera)
+void Renderer::render_world(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera)
 {
 	SCOPED_DEBUG_GROUP("render world call"sv);
-	const auto has_outlined_meshes = std::any_of(
-		world.meshes.begin(), world.meshes.end(), [](const auto& mesh) { return mesh->outline.has_value(); }
+	const auto has_outlined_meshes = std::ranges::any_of(world.meshes,
+		[](const auto& mesh) { return mesh->outline.has_value(); }
 	);
 	StateChanger{&pimpl->states}
 		.cull_face(true)
@@ -254,8 +254,6 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	const auto clear_color = linear_from_srgb(world.clear_color, settings.gamma);
 	glClearColor(clear_color.r, clear_color.g, clear_color.b, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-
-	const auto compiled_camera = compile(camera, window_size);
 
 	auto bound_camera_buffer = BoundUniformBuffer{pimpl->camera_uniform_buffer.buffer.get()};
 	pimpl->camera_uniform_buffer.set_props(compiled_camera);
@@ -346,6 +344,24 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 			}
 		}
 	}
+}
+
+void Renderer::render_shadows(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera)
+{
+	// todo(Gustav): bind less colors and use depth only shaders
+	SCOPED_DEBUG_GROUP("render world call"sv);
+	StateChanger{&pimpl->states}
+		.cull_face(true)
+		.cull_face_mode(CullFace::back)
+		.depth_test(true)
+		.depth_mask(true);
+
+	glClear(GL_DEPTH_BUFFER_BIT);
+
+	auto bound_camera_buffer = BoundUniformBuffer{pimpl->camera_uniform_buffer.buffer.get()};
+	pimpl->camera_uniform_buffer.set_props(compiled_camera);
+
+	render_solids(settings, compiled_camera, window_size, world, nullptr, pimpl.get(), debug, &assets);
 }
 
 }  //  namespace klotter

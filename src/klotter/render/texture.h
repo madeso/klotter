@@ -124,6 +124,7 @@ struct FrameBuffer : BaseTexture
 	void operator=(const FrameBuffer&) = delete;
 	void operator=(FrameBuffer&&) = delete;
 
+	// todo(Gustav): use ivec2 for size
 	int width;
 	int height;
 
@@ -143,6 +144,7 @@ enum class DepthBits
 /// The number of bits/pixel to use for the color buffer.
 enum class ColorBitsPerPixel
 {
+	use_depth,
 	use_8, use_16, use_32
 };
 
@@ -161,6 +163,7 @@ struct FrameBufferBuilder
 	ColorBitsPerPixel color_bits_per_pixel = ColorBitsPerPixel::use_8;
 	DepthBits include_depth = DepthBits::use_none;
 	bool include_stencil = false;
+	std::optional<glm::vec4> border_color = std::nullopt;
 
 	/// 0 samples == no msaa
 	int msaa_samples = 0;
@@ -186,6 +189,12 @@ struct FrameBufferBuilder
 	constexpr FrameBufferBuilder& with_stencil()
 	{
 		include_stencil = true;
+		return *this;
+	}
+
+	constexpr FrameBufferBuilder& with_border_color(const glm::vec4& c)
+	{
+		border_color = c;
 		return *this;
 	}
 

@@ -13,6 +13,7 @@
 #include "klotter/render/shader.h"
 #include "klotter/render/statechanger.h"
 #include "klotter/render/ui.h"
+#include "klotter/render/camera.h"
 
 #include "imgui.h"
 
@@ -88,11 +89,46 @@ RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractSha
 
 void RenderWorld::update(const PostProcArg& arg)
 {
+	// render shadow buffer
+	const auto shadow_size = arg.renderer->settings.shadow_map_resolution;
+	{
+		bool update_shadow_buffer = shadow_buffer == nullptr;
+		if (shadow_buffer && shadow_buffer->width != shadow_size.x)
+		{
+			update_shadow_buffer = true;
+		}
+		if (shadow_buffer && shadow_buffer->height != shadow_size.y)
+		{
+			update_shadow_buffer = true;
+		}
+
+		if (update_shadow_buffer)
+		{
+			shadow_buffer = FrameBufferBuilder{shadow_size}
+				.with_color_bits(ColorBitsPerPixel::use_depth)
+				.with_border_color(glm::vec4{1.0f, 1.0f, 1.0f, 1.0f})
+				.build(USE_DEBUG_LABEL("shadow buffer"));
+		}
+	}
+
+	if (arg.world->lights.directional_lights.empty() == false)
+	{
+		SCOPED_DEBUG_GROUP("render shadow buffer"sv);
+		auto bound = BoundFbo{shadow_buffer};
+		const auto& light = arg.world->lights.directional_lights[0];
+		auto cam = OrthoCamera{};
+		cam.position = arg.camera->position + arg.world->lights.shadow_offset;
+		cam.pitch = light.pitch;
+		cam.yaw = light.yaw;
+		cam.size = arg.world->lights.shadow_size;
+		arg.renderer->render_shadows(shadow_size, *arg.world, compile(cam, shadow_size));
+	}
+
 	// render into msaa buffer
 	{
 		SCOPED_DEBUG_GROUP("rendering into msaa buffer"sv);
 		auto bound = BoundFbo{msaa_buffer};
-		arg.renderer->render_world(window_size, *arg.world, *arg.camera);
+		arg.renderer->render_world(window_size, *arg.world, compile(*arg.camera, window_size));
 	}
 
 	// copy msaa buffer to realized

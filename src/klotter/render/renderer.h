@@ -51,7 +51,9 @@ struct Renderer
 	[[nodiscard]] bool is_loaded() const;
 
 	/// doesn't set the size, prefer EffectStack::render
-	void render_world(const glm::ivec2& window_size, const World&, const Camera&);
+	void render_world(const glm::ivec2& window_size, const World&, const CompiledCamera&);
+
+	void render_shadows(const glm::ivec2& window_size, const World&, const CompiledCamera&);
 };
 
 /**

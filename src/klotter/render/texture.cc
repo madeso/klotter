@@ -37,9 +37,17 @@ namespace
 		return texture;
 	}
 
-	void set_texture_wrap(GLenum target, TextureEdge te)
+	void set_texture_wrap(GLenum target, TextureEdge te, const std::optional<glm::vec4>& border_color)
 	{
 		const auto wrap = te == TextureEdge::clamp ? GL_CLAMP_TO_EDGE : GL_REPEAT;
+		if (border_color.has_value())
+		{
+			ASSERT(te == TextureEdge::clamp);
+			glTexParameterfv(target, GL_TEXTURE_BORDER_COLOR, glm::value_ptr(*border_color));
+			glTexParameteri(target, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+			glTexParameteri(target, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+			return;
+		}
 		glTexParameteri(target, GL_TEXTURE_WRAP_S, wrap);
 		glTexParameteri(target, GL_TEXTURE_WRAP_T, wrap);
 	}
@@ -126,7 +134,7 @@ Texture2d::Texture2d(DEBUG_LABEL_ARG_MANY const void* pixel_data, unsigned int p
 	glBindTexture(GL_TEXTURE_2D, id);
 	SET_DEBUG_LABEL_NAMED(id, DebugLabelFor::Texture, Str() << "TEXTURE2d " << debug_label);
 
-	set_texture_wrap(GL_TEXTURE_2D, te);
+	set_texture_wrap(GL_TEXTURE_2D, te, std::nullopt);
 
 	const auto filter = min_mag_from_trs(trs);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filter.min);
@@ -389,6 +397,7 @@ R internal_format_from_color_bpp(ColorBitsPerPixel texture_bits, Transparency tr
 
 	switch (texture_bits)
 	{
+	case ColorBitsPerPixel::use_depth: return GL_DEPTH_COMPONENT;
 	case ColorBitsPerPixel::use_8: return include_transparency ? GL_RGBA : GL_RGB;
 	case ColorBitsPerPixel::use_16: return include_transparency ? GL_RGBA16F : GL_RGB16F;
 	case ColorBitsPerPixel::use_32: return include_transparency ? GL_RGBA32F : GL_RGB32F;
@@ -397,6 +406,7 @@ R internal_format_from_color_bpp(ColorBitsPerPixel texture_bits, Transparency tr
 		return GL_RGB;
 	}
 }
+
 
 std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) const
 {
@@ -419,7 +429,7 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 	if (is_msaa == false)
 	{
 		// msaa neither support min/mag filters nor texture wrapping
-		set_texture_wrap(target, te);
+		set_texture_wrap(target, te, border_color);
 		const auto filter = min_mag_from_trs(trs);
 		glTexParameteri(target, GL_TEXTURE_MIN_FILTER, filter.min);
 		glTexParameteri(target, GL_TEXTURE_MAG_FILTER, filter.mag);
@@ -446,8 +456,8 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 			height,
 			0,
 			// todo(Gustav): since we pass null as the data, the type doesn't matter... right?
-			GL_RGB,
-			GL_UNSIGNED_BYTE,
+			color_bits_per_pixel == ColorBitsPerPixel::use_depth ? GL_DEPTH_COMPONENT : GL_RGB,
+			color_bits_per_pixel == ColorBitsPerPixel::use_depth ? GL_FLOAT : GL_UNSIGNED_BYTE,
 			nullptr
 		);
 	}
@@ -456,11 +466,19 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 	auto bound = BoundFbo{fbo};
 	SET_DEBUG_LABEL_NAMED(fbo->fbo, DebugLabelFor::FrameBuffer, Str() << "FBO " << debug_label);
 	constexpr GLint mipmap_level = 0;
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, target, fbo->id, mipmap_level);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, color_bits_per_pixel == ColorBitsPerPixel::use_depth? GL_DEPTH_ATTACHMENT : GL_COLOR_ATTACHMENT0, target, fbo->id, mipmap_level);
+
+	if (color_bits_per_pixel == ColorBitsPerPixel::use_depth)
+	{
+		// disable color buffer when using depth texture _only_
+		glDrawBuffer(GL_NONE);
+		glReadBuffer(GL_NONE);
+	}
 
 	const auto internal_format = determine_fbo_internal_format(include_depth, include_stencil);
 	if (internal_format != GL_NONE)
 	{
+		ASSERT(color_bits_per_pixel != ColorBitsPerPixel::use_depth);
 		glGenRenderbuffers(1, &fbo->rbo);
 		ASSERT(fbo->rbo != 0);
 		glBindRenderbuffer(GL_RENDERBUFFER, fbo->rbo);

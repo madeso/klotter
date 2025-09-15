@@ -21,6 +21,7 @@ CameraVectors create_vectors(float yaw, float pitch)
 	return {front, right, up};
 }
 
+// todo(Gustav): is this wrapper needed?
 CameraVectors create_vectors(const Camera& cam)
 {
 	return create_vectors(cam.yaw, cam.pitch);
@@ -33,10 +34,26 @@ glm::mat4 create_view_from_world_mat(const glm::vec3& pos, const CameraVectors& 
 
 CompiledCamera compile(const Camera& cam, const glm::ivec2& window_size)
 {
+	// todo(Gustav): use the near and far from the camera struct
 	const float aspect = static_cast<float>(window_size.x) / static_cast<float>(window_size.y);
 	const auto clip_from_view = glm::perspective(glm::radians(cam.fov), aspect, 0.1f, 100.0f);
 
 	const auto camera_space = create_vectors(cam);
+	const auto view_from_world = create_view_from_world_mat(cam.position, camera_space);
+
+	return CompiledCamera{clip_from_view, view_from_world, cam.position, camera_space.front};
+}
+
+CompiledCamera compile(const OrthoCamera& cam, const glm::ivec2& window_size)
+{
+	const float aspect = static_cast<float>(window_size.x) / static_cast<float>(window_size.y);
+
+	const float width = cam.size * aspect;
+	const float height = cam.size;
+
+	const auto clip_from_view = glm::ortho(-width/2.0f, width/2.0f, -height/2.0f, height/2.0f, cam.near, cam.far);
+
+	const auto camera_space = create_vectors(cam.yaw, cam.pitch);
 	const auto view_from_world = create_view_from_world_mat(cam.position, camera_space);
 
 	return CompiledCamera{clip_from_view, view_from_world, cam.position, camera_space.front};

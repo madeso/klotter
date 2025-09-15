@@ -42,6 +42,10 @@ struct RenderSettings
 	/// how any steps of bloom blur to perform.
 	/// The renderer doesn't need to restart when this value has changed.
 	int bloom_blur_steps = 10;
+
+	/// The resolution of the shadow map.
+	/// The renderer needs to restart when this value has changed.
+	glm::ivec2 shadow_map_resolution = {2048, 2048};
 };
 
 /**

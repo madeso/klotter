@@ -34,6 +34,7 @@ struct RenderWorld : RenderSource
 
 	std::shared_ptr<FrameBuffer> msaa_buffer;
 	std::shared_ptr<FrameBuffer> realized_buffer;
+	std::shared_ptr<FrameBuffer> shadow_buffer;
 	RealizeShader* realize_shader;
 	std::optional<BloomRender> bloom_render;
 	std::size_t last_bloom_blur_index;
