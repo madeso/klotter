@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="163" column="7" bodyfile="src/klotter/render/world.h" bodystart="163" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="164" column="7" bodyfile="src/klotter/render/world.h" bodystart="164" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Lights_1a890e9d1377f243ecabc96b1cf61a5ad7" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -32,7 +32,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="164" column="7" bodyfile="src/klotter/render/world.h" bodystart="164" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="165" column="7" bodyfile="src/klotter/render/world.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1Lights_1a36d37b5cb32f19ddc5317bd63d672710" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 klotter::Lights::shadow_offset</definition>
+        <argsstring></argsstring>
+        <name>shadow_offset</name>
+        <qualifiedname>klotter::Lights::shadow_offset</qualifiedname>
+        <initializer>= {0.0f, 10.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="167" column="11" bodyfile="src/klotter/render/world.h" bodystart="167" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1Lights_1a93b4541fef98a095de4b3b3b7b13a436" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::Lights::shadow_size</definition>
+        <argsstring></argsstring>
+        <name>shadow_size</name>
+        <qualifiedname>klotter::Lights::shadow_size</qualifiedname>
+        <initializer>= 100.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="168" column="7" bodyfile="src/klotter/render/world.h" bodystart="168" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Lights_1a61b2b0f76c7cc5fd6deb52c207043de7" prot="public" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="structklotter_1_1DirectionalLight" kindref="compound">DirectionalLight</ref> &gt;</type>
@@ -46,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="166" column="13" bodyfile="src/klotter/render/world.h" bodystart="166" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="170" column="13" bodyfile="src/klotter/render/world.h" bodystart="170" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Lights_1acb7b0f789218068315c8612d1ebe189c" prot="public" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="structklotter_1_1PointLight" kindref="compound">PointLight</ref> &gt;</type>
@@ -60,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="167" column="13" bodyfile="src/klotter/render/world.h" bodystart="167" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="171" column="13" bodyfile="src/klotter/render/world.h" bodystart="171" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Lights_1aa1be9e01f131119d7fe7aed807a69464" prot="public" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="structklotter_1_1FrustumLight" kindref="compound">FrustumLight</ref> &gt;</type>
@@ -74,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="168" column="13" bodyfile="src/klotter/render/world.h" bodystart="168" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="172" column="13" bodyfile="src/klotter/render/world.h" bodystart="172" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -172,13 +202,15 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/world.h" line="161" column="1" bodyfile="src/klotter/render/world.h" bodystart="162" bodyend="169"/>
+    <location file="src/klotter/render/world.h" line="162" column="1" bodyfile="src/klotter/render/world.h" bodystart="163" bodyend="173"/>
     <listofallmembers>
       <member refid="structklotter_1_1Lights_1a81ed1012bb866e7411836d2c1e078fb8" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>ambient_color</name></member>
       <member refid="structklotter_1_1Lights_1a890e9d1377f243ecabc96b1cf61a5ad7" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>ambient_strength</name></member>
       <member refid="structklotter_1_1Lights_1a61b2b0f76c7cc5fd6deb52c207043de7" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>directional_lights</name></member>
       <member refid="structklotter_1_1Lights_1aa1be9e01f131119d7fe7aed807a69464" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>frustum_lights</name></member>
       <member refid="structklotter_1_1Lights_1acb7b0f789218068315c8612d1ebe189c" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>point_lights</name></member>
+      <member refid="structklotter_1_1Lights_1a36d37b5cb32f19ddc5317bd63d672710" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>shadow_offset</name></member>
+      <member refid="structklotter_1_1Lights_1a93b4541fef98a095de4b3b3b7b13a436" prot="public" virt="non-virtual"><scope>klotter::Lights</scope><name>shadow_size</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

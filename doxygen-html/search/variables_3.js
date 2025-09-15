@@ -19,11 +19,10 @@ var searchData=
   ['diffuse_5fstrength_16',['diffuse_strength',['../structklotter_1_1DirectionalLight.html#ab5ec90854317662801faf7f3f3ef2340',1,'klotter::DirectionalLight::diffuse_strength'],['../structklotter_1_1PointLight.html#ac94ccb541980db50f5c2622172efbf2a',1,'klotter::PointLight::diffuse_strength'],['../structklotter_1_1FrustumLight.html#af8924ca4e0740a9d1e792dc42d974d8e',1,'klotter::FrustumLight::diffuse_strength']]],
   ['diffuse_5funi_17',['diffuse_uni',['../structklotter_1_1FrustumLightUniforms.html#abc6a374421c4027a3c6240e255613606',1,'klotter::FrustumLightUniforms']]],
   ['dir_5funi_18',['dir_uni',['../structklotter_1_1DirectionalLightUniforms.html#aed02f947b82c857ca9f1f91401785d6c',1,'klotter::DirectionalLightUniforms']]],
-  ['direction_19',['direction',['../structklotter_1_1DirectionalLight.html#aef91c29677db151b799ed13f1a540deb',1,'klotter::DirectionalLight']]],
-  ['directional_5flights_20',['directional_lights',['../structklotter_1_1LoadedShader__Default.html#a67c3fab2355d461a914559f6c571db5b',1,'klotter::LoadedShader_Default::directional_lights'],['../structklotter_1_1Lights.html#a61b2b0f76c7cc5fd6deb52c207043de7',1,'klotter::Lights::directional_lights']]],
-  ['dirty_21',['dirty',['../structklotter_1_1EffectStack.html#a943bbfc9c0c88cf892b41f28ffede7f0',1,'klotter::EffectStack']]],
-  ['drag_22',['drag',['../structklotter_1_1SCurveGuiState.html#a72718db76c89b9a18bac530c461aa8d6',1,'klotter::SCurveGuiState']]],
-  ['drag_5fcolor_23',['drag_color',['../structklotter_1_1SCurveImguiSettings.html#af3f175b069e2aec5c1a3bb56f1395245',1,'klotter::SCurveImguiSettings']]],
-  ['drag_5fradius_24',['drag_radius',['../structklotter_1_1SCurveImguiSettings.html#a4123894fee2dc6ec8a1ffd24ccfd558e',1,'klotter::SCurveImguiSettings']]],
-  ['draw_5fpoints_25',['draw_points',['../structklotter_1_1SCurveImguiSettings.html#a881dc3d42c615c71ed9ed62b5eb4cd59',1,'klotter::SCurveImguiSettings']]]
+  ['directional_5flights_19',['directional_lights',['../structklotter_1_1LoadedShader__Default.html#a67c3fab2355d461a914559f6c571db5b',1,'klotter::LoadedShader_Default::directional_lights'],['../structklotter_1_1Lights.html#a61b2b0f76c7cc5fd6deb52c207043de7',1,'klotter::Lights::directional_lights']]],
+  ['dirty_20',['dirty',['../structklotter_1_1EffectStack.html#a943bbfc9c0c88cf892b41f28ffede7f0',1,'klotter::EffectStack']]],
+  ['drag_21',['drag',['../structklotter_1_1SCurveGuiState.html#a72718db76c89b9a18bac530c461aa8d6',1,'klotter::SCurveGuiState']]],
+  ['drag_5fcolor_22',['drag_color',['../structklotter_1_1SCurveImguiSettings.html#af3f175b069e2aec5c1a3bb56f1395245',1,'klotter::SCurveImguiSettings']]],
+  ['drag_5fradius_23',['drag_radius',['../structklotter_1_1SCurveImguiSettings.html#a4123894fee2dc6ec8a1ffd24ccfd558e',1,'klotter::SCurveImguiSettings']]],
+  ['draw_5fpoints_24',['draw_points',['../structklotter_1_1SCurveImguiSettings.html#a881dc3d42c615c71ed9ed62b5eb4cd59',1,'klotter::SCurveImguiSettings']]]
 ];

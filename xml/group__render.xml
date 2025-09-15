@@ -5,6 +5,7 @@
     <title>Renderer</title>
     <innerclass refid="structklotter_1_1CameraVectors" prot="public">klotter::CameraVectors</innerclass>
     <innerclass refid="structklotter_1_1Camera" prot="public">klotter::Camera</innerclass>
+    <innerclass refid="structklotter_1_1OrthoCamera" prot="public">klotter::OrthoCamera</innerclass>
     <innerclass refid="structklotter_1_1CompiledCamera" prot="public">klotter::CompiledCamera</innerclass>
     <innerclass refid="structklotter_1_1DebugLine" prot="public">klotter::DebugLine</innerclass>
     <innerclass refid="structklotter_1_1DebugRender" prot="public">klotter::DebugRender</innerclass>
@@ -709,7 +710,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="47" column="15" declfile="src/klotter/render/camera.h" declline="47" declcolumn="15"/>
+        <location file="src/klotter/render/camera.h" line="62" column="15" declfile="src/klotter/render/camera.h" declline="62" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga531baa4b9f91162f31830d9dd415d002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CameraVectors</type>
@@ -732,7 +733,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="50" column="15" declfile="src/klotter/render/camera.h" declline="50" declcolumn="15"/>
+        <location file="src/klotter/render/camera.h" line="65" column="15" declfile="src/klotter/render/camera.h" declline="65" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::mat4</type>
@@ -754,7 +755,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="53" column="11" declfile="src/klotter/render/camera.h" declline="53" declcolumn="11"/>
+        <location file="src/klotter/render/camera.h" line="68" column="11" declfile="src/klotter/render/camera.h" declline="68" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CompiledCamera</type>
@@ -770,13 +771,35 @@
           <declname>window_size</declname>
         </param>
         <briefdescription>
-<para>&quot;Compile&quot; a camera so it can be used in rendering. </para>
+<para>&quot;Compile&quot; a camera to a perspective so it can be used in rendering. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="56" column="16" declfile="src/klotter/render/camera.h" declline="56" declcolumn="16"/>
+        <location file="src/klotter/render/camera.h" line="71" column="16" declfile="src/klotter/render/camera.h" declline="71" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__render_1ga5068b304bb08be791391379a39514cb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CompiledCamera</type>
+        <definition>CompiledCamera klotter::compile</definition>
+        <argsstring>(const OrthoCamera &amp;, const glm::ivec2 &amp;window_size)</argsstring>
+        <name>compile</name>
+        <qualifiedname>klotter::compile</qualifiedname>
+        <param>
+          <type>const OrthoCamera &amp;</type>
+        </param>
+        <param>
+          <type>const glm::ivec2 &amp;</type>
+          <declname>window_size</declname>
+        </param>
+        <briefdescription>
+<para>&quot;Compile&quot; a camera to an orthographic view so it can be used in rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="74" column="16" declfile="src/klotter/render/camera.h" declline="74" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::vec2</type>
@@ -803,7 +826,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="60" column="11" declfile="src/klotter/render/camera.h" declline="60" declcolumn="11"/>
+        <location file="src/klotter/render/camera.h" line="78" column="11" declfile="src/klotter/render/camera.h" declline="78" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>PostProcSetup</type>

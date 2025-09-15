@@ -8,7 +8,7 @@ var searchData=
   ['factor_5',['factor',['../group__render.html#gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d',1,'klotter']]],
   ['factor_5funi_6',['factor_uni',['../structklotter_1_1LoadedPostProcShader.html#a8a4b03defcce03b259e547afb8fdc87c',1,'klotter::LoadedPostProcShader']]],
   ['factoreffect_7',['FactorEffect',['../structklotter_1_1FactorEffect.html',1,'klotter::FactorEffect'],['../structklotter_1_1FactorEffect.html#a20c51552c66bf6c1e49d615a5021d4bd',1,'klotter::FactorEffect::FactorEffect()']]],
-  ['far_8',['far',['../structklotter_1_1Camera.html#aa5580be75db05bc2a99273caf62b3394',1,'klotter::Camera']]],
+  ['far_8',['far',['../structklotter_1_1Camera.html#aa5580be75db05bc2a99273caf62b3394',1,'klotter::Camera::far'],['../structklotter_1_1OrthoCamera.html#aad849b9d7c4ae2741c230f1978add4fe',1,'klotter::OrthoCamera::far']]],
   ['fbo_9',['fbo',['../structklotter_1_1RenderTextureWithShader.html#a0ae8bab66cf61e303741ee950ab8303d',1,'klotter::RenderTextureWithShader::fbo'],['../structklotter_1_1FrameBuffer.html#a7945d2f95265ed1b905a1d823b2a07c1',1,'klotter::FrameBuffer::fbo'],['../structklotter_1_1BoundFbo.html#afe94d7a00ce51497623dd29f5e006b09',1,'klotter::BoundFbo::fbo']]],
   ['feature_5fflags_2eh_10',['feature_flags.h',['../feature__flags_8h.html',1,'']]],
   ['ff_5fhas_11',['FF_HAS',['../feature__flags_8h.html#a3aff7fe2c32285f262b9184ac9fcf6e2',1,'feature_flags.h']]],

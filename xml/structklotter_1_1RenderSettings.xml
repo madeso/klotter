@@ -151,13 +151,30 @@
         </inbodydescription>
         <location file="src/klotter/render/render_settings.h" line="44" column="5" bodyfile="src/klotter/render/render_settings.h" bodystart="44" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RenderSettings_1a38b6b970e96e96af41f8e85f8761e2d7" prot="public" static="no" mutable="no">
+        <type>glm::ivec2</type>
+        <definition>glm::ivec2 klotter::RenderSettings::shadow_map_resolution</definition>
+        <argsstring></argsstring>
+        <name>shadow_map_resolution</name>
+        <qualifiedname>klotter::RenderSettings::shadow_map_resolution</qualifiedname>
+        <initializer>= {2048, 2048}</initializer>
+        <briefdescription>
+<para>The resolution of the shadow map. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The renderer needs to restart when this value has changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/render_settings.h" line="48" column="12" bodyfile="src/klotter/render/render_settings.h" bodystart="48" bodyend="48"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Startup settings for the renderer. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/render_settings.h" line="12" column="1" bodyfile="src/klotter/render/render_settings.h" bodystart="13" bodyend="45"/>
+    <location file="src/klotter/render/render_settings.h" line="12" column="1" bodyfile="src/klotter/render/render_settings.h" bodystart="13" bodyend="49"/>
     <listofallmembers>
       <member refid="structklotter_1_1RenderSettings_1a9309a180ccfe2eb5e5679b6c46782c4c" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>bloom_blur_steps</name></member>
       <member refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>bloom_cutoff</name></member>
@@ -167,6 +184,7 @@
       <member refid="structklotter_1_1RenderSettings_1a35a5d2af4f7e7e2d90d372b9f2f14e92" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_directional_lights</name></member>
       <member refid="structklotter_1_1RenderSettings_1a27006cbef64a158e5c4d310d07107e19" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_frustum_lights</name></member>
       <member refid="structklotter_1_1RenderSettings_1af9dc73fb0a1285f9d63cd41d46bdd875" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>number_of_point_lights</name></member>
+      <member refid="structklotter_1_1RenderSettings_1a38b6b970e96e96af41f8e85f8761e2d7" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>shadow_map_resolution</name></member>
       <member refid="structklotter_1_1RenderSettings_1aba675c055c2e67f7622b35299261ebb8" prot="public" virt="non-virtual"><scope>klotter::RenderSettings</scope><name>use_bloom</name></member>
     </listofallmembers>
   </compounddef>

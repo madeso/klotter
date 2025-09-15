@@ -186,12 +186,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="137" column="1" bodyfile="src/klotter/render/texture.h" bodystart="138" bodyend="141"/>
+        <location file="src/klotter/render/texture.h" line="138" column="1" bodyfile="src/klotter/render/texture.h" bodystart="139" bodyend="142"/>
       </memberdef>
       <memberdef kind="enum" id="group__texture_1ga1d677cc4a3cecec32f8e90f3ae62bf95" prot="public" static="no" strong="yes">
         <type></type>
         <name>ColorBitsPerPixel</name>
         <qualifiedname>klotter::ColorBitsPerPixel</qualifiedname>
+        <enumvalue id="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95a925803c00853ca6aea99f12ad20f47c8" prot="public">
+          <name>use_depth</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95a9b898fcf422b2b9616148b3f3d1fa101" prot="public">
           <name>use_8</name>
           <briefdescription>
@@ -220,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="144" column="1" bodyfile="src/klotter/render/texture.h" bodystart="145" bodyend="147"/>
+        <location file="src/klotter/render/texture.h" line="145" column="1" bodyfile="src/klotter/render/texture.h" bodystart="146" bodyend="149"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
@@ -385,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="211" column="6" declfile="src/klotter/render/texture.h" declline="211" declcolumn="6"/>
+        <location file="src/klotter/render/texture.h" line="220" column="6" declfile="src/klotter/render/texture.h" declline="220" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

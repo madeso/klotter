@@ -261,6 +261,7 @@
         <childnode refid="13" relation="usage">
           <edgelabel>msaa_buffer</edgelabel>
           <edgelabel>realized_buffer</edgelabel>
+          <edgelabel>shadow_buffer</edgelabel>
         </childnode>
         <childnode refid="19" relation="usage">
           <edgelabel>realize_shader</edgelabel>

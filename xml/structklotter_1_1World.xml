@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="182" column="13" bodyfile="src/klotter/render/world.h" bodystart="182" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="186" column="13" bodyfile="src/klotter/render/world.h" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1World_1a42950d49b98dc3304ea9a25ddbf83c9f" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::shared_ptr&lt; <ref refid="structklotter_1_1MeshInstance__TransformInstanced" kindref="compound">MeshInstance_TransformInstanced</ref> &gt; &gt;</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="183" column="13" bodyfile="src/klotter/render/world.h" bodystart="183" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="187" column="13" bodyfile="src/klotter/render/world.h" bodystart="187" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1World_1a3fbb4f1f21c97a7f1cc7e11bc5f26a0b" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Lights" kindref="compound">Lights</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="184" column="8" bodyfile="src/klotter/render/world.h" bodystart="184" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="188" column="8" bodyfile="src/klotter/render/world.h" bodystart="188" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1World_1ad3f987c9d56ef8a9c7c736275f8a4f20" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Color" kindref="compound">Color</ref></type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="186" column="7" bodyfile="src/klotter/render/world.h" bodystart="186" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="190" column="7" bodyfile="src/klotter/render/world.h" bodystart="190" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1World_1a3f1bf3f492e9654b5ad192377811dffb" prot="public" static="no" mutable="no">
         <type>std::optional&lt; <ref refid="structklotter_1_1Skybox" kindref="compound">Skybox</ref> &gt;</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="187" column="15" bodyfile="src/klotter/render/world.h" bodystart="187" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="191" column="15" bodyfile="src/klotter/render/world.h" bodystart="191" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -277,7 +277,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/world.h" line="180" column="1" bodyfile="src/klotter/render/world.h" bodystart="181" bodyend="188"/>
+    <location file="src/klotter/render/world.h" line="184" column="1" bodyfile="src/klotter/render/world.h" bodystart="185" bodyend="192"/>
     <listofallmembers>
       <member refid="structklotter_1_1World_1ad3f987c9d56ef8a9c7c736275f8a4f20" prot="public" virt="non-virtual"><scope>klotter::World</scope><name>clear_color</name></member>
       <member refid="structklotter_1_1World_1a42950d49b98dc3304ea9a25ddbf83c9f" prot="public" virt="non-virtual"><scope>klotter::World</scope><name>instances</name></member>

@@ -121,7 +121,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A temporary view of the local space of a camera.  <a href="structklotter_1_1CameraVectors.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Camera.html">klotter::Camera</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current camera representation.  <a href="structklotter_1_1Camera.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current perspective camera representation.  <a href="structklotter_1_1Camera.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1OrthoCamera.html">klotter::OrthoCamera</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A orthographic camera representation.  <a href="structklotter_1_1OrthoCamera.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CompiledCamera.html">klotter::CompiledCamera</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "compiled" camera for use in rendering.  <a href="structklotter_1_1CompiledCamera.html#details">More...</a><br /></td></tr>
@@ -383,8 +386,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3ceb6e1d2428afc0bd213b454601023a" id="r_ga3ceb6e1d2428afc0bd213b454601023a"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ceb6e1d2428afc0bd213b454601023a">klotter::create_view_from_world_mat</a> (const glm::vec3 &amp;pos, const <a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> &amp;cv)</td></tr>
 <tr class="separator:ga3ceb6e1d2428afc0bd213b454601023a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga877a3ed04c88761bdfb420e7d4190be4" id="r_ga877a3ed04c88761bdfb420e7d4190be4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga877a3ed04c88761bdfb420e7d4190be4">klotter::compile</a> (const <a class="el" href="structklotter_1_1Camera.html">Camera</a> &amp;, const glm::ivec2 &amp;window_size)</td></tr>
-<tr class="memdesc:ga877a3ed04c88761bdfb420e7d4190be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Compile" a camera so it can be used in rendering.  <br /></td></tr>
+<tr class="memdesc:ga877a3ed04c88761bdfb420e7d4190be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Compile" a camera to a perspective so it can be used in rendering.  <br /></td></tr>
 <tr class="separator:ga877a3ed04c88761bdfb420e7d4190be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5068b304bb08be791391379a39514cb2" id="r_ga5068b304bb08be791391379a39514cb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5068b304bb08be791391379a39514cb2">klotter::compile</a> (const <a class="el" href="structklotter_1_1OrthoCamera.html">OrthoCamera</a> &amp;, const glm::ivec2 &amp;window_size)</td></tr>
+<tr class="memdesc:ga5068b304bb08be791391379a39514cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Compile" a camera to an orthographic view so it can be used in rendering.  <br /></td></tr>
+<tr class="separator:ga5068b304bb08be791391379a39514cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga96a0f5ab096cbed0b9ebdc24ac13e7ca" id="r_ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga96a0f5ab096cbed0b9ebdc24ac13e7ca">klotter::screen_from_world</a> (const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;cam, const glm::vec3 &amp;world_pos, const glm::vec2 &amp;<a class="el" href="#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">resolution</a>)</td></tr>
 <tr class="memdesc:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the screen coordinate of a 3d world position.  <br /></td></tr>
 <tr class="separator:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -874,7 +880,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="ga877a3ed04c88761bdfb420e7d4190be4" name="ga877a3ed04c88761bdfb420e7d4190be4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga877a3ed04c88761bdfb420e7d4190be4">&#9670;&#160;</a></span>compile()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga877a3ed04c88761bdfb420e7d4190be4">&#9670;&#160;</a></span>compile() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -892,7 +898,30 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>"Compile" a camera so it can be used in rendering. </p>
+<p>"Compile" a camera to a perspective so it can be used in rendering. </p>
+
+</div>
+</div>
+<a id="ga5068b304bb08be791391379a39514cb2" name="ga5068b304bb08be791391379a39514cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5068b304bb08be791391379a39514cb2">&#9670;&#160;</a></span>compile() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> klotter::compile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1OrthoCamera.html">OrthoCamera</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::ivec2 &amp;</td>          <td class="paramname"><span class="paramname"><em>window_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>"Compile" a camera to an orthographic view so it can be used in rendering. </p>
 
 </div>
 </div>

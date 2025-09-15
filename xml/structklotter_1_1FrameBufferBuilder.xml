@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="158" column="5" bodyfile="src/klotter/render/texture.h" bodystart="158" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="160" column="5" bodyfile="src/klotter/render/texture.h" bodystart="160" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FrameBufferBuilder_1a6cff15400f61967b5a7d5ae860363a12" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="159" column="5" bodyfile="src/klotter/render/texture.h" bodystart="159" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="161" column="5" bodyfile="src/klotter/render/texture.h" bodystart="161" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FrameBufferBuilder_1afbbcb8888ef61ff4b6a84e1c1f2a1585" prot="public" static="no" mutable="no">
         <type><ref refid="group__texture_1ga1d677cc4a3cecec32f8e90f3ae62bf95" kindref="member">ColorBitsPerPixel</ref></type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="161" column="19" bodyfile="src/klotter/render/texture.h" bodystart="161" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="163" column="19" bodyfile="src/klotter/render/texture.h" bodystart="163" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FrameBufferBuilder_1aca3f7b8c2f13b65748c3d95cbdd589bd" prot="public" static="no" mutable="no">
         <type><ref refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kindref="member">DepthBits</ref></type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="162" column="11" bodyfile="src/klotter/render/texture.h" bodystart="162" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="164" column="11" bodyfile="src/klotter/render/texture.h" bodystart="164" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FrameBufferBuilder_1abe6356a9393d070cdd6cbd8455f1493f" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -75,7 +75,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="163" column="6" bodyfile="src/klotter/render/texture.h" bodystart="163" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="165" column="6" bodyfile="src/klotter/render/texture.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FrameBufferBuilder_1a28480231d8dc07bd7995909689106bb4" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; glm::vec4 &gt;</type>
+        <definition>std::optional&lt;glm::vec4&gt; klotter::FrameBufferBuilder::border_color</definition>
+        <argsstring></argsstring>
+        <name>border_color</name>
+        <qualifiedname>klotter::FrameBufferBuilder::border_color</qualifiedname>
+        <initializer>= std::nullopt</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="166" column="15" bodyfile="src/klotter/render/texture.h" bodystart="166" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1FrameBufferBuilder_1ab281ad34ad7d4faef8a0c859d13c879a" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -91,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="166" column="5" bodyfile="src/klotter/render/texture.h" bodystart="166" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="169" column="5" bodyfile="src/klotter/render/texture.h" bodystart="169" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -111,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="152" column="20" bodyfile="src/klotter/render/texture.h" bodystart="152" bodyend="156"/>
+        <location file="src/klotter/render/texture.h" line="154" column="20" bodyfile="src/klotter/render/texture.h" bodystart="154" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FrameBufferBuilder_1abb13c3b37555723323e059b39814aa4a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structklotter_1_1FrameBufferBuilder" kindref="compound">FrameBufferBuilder</ref> &amp;</type>
@@ -129,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="168" column="30" bodyfile="src/klotter/render/texture.h" bodystart="168" bodyend="172"/>
+        <location file="src/klotter/render/texture.h" line="171" column="30" bodyfile="src/klotter/render/texture.h" bodystart="171" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FrameBufferBuilder_1a7f81f8a66751a58cbbee4cb7227480c4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structklotter_1_1FrameBufferBuilder" kindref="compound">FrameBufferBuilder</ref> &amp;</type>
@@ -148,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="174" column="30" bodyfile="src/klotter/render/texture.h" bodystart="174" bodyend="178"/>
+        <location file="src/klotter/render/texture.h" line="177" column="30" bodyfile="src/klotter/render/texture.h" bodystart="177" bodyend="181"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FrameBufferBuilder_1a35987e72c52d978dfd5b9ff285f9b541" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structklotter_1_1FrameBufferBuilder" kindref="compound">FrameBufferBuilder</ref> &amp;</type>
@@ -166,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="180" column="30" bodyfile="src/klotter/render/texture.h" bodystart="180" bodyend="184"/>
+        <location file="src/klotter/render/texture.h" line="183" column="30" bodyfile="src/klotter/render/texture.h" bodystart="183" bodyend="187"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FrameBufferBuilder_1a1e0802c3d625392894e2f036b855c336" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structklotter_1_1FrameBufferBuilder" kindref="compound">FrameBufferBuilder</ref> &amp;</type>
@@ -180,7 +195,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="186" column="30" bodyfile="src/klotter/render/texture.h" bodystart="186" bodyend="190"/>
+        <location file="src/klotter/render/texture.h" line="189" column="30" bodyfile="src/klotter/render/texture.h" bodystart="189" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1FrameBufferBuilder_1a2ea81aecbacf6c7ed843e8bf84d47806" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structklotter_1_1FrameBufferBuilder" kindref="compound">FrameBufferBuilder</ref> &amp;</type>
+        <definition>FrameBufferBuilder &amp; klotter::FrameBufferBuilder::with_border_color</definition>
+        <argsstring>(const glm::vec4 &amp;c)</argsstring>
+        <name>with_border_color</name>
+        <qualifiedname>klotter::FrameBufferBuilder::with_border_color</qualifiedname>
+        <param>
+          <type>const glm::vec4 &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="195" column="30" bodyfile="src/klotter/render/texture.h" bodystart="195" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1FrameBufferBuilder_1a3e589e67aa22e8301710b5308cf9429b" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
@@ -197,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="194" column="18"/>
+        <location file="src/klotter/render/texture.h" line="203" column="18"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -205,8 +238,9 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/texture.h" line="150" column="1" bodyfile="src/klotter/render/texture.h" bodystart="151" bodyend="195"/>
+    <location file="src/klotter/render/texture.h" line="152" column="1" bodyfile="src/klotter/render/texture.h" bodystart="153" bodyend="204"/>
     <listofallmembers>
+      <member refid="structklotter_1_1FrameBufferBuilder_1a28480231d8dc07bd7995909689106bb4" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>border_color</name></member>
       <member refid="structklotter_1_1FrameBufferBuilder_1a3e589e67aa22e8301710b5308cf9429b" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>build</name></member>
       <member refid="structklotter_1_1FrameBufferBuilder_1afbbcb8888ef61ff4b6a84e1c1f2a1585" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>color_bits_per_pixel</name></member>
       <member refid="structklotter_1_1FrameBufferBuilder_1a3e5157674b4f8d71cf2cef6c44ad0620" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>FrameBufferBuilder</name></member>
@@ -215,6 +249,7 @@
       <member refid="structklotter_1_1FrameBufferBuilder_1abe6356a9393d070cdd6cbd8455f1493f" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>include_stencil</name></member>
       <member refid="structklotter_1_1FrameBufferBuilder_1ab281ad34ad7d4faef8a0c859d13c879a" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>msaa_samples</name></member>
       <member refid="structklotter_1_1FrameBufferBuilder_1abd3be8a4e6c94d4eb062c83030e8d31f" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>width</name></member>
+      <member refid="structklotter_1_1FrameBufferBuilder_1a2ea81aecbacf6c7ed843e8bf84d47806" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>with_border_color</name></member>
       <member refid="structklotter_1_1FrameBufferBuilder_1a35987e72c52d978dfd5b9ff285f9b541" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>with_color_bits</name></member>
       <member refid="structklotter_1_1FrameBufferBuilder_1a7f81f8a66751a58cbbee4cb7227480c4" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>with_depth</name></member>
       <member refid="structklotter_1_1FrameBufferBuilder_1abb13c3b37555723323e059b39814aa4a" prot="public" virt="non-virtual"><scope>klotter::FrameBufferBuilder</scope><name>with_msaa</name></member>

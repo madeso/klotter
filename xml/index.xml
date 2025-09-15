@@ -242,7 +242,8 @@
     <member refid="structklotter_1_1DefaultMaterial_1a908a00a5227daaa63e74bc197fd6e6af" kind="function"><name>is_transparent</name></member>
   </compound>
   <compound refid="structklotter_1_1DirectionalLight" kind="struct"><name>klotter::DirectionalLight</name>
-    <member refid="structklotter_1_1DirectionalLight_1aef91c29677db151b799ed13f1a540deb" kind="variable"><name>direction</name></member>
+    <member refid="structklotter_1_1DirectionalLight_1ac00c14f79838961452f94134d99f94fd" kind="variable"><name>pitch</name></member>
+    <member refid="structklotter_1_1DirectionalLight_1aa8552762500327f550348e772777fa68" kind="variable"><name>yaw</name></member>
     <member refid="structklotter_1_1DirectionalLight_1a70136f59509a5683d7131e79e850ed24" kind="variable"><name>color</name></member>
     <member refid="structklotter_1_1DirectionalLight_1a9b4bfe875fa89fd44ee20b5e6fa2f3d9" kind="variable"><name>specular_strength</name></member>
     <member refid="structklotter_1_1DirectionalLight_1ab5ec90854317662801faf7f3f3ef2340" kind="variable"><name>diffuse_strength</name></member>
@@ -349,12 +350,14 @@
     <member refid="structklotter_1_1FrameBufferBuilder_1afbbcb8888ef61ff4b6a84e1c1f2a1585" kind="variable"><name>color_bits_per_pixel</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1aca3f7b8c2f13b65748c3d95cbdd589bd" kind="variable"><name>include_depth</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1abe6356a9393d070cdd6cbd8455f1493f" kind="variable"><name>include_stencil</name></member>
+    <member refid="structklotter_1_1FrameBufferBuilder_1a28480231d8dc07bd7995909689106bb4" kind="variable"><name>border_color</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1ab281ad34ad7d4faef8a0c859d13c879a" kind="variable"><name>msaa_samples</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1a3e5157674b4f8d71cf2cef6c44ad0620" kind="function"><name>FrameBufferBuilder</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1abb13c3b37555723323e059b39814aa4a" kind="function"><name>with_msaa</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1a7f81f8a66751a58cbbee4cb7227480c4" kind="function"><name>with_depth</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1a35987e72c52d978dfd5b9ff285f9b541" kind="function"><name>with_color_bits</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1a1e0802c3d625392894e2f036b855c336" kind="function"><name>with_stencil</name></member>
+    <member refid="structklotter_1_1FrameBufferBuilder_1a2ea81aecbacf6c7ed843e8bf84d47806" kind="function"><name>with_border_color</name></member>
     <member refid="structklotter_1_1FrameBufferBuilder_1a3e589e67aa22e8301710b5308cf9429b" kind="function"><name>build</name></member>
   </compound>
   <compound refid="structklotter_1_1FrustumLight" kind="struct"><name>klotter::FrustumLight</name>
@@ -400,6 +403,8 @@
   <compound refid="structklotter_1_1Lights" kind="struct"><name>klotter::Lights</name>
     <member refid="structklotter_1_1Lights_1a81ed1012bb866e7411836d2c1e078fb8" kind="variable"><name>ambient_color</name></member>
     <member refid="structklotter_1_1Lights_1a890e9d1377f243ecabc96b1cf61a5ad7" kind="variable"><name>ambient_strength</name></member>
+    <member refid="structklotter_1_1Lights_1a36d37b5cb32f19ddc5317bd63d672710" kind="variable"><name>shadow_offset</name></member>
+    <member refid="structklotter_1_1Lights_1a93b4541fef98a095de4b3b3b7b13a436" kind="variable"><name>shadow_size</name></member>
     <member refid="structklotter_1_1Lights_1a61b2b0f76c7cc5fd6deb52c207043de7" kind="variable"><name>directional_lights</name></member>
     <member refid="structklotter_1_1Lights_1acb7b0f789218068315c8612d1ebe189c" kind="variable"><name>point_lights</name></member>
     <member refid="structklotter_1_1Lights_1aa1be9e01f131119d7fe7aed807a69464" kind="variable"><name>frustum_lights</name></member>
@@ -539,6 +544,14 @@
     <member refid="structklotter_1_1OpenglStates_1abc35a8245c75899fbf5242809bf19c69" kind="variable"><name>active_texture</name></member>
     <member refid="structklotter_1_1OpenglStates_1a86522266949d8aee0bf4e2b53a9131f2" kind="variable"><name>texture_bound</name></member>
   </compound>
+  <compound refid="structklotter_1_1OrthoCamera" kind="struct"><name>klotter::OrthoCamera</name>
+    <member refid="structklotter_1_1OrthoCamera_1aab878670ba7a0c8357015426cbae5fe8" kind="variable"><name>size</name></member>
+    <member refid="structklotter_1_1OrthoCamera_1a770146cc46fe2e3b200f670c9983fcb4" kind="variable"><name>near</name></member>
+    <member refid="structklotter_1_1OrthoCamera_1aad849b9d7c4ae2741c230f1978add4fe" kind="variable"><name>far</name></member>
+    <member refid="structklotter_1_1OrthoCamera_1ab5f7e056f935b49c22d6c80e82f67c6d" kind="variable"><name>position</name></member>
+    <member refid="structklotter_1_1OrthoCamera_1ad585a230be64c783909c5d9719a8256d" kind="variable"><name>yaw</name></member>
+    <member refid="structklotter_1_1OrthoCamera_1ada539ed8a71d3a041487ef1a9754e4da" kind="variable"><name>pitch</name></member>
+  </compound>
   <compound refid="structklotter_1_1PingPongBlurShader" kind="struct"><name>klotter::PingPongBlurShader</name>
     <member refid="structklotter_1_1PingPongBlurShader_1aa4489466c7f677289c52d3e3b8220916" kind="variable"><name>shader</name></member>
     <member refid="structklotter_1_1PingPongBlurShader_1afba0c910c25cb3ee95c7bf59cec659d8" kind="variable"><name>is_horizontal_uniform</name></member>
@@ -607,7 +620,8 @@
     <member refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" kind="function"><name>make_blur_effect</name></member>
     <member refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" kind="function"><name>make_skybox</name></member>
     <member refid="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" kind="function"><name>is_loaded</name></member>
-    <member refid="structklotter_1_1Renderer_1a48524cf82c262c4ee5caa4d8341ea351" kind="function"><name>render_world</name></member>
+    <member refid="structklotter_1_1Renderer_1a2f7aaf8158a5c6a9aab9d9bdf9bd8724" kind="function"><name>render_world</name></member>
+    <member refid="structklotter_1_1Renderer_1a43bf75b910e4ad9d97c703f33fffa926" kind="function"><name>render_shadows</name></member>
   </compound>
   <compound refid="structklotter_1_1RendererPimpl" kind="struct"><name>klotter::RendererPimpl</name>
     <member refid="structklotter_1_1RendererPimpl_1a146ca5e38bd4c8a717795a173c657e89" kind="variable"><name>camera_uniform_buffer</name></member>
@@ -627,6 +641,7 @@
     <member refid="structklotter_1_1RenderSettings_1a3a8c008ef8627b7389ac2d49403aa399" kind="variable"><name>bloom_cutoff</name></member>
     <member refid="structklotter_1_1RenderSettings_1ae19fc5937643ba57c79be581814f86bd" kind="variable"><name>bloom_softness</name></member>
     <member refid="structklotter_1_1RenderSettings_1a9309a180ccfe2eb5e5679b6c46782c4c" kind="variable"><name>bloom_blur_steps</name></member>
+    <member refid="structklotter_1_1RenderSettings_1a38b6b970e96e96af41f8e85f8761e2d7" kind="variable"><name>shadow_map_resolution</name></member>
   </compound>
   <compound refid="structklotter_1_1RenderSource" kind="struct"><name>klotter::RenderSource</name>
     <member refid="structklotter_1_1RenderSource_1a7bbdf727aee83637ea11695272907a31" kind="function"><name>RenderSource</name></member>
@@ -652,6 +667,7 @@
     <member refid="structklotter_1_1RenderWorld_1a0c96c544429ce3d6905ed01fe02b7805" kind="variable"><name>exposure</name></member>
     <member refid="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" kind="variable"><name>msaa_buffer</name></member>
     <member refid="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" kind="variable"><name>realized_buffer</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a99682b1da98c2df7e222617ce788955b" kind="variable"><name>shadow_buffer</name></member>
     <member refid="structklotter_1_1RenderWorld_1a4d57a0d535387b761cc66e2389128328" kind="variable"><name>realize_shader</name></member>
     <member refid="structklotter_1_1RenderWorld_1a25bb231d5ce892d16237affabba27d61" kind="variable"><name>bloom_render</name></member>
     <member refid="structklotter_1_1RenderWorld_1a50b93c67171958ea83a5acffb927909d" kind="variable"><name>last_bloom_blur_index</name></member>
@@ -955,6 +971,7 @@
     <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
     <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
+    <member refid="group__render_1ga5068b304bb08be791391379a39514cb2" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
     <member refid="namespaceklotter_1a8655e92bbc13aff3832b4fed06e62fb1" kind="function"><name>linear_from_srgb</name></member>
     <member refid="namespaceklotter_1a16fc6bb5ae9c482d07217873f345e25e" kind="function"><name>linear_from_srgb</name></member>
@@ -1336,6 +1353,7 @@
     <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
     <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
+    <member refid="group__render_1ga5068b304bb08be791391379a39514cb2" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
     <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
     <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
@@ -1400,6 +1418,7 @@
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab33abfcb724dd7b2af41c9c87c2a947e" kind="enumvalue"><name>use_24</name></member>
     <member refid="group__texture_1ggad4a5a90c6e8064ff314642d5cd089849ab58da2c01fd2c34c8f79d446758f5253" kind="enumvalue"><name>use_32</name></member>
     <member refid="group__texture_1ga1d677cc4a3cecec32f8e90f3ae62bf95" kind="enum"><name>ColorBitsPerPixel</name></member>
+    <member refid="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95a925803c00853ca6aea99f12ad20f47c8" kind="enumvalue"><name>use_depth</name></member>
     <member refid="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95a9b898fcf422b2b9616148b3f3d1fa101" kind="enumvalue"><name>use_8</name></member>
     <member refid="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95a2b8128f893f047b799dcef08274808e4" kind="enumvalue"><name>use_16</name></member>
     <member refid="group__texture_1gga1d677cc4a3cecec32f8e90f3ae62bf95ab58da2c01fd2c34c8f79d446758f5253" kind="enumvalue"><name>use_32</name></member>

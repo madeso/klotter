@@ -63,6 +63,7 @@
     <innerclass refid="structklotter_1_1MeshInstance" prot="public">klotter::MeshInstance</innerclass>
     <innerclass refid="structklotter_1_1MeshInstance__TransformInstanced" prot="public">klotter::MeshInstance_TransformInstanced</innerclass>
     <innerclass refid="structklotter_1_1OpenglStates" prot="public">klotter::OpenglStates</innerclass>
+    <innerclass refid="structklotter_1_1OrthoCamera" prot="public">klotter::OrthoCamera</innerclass>
     <innerclass refid="structklotter_1_1PingPongBlurShader" prot="public">klotter::PingPongBlurShader</innerclass>
     <innerclass refid="structklotter_1_1PointLight" prot="public">klotter::PointLight</innerclass>
     <innerclass refid="structklotter_1_1PointLightUniforms" prot="public">klotter::PointLightUniforms</innerclass>
@@ -374,6 +375,7 @@
       <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
       <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
       <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
+      <member refid="group__render_1ga5068b304bb08be791391379a39514cb2" kind="function"><name>compile</name></member>
       <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
       <memberdef kind="function" id="namespaceklotter_1a8655e92bbc13aff3832b4fed06e62fb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>

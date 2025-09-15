@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klotter: klotter::Camera Struct Reference</title>
+<title>Klotter: klotter::OrthoCamera Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,119 +104,119 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1Camera.html">Camera</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceklotter.html">klotter</a></li><li class="navelem"><a class="el" href="structklotter_1_1OrthoCamera.html">OrthoCamera</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structklotter_1_1Camera-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">klotter::Camera Struct Reference<div class="ingroups"><a class="el" href="group__render.html">Renderer</a></div></div></div>
+<a href="structklotter_1_1OrthoCamera-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">klotter::OrthoCamera Struct Reference<div class="ingroups"><a class="el" href="group__render.html">Renderer</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>The current perspective camera representation.  
+<p>A orthographic camera representation.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="camera_8h_source.html">camera.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a44876819aa360977eb57fbc806766656" id="r_a44876819aa360977eb57fbc806766656"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44876819aa360977eb57fbc806766656">fov</a> = 45.0f</td></tr>
-<tr class="separator:a44876819aa360977eb57fbc806766656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae97d581da5fb4a150c56f128346ce0a5" id="r_ae97d581da5fb4a150c56f128346ce0a5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae97d581da5fb4a150c56f128346ce0a5">near</a> = 0.1f</td></tr>
-<tr class="separator:ae97d581da5fb4a150c56f128346ce0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5580be75db05bc2a99273caf62b3394" id="r_aa5580be75db05bc2a99273caf62b3394"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5580be75db05bc2a99273caf62b3394">far</a> = 100.0f</td></tr>
-<tr class="separator:aa5580be75db05bc2a99273caf62b3394"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95a31013fb1a105c79f2df166c099e46" id="r_a95a31013fb1a105c79f2df166c099e46"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95a31013fb1a105c79f2df166c099e46">position</a> = glm::vec3{0.0f, 0.0f, 0.0f}</td></tr>
-<tr class="separator:a95a31013fb1a105c79f2df166c099e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51008746c43ccdb08d655e9f2f230472" id="r_a51008746c43ccdb08d655e9f2f230472"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51008746c43ccdb08d655e9f2f230472">yaw</a> = 0.0f</td></tr>
-<tr class="separator:a51008746c43ccdb08d655e9f2f230472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a239ef16a40798863e933a2b56db8de78" id="r_a239ef16a40798863e933a2b56db8de78"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a239ef16a40798863e933a2b56db8de78">pitch</a> = 0.0f</td></tr>
-<tr class="separator:a239ef16a40798863e933a2b56db8de78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab878670ba7a0c8357015426cbae5fe8" id="r_aab878670ba7a0c8357015426cbae5fe8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab878670ba7a0c8357015426cbae5fe8">size</a> = 100.0f</td></tr>
+<tr class="separator:aab878670ba7a0c8357015426cbae5fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770146cc46fe2e3b200f670c9983fcb4" id="r_a770146cc46fe2e3b200f670c9983fcb4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a770146cc46fe2e3b200f670c9983fcb4">near</a> = 0.1f</td></tr>
+<tr class="separator:a770146cc46fe2e3b200f670c9983fcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad849b9d7c4ae2741c230f1978add4fe" id="r_aad849b9d7c4ae2741c230f1978add4fe"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad849b9d7c4ae2741c230f1978add4fe">far</a> = 100.0f</td></tr>
+<tr class="separator:aad849b9d7c4ae2741c230f1978add4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f7e056f935b49c22d6c80e82f67c6d" id="r_ab5f7e056f935b49c22d6c80e82f67c6d"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5f7e056f935b49c22d6c80e82f67c6d">position</a> = glm::vec3{0.0f, 0.0f, 0.0f}</td></tr>
+<tr class="separator:ab5f7e056f935b49c22d6c80e82f67c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad585a230be64c783909c5d9719a8256d" id="r_ad585a230be64c783909c5d9719a8256d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad585a230be64c783909c5d9719a8256d">yaw</a> = 0.0f</td></tr>
+<tr class="separator:ad585a230be64c783909c5d9719a8256d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada539ed8a71d3a041487ef1a9754e4da" id="r_ada539ed8a71d3a041487ef1a9754e4da"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada539ed8a71d3a041487ef1a9754e4da">pitch</a> = 0.0f</td></tr>
+<tr class="separator:ada539ed8a71d3a041487ef1a9754e4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The current perspective camera representation. </p>
+<div class="textblock"><p>A orthographic camera representation. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa5580be75db05bc2a99273caf62b3394" name="aa5580be75db05bc2a99273caf62b3394"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5580be75db05bc2a99273caf62b3394">&#9670;&#160;</a></span>far</h2>
+<a id="aad849b9d7c4ae2741c230f1978add4fe" name="aad849b9d7c4ae2741c230f1978add4fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad849b9d7c4ae2741c230f1978add4fe">&#9670;&#160;</a></span>far</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float klotter::Camera::far = 100.0f</td>
+          <td class="memname">float klotter::OrthoCamera::far = 100.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a44876819aa360977eb57fbc806766656" name="a44876819aa360977eb57fbc806766656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44876819aa360977eb57fbc806766656">&#9670;&#160;</a></span>fov</h2>
+<a id="a770146cc46fe2e3b200f670c9983fcb4" name="a770146cc46fe2e3b200f670c9983fcb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770146cc46fe2e3b200f670c9983fcb4">&#9670;&#160;</a></span>near</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float klotter::Camera::fov = 45.0f</td>
+          <td class="memname">float klotter::OrthoCamera::near = 0.1f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ae97d581da5fb4a150c56f128346ce0a5" name="ae97d581da5fb4a150c56f128346ce0a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae97d581da5fb4a150c56f128346ce0a5">&#9670;&#160;</a></span>near</h2>
+<a id="ada539ed8a71d3a041487ef1a9754e4da" name="ada539ed8a71d3a041487ef1a9754e4da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada539ed8a71d3a041487ef1a9754e4da">&#9670;&#160;</a></span>pitch</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float klotter::Camera::near = 0.1f</td>
+          <td class="memname">float klotter::OrthoCamera::pitch = 0.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a239ef16a40798863e933a2b56db8de78" name="a239ef16a40798863e933a2b56db8de78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a239ef16a40798863e933a2b56db8de78">&#9670;&#160;</a></span>pitch</h2>
+<a id="ab5f7e056f935b49c22d6c80e82f67c6d" name="ab5f7e056f935b49c22d6c80e82f67c6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f7e056f935b49c22d6c80e82f67c6d">&#9670;&#160;</a></span>position</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float klotter::Camera::pitch = 0.0f</td>
+          <td class="memname">glm::vec3 klotter::OrthoCamera::position = glm::vec3{0.0f, 0.0f, 0.0f}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a95a31013fb1a105c79f2df166c099e46" name="a95a31013fb1a105c79f2df166c099e46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95a31013fb1a105c79f2df166c099e46">&#9670;&#160;</a></span>position</h2>
+<a id="aab878670ba7a0c8357015426cbae5fe8" name="aab878670ba7a0c8357015426cbae5fe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab878670ba7a0c8357015426cbae5fe8">&#9670;&#160;</a></span>size</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::vec3 klotter::Camera::position = glm::vec3{0.0f, 0.0f, 0.0f}</td>
+          <td class="memname">float klotter::OrthoCamera::size = 100.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a51008746c43ccdb08d655e9f2f230472" name="a51008746c43ccdb08d655e9f2f230472"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51008746c43ccdb08d655e9f2f230472">&#9670;&#160;</a></span>yaw</h2>
+<a id="ad585a230be64c783909c5d9719a8256d" name="ad585a230be64c783909c5d9719a8256d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad585a230be64c783909c5d9719a8256d">&#9670;&#160;</a></span>yaw</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float klotter::Camera::yaw = 0.0f</td>
+          <td class="memname">float klotter::OrthoCamera::yaw = 0.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">
