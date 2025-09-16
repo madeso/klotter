@@ -151,90 +151,6 @@ void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates*
 	batch_lines(drawer, debug_lines, gamma);
 }
 
-void render_solids(
-	const RenderSettings& settings, const CompiledCamera& compiled_camera, const glm::ivec2& window_size,
-	const World& world, std::vector<TransparentMesh>* transparent_meshes, RendererPimpl* pimpl, 
-	const DebugRender& debug, Assets* assets)
-{
-	if (world.meshes.empty() == false)
-	{
-		SCOPED_DEBUG_GROUP("render basic geom"sv);
-		for (const auto& mesh: world.meshes)
-		{
-			const auto not_transparent_context
-				= RenderContext{TransformSource::Uniform, UseTransparency::no, settings.gamma};
-
-			if (mesh->material->is_transparent())
-			{
-				if (transparent_meshes == nullptr) { continue; }
-				
-				transparent_meshes->emplace_back(
-					TransparentMesh{mesh, glm::length2(compiled_camera.position - mesh->world_position)}
-				);
-				
-				continue;
-			}
-			StateChanger{&pimpl->states}
-				.depth_test(true)
-				.depth_mask(true)
-				.depth_func(Compare::less)
-				.blending(false)
-				.stencil_mask(0x0)
-				.stencil_func(Compare::always, 1, 0xFF);
-
-			if (mesh->outline)
-			{
-				StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
-			}
-			mesh->material->use_shader(not_transparent_context);
-			mesh->material->set_uniforms(
-				not_transparent_context, compiled_camera, calc_world_from_local(mesh, compiled_camera)
-			);
-			mesh->material->bind_textures(not_transparent_context, &pimpl->states, assets);
-			mesh->material->apply_lights(not_transparent_context, world.lights, settings, &pimpl->states, assets);
-
-			render_geom(*mesh->geom);
-		}
-	}
-
-	if (world.instances.empty() == false)
-	{
-		SCOPED_DEBUG_GROUP("render instances"sv);
-		for (const auto& instance: world.instances)
-		{
-			const auto not_transparent_context
-				= RenderContext{TransformSource::Instanced_mat4, UseTransparency::no, settings.gamma};
-
-			StateChanger{&pimpl->states}
-				.depth_test(true)
-				.depth_mask(true)
-				.depth_func(Compare::less)
-				.blending(false)
-				.stencil_mask(0x0)
-				.stencil_func(Compare::always, 1, 0xFF);
-			instance->material->use_shader(not_transparent_context);
-			instance->material->set_uniforms(
-				// todo(Gustav): should we really set the model matrix for instanced meshes?
-				not_transparent_context,
-				compiled_camera,
-				std::nullopt
-			);
-			instance->material->bind_textures(not_transparent_context, &pimpl->states, assets);
-			instance->material->apply_lights(not_transparent_context, world.lights, settings, &pimpl->states, assets);
-
-			render_geom_instanced(*instance);
-		}
-	}
-
-	if (debug.lines.empty() == false)
-	{
-		SCOPED_DEBUG_GROUP("render debug lines"sv);
-		render_debug_lines(
-			debug.lines, &pimpl->states, &pimpl->debug_drawer, compiled_camera, window_size, settings.gamma
-		);
-	}
-}
-
 void Renderer::render_world(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera)
 {
 	SCOPED_DEBUG_GROUP("render world call"sv);
@@ -260,7 +176,86 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 
 	std::vector<TransparentMesh> transparent_meshes;
 
-	render_solids(settings, compiled_camera, window_size, world, &transparent_meshes, pimpl.get(), debug, &assets);
+	// render solids
+	{
+		if (world.meshes.empty() == false)
+		{
+			SCOPED_DEBUG_GROUP("render basic geom"sv);
+			for (const auto& mesh: world.meshes)
+			{
+				const auto not_transparent_context
+					= RenderContext{TransformSource::Uniform, UseTransparency::no, settings.gamma};
+
+				if (mesh->material->is_transparent())
+				{
+					transparent_meshes.emplace_back(
+						TransparentMesh{mesh, glm::length2(compiled_camera.position - mesh->world_position)}
+					);
+
+					continue;
+				}
+				StateChanger{&pimpl->states}
+					.depth_test(true)
+					.depth_mask(true)
+					.depth_func(Compare::less)
+					.blending(false)
+					.stencil_mask(0x0)
+					.stencil_func(Compare::always, 1, 0xFF);
+
+				if (mesh->outline)
+				{
+					StateChanger{&pimpl->states}.stencil_func(Compare::always, 1, 0xFF).stencil_mask(0xFF);
+				}
+				mesh->material->use_shader(not_transparent_context);
+				mesh->material->set_uniforms(
+					not_transparent_context, compiled_camera, calc_world_from_local(mesh, compiled_camera)
+				);
+				mesh->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
+				mesh->material->apply_lights(not_transparent_context, world.lights, settings, &pimpl->states, &assets);
+
+				render_geom(*mesh->geom);
+			}
+		}
+
+		if (world.instances.empty() == false)
+		{
+			SCOPED_DEBUG_GROUP("render instances"sv);
+			for (const auto& instance: world.instances)
+			{
+				const auto not_transparent_context
+					= RenderContext{TransformSource::Instanced_mat4, UseTransparency::no, settings.gamma};
+
+				StateChanger{&pimpl->states}
+					.depth_test(true)
+					.depth_mask(true)
+					.depth_func(Compare::less)
+					.blending(false)
+					.stencil_mask(0x0)
+					.stencil_func(Compare::always, 1, 0xFF);
+				instance->material->use_shader(not_transparent_context);
+				instance->material->set_uniforms(
+					// todo(Gustav): should we really set the model matrix for instanced meshes?
+					not_transparent_context,
+					compiled_camera,
+					std::nullopt
+				);
+				instance->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
+				instance->material->apply_lights(
+					not_transparent_context, world.lights, settings, &pimpl->states, &assets
+				);
+
+				render_geom_instanced(*instance);
+			}
+		}
+
+		if (debug.lines.empty() == false)
+		{
+			SCOPED_DEBUG_GROUP("render debug lines"sv);
+			render_debug_lines(
+				debug.lines, &pimpl->states, &pimpl->debug_drawer, compiled_camera, window_size, settings.gamma
+			);
+		}
+	}
 
 	// todo(Gustav): should this be done at the start of the update so the renderer can be "const"
 	debug.lines.clear();
@@ -349,7 +344,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 void Renderer::render_shadows(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera)
 {
 	// todo(Gustav): bind less colors and use depth only shaders
-	SCOPED_DEBUG_GROUP("render world call"sv);
+	SCOPED_DEBUG_GROUP("render shadows call"sv);
 	StateChanger{&pimpl->states}
 		.cull_face(true)
 		.cull_face_mode(CullFace::back)
@@ -361,7 +356,73 @@ void Renderer::render_shadows(const glm::ivec2& window_size, const World& world,
 	auto bound_camera_buffer = BoundUniformBuffer{pimpl->camera_uniform_buffer.buffer.get()};
 	pimpl->camera_uniform_buffer.set_props(compiled_camera);
 
-	render_solids(settings, compiled_camera, window_size, world, nullptr, pimpl.get(), debug, &assets);
+	// todo(Gustav): change shader to something that doesn't write color
+
+	StateChanger{&pimpl->states}
+		.depth_test(true)
+		.depth_mask(true)
+		.depth_func(Compare::less)
+		.blending(false)
+		.stencil_mask(0x0)
+		.stencil_func(Compare::always, 1, 0xFF);
+
+	// render solids
+	{
+		if (world.meshes.empty() == false)
+		{
+			SCOPED_DEBUG_GROUP("render basic geom"sv);
+			for (const auto& mesh: world.meshes)
+			{
+				const auto not_transparent_context
+					= RenderContext{TransformSource::Uniform, UseTransparency::no, settings.gamma};
+
+				if (mesh->material->is_transparent())
+				{
+					continue;
+				}
+				mesh->material->use_shader(not_transparent_context);
+				mesh->material->set_uniforms(
+					not_transparent_context, compiled_camera, calc_world_from_local(mesh, compiled_camera)
+				);
+				mesh->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
+				mesh->material->apply_lights(not_transparent_context, world.lights, settings, &pimpl->states, &assets);
+
+				render_geom(*mesh->geom);
+			}
+		}
+
+		if (world.instances.empty() == false)
+		{
+			SCOPED_DEBUG_GROUP("render instances"sv);
+			for (const auto& instance: world.instances)
+			{
+				const auto not_transparent_context
+					= RenderContext{TransformSource::Instanced_mat4, UseTransparency::no, settings.gamma};
+
+				instance->material->use_shader(not_transparent_context);
+				instance->material->set_uniforms(
+					// todo(Gustav): should we really set the model matrix for instanced meshes?
+					not_transparent_context,
+					compiled_camera,
+					std::nullopt
+				);
+				instance->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
+				instance->material->apply_lights(
+					not_transparent_context, world.lights, settings, &pimpl->states, &assets
+				);
+
+				render_geom_instanced(*instance);
+			}
+		}
+
+		if (debug.lines.empty() == false)
+		{
+			SCOPED_DEBUG_GROUP("render debug lines"sv);
+			render_debug_lines(
+				debug.lines, &pimpl->states, &pimpl->debug_drawer, compiled_camera, window_size, settings.gamma
+			);
+		}
+	}
 }
 
 }  //  namespace klotter
