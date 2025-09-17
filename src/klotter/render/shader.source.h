@@ -10,6 +10,7 @@ namespace klotter
 /// @see \ref RenderSettings
 struct ShaderOptions
 {
+	bool only_depth = false;
 	bool use_blinn_phong = true;
 	bool use_texture = false;
 	bool use_lights = false;

@@ -53,6 +53,21 @@ struct LoadedShader_SingleColor
 	Uniform world_from_local_uni;
 };
 
+/// Only writes depth.
+/// Useful for rendering shadow maps.
+struct LoadedShader_OnlyDepth
+{
+	LoadedShader_OnlyDepth(
+		TransformSource model_source,
+		std::shared_ptr<ShaderProgram> p, CompiledGeomVertexAttributes l, const CameraUniformBuffer& desc
+	);
+
+	std::shared_ptr<ShaderProgram> program;
+	CompiledGeomVertexAttributes geom_layout;
+
+	std::optional<Uniform> world_from_local_uni;
+};
+
 /// A skybox shader.
 struct LoadedShader_Skybox
 {
@@ -255,6 +270,8 @@ struct PingPongBlurShader
 struct ShaderResource
 {
 	LoadedShader_SingleColor single_color_shader;
+	LoadedShader_OnlyDepth depth_transform_uniform;
+	LoadedShader_OnlyDepth depth_transform_instanced_mat4;
 	LoadedShader_Skybox skybox_shader;
 
 	LoadedShader_Unlit_Container unlit_shader_container;

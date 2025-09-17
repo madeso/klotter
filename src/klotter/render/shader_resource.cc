@@ -58,7 +58,21 @@ LoadedShader_Skybox::LoadedShader_Skybox(
 	program->setup_uniform_block(desc.setup);
 }
 
-
+LoadedShader_OnlyDepth::LoadedShader_OnlyDepth(
+	TransformSource model_source,
+	std::shared_ptr<ShaderProgram> p,
+	CompiledGeomVertexAttributes l,
+	const CameraUniformBuffer& desc
+)
+	: program(std::move(p))
+	, geom_layout(std::move(l))
+	, world_from_local_uni(
+		  model_source == TransformSource::Uniform ? std::optional<Uniform>{program->get_uniform("u_world_from_local")}
+												   : std::nullopt
+	  )
+{
+	program->setup_uniform_block(desc.setup);
+}
 
 LoadedShader_Unlit::LoadedShader_Unlit(
 	TransformSource model_source,
@@ -261,9 +275,17 @@ PingPongBlurShader::PingPongBlurShader(std::shared_ptr<LoadedPostProcShader>&& s
 
 bool ShaderResource::is_loaded() const
 {
-	return single_color_shader.program->is_loaded() && skybox_shader.program->is_loaded() && unlit_shader_container.is_loaded()
-		&& default_shader_container.is_loaded() && pp_invert->program->is_loaded() && pp_grayscale->program->is_loaded()
-		&& pp_blurv->program->is_loaded() && pp_blurh->program->is_loaded() && pp_realize.program->is_loaded();
+	return single_color_shader.program->is_loaded()
+		&& depth_transform_uniform.program->is_loaded()
+		&& depth_transform_instanced_mat4.program->is_loaded()
+		&& skybox_shader.program->is_loaded()
+		&& unlit_shader_container.is_loaded()
+		&& default_shader_container.is_loaded()
+		&& pp_invert->program->is_loaded()
+		&& pp_grayscale->program->is_loaded()
+		&& pp_blurv->program->is_loaded()
+		&& pp_blurh->program->is_loaded()
+		&& pp_realize.program->is_loaded();
 }
 
 
@@ -272,12 +294,21 @@ using BaseShaderData = std::vector<VertexType>;
 
 
 
-BaseShaderData get_vertex_types(const ShaderVertexAttributes& va)
+template<std::size_t count>
+BaseShaderData get_vertex_types(const std::array<const ShaderVertexAttributes*, count>& vas)
 {
+	std::set<VertexType> unique_types;
 	auto ret = BaseShaderData{};
-	for (const auto& v: va)
+	for (const auto& va: vas)
 	{
-		ret.emplace_back(v.type);
+		for (const auto& v: *va)
+		{
+			const auto [_, is_unique] = unique_types.insert(v.type);
+			if (is_unique)
+			{
+				ret.emplace_back(v.type);
+			}
+		}
 	}
 	return ret;
 }
@@ -324,12 +355,22 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 {
 	const auto single_color_shader = load_shader_source({}, desc.setup.source);
 
+	ShaderOptions depth_shader_options;
+	depth_shader_options.only_depth = true;
+	const auto depth_transform_uniform = load_shader_source(depth_shader_options, desc.setup.source);
+	const auto depth_transform_instanced_mat4 = load_shader_source(depth_shader_options.with_instanced_mat4(), desc.setup.source);
+
 	const auto skybox_source = load_skybox_source(desc.setup.source);
 	const auto skybox_shader = ShaderSource_withLayout{
 		ShaderVertexAttributes{{VertexType::position3, "a_position"}}, skybox_source.vertex, skybox_source.fragment
 	};
 
-	const BaseShaderData global_shader_data = get_vertex_types(single_color_shader.layout);
+	const BaseShaderData global_shader_data = get_vertex_types<3>
+		({
+			&single_color_shader.layout,
+			&depth_transform_uniform.layout, 
+			&depth_transform_instanced_mat4.layout
+		});
 
 	ShaderOptions unlit_shader_options;
 	unlit_shader_options.use_texture = true;
@@ -449,12 +490,29 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 	auto loaded_single_color = load_shader(
 		USE_DEBUG_LABEL_MANY("single color") global_shader_data, single_color_shader, TransformSource::Uniform
 	);
+	auto loaded_depth_transform_uniform = load_shader(
+		USE_DEBUG_LABEL_MANY("depth transform uniform") global_shader_data, depth_transform_uniform, TransformSource::Uniform
+	);
+	auto loaded_depth_transform_instanced_mat4 = load_shader(
+		USE_DEBUG_LABEL_MANY("depth transform instanced") global_shader_data, depth_transform_instanced_mat4, TransformSource::Uniform
+	);
 	auto loaded_skybox_shader
 		= load_shader(USE_DEBUG_LABEL_MANY("skybox"){}, skybox_shader, TransformSource::Uniform);
 
 	return {
 		// todo(Gustav): not really happy with sending "the same" argument twice, loaded_X.program and loaded_X.geom_layout
 		LoadedShader_SingleColor{std::move(loaded_single_color.program), loaded_single_color.geom_layout, desc},
+		LoadedShader_OnlyDepth{
+			TransformSource::Uniform, std::move(loaded_depth_transform_uniform.program),
+			loaded_depth_transform_uniform.geom_layout,
+			desc
+		},
+		LoadedShader_OnlyDepth{
+			TransformSource::Instanced_mat4,
+			std::move(loaded_depth_transform_instanced_mat4.program),
+			loaded_depth_transform_instanced_mat4.geom_layout,
+			desc
+		},
 		LoadedShader_Skybox{std::move(loaded_skybox_shader.program), loaded_skybox_shader.geom_layout, desc},
 		LoadedShader_Unlit_Container{
 			loaded_unlit.geom_layout,

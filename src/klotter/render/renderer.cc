@@ -373,19 +373,14 @@ void Renderer::render_shadows(const glm::ivec2& window_size, const World& world,
 			SCOPED_DEBUG_GROUP("render basic geom"sv);
 			for (const auto& mesh: world.meshes)
 			{
-				const auto not_transparent_context
-					= RenderContext{TransformSource::Uniform, UseTransparency::no, settings.gamma};
-
 				if (mesh->material->is_transparent())
 				{
 					continue;
 				}
-				mesh->material->use_shader(not_transparent_context);
-				mesh->material->set_uniforms(
-					not_transparent_context, compiled_camera, calc_world_from_local(mesh, compiled_camera)
-				);
-				mesh->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
-				mesh->material->apply_lights(not_transparent_context, world.lights, settings, &pimpl->states, &assets);
+
+				auto& shader = pimpl->shaders_resources.depth_transform_uniform;
+				shader.program->use();
+				shader.program->set_mat(*shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera));
 
 				render_geom(*mesh->geom);
 			}
@@ -399,17 +394,9 @@ void Renderer::render_shadows(const glm::ivec2& window_size, const World& world,
 				const auto not_transparent_context
 					= RenderContext{TransformSource::Instanced_mat4, UseTransparency::no, settings.gamma};
 
-				instance->material->use_shader(not_transparent_context);
-				instance->material->set_uniforms(
-					// todo(Gustav): should we really set the model matrix for instanced meshes?
-					not_transparent_context,
-					compiled_camera,
-					std::nullopt
-				);
-				instance->material->bind_textures(not_transparent_context, &pimpl->states, &assets);
-				instance->material->apply_lights(
-					not_transparent_context, world.lights, settings, &pimpl->states, &assets
-				);
+				auto& shader = pimpl->shaders_resources.depth_transform_instanced_mat4;
+				shader.program->use();
+				assert(shader.world_from_local_uni.has_value() == false);
 
 				render_geom_instanced(*instance);
 			}
