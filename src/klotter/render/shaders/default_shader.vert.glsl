@@ -6,9 +6,10 @@ in vec3 a_position;
 {{#use_lights}}
 in vec3 a_normal;
 {{/use_lights}}
+{{^only_depth}}
 in vec3 a_color;
 in vec2 a_tex_coord;
-
+{{/only_depth}}
 
 ///////////////////////////////////////////////////////////////////////////////
 // uniforms
@@ -28,8 +29,10 @@ uniform mat4 u_world_from_local;
 out vec3 v_worldspace;
 out vec3 v_normal;
 {{/use_lights}}
+{{^only_depth}}
 out vec3 v_color;
 out vec2 v_tex_coord;
+{{/only_depth}}
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -42,6 +45,8 @@ void main()
     v_worldspace = vec3(u_world_from_local * vec4(a_position.xyz, 1.0));
     v_normal = mat3(transpose(inverse(u_world_from_local))) * a_normal; // move to cpu
 {{/use_lights}}
+{{^only_depth}}
     v_color = a_color;
     v_tex_coord = a_tex_coord;
+{{/only_depth}}
 }

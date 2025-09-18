@@ -3,6 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // uniforms
 
+{{^only_depth}}
 struct Material
 {
     vec4 diffuse_tint; // diffuse + alpha
@@ -21,6 +22,7 @@ struct Material
 };
 
 uniform Material u_material;
+{{/only_depth}}
 
 {{#use_lights}}
 uniform vec3 u_view_position;
@@ -64,8 +66,10 @@ uniform FrustumLight u_frustum_lights[{{number_of_frustum_lights}}];
 
 ///////////////////////////////////////////////////////////////////////////////
 // varying
+{{^only_depth}}
 in vec3 v_color;
 in vec2 v_tex_coord;
+{{/only_depth}}
 
 {{#use_lights}}
 in vec3 v_worldspace;
@@ -196,6 +200,7 @@ vec3 calculate_frustum_light(
 // code
 void main()
 {
+{{^only_depth}}
 {{#use_lights}}
     vec3 normal = normalize(v_normal);
     vec3 view_direction = normalize(u_view_position - v_worldspace);
@@ -259,5 +264,5 @@ void main()
     o_frag_color = object_color;
 {{/use_texture}}
 {{/use_lights}}
-
+{{/only_depth}}
 }

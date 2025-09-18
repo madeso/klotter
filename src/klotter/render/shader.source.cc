@@ -70,6 +70,7 @@ std::string generate(std::string_view str, const ShaderOptions& options, const s
 	data["transparent_cutoff"] = options.transparent_cutoff;
 	data["use_instancing"] = options.use_instancing;
 	data["uniform_buffer_source"] = uniform_buffer_source;
+	data["only_depth"] = options.only_depth;
 
 	return input.render(data);
 }
