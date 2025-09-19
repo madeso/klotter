@@ -55,13 +55,10 @@ std::optional<BloomRender> build_bloom(const glm::ivec2& size, ExtractShader* sh
 {
 	if (sh == nullptr) { return std::nullopt; }
 
-	auto bloom_buffer = FrameBufferBuilder{size}
-		 .build(USE_DEBUG_LABEL("bloom extraction buffer"));
+	auto bloom_buffer = build_simple_framebuffer(USE_DEBUG_LABEL_MANY("bloom extraction buffer") size);
 
-	auto ping_one = FrameBufferBuilder{size}
-		 .build(USE_DEBUG_LABEL("ping-pong bloom buffer one"));
-	auto ping_two = FrameBufferBuilder{size}
-		 .build(USE_DEBUG_LABEL("ping-pong bloom buffer two"));
+	auto ping_one = build_simple_framebuffer(USE_DEBUG_LABEL_MANY("ping-pong bloom buffer one") size);
+	auto ping_two = build_simple_framebuffer(USE_DEBUG_LABEL_MANY("ping-pong bloom buffer two") size);
 
 	return BloomRender{sh, bloom_buffer, ping_sh, {ping_one, ping_two}};
 }
@@ -70,15 +67,9 @@ RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractSha
 	: window_size(size)
 	, use_hdr(h)
 	, exposure(e)
-	, msaa_buffer(FrameBufferBuilder{size}
-		.with_msaa(msaa_samples)
-		.with_color_bits(render_world_color_bits_per_pixel)
-		.with_depth()
-		.with_stencil()
-		.build(USE_DEBUG_LABEL("msaa buffer")))
-	, realized_buffer(FrameBufferBuilder{size}
-		.with_color_bits(render_world_color_bits_per_pixel)
-		.build(USE_DEBUG_LABEL("realized msaa buffer")))
+	, msaa_buffer(build_msaa_framebuffer(USE_DEBUG_LABEL_MANY("msaa buffer")
+		size, msaa_samples, render_world_color_bits_per_pixel))
+	, realized_buffer(build_realized_framebuffer(USE_DEBUG_LABEL_MANY("realized msaa buffer") size, render_world_color_bits_per_pixel))
 	, realize_shader(re_sh)
 	, bloom_render(build_bloom(size, ex_sh, ping_sh))
 	, last_bloom_blur_index(0)
@@ -104,10 +95,7 @@ void RenderWorld::update(const PostProcArg& arg)
 
 		if (update_shadow_buffer)
 		{
-			shadow_buffer = FrameBufferBuilder{shadow_size}
-				.with_color_bits(ColorBitsPerPixel::use_depth)
-				.with_border_color(glm::vec4{1.0f, 1.0f, 1.0f, 1.0f})
-				.build(USE_DEBUG_LABEL("shadow buffer"));
+			shadow_buffer = build_shadow_framebuffer(USE_DEBUG_LABEL_MANY("shadow buffer") shadow_size);
 		}
 	}
 
@@ -591,7 +579,9 @@ void SimpleEffect::build(const BuildArg& arg)
 {
 	time = 0.0f;
 
-	auto fbo = FrameBufferBuilder{arg.window_size}.build(USE_DEBUG_LABEL(Str() << "fbo for " << name));
+	// todo(Gustav): reuse buffers created from an earlier postproc build
+	// todo(Gustav): reuse buffers from earlier in the postproc stack, that aren't in use
+	auto fbo = build_simple_framebuffer(USE_DEBUG_LABEL_MANY(Str() << "fbo for " << name) arg.window_size);
 
 	auto src = arg.builder->last_source;
 	auto target = std::make_shared<RenderTextureWithShader>(name, src, fbo, this);
@@ -722,12 +712,12 @@ void BlurEffect::build(const BuildArg& arg)
 	// todo(Gustav): modify resolution to get better blur and at a lower cost!
 
 	// step 1: vertical
-	auto fbo_v = FrameBufferBuilder{arg.window_size}.build(USE_DEBUG_LABEL("blur vertical"));
+	auto fbo_v = build_simple_framebuffer(USE_DEBUG_LABEL_MANY("blur vertical") arg.window_size);
 	auto target_v = std::make_shared<RenderTextureWithShader>("blur vertical", src, fbo_v, &vert_p);
 	arg.builder->targets.emplace_back(target_v);
 
 	// step 2: horizontal
-	auto fbo_h = FrameBufferBuilder{arg.window_size}.build(USE_DEBUG_LABEL("blur horizontal"));
+	auto fbo_h = build_simple_framebuffer(USE_DEBUG_LABEL_MANY("blur horizontal") arg.window_size);
 	auto target_h = std::make_shared<RenderTextureWithShader>("blur horizontal", target_v, fbo_h, &hori_p);
 	arg.builder->targets.emplace_back(target_h);
 

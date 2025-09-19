@@ -408,6 +408,91 @@ R internal_format_from_color_bpp(ColorBitsPerPixel texture_bits, Transparency tr
 }
 
 
+/// A builder class for the \ref FrameBuffer
+struct FrameBufferBuilder
+{
+	constexpr explicit FrameBufferBuilder(const glm::ivec2& size)
+		: width(size.x)
+		, height(size.y)
+	{
+	}
+
+	int width;
+	int height;
+
+	ColorBitsPerPixel color_bits_per_pixel = ColorBitsPerPixel::use_8;
+	DepthBits include_depth = DepthBits::use_none;
+	bool include_stencil = false;
+	std::optional<glm::vec4> border_color = std::nullopt;
+
+	/// 0 samples == no msaa
+	int msaa_samples = 0;
+
+	constexpr FrameBufferBuilder& with_msaa(int samples)
+	{
+		msaa_samples = samples;
+		return *this;
+	}
+
+	constexpr FrameBufferBuilder& with_depth(DepthBits bits = DepthBits::use_24)
+	{
+		include_depth = bits;
+		return *this;
+	}
+
+	constexpr FrameBufferBuilder& with_color_bits(ColorBitsPerPixel bits)
+	{
+		color_bits_per_pixel = bits;
+		return *this;
+	}
+
+	constexpr FrameBufferBuilder& with_stencil()
+	{
+		include_stencil = true;
+		return *this;
+	}
+
+	constexpr FrameBufferBuilder& with_border_color(const glm::vec4& c)
+	{
+		border_color = c;
+		return *this;
+	}
+
+	[[nodiscard]]
+	std::shared_ptr<FrameBuffer> build(DEBUG_LABEL_ARG_SINGLE) const;
+};
+
+std::shared_ptr<FrameBuffer> build_simple_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size)
+{
+	return FrameBufferBuilder{size}
+		.build(USE_DEBUG_LABEL(debug_label));
+}
+
+std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, int msaa_samples, ColorBitsPerPixel render_world_color_bits_per_pixel)
+{
+	return FrameBufferBuilder{size}
+		.with_msaa(msaa_samples)
+		.with_color_bits(render_world_color_bits_per_pixel)
+		.with_depth()
+		.with_stencil()
+		.build(USE_DEBUG_LABEL(debug_label));
+}
+
+std::shared_ptr<FrameBuffer> build_realized_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel)
+{
+	return FrameBufferBuilder{size}
+		.with_color_bits(render_world_color_bits_per_pixel)
+		.build(USE_DEBUG_LABEL(debug_label));
+}
+
+std::shared_ptr<FrameBuffer> build_shadow_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size)
+{
+	return FrameBufferBuilder{size}
+		.with_color_bits(ColorBitsPerPixel::use_depth)
+		.with_border_color(glm::vec4{1.0f, 1.0f, 1.0f, 1.0f})
+		.build(USE_DEBUG_LABEL(debug_label));
+}
+
 std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) const
 {
 	const auto te = TextureEdge::clamp;

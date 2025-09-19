@@ -148,60 +148,10 @@ enum class ColorBitsPerPixel
 	use_8, use_16, use_32
 };
 
-/// A builder class for the \ref FrameBuffer
-struct FrameBufferBuilder
-{
-	constexpr explicit FrameBufferBuilder(const glm::ivec2& size)
-		: width(size.x)
-		, height(size.y)
-	{
-	}
-
-	int width;
-	int height;
-
-	ColorBitsPerPixel color_bits_per_pixel = ColorBitsPerPixel::use_8;
-	DepthBits include_depth = DepthBits::use_none;
-	bool include_stencil = false;
-	std::optional<glm::vec4> border_color = std::nullopt;
-
-	/// 0 samples == no msaa
-	int msaa_samples = 0;
-
-	constexpr FrameBufferBuilder& with_msaa(int samples)
-	{
-		msaa_samples = samples;
-		return *this;
-	}
-
-	constexpr FrameBufferBuilder& with_depth(DepthBits bits = DepthBits::use_24)
-	{
-		include_depth = bits;
-		return *this;
-	}
-
-	constexpr FrameBufferBuilder& with_color_bits(ColorBitsPerPixel bits)
-	{
-		color_bits_per_pixel = bits;
-		return *this;
-	}
-
-	constexpr FrameBufferBuilder& with_stencil()
-	{
-		include_stencil = true;
-		return *this;
-	}
-
-	constexpr FrameBufferBuilder& with_border_color(const glm::vec4& c)
-	{
-		border_color = c;
-		return *this;
-	}
-
-	// todo(Gustav): reuse buffers created from an earlier postproc build
-	// todo(Gustav): reuse buffers from earlier in the postproc stack, that aren't in use
-	[[nodiscard]] std::shared_ptr<FrameBuffer> build(DEBUG_LABEL_ARG_SINGLE) const;
-};
+std::shared_ptr<FrameBuffer> build_simple_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size);
+std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, int msaa_samples, ColorBitsPerPixel render_world_color_bits_per_pixel);
+std::shared_ptr<FrameBuffer> build_realized_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel);
+std::shared_ptr<FrameBuffer> build_shadow_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size);
 
 /// raii class to render to a FrameBuffer
 struct BoundFbo
