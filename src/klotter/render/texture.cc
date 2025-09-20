@@ -344,9 +344,8 @@ unsigned int create_fbo()
 	return fbo;
 }
 
-FrameBuffer::FrameBuffer(unsigned int f, int w, int h)
-	: width(w)
-	, height(h)
+FrameBuffer::FrameBuffer(unsigned int f, const glm::ivec2& s)
+	: size(s)
 	, fbo(f)
 {
 }
@@ -411,13 +410,12 @@ R internal_format_from_color_bpp(ColorBitsPerPixel texture_bits, Transparency tr
 /// A builder class for the \ref FrameBuffer
 struct FrameBufferBuilder
 {
-	constexpr explicit FrameBufferBuilder(const glm::ivec2& size)
-		: width(size.x)
-		, height(size.y)
+	constexpr explicit FrameBufferBuilder(const glm::ivec2& s)
+		: size(s)
 	{
 	}
 
-	int width;
+	glm::ivec2 size;
 	int height;
 
 	ColorBitsPerPixel color_bits_per_pixel = ColorBitsPerPixel::use_8;
@@ -501,8 +499,8 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 
 	const bool is_msaa = msaa_samples > 0;
 
-	LOG_INFO("Creating frame buffer %d %d", width, height);
-	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), width, height);
+	LOG_INFO("Creating frame buffer %d %d", size.x, size.y);
+	auto fbo = std::make_shared<FrameBuffer>(create_fbo(), size);
 	ASSERT(fbo->id > 0);
 
 	fbo->debug_is_msaa = is_msaa;
@@ -526,8 +524,8 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 			target,
 			msaa_samples,
 			internal_format_from_color_bpp<GLenum>(color_bits_per_pixel, trans),
-			width,
-			height,
+			size.x,
+			size.y,
 			GL_TRUE
 		);
 	}
@@ -537,8 +535,8 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 			target,
 			0,
 			internal_format_from_color_bpp<GLint>(color_bits_per_pixel, trans),
-			width,
-			height,
+			size.x,
+			size.y,
 			0,
 			// todo(Gustav): since we pass null as the data, the type doesn't matter... right?
 			color_bits_per_pixel == ColorBitsPerPixel::use_depth ? GL_DEPTH_COMPONENT : GL_RGB,
@@ -571,11 +569,11 @@ std::shared_ptr<FrameBuffer> FrameBufferBuilder::build(DEBUG_LABEL_ARG_SINGLE) c
 
 		if (is_msaa)
 		{
-			glRenderbufferStorageMultisample(GL_RENDERBUFFER, msaa_samples, internal_format, width, height);
+			glRenderbufferStorageMultisample(GL_RENDERBUFFER, msaa_samples, internal_format, size.x, size.y);
 		}
 		else
 		{
-			glRenderbufferStorage(GL_RENDERBUFFER, internal_format, width, height);
+			glRenderbufferStorage(GL_RENDERBUFFER, internal_format, size.x, size.y);
 		}
 
 		if (include_stencil)
@@ -603,10 +601,9 @@ void resolve_multisampled_buffer(const FrameBuffer& src, FrameBuffer* dst)
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, src.fbo);
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, dst->fbo);
 
-	ASSERT(src.width == dst->width);
-	ASSERT(src.height == dst->height);
+	ASSERT(src.size == dst->size);
 
-	glBlitFramebuffer(0, 0, src.width, src.height, 0, 0, dst->width, dst->height, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+	glBlitFramebuffer(0, 0, src.size.x, src.size.y, 0, 0, dst->size.x, dst->size.y, GL_COLOR_BUFFER_BIT, GL_NEAREST);
 
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);

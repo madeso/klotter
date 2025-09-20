@@ -84,11 +84,7 @@ void RenderWorld::update(const PostProcArg& arg)
 	const auto shadow_size = arg.renderer->settings.shadow_map_resolution;
 	{
 		bool update_shadow_buffer = shadow_buffer == nullptr;
-		if (shadow_buffer && shadow_buffer->width != shadow_size.x)
-		{
-			update_shadow_buffer = true;
-		}
-		if (shadow_buffer && shadow_buffer->height != shadow_size.y)
+		if (shadow_buffer && shadow_buffer->size != shadow_size)
 		{
 			update_shadow_buffer = true;
 		}
@@ -291,7 +287,7 @@ void RenderTextureWithShader::update(const PostProcArg& arg)
 {
 	SCOPED_DEBUG_GROUP(Str() << "Updating task " << name);
 	auto bound = BoundFbo{fbo};
-	set_gl_viewport({fbo->width, fbo->height});
+	set_gl_viewport({fbo->size.x, fbo->size.y});
 	source->render(arg);
 }
 

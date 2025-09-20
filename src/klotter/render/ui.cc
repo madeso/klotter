@@ -129,7 +129,7 @@ static ImTextureID imgui_texture_from(unsigned int texture)
 
 void imgui_image(const char* name, const FrameBuffer& img)
 {
-	imgui_image(name, imgui_texture_from(img.id), {static_cast<float>(img.width), static_cast<float>(img.height)});
+	imgui_image(name, imgui_texture_from(img.id), {static_cast<float>(img.size.x), static_cast<float>(img.size.y)});
 }
 
 

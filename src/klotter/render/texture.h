@@ -116,7 +116,7 @@ struct FrameBuffer : BaseTexture
 	/// @param f The FBO handle
 	/// @param w the texture width
 	/// @param h the texture height
-	FrameBuffer(unsigned int f, int w, int h);
+	FrameBuffer(unsigned int f, const glm::ivec2& s);
 	~FrameBuffer();
 
 	FrameBuffer(const FrameBuffer&) = delete;
@@ -124,9 +124,7 @@ struct FrameBuffer : BaseTexture
 	void operator=(const FrameBuffer&) = delete;
 	void operator=(FrameBuffer&&) = delete;
 
-	// todo(Gustav): use ivec2 for size
-	int width;
-	int height;
+	glm::ivec2 size;
 
 	unsigned int fbo = 0;
 	unsigned int rbo = 0;
