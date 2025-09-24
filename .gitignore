@@ -10,3 +10,18 @@ docs/generated/codecity.html
 
 # winmerge backup files
 *.bak
+
+
+# visual debug/npm build
+node_modules/
+package.json
+src/klotter/*.d.ts
+src/klotter/*.d.ts.map
+src/klotter/*.js
+src/klotter/*.js.map
+
+# temporary debug html files
+src/klotter/*.html
+
+# ignore this???
+package-lock.json

@@ -98,6 +98,9 @@ set(src_base
     klotter/dump.cc klotter/dump.h
 
     klotter/imgui.theme.cc klotter/imgui.theme.h
+
+    klotter/vdebug.cc
+    klotter/vdebug.h
 )
 
 set(src_pch
@@ -185,3 +188,4 @@ function(add_sample APP FILE)
 endfunction()
 
 add_sample(sample_dump "klotter/dump.main.cc")
+add_sample(sample_vdebug "klotter/vdebug.main.cc")
