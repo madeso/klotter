@@ -3,7 +3,6 @@ type Color = string;
 // API and ui partly inspired by https://github.com/SebLague/Visual-Debug
 
 // todo(Gustav): focus button
-// todo(Gustav): display current frame
 // todo(Gustav): plot primitive with hover
 // todo(Gustav): fullscreen button
 // todo(Gustav): generate self contained file with packed js file
@@ -110,7 +109,8 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         previous_frame: HTMLButtonElement,
         next_frame: HTMLButtonElement,
         last_frame: HTMLButtonElement,
-        description: HTMLParagraphElement,
+        description: HTMLSpanElement,
+        status: HTMLSpanElement,
         hover: HTMLParagraphElement},
     frames: Frame<Artist2>[]) => {
     const zoom_min = 0.1;
@@ -207,6 +207,7 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         ui.frame.value = frame_index.toString();
 
         const frame = frames[frame_index];
+        ui.status.innerHTML = `<b>${frame_index + 1}</b> of <b>${frames.length}</b>:`
         ui.description.innerText = frame?.description ?? "";
 
         draw();

@@ -170,6 +170,10 @@ void VisualDebug::Save(const std::string& title)
 	file << "        <input type=\"range\" id=\"frame\" name=\"frame\" min=\"10\" max=\"100\" />\n";
 	file << "        <input type=\"button\" class=\"play-button\" id=\"next-frame\" value=\">\" />\n";
 	file << "        <input type=\"button\" class=\"play-button\" id=\"last-frame\" value=\">|\" />\n";
+	file << "        <p>\n";
+	file << "             <span id=\"status\">status</span>\n";
+	file << "             <span id=\"description\">description</span>\n";
+	file << "         </p>\n";
 	file << "        <p id=\"description\">\n";
 	file << "            test\n";
 	file << "        </p>\n";
@@ -215,6 +219,7 @@ void VisualDebug::Save(const std::string& title)
 	file << "        ]\n";
 	file << "	        window.register_vdebug2({\n";
 	file << "            canvas: document.getElementById(\"canvas\"),\n";
+	file << "            status: document.getElementById(\"status\"),\n";
 	file << "            description: document.getElementById(\"description\"),\n";
 	file << "            hover: document.getElementById(\"hover\"),\n";
 	file << "            first_frame: document.getElementById(\"first-frame\"),\n";
