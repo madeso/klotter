@@ -141,7 +141,7 @@ void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates*
 
 	drawer->shader.use();
 	drawer->set_camera(compiled_camera);
-	
+
 	StateChanger{states}.depth_func(Compare::less_equal).depth_test(true);
 	drawer->set_line_to_solid();
 	batch_lines(drawer, debug_lines, gamma);
@@ -391,9 +391,6 @@ void Renderer::render_shadows(const glm::ivec2& window_size, const World& world,
 			SCOPED_DEBUG_GROUP("render instances"sv);
 			for (const auto& instance: world.instances)
 			{
-				const auto not_transparent_context
-					= RenderContext{TransformSource::Instanced_mat4, UseTransparency::no, settings.gamma};
-
 				auto& shader = pimpl->shaders_resources.depth_transform_instanced_mat4;
 				shader.program->use();
 				assert(shader.world_from_local_uni.has_value() == false);
