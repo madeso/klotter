@@ -54,7 +54,7 @@ std::vector<glm::vec2> GeneratePoints()
     float radius = 100.0f;
     
     std::random_device r;
-	std::uniform_real_distribution uniform(0.0f, radius);
+	std::uniform_real_distribution uniform(-radius, radius);
 
     std::vector<glm::vec2> points;
     points.reserve(numPoints);
