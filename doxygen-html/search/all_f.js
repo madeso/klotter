@@ -13,7 +13,7 @@ var searchData=
   ['render_5fgeom_5finstanced_10',['render_geom_instanced',['../group__render.html#ga23dc1ed0230e8dea88ce038e06a6136f',1,'klotter']]],
   ['render_5fmode_11',['render_mode',['../structklotter_1_1OpenglStates.html#a25febe869bee7f6251f482106cd7ed9c',1,'klotter::OpenglStates::render_mode'],['../structklotter_1_1StateChanger.html#a4460dfe9a996fd2d47f4986fef9a763d',1,'klotter::StateChanger::render_mode()']]],
   ['render_5fsettings_2eh_12',['render_settings.h',['../render__settings_8h.html',1,'']]],
-  ['render_5fshadows_13',['render_shadows',['../structklotter_1_1Renderer.html#a43bf75b910e4ad9d97c703f33fffa926',1,'klotter::Renderer']]],
+  ['render_5fshadows_13',['render_shadows',['../structklotter_1_1Renderer.html#a92e2fc70d10ed88e24dd115d038ba88a',1,'klotter::Renderer']]],
   ['render_5fworld_14',['render_world',['../structklotter_1_1Renderer.html#a2f7aaf8158a5c6a9aab9d9bdf9bd8724',1,'klotter::Renderer']]],
   ['render_5fworld_5fref_15',['render_world_ref',['../structklotter_1_1EffectStack.html#adfd748607dee4c12c729c56b09e3d5a6',1,'klotter::EffectStack']]],
   ['rendercontext_16',['RenderContext',['../structklotter_1_1RenderContext.html',1,'klotter::RenderContext'],['../structklotter_1_1RenderContext.html#a66fb7812f5a1c363a13e55f15f57f7d8',1,'klotter::RenderContext::RenderContext()']]],

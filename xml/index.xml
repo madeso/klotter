@@ -630,7 +630,7 @@
     <member refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" kind="function"><name>make_skybox</name></member>
     <member refid="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" kind="function"><name>is_loaded</name></member>
     <member refid="structklotter_1_1Renderer_1a2f7aaf8158a5c6a9aab9d9bdf9bd8724" kind="function"><name>render_world</name></member>
-    <member refid="structklotter_1_1Renderer_1a43bf75b910e4ad9d97c703f33fffa926" kind="function"><name>render_shadows</name></member>
+    <member refid="structklotter_1_1Renderer_1a92e2fc70d10ed88e24dd115d038ba88a" kind="function"><name>render_shadows</name></member>
   </compound>
   <compound refid="structklotter_1_1RendererPimpl" kind="struct"><name>klotter::RendererPimpl</name>
     <member refid="structklotter_1_1RendererPimpl_1a146ca5e38bd4c8a717795a173c657e89" kind="variable"><name>camera_uniform_buffer</name></member>

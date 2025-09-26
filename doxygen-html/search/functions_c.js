@@ -5,7 +5,7 @@ var searchData=
   ['render_5fgeom_2',['render_geom',['../group__render.html#ga7c41540b85fbcd00d0dfbe1104d10443',1,'klotter']]],
   ['render_5fgeom_5finstanced_3',['render_geom_instanced',['../group__render.html#ga23dc1ed0230e8dea88ce038e06a6136f',1,'klotter']]],
   ['render_5fmode_4',['render_mode',['../structklotter_1_1StateChanger.html#a4460dfe9a996fd2d47f4986fef9a763d',1,'klotter::StateChanger']]],
-  ['render_5fshadows_5',['render_shadows',['../structklotter_1_1Renderer.html#a43bf75b910e4ad9d97c703f33fffa926',1,'klotter::Renderer']]],
+  ['render_5fshadows_5',['render_shadows',['../structklotter_1_1Renderer.html#a92e2fc70d10ed88e24dd115d038ba88a',1,'klotter::Renderer']]],
   ['render_5fworld_6',['render_world',['../structklotter_1_1Renderer.html#a2f7aaf8158a5c6a9aab9d9bdf9bd8724',1,'klotter::Renderer']]],
   ['rendercontext_7',['RenderContext',['../structklotter_1_1RenderContext.html#a66fb7812f5a1c363a13e55f15f57f7d8',1,'klotter::RenderContext']]],
   ['renderer_8',['Renderer',['../structklotter_1_1Renderer.html#ad5a6f1e81638462af81153f65f17b967',1,'klotter::Renderer::Renderer(const RenderSettings &amp;settings)'],['../structklotter_1_1Renderer.html#ab746b0b937079d7c796a73c50b468dcb',1,'klotter::Renderer::Renderer(const Renderer &amp;)=delete'],['../structklotter_1_1Renderer.html#a088e263db406085384a2dac04cbc6f81',1,'klotter::Renderer::Renderer(Renderer &amp;&amp;)=delete']]],

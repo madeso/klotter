@@ -26,12 +26,12 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/renderer.cc</div>
-            <div>Date: 2025-09-26 17:34:12</div>
+            <div>Date: 2025-09-26 18:50:37</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
                 <div class="mr-2">Lines:</div>
-                <div class="mr-2" style="margin: auto;">0/227</div>
+                <div class="mr-2" style="margin: auto;">0/229</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
             <div class="d-flex">
@@ -41,7 +41,7 @@
             </div>
             <div class="d-flex">
                 <div class="mr-2">Branches:</div>
-                <div class="mr-2" style="margin: auto;">0/387</div>
+                <div class="mr-2" style="margin: auto;">0/391</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
         </div>
@@ -70,7 +70,7 @@
     <tr><td><a href="#l49">klotter::Renderer::make_default_material() const (line 49)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l25">klotter::Renderer::make_skybox(std::shared_ptr&lt;klotter::TextureCubemap&gt;) const (line 25)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l44">klotter::Renderer::make_unlit_material() const (line 44)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l344">klotter::Renderer::render_shadows(glm::vec&lt;2, int, (glm::qualifier)0&gt; const&amp;, klotter::World const&amp;, klotter::CompiledCamera const&amp;) (line 344)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l344">klotter::Renderer::render_shadows(glm::vec&lt;2, int, (glm::qualifier)0&gt; const&amp;, klotter::World const&amp;, klotter::CompiledCamera const&amp;) const (line 344)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l154">klotter::Renderer::render_world(glm::vec&lt;2, int, (glm::qualifier)0&gt; const&amp;, klotter::World const&amp;, klotter::CompiledCamera const&amp;) (line 154)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l54">klotter::Renderer::unlit_geom_layout() const (line 54)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l23">klotter::Renderer::~Renderer() (line 23)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>-%</td><td>0.0%</td></tr>
@@ -2503,7 +2503,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">Renderer::render_shadows</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">window_size</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">World</span><span class="o">&amp;</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">compiled_camera</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">Renderer::render_shadows</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">window_size</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">World</span><span class="o">&amp;</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">compiled_camera</span><span class="p">)</span><span class="w"> </span><span class="k">const</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l345" href="#l345">345</a></td>
@@ -2775,214 +2775,256 @@
                 <td class="text-right src linenos"><a class="normal" id="l383" href="#l383">383</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">				</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_mat</span><span class="p">(</span><span class="o">*</span><span class="n">shader</span><span class="p">.</span><span class="n">world_from_local_uni</span><span class="p">,</span><span class="w"> </span><span class="n">calc_world_from_local</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">compiled_camera</span><span class="p">));</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l384" href="#l384">384</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">				</span><span class="c1">// todo(Gustav): the depth shader should not be a shared type between transform uniform and instanced, this should be verified at compile time with different types</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l385" href="#l385">385</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">				</span><span class="n">render_geom</span><span class="p">(</span><span class="o">*</span><span class="n">mesh</span><span class="o">-&gt;</span><span class="n">geom</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">				</span><span class="n">assert</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">world_from_local_uni</span><span class="p">.</span><span class="n">has_value</span><span class="p">());</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l386" href="#l386">386</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="p">}</span></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">world_from_local_uni</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l387" href="#l387">387</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="p">}</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">				</span><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l388" href="#l388">388</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">					</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_mat</span><span class="p">(</span><span class="o">*</span><span class="n">shader</span><span class="p">.</span><span class="n">world_from_local_uni</span><span class="p">,</span><span class="w"> </span><span class="n">calc_world_from_local</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">compiled_camera</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l389" href="#l389">389</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">world</span><span class="p">.</span><span class="n">instances</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">				</span><span class="p">}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l390" href="#l390">390</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">		</span><span class="p">{</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l391" href="#l391">391</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">SCOPED_DEBUG_GROUP</span><span class="p">(</span><span class="s">&quot;render instances&quot;</span><span class="n">sv</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">				</span><span class="n">render_geom</span><span class="p">(</span><span class="o">*</span><span class="n">mesh</span><span class="o">-&gt;</span><span class="n">geom</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l392" href="#l392">392</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">instance</span><span class="o">:</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="n">instances</span><span class="p">)</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l393" href="#l393">393</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="p">{</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l394" href="#l394">394</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">				</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">shaders_resources</span><span class="p">.</span><span class="n">depth_transform_instanced_mat4</span><span class="p">;</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l395" href="#l395">395</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">				</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">use</span><span class="p">();</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l396" href="#l396">396</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">				</span><span class="n">assert</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">world_from_local_uni</span><span class="p">.</span><span class="n">has_value</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l397" href="#l397">397</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l398" href="#l398">398</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">				</span><span class="n">render_geom_instanced</span><span class="p">(</span><span class="o">*</span><span class="n">instance</span><span class="p">);</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l399" href="#l399">399</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="w">			</span><span class="p">}</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l400" href="#l400">400</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l393" href="#l393">393</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
                 <td class="src uncoveredLine"><span class="w">		</span><span class="p">}</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l401" href="#l401">401</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l394" href="#l394">394</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l402" href="#l402">402</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l395" href="#l395">395</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">debug</span><span class="p">.</span><span class="n">lines</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">world</span><span class="p">.</span><span class="n">instances</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l403" href="#l403">403</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l396" href="#l396">396</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="w">		</span><span class="p">{</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l404" href="#l404">404</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l397" href="#l397">397</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">SCOPED_DEBUG_GROUP</span><span class="p">(</span><span class="s">&quot;render debug lines&quot;</span><span class="n">sv</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="n">SCOPED_DEBUG_GROUP</span><span class="p">(</span><span class="s">&quot;render instances&quot;</span><span class="n">sv</span><span class="p">);</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l405" href="#l405">405</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l398" href="#l398">398</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">render_debug_lines</span><span class="p">(</span></td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">instance</span><span class="o">:</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="n">instances</span><span class="p">)</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l406" href="#l406">406</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">				</span><span class="n">debug</span><span class="p">.</span><span class="n">lines</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">debug_drawer</span><span class="p">,</span><span class="w"> </span><span class="n">compiled_camera</span><span class="p">,</span><span class="w"> </span><span class="n">window_size</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">.</span><span class="n">gamma</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l407" href="#l407">407</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l399" href="#l399">399</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">			</span><span class="p">);</span></td>
+                <td class="src "><span class="w">			</span><span class="p">{</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l408" href="#l408">408</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l400" href="#l400">400</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="p">}</span></td>
+                <td class="src uncoveredLine"><span class="w">				</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">shader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">shaders_resources</span><span class="p">.</span><span class="n">depth_transform_instanced_mat4</span><span class="p">;</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l409" href="#l409">409</a></td>
-                <td class="text-right src linenos ws-unset">
-                </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="p">}</span></td>
-            </tr>
-            <tr>
-                <td class="text-right src linenos"><a class="normal" id="l410" href="#l410">410</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l401" href="#l401">401</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="p">}</span></td>
+                <td class="src uncoveredLine"><span class="w">				</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">use</span><span class="p">();</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l411" href="#l411">411</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l402" href="#l402">402</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">				</span><span class="n">assert</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">world_from_local_uni</span><span class="p">.</span><span class="n">has_value</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l403" href="#l403">403</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
+                <td class="text-right src linenos"><a class="normal" id="l404" href="#l404">404</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">				</span><span class="n">render_geom_instanced</span><span class="p">(</span><span class="o">*</span><span class="n">instance</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l405" href="#l405">405</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">			</span><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l406" href="#l406">406</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l407" href="#l407">407</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l408" href="#l408">408</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">debug</span><span class="p">.</span><span class="n">lines</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l409" href="#l409">409</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">		</span><span class="p">{</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l410" href="#l410">410</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="n">SCOPED_DEBUG_GROUP</span><span class="p">(</span><span class="s">&quot;render debug lines&quot;</span><span class="n">sv</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l411" href="#l411">411</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="n">render_debug_lines</span><span class="p">(</span></td>
+            </tr>
+            <tr>
                 <td class="text-right src linenos"><a class="normal" id="l412" href="#l412">412</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">				</span><span class="n">debug</span><span class="p">.</span><span class="n">lines</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pimpl</span><span class="o">-&gt;</span><span class="n">debug_drawer</span><span class="p">,</span><span class="w"> </span><span class="n">compiled_camera</span><span class="p">,</span><span class="w"> </span><span class="n">window_size</span><span class="p">,</span><span class="w"> </span><span class="n">settings</span><span class="p">.</span><span class="n">gamma</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l413" href="#l413">413</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">			</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l414" href="#l414">414</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l415" href="#l415">415</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l416" href="#l416">416</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l417" href="#l417">417</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l418" href="#l418">418</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l413" href="#l413">413</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l419" href="#l419">419</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
