@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<title>src/klotter/render/renderer.cc</title>
+</head>
+<body>
+<h1>src/klotter/render/renderer.cc</h1>
+<span id='readability-make-member-function-const'>&nbsp;</span>
+<hr>
+<h3>warning: method &#39;render_shadows&#39; can be made const</h3>
+<code>[readability-make-member-function-const]</code>
+<p><i>src/klotter/render/renderer.cc 344 : 16</i></p>
+<pre>
+  344 | void Renderer::render_shadows(const glm::ivec2&amp; window_size, const World&amp; world, const CompiledCamera&amp; compiled_camera)
+      |                ^                                                                                                       
+      |                                                                                                                         const
+</pre>
+<span id='bugprone-unchecked-optional-access'>&nbsp;</span>
+<hr>
+<h3>warning: unchecked access to optional value</h3>
+<code>[bugprone-unchecked-optional-access]</code>
+<p><i>src/klotter/render/renderer.cc 383 : 30</i></p>
+<pre>
+  383 |                                 shader.program-&gt;set_mat(*shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera));
+      |                                                          ^
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/render/renderer.cc:344:16: warning: method 'render_shadows' can be made const [readability-make-member-function-const]
+  344 | void Renderer::render_shadows(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera)
+      |                ^                                                                                                       
+      |                                                                                                                         const
+/home/runner/work/klotter/klotter/src/klotter/render/renderer.cc:383:30: warning: unchecked access to optional value [bugprone-unchecked-optional-access]
+  383 |                                 shader.program->set_mat(*shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera));
+      |                                                          ^
+-->
+</body>
+</html>

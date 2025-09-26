@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1EffectStack" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::EffectStack</compoundname>
+    <includes refid="postproc_8h" local="no">postproc.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1ae97d74e9a542183e6de3e7a3185315ad" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int klotter::EffectStack::current_msaa_setting</definition>
+        <argsstring></argsstring>
+        <name>current_msaa_setting</name>
+        <qualifiedname>klotter::EffectStack::current_msaa_setting</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="147" column="5" bodyfile="src/klotter/render/postproc.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1a943bbfc9c0c88cf892b41f28ffede7f0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool klotter::EffectStack::dirty</definition>
+        <argsstring></argsstring>
+        <name>dirty</name>
+        <qualifiedname>klotter::EffectStack::dirty</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="148" column="6" bodyfile="src/klotter/render/postproc.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1a69f6d22d0045f408054bd97ed6a67c66" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; glm::ivec2 &gt;</type>
+        <definition>std::optional&lt;glm::ivec2&gt; klotter::EffectStack::window_size</definition>
+        <argsstring></argsstring>
+        <name>window_size</name>
+        <qualifiedname>klotter::EffectStack::window_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="149" column="15" bodyfile="src/klotter/render/postproc.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1a9e333bc5482652c2e731dc4362575d34" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="structklotter_1_1Effect" kindref="compound">Effect</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;Effect&gt; &gt; klotter::EffectStack::effects</definition>
+        <argsstring></argsstring>
+        <name>effects</name>
+        <qualifiedname>klotter::EffectStack::effects</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="150" column="13" bodyfile="src/klotter/render/postproc.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1a99d2b4b2f9ddce5da16bf4d088978bd6" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1CompiledStack" kindref="compound">CompiledStack</ref></type>
+        <definition>CompiledStack klotter::EffectStack::compiled</definition>
+        <argsstring></argsstring>
+        <name>compiled</name>
+        <qualifiedname>klotter::EffectStack::compiled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="151" column="15" bodyfile="src/klotter/render/postproc.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1aeac7678584313570bb2642cd51a07759" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool klotter::EffectStack::use_hdr</definition>
+        <argsstring></argsstring>
+        <name>use_hdr</name>
+        <qualifiedname>klotter::EffectStack::use_hdr</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="156" column="6" bodyfile="src/klotter/render/postproc.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1ae1b4343dbc50a5ae1b08aaf3efc20b68" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::EffectStack::exposure</definition>
+        <argsstring></argsstring>
+        <name>exposure</name>
+        <qualifiedname>klotter::EffectStack::exposure</qualifiedname>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="157" column="7" bodyfile="src/klotter/render/postproc.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1EffectStack_1adfd748607dee4c12c729c56b09e3d5a6" prot="public" static="no" mutable="no">
+        <type>std::weak_ptr&lt; <ref refid="structklotter_1_1RenderWorld" kindref="compound">RenderWorld</ref> &gt;</type>
+        <definition>std::weak_ptr&lt;RenderWorld&gt; klotter::EffectStack::render_world_ref</definition>
+        <argsstring></argsstring>
+        <name>render_world_ref</name>
+        <qualifiedname>klotter::EffectStack::render_world_ref</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="159" column="15" bodyfile="src/klotter/render/postproc.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1EffectStack_1aaf622b94ba48b5950c9324c6d4434c05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::EffectStack::render</definition>
+        <argsstring>(const PostProcArg &amp;arg)</argsstring>
+        <name>render</name>
+        <qualifiedname>klotter::EffectStack::render</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref> &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>rebuilds stack if dirty, update all targets, then render the last_source </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="162" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1EffectStack_1a045d1a84ab1f0e78ac4382191f521c75" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::EffectStack::update</definition>
+        <argsstring>(float dt) const</argsstring>
+        <name>update</name>
+        <qualifiedname>klotter::EffectStack::update</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="163" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1EffectStack_1a225f24c131243c23e9a22598a9765fb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::EffectStack::gui</definition>
+        <argsstring>()</argsstring>
+        <name>gui</name>
+        <qualifiedname>klotter::EffectStack::gui</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="164" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The facade of the post-proc framework. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="15">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="5">
+        <label>klotter::CompiledStack</label>
+        <link refid="structklotter_1_1CompiledStack"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>last_source</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>targets</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter::Effect</label>
+        <link refid="structklotter_1_1Effect"/>
+      </node>
+      <node id="1">
+        <label>klotter::EffectStack</label>
+        <link refid="structklotter_1_1EffectStack"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>effects</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>compiled</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>render_world_ref</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>klotter::FrameBuffer</label>
+        <link refid="structklotter_1_1FrameBuffer"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>klotter::RealizeShader</label>
+        <link refid="structklotter_1_1RealizeShader"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="23" relation="usage">
+          <edgelabel>exposure_uniform</edgelabel>
+          <edgelabel>gamma_uniform</edgelabel>
+          <edgelabel>tex_blurred_bloom_uniform</edgelabel>
+          <edgelabel>tex_input_uniform</edgelabel>
+          <edgelabel>use_blur_uniform</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>klotter::RenderSource</label>
+        <link refid="structklotter_1_1RenderSource"/>
+      </node>
+      <node id="10">
+        <label>klotter::RenderTextureWithShader</label>
+        <link refid="structklotter_1_1RenderTextureWithShader"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>fbo</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>effect</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>klotter::RenderWorld</label>
+        <link refid="structklotter_1_1RenderWorld"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>msaa_buffer</edgelabel>
+          <edgelabel>realized_buffer</edgelabel>
+          <edgelabel>shadow_buffer</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>realize_shader</edgelabel>
+        </childnode>
+      </node>
+      <node id="21">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="22" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>klotter::ShaderPropertyProvider</label>
+        <link refid="structklotter_1_1ShaderPropertyProvider"/>
+      </node>
+      <node id="23">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="3">
+        <label>std::shared_ptr&lt; klotter::Effect &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::shared_ptr&lt; klotter::FrameBuffer &gt;</label>
+        <childnode refid="14" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::shared_ptr&lt; klotter::RenderSource &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::shared_ptr&lt; klotter::RenderTextureWithShader &gt;</label>
+        <childnode refid="10" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="21" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>std::string</label>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; std::shared_ptr&lt; klotter::Effect &gt; &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::vector&lt; std::shared_ptr&lt; klotter::RenderTextureWithShader &gt; &gt;</label>
+        <childnode refid="9" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>std::weak_ptr&lt; klotter::RenderWorld &gt;</label>
+        <childnode refid="18" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/postproc.h" line="145" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="146" bodyend="165"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1EffectStack_1a99d2b4b2f9ddce5da16bf4d088978bd6" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>compiled</name></member>
+      <member refid="structklotter_1_1EffectStack_1ae97d74e9a542183e6de3e7a3185315ad" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>current_msaa_setting</name></member>
+      <member refid="structklotter_1_1EffectStack_1a943bbfc9c0c88cf892b41f28ffede7f0" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>dirty</name></member>
+      <member refid="structklotter_1_1EffectStack_1a9e333bc5482652c2e731dc4362575d34" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>effects</name></member>
+      <member refid="structklotter_1_1EffectStack_1ae1b4343dbc50a5ae1b08aaf3efc20b68" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>exposure</name></member>
+      <member refid="structklotter_1_1EffectStack_1a225f24c131243c23e9a22598a9765fb1" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>gui</name></member>
+      <member refid="structklotter_1_1EffectStack_1aaf622b94ba48b5950c9324c6d4434c05" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>render</name></member>
+      <member refid="structklotter_1_1EffectStack_1adfd748607dee4c12c729c56b09e3d5a6" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>render_world_ref</name></member>
+      <member refid="structklotter_1_1EffectStack_1a045d1a84ab1f0e78ac4382191f521c75" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>update</name></member>
+      <member refid="structklotter_1_1EffectStack_1aeac7678584313570bb2642cd51a07759" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>use_hdr</name></member>
+      <member refid="structklotter_1_1EffectStack_1a69f6d22d0045f408054bd97ed6a67c66" prot="public" virt="non-virtual"><scope>klotter::EffectStack</scope><name>window_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

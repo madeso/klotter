@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1BoundFbo" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::BoundFbo</compoundname>
+    <includes refid="texture_8h" local="no">texture.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1BoundFbo_1afe94d7a00ce51497623dd29f5e006b09" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;FrameBuffer&gt; klotter::BoundFbo::fbo</definition>
+        <argsstring></argsstring>
+        <name>fbo</name>
+        <qualifiedname>klotter::BoundFbo::fbo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="157" column="17" bodyfile="src/klotter/render/texture.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::BoundFbo::BoundFbo</definition>
+        <argsstring>(const BoundFbo &amp;)=delete</argsstring>
+        <name>BoundFbo</name>
+        <qualifiedname>klotter::BoundFbo::BoundFbo</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1BoundFbo" kindref="compound">BoundFbo</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="159" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1BoundFbo_1ad2380dad3d659ad7ace194845af9ca55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::BoundFbo::BoundFbo</definition>
+        <argsstring>(BoundFbo &amp;&amp;)=delete</argsstring>
+        <name>BoundFbo</name>
+        <qualifiedname>klotter::BoundFbo::BoundFbo</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1BoundFbo" kindref="compound">BoundFbo</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1BoundFbo_1a19f619eb3bedb1f31515f965329002b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::BoundFbo::operator=</definition>
+        <argsstring>(const BoundFbo &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>klotter::BoundFbo::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1BoundFbo" kindref="compound">BoundFbo</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="161" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1BoundFbo_1a0f3f1de7ce24a05c11bf9b7601c912a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::BoundFbo::operator=</definition>
+        <argsstring>(BoundFbo &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>klotter::BoundFbo::operator=</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1BoundFbo" kindref="compound">BoundFbo</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="162" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1BoundFbo_1a7711b6a4637a0baea669081503aa70e0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::BoundFbo::BoundFbo</definition>
+        <argsstring>(std::shared_ptr&lt; FrameBuffer &gt; f)</argsstring>
+        <name>BoundFbo</name>
+        <qualifiedname>klotter::BoundFbo::BoundFbo</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="164" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1BoundFbo_1a23612705497e98bf4562249ab3c0667c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::BoundFbo::~BoundFbo</definition>
+        <argsstring>()</argsstring>
+        <name>~BoundFbo</name>
+        <qualifiedname>klotter::BoundFbo::~BoundFbo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/texture.h" line="165" column="1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>raii class to render to a <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="1">
+        <label>klotter::BoundFbo</label>
+        <link refid="structklotter_1_1BoundFbo"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>fbo</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::FrameBuffer</label>
+        <link refid="structklotter_1_1FrameBuffer"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::FrameBuffer &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/texture.h" line="155" column="1" bodyfile="src/klotter/render/texture.h" bodystart="156" bodyend="166"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1BoundFbo_1ab0a8fe6a0a96dcbe537f5cd618719f4f" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>BoundFbo</name></member>
+      <member refid="structklotter_1_1BoundFbo_1ad2380dad3d659ad7ace194845af9ca55" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>BoundFbo</name></member>
+      <member refid="structklotter_1_1BoundFbo_1a7711b6a4637a0baea669081503aa70e0" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>BoundFbo</name></member>
+      <member refid="structklotter_1_1BoundFbo_1afe94d7a00ce51497623dd29f5e006b09" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>fbo</name></member>
+      <member refid="structklotter_1_1BoundFbo_1a19f619eb3bedb1f31515f965329002b1" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1BoundFbo_1a0f3f1de7ce24a05c11bf9b7601c912a4" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1BoundFbo_1a23612705497e98bf4562249ab3c0667c" prot="public" virt="non-virtual"><scope>klotter::BoundFbo</scope><name>~BoundFbo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

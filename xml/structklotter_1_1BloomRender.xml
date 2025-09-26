@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1BloomRender" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::BloomRender</compoundname>
+    <includes refid="postproc_8internal_8h" local="no">postproc.internal.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1BloomRender_1a8e9a87e5eb677a0530b4857f7de633f2" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1ExtractShader" kindref="compound">ExtractShader</ref> *</type>
+        <definition>ExtractShader* klotter::BloomRender::extract_shader</definition>
+        <argsstring></argsstring>
+        <name>extract_shader</name>
+        <qualifiedname>klotter::BloomRender::extract_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="20" column="15" bodyfile="src/klotter/render/postproc.internal.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1BloomRender_1a1d971d1ca0cdc8eea850f4c008729101" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;FrameBuffer&gt; klotter::BloomRender::bloom_buffer</definition>
+        <argsstring></argsstring>
+        <name>bloom_buffer</name>
+        <qualifiedname>klotter::BloomRender::bloom_buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="21" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1BloomRender_1a38d3ba543d3b0af12408795decc301db" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1PingPongBlurShader" kindref="compound">PingPongBlurShader</ref> *</type>
+        <definition>PingPongBlurShader* klotter::BloomRender::ping_pong_shader</definition>
+        <argsstring></argsstring>
+        <name>ping_pong_shader</name>
+        <qualifiedname>klotter::BloomRender::ping_pong_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="23" column="20" bodyfile="src/klotter/render/postproc.internal.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1BloomRender_1acf57133837ca2ba11f1814835e8ec5c8" prot="public" static="no" mutable="no">
+        <type>std::array&lt; std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;, 2 &gt;</type>
+        <definition>std::array&lt;std::shared_ptr&lt;FrameBuffer&gt;, 2&gt; klotter::BloomRender::ping_pong_buffer</definition>
+        <argsstring></argsstring>
+        <name>ping_pong_buffer</name>
+        <qualifiedname>klotter::BloomRender::ping_pong_buffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="24" column="12" bodyfile="src/klotter/render/postproc.internal.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="13">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="1">
+        <label>klotter::BloomRender</label>
+        <link refid="structklotter_1_1BloomRender"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>extract_shader</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>bloom_buffer</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>ping_pong_shader</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>ping_pong_buffer</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::ExtractShader</label>
+        <link refid="structklotter_1_1ExtractShader"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>cutoff_uniform</edgelabel>
+          <edgelabel>softness_uniform</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>klotter::FrameBuffer</label>
+        <link refid="structklotter_1_1FrameBuffer"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter::LoadedPostProcShader</label>
+        <link refid="structklotter_1_1LoadedPostProcShader"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>tex_input_uniform</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>klotter::PingPongBlurShader</label>
+        <link refid="structklotter_1_1PingPongBlurShader"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>is_horizontal_uniform</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>std::array&lt; std::shared_ptr&lt; klotter::FrameBuffer &gt;, 2 &gt;</label>
+        <childnode refid="11" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="11">
+        <label>std::shared_ptr&lt; klotter::FrameBuffer &gt;</label>
+        <childnode refid="12" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::shared_ptr&lt; klotter::LoadedPostProcShader &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::string</label>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/postproc.internal.h" line="18" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="19" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1BloomRender_1a1d971d1ca0cdc8eea850f4c008729101" prot="public" virt="non-virtual"><scope>klotter::BloomRender</scope><name>bloom_buffer</name></member>
+      <member refid="structklotter_1_1BloomRender_1a8e9a87e5eb677a0530b4857f7de633f2" prot="public" virt="non-virtual"><scope>klotter::BloomRender</scope><name>extract_shader</name></member>
+      <member refid="structklotter_1_1BloomRender_1acf57133837ca2ba11f1814835e8ec5c8" prot="public" virt="non-virtual"><scope>klotter::BloomRender</scope><name>ping_pong_buffer</name></member>
+      <member refid="structklotter_1_1BloomRender_1a38d3ba543d3b0af12408795decc301db" prot="public" virt="non-virtual"><scope>klotter::BloomRender</scope><name>ping_pong_shader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

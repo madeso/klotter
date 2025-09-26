@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structVisualDebugging_1_1VisualDebug" kind="struct" language="C++" prot="public">
+    <compoundname>VisualDebugging::VisualDebug</compoundname>
+    <includes refid="vdebug_8h" local="no">vdebug.h</includes>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structVisualDebugging_1_1VisualDebug_1a07164665a0efab337e7c7426790e42c5" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int VisualDebugging::VisualDebug::defaultFontSize</definition>
+        <argsstring></argsstring>
+        <name>defaultFontSize</name>
+        <qualifiedname>VisualDebugging::VisualDebug::defaultFontSize</qualifiedname>
+        <initializer>= 18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="88" column="22" bodyfile="src/klotter/vdebug.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structVisualDebugging_1_1VisualDebug_1a28233e45b9dadccfaf8028e93a0237fc" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structVisualDebugging_1_1Frame" kindref="compound">Frame</ref> &gt;</type>
+        <definition>std::vector&lt;Frame&gt; VisualDebugging::VisualDebug::frames</definition>
+        <argsstring></argsstring>
+        <name>frames</name>
+        <qualifiedname>VisualDebugging::VisualDebug::frames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="90" column="13" bodyfile="src/klotter/vdebug.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVisualDebugging_1_1VisualDebug_1a55521d36a72914df42ecb7fe409c93d4" prot="public" static="no" mutable="no">
+        <type><ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref></type>
+        <definition>Color VisualDebugging::VisualDebug::currentActiveColor</definition>
+        <argsstring></argsstring>
+        <name>currentActiveColor</name>
+        <qualifiedname>VisualDebugging::VisualDebug::currentActiveColor</qualifiedname>
+        <initializer>= <ref refid="namespaceVisualDebugging_1_1Colors_1aca2c2af7b16321d48a0ab354820a6757" kindref="member">Colors::white</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="91" column="7" bodyfile="src/klotter/vdebug.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVisualDebugging_1_1VisualDebug_1a5a775c42e2bf7f7f56f64d6a88659cb1" prot="public" static="no" mutable="no">
+        <type><ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref></type>
+        <definition>Color VisualDebugging::VisualDebug::currentBackgroundColor</definition>
+        <argsstring></argsstring>
+        <name>currentBackgroundColor</name>
+        <qualifiedname>VisualDebugging::VisualDebug::currentBackgroundColor</qualifiedname>
+        <initializer>= <ref refid="namespaceVisualDebugging_1_1Colors_1aca2c2af7b16321d48a0ab354820a6757" kindref="member">Colors::white</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="92" column="7" bodyfile="src/klotter/vdebug.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVisualDebugging_1_1VisualDebug_1a3b19bea0c1faa9751d136619ccf9f167" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int VisualDebugging::VisualDebug::currentFontSize</definition>
+        <argsstring></argsstring>
+        <name>currentFontSize</name>
+        <qualifiedname>VisualDebugging::VisualDebug::currentFontSize</qualifiedname>
+        <initializer>= <ref refid="structVisualDebugging_1_1VisualDebug_1a07164665a0efab337e7c7426790e42c5" kindref="member">defaultFontSize</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="93" column="5" bodyfile="src/klotter/vdebug.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVisualDebugging_1_1VisualDebug_1a78af68a0a2ebeaeb985e41489fbc3b1e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool VisualDebugging::VisualDebug::dontShowNextElementWhenFrameIsInBackground</definition>
+        <argsstring></argsstring>
+        <name>dontShowNextElementWhenFrameIsInBackground</name>
+        <qualifiedname>VisualDebugging::VisualDebug::dontShowNextElementWhenFrameIsInBackground</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="94" column="6" bodyfile="src/klotter/vdebug.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1adb247749f96d4ccfe2717ba78d1311c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::AddArtistToCurrentFrame</definition>
+        <argsstring>(std::unique_ptr&lt; SceneArtist &gt; artist)</argsstring>
+        <name>AddArtistToCurrentFrame</name>
+        <qualifiedname>VisualDebugging::VisualDebug::AddArtistToCurrentFrame</qualifiedname>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="structVisualDebugging_1_1SceneArtist" kindref="compound">SceneArtist</ref> &gt;</type>
+          <declname>artist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="96" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a23f71fe5e2df8d74d07884a4d1bba115" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::Save</definition>
+        <argsstring>(const std::string &amp;title)</argsstring>
+        <name>Save</name>
+        <qualifiedname>VisualDebugging::VisualDebug::Save</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+<para>Save visual debug data. Call this when finished creating frames. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="99" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a57157d0a12e9ded31245281f1ab9a866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::BeginFrame</definition>
+        <argsstring>(std::string description=&quot;&quot;, bool keepInBackground=false)</argsstring>
+        <name>BeginFrame</name>
+        <qualifiedname>VisualDebugging::VisualDebug::BeginFrame</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>description</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>keepInBackground</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Begin a new frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>description</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Description. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>keepInBackground</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, this frame will remain in the background when the next frames are drawn, i.e. it won&apos;t be erased. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="104" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1ab75fe0ed561e849944cd4dd45fd4a29a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::DontShowNextElementWhenFrameIsInBackground</definition>
+        <argsstring>()</argsstring>
+        <name>DontShowNextElementWhenFrameIsInBackground</name>
+        <qualifiedname>VisualDebugging::VisualDebug::DontShowNextElementWhenFrameIsInBackground</qualifiedname>
+        <briefdescription>
+<para>The next element drawn to the current frame will not be shown when the frame is in the background. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>(Only applicable to frames where keepInBackground is true). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="108" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a7e1446968ecd3fd3fdce4cb11d063ed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::SetColor</definition>
+        <argsstring>(const Color &amp;activeColor, const Color &amp;backgroundColor)</argsstring>
+        <name>SetColor</name>
+        <qualifiedname>VisualDebugging::VisualDebug::SetColor</qualifiedname>
+        <param>
+          <type>const <ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <declname>activeColor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <declname>backgroundColor</declname>
+        </param>
+        <briefdescription>
+<para>Set the active and inactive colors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>activeColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref> to use when frame is active. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>backgroundColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref> to use when frame is in background (only applies to frames where keepInBackground is true). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="113" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a925180c139555a21a71a5832f8c9476b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::SetColor</definition>
+        <argsstring>(const Color &amp;color)</argsstring>
+        <name>SetColor</name>
+        <qualifiedname>VisualDebugging::VisualDebug::SetColor</qualifiedname>
+        <param>
+          <type>const <ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="115" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1ace2fbe0f0a9f5e3a5d9de1cd4f551e58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::SetDefaultFontSize</definition>
+        <argsstring>(int fontSize)</argsstring>
+        <name>SetDefaultFontSize</name>
+        <qualifiedname>VisualDebugging::VisualDebug::SetDefaultFontSize</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>fontSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="117" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a3d65ba2cf498ed67b6632fec15d5e35e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::ResetDefaultFontSize</definition>
+        <argsstring>()</argsstring>
+        <name>ResetDefaultFontSize</name>
+        <qualifiedname>VisualDebugging::VisualDebug::ResetDefaultFontSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="119" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a6f513271b99864391b4bca1525fad6cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::DrawLineSegmentWithLabel</definition>
+        <argsstring>(const glm::vec2 &amp;lineStart, const glm::vec2 &amp;lineEnd, const std::string &amp;text)</argsstring>
+        <name>DrawLineSegmentWithLabel</name>
+        <qualifiedname>VisualDebugging::VisualDebug::DrawLineSegmentWithLabel</qualifiedname>
+        <param>
+          <type>const glm::vec2 &amp;</type>
+          <declname>lineStart</declname>
+        </param>
+        <param>
+          <type>const glm::vec2 &amp;</type>
+          <declname>lineEnd</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="122" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a2f4e8961d9d14e037d5e51ce614a7f12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::DrawPoint</definition>
+        <argsstring>(const glm::vec2 &amp;position, float radius, bool wireframe=false)</argsstring>
+        <name>DrawPoint</name>
+        <qualifiedname>VisualDebugging::VisualDebug::DrawPoint</qualifiedname>
+        <param>
+          <type>const glm::vec2 &amp;</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>wireframe</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="123" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a3303cf9132fd44a6d2305fe7485032a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::DrawPoints</definition>
+        <argsstring>(const std::vector&lt; glm::vec2 &gt; &amp;points, float radius, bool wireframe=false)</argsstring>
+        <name>DrawPoints</name>
+        <qualifiedname>VisualDebugging::VisualDebug::DrawPoints</qualifiedname>
+        <param>
+          <type>const std::vector&lt; glm::vec2 &gt; &amp;</type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>wireframe</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="124" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1ae5366ab971dd1268d2df4f1c1dd780b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::DrawArrow</definition>
+        <argsstring>(const glm::vec2 &amp;start, const glm::vec2 &amp;end, float size)</argsstring>
+        <name>DrawArrow</name>
+        <qualifiedname>VisualDebugging::VisualDebug::DrawArrow</qualifiedname>
+        <param>
+          <type>const glm::vec2 &amp;</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>const glm::vec2 &amp;</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="125" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>VisualDebugging::Color</label>
+        <link refid="structVisualDebugging_1_1Color"/>
+      </node>
+      <node id="3">
+        <label>VisualDebugging::Frame</label>
+        <link refid="structVisualDebugging_1_1Frame"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>description</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>artists</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>VisualDebugging::SceneArtist</label>
+        <link refid="structVisualDebugging_1_1SceneArtist"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>activeDrawColor</edgelabel>
+          <edgelabel>inactiveDrawColor</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>VisualDebugging::VisualDebug</label>
+        <link refid="structVisualDebugging_1_1VisualDebug"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>frames</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>currentActiveColor</edgelabel>
+          <edgelabel>currentBackgroundColor</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="4">
+        <label>std::string</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::unique_ptr&lt; VisualDebugging::SceneArtist &gt;</label>
+        <childnode refid="8" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; VisualDebugging::Frame &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; std::unique_ptr&lt; VisualDebugging::SceneArtist &gt; &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/vdebug.h" line="86" column="1" bodyfile="src/klotter/vdebug.h" bodystart="87" bodyend="127"/>
+    <listofallmembers>
+      <member refid="structVisualDebugging_1_1VisualDebug_1adb247749f96d4ccfe2717ba78d1311c7" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>AddArtistToCurrentFrame</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a57157d0a12e9ded31245281f1ab9a866" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>BeginFrame</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a55521d36a72914df42ecb7fe409c93d4" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>currentActiveColor</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a5a775c42e2bf7f7f56f64d6a88659cb1" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>currentBackgroundColor</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a3b19bea0c1faa9751d136619ccf9f167" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>currentFontSize</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a07164665a0efab337e7c7426790e42c5" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>defaultFontSize</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1ab75fe0ed561e849944cd4dd45fd4a29a" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>DontShowNextElementWhenFrameIsInBackground</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a78af68a0a2ebeaeb985e41489fbc3b1e" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>dontShowNextElementWhenFrameIsInBackground</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1ae5366ab971dd1268d2df4f1c1dd780b7" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>DrawArrow</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a6f513271b99864391b4bca1525fad6cf" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>DrawLineSegmentWithLabel</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a2f4e8961d9d14e037d5e51ce614a7f12" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>DrawPoint</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a3303cf9132fd44a6d2305fe7485032a5" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>DrawPoints</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a28233e45b9dadccfaf8028e93a0237fc" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>frames</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a3d65ba2cf498ed67b6632fec15d5e35e" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>ResetDefaultFontSize</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a23f71fe5e2df8d74d07884a4d1bba115" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>Save</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a7e1446968ecd3fd3fdce4cb11d063ed7" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>SetColor</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a925180c139555a21a71a5832f8c9476b" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>SetColor</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1ace2fbe0f0a9f5e3a5d9de1cd4f551e58" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>SetDefaultFontSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

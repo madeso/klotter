@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceVisualDebugging" kind="namespace" language="C++">
+    <compoundname>VisualDebugging</compoundname>
+    <innerclass refid="structVisualDebugging_1_1AABB2" prot="public">VisualDebugging::AABB2</innerclass>
+    <innerclass refid="structVisualDebugging_1_1Color" prot="public">VisualDebugging::Color</innerclass>
+    <innerclass refid="structVisualDebugging_1_1Frame" prot="public">VisualDebugging::Frame</innerclass>
+    <innerclass refid="structVisualDebugging_1_1SceneArtist" prot="public">VisualDebugging::SceneArtist</innerclass>
+    <innerclass refid="structVisualDebugging_1_1VisualDebug" prot="public">VisualDebugging::VisualDebug</innerclass>
+    <innernamespace refid="namespaceVisualDebugging_1_1Colors">VisualDebugging::Colors</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/vdebug.h" line="7" column="1"/>
+  </compounddef>
+</doxygen>

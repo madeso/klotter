@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structVisualDebugging_1_1SceneArtist" kind="struct" language="C++" prot="public" abstract="yes">
+    <compoundname>VisualDebugging::SceneArtist</compoundname>
+    <includes refid="vdebug_8h" local="no">vdebug.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1ae4496e0cf585d56cef10c0a3ad18c96c" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool VisualDebugging::SceneArtist::showWhenInBackground</definition>
+        <argsstring></argsstring>
+        <name>showWhenInBackground</name>
+        <qualifiedname>VisualDebugging::SceneArtist::showWhenInBackground</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="52" column="6" bodyfile="src/klotter/vdebug.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1a92cfe711c36099d0642fba4c3bea159f" prot="protected" static="no" mutable="no">
+        <type><ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref></type>
+        <definition>Color VisualDebugging::SceneArtist::activeDrawColor</definition>
+        <argsstring></argsstring>
+        <name>activeDrawColor</name>
+        <qualifiedname>VisualDebugging::SceneArtist::activeDrawColor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="69" column="7" bodyfile="src/klotter/vdebug.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1a9d28df9a71f15ae5cb0894654a974551" prot="protected" static="no" mutable="no">
+        <type><ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref></type>
+        <definition>Color VisualDebugging::SceneArtist::inactiveDrawColor</definition>
+        <argsstring></argsstring>
+        <name>inactiveDrawColor</name>
+        <qualifiedname>VisualDebugging::SceneArtist::inactiveDrawColor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="70" column="7" bodyfile="src/klotter/vdebug.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1a6f2b4ca0e1940ddcdc7eb9e34f49c6ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::SceneArtist::SetColor</definition>
+        <argsstring>(const Color &amp;act, const Color &amp;bkg)</argsstring>
+        <name>SetColor</name>
+        <qualifiedname>VisualDebugging::SceneArtist::SetColor</qualifiedname>
+        <param>
+          <type>const <ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <declname>act</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref> &amp;</type>
+          <declname>bkg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="54" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1a2c99802b48717cd830e77bc0c7c74d19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VisualDebugging::SceneArtist::SceneArtist</definition>
+        <argsstring>()</argsstring>
+        <name>SceneArtist</name>
+        <qualifiedname>VisualDebugging::SceneArtist::SceneArtist</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1aaf16a74428bd880b5806b6e80f9da738" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual VisualDebugging::SceneArtist::~SceneArtist</definition>
+        <argsstring>()=default</argsstring>
+        <name>~SceneArtist</name>
+        <qualifiedname>VisualDebugging::SceneArtist::~SceneArtist</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="57" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1a72a55d6278692932c28f032a43d1dd94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VisualDebugging::SceneArtist::SceneArtist</definition>
+        <argsstring>(const SceneArtist &amp;)=delete</argsstring>
+        <name>SceneArtist</name>
+        <qualifiedname>VisualDebugging::SceneArtist::SceneArtist</qualifiedname>
+        <param>
+          <type>const <ref refid="structVisualDebugging_1_1SceneArtist" kindref="compound">SceneArtist</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1a2798c85aea4e6e7aff9a283983cd13c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVisualDebugging_1_1SceneArtist" kindref="compound">SceneArtist</ref> &amp;</type>
+        <definition>SceneArtist &amp; VisualDebugging::SceneArtist::operator=</definition>
+        <argsstring>(const SceneArtist &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>VisualDebugging::SceneArtist::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="structVisualDebugging_1_1SceneArtist" kindref="compound">SceneArtist</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="59" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1af5f6e2e96aec63f3e4fa78abc0f5f428" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VisualDebugging::SceneArtist::SceneArtist</definition>
+        <argsstring>(SceneArtist &amp;&amp;)=default</argsstring>
+        <name>SceneArtist</name>
+        <qualifiedname>VisualDebugging::SceneArtist::SceneArtist</qualifiedname>
+        <param>
+          <type><ref refid="structVisualDebugging_1_1SceneArtist" kindref="compound">SceneArtist</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1a77fc757481c93169924f07924ed6e2c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structVisualDebugging_1_1SceneArtist" kindref="compound">SceneArtist</ref> &amp;</type>
+        <definition>SceneArtist &amp; VisualDebugging::SceneArtist::operator=</definition>
+        <argsstring>(SceneArtist &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>VisualDebugging::SceneArtist::operator=</qualifiedname>
+        <param>
+          <type><ref refid="structVisualDebugging_1_1SceneArtist" kindref="compound">SceneArtist</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="61" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1ad5ae6ef87c5421627c748c8468cd4025" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::SceneArtist::WriteJsonBase</definition>
+        <argsstring>(std::ostream &amp;file) const</argsstring>
+        <name>WriteJsonBase</name>
+        <qualifiedname>VisualDebugging::SceneArtist::WriteJsonBase</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="63" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1a8d748a66be78fe348c5e2d0e35d555e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void VisualDebugging::SceneArtist::WriteJson</definition>
+        <argsstring>(std::ostream &amp;file) const =0</argsstring>
+        <name>WriteJson</name>
+        <qualifiedname>VisualDebugging::SceneArtist::WriteJson</qualifiedname>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="64" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1SceneArtist_1a522d133e615ec84375531988dcd2ad22" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void VisualDebugging::SceneArtist::Include</definition>
+        <argsstring>(AABB2 *aabb)=0</argsstring>
+        <name>Include</name>
+        <qualifiedname>VisualDebugging::SceneArtist::Include</qualifiedname>
+        <param>
+          <type><ref refid="structVisualDebugging_1_1AABB2" kindref="compound">AABB2</ref> *</type>
+          <declname>aabb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="65" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>VisualDebugging::Color</label>
+        <link refid="structVisualDebugging_1_1Color"/>
+      </node>
+      <node id="1">
+        <label>VisualDebugging::SceneArtist</label>
+        <link refid="structVisualDebugging_1_1SceneArtist"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>activeDrawColor</edgelabel>
+          <edgelabel>inactiveDrawColor</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/vdebug.h" line="50" column="1" bodyfile="src/klotter/vdebug.h" bodystart="51" bodyend="71"/>
+    <listofallmembers>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a92cfe711c36099d0642fba4c3bea159f" prot="protected" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>activeDrawColor</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a9d28df9a71f15ae5cb0894654a974551" prot="protected" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>inactiveDrawColor</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a522d133e615ec84375531988dcd2ad22" prot="public" virt="pure-virtual"><scope>VisualDebugging::SceneArtist</scope><name>Include</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a2798c85aea4e6e7aff9a283983cd13c0" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>operator=</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a77fc757481c93169924f07924ed6e2c0" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>operator=</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a2c99802b48717cd830e77bc0c7c74d19" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>SceneArtist</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a72a55d6278692932c28f032a43d1dd94" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>SceneArtist</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1af5f6e2e96aec63f3e4fa78abc0f5f428" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>SceneArtist</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a6f2b4ca0e1940ddcdc7eb9e34f49c6ab" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>SetColor</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1ae4496e0cf585d56cef10c0a3ad18c96c" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>showWhenInBackground</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a8d748a66be78fe348c5e2d0e35d555e0" prot="public" virt="pure-virtual"><scope>VisualDebugging::SceneArtist</scope><name>WriteJson</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1ad5ae6ef87c5421627c748c8468cd4025" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>WriteJsonBase</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1aaf16a74428bd880b5806b6e80f9da738" prot="public" virt="virtual"><scope>VisualDebugging::SceneArtist</scope><name>~SceneArtist</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1OrthoCamera" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::OrthoCamera</compoundname>
+    <includes refid="camera_8h" local="no">camera.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1OrthoCamera_1aab878670ba7a0c8357015426cbae5fe8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OrthoCamera::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>klotter::OrthoCamera::size</qualifiedname>
+        <initializer>= 100.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="37" column="7" bodyfile="src/klotter/render/camera.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OrthoCamera_1a770146cc46fe2e3b200f670c9983fcb4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OrthoCamera::near</definition>
+        <argsstring></argsstring>
+        <name>near</name>
+        <qualifiedname>klotter::OrthoCamera::near</qualifiedname>
+        <initializer>= 0.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="39" column="7" bodyfile="src/klotter/render/camera.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OrthoCamera_1aad849b9d7c4ae2741c230f1978add4fe" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OrthoCamera::far</definition>
+        <argsstring></argsstring>
+        <name>far</name>
+        <qualifiedname>klotter::OrthoCamera::far</qualifiedname>
+        <initializer>= 100.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="40" column="7" bodyfile="src/klotter/render/camera.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OrthoCamera_1ab5f7e056f935b49c22d6c80e82f67c6d" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 klotter::OrthoCamera::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <qualifiedname>klotter::OrthoCamera::position</qualifiedname>
+        <initializer>= glm::vec3{0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="42" column="11" bodyfile="src/klotter/render/camera.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OrthoCamera_1ad585a230be64c783909c5d9719a8256d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OrthoCamera::yaw</definition>
+        <argsstring></argsstring>
+        <name>yaw</name>
+        <qualifiedname>klotter::OrthoCamera::yaw</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="44" column="7" bodyfile="src/klotter/render/camera.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OrthoCamera_1ada539ed8a71d3a041487ef1a9754e4da" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OrthoCamera::pitch</definition>
+        <argsstring></argsstring>
+        <name>pitch</name>
+        <qualifiedname>klotter::OrthoCamera::pitch</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="45" column="7" bodyfile="src/klotter/render/camera.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A orthographic camera representation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/render/camera.h" line="35" column="1" bodyfile="src/klotter/render/camera.h" bodystart="36" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1OrthoCamera_1aad849b9d7c4ae2741c230f1978add4fe" prot="public" virt="non-virtual"><scope>klotter::OrthoCamera</scope><name>far</name></member>
+      <member refid="structklotter_1_1OrthoCamera_1a770146cc46fe2e3b200f670c9983fcb4" prot="public" virt="non-virtual"><scope>klotter::OrthoCamera</scope><name>near</name></member>
+      <member refid="structklotter_1_1OrthoCamera_1ada539ed8a71d3a041487ef1a9754e4da" prot="public" virt="non-virtual"><scope>klotter::OrthoCamera</scope><name>pitch</name></member>
+      <member refid="structklotter_1_1OrthoCamera_1ab5f7e056f935b49c22d6c80e82f67c6d" prot="public" virt="non-virtual"><scope>klotter::OrthoCamera</scope><name>position</name></member>
+      <member refid="structklotter_1_1OrthoCamera_1aab878670ba7a0c8357015426cbae5fe8" prot="public" virt="non-virtual"><scope>klotter::OrthoCamera</scope><name>size</name></member>
+      <member refid="structklotter_1_1OrthoCamera_1ad585a230be64c783909c5d9719a8256d" prot="public" virt="non-virtual"><scope>klotter::OrthoCamera</scope><name>yaw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
