@@ -52,14 +52,20 @@ const camera_from_aabb = (bb: AABB, space: number, canvas: [number, number]): Ca
         bb_max_y - bb_min_y
     ];
 
-    const scale = Math.min((width-space*2) / size_x, (height-space*2) / size_y);
+    const suggested_scale: [number, number] = [(width-space*2) / size_x, (height-space*2) / size_y]
+    const scale = Math.min(suggested_scale[0], suggested_scale[1]);
 
-    const offset_x = (width - (size_x * scale))/2;
-    const offset_y = (height - (size_y * scale))/2;
+    const scaled: [number, number] = [
+        size_x * scale,
+        size_y * scale
+    ]
+
+    const offset_x = (width - scaled[0])/2;
+    const offset_y = (height - scaled[1])/2;
 
     return {
-        pan_x: bb_min_x + offset_x,
-        pan_y: bb_min_y - offset_y,
+        pan_x: offset_x - bb_min_x * scale,
+        pan_y: offset_y - bb_min_y * scale,
         scale
     };
 };
