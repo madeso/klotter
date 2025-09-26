@@ -416,7 +416,6 @@ struct FrameBufferBuilder
 	}
 
 	glm::ivec2 size;
-	int height;
 
 	ColorBitsPerPixel color_bits_per_pixel = ColorBitsPerPixel::use_8;
 	DepthBits include_depth = DepthBits::use_none;
