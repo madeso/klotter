@@ -459,9 +459,17 @@ struct FrameBufferBuilder
 	std::shared_ptr<FrameBuffer> build(DEBUG_LABEL_ARG_SINGLE) const;
 };
 
+// todo(Gustav): are the build_simple_framebuffer and build_realized_framebuffer functions the same?
 std::shared_ptr<FrameBuffer> build_simple_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size)
 {
 	return FrameBufferBuilder{size}
+		.build(USE_DEBUG_LABEL(debug_label));
+}
+
+std::shared_ptr<FrameBuffer> build_realized_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel)
+{
+	return FrameBufferBuilder{size}
+		.with_color_bits(render_world_color_bits_per_pixel)
 		.build(USE_DEBUG_LABEL(debug_label));
 }
 
@@ -472,13 +480,6 @@ std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const g
 		.with_color_bits(render_world_color_bits_per_pixel)
 		.with_depth()
 		.with_stencil()
-		.build(USE_DEBUG_LABEL(debug_label));
-}
-
-std::shared_ptr<FrameBuffer> build_realized_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel)
-{
-	return FrameBufferBuilder{size}
-		.with_color_bits(render_world_color_bits_per_pixel)
 		.build(USE_DEBUG_LABEL(debug_label));
 }
 
