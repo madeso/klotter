@@ -23,7 +23,7 @@ Pair FindClosestPairOfPoints(const std::vector<glm::vec2>& points)
     {
         for (std::size_t j = i + 1; j < points.size(); j++)
         {
-            float dst = (points[i] - points[j]).length();
+            float dst = glm::length(points[i] - points[j]);
             if (dst < bestDst)
             {
                 bestDst = dst;
