@@ -341,7 +341,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 	}
 }
 
-void Renderer::render_shadows(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera)
+void Renderer::render_shadows(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera) const
 {
 	// todo(Gustav): bind less colors and use depth only shaders
 	SCOPED_DEBUG_GROUP("render shadows call"sv);
@@ -380,7 +380,13 @@ void Renderer::render_shadows(const glm::ivec2& window_size, const World& world,
 
 				auto& shader = pimpl->shaders_resources.depth_transform_uniform;
 				shader.program->use();
-				shader.program->set_mat(*shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera));
+
+				// todo(Gustav): the depth shader should not be a shared type between transform uniform and instanced, this should be verified at compile time with different types
+				assert(shader.world_from_local_uni.has_value());
+				if (shader.world_from_local_uni)
+				{
+					shader.program->set_mat(*shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera));
+				}
 
 				render_geom(*mesh->geom);
 			}
