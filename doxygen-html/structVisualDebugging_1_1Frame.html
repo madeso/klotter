@@ -121,8 +121,8 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7f68bc5133d14b5946f7394add110855" id="r_a7f68bc5133d14b5946f7394add110855"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f68bc5133d14b5946f7394add110855">Frame</a> (const std::string &amp;the_description, bool dontErase)</td></tr>
-<tr class="separator:a7f68bc5133d14b5946f7394add110855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f3d9515781ee16fe81f66445478593" id="r_a10f3d9515781ee16fe81f66445478593"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10f3d9515781ee16fe81f66445478593">Frame</a> (const std::string &amp;the_description, bool do_not_erase)</td></tr>
+<tr class="separator:a10f3d9515781ee16fe81f66445478593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a756e184e7affa1ad0f9ab3d7e9995867" id="r_a756e184e7affa1ad0f9ab3d7e9995867"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a756e184e7affa1ad0f9ab3d7e9995867">AddArtist</a> (std::unique_ptr&lt; <a class="el" href="structVisualDebugging_1_1SceneArtist.html">SceneArtist</a> &gt; artist)</td></tr>
 <tr class="separator:a756e184e7affa1ad0f9ab3d7e9995867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -132,13 +132,13 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4104072b526a2d3e78b618ed378aacdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca9aaf57723acd51c1ea7efe856cf03e" id="r_aca9aaf57723acd51c1ea7efe856cf03e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="structVisualDebugging_1_1SceneArtist.html">SceneArtist</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca9aaf57723acd51c1ea7efe856cf03e">artists</a></td></tr>
 <tr class="separator:aca9aaf57723acd51c1ea7efe856cf03e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a4b60e1735a8f43c76b71e7f20d1b00" id="r_a4a4b60e1735a8f43c76b71e7f20d1b00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a4b60e1735a8f43c76b71e7f20d1b00">keepInBackground</a></td></tr>
-<tr class="memdesc:a4a4b60e1735a8f43c76b71e7f20d1b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">should this frame be erased before drawing the next?  <br /></td></tr>
-<tr class="separator:a4a4b60e1735a8f43c76b71e7f20d1b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a460790ca1245c14cbeccc92fbbd3016d" id="r_a460790ca1245c14cbeccc92fbbd3016d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a460790ca1245c14cbeccc92fbbd3016d">keep_in_background</a></td></tr>
+<tr class="memdesc:a460790ca1245c14cbeccc92fbbd3016d"><td class="mdescLeft">&#160;</td><td class="mdescRight">should this frame be erased before drawing the next?  <br /></td></tr>
+<tr class="separator:a460790ca1245c14cbeccc92fbbd3016d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7f68bc5133d14b5946f7394add110855" name="a7f68bc5133d14b5946f7394add110855"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f68bc5133d14b5946f7394add110855">&#9670;&#160;</a></span>Frame()</h2>
+<a id="a10f3d9515781ee16fe81f66445478593" name="a10f3d9515781ee16fe81f66445478593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f3d9515781ee16fe81f66445478593">&#9670;&#160;</a></span>Frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +151,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>dontErase</em></span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>do_not_erase</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -205,14 +205,14 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4a4b60e1735a8f43c76b71e7f20d1b00" name="a4a4b60e1735a8f43c76b71e7f20d1b00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a4b60e1735a8f43c76b71e7f20d1b00">&#9670;&#160;</a></span>keepInBackground</h2>
+<a id="a460790ca1245c14cbeccc92fbbd3016d" name="a460790ca1245c14cbeccc92fbbd3016d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a460790ca1245c14cbeccc92fbbd3016d">&#9670;&#160;</a></span>keep_in_background</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool VisualDebugging::Frame::keepInBackground</td>
+          <td class="memname">bool VisualDebugging::Frame::keep_in_background</td>
         </tr>
       </table>
 </div><div class="memdoc">

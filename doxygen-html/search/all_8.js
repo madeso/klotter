@@ -15,7 +15,7 @@ var searchData=
   ['implement_5fmain_12',['IMPLEMENT_MAIN',['../klotter_8h.html#a8c20628131afaadf69938840b3ce9ea7',1,'klotter.h']]],
   ['in_13',['In',['../group__geom-builder.html#ggaa46e00f69ed77b0f5e8413c5183f428daefeb369cccbd560588a756610865664c',1,'klotter::geom']]],
   ['in_14',['in',['../structklotter_1_1CompiledCamera.html#af8f3aacb0e4384ae60db486c14dfdb60',1,'klotter::CompiledCamera']]],
-  ['inactivedrawcolor_15',['inactiveDrawColor',['../structVisualDebugging_1_1SceneArtist.html#a9d28df9a71f15ae5cb0894654a974551',1,'VisualDebugging::SceneArtist']]],
+  ['inactive_5fdraw_5fcolor_5f_15',['inactive_draw_color_',['../structVisualDebugging_1_1SceneArtist.html#a5cb1cb0ea600eb04125a73c5105e9d62',1,'VisualDebugging::SceneArtist']]],
   ['include_16',['Include',['../structVisualDebugging_1_1SceneArtist.html#a522d133e615ec84375531988dcd2ad22',1,'VisualDebugging::SceneArtist']]],
   ['include_17',['include',['../structVisualDebugging_1_1AABB2.html#a38e8042e9422479884b0f2ff478650ce',1,'VisualDebugging::AABB2::include()'],['../group__texture.html#gga3257f86dae0e1a101035a7d4cd2026bcad436eb0fd9de10b54a828ce6435f7e81',1,'klotter::include']]],
   ['increase_18',['increase',['../group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fa11198b294adbcf089f9d27990258fd22',1,'klotter']]],

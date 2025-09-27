@@ -13,7 +13,7 @@ var searchData=
   ['rendersource_10',['RenderSource',['../structklotter_1_1RenderSource.html#a7bbdf727aee83637ea11695272907a31',1,'klotter::RenderSource::RenderSource()=default'],['../structklotter_1_1RenderSource.html#a1fbc3febe5e3d46202efebdac885dd5c',1,'klotter::RenderSource::RenderSource(const RenderSource &amp;)=delete'],['../structklotter_1_1RenderSource.html#ade2acc705758ca5458b8415f4e2716b3',1,'klotter::RenderSource::RenderSource(RenderSource &amp;&amp;)=delete']]],
   ['rendertexturewithshader_11',['RenderTextureWithShader',['../structklotter_1_1RenderTextureWithShader.html#aff7be13082c2aed0d2e2db9d77123b09',1,'klotter::RenderTextureWithShader']]],
   ['renderworld_12',['RenderWorld',['../structklotter_1_1RenderWorld.html#a592967237f97acd126fca9aba57fa470',1,'klotter::RenderWorld']]],
-  ['resetdefaultfontsize_13',['ResetDefaultFontSize',['../structVisualDebugging_1_1VisualDebug.html#a3d65ba2cf498ed67b6632fec15d5e35e',1,'VisualDebugging::VisualDebug']]],
+  ['reset_5fdefault_5ffont_5fsize_13',['reset_default_font_size',['../structVisualDebugging_1_1VisualDebug.html#a7ae0711f25ac70249b0fc5b781565c71',1,'VisualDebugging::VisualDebug']]],
   ['resolve_5fmultisampled_5fbuffer_14',['resolve_multisampled_buffer',['../group__texture.html#ga2db91a5f624e2dc351118f2d7b0ecf31',1,'klotter']]],
   ['rgb_15',['rgb',['../namespaceklotter_1_1colors.html#a084841f5ac61fab0097a9dd0cff4d5dc',1,'klotter::colors']]],
   ['run_5fmain_16',['run_main',['../namespaceklotter.html#ae8ba8f25677bd8a5d98681f05fd0a162',1,'klotter']]]

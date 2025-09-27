@@ -8,239 +8,66 @@
 <h1>src/klotter/vdebug.main.cc</h1>
 <span id='readability-identifier-naming'>&nbsp;</span>
 <hr>
-<h3>warning: invalid case style for global function &#39;FindClosestPairOfPoints&#39;</h3>
+<h3>warning: invalid case style for constexpr variable &#39;NUM_POINTS&#39;</h3>
 <code>[readability-identifier-naming]</code>
-<p><i>src/klotter/vdebug.main.cc 13 : 6</i></p>
+<p><i>src/klotter/vdebug.main.cc 53 : 19</i></p>
 <pre>
-   13 | Pair FindClosestPairOfPoints(const std::vector&lt;glm::vec2&gt;&amp; points)
-      |      ^~~~~~~~~~~~~~~~~~~~~~~
-      |      find_closest_pair_of_points
-</pre>
-<hr>
-<h3>warning: invalid case style for local variable &#39;closestPointPair&#39;</h3>
-<code>[readability-identifier-naming]</code>
-<p><i>src/klotter/vdebug.main.cc 19 : 10</i></p>
-<pre>
-   19 |     Pair closestPointPair;
-      |          ^~~~~~~~~~~~~~~~
-      |          closest_point_pair
-   20 |     float bestDst = std::numeric_limits&lt;float&gt;::max();
-   21 | 
-   22 |     for (std::size_t i = 0; i &lt; points.size(); i++)
-   23 |     {
-   24 |         for (std::size_t j = i + 1; j &lt; points.size(); j++)
-   25 |         {
-   26 |             float dst = glm::length(points[i] - points[j]);
-   27 |             if (dst &lt; bestDst)
-   28 |             {
-   29 |                 bestDst = dst;
-   30 |                 closestPointPair.first = points[i];
-      |                 ~~~~~~~~~~~~~~~~
-      |                 closest_point_pair
-   31 |                 closestPointPair.second = points[j];
-      |                 ~~~~~~~~~~~~~~~~
-      |                 closest_point_pair
-</pre>
-<hr>
-<h3>warning: invalid case style for local variable &#39;bestDst&#39;</h3>
-<code>[readability-identifier-naming]</code>
-<p><i>src/klotter/vdebug.main.cc 20 : 11</i></p>
-<pre>
-   20 |     float bestDst = std::numeric_limits&lt;float&gt;::max();
-      |           ^~~~~~~
-      |           best_dst
-   21 | 
-   22 |     for (std::size_t i = 0; i &lt; points.size(); i++)
-   23 |     {
-   24 |         for (std::size_t j = i + 1; j &lt; points.size(); j++)
-   25 |         {
-   26 |             float dst = glm::length(points[i] - points[j]);
-   27 |             if (dst &lt; bestDst)
-      |                       ~~~~~~~
-      |                       best_dst
-   28 |             {
-   29 |                 bestDst = dst;
-      |                 ~~~~~~~
-      |                 best_dst
-</pre>
-<span id='readability-identifier-length'>&nbsp;</span>
-<hr>
-<h3>warning: loop variable name &#39;i&#39; is too short, expected at least 2 characters</h3>
-<code>[readability-identifier-length]</code>
-<p><i>src/klotter/vdebug.main.cc 22 : 22</i></p>
-<pre>
-   22 |     for (std::size_t i = 0; i &lt; points.size(); i++)
-      |                      ^
-</pre>
-<hr>
-<h3>warning: loop variable name &#39;j&#39; is too short, expected at least 2 characters</h3>
-<code>[readability-identifier-length]</code>
-<p><i>src/klotter/vdebug.main.cc 24 : 26</i></p>
-<pre>
-   24 |         for (std::size_t j = i + 1; j &lt; points.size(); j++)
-      |                          ^
-</pre>
-<span id='misc-const-correctness'>&nbsp;</span>
-<hr>
-<h3>warning: variable &#39;dst&#39; of type &#39;float&#39; can be declared &#39;const&#39;</h3>
-<code>[misc-const-correctness]</code>
-<p><i>src/klotter/vdebug.main.cc 26 : 13</i></p>
-<pre>
-   26 |             float dst = glm::length(points[i] - points[j]);
-      |             ^
-      |                   const 
-</pre>
-<hr>
-<h3>warning: invalid case style for global function &#39;GeneratePoints&#39;</h3>
-<code>[readability-identifier-naming]</code>
-<p><i>src/klotter/vdebug.main.cc 51 : 24</i></p>
-<pre>
-   51 | std::vector&lt;glm::vec2&gt; GeneratePoints()
-      |                        ^~~~~~~~~~~~~~
-      |                        generate_points
-</pre>
-<hr>
-<h3>warning: variable &#39;numPoints&#39; of type &#39;int&#39; can be declared &#39;const&#39;</h3>
-<code>[misc-const-correctness]</code>
-<p><i>src/klotter/vdebug.main.cc 53 : 5</i></p>
-<pre>
-   53 |     int numPoints = 8;
-      |     ^
-      |         const 
-</pre>
-<hr>
-<h3>warning: invalid case style for local variable &#39;numPoints&#39;</h3>
-<code>[readability-identifier-naming]</code>
-<p><i>src/klotter/vdebug.main.cc 53 : 9</i></p>
-<pre>
-   53 |     int numPoints = 8;
-      |         ^~~~~~~~~
-      |         num_points
-   54 |     float radius = 100.0f;
+   53 |     constexpr int NUM_POINTS = 8;
+      |                   ^~~~~~~~~~
+      |                   num_points
+   54 |     constexpr float RADIUS = 100.0f;
    55 |     
    56 |     std::random_device r;
-   57 |         std::uniform_real_distribution uniform(-radius, radius);
+   57 |         std::uniform_real_distribution uniform(-RADIUS, RADIUS);
    58 | 
    59 |     std::vector&lt;glm::vec2&gt; points;
-   60 |     points.reserve(numPoints);
-      |                    ~~~~~~~~~
+   60 |     points.reserve(NUM_POINTS);
+      |                    ~~~~~~~~~~
       |                    num_points
-   61 |     for (int i = 0; i &lt; numPoints; i++)
-      |                         ~~~~~~~~~
-      |                         num_points
+   61 |     for (int point_index = 0; point_index &lt; NUM_POINTS; point_index+=1)
+      |                                             ~~~~~~~~~~
+      |                                             num_points
 </pre>
 <hr>
-<h3>warning: variable &#39;radius&#39; of type &#39;float&#39; can be declared &#39;const&#39;</h3>
-<code>[misc-const-correctness]</code>
-<p><i>src/klotter/vdebug.main.cc 54 : 5</i></p>
+<h3>warning: invalid case style for constexpr variable &#39;RADIUS&#39;</h3>
+<code>[readability-identifier-naming]</code>
+<p><i>src/klotter/vdebug.main.cc 54 : 21</i></p>
 <pre>
-   54 |     float radius = 100.0f;
-      |     ^
-      |           const 
-</pre>
-<hr>
-<h3>warning: loop variable name &#39;i&#39; is too short, expected at least 2 characters</h3>
-<code>[readability-identifier-length]</code>
-<p><i>src/klotter/vdebug.main.cc 61 : 14</i></p>
-<pre>
-   61 |     for (int i = 0; i &lt; numPoints; i++)
-      |              ^
-</pre>
-<span id='modernize-use-emplace'>&nbsp;</span>
-<hr>
-<h3>warning: unnecessary temporary object created while calling emplace_back</h3>
-<code>[modernize-use-emplace]</code>
-<p><i>src/klotter/vdebug.main.cc 63 : 23</i></p>
-<pre>
-   63 |                 points.emplace_back(glm::vec2{uniform(r), uniform(r)});
-      |                                     ^~~~~~~~~~                      ~
-</pre>
-<!--
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:13:6: warning: invalid case style for global function 'FindClosestPairOfPoints' [readability-identifier-naming]
-   13 | Pair FindClosestPairOfPoints(const std::vector<glm::vec2>& points)
-      |      ^~~~~~~~~~~~~~~~~~~~~~~
-      |      find_closest_pair_of_points
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:19:10: warning: invalid case style for local variable 'closestPointPair' [readability-identifier-naming]
-   19 |     Pair closestPointPair;
-      |          ^~~~~~~~~~~~~~~~
-      |          closest_point_pair
-   20 |     float bestDst = std::numeric_limits<float>::max();
-   21 | 
-   22 |     for (std::size_t i = 0; i < points.size(); i++)
-   23 |     {
-   24 |         for (std::size_t j = i + 1; j < points.size(); j++)
-   25 |         {
-   26 |             float dst = glm::length(points[i] - points[j]);
-   27 |             if (dst < bestDst)
-   28 |             {
-   29 |                 bestDst = dst;
-   30 |                 closestPointPair.first = points[i];
-      |                 ~~~~~~~~~~~~~~~~
-      |                 closest_point_pair
-   31 |                 closestPointPair.second = points[j];
-      |                 ~~~~~~~~~~~~~~~~
-      |                 closest_point_pair
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:20:11: warning: invalid case style for local variable 'bestDst' [readability-identifier-naming]
-   20 |     float bestDst = std::numeric_limits<float>::max();
-      |           ^~~~~~~
-      |           best_dst
-   21 | 
-   22 |     for (std::size_t i = 0; i < points.size(); i++)
-   23 |     {
-   24 |         for (std::size_t j = i + 1; j < points.size(); j++)
-   25 |         {
-   26 |             float dst = glm::length(points[i] - points[j]);
-   27 |             if (dst < bestDst)
-      |                       ~~~~~~~
-      |                       best_dst
-   28 |             {
-   29 |                 bestDst = dst;
-      |                 ~~~~~~~
-      |                 best_dst
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:22:22: warning: loop variable name 'i' is too short, expected at least 2 characters [readability-identifier-length]
-   22 |     for (std::size_t i = 0; i < points.size(); i++)
-      |                      ^
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:24:26: warning: loop variable name 'j' is too short, expected at least 2 characters [readability-identifier-length]
-   24 |         for (std::size_t j = i + 1; j < points.size(); j++)
-      |                          ^
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:26:13: warning: variable 'dst' of type 'float' can be declared 'const' [misc-const-correctness]
-   26 |             float dst = glm::length(points[i] - points[j]);
-      |             ^
-      |                   const 
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:51:24: warning: invalid case style for global function 'GeneratePoints' [readability-identifier-naming]
-   51 | std::vector<glm::vec2> GeneratePoints()
-      |                        ^~~~~~~~~~~~~~
-      |                        generate_points
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:53:5: warning: variable 'numPoints' of type 'int' can be declared 'const' [misc-const-correctness]
-   53 |     int numPoints = 8;
-      |     ^
-      |         const 
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:53:9: warning: invalid case style for local variable 'numPoints' [readability-identifier-naming]
-   53 |     int numPoints = 8;
-      |         ^~~~~~~~~
-      |         num_points
-   54 |     float radius = 100.0f;
+   54 |     constexpr float RADIUS = 100.0f;
+      |                     ^~~~~~
+      |                     radius
    55 |     
    56 |     std::random_device r;
-   57 |         std::uniform_real_distribution uniform(-radius, radius);
+   57 |         std::uniform_real_distribution uniform(-RADIUS, RADIUS);
+      |                                                 ~~~~~~  ~~~~~~
+      |                                                 radius  radius
+</pre>
+<!--
+/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:53:19: warning: invalid case style for constexpr variable 'NUM_POINTS' [readability-identifier-naming]
+   53 |     constexpr int NUM_POINTS = 8;
+      |                   ^~~~~~~~~~
+      |                   num_points
+   54 |     constexpr float RADIUS = 100.0f;
+   55 |     
+   56 |     std::random_device r;
+   57 |         std::uniform_real_distribution uniform(-RADIUS, RADIUS);
    58 | 
    59 |     std::vector<glm::vec2> points;
-   60 |     points.reserve(numPoints);
-      |                    ~~~~~~~~~
+   60 |     points.reserve(NUM_POINTS);
+      |                    ~~~~~~~~~~
       |                    num_points
-   61 |     for (int i = 0; i < numPoints; i++)
-      |                         ~~~~~~~~~
-      |                         num_points
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:54:5: warning: variable 'radius' of type 'float' can be declared 'const' [misc-const-correctness]
-   54 |     float radius = 100.0f;
-      |     ^
-      |           const 
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:61:14: warning: loop variable name 'i' is too short, expected at least 2 characters [readability-identifier-length]
-   61 |     for (int i = 0; i < numPoints; i++)
-      |              ^
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:63:23: warning: unnecessary temporary object created while calling emplace_back [modernize-use-emplace]
-   63 |                 points.emplace_back(glm::vec2{uniform(r), uniform(r)});
-      |                                     ^~~~~~~~~~                      ~
+   61 |     for (int point_index = 0; point_index < NUM_POINTS; point_index+=1)
+      |                                             ~~~~~~~~~~
+      |                                             num_points
+/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:54:21: warning: invalid case style for constexpr variable 'RADIUS' [readability-identifier-naming]
+   54 |     constexpr float RADIUS = 100.0f;
+      |                     ^~~~~~
+      |                     radius
+   55 |     
+   56 |     std::random_device r;
+   57 |         std::uniform_real_distribution uniform(-RADIUS, RADIUS);
+      |                                                 ~~~~~~  ~~~~~~
+      |                                                 radius  radius
 -->
 </body>
 </html>

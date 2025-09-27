@@ -13,7 +13,7 @@ var searchData=
   ['shadow_5fsize_10',['shadow_size',['../structklotter_1_1Lights.html#a93b4541fef98a095de4b3b3b7b13a436',1,'klotter::Lights']]],
   ['shininess_11',['shininess',['../structklotter_1_1DefaultMaterial.html#a3a93fa530b29586a9797f1d32220ce9f',1,'klotter::DefaultMaterial']]],
   ['shininess_5funi_12',['shininess_uni',['../structklotter_1_1LoadedShader__Default.html#ab768fd618865565d6bfad53ad5a44c14',1,'klotter::LoadedShader_Default']]],
-  ['showwheninbackground_13',['showWhenInBackground',['../structVisualDebugging_1_1SceneArtist.html#ae4496e0cf585d56cef10c0a3ad18c96c',1,'VisualDebugging::SceneArtist']]],
+  ['show_5fwhen_5fin_5fbackground_13',['show_when_in_background',['../structVisualDebugging_1_1SceneArtist.html#a04bace71366367c5c2a54d4f794b616f',1,'VisualDebugging::SceneArtist']]],
   ['single_5fcolor_5fshader_14',['single_color_shader',['../structklotter_1_1ShaderResource.html#ae8c6c5ddd6c4420cf6c0b45b7af33774',1,'klotter::ShaderResource']]],
   ['size_15',['size',['../structklotter_1_1OrthoCamera.html#aab878670ba7a0c8357015426cbae5fe8',1,'klotter::OrthoCamera::size'],['../structklotter_1_1ExtractedAttribute.html#a26fd68b8dcbbdaea8794287deed58f01',1,'klotter::ExtractedAttribute::size'],['../structklotter_1_1FrameBuffer.html#a4712c2c701c0878e1f1a40bc934af606',1,'klotter::FrameBuffer::size'],['../structklotter_1_1UniformBufferSetup.html#a4dd7230c77d6877d730e2a4fa45462f8',1,'klotter::UniformBufferSetup::size']]],
   ['sky_5fblue_16',['sky_blue',['../namespacesvg.html#ac071d0ceb3a22d5b415c37c50bd94c62',1,'svg']]],

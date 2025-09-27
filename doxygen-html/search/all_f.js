@@ -30,7 +30,7 @@ var searchData=
   ['renderworld_27',['RenderWorld',['../structklotter_1_1RenderWorld.html',1,'klotter::RenderWorld'],['../structklotter_1_1RenderWorld.html#a592967237f97acd126fca9aba57fa470',1,'klotter::RenderWorld::RenderWorld()']]],
   ['repeat_28',['repeat',['../group__texture.html#gga975d5c1b5f6b62b122652d21e890346ea32cf6da134a8b268cf4ab6b79a9a5ad9',1,'klotter']]],
   ['replace_29',['replace',['../group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fa9dde360102c103867bd2f45872f1129c',1,'klotter']]],
-  ['resetdefaultfontsize_30',['ResetDefaultFontSize',['../structVisualDebugging_1_1VisualDebug.html#a3d65ba2cf498ed67b6632fec15d5e35e',1,'VisualDebugging::VisualDebug']]],
+  ['reset_5fdefault_5ffont_5fsize_30',['reset_default_font_size',['../structVisualDebugging_1_1VisualDebug.html#a7ae0711f25ac70249b0fc5b781565c71',1,'VisualDebugging::VisualDebug']]],
   ['resolution_31',['resolution',['../group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da',1,'klotter']]],
   ['resolution_5funi_32',['resolution_uni',['../structklotter_1_1LineDrawer.html#a02f5813ada4de1104582aed3aac54e07',1,'klotter::LineDrawer::resolution_uni'],['../structklotter_1_1LoadedPostProcShader.html#a3ad52ac1878403776878765d66e4a9d6',1,'klotter::LoadedPostProcShader::resolution_uni']]],
   ['resolve_5fmultisampled_5fbuffer_33',['resolve_multisampled_buffer',['../group__texture.html#ga2db91a5f624e2dc351118f2d7b0ecf31',1,'klotter']]],

@@ -1,8 +1,8 @@
 var searchData=
 [
   ['a_0',['a',['../structklotter_1_1Face.html#a6b31a3e3e29273c8174e15d763136b2c',1,'klotter::Face']]],
-  ['active_5ftexture_1',['active_texture',['../structklotter_1_1OpenglStates.html#abc35a8245c75899fbf5242809bf19c69',1,'klotter::OpenglStates']]],
-  ['activedrawcolor_2',['activeDrawColor',['../structVisualDebugging_1_1SceneArtist.html#a92cfe711c36099d0642fba4c3bea159f',1,'VisualDebugging::SceneArtist']]],
+  ['active_5fdraw_5fcolor_5f_1',['active_draw_color_',['../structVisualDebugging_1_1SceneArtist.html#a421051607201e9d28ce5bd4e512d296a',1,'VisualDebugging::SceneArtist']]],
+  ['active_5ftexture_2',['active_texture',['../structklotter_1_1OpenglStates.html#abc35a8245c75899fbf5242809bf19c69',1,'klotter::OpenglStates']]],
   ['almost_5fzero_3',['ALMOST_ZERO',['../namespaceklotter.html#af84f50d2d555a52091dca0e8b0707f8a',1,'klotter']]],
   ['alpha_4',['ALPHA',['../group__imguicolors.html#gaa9ebfa075a3dfab2438e857c5613eb90',1,'klotter::imgui']]],
   ['alpha_5',['alpha',['../structklotter_1_1UnlitMaterial.html#a4f569b97cfba5e690ae58b220f50acf8',1,'klotter::UnlitMaterial::alpha'],['../structklotter_1_1DefaultMaterial.html#a3c97cf440220d6a37ebeb57e28d082cb',1,'klotter::DefaultMaterial::alpha']]],

@@ -8,9 +8,9 @@ var searchData=
   ['destroy_5fbuffer_5',['destroy_buffer',['../namespaceklotter.html#a939548cd29b251463ed344cde014e212',1,'klotter']]],
   ['destroy_5fvertex_5farray_6',['destroy_vertex_array',['../namespaceklotter.html#a17b0082d237f487d14ccf319d15f8e08',1,'klotter']]],
   ['directionallightuniforms_7',['DirectionalLightUniforms',['../structklotter_1_1DirectionalLightUniforms.html#a91fd8436ad067b9181e18831b5ed382d',1,'klotter::DirectionalLightUniforms']]],
-  ['dontshownextelementwhenframeisinbackground_8',['DontShowNextElementWhenFrameIsInBackground',['../structVisualDebugging_1_1VisualDebug.html#ab75fe0ed561e849944cd4dd45fd4a29a',1,'VisualDebugging::VisualDebug']]],
-  ['drawarrow_9',['DrawArrow',['../structVisualDebugging_1_1VisualDebug.html#ae5366ab971dd1268d2df4f1c1dd780b7',1,'VisualDebugging::VisualDebug']]],
-  ['drawlinesegmentwithlabel_10',['DrawLineSegmentWithLabel',['../structVisualDebugging_1_1VisualDebug.html#a6f513271b99864391b4bca1525fad6cf',1,'VisualDebugging::VisualDebug']]],
-  ['drawpoint_11',['DrawPoint',['../structVisualDebugging_1_1VisualDebug.html#a2f4e8961d9d14e037d5e51ce614a7f12',1,'VisualDebugging::VisualDebug']]],
-  ['drawpoints_12',['DrawPoints',['../structVisualDebugging_1_1VisualDebug.html#a3303cf9132fd44a6d2305fe7485032a5',1,'VisualDebugging::VisualDebug']]]
+  ['do_5fnot_5fshow_5fnext_5felement_5fwhen_5fframe_5fis_5fin_5fbackground_8',['do_not_show_next_element_when_frame_is_in_background',['../structVisualDebugging_1_1VisualDebug.html#a54fd94b58325d726fd796a348252a0ef',1,'VisualDebugging::VisualDebug']]],
+  ['draw_5farrow_9',['draw_arrow',['../structVisualDebugging_1_1VisualDebug.html#a1b0dedb27632c574c3e6ad0d8548da6d',1,'VisualDebugging::VisualDebug']]],
+  ['draw_5fline_5fsegment_5fwith_5flabel_10',['draw_line_segment_with_label',['../structVisualDebugging_1_1VisualDebug.html#a5d440acd37137a4256d2682333101d03',1,'VisualDebugging::VisualDebug']]],
+  ['draw_5fpoint_11',['draw_point',['../structVisualDebugging_1_1VisualDebug.html#a87628c87cdd61de927bbb07094be330e',1,'VisualDebugging::VisualDebug']]],
+  ['draw_5fpoints_12',['draw_points',['../structVisualDebugging_1_1VisualDebug.html#a7645c9941762b1f560c7058912672d84',1,'VisualDebugging::VisualDebug']]]
 ];

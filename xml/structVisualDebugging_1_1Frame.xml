@@ -32,12 +32,12 @@
         </inbodydescription>
         <location file="src/klotter/vdebug.h" line="76" column="13" bodyfile="src/klotter/vdebug.h" bodystart="76" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structVisualDebugging_1_1Frame_1a4a4b60e1735a8f43c76b71e7f20d1b00" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structVisualDebugging_1_1Frame_1a460790ca1245c14cbeccc92fbbd3016d" prot="public" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool VisualDebugging::Frame::keepInBackground</definition>
+        <definition>bool VisualDebugging::Frame::keep_in_background</definition>
         <argsstring></argsstring>
-        <name>keepInBackground</name>
-        <qualifiedname>VisualDebugging::Frame::keepInBackground</qualifiedname>
+        <name>keep_in_background</name>
+        <qualifiedname>VisualDebugging::Frame::keep_in_background</qualifiedname>
         <briefdescription>
 <para>should this frame be erased before drawing the next? </para>
         </briefdescription>
@@ -49,10 +49,10 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structVisualDebugging_1_1Frame_1a7f68bc5133d14b5946f7394add110855" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structVisualDebugging_1_1Frame_1a10f3d9515781ee16fe81f66445478593" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>VisualDebugging::Frame::Frame</definition>
-        <argsstring>(const std::string &amp;the_description, bool dontErase)</argsstring>
+        <argsstring>(const std::string &amp;the_description, bool do_not_erase)</argsstring>
         <name>Frame</name>
         <qualifiedname>VisualDebugging::Frame::Frame</qualifiedname>
         <param>
@@ -61,7 +61,7 @@
         </param>
         <param>
           <type>bool</type>
-          <declname>dontErase</declname>
+          <declname>do_not_erase</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -113,8 +113,8 @@
         <label>VisualDebugging::SceneArtist</label>
         <link refid="structVisualDebugging_1_1SceneArtist"/>
         <childnode refid="7" relation="usage">
-          <edgelabel>activeDrawColor</edgelabel>
-          <edgelabel>inactiveDrawColor</edgelabel>
+          <edgelabel>active_draw_color_</edgelabel>
+          <edgelabel>inactive_draw_color_</edgelabel>
         </childnode>
       </node>
       <node id="3">
@@ -143,8 +143,8 @@
       <member refid="structVisualDebugging_1_1Frame_1a756e184e7affa1ad0f9ab3d7e9995867" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>AddArtist</name></member>
       <member refid="structVisualDebugging_1_1Frame_1aca9aaf57723acd51c1ea7efe856cf03e" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>artists</name></member>
       <member refid="structVisualDebugging_1_1Frame_1a4104072b526a2d3e78b618ed378aacdf" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>description</name></member>
-      <member refid="structVisualDebugging_1_1Frame_1a7f68bc5133d14b5946f7394add110855" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>Frame</name></member>
-      <member refid="structVisualDebugging_1_1Frame_1a4a4b60e1735a8f43c76b71e7f20d1b00" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>keepInBackground</name></member>
+      <member refid="structVisualDebugging_1_1Frame_1a10f3d9515781ee16fe81f66445478593" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>Frame</name></member>
+      <member refid="structVisualDebugging_1_1Frame_1a460790ca1245c14cbeccc92fbbd3016d" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>keep_in_background</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

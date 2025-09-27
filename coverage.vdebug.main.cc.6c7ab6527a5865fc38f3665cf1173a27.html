@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: vdebug.main.cc</div>
-            <div>Date: 2025-09-26 18:50:37</div>
+            <div>Date: 2025-09-27 13:37:10</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -62,8 +62,8 @@
       <th>Condition coverage</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l13">FindClosestPairOfPoints(std::vector&lt;glm::vec&lt;2, float, (glm::qualifier)0&gt;, std::allocator&lt;glm::vec&lt;2, float, (glm::qualifier)0&gt; &gt; &gt; const&amp;) (line 13)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l51">GeneratePoints() (line 51)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l13">find_closest_pair_of_points(std::vector&lt;glm::vec&lt;2, float, (glm::qualifier)0&gt;, std::allocator&lt;glm::vec&lt;2, float, (glm::qualifier)0&gt; &gt; &gt; const&amp;) (line 13)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l51">generate_points() (line 51)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l68">main (line 68)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
   </table>
 </details>
@@ -171,7 +171,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">Pair</span><span class="w"> </span><span class="nf">FindClosestPairOfPoints</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">points</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="n">Pair</span><span class="w"> </span><span class="nf">find_closest_pair_of_points</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">points</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l14" href="#l14">14</a></td>
@@ -199,28 +199,28 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="n">vd</span><span class="p">.</span><span class="n">BeginFrame</span><span class="p">(</span><span class="s">&quot;All points&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="n">vd</span><span class="p">.</span><span class="n">begin_frame</span><span class="p">(</span><span class="s">&quot;All points&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l18" href="#l18">18</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="n">vd</span><span class="p">.</span><span class="n">DrawPoints</span><span class="p">(</span><span class="n">points</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="n">vd</span><span class="p">.</span><span class="n">draw_points</span><span class="p">(</span><span class="n">points</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l19" href="#l19">19</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="n">Pair</span><span class="w"> </span><span class="n">closestPointPair</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="n">Pair</span><span class="w"> </span><span class="n">closest_point_pair</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l20" href="#l20">20</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">bestDst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">shortest_distance_found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l21" href="#l21">21</a></td>
@@ -234,7 +234,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">outer_point_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">outer_point_index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">outer_point_index</span><span class="o">++</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l23" href="#l23">23</a></td>
@@ -248,7 +248,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">inner_point_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outer_point_index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">inner_point_index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">inner_point_index</span><span class="o">++</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l25" href="#l25">25</a></td>
@@ -262,14 +262,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">            </span><span class="kt">float</span><span class="w"> </span><span class="n">dst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">length</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span></td>
+                <td class="src uncoveredLine"><span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">current_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">length</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">outer_point_index</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">inner_point_index</span><span class="p">]);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l27" href="#l27">27</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dst</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bestDst</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">current_distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">shortest_distance_found</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l28" href="#l28">28</a></td>
@@ -283,21 +283,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">                </span><span class="n">bestDst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dst</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">                </span><span class="n">shortest_distance_found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current_distance</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l30" href="#l30">30</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">                </span><span class="n">closestPointPair</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">];</span></td>
+                <td class="src uncoveredLine"><span class="w">                </span><span class="n">closest_point_pair</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">outer_point_index</span><span class="p">];</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l31" href="#l31">31</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">                </span><span class="n">closestPointPair</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">];</span></td>
+                <td class="src uncoveredLine"><span class="w">                </span><span class="n">closest_point_pair</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">inner_point_index</span><span class="p">];</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l32" href="#l32">32</a></td>
@@ -311,49 +311,49 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">BeginFrame</span><span class="p">(</span><span class="s">&quot;Compare dst&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">begin_frame</span><span class="p">(</span><span class="s">&quot;Compare dst&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l34" href="#l34">34</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">vd</span><span class="p">.</span><span class="n">SetColor</span><span class="p">(</span><span class="n">VisualDebugging</span><span class="o">::</span><span class="n">Colors</span><span class="o">::</span><span class="n">lightRed</span><span class="p">,</span><span class="w"> </span><span class="n">VisualDebugging</span><span class="o">::</span><span class="n">Colors</span><span class="o">::</span><span class="n">veryDarkGrey</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="n">vd</span><span class="p">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">VisualDebugging</span><span class="o">::</span><span class="n">Colors</span><span class="o">::</span><span class="n">lightRed</span><span class="p">,</span><span class="w"> </span><span class="n">VisualDebugging</span><span class="o">::</span><span class="n">Colors</span><span class="o">::</span><span class="n">veryDarkGrey</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l35" href="#l35">35</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">DrawPoint</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">draw_point</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">outer_point_index</span><span class="p">],</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l36" href="#l36">36</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">DrawArrow</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">draw_arrow</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">outer_point_index</span><span class="p">],</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="n">inner_point_index</span><span class="p">],</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l37" href="#l37">37</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">DontShowNextElementWhenFrameIsInBackground</span><span class="p">();</span></td>
+                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">do_not_show_next_element_when_frame_is_in_background</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l38" href="#l38">38</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">SetColor</span><span class="p">(</span><span class="n">VisualDebugging</span><span class="o">::</span><span class="n">Colors</span><span class="o">::</span><span class="n">lightGreen</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">            </span><span class="n">vd</span><span class="p">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">VisualDebugging</span><span class="o">::</span><span class="n">Colors</span><span class="o">::</span><span class="n">lightGreen</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l39" href="#l39">39</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">			</span><span class="n">vd</span><span class="p">.</span><span class="n">DrawLineSegmentWithLabel</span><span class="p">(</span><span class="n">closestPointPair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">closestPointPair</span><span class="p">.</span><span class="n">second</span><span class="p">,</span><span class="w"> </span><span class="n">Str</span><span class="w"> </span><span class="p">{}</span><span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bestDst</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">			</span><span class="n">vd</span><span class="p">.</span><span class="n">draw_line_segment_with_label</span><span class="p">(</span><span class="n">closest_point_pair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">closest_point_pair</span><span class="p">.</span><span class="n">second</span><span class="p">,</span><span class="w"> </span><span class="n">Str</span><span class="w"> </span><span class="p">{}</span><span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shortest_distance_found</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l40" href="#l40">40</a></td>
@@ -381,42 +381,42 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="n">vd</span><span class="p">.</span><span class="n">BeginFrame</span><span class="p">(</span><span class="s">&quot;Finished&quot;</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="n">vd</span><span class="p">.</span><span class="n">begin_frame</span><span class="p">(</span><span class="s">&quot;Finished&quot;</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l44" href="#l44">44</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="n">vd</span><span class="p">.</span><span class="n">SetColor</span><span class="p">(</span><span class="n">VisualDebugging</span><span class="o">::</span><span class="n">Colors</span><span class="o">::</span><span class="n">lightGreen</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="n">vd</span><span class="p">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">VisualDebugging</span><span class="o">::</span><span class="n">Colors</span><span class="o">::</span><span class="n">lightGreen</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l45" href="#l45">45</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">vd</span><span class="p">.</span><span class="n">DrawPoints</span><span class="p">({</span><span class="n">closestPointPair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">closestPointPair</span><span class="p">.</span><span class="n">second</span><span class="p">},</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">vd</span><span class="p">.</span><span class="n">draw_points</span><span class="p">({</span><span class="n">closest_point_pair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">closest_point_pair</span><span class="p">.</span><span class="n">second</span><span class="p">},</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l46" href="#l46">46</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">vd</span><span class="p">.</span><span class="n">DrawLineSegmentWithLabel</span><span class="p">(</span><span class="n">closestPointPair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">closestPointPair</span><span class="p">.</span><span class="n">second</span><span class="p">,</span><span class="w"> </span><span class="n">Str</span><span class="p">{}</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">bestDst</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">vd</span><span class="p">.</span><span class="n">draw_line_segment_with_label</span><span class="p">(</span><span class="n">closest_point_pair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">closest_point_pair</span><span class="p">.</span><span class="n">second</span><span class="p">,</span><span class="w"> </span><span class="n">Str</span><span class="p">{}</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">shortest_distance_found</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l47" href="#l47">47</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">vd</span><span class="p">.</span><span class="n">Save</span><span class="p">(</span><span class="s">&quot;closest points&quot;</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">vd</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">&quot;closest points&quot;</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l48" href="#l48">48</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">closestPointPair</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">closest_point_pair</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l49" href="#l49">49</a></td>
@@ -437,7 +437,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GeneratePoints</span><span class="p">()</span></td>
+                <td class="src uncoveredLine"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">generate_points</span><span class="p">()</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l52" href="#l52">52</a></td>
@@ -451,14 +451,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numPoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NUM_POINTS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l54" href="#l54">54</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.0f</span><span class="p">;</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">RADIUS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.0f</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l55" href="#l55">55</a></td>
@@ -479,7 +479,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">uniform_real_distribution</span><span class="w"> </span><span class="nf">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">uniform_real_distribution</span><span class="w"> </span><span class="nf">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">RADIUS</span><span class="p">,</span><span class="w"> </span><span class="n">RADIUS</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l58" href="#l58">58</a></td>
@@ -500,14 +500,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="n">points</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">numPoints</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="n">points</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="n">NUM_POINTS</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">numPoints</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">point_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">point_index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_POINTS</span><span class="p">;</span><span class="w"> </span><span class="n">point_index</span><span class="o">+=</span><span class="mi">1</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
@@ -521,7 +521,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">points</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">glm</span><span class="o">::</span><span class="n">vec2</span><span class="p">{</span><span class="n">uniform</span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"> </span><span class="n">uniform</span><span class="p">(</span><span class="n">r</span><span class="p">)});</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">points</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">uniform</span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"> </span><span class="n">uniform</span><span class="p">(</span><span class="n">r</span><span class="p">));</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l64" href="#l64">64</a></td>
@@ -570,7 +570,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">    </span><span class="n">FindClosestPairOfPoints</span><span class="p">(</span><span class="n">GeneratePoints</span><span class="p">());</span></td>
+                <td class="src uncoveredLine"><span class="w">    </span><span class="n">find_closest_pair_of_points</span><span class="p">(</span><span class="n">generate_points</span><span class="p">());</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l71" href="#l71">71</a></td>

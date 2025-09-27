@@ -4,12 +4,12 @@
     <compoundname>VisualDebugging::SceneArtist</compoundname>
     <includes refid="vdebug_8h" local="no">vdebug.h</includes>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1ae4496e0cf585d56cef10c0a3ad18c96c" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1a04bace71366367c5c2a54d4f794b616f" prot="public" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool VisualDebugging::SceneArtist::showWhenInBackground</definition>
+        <definition>bool VisualDebugging::SceneArtist::show_when_in_background</definition>
         <argsstring></argsstring>
-        <name>showWhenInBackground</name>
-        <qualifiedname>VisualDebugging::SceneArtist::showWhenInBackground</qualifiedname>
+        <name>show_when_in_background</name>
+        <qualifiedname>VisualDebugging::SceneArtist::show_when_in_background</qualifiedname>
         <initializer>= true</initializer>
         <briefdescription>
         </briefdescription>
@@ -21,12 +21,12 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-attrib">
-      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1a92cfe711c36099d0642fba4c3bea159f" prot="protected" static="no" mutable="no">
+      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1a421051607201e9d28ce5bd4e512d296a" prot="protected" static="no" mutable="no">
         <type><ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref></type>
-        <definition>Color VisualDebugging::SceneArtist::activeDrawColor</definition>
+        <definition>Color VisualDebugging::SceneArtist::active_draw_color_</definition>
         <argsstring></argsstring>
-        <name>activeDrawColor</name>
-        <qualifiedname>VisualDebugging::SceneArtist::activeDrawColor</qualifiedname>
+        <name>active_draw_color_</name>
+        <qualifiedname>VisualDebugging::SceneArtist::active_draw_color_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -35,12 +35,12 @@
         </inbodydescription>
         <location file="src/klotter/vdebug.h" line="69" column="7" bodyfile="src/klotter/vdebug.h" bodystart="69" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1a9d28df9a71f15ae5cb0894654a974551" prot="protected" static="no" mutable="no">
+      <memberdef kind="variable" id="structVisualDebugging_1_1SceneArtist_1a5cb1cb0ea600eb04125a73c5105e9d62" prot="protected" static="no" mutable="no">
         <type><ref refid="structVisualDebugging_1_1Color" kindref="compound">Color</ref></type>
-        <definition>Color VisualDebugging::SceneArtist::inactiveDrawColor</definition>
+        <definition>Color VisualDebugging::SceneArtist::inactive_draw_color_</definition>
         <argsstring></argsstring>
-        <name>inactiveDrawColor</name>
-        <qualifiedname>VisualDebugging::SceneArtist::inactiveDrawColor</qualifiedname>
+        <name>inactive_draw_color_</name>
+        <qualifiedname>VisualDebugging::SceneArtist::inactive_draw_color_</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -237,15 +237,15 @@
         <label>VisualDebugging::SceneArtist</label>
         <link refid="structVisualDebugging_1_1SceneArtist"/>
         <childnode refid="2" relation="usage">
-          <edgelabel>activeDrawColor</edgelabel>
-          <edgelabel>inactiveDrawColor</edgelabel>
+          <edgelabel>active_draw_color_</edgelabel>
+          <edgelabel>inactive_draw_color_</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
     <location file="src/klotter/vdebug.h" line="50" column="1" bodyfile="src/klotter/vdebug.h" bodystart="51" bodyend="71"/>
     <listofallmembers>
-      <member refid="structVisualDebugging_1_1SceneArtist_1a92cfe711c36099d0642fba4c3bea159f" prot="protected" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>activeDrawColor</name></member>
-      <member refid="structVisualDebugging_1_1SceneArtist_1a9d28df9a71f15ae5cb0894654a974551" prot="protected" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>inactiveDrawColor</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a421051607201e9d28ce5bd4e512d296a" prot="protected" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>active_draw_color_</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a5cb1cb0ea600eb04125a73c5105e9d62" prot="protected" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>inactive_draw_color_</name></member>
       <member refid="structVisualDebugging_1_1SceneArtist_1a522d133e615ec84375531988dcd2ad22" prot="public" virt="pure-virtual"><scope>VisualDebugging::SceneArtist</scope><name>Include</name></member>
       <member refid="structVisualDebugging_1_1SceneArtist_1a2798c85aea4e6e7aff9a283983cd13c0" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>operator=</name></member>
       <member refid="structVisualDebugging_1_1SceneArtist_1a77fc757481c93169924f07924ed6e2c0" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>operator=</name></member>
@@ -253,7 +253,7 @@
       <member refid="structVisualDebugging_1_1SceneArtist_1a72a55d6278692932c28f032a43d1dd94" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>SceneArtist</name></member>
       <member refid="structVisualDebugging_1_1SceneArtist_1af5f6e2e96aec63f3e4fa78abc0f5f428" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>SceneArtist</name></member>
       <member refid="structVisualDebugging_1_1SceneArtist_1a6f2b4ca0e1940ddcdc7eb9e34f49c6ab" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>SetColor</name></member>
-      <member refid="structVisualDebugging_1_1SceneArtist_1ae4496e0cf585d56cef10c0a3ad18c96c" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>showWhenInBackground</name></member>
+      <member refid="structVisualDebugging_1_1SceneArtist_1a04bace71366367c5c2a54d4f794b616f" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>show_when_in_background</name></member>
       <member refid="structVisualDebugging_1_1SceneArtist_1a8d748a66be78fe348c5e2d0e35d555e0" prot="public" virt="pure-virtual"><scope>VisualDebugging::SceneArtist</scope><name>WriteJson</name></member>
       <member refid="structVisualDebugging_1_1SceneArtist_1ad5ae6ef87c5421627c748c8468cd4025" prot="public" virt="non-virtual"><scope>VisualDebugging::SceneArtist</scope><name>WriteJsonBase</name></member>
       <member refid="structVisualDebugging_1_1SceneArtist_1aaf16a74428bd880b5806b6e80f9da738" prot="public" virt="virtual"><scope>VisualDebugging::SceneArtist</scope><name>~SceneArtist</name></member>
