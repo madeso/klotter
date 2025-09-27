@@ -48,17 +48,14 @@ Pair find_closest_pair_of_points(const std::vector<glm::vec2>& points)
     return closest_point_pair;
 }
 
-std::vector<glm::vec2> generate_points()
+std::vector<glm::vec2> generate_points(int num_points, float radius)
 {
-    constexpr int NUM_POINTS = 8;
-    constexpr float RADIUS = 100.0f;
-    
     std::random_device r;
-	std::uniform_real_distribution uniform(-RADIUS, RADIUS);
+	std::uniform_real_distribution uniform(-radius, radius);
 
     std::vector<glm::vec2> points;
-    points.reserve(NUM_POINTS);
-    for (int point_index = 0; point_index < NUM_POINTS; point_index+=1)
+    points.reserve(num_points);
+    for (int point_index = 0; point_index < num_points; point_index+=1)
     {
 		points.emplace_back(uniform(r), uniform(r));
     }
@@ -67,6 +64,6 @@ std::vector<glm::vec2> generate_points()
 
 int main(int, char*[])
 {
-    find_closest_pair_of_points(generate_points());
+	find_closest_pair_of_points(generate_points(8, 100.0f));
 }
 
