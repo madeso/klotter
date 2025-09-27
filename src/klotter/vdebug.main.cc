@@ -10,63 +10,63 @@
 using Pair = std::pair<glm::vec2, glm::vec2>;
 
 // Returns an array containing the points nearest to one another out of the given set
-Pair FindClosestPairOfPoints(const std::vector<glm::vec2>& points)
+Pair find_closest_pair_of_points(const std::vector<glm::vec2>& points)
 {
 	auto vd = VisualDebugging::VisualDebug{};
 
-    vd.BeginFrame("All points", true);
-    vd.DrawPoints(points, 5);
-    Pair closestPointPair;
-    float bestDst = std::numeric_limits<float>::max();
+    vd.begin_frame("All points", true);
+    vd.draw_points(points, 5);
+    Pair closest_point_pair;
+    float shortest_distance_found = std::numeric_limits<float>::max();
 
-    for (std::size_t i = 0; i < points.size(); i++)
+    for (std::size_t outer_point_index = 0; outer_point_index < points.size(); outer_point_index++)
     {
-        for (std::size_t j = i + 1; j < points.size(); j++)
+        for (std::size_t inner_point_index = outer_point_index + 1; inner_point_index < points.size(); inner_point_index++)
         {
-            float dst = glm::length(points[i] - points[j]);
-            if (dst < bestDst)
+            const auto current_distance = glm::length(points[outer_point_index] - points[inner_point_index]);
+            if (current_distance < shortest_distance_found)
             {
-                bestDst = dst;
-                closestPointPair.first = points[i];
-                closestPointPair.second = points[j];
+                shortest_distance_found = current_distance;
+                closest_point_pair.first = points[outer_point_index];
+                closest_point_pair.second = points[inner_point_index];
             }
-            vd.BeginFrame("Compare dst", true);
-			vd.SetColor(VisualDebugging::Colors::lightRed, VisualDebugging::Colors::veryDarkGrey);
-            vd.DrawPoint(points[i], 6);
-            vd.DrawArrow(points[i], points[j], 10);
-            vd.DontShowNextElementWhenFrameIsInBackground();
-            vd.SetColor(VisualDebugging::Colors::lightGreen);
-			vd.DrawLineSegmentWithLabel(closestPointPair.first, closestPointPair.second, Str {}  << bestDst);
+            vd.begin_frame("Compare dst", true);
+			vd.set_color(VisualDebugging::Colors::lightRed, VisualDebugging::Colors::veryDarkGrey);
+            vd.draw_point(points[outer_point_index], 6);
+            vd.draw_arrow(points[outer_point_index], points[inner_point_index], 10);
+            vd.do_not_show_next_element_when_frame_is_in_background();
+            vd.set_color(VisualDebugging::Colors::lightGreen);
+			vd.draw_line_segment_with_label(closest_point_pair.first, closest_point_pair.second, Str {}  << shortest_distance_found);
         }
     }
 
-    vd.BeginFrame("Finished");
-    vd.SetColor(VisualDebugging::Colors::lightGreen);
-	vd.DrawPoints({closestPointPair.first, closestPointPair.second}, 7);
-	vd.DrawLineSegmentWithLabel(closestPointPair.first, closestPointPair.second, Str{} << bestDst);
-	vd.Save("closest points");
-    return closestPointPair;
+    vd.begin_frame("Finished");
+    vd.set_color(VisualDebugging::Colors::lightGreen);
+	vd.draw_points({closest_point_pair.first, closest_point_pair.second}, 7);
+	vd.draw_line_segment_with_label(closest_point_pair.first, closest_point_pair.second, Str{} << shortest_distance_found);
+	vd.save("closest points");
+    return closest_point_pair;
 }
 
-std::vector<glm::vec2> GeneratePoints()
+std::vector<glm::vec2> generate_points()
 {
-    int numPoints = 8;
-    float radius = 100.0f;
+    constexpr int NUM_POINTS = 8;
+    constexpr float RADIUS = 100.0f;
     
     std::random_device r;
-	std::uniform_real_distribution uniform(-radius, radius);
+	std::uniform_real_distribution uniform(-RADIUS, RADIUS);
 
     std::vector<glm::vec2> points;
-    points.reserve(numPoints);
-    for (int i = 0; i < numPoints; i++)
+    points.reserve(NUM_POINTS);
+    for (int point_index = 0; point_index < NUM_POINTS; point_index+=1)
     {
-		points.emplace_back(glm::vec2{uniform(r), uniform(r)});
+		points.emplace_back(uniform(r), uniform(r));
     }
     return points;
 }
 
 int main(int, char*[])
 {
-    FindClosestPairOfPoints(GeneratePoints());
+    find_closest_pair_of_points(generate_points());
 }
 

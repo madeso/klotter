@@ -49,7 +49,7 @@ struct AABB2
 
 struct SceneArtist
 {
-	bool showWhenInBackground = true;
+	bool show_when_in_background = true;
 
 	void SetColor(const Color& act, const Color& bkg);
 
@@ -66,8 +66,8 @@ struct SceneArtist
 
    protected:
 
-	Color activeDrawColor;
-	Color inactiveDrawColor;
+	Color active_draw_color_;
+	Color inactive_draw_color_;
 };
 
 struct Frame
@@ -75,54 +75,54 @@ struct Frame
 	std::string description;
 	std::vector<std::unique_ptr<SceneArtist>> artists;
 
-	Frame(const std::string& the_description, bool dontErase);
+	Frame(const std::string& the_description, bool do_not_erase);
 
 	void AddArtist(std::unique_ptr<SceneArtist> artist);
 
 	/// should this frame be erased before drawing the next?
-	bool keepInBackground;
+	bool keep_in_background;
 };
 
 struct VisualDebug
 {
-	static constexpr int defaultFontSize = 18;
+	static constexpr int DEFAULT_FONT_SIZE = 18;
 
 	std::vector<Frame> frames;
-	Color currentActiveColor = Colors::white;
-	Color currentBackgroundColor = Colors::white;
-	int currentFontSize = defaultFontSize;
-	bool dontShowNextElementWhenFrameIsInBackground = false;
+	Color current_active_color = Colors::white;
+	Color current_background_color = Colors::white;
+	int current_font_size = DEFAULT_FONT_SIZE;
+	bool don_not_show_next_element_when_frame_is_in_background = false;
 
-	void AddArtistToCurrentFrame(std::unique_ptr<SceneArtist> artist);
+	void add_artist_to_current_frame(std::unique_ptr<SceneArtist> artist);
 
 	/// Save visual debug data. Call this when finished creating frames.
-	void Save(const std::string& title);
+	void save(const std::string& title);
 
 	/// Begin a new frame.
 	/// @param description Description.
-	/// @param keepInBackground If true, this frame will remain in the background when the next frames are drawn, i.e. it won't be erased.
-	void BeginFrame(std::string description = "", bool keepInBackground = false);
+	/// @param keep_in_background If true, this frame will remain in the background when the next frames are drawn, i.e. it won't be erased.
+	void begin_frame(std::string description = "", bool keep_in_background = false);
 
 	/// The next element drawn to the current frame will not be shown when the frame is in the background.
 	/// (Only applicable to frames where keepInBackground is true).
-	void DontShowNextElementWhenFrameIsInBackground();
+	void do_not_show_next_element_when_frame_is_in_background();
 
 	/// Set the active and inactive colors.
-	/// @param activeColor Color to use when frame is active.
-	/// @param backgroundColor Color to use when frame is in background (only applies to frames where keepInBackground is true).
-	void SetColor(const Color& activeColor, const Color& backgroundColor);
+	/// @param new_active_color Color to use when frame is active.
+	/// @param new_background_color Color to use when frame is in background (only applies to frames where keepInBackground is true).
+	void set_color(const Color& new_active_color, const Color& new_background_color);
 
-	void SetColor(const Color& color);
+	void set_color(const Color& color);
 
-	void SetDefaultFontSize(int fontSize);
+	void set_default_font_size(int new_font_size);
 
-	void ResetDefaultFontSize();
+	void reset_default_font_size();
 
 
-	void DrawLineSegmentWithLabel(const glm::vec2& lineStart, const glm::vec2& lineEnd, const std::string& text);
-	void DrawPoint(const glm::vec2& position, float radius, bool wireframe = false);
-	void DrawPoints(const std::vector<glm::vec2>& points, float radius, bool wireframe = false);
-	void DrawArrow(const glm::vec2& start, const glm::vec2& end, float size);
+	void draw_line_segment_with_label(const glm::vec2& line_start, const glm::vec2& line_end, const std::string& text);
+	void draw_point(const glm::vec2& position, float radius, bool wireframe = false);
+	void draw_points(const std::vector<glm::vec2>& points, float radius, bool wireframe = false);
+	void draw_arrow(const glm::vec2& start, const glm::vec2& end, float size);
 
 };
 }

@@ -40,15 +40,15 @@ void AABB2::include(const glm::vec2& p)
 }
 
 SceneArtist::SceneArtist()
-	: activeDrawColor(Colors::lightRed)
-	, inactiveDrawColor(Colors::darkRed)
+	: active_draw_color_(Colors::lightRed)
+	, inactive_draw_color_(Colors::darkRed)
 {
 }
 
 void SceneArtist::SetColor(const Color& act, const Color& bkg)
 {
-	activeDrawColor = act;
-	inactiveDrawColor = bkg;
+	active_draw_color_ = act;
+	inactive_draw_color_ = bkg;
 }
 
 std::string hex(const Color& color)
@@ -60,14 +60,14 @@ std::string hex(const Color& color)
 
 void SceneArtist::WriteJsonBase(std::ostream& file) const
 {
-	file << "                        showWhenInBackground: " << (showWhenInBackground ? "true":"false") << ",\n";
-	file << "                        activeDrawColor: \"" << hex(activeDrawColor) << "\",\n";
-	file << "                        inactiveDrawColor: \"" << hex(inactiveDrawColor)<< "\",\n";
+	file << "                        showWhenInBackground: " << (show_when_in_background ? "true":"false") << ",\n";
+	file << "                        activeDrawColor: \"" << hex(active_draw_color_) << "\",\n";
+	file << "                        inactiveDrawColor: \"" << hex(inactive_draw_color_)<< "\",\n";
 }
 
-Frame::Frame(const std::string& the_description, bool dontErase)
+Frame::Frame(const std::string& the_description, bool do_not_erase)
 	: description(the_description)
-	, keepInBackground(dontErase)
+	, keep_in_background(do_not_erase)
 {
 }
 
@@ -84,13 +84,16 @@ AABB2 aabb_from_frames(const std::vector<Frame>& frames, std::size_t selected_fr
 	{
 		const auto& frame = frames[my_frame_index];
 
-		const auto isCurrentFrame = selected_frame_index == my_frame_index;
-		const auto showFrame = isCurrentFrame || (frame.keepInBackground && selected_frame_index > my_frame_index);
-		if (! showFrame) continue;
+		const auto is_current_frame = selected_frame_index == my_frame_index;
+		const auto show_frame = is_current_frame || (frame.keep_in_background && selected_frame_index > my_frame_index);
+		if (! show_frame)
+		{
+			continue;
+		}
 
 		for (const auto& artist: frame.artists)
 		{
-			if (isCurrentFrame || artist->showWhenInBackground)
+			if (is_current_frame || artist->show_when_in_background)
 			{
 				artist->Include(&r);
 			}
@@ -99,20 +102,20 @@ AABB2 aabb_from_frames(const std::vector<Frame>& frames, std::size_t selected_fr
 	return r;
 }
 
-void VisualDebug::AddArtistToCurrentFrame(std::unique_ptr<SceneArtist> artist)
+void VisualDebug::add_artist_to_current_frame(std::unique_ptr<SceneArtist> artist)
 {
 	if (frames.empty())
 	{
-		BeginFrame();
+		begin_frame();
 	}
 
-	artist->SetColor(currentActiveColor, currentBackgroundColor);
-	artist->showWhenInBackground = ! dontShowNextElementWhenFrameIsInBackground;
+	artist->SetColor(current_active_color, current_background_color);
+	artist->show_when_in_background = ! don_not_show_next_element_when_frame_is_in_background;
 	frames.rbegin()->AddArtist(std::move(artist));
 }
 
 /// Save visual debug data. Call this when finished creating frames.
-void VisualDebug::Save(const std::string& title)
+void VisualDebug::save(const std::string& title)
 {
 	// todo(Gustav): move to argument
 	const auto width = 400;
@@ -193,7 +196,7 @@ void VisualDebug::Save(const std::string& title)
 		}
 		file << "            {\n";
 		file << "                description: \""<< f.description << "\",\n";
-		file << "                keepInBackground: " << (f.keepInBackground ? "true" : "false") << ",\n";
+		file << "                keepInBackground: " << (f.keep_in_background ? "true" : "false") << ",\n";
 		const auto aabb = aabb_from_frames(frames, current_frame_index);
 		if (aabb.min && aabb.max)
 		{
@@ -233,36 +236,36 @@ void VisualDebug::Save(const std::string& title)
 	file << "</html>\n";
 }
 
-void VisualDebug::BeginFrame(std::string description, bool keepInBackground)
+void VisualDebug::begin_frame(std::string description, bool keep_in_background)
 {
-	dontShowNextElementWhenFrameIsInBackground = false;
-	frames.emplace_back(description, keepInBackground);
+	don_not_show_next_element_when_frame_is_in_background = false;
+	frames.emplace_back(description, keep_in_background);
 }
 
-void VisualDebug::DontShowNextElementWhenFrameIsInBackground()
+void VisualDebug::do_not_show_next_element_when_frame_is_in_background()
 {
-	dontShowNextElementWhenFrameIsInBackground = true;
+	don_not_show_next_element_when_frame_is_in_background = true;
 }
 
-void VisualDebug::SetColor(const Color& activeColor, const Color& backgroundColor)
+void VisualDebug::set_color(const Color& new_active_color, const Color& new_background_color)
 {
-	currentActiveColor = activeColor;
-	currentBackgroundColor = backgroundColor;
+	current_active_color = new_active_color;
+	current_background_color = new_background_color;
 }
 
-void VisualDebug::SetColor(const Color& color)
+void VisualDebug::set_color(const Color& color)
 {
-	SetColor(color, color);
+	set_color(color, color);
 }
 
-void VisualDebug::SetDefaultFontSize(int fontSize)
+void VisualDebug::set_default_font_size(int new_font_size)
 {
-	currentFontSize = fontSize;
+	current_font_size = new_font_size;
 }
 
-void VisualDebug::ResetDefaultFontSize()
+void VisualDebug::reset_default_font_size()
 {
-	currentFontSize = defaultFontSize;
+	current_font_size = DEFAULT_FONT_SIZE;
 }
 
 
@@ -378,31 +381,31 @@ struct PointArtist : public SceneArtist
 	}
 };
 
-void VisualDebug::DrawLineSegmentWithLabel(const glm::vec2& lineStart, const glm::vec2& lineEnd, const std::string& text)
+void VisualDebug::draw_line_segment_with_label(const glm::vec2& line_start, const glm::vec2& line_end, const std::string& text)
 {
-	AddArtistToCurrentFrame(std::make_unique<LineArtist>(lineStart, lineEnd));
-	AddArtistToCurrentFrame(std::make_unique<TextArtist>((lineStart + lineEnd) * 0.5f, text));
+	add_artist_to_current_frame(std::make_unique<LineArtist>(line_start, line_end));
+	add_artist_to_current_frame(std::make_unique<TextArtist>((line_start + line_end) * 0.5f, text));
 }
 
 
-void VisualDebug::DrawPoint(const glm::vec2& position, float radius, bool wireframe)
+void VisualDebug::draw_point(const glm::vec2& position, float radius, bool wireframe)
 {
-	AddArtistToCurrentFrame(std::make_unique<PointArtist>(position, radius, wireframe));
+	add_artist_to_current_frame(std::make_unique<PointArtist>(position, radius, wireframe));
 }
 
 
-void VisualDebug::DrawPoints(const std::vector<glm::vec2>& points, float radius, bool wireframe)
+void VisualDebug::draw_points(const std::vector<glm::vec2>& points, float radius, bool wireframe)
 {
 	for (const auto&p : points)
 	{
-		AddArtistToCurrentFrame(std::make_unique<PointArtist>(p, radius, wireframe));
+		add_artist_to_current_frame(std::make_unique<PointArtist>(p, radius, wireframe));
 	}
 }
 
 
-void VisualDebug::DrawArrow(const glm::vec2& start, const glm::vec2& end, float size)
+void VisualDebug::draw_arrow(const glm::vec2& start, const glm::vec2& end, float size)
 {
-	AddArtistToCurrentFrame(std::make_unique<ArrowArtist>(start, end, size));
+	add_artist_to_current_frame(std::make_unique<ArrowArtist>(start, end, size));
 }
 
 }  //  namespace VisualDebugging
