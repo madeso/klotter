@@ -6,68 +6,7 @@
 </head>
 <body>
 <h1>src/klotter/vdebug.main.cc</h1>
-<span id='readability-identifier-naming'>&nbsp;</span>
-<hr>
-<h3>warning: invalid case style for constexpr variable &#39;NUM_POINTS&#39;</h3>
-<code>[readability-identifier-naming]</code>
-<p><i>src/klotter/vdebug.main.cc 53 : 19</i></p>
-<pre>
-   53 |     constexpr int NUM_POINTS = 8;
-      |                   ^~~~~~~~~~
-      |                   num_points
-   54 |     constexpr float RADIUS = 100.0f;
-   55 |     
-   56 |     std::random_device r;
-   57 |         std::uniform_real_distribution uniform(-RADIUS, RADIUS);
-   58 | 
-   59 |     std::vector&lt;glm::vec2&gt; points;
-   60 |     points.reserve(NUM_POINTS);
-      |                    ~~~~~~~~~~
-      |                    num_points
-   61 |     for (int point_index = 0; point_index &lt; NUM_POINTS; point_index+=1)
-      |                                             ~~~~~~~~~~
-      |                                             num_points
-</pre>
-<hr>
-<h3>warning: invalid case style for constexpr variable &#39;RADIUS&#39;</h3>
-<code>[readability-identifier-naming]</code>
-<p><i>src/klotter/vdebug.main.cc 54 : 21</i></p>
-<pre>
-   54 |     constexpr float RADIUS = 100.0f;
-      |                     ^~~~~~
-      |                     radius
-   55 |     
-   56 |     std::random_device r;
-   57 |         std::uniform_real_distribution uniform(-RADIUS, RADIUS);
-      |                                                 ~~~~~~  ~~~~~~
-      |                                                 radius  radius
-</pre>
 <!--
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:53:19: warning: invalid case style for constexpr variable 'NUM_POINTS' [readability-identifier-naming]
-   53 |     constexpr int NUM_POINTS = 8;
-      |                   ^~~~~~~~~~
-      |                   num_points
-   54 |     constexpr float RADIUS = 100.0f;
-   55 |     
-   56 |     std::random_device r;
-   57 |         std::uniform_real_distribution uniform(-RADIUS, RADIUS);
-   58 | 
-   59 |     std::vector<glm::vec2> points;
-   60 |     points.reserve(NUM_POINTS);
-      |                    ~~~~~~~~~~
-      |                    num_points
-   61 |     for (int point_index = 0; point_index < NUM_POINTS; point_index+=1)
-      |                                             ~~~~~~~~~~
-      |                                             num_points
-/home/runner/work/klotter/klotter/src/klotter/vdebug.main.cc:54:21: warning: invalid case style for constexpr variable 'RADIUS' [readability-identifier-naming]
-   54 |     constexpr float RADIUS = 100.0f;
-      |                     ^~~~~~
-      |                     radius
-   55 |     
-   56 |     std::random_device r;
-   57 |         std::uniform_real_distribution uniform(-RADIUS, RADIUS);
-      |                                                 ~~~~~~  ~~~~~~
-      |                                                 radius  radius
 -->
 </body>
 </html>
