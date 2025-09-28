@@ -4,7 +4,6 @@ type Color = string;
 
 // todo(Gustav): focus button
 // todo(Gustav): plot primitive with hover
-// todo(Gustav): fullscreen button
 // todo(Gustav): generate self contained file with packed js file
 // todo(Gustav): replace existing dump tool
 // todo(Gustav): more rendering primitives
@@ -137,16 +136,18 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
     let pan_x = 0;
     let pan_y = 0;
     let scale = 1.0;
-    {
-        // set initial pan
-        const aabb = frames[0]?.aabb;
-        if(aabb) {
-            const cam = camera_from_aabb(aabb, additional_space, [ui.canvas.width, ui.canvas.height]);
-            pan_x = cam.pan_x;
-            pan_y = cam.pan_y;
-            scale = cam.scale;
-        }
-    }
+
+    const set_cam_from_aabb = (aabb: AABB | undefined) => {
+        if(!aabb) return;
+        const cam = camera_from_aabb(aabb, additional_space, [ui.canvas.width, ui.canvas.height]);
+        pan_x = cam.pan_x;
+        pan_y = cam.pan_y;
+        scale = cam.scale;
+    };
+
+    // set initial pan
+    set_cam_from_aabb(frames[0]?.aabb);
+
     // world to screen
     const px = (x: number) => pan_x + x * scale;
     const py = (y: number) => pan_y + y * scale;
@@ -308,5 +309,28 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
 
         draw();
         display_hover(ev);
-    })
+    });
+
+    ui.canvas.addEventListener("dblclick", _ => {
+        ui.canvas.requestFullscreen();
+    });
+
+    let old_width = 0;
+    let old_height = 0;
+    ui.canvas.addEventListener("fullscreenchange", _ => {
+        const is_entering = !!document.fullscreenElement;
+        if (is_entering) {
+            old_width = ui.canvas.width;
+            old_height = ui.canvas.height;
+            ui.canvas.width = window.screen.width;
+            ui.canvas.height = window.screen.height;
+        }
+        else {
+            ui.canvas.width = old_width;
+            ui.canvas.height = old_height;
+        }
+
+        set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
+        draw();
+    });
 }
