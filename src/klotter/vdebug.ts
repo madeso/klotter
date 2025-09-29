@@ -333,4 +333,13 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
         draw();
     });
+
+    const resize_canvas = () => {
+        ui.canvas.width = window.innerWidth;
+        ui.canvas.height = window.innerHeight;
+        set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
+        draw();
+    };
+    window.addEventListener("resize", resize_canvas);
+    resize_canvas();
 }
