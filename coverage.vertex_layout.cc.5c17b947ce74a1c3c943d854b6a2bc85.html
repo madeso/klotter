@@ -2,7 +2,7 @@
 <html class="theme-blue" >
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>GCC Code Coverage Report</title>
+    <title>render/vertex_layout.cc - GCC Code Coverage Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="coverage.css"/>
   </head>
@@ -26,22 +26,22 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/vertex_layout.cc</div>
-            <div>Date: 2025-09-27 14:24:46</div>
+            <div>Date: 2025-09-29 21:21:46</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
                 <div class="mr-2">Lines:</div>
-                <div class="mr-2" style="margin: auto;">61/62</div>
+                <div class="mr-2" style="margin: auto;">61 of 62, 0 excluded</div>
                 <div class="Label--minw"><span class="coverage-high IssueLabel color-fg-on-emphasis mr-1">98.4%</span></div>
             </div>
             <div class="d-flex">
                 <div class="mr-2">Functions:</div>
-                <div class="mr-2" style="margin: auto;">10/10</div>
+                <div class="mr-2" style="margin: auto;">10 of 10, 0 excluded</div>
                 <div class="Label--minw"><span class="coverage-high IssueLabel color-fg-on-emphasis mr-1">100.0%</span></div>
             </div>
             <div class="d-flex">
                 <div class="mr-2">Branches:</div>
-                <div class="mr-2" style="margin: auto;">50/94</div>
+                <div class="mr-2" style="margin: auto;">50 of 94, 0 excluded</div>
                 <div class="Label--minw"><span class="coverage-low IssueLabel color-fg-on-emphasis mr-1">53.2%</span></div>
             </div>
         </div>
@@ -59,19 +59,18 @@
       <th>Call count</th>
       <th>Line coverage</th>
       <th>Branch coverage</th>
-      <th>Condition coverage</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l28">klotter::VertexTypeList::VertexTypeList(std::vector&lt;klotter::VertexType, std::allocator&lt;klotter::VertexType&gt; &gt; const&amp;) (line 28)</a></td><td>called 9 times</td><td>100.0%</td><td>-%</td><td>-%</td><td>100.0%</td></tr>
-    <tr><td><a href="#l33">klotter::VertexTypeList::add(std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; const&amp;) (line 33)</a></td><td>called 12 times</td><td>100.0%</td><td>75.0%</td><td>-%</td><td>100.0%</td></tr>
-    <tr><td><a href="#l92">klotter::calculate_shader_attribute_size(klotter::VertexType const&amp;) (line 92)</a></td><td>called 22 times</td><td>100.0%</td><td>-%</td><td>-%</td><td>100.0%</td></tr>
-    <tr><td><a href="#l124">klotter::compile_attribute_layouts(std::vector&lt;klotter::VertexType, std::allocator&lt;klotter::VertexType&gt; &gt; const&amp;, std::vector&lt;std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt;, std::allocator&lt;std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; &gt; &gt; const&amp;) (line 124)</a></td><td>called 9 times</td><td>100.0%</td><td>50.0%</td><td>-%</td><td>57.1%</td></tr>
-    <tr><td><a href="#l140">klotter::compile_attribute_layouts(std::vector&lt;std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt;, std::allocator&lt;std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; &gt; &gt; const&amp;) (line 140)</a></td><td>called 8 times</td><td>100.0%</td><td>50.0%</td><td>-%</td><td>77.8%</td></tr>
-    <tr><td><a href="#l45">klotter::compile_shader_layout(klotter::CompiledVertexTypeList const&amp;, std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; const&amp;, std::optional&lt;klotter::InstanceProp&gt;) (line 45)</a></td><td>called 16 times</td><td>90.9%</td><td>43.8%</td><td>-%</td><td>65.1%</td></tr>
-    <tr><td><a href="#l97">klotter::compile_vertex_type_list(klotter::VertexTypeList const&amp;) (line 97)</a></td><td>called 9 times</td><td>100.0%</td><td>61.1%</td><td>-%</td><td>72.0%</td></tr>
-    <tr><td><a href="#l9">klotter::find_duplicates(std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; const&amp;) (line 9)</a></td><td>called 14 times</td><td>100.0%</td><td>75.0%</td><td>-%</td><td>73.7%</td></tr>
-    <tr><td><a href="#l70">klotter::get_geom_layout(klotter::CompiledVertexTypeList const&amp;) (line 70)</a></td><td>called 9 times</td><td>100.0%</td><td>50.0%</td><td>-%</td><td>75.0%</td></tr>
-    <tr><td><a href="#l83">klotter::get_geom_layout(klotter::CompiledVertexTypeList const&amp;)::{lambda(klotter::CompiledVertexElementNoName const&amp;, klotter::CompiledVertexElementNoName const&amp;)#1}::operator()(klotter::CompiledVertexElementNoName const&amp;, klotter::CompiledVertexElementNoName const&amp;) const (line 83)</a></td><td>called 27 times</td><td>100.0%</td><td>-%</td><td>-%</td><td>100.0%</td></tr>
+    <tr><td><a href="#l28">klotter::VertexTypeList::VertexTypeList(std::vector&lt;klotter::VertexType, std::allocator&lt;klotter::VertexType&gt; &gt; const&amp;) (line 28)</a></td><td>called 9 times</td><td>100.0%</td><td>-%</td><td>100.0%</td></tr>
+    <tr><td><a href="#l33">klotter::VertexTypeList::add(std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; const&amp;) (line 33)</a></td><td>called 12 times</td><td>100.0%</td><td>75.0%</td><td>100.0%</td></tr>
+    <tr><td><a href="#l92">klotter::calculate_shader_attribute_size(klotter::VertexType const&amp;) (line 92)</a></td><td>called 22 times</td><td>100.0%</td><td>-%</td><td>100.0%</td></tr>
+    <tr><td><a href="#l124">klotter::compile_attribute_layouts(std::vector&lt;klotter::VertexType, std::allocator&lt;klotter::VertexType&gt; &gt; const&amp;, std::vector&lt;std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt;, std::allocator&lt;std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; &gt; &gt; const&amp;) (line 124)</a></td><td>called 9 times</td><td>100.0%</td><td>50.0%</td><td>57.1%</td></tr>
+    <tr><td><a href="#l140">klotter::compile_attribute_layouts(std::vector&lt;std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt;, std::allocator&lt;std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; &gt; &gt; const&amp;) (line 140)</a></td><td>called 8 times</td><td>100.0%</td><td>50.0%</td><td>77.8%</td></tr>
+    <tr><td><a href="#l45">klotter::compile_shader_layout(klotter::CompiledVertexTypeList const&amp;, std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; const&amp;, std::optional&lt;klotter::InstanceProp&gt;) (line 45)</a></td><td>called 16 times</td><td>90.9%</td><td>43.8%</td><td>65.1%</td></tr>
+    <tr><td><a href="#l97">klotter::compile_vertex_type_list(klotter::VertexTypeList const&amp;) (line 97)</a></td><td>called 9 times</td><td>100.0%</td><td>61.1%</td><td>72.0%</td></tr>
+    <tr><td><a href="#l9">klotter::find_duplicates(std::vector&lt;klotter::VertexElementDescription, std::allocator&lt;klotter::VertexElementDescription&gt; &gt; const&amp;) (line 9)</a></td><td>called 14 times</td><td>100.0%</td><td>75.0%</td><td>73.7%</td></tr>
+    <tr><td><a href="#l70">klotter::get_geom_layout(klotter::CompiledVertexTypeList const&amp;) (line 70)</a></td><td>called 9 times</td><td>100.0%</td><td>50.0%</td><td>75.0%</td></tr>
+    <tr><td><a href="#l83">klotter::get_geom_layout(klotter::CompiledVertexTypeList const&amp;)::{lambda(klotter::CompiledVertexElementNoName const&amp;, klotter::CompiledVertexElementNoName const&amp;)#1}::operator()(klotter::CompiledVertexElementNoName const&amp;, klotter::CompiledVertexElementNoName const&amp;) const (line 83)</a></td><td>called 27 times</td><td>100.0%</td><td>-%</td><td>100.0%</td></tr>
   </table>
 </details>
 </div>
@@ -186,8 +185,8 @@
                     <details class="normal details-overlay">
                         <summary>2/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (11 &rightarrow; 5) taken 35 times.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (11 &rightarrow; 12) taken 14 times.</div>
+                            <div class="color-taken-branch">&check; Branch  11 &rightarrow; 5 taken 35 times.</div>
+                            <div class="color-taken-branch">&check; Branch  11 &rightarrow; 12 taken 14 times.</div>
                         </div>
                     </details>
                 </td>
@@ -207,10 +206,10 @@
                     <details class="normal details-overlay">
                         <summary>3/4</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (6 &rightarrow; 7) taken 35 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (6 &rightarrow; 15) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 2 (7 &rightarrow; 8) taken 1 times.</div>
-                            <div class="color-taken-branch">&check; Branch 3 (7 &rightarrow; 9) taken 34 times.</div>
+                            <div class="color-taken-branch">&check; Branch  6 &rightarrow; 7 taken 35 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  6 &rightarrow; 15 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  7 &rightarrow; 8 taken 1 time.</div>
+                            <div class="color-taken-branch">&check; Branch  7 &rightarrow; 9 taken 34 times.</div>
                         </div>
                     </details>
                 </td>
@@ -230,8 +229,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (8 &rightarrow; 9) taken 1 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (8 &rightarrow; 15) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  8 &rightarrow; 9 taken 1 time.</div>
+                            <div class="color-fg-danger">&cross; Branch  8 &rightarrow; 15 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -356,8 +355,8 @@
                     <details class="normal details-overlay">
                         <summary>2/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (8 &rightarrow; 4) taken 27 times.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (8 &rightarrow; 9) taken 12 times.</div>
+                            <div class="color-taken-branch">&check; Branch  8 &rightarrow; 4 taken 27 times.</div>
+                            <div class="color-taken-branch">&check; Branch  8 &rightarrow; 9 taken 12 times.</div>
                         </div>
                     </details>
                 </td>
@@ -377,8 +376,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (5 &rightarrow; 6) taken 27 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (5 &rightarrow; 10) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  5 &rightarrow; 6 taken 27 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  5 &rightarrow; 10 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -482,8 +481,8 @@
                     <details class="normal details-overlay">
                         <summary>2/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (27 &rightarrow; 4) taken 31 times.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (27 &rightarrow; 28) taken 12 times.</div>
+                            <div class="color-taken-branch">&check; Branch  27 &rightarrow; 4 taken 31 times.</div>
+                            <div class="color-taken-branch">&check; Branch  27 &rightarrow; 28 taken 12 times.</div>
                         </div>
                     </details>
                 </td>
@@ -503,8 +502,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (5 &rightarrow; 6) taken 31 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (5 &rightarrow; 51) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  5 &rightarrow; 6 taken 31 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  5 &rightarrow; 51 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -517,12 +516,12 @@
                     <details class="normal details-overlay">
                         <summary>5/6</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (8 &rightarrow; 9) taken 27 times.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (8 &rightarrow; 10) taken 4 times.</div>
-                            <div class="color-taken-branch">&check; Branch 2 (11 &rightarrow; 12) taken 4 times.</div>
-                            <div class="color-taken-branch">&check; Branch 3 (11 &rightarrow; 17) taken 27 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 4 (15 &rightarrow; 16) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 5 (15 &rightarrow; 42) taken 4 times.</div>
+                            <div class="color-taken-branch">&check; Branch  8 &rightarrow; 9 taken 27 times.</div>
+                            <div class="color-taken-branch">&check; Branch  8 &rightarrow; 10 taken 4 times.</div>
+                            <div class="color-taken-branch">&check; Branch  11 &rightarrow; 12 taken 4 times.</div>
+                            <div class="color-taken-branch">&check; Branch  11 &rightarrow; 17 taken 27 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  15 &rightarrow; 16 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  15 &rightarrow; 42 taken 4 times.</div>
                         </div>
                     </details>
                 </td>
@@ -535,8 +534,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (19 &rightarrow; 20) taken 27 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (19 &rightarrow; 25) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  19 &rightarrow; 20 taken 27 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  19 &rightarrow; 25 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -584,8 +583,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-fg-danger">&cross; Branch 0 (29 &rightarrow; 30) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (29 &rightarrow; 36) taken 12 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  29 &rightarrow; 30 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  29 &rightarrow; 36 taken 12 times.</div>
                         </div>
                     </details>
                 </td>
@@ -633,24 +632,24 @@
                     <details class="normal details-overlay">
                         <summary>4/18</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (20 &rightarrow; 21) taken 27 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (20 &rightarrow; 50) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 2 (22 &rightarrow; 23) taken 27 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 3 (22 &rightarrow; 45) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 4 (32 &rightarrow; 33) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 5 (32 &rightarrow; 58) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 6 (33 &rightarrow; 34) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 7 (33 &rightarrow; 53) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 8 (36 &rightarrow; 37) taken 12 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 9 (36 &rightarrow; 62) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 10 (37 &rightarrow; 38) taken 12 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 11 (37 &rightarrow; 59) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 12 (47 &rightarrow; 48) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 13 (47 &rightarrow; 49) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 14 (55 &rightarrow; 56) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 15 (55 &rightarrow; 57) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 16 (59 &rightarrow; 60) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 17 (59 &rightarrow; 61) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  20 &rightarrow; 21 taken 27 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  20 &rightarrow; 50 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  22 &rightarrow; 23 taken 27 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  22 &rightarrow; 45 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  32 &rightarrow; 33 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  32 &rightarrow; 58 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  33 &rightarrow; 34 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  33 &rightarrow; 53 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  36 &rightarrow; 37 taken 12 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  36 &rightarrow; 62 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  37 &rightarrow; 38 taken 12 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  37 &rightarrow; 59 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  47 &rightarrow; 48 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  47 &rightarrow; 49 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  55 &rightarrow; 56 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  55 &rightarrow; 57 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  59 &rightarrow; 60 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  59 &rightarrow; 61 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -698,8 +697,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (3 &rightarrow; 4) taken 9 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (3 &rightarrow; 27) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  3 &rightarrow; 4 taken 9 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  3 &rightarrow; 27 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -719,8 +718,8 @@
                     <details class="normal details-overlay">
                         <summary>2/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (12 &rightarrow; 6) taken 22 times.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (12 &rightarrow; 13) taken 9 times.</div>
+                            <div class="color-taken-branch">&check; Branch  12 &rightarrow; 6 taken 22 times.</div>
+                            <div class="color-taken-branch">&check; Branch  12 &rightarrow; 13 taken 9 times.</div>
                         </div>
                     </details>
                 </td>
@@ -740,8 +739,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (9 &rightarrow; 10) taken 22 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (9 &rightarrow; 22) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  9 &rightarrow; 10 taken 22 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  9 &rightarrow; 22 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -768,8 +767,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (15 &rightarrow; 16) taken 9 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (15 &rightarrow; 27) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  15 &rightarrow; 16 taken 9 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  15 &rightarrow; 27 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -845,12 +844,12 @@
                     <details class="normal details-overlay">
                         <summary>2/6</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (16 &rightarrow; 17) taken 9 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (16 &rightarrow; 27) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 2 (17 &rightarrow; 18) taken 9 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 3 (17 &rightarrow; 24) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 4 (24 &rightarrow; 25) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 5 (24 &rightarrow; 26) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  16 &rightarrow; 17 taken 9 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  16 &rightarrow; 27 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  17 &rightarrow; 18 taken 9 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  17 &rightarrow; 24 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  24 &rightarrow; 25 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  24 &rightarrow; 26 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -947,8 +946,8 @@
                     <details class="normal details-overlay">
                         <summary>2/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (11 &rightarrow; 5) taken 2 times.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (11 &rightarrow; 12) taken 9 times.</div>
+                            <div class="color-taken-branch">&check; Branch  11 &rightarrow; 5 taken 2 times.</div>
+                            <div class="color-taken-branch">&check; Branch  11 &rightarrow; 12 taken 9 times.</div>
                         </div>
                     </details>
                 </td>
@@ -968,8 +967,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (7 &rightarrow; 8) taken 2 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (7 &rightarrow; 37) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  7 &rightarrow; 8 taken 2 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  7 &rightarrow; 37 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1003,8 +1002,8 @@
                     <details class="normal details-overlay">
                         <summary>2/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (26 &rightarrow; 14) taken 22 times.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (26 &rightarrow; 27) taken 9 times.</div>
+                            <div class="color-taken-branch">&check; Branch  26 &rightarrow; 14 taken 22 times.</div>
+                            <div class="color-taken-branch">&check; Branch  26 &rightarrow; 27 taken 9 times.</div>
                         </div>
                     </details>
                 </td>
@@ -1031,10 +1030,10 @@
                     <details class="normal details-overlay">
                         <summary>3/4</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (16 &rightarrow; 17) taken 22 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (16 &rightarrow; 39) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 2 (18 &rightarrow; 19) taken 2 times.</div>
-                            <div class="color-taken-branch">&check; Branch 3 (18 &rightarrow; 20) taken 20 times.</div>
+                            <div class="color-taken-branch">&check; Branch  16 &rightarrow; 17 taken 22 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  16 &rightarrow; 39 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  18 &rightarrow; 19 taken 2 times.</div>
+                            <div class="color-taken-branch">&check; Branch  18 &rightarrow; 20 taken 20 times.</div>
                         </div>
                     </details>
                 </td>
@@ -1075,8 +1074,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (21 &rightarrow; 22) taken 20 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (21 &rightarrow; 41) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  21 &rightarrow; 22 taken 20 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  21 &rightarrow; 41 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1117,12 +1116,12 @@
                     <details class="normal details-overlay">
                         <summary>2/6</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (27 &rightarrow; 28) taken 9 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (27 &rightarrow; 49) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 2 (32 &rightarrow; 33) taken 9 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 3 (32 &rightarrow; 43) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 4 (46 &rightarrow; 47) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 5 (46 &rightarrow; 48) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  27 &rightarrow; 28 taken 9 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  27 &rightarrow; 49 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  32 &rightarrow; 33 taken 9 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  32 &rightarrow; 43 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  46 &rightarrow; 47 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  46 &rightarrow; 48 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1170,8 +1169,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (2 &rightarrow; 3) taken 9 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (2 &rightarrow; 36) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  2 &rightarrow; 3 taken 9 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  2 &rightarrow; 36 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1191,8 +1190,8 @@
                     <details class="normal details-overlay">
                         <summary>2/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (21 &rightarrow; 5) taken 12 times.</div>
-                            <div class="color-taken-branch">&check; Branch 1 (21 &rightarrow; 22) taken 9 times.</div>
+                            <div class="color-taken-branch">&check; Branch  21 &rightarrow; 5 taken 12 times.</div>
+                            <div class="color-taken-branch">&check; Branch  21 &rightarrow; 22 taken 9 times.</div>
                         </div>
                     </details>
                 </td>
@@ -1212,8 +1211,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (6 &rightarrow; 7) taken 12 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (6 &rightarrow; 32) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  6 &rightarrow; 7 taken 12 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  6 &rightarrow; 32 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1226,12 +1225,12 @@
                     <details class="normal details-overlay">
                         <summary>2/6</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (8 &rightarrow; 9) taken 12 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (8 &rightarrow; 10) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 2 (11 &rightarrow; 12) not taken.</div>
-                            <div class="color-taken-branch">&check; Branch 3 (11 &rightarrow; 17) taken 12 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 4 (15 &rightarrow; 16) not taken.</div>
-                            <div class="color-fg-danger">&cross; Branch 5 (15 &rightarrow; 27) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  8 &rightarrow; 9 taken 12 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  8 &rightarrow; 10 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  11 &rightarrow; 12 not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  11 &rightarrow; 17 taken 12 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  15 &rightarrow; 16 not taken.</div>
+                            <div class="color-fg-danger">&cross; Branch  15 &rightarrow; 27 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1244,8 +1243,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (17 &rightarrow; 18) taken 12 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (17 &rightarrow; 30) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  17 &rightarrow; 18 taken 12 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  17 &rightarrow; 30 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1272,8 +1271,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (22 &rightarrow; 23) taken 9 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (22 &rightarrow; 34) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  22 &rightarrow; 23 taken 9 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  22 &rightarrow; 34 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1314,8 +1313,8 @@
                     <details class="normal details-overlay">
                         <summary>1/2</summary>
                         <div class="text-left position-absolute color-bg-subtle p-3 mt-2" style="z-index: 1;">
-                            <div class="color-taken-branch">&check; Branch 0 (3 &rightarrow; 4) taken 8 times.</div>
-                            <div class="color-fg-danger">&cross; Branch 1 (3 &rightarrow; 8) not taken.</div>
+                            <div class="color-taken-branch">&check; Branch  3 &rightarrow; 4 taken 8 times.</div>
+                            <div class="color-fg-danger">&cross; Branch  3 &rightarrow; 8 not taken.</div>
                         </div>
                     </details>
                 </td>
@@ -1357,7 +1356,7 @@
           <hr/>
         </main>
         <footer class="text-center">
-          Generated by: <a href="http://gcovr.com/en/8.3">GCOVR (Version 8.3)</a>
+          Generated by: <a href="http://gcovr.com/en/8.4">GCOVR (Version 8.4)</a>
         </footer>
       </div>
     </div>
