@@ -2,7 +2,7 @@ type Color = string;
 
 // API and ui partly inspired by https://github.com/SebLague/Visual-Debug
 
-// todo(Gustav): focus button
+// todo(Gustav): focus keybind
 // todo(Gustav): plot primitive with hover
 // todo(Gustav): generate self contained file with packed js file
 // todo(Gustav): replace existing dump tool
@@ -109,6 +109,7 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
 
 (window as any).register_vdebug2 = (
     ui: {canvas: HTMLCanvasElement,
+        focus: HTMLButtonElement,
         frame: HTMLInputElement,
         first_frame: HTMLButtonElement,
         previous_frame: HTMLButtonElement,
@@ -340,6 +341,10 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
         draw();
     };
+    ui.focus.addEventListener("click", () => {
+        set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
+        draw();
+    });
     window.addEventListener("resize", resize_canvas);
     resize_canvas();
 }
