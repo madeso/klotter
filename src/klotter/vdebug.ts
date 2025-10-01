@@ -2,7 +2,6 @@ type Color = string;
 
 // API and ui partly inspired by https://github.com/SebLague/Visual-Debug
 
-// todo(Gustav): focus keybind
 // todo(Gustav): plot primitive with hover
 // todo(Gustav): generate self contained file with packed js file
 // todo(Gustav): replace existing dump tool
@@ -220,19 +219,30 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
 
         draw();
     }
-    ui.first_frame.addEventListener("click", () => {
+
+    const step_frame = (calc_next_frame:(frame: number)=> number) => {
+        const current_frame = fetch_current_frame_index();
+        const next_frame = calc_next_frame(current_frame);
+        set_current_frame_and_redraw(next_frame);
+    };
+    const set_first_frame = () => {
         set_current_frame_and_redraw(0);
+    };
+    const set_last_frame = () => {
+        set_current_frame_and_redraw(frames.length - 1);
+    };
+
+    ui.first_frame.addEventListener("click", () => {
+        set_first_frame();
     });
     ui.previous_frame.addEventListener("click", () => {
-        const current_frame = fetch_current_frame_index();
-        set_current_frame_and_redraw(current_frame - 1);
+        step_frame(current_frame => current_frame - 1);
     });
     ui.next_frame.addEventListener("click", () => {
-        const current_frame = fetch_current_frame_index();
-        set_current_frame_and_redraw(current_frame + 1);
+        step_frame(current_frame => current_frame + 1);
     });
     ui.last_frame.addEventListener("click", () => {
-        set_current_frame_and_redraw(frames.length - 1);
+        set_last_frame();
     });
 
     set_current_frame_and_redraw(fetch_current_frame_index());
@@ -341,10 +351,42 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
         draw();
     };
-    ui.focus.addEventListener("click", () => {
+    const foucus_current_frame = () => {
         set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
         draw();
+    }
+    ui.focus.addEventListener("click", () => {
+        foucus_current_frame();
     });
     window.addEventListener("resize", resize_canvas);
+    window.addEventListener("keydown", ev => {
+        const ctrl = ev.ctrlKey || ev.altKey;
+        const shift = ev.shiftKey;
+        const key = ev.key.toLowerCase();
+        const get_step = () => {
+            if(shift && ctrl) return 10;
+            if(shift) return 5;
+            if(ctrl) return 5;
+            return 1;
+        };
+        if(key === "arrowleft") {
+            step_frame(current_frame => current_frame - get_step());
+        }
+        else if (key === "arrowright") {
+            step_frame(current_frame => current_frame + get_step());
+        }
+        else if(key === "f") {
+            foucus_current_frame();
+        }
+        else if(key == "home") {
+            set_first_frame();
+        }
+        else if(key == "end") {
+            set_last_frame();
+        }
+        else {
+            console.log(key);
+        }
+    })
     resize_canvas();
 }
