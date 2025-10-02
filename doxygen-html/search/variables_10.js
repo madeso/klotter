@@ -29,12 +29,12 @@ var searchData=
   ['specular_5funi_26',['specular_uni',['../structklotter_1_1FrustumLightUniforms.html#aef2f8f7b7e81312de6e7575a5117e98b',1,'klotter::FrustumLightUniforms']]],
   ['speed_27',['speed',['../structklotter_1_1FloatDragShaderProp.html#ad36bed4fdaba81b5be72b49eeb43bb7e',1,'klotter::FloatDragShaderProp']]],
   ['ss_28',['ss',['../structStr.html#aa315682ec6b061b2e4211000a006596a',1,'Str']]],
-  ['start_29',['start',['../structPlotRange.html#a3ed06b9824af4a36190845b075f20658',1,'PlotRange']]],
+  ['start_29',['start',['../structPlotRange.html#a3ed06b9824af4a36190845b075f20658',1,'PlotRange::start'],['../structVisualDebugging_1_1PlotRange.html#acffb797f20011d668fcfab18bc46b71f',1,'VisualDebugging::PlotRange::start']]],
   ['states_30',['states',['../structklotter_1_1RendererPimpl.html#a30fac033e1f7db0bff6ddf2c36728c80',1,'klotter::RendererPimpl::states'],['../structklotter_1_1StateChanger.html#aee93777d716b4aa71e478ac0798168c9',1,'klotter::StateChanger::states']]],
   ['stencil_5ffunc_31',['stencil_func',['../structklotter_1_1OpenglStates.html#af00a0141580a5e0169bb9cfa44b355b2',1,'klotter::OpenglStates']]],
   ['stencil_5fmask_32',['stencil_mask',['../structklotter_1_1OpenglStates.html#a90695fe8cd6640b6d9ee540d4f583bca',1,'klotter::OpenglStates']]],
   ['stencil_5fop_33',['stencil_op',['../structklotter_1_1OpenglStates.html#af1e8ecdb450e36a413e6b35ce753c352',1,'klotter::OpenglStates']]],
   ['stencil_5ftest_34',['stencil_test',['../structklotter_1_1OpenglStates.html#a68cdfa7a0607de2cb1841ae79261653e',1,'klotter::OpenglStates']]],
-  ['step_35',['step',['../structPlotRange.html#a3ce32efc8597c15695c3cd6990ab1cfe',1,'PlotRange']]],
+  ['step_35',['step',['../structPlotRange.html#a3ce32efc8597c15695c3cd6990ab1cfe',1,'PlotRange::step'],['../structVisualDebugging_1_1PlotRange.html#a552aa8a97e652118164d0fcb519fdcda',1,'VisualDebugging::PlotRange::step']]],
   ['stride_36',['stride',['../structklotter_1_1ExtractedGeom.html#a88aa2dea435a4e337465450b863fe03f',1,'klotter::ExtractedGeom']]]
 ];

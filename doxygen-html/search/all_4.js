@@ -13,7 +13,7 @@ var searchData=
   ['enable_5fhigh_5fperformance_5fgraphics_10',['ENABLE_HIGH_PERFORMANCE_GRAPHICS',['../enable__high__performance__graphics_8h.html#a867fab4acab3a973f4c17d6196f2de2a',1,'enable_high_performance_graphics.h']]],
   ['enable_5fhigh_5fperformance_5fgraphics_2eh_11',['enable_high_performance_graphics.h',['../enable__high__performance__graphics_8h.html',1,'']]],
   ['enabled_12',['enabled',['../structklotter_1_1Effect.html#a5b3f083f8b7d5c62e8ffaae80690786f',1,'klotter::Effect']]],
-  ['end_13',['end',['../structPlotRange.html#aae56ef81c1da0462b1ea13595713818a',1,'PlotRange']]],
+  ['end_13',['end',['../structPlotRange.html#aae56ef81c1da0462b1ea13595713818a',1,'PlotRange::end'],['../structVisualDebugging_1_1PlotRange.html#af0d8da73b84b936ed164708b90b9774d',1,'VisualDebugging::PlotRange::end']]],
   ['equal_14',['equal',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a465289687a70db7aa7217cc240c29f0f',1,'klotter']]],
   ['exclude_15',['exclude',['../group__texture.html#gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef',1,'klotter']]],
   ['exposure_16',['exposure',['../structklotter_1_1EffectStack.html#ae1b4343dbc50a5ae1b08aaf3efc20b68',1,'klotter::EffectStack::exposure'],['../structklotter_1_1RenderWorld.html#a0c96c544429ce3d6905ed01fe02b7805',1,'klotter::RenderWorld::exposure']]],

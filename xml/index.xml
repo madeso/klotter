@@ -571,6 +571,12 @@
     <member refid="structPlotRange_1aae56ef81c1da0462b1ea13595713818a" kind="variable"><name>end</name></member>
     <member refid="structPlotRange_1a3ce32efc8597c15695c3cd6990ab1cfe" kind="variable"><name>step</name></member>
   </compound>
+  <compound refid="structVisualDebugging_1_1PlotRange" kind="struct"><name>VisualDebugging::PlotRange</name>
+    <member refid="structVisualDebugging_1_1PlotRange_1acffb797f20011d668fcfab18bc46b71f" kind="variable"><name>start</name></member>
+    <member refid="structVisualDebugging_1_1PlotRange_1af0d8da73b84b936ed164708b90b9774d" kind="variable"><name>end</name></member>
+    <member refid="structVisualDebugging_1_1PlotRange_1a552aa8a97e652118164d0fcb519fdcda" kind="variable"><name>step</name></member>
+    <member refid="structVisualDebugging_1_1PlotRange_1abb27f392027f3cd9f9ac72beb8a0ffca" kind="function"><name>PlotRange</name></member>
+  </compound>
   <compound refid="structklotter_1_1PointLight" kind="struct"><name>klotter::PointLight</name>
     <member refid="structklotter_1_1PointLight_1adb0573784a8adf570ed880587d3d9a1a" kind="variable"><name>position</name></member>
     <member refid="structklotter_1_1PointLight_1a29d07bcec7b9efd1198de1584e75dbae" kind="variable"><name>min_range</name></member>
@@ -959,9 +965,11 @@
     <member refid="structVisualDebugging_1_1VisualDebug_1a7c762abe3513b4e391bf91e6952dce09" kind="function"><name>set_default_font_size</name></member>
     <member refid="structVisualDebugging_1_1VisualDebug_1a7ae0711f25ac70249b0fc5b781565c71" kind="function"><name>reset_default_font_size</name></member>
     <member refid="structVisualDebugging_1_1VisualDebug_1a5d440acd37137a4256d2682333101d03" kind="function"><name>draw_line_segment_with_label</name></member>
+    <member refid="structVisualDebugging_1_1VisualDebug_1aec9e505fb0222c4a7a095956341242bc" kind="function"><name>draw_line</name></member>
     <member refid="structVisualDebugging_1_1VisualDebug_1a87628c87cdd61de927bbb07094be330e" kind="function"><name>draw_point</name></member>
     <member refid="structVisualDebugging_1_1VisualDebug_1a7645c9941762b1f560c7058912672d84" kind="function"><name>draw_points</name></member>
     <member refid="structVisualDebugging_1_1VisualDebug_1a1b0dedb27632c574c3e6ad0d8548da6d" kind="function"><name>draw_arrow</name></member>
+    <member refid="structVisualDebugging_1_1VisualDebug_1a356fa3d8fff074e55f1399e542d6d154" kind="function"><name>draw_plot</name></member>
   </compound>
   <compound refid="structklotter_1_1World" kind="struct"><name>klotter::World</name>
     <member refid="structklotter_1_1World_1adf837f631529619280d72f2093d9d9a7" kind="variable"><name>meshes</name></member>
@@ -1135,6 +1143,7 @@
     <member refid="namespacesvg_1a77d6e5012f32a5531daaae30ea8a163e" kind="variable"><name>reddish_purple</name></member>
   </compound>
   <compound refid="namespaceVisualDebugging" kind="namespace"><name>VisualDebugging</name>
+    <member refid="namespaceVisualDebugging_1a4a0ec37030187fc96b60600590802cf5" kind="function"><name>plot_line</name></member>
   </compound>
   <compound refid="namespaceVisualDebugging_1_1Colors" kind="namespace"><name>VisualDebugging::Colors</name>
     <member refid="namespaceVisualDebugging_1_1Colors_1a5d3364cdb55e52c3e865bb9acab35ad1" kind="variable"><name>lightRed</name></member>

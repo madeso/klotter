@@ -5,9 +5,39 @@
     <innerclass refid="structVisualDebugging_1_1AABB2" prot="public">VisualDebugging::AABB2</innerclass>
     <innerclass refid="structVisualDebugging_1_1Color" prot="public">VisualDebugging::Color</innerclass>
     <innerclass refid="structVisualDebugging_1_1Frame" prot="public">VisualDebugging::Frame</innerclass>
+    <innerclass refid="structVisualDebugging_1_1PlotRange" prot="public">VisualDebugging::PlotRange</innerclass>
     <innerclass refid="structVisualDebugging_1_1SceneArtist" prot="public">VisualDebugging::SceneArtist</innerclass>
     <innerclass refid="structVisualDebugging_1_1VisualDebug" prot="public">VisualDebugging::VisualDebug</innerclass>
     <innernamespace refid="namespaceVisualDebugging_1_1Colors">VisualDebugging::Colors</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceVisualDebugging_1a4a0ec37030187fc96b60600590802cf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt; float &gt; VisualDebugging::plot_line</definition>
+        <argsstring>(const PlotRange &amp;p, F f)</argsstring>
+        <name>plot_line</name>
+        <qualifiedname>VisualDebugging::plot_line</qualifiedname>
+        <param>
+          <type>const <ref refid="structVisualDebugging_1_1PlotRange" kindref="compound">PlotRange</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>F</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="63" column="13" bodyfile="src/klotter/vdebug.h" bodystart="63" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
