@@ -332,28 +332,41 @@ void VisualDebug::reset_default_font_size()
 
 struct LineArtist : public SceneArtist
 {
-	LineArtist(const glm::vec2& start, const glm::vec2& end)
-		: from(start)
-		, to(end)
+	LineArtist(const std::vector<glm::vec2>& p)
+		: points(p)
 	{
 	}
-	glm::vec2 from;
-	glm::vec2 to;
+	std::vector<glm::vec2> points;
 
 	void WriteJson(std::ostream& file) const override
 	{
 		file << "                    {\n";
 		WriteJsonBase(file);
 		file << "                        type: \"line\",\n";
-		file << "                        x1: " << from.x << ", y1: " << from.y << ",\n";
-		file << "                        x2: " << to.x << ", y2: " << to.y << ",\n";
+		file << "                        points: [";
+		bool first = true;
+		for (const auto& p: points)
+		{
+			if (first)
+			{
+				first = false;
+			}
+			else
+			{
+				file << ", ";
+			}
+			file << "{x:" << p.x << ",y:" << p.y << "}";
+		}
+		file << "]\n";
 		file << "                    }\n";
 	}
 
 	void Include(AABB2* aabb) override
 	{
-		aabb->include(from);
-		aabb->include(to);
+		for (const auto& p: points)
+		{
+			aabb->include(p);
+		}
 	}
 };
 
@@ -442,12 +455,67 @@ struct PointArtist : public SceneArtist
 	}
 };
 
+
+struct PlotArtist : public SceneArtist
+{
+
+	PlotArtist(const PlotRange& r, const std::vector<float>& v)
+		: range(r)
+		, values(v)
+	{
+	}
+
+	PlotRange range;
+	std::vector<float> values;
+
+	void WriteJson(std::ostream& file) const override
+	{
+		file << "                    {\n";
+		WriteJsonBase(file);
+		file << "                        type: \"plot\",\n";
+		file << "                        start: " << range.start
+									<< ", end: " << range.end
+									<< ", step: " << range.step << ",\n";
+		file << "                        values: [";
+		bool first = true;
+		for (auto& v: values)
+		{
+			if (first)
+			{
+				first = false;
+			}
+			else
+			{
+				file << ", ";
+			}
+			file << v;
+		}
+		file << "],\n";
+		file << "                    }\n";
+	}
+
+	void Include(AABB2* aabb) override
+	{
+		float x = range.start;
+		for (auto y: values)
+		{
+			aabb->include({x, y});
+			x += range.step;
+		}
+	}
+};
+
+
 void VisualDebug::draw_line_segment_with_label(const glm::vec2& line_start, const glm::vec2& line_end, const std::string& text)
 {
-	add_artist_to_current_frame(std::make_unique<LineArtist>(line_start, line_end));
+	add_artist_to_current_frame(std::make_unique<LineArtist>(std::vector{line_start, line_end}));
 	add_artist_to_current_frame(std::make_unique<TextArtist>((line_start + line_end) * 0.5f, text));
 }
 
+void VisualDebug::draw_line(const std::vector<glm::vec2>& points)
+{
+	add_artist_to_current_frame(std::make_unique<LineArtist>(points));
+}
 
 void VisualDebug::draw_point(const glm::vec2& position, float radius, bool wireframe)
 {
@@ -468,5 +536,11 @@ void VisualDebug::draw_arrow(const glm::vec2& start, const glm::vec2& end, float
 {
 	add_artist_to_current_frame(std::make_unique<ArrowArtist>(start, end, size));
 }
+
+void VisualDebug::draw_plot(const PlotRange& range, const std::vector<float>& values)
+{
+	add_artist_to_current_frame(std::make_unique<PlotArtist>(range, values));
+}
+
 
 }  //  namespace VisualDebugging

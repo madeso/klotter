@@ -46,6 +46,29 @@ struct AABB2
 	void include(const glm::vec2& p);
 };
 
+struct PlotRange
+{
+	float start;
+	float end;
+	float step;
+
+	constexpr PlotRange(float s, float e, float st)
+		: start(s)
+		, end(e)
+		, step(st)
+	{}
+};
+
+template<typename F>
+std::vector<float> plot_line(const PlotRange& p, F f)
+{
+	std::vector<float> points;
+	for (float x = p.start; x <= p.end; x += p.step)
+	{
+		points.emplace_back(f(x));
+	}
+	return points;
+}
 
 struct SceneArtist
 {
@@ -120,10 +143,11 @@ struct VisualDebug
 
 
 	void draw_line_segment_with_label(const glm::vec2& line_start, const glm::vec2& line_end, const std::string& text);
+	void draw_line(const std::vector<glm::vec2>& points);
 	void draw_point(const glm::vec2& position, float radius, bool wireframe = false);
 	void draw_points(const std::vector<glm::vec2>& points, float radius, bool wireframe = false);
 	void draw_arrow(const glm::vec2& start, const glm::vec2& end, float size);
-
+	void draw_plot(const PlotRange& range, const std::vector<float>& values);
 };
 }
 

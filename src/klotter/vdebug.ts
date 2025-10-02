@@ -89,7 +89,7 @@ type Artist2 =
     | SceneArtist & {"type": "point", x: number, y: number, radius: number}
     | SceneArtist & {"type": "fillpoint", x: number, y: number, radius: number}
     | SceneArtist & {"type": "text", x: number, y: number, text: string}
-    | SceneArtist & {"type": "line", x1: number, y1: number, x2: number, y2: number}
+    | SceneArtist & {"type": "line", points: {x: number, y: number}[]}
     | SceneArtist & {"type": "arrow", x1: number, y1: number, x2: number, y2: number, size: number}
 ;
 
@@ -170,8 +170,14 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
                 case "line":
                     ctx.strokeStyle = color;
                     ctx.beginPath();
-                    ctx.moveTo(px(a.x1), py(a.y1));
-                    ctx.lineTo(px(a.x2), py(a.y2));
+
+                    let first = true;
+                    for(const p of a.points) {
+                        const is_first = first;
+                        if(first) first = false;
+                        if(is_first) ctx.moveTo(px(p.x), py(p.y));
+                        else ctx.lineTo(px(p.x), py(p.y));
+                    }
                     ctx.stroke();
                     break;
                 case "arrow":
