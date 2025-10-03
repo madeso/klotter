@@ -84,6 +84,14 @@ const draw_frame = <Artist extends SceneArtist>(frame: Frame<Artist>, selected_f
     }
 };
 
+const for_each_artist = <Artist extends SceneArtist>(selected_frame_index: number, frames: Frame<Artist>[], draw_artist: (artist: Artist, isCurrentFrame: boolean)=>void) => {
+    for(let i=0; i<=selected_frame_index; i+=1) {
+        const frame = frames[i];
+        if(!frame) continue;
+        draw_frame(frame, selected_frame_index, i, draw_artist);
+    }
+}
+
 type Artist2 =
       SceneArtist & {"type": "rect", x: number, y: number, w: number, h: number}
     | SceneArtist & {"type": "point", x: number, y: number, radius: number}
@@ -161,51 +169,47 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         ctx.fillStyle = "lightgray";
         ctx.fillRect(0, 0, ui.canvas.width, ui.canvas.height);
         const selected_frame_index = fetch_current_frame_index();
-        for(let i=0; i<=selected_frame_index; i+=1) {
-            const frame = frames[i];
-            if(!frame) continue;
-            draw_frame(frame, selected_frame_index, i, (a, isCurrentFrame) => {
-                const color = color_from_artist(a, isCurrentFrame);
-                switch(a.type) {
-                case "line":
-                    ctx.strokeStyle = color;
-                    ctx.beginPath();
+        for_each_artist(selected_frame_index, frames, (a, isCurrentFrame) => {
+            const color = color_from_artist(a, isCurrentFrame);
+            switch(a.type) {
+            case "line":
+                ctx.strokeStyle = color;
+                ctx.beginPath();
 
-                    let first = true;
-                    for(const p of a.points) {
-                        const is_first = first;
-                        if(first) first = false;
-                        if(is_first) ctx.moveTo(px(p.x), py(p.y));
-                        else ctx.lineTo(px(p.x), py(p.y));
-                    }
-                    ctx.stroke();
-                    break;
-                case "arrow":
-                    ctx.strokeStyle = color;
-                    canvas_arrow(ctx, px(a.x1), py(a.y1), px(a.x2), py(a.y2), a.size);
-                    break;
-                case "point":
-                    ctx.fillStyle = color;
-                    ctx.beginPath();
-                    ctx.arc(px(a.x), py(a.y), a.radius, 0, 2 * Math.PI);
-                    ctx.stroke();
-                    break;
-                case "text":
-                    ctx.fillText(a.text, px(a.x), py(a.y));
-                    break;
-                case "fillpoint":
-                    ctx.fillStyle = color;
-                    ctx.beginPath();
-                    ctx.arc(px(a.x), py(a.y), a.radius, 0, 2 * Math.PI);
-                    ctx.fill();
-                    break;
-                case "rect":
-                    ctx.fillStyle = color;
-                    ctx.fillRect(px(a.x), py(a.y), ps(a.w), ps(a.h));
-                    break;
+                let first = true;
+                for(const p of a.points) {
+                    const is_first = first;
+                    if(first) first = false;
+                    if(is_first) ctx.moveTo(px(p.x), py(p.y));
+                    else ctx.lineTo(px(p.x), py(p.y));
                 }
-            });
-        }
+                ctx.stroke();
+                break;
+            case "arrow":
+                ctx.strokeStyle = color;
+                canvas_arrow(ctx, px(a.x1), py(a.y1), px(a.x2), py(a.y2), a.size);
+                break;
+            case "point":
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(px(a.x), py(a.y), a.radius, 0, 2 * Math.PI);
+                ctx.stroke();
+                break;
+            case "text":
+                ctx.fillText(a.text, px(a.x), py(a.y));
+                break;
+            case "fillpoint":
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(px(a.x), py(a.y), a.radius, 0, 2 * Math.PI);
+                ctx.fill();
+                break;
+            case "rect":
+                ctx.fillStyle = color;
+                ctx.fillRect(px(a.x), py(a.y), ps(a.w), ps(a.h));
+                break;
+            }
+        });
     };
     const set_current_frame_and_redraw = (this_frame: number) => {
         let frame_index = this_frame;
