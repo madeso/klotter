@@ -68,29 +68,27 @@ const camera_from_aabb = (bb: AABB, space: number, canvas: [number, number]): Ca
     };
 };
 
-const draw_frame = <Artist extends SceneArtist>(frame: Frame<Artist>, selected_frame_index: number,
-    my_frame_index: number,
-    draw_artist: (artist: Artist, isCurrentFrame: boolean)=>void) =>
-{
-    const isCurrentFrame = selected_frame_index == my_frame_index;
-    const showFrame = isCurrentFrame || (frame.keepInBackground && selected_frame_index > my_frame_index);
-    if (!showFrame) return;
-    for (const artist of frame.artists)
-    {
-        if (isCurrentFrame || artist.showWhenInBackground)
-        {
-            draw_artist(artist, isCurrentFrame);
-        }
-    }
-};
-
-const for_each_artist = <Artist extends SceneArtist>(selected_frame_index: number, frames: Frame<Artist>[], draw_artist: (artist: Artist, isCurrentFrame: boolean)=>void) => {
+const for_each_artist = <Artist extends SceneArtist>(
+    selected_frame_index: number,
+    frames: Frame<Artist>[],
+    draw_artist: (artist: Artist, is_current_frame: boolean)=>void
+) => {
     for(let i=0; i<=selected_frame_index; i+=1) {
         const frame = frames[i];
         if(!frame) continue;
-        draw_frame(frame, selected_frame_index, i, draw_artist);
+        
+        const is_current_frame = selected_frame_index == i;
+        const showFrame = is_current_frame || (frame.keepInBackground && selected_frame_index > i);
+        if (!showFrame) return;
+        for (const artist of frame.artists)
+        {
+            if (is_current_frame || artist.showWhenInBackground)
+            {
+                draw_artist(artist, is_current_frame);
+            }
+        }
     }
-}
+};
 
 type Artist2 =
       SceneArtist & {"type": "rect", x: number, y: number, w: number, h: number}
@@ -169,8 +167,8 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         ctx.fillStyle = "lightgray";
         ctx.fillRect(0, 0, ui.canvas.width, ui.canvas.height);
         const selected_frame_index = fetch_current_frame_index();
-        for_each_artist(selected_frame_index, frames, (a, isCurrentFrame) => {
-            const color = color_from_artist(a, isCurrentFrame);
+        for_each_artist(selected_frame_index, frames, (a, is_current_frame) => {
+            const color = color_from_artist(a, is_current_frame);
             switch(a.type) {
             case "line":
                 ctx.strokeStyle = color;
