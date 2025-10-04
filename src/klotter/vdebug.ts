@@ -24,14 +24,30 @@ const color_from_artist = (artist: SceneArtist, isActive: boolean) : Color =>
 };
 
 // min x, min y, max x, max y
-type AABB = [number, number, number, number];
+interface AABB
+{
+    min_x: number;
+    min_y: number;
+    max_x: number;
+    max_y: number
+}
+
+const include_point = (aabb: AABB|null, x: number, y: number): AABB =>
+{
+    if(!aabb) return {min_x: x, min_y: y, max_x: x, max_y: y};
+
+    aabb.min_x = Math.min(aabb.min_x, x);
+    aabb.min_y = Math.min(aabb.min_y, y);
+    aabb.max_x = Math.max(aabb.max_x, x);
+    aabb.max_y = Math.max(aabb.max_y, y);
+    return aabb;
+};
 
 interface Frame<Artist>
 {
     description: string;
     artists: Artist[];
     keepInBackground: boolean;
-    aabb?: AABB;
 }
 
 interface Camera
@@ -43,11 +59,10 @@ interface Camera
 
 const camera_from_aabb = (bb: AABB, space: number, canvas: [number, number]): Camera =>
 {
-    const [bb_min_x, bb_min_y, bb_max_x, bb_max_y] = bb;
     const [width, height] = canvas;
     const [size_x, size_y] = [
-        bb_max_x - bb_min_x,
-        bb_max_y - bb_min_y
+        bb.max_x - bb.min_x,
+        bb.max_y - bb.min_y
     ];
 
     const suggested_scale: [number, number] = [(width-space*2) / size_x, (height-space*2) / size_y]
@@ -62,8 +77,8 @@ const camera_from_aabb = (bb: AABB, space: number, canvas: [number, number]): Ca
     const offset_y = (height - scaled[1])/2;
 
     return {
-        pan_x: offset_x - bb_min_x * scale,
-        pan_y: offset_y - bb_min_y * scale,
+        pan_x: offset_x - bb.min_x * scale,
+        pan_y: offset_y - bb.min_y * scale,
         scale
     };
 };
@@ -151,8 +166,39 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         scale = cam.scale;
     };
 
+    const calc_aabb = (frame_index: number): AABB => {
+        let aabb : AABB | null = null;
+        for_each_artist(frame_index, frames, (artist) => {
+            switch(artist.type) {
+                case "arrow":
+                    aabb = include_point(aabb, artist.x1, artist.y1);
+                    aabb = include_point(aabb, artist.x2, artist.y2);
+                    break;
+                case "line":
+                    for(const p of artist.points) {
+                        aabb = include_point(aabb, p.x, p.y);
+                    }
+                    break;
+                case "fillpoint":
+                case "point":
+                    aabb = include_point(aabb, artist.x, artist.y);
+                    break;
+                case "rect":
+                    aabb = include_point(aabb, artist.x, artist.y);
+                    aabb = include_point(aabb, artist.x + artist.w, artist.y + artist.h);
+                    break;
+                case "text":
+                    // todo(Gustav): include width somehow...
+                    aabb = include_point(aabb, artist.x, artist.y);
+                
+            }
+        });
+
+        return aabb ?? {min_x: 0, min_y: 0, max_x: 0, max_y: 0};
+    };
+
     // set initial pan
-    set_cam_from_aabb(frames[0]?.aabb);
+    set_cam_from_aabb(calc_aabb(0));
 
     // world to screen
     const px = (x: number) => pan_x + x * scale;
@@ -349,18 +395,18 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
             ui.canvas.height = old_height;
         }
 
-        set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
+        set_cam_from_aabb(calc_aabb(fetch_current_frame_index()));
         draw();
     });
 
     const resize_canvas = () => {
         ui.canvas.width = window.innerWidth;
         ui.canvas.height = window.innerHeight;
-        set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
+        set_cam_from_aabb(calc_aabb(fetch_current_frame_index()));
         draw();
     };
     const foucus_current_frame = () => {
-        set_cam_from_aabb(frames[fetch_current_frame_index()]?.aabb);
+        set_cam_from_aabb(calc_aabb(fetch_current_frame_index()));
         draw();
     }
     ui.focus.addEventListener("click", () => {
