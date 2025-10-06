@@ -4,41 +4,6 @@
 namespace VisualDebugging
 {
 
-AABB2::AABB2()
-	: min(std::nullopt)
-	, max(std::nullopt)
-{
-}
-
-AABB2::AABB2(const glm::vec2& f)
-	: min(f)
-	, max(f)
-{
-}
-
-void AABB2::include(const glm::vec2& p)
-{
-	if (min)
-	{
-		min->x = std::min(p.x, min->x);
-		min->y = std::min(p.y, min->y);
-	}
-	else
-	{
-		min = p;
-	}
-
-	if (max)
-	{
-		max->x = std::max(p.x, max->x);
-		max->y = std::max(p.y, max->y);
-	}
-	else
-	{
-		max = p;
-	}
-}
-
 SceneArtist::SceneArtist()
 	: active_draw_color_(Colors::lightRed)
 	, inactive_draw_color_(Colors::darkRed)
@@ -74,32 +39,6 @@ Frame::Frame(const std::string& the_description, bool do_not_erase)
 void Frame::AddArtist(std::unique_ptr<SceneArtist> artist)
 {
 	artists.emplace_back(std::move(artist));
-}
-
-AABB2 aabb_from_frames(const std::vector<Frame>& frames, std::size_t selected_frame_index)
-{
-	AABB2 r;
-	for (std::size_t my_frame_index = 0; my_frame_index <= selected_frame_index && my_frame_index < frames.size();
-		 my_frame_index += 1)
-	{
-		const auto& frame = frames[my_frame_index];
-
-		const auto is_current_frame = selected_frame_index == my_frame_index;
-		const auto show_frame = is_current_frame || (frame.keep_in_background && selected_frame_index > my_frame_index);
-		if (! show_frame)
-		{
-			continue;
-		}
-
-		for (const auto& artist: frame.artists)
-		{
-			if (is_current_frame || artist->show_when_in_background)
-			{
-				artist->Include(&r);
-			}
-		}
-	}
-	return r;
 }
 
 void VisualDebug::add_artist_to_current_frame(std::unique_ptr<SceneArtist> artist)
@@ -257,11 +196,6 @@ void VisualDebug::save(const std::string& title)
 		file << "            {\n";
 		file << "                description: \""<< f.description << "\",\n";
 		file << "                keepInBackground: " << (f.keep_in_background ? "true" : "false") << ",\n";
-		const auto aabb = aabb_from_frames(frames, current_frame_index);
-		if (aabb.min && aabb.max)
-		{
-			file << "                aabb: [" << aabb.min->x << ", " << aabb.min->y << ", " << aabb.max->x << ", " << aabb.max->y << "],\n";
-		}
 		file << "                artists: [\n";
 		bool first_artist = true;
 		for (const auto& a: f.artists)
@@ -360,14 +294,6 @@ struct LineArtist : public SceneArtist
 		file << "]\n";
 		file << "                    }\n";
 	}
-
-	void Include(AABB2* aabb) override
-	{
-		for (const auto& p: points)
-		{
-			aabb->include(p);
-		}
-	}
 };
 
 struct ArrowArtist : public SceneArtist
@@ -393,12 +319,6 @@ struct ArrowArtist : public SceneArtist
 		file << "                        size: " << size << ",\n";
 		file << "                    }\n";
 	}
-
-	void Include(AABB2* aabb) override
-	{
-		aabb->include(from);
-		aabb->include(to);
-	}
 };
 
 struct TextArtist : public SceneArtist
@@ -419,11 +339,6 @@ struct TextArtist : public SceneArtist
 		file << "                        x: " << position.x << ", y: " << position.y << ",\n";
 		file << "                        text: \"" << text << "\",\n";
 		file << "                    }\n";
-	}
-
-	void Include(AABB2* aabb) override
-	{
-		aabb->include(position);
 	}
 };
 
@@ -447,11 +362,6 @@ struct PointArtist : public SceneArtist
 		file << "                        x: " << position.x << ", y: " << position.y << ",\n";
 		file << "                        radius: " << radius << ",\n";
 		file << "                    }\n";
-	}
-
-	void Include(AABB2* aabb) override
-	{
-		aabb->include(position);
 	}
 };
 
@@ -492,16 +402,6 @@ struct PlotArtist : public SceneArtist
 		}
 		file << "],\n";
 		file << "                    }\n";
-	}
-
-	void Include(AABB2* aabb) override
-	{
-		float x = range.start;
-		for (auto y: values)
-		{
-			aabb->include({x, y});
-			x += range.step;
-		}
 	}
 };
 

@@ -35,17 +35,6 @@ namespace Colors
 	constexpr Color black = Color{0x00, 0x00, 0x00};
 }  //  namespace Colors
 
-
-struct AABB2
-{
-	std::optional<glm::vec2> min;
-	std::optional<glm::vec2> max;
-
-	AABB2();
-	explicit AABB2(const glm::vec2& f);
-	void include(const glm::vec2& p);
-};
-
 struct PlotRange
 {
 	float start;
@@ -85,7 +74,6 @@ struct SceneArtist
 
 	void WriteJsonBase(std::ostream& file) const;
 	virtual void WriteJson(std::ostream& file) const = 0;
-	virtual void Include(AABB2* aabb) = 0;
 
    protected:
 
