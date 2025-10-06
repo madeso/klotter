@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="namespaceVisualDebugging" kind="namespace" language="C++">
     <compoundname>VisualDebugging</compoundname>
-    <innerclass refid="structVisualDebugging_1_1AABB2" prot="public">VisualDebugging::AABB2</innerclass>
     <innerclass refid="structVisualDebugging_1_1Color" prot="public">VisualDebugging::Color</innerclass>
     <innerclass refid="structVisualDebugging_1_1Frame" prot="public">VisualDebugging::Frame</innerclass>
     <innerclass refid="structVisualDebugging_1_1PlotRange" prot="public">VisualDebugging::PlotRange</innerclass>
@@ -35,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="63" column="13" bodyfile="src/klotter/vdebug.h" bodystart="63" bodyend="71"/>
+        <location file="src/klotter/vdebug.h" line="52" column="13" bodyfile="src/klotter/vdebug.h" bodystart="52" bodyend="60"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

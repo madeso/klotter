@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="98" column="13" bodyfile="src/klotter/vdebug.h" bodystart="98" bodyend="-1"/>
+        <location file="src/klotter/vdebug.h" line="86" column="13" bodyfile="src/klotter/vdebug.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structVisualDebugging_1_1Frame_1aca9aaf57723acd51c1ea7efe856cf03e" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::unique_ptr&lt; <ref refid="structVisualDebugging_1_1SceneArtist" kindref="compound">SceneArtist</ref> &gt; &gt;</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="99" column="13" bodyfile="src/klotter/vdebug.h" bodystart="99" bodyend="-1"/>
+        <location file="src/klotter/vdebug.h" line="87" column="13" bodyfile="src/klotter/vdebug.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structVisualDebugging_1_1Frame_1a460790ca1245c14cbeccc92fbbd3016d" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="106" column="6" bodyfile="src/klotter/vdebug.h" bodystart="106" bodyend="-1"/>
+        <location file="src/klotter/vdebug.h" line="94" column="6" bodyfile="src/klotter/vdebug.h" bodystart="94" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="101" column="1"/>
+        <location file="src/klotter/vdebug.h" line="89" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1Frame_1a756e184e7affa1ad0f9ab3d7e9995867" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="103" column="6"/>
+        <location file="src/klotter/vdebug.h" line="91" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -138,7 +138,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/vdebug.h" line="96" column="1" bodyfile="src/klotter/vdebug.h" bodystart="97" bodyend="107"/>
+    <location file="src/klotter/vdebug.h" line="84" column="1" bodyfile="src/klotter/vdebug.h" bodystart="85" bodyend="95"/>
     <listofallmembers>
       <member refid="structVisualDebugging_1_1Frame_1a756e184e7affa1ad0f9ab3d7e9995867" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>AddArtist</name></member>
       <member refid="structVisualDebugging_1_1Frame_1aca9aaf57723acd51c1ea7efe856cf03e" prot="public" virt="non-virtual"><scope>VisualDebugging::Frame</scope><name>artists</name></member>

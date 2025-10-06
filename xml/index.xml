@@ -1,12 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
-  <compound refid="structVisualDebugging_1_1AABB2" kind="struct"><name>VisualDebugging::AABB2</name>
-    <member refid="structVisualDebugging_1_1AABB2_1a6e95eec897c7274b86f567e81909c97f" kind="variable"><name>min</name></member>
-    <member refid="structVisualDebugging_1_1AABB2_1a70275cc2a8594668b36b8ebb319ba4a1" kind="variable"><name>max</name></member>
-    <member refid="structVisualDebugging_1_1AABB2_1a3a7a57882f92302990d7fa27fbb49075" kind="function"><name>AABB2</name></member>
-    <member refid="structVisualDebugging_1_1AABB2_1a3016afc935ce437377f447428d2db5e0" kind="function"><name>AABB2</name></member>
-    <member refid="structVisualDebugging_1_1AABB2_1a38e8042e9422479884b0f2ff478650ce" kind="function"><name>include</name></member>
-  </compound>
   <compound refid="structklotter_1_1App" kind="struct"><name>klotter::App</name>
     <member refid="structklotter_1_1App_1a0010a1af3138595dffbb2935c9434d07" kind="variable"><name>camera</name></member>
     <member refid="structklotter_1_1App_1ac4f30b81850fb6e66026121dcf45b6e2" kind="function"><name>on_frame</name></member>
@@ -704,7 +697,6 @@
     <member refid="structVisualDebugging_1_1SceneArtist_1a77fc757481c93169924f07924ed6e2c0" kind="function"><name>operator=</name></member>
     <member refid="structVisualDebugging_1_1SceneArtist_1ad5ae6ef87c5421627c748c8468cd4025" kind="function"><name>WriteJsonBase</name></member>
     <member refid="structVisualDebugging_1_1SceneArtist_1a8d748a66be78fe348c5e2d0e35d555e0" kind="function"><name>WriteJson</name></member>
-    <member refid="structVisualDebugging_1_1SceneArtist_1a522d133e615ec84375531988dcd2ad22" kind="function"><name>Include</name></member>
   </compound>
   <compound refid="structklotter_1_1SCurve" kind="struct"><name>klotter::SCurve</name>
     <member refid="structklotter_1_1SCurve_1af457354e2e258c569bb9007f05de1044" kind="variable"><name>slope</name></member>

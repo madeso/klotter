@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="51" column="7" bodyfile="src/klotter/vdebug.h" bodystart="51" bodyend="-1"/>
+        <location file="src/klotter/vdebug.h" line="40" column="7" bodyfile="src/klotter/vdebug.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structVisualDebugging_1_1PlotRange_1af0d8da73b84b936ed164708b90b9774d" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="52" column="7" bodyfile="src/klotter/vdebug.h" bodystart="52" bodyend="-1"/>
+        <location file="src/klotter/vdebug.h" line="41" column="7" bodyfile="src/klotter/vdebug.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structVisualDebugging_1_1PlotRange_1a552aa8a97e652118164d0fcb519fdcda" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="53" column="7" bodyfile="src/klotter/vdebug.h" bodystart="53" bodyend="-1"/>
+        <location file="src/klotter/vdebug.h" line="42" column="7" bodyfile="src/klotter/vdebug.h" bodystart="42" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -72,14 +72,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="55" column="11" bodyfile="src/klotter/vdebug.h" bodystart="55" bodyend="59"/>
+        <location file="src/klotter/vdebug.h" line="44" column="11" bodyfile="src/klotter/vdebug.h" bodystart="44" bodyend="48"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/vdebug.h" line="49" column="1" bodyfile="src/klotter/vdebug.h" bodystart="50" bodyend="60"/>
+    <location file="src/klotter/vdebug.h" line="38" column="1" bodyfile="src/klotter/vdebug.h" bodystart="39" bodyend="49"/>
     <listofallmembers>
       <member refid="structVisualDebugging_1_1PlotRange_1af0d8da73b84b936ed164708b90b9774d" prot="public" virt="non-virtual"><scope>VisualDebugging::PlotRange</scope><name>end</name></member>
       <member refid="structVisualDebugging_1_1PlotRange_1abb27f392027f3cd9f9ac72beb8a0ffca" prot="public" virt="non-virtual"><scope>VisualDebugging::PlotRange</scope><name>PlotRange</name></member>
