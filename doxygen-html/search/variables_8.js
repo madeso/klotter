@@ -10,5 +10,6 @@ var searchData=
   ['instance_5fvbo_7',['instance_vbo',['../structklotter_1_1CompiledGeom__TransformInstance.html#ab5f7094925a36f1a915bbb22a51d6759',1,'klotter::CompiledGeom_TransformInstance']]],
   ['instances_8',['instances',['../structklotter_1_1World.html#a42950d49b98dc3304ea9a25ddbf83c9f',1,'klotter::World']]],
   ['is_5fgauss_9',['is_gauss',['../structklotter_1_1BlurOptions.html#a95c8cd4bd600737931412e2230899dfa',1,'klotter::BlurOptions']]],
-  ['is_5fhorizontal_5funiform_10',['is_horizontal_uniform',['../structklotter_1_1PingPongBlurShader.html#afba0c910c25cb3ee95c7bf59cec659d8',1,'klotter::PingPongBlurShader']]]
+  ['is_5fhorizontal_5funiform_10',['is_horizontal_uniform',['../structklotter_1_1PingPongBlurShader.html#afba0c910c25cb3ee95c7bf59cec659d8',1,'klotter::PingPongBlurShader']]],
+  ['is_5fy_5fpositive_11',['is_y_positive',['../structVisualDebugging_1_1VisualDebug.html#a8d9bac585ea64f8cedbf5e99102bd4e6',1,'VisualDebugging::VisualDebug']]]
 ];

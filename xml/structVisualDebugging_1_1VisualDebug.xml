@@ -95,6 +95,21 @@
         </inbodydescription>
         <location file="src/klotter/vdebug.h" line="105" column="6" bodyfile="src/klotter/vdebug.h" bodystart="105" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="structVisualDebugging_1_1VisualDebug_1a8d9bac585ea64f8cedbf5e99102bd4e6" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool VisualDebugging::VisualDebug::is_y_positive</definition>
+        <argsstring></argsstring>
+        <name>is_y_positive</name>
+        <qualifiedname>VisualDebugging::VisualDebug::is_y_positive</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="107" column="6" bodyfile="src/klotter/vdebug.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a83f7edf19eba77caa312643aab7ecd3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -113,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="107" column="6"/>
+        <location file="src/klotter/vdebug.h" line="109" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a1af611820977d8a09acb4cb59760f68c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -132,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="110" column="6"/>
+        <location file="src/klotter/vdebug.h" line="112" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a403b65816157a73d36970db380a53080" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -175,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="115" column="6"/>
+        <location file="src/klotter/vdebug.h" line="117" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a54fd94b58325d726fd796a348252a0ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -191,7 +206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="119" column="6"/>
+        <location file="src/klotter/vdebug.h" line="121" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a18081ae51ae0a477dea061a306d93835" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -232,7 +247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="124" column="6"/>
+        <location file="src/klotter/vdebug.h" line="126" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a9554532ee31442a86377af01d46290d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -250,7 +265,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="126" column="6"/>
+        <location file="src/klotter/vdebug.h" line="128" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a7c762abe3513b4e391bf91e6952dce09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -268,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="128" column="6"/>
+        <location file="src/klotter/vdebug.h" line="130" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a7ae0711f25ac70249b0fc5b781565c71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -282,7 +297,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="130" column="6"/>
+        <location file="src/klotter/vdebug.h" line="132" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a397026d7cc5862c8e41ff9d19a0ff274" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VisualDebugging::VisualDebug::y_positive</definition>
+        <argsstring>()</argsstring>
+        <name>y_positive</name>
+        <qualifiedname>VisualDebugging::VisualDebug::y_positive</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/vdebug.h" line="134" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a5d440acd37137a4256d2682333101d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -308,7 +337,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="133" column="6"/>
+        <location file="src/klotter/vdebug.h" line="136" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1aec9e505fb0222c4a7a095956341242bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -326,7 +355,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="134" column="6"/>
+        <location file="src/klotter/vdebug.h" line="137" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a87628c87cdd61de927bbb07094be330e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -353,7 +382,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="135" column="6"/>
+        <location file="src/klotter/vdebug.h" line="138" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a7645c9941762b1f560c7058912672d84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -380,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="136" column="6"/>
+        <location file="src/klotter/vdebug.h" line="139" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a1b0dedb27632c574c3e6ad0d8548da6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -406,7 +435,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="137" column="6"/>
+        <location file="src/klotter/vdebug.h" line="140" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structVisualDebugging_1_1VisualDebug_1a356fa3d8fff074e55f1399e542d6d154" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -428,7 +457,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/vdebug.h" line="138" column="6"/>
+        <location file="src/klotter/vdebug.h" line="141" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -496,7 +525,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/vdebug.h" line="97" column="1" bodyfile="src/klotter/vdebug.h" bodystart="98" bodyend="139"/>
+    <location file="src/klotter/vdebug.h" line="97" column="1" bodyfile="src/klotter/vdebug.h" bodystart="98" bodyend="142"/>
     <listofallmembers>
       <member refid="structVisualDebugging_1_1VisualDebug_1a83f7edf19eba77caa312643aab7ecd3a" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>add_artist_to_current_frame</name></member>
       <member refid="structVisualDebugging_1_1VisualDebug_1a403b65816157a73d36970db380a53080" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>begin_frame</name></member>
@@ -513,11 +542,13 @@
       <member refid="structVisualDebugging_1_1VisualDebug_1a87628c87cdd61de927bbb07094be330e" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>draw_point</name></member>
       <member refid="structVisualDebugging_1_1VisualDebug_1a7645c9941762b1f560c7058912672d84" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>draw_points</name></member>
       <member refid="structVisualDebugging_1_1VisualDebug_1a28233e45b9dadccfaf8028e93a0237fc" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>frames</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a8d9bac585ea64f8cedbf5e99102bd4e6" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>is_y_positive</name></member>
       <member refid="structVisualDebugging_1_1VisualDebug_1a7ae0711f25ac70249b0fc5b781565c71" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>reset_default_font_size</name></member>
       <member refid="structVisualDebugging_1_1VisualDebug_1a1af611820977d8a09acb4cb59760f68c" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>save</name></member>
       <member refid="structVisualDebugging_1_1VisualDebug_1a18081ae51ae0a477dea061a306d93835" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>set_color</name></member>
       <member refid="structVisualDebugging_1_1VisualDebug_1a9554532ee31442a86377af01d46290d1" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>set_color</name></member>
       <member refid="structVisualDebugging_1_1VisualDebug_1a7c762abe3513b4e391bf91e6952dce09" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>set_default_font_size</name></member>
+      <member refid="structVisualDebugging_1_1VisualDebug_1a397026d7cc5862c8e41ff9d19a0ff274" prot="public" virt="non-virtual"><scope>VisualDebugging::VisualDebug</scope><name>y_positive</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
