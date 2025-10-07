@@ -100,6 +100,7 @@ std::vector<float> plot_func(const VisualDebugging::PlotRange& range, float soft
 void main()
 {
 	auto vd = VisualDebugging::VisualDebug{};
+	vd.y_positive();
 	constexpr VisualDebugging::PlotRange range = {0.0f, 1.0f, 0.01f};
     vd.set_color(VisualDebugging::Colors::black);      vd.draw_plot(range, plot_func(range, 0.00f));
     vd.set_color(VisualDebugging::Colors::darkGreen);  vd.draw_plot(range, plot_func(range, 0.25f));
@@ -126,6 +127,7 @@ void main()
 	};
 
     auto vd = VisualDebugging::VisualDebug{};
+	vd.y_positive();
 	vd.draw_line(house);
 	vd.save("house");
 }

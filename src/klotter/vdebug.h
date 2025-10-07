@@ -104,6 +104,8 @@ struct VisualDebug
 	int current_font_size = DEFAULT_FONT_SIZE;
 	bool don_not_show_next_element_when_frame_is_in_background = false;
 
+	bool is_y_positive = false;
+
 	void add_artist_to_current_frame(std::unique_ptr<SceneArtist> artist);
 
 	/// Save visual debug data. Call this when finished creating frames.
@@ -129,6 +131,7 @@ struct VisualDebug
 
 	void reset_default_font_size();
 
+	void y_positive();
 
 	void draw_line_segment_with_label(const glm::vec2& line_start, const glm::vec2& line_end, const std::string& text);
 	void draw_line(const std::vector<glm::vec2>& points);

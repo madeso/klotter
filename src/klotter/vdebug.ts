@@ -127,6 +127,11 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
   context.stroke();
 }
 
+interface DebugData {
+    frames: Frame<Artist2>[];
+    y_positive: boolean;
+}
+
 (window as any).register_vdebug2 = (
     ui: {canvas: HTMLCanvasElement,
         focus: HTMLButtonElement,
@@ -138,7 +143,7 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         description: HTMLSpanElement,
         status: HTMLSpanElement,
         hover: HTMLParagraphElement},
-    frames: Frame<Artist2>[]) => {
+    data: DebugData) => {
     const zoom_min = 0.1;
     const zoom_max = 15.0;
     const additional_space = 10;
@@ -168,7 +173,7 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
 
     const calc_aabb = (frame_index: number): AABB => {
         let aabb : AABB | null = null;
-        for_each_artist(frame_index, frames, (artist) => {
+        for_each_artist(frame_index, data.frames, (artist) => {
             switch(artist.type) {
                 case "arrow":
                     aabb = include_point(aabb, artist.x1, artist.y1);
@@ -213,7 +218,7 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         ctx.fillStyle = "lightgray";
         ctx.fillRect(0, 0, ui.canvas.width, ui.canvas.height);
         const selected_frame_index = fetch_current_frame_index();
-        for_each_artist(selected_frame_index, frames, (a, is_current_frame) => {
+        for_each_artist(selected_frame_index, data.frames, (a, is_current_frame) => {
             const color = color_from_artist(a, is_current_frame);
             switch(a.type) {
             case "line":
@@ -258,8 +263,8 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
     const set_current_frame_and_redraw = (this_frame: number) => {
         let frame_index = this_frame;
         
-        if(frame_index >= frames.length) {
-            frame_index = frames.length - 1;
+        if(frame_index >= data.frames.length) {
+            frame_index = data.frames.length - 1;
         }
         if(frame_index < 0 ) {
             frame_index = 0;
@@ -267,8 +272,8 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
 
         ui.frame.value = frame_index.toString();
 
-        const frame = frames[frame_index];
-        ui.status.innerHTML = `<b>${frame_index + 1}</b> of <b>${frames.length}</b>:`
+        const frame = data.frames[frame_index];
+        ui.status.innerHTML = `<b>${frame_index + 1}</b> of <b>${data.frames.length}</b>:`
         ui.description.innerText = frame?.description ?? "";
 
         draw();
@@ -283,7 +288,7 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
         set_current_frame_and_redraw(0);
     };
     const set_last_frame = () => {
-        set_current_frame_and_redraw(frames.length - 1);
+        set_current_frame_and_redraw(data.frames.length - 1);
     };
 
     ui.first_frame.addEventListener("click", () => {
@@ -301,7 +306,7 @@ const canvas_arrow = (context: CanvasRenderingContext2D, fromx: number, fromy: n
 
     set_current_frame_and_redraw(fetch_current_frame_index());
     ui.frame.min = "0";
-    ui.frame.max = (frames.length -1).toString();
+    ui.frame.max = (data.frames.length -1).toString();
 
     ui.frame.addEventListener("input", () => {
         set_current_frame_and_redraw(fetch_current_frame_index());

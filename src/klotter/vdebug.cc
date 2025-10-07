@@ -41,6 +41,12 @@ void Frame::AddArtist(std::unique_ptr<SceneArtist> artist)
 	artists.emplace_back(std::move(artist));
 }
 
+void VisualDebug::y_positive()
+{
+	is_y_positive = true;
+}
+
+
 void VisualDebug::add_artist_to_current_frame(std::unique_ptr<SceneArtist> artist)
 {
 	if (frames.empty())
@@ -183,7 +189,9 @@ void VisualDebug::save(const std::string& title)
 	file << "	</div>\n";
 	file << "    <p id=\"hover\"></p>\n";
 	file << "    <script>\n";
-	file << "        const frames = [\n";
+	file << "        const frames = {\n";
+	file << "            y_positive: " << (is_y_positive ? "true" : "false") << ",\n";
+	file << "            frames: [\n";
 	std::size_t frame_index = 0;
 	for (const auto& f: frames)
 	{
@@ -213,8 +221,8 @@ void VisualDebug::save(const std::string& title)
 		file << "                ]\n";
 		file << "            }\n";
 	}
-	file << "        ]\n";
-	file << "	        window.register_vdebug2({\n";
+	file << "        ]};\n";
+	file << "	     window.register_vdebug2({\n";
 	file << "            canvas: document.getElementById(\"canvas\"),\n";
 	file << "            focus: document.getElementById(\"focus\"),\n";
 	file << "            status: document.getElementById(\"status\"),\n";
