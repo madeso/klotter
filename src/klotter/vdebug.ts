@@ -148,6 +148,9 @@ interface DebugData {
     const zoom_max = 15.0;
     const additional_space = 10;
 
+    const x_scale = 1;
+    const y_scale = data.y_positive ? -1 : 1;
+
     const ctx = ui.canvas.getContext("2d");
     if(!ctx) {
         console.error("Missing 2d support");
@@ -176,25 +179,25 @@ interface DebugData {
         for_each_artist(frame_index, data.frames, (artist) => {
             switch(artist.type) {
                 case "arrow":
-                    aabb = include_point(aabb, artist.x1, artist.y1);
-                    aabb = include_point(aabb, artist.x2, artist.y2);
+                    aabb = include_point(aabb, artist.x1 * x_scale, artist.y1 * y_scale);
+                    aabb = include_point(aabb, artist.x2 * x_scale, artist.y2 * y_scale);
                     break;
                 case "line":
                     for(const p of artist.points) {
-                        aabb = include_point(aabb, p.x, p.y);
+                        aabb = include_point(aabb, p.x * x_scale, p.y * y_scale);
                     }
                     break;
                 case "fillpoint":
                 case "point":
-                    aabb = include_point(aabb, artist.x, artist.y);
+                    aabb = include_point(aabb, artist.x * x_scale, artist.y * y_scale);
                     break;
                 case "rect":
-                    aabb = include_point(aabb, artist.x, artist.y);
-                    aabb = include_point(aabb, artist.x + artist.w, artist.y + artist.h);
+                    aabb = include_point(aabb, artist.x * x_scale, artist.y * y_scale);
+                    aabb = include_point(aabb, (artist.x + artist.w) * x_scale, (artist.y + artist.h) * y_scale);
                     break;
                 case "text":
                     // todo(Gustav): include width somehow...
-                    aabb = include_point(aabb, artist.x, artist.y);
+                    aabb = include_point(aabb, artist.x * x_scale, artist.y * y_scale);
                 
             }
         });
@@ -206,12 +209,12 @@ interface DebugData {
     set_cam_from_aabb(calc_aabb(0));
 
     // world to screen
-    const px = (x: number) => pan_x + x * scale;
-    const py = (y: number) => pan_y + y * scale;
+    const px = (x: number) => pan_x + x * scale * x_scale;
+    const py = (y: number) => pan_y + y * scale * y_scale;
     const ps = (s: number) => s * scale;
     // screen 2 world
-    const rpx = (x: number) => (x-pan_x) / scale;
-    const rpy = (y: number) => (y-pan_y) / scale;
+    const rpx = (x: number) => (x-pan_x) / (scale * x_scale);
+    const rpy = (y: number) => (y-pan_y) / (scale * y_scale);
 
     const draw = () => {
         ctx.save();
@@ -374,8 +377,8 @@ interface DebugData {
 
         const new_focus_x = rpx(mouse_x);
         const new_focus_y = rpy(mouse_y);
-        pan_x = pan_x + (new_focus_x - focus_x) * scale;
-        pan_y = pan_y + (new_focus_y - focus_y) * scale;
+        pan_x = pan_x + (new_focus_x - focus_x) * scale * x_scale;
+        pan_y = pan_y + (new_focus_y - focus_y) * scale * y_scale;
 
         draw();
         display_hover(ev);
