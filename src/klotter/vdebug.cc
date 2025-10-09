@@ -396,7 +396,7 @@ struct PlotArtist : public SceneArtist
 									<< ", step: " << range.step << ",\n";
 		file << "                        values: [";
 		bool first = true;
-		for (auto& v: values)
+		for (const auto& v: values)
 		{
 			if (first)
 			{
