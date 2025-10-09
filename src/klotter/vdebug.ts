@@ -144,8 +144,6 @@ interface DebugData {
         status: HTMLSpanElement,
         hover: HTMLParagraphElement},
     data: DebugData) => {
-    const zoom_min = 0.1;
-    const zoom_max = 15.0;
     const additional_space = 10;
 
     const x_scale = 1;
@@ -363,17 +361,15 @@ interface DebugData {
         hide_hover();
     });
     ui.canvas.addEventListener("wheel", ev => {
-        const zoom = -ev.deltaY / 20;
         const [mouse_x, mouse_y] = [ev.offsetX, ev.offsetY];
 
         const focus_x = rpx(mouse_x);
         const focus_y = rpy(mouse_y);
 
+        const zoom = -ev.deltaY / 20;
         const scale_factor = 1 + 0.01 * Math.abs(zoom);
         if(zoom < 0.0) { scale /= scale_factor; }
         if(zoom > 0.0) { scale *= scale_factor; }
-
-        scale = Math.max(zoom_min, Math.min(zoom_max, scale));
 
         const new_focus_x = rpx(mouse_x);
         const new_focus_y = rpy(mouse_y);
