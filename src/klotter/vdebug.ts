@@ -23,6 +23,23 @@ const color_from_artist = (artist: SceneArtist, isActive: boolean) : Color =>
     return isActive ? artist.activeDrawColor : artist.inactiveDrawColor;
 };
 
+interface vec2 {
+    x: number;
+    y: number;
+}
+const find_closest = <T>(points: T[], d2: (p: T)=>number): [T|null, number] => {
+    let closest = null;
+    let smallest = 0;
+    for(const src of points) {
+        const d = d2(src);
+        if(!closest || smallest > d) {
+            closest = src;
+            smallest = d;
+        }
+    }
+    return [closest, smallest]
+};
+
 // min x, min y, max x, max y
 interface AABB
 {
@@ -311,22 +328,64 @@ interface DebugData {
 
     ui.frame.addEventListener("input", () => {
         set_current_frame_and_redraw(fetch_current_frame_index());
-    })
+    });
+
+    const collect_hover_list = (frame: number, ui_mouse: vec2): string[] => {
+        const lines = new Array<string>();
+        const include_points = (points: {x: number, y: number}[]) => {
+            const [closest, distance2] = find_closest(points, (p) => {
+                const dx = px(p.x) - ui_mouse.x;
+                const dy = py(p.y) - ui_mouse.y
+                return dx*dx + dy*dy;
+            });
+            if(closest === null) return;
+            if(Math.sqrt(distance2) > 10) return;
+
+            // todo(Gustav): rank points
+            // todo(Gustav): exclude duplicates
+            // todo(Gustav): render/highlight hover
+            // todo(Gustav): expand with artist name
+            // keep in mind that we probably wangt to do a double take when hovering a plot widget in the near future
+            lines.push('<span>(' + closest.x + ' ' + closest.y + ')</span>');
+        };
+        for_each_artist(frame, data.frames, a => {
+            switch(a.type) {
+            case "line":
+                include_points(a.points);
+                break;
+            case "arrow":
+                include_points([{x: a.x1, y: a.y1}, {x: a.x2, y: a.y2}]);
+                break;
+            case "point":
+                include_points([a]);
+                break;
+            case "text":
+                break;
+            case "fillpoint":
+                include_points([a]);
+                break;
+            case "rect":
+                // todo(Gustav): improve rect with all corners
+                include_points([a]);
+                break;
+            }
+        });
+        return lines;
+    }
 
     const drag_button = 0;
     let down : {client_x: number, client_y: number, pan_x: number, pan_y: number} | null = null;
     const display_hover = (ev: MouseEvent) => {
-		ui.hover.style.display = 'block';
+        const frame = fetch_current_frame_index();
+        const hovers = collect_hover_list(frame, {x: ev.offsetX, y: ev.offsetY});
+
+        ui.hover.style.display = 'block';
         let html = '' + rpx(ev.offsetX) + ' x ' + rpy(ev.offsetY);
-        /*
-        for(const poly of lines) {
-            const [p, dist] = closest(poly, {x: ev.offsetX, y: ev.offsetY});
-            if(dist > 10) continue;
-            html += '<br /><span style="color:' + poly.attributes.stroke.value + '"">' +
-                px(p.x) + ' x ' + py(p.y) + '</span>';
-        }*/
+		for(const hov of hovers) {
+            html += '<br />' + hov;
+        }
         ui.hover.innerHTML = html;
-		ui.hover.style.left = (ev.clientX + 10) + 'px';
+	    ui.hover.style.left = (ev.clientX + 10) + 'px';
         ui.hover.style.top = (ev.clientY + 10) + 'px';
     };
     const hide_hover = () => {
