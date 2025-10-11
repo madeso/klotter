@@ -331,8 +331,9 @@ interface DebugData {
     });
 
     const collect_hover_list = (frame: number, ui_mouse: vec2): string[] => {
-        const lines = new Array<string>();
-        const include_points = (points: {x: number, y: number}[]) => {
+        type LineType = {html: string, type: Artist2['type']};
+        const lines = new Array<LineType>();
+        const include_points = (from: Artist2['type'], points: {x: number, y: number}[]) => {
             const [closest, distance2] = find_closest(points, (p) => {
                 const dx = px(p.x) - ui_mouse.x;
                 const dy = py(p.y) - ui_mouse.y
@@ -341,36 +342,46 @@ interface DebugData {
             if(closest === null) return;
             if(Math.sqrt(distance2) > 10) return;
 
-            // todo(Gustav): rank points
-            // todo(Gustav): exclude duplicates
+            const candidate: LineType = {html: '<span>(' + closest.x + ' ' + closest.y + ')</span>', type: from};
+            
+            for(let line_index = 0; line_index<lines.length; line_index += 1) {
+                const src = lines[line_index];
+                console.assert(src !== undefined, src); if(!src) continue;
+                if(src.html !== candidate.html) continue;
+                // todo(Gustav): rank "lines"
+
+                // remove the duplicate and continue
+                lines.splice(line_index, 1);
+                line_index -= 1;
+            }
             // todo(Gustav): render/highlight hover
             // todo(Gustav): expand with artist name
             // keep in mind that we probably wangt to do a double take when hovering a plot widget in the near future
-            lines.push('<span>(' + closest.x + ' ' + closest.y + ')</span>');
+            lines.push(candidate);
         };
         for_each_artist(frame, data.frames, a => {
             switch(a.type) {
             case "line":
-                include_points(a.points);
+                include_points(a.type, a.points);
                 break;
             case "arrow":
-                include_points([{x: a.x1, y: a.y1}, {x: a.x2, y: a.y2}]);
+                include_points(a.type, [{x: a.x1, y: a.y1}, {x: a.x2, y: a.y2}]);
                 break;
             case "point":
-                include_points([a]);
+                include_points(a.type, [a]);
                 break;
             case "text":
                 break;
             case "fillpoint":
-                include_points([a]);
+                include_points(a.type, [a]);
                 break;
             case "rect":
                 // todo(Gustav): improve rect with all corners
-                include_points([a]);
+                include_points(a.type, [a]);
                 break;
             }
         });
-        return lines;
+        return lines.map(x => x.html);
     }
 
     const drag_button = 0;
