@@ -234,7 +234,7 @@ interface DebugData {
     type HoverInfo = {html: string, type: Artist2['type'], hover: null | {type: "point", x: number, y: number, radius: number}};
     let current_hover_info: HoverInfo[] | null = null;
 
-    const hover_color = "red";
+    const hover_color = "#f00";
 
     const draw = () => {
         ctx.save();
@@ -262,7 +262,7 @@ interface DebugData {
                 canvas_arrow(ctx, px(a.x1), py(a.y1), px(a.x2), py(a.y2), a.size);
                 break;
             case "point":
-                ctx.fillStyle = color;
+                ctx.strokeStyle = color;
                 ctx.beginPath();
                 ctx.arc(px(a.x), py(a.y), a.radius, 0, 2 * Math.PI);
                 ctx.stroke();
@@ -288,7 +288,7 @@ interface DebugData {
             if(!hover) continue;
             switch(hover.type) {
             case "point":
-                ctx.fillStyle = hover_color;
+                ctx.strokeStyle = hover_color;
                 ctx.beginPath();
                 ctx.arc(px(hover.x), py(hover.y), hover.radius, 0, 2 * Math.PI);
                 ctx.stroke();
