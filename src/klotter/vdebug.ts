@@ -231,6 +231,12 @@ interface DebugData {
     const rpx = (x: number) => (x-pan_x) / (scale * x_scale);
     const rpy = (y: number) => (y-pan_y) / (scale * y_scale);
 
+    type HoverInfo = {html: string, type: Artist2['type'], hover: null | {x: number, y: number, type: "point"}};
+    let current_hover_info: HoverInfo[] | null = null;
+
+    const hover_color = "red";
+    const hover_radius = 10;
+
     const draw = () => {
         ctx.save();
         ctx.fillStyle = "lightgray";
@@ -277,6 +283,19 @@ interface DebugData {
                 break;
             }
         });
+
+        if(current_hover_info == null) return;
+        for(const hover of current_hover_info.map(x => x.hover)) {
+            if(!hover) continue;
+            switch(hover.type) {
+            case "point":
+                ctx.fillStyle = hover_color;
+                ctx.beginPath();
+                ctx.arc(px(hover.x), py(hover.y), hover_radius, 0, 2 * Math.PI);
+                ctx.stroke();
+                break;
+            }
+        }
     };
     const set_current_frame_and_redraw = (this_frame: number) => {
         let frame_index = this_frame;
@@ -330,9 +349,8 @@ interface DebugData {
         set_current_frame_and_redraw(fetch_current_frame_index());
     });
 
-    const collect_hover_list = (frame: number, ui_mouse: vec2): string[] => {
-        type LineType = {html: string, type: Artist2['type']};
-        const lines = new Array<LineType>();
+    const collect_hover_info = (frame: number, ui_mouse: vec2): HoverInfo[] => {
+        const lines = new Array<HoverInfo>();
         const include_points = (from: Artist2['type'], points: {x: number, y: number}[]) => {
             const [closest, distance2] = find_closest(points, (p) => {
                 const dx = px(p.x) - ui_mouse.x;
@@ -342,7 +360,11 @@ interface DebugData {
             if(closest === null) return;
             if(Math.sqrt(distance2) > 10) return;
 
-            const candidate: LineType = {html: '<span>(' + closest.x + ' ' + closest.y + ')</span>', type: from};
+            const candidate: HoverInfo = {html: '<span>(' + closest.x + ' ' + closest.y + ')</span>', type: from, hover: {
+                type: "point",
+                x: closest.x,
+                y: closest.y
+            }};
             
             for(let line_index = 0; line_index<lines.length; line_index += 1) {
                 const src = lines[line_index];
@@ -381,19 +403,21 @@ interface DebugData {
                 break;
             }
         });
-        return lines.map(x => x.html);
+        return lines;
     }
 
     const drag_button = 0;
     let down : {client_x: number, client_y: number, pan_x: number, pan_y: number} | null = null;
     const display_hover = (ev: MouseEvent) => {
         const frame = fetch_current_frame_index();
-        const hovers = collect_hover_list(frame, {x: ev.offsetX, y: ev.offsetY});
+        const hovers = collect_hover_info(frame, {x: ev.offsetX, y: ev.offsetY});
+        current_hover_info = hovers;
+        draw();
 
         ui.hover.style.display = 'block';
         let html = '' + rpx(ev.offsetX) + ' x ' + rpy(ev.offsetY);
 		for(const hov of hovers) {
-            html += '<br />' + hov;
+            html += '<br />' + hov.html;
         }
         ui.hover.innerHTML = html;
 	    ui.hover.style.left = (ev.clientX + 10) + 'px';
@@ -401,6 +425,8 @@ interface DebugData {
     };
     const hide_hover = () => {
         ui.hover.style.display = 'none';
+        current_hover_info = null;
+        draw();
     }
     ui.canvas.addEventListener("mousedown", ev => {
         if(ev.button === drag_button) {
