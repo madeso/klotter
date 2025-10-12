@@ -231,11 +231,10 @@ interface DebugData {
     const rpx = (x: number) => (x-pan_x) / (scale * x_scale);
     const rpy = (y: number) => (y-pan_y) / (scale * y_scale);
 
-    type HoverInfo = {html: string, type: Artist2['type'], hover: null | {x: number, y: number, type: "point"}};
+    type HoverInfo = {html: string, type: Artist2['type'], hover: null | {type: "point", x: number, y: number, radius: number}};
     let current_hover_info: HoverInfo[] | null = null;
 
     const hover_color = "red";
-    const hover_radius = 10;
 
     const draw = () => {
         ctx.save();
@@ -291,7 +290,7 @@ interface DebugData {
             case "point":
                 ctx.fillStyle = hover_color;
                 ctx.beginPath();
-                ctx.arc(px(hover.x), py(hover.y), hover_radius, 0, 2 * Math.PI);
+                ctx.arc(px(hover.x), py(hover.y), hover.radius, 0, 2 * Math.PI);
                 ctx.stroke();
                 break;
             }
@@ -358,12 +357,14 @@ interface DebugData {
                 return dx*dx + dy*dy;
             });
             if(closest === null) return;
-            if(Math.sqrt(distance2) > 10) return;
+            const distance = Math.sqrt(distance2);
+            if(distance > 10) return;
 
             const candidate: HoverInfo = {html: '<span>(' + closest.x + ' ' + closest.y + ')</span>', type: from, hover: {
                 type: "point",
                 x: closest.x,
-                y: closest.y
+                y: closest.y,
+                radius: distance
             }};
             
             for(let line_index = 0; line_index<lines.length; line_index += 1) {
