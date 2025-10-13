@@ -377,7 +377,6 @@ interface DebugData {
                 lines.splice(line_index, 1);
                 line_index -= 1;
             }
-            // todo(Gustav): render/highlight hover
             // todo(Gustav): expand with artist name
             // keep in mind that we probably wangt to do a double take when hovering a plot widget in the near future
             lines.push(candidate);
