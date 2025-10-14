@@ -257,8 +257,49 @@ interface DebugData {
     const rpx = (x: number) => (x-pan_x) / (scale * x_scale);
     const rpy = (y: number) => (y-pan_y) / (scale * y_scale);
 
-    type HoverInfo = {html: string, type: Artist2['type'], hover: null | {type: "point", x: number, y: number, radius: number}};
+    type HoverInfo = { html: string, type: Artist2['type'], hover:
+        null
+        | {type: "point", x: number, y: number, radius: number}
+        | {type: "plot", x: number, y: number, min: number, max: number}
+    };
     let current_hover_info: HoverInfo[] | null = null;
+
+    const lerp = (from: number, frac: number, to: number) => {
+        return from + frac * (to - from);
+    }
+
+    const find_hover_candidate = (plot: PlotInterface, mouse: vec2): HoverInfo|null => {
+        const x = rpx(mouse.x);
+        const min_y_screen = Math.min(...plot.values);
+        const max_y_screen = Math.max(...plot.values);
+        const min_y = py(min_y_screen);
+        const max_y = py(max_y_screen);
+        if(x < plot.start) return null;
+        if(x > plot.end) return null;
+        if(mouse.y < max_y) return null;
+        if(mouse.y > min_y) return null;
+
+        
+        const base = x/plot.step;
+        const index = Math.floor(base);
+        const frac = base - index;
+        const lhs = plot.values[index];
+        const rhs = plot.values[index+1];
+        if(lhs === undefined) return null;
+        const y = rhs ? lerp(lhs, frac, rhs) : lhs;
+
+        return {
+            html: '<span>(' + x + ' ' + y + ')</span>',
+            type: plot.type,
+            hover: {
+                type: "plot",
+                x: x,
+                y: y,
+                min: min_y_screen,
+                max: max_y_screen
+            }
+        };
+    };
 
     const hover_color = "#f00";
 
@@ -331,6 +372,21 @@ interface DebugData {
                 ctx.arc(px(hover.x), py(hover.y), hover.radius, 0, 2 * Math.PI);
                 ctx.stroke();
                 break;
+            case "plot":
+                ctx.strokeStyle = hover_color;
+                
+                ctx.beginPath();
+                ctx.moveTo(px(hover.x), py(hover.min));
+                ctx.lineTo(px(hover.x), py(hover.max));
+                
+                ctx.moveTo(px(hover.x)-10, py(hover.y));
+                ctx.lineTo(px(hover.x)+10, py(hover.y));
+                ctx.stroke();
+
+                // ctx.beginPath();
+                // ctx.arc(px(hover.x), py(hover.y), 10, 0, 2 * Math.PI);
+                // ctx.stroke();
+                break;
             }
         }
     };
@@ -388,14 +444,7 @@ interface DebugData {
 
     const collect_hover_info = (frame: number, ui_mouse: vec2): HoverInfo[] => {
         const lines = new Array<HoverInfo>();
-        const include_hover = <T>(points: T[], length_fun: (t: T, index: number)=>number, hover_fun: (t: T, dist: number, index: number) => HoverInfo) => {
-            const [closest, distance2, found_index] = find_closest(points, length_fun);
-            if(closest === null) return;
-            const distance = Math.sqrt(distance2);
-            if(distance > 10) return;
-
-            const candidate = hover_fun(closest, distance, found_index);
-            
+        const include_hover = (candidate: HoverInfo) => {
             for(let line_index = 0; line_index<lines.length; line_index += 1) {
                 const src = lines[line_index];
                 console.assert(src !== undefined, src); if(!src) continue;
@@ -411,18 +460,27 @@ interface DebugData {
             lines.push(candidate);
         };
         const include_points = (from: Artist2['type'], points: {x: number, y: number}[]) => {
-            include_hover(points, (p) => {
+            const [closest, distance2] = find_closest(points, (p) => {
                 const dx = px(p.x) - ui_mouse.x;
                 const dy = py(p.y) - ui_mouse.y
                 return dx*dx + dy*dy;
-            }, (closest, distance) => {
-                return {html: '<span>(' + closest.x + ' ' + closest.y + ')</span>', type: from, hover: {
+            });
+            if(closest === null) return;
+            const distance = Math.sqrt(distance2);
+            if(distance > 10) return;
+
+            const candidate: HoverInfo = {
+                html: '<span>(' + closest.x + ' ' + closest.y + ')</span>',
+                type: from,
+                hover: {
                     type: "point",
                     x: closest.x,
                     y: closest.y,
                     radius: distance
-                }};
-            });
+                }
+            };
+
+            include_hover(candidate);
         };
         for_each_artist(frame, data.frames, a => {
             switch(a.type) {
@@ -445,20 +503,13 @@ interface DebugData {
                 include_points(a.type, [a]);
                 break;
             case "plot":
-                include_hover(a.values, (y, index) => {
-                    const x = a.start + index * a.step;
-                    const dx = px(x) - ui_mouse.x;
-                    const dy = py(y) - ui_mouse.y
-                    return dx*dx + dy*dy;
-                }, (y, distance, index) => {
-                    const x = a.start + index * a.step;
-                    return {html: '<span>(' + x + ' ' + y + ')</span>', type: a.type, hover: {
-                        type: "point",
-                        x: x,
-                        y: y,
-                        radius: distance
-                    }};
-                })
+                {
+                    const candidate = find_hover_candidate(a, ui_mouse);
+                    if(candidate) {
+                        include_hover(candidate);
+                    }
+                }
+                break;
             }
         });
         return lines;
