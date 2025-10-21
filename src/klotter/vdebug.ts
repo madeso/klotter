@@ -2,7 +2,6 @@ type Color = string;
 
 // API and ui partly inspired by https://github.com/SebLague/Visual-Debug
 
-// todo(Gustav): plot primitive with hover
 // todo(Gustav): generate self contained file with packed js file
 // todo(Gustav): replace existing dump tool
 // todo(Gustav): more rendering primitives
@@ -268,7 +267,7 @@ interface DebugData {
         return from + frac * (to - from);
     }
 
-    const find_hover_candidate = (plot: PlotInterface, mouse: vec2): HoverInfo|null => {
+    const find_hover_candidate = (plot: SceneArtist & PlotInterface, mouse: vec2): HoverInfo|null => {
         const x = rpx(mouse.x);
         const min_y_screen = Math.min(...plot.values);
         const max_y_screen = Math.max(...plot.values);
@@ -289,7 +288,7 @@ interface DebugData {
         const y = rhs ? lerp(lhs, frac, rhs) : lhs;
 
         return {
-            html: '<span>(' + x + ' ' + y + ')</span>',
+            html: '<span style="color:' + plot.activeDrawColor +'">(' + y + ')</span>',
             type: plot.type,
             hover: {
                 type: "plot",
