@@ -846,9 +846,9 @@ void setup_imgui_theme(const Theme& theme)
 	colors[ImGuiCol_ResizeGripActive] = theme.f_inv;
 	colors[ImGuiCol_Tab] = theme.b_med;
 	colors[ImGuiCol_TabHovered] = theme.b_high;
-	colors[ImGuiCol_TabActive] = theme.b_inv;
-	colors[ImGuiCol_TabUnfocused] = theme.b_low;
-	colors[ImGuiCol_TabUnfocusedActive] = theme.b_high;
+	colors[ImGuiCol_TabSelected] = theme.b_inv;
+	colors[ImGuiCol_TabDimmed] = theme.b_low;
+	colors[ImGuiCol_TabDimmedSelected] = theme.b_high;
 	colors[ImGuiCol_PlotLines] = theme.f_med;
 	colors[ImGuiCol_PlotLinesHovered] = theme.f_high;
 	colors[ImGuiCol_PlotHistogram] = theme.f_med;
@@ -1072,9 +1072,9 @@ void setup_imgui_theme_simv0()
 	colors[ImGuiCol_ResizeGripActive] = ImVec4(0.44f, 0.54f, 0.64f, 1.00f);	 // Active resize grip
 	colors[ImGuiCol_Tab] = ImVec4(0.20f, 0.22f, 0.24f, 1.00f);	// Inactive tab
 	colors[ImGuiCol_TabHovered] = ImVec4(0.28f, 0.38f, 0.48f, 1.00f);  // Hover effect for tab
-	colors[ImGuiCol_TabActive] = ImVec4(0.24f, 0.34f, 0.44f, 1.00f);  // Active tab color
-	colors[ImGuiCol_TabUnfocused] = ImVec4(0.20f, 0.22f, 0.24f, 1.00f);	 // Unfocused tab
-	colors[ImGuiCol_TabUnfocusedActive] = ImVec4(0.24f, 0.34f, 0.44f, 1.00f);  // Active but unfocused tab
+	colors[ImGuiCol_TabSelected] = ImVec4(0.24f, 0.34f, 0.44f, 1.00f);  // Active tab color
+	colors[ImGuiCol_TabDimmed] = ImVec4(0.20f, 0.22f, 0.24f, 1.00f);	 // Unfocused tab
+	colors[ImGuiCol_TabDimmedSelected] = ImVec4(0.24f, 0.34f, 0.44f, 1.00f);  // Active but unfocused tab
 	colors[ImGuiCol_PlotLines] = ImVec4(0.46f, 0.56f, 0.66f, 1.00f);  // Plot lines
 	colors[ImGuiCol_PlotLinesHovered] = ImVec4(0.46f, 0.56f, 0.66f, 1.00f);	 // Hover effect for plot lines
 	colors[ImGuiCol_PlotHistogram] = ImVec4(0.36f, 0.46f, 0.56f, 1.00f);  // Histogram color
@@ -1259,9 +1259,9 @@ void setup_imgui_theme_wpsimon()
 	colors[ImGuiCol_ResizeGripActive] = ImVec4(0.26f, 0.59f, 0.98f, 0.95f);
 	colors[ImGuiCol_Tab] = ImVec4(0.11f, 0.15f, 0.17f, 1.00f);
 	colors[ImGuiCol_TabHovered] = ImVec4(0.28f, 0.56f, 1.00f, 0.80f);
-	colors[ImGuiCol_TabActive] = ImVec4(0.20f, 0.25f, 0.29f, 1.00f);
-	colors[ImGuiCol_TabUnfocused] = ImVec4(0.07f, 0.10f, 0.15f, 0.97f);
-	colors[ImGuiCol_TabUnfocusedActive] = ImVec4(0.14f, 0.22f, 0.36f, 1.00f);
+	colors[ImGuiCol_TabSelected] = ImVec4(0.20f, 0.25f, 0.29f, 1.00f);
+	colors[ImGuiCol_TabDimmed] = ImVec4(0.07f, 0.10f, 0.15f, 0.97f);
+	colors[ImGuiCol_TabDimmedSelected] = ImVec4(0.14f, 0.22f, 0.36f, 1.00f);
 	// colors[ImGuiCol_DockingPreview] = ImVec4(0.26f, 0.59f, 0.98f, 0.70f);
 	// colors[ImGuiCol_DockingEmptyBg] = ImVec4(0.20f, 0.20f, 0.20f, 1.00f);
 	colors[ImGuiCol_PlotLines] = ImVec4(0.61f, 0.61f, 0.61f, 1.00f);
@@ -1320,9 +1320,9 @@ void setup_imgui_theme_adia()
 	// Tabs
 	colors[ImGuiCol_Tab] = panelColor;
 	colors[ImGuiCol_TabHovered] = panelHoverColor;
-	colors[ImGuiCol_TabActive] = panelActiveColor;
-	colors[ImGuiCol_TabUnfocused] = panelColor;
-	colors[ImGuiCol_TabUnfocusedActive] = panelHoverColor;
+	colors[ImGuiCol_TabSelected] = panelActiveColor;
+	colors[ImGuiCol_TabDimmed] = panelColor;
+	colors[ImGuiCol_TabDimmedSelected] = panelHoverColor;
 
 	// Title
 	colors[ImGuiCol_TitleBg] = bgColor;

@@ -106,14 +106,17 @@ static void imgui_image(const char* name, ImTextureID texture_id, const ImVec2 t
 		ImGui::EndPopup();
 	}
 	ImGui::OpenPopupOnItemClick(popup_id, ImGuiPopupFlags_MouseButtonRight);
-	
+
+	// todo(Gustav): look into SetItemTooltip and BeginItemTooltip from https://github.com/ocornut/imgui/releases/tag/v1.89.7
 	if (ImGui::IsItemHovered())
 	{
 		current_id = id;
 		latest_tooltip = io.MousePos;
-		ImGui::BeginTooltip();
-		image_tooltip(texture_id, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, tint_col, border_col);
-		ImGui::EndTooltip();
+		if (ImGui::BeginTooltip())
+		{
+			image_tooltip(texture_id, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, tint_col, border_col);
+			ImGui::EndTooltip();
+		}
 	}
 }
 
