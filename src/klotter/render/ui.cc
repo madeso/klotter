@@ -52,8 +52,8 @@ void imgui_text(const std::string& str)
     ImGui::Text("%s", str.c_str());
 }
 
-static void image_tooltip(ImTextureID texture_id, const ImVec2 texture_size, const float& region_size, const float& hover_size,
-	const ImVec2 mouse_pos, const ImVec2 widget_size, const ImVec2 pos, const ImVec4 tint_col, const ImVec4 border_col)
+static void image_tooltip(ImTextureRef texture_id, const ImVec2 texture_size, const float& region_size, const float& hover_size,
+	const ImVec2 mouse_pos, const ImVec2 widget_size, const ImVec2 pos, const ImVec4 border_col)
 {
 	const auto region = calculate_region(mouse_pos, pos, texture_size, widget_size, region_size);
 	const auto flipped_region_y = texture_size.y - region.y;
@@ -63,10 +63,10 @@ static void image_tooltip(ImTextureID texture_id, const ImVec2 texture_size, con
 	// todo(Gustav): can we display pixel value instead of where we are looking? is the region important information?
 	imgui_text(Str{} << "UL: " << region.x << " " << region.y);
 	imgui_text(Str{} << "LR: " << region.x + region_size << " " << region.y + region_size);
-	ImGui::Image(texture_id, ImVec2(hover_size, hover_size), uv0, uv1, tint_col, border_col);
+	ImGui::ImageWithBg(texture_id, ImVec2(hover_size, hover_size), uv0, uv1, border_col);
 }
 
-static void imgui_image(const char* name, ImTextureID texture_id, const ImVec2 texture_size)
+static void imgui_image_impl(const char* name, ImTextureRef texture_id, const ImVec2 texture_size)
 {
 	// todo(Gustav): make the arguments widget_size and zoom level AND make them configurable (with scrolling)
 	static float widget_height = 100.0f;
@@ -82,7 +82,6 @@ static void imgui_image(const char* name, ImTextureID texture_id, const ImVec2 t
 	const auto pos = ImGui::GetCursorScreenPos();
 	constexpr auto uv_min = ImVec2{0.0f, 1.0f};	 // Top-left
 	constexpr auto uv_max = ImVec2{1.0f, 0.0f};	 // Lower-right
-	constexpr auto tint_col = ImVec4{1.0f, 1.0f, 1.0f, 1.0f};
 	const auto border_col = ImGui::GetStyleColorVec4(ImGuiCol_Border);
 
 	static ImVec2 latest_tooltip;
@@ -90,7 +89,7 @@ static void imgui_image(const char* name, ImTextureID texture_id, const ImVec2 t
 
 	constexpr const char* const popup_id = "image config popup";
 
-	ImGui::Image(texture_id, widget_size, uv_min, uv_max, tint_col, border_col);
+	ImGui::ImageWithBg(texture_id, widget_size, uv_min, uv_max, border_col);
 	const auto id = ImGui::GetID(name);
 
 	if (id == current_id && ImGui::BeginPopupContextItem(popup_id))
@@ -98,7 +97,7 @@ static void imgui_image(const char* name, ImTextureID texture_id, const ImVec2 t
 		ImGui::DragFloat("Base", &widget_height, 1.0f);
 		ImGui::DragFloat("Size", &region_size, 0.01f);
 		ImGui::DragFloat("Scale", &hover_size, 1.0f);
-		image_tooltip(texture_id, texture_size, region_size, hover_size, latest_tooltip, widget_size, pos, tint_col, border_col);
+		image_tooltip(texture_id, texture_size, region_size, hover_size, latest_tooltip, widget_size, pos, border_col);
 		if (ImGui::Button("Close"))
 		{
 			ImGui::CloseCurrentPopup();
@@ -114,7 +113,7 @@ static void imgui_image(const char* name, ImTextureID texture_id, const ImVec2 t
 		latest_tooltip = io.MousePos;
 		if (ImGui::BeginTooltip())
 		{
-			image_tooltip(texture_id, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, tint_col, border_col);
+			image_tooltip(texture_id, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, border_col);
 			ImGui::EndTooltip();
 		}
 	}
@@ -122,7 +121,7 @@ static void imgui_image(const char* name, ImTextureID texture_id, const ImVec2 t
 
 
 
-static ImTextureID imgui_texture_from(unsigned int texture)
+static ImTextureRef imgui_texture_from(unsigned int texture)
 {
 	return texture;
 }
@@ -131,7 +130,7 @@ static ImTextureID imgui_texture_from(unsigned int texture)
 
 void imgui_image(const char* name, const FrameBuffer& img)
 {
-	imgui_image(name, imgui_texture_from(img.id), {static_cast<float>(img.size.x), static_cast<float>(img.size.y)});
+	imgui_image_impl(name, imgui_texture_from(img.id), {static_cast<float>(img.size.x), static_cast<float>(img.size.y)});
 }
 
 
