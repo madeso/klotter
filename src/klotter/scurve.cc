@@ -63,7 +63,7 @@ float calculate_s_curve(float x, float slope, float threshold)
 bool imgui_s_curve_editor(const char* title, SCurve* curve, SCurveGuiState* gui, FlipX flip_x, const SCurveImguiSettings& settings, bool force_init_curve)
 {
 	imgui_text(Str{} << title << " (" << curve->slope << ' ' << curve->threshold << ')');
-	if (ImGui::BeginChild(title, settings.widget_size, settings.widget_border, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
+	if (ImGui::BeginChild(title, settings.widget_size, settings.widget_border ? ImGuiChildFlags_Borders : ImGuiChildFlags_None, ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove)
 		== false)
 	{
 		ImGui::EndChild();
