@@ -9,6 +9,7 @@ struct Renderer;
 struct Camera;
 struct World;
 struct RenderWorld;
+struct ImguiShaderCache;
 
 /** \addtogroup postproc Post Processing
  *  @{
@@ -161,7 +162,7 @@ struct EffectStack
 	/// rebuilds stack if dirty, update all targets, then render the last_source
 	void render(const PostProcArg& arg);
 	void update(float dt) const;
-	void gui();
+	void gui(ImguiShaderCache* cache);
 };
 
 /**

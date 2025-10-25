@@ -297,6 +297,7 @@ struct LightsSample : klotter::App
 
 	std::vector<SCurveGuiState> point_light_curves;
 	SCurveGuiState frustum_light_curve = SCurveGuiState::light_curve();
+	ImguiShaderCache imgui_shader_cache;
 
 	void on_render(
 		const glm::ivec2& window_size,
@@ -567,7 +568,7 @@ struct LightsSample : klotter::App
 
 		ImGui::SeparatorText("Effects");
 		gui_effects_factors();
-		effects.gui();
+		effects.gui(&imgui_shader_cache);
 
 		ImGui::SeparatorText("Stats");
 		ImGui::DragFloat3("position", glm::value_ptr(camera.position));

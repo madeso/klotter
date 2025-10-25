@@ -239,14 +239,14 @@ void RenderWorld::render(const PostProcArg& arg)
 
 
 
-void RenderWorld::gui()
+void RenderWorld::gui(ImguiShaderCache* cache)
 {
 	if (bloom_render && bloom_render->bloom_buffer)
 	{
-		imgui_image("bloom buffer", *bloom_render->bloom_buffer);
+		imgui_image("bloom buffer", *bloom_render->bloom_buffer, cache);
 
-		imgui_image("ping-pong A", *bloom_render->ping_pong_buffer[0]);
-		imgui_image("ping-pong B", *bloom_render->ping_pong_buffer[1]);
+		imgui_image("ping-pong A", *bloom_render->ping_pong_buffer[0], cache);
+		imgui_image("ping-pong B", *bloom_render->ping_pong_buffer[1], cache);
 	}
 }
 
@@ -404,14 +404,14 @@ void EffectStack::render(const PostProcArg& arg)
 	}
 }
 
-void EffectStack::gui()
+void EffectStack::gui(ImguiShaderCache* cache)
 {
 	ImGui::Checkbox("HDR", &use_hdr);
 	ImGui::SliderFloat("Exposure", &exposure, 0.01f, 20.0f);
 
 	if (const auto rw = render_world_ref.lock(); rw)
 	{
-		rw->gui();
+		rw->gui(cache);
 	}
 
 	int index = 0;

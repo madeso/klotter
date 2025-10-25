@@ -8,6 +8,10 @@ namespace klotter
 {
 
 
+// todo(Gustav): add custom shaders
+ImguiShaderCache::ImguiShaderCache() = default;
+ImguiShaderCache::~ImguiShaderCache() = default;
+
 
 ImVec2 operator+(const ImVec2& lhs, const ImVec2& rhs)
 {
@@ -47,13 +51,26 @@ ImVec2 calculate_region(const ImVec2& mouse_pos, const ImVec2& pos, const ImVec2
 	return {region_x, region_y};
 }
 
+
+
 void imgui_text(const std::string& str)
 {
     ImGui::Text("%s", str.c_str());
 }
 
-static void image_tooltip(ImTextureRef texture_id, const ImVec2 texture_size, const float& region_size, const float& hover_size,
-	const ImVec2 mouse_pos, const ImVec2 widget_size, const ImVec2 pos, const ImVec4 border_col)
+
+
+static void draw_imgui_image(const FrameBuffer& img, const ImVec2& image_size, const ImVec2& uv0, const ImVec2& uv1, const ImVec4& border_col, ImguiShaderCache*)
+{
+	// todo(Gustav): bind shader
+	ImGui::ImageWithBg(img.id, image_size, uv0, uv1, border_col);
+	// todo(Gustav): reset state
+}
+
+
+
+static void image_tooltip(const FrameBuffer& texture_id, const ImVec2 texture_size, const float& region_size, const float& hover_size,
+	const ImVec2 mouse_pos, const ImVec2 widget_size, const ImVec2 pos, const ImVec4 border_col, ImguiShaderCache* cache)
 {
 	const auto region = calculate_region(mouse_pos, pos, texture_size, widget_size, region_size);
 	const auto flipped_region_y = texture_size.y - region.y;
@@ -63,11 +80,15 @@ static void image_tooltip(ImTextureRef texture_id, const ImVec2 texture_size, co
 	// todo(Gustav): can we display pixel value instead of where we are looking? is the region important information?
 	imgui_text(Str{} << "UL: " << region.x << " " << region.y);
 	imgui_text(Str{} << "LR: " << region.x + region_size << " " << region.y + region_size);
-	ImGui::ImageWithBg(texture_id, ImVec2(hover_size, hover_size), uv0, uv1, border_col);
+	draw_imgui_image(texture_id, ImVec2(hover_size, hover_size), uv0, uv1, border_col, cache);
 }
 
-static void imgui_image_impl(const char* name, ImTextureRef texture_id, const ImVec2 texture_size)
+
+
+void imgui_image(const char* name, const FrameBuffer& img, ImguiShaderCache* cache)
 {
+	const auto texture_size = ImVec2{static_cast<float>(img.size.x), static_cast<float>(img.size.y)};
+
 	// todo(Gustav): make the arguments widget_size and zoom level AND make them configurable (with scrolling)
 	static float widget_height = 100.0f;
 	static float region_size = 32.0f;
@@ -87,9 +108,9 @@ static void imgui_image_impl(const char* name, ImTextureRef texture_id, const Im
 	static ImVec2 latest_tooltip;
 	static ImGuiID current_id = 0;
 
-	constexpr const char* const popup_id = "image config popup";
+	const constexpr char* const popup_id = "image config popup";
 
-	ImGui::ImageWithBg(texture_id, widget_size, uv_min, uv_max, border_col);
+	draw_imgui_image(img, widget_size, uv_min, uv_max, border_col, cache);
 	const auto id = ImGui::GetID(name);
 
 	if (id == current_id && ImGui::BeginPopupContextItem(popup_id))
@@ -97,7 +118,7 @@ static void imgui_image_impl(const char* name, ImTextureRef texture_id, const Im
 		ImGui::DragFloat("Base", &widget_height, 1.0f);
 		ImGui::DragFloat("Size", &region_size, 0.01f);
 		ImGui::DragFloat("Scale", &hover_size, 1.0f);
-		image_tooltip(texture_id, texture_size, region_size, hover_size, latest_tooltip, widget_size, pos, border_col);
+		image_tooltip(img, texture_size, region_size, hover_size, latest_tooltip, widget_size, pos, border_col, cache);
 		if (ImGui::Button("Close"))
 		{
 			ImGui::CloseCurrentPopup();
@@ -113,24 +134,10 @@ static void imgui_image_impl(const char* name, ImTextureRef texture_id, const Im
 		latest_tooltip = io.MousePos;
 		if (ImGui::BeginTooltip())
 		{
-			image_tooltip(texture_id, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, border_col);
+			image_tooltip(img, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, border_col, cache);
 			ImGui::EndTooltip();
 		}
 	}
-}
-
-
-
-static ImTextureRef imgui_texture_from(unsigned int texture)
-{
-	return texture;
-}
-
-
-
-void imgui_image(const char* name, const FrameBuffer& img)
-{
-	imgui_image_impl(name, imgui_texture_from(img.id), {static_cast<float>(img.size.x), static_cast<float>(img.size.y)});
 }
 
 

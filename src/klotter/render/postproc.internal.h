@@ -14,6 +14,7 @@ namespace klotter
  *  @{
 */
 
+struct ImguiShaderCache;
 
 struct BloomRender
 {
@@ -45,7 +46,7 @@ struct RenderWorld : RenderSource
 
 	void render(const PostProcArg& arg) override;
 
-	void gui();
+	void gui(ImguiShaderCache* cache);
 };
 
 
