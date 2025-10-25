@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="30" column="12" bodyfile="src/klotter/render/postproc.internal.h" bodystart="30" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="31" column="12" bodyfile="src/klotter/render/postproc.internal.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderWorld_1a5c1c9291f9d87e3fb1e80e93be6b0796" prot="public" static="no" mutable="no">
         <type>bool *</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="32" column="6" bodyfile="src/klotter/render/postproc.internal.h" bodystart="32" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="33" column="6" bodyfile="src/klotter/render/postproc.internal.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderWorld_1a0c96c544429ce3d6905ed01fe02b7805" prot="public" static="no" mutable="no">
         <type>float *</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="33" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="33" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="34" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="35" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="35" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="36" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderWorld_1a8e8a70eb89a367316486fcd3b276a99c" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="36" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="36" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="37" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderWorld_1a99682b1da98c2df7e222617ce788955b" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="37" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="37" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="38" column="17" bodyfile="src/klotter/render/postproc.internal.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderWorld_1a4d57a0d535387b761cc66e2389128328" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1RealizeShader" kindref="compound">RealizeShader</ref> *</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="38" column="15" bodyfile="src/klotter/render/postproc.internal.h" bodystart="38" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="39" column="15" bodyfile="src/klotter/render/postproc.internal.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderWorld_1a25bb231d5ce892d16237affabba27d61" prot="public" static="no" mutable="no">
         <type>std::optional&lt; <ref refid="structklotter_1_1BloomRender" kindref="compound">BloomRender</ref> &gt;</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="39" column="15" bodyfile="src/klotter/render/postproc.internal.h" bodystart="39" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="40" column="15" bodyfile="src/klotter/render/postproc.internal.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderWorld_1a50b93c67171958ea83a5acffb927909d" prot="public" static="no" mutable="no">
         <type>std::size_t</type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="40" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="40" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="41" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="41" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -173,7 +173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="42" column="1"/>
+        <location file="src/klotter/render/postproc.internal.h" line="43" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -191,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="44" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="45" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -210,21 +210,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="46" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="47" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1RenderWorld_1ae8cc6b1309ad7159af104a5194decce1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1RenderWorld_1a441371d968a71e839ee54972a652e3c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::RenderWorld::gui</definition>
-        <argsstring>()</argsstring>
+        <argsstring>(ImguiShaderCache *cache)</argsstring>
         <name>gui</name>
         <qualifiedname>klotter::RenderWorld::gui</qualifiedname>
+        <param>
+          <type><ref refid="structklotter_1_1ImguiShaderCache" kindref="compound">ImguiShaderCache</ref> *</type>
+          <declname>cache</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.internal.h" line="48" column="6"/>
+        <location file="src/klotter/render/postproc.internal.h" line="49" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -325,11 +329,11 @@
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.internal.h" line="28" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="29" bodyend="49"/>
+    <location file="src/klotter/render/postproc.internal.h" line="29" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="30" bodyend="50"/>
     <listofallmembers>
       <member refid="structklotter_1_1RenderWorld_1a25bb231d5ce892d16237affabba27d61" prot="public" virt="non-virtual"><scope>klotter::RenderWorld</scope><name>bloom_render</name></member>
       <member refid="structklotter_1_1RenderWorld_1a0c96c544429ce3d6905ed01fe02b7805" prot="public" virt="non-virtual"><scope>klotter::RenderWorld</scope><name>exposure</name></member>
-      <member refid="structklotter_1_1RenderWorld_1ae8cc6b1309ad7159af104a5194decce1" prot="public" virt="non-virtual"><scope>klotter::RenderWorld</scope><name>gui</name></member>
+      <member refid="structklotter_1_1RenderWorld_1a441371d968a71e839ee54972a652e3c3" prot="public" virt="non-virtual"><scope>klotter::RenderWorld</scope><name>gui</name></member>
       <member refid="structklotter_1_1RenderWorld_1a50b93c67171958ea83a5acffb927909d" prot="public" virt="non-virtual"><scope>klotter::RenderWorld</scope><name>last_bloom_blur_index</name></member>
       <member refid="structklotter_1_1RenderWorld_1ae92b2cb5948a39ba863df9109a4fbb62" prot="public" virt="non-virtual"><scope>klotter::RenderWorld</scope><name>msaa_buffer</name></member>
       <member refid="structklotter_1_1RenderSource_1a573f81ac792964127141bfe9d9d19f2a" prot="public" virt="non-virtual"><scope>klotter::RenderWorld</scope><name>operator=</name></member>

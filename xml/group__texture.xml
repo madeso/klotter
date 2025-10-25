@@ -238,7 +238,7 @@
         <qualifiedname>klotter::cubemap_size</qualifiedname>
         <initializer>= 6</initializer>
         <briefdescription>
-<para>0=right, 1=left, 2=top, 3=bottom, 4=back, 5=front </para>
+<para>0=right(x+), 1=left(x-), 2=top(y+), 3=bottom(y-), 4=front(z+), 5=back(z-) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>

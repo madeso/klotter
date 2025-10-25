@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/postproc.cc</div>
-            <div>Date: 2025-10-25 12:34:04</div>
+            <div>Date: 2025-10-25 18:49:31</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -73,7 +73,7 @@
     <tr><td><a href="#l615">klotter::BurHorizontalProvider::use_shader(klotter::PostProcArg const&amp;, klotter::FrameBuffer const&amp;) (line 615)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l28">klotter::Effect::enabled() const (line 28)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l33">klotter::Effect::set_enabled(bool) (line 33)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l407">klotter::EffectStack::gui() (line 407)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l407">klotter::EffectStack::gui(klotter::ImguiShaderCache*) (line 407)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l311">klotter::EffectStack::render(klotter::PostProcArg const&amp;) (line 311)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l298">klotter::EffectStack::update(float) const (line 298)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l431">klotter::FactorEffect::FactorEffect() (line 431)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
@@ -89,7 +89,7 @@
     <tr><td><a href="#l266">klotter::RenderTextureWithShader::render(klotter::PostProcArg const&amp;) (line 266)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l286">klotter::RenderTextureWithShader::update(klotter::PostProcArg const&amp;) (line 286)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l66">klotter::RenderWorld::RenderWorld(glm::vec&lt;2, int, (glm::qualifier)0&gt;, klotter::RealizeShader*, klotter::ExtractShader*, klotter::PingPongBlurShader*, int, bool*, float*) (line 66)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l242">klotter::RenderWorld::gui() (line 242)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l242">klotter::RenderWorld::gui(klotter::ImguiShaderCache*) (line 242)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l206">klotter::RenderWorld::render(klotter::PostProcArg const&amp;) (line 206)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l81">klotter::RenderWorld::update(klotter::PostProcArg const&amp;) (line 81)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l747">klotter::Renderer::make_blur_effect() const (line 747)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
@@ -1813,7 +1813,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">RenderWorld</span><span class="o">::</span><span class="n">gui</span><span class="p">()</span></td>
+                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">RenderWorld</span><span class="o">::</span><span class="n">gui</span><span class="p">(</span><span class="n">ImguiShaderCache</span><span class="o">*</span><span class="w"> </span><span class="n">cache</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l243" href="#l243">243</a></td>
@@ -1841,7 +1841,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;bloom buffer&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">bloom_buffer</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;bloom buffer&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">bloom_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">cache</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l247" href="#l247">247</a></td>
@@ -1855,14 +1855,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;ping-pong A&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">ping_pong_buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;ping-pong A&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">ping_pong_buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">cache</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l249" href="#l249">249</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;ping-pong B&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">ping_pong_buffer</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;ping-pong B&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">ping_pong_buffer</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">cache</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l250" href="#l250">250</a></td>
@@ -2968,7 +2968,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">EffectStack</span><span class="o">::</span><span class="n">gui</span><span class="p">()</span></td>
+                <td class="src uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">EffectStack</span><span class="o">::</span><span class="n">gui</span><span class="p">(</span><span class="n">ImguiShaderCache</span><span class="o">*</span><span class="w"> </span><span class="n">cache</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l408" href="#l408">408</a></td>
@@ -3017,7 +3017,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">rw</span><span class="o">-&gt;</span><span class="n">gui</span><span class="p">();</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">rw</span><span class="o">-&gt;</span><span class="n">gui</span><span class="p">(</span><span class="n">cache</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l415" href="#l415">415</a></td>

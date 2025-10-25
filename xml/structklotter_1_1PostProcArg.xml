@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="20" column="13" bodyfile="src/klotter/render/postproc.h" bodystart="20" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="21" column="13" bodyfile="src/klotter/render/postproc.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PostProcArg_1af8b4768a61672c5d15f7dbd363bef215" prot="public" static="no" mutable="no">
         <type>glm::ivec2</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="21" column="12" bodyfile="src/klotter/render/postproc.h" bodystart="21" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="22" column="12" bodyfile="src/klotter/render/postproc.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PostProcArg_1a5f841578f5f3c3ad12f200a179c3c4c1" prot="public" static="no" mutable="no">
         <type>const <ref refid="structklotter_1_1Camera" kindref="compound">Camera</ref> *</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="22" column="14" bodyfile="src/klotter/render/postproc.h" bodystart="22" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="23" column="14" bodyfile="src/klotter/render/postproc.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PostProcArg_1afb6209a69a9db4f6779c43290d6cc32c" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Renderer" kindref="compound">Renderer</ref> *</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="23" column="10" bodyfile="src/klotter/render/postproc.h" bodystart="23" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="24" column="10" bodyfile="src/klotter/render/postproc.h" bodystart="24" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -732,7 +732,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.h" line="18" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="19" bodyend="24"/>
+    <location file="src/klotter/render/postproc.h" line="19" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="20" bodyend="25"/>
     <listofallmembers>
       <member refid="structklotter_1_1PostProcArg_1a5f841578f5f3c3ad12f200a179c3c4c1" prot="public" virt="non-virtual"><scope>klotter::PostProcArg</scope><name>camera</name></member>
       <member refid="structklotter_1_1PostProcArg_1afb6209a69a9db4f6779c43290d6cc32c" prot="public" virt="non-virtual"><scope>klotter::PostProcArg</scope><name>renderer</name></member>

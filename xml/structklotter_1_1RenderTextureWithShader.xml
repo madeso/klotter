@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="60" column="13" bodyfile="src/klotter/render/postproc.h" bodystart="60" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="61" column="13" bodyfile="src/klotter/render/postproc.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderTextureWithShader_1a09fb02631c3a68491b2eaeda70a7f6eb" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1RenderSource" kindref="compound">RenderSource</ref> &gt;</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="61" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="61" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="62" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderTextureWithShader_1a0ae8bab66cf61e303741ee950ab8303d" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="62" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="62" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="63" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderTextureWithShader_1a11982aa89c5401cd9235959bd8a96beb" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1ShaderPropertyProvider" kindref="compound">ShaderPropertyProvider</ref> *</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="63" column="24" bodyfile="src/klotter/render/postproc.h" bodystart="63" bodyend="-1"/>
+        <location file="src/klotter/render/postproc.h" line="64" column="24" bodyfile="src/klotter/render/postproc.h" bodystart="64" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="65" column="1"/>
+        <location file="src/klotter/render/postproc.h" line="66" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1RenderTextureWithShader_1ae9721966d78654a54078a7b159180dd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="68" column="6"/>
+        <location file="src/klotter/render/postproc.h" line="69" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1RenderTextureWithShader_1a5ed90bcae50cd19bf1b21450e04c40f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -130,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/postproc.h" line="71" column="6"/>
+        <location file="src/klotter/render/postproc.h" line="72" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -209,7 +209,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/postproc.h" line="58" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="59" bodyend="72"/>
+    <location file="src/klotter/render/postproc.h" line="59" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="60" bodyend="73"/>
     <listofallmembers>
       <member refid="structklotter_1_1RenderTextureWithShader_1a11982aa89c5401cd9235959bd8a96beb" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>effect</name></member>
       <member refid="structklotter_1_1RenderTextureWithShader_1a0ae8bab66cf61e303741ee950ab8303d" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>fbo</name></member>

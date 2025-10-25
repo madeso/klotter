@@ -54,7 +54,7 @@
 <para>A cubemap texture. </para>
     </briefdescription>
     <detaileddescription>
-<para>USeful for skybox rendering or faking reflections from a (static) scene. </para>
+<para>Useful for skybox rendering or faking reflections from a (static) scene. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">

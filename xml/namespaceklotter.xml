@@ -47,6 +47,7 @@
     <innerclass refid="structklotter_1_1FullScreenGeom" prot="public">klotter::FullScreenGeom</innerclass>
     <innerclass refid="structklotter_1_1Geom" prot="public">klotter::Geom</innerclass>
     <innerclass refid="structklotter_1_1HashCombiner" prot="public">klotter::HashCombiner</innerclass>
+    <innerclass refid="structklotter_1_1ImguiShaderCache" prot="public">klotter::ImguiShaderCache</innerclass>
     <innerclass refid="structklotter_1_1InstanceProp" prot="public">klotter::InstanceProp</innerclass>
     <innerclass refid="structklotter_1_1Lights" prot="public">klotter::Lights</innerclass>
     <innerclass refid="structklotter_1_1LineDrawer" prot="public">klotter::LineDrawer</innerclass>
@@ -911,7 +912,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="11" column="8" declfile="src/klotter/render/ui.h" declline="11" declcolumn="8"/>
+        <location file="src/klotter/render/ui.h" line="23" column="8" declfile="src/klotter/render/ui.h" declline="23" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ImVec2</type>
@@ -933,7 +934,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="12" column="8" declfile="src/klotter/render/ui.h" declline="12" declcolumn="8"/>
+        <location file="src/klotter/render/ui.h" line="24" column="8" declfile="src/klotter/render/ui.h" declline="24" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ImVec2</type>
@@ -968,7 +969,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="15" column="8" declfile="src/klotter/render/ui.h" declline="15" declcolumn="8"/>
+        <location file="src/klotter/render/ui.h" line="27" column="8" declfile="src/klotter/render/ui.h" declline="27" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a097b19b90783477eca0bb931a3ad7692" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -986,12 +987,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="17" column="6" declfile="src/klotter/render/ui.h" declline="17" declcolumn="6"/>
+        <location file="src/klotter/render/ui.h" line="29" column="6" declfile="src/klotter/render/ui.h" declline="29" declcolumn="6"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a7c0a15c13797891f0a83daf98c4d42ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a7a6efb87c78788378c7a4fb18b603e8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void klotter::imgui_image</definition>
-        <argsstring>(const char *name, const FrameBuffer &amp;img)</argsstring>
+        <argsstring>(const char *name, const FrameBuffer &amp;img, ImguiShaderCache *cache)</argsstring>
         <name>imgui_image</name>
         <qualifiedname>klotter::imgui_image</qualifiedname>
         <param>
@@ -1002,13 +1003,17 @@
           <type>const <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &amp;</type>
           <declname>img</declname>
         </param>
+        <param>
+          <type><ref refid="structklotter_1_1ImguiShaderCache" kindref="compound">ImguiShaderCache</ref> *</type>
+          <declname>cache</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="18" column="6" declfile="src/klotter/render/ui.h" declline="18" declcolumn="6"/>
+        <location file="src/klotter/render/ui.h" line="30" column="6" declfile="src/klotter/render/ui.h" declline="30" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6308c1c02eba0c354d9b8f5621f63162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1045,7 +1050,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="19" column="6" declfile="src/klotter/render/ui.h" declline="19" declcolumn="6"/>
+        <location file="src/klotter/render/ui.h" line="31" column="6" declfile="src/klotter/render/ui.h" declline="31" declcolumn="6"/>
       </memberdef>
       <member refid="group__vertex-layout_1gac498a4f9c32fddd6f300437dec2051ad" kind="function"><name>is_instance_based</name></member>
       <member refid="group__vertex-layout_1ga930a511a1263566c1155f47dd193e47c" kind="function"><name>find_duplicates</name></member>

@@ -8,13 +8,14 @@ var searchData=
   ['_7ecompiledgeom_5ftransforminstance_5',['~CompiledGeom_TransformInstance',['../structklotter_1_1CompiledGeom__TransformInstance.html#a752e9f860b2a97c6982af43fefc1faff',1,'klotter::CompiledGeom_TransformInstance']]],
   ['_7eeffect_6',['~Effect',['../structklotter_1_1Effect.html#a098603548d6ee2c1f5f6179921b13f48',1,'klotter::Effect']]],
   ['_7eframebuffer_7',['~FrameBuffer',['../structklotter_1_1FrameBuffer.html#a602306657cd67730fb9860bbaf4e339d',1,'klotter::FrameBuffer']]],
-  ['_7elinedrawer_8',['~LineDrawer',['../structklotter_1_1LineDrawer.html#a4f17c58c2075ae05dab7de0529c2c2da',1,'klotter::LineDrawer']]],
-  ['_7ematerial_9',['~Material',['../structklotter_1_1Material.html#abd64872e3d2303186c0a9b5e978e0cd9',1,'klotter::Material']]],
-  ['_7erenderer_10',['~Renderer',['../structklotter_1_1Renderer.html#a84a0c241507db1c10f6779a0a06e7019',1,'klotter::Renderer']]],
-  ['_7erendersource_11',['~RenderSource',['../structklotter_1_1RenderSource.html#a11b2e79c0400c88412f16971cc3d6e8a',1,'klotter::RenderSource']]],
-  ['_7esceneartist_12',['~SceneArtist',['../structVisualDebugging_1_1SceneArtist.html#aaf16a74428bd880b5806b6e80f9da738',1,'VisualDebugging::SceneArtist']]],
-  ['_7eshaderprogram_13',['~ShaderProgram',['../structklotter_1_1ShaderProgram.html#af95702d66323267c513e4dafd89ec16f',1,'klotter::ShaderProgram']]],
-  ['_7eshaderprop_14',['~ShaderProp',['../structklotter_1_1ShaderProp.html#a3b2afd1a1a741fee9ae837da87a49332',1,'klotter::ShaderProp']]],
-  ['_7eshaderpropertyprovider_15',['~ShaderPropertyProvider',['../structklotter_1_1ShaderPropertyProvider.html#aba7169be559b2c482fa97cfcb0d65561',1,'klotter::ShaderPropertyProvider']]],
-  ['_7euniformbuffer_16',['~UniformBuffer',['../structklotter_1_1UniformBuffer.html#ad1f9ea4158f98ea62ceeff8f77a80f50',1,'klotter::UniformBuffer']]]
+  ['_7eimguishadercache_8',['~ImguiShaderCache',['../structklotter_1_1ImguiShaderCache.html#a2308d1e959f7f40a95ed37a0f67e05dd',1,'klotter::ImguiShaderCache']]],
+  ['_7elinedrawer_9',['~LineDrawer',['../structklotter_1_1LineDrawer.html#a4f17c58c2075ae05dab7de0529c2c2da',1,'klotter::LineDrawer']]],
+  ['_7ematerial_10',['~Material',['../structklotter_1_1Material.html#abd64872e3d2303186c0a9b5e978e0cd9',1,'klotter::Material']]],
+  ['_7erenderer_11',['~Renderer',['../structklotter_1_1Renderer.html#a84a0c241507db1c10f6779a0a06e7019',1,'klotter::Renderer']]],
+  ['_7erendersource_12',['~RenderSource',['../structklotter_1_1RenderSource.html#a11b2e79c0400c88412f16971cc3d6e8a',1,'klotter::RenderSource']]],
+  ['_7esceneartist_13',['~SceneArtist',['../structVisualDebugging_1_1SceneArtist.html#aaf16a74428bd880b5806b6e80f9da738',1,'VisualDebugging::SceneArtist']]],
+  ['_7eshaderprogram_14',['~ShaderProgram',['../structklotter_1_1ShaderProgram.html#af95702d66323267c513e4dafd89ec16f',1,'klotter::ShaderProgram']]],
+  ['_7eshaderprop_15',['~ShaderProp',['../structklotter_1_1ShaderProp.html#a3b2afd1a1a741fee9ae837da87a49332',1,'klotter::ShaderProp']]],
+  ['_7eshaderpropertyprovider_16',['~ShaderPropertyProvider',['../structklotter_1_1ShaderPropertyProvider.html#aba7169be559b2c482fa97cfcb0d65561',1,'klotter::ShaderPropertyProvider']]],
+  ['_7euniformbuffer_17',['~UniformBuffer',['../structklotter_1_1UniformBuffer.html#ad1f9ea4158f98ea62ceeff8f77a80f50',1,'klotter::UniformBuffer']]]
 ];

@@ -287,7 +287,7 @@
     <member refid="structklotter_1_1EffectStack_1adfd748607dee4c12c729c56b09e3d5a6" kind="variable"><name>render_world_ref</name></member>
     <member refid="structklotter_1_1EffectStack_1aaf622b94ba48b5950c9324c6d4434c05" kind="function"><name>render</name></member>
     <member refid="structklotter_1_1EffectStack_1a045d1a84ab1f0e78ac4382191f521c75" kind="function"><name>update</name></member>
-    <member refid="structklotter_1_1EffectStack_1a225f24c131243c23e9a22598a9765fb1" kind="function"><name>gui</name></member>
+    <member refid="structklotter_1_1EffectStack_1a49249317755cafe6db59ef29cea7bdc6" kind="function"><name>gui</name></member>
   </compound>
   <compound refid="structklotter_1_1ExtractedAttribute" kind="struct"><name>klotter::ExtractedAttribute</name>
     <member refid="structklotter_1_1ExtractedAttribute_1a13b00d60b002e83054006e4bdac1300b" kind="variable"><name>type</name></member>
@@ -391,6 +391,14 @@
   <compound refid="structklotter_1_1HashCombiner" kind="struct"><name>klotter::HashCombiner</name>
     <member refid="structklotter_1_1HashCombiner_1a26bf8eb600fcab0bb021b3761e8ad8e2" kind="variable"><name>result</name></member>
     <member refid="structklotter_1_1HashCombiner_1a65dfeacdc4930769b33d9f68dd509f4a" kind="function"><name>combine</name></member>
+  </compound>
+  <compound refid="structklotter_1_1ImguiShaderCache" kind="struct"><name>klotter::ImguiShaderCache</name>
+    <member refid="structklotter_1_1ImguiShaderCache_1aaa7e68a6847a9a2df3f8533bd60526f0" kind="function"><name>ImguiShaderCache</name></member>
+    <member refid="structklotter_1_1ImguiShaderCache_1a2308d1e959f7f40a95ed37a0f67e05dd" kind="function"><name>~ImguiShaderCache</name></member>
+    <member refid="structklotter_1_1ImguiShaderCache_1a4e40e5336438c299925522be00ee280f" kind="function"><name>ImguiShaderCache</name></member>
+    <member refid="structklotter_1_1ImguiShaderCache_1a8eb928b6e717d694480b9537fd3a76e7" kind="function"><name>ImguiShaderCache</name></member>
+    <member refid="structklotter_1_1ImguiShaderCache_1a8f41fe5350a4b079a87b59507eb0527d" kind="function"><name>operator=</name></member>
+    <member refid="structklotter_1_1ImguiShaderCache_1a5e9e399b8beeb81e6c6c7daf1ba24082" kind="function"><name>operator=</name></member>
   </compound>
   <compound refid="structklotter_1_1InstanceProp" kind="struct"><name>klotter::InstanceProp</name>
     <member refid="structklotter_1_1InstanceProp_1a6099c86f6b1ab7dffa1720edab9b0142" kind="variable"><name>type</name></member>
@@ -682,7 +690,7 @@
     <member refid="structklotter_1_1RenderWorld_1a592967237f97acd126fca9aba57fa470" kind="function"><name>RenderWorld</name></member>
     <member refid="structklotter_1_1RenderWorld_1a0b673214ee06737e64fd065c9987fb20" kind="function"><name>update</name></member>
     <member refid="structklotter_1_1RenderWorld_1aa71e960bb1aaffe030d568f98695a518" kind="function"><name>render</name></member>
-    <member refid="structklotter_1_1RenderWorld_1ae8cc6b1309ad7159af104a5194decce1" kind="function"><name>gui</name></member>
+    <member refid="structklotter_1_1RenderWorld_1a441371d968a71e839ee54972a652e3c3" kind="function"><name>gui</name></member>
   </compound>
   <compound refid="structVisualDebugging_1_1SceneArtist" kind="struct"><name>VisualDebugging::SceneArtist</name>
     <member refid="structVisualDebugging_1_1SceneArtist_1a04bace71366367c5c2a54d4f794b616f" kind="variable"><name>show_when_in_background</name></member>
@@ -1065,7 +1073,7 @@
     <member refid="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" kind="function"><name>operator-</name></member>
     <member refid="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" kind="function"><name>calculate_region</name></member>
     <member refid="namespaceklotter_1a097b19b90783477eca0bb931a3ad7692" kind="function"><name>imgui_text</name></member>
-    <member refid="namespaceklotter_1a7c0a15c13797891f0a83daf98c4d42ec" kind="function"><name>imgui_image</name></member>
+    <member refid="namespaceklotter_1a7a6efb87c78788378c7a4fb18b603e8a" kind="function"><name>imgui_image</name></member>
     <member refid="namespaceklotter_1a6308c1c02eba0c354d9b8f5621f63162" kind="function"><name>simple_gamma_slider</name></member>
     <member refid="group__vertex-layout_1gac498a4f9c32fddd6f300437dec2051ad" kind="function"><name>is_instance_based</name></member>
     <member refid="group__vertex-layout_1ga930a511a1263566c1155f47dd193e47c" kind="function"><name>find_duplicates</name></member>
