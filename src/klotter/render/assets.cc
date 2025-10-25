@@ -116,7 +116,9 @@ std::shared_ptr<TextureCubemap> Assets::get_skybox()
 		skybox = std::make_shared<TextureCubemap>(load_cubemap_from_embedded(
 			USE_DEBUG_LABEL_MANY("skybox cubemap") 
 			std::array{
-				SKYBOX_RIGHT_JPG, SKYBOX_LEFT_JPG, SKYBOX_TOP_JPG, SKYBOX_BOTTOM_JPG, SKYBOX_BACK_JPG, SKYBOX_FRONT_JPG
+				SKYBOX_RIGHT_JPG, SKYBOX_LEFT_JPG, 
+				SKYBOX_TOP_JPG, SKYBOX_BOTTOM_JPG,
+				SKYBOX_FRONT_JPG, SKYBOX_BACK_JPG
 			},
 			ColorData::color_data
 		));
