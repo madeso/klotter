@@ -7,10 +7,153 @@
 namespace klotter
 {
 
+// opengl code copied from the imgui opengl3 backend with minor modifications
+// todo(Gustav): should we use the imgui backend code for "backend" rendering or use our own shader?
 
-// todo(Gustav): add custom shaders
-ImguiShaderCache::ImguiShaderCache() = default;
-ImguiShaderCache::~ImguiShaderCache() = default;
+#define GL_CALL(_CALL) _CALL  // Call without error check
+
+static bool check_imgui_shader(GLuint handle, const char* desc)
+{
+	GLint status = 0, log_length = 0;
+	glGetShaderiv(handle, GL_COMPILE_STATUS, &status);
+	glGetShaderiv(handle, GL_INFO_LOG_LENGTH, &log_length);
+	if (status == GL_FALSE)
+		fprintf(
+			stderr,
+			"ERROR: Shader code: failed to compile %s!\n",
+			desc
+		);
+	if (log_length > 1)
+	{
+		ImVector<char> buf;
+		buf.resize((int) (log_length + 1));
+		glGetShaderInfoLog(handle, log_length, nullptr, (GLchar*) buf.begin());
+		fprintf(stderr, "%s\n", buf.begin());
+	}
+	return status == GL_TRUE;
+}
+
+static bool imgui_check_program(GLuint handle, const char* desc)
+{
+	GLint status = 0, log_length = 0;
+	glGetProgramiv(handle, GL_LINK_STATUS, &status);
+	glGetProgramiv(handle, GL_INFO_LOG_LENGTH, &log_length);
+	if (status == GL_FALSE)
+		fprintf(
+			stderr,
+			"ERROR: Shader program: failed to link %s!\n",
+			desc
+		);
+	if (log_length > 1)
+	{
+		ImVector<char> buf;
+		buf.resize((int) (log_length + 1));
+		glGetProgramInfoLog(handle, log_length, nullptr, (GLchar*) buf.begin());
+		fprintf(stderr, "%s\n", buf.begin());
+	}
+	return status == GL_TRUE;
+}
+
+bool imgui_load_shader(const char* GlslVersionString, const char* vertex_shader, const char* fragment_shader, ImguiShaderProgram* bd)
+{
+	// Create shaders
+	const GLchar* vertex_shader_with_version[2] = {GlslVersionString, vertex_shader};
+	GLuint vert_handle;
+	GL_CALL(vert_handle = glCreateShader(GL_VERTEX_SHADER));
+	glShaderSource(vert_handle, 2, vertex_shader_with_version, nullptr);
+	glCompileShader(vert_handle);
+	if (! check_imgui_shader(vert_handle, "vertex shader")) return false;
+
+	const GLchar* fragment_shader_with_version[2] = {GlslVersionString, fragment_shader};
+	GLuint frag_handle;
+	GL_CALL(frag_handle = glCreateShader(GL_FRAGMENT_SHADER));
+	glShaderSource(frag_handle, 2, fragment_shader_with_version, nullptr);
+	glCompileShader(frag_handle);
+	if (! check_imgui_shader(frag_handle, "fragment shader")) return false;
+
+	// Link
+	bd->program_handle = glCreateProgram();
+	glAttachShader(bd->program_handle, vert_handle);
+	glAttachShader(bd->program_handle, frag_handle);
+	glLinkProgram(bd->program_handle);
+	if (! imgui_check_program(bd->program_handle, "shader program")) return false;
+
+	glDetachShader(bd->program_handle, vert_handle);
+	glDetachShader(bd->program_handle, frag_handle);
+	glDeleteShader(vert_handle);
+	glDeleteShader(frag_handle);
+
+	bd->texture_attrib = glGetUniformLocation(bd->program_handle, "Texture");
+	bd->projection_attrib = glGetUniformLocation(bd->program_handle, "ProjMtx");
+	return true;
+}
+
+void imgui_destroy_shader(ImguiShaderProgram* bd)
+{
+	if (bd->program_handle)
+	{
+		glDeleteProgram(bd->program_handle);
+		bd->program_handle = 0;
+	}
+}
+
+ImguiShaderCache::ImguiShaderCache()
+{
+	imgui_load_shader(
+		// vertex shader
+		"#version 330 core\n",
+		"layout (location = 0) in vec2 Position;\n"
+        "layout (location = 1) in vec2 UV;\n"
+        "layout (location = 2) in vec4 Color;\n"
+        "uniform mat4 ProjMtx;\n"
+        "out vec2 Frag_UV;\n"
+        "out vec4 Frag_Color;\n"
+        "void main()\n"
+        "{\n"
+        "    Frag_UV = UV;\n"
+        "    Frag_Color = Color;\n"
+        "    gl_Position = ProjMtx * vec4(Position.xy,0,1);\n"
+        "}\n",
+		// fragment shader
+		"in vec2 Frag_UV;\n"
+        "in vec4 Frag_Color;\n"
+        "uniform sampler2D Texture;\n"
+        "layout (location = 0) out vec4 Out_Color;\n"
+        "void main()\n"
+        "{\n"
+		"    vec4 sample = texture(Texture, Frag_UV.st);\n"
+        "    Out_Color = Frag_Color * vec4(sample.r, 0, 0, sample.a);\n"
+		"}\n",
+		&linear_to_gamma_shader
+	);
+}
+
+ImguiShaderCache::~ImguiShaderCache()
+{
+	imgui_destroy_shader(&linear_to_gamma_shader);
+}
+
+
+void set_shader_callback(const ImDrawList*, const ImDrawCmd* cmd)
+{
+	ImguiShaderProgram* bd = static_cast<ImguiShaderProgram*>(cmd->UserCallbackData);
+	ImDrawData* draw_data = ImGui::GetDrawData();
+
+	float L = draw_data->DisplayPos.x;
+	float R = draw_data->DisplayPos.x + draw_data->DisplaySize.x;
+	float T = draw_data->DisplayPos.y;
+	float B = draw_data->DisplayPos.y + draw_data->DisplaySize.y;
+
+	const float ortho_projection[4][4] = {
+		{2.0f / (R - L), 0.0f, 0.0f, 0.0f},
+		{0.0f, 2.0f / (T - B), 0.0f, 0.0f},
+		{0.0f, 0.0f, -1.0f, 0.0f},
+		{(R + L) / (L - R), (T + B) / (B - T), 0.0f, 1.0f},
+	};
+	glUseProgram(bd->program_handle);
+	glUniform1i(bd->texture_attrib, 0);
+	glUniformMatrix4fv(bd->projection_attrib, 1, GL_FALSE, &ortho_projection[0][0]);
+}
 
 
 ImVec2 operator+(const ImVec2& lhs, const ImVec2& rhs)
@@ -60,11 +203,18 @@ void imgui_text(const std::string& str)
 
 
 
-static void draw_imgui_image(const FrameBuffer& img, const ImVec2& image_size, const ImVec2& uv0, const ImVec2& uv1, const ImVec4& border_col, ImguiShaderCache*)
+static void draw_imgui_image(const FrameBuffer& img, const ImVec2& image_size, const ImVec2& uv0, const ImVec2& uv1, const ImVec4& border_col, ImguiShaderCache* cache)
 {
-	// todo(Gustav): bind shader
+	ImDrawList* draw_list = ImGui::GetWindowDrawList();
+
+	// set shader
+	draw_list->AddCallback(set_shader_callback, &cache->linear_to_gamma_shader);
+
+	// draw image
 	ImGui::ImageWithBg(img.id, image_size, uv0, uv1, border_col);
-	// todo(Gustav): reset state
+
+	// reset shader
+	draw_list->AddCallback(ImDrawCallback_ResetRenderState, nullptr);
 }
 
 

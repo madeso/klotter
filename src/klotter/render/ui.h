@@ -7,6 +7,12 @@ namespace klotter
 
 struct FrameBuffer;
 
+struct ImguiShaderProgram
+{
+	unsigned int program_handle = 0;
+	int texture_attrib = 0;
+	int projection_attrib = 0;
+};
 
 struct ImguiShaderCache
 {
@@ -17,6 +23,8 @@ struct ImguiShaderCache
 	ImguiShaderCache(ImguiShaderCache&&) = delete;
 	ImguiShaderCache& operator=(const ImguiShaderCache&) = delete;
 	ImguiShaderCache& operator=(ImguiShaderCache&&) = delete;
+
+	ImguiShaderProgram linear_to_gamma_shader;
 };
 
 
