@@ -4,6 +4,8 @@
 
 #include "klotter/render/texture.h"
 
+#include <iostream>
+
 namespace klotter
 {
 
@@ -18,17 +20,16 @@ static bool check_imgui_shader(GLuint handle, const char* desc)
 	glGetShaderiv(handle, GL_COMPILE_STATUS, &status);
 	glGetShaderiv(handle, GL_INFO_LOG_LENGTH, &log_length);
 	if (status == GL_FALSE)
-		fprintf(
-			stderr,
-			"ERROR: Shader code: failed to compile %s!\n",
-			desc
-		);
+	{
+		std::cerr << "ERROR: Shader code: failed to compile " << desc << "!\n";
+	}
+
 	if (log_length > 1)
 	{
-		ImVector<char> buf;
-		buf.resize((int) (log_length + 1));
-		glGetShaderInfoLog(handle, log_length, nullptr, (GLchar*) buf.begin());
-		fprintf(stderr, "%s\n", buf.begin());
+		std::vector<GLchar> buf;
+		buf.resize(log_length + 1);
+		glGetShaderInfoLog(handle, log_length, nullptr, buf.data());
+		std::cerr << buf.data();
 	}
 	return status == GL_TRUE;
 }
@@ -39,22 +40,32 @@ static bool imgui_check_program(GLuint handle, const char* desc)
 	glGetProgramiv(handle, GL_LINK_STATUS, &status);
 	glGetProgramiv(handle, GL_INFO_LOG_LENGTH, &log_length);
 	if (status == GL_FALSE)
-		fprintf(
-			stderr,
-			"ERROR: Shader program: failed to link %s!\n",
-			desc
-		);
+	{
+		std::cerr << "ERROR: Shader program: failed to link " << desc << "!\n";
+	}
+
 	if (log_length > 1)
 	{
-		ImVector<char> buf;
-		buf.resize((int) (log_length + 1));
-		glGetProgramInfoLog(handle, log_length, nullptr, (GLchar*) buf.begin());
-		fprintf(stderr, "%s\n", buf.begin());
+		std::vector<GLchar> buf;
+		buf.resize(log_length + 1);
+		glGetProgramInfoLog(handle, log_length, nullptr, buf.data());
+		std::cerr << buf.data();
 	}
 	return status == GL_TRUE;
 }
 
-bool imgui_load_shader(const char* GlslVersionString, const char* vertex_shader, const char* fragment_shader, ImguiShaderProgram* bd)
+void imgui_destroy_shader(ImguiShaderProgram* bd)
+{
+	if (bd->program_handle == 0)
+	{
+		return;
+	}
+
+	glDeleteProgram(bd->program_handle);
+	bd->program_handle = 0;
+}
+
+ImguiShaderProgram imgui_load_shader(const char* GlslVersionString, const char* vertex_shader, const char* fragment_shader)
 {
 	// Create shaders
 	const GLchar* vertex_shader_with_version[2] = {GlslVersionString, vertex_shader};
@@ -62,70 +73,71 @@ bool imgui_load_shader(const char* GlslVersionString, const char* vertex_shader,
 	GL_CALL(vert_handle = glCreateShader(GL_VERTEX_SHADER));
 	glShaderSource(vert_handle, 2, vertex_shader_with_version, nullptr);
 	glCompileShader(vert_handle);
-	if (! check_imgui_shader(vert_handle, "vertex shader")) return false;
+	if (! check_imgui_shader(vert_handle, "vertex shader")) return {};
 
 	const GLchar* fragment_shader_with_version[2] = {GlslVersionString, fragment_shader};
 	GLuint frag_handle;
 	GL_CALL(frag_handle = glCreateShader(GL_FRAGMENT_SHADER));
 	glShaderSource(frag_handle, 2, fragment_shader_with_version, nullptr);
 	glCompileShader(frag_handle);
-	if (! check_imgui_shader(frag_handle, "fragment shader")) return false;
+	if (! check_imgui_shader(frag_handle, "fragment shader")) return {};
 
 	// Link
-	bd->program_handle = glCreateProgram();
-	glAttachShader(bd->program_handle, vert_handle);
-	glAttachShader(bd->program_handle, frag_handle);
-	glLinkProgram(bd->program_handle);
-	if (! imgui_check_program(bd->program_handle, "shader program")) return false;
+	ImguiShaderProgram prog;
+	prog.program_handle = glCreateProgram();
+	glAttachShader(prog.program_handle, vert_handle);
+	glAttachShader(prog.program_handle, frag_handle);
+	glLinkProgram(prog.program_handle);
+	if (! imgui_check_program(prog.program_handle, "shader program"))
+	{
+		imgui_destroy_shader(&prog);
+		return {};
+	}
 
-	glDetachShader(bd->program_handle, vert_handle);
-	glDetachShader(bd->program_handle, frag_handle);
+	glDetachShader(prog.program_handle, vert_handle);
+	glDetachShader(prog.program_handle, frag_handle);
 	glDeleteShader(vert_handle);
 	glDeleteShader(frag_handle);
 
-	bd->texture_attrib = glGetUniformLocation(bd->program_handle, "Texture");
-	bd->projection_attrib = glGetUniformLocation(bd->program_handle, "ProjMtx");
-	return true;
+	prog.texture_attrib = glGetUniformLocation(prog.program_handle, "Texture");
+	prog.projection_attrib = glGetUniformLocation(prog.program_handle, "ProjMtx");
+	return prog;
 }
 
-void imgui_destroy_shader(ImguiShaderProgram* bd)
+constexpr auto dear_imgui_shader_version = "#version 330 core\n";
+
+constexpr auto linear_to_gamma_glsl_vert = R"glsl(
+layout (location = 0) in vec2 Position;
+layout (location = 1) in vec2 UV;
+layout (location = 2) in vec4 Color;
+uniform mat4 ProjMtx;
+out vec2 Frag_UV;
+out vec4 Frag_Color;
+void main()
 {
-	if (bd->program_handle)
-	{
-		glDeleteProgram(bd->program_handle);
-		bd->program_handle = 0;
-	}
+    Frag_UV = UV;
+    Frag_Color = Color;
+    gl_Position = ProjMtx * vec4(Position.xy,0,1);
 }
+)glsl";
+
+constexpr auto linear_to_gamma_glsl_frag = R"glsl(
+in vec2 Frag_UV;
+in vec4 Frag_Color;
+uniform sampler2D Texture;
+layout (location = 0) out vec4 Out_Color;
+void main()
+{
+    vec4 sample = texture(Texture, Frag_UV.st);
+    Out_Color = Frag_Color * vec4(sample.r, 0, 0, sample.a);
+}
+)glsl";
+
 
 ImguiShaderCache::ImguiShaderCache()
+	: linear_to_gamma_shader(imgui_load_shader(dear_imgui_shader_version,
+		linear_to_gamma_glsl_vert, linear_to_gamma_glsl_frag))
 {
-	imgui_load_shader(
-		// vertex shader
-		"#version 330 core\n",
-		"layout (location = 0) in vec2 Position;\n"
-        "layout (location = 1) in vec2 UV;\n"
-        "layout (location = 2) in vec4 Color;\n"
-        "uniform mat4 ProjMtx;\n"
-        "out vec2 Frag_UV;\n"
-        "out vec4 Frag_Color;\n"
-        "void main()\n"
-        "{\n"
-        "    Frag_UV = UV;\n"
-        "    Frag_Color = Color;\n"
-        "    gl_Position = ProjMtx * vec4(Position.xy,0,1);\n"
-        "}\n",
-		// fragment shader
-		"in vec2 Frag_UV;\n"
-        "in vec4 Frag_Color;\n"
-        "uniform sampler2D Texture;\n"
-        "layout (location = 0) out vec4 Out_Color;\n"
-        "void main()\n"
-        "{\n"
-		"    vec4 sample = texture(Texture, Frag_UV.st);\n"
-        "    Out_Color = Frag_Color * vec4(sample.r, 0, 0, sample.a);\n"
-		"}\n",
-		&linear_to_gamma_shader
-	);
 }
 
 ImguiShaderCache::~ImguiShaderCache()
@@ -134,9 +146,8 @@ ImguiShaderCache::~ImguiShaderCache()
 }
 
 
-void set_shader_callback(const ImDrawList*, const ImDrawCmd* cmd)
+void imgui_set_shared_shader_params(ImguiShaderProgram* prog)
 {
-	ImguiShaderProgram* bd = static_cast<ImguiShaderProgram*>(cmd->UserCallbackData);
 	ImDrawData* draw_data = ImGui::GetDrawData();
 
 	float L = draw_data->DisplayPos.x;
@@ -150,9 +161,16 @@ void set_shader_callback(const ImDrawList*, const ImDrawCmd* cmd)
 		{0.0f, 0.0f, -1.0f, 0.0f},
 		{(R + L) / (L - R), (T + B) / (B - T), 0.0f, 1.0f},
 	};
-	glUseProgram(bd->program_handle);
-	glUniform1i(bd->texture_attrib, 0);
-	glUniformMatrix4fv(bd->projection_attrib, 1, GL_FALSE, &ortho_projection[0][0]);
+	glUseProgram(prog->program_handle);
+	glUniform1i(prog->texture_attrib, 0);
+	glUniformMatrix4fv(prog->projection_attrib, 1, GL_FALSE, &ortho_projection[0][0]);
+}
+
+void ImDrawCallback_linear_to_gamma(const ImDrawList*, const ImDrawCmd* cmd)
+{
+	auto prog = static_cast<ImguiShaderProgram*>(cmd->UserCallbackData);
+
+	imgui_set_shared_shader_params(prog);
 }
 
 
@@ -208,7 +226,7 @@ static void draw_imgui_image(const FrameBuffer& img, const ImVec2& image_size, c
 	ImDrawList* draw_list = ImGui::GetWindowDrawList();
 
 	// set shader
-	draw_list->AddCallback(set_shader_callback, &cache->linear_to_gamma_shader);
+	draw_list->AddCallback(ImDrawCallback_linear_to_gamma, &cache->linear_to_gamma_shader);
 
 	// draw image
 	ImGui::ImageWithBg(img.id, image_size, uv0, uv1, border_col);
