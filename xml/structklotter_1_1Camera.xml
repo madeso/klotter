@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1Camera" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::Camera</compoundname>
+    <includes refid="camera_8h" local="no">camera.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1Camera_1a44876819aa360977eb57fbc806766656" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::Camera::fov</definition>
+        <argsstring></argsstring>
+        <name>fov</name>
+        <qualifiedname>klotter::Camera::fov</qualifiedname>
+        <initializer>= 45.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="24" column="7" bodyfile="src/klotter/render/camera.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1Camera_1ae97d581da5fb4a150c56f128346ce0a5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::Camera::near</definition>
+        <argsstring></argsstring>
+        <name>near</name>
+        <qualifiedname>klotter::Camera::near</qualifiedname>
+        <initializer>= 0.1f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="25" column="7" bodyfile="src/klotter/render/camera.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1Camera_1aa5580be75db05bc2a99273caf62b3394" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::Camera::far</definition>
+        <argsstring></argsstring>
+        <name>far</name>
+        <qualifiedname>klotter::Camera::far</qualifiedname>
+        <initializer>= 100.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="26" column="7" bodyfile="src/klotter/render/camera.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1Camera_1a95a31013fb1a105c79f2df166c099e46" prot="public" static="no" mutable="no">
+        <type>glm::vec3</type>
+        <definition>glm::vec3 klotter::Camera::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <qualifiedname>klotter::Camera::position</qualifiedname>
+        <initializer>= glm::vec3{0.0f, 0.0f, 0.0f}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="28" column="11" bodyfile="src/klotter/render/camera.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1Camera_1a51008746c43ccdb08d655e9f2f230472" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::Camera::yaw</definition>
+        <argsstring></argsstring>
+        <name>yaw</name>
+        <qualifiedname>klotter::Camera::yaw</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="30" column="7" bodyfile="src/klotter/render/camera.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1Camera_1a239ef16a40798863e933a2b56db8de78" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::Camera::pitch</definition>
+        <argsstring></argsstring>
+        <name>pitch</name>
+        <qualifiedname>klotter::Camera::pitch</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/camera.h" line="31" column="7" bodyfile="src/klotter/render/camera.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The current perspective camera representation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/render/camera.h" line="22" column="1" bodyfile="src/klotter/render/camera.h" bodystart="23" bodyend="32"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1Camera_1aa5580be75db05bc2a99273caf62b3394" prot="public" virt="non-virtual"><scope>klotter::Camera</scope><name>far</name></member>
+      <member refid="structklotter_1_1Camera_1a44876819aa360977eb57fbc806766656" prot="public" virt="non-virtual"><scope>klotter::Camera</scope><name>fov</name></member>
+      <member refid="structklotter_1_1Camera_1ae97d581da5fb4a150c56f128346ce0a5" prot="public" virt="non-virtual"><scope>klotter::Camera</scope><name>near</name></member>
+      <member refid="structklotter_1_1Camera_1a239ef16a40798863e933a2b56db8de78" prot="public" virt="non-virtual"><scope>klotter::Camera</scope><name>pitch</name></member>
+      <member refid="structklotter_1_1Camera_1a95a31013fb1a105c79f2df166c099e46" prot="public" virt="non-virtual"><scope>klotter::Camera</scope><name>position</name></member>
+      <member refid="structklotter_1_1Camera_1a51008746c43ccdb08d655e9f2f230472" prot="public" virt="non-virtual"><scope>klotter::Camera</scope><name>yaw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

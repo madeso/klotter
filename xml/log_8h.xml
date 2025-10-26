@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="log_8h" kind="file" language="C++">
+    <compoundname>log.h</compoundname>
+    <includes local="yes">SDL_log.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/klotter/log.h</label>
+        <link refid="log_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL_log.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="log_8h_1a378e28bfcb78d17285210d6bbb70a083" prot="public" static="no">
+        <name>LOG_INFO</name>
+        <param><defname>...</defname></param>
+        <initializer>SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/log.h" line="4" column="10" bodyfile="src/klotter/log.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="log_8h_1ad4a9117ce894e3319e903142347a0f63" prot="public" static="no">
+        <name>LOG_ERROR</name>
+        <param><defname>...</defname></param>
+        <initializer>SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/log.h" line="5" column="9" bodyfile="src/klotter/log.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDL_log.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="log_8h_1a378e28bfcb78d17285210d6bbb70a083" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_INFO(...)<sp/>SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,<sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="log_8h_1ad4a9117ce894e3319e903142347a0f63" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_ERROR(...)<sp/>SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,<sp/>__VA_ARGS__)</highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/log.h"/>
+  </compounddef>
+</doxygen>

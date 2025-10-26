@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structPlotRange" kind="struct" language="C++" prot="public">
+    <compoundname>PlotRange</compoundname>
+    <includes refid="dump_8h" local="no">dump.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPlotRange_1a3ed06b9824af4a36190845b075f20658" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlotRange::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <qualifiedname>PlotRange::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/dump.h" line="18" column="7" bodyfile="src/klotter/dump.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPlotRange_1aae56ef81c1da0462b1ea13595713818a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlotRange::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <qualifiedname>PlotRange::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/dump.h" line="19" column="7" bodyfile="src/klotter/dump.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPlotRange_1a3ce32efc8597c15695c3cd6990ab1cfe" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float PlotRange::step</definition>
+        <argsstring></argsstring>
+        <name>step</name>
+        <qualifiedname>PlotRange::step</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/dump.h" line="20" column="7" bodyfile="src/klotter/dump.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/dump.h" line="16" column="1" bodyfile="src/klotter/dump.h" bodystart="17" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structPlotRange_1aae56ef81c1da0462b1ea13595713818a" prot="public" virt="non-virtual"><scope>PlotRange</scope><name>end</name></member>
+      <member refid="structPlotRange_1a3ed06b9824af4a36190845b075f20658" prot="public" virt="non-virtual"><scope>PlotRange</scope><name>start</name></member>
+      <member refid="structPlotRange_1a3ce32efc8597c15695c3cd6990ab1cfe" prot="public" virt="non-virtual"><scope>PlotRange</scope><name>step</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1RenderTextureWithShader" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::RenderTextureWithShader</compoundname>
+    <basecompoundref refid="structklotter_1_1RenderSource" prot="public" virt="non-virtual">klotter::RenderSource</basecompoundref>
+    <includes refid="postproc_8h" local="no">postproc.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1RenderTextureWithShader_1ac5de1a3fa4f68ba53aad41fd85388f7d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string klotter::RenderTextureWithShader::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>klotter::RenderTextureWithShader::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="61" column="13" bodyfile="src/klotter/render/postproc.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RenderTextureWithShader_1a09fb02631c3a68491b2eaeda70a7f6eb" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1RenderSource" kindref="compound">RenderSource</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;RenderSource&gt; klotter::RenderTextureWithShader::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <qualifiedname>klotter::RenderTextureWithShader::source</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="62" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RenderTextureWithShader_1a0ae8bab66cf61e303741ee950ab8303d" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;FrameBuffer&gt; klotter::RenderTextureWithShader::fbo</definition>
+        <argsstring></argsstring>
+        <name>fbo</name>
+        <qualifiedname>klotter::RenderTextureWithShader::fbo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="63" column="17" bodyfile="src/klotter/render/postproc.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RenderTextureWithShader_1a11982aa89c5401cd9235959bd8a96beb" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1ShaderPropertyProvider" kindref="compound">ShaderPropertyProvider</ref> *</type>
+        <definition>ShaderPropertyProvider* klotter::RenderTextureWithShader::effect</definition>
+        <argsstring></argsstring>
+        <name>effect</name>
+        <qualifiedname>klotter::RenderTextureWithShader::effect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="64" column="24" bodyfile="src/klotter/render/postproc.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1RenderTextureWithShader_1aff7be13082c2aed0d2e2db9d77123b09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::RenderTextureWithShader::RenderTextureWithShader</definition>
+        <argsstring>(std::string n, std::shared_ptr&lt; RenderSource &gt; s, std::shared_ptr&lt; FrameBuffer &gt; f, ShaderPropertyProvider *e)</argsstring>
+        <name>RenderTextureWithShader</name>
+        <qualifiedname>klotter::RenderTextureWithShader::RenderTextureWithShader</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1RenderSource" kindref="compound">RenderSource</ref> &gt;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref> &gt;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="structklotter_1_1ShaderPropertyProvider" kindref="compound">ShaderPropertyProvider</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1RenderTextureWithShader_1ae9721966d78654a54078a7b159180dd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void klotter::RenderTextureWithShader::render</definition>
+        <argsstring>(const PostProcArg &amp;arg) override</argsstring>
+        <name>render</name>
+        <qualifiedname>klotter::RenderTextureWithShader::render</qualifiedname>
+        <reimplements refid="structklotter_1_1RenderSource_1a09fe11c60248250aeeaf931bb1f0e2e1">render</reimplements>
+        <param>
+          <type>const <ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref> &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>render internal fbo to a quad with a shader </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="69" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1RenderTextureWithShader_1a5ed90bcae50cd19bf1b21450e04c40f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::RenderTextureWithShader::update</definition>
+        <argsstring>(const PostProcArg &amp;arg)</argsstring>
+        <name>update</name>
+        <qualifiedname>klotter::RenderTextureWithShader::update</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref> &amp;</type>
+          <declname>arg</declname>
+        </param>
+        <briefdescription>
+<para>call render on linked source and render to fbo </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.h" line="72" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Applies a shader to the output of another source. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is done using a framebuffer that is rendered to a quad with the shader applied. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>klotter::RenderSource</label>
+        <link refid="structklotter_1_1RenderSource"/>
+      </node>
+      <node id="1">
+        <label>klotter::RenderTextureWithShader</label>
+        <link refid="structklotter_1_1RenderTextureWithShader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="7">
+        <label>klotter::FrameBuffer</label>
+        <link refid="structklotter_1_1FrameBuffer"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::RenderSource</label>
+        <link refid="structklotter_1_1RenderSource"/>
+      </node>
+      <node id="1">
+        <label>klotter::RenderTextureWithShader</label>
+        <link refid="structklotter_1_1RenderTextureWithShader"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>source</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>fbo</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>effect</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>klotter::ShaderPropertyProvider</label>
+        <link refid="structklotter_1_1ShaderPropertyProvider"/>
+      </node>
+      <node id="4">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="6">
+        <label>std::shared_ptr&lt; klotter::FrameBuffer &gt;</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::shared_ptr&lt; klotter::RenderSource &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::string</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/postproc.h" line="59" column="1" bodyfile="src/klotter/render/postproc.h" bodystart="60" bodyend="73"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1RenderTextureWithShader_1a11982aa89c5401cd9235959bd8a96beb" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>effect</name></member>
+      <member refid="structklotter_1_1RenderTextureWithShader_1a0ae8bab66cf61e303741ee950ab8303d" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>fbo</name></member>
+      <member refid="structklotter_1_1RenderTextureWithShader_1ac5de1a3fa4f68ba53aad41fd85388f7d" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>name</name></member>
+      <member refid="structklotter_1_1RenderSource_1a573f81ac792964127141bfe9d9d19f2a" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1RenderSource_1a282b41ce7fa0a6e06d49c5c8983eb0d6" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1RenderTextureWithShader_1ae9721966d78654a54078a7b159180dd5" prot="public" virt="virtual"><scope>klotter::RenderTextureWithShader</scope><name>render</name></member>
+      <member refid="structklotter_1_1RenderSource_1a7bbdf727aee83637ea11695272907a31" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>RenderSource</name></member>
+      <member refid="structklotter_1_1RenderSource_1a1fbc3febe5e3d46202efebdac885dd5c" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>RenderSource</name></member>
+      <member refid="structklotter_1_1RenderSource_1ade2acc705758ca5458b8415f4e2716b3" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>RenderSource</name></member>
+      <member refid="structklotter_1_1RenderTextureWithShader_1aff7be13082c2aed0d2e2db9d77123b09" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>RenderTextureWithShader</name></member>
+      <member refid="structklotter_1_1RenderTextureWithShader_1a09fb02631c3a68491b2eaeda70a7f6eb" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>source</name></member>
+      <member refid="structklotter_1_1RenderTextureWithShader_1a5ed90bcae50cd19bf1b21450e04c40f5" prot="public" virt="non-virtual"><scope>klotter::RenderTextureWithShader</scope><name>update</name></member>
+      <member refid="structklotter_1_1RenderSource_1a11b2e79c0400c88412f16971cc3d6e8a" prot="public" virt="virtual"><scope>klotter::RenderTextureWithShader</scope><name>~RenderSource</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

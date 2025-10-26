@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="blend_8h" kind="file" language="C++">
+    <compoundname>blend.h</compoundname>
+    <includedby refid="opengl__states_8h" local="yes">src/klotter/render/opengl_states.h</includedby>
+    <includedby refid="statechanger_8h" local="yes">src/klotter/render/statechanger.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/klotter/render/blend.h</label>
+        <link refid="blend_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/klotter/render/opengl_states.h</label>
+        <link refid="opengl__states_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
+      </node>
+      <node id="4">
+        <label>src/klotter/render/statechanger.h</label>
+        <link refid="statechanger_8h"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kindref="member">Blend</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bad02c4c4cde7ae76252540d116a40f23a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bad02c4c4cde7ae76252540d116a40f23a" kindref="member">zero</ref>,</highlight></codeline>
+<codeline lineno="13" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baf97c5d29941bfb1b2fdab0874906ab82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baf97c5d29941bfb1b2fdab0874906ab82" kindref="member">one</ref>,</highlight></codeline>
+<codeline lineno="14" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba3bbfc559ec491c8f1c2e45bb87255cf2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba3bbfc559ec491c8f1c2e45bb87255cf2" kindref="member">src_color</ref>,</highlight></codeline>
+<codeline lineno="15" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bab41ddc54ca846edeec43f65983a0f8ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bab41ddc54ca846edeec43f65983a0f8ae" kindref="member">one_minus_src_color</ref>,</highlight></codeline>
+<codeline lineno="16" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baeadd61e269579f1d602a06d9ae0972e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baeadd61e269579f1d602a06d9ae0972e3" kindref="member">dst_color</ref>,</highlight></codeline>
+<codeline lineno="17" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba10b63c6bd5f63fd9a592ebf3f6103ff3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba10b63c6bd5f63fd9a592ebf3f6103ff3" kindref="member">one_minus_dst_color</ref>,</highlight></codeline>
+<codeline lineno="18" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baff175e9d424fcb3eef837a773872fb9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baff175e9d424fcb3eef837a773872fb9e" kindref="member">src_alpha</ref>,</highlight></codeline>
+<codeline lineno="19" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baa415ef353601f5e5d8a3e5ac06683703" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baa415ef353601f5e5d8a3e5ac06683703" kindref="member">one_minus_src_alpha</ref>,</highlight></codeline>
+<codeline lineno="20" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bab71b79d6bf971b9dd2ee1d43565ab344" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bab71b79d6bf971b9dd2ee1d43565ab344" kindref="member">dst_alpha</ref>,</highlight></codeline>
+<codeline lineno="21" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba8d3a4c2d0c55b1041c69d3fdd7ed55e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba8d3a4c2d0c55b1041c69d3fdd7ed55e1" kindref="member">one_minus_dst_alpha</ref>,</highlight></codeline>
+<codeline lineno="22" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baec5574dc954581793a5dcbdf0e358ae1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baec5574dc954581793a5dcbdf0e358ae1" kindref="member">constant_color</ref>,</highlight></codeline>
+<codeline lineno="23" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba645421b2fe9a762542bf70220d9eae9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba645421b2fe9a762542bf70220d9eae9c" kindref="member">one_minus_constant_color</ref>,</highlight></codeline>
+<codeline lineno="24" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba9831f8a00f48f451286ea6c16cd2f55e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba9831f8a00f48f451286ea6c16cd2f55e" kindref="member">constant_alpha</ref>,</highlight></codeline>
+<codeline lineno="25" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bae984532432604da975ecbe092f88091c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bae984532432604da975ecbe092f88091c" kindref="member">one_minus_constant_alpha</ref>,</highlight></codeline>
+<codeline lineno="26" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba4ca927a00bbb81ed85f09169e3280e4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba4ca927a00bbb81ed85f09169e3280e4f" kindref="member">src_alpha_saturate</ref>,</highlight></codeline>
+<codeline lineno="27" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bab0d68a99473c977a3817fedc7d08f0e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bab0d68a99473c977a3817fedc7d08f0e2" kindref="member">src1_color</ref>,</highlight></codeline>
+<codeline lineno="28" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481badfdd9575355e1f8bf7a8ac999b80aec5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481badfdd9575355e1f8bf7a8ac999b80aec5" kindref="member">one_minus_src1_color</ref>,</highlight></codeline>
+<codeline lineno="29" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba0617538b9cf7a4e498eb780836a56839" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba0617538b9cf7a4e498eb780836a56839" kindref="member">src1_alpha</ref>,</highlight></codeline>
+<codeline lineno="30" refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba0f5e5ae7cbb93bf3f4e223b2e967aedf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481ba0f5e5ae7cbb93bf3f4e223b2e967aedf" kindref="member">one_minus_src1_alpha</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/blend.h"/>
+  </compounddef>
+</doxygen>
