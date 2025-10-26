@@ -1,6 +1,7 @@
 #include "klotter/render/ui.h"
 
 #include "klotter/str.h"
+#include "klotter/cint.h"
 
 #include "klotter/render/texture.h"
 
@@ -27,7 +28,7 @@ static bool check_imgui_shader(GLuint handle, const char* desc)
 	if (log_length > 1)
 	{
 		std::vector<GLchar> buf;
-		buf.resize(log_length + 1);
+		buf.resize(sizet_from_int(log_length + 1));
 		glGetShaderInfoLog(handle, log_length, nullptr, buf.data());
 		std::cerr << buf.data();
 	}
@@ -47,7 +48,7 @@ static bool imgui_check_program(GLuint handle, const char* desc)
 	if (log_length > 1)
 	{
 		std::vector<GLchar> buf;
-		buf.resize(log_length + 1);
+		buf.resize(sizet_from_int(log_length + 1));
 		glGetProgramInfoLog(handle, log_length, nullptr, buf.data());
 		std::cerr << buf.data();
 	}
