@@ -81,7 +81,7 @@ struct BaseTexture
 	void unload();
 };
 
-/// A 3d image texture.
+/// A 2d image texture.
 struct Texture2d : BaseTexture
 {
 	Texture2d() = delete;
@@ -114,8 +114,7 @@ TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, C
 struct FrameBuffer : BaseTexture
 {
 	/// @param f The FBO handle
-	/// @param w the texture width
-	/// @param h the texture height
+	/// @param s the texture size
 	FrameBuffer(unsigned int f, const glm::ivec2& s);
 	~FrameBuffer();
 
