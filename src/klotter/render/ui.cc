@@ -13,11 +13,11 @@ namespace klotter
 // opengl code copied from the imgui opengl3 backend with minor modifications
 // todo(Gustav): should we use the imgui backend code for "backend" rendering or use our own shader?
 
-#define GL_CALL(_CALL) _CALL  // Call without error check
-
 static bool check_imgui_shader(GLuint handle, const char* desc)
 {
-	GLint status = 0, log_length = 0;
+	GLint status = 0;
+	GLint log_length = 0;
+
 	glGetShaderiv(handle, GL_COMPILE_STATUS, &status);
 	glGetShaderiv(handle, GL_INFO_LOG_LENGTH, &log_length);
 	if (status == GL_FALSE)
@@ -37,7 +37,8 @@ static bool check_imgui_shader(GLuint handle, const char* desc)
 
 static bool imgui_check_program(GLuint handle, const char* desc)
 {
-	GLint status = 0, log_length = 0;
+	GLint status = 0;
+	GLint log_length = 0;
 	glGetProgramiv(handle, GL_LINK_STATUS, &status);
 	glGetProgramiv(handle, GL_INFO_LOG_LENGTH, &log_length);
 	if (status == GL_FALSE)
@@ -66,22 +67,27 @@ void imgui_destroy_shader(ImguiShaderProgram* bd)
 	bd->program_handle = 0;
 }
 
-ImguiShaderProgram imgui_load_shader(const char* GlslVersionString, const char* vertex_shader, const char* fragment_shader)
+ImguiShaderProgram imgui_load_shader(const char* glsl_version_string, const char* vertex_shader, const char* fragment_shader)
 {
 	// Create shaders
-	const GLchar* vertex_shader_with_version[2] = {GlslVersionString, vertex_shader};
-	GLuint vert_handle;
-	GL_CALL(vert_handle = glCreateShader(GL_VERTEX_SHADER));
+	const GLchar* vertex_shader_with_version[2] = {glsl_version_string, vertex_shader};
+	const auto vert_handle = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vert_handle, 2, vertex_shader_with_version, nullptr);
 	glCompileShader(vert_handle);
-	if (! check_imgui_shader(vert_handle, "vertex shader")) return {};
+	if (! check_imgui_shader(vert_handle, "vertex shader"))
+	{
+		return {};
+	}
 
-	const GLchar* fragment_shader_with_version[2] = {GlslVersionString, fragment_shader};
-	GLuint frag_handle;
-	GL_CALL(frag_handle = glCreateShader(GL_FRAGMENT_SHADER));
+	const GLchar* fragment_shader_with_version[2] = {glsl_version_string, fragment_shader};
+	const auto frag_handle = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(frag_handle, 2, fragment_shader_with_version, nullptr);
 	glCompileShader(frag_handle);
-	if (! check_imgui_shader(frag_handle, "fragment shader")) return {};
+
+	if (! check_imgui_shader(frag_handle, "fragment shader"))
+	{
+		return {};
+	}
 
 	// Link
 	ImguiShaderProgram prog;
@@ -151,25 +157,25 @@ void imgui_set_shared_shader_params(ImguiShaderProgram* prog)
 {
 	ImDrawData* draw_data = ImGui::GetDrawData();
 
-	float L = draw_data->DisplayPos.x;
-	float R = draw_data->DisplayPos.x + draw_data->DisplaySize.x;
-	float T = draw_data->DisplayPos.y;
-	float B = draw_data->DisplayPos.y + draw_data->DisplaySize.y;
+	const auto le = draw_data->DisplayPos.x;
+	const auto ri = draw_data->DisplayPos.x + draw_data->DisplaySize.x;
+	const auto to = draw_data->DisplayPos.y;
+	const auto bo = draw_data->DisplayPos.y + draw_data->DisplaySize.y;
 
 	const float ortho_projection[4][4] = {
-		{2.0f / (R - L), 0.0f, 0.0f, 0.0f},
-		{0.0f, 2.0f / (T - B), 0.0f, 0.0f},
+		{2.0f / (ri - le), 0.0f, 0.0f, 0.0f},
+		{0.0f, 2.0f / (to - bo), 0.0f, 0.0f},
 		{0.0f, 0.0f, -1.0f, 0.0f},
-		{(R + L) / (L - R), (T + B) / (B - T), 0.0f, 1.0f},
+		{(ri + le) / (le - ri), (to + bo) / (bo - to), 0.0f, 1.0f},
 	};
 	glUseProgram(prog->program_handle);
 	glUniform1i(prog->texture_attrib, 0);
 	glUniformMatrix4fv(prog->projection_attrib, 1, GL_FALSE, &ortho_projection[0][0]);
 }
 
-void ImDrawCallback_linear_to_gamma(const ImDrawList*, const ImDrawCmd* cmd)
+void im_draw_callback_linear_to_gamma(const ImDrawList*, const ImDrawCmd* cmd)
 {
-	auto prog = static_cast<ImguiShaderProgram*>(cmd->UserCallbackData);
+	auto* prog = static_cast<ImguiShaderProgram*>(cmd->UserCallbackData);
 
 	imgui_set_shared_shader_params(prog);
 }
@@ -227,7 +233,7 @@ static void draw_imgui_image(const FrameBuffer& img, const ImVec2& image_size, c
 	ImDrawList* draw_list = ImGui::GetWindowDrawList();
 
 	// set shader
-	draw_list->AddCallback(ImDrawCallback_linear_to_gamma, &cache->linear_to_gamma_shader);
+	draw_list->AddCallback(im_draw_callback_linear_to_gamma, &cache->linear_to_gamma_shader);
 
 	// draw image
 	ImGui::ImageWithBg(img.id, image_size, uv0, uv1, border_col);
