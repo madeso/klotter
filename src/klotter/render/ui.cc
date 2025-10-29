@@ -136,8 +136,10 @@ layout (location = 0) out vec4 Out_Color;
 void main()
 {
     vec4 sample = texture(Texture, Frag_UV.st);
-	vec3 reinhard = sample.rgb / (sample.rgb + vec3(1.0f));
-    Out_Color = Frag_Color * vec4(reinhard, sample.a);
+	vec3 color = sample.rgb / (sample.rgb + vec3(1.0f)); // reinhard tone mapping
+	float gamma = 2.2f;
+	vec3 gamma_corrected = pow(color.rgb, vec3(1.0f/gamma));
+    Out_Color = Frag_Color * vec4(gamma_corrected, sample.a);
 }
 )glsl";
 
