@@ -136,7 +136,8 @@ layout (location = 0) out vec4 Out_Color;
 void main()
 {
     vec4 sample = texture(Texture, Frag_UV.st);
-    Out_Color = Frag_Color * vec4(sample.r, 0, 0, sample.a);
+	vec3 reinhard = sample.rgb / (sample.rgb + vec3(1.0f));
+    Out_Color = Frag_Color * vec4(reinhard, sample.a);
 }
 )glsl";
 
