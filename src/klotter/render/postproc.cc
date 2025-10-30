@@ -243,10 +243,10 @@ void RenderWorld::gui(ImguiShaderCache* cache)
 {
 	if (bloom_render && bloom_render->bloom_buffer)
 	{
-		imgui_image("bloom buffer", *bloom_render->bloom_buffer, cache);
+		imgui_image("bloom buffer", *bloom_render->bloom_buffer, cache, ImageShader::TonemapAndGamma);
 
-		imgui_image("ping-pong A", *bloom_render->ping_pong_buffer[0], cache);
-		imgui_image("ping-pong B", *bloom_render->ping_pong_buffer[1], cache);
+		imgui_image("ping-pong A", *bloom_render->ping_pong_buffer[0], cache, ImageShader::TonemapAndGamma);
+		imgui_image("ping-pong B", *bloom_render->ping_pong_buffer[1], cache, ImageShader::TonemapAndGamma);
 	}
 }
 

@@ -231,24 +231,35 @@ void imgui_text(const std::string& str)
 
 
 
-static void draw_imgui_image(const FrameBuffer& img, const ImVec2& image_size, const ImVec2& uv0, const ImVec2& uv1, const ImVec4& border_col, ImguiShaderCache* cache)
+static void draw_imgui_image(const FrameBuffer& img, const ImVec2& image_size, const ImVec2& uv0, const ImVec2& uv1, const ImVec4& border_col, ImguiShaderCache* cache, ImageShader shader)
 {
 	ImDrawList* draw_list = ImGui::GetWindowDrawList();
 
 	// set shader
-	draw_list->AddCallback(im_draw_callback_linear_to_gamma, &cache->linear_to_gamma_shader);
+	switch (shader)
+	{
+	case ImageShader::TonemapAndGamma:
+		draw_list->AddCallback(im_draw_callback_linear_to_gamma, &cache->linear_to_gamma_shader);
+		break;
+	case ImageShader::None:
+		// no shader
+		break;
+	}
 
 	// draw image
 	ImGui::ImageWithBg(img.id, image_size, uv0, uv1, border_col);
 
 	// reset shader
-	draw_list->AddCallback(ImDrawCallback_ResetRenderState, nullptr);
+	if (shader != ImageShader::None)
+	{
+		draw_list->AddCallback(ImDrawCallback_ResetRenderState, nullptr);
+	}
 }
 
 
 
 static void image_tooltip(const FrameBuffer& texture_id, const ImVec2 texture_size, const float& region_size, const float& hover_size,
-	const ImVec2 mouse_pos, const ImVec2 widget_size, const ImVec2 pos, const ImVec4 border_col, ImguiShaderCache* cache)
+	const ImVec2 mouse_pos, const ImVec2 widget_size, const ImVec2 pos, const ImVec4 border_col, ImguiShaderCache* cache, ImageShader shader)
 {
 	const auto region = calculate_region(mouse_pos, pos, texture_size, widget_size, region_size);
 	const auto flipped_region_y = texture_size.y - region.y;
@@ -258,12 +269,12 @@ static void image_tooltip(const FrameBuffer& texture_id, const ImVec2 texture_si
 	// todo(Gustav): can we display pixel value instead of where we are looking? is the region important information?
 	imgui_text(Str{} << "UL: " << region.x << " " << region.y);
 	imgui_text(Str{} << "LR: " << region.x + region_size << " " << region.y + region_size);
-	draw_imgui_image(texture_id, ImVec2(hover_size, hover_size), uv0, uv1, border_col, cache);
+	draw_imgui_image(texture_id, ImVec2(hover_size, hover_size), uv0, uv1, border_col, cache, shader);
 }
 
 
 
-void imgui_image(const char* name, const FrameBuffer& img, ImguiShaderCache* cache)
+void imgui_image(const char* name, const FrameBuffer& img, ImguiShaderCache* cache, ImageShader shader)
 {
 	const auto texture_size = ImVec2{static_cast<float>(img.size.x), static_cast<float>(img.size.y)};
 
@@ -288,7 +299,7 @@ void imgui_image(const char* name, const FrameBuffer& img, ImguiShaderCache* cac
 
 	const constexpr char* const popup_id = "image config popup";
 
-	draw_imgui_image(img, widget_size, uv_min, uv_max, border_col, cache);
+	draw_imgui_image(img, widget_size, uv_min, uv_max, border_col, cache, shader);
 	const auto id = ImGui::GetID(name);
 
 	if (id == current_id && ImGui::BeginPopupContextItem(popup_id))
@@ -296,7 +307,7 @@ void imgui_image(const char* name, const FrameBuffer& img, ImguiShaderCache* cac
 		ImGui::DragFloat("Base", &widget_height, 1.0f);
 		ImGui::DragFloat("Size", &region_size, 0.01f);
 		ImGui::DragFloat("Scale", &hover_size, 1.0f);
-		image_tooltip(img, texture_size, region_size, hover_size, latest_tooltip, widget_size, pos, border_col, cache);
+		image_tooltip(img, texture_size, region_size, hover_size, latest_tooltip, widget_size, pos, border_col, cache, shader);
 		if (ImGui::Button("Close"))
 		{
 			ImGui::CloseCurrentPopup();
@@ -312,7 +323,7 @@ void imgui_image(const char* name, const FrameBuffer& img, ImguiShaderCache* cac
 		latest_tooltip = io.MousePos;
 		if (ImGui::BeginTooltip())
 		{
-			image_tooltip(img, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, border_col, cache);
+			image_tooltip(img, texture_size, region_size, hover_size, io.MousePos, widget_size, pos, border_col, cache, shader);
 			ImGui::EndTooltip();
 		}
 	}
