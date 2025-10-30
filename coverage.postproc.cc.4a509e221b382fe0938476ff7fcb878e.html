@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/postproc.cc</div>
-            <div>Date: 2025-10-29 18:31:29</div>
+            <div>Date: 2025-10-30 20:02:31</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -1841,7 +1841,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;bloom buffer&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">bloom_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">cache</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;bloom buffer&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">bloom_buffer</span><span class="p">,</span><span class="w"> </span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="n">ImageShader</span><span class="o">::</span><span class="n">TonemapAndGamma</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l247" href="#l247">247</a></td>
@@ -1855,14 +1855,14 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;ping-pong A&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">ping_pong_buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">cache</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;ping-pong A&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">ping_pong_buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="n">ImageShader</span><span class="o">::</span><span class="n">TonemapAndGamma</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l249" href="#l249">249</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;ping-pong B&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">ping_pong_buffer</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">cache</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="n">imgui_image</span><span class="p">(</span><span class="s">&quot;ping-pong B&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">bloom_render</span><span class="o">-&gt;</span><span class="n">ping_pong_buffer</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">cache</span><span class="p">,</span><span class="w"> </span><span class="n">ImageShader</span><span class="o">::</span><span class="n">TonemapAndGamma</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l250" href="#l250">250</a></td>

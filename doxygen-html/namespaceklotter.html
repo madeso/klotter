@@ -565,6 +565,10 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga1d677cc4a3cecec32f8e90f3ae62bf95"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of bits/pixel to use for the color buffer.  <a href="group__texture.html#ga1d677cc4a3cecec32f8e90f3ae62bf95">More...</a><br /></td></tr>
 <tr class="separator:ga1d677cc4a3cecec32f8e90f3ae62bf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99572338461d75663684a70452d1cbb7" id="r_a99572338461d75663684a70452d1cbb7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99572338461d75663684a70452d1cbb7">ImageShader</a> { <a class="el" href="#a99572338461d75663684a70452d1cbb7a6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="#a99572338461d75663684a70452d1cbb7a800cc94407ac56dd99c5f89eb5c8f72a">TonemapAndGamma</a>
+ }</td></tr>
+<tr class="separator:a99572338461d75663684a70452d1cbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4a0ad326e2184f99dd55593abe721e40" id="r_ga4a0ad326e2184f99dd55593abe721e40"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga4a0ad326e2184f99dd55593abe721e40">UniformType</a> { <br />
 &#160;&#160;<a class="el" href="group__render.html#gga4a0ad326e2184f99dd55593abe721e40afedb2d84cafe20862cb4399751a8a7e3">UniformType::invalid</a>
 , <a class="el" href="group__render.html#gga4a0ad326e2184f99dd55593abe721e40a5c3e61d27b2bdaf4ddb98aadc356e863">UniformType::bool_type</a>
@@ -731,8 +735,8 @@ Functions</h2></td></tr>
 <tr class="separator:a60504853aeac4aeafebbe058813673ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a097b19b90783477eca0bb931a3ad7692" id="r_a097b19b90783477eca0bb931a3ad7692"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a097b19b90783477eca0bb931a3ad7692">imgui_text</a> (const std::string &amp;str)</td></tr>
 <tr class="separator:a097b19b90783477eca0bb931a3ad7692"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a6efb87c78788378c7a4fb18b603e8a" id="r_a7a6efb87c78788378c7a4fb18b603e8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a6efb87c78788378c7a4fb18b603e8a">imgui_image</a> (const char *name, const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;img, <a class="el" href="structklotter_1_1ImguiShaderCache.html">ImguiShaderCache</a> *cache)</td></tr>
-<tr class="separator:a7a6efb87c78788378c7a4fb18b603e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051c93101805faa9650372682abb0c6a" id="r_a051c93101805faa9650372682abb0c6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a051c93101805faa9650372682abb0c6a">imgui_image</a> (const char *name, const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;img, <a class="el" href="structklotter_1_1ImguiShaderCache.html">ImguiShaderCache</a> *cache, <a class="el" href="#a99572338461d75663684a70452d1cbb7">ImageShader</a> shader)</td></tr>
+<tr class="separator:a051c93101805faa9650372682abb0c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6308c1c02eba0c354d9b8f5621f63162" id="r_a6308c1c02eba0c354d9b8f5621f63162"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6308c1c02eba0c354d9b8f5621f63162">simple_gamma_slider</a> (const char *label, float *gamma, float curve=1.5f, float min_gamma=1.6f, float max_gamma=2.8f)</td></tr>
 <tr class="separator:a6308c1c02eba0c354d9b8f5621f63162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac498a4f9c32fddd6f300437dec2051ad" id="r_gac498a4f9c32fddd6f300437dec2051ad"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vertex-layout.html#gac498a4f9c32fddd6f300437dec2051ad">is_instance_based</a> (<a class="el" href="group__vertex-layout.html#gad736ea89c0534627057463235feb9189">VertexType</a> v)</td></tr>
@@ -826,6 +830,32 @@ Variables</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f" name="a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f"></a>horizontal&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3" name="a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3"></a>vertical&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a99572338461d75663684a70452d1cbb7" name="a99572338461d75663684a70452d1cbb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99572338461d75663684a70452d1cbb7">&#9670;&#160;</a></span>ImageShader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a99572338461d75663684a70452d1cbb7">klotter::ImageShader</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a99572338461d75663684a70452d1cbb7a6adf97f83acf6453d4a6a4b1070f3754" name="a99572338461d75663684a70452d1cbb7a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a99572338461d75663684a70452d1cbb7a800cc94407ac56dd99c5f89eb5c8f72a" name="a99572338461d75663684a70452d1cbb7a800cc94407ac56dd99c5f89eb5c8f72a"></a>TonemapAndGamma&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -1116,8 +1146,8 @@ template&lt;typename E&gt; </div>
 
 </div>
 </div>
-<a id="a7a6efb87c78788378c7a4fb18b603e8a" name="a7a6efb87c78788378c7a4fb18b603e8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a6efb87c78788378c7a4fb18b603e8a">&#9670;&#160;</a></span>imgui_image()</h2>
+<a id="a051c93101805faa9650372682abb0c6a" name="a051c93101805faa9650372682abb0c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a051c93101805faa9650372682abb0c6a">&#9670;&#160;</a></span>imgui_image()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1135,7 +1165,12 @@ template&lt;typename E&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structklotter_1_1ImguiShaderCache.html">ImguiShaderCache</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1ImguiShaderCache.html">ImguiShaderCache</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a99572338461d75663684a70452d1cbb7">ImageShader</a></td>          <td class="paramname"><span class="paramname"><em>shader</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

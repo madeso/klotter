@@ -1009,6 +1009,9 @@
     <member refid="group__texture_1ga9733fe97e5e653625387fead61ef06a3" kind="enum"><name>SingleColor</name></member>
     <member refid="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" kind="enum"><name>DepthBits</name></member>
     <member refid="group__texture_1ga1d677cc4a3cecec32f8e90f3ae62bf95" kind="enum"><name>ColorBitsPerPixel</name></member>
+    <member refid="namespaceklotter_1a99572338461d75663684a70452d1cbb7" kind="enum"><name>ImageShader</name></member>
+    <member refid="namespaceklotter_1a99572338461d75663684a70452d1cbb7a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
+    <member refid="namespaceklotter_1a99572338461d75663684a70452d1cbb7a800cc94407ac56dd99c5f89eb5c8f72a" kind="enumvalue"><name>TonemapAndGamma</name></member>
     <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
     <member refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kind="enum"><name>VertexType</name></member>
     <member refid="group__render_1ga8b35cebf3243809e4ea2b1ab6bb19fce" kind="enum"><name>Billboarding</name></member>
@@ -1079,7 +1082,7 @@
     <member refid="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" kind="function"><name>operator-</name></member>
     <member refid="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" kind="function"><name>calculate_region</name></member>
     <member refid="namespaceklotter_1a097b19b90783477eca0bb931a3ad7692" kind="function"><name>imgui_text</name></member>
-    <member refid="namespaceklotter_1a7a6efb87c78788378c7a4fb18b603e8a" kind="function"><name>imgui_image</name></member>
+    <member refid="namespaceklotter_1a051c93101805faa9650372682abb0c6a" kind="function"><name>imgui_image</name></member>
     <member refid="namespaceklotter_1a6308c1c02eba0c354d9b8f5621f63162" kind="function"><name>simple_gamma_slider</name></member>
     <member refid="group__vertex-layout_1gac498a4f9c32fddd6f300437dec2051ad" kind="function"><name>is_instance_based</name></member>
     <member refid="group__vertex-layout_1ga930a511a1263566c1155f47dd193e47c" kind="function"><name>find_duplicates</name></member>
