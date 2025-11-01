@@ -99,6 +99,7 @@ void RenderWorld::update(const PostProcArg& arg)
 	{
 		SCOPED_DEBUG_GROUP("render shadow buffer"sv);
 		auto bound = BoundFbo{shadow_buffer};
+		set_gl_viewport({shadow_buffer->size.x, shadow_buffer->size.y});
 		const auto& light = arg.world->lights.directional_lights[0];
 		auto cam = OrthoCamera{};
 		cam.position = arg.camera->position + arg.world->lights.shadow_offset;
@@ -112,6 +113,7 @@ void RenderWorld::update(const PostProcArg& arg)
 	{
 		SCOPED_DEBUG_GROUP("rendering into msaa buffer"sv);
 		auto bound = BoundFbo{msaa_buffer};
+		set_gl_viewport({msaa_buffer->size.x, msaa_buffer->size.y});
 		arg.renderer->render_world(window_size, *arg.world, compile(*arg.camera, window_size));
 	}
 
