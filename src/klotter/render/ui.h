@@ -25,12 +25,14 @@ struct ImguiShaderCache
 	ImguiShaderCache& operator=(ImguiShaderCache&&) = delete;
 
 	ImguiShaderProgram linear_to_gamma_shader;
+	ImguiShaderProgram depth_ortho_shader;
 };
 
 enum class ImageShader
 {
 	None,
-	TonemapAndGamma
+	TonemapAndGamma,
+	DepthOrtho
 };
 
 

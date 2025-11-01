@@ -144,15 +144,48 @@ void main()
 )glsl";
 
 
+constexpr auto depth_ortho_glsl_vert = R"glsl(
+layout (location = 0) in vec2 Position;
+layout (location = 1) in vec2 UV;
+layout (location = 2) in vec4 Color;
+uniform mat4 ProjMtx;
+out vec2 Frag_UV;
+out vec4 Frag_Color;
+void main()
+{
+    Frag_UV = UV;
+    Frag_Color = Color;
+    gl_Position = ProjMtx * vec4(Position.xy,0,1);
+}
+)glsl";
+
+constexpr auto depth_ortho_glsl_frag = R"glsl(
+in vec2 Frag_UV;
+in vec4 Frag_Color;
+uniform sampler2D Texture;
+layout (location = 0) out vec4 Out_Color;
+
+void main()
+{
+    vec4 sample = texture(Texture, Frag_UV.st);
+	Out_Color = Frag_Color * vec4(vec3(sample.r), 1);
+}
+)glsl";
+
+
 ImguiShaderCache::ImguiShaderCache()
 	: linear_to_gamma_shader(imgui_load_shader(dear_imgui_shader_version,
 		linear_to_gamma_glsl_vert, linear_to_gamma_glsl_frag))
+	, depth_ortho_shader(imgui_load_shader(dear_imgui_shader_version,
+		depth_ortho_glsl_vert, depth_ortho_glsl_frag)
+	  )
 {
 }
 
 ImguiShaderCache::~ImguiShaderCache()
 {
 	imgui_destroy_shader(&linear_to_gamma_shader);
+	imgui_destroy_shader(&depth_ortho_shader);
 }
 
 
@@ -177,6 +210,13 @@ void imgui_set_shared_shader_params(ImguiShaderProgram* prog)
 }
 
 void im_draw_callback_linear_to_gamma(const ImDrawList*, const ImDrawCmd* cmd)
+{
+	auto* prog = static_cast<ImguiShaderProgram*>(cmd->UserCallbackData);
+
+	imgui_set_shared_shader_params(prog);
+}
+
+void im_draw_callback_depth_ortho(const ImDrawList*, const ImDrawCmd* cmd)
 {
 	auto* prog = static_cast<ImguiShaderProgram*>(cmd->UserCallbackData);
 
@@ -240,6 +280,9 @@ static void draw_imgui_image(const FrameBuffer& img, const ImVec2& image_size, c
 	{
 	case ImageShader::TonemapAndGamma:
 		draw_list->AddCallback(im_draw_callback_linear_to_gamma, &cache->linear_to_gamma_shader);
+		break;
+	case ImageShader::DepthOrtho:
+		draw_list->AddCallback(im_draw_callback_depth_ortho, &cache->depth_ortho_shader);
 		break;
 	case ImageShader::None:
 		// no shader
