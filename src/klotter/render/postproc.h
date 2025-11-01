@@ -157,7 +157,7 @@ struct EffectStack
 	bool use_hdr = true;
 	float exposure = 1.0f;
 
-	std::weak_ptr<RenderWorld> render_world_ref;
+	std::weak_ptr<RenderWorld> render_world_ref; // todo(Gustav): why is this weak? we lock it each render...
 
 	/// rebuilds stack if dirty, update all targets, then render the last_source
 	void render(const PostProcArg& arg);
