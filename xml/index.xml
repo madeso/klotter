@@ -394,6 +394,7 @@
   </compound>
   <compound refid="structklotter_1_1ImguiShaderCache" kind="struct"><name>klotter::ImguiShaderCache</name>
     <member refid="structklotter_1_1ImguiShaderCache_1a4e7263e61b0040d3d3eeb762312aa422" kind="variable"><name>linear_to_gamma_shader</name></member>
+    <member refid="structklotter_1_1ImguiShaderCache_1a4733c47be41caba510608091d655cf04" kind="variable"><name>depth_ortho_shader</name></member>
     <member refid="structklotter_1_1ImguiShaderCache_1aaa7e68a6847a9a2df3f8533bd60526f0" kind="function"><name>ImguiShaderCache</name></member>
     <member refid="structklotter_1_1ImguiShaderCache_1a2308d1e959f7f40a95ed37a0f67e05dd" kind="function"><name>~ImguiShaderCache</name></member>
     <member refid="structklotter_1_1ImguiShaderCache_1a4e40e5336438c299925522be00ee280f" kind="function"><name>ImguiShaderCache</name></member>
@@ -1012,6 +1013,7 @@
     <member refid="namespaceklotter_1a99572338461d75663684a70452d1cbb7" kind="enum"><name>ImageShader</name></member>
     <member refid="namespaceklotter_1a99572338461d75663684a70452d1cbb7a6adf97f83acf6453d4a6a4b1070f3754" kind="enumvalue"><name>None</name></member>
     <member refid="namespaceklotter_1a99572338461d75663684a70452d1cbb7a800cc94407ac56dd99c5f89eb5c8f72a" kind="enumvalue"><name>TonemapAndGamma</name></member>
+    <member refid="namespaceklotter_1a99572338461d75663684a70452d1cbb7ad747460882e26f688d85286a817fb2d6" kind="enumvalue"><name>DepthOrtho</name></member>
     <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
     <member refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kind="enum"><name>VertexType</name></member>
     <member refid="group__render_1ga8b35cebf3243809e4ea2b1ab6bb19fce" kind="enum"><name>Billboarding</name></member>

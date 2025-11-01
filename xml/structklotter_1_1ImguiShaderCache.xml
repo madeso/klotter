@@ -18,6 +18,20 @@
         </inbodydescription>
         <location file="src/klotter/render/ui.h" line="27" column="20" bodyfile="src/klotter/render/ui.h" bodystart="27" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ImguiShaderCache_1a4733c47be41caba510608091d655cf04" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1ImguiShaderProgram" kindref="compound">ImguiShaderProgram</ref></type>
+        <definition>ImguiShaderProgram klotter::ImguiShaderCache::depth_ortho_shader</definition>
+        <argsstring></argsstring>
+        <name>depth_ortho_shader</name>
+        <qualifiedname>klotter::ImguiShaderCache::depth_ortho_shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/ui.h" line="28" column="20" bodyfile="src/klotter/render/ui.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
       <memberdef kind="function" id="structklotter_1_1ImguiShaderCache_1aaa7e68a6847a9a2df3f8533bd60526f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -126,6 +140,7 @@
         <label>klotter::ImguiShaderCache</label>
         <link refid="structklotter_1_1ImguiShaderCache"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>depth_ortho_shader</edgelabel>
           <edgelabel>linear_to_gamma_shader</edgelabel>
         </childnode>
       </node>
@@ -134,8 +149,9 @@
         <link refid="structklotter_1_1ImguiShaderProgram"/>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/ui.h" line="17" column="1" bodyfile="src/klotter/render/ui.h" bodystart="18" bodyend="28"/>
+    <location file="src/klotter/render/ui.h" line="17" column="1" bodyfile="src/klotter/render/ui.h" bodystart="18" bodyend="29"/>
     <listofallmembers>
+      <member refid="structklotter_1_1ImguiShaderCache_1a4733c47be41caba510608091d655cf04" prot="public" virt="non-virtual"><scope>klotter::ImguiShaderCache</scope><name>depth_ortho_shader</name></member>
       <member refid="structklotter_1_1ImguiShaderCache_1aaa7e68a6847a9a2df3f8533bd60526f0" prot="public" virt="non-virtual"><scope>klotter::ImguiShaderCache</scope><name>ImguiShaderCache</name></member>
       <member refid="structklotter_1_1ImguiShaderCache_1a4e40e5336438c299925522be00ee280f" prot="public" virt="non-virtual"><scope>klotter::ImguiShaderCache</scope><name>ImguiShaderCache</name></member>
       <member refid="structklotter_1_1ImguiShaderCache_1a8eb928b6e717d694480b9537fd3a76e7" prot="public" virt="non-virtual"><scope>klotter::ImguiShaderCache</scope><name>ImguiShaderCache</name></member>

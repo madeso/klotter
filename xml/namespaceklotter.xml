@@ -198,13 +198,20 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="namespaceklotter_1a99572338461d75663684a70452d1cbb7ad747460882e26f688d85286a817fb2d6" prot="public">
+          <name>DepthOrtho</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="30" column="1" bodyfile="src/klotter/render/ui.h" bodystart="31" bodyend="34"/>
+        <location file="src/klotter/render/ui.h" line="31" column="1" bodyfile="src/klotter/render/ui.h" bodystart="32" bodyend="36"/>
       </memberdef>
       <member refid="group__render_1ga4a0ad326e2184f99dd55593abe721e40" kind="enum"><name>UniformType</name></member>
       <member refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kind="enum"><name>VertexType</name></member>
@@ -939,7 +946,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="37" column="8" declfile="src/klotter/render/ui.h" declline="37" declcolumn="8"/>
+        <location file="src/klotter/render/ui.h" line="39" column="8" declfile="src/klotter/render/ui.h" declline="39" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ae1b563d09f763c7ff882dee16a31b259" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ImVec2</type>
@@ -961,7 +968,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="38" column="8" declfile="src/klotter/render/ui.h" declline="38" declcolumn="8"/>
+        <location file="src/klotter/render/ui.h" line="40" column="8" declfile="src/klotter/render/ui.h" declline="40" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a60504853aeac4aeafebbe058813673ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>ImVec2</type>
@@ -996,7 +1003,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="41" column="8" declfile="src/klotter/render/ui.h" declline="41" declcolumn="8"/>
+        <location file="src/klotter/render/ui.h" line="43" column="8" declfile="src/klotter/render/ui.h" declline="43" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a097b19b90783477eca0bb931a3ad7692" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1014,7 +1021,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="43" column="6" declfile="src/klotter/render/ui.h" declline="43" declcolumn="6"/>
+        <location file="src/klotter/render/ui.h" line="45" column="6" declfile="src/klotter/render/ui.h" declline="45" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a051c93101805faa9650372682abb0c6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1044,7 +1051,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="44" column="6" declfile="src/klotter/render/ui.h" declline="44" declcolumn="6"/>
+        <location file="src/klotter/render/ui.h" line="46" column="6" declfile="src/klotter/render/ui.h" declline="46" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6308c1c02eba0c354d9b8f5621f63162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -1081,7 +1088,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/ui.h" line="45" column="6" declfile="src/klotter/render/ui.h" declline="45" declcolumn="6"/>
+        <location file="src/klotter/render/ui.h" line="47" column="6" declfile="src/klotter/render/ui.h" declline="47" declcolumn="6"/>
       </memberdef>
       <member refid="group__vertex-layout_1gac498a4f9c32fddd6f300437dec2051ad" kind="function"><name>is_instance_based</name></member>
       <member refid="group__vertex-layout_1ga930a511a1263566c1155f47dd193e47c" kind="function"><name>find_duplicates</name></member>
