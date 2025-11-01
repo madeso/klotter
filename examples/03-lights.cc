@@ -9,7 +9,7 @@
 #include "klotter/render/geom.builder.h"
 #include "klotter/render/geom.h"
 #include "klotter/render/ui.h"
-
+#include "klotter/render/postproc.internal.h" // todo(Gustav): only needed for visualizing the shadow depth buffer, improve design and remove
 
 using namespace klotter;
 
@@ -383,6 +383,15 @@ struct LightsSample : klotter::App
 	{
 		ImGui::DragFloat("Shadow size", &world.lights.shadow_size, FAC_SPEED);
 		ImGui::DragFloat3("Shadow offset", glm::value_ptr(world.lights.shadow_offset), FAC_SPEED);
+		if (world.lights.directional_lights.empty() == false)
+		{
+			// todo(Gustav): this is clumsy...
+			auto render_world = effects.render_world_ref.lock();
+			if (render_world && render_world->shadow_buffer)
+			{
+				imgui_image("Shadow buffer", *render_world->shadow_buffer, &imgui_shader_cache, ImageShader::DepthOrtho);
+			}
+		}
 		for (int dir_light_index = 0;
 		     dir_light_index < int_from_sizet(world.lights.directional_lights.size());
 		     dir_light_index += 1)
