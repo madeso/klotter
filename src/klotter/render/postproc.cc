@@ -323,7 +323,6 @@ void EffectStack::render(const PostProcArg& arg)
 		}
 	}
 
-	auto render_world = render_world_ref.lock();
 	if (render_world == nullptr)
 	{
 		dirty = true;
@@ -371,7 +370,6 @@ void EffectStack::render(const PostProcArg& arg)
 			&exposure
 		);
 		compiled.last_source = created_world;
-		render_world_ref = created_world;
 		render_world = created_world;
 
 		for (auto& e: effects)
@@ -411,9 +409,9 @@ void EffectStack::gui(ImguiShaderCache* cache)
 	ImGui::Checkbox("HDR", &use_hdr);
 	ImGui::SliderFloat("Exposure", &exposure, 0.01f, 20.0f);
 
-	if (const auto rw = render_world_ref.lock(); rw)
+	if (render_world)
 	{
-		rw->gui(cache);
+		render_world->gui(cache);
 	}
 
 	int index = 0;

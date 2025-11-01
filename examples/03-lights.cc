@@ -386,10 +386,9 @@ struct LightsSample : klotter::App
 		if (world.lights.directional_lights.empty() == false)
 		{
 			// todo(Gustav): this is clumsy...
-			auto render_world = effects.render_world_ref.lock();
-			if (render_world && render_world->shadow_buffer)
+			if (effects.render_world && effects.render_world->shadow_buffer)
 			{
-				imgui_image("Shadow buffer", *render_world->shadow_buffer, &imgui_shader_cache, ImageShader::DepthOrtho);
+				imgui_image("Shadow buffer", *effects.render_world->shadow_buffer, &imgui_shader_cache, ImageShader::DepthOrtho);
 			}
 		}
 		for (int dir_light_index = 0;
