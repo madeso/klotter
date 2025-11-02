@@ -284,7 +284,7 @@
     <member refid="structklotter_1_1EffectStack_1a99d2b4b2f9ddce5da16bf4d088978bd6" kind="variable"><name>compiled</name></member>
     <member refid="structklotter_1_1EffectStack_1aeac7678584313570bb2642cd51a07759" kind="variable"><name>use_hdr</name></member>
     <member refid="structklotter_1_1EffectStack_1ae1b4343dbc50a5ae1b08aaf3efc20b68" kind="variable"><name>exposure</name></member>
-    <member refid="structklotter_1_1EffectStack_1adfd748607dee4c12c729c56b09e3d5a6" kind="variable"><name>render_world_ref</name></member>
+    <member refid="structklotter_1_1EffectStack_1a3135bf919d6557fc6b131048cc30fb11" kind="variable"><name>render_world</name></member>
     <member refid="structklotter_1_1EffectStack_1aaf622b94ba48b5950c9324c6d4434c05" kind="function"><name>render</name></member>
     <member refid="structklotter_1_1EffectStack_1a045d1a84ab1f0e78ac4382191f521c75" kind="function"><name>update</name></member>
     <member refid="structklotter_1_1EffectStack_1a49249317755cafe6db59ef29cea7bdc6" kind="function"><name>gui</name></member>
@@ -414,7 +414,9 @@
   <compound refid="structklotter_1_1Lights" kind="struct"><name>klotter::Lights</name>
     <member refid="structklotter_1_1Lights_1a81ed1012bb866e7411836d2c1e078fb8" kind="variable"><name>ambient_color</name></member>
     <member refid="structklotter_1_1Lights_1a890e9d1377f243ecabc96b1cf61a5ad7" kind="variable"><name>ambient_strength</name></member>
-    <member refid="structklotter_1_1Lights_1a36d37b5cb32f19ddc5317bd63d672710" kind="variable"><name>shadow_offset</name></member>
+    <member refid="structklotter_1_1Lights_1af423a9be9a8d09fca172430da05cd594" kind="variable"><name>shadow_near</name></member>
+    <member refid="structklotter_1_1Lights_1a859fc7240ce1ecb386723105e146659a" kind="variable"><name>shadow_offset</name></member>
+    <member refid="structklotter_1_1Lights_1a7a75be5a38f036a3e7f91814ef8b3a70" kind="variable"><name>shadow_far</name></member>
     <member refid="structklotter_1_1Lights_1a93b4541fef98a095de4b3b3b7b13a436" kind="variable"><name>shadow_size</name></member>
     <member refid="structklotter_1_1Lights_1a61b2b0f76c7cc5fd6deb52c207043de7" kind="variable"><name>directional_lights</name></member>
     <member refid="structklotter_1_1Lights_1acb7b0f789218068315c8612d1ebe189c" kind="variable"><name>point_lights</name></member>
@@ -1024,25 +1026,25 @@
     <member refid="group__render_1ga1c638300d3c0acd1ab75efc88f4aa741" kind="typedef"><name>StencilOp</name></member>
     <member refid="group__vertex-layout_1gab14e38875ed51577f61fbbe750a605ea" kind="typedef"><name>ShaderVertexAttributes</name></member>
     <member refid="group__vertex-layout_1gaa3eb81233db95fb693918802ac36cc30" kind="typedef"><name>VertexTypes</name></member>
-    <member refid="group__render_1ga86f2208b879c568d1ee1e6e771c0caa1" kind="variable"><name>UP</name></member>
     <member refid="namespaceklotter_1a43f9bbbce92ceeed2837fcace91d9612" kind="variable"><name>MAX_TEXTURES_SUPPORTED</name></member>
     <member refid="namespaceklotter_1af84f50d2d555a52091dca0e8b0707f8a" kind="variable"><name>ALMOST_ZERO</name></member>
     <member refid="namespaceklotter_1a6d9726b7a1f0528975dfda6051f71743" kind="variable"><name>ALPHA_TRANSPARENCY_LIMIT</name></member>
     <member refid="namespaceklotter_1a6560e226d59ab07f92a3c0d1a4fd99bc" kind="variable"><name>OUTLINE_SCALE</name></member>
     <member refid="namespaceklotter_1a095e93aa73a0f90b24c3e84cc8fe2afe" kind="variable"><name>BLUR_SAMPLES</name></member>
+    <member refid="namespaceklotter_1a86f2208b879c568d1ee1e6e771c0caa1" kind="variable"><name>UP</name></member>
     <member refid="group__texture_1ga10216e8af0ed877194fd22899e5b058b" kind="variable"><name>cubemap_size</name></member>
     <member refid="namespaceklotter_1aafbf3062eca044adc3d6d3cf54778a51" kind="function"><name>base_cast</name></member>
     <member refid="namespaceklotter_1a97ebef3ce88032d5a9016b09c001d176" kind="function"><name>is_flag_set</name></member>
     <member refid="namespaceklotter_1a70c3ecdc0214c61c6277dda3f1f5f963" kind="function"><name>test_themes</name></member>
     <member refid="namespaceklotter_1ae8ba8f25677bd8a5d98681f05fd0a162" kind="function"><name>run_main</name></member>
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
-    <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
     <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga5068b304bb08be791391379a39514cb2" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
     <member refid="namespaceklotter_1a8655e92bbc13aff3832b4fed06e62fb1" kind="function"><name>linear_from_srgb</name></member>
     <member refid="namespaceklotter_1a16fc6bb5ae9c482d07217873f345e25e" kind="function"><name>linear_from_srgb</name></member>
+    <member refid="group__render_1gaa34634737d2319b0f1c9ba860e01ef98" kind="function"><name>draw_frustum</name></member>
     <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
     <member refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" kind="function"><name>setup_opengl_debug</name></member>
     <member refid="namespaceklotter_1ad8e391c995de185fccf27218b510d64c" kind="function"><name>glenum_from_int</name></member>
@@ -1067,6 +1069,8 @@
     <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1ga8072e6de57f4c7633a25803ddf551385" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" kind="function"><name>load_shaders</name></member>
+    <member refid="namespaceklotter_1ae5b60da1c532d5bdf88f860c4a3c3d1a" kind="function"><name>shadow_cam_from_light</name></member>
+    <member refid="namespaceklotter_1a531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kind="function"><name>bind_texture_2d</name></member>
     <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
     <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
@@ -1098,6 +1102,7 @@
     <member refid="group__render_1ga14106c01b64a4fb907c564373ba5e691" kind="function"><name>make_mesh_instance</name></member>
     <member refid="group__render_1ga7c41540b85fbcd00d0dfbe1104d10443" kind="function"><name>render_geom</name></member>
     <member refid="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" kind="function"><name>render_geom_instanced</name></member>
+    <member refid="group__render_1gaab08d8610efe72b6bb05212584593e2f" kind="function"><name>create_vectors</name></member>
     <member refid="group__scurcve_1gad502f980124ff607cb9564e4562d6a25" kind="function"><name>s_curve_from_input</name></member>
     <member refid="group__scurcve_1ga2c2164653e472f2eb8c12ab361bc7b8a" kind="function"><name>calculate_s_curve</name></member>
     <member refid="group__scurcve_1ga053ee1a8fe68689ff1ef5b8d2488bc55" kind="function"><name>imgui_s_curve_editor</name></member>
@@ -1301,6 +1306,10 @@
   </compound>
   <compound refid="shader__resource_8h" kind="file"><name>shader_resource.h</name>
   </compound>
+  <compound refid="shadow_8h" kind="file"><name>shadow.h</name>
+  </compound>
+  <compound refid="space_8h" kind="file"><name>space.h</name>
+  </compound>
   <compound refid="statechanger_8h" kind="file"><name>statechanger.h</name>
   </compound>
   <compound refid="stencilaction_8h" kind="file"><name>stencilaction.h</name>
@@ -1438,13 +1447,12 @@
     <member refid="group__render_1ga2bf0fb4228d3cf9922870684f4b25e81" kind="typedef"><name>BlendMode</name></member>
     <member refid="group__render_1gad39dccc38e66e47ae52ef347a685cf07" kind="typedef"><name>StencilFunc</name></member>
     <member refid="group__render_1ga1c638300d3c0acd1ab75efc88f4aa741" kind="typedef"><name>StencilOp</name></member>
-    <member refid="group__render_1ga86f2208b879c568d1ee1e6e771c0caa1" kind="variable"><name>UP</name></member>
     <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
-    <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
     <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
     <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga5068b304bb08be791391379a39514cb2" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
+    <member refid="group__render_1gaa34634737d2319b0f1c9ba860e01ef98" kind="function"><name>draw_frustum</name></member>
     <member refid="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" kind="function"><name>operator|</name></member>
     <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1ga8072e6de57f4c7633a25803ddf551385" kind="function"><name>shader_from_container</name></member>
@@ -1458,6 +1466,7 @@
     <member refid="group__render_1ga14106c01b64a4fb907c564373ba5e691" kind="function"><name>make_mesh_instance</name></member>
     <member refid="group__render_1ga7c41540b85fbcd00d0dfbe1104d10443" kind="function"><name>render_geom</name></member>
     <member refid="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" kind="function"><name>render_geom_instanced</name></member>
+    <member refid="group__render_1gaab08d8610efe72b6bb05212584593e2f" kind="function"><name>create_vectors</name></member>
   </compound>
   <compound refid="group__hash" kind="group"><name>hash</name>
     <member refid="group__hash_1ga9038dc1dac99b31ae58ae04bee68d416" kind="define"><name>HASH_DEF_BEGIN</name></member>

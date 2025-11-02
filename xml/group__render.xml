@@ -3,7 +3,6 @@
   <compounddef id="group__render" kind="group">
     <compoundname>render</compoundname>
     <title>Renderer</title>
-    <innerclass refid="structklotter_1_1CameraVectors" prot="public">klotter::CameraVectors</innerclass>
     <innerclass refid="structklotter_1_1Camera" prot="public">klotter::Camera</innerclass>
     <innerclass refid="structklotter_1_1OrthoCamera" prot="public">klotter::OrthoCamera</innerclass>
     <innerclass refid="structklotter_1_1CompiledCamera" prot="public">klotter::CompiledCamera</innerclass>
@@ -623,7 +622,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="72" column="1" bodyfile="src/klotter/render/world.h" bodystart="73" bodyend="79"/>
+        <location file="src/klotter/render/world.h" line="73" column="1" bodyfile="src/klotter/render/world.h" bodystart="74" bodyend="80"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
@@ -676,23 +675,6 @@
         <location file="src/klotter/render/opengl_states.h" line="27" column="1" bodyfile="src/klotter/render/opengl_states.h" bodystart="27" bodyend="-1"/>
       </memberdef>
     </sectiondef>
-    <sectiondef kind="var">
-      <memberdef kind="variable" id="group__render_1ga86f2208b879c568d1ee1e6e771c0caa1" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>auto</type>
-        <definition>auto klotter::UP</definition>
-        <argsstring></argsstring>
-        <name>UP</name>
-        <qualifiedname>klotter::UP</qualifiedname>
-        <initializer>= glm::vec3(0.0f, 1.0f, 0.0f)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="10" column="16" bodyfile="src/klotter/render/camera.h" bodystart="10" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
     <sectiondef kind="func">
       <memberdef kind="function" id="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CameraVectors</type>
@@ -711,30 +693,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="62" column="15" declfile="src/klotter/render/camera.h" declline="62" declcolumn="15"/>
-      </memberdef>
-      <memberdef kind="function" id="group__render_1ga531baa4b9f91162f31830d9dd415d002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>CameraVectors</type>
-        <definition>CameraVectors klotter::create_vectors</definition>
-        <argsstring>(float yaw, float pitch)</argsstring>
-        <name>create_vectors</name>
-        <qualifiedname>klotter::create_vectors</qualifiedname>
-        <param>
-          <type>float</type>
-          <declname>yaw</declname>
-        </param>
-        <param>
-          <type>float</type>
-          <declname>pitch</declname>
-        </param>
-        <briefdescription>
-<para>Capture the local space of a &quot;camera&quot; us ing only the rotation. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="65" column="15" declfile="src/klotter/render/camera.h" declline="65" declcolumn="15"/>
+        <location file="src/klotter/render/camera.h" line="57" column="15" declfile="src/klotter/render/camera.h" declline="57" declcolumn="15"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::mat4</type>
@@ -756,7 +715,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="68" column="11" declfile="src/klotter/render/camera.h" declline="68" declcolumn="11"/>
+        <location file="src/klotter/render/camera.h" line="60" column="11" declfile="src/klotter/render/camera.h" declline="60" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CompiledCamera</type>
@@ -778,7 +737,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="71" column="16" declfile="src/klotter/render/camera.h" declline="71" declcolumn="16"/>
+        <location file="src/klotter/render/camera.h" line="63" column="16" declfile="src/klotter/render/camera.h" declline="63" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga5068b304bb08be791391379a39514cb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CompiledCamera</type>
@@ -800,7 +759,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="74" column="16" declfile="src/klotter/render/camera.h" declline="74" declcolumn="16"/>
+        <location file="src/klotter/render/camera.h" line="66" column="16" declfile="src/klotter/render/camera.h" declline="66" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::vec2</type>
@@ -827,7 +786,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/camera.h" line="78" column="11" declfile="src/klotter/render/camera.h" declline="78" declcolumn="11"/>
+        <location file="src/klotter/render/camera.h" line="70" column="11" declfile="src/klotter/render/camera.h" declline="70" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="group__render_1gaa34634737d2319b0f1c9ba860e01ef98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::draw_frustum</definition>
+        <argsstring>(DebugRender *debug, const CompiledCamera &amp;camera, const Color &amp;color)</argsstring>
+        <name>draw_frustum</name>
+        <qualifiedname>klotter::draw_frustum</qualifiedname>
+        <param>
+          <type>DebugRender *</type>
+          <declname>debug</declname>
+        </param>
+        <param>
+          <type>const CompiledCamera &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <param>
+          <type>const Color &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/debug.h" line="30" column="6" declfile="src/klotter/render/debug.h" declline="30" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga8f2a36f8af7bbc5fc841e84b35e5bcfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>PostProcSetup</type>
@@ -1020,7 +1005,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="57" column="17" declfile="src/klotter/render/world.h" declline="57" declcolumn="17"/>
+        <location file="src/klotter/render/world.h" line="58" column="17" declfile="src/klotter/render/world.h" declline="58" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga5b8a0dd10d8f433def90492f9f0ef96d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; CompiledGeom_TransformInstance &gt;</type>
@@ -1045,7 +1030,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="58" column="17" declfile="src/klotter/render/world.h" declline="58" declcolumn="17"/>
+        <location file="src/klotter/render/world.h" line="59" column="17" declfile="src/klotter/render/world.h" declline="59" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1gab1c7bfa5f2902fc511ab0ef72a8d3f6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; MeshInstance &gt;</type>
@@ -1067,7 +1052,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="96" column="17" declfile="src/klotter/render/world.h" declline="96" declcolumn="17"/>
+        <location file="src/klotter/render/world.h" line="97" column="17" declfile="src/klotter/render/world.h" declline="97" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga14106c01b64a4fb907c564373ba5e691" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; MeshInstance_TransformInstanced &gt;</type>
@@ -1089,7 +1074,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="109" column="17" declfile="src/klotter/render/world.h" declline="109" declcolumn="17"/>
+        <location file="src/klotter/render/world.h" line="110" column="17" declfile="src/klotter/render/world.h" declline="110" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga7c41540b85fbcd00d0dfbe1104d10443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1107,7 +1092,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="113" column="6" declfile="src/klotter/render/world.h" declline="113" declcolumn="6"/>
+        <location file="src/klotter/render/world.h" line="114" column="6" declfile="src/klotter/render/world.h" declline="114" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1125,7 +1110,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="114" column="6" declfile="src/klotter/render/world.h" declline="114" declcolumn="6"/>
+        <location file="src/klotter/render/world.h" line="115" column="6" declfile="src/klotter/render/world.h" declline="115" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__render_1gaab08d8610efe72b6bb05212584593e2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CameraVectors</type>
+        <definition>CameraVectors klotter::create_vectors</definition>
+        <argsstring>(const DirectionalLight &amp;p)</argsstring>
+        <name>create_vectors</name>
+        <qualifiedname>klotter::create_vectors</qualifiedname>
+        <param>
+          <type>const DirectionalLight &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="142" column="15" declfile="src/klotter/render/world.h" declline="142" declcolumn="15"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

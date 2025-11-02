@@ -2,7 +2,7 @@ var searchData=
 [
   ['uniform_0',['uniform',['../structklotter_1_1FloatDragShaderProp.html#ad10f394f5c2c446a3c950ee2034ef354',1,'klotter::FloatDragShaderProp::uniform'],['../structklotter_1_1FloatSliderShaderProp.html#a921d30c4c7caff395f87eae689094cb1',1,'klotter::FloatSliderShaderProp::uniform']]],
   ['unlit_5fshader_5fcontainer_1',['unlit_shader_container',['../structklotter_1_1ShaderResource.html#a6cd5168ba013a0a024399c947049d62c',1,'klotter::ShaderResource']]],
-  ['up_2',['UP',['../group__render.html#ga86f2208b879c568d1ee1e6e771c0caa1',1,'klotter']]],
+  ['up_2',['UP',['../namespaceklotter.html#a86f2208b879c568d1ee1e6e771c0caa1',1,'klotter']]],
   ['up_3',['up',['../structklotter_1_1CameraVectors.html#af53d2d059ea34390beb2f73311aa9e7e',1,'klotter::CameraVectors']]],
   ['use_5fblinn_5fphong_4',['use_blinn_phong',['../structklotter_1_1ShaderOptions.html#a82219aa56babe230c959a8715122a4e8',1,'klotter::ShaderOptions']]],
   ['use_5fbloom_5',['use_bloom',['../structklotter_1_1RenderSettings.html#aba675c055c2e67f7622b35299261ebb8',1,'klotter::RenderSettings']]],

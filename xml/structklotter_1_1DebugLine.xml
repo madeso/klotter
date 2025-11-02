@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/debug.h" line="15" column="11" bodyfile="src/klotter/render/debug.h" bodystart="15" bodyend="-1"/>
+        <location file="src/klotter/render/debug.h" line="16" column="11" bodyfile="src/klotter/render/debug.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1DebugLine_1ab28646931b94b77ad1c89dff411a4273" prot="public" static="no" mutable="no">
         <type>glm::vec3</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/debug.h" line="16" column="11" bodyfile="src/klotter/render/debug.h" bodystart="16" bodyend="-1"/>
+        <location file="src/klotter/render/debug.h" line="17" column="11" bodyfile="src/klotter/render/debug.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1DebugLine_1a7e88c43bf3fe0b3e5631453f84b02a88" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Color" kindref="compound">Color</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/debug.h" line="17" column="7" bodyfile="src/klotter/render/debug.h" bodystart="17" bodyend="-1"/>
+        <location file="src/klotter/render/debug.h" line="18" column="7" bodyfile="src/klotter/render/debug.h" bodystart="18" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -65,7 +65,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/debug.h" line="13" column="1" bodyfile="src/klotter/render/debug.h" bodystart="14" bodyend="18"/>
+    <location file="src/klotter/render/debug.h" line="14" column="1" bodyfile="src/klotter/render/debug.h" bodystart="15" bodyend="19"/>
     <listofallmembers>
       <member refid="structklotter_1_1DebugLine_1a7e88c43bf3fe0b3e5631453f84b02a88" prot="public" virt="non-virtual"><scope>klotter::DebugLine</scope><name>color</name></member>
       <member refid="structklotter_1_1DebugLine_1afa0c9a0ada0ad0186082527930108f73" prot="public" virt="non-virtual"><scope>klotter::DebugLine</scope><name>from</name></member>

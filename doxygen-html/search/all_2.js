@@ -56,7 +56,7 @@ var searchData=
   ['create_5fbox_53',['create_box',['../group__geom-builder.html#ga6751832680f413e316407e2a71fc5721',1,'klotter::geom']]],
   ['create_5fbuffer_54',['create_buffer',['../namespaceklotter.html#a6c289ace2f2ad87891be1f0825aa3893',1,'klotter']]],
   ['create_5fuv_5fsphere_55',['create_uv_sphere',['../group__geom-builder.html#ga5c81b57290bcdc4cda11281c3d39675e',1,'klotter::geom']]],
-  ['create_5fvectors_56',['create_vectors',['../group__render.html#gaa482e8fe45daf1b222cbb8afc10f1d8b',1,'klotter::create_vectors(const Camera &amp;camera)'],['../group__render.html#ga531baa4b9f91162f31830d9dd415d002',1,'klotter::create_vectors(float yaw, float pitch)']]],
+  ['create_5fvectors_56',['create_vectors',['../group__render.html#gaa482e8fe45daf1b222cbb8afc10f1d8b',1,'klotter::create_vectors(const Camera &amp;camera)'],['../namespaceklotter.html#a531baa4b9f91162f31830d9dd415d002',1,'klotter::create_vectors(float yaw, float pitch)'],['../group__render.html#gaab08d8610efe72b6bb05212584593e2f',1,'klotter::create_vectors(const DirectionalLight &amp;p)']]],
   ['create_5fvertex_5farray_57',['create_vertex_array',['../namespaceklotter.html#a6b9047ff3f4c1bc18394f9404fa00f6a',1,'klotter']]],
   ['create_5fview_5ffrom_5fworld_5fmat_58',['create_view_from_world_mat',['../group__render.html#ga3ceb6e1d2428afc0bd213b454601023a',1,'klotter']]],
   ['create_5fxy_5fplane_59',['create_xy_plane',['../group__geom-builder.html#gafb656dc8ee5b50fd74b4c310f992c691',1,'klotter::geom']]],

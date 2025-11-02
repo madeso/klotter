@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="131" column="11" bodyfile="src/klotter/render/world.h" bodystart="131" bodyend="131"/>
+        <location file="src/klotter/render/world.h" line="132" column="11" bodyfile="src/klotter/render/world.h" bodystart="132" bodyend="132"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PointLight_1a29d07bcec7b9efd1198de1584e75dbae" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="132" column="7" bodyfile="src/klotter/render/world.h" bodystart="132" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="133" column="7" bodyfile="src/klotter/render/world.h" bodystart="133" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PointLight_1a39b47df35963b4a18efa5abf68c09f77" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="133" column="7" bodyfile="src/klotter/render/world.h" bodystart="133" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="134" column="7" bodyfile="src/klotter/render/world.h" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PointLight_1ac0d003441d29d18c8f09a1a2106af1d6" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1SCurve" kindref="compound">SCurve</ref></type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="134" column="8" bodyfile="src/klotter/render/world.h" bodystart="134" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="135" column="8" bodyfile="src/klotter/render/world.h" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PointLight_1a450380d7db060b4a7c93886e9db6eaa6" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Color" kindref="compound">Color</ref></type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="136" column="7" bodyfile="src/klotter/render/world.h" bodystart="136" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="137" column="7" bodyfile="src/klotter/render/world.h" bodystart="137" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PointLight_1a46ba96dd5b810c7232a2d84a63462fa9" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="137" column="7" bodyfile="src/klotter/render/world.h" bodystart="137" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="138" column="7" bodyfile="src/klotter/render/world.h" bodystart="138" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1PointLight_1ac94ccb541980db50f5c2622172efbf2a" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="138" column="7" bodyfile="src/klotter/render/world.h" bodystart="138" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="139" column="7" bodyfile="src/klotter/render/world.h" bodystart="139" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -136,7 +136,7 @@
         <link refid="structklotter_1_1SCurve"/>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/world.h" line="129" column="1" bodyfile="src/klotter/render/world.h" bodystart="130" bodyend="139"/>
+    <location file="src/klotter/render/world.h" line="130" column="1" bodyfile="src/klotter/render/world.h" bodystart="131" bodyend="140"/>
     <listofallmembers>
       <member refid="structklotter_1_1PointLight_1a450380d7db060b4a7c93886e9db6eaa6" prot="public" virt="non-virtual"><scope>klotter::PointLight</scope><name>color</name></member>
       <member refid="structklotter_1_1PointLight_1ac0d003441d29d18c8f09a1a2106af1d6" prot="public" virt="non-virtual"><scope>klotter::PointLight</scope><name>curve</name></member>

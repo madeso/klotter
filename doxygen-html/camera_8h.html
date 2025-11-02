@@ -112,19 +112,16 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">camera.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="space_8h_source.html">klotter/render/space.h</a>&quot;</code><br />
+</div>
 <p><a href="camera_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CameraVectors.html">klotter::CameraVectors</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A temporary view of the local space of a camera.  <a href="structklotter_1_1CameraVectors.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Camera.html">klotter::Camera</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current perspective camera representation.  <a href="structklotter_1_1Camera.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,9 +142,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa482e8fe45daf1b222cbb8afc10f1d8b" id="r_gaa482e8fe45daf1b222cbb8afc10f1d8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gaa482e8fe45daf1b222cbb8afc10f1d8b">klotter::create_vectors</a> (const <a class="el" href="structklotter_1_1Camera.html">Camera</a> &amp;camera)</td></tr>
 <tr class="memdesc:gaa482e8fe45daf1b222cbb8afc10f1d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture the current local space of the camera.  <br /></td></tr>
 <tr class="separator:gaa482e8fe45daf1b222cbb8afc10f1d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga531baa4b9f91162f31830d9dd415d002" id="r_ga531baa4b9f91162f31830d9dd415d002"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga531baa4b9f91162f31830d9dd415d002">klotter::create_vectors</a> (float yaw, float pitch)</td></tr>
-<tr class="memdesc:ga531baa4b9f91162f31830d9dd415d002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture the local space of a "camera" us ing only the rotation.  <br /></td></tr>
-<tr class="separator:ga531baa4b9f91162f31830d9dd415d002"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3ceb6e1d2428afc0bd213b454601023a" id="r_ga3ceb6e1d2428afc0bd213b454601023a"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga3ceb6e1d2428afc0bd213b454601023a">klotter::create_view_from_world_mat</a> (const glm::vec3 &amp;pos, const <a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> &amp;cv)</td></tr>
 <tr class="separator:ga3ceb6e1d2428afc0bd213b454601023a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga877a3ed04c88761bdfb420e7d4190be4" id="r_ga877a3ed04c88761bdfb420e7d4190be4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga877a3ed04c88761bdfb420e7d4190be4">klotter::compile</a> (const <a class="el" href="structklotter_1_1Camera.html">Camera</a> &amp;, const glm::ivec2 &amp;window_size)</td></tr>
@@ -159,11 +153,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga96a0f5ab096cbed0b9ebdc24ac13e7ca" id="r_ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga96a0f5ab096cbed0b9ebdc24ac13e7ca">klotter::screen_from_world</a> (const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;cam, const glm::vec3 &amp;world_pos, const glm::vec2 &amp;<a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">resolution</a>)</td></tr>
 <tr class="memdesc:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the screen coordinate of a 3d world position.  <br /></td></tr>
 <tr class="separator:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga86f2208b879c568d1ee1e6e771c0caa1" id="r_ga86f2208b879c568d1ee1e6e771c0caa1"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga86f2208b879c568d1ee1e6e771c0caa1">klotter::UP</a> = glm::vec3(0.0f, 1.0f, 0.0f)</td></tr>
-<tr class="separator:ga86f2208b879c568d1ee1e6e771c0caa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

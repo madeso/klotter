@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="21" column="5" bodyfile="src/klotter/render/world.h" bodystart="21" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="22" column="5" bodyfile="src/klotter/render/world.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a9c61cb6bfef749b69af91f6802dcb67a" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="22" column="5" bodyfile="src/klotter/render/world.h" bodystart="22" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="23" column="5" bodyfile="src/klotter/render/world.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a892b06c701feae6c5b83e3f000096c03" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="23" column="5" bodyfile="src/klotter/render/world.h" bodystart="23" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="24" column="5" bodyfile="src/klotter/render/world.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a92fc9f0c9c08e6064fa951a7fee6eae2" prot="public" static="no" mutable="no">
         <type><ref refid="pch_8public_8h_1aec41e5f8e4b7aef2540e84268692fa84" kindref="member">i32</ref></type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="24" column="5" bodyfile="src/klotter/render/world.h" bodystart="24" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="25" column="5" bodyfile="src/klotter/render/world.h" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledGeom_1a9a1d14b0928fda7cdde988fc154f1f0d" prot="public" static="no" mutable="no">
         <type>std::unordered_set&lt; <ref refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kindref="member">VertexType</ref> &gt;</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="25" column="20" bodyfile="src/klotter/render/world.h" bodystart="25" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="26" column="20" bodyfile="src/klotter/render/world.h" bodystart="26" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="27" column="10"/>
+        <location file="src/klotter/render/world.h" line="28" column="10"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1CompiledGeom_1a57733edc24b55c61cb70307fd4c56fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="28" column="1"/>
+        <location file="src/klotter/render/world.h" line="29" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1CompiledGeom_1a391a1776bea02be9cc81c9395931a0a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="30" column="1"/>
+        <location file="src/klotter/render/world.h" line="31" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1CompiledGeom_1a10cb045efcc3338701a46f34209bd04c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -151,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="31" column="1"/>
+        <location file="src/klotter/render/world.h" line="32" column="1"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1CompiledGeom_1adf2ee29bf8ba976ea1f68f81233df21e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="32" column="6"/>
+        <location file="src/klotter/render/world.h" line="33" column="6"/>
       </memberdef>
       <memberdef kind="function" id="structklotter_1_1CompiledGeom_1aec30168aa360f3236b5360e56a696a43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="33" column="6"/>
+        <location file="src/klotter/render/world.h" line="34" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -205,7 +205,7 @@
         <label>std::unordered_set&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/world.h" line="19" column="1" bodyfile="src/klotter/render/world.h" bodystart="20" bodyend="34"/>
+    <location file="src/klotter/render/world.h" line="20" column="1" bodyfile="src/klotter/render/world.h" bodystart="21" bodyend="35"/>
     <listofallmembers>
       <member refid="structklotter_1_1CompiledGeom_1a6fdc0111b7de9df424a151951ee282d7" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>CompiledGeom</name></member>
       <member refid="structklotter_1_1CompiledGeom_1a391a1776bea02be9cc81c9395931a0a1" prot="public" virt="non-virtual"><scope>klotter::CompiledGeom</scope><name>CompiledGeom</name></member>

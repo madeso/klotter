@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="101" column="17" bodyfile="src/klotter/render/world.h" bodystart="101" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="102" column="17" bodyfile="src/klotter/render/world.h" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1MeshInstance__TransformInstanced_1ad01fe393f543e9f9bfb9335621b75395" prot="public" static="no" mutable="no">
         <type>std::shared_ptr&lt; <ref refid="structklotter_1_1Material" kindref="compound">Material</ref> &gt;</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="102" column="17" bodyfile="src/klotter/render/world.h" bodystart="102" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="103" column="17" bodyfile="src/klotter/render/world.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1MeshInstance__TransformInstanced_1a35913435778f8c6634d2bc6a4e3ad218" prot="public" static="no" mutable="no">
         <type>std::vector&lt; glm::mat4 &gt;</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/world.h" line="106" column="13" bodyfile="src/klotter/render/world.h" bodystart="106" bodyend="-1"/>
+        <location file="src/klotter/render/world.h" line="107" column="13" bodyfile="src/klotter/render/world.h" bodystart="107" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -96,7 +96,7 @@
         <label>std::vector&lt; glm::mat4 &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/world.h" line="99" column="1" bodyfile="src/klotter/render/world.h" bodystart="100" bodyend="107"/>
+    <location file="src/klotter/render/world.h" line="100" column="1" bodyfile="src/klotter/render/world.h" bodystart="101" bodyend="108"/>
     <listofallmembers>
       <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad14910f961fedc36210d3173fca24ab4" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>geom</name></member>
       <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad01fe393f543e9f9bfb9335621b75395" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>material</name></member>

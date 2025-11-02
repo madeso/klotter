@@ -26,17 +26,17 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/world.cc</div>
-            <div>Date: 2025-11-01 16:03:09</div>
+            <div>Date: 2025-11-02 21:08:32</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
                 <div class="mr-2">Lines:</div>
-                <div class="mr-2" style="margin: auto;">0 of 140, 0 excluded</div>
+                <div class="mr-2" style="margin: auto;">0 of 142, 0 excluded</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
             <div class="d-flex">
                 <div class="mr-2">Functions:</div>
-                <div class="mr-2" style="margin: auto;">0 of 13, 0 excluded</div>
+                <div class="mr-2" style="margin: auto;">0 of 14, 0 excluded</div>
                 <div class="Label--minw"><span class="coverage-none IssueLabel color-fg-on-emphasis mr-1">0.0%</span></div>
             </div>
             <div class="d-flex">
@@ -70,6 +70,7 @@
     <tr><td><a href="#l71">klotter::compile_geom(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, klotter::Geom const&amp;, klotter::CompiledGeomVertexAttributes const&amp;)::{lambda(klotter::ExtractedAttribute const&amp;)#1}::operator()(klotter::ExtractedAttribute const&amp;) const (line 71)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l127">klotter::compile_geom_with_transform_instance(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, klotter::Geom const&amp;, klotter::CompiledGeomVertexAttributes const&amp;, unsigned long) (line 127)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l143">klotter::compile_geom_with_transform_instance(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, klotter::Geom const&amp;, klotter::CompiledGeomVertexAttributes const&amp;, unsigned long)::{lambda(klotter::ExtractedAttribute const&amp;)#1}::operator()(klotter::ExtractedAttribute const&amp;) const (line 143)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l265">klotter::create_vectors(klotter::DirectionalLight const&amp;) (line 265)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l40">klotter::make_mesh_instance(std::shared_ptr&lt;klotter::CompiledGeom&gt;, std::shared_ptr&lt;klotter::Material&gt;) (line 40)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l48">klotter::make_mesh_instance(std::shared_ptr&lt;klotter::CompiledGeom_TransformInstance&gt;, std::shared_ptr&lt;klotter::Material&gt;) (line 48)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l218">klotter::render_geom(klotter::CompiledGeom const&amp;) (line 218)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
@@ -1943,18 +1944,46 @@
                 <td class="text-right src linenos"><a class="normal" id="l265" href="#l265">265</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="n">CameraVectors</span><span class="w"> </span><span class="n">create_vectors</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">DirectionalLight</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l266" href="#l266">266</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l267" href="#l267">267</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">create_vectors</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">yaw</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">pitch</span><span class="p">);</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l268" href="#l268">268</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l269" href="#l269">269</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l270" href="#l270">270</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l271" href="#l271">271</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>

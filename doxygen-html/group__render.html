@@ -109,17 +109,13 @@ $(function(){ initResizable(false); });
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Renderer</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CameraVectors.html">klotter::CameraVectors</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A temporary view of the local space of a camera.  <a href="structklotter_1_1CameraVectors.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Camera.html">klotter::Camera</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current perspective camera representation.  <a href="structklotter_1_1Camera.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -383,9 +379,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa482e8fe45daf1b222cbb8afc10f1d8b" id="r_gaa482e8fe45daf1b222cbb8afc10f1d8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa482e8fe45daf1b222cbb8afc10f1d8b">klotter::create_vectors</a> (const <a class="el" href="structklotter_1_1Camera.html">Camera</a> &amp;camera)</td></tr>
 <tr class="memdesc:gaa482e8fe45daf1b222cbb8afc10f1d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture the current local space of the camera.  <br /></td></tr>
 <tr class="separator:gaa482e8fe45daf1b222cbb8afc10f1d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga531baa4b9f91162f31830d9dd415d002" id="r_ga531baa4b9f91162f31830d9dd415d002"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga531baa4b9f91162f31830d9dd415d002">klotter::create_vectors</a> (float yaw, float pitch)</td></tr>
-<tr class="memdesc:ga531baa4b9f91162f31830d9dd415d002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture the local space of a "camera" us ing only the rotation.  <br /></td></tr>
-<tr class="separator:ga531baa4b9f91162f31830d9dd415d002"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3ceb6e1d2428afc0bd213b454601023a" id="r_ga3ceb6e1d2428afc0bd213b454601023a"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ceb6e1d2428afc0bd213b454601023a">klotter::create_view_from_world_mat</a> (const glm::vec3 &amp;pos, const <a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> &amp;cv)</td></tr>
 <tr class="separator:ga3ceb6e1d2428afc0bd213b454601023a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga877a3ed04c88761bdfb420e7d4190be4" id="r_ga877a3ed04c88761bdfb420e7d4190be4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga877a3ed04c88761bdfb420e7d4190be4">klotter::compile</a> (const <a class="el" href="structklotter_1_1Camera.html">Camera</a> &amp;, const glm::ivec2 &amp;window_size)</td></tr>
@@ -397,6 +390,8 @@ Functions</h2></td></tr>
 <tr class="memitem:ga96a0f5ab096cbed0b9ebdc24ac13e7ca" id="r_ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memItemLeft" align="right" valign="top">glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga96a0f5ab096cbed0b9ebdc24ac13e7ca">klotter::screen_from_world</a> (const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;cam, const glm::vec3 &amp;world_pos, const glm::vec2 &amp;<a class="el" href="#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">resolution</a>)</td></tr>
 <tr class="memdesc:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the screen coordinate of a 3d world position.  <br /></td></tr>
 <tr class="separator:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa34634737d2319b0f1c9ba860e01ef98" id="r_gaa34634737d2319b0f1c9ba860e01ef98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa34634737d2319b0f1c9ba860e01ef98">klotter::draw_frustum</a> (<a class="el" href="structklotter_1_1DebugRender.html">DebugRender</a> *debug, const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;camera, const <a class="el" href="structklotter_1_1Color.html">Color</a> &amp;color)</td></tr>
+<tr class="separator:gaa34634737d2319b0f1c9ba860e01ef98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8f2a36f8af7bbc5fc841e84b35e5bcfa" id="r_ga8f2a36f8af7bbc5fc841e84b35e5bcfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8f2a36f8af7bbc5fc841e84b35e5bcfa">klotter::operator|</a> (<a class="el" href="#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> lhs, <a class="el" href="#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> rhs)</td></tr>
 <tr class="separator:ga8f2a36f8af7bbc5fc841e84b35e5bcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga520b75edd8118f7827919d7890a3fbd9" id="r_ga520b75edd8118f7827919d7890a3fbd9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structklotter_1_1LoadedShader__Unlit.html">LoadedShader_Unlit</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga520b75edd8118f7827919d7890a3fbd9">klotter::shader_from_container</a> (const <a class="el" href="structklotter_1_1LoadedShader__Unlit__Container.html">LoadedShader_Unlit_Container</a> &amp;container, const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;rc)</td></tr>
@@ -425,11 +420,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga7c41540b85fbcd00d0dfbe1104d10443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga23dc1ed0230e8dea88ce038e06a6136f" id="r_ga23dc1ed0230e8dea88ce038e06a6136f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga23dc1ed0230e8dea88ce038e06a6136f">klotter::render_geom_instanced</a> (const <a class="el" href="structklotter_1_1MeshInstance__TransformInstanced.html">MeshInstance_TransformInstanced</a> &amp;instanced)</td></tr>
 <tr class="separator:ga23dc1ed0230e8dea88ce038e06a6136f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga86f2208b879c568d1ee1e6e771c0caa1" id="r_ga86f2208b879c568d1ee1e6e771c0caa1"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga86f2208b879c568d1ee1e6e771c0caa1">klotter::UP</a> = glm::vec3(0.0f, 1.0f, 0.0f)</td></tr>
-<tr class="separator:ga86f2208b879c568d1ee1e6e771c0caa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab08d8610efe72b6bb05212584593e2f" id="r_gaab08d8610efe72b6bb05212584593e2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaab08d8610efe72b6bb05212584593e2f">klotter::create_vectors</a> (const <a class="el" href="structklotter_1_1DirectionalLight.html">DirectionalLight</a> &amp;p)</td></tr>
+<tr class="separator:gaab08d8610efe72b6bb05212584593e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -994,8 +986,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga531baa4b9f91162f31830d9dd415d002" name="ga531baa4b9f91162f31830d9dd415d002"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga531baa4b9f91162f31830d9dd415d002">&#9670;&#160;</a></span>create_vectors() <span class="overload">[2/2]</span></h2>
+<a id="gaab08d8610efe72b6bb05212584593e2f" name="gaab08d8610efe72b6bb05212584593e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaab08d8610efe72b6bb05212584593e2f">&#9670;&#160;</a></span>create_vectors() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1003,17 +995,11 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> klotter::create_vectors </td>
           <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>yaw</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1DirectionalLight.html">DirectionalLight</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>pitch</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Capture the local space of a "camera" us ing only the rotation. </p>
 
 </div>
 </div>
@@ -1032,6 +1018,32 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cv</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa34634737d2319b0f1c9ba860e01ef98" name="gaa34634737d2319b0f1c9ba860e01ef98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa34634737d2319b0f1c9ba860e01ef98">&#9670;&#160;</a></span>draw_frustum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klotter::draw_frustum </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1DebugRender.html">DebugRender</a> *</td>          <td class="paramname"><span class="paramname"><em>debug</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structklotter_1_1Color.html">Color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1248,29 +1260,6 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Select the correct sub shader from a container. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ga86f2208b879c568d1ee1e6e771c0caa1" name="ga86f2208b879c568d1ee1e6e771c0caa1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga86f2208b879c568d1ee1e6e771c0caa1">&#9670;&#160;</a></span>UP</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto klotter::UP = glm::vec3(0.0f, 1.0f, 0.0f)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

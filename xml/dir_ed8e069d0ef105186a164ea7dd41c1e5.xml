@@ -29,6 +29,8 @@
     <innerfile refid="shader_8h">shader.h</innerfile>
     <innerfile refid="shader_8source_8h">shader.source.h</innerfile>
     <innerfile refid="shader__resource_8h">shader_resource.h</innerfile>
+    <innerfile refid="shadow_8h">shadow.h</innerfile>
+    <innerfile refid="space_8h">space.h</innerfile>
     <innerfile refid="statechanger_8h">statechanger.h</innerfile>
     <innerfile refid="stencilaction_8h">stencilaction.h</innerfile>
     <innerfile refid="texture_8h">texture.h</innerfile>

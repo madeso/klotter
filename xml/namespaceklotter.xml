@@ -240,7 +240,6 @@
       <member refid="group__vertex-layout_1gaa3eb81233db95fb693918802ac36cc30" kind="typedef"><name>VertexTypes</name></member>
     </sectiondef>
     <sectiondef kind="var">
-      <member refid="group__render_1ga86f2208b879c568d1ee1e6e771c0caa1" kind="variable"><name>UP</name></member>
       <memberdef kind="variable" id="namespaceklotter_1a43f9bbbce92ceeed2837fcace91d9612" prot="public" static="no" constexpr="yes" mutable="no">
         <type>std::size_t</type>
         <definition>std::size_t klotter::MAX_TEXTURES_SUPPORTED</definition>
@@ -316,6 +315,21 @@
         <inbodydescription>
         </inbodydescription>
         <location file="src/klotter/render/constants.h" line="18" column="15" bodyfile="src/klotter/render/constants.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1a86f2208b879c568d1ee1e6e771c0caa1" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>auto</type>
+        <definition>auto klotter::UP</definition>
+        <argsstring></argsstring>
+        <name>UP</name>
+        <qualifiedname>klotter::UP</qualifiedname>
+        <initializer>= glm::vec3(0.0f, 1.0f, 0.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/space.h" line="6" column="16" bodyfile="src/klotter/render/space.h" bodystart="6" bodyend="-1"/>
       </memberdef>
       <member refid="group__texture_1ga10216e8af0ed877194fd22899e5b058b" kind="variable"><name>cubemap_size</name></member>
     </sectiondef>
@@ -407,7 +421,6 @@
         <location file="src/klotter/klotter.h" line="28" column="5" declfile="src/klotter/klotter.h" declline="28" declcolumn="5"/>
       </memberdef>
       <member refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kind="function"><name>create_vectors</name></member>
-      <member refid="group__render_1ga531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
       <member refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kind="function"><name>create_view_from_world_mat</name></member>
       <member refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kind="function"><name>compile</name></member>
       <member refid="group__render_1ga5068b304bb08be791391379a39514cb2" kind="function"><name>compile</name></member>
@@ -456,6 +469,7 @@
         </inbodydescription>
         <location file="src/klotter/render/color.h" line="21" column="11" declfile="src/klotter/render/color.h" declline="21" declcolumn="11"/>
       </memberdef>
+      <member refid="group__render_1gaa34634737d2319b0f1c9ba860e01ef98" kind="function"><name>draw_frustum</name></member>
       <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
       <memberdef kind="function" id="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -849,6 +863,55 @@
       <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
       <member refid="group__render_1ga8072e6de57f4c7633a25803ddf551385" kind="function"><name>shader_from_container</name></member>
       <member refid="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" kind="function"><name>load_shaders</name></member>
+      <memberdef kind="function" id="namespaceklotter_1ae5b60da1c532d5bdf88f860c4a3c3d1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1OrthoCamera" kindref="compound">OrthoCamera</ref></type>
+        <definition>OrthoCamera klotter::shadow_cam_from_light</definition>
+        <argsstring>(const DirectionalLight &amp;light, const World &amp;world, const Camera &amp;camera)</argsstring>
+        <name>shadow_cam_from_light</name>
+        <qualifiedname>klotter::shadow_cam_from_light</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1DirectionalLight" kindref="compound">DirectionalLight</ref> &amp;</type>
+          <declname>light</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1World" kindref="compound">World</ref> &amp;</type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1Camera" kindref="compound">Camera</ref> &amp;</type>
+          <declname>camera</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shadow.h" line="11" column="13" declfile="src/klotter/render/shadow.h" declline="11" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a531baa4b9f91162f31830d9dd415d002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1CameraVectors" kindref="compound">CameraVectors</ref></type>
+        <definition>CameraVectors klotter::create_vectors</definition>
+        <argsstring>(float yaw, float pitch)</argsstring>
+        <name>create_vectors</name>
+        <qualifiedname>klotter::create_vectors</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>yaw</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>pitch</declname>
+        </param>
+        <briefdescription>
+<para>Capture the local space of a &quot;camera&quot; us ing only the rotation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/space.h" line="17" column="15" declfile="src/klotter/render/space.h" declline="17" declcolumn="15"/>
+      </memberdef>
       <member refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kind="function"><name>bind_texture_2d</name></member>
       <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
       <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
@@ -1102,6 +1165,7 @@
       <member refid="group__render_1ga14106c01b64a4fb907c564373ba5e691" kind="function"><name>make_mesh_instance</name></member>
       <member refid="group__render_1ga7c41540b85fbcd00d0dfbe1104d10443" kind="function"><name>render_geom</name></member>
       <member refid="group__render_1ga23dc1ed0230e8dea88ce038e06a6136f" kind="function"><name>render_geom_instanced</name></member>
+      <member refid="group__render_1gaab08d8610efe72b6bb05212584593e2f" kind="function"><name>create_vectors</name></member>
       <member refid="group__scurcve_1gad502f980124ff607cb9564e4562d6a25" kind="function"><name>s_curve_from_input</name></member>
       <member refid="group__scurcve_1ga2c2164653e472f2eb8c12ab361bc7b8a" kind="function"><name>calculate_s_curve</name></member>
       <member refid="group__scurcve_1ga053ee1a8fe68689ff1ef5b8d2488bc55" kind="function"><name>imgui_s_curve_editor</name></member>

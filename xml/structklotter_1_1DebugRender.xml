@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/debug.h" line="24" column="13" bodyfile="src/klotter/render/debug.h" bodystart="24" bodyend="-1"/>
+        <location file="src/klotter/render/debug.h" line="25" column="13" bodyfile="src/klotter/render/debug.h" bodystart="25" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/debug.h" line="26" column="6"/>
+        <location file="src/klotter/render/debug.h" line="27" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -81,7 +81,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/debug.h" line="22" column="1" bodyfile="src/klotter/render/debug.h" bodystart="23" bodyend="27"/>
+    <location file="src/klotter/render/debug.h" line="23" column="1" bodyfile="src/klotter/render/debug.h" bodystart="24" bodyend="28"/>
     <listofallmembers>
       <member refid="structklotter_1_1DebugRender_1a9cbb501748d6e0e2132cf0bece044020" prot="public" virt="non-virtual"><scope>klotter::DebugRender</scope><name>add_line</name></member>
       <member refid="structklotter_1_1DebugRender_1a4fc7dbe5c91dc159abf7e4d1421d4fcf" prot="public" virt="non-virtual"><scope>klotter::DebugRender</scope><name>lines</name></member>

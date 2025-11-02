@@ -8,7 +8,7 @@ var searchData=
   ['red_5fvermillion_5',['red_vermillion',['../namespaceklotter_1_1colors.html#a283f711b3847f13c0a354917ab22eca1',1,'klotter::colors']]],
   ['reddish_5fpurple_6',['reddish_purple',['../namespacesvg.html#a77d6e5012f32a5531daaae30ea8a163e',1,'svg']]],
   ['render_5fmode_7',['render_mode',['../structklotter_1_1OpenglStates.html#a25febe869bee7f6251f482106cd7ed9c',1,'klotter::OpenglStates']]],
-  ['render_5fworld_5fref_8',['render_world_ref',['../structklotter_1_1EffectStack.html#adfd748607dee4c12c729c56b09e3d5a6',1,'klotter::EffectStack']]],
+  ['render_5fworld_8',['render_world',['../structklotter_1_1EffectStack.html#a3135bf919d6557fc6b131048cc30fb11',1,'klotter::EffectStack']]],
   ['renderer_9',['renderer',['../structklotter_1_1PostProcArg.html#afb6209a69a9db4f6779c43290d6cc32c',1,'klotter::PostProcArg']]],
   ['resolution_5funi_10',['resolution_uni',['../structklotter_1_1LineDrawer.html#a02f5813ada4de1104582aed3aac54e07',1,'klotter::LineDrawer::resolution_uni'],['../structklotter_1_1LoadedPostProcShader.html#a3ad52ac1878403776878765d66e4a9d6',1,'klotter::LoadedPostProcShader::resolution_uni']]],
   ['result_11',['result',['../structklotter_1_1HashCombiner.html#a26bf8eb600fcab0bb021b3761e8ad8e2',1,'klotter::HashCombiner']]],

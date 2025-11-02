@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="space_8h" kind="file" language="C++">
+    <compoundname>space.h</compoundname>
+    <includedby refid="camera_8h" local="yes">src/klotter/render/camera.h</includedby>
+    <includedby refid="world_8h" local="yes">src/klotter/render/world.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/klotter/klotter.h</label>
+        <link refid="klotter_8h"/>
+      </node>
+      <node id="2">
+        <label>src/klotter/render/camera.h</label>
+        <link refid="camera_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/klotter/render/fullscreen.h</label>
+        <link refid="fullscreen_8h"/>
+      </node>
+      <node id="8">
+        <label>src/klotter/render/postproc.internal.h</label>
+        <link refid="postproc_8internal_8h"/>
+      </node>
+      <node id="7">
+        <label>src/klotter/render/renderer.h</label>
+        <link refid="renderer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
+      </node>
+      <node id="4">
+        <label>src/klotter/render/shadow.h</label>
+        <link refid="shadow_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/space.h</label>
+        <link refid="space_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/klotter/render/world.h</label>
+        <link refid="world_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1CameraVectors" prot="public">klotter::CameraVectors</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="namespaceklotter_1a86f2208b879c568d1ee1e6e771c0caa1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="namespaceklotter_1a86f2208b879c568d1ee1e6e771c0caa1" kindref="member">UP</ref><sp/>=<sp/>glm::vec3(0.0f,<sp/>1.0f,<sp/>0.0f);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="structklotter_1_1CameraVectors" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1CameraVectors" kindref="compound">CameraVectors</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11" refid="structklotter_1_1CameraVectors_1a1462b3c73fdf42f65589e3f926d6d921" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1CameraVectors_1a1462b3c73fdf42f65589e3f926d6d921" kindref="member">front</ref>;</highlight></codeline>
+<codeline lineno="12" refid="structklotter_1_1CameraVectors_1ae12a181bba402aad79fdd391ff41e3da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1CameraVectors_1ae12a181bba402aad79fdd391ff41e3da" kindref="member">right</ref>;</highlight></codeline>
+<codeline lineno="13" refid="structklotter_1_1CameraVectors_1af53d2d059ea34390beb2f73311aa9e7e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1CameraVectors_1af53d2d059ea34390beb2f73311aa9e7e" kindref="member">up</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="namespaceklotter_1a531baa4b9f91162f31830d9dd415d002" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1CameraVectors" kindref="compound">CameraVectors</ref><sp/><ref refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kindref="member">create_vectors</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yaw,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>pitch);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/space.h"/>
+  </compounddef>
+</doxygen>
