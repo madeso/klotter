@@ -5,21 +5,7 @@
 namespace klotter
 {
 
-// todo(Gustav): replace create_vectors and create_view_mat when we have test rendering
-
-CameraVectors create_vectors(float yaw, float pitch)
-{
-	const auto direction = glm::vec3{
-		std::cos(glm::radians(yaw)) * std::cos(glm::radians(pitch)),
-		std::sin(glm::radians(pitch)),
-		std::sin(glm::radians(yaw)) * std::cos(glm::radians(pitch))
-	};
-	const auto front = glm::normalize(direction);
-	const auto right = glm::normalize(glm::cross(front, UP));
-	const auto up = glm::normalize(glm::cross(right, front));
-
-	return {front, right, up};
-}
+// todo(Gustav): replace create_view_mat when we have test rendering
 
 // todo(Gustav): is this wrapper needed?
 CameraVectors create_vectors(const Camera& cam)

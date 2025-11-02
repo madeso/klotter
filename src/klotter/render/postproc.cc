@@ -14,6 +14,7 @@
 #include "klotter/render/statechanger.h"
 #include "klotter/render/ui.h"
 #include "klotter/render/camera.h"
+#include "klotter/render/shadow.h"
 
 #include "imgui.h"
 
@@ -101,11 +102,7 @@ void RenderWorld::update(const PostProcArg& arg)
 		auto bound = BoundFbo{shadow_buffer};
 		set_gl_viewport({shadow_buffer->size.x, shadow_buffer->size.y});
 		const auto& light = arg.world->lights.directional_lights[0];
-		auto cam = OrthoCamera{};
-		cam.position = arg.camera->position + arg.world->lights.shadow_offset;
-		cam.pitch = light.pitch;
-		cam.yaw = light.yaw;
-		cam.size = arg.world->lights.shadow_size;
+		const auto cam = shadow_cam_from_light(light, *arg.world, *arg.camera);
 		arg.renderer->render_shadows(shadow_size, *arg.world, compile(cam, shadow_size));
 	}
 

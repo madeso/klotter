@@ -4,6 +4,7 @@
 
 namespace klotter
 {
+struct CompiledCamera;
 
 /** \addtogroup render Renderer
  *  @{
@@ -25,6 +26,8 @@ struct DebugRender
 
 	void add_line(const glm::vec3& from, const glm::vec3& to, const Color& color);
 };
+
+void draw_frustum(DebugRender* debug, const CompiledCamera& camera, const Color& color);
 
 /**
  * @}

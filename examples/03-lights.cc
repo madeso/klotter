@@ -10,6 +10,7 @@
 #include "klotter/render/geom.h"
 #include "klotter/render/ui.h"
 #include "klotter/render/postproc.internal.h" // todo(Gustav): only needed for visualizing the shadow depth buffer, improve design and remove
+#include "klotter/render/shadow.h"
 
 using namespace klotter;
 
@@ -299,6 +300,9 @@ struct LightsSample : klotter::App
 	SCurveGuiState frustum_light_curve = SCurveGuiState::light_curve();
 	ImguiShaderCache imgui_shader_cache;
 
+	bool debug_draw_frustum = false;
+	bool debug_draw_shadow_frustum = true;
+
 	void on_render(
 		const glm::ivec2& window_size,
 		klotter::Renderer* renderer,
@@ -319,6 +323,18 @@ struct LightsSample : klotter::App
 			last_window_size = window_size;
 			projected_target = screen_from_world(compile(camera, window_size), target, window_size);
 			renderer->debug.add_line(glm::vec3{0, 0, 0}, target, klotter::colors::orange);
+		}
+		if (debug_draw_frustum)
+		{
+			draw_frustum(&renderer->debug, compile(camera, window_size), klotter::colors::yellow);
+		}
+		if (debug_draw_shadow_frustum)
+		{
+			draw_frustum(
+				&renderer->debug,
+				compile(shadow_cam_from_light(world.lights.directional_lights[0], world, camera), renderer->settings.shadow_map_resolution),
+				klotter::colors::red_vermillion
+			);
 		}
 		anim += dt * 0.25f;
 		apply_animation();
@@ -381,8 +397,12 @@ struct LightsSample : klotter::App
 
 	void gui_all_direction_lights()
 	{
+		ImGui::Checkbox("Draw camera frustum", &debug_draw_frustum);
+		ImGui::Checkbox("Draw shadow frustum", &debug_draw_shadow_frustum);
 		ImGui::DragFloat("Shadow size", &world.lights.shadow_size, FAC_SPEED);
-		ImGui::DragFloat3("Shadow offset", glm::value_ptr(world.lights.shadow_offset), FAC_SPEED);
+		ImGui::DragFloat("Shadow offset", &world.lights.shadow_offset, FAC_SPEED);
+		ImGui::DragFloat("Shadow near", &world.lights.shadow_near, FAC_SPEED);
+		ImGui::DragFloat("Shadow far", &world.lights.shadow_far, FAC_SPEED);
 		if (world.lights.directional_lights.empty() == false)
 		{
 			// todo(Gustav): this is clumsy...

@@ -3,6 +3,7 @@
 
 #include "klotter/render/material.h"
 #include "klotter/render/vertex_layout.h"
+#include "klotter/render/space.h"
 
 #include <unordered_set>
 
@@ -138,6 +139,8 @@ struct PointLight
 	float diffuse_strength = 1.0f;
 };
 
+CameraVectors create_vectors(const DirectionalLight& p);
+
 /// Like a spotlight but can be positioned with a transform, supports light cookies and can use a "viewfrustom" when culling.
 struct FrustumLight
 {
@@ -164,7 +167,9 @@ struct Lights
 	Color ambient_color = colors::white;
 	float ambient_strength = 0.029f;
 
-	glm::vec3 shadow_offset = {0.0f, 10.0f, 0.0f};
+	float shadow_near = 1.0f;
+	float shadow_offset = 50.0f;
+	float shadow_far = 500.0f;
 	float shadow_size = 100.0f;
 
 	std::vector<DirectionalLight> directional_lights;

@@ -262,5 +262,9 @@ CompiledGeom_TransformInstance::~CompiledGeom_TransformInstance()
 	destroy_vertex_array(vao);
 }
 
+CameraVectors create_vectors(const DirectionalLight& p)
+{
+	return create_vectors(p.yaw, p.pitch);
+}
 
 }  //  namespace klotter

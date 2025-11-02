@@ -77,6 +77,8 @@ set(src_render
     klotter/render/geom.extract.cc klotter/render/geom.extract.h
 
     klotter/render/color.cc klotter/render/color.h
+    klotter/render/space.cc klotter/render/space.h
+    klotter/render/shadow.cc klotter/render/shadow.h
 )
 
 set(src_base

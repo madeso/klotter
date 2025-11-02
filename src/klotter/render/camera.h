@@ -1,21 +1,13 @@
 #pragma once
 
+#include "klotter/render/space.h"
+
 namespace klotter
 {
 
 /** \addtogroup render
  *  @{
 */
-
-constexpr auto UP = glm::vec3(0.0f, 1.0f, 0.0f);
-
-/// A temporary view of the local space of a camera.
-struct CameraVectors
-{
-	glm::vec3 front;
-	glm::vec3 right;
-	glm::vec3 up;
-};
 
 // todo(Gustav): rename to PerspectiveCamera? or PerspCamera?
 /// The current perspective camera representation.
@@ -49,7 +41,10 @@ struct OrthoCamera
 /// @see compile_camera
 struct CompiledCamera
 {
+	/// also known as projection matrix
 	glm::mat4 clip_from_view;
+
+	/// also known as view matrix
 	glm::mat4 view_from_world;
 	glm::vec3 position;
 	glm::vec3 in;
@@ -60,9 +55,6 @@ struct CompiledCamera
 
 /// Capture the current local space of the camera.
 CameraVectors create_vectors(const Camera& camera);
-
-/// Capture the local space of a "camera" us ing only the rotation.
-CameraVectors create_vectors(float yaw, float pitch);
 
 // todo(Gustav): the meaning of this function is unclear... move closer to usage or remove?
 glm::mat4 create_view_from_world_mat(const glm::vec3& pos, const CameraVectors& cv);
