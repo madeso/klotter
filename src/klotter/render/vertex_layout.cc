@@ -43,7 +43,10 @@ struct VertexTypeList
 };
 
 CompiledShaderVertexAttributes compile_shader_layout(
-	const CompiledVertexTypeList& l, const ShaderVertexAttributes& elements, std::optional<InstanceProp> instance_prop
+	const CompiledVertexTypeList& l,
+	const ShaderVertexAttributes& elements,
+	std::optional<InstanceProp> instance_prop,
+	std::optional<int> start_index
 )
 {
 	std::vector<CompiledVertexElement> list;
@@ -60,7 +63,9 @@ CompiledShaderVertexAttributes compile_shader_layout(
 
 	if (instance_prop.has_value())
 	{
-		list.push_back({instance_prop->type, instance_prop->name, l.next_index});
+		// if the value was provided, it can't be less than what we have already used
+		ASSERT(start_index.has_value() == false || start_index.value() >= l.next_index);
+		list.push_back({instance_prop->type, instance_prop->name, start_index.value_or(l.next_index)});
 	}
 
 	return {list, l.debug_types};

@@ -15,7 +15,7 @@ LineDrawer::LineDrawer()
 	// todo(Gustav): expand shader with stipple pattern https://stackoverflow.com/questions/52928678/dashed-line-in-opengl3/54543267#54543267
 	// todo(Gustav): move `description` and `layout` to a separate setup
 	: description({{VertexType::position3, "a_world_position"}, {VertexType::color3, "a_color"}})
-	, layout(compile_shader_layout(compile_attribute_layouts({description}), description, std::nullopt))
+	, layout(compile_shader_layout(compile_attribute_layouts({description}), description, std::nullopt, std::nullopt))
 	, shader(
 		  USE_DEBUG_LABEL_MANY("debug line")
 		  R"glsl(

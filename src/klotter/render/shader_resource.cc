@@ -19,6 +19,7 @@
 #include "pp.extract.frag.glsl.h"
 #include "pp.ping_pong_blur.frag.glsl.h"
 #include "pp.realize.frag.glsl.h"
+#include "klotter/assert.h"
 
 
 namespace klotter
@@ -327,22 +328,43 @@ struct LoadedShader
 	CompiledGeomVertexAttributes geom_layout;
 };
 
+std::optional<int> get_instance_start_index(const LoadedShader* shader)
+{
+	if (shader == nullptr)
+	{
+		return std::nullopt;
+	}
 
+	const CompiledGeomVertexAttributes& layout = shader->geom_layout;
 
-LoadedShader load_shader(DEBUG_LABEL_ARG_MANY const BaseShaderData& base_layout, const ShaderSource_withLayout& source, TransformSource model_source)
+	int max = 0;
+
+	for (const auto& entry: layout.elements)
+	{
+		max = std::max(entry.index, max);
+	}
+
+	return max + 1;
+}
+
+LoadedShader load_shader(DEBUG_LABEL_ARG_MANY const BaseShaderData& base_layout, const ShaderSource_withLayout& source, TransformSource model_source, const LoadedShader* instance_base = nullptr)
 {
 	auto layout_compiler = compile_attribute_layouts(base_layout, {source.layout});
 	const auto geom_layout = get_geom_layout(layout_compiler);
 
-	std::optional<InstanceProp> instance_prop;
+	std::optional<InstanceProp> instance_prop = std::nullopt;
+	std::optional<int> start_index = std::nullopt;
 	switch (model_source)
 	{
-	case TransformSource::Instanced_mat4: instance_prop = InstanceProp{VertexType::instance_transform, "u_world_from_local"}; break;
+	case TransformSource::Instanced_mat4:
+		instance_prop = InstanceProp{VertexType::instance_transform, "u_world_from_local"};
+		start_index = get_instance_start_index(instance_base);
+		break;
 	case TransformSource::Uniform: break;
 	default: assert(false && "unhandled ModelSource");
 	}
 
-	const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout, instance_prop);
+	const auto compiled_layout = compile_shader_layout(layout_compiler, source.layout, instance_prop, start_index);
 
 	auto program = std::make_shared<ShaderProgram>(USE_DEBUG_LABEL_MANY(debug_label) source.vertex, source.fragment, compiled_layout);
 
@@ -494,7 +516,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		USE_DEBUG_LABEL_MANY("depth transform uniform") global_shader_data, depth_transform_uniform, TransformSource::Uniform
 	);
 	auto loaded_depth_transform_instanced_mat4 = load_shader(
-		USE_DEBUG_LABEL_MANY("depth transform instanced") global_shader_data, depth_transform_instanced_mat4, TransformSource::Instanced_mat4
+		USE_DEBUG_LABEL_MANY("depth transform instanced") global_shader_data, depth_transform_instanced_mat4, TransformSource::Instanced_mat4, &loaded_default_instanced
 	);
 	auto loaded_skybox_shader
 		= load_shader(USE_DEBUG_LABEL_MANY("skybox"){}, skybox_shader, TransformSource::Uniform);

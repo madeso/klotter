@@ -99,7 +99,10 @@ struct InstanceProp
 
 [[nodiscard]]
 CompiledShaderVertexAttributes compile_shader_layout(
-	const CompiledVertexTypeList& l, const ShaderVertexAttributes& elements, std::optional<InstanceProp> instance_prop
+	const CompiledVertexTypeList& l,
+	const ShaderVertexAttributes& elements,
+	std::optional<InstanceProp> instance_prop,
+	std::optional<int> start_index
 );
 
 [[nodiscard]]
