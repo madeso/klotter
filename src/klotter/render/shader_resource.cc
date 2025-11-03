@@ -494,7 +494,7 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 		USE_DEBUG_LABEL_MANY("depth transform uniform") global_shader_data, depth_transform_uniform, TransformSource::Uniform
 	);
 	auto loaded_depth_transform_instanced_mat4 = load_shader(
-		USE_DEBUG_LABEL_MANY("depth transform instanced") global_shader_data, depth_transform_instanced_mat4, TransformSource::Uniform
+		USE_DEBUG_LABEL_MANY("depth transform instanced") global_shader_data, depth_transform_instanced_mat4, TransformSource::Instanced_mat4
 	);
 	auto loaded_skybox_shader
 		= load_shader(USE_DEBUG_LABEL_MANY("skybox"){}, skybox_shader, TransformSource::Uniform);
