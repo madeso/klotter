@@ -388,6 +388,10 @@ void Renderer::render_shadows(const glm::ivec2& window_size, const World& world,
 					shader.program->set_mat(*shader.world_from_local_uni, calc_world_from_local(mesh, compiled_camera));
 				}
 
+				if (mesh->billboarding != Billboarding::none)
+				{
+					continue;
+				}
 				render_geom(*mesh->geom);
 			}
 		}
