@@ -37,7 +37,7 @@
 <para>A property for a shader used in instanced rendering. </para>
     </briefdescription>
     <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__vertex-layout_1ga237368f15ea9a44ec4b6b7302d44c312" kindref="member">compile_shader_layout</ref> </para>
+<para><simplesect kind="see"><para><ref refid="group__vertex-layout_1ga76ef56d5b76a7671dddef14e54331714" kindref="member">compile_shader_layout</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>

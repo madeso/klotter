@@ -1155,7 +1155,7 @@
       </memberdef>
       <member refid="group__vertex-layout_1gac498a4f9c32fddd6f300437dec2051ad" kind="function"><name>is_instance_based</name></member>
       <member refid="group__vertex-layout_1ga930a511a1263566c1155f47dd193e47c" kind="function"><name>find_duplicates</name></member>
-      <member refid="group__vertex-layout_1ga237368f15ea9a44ec4b6b7302d44c312" kind="function"><name>compile_shader_layout</name></member>
+      <member refid="group__vertex-layout_1ga76ef56d5b76a7671dddef14e54331714" kind="function"><name>compile_shader_layout</name></member>
       <member refid="group__vertex-layout_1gaafa6ccef1474d9837601f1f46c18e10d" kind="function"><name>get_geom_layout</name></member>
       <member refid="group__vertex-layout_1gaf098cc3fc06209c4e177a1536d21660c" kind="function"><name>compile_attribute_layouts</name></member>
       <member refid="group__vertex-layout_1ga32dd8d711a7c3af2bef87c46aa863269" kind="function"><name>compile_attribute_layouts</name></member>

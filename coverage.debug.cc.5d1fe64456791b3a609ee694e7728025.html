@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/debug.cc</div>
-            <div>Date: 2025-11-02 21:08:32</div>
+            <div>Date: 2025-11-03 20:51:04</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -63,7 +63,7 @@
     </tr>
     <tr><td><a href="#l8">klotter::DebugRender::add_line(glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;, klotter::Color const&amp;) (line 8)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l25">klotter::draw_frustum(klotter::DebugRender*, klotter::CompiledCamera const&amp;, klotter::Color const&amp;) (line 25)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l13">klotter::unproject_ndc_to_world(klotter::CompiledCamera const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 13)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l13">klotter::world_from_ndc(klotter::CompiledCamera const&amp;, glm::vec&lt;3, float, (glm::qualifier)0&gt; const&amp;) (line 13)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
   </table>
 </details>
 </div>
@@ -170,7 +170,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="w"> </span><span class="nf">unproject_ndc_to_world</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ndc</span><span class="p">)</span></td>
+                <td class="src uncoveredLine"><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="w"> </span><span class="nf">world_from_ndc</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ndc</span><span class="p">)</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l14" href="#l14">14</a></td>
@@ -268,56 +268,56 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">near_bot_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unproject_ndc_to_world</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">near_bot_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world_from_ndc</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l28" href="#l28">28</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">near_bot_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unproject_ndc_to_world</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">near_bot_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world_from_ndc</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l29" href="#l29">29</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">near_top_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unproject_ndc_to_world</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">near_top_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world_from_ndc</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l30" href="#l30">30</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">near_top_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unproject_ndc_to_world</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">near_top_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world_from_ndc</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l31" href="#l31">31</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">far_bot_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unproject_ndc_to_world</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">far_bot_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world_from_ndc</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l32" href="#l32">32</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">far_bot_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unproject_ndc_to_world</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">far_bot_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world_from_ndc</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l33" href="#l33">33</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">far_top_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unproject_ndc_to_world</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">far_top_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world_from_ndc</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l34" href="#l34">34</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">far_top_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unproject_ndc_to_world</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">});</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">far_top_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world_from_ndc</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="o">+</span><span class="mf">1.0f</span><span class="p">});</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l35" href="#l35">35</a></td>
