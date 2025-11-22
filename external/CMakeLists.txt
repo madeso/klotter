@@ -1,7 +1,7 @@
 include( ExternalProject )
 
-# todo(Gustav): update from SDL2-2.0.20 to SDL2-2.32.8 (or more modern)
-set(SDL_VERSION_STRING "SDL2-2.0.20") # tar.gz name on sdl release page
+# todo(Gustav): update to sdl 3
+set(SDL_VERSION_STRING "2.32.10") # tar.gz name on sdl github release page
 set(CATCH_GIT_TAG v3.7.1)
 
 ###################################################################################################
@@ -62,7 +62,7 @@ if(EU_SDL_SOURCE_FETCH)
     ExternalProject_Add(
         SDL2_external
         DOWNLOAD_EXTRACT_TIMESTAMP TRUE
-        URL https://www.libsdl.org/release/${SDL_VERSION_STRING}.zip
+        URL https://github.com/libsdl-org/SDL/releases/download/release-${SDL_VERSION_STRING}/SDL2-${SDL_VERSION_STRING}.zip
         PREFIX "${SDL_EXTERN_DIR}/${SDL_VERSION_STRING}"
         LOG_DIR "${SDL_EXTERN_DIR}/log"
         INSTALL_DIR ${SDL_INSTALL_DIR}
