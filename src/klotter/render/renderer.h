@@ -17,6 +17,15 @@ namespace klotter
 
 struct RendererPimpl;
 
+
+// todo(Gustav): move to a different file?
+struct ShadowContext
+{
+	FrameBuffer* directional_shadow_map = nullptr;
+	glm::mat4 shadow_projection;
+};
+
+
 /// The rendering engine.
 struct Renderer
 {
@@ -51,7 +60,7 @@ struct Renderer
 	[[nodiscard]] bool is_loaded() const;
 
 	/// doesn't set the size, prefer EffectStack::render
-	void render_world(const glm::ivec2& window_size, const World&, const CompiledCamera&);
+	void render_world(const glm::ivec2& window_size, const World&, const CompiledCamera&, const ShadowContext& shadow_context);
 
 	void render_shadows(const glm::ivec2& window_size, const World&, const CompiledCamera&) const;
 };

@@ -167,6 +167,8 @@ LoadedShader_Default::LoadedShader_Default(
 )
 	: program(std::move(p))
 	, tint_color_uni(program->get_uniform("u_material.diffuse_tint"))
+	, tex_directional_light_depth_uni(program->get_uniform("u_directional_light_depth_tex"))
+	, shadow_projection_uni(program->get_uniform("u_shadow_projection"))
 	, tex_diffuse_uniform(program->get_uniform("u_material.diffuse_tex"))
 	, tex_specular_uniform(program->get_uniform("u_material.specular_tex"))
 	, tex_emissive_uniform(program->get_uniform("u_material.emissive_tex"))
@@ -198,7 +200,7 @@ LoadedShader_Default::LoadedShader_Default(
 		frustum_lights.emplace_back(program.get(), base);
 	}
 
-	std::vector<Uniform*> textures = {&tex_diffuse_uniform, &tex_specular_uniform, &tex_emissive_uniform};
+	std::vector<Uniform*> textures = {&tex_directional_light_depth_uni, &tex_diffuse_uniform, &tex_specular_uniform, &tex_emissive_uniform};
 	for (auto& fl: frustum_lights)
 	{
 		textures.emplace_back(&fl.tex_cookie_uniform);

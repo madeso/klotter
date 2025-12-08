@@ -3,6 +3,7 @@
 #include "klotter/assert.h"
 #include "klotter/cint.h"
 
+#include "klotter/render/renderer.h"
 #include "klotter/render/assets.h"
 #include "klotter/render/camera.h"
 #include "klotter/render/render_settings.h"
@@ -10,8 +11,8 @@
 #include "klotter/render/shader_resource.h"
 #include "klotter/render/world.h"
 #include "klotter/render/statechanger.h"
-
 #include "klotter/render/constants.h"
+
 
 namespace klotter
 {
@@ -201,6 +202,21 @@ void DefaultMaterial::apply_lights(
 
 		bind_texture_2d(states, u.tex_cookie_uniform, *get_or_white(assets, p.cookie));
 	}
+
+	// directional light shadows
+	ASSERT(rc.shadow_context);
+	auto* shadow_map = rc.shadow_context ? rc.shadow_context->directional_shadow_map : nullptr;
+	if (shadow_map != nullptr)
+	{
+		bind_texture_2d(states, shader.tex_directional_light_depth_uni, *shadow_map);
+	}
+	else
+	{
+		bind_texture_2d(states, shader.tex_directional_light_depth_uni, *assets->get_white());
+	}
+
+	const auto projection = rc.shadow_context ? rc.shadow_context->shadow_projection : glm::mat4{};
+	shader.program->set_mat(shader.shadow_projection_uni, projection);
 }
 
 bool DefaultMaterial::is_transparent() const

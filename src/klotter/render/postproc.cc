@@ -96,22 +96,31 @@ void RenderWorld::update(const PostProcArg& arg)
 		}
 	}
 
+	const auto compiled_shadow_camera = ([&]()
+	{
+		const auto& light = arg.world->lights.directional_lights[0];
+		const auto cam = shadow_cam_from_light(light, *arg.world, *arg.camera);
+		return compile(cam, shadow_size);
+	})();
+
 	if (arg.world->lights.directional_lights.empty() == false)
 	{
 		SCOPED_DEBUG_GROUP("render shadow buffer"sv);
 		auto bound = BoundFbo{shadow_buffer};
 		set_gl_viewport({shadow_buffer->size.x, shadow_buffer->size.y});
-		const auto& light = arg.world->lights.directional_lights[0];
-		const auto cam = shadow_cam_from_light(light, *arg.world, *arg.camera);
-		arg.renderer->render_shadows(shadow_size, *arg.world, compile(cam, shadow_size));
+		arg.renderer->render_shadows(shadow_size, *arg.world, compiled_shadow_camera);
 	}
 
 	// render into msaa buffer
 	{
 		SCOPED_DEBUG_GROUP("rendering into msaa buffer"sv);
+
+		const auto shadow_context = ShadowContext{.directional_shadow_map = shadow_buffer.get(),
+		                                          .shadow_projection = compiled_shadow_camera.clip_from_view};
+
 		auto bound = BoundFbo{msaa_buffer};
 		set_gl_viewport({msaa_buffer->size.x, msaa_buffer->size.y});
-		arg.renderer->render_world(window_size, *arg.world, compile(*arg.camera, window_size));
+		arg.renderer->render_world(window_size, *arg.world, compile(*arg.camera, window_size), shadow_context);
 	}
 
 	// copy msaa buffer to realized

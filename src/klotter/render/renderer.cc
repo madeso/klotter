@@ -151,7 +151,7 @@ void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates*
 	batch_lines(drawer, debug_lines, gamma);
 }
 
-void Renderer::render_world(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera)
+void Renderer::render_world(const glm::ivec2& window_size, const World& world, const CompiledCamera& compiled_camera, const ShadowContext& shadow_context)
 {
 	SCOPED_DEBUG_GROUP("render world call"sv);
 	const auto has_outlined_meshes = std::ranges::any_of(world.meshes,
@@ -184,7 +184,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 			for (const auto& mesh: world.meshes)
 			{
 				const auto not_transparent_context
-					= RenderContext{TransformSource::Uniform, UseTransparency::no, settings.gamma};
+					= RenderContext{TransformSource::Uniform, UseTransparency::no, settings.gamma, &shadow_context};
 
 				if (mesh->material->is_transparent())
 				{
@@ -222,8 +222,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 			SCOPED_DEBUG_GROUP("render instances"sv);
 			for (const auto& instance: world.instances)
 			{
-				const auto not_transparent_context
-					= RenderContext{TransformSource::Instanced_mat4, UseTransparency::no, settings.gamma};
+				const auto not_transparent_context = RenderContext{TransformSource::Instanced_mat4, UseTransparency::no, settings.gamma, &shadow_context};
 
 				StateChanger{&pimpl->states}
 					.depth_test(true)
@@ -291,7 +290,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		SCOPED_DEBUG_GROUP("render transparent meshes"sv);
 		for (auto& transparent_mesh: transparent_meshes)
 		{
-			const auto transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::yes, settings.gamma};
+			const auto transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::yes, settings.gamma, nullptr};
 
 			const auto& mesh = transparent_mesh.mesh;
 			StateChanger{&pimpl->states}

@@ -25,10 +25,6 @@ uniform Material u_material;
 {{/only_depth}}
 
 {{#use_lights}}
-uniform vec3 u_view_position;
-
-uniform vec3 u_ambient_light;
-
 struct DirectionalLight
 {
     vec3 diffuse;
@@ -58,6 +54,11 @@ struct FrustumLight
     sampler2D cookie;
 };
 
+uniform sampler2D u_directional_light_depth_tex;
+
+uniform vec3 u_view_position;
+uniform vec3 u_ambient_light;
+
 uniform PointLight u_point_lights[{{number_of_point_lights}}];
 uniform DirectionalLight u_directional_lights[{{number_of_directional_lights}}];
 uniform FrustumLight u_frustum_lights[{{number_of_frustum_lights}}];
@@ -74,6 +75,7 @@ in vec2 v_tex_coord;
 {{#use_lights}}
 in vec3 v_worldspace;
 in vec3 v_normal;
+in vec4 v_frag_pos_light;
 {{/use_lights}}
 
 
@@ -132,7 +134,21 @@ vec3 calculate_directional_light(
     float spec = calculate_specular(view_direction, light_direction, normal, u_material.shininess);
     vec3 specular_color = spec * (u_material.specular_tint * spec_t * pl.specular);
 
-    return diffuse_color + specular_color;
+    float shadow = 0.0f;
+    vec3 light_coords = v_frag_pos_light.xyz / v_frag_pos_light.w;
+    if(light_coords.z <= 1.0f)
+    {
+        light_coords = (light_coords + 1.0f)/ 2.0f; // transform from (-1 to +1) to (0 to 1) range
+        float closest_depth = texture(u_directional_light_depth_tex, light_coords.xy).r;
+        float current_depth = light_coords.z;
+        if(current_depth > closest_depth)
+        {
+            shadow = 1.0f;
+        }
+    }
+    float shadow_tint = 1-shadow;
+
+    return (diffuse_color + specular_color)*shadow_tint;
 }
 
 vec3 calculate_point_light(

@@ -22,12 +22,16 @@ in mat4 u_world_from_local; // hacky way to define a attribute :/
 uniform mat4 u_world_from_local;
 {{/use_instancing}}
 
+{{#use_lights}}
+uniform mat4 u_shadow_projection;
+{{/use_lights}}
 
 ///////////////////////////////////////////////////////////////////////////////
 // varying
 {{#use_lights}}
 out vec3 v_worldspace;
 out vec3 v_normal;
+out vec4 v_frag_pos_light;
 {{/use_lights}}
 {{^only_depth}}
 out vec3 v_color;
@@ -39,11 +43,13 @@ out vec2 v_tex_coord;
 // code
 void main()
 {
-    gl_Position = u_clip_from_view * u_view_from_world * u_world_from_local * vec4(a_position.xyz, 1.0);
+    vec4 view_position = u_view_from_world * u_world_from_local * vec4(a_position.xyz, 1.0);
+    gl_Position = u_clip_from_view * view_position;
 
 {{#use_lights}}
     v_worldspace = vec3(u_world_from_local * vec4(a_position.xyz, 1.0));
     v_normal = mat3(transpose(inverse(u_world_from_local))) * a_normal; // move to cpu
+    v_frag_pos_light = u_shadow_projection * view_position;
 {{/use_lights}}
 {{^only_depth}}
     v_color = a_color;

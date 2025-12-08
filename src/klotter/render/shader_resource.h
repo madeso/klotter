@@ -11,6 +11,7 @@ struct RenderSettings;
 struct CompiledGeomVertexAttributes;
 struct ShaderProgram;
 struct CompiledCamera;
+struct ShadowContext;
 
 /** \addtogroup render Renderer
  *  @{
@@ -164,6 +165,8 @@ struct LoadedShader_Default
 	);
 
 	Uniform tint_color_uni;
+	Uniform tex_directional_light_depth_uni;
+	Uniform shadow_projection_uni;
 	Uniform tex_diffuse_uniform;
 	Uniform tex_specular_uniform;
 	Uniform tex_emissive_uniform;
@@ -195,11 +198,13 @@ struct RenderContext
 	TransformSource model_source;
 	UseTransparency use_transparency;
 	float gamma; ///< gamma from the rendering settings
+	ShadowContext const* shadow_context;
 
-	constexpr RenderContext(TransformSource s, UseTransparency t, float g)
+	constexpr RenderContext(TransformSource s, UseTransparency t, float g, const ShadowContext* sc)
 		: model_source(s)
 		, use_transparency(t)
 		, gamma(g)
+		, shadow_context(sc)
 	{}
 };
 
