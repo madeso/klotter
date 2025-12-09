@@ -11,10 +11,11 @@ var searchData=
   ['shaderresource_8',['ShaderResource',['../structklotter_1_1ShaderResource.html',1,'klotter']]],
   ['shadersource_9',['ShaderSource',['../structklotter_1_1ShaderSource.html',1,'klotter']]],
   ['shadersource_5fwithlayout_10',['ShaderSource_withLayout',['../structklotter_1_1ShaderSource__withLayout.html',1,'klotter']]],
-  ['simpleeffect_11',['SimpleEffect',['../structklotter_1_1SimpleEffect.html',1,'klotter']]],
-  ['skybox_12',['Skybox',['../structklotter_1_1Skybox.html',1,'klotter']]],
-  ['statechanger_13',['StateChanger',['../structklotter_1_1StateChanger.html',1,'klotter']]],
-  ['str_14',['Str',['../structStr.html',1,'']]],
-  ['svg_15',['Svg',['../structSvg.html',1,'']]],
-  ['svgline_16',['SvgLine',['../structSvgLine.html',1,'']]]
+  ['shadowcontext_11',['ShadowContext',['../structklotter_1_1ShadowContext.html',1,'klotter']]],
+  ['simpleeffect_12',['SimpleEffect',['../structklotter_1_1SimpleEffect.html',1,'klotter']]],
+  ['skybox_13',['Skybox',['../structklotter_1_1Skybox.html',1,'klotter']]],
+  ['statechanger_14',['StateChanger',['../structklotter_1_1StateChanger.html',1,'klotter']]],
+  ['str_15',['Str',['../structStr.html',1,'']]],
+  ['svg_16',['Svg',['../structSvg.html',1,'']]],
+  ['svgline_17',['SvgLine',['../structSvgLine.html',1,'']]]
 ];

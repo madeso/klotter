@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="103" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="103" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="104" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1DirectionalLightUniforms_1a115063de2d20559239d655e99a54a13f" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="104" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="104" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="105" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1DirectionalLightUniforms_1aed02f947b82c857ca9f1f91401785d6c" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="105" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="105" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="106" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="106" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="101" column="1"/>
+        <location file="src/klotter/render/shader_resource.h" line="102" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -105,7 +105,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="99" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="100" bodyend="106"/>
+    <location file="src/klotter/render/shader_resource.h" line="100" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="101" bodyend="107"/>
     <listofallmembers>
       <member refid="structklotter_1_1DirectionalLightUniforms_1aed02f947b82c857ca9f1f91401785d6c" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>dir_uni</name></member>
       <member refid="structklotter_1_1DirectionalLightUniforms_1a91fd8436ad067b9181e18831b5ed382d" prot="public" virt="non-virtual"><scope>klotter::DirectionalLightUniforms</scope><name>DirectionalLightUniforms</name></member>

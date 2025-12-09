@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="195" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="195" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="198" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="198" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderContext_1adfe2c953d814742376a8c64af73f0a26" prot="public" static="no" mutable="no">
         <type><ref refid="group__render_1ga3453e147b5d5dff196af8e69e2adfc3b" kindref="member">UseTransparency</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="196" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="196" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="199" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RenderContext_1abce13a97463ff43689c0f9637bf6ecb8" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -45,14 +45,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="197" column="7" bodyfile="src/klotter/render/shader_resource.h" bodystart="197" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="200" column="7" bodyfile="src/klotter/render/shader_resource.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1RenderContext_1a799dff4da1bc3f8437f9ef3469429f68" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1ShadowContext" kindref="compound">ShadowContext</ref> const  *</type>
+        <definition>ShadowContext const* klotter::RenderContext::shadow_context</definition>
+        <argsstring></argsstring>
+        <name>shadow_context</name>
+        <qualifiedname>klotter::RenderContext::shadow_context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="201" column="21" bodyfile="src/klotter/render/shader_resource.h" bodystart="201" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structklotter_1_1RenderContext_1a66fb7812f5a1c363a13e55f15f57f7d8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structklotter_1_1RenderContext_1a9e2c603242fdd90c8901b512f72aaa09" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr</type>
         <definition>klotter::RenderContext::RenderContext</definition>
-        <argsstring>(TransformSource s, UseTransparency t, float g)</argsstring>
+        <argsstring>(TransformSource s, UseTransparency t, float g, const ShadowContext *sc)</argsstring>
         <name>RenderContext</name>
         <qualifiedname>klotter::RenderContext::RenderContext</qualifiedname>
         <param>
@@ -67,13 +81,17 @@
           <type>float</type>
           <declname>g</declname>
         </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1ShadowContext" kindref="compound">ShadowContext</ref> *</type>
+          <declname>sc</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="199" column="11" bodyfile="src/klotter/render/shader_resource.h" bodystart="199" bodyend="203"/>
+        <location file="src/klotter/render/shader_resource.h" line="203" column="11" bodyfile="src/klotter/render/shader_resource.h" bodystart="203" bodyend="208"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -81,11 +99,38 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/shader_resource.h" line="193" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="194" bodyend="204"/>
+    <collaborationgraph>
+      <node id="4">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="3">
+        <label>klotter::FrameBuffer</label>
+        <link refid="structklotter_1_1FrameBuffer"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>klotter::RenderContext</label>
+        <link refid="structklotter_1_1RenderContext"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>shadow_context</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::ShadowContext</label>
+        <link refid="structklotter_1_1ShadowContext"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>directional_shadow_map</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/shader_resource.h" line="196" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="197" bodyend="209"/>
     <listofallmembers>
       <member refid="structklotter_1_1RenderContext_1abce13a97463ff43689c0f9637bf6ecb8" prot="public" virt="non-virtual"><scope>klotter::RenderContext</scope><name>gamma</name></member>
       <member refid="structklotter_1_1RenderContext_1a58b31ed4a728c9bfbc835f39e0fe38d6" prot="public" virt="non-virtual"><scope>klotter::RenderContext</scope><name>model_source</name></member>
-      <member refid="structklotter_1_1RenderContext_1a66fb7812f5a1c363a13e55f15f57f7d8" prot="public" virt="non-virtual"><scope>klotter::RenderContext</scope><name>RenderContext</name></member>
+      <member refid="structklotter_1_1RenderContext_1a9e2c603242fdd90c8901b512f72aaa09" prot="public" virt="non-virtual"><scope>klotter::RenderContext</scope><name>RenderContext</name></member>
+      <member refid="structklotter_1_1RenderContext_1a799dff4da1bc3f8437f9ef3469429f68" prot="public" virt="non-virtual"><scope>klotter::RenderContext</scope><name>shadow_context</name></member>
       <member refid="structklotter_1_1RenderContext_1adfe2c953d814742376a8c64af73f0a26" prot="public" virt="non-virtual"><scope>klotter::RenderContext</scope><name>use_transparency</name></member>
     </listofallmembers>
   </compounddef>

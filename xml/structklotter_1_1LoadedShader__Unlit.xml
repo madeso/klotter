@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="87" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="87" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="88" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1a25e2aa953efc824eda874f0cfd84b73e" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="91" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="91" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="92" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1ac45048f65bd4828a40e739ff09533220" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="92" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="92" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="93" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__Unlit_1a539d07d5134064aa9e1dcf0ef093c7d2" prot="public" static="no" mutable="no">
         <type>std::optional&lt; <ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref> &gt;</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="94" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="94" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="95" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="95" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="89" column="10"/>
+        <location file="src/klotter/render/shader_resource.h" line="90" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -141,7 +141,7 @@
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="85" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="86" bodyend="95"/>
+    <location file="src/klotter/render/shader_resource.h" line="86" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="87" bodyend="96"/>
     <listofallmembers>
       <member refid="structklotter_1_1LoadedShader__Unlit_1a0b51dc62bde3db127b96b139e2af0163" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>LoadedShader_Unlit</name></member>
       <member refid="structklotter_1_1LoadedShader__Unlit_1ae89bb303b8ae6300dc63f888bb7c0dc3" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Unlit</scope><name>program</name></member>

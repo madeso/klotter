@@ -380,13 +380,13 @@
           <edgelabel>ambient_tint_uni</edgelabel>
           <edgelabel>emissive_factor_uni</edgelabel>
           <edgelabel>light_ambient_color_uni</edgelabel>
+          <edgelabel>shadow_projection_uni</edgelabel>
           <edgelabel>shininess_uni</edgelabel>
           <edgelabel>specular_color_uni</edgelabel>
           <edgelabel>tex_diffuse_uniform</edgelabel>
+          <edgelabel>tex_directional_light_depth_uni</edgelabel>
           <edgelabel>tex_emissive_uniform</edgelabel>
           <edgelabel>tex_specular_uniform</edgelabel>
-          <edgelabel>tint_color_uni</edgelabel>
-          <edgelabel>view_position_uni</edgelabel>
           <edgelabel>...</edgelabel>
         </childnode>
         <childnode refid="14" relation="usage">

@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="32" column="20" bodyfile="src/klotter/render/shader_resource.h" bodystart="32" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="33" column="20" bodyfile="src/klotter/render/shader_resource.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CameraUniformBuffer_1a2164abaa62bfc7290179e65faf02d1d3" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1CompiledUniformProp" kindref="compound">CompiledUniformProp</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="34" column="21" bodyfile="src/klotter/render/shader_resource.h" bodystart="34" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="35" column="21" bodyfile="src/klotter/render/shader_resource.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CameraUniformBuffer_1aaae605f9cf97189117b80735ec12b77f" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1CompiledUniformProp" kindref="compound">CompiledUniformProp</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="35" column="21" bodyfile="src/klotter/render/shader_resource.h" bodystart="35" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="36" column="21" bodyfile="src/klotter/render/shader_resource.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CameraUniformBuffer_1a46b28bfe4ad5f8155051abfca7ad6652" prot="public" static="no" mutable="no">
         <type>std::unique_ptr&lt; <ref refid="structklotter_1_1UniformBuffer" kindref="compound">UniformBuffer</ref> &gt;</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="37" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="37" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="38" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="38" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="39" column="6"/>
+        <location file="src/klotter/render/shader_resource.h" line="40" column="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -132,7 +132,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="30" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="31" bodyend="40"/>
+    <location file="src/klotter/render/shader_resource.h" line="31" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="32" bodyend="41"/>
     <listofallmembers>
       <member refid="structklotter_1_1CameraUniformBuffer_1a46b28bfe4ad5f8155051abfca7ad6652" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>buffer</name></member>
       <member refid="structklotter_1_1CameraUniformBuffer_1a2164abaa62bfc7290179e65faf02d1d3" prot="public" virt="non-virtual"><scope>klotter::CameraUniformBuffer</scope><name>clip_from_view_uni</name></member>

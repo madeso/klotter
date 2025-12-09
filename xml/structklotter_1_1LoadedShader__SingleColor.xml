@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="50" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="50" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="51" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__SingleColor_1a008c62fa6ddc4d90ceb7eb4edf0927a2" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="51" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="51" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="52" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__SingleColor_1a4cb00aa2b75879c67cb884a7a7723e80" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="52" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="52" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="53" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__SingleColor_1a2871864eddb63c2d7545c77d93023491" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="53" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="53" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="54" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="54" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="46" column="1"/>
+        <location file="src/klotter/render/shader_resource.h" line="47" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -161,7 +161,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="44" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="45" bodyend="54"/>
+    <location file="src/klotter/render/shader_resource.h" line="45" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="46" bodyend="55"/>
     <listofallmembers>
       <member refid="structklotter_1_1LoadedShader__SingleColor_1a008c62fa6ddc4d90ceb7eb4edf0927a2" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_SingleColor</scope><name>geom_layout</name></member>
       <member refid="structklotter_1_1LoadedShader__SingleColor_1a78fd1a7a6acfb086b714d9ebafe1374a" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_SingleColor</scope><name>LoadedShader_SingleColor</name></member>

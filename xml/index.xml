@@ -461,6 +461,8 @@
   <compound refid="structklotter_1_1LoadedShader__Default" kind="struct"><name>klotter::LoadedShader_Default</name>
     <member refid="structklotter_1_1LoadedShader__Default_1adb6c4dab68ac21d0ec082b715e6a9003" kind="variable"><name>program</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1aa8bd2208f55eebc41109c66f559a5737" kind="variable"><name>tint_color_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1a7abec5310c088136df6c21b29040b80b" kind="variable"><name>tex_directional_light_depth_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1af06bb1e74e3e579ff8cff5373e5ca082" kind="variable"><name>shadow_projection_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a73763e3123237cc0683535fef73562f6" kind="variable"><name>tex_diffuse_uniform</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1ab9ba3c0f80294ef6eaed886e671773cb" kind="variable"><name>tex_specular_uniform</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a4f3ec2079a8354cca66539291c901687" kind="variable"><name>tex_emissive_uniform</name></member>
@@ -622,7 +624,8 @@
     <member refid="structklotter_1_1RenderContext_1a58b31ed4a728c9bfbc835f39e0fe38d6" kind="variable"><name>model_source</name></member>
     <member refid="structklotter_1_1RenderContext_1adfe2c953d814742376a8c64af73f0a26" kind="variable"><name>use_transparency</name></member>
     <member refid="structklotter_1_1RenderContext_1abce13a97463ff43689c0f9637bf6ecb8" kind="variable"><name>gamma</name></member>
-    <member refid="structklotter_1_1RenderContext_1a66fb7812f5a1c363a13e55f15f57f7d8" kind="function"><name>RenderContext</name></member>
+    <member refid="structklotter_1_1RenderContext_1a799dff4da1bc3f8437f9ef3469429f68" kind="variable"><name>shadow_context</name></member>
+    <member refid="structklotter_1_1RenderContext_1a9e2c603242fdd90c8901b512f72aaa09" kind="function"><name>RenderContext</name></member>
   </compound>
   <compound refid="structklotter_1_1Renderer" kind="struct"><name>klotter::Renderer</name>
     <member refid="structklotter_1_1Renderer_1a4003f3fcc5f8bf2524fe1e23b3bb9bff" kind="variable"><name>settings</name></member>
@@ -645,7 +648,7 @@
     <member refid="structklotter_1_1Renderer_1a1017b27e7fa7e2a1aaa7c0e1b314a390" kind="function"><name>make_blur_effect</name></member>
     <member refid="structklotter_1_1Renderer_1a6c10f931f84d4c16cdf5ce442ea5db58" kind="function"><name>make_skybox</name></member>
     <member refid="structklotter_1_1Renderer_1a49001afb79833f03d22f5ba4cb0c26f3" kind="function"><name>is_loaded</name></member>
-    <member refid="structklotter_1_1Renderer_1a2f7aaf8158a5c6a9aab9d9bdf9bd8724" kind="function"><name>render_world</name></member>
+    <member refid="structklotter_1_1Renderer_1a90ccf11a7750a3743be592f8354b4c72" kind="function"><name>render_world</name></member>
     <member refid="structklotter_1_1Renderer_1a92e2fc70d10ed88e24dd115d038ba88a" kind="function"><name>render_shadows</name></member>
   </compound>
   <compound refid="structklotter_1_1RendererPimpl" kind="struct"><name>klotter::RendererPimpl</name>
@@ -825,6 +828,10 @@
     <member refid="structklotter_1_1ShaderSource__withLayout_1a74f580f6ed5ac7a42a8abbc545f3f3c7" kind="variable"><name>layout</name></member>
     <member refid="structklotter_1_1ShaderSource__withLayout_1aac692ba1345ceaf0c763d523f9ec1afd" kind="variable"><name>vertex</name></member>
     <member refid="structklotter_1_1ShaderSource__withLayout_1ad3c8f31d0432c9a95eb65c19fef97fa3" kind="variable"><name>fragment</name></member>
+  </compound>
+  <compound refid="structklotter_1_1ShadowContext" kind="struct"><name>klotter::ShadowContext</name>
+    <member refid="structklotter_1_1ShadowContext_1aa77ad3becf6e2cc6c182de998f9b56cc" kind="variable"><name>directional_shadow_map</name></member>
+    <member refid="structklotter_1_1ShadowContext_1a7d435394ff7499c68f7f3ea82b66561f" kind="variable"><name>shadow_projection</name></member>
   </compound>
   <compound refid="structklotter_1_1SimpleEffect" kind="struct"><name>klotter::SimpleEffect</name>
     <member refid="structklotter_1_1SimpleEffect_1a54faefb8903be9d6632b6c46480d4d8e" kind="variable"><name>name</name></member>

@@ -88,6 +88,7 @@
     <innerclass refid="structklotter_1_1ShaderResource" prot="public">klotter::ShaderResource</innerclass>
     <innerclass refid="structklotter_1_1ShaderSource" prot="public">klotter::ShaderSource</innerclass>
     <innerclass refid="structklotter_1_1ShaderSource__withLayout" prot="public">klotter::ShaderSource_withLayout</innerclass>
+    <innerclass refid="structklotter_1_1ShadowContext" prot="public">klotter::ShadowContext</innerclass>
     <innerclass refid="structklotter_1_1SimpleEffect" prot="public">klotter::SimpleEffect</innerclass>
     <innerclass refid="structklotter_1_1Skybox" prot="public">klotter::Skybox</innerclass>
     <innerclass refid="structklotter_1_1StateChanger" prot="public">klotter::StateChanger</innerclass>

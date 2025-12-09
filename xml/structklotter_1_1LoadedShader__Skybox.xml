@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="78" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="78" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="79" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__Skybox_1a585e8b4c4fc29f8c3e16c4baace5774b" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1CompiledGeomVertexAttributes" kindref="compound">CompiledGeomVertexAttributes</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="79" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="79" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="80" column="30" bodyfile="src/klotter/render/shader_resource.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedShader__Skybox_1a8c617ea67c3778404e15c130f98ec279" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="80" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="80" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="81" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="81" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="74" column="1"/>
+        <location file="src/klotter/render/shader_resource.h" line="75" column="1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -146,7 +146,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="72" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="73" bodyend="81"/>
+    <location file="src/klotter/render/shader_resource.h" line="73" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="74" bodyend="82"/>
     <listofallmembers>
       <member refid="structklotter_1_1LoadedShader__Skybox_1a585e8b4c4fc29f8c3e16c4baace5774b" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Skybox</scope><name>geom_layout</name></member>
       <member refid="structklotter_1_1LoadedShader__Skybox_1a8087ee41a2ac5ead432b60aa682aff5f" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Skybox</scope><name>LoadedShader_Skybox</name></member>

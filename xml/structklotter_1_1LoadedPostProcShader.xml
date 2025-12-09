@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="147" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="147" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="148" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="148" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedPostProcShader_1a6c49f381ffdc87c39b1313437f8c3058" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="148" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="148" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="149" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="149" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedPostProcShader_1a8a4b03defcce03b259e547afb8fdc87c" prot="public" static="no" mutable="no">
         <type>std::optional&lt; <ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref> &gt;</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="149" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="149" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="150" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="150" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedPostProcShader_1a3ad52ac1878403776878765d66e4a9d6" prot="public" static="no" mutable="no">
         <type>std::optional&lt; <ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref> &gt;</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="150" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="150" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="151" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="151" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1LoadedPostProcShader_1a99c2cbec10319108c1ffde8f035b6e8b" prot="public" static="no" mutable="no">
         <type>std::optional&lt; <ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref> &gt;</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="151" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="151" bodyend="-1"/>
+        <location file="src/klotter/render/shader_resource.h" line="152" column="15" bodyfile="src/klotter/render/shader_resource.h" bodystart="152" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/shader_resource.h" line="153" column="10"/>
+        <location file="src/klotter/render/shader_resource.h" line="154" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -147,7 +147,7 @@
         <label>std::vector&lt; VertexType &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/shader_resource.h" line="145" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="146" bodyend="154"/>
+    <location file="src/klotter/render/shader_resource.h" line="146" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="147" bodyend="155"/>
     <listofallmembers>
       <member refid="structklotter_1_1LoadedPostProcShader_1a8a4b03defcce03b259e547afb8fdc87c" prot="public" virt="non-virtual"><scope>klotter::LoadedPostProcShader</scope><name>factor_uni</name></member>
       <member refid="structklotter_1_1LoadedPostProcShader_1ab3e27ddc81e87d1ac1cfd7824c97722b" prot="public" virt="non-virtual"><scope>klotter::LoadedPostProcShader</scope><name>LoadedPostProcShader</name></member>
