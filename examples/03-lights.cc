@@ -145,7 +145,7 @@ struct LightsSample : klotter::App
 			auto& dili = world.lights.directional_lights[0];
 			dili.pitch = -45.0f;
 			dili.yaw = 45.0f;
-			dili.diffuse_strength = 0.007f;
+			dili.diffuse_strength = 0.25f;
 			dili.specular_strength = dili.diffuse_strength;
 			dili.color = colors::red_vermillion;
 		}
