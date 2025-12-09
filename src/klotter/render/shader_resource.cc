@@ -168,7 +168,7 @@ LoadedShader_Default::LoadedShader_Default(
 	: program(std::move(p))
 	, tint_color_uni(program->get_uniform("u_material.diffuse_tint"))
 	, tex_directional_light_depth_uni(program->get_uniform("u_directional_light_depth_tex"))
-	, shadow_projection_uni(program->get_uniform("u_shadow_projection"))
+	, directional_shadow_clip_from_world_uni(program->get_uniform("u_directional_shadow_clip_from_world"))
 	, tex_diffuse_uniform(program->get_uniform("u_material.diffuse_tex"))
 	, tex_specular_uniform(program->get_uniform("u_material.specular_tex"))
 	, tex_emissive_uniform(program->get_uniform("u_material.emissive_tex"))

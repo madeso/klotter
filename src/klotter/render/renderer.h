@@ -22,7 +22,7 @@ struct RendererPimpl;
 struct ShadowContext
 {
 	FrameBuffer* directional_shadow_map = nullptr;
-	glm::mat4 shadow_projection;
+	glm::mat4 directional_shadow_clip_from_world;
 };
 
 

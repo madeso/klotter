@@ -75,7 +75,7 @@ in vec2 v_tex_coord;
 {{#use_lights}}
 in vec3 v_worldspace;
 in vec3 v_normal;
-in vec4 v_frag_pos_light;
+in vec4 v_directional_shadow_clip_position;
 {{/use_lights}}
 
 
@@ -135,10 +135,12 @@ vec3 calculate_directional_light(
     vec3 specular_color = spec * (u_material.specular_tint * spec_t * pl.specular);
 
     float shadow = 0.0f;
-    vec3 light_coords = v_frag_pos_light.xyz / v_frag_pos_light.w;
-    if(light_coords.z <= 1.0f)
+    // transform from homogenous clip space to NDC
+    vec3 directional_shadow_ndc_position = v_directional_shadow_clip_position.xyz / v_directional_shadow_clip_position.w;
+    if(directional_shadow_ndc_position.z <= 1.0f)
     {
-        light_coords = (light_coords + 1.0f)/ 2.0f; // transform from (-1 to +1) to (0 to 1) range
+        // transform from (-1 to +1) to (0 to 1) range
+        vec3 light_coords = (directional_shadow_ndc_position + 1.0f)/ 2.0f;
         float closest_depth = texture(u_directional_light_depth_tex, light_coords.xy).r;
         float current_depth = light_coords.z;
         if(current_depth > closest_depth)

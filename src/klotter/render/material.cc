@@ -215,8 +215,9 @@ void DefaultMaterial::apply_lights(
 		bind_texture_2d(states, shader.tex_directional_light_depth_uni, *assets->get_white());
 	}
 
-	const auto projection = rc.shadow_context ? rc.shadow_context->shadow_projection : glm::mat4{};
-	shader.program->set_mat(shader.shadow_projection_uni, projection);
+	const auto directional_shadow_clip_from_world
+		= rc.shadow_context ? rc.shadow_context->directional_shadow_clip_from_world : glm::mat4{};
+	shader.program->set_mat(shader.directional_shadow_clip_from_world_uni, directional_shadow_clip_from_world);
 }
 
 bool DefaultMaterial::is_transparent() const

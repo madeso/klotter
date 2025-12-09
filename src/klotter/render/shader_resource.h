@@ -166,7 +166,7 @@ struct LoadedShader_Default
 
 	Uniform tint_color_uni;
 	Uniform tex_directional_light_depth_uni;
-	Uniform shadow_projection_uni;
+	Uniform directional_shadow_clip_from_world_uni;
 	Uniform tex_diffuse_uniform;
 	Uniform tex_specular_uniform;
 	Uniform tex_emissive_uniform;

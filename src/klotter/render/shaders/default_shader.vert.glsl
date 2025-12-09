@@ -23,7 +23,7 @@ uniform mat4 u_world_from_local;
 {{/use_instancing}}
 
 {{#use_lights}}
-uniform mat4 u_shadow_projection;
+uniform mat4 u_directional_shadow_clip_from_world;
 {{/use_lights}}
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ uniform mat4 u_shadow_projection;
 {{#use_lights}}
 out vec3 v_worldspace;
 out vec3 v_normal;
-out vec4 v_frag_pos_light;
+out vec4 v_directional_shadow_clip_position;
 {{/use_lights}}
 {{^only_depth}}
 out vec3 v_color;
@@ -49,7 +49,7 @@ void main()
 {{#use_lights}}
     v_worldspace = vec3(u_world_from_local * vec4(a_position.xyz, 1.0));
     v_normal = mat3(transpose(inverse(u_world_from_local))) * a_normal; // move to cpu
-    v_frag_pos_light = u_shadow_projection * world_position;
+    v_directional_shadow_clip_position = u_directional_shadow_clip_from_world * world_position;
 {{/use_lights}}
 {{^only_depth}}
     v_color = a_color;
