@@ -147,7 +147,6 @@ struct LightsSample : klotter::App
 			dili.yaw = 45.0f;
 			dili.diffuse_strength = 0.25f;
 			dili.specular_strength = dili.diffuse_strength;
-			dili.color = colors::red_vermillion;
 		}
 
 		// point light
