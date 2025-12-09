@@ -141,15 +141,25 @@ vec3 calculate_directional_light(
     {
         // transform from (-1 to +1) to (0 to 1) range
         vec3 light_coords = (directional_shadow_ndc_position + 1.0f)/ 2.0f;
-        float closest_depth = texture(u_directional_light_depth_tex, light_coords.xy).r;
         float current_depth = light_coords.z;
+        float bias = max(0.025f * (1.0f - dot(normal, light_direction)), 0.0005f); // todo(Gustav): make tweakable?
 
-        // todo(Gustav): make tweakable?
-        float bias = max(0.025f * (1.0f - dot(normal, light_direction)), 0.0005f);
-        if(current_depth > (closest_depth + bias))
+        int sample_radius = 2;
+        vec2 pixel_size = 1.0 / textureSize(u_directional_light_depth_tex, 0);
+
+        for(int y = -sample_radius; y <= sample_radius; y+=1)
         {
-            shadow = 1.0f;
+            for(int x = -sample_radius; x <= sample_radius; x+=1)
+            {
+                float closest_depth = texture(u_directional_light_depth_tex, light_coords.xy + vec2(x, y) * pixel_size).r;
+                if(current_depth > (closest_depth + bias))
+                {
+                    shadow += 1.0f;
+                }
+            }
         }
+
+        shadow = shadow / pow((sample_radius * 2 + 1), 2);
     }
     float shadow_tint = 1-shadow;
 
