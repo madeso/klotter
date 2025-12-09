@@ -70,7 +70,7 @@
         <argsstring></argsstring>
         <name>shadow_far</name>
         <qualifiedname>klotter::Lights::shadow_far</qualifiedname>
-        <initializer>= 500.0f</initializer>
+        <initializer>= 200.0f</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -85,7 +85,7 @@
         <argsstring></argsstring>
         <name>shadow_size</name>
         <qualifiedname>klotter::Lights::shadow_size</qualifiedname>
-        <initializer>= 100.0f</initializer>
+        <initializer>= 70.0f</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
