@@ -116,7 +116,8 @@ void RenderWorld::update(const PostProcArg& arg)
 		SCOPED_DEBUG_GROUP("rendering into msaa buffer"sv);
 
 		const auto shadow_context = ShadowContext{.directional_shadow_map = shadow_buffer.get(),
-		                                          .shadow_projection = compiled_shadow_camera.clip_from_view};
+			.shadow_projection = compiled_shadow_camera.clip_from_view * compiled_shadow_camera.view_from_world
+		};
 
 		auto bound = BoundFbo{msaa_buffer};
 		set_gl_viewport({msaa_buffer->size.x, msaa_buffer->size.y});

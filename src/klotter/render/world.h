@@ -169,8 +169,8 @@ struct Lights
 
 	float shadow_near = 1.0f;
 	float shadow_offset = 50.0f;
-	float shadow_far = 500.0f;
-	float shadow_size = 100.0f;
+	float shadow_far = 200.0f;
+	float shadow_size = 70.0f;
 
 	std::vector<DirectionalLight> directional_lights;
 	std::vector<PointLight> point_lights;

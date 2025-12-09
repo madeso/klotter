@@ -290,7 +290,7 @@ void Renderer::render_world(const glm::ivec2& window_size, const World& world, c
 		SCOPED_DEBUG_GROUP("render transparent meshes"sv);
 		for (auto& transparent_mesh: transparent_meshes)
 		{
-			const auto transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::yes, settings.gamma, nullptr};
+			const auto transparent_context = RenderContext{TransformSource::Uniform, UseTransparency::yes, settings.gamma, &shadow_context};
 
 			const auto& mesh = transparent_mesh.mesh;
 			StateChanger{&pimpl->states}

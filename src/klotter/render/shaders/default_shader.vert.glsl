@@ -43,13 +43,13 @@ out vec2 v_tex_coord;
 // code
 void main()
 {
-    vec4 view_position = u_view_from_world * u_world_from_local * vec4(a_position.xyz, 1.0);
-    gl_Position = u_clip_from_view * view_position;
+    vec4 world_position = u_world_from_local * vec4(a_position.xyz, 1.0);
+    gl_Position = u_clip_from_view * u_view_from_world * world_position;
 
 {{#use_lights}}
     v_worldspace = vec3(u_world_from_local * vec4(a_position.xyz, 1.0));
     v_normal = mat3(transpose(inverse(u_world_from_local))) * a_normal; // move to cpu
-    v_frag_pos_light = u_shadow_projection * view_position;
+    v_frag_pos_light = u_shadow_projection * world_position;
 {{/use_lights}}
 {{^only_depth}}
     v_color = a_color;
