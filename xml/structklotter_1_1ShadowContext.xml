@@ -19,12 +19,12 @@
         </inbodydescription>
         <location file="src/klotter/render/renderer.h" line="24" column="13" bodyfile="src/klotter/render/renderer.h" bodystart="24" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1ShadowContext_1a7d435394ff7499c68f7f3ea82b66561f" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1ShadowContext_1a37e01dc76e679764e9d9fea4b64ab01c" prot="public" static="no" mutable="no">
         <type>glm::mat4</type>
-        <definition>glm::mat4 klotter::ShadowContext::shadow_projection</definition>
+        <definition>glm::mat4 klotter::ShadowContext::directional_shadow_clip_from_world</definition>
         <argsstring></argsstring>
-        <name>shadow_projection</name>
-        <qualifiedname>klotter::ShadowContext::shadow_projection</qualifiedname>
+        <name>directional_shadow_clip_from_world</name>
+        <qualifiedname>klotter::ShadowContext::directional_shadow_clip_from_world</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -59,8 +59,8 @@
     </collaborationgraph>
     <location file="src/klotter/render/renderer.h" line="22" column="1" bodyfile="src/klotter/render/renderer.h" bodystart="23" bodyend="26"/>
     <listofallmembers>
+      <member refid="structklotter_1_1ShadowContext_1a37e01dc76e679764e9d9fea4b64ab01c" prot="public" virt="non-virtual"><scope>klotter::ShadowContext</scope><name>directional_shadow_clip_from_world</name></member>
       <member refid="structklotter_1_1ShadowContext_1aa77ad3becf6e2cc6c182de998f9b56cc" prot="public" virt="non-virtual"><scope>klotter::ShadowContext</scope><name>directional_shadow_map</name></member>
-      <member refid="structklotter_1_1ShadowContext_1a7d435394ff7499c68f7f3ea82b66561f" prot="public" virt="non-virtual"><scope>klotter::ShadowContext</scope><name>shadow_projection</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

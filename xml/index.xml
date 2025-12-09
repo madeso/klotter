@@ -462,7 +462,7 @@
     <member refid="structklotter_1_1LoadedShader__Default_1adb6c4dab68ac21d0ec082b715e6a9003" kind="variable"><name>program</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1aa8bd2208f55eebc41109c66f559a5737" kind="variable"><name>tint_color_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a7abec5310c088136df6c21b29040b80b" kind="variable"><name>tex_directional_light_depth_uni</name></member>
-    <member refid="structklotter_1_1LoadedShader__Default_1af06bb1e74e3e579ff8cff5373e5ca082" kind="variable"><name>shadow_projection_uni</name></member>
+    <member refid="structklotter_1_1LoadedShader__Default_1aea6d1b6a0de968aeffa4872b7a338212" kind="variable"><name>directional_shadow_clip_from_world_uni</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a73763e3123237cc0683535fef73562f6" kind="variable"><name>tex_diffuse_uniform</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1ab9ba3c0f80294ef6eaed886e671773cb" kind="variable"><name>tex_specular_uniform</name></member>
     <member refid="structklotter_1_1LoadedShader__Default_1a4f3ec2079a8354cca66539291c901687" kind="variable"><name>tex_emissive_uniform</name></member>
@@ -831,7 +831,7 @@
   </compound>
   <compound refid="structklotter_1_1ShadowContext" kind="struct"><name>klotter::ShadowContext</name>
     <member refid="structklotter_1_1ShadowContext_1aa77ad3becf6e2cc6c182de998f9b56cc" kind="variable"><name>directional_shadow_map</name></member>
-    <member refid="structklotter_1_1ShadowContext_1a7d435394ff7499c68f7f3ea82b66561f" kind="variable"><name>shadow_projection</name></member>
+    <member refid="structklotter_1_1ShadowContext_1a37e01dc76e679764e9d9fea4b64ab01c" kind="variable"><name>directional_shadow_clip_from_world</name></member>
   </compound>
   <compound refid="structklotter_1_1SimpleEffect" kind="struct"><name>klotter::SimpleEffect</name>
     <member refid="structklotter_1_1SimpleEffect_1a54faefb8903be9d6632b6c46480d4d8e" kind="variable"><name>name</name></member>

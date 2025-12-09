@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/material.cc</div>
-            <div>Date: 2025-12-09 08:17:29</div>
+            <div>Date: 2025-12-09 19:34:07</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -65,7 +65,7 @@
     <tr><td><a href="#l134">klotter::DefaultMaterial::apply_lights(klotter::RenderContext const&amp;, klotter::Lights const&amp;, klotter::RenderSettings const&amp;, klotter::OpenglStates*, klotter::Assets*) (line 134)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l155">klotter::DefaultMaterial::apply_lights(klotter::RenderContext const&amp;, klotter::Lights const&amp;, klotter::RenderSettings const&amp;, klotter::OpenglStates*, klotter::Assets*)::{lambda()#3}::operator()() const (line 155)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l126">klotter::DefaultMaterial::bind_textures(klotter::RenderContext const&amp;, klotter::OpenglStates*, klotter::Assets*) (line 126)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
-    <tr><td><a href="#l222">klotter::DefaultMaterial::is_transparent() const (line 222)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
+    <tr><td><a href="#l223">klotter::DefaultMaterial::is_transparent() const (line 223)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l86">klotter::DefaultMaterial::set_uniforms(klotter::RenderContext const&amp;, klotter::CompiledCamera const&amp;, std::optional&lt;glm::mat&lt;4, 4, float, (glm::qualifier)0&gt; &gt; const&amp;) (line 86)</a></td><td>not called</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr>
     <tr><td><a href="#l81">klotter::DefaultMaterial::use_shader(klotter::RenderContext const&amp;) (line 81)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
     <tr><td><a href="#l20">klotter::UnlitMaterial::UnlitMaterial(klotter::ShaderResource const&amp;) (line 20)</a></td><td>not called</td><td>0.0%</td><td>-%</td><td>0.0%</td></tr>
@@ -1617,81 +1617,88 @@
                 <td class="text-right src linenos"><a class="normal" id="l218" href="#l218">218</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
-                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">shadow_context</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">shadow_context</span><span class="o">-&gt;</span><span class="n">shadow_projection</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="p">{};</span></td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">directional_shadow_clip_from_world</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l219" href="#l219">219</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_mat</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">shadow_projection_uni</span><span class="p">,</span><span class="w"> </span><span class="n">projection</span><span class="p">);</span></td>
+                <td class="src uncoveredLine"><span class="w">		</span><span class="o">=</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">shadow_context</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">rc</span><span class="p">.</span><span class="n">shadow_context</span><span class="o">-&gt;</span><span class="n">directional_shadow_clip_from_world</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">mat4</span><span class="p">{};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l220" href="#l220">220</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-                <td class="src uncoveredLine"><span class="p">}</span></td>
+                <td class="src uncoveredLine"><span class="w">	</span><span class="n">shader</span><span class="p">.</span><span class="n">program</span><span class="o">-&gt;</span><span class="n">set_mat</span><span class="p">(</span><span class="n">shader</span><span class="p">.</span><span class="n">directional_shadow_clip_from_world_uni</span><span class="p">,</span><span class="w"> </span><span class="n">directional_shadow_clip_from_world</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l221" href="#l221">221</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+                <td class="src uncoveredLine"><span class="p">}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l222" href="#l222">222</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l222" href="#l222">222</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l223" href="#l223">223</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
                 <td class="src uncoveredLine"><span class="kt">bool</span><span class="w"> </span><span class="nf">DefaultMaterial::is_transparent</span><span class="p">()</span><span class="w"> </span><span class="k">const</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l223" href="#l223">223</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l224" href="#l224">224</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l224" href="#l224">224</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l225" href="#l225">225</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="w">	</span><span class="c1">// todo(Gustav): improve transparency</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l225" href="#l225">225</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l226" href="#l226">226</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
                 <td class="src uncoveredLine"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ALPHA_TRANSPARENCY_LIMIT</span><span class="p">;</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l226" href="#l226">226</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l227" href="#l227">227</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="p">}</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l227" href="#l227">227</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l228" href="#l228">228</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l228" href="#l228">228</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l229" href="#l229">229</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
                 <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
             </tr>
             <tr>
-                <td class="text-right src linenos"><a class="normal" id="l229" href="#l229">229</a></td>
+                <td class="text-right src linenos"><a class="normal" id="l230" href="#l230">230</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>

@@ -234,9 +234,9 @@
         </childnode>
         <childnode refid="17" relation="usage">
           <edgelabel>ambient_tint_uni</edgelabel>
+          <edgelabel>directional_shadow_clip_from_world_uni</edgelabel>
           <edgelabel>emissive_factor_uni</edgelabel>
           <edgelabel>light_ambient_color_uni</edgelabel>
-          <edgelabel>shadow_projection_uni</edgelabel>
           <edgelabel>shininess_uni</edgelabel>
           <edgelabel>specular_color_uni</edgelabel>
           <edgelabel>tex_diffuse_uniform</edgelabel>

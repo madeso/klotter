@@ -191,7 +191,7 @@
 <codeline lineno="22" refid="structklotter_1_1ShadowContext" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1ShadowContext" kindref="compound">ShadowContext</ref></highlight></codeline>
 <codeline lineno="23"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="24" refid="structklotter_1_1ShadowContext_1aa77ad3becf6e2cc6c182de998f9b56cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1FrameBuffer" kindref="compound">FrameBuffer</ref>*<sp/><ref refid="structklotter_1_1ShadowContext_1aa77ad3becf6e2cc6c182de998f9b56cc" kindref="member">directional_shadow_map</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="25" refid="structklotter_1_1ShadowContext_1a7d435394ff7499c68f7f3ea82b66561f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::mat4<sp/><ref refid="structklotter_1_1ShadowContext_1a7d435394ff7499c68f7f3ea82b66561f" kindref="member">shadow_projection</ref>;</highlight></codeline>
+<codeline lineno="25" refid="structklotter_1_1ShadowContext_1a37e01dc76e679764e9d9fea4b64ab01c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::mat4<sp/><ref refid="structklotter_1_1ShadowContext_1a37e01dc76e679764e9d9fea4b64ab01c" kindref="member">directional_shadow_clip_from_world</ref>;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>

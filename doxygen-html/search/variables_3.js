@@ -28,11 +28,13 @@ var searchData=
   ['diffuse_5funi_25',['diffuse_uni',['../structklotter_1_1FrustumLightUniforms.html#abc6a374421c4027a3c6240e255613606',1,'klotter::FrustumLightUniforms']]],
   ['dir_5funi_26',['dir_uni',['../structklotter_1_1DirectionalLightUniforms.html#aed02f947b82c857ca9f1f91401785d6c',1,'klotter::DirectionalLightUniforms']]],
   ['directional_5flights_27',['directional_lights',['../structklotter_1_1LoadedShader__Default.html#a67c3fab2355d461a914559f6c571db5b',1,'klotter::LoadedShader_Default::directional_lights'],['../structklotter_1_1Lights.html#a61b2b0f76c7cc5fd6deb52c207043de7',1,'klotter::Lights::directional_lights']]],
-  ['directional_5fshadow_5fmap_28',['directional_shadow_map',['../structklotter_1_1ShadowContext.html#aa77ad3becf6e2cc6c182de998f9b56cc',1,'klotter::ShadowContext']]],
-  ['dirty_29',['dirty',['../structklotter_1_1EffectStack.html#a943bbfc9c0c88cf892b41f28ffede7f0',1,'klotter::EffectStack']]],
-  ['don_5fnot_5fshow_5fnext_5felement_5fwhen_5fframe_5fis_5fin_5fbackground_30',['don_not_show_next_element_when_frame_is_in_background',['../structVisualDebugging_1_1VisualDebug.html#a6413420a1c9dacbf30c78e93587dbbad',1,'VisualDebugging::VisualDebug']]],
-  ['drag_31',['drag',['../structklotter_1_1SCurveGuiState.html#a72718db76c89b9a18bac530c461aa8d6',1,'klotter::SCurveGuiState']]],
-  ['drag_5fcolor_32',['drag_color',['../structklotter_1_1SCurveImguiSettings.html#af3f175b069e2aec5c1a3bb56f1395245',1,'klotter::SCurveImguiSettings']]],
-  ['drag_5fradius_33',['drag_radius',['../structklotter_1_1SCurveImguiSettings.html#a4123894fee2dc6ec8a1ffd24ccfd558e',1,'klotter::SCurveImguiSettings']]],
-  ['draw_5fpoints_34',['draw_points',['../structklotter_1_1SCurveImguiSettings.html#a881dc3d42c615c71ed9ed62b5eb4cd59',1,'klotter::SCurveImguiSettings']]]
+  ['directional_5fshadow_5fclip_5ffrom_5fworld_28',['directional_shadow_clip_from_world',['../structklotter_1_1ShadowContext.html#a37e01dc76e679764e9d9fea4b64ab01c',1,'klotter::ShadowContext']]],
+  ['directional_5fshadow_5fclip_5ffrom_5fworld_5funi_29',['directional_shadow_clip_from_world_uni',['../structklotter_1_1LoadedShader__Default.html#aea6d1b6a0de968aeffa4872b7a338212',1,'klotter::LoadedShader_Default']]],
+  ['directional_5fshadow_5fmap_30',['directional_shadow_map',['../structklotter_1_1ShadowContext.html#aa77ad3becf6e2cc6c182de998f9b56cc',1,'klotter::ShadowContext']]],
+  ['dirty_31',['dirty',['../structklotter_1_1EffectStack.html#a943bbfc9c0c88cf892b41f28ffede7f0',1,'klotter::EffectStack']]],
+  ['don_5fnot_5fshow_5fnext_5felement_5fwhen_5fframe_5fis_5fin_5fbackground_32',['don_not_show_next_element_when_frame_is_in_background',['../structVisualDebugging_1_1VisualDebug.html#a6413420a1c9dacbf30c78e93587dbbad',1,'VisualDebugging::VisualDebug']]],
+  ['drag_33',['drag',['../structklotter_1_1SCurveGuiState.html#a72718db76c89b9a18bac530c461aa8d6',1,'klotter::SCurveGuiState']]],
+  ['drag_5fcolor_34',['drag_color',['../structklotter_1_1SCurveImguiSettings.html#af3f175b069e2aec5c1a3bb56f1395245',1,'klotter::SCurveImguiSettings']]],
+  ['drag_5fradius_35',['drag_radius',['../structklotter_1_1SCurveImguiSettings.html#a4123894fee2dc6ec8a1ffd24ccfd558e',1,'klotter::SCurveImguiSettings']]],
+  ['draw_5fpoints_36',['draw_points',['../structklotter_1_1SCurveImguiSettings.html#a881dc3d42c615c71ed9ed62b5eb4cd59',1,'klotter::SCurveImguiSettings']]]
 ];

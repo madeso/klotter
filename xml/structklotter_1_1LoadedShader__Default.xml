@@ -46,12 +46,12 @@
         </inbodydescription>
         <location file="src/klotter/render/shader_resource.h" line="168" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="168" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Default_1af06bb1e74e3e579ff8cff5373e5ca082" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1LoadedShader__Default_1aea6d1b6a0de968aeffa4872b7a338212" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
-        <definition>Uniform klotter::LoadedShader_Default::shadow_projection_uni</definition>
+        <definition>Uniform klotter::LoadedShader_Default::directional_shadow_clip_from_world_uni</definition>
         <argsstring></argsstring>
-        <name>shadow_projection_uni</name>
-        <qualifiedname>klotter::LoadedShader_Default::shadow_projection_uni</qualifiedname>
+        <name>directional_shadow_clip_from_world_uni</name>
+        <qualifiedname>klotter::LoadedShader_Default::directional_shadow_clip_from_world_uni</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -313,9 +313,9 @@
         </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>ambient_tint_uni</edgelabel>
+          <edgelabel>directional_shadow_clip_from_world_uni</edgelabel>
           <edgelabel>emissive_factor_uni</edgelabel>
           <edgelabel>light_ambient_color_uni</edgelabel>
-          <edgelabel>shadow_projection_uni</edgelabel>
           <edgelabel>shininess_uni</edgelabel>
           <edgelabel>specular_color_uni</edgelabel>
           <edgelabel>tex_diffuse_uniform</edgelabel>
@@ -398,13 +398,13 @@
     <listofallmembers>
       <member refid="structklotter_1_1LoadedShader__Default_1a368b22d4833ac751f4015687aaaab671" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>ambient_tint_uni</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1a67c3fab2355d461a914559f6c571db5b" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>directional_lights</name></member>
+      <member refid="structklotter_1_1LoadedShader__Default_1aea6d1b6a0de968aeffa4872b7a338212" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>directional_shadow_clip_from_world_uni</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1a385a11e189ac7f0786000ed7c810d751" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>emissive_factor_uni</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1a03e09db0a3440956c276c380fef51067" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>frustum_lights</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1aee6221bbb554a57b102e194b40d5eb36" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>light_ambient_color_uni</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1a3e67cf04e788a3c9a079d4b3b423f4c6" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>LoadedShader_Default</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1ae798dd79cd77cf0754e3964efbacb314" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>point_lights</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1adb6c4dab68ac21d0ec082b715e6a9003" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>program</name></member>
-      <member refid="structklotter_1_1LoadedShader__Default_1af06bb1e74e3e579ff8cff5373e5ca082" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>shadow_projection_uni</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1ab768fd618865565d6bfad53ad5a44c14" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>shininess_uni</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1a87987ad8aadd6e42917e44fe9933e5ba" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>specular_color_uni</name></member>
       <member refid="structklotter_1_1LoadedShader__Default_1a73763e3123237cc0683535fef73562f6" prot="public" virt="non-virtual"><scope>klotter::LoadedShader_Default</scope><name>tex_diffuse_uniform</name></member>

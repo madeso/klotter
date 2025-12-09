@@ -19,21 +19,21 @@
 <hr>
 <h3>warning: implicit conversion &#39;const ShadowContext *&#39; -&gt; &#39;bool&#39;</h3>
 <code>[readability-implicit-bool-conversion]</code>
-<p><i>src/klotter/render/material.cc 218 : 26</i></p>
+<p><i>src/klotter/render/material.cc 219 : 5</i></p>
 <pre>
-  218 |         const auto projection = rc.shadow_context ? rc.shadow_context-&gt;shadow_projection : glm::mat4{};
-      |                                 ^
-      |                                 (                 != nullptr)
+  219 |                 = rc.shadow_context ? rc.shadow_context-&gt;directional_shadow_clip_from_world : glm::mat4{};
+      |                   ^
+      |                   (                 != nullptr)
 </pre>
 <!--
 /home/runner/work/klotter/klotter/src/klotter/render/material.cc:208:21: warning: implicit conversion 'const ShadowContext *' -> 'bool' [readability-implicit-bool-conversion]
   208 |         auto* shadow_map = rc.shadow_context ? rc.shadow_context->directional_shadow_map : nullptr;
       |                            ^
       |                            (                 != nullptr)
-/home/runner/work/klotter/klotter/src/klotter/render/material.cc:218:26: warning: implicit conversion 'const ShadowContext *' -> 'bool' [readability-implicit-bool-conversion]
-  218 |         const auto projection = rc.shadow_context ? rc.shadow_context->shadow_projection : glm::mat4{};
-      |                                 ^
-      |                                 (                 != nullptr)
+/home/runner/work/klotter/klotter/src/klotter/render/material.cc:219:5: warning: implicit conversion 'const ShadowContext *' -> 'bool' [readability-implicit-bool-conversion]
+  219 |                 = rc.shadow_context ? rc.shadow_context->directional_shadow_clip_from_world : glm::mat4{};
+      |                   ^
+      |                   (                 != nullptr)
 -->
 </body>
 </html>
