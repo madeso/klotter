@@ -143,7 +143,10 @@ vec3 calculate_directional_light(
         vec3 light_coords = (directional_shadow_ndc_position + 1.0f)/ 2.0f;
         float closest_depth = texture(u_directional_light_depth_tex, light_coords.xy).r;
         float current_depth = light_coords.z;
-        if(current_depth > closest_depth)
+
+        // todo(Gustav): make tweakable?
+        float bias = max(0.025f * (1.0f - dot(normal, light_direction)), 0.0005f);
+        if(current_depth > (closest_depth + bias))
         {
             shadow = 1.0f;
         }
