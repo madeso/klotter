@@ -25,18 +25,17 @@ LineDrawer::LineDrawer()
 
 			uniform mat4 u_clip_from_view;
 			uniform mat4 u_view_from_world;
-			uniform vec2  u_resolution;
 
 			out vec4 v_color;
-			out vec2 v_vert_pos;
-			flat out vec2 v_start_pos;
+			out vec4 v_vert_pos;
+			flat out vec4 v_start_pos;
 
 			void main()
 			{
 				v_color = vec4(a_color, 1.0);
 				vec4 pos = u_clip_from_view * u_view_from_world * vec4(a_world_position.xyz, 1.0);
 				gl_Position = pos;
-				v_vert_pos = ((pos.xy / pos.w) + 1)/2.0 * u_resolution;
+				v_vert_pos = pos;
 				v_start_pos = v_vert_pos;
 			}
 		)glsl",
@@ -44,14 +43,19 @@ LineDrawer::LineDrawer()
 			#version 430 core
 
 			in vec4 v_color;
-			flat in vec2 v_start_pos;
-			in vec2 v_vert_pos;
+			flat in vec4 v_start_pos;
+			in vec4 v_vert_pos;
 
 			uniform float u_dash_size;
 			uniform float u_gap_size;
 			uniform vec2  u_resolution;
 
 			out vec4 color;
+
+			vec2 pixel(vec4 pos)
+			{
+				return ((pos.xy / pos.w) + 1)/2.0 * u_resolution;
+			}
 
 			void main()
 			{
@@ -61,7 +65,7 @@ LineDrawer::LineDrawer()
 
 					float dash_seg = u_dash_size/seg_len;
 
-					float cur = length(v_vert_pos - v_start_pos);
+					float cur = length(pixel(v_vert_pos) - pixel(v_start_pos));
 					float cur_seg = fract(cur / seg_len);
 					if(cur_seg > dash_seg)
 					{
