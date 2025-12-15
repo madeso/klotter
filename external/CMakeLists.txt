@@ -89,7 +89,7 @@ if(EU_SDL_SOURCE_FETCH)
             optimized ${SDL_INSTALL_DIR}/lib/SDL2main.lib
             optimized ${SDL_INSTALL_DIR}/lib/SDL2.lib
             debug ${SDL_INSTALL_DIR}/lib/SDL2maind.lib
-            debug ${SDL_INSTALL_DIR}/lib/SDL2d.lib
+            debug ${SDL_INSTALL_DIR}/lib/SDL2-staticd.lib
             version.lib imm32.lib winmm.lib Setupapi.lib
         )
     else()
