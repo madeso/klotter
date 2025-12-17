@@ -140,9 +140,11 @@ vec3 calculate_directional_light(
     if(directional_shadow_ndc_position.z <= 1.0f)
     {
         // transform from (-1 to +1) to (0 to 1) range
+        float max_bias = 0.025f;
+        float min_bias = 0.0005f;
         vec3 light_coords = (directional_shadow_ndc_position + 1.0f)/ 2.0f;
         float current_depth = light_coords.z;
-        float bias = max(0.025f * (1.0f - dot(normal, light_direction)), 0.0005f); // todo(Gustav): make tweakable?
+        float bias = max(max_bias * (1.0f - dot(normal, light_direction)), min_bias); // todo(Gustav): make tweakable?
 
         int sample_radius = 2;
         vec2 pixel_size = 1.0 / textureSize(u_directional_light_depth_tex, 0);
