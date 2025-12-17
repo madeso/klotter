@@ -87,7 +87,7 @@ if(EU_SDL_SOURCE_FETCH)
     if(WIN32)
         target_link_libraries(external_sdl2 INTERFACE
             optimized ${SDL_INSTALL_DIR}/lib/SDL2main.lib
-            optimized ${SDL_INSTALL_DIR}/lib/SDL2.lib
+            optimized ${SDL_INSTALL_DIR}/lib/SDL2-static.lib
             debug ${SDL_INSTALL_DIR}/lib/SDL2maind.lib
             debug ${SDL_INSTALL_DIR}/lib/SDL2-staticd.lib
             version.lib imm32.lib winmm.lib Setupapi.lib
