@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1CompiledVertexElementNoName" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::CompiledVertexElementNoName</compoundname>
+    <includes refid="vertex__layout_8h" local="no">vertex_layout.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1CompiledVertexElementNoName_1aba7f428b67267b016f8a2ad28a1cf00c" prot="public" static="no" mutable="no">
+        <type><ref refid="group__vertex-layout_1gad736ea89c0534627057463235feb9189" kindref="member">VertexType</ref></type>
+        <definition>VertexType klotter::CompiledVertexElementNoName::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>klotter::CompiledVertexElementNoName::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/vertex_layout.h" line="64" column="12" bodyfile="src/klotter/render/vertex_layout.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1CompiledVertexElementNoName_1a8c274532efa2ebb3f9fa4c65c5e6df09" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int klotter::CompiledVertexElementNoName::index</definition>
+        <argsstring></argsstring>
+        <name>index</name>
+        <qualifiedname>klotter::CompiledVertexElementNoName::index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/vertex_layout.h" line="65" column="5" bodyfile="src/klotter/render/vertex_layout.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A realized <ref refid="structklotter_1_1VertexElementDescription" kindref="compound">VertexElementDescription</ref> without name like <computeroutput>vec3</computeroutput> at gl shader position 3. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/render/vertex_layout.h" line="62" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="63" bodyend="66"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1CompiledVertexElementNoName_1a8c274532efa2ebb3f9fa4c65c5e6df09" prot="public" virt="non-virtual"><scope>klotter::CompiledVertexElementNoName</scope><name>index</name></member>
+      <member refid="structklotter_1_1CompiledVertexElementNoName_1aba7f428b67267b016f8a2ad28a1cf00c" prot="public" virt="non-virtual"><scope>klotter::CompiledVertexElementNoName</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

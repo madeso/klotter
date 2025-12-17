@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="renderer_8pimpl_8h" kind="file" language="C++">
+    <compoundname>renderer.pimpl.h</compoundname>
+    <includes refid="linebatch_8h" local="yes">klotter/render/linebatch.h</includes>
+    <includes refid="opengl__states_8h" local="yes">klotter/render/opengl_states.h</includes>
+    <includes refid="shader__resource_8h" local="yes">klotter/render/shader_resource.h</includes>
+    <includes refid="world_8h" local="yes">klotter/render/world.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>klotter/feature_flags.h</label>
+        <link refid="feature__flags_8h"/>
+      </node>
+      <node id="13">
+        <label>klotter/render/blend.h</label>
+        <link refid="blend_8h"/>
+      </node>
+      <node id="25">
+        <label>klotter/render/color.h</label>
+        <link refid="color_8h"/>
+      </node>
+      <node id="14">
+        <label>klotter/render/compare.h</label>
+        <link refid="compare_8h"/>
+      </node>
+      <node id="15">
+        <label>klotter/render/constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="16">
+        <label>klotter/render/cullface.h</label>
+        <link refid="cullface_8h"/>
+      </node>
+      <node id="2">
+        <label>klotter/render/linebatch.h</label>
+        <link refid="linebatch_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>klotter/render/material.h</label>
+        <link refid="material_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>klotter/render/opengl_labels.h</label>
+        <link refid="opengl__labels_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>klotter/render/opengl_states.h</label>
+        <link refid="opengl__states_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/renderer.pimpl.h</label>
+        <link refid="renderer_8pimpl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>klotter/render/rendermode.h</label>
+        <link refid="rendermode_8h"/>
+      </node>
+      <node id="3">
+        <label>klotter/render/shader.h</label>
+        <link refid="shader_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>klotter/render/shader_resource.h</label>
+        <link refid="shader__resource_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>klotter/render/space.h</label>
+        <link refid="space_8h"/>
+      </node>
+      <node id="18">
+        <label>klotter/render/stencilaction.h</label>
+        <link refid="stencilaction_8h"/>
+      </node>
+      <node id="26">
+        <label>klotter/render/texture.h</label>
+        <link refid="texture_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>klotter/render/uniform.h</label>
+        <link refid="uniform_8h"/>
+      </node>
+      <node id="20">
+        <label>klotter/render/uniform_buffer.h</label>
+        <link refid="uniform__buffer_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>klotter/render/vertex_layout.h</label>
+        <link refid="vertex__layout_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>klotter/render/world.h</label>
+        <link refid="world_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>klotter/scurve.h</label>
+        <link refid="scurve_8h"/>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>cstdint</label>
+      </node>
+      <node id="23">
+        <label>imgui.h</label>
+      </node>
+      <node id="8">
+        <label>map</label>
+      </node>
+      <node id="28">
+        <label>memory</label>
+      </node>
+      <node id="10">
+        <label>optional</label>
+      </node>
+      <node id="9">
+        <label>set</label>
+      </node>
+      <node id="11">
+        <label>unordered_set</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structklotter_1_1RendererPimpl" prot="public">klotter::RendererPimpl</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="linebatch_8h" kindref="compound">klotter/render/linebatch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="opengl__states_8h" kindref="compound">klotter/render/opengl_states.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="shader__resource_8h" kindref="compound">klotter/render/shader_resource.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="world_8h" kindref="compound">klotter/render/world.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structklotter_1_1RendererPimpl" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1RendererPimpl_1a5589ea5eb933cefc1fd719af2ae2f432" kindref="member">RendererPimpl</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18" refid="structklotter_1_1RendererPimpl_1a146ca5e38bd4c8a717795a173c657e89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1CameraUniformBuffer" kindref="compound">CameraUniformBuffer</ref><sp/><ref refid="structklotter_1_1RendererPimpl_1a146ca5e38bd4c8a717795a173c657e89" kindref="member">camera_uniform_buffer</ref>;</highlight></codeline>
+<codeline lineno="19" refid="structklotter_1_1RendererPimpl_1a8707601c657c0774f0e7022c259f2cd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1ShaderResource" kindref="compound">ShaderResource</ref><sp/><ref refid="structklotter_1_1RendererPimpl_1a8707601c657c0774f0e7022c259f2cd5" kindref="member">shaders_resources</ref>;</highlight></codeline>
+<codeline lineno="20" refid="structklotter_1_1RendererPimpl_1a30fac033e1f7db0bff6ddf2c36728c80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref><sp/><ref refid="structklotter_1_1RendererPimpl_1a30fac033e1f7db0bff6ddf2c36728c80" kindref="member">states</ref>;</highlight></codeline>
+<codeline lineno="21" refid="structklotter_1_1RendererPimpl_1a94bf72a0e910b1795c10682f118a7cba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1LineDrawer" kindref="compound">LineDrawer</ref><sp/><ref refid="structklotter_1_1RendererPimpl_1a94bf72a0e910b1795c10682f118a7cba" kindref="member">debug_drawer</ref>;</highlight></codeline>
+<codeline lineno="22" refid="structklotter_1_1RendererPimpl_1a81cf9becda0b96defeb78b8f4ccd81bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::shared_ptr&lt;CompiledGeom&gt;<sp/><ref refid="structklotter_1_1RendererPimpl_1a81cf9becda0b96defeb78b8f4ccd81bc" kindref="member">full_screen_geom</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="structklotter_1_1RendererPimpl_1a5589ea5eb933cefc1fd719af2ae2f432" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structklotter_1_1RendererPimpl_1a5589ea5eb933cefc1fd719af2ae2f432" kindref="member">RendererPimpl</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref>&amp;<sp/>set,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1FullScreenGeom" kindref="compound">FullScreenGeom</ref>&amp;<sp/>full_screen);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/renderer.pimpl.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1UnlitMaterial" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::UnlitMaterial</compoundname>
+    <basecompoundref refid="structklotter_1_1Material" prot="public" virt="non-virtual">klotter::Material</basecompoundref>
+    <includes refid="material_8h" local="no">material.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1UnlitMaterial_1a1324344df38382e9ebe569901cad360f" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structklotter_1_1LoadedShader__Unlit__Container" kindref="compound">LoadedShader_Unlit_Container</ref> *</type>
+        <definition>const LoadedShader_Unlit_Container* klotter::UnlitMaterial::shader_container</definition>
+        <argsstring></argsstring>
+        <name>shader_container</name>
+        <qualifiedname>klotter::UnlitMaterial::shader_container</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="51" column="36" bodyfile="src/klotter/render/material.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1UnlitMaterial_1a1e38676e4d67d940b9ceea11b7768046" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Color" kindref="compound">Color</ref></type>
+        <definition>Color klotter::UnlitMaterial::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>klotter::UnlitMaterial::color</qualifiedname>
+        <initializer>= <ref refid="namespaceklotter_1_1colors_1a31ced28375c71daf9b639bdcb0e282e8" kindref="member">colors::white</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="52" column="7" bodyfile="src/klotter/render/material.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1UnlitMaterial_1a4f569b97cfba5e690ae58b220f50acf8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::UnlitMaterial::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <qualifiedname>klotter::UnlitMaterial::alpha</qualifiedname>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="53" column="7" bodyfile="src/klotter/render/material.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1UnlitMaterial_1a7801e658eb779b80ebca950cab56a54f" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1Texture2d" kindref="compound">Texture2d</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Texture2d&gt; klotter::UnlitMaterial::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <qualifiedname>klotter::UnlitMaterial::texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="54" column="17" bodyfile="src/klotter/render/material.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1abeea77af30a3fe439dcf57f07dee7e30" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::UnlitMaterial::UnlitMaterial</definition>
+        <argsstring>(const ShaderResource &amp;resource)</argsstring>
+        <name>UnlitMaterial</name>
+        <qualifiedname>klotter::UnlitMaterial::UnlitMaterial</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1ShaderResource" kindref="compound">ShaderResource</ref> &amp;</type>
+          <declname>resource</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="56" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a24a10994b33c725dc865ac96d8a6bdc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void klotter::UnlitMaterial::use_shader</definition>
+        <argsstring>(const RenderContext &amp;) override</argsstring>
+        <name>use_shader</name>
+        <qualifiedname>klotter::UnlitMaterial::use_shader</qualifiedname>
+        <reimplements refid="structklotter_1_1Material_1acc7a0623867b0770e101cdcca4c294ce">use_shader</reimplements>
+        <param>
+          <type>const <ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="57" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a943b628224cf9d4eab243c7a344961a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void klotter::UnlitMaterial::set_uniforms</definition>
+        <argsstring>(const RenderContext &amp;, const CompiledCamera &amp;, const std::optional&lt; glm::mat4 &gt; &amp;) override</argsstring>
+        <name>set_uniforms</name>
+        <qualifiedname>klotter::UnlitMaterial::set_uniforms</qualifiedname>
+        <reimplements refid="structklotter_1_1Material_1aefed8390f6292db10e329947cbfc8927">set_uniforms</reimplements>
+        <param>
+          <type>const <ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const std::optional&lt; glm::mat4 &gt; &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="58" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a4a647c9b677bbb4ee9a36333eb42cc8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void klotter::UnlitMaterial::bind_textures</definition>
+        <argsstring>(const RenderContext &amp;, OpenglStates *states, Assets *assets) override</argsstring>
+        <name>bind_textures</name>
+        <qualifiedname>klotter::UnlitMaterial::bind_textures</qualifiedname>
+        <reimplements refid="structklotter_1_1Material_1ad85a4d46e7cef0f29370c1c70db495be">bind_textures</reimplements>
+        <param>
+          <type>const <ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref> *</type>
+          <declname>states</declname>
+        </param>
+        <param>
+          <type><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref> *</type>
+          <declname>assets</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="59" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a08cab92f0b59a39ae2adb6cfa51ca7e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void klotter::UnlitMaterial::apply_lights</definition>
+        <argsstring>(const RenderContext &amp;, const Lights &amp;lights, const RenderSettings &amp;settings, OpenglStates *states, Assets *assets) override</argsstring>
+        <name>apply_lights</name>
+        <qualifiedname>klotter::UnlitMaterial::apply_lights</qualifiedname>
+        <reimplements refid="structklotter_1_1Material_1a54c02acb7ce2d5c1ab8637a819a52d76">apply_lights</reimplements>
+        <param>
+          <type>const <ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref> &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1Lights" kindref="compound">Lights</ref> &amp;</type>
+          <declname>lights</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structklotter_1_1RenderSettings" kindref="compound">RenderSettings</ref> &amp;</type>
+          <declname>settings</declname>
+        </param>
+        <param>
+          <type><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref> *</type>
+          <declname>states</declname>
+        </param>
+        <param>
+          <type><ref refid="structklotter_1_1Assets" kindref="compound">Assets</ref> *</type>
+          <declname>assets</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="60" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a13281148f24bc55c04ba816c9aab8d1e" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool klotter::UnlitMaterial::is_transparent</definition>
+        <argsstring>() const override</argsstring>
+        <name>is_transparent</name>
+        <qualifiedname>klotter::UnlitMaterial::is_transparent</qualifiedname>
+        <reimplements refid="structklotter_1_1Material_1a1bc8203ffbdf63223113a444dd1cf4a9">is_transparent</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/material.h" line="64" column="7"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A unlit (or fully lit) material, not affected by light. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>klotter::Material</label>
+        <link refid="structklotter_1_1Material"/>
+      </node>
+      <node id="1">
+        <label>klotter::UnlitMaterial</label>
+        <link refid="structklotter_1_1UnlitMaterial"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="17">
+        <label>klotter::BaseTexture</label>
+        <link refid="structklotter_1_1BaseTexture"/>
+      </node>
+      <node id="14">
+        <label>klotter::Color</label>
+        <link refid="structklotter_1_1Color"/>
+      </node>
+      <node id="4">
+        <label>klotter::CompiledGeomVertexAttributes</label>
+        <link refid="structklotter_1_1CompiledGeomVertexAttributes"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>klotter::CompiledVertexElementNoName</label>
+        <link refid="structklotter_1_1CompiledVertexElementNoName"/>
+      </node>
+      <node id="8">
+        <label>klotter::LoadedShader_Unlit</label>
+        <link refid="structklotter_1_1LoadedShader__Unlit"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>tex_diffuse_uniform</edgelabel>
+          <edgelabel>tint_color_uni</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::LoadedShader_Unlit_Container</label>
+        <link refid="structklotter_1_1LoadedShader__Unlit__Container"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>geom_layout</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>default_shader</edgelabel>
+          <edgelabel>transparency_shader</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::Material</label>
+        <link refid="structklotter_1_1Material"/>
+      </node>
+      <node id="10">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>klotter::Texture2d</label>
+        <link refid="structklotter_1_1Texture2d"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>klotter::UnlitMaterial</label>
+        <link refid="structklotter_1_1UnlitMaterial"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>shader_container</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>texture</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="9">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="10" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>std::shared_ptr&lt; klotter::Texture2d &gt;</label>
+        <childnode refid="16" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>std::string</label>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; klotter::CompiledVertexElementNoName &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/material.h" line="49" column="1" bodyfile="src/klotter/render/material.h" bodystart="50" bodyend="65"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1UnlitMaterial_1a4f569b97cfba5e690ae58b220f50acf8" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>alpha</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a08cab92f0b59a39ae2adb6cfa51ca7e1" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>apply_lights</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a4a647c9b677bbb4ee9a36333eb42cc8c" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>bind_textures</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a1e38676e4d67d940b9ceea11b7768046" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>color</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a13281148f24bc55c04ba816c9aab8d1e" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>is_transparent</name></member>
+      <member refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>Material</name></member>
+      <member refid="structklotter_1_1Material_1ace5e0bd7d0fc1daad0f181dc42dfa6af" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>Material</name></member>
+      <member refid="structklotter_1_1Material_1a9775d81964f25d6af45a2a91b46a548f" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>Material</name></member>
+      <member refid="structklotter_1_1Material_1ae6b0e38e5f74eddf5abf05563946719b" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1Material_1af6386229d9bf2a00f8d43173388a11a7" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a943b628224cf9d4eab243c7a344961a1" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>set_uniforms</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a1324344df38382e9ebe569901cad360f" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>shader_container</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a7801e658eb779b80ebca950cab56a54f" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>texture</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1abeea77af30a3fe439dcf57f07dee7e30" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>UnlitMaterial</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a24a10994b33c725dc865ac96d8a6bdc8" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>use_shader</name></member>
+      <member refid="structklotter_1_1Material_1abd64872e3d2303186c0a9b5e978e0cd9" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>~Material</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
