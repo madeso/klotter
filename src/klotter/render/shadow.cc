@@ -5,8 +5,10 @@
 #include "klotter/render/render_settings.h"
 
 #include <algorithm>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+#include <cmath>
+
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 
 #include <array>
 
@@ -81,7 +83,7 @@ CompiledCamera calculate_tight_fitting_camera_around_perspective(
 	const auto world_pos_eye = world_pos_center - dir * 100.0f;
 	constexpr auto y_up = glm::vec3(0, 1, 0);
 	constexpr auto x_up = glm::vec3(1, 0, 0);
-	const auto up = abs(glm::dot(y_up, dir)) > 0.99f ? x_up : y_up;
+	const auto up = std::abs(glm::dot(y_up, dir)) > 0.99f ? x_up : y_up;
 	const auto light_view_from_world = glm::lookAt(world_pos_eye, world_pos_center, up);
 
 	// calculate aabb
