@@ -46,6 +46,10 @@ struct RenderSettings
 	/// The resolution of the shadow map.
 	/// The renderer needs to restart when this value has changed.
 	glm::ivec2 shadow_map_resolution = {2048, 2048};
+
+	/// Use a tight fit shadow map.
+	/// The renderer doesn't need to restart when this value has changed.
+	bool use_tight_fit_shadows = false;
 };
 
 /**

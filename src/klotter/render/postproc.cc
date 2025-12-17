@@ -96,13 +96,9 @@ void RenderWorld::update(const PostProcArg& arg)
 		}
 	}
 
-	const auto compiled_shadow_camera = ([&]()
-	{
-		const auto& light = arg.world->lights.directional_lights[0];
-		return calculate_tight_fitting_camera_around_perspective(compile(*arg.camera, window_size), create_vectors(light).front);
-		// const auto cam = shadow_cam_from_light(light, *arg.world, *arg.camera);
-		// return compile(cam, shadow_size);
-	})();
+	const auto compiled_shadow_camera = compile_the_shadow_camera(
+		*arg.camera, window_size, arg.world->lights.directional_lights[0], arg.renderer->settings, *arg.world
+	);
 
 	if (arg.world->lights.directional_lights.empty() == false)
 	{

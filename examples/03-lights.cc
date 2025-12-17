@@ -331,10 +331,13 @@ struct LightsSample : klotter::App
 		{
 			draw_frustum(
 				&renderer->debug,
-				calculate_tight_fitting_camera_around_perspective(
-							 compile(camera, window_size), create_vectors(world.lights.directional_lights[0]).front
-						 ),
-				// compile(shadow_cam_from_light(world.lights.directional_lights[0], world, camera), renderer->settings.shadow_map_resolution),
+				compile_the_shadow_camera(
+					camera,
+					window_size,
+					world.lights.directional_lights[0],
+					renderer->settings,
+					world
+				),
 				klotter::colors::red_vermillion
 			);
 		}

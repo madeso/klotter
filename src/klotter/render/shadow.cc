@@ -2,6 +2,7 @@
 
 #include "klotter/render/world.h"
 #include "klotter/render/camera.h"
+#include "klotter/render/render_settings.h"
 
 #include <algorithm>
 #include <glm/glm.hpp>
@@ -112,6 +113,7 @@ CompiledCamera calculate_tight_fitting_camera_around_perspective(
 	};
 }
 
+
 #if 0
 struct Plane
 {
@@ -168,5 +170,29 @@ CompiledCamera calculate_tight_fitting_camera_around_perspective(
 	// calculate ortho from planes
 }
 #endif
+
+CompiledCamera compile_the_shadow_camera(
+	const Camera& camera,
+	const glm::ivec2& window_size,
+	const DirectionalLight& light,
+	const RenderSettings& settings,
+	const World& world
+)
+{
+	if (settings.use_tight_fit_shadows)
+	{
+		return calculate_tight_fitting_camera_around_perspective(
+			compile(camera, window_size), create_vectors(light).front
+		);
+	}
+	else
+	{
+		const auto cam = shadow_cam_from_light(light, world, camera);
+		return compile(cam, settings.shadow_map_resolution);
+	}
+}
+
+
+
 
 }
