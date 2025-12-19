@@ -1,8 +1,7 @@
-#include <iostream>
-
-#include "klotter/dump.h"
+﻿#include "klotter/dump.h"
 
 #include <algorithm>
+#include <iostream>
 
 namespace
 {

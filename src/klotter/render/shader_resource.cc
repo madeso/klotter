@@ -1,25 +1,25 @@
-#include "klotter/render/shader_resource.h"
+﻿#include "klotter/render/shader_resource.h"
 
+#include "klotter/assert.h"
+#include "klotter/cpp.h"
 #include "klotter/feature_flags.h"
 #include "klotter/str.h"
-#include "klotter/cpp.h"
 
-#include "klotter/render/constants.h"
-#include "klotter/render/shader.source.h"
-#include "klotter/render/shader.h"
 #include "klotter/render/camera.h"
-#include "klotter/render/render_settings.h"
+#include "klotter/render/constants.h"
 #include "klotter/render/fullscreen.h"
+#include "klotter/render/render_settings.h"
+#include "klotter/render/shader.h"
+#include "klotter/render/shader.source.h"
 
-#include "pp.vert.glsl.h"
-#include "pp.invert.frag.glsl.h"
-#include "pp.grayscale.frag.glsl.h"
-#include "pp.damage.frag.glsl.h"
 #include "pp.blur.frag.glsl.h"
+#include "pp.damage.frag.glsl.h"
 #include "pp.extract.frag.glsl.h"
+#include "pp.grayscale.frag.glsl.h"
+#include "pp.invert.frag.glsl.h"
 #include "pp.ping_pong_blur.frag.glsl.h"
 #include "pp.realize.frag.glsl.h"
-#include "klotter/assert.h"
+#include "pp.vert.glsl.h"
 
 
 namespace klotter

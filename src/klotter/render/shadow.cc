@@ -1,16 +1,15 @@
-#include "klotter/render/shadow.h"
+﻿#include "klotter/render/shadow.h"
 
-#include "klotter/render/world.h"
 #include "klotter/render/camera.h"
 #include "klotter/render/render_settings.h"
-
-#include <algorithm>
-#include <cmath>
+#include "klotter/render/world.h"
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
+#include <algorithm>
 #include <array>
+#include <cmath>
 
 namespace klotter
 {
