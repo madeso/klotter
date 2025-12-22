@@ -205,7 +205,7 @@ void DefaultMaterial::apply_lights(
 
 	// directional light shadows
 	ASSERT(rc.shadow_context);
-	auto* shadow_map = rc.shadow_context ? rc.shadow_context->directional_shadow_map : nullptr;
+	auto* shadow_map = rc.shadow_context != nullptr ? rc.shadow_context->directional_shadow_map : nullptr;
 	if (shadow_map != nullptr)
 	{
 		bind_texture_2d(states, shader.tex_directional_light_depth_uni, *shadow_map);
@@ -216,7 +216,7 @@ void DefaultMaterial::apply_lights(
 	}
 
 	const auto directional_shadow_clip_from_world
-		= rc.shadow_context ? rc.shadow_context->directional_shadow_clip_from_world : glm::mat4{};
+		= rc.shadow_context != nullptr ? rc.shadow_context->directional_shadow_clip_from_world : glm::mat4{};
 	shader.program->set_mat(shader.directional_shadow_clip_from_world_uni, directional_shadow_clip_from_world);
 }
 
