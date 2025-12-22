@@ -115,7 +115,7 @@ CompiledCamera calculate_tight_fitting_camera_around_perspective(
 }
 
 
-#if 0
+#if TEMP
 struct Plane
 {
 	float a;
