@@ -160,10 +160,10 @@ std::shared_ptr<FrameBuffer> build_simple_framebuffer(DEBUG_LABEL_ARG_MANY const
  *
  * @param size The dimensions (width, height) of the framebuffer in pixels.
  * @param msaa_samples The number of MSAA samples to use. Higher values provide better anti-aliasing but may impact performance. Typical values are 2, 4, or 8.
- * @param render_world_color_bits_per_pixel The color buffer precision.
+ * @param bits_per_pixel The color buffer precision.
  * @return The created \ref FrameBuffer object with MSAA enabled.
  */
-std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, int msaa_samples, ColorBitsPerPixel render_world_color_bits_per_pixel);
+std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, int msaa_samples, ColorBitsPerPixel bits_per_pixel);
 
 std::shared_ptr<FrameBuffer> build_hdr_floating_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel);
 std::shared_ptr<FrameBuffer> build_shadow_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size);
