@@ -180,11 +180,13 @@ Functions</h2></td></tr>
 <tr class="memitem:gac294a067af5e2b530a3cf9c2fdd303f0" id="r_gac294a067af5e2b530a3cf9c2fdd303f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac294a067af5e2b530a3cf9c2fdd303f0">klotter::load_cubemap_from_color</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>, <a class="el" href="#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> cd)</td></tr>
 <tr class="separator:gac294a067af5e2b530a3cf9c2fdd303f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1460f45f666b8af9495c71d6bfeb1c7d" id="r_ga1460f45f666b8af9495c71d6bfeb1c7d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1460f45f666b8af9495c71d6bfeb1c7d">klotter::build_simple_framebuffer</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size)</td></tr>
+<tr class="memdesc:ga1460f45f666b8af9495c71d6bfeb1c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a simple LDR frame buffer.  <br /></td></tr>
 <tr class="separator:ga1460f45f666b8af9495c71d6bfeb1c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaddca4621e39117bf86637858e4a651a9" id="r_gaddca4621e39117bf86637858e4a651a9"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaddca4621e39117bf86637858e4a651a9">klotter::build_msaa_framebuffer</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size, int msaa_samples, <a class="el" href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a> render_world_color_bits_per_pixel)</td></tr>
-<tr class="separator:gaddca4621e39117bf86637858e4a651a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae3f45b28d27947618ce4ee4c4178eeeb" id="r_gae3f45b28d27947618ce4ee4c4178eeeb"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae3f45b28d27947618ce4ee4c4178eeeb">klotter::build_realized_framebuffer</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size, <a class="el" href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a> render_world_color_bits_per_pixel)</td></tr>
-<tr class="separator:gae3f45b28d27947618ce4ee4c4178eeeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad98a5583c84e57cc8dc42be2c1514e4a" id="r_gad98a5583c84e57cc8dc42be2c1514e4a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad98a5583c84e57cc8dc42be2c1514e4a">klotter::build_msaa_framebuffer</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size, int msaa_samples, <a class="el" href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a> bits_per_pixel)</td></tr>
+<tr class="memdesc:gad98a5583c84e57cc8dc42be2c1514e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a multisample anti-aliasing (MSAA) framebuffer for high-quality rendering.  <br /></td></tr>
+<tr class="separator:gad98a5583c84e57cc8dc42be2c1514e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab35860a38dfdad20b779287031769a3e" id="r_gab35860a38dfdad20b779287031769a3e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab35860a38dfdad20b779287031769a3e">klotter::build_hdr_floating_framebuffer</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size, <a class="el" href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a> render_world_color_bits_per_pixel)</td></tr>
+<tr class="separator:gab35860a38dfdad20b779287031769a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d4b4cc65449e3cf5cc8297475376703" id="r_ga3d4b4cc65449e3cf5cc8297475376703"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3d4b4cc65449e3cf5cc8297475376703">klotter::build_shadow_framebuffer</a> (<a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size)</td></tr>
 <tr class="separator:ga3d4b4cc65449e3cf5cc8297475376703"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2db91a5f624e2dc351118f2d7b0ecf31" id="r_ga2db91a5f624e2dc351118f2d7b0ecf31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2db91a5f624e2dc351118f2d7b0ecf31">klotter::resolve_multisampled_buffer</a> (const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;src, <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> *dst)</td></tr>
@@ -393,8 +395,29 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gaddca4621e39117bf86637858e4a651a9" name="gaddca4621e39117bf86637858e4a651a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaddca4621e39117bf86637858e4a651a9">&#9670;&#160;</a></span>build_msaa_framebuffer()</h2>
+<a id="gab35860a38dfdad20b779287031769a3e" name="gab35860a38dfdad20b779287031769a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab35860a38dfdad20b779287031769a3e">&#9670;&#160;</a></span>build_hdr_floating_framebuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt; klotter::build_hdr_floating_framebuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a></td>          <td class="paramname"><span class="paramname"><em>render_world_color_bits_per_pixel</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad98a5583c84e57cc8dc42be2c1514e4a" name="gad98a5583c84e57cc8dc42be2c1514e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad98a5583c84e57cc8dc42be2c1514e4a">&#9670;&#160;</a></span>build_msaa_framebuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,31 +435,22 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a></td>          <td class="paramname"><span class="paramname"><em>render_world_color_bits_per_pixel</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a></td>          <td class="paramname"><span class="paramname"><em>bits_per_pixel</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="gae3f45b28d27947618ce4ee4c4178eeeb" name="gae3f45b28d27947618ce4ee4c4178eeeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae3f45b28d27947618ce4ee4c4178eeeb">&#9670;&#160;</a></span>build_realized_framebuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt; klotter::build_realized_framebuffer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="opengl__labels_8h.html#abd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a></td>          <td class="paramname"><span class="paramname"><em>render_world_color_bits_per_pixel</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Builds a multisample anti-aliasing (MSAA) framebuffer for high-quality rendering. </p>
+<p>This function creates a framebuffer object (FBO) with multisample support, allowing for smoother edges and reduced aliasing artifacts in rendered images.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The dimensions (width, height) of the framebuffer in pixels. </td></tr>
+    <tr><td class="paramname">msaa_samples</td><td>The number of MSAA samples to use. Higher values provide better anti-aliasing but may impact performance. Typical values are 2, 4, or 8. </td></tr>
+    <tr><td class="paramname">bits_per_pixel</td><td>The color buffer precision. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The created <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> object with MSAA enabled. </dd></dl>
 
 </div>
 </div>
@@ -471,6 +485,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Build a simple LDR frame buffer. </p>
+<p>This is mostly used for post-processing . </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The size of the framebuffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The framebuffer </dd></dl>
 
 </div>
 </div>

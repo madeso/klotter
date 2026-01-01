@@ -1086,8 +1086,8 @@
     <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
     <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
     <member refid="group__texture_1ga1460f45f666b8af9495c71d6bfeb1c7d" kind="function"><name>build_simple_framebuffer</name></member>
-    <member refid="group__texture_1gaddca4621e39117bf86637858e4a651a9" kind="function"><name>build_msaa_framebuffer</name></member>
-    <member refid="group__texture_1gae3f45b28d27947618ce4ee4c4178eeeb" kind="function"><name>build_realized_framebuffer</name></member>
+    <member refid="group__texture_1gad98a5583c84e57cc8dc42be2c1514e4a" kind="function"><name>build_msaa_framebuffer</name></member>
+    <member refid="group__texture_1gab35860a38dfdad20b779287031769a3e" kind="function"><name>build_hdr_floating_framebuffer</name></member>
     <member refid="group__texture_1ga3d4b4cc65449e3cf5cc8297475376703" kind="function"><name>build_shadow_framebuffer</name></member>
     <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
     <member refid="namespaceklotter_1a1156efb8b28797f795987665d554aea3" kind="function"><name>load_image_from_embedded</name></member>
@@ -1534,8 +1534,8 @@
     <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
     <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
     <member refid="group__texture_1ga1460f45f666b8af9495c71d6bfeb1c7d" kind="function"><name>build_simple_framebuffer</name></member>
-    <member refid="group__texture_1gaddca4621e39117bf86637858e4a651a9" kind="function"><name>build_msaa_framebuffer</name></member>
-    <member refid="group__texture_1gae3f45b28d27947618ce4ee4c4178eeeb" kind="function"><name>build_realized_framebuffer</name></member>
+    <member refid="group__texture_1gad98a5583c84e57cc8dc42be2c1514e4a" kind="function"><name>build_msaa_framebuffer</name></member>
+    <member refid="group__texture_1gab35860a38dfdad20b779287031769a3e" kind="function"><name>build_hdr_floating_framebuffer</name></member>
     <member refid="group__texture_1ga3d4b4cc65449e3cf5cc8297475376703" kind="function"><name>build_shadow_framebuffer</name></member>
     <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
   </compound>
