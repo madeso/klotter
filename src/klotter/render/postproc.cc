@@ -70,7 +70,7 @@ RenderWorld::RenderWorld(const glm::ivec2 size, RealizeShader* re_sh, ExtractSha
 	, exposure(e)
 	, msaa_buffer(build_msaa_framebuffer(USE_DEBUG_LABEL_MANY("msaa buffer")
 		size, msaa_samples, render_world_color_bits_per_pixel))
-	, realized_buffer(build_realized_framebuffer(USE_DEBUG_LABEL_MANY("realized msaa buffer") size, render_world_color_bits_per_pixel))
+	, realized_buffer(build_hdr_floating_framebuffer(USE_DEBUG_LABEL_MANY("realized msaa buffer") size, render_world_color_bits_per_pixel))
 	, realize_shader(re_sh)
 	, bloom_render(build_bloom(size, ex_sh, ping_sh))
 	, last_bloom_blur_index(0)

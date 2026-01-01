@@ -145,9 +145,27 @@ enum class ColorBitsPerPixel
 	use_8, use_16, use_32
 };
 
+/** Build a simple LDR frame buffer.
+ * This is mostly used for post-processing .
+ * @param size The size of the framebuffer.
+ * @return The framebuffer
+ */
 std::shared_ptr<FrameBuffer> build_simple_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size);
+
+
+
+/** Builds a multisample anti-aliasing (MSAA) framebuffer for high-quality rendering.
+ *
+ * This function creates a framebuffer object (FBO) with multisample support, allowing for smoother edges and reduced aliasing artifacts in rendered images.
+ *
+ * @param size The dimensions (width, height) of the framebuffer in pixels.
+ * @param msaa_samples The number of MSAA samples to use. Higher values provide better anti-aliasing but may impact performance. Typical values are 2, 4, or 8.
+ * @param render_world_color_bits_per_pixel The color buffer precision.
+ * @return The created \ref FrameBuffer object with MSAA enabled.
+ */
 std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, int msaa_samples, ColorBitsPerPixel render_world_color_bits_per_pixel);
-std::shared_ptr<FrameBuffer> build_realized_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel);
+
+std::shared_ptr<FrameBuffer> build_hdr_floating_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel);
 std::shared_ptr<FrameBuffer> build_shadow_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size);
 
 /// raii class to render to a FrameBuffer
