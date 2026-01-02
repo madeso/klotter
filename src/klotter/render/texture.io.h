@@ -15,6 +15,7 @@ Texture2d load_image_from_embedded(
 
 /**
 @param images images in the following order: right, left, top, bottom, back and front
+@param cd How to load/interpret the color from the image
  */
 [[nodiscard]]
 TextureCubemap load_cubemap_from_embedded(
