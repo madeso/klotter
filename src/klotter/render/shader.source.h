@@ -36,7 +36,7 @@ struct ShaderSource_withLayout
 };
 
 // vertex and fragment shader source.
-/// @see \ref VertexShaderSource
+/// @see \ref ShaderSource_withLayout
 struct ShaderSource
 {
 	std::string vertex;
