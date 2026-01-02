@@ -26,7 +26,7 @@
         <name>TextureCubemap</name>
         <qualifiedname>klotter::TextureCubemap::TextureCubemap</qualifiedname>
         <param>
-          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const std::array&lt; void *, <ref refid="group__texture_1ga10216e8af0ed877194fd22899e5b058b" kindref="member">cubemap_size</ref> &gt; &amp;</type>
+          <type><ref refid="group__debug_1gabd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const std::array&lt; void *, <ref refid="group__texture_1ga10216e8af0ed877194fd22899e5b058b" kindref="member">cubemap_size</ref> &gt; &amp;</type>
           <declname>pixel_data</declname>
         </param>
         <param>

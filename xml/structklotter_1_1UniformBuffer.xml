@@ -21,13 +21,13 @@
     </sectiondef>
     <sectiondef kind="public-func">
       <memberdef kind="function" id="structklotter_1_1UniformBuffer_1a90da8ffcbe702b54f0a6a202876992ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="opengl__labels_8h_1afed7fc3411aca190c75d04eaba304acf" kindref="member">DEBUG_LABEL_EXPLICIT_MANY</ref></type>
+        <type><ref refid="group__debug_1gafed7fc3411aca190c75d04eaba304acf" kindref="member">DEBUG_LABEL_EXPLICIT_MANY</ref></type>
         <definition>DEBUG_LABEL_EXPLICIT_MANY klotter::UniformBuffer::UniformBuffer</definition>
         <argsstring>(DEBUG_LABEL_ARG_MANY const UniformBufferSetup &amp;setup)</argsstring>
         <name>UniformBuffer</name>
         <qualifiedname>klotter::UniformBuffer::UniformBuffer</qualifiedname>
         <param>
-          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const <ref refid="structklotter_1_1UniformBufferSetup" kindref="compound">UniformBufferSetup</ref> &amp;</type>
+          <type><ref refid="group__debug_1gabd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const <ref refid="structklotter_1_1UniformBufferSetup" kindref="compound">UniformBufferSetup</ref> &amp;</type>
           <declname>setup</declname>
         </param>
         <briefdescription>

@@ -14,7 +14,7 @@ var searchData=
   ['scurve_2eh_11',['scurve.h',['../scurve_8h.html',1,'']]],
   ['scurveguistate_12',['SCurveGuiState',['../structklotter_1_1SCurveGuiState.html',1,'klotter::SCurveGuiState'],['../structklotter_1_1SCurveGuiState.html#a907672c8f90da89f0b7a307e1f14682e',1,'klotter::SCurveGuiState::SCurveGuiState()=default'],['../structklotter_1_1SCurveGuiState.html#ac75ef67881fd35b09e24feaeb435032c',1,'klotter::SCurveGuiState::SCurveGuiState(float x, float y)']]],
   ['scurveimguisettings_13',['SCurveImguiSettings',['../structklotter_1_1SCurveImguiSettings.html',1,'klotter']]],
-  ['send_5fdebug_5flabel_5fmany_14',['SEND_DEBUG_LABEL_MANY',['../opengl__labels_8h.html#a95a4f5aaa37968ac667c14fbb3a0e05f',1,'opengl_labels.h']]],
+  ['send_5fdebug_5flabel_5fmany_14',['SEND_DEBUG_LABEL_MANY',['../group__debug.html#ga95a4f5aaa37968ac667c14fbb3a0e05f',1,'opengl_labels.h']]],
   ['set_5fbool_15',['set_bool',['../structklotter_1_1ShaderProgram.html#ae3321fd5984b9c45789b7d999d70e3e5',1,'klotter::ShaderProgram']]],
   ['set_5fcamera_16',['set_camera',['../structklotter_1_1LineDrawer.html#aff6d49567156644731eb342450946439',1,'klotter::LineDrawer']]],
   ['set_5fcolor_17',['set_color',['../structVisualDebugging_1_1VisualDebug.html#a18081ae51ae0a477dea061a306d93835',1,'VisualDebugging::VisualDebug::set_color(const Color &amp;new_active_color, const Color &amp;new_background_color)'],['../structVisualDebugging_1_1VisualDebug.html#a9554532ee31442a86377af01d46290d1',1,'VisualDebugging::VisualDebug::set_color(const Color &amp;color)']]],

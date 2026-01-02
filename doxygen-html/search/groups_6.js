@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['layout_0',['Vertex layout',['../group__vertex-layout.html',1,'']]]
+  ['imgui_20colors_0',['Dear ImGui Colors',['../group__imguicolors.html',1,'']]]
 ];

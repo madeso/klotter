@@ -36,7 +36,7 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><simplesect kind="see"><para>VertexShaderSource </para>
+<para><simplesect kind="see"><para><ref refid="structklotter_1_1ShaderSource__withLayout" kindref="compound">ShaderSource_withLayout</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>

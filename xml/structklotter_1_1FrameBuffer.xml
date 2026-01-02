@@ -193,7 +193,7 @@
 <para>&quot;render to texture&quot; feature </para>
     </briefdescription>
     <detaileddescription>
-<para><simplesect kind="see"><para>FrameBufferBuilder </para>
+<para><simplesect kind="see"><para><ref refid="group__create-framebuffer" kindref="compound">Create-framebuffer</ref> </para>
 </simplesect>
 </para>
     </detaileddescription>

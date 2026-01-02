@@ -43,7 +43,7 @@
         <name>ShaderProgram</name>
         <qualifiedname>klotter::ShaderProgram::ShaderProgram</qualifiedname>
         <param>
-          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const std::string &amp;</type>
+          <type><ref refid="group__debug_1gabd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const std::string &amp;</type>
           <declname>vertex_source</declname>
         </param>
         <param>

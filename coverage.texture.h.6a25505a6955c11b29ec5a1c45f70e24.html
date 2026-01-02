@@ -26,7 +26,7 @@
                 <span>src/klotter/</span>
             </div>
             <div>File: render/texture.h</div>
-            <div>Date: 2026-01-01 20:25:07</div>
+            <div>Date: 2026-01-02 13:48:41</div>
         </div>
         <div class="col-sm-12 col-lg-3 float-left d-flex flex-column text-right flex-justify-end p-3">
             <div class="d-flex">
@@ -868,7 +868,7 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="c1">///	@see \ref FrameBufferBuilder</span></td>
+                <td class="src "><span class="c1">///	@see \ref create-framebuffer</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l114" href="#l114">114</a></td>
@@ -1113,56 +1113,56 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm">/** Build a simple LDR frame buffer.</span></td>
+                <td class="src "><span class="c1">/// \weakgroup create-framebuffer</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l149" href="#l149">149</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * This is mostly used for post-processing .</span></td>
+                <td class="src "><span class="c1">///@{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l150" href="#l150">150</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * @param size The size of the framebuffer.</span></td>
+                <td class="src "><span class="cm">/** Build a simple LDR frame buffer.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l151" href="#l151">151</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * @return The framebuffer</span></td>
+                <td class="src "><span class="cm"> * This is mostly used for post-processing.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l152" href="#l152">152</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> */</span></td>
+                <td class="src "><span class="cm"> * @param size The size of the framebuffer.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l153" href="#l153">153</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_simple_framebuffer</span><span class="p">(</span><span class="n">DEBUG_LABEL_ARG_MANY</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">size</span><span class="p">);</span></td>
+                <td class="src "><span class="cm"> * @return The framebuffer</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l154" href="#l154">154</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="cm"> */</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l155" href="#l155">155</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_simple_framebuffer</span><span class="p">(</span><span class="n">DEBUG_LABEL_ARG_MANY</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">size</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l156" href="#l156">156</a></td>
@@ -1176,21 +1176,21 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm">/** Builds a multisample anti-aliasing (MSAA) framebuffer for high-quality rendering.</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l158" href="#l158">158</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> *</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l159" href="#l159">159</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * This function creates a framebuffer object (FBO) with multisample support, allowing for smoother edges and reduced aliasing artifacts in rendered images.</span></td>
+                <td class="src "><span class="cm">/** Builds a multisample anti-aliasing (MSAA) framebuffer for high-quality rendering.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l160" href="#l160">160</a></td>
@@ -1204,161 +1204,161 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * @param size The dimensions (width, height) of the framebuffer in pixels.</span></td>
+                <td class="src "><span class="cm"> * This function creates a framebuffer object (FBO) with multisample support, allowing for smoother edges and reduced aliasing artifacts in rendered images.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l162" href="#l162">162</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * @param msaa_samples The number of MSAA samples to use. Higher values provide better anti-aliasing but may impact performance. Typical values are 2, 4, or 8.</span></td>
+                <td class="src "><span class="cm"> *</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l163" href="#l163">163</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * @param bits_per_pixel The color buffer precision.</span></td>
+                <td class="src "><span class="cm"> * @param size The dimensions (width, height) of the framebuffer in pixels.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l164" href="#l164">164</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * @return The created \ref FrameBuffer object with MSAA enabled.</span></td>
+                <td class="src "><span class="cm"> * @param msaa_samples The number of MSAA samples to use. Higher values provide better anti-aliasing but may impact performance. Typical values are 2, 4, or 8.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l165" href="#l165">165</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> */</span></td>
+                <td class="src "><span class="cm"> * @param bits_per_pixel The color buffer precision.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l166" href="#l166">166</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_msaa_framebuffer</span><span class="p">(</span><span class="n">DEBUG_LABEL_ARG_MANY</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">msaa_samples</span><span class="p">,</span><span class="w"> </span><span class="n">ColorBitsPerPixel</span><span class="w"> </span><span class="n">bits_per_pixel</span><span class="p">);</span></td>
+                <td class="src "><span class="cm"> * @return The created \ref FrameBuffer object with MSAA enabled.</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l167" href="#l167">167</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="cm"> */</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l168" href="#l168">168</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_hdr_floating_framebuffer</span><span class="p">(</span><span class="n">DEBUG_LABEL_ARG_MANY</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">ColorBitsPerPixel</span><span class="w"> </span><span class="n">render_world_color_bits_per_pixel</span><span class="p">);</span></td>
+                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_msaa_framebuffer</span><span class="p">(</span><span class="n">DEBUG_LABEL_ARG_MANY</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">msaa_samples</span><span class="p">,</span><span class="w"> </span><span class="n">ColorBitsPerPixel</span><span class="w"> </span><span class="n">bits_per_pixel</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l169" href="#l169">169</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_shadow_framebuffer</span><span class="p">(</span><span class="n">DEBUG_LABEL_ARG_MANY</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">size</span><span class="p">);</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l170" href="#l170">170</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_hdr_floating_framebuffer</span><span class="p">(</span><span class="n">DEBUG_LABEL_ARG_MANY</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">ColorBitsPerPixel</span><span class="w"> </span><span class="n">render_world_color_bits_per_pixel</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l171" href="#l171">171</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="c1">/// raii class to render to a FrameBuffer</span></td>
+                <td class="src "><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">build_shadow_framebuffer</span><span class="p">(</span><span class="n">DEBUG_LABEL_ARG_MANY</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">size</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l172" href="#l172">172</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">BoundFbo</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l173" href="#l173">173</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">{</span></td>
+                <td class="src "><span class="c1">///@}</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l174" href="#l174">174</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fbo</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l175" href="#l175">175</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="c1">/// raii class to render to a FrameBuffer</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l176" href="#l176">176</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">BoundFbo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">BoundFbo</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
+                <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">BoundFbo</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l177" href="#l177">177</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">BoundFbo</span><span class="p">(</span><span class="n">BoundFbo</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
+                <td class="src "><span class="p">{</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l178" href="#l178">178</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">BoundFbo</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
+                <td class="src "><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fbo</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l179" href="#l179">179</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="n">BoundFbo</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l180" href="#l180">180</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="n">BoundFbo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">BoundFbo</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l181" href="#l181">181</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="n">explicit</span><span class="w"> </span><span class="nf">BoundFbo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">);</span></td>
+                <td class="src "><span class="w">	</span><span class="n">BoundFbo</span><span class="p">(</span><span class="n">BoundFbo</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l182" href="#l182">182</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="w">	</span><span class="o">~</span><span class="n">BoundFbo</span><span class="p">();</span></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">BoundFbo</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l183" href="#l183">183</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">};</span></td>
+                <td class="src "><span class="w">	</span><span class="kt">void</span><span class="w"> </span><span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="n">BoundFbo</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delete</span><span class="p">;</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l184" href="#l184">184</a></td>
@@ -1372,35 +1372,35 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="kt">void</span><span class="w"> </span><span class="nf">resolve_multisampled_buffer</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FrameBuffer</span><span class="o">&amp;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">FrameBuffer</span><span class="o">*</span><span class="w"> </span><span class="n">dst</span><span class="p">);</span></td>
+                <td class="src "><span class="w">	</span><span class="n">explicit</span><span class="w"> </span><span class="nf">BoundFbo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">FrameBuffer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l186" href="#l186">186</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "></td>
+                <td class="src "><span class="w">	</span><span class="o">~</span><span class="n">BoundFbo</span><span class="p">();</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l187" href="#l187">187</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm">/**</span></td>
+                <td class="src "><span class="p">};</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l188" href="#l188">188</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm"> * @}</span></td>
+                <td class="src "></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l189" href="#l189">189</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="cm">*/</span></td>
+                <td class="src "><span class="kt">void</span><span class="w"> </span><span class="nf">resolve_multisampled_buffer</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FrameBuffer</span><span class="o">&amp;</span><span class="w"> </span><span class="n">src</span><span class="p">,</span><span class="w"> </span><span class="n">FrameBuffer</span><span class="o">*</span><span class="w"> </span><span class="n">dst</span><span class="p">);</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l190" href="#l190">190</a></td>
@@ -1414,10 +1414,38 @@
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
-                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+                <td class="src "><span class="cm">/**</span></td>
             </tr>
             <tr>
                 <td class="text-right src linenos"><a class="normal" id="l192" href="#l192">192</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="cm"> * @}</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l193" href="#l193">193</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="cm">*/</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l194" href="#l194">194</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l195" href="#l195">195</a></td>
+                <td class="text-right src linenos ws-unset">
+                </td>
+                <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>
+                <td class="src "><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+            </tr>
+            <tr>
+                <td class="text-right src linenos"><a class="normal" id="l196" href="#l196">196</a></td>
                 <td class="text-right src linenos ws-unset">
                 </td>
                 <td class="src  pr-2 pl-2 color-fg-muted text-right"></td>

@@ -26,7 +26,7 @@
         <name>Texture2d</name>
         <qualifiedname>klotter::Texture2d::Texture2d</qualifiedname>
         <param>
-          <type><ref refid="opengl__labels_8h_1abd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const void *</type>
+          <type><ref refid="group__debug_1gabd34c805e47ae972bc6f5b1e406e921d" kindref="member">DEBUG_LABEL_ARG_MANY</ref> const void *</type>
           <declname>pixel_data</declname>
         </param>
         <param>
