@@ -110,7 +110,7 @@ TextureCubemap load_cubemap_from_color(DEBUG_LABEL_ARG_MANY SingleColor pixel, C
 
 
 /// "render to texture" feature
-///	@see \ref FrameBufferBuilder
+///	@see \ref create-framebuffer
 struct FrameBuffer : BaseTexture
 {
 	/// @param f The FBO handle
@@ -145,8 +145,10 @@ enum class ColorBitsPerPixel
 	use_8, use_16, use_32
 };
 
+/// \weakgroup create-framebuffer
+///@{
 /** Build a simple LDR frame buffer.
- * This is mostly used for post-processing .
+ * This is mostly used for post-processing.
  * @param size The size of the framebuffer.
  * @return The framebuffer
  */
@@ -167,6 +169,8 @@ std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const g
 
 std::shared_ptr<FrameBuffer> build_hdr_floating_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel);
 std::shared_ptr<FrameBuffer> build_shadow_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size);
+
+///@}
 
 /// raii class to render to a FrameBuffer
 struct BoundFbo
