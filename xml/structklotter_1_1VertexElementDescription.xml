@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="43" column="12" bodyfile="src/klotter/render/vertex_layout.h" bodystart="43" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="44" column="12" bodyfile="src/klotter/render/vertex_layout.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1VertexElementDescription_1ad0817fefcef3f41a2c4ad66555e45019" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="44" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="44" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="45" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="45" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -55,7 +55,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/vertex_layout.h" line="41" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="42" bodyend="45"/>
+    <location file="src/klotter/render/vertex_layout.h" line="42" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="43" bodyend="46"/>
     <listofallmembers>
       <member refid="structklotter_1_1VertexElementDescription_1ad0817fefcef3f41a2c4ad66555e45019" prot="public" virt="non-virtual"><scope>klotter::VertexElementDescription</scope><name>name</name></member>
       <member refid="structklotter_1_1VertexElementDescription_1aef49c5f9349cee1038b7182047ac31bf" prot="public" virt="non-virtual"><scope>klotter::VertexElementDescription</scope><name>type</name></member>

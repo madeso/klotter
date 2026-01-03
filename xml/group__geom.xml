@@ -7,6 +7,7 @@
     <innerclass refid="structklotter_1_1Face" prot="public">klotter::Face</innerclass>
     <innerclass refid="structklotter_1_1Geom" prot="public">klotter::Geom</innerclass>
     <briefdescription>
+<para>Vertices and triangles without a material </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

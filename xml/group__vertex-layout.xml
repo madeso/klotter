@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="16" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="17" bodyend="29"/>
+        <location file="src/klotter/render/vertex_layout.h" line="17" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="18" bodyend="30"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="49" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="49" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="50" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__vertex-layout_1gaa3eb81233db95fb693918802ac36cc30" prot="public" static="no">
         <type>std::vector&lt; VertexType &gt;</type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="68" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="68" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="69" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="69" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="31" column="16" bodyfile="src/klotter/render/vertex_layout.h" bodystart="31" bodyend="38"/>
+        <location file="src/klotter/render/vertex_layout.h" line="32" column="16" bodyfile="src/klotter/render/vertex_layout.h" bodystart="32" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="group__vertex-layout_1ga930a511a1263566c1155f47dd193e47c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; VertexType &gt;</type>
@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="51" column="13" declfile="src/klotter/render/vertex_layout.h" declline="51" declcolumn="13"/>
+        <location file="src/klotter/render/vertex_layout.h" line="52" column="13" declfile="src/klotter/render/vertex_layout.h" declline="52" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="group__vertex-layout_1ga76ef56d5b76a7671dddef14e54331714" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CompiledShaderVertexAttributes</type>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="101" column="32" declfile="src/klotter/render/vertex_layout.h" declline="101" declcolumn="32"/>
+        <location file="src/klotter/render/vertex_layout.h" line="102" column="32" declfile="src/klotter/render/vertex_layout.h" declline="102" declcolumn="32"/>
       </memberdef>
       <memberdef kind="function" id="group__vertex-layout_1gaafa6ccef1474d9837601f1f46c18e10d" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CompiledGeomVertexAttributes</type>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="109" column="30" declfile="src/klotter/render/vertex_layout.h" declline="109" declcolumn="30"/>
+        <location file="src/klotter/render/vertex_layout.h" line="110" column="30" declfile="src/klotter/render/vertex_layout.h" declline="110" declcolumn="30"/>
       </memberdef>
       <memberdef kind="function" id="group__vertex-layout_1gaf098cc3fc06209c4e177a1536d21660c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CompiledVertexTypeList</type>
@@ -222,7 +222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="111" column="24" declfile="src/klotter/render/vertex_layout.h" declline="111" declcolumn="24"/>
+        <location file="src/klotter/render/vertex_layout.h" line="112" column="24" declfile="src/klotter/render/vertex_layout.h" declline="112" declcolumn="24"/>
       </memberdef>
       <memberdef kind="function" id="group__vertex-layout_1ga32dd8d711a7c3af2bef87c46aa863269" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>CompiledVertexTypeList</type>
@@ -240,10 +240,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="115" column="24" declfile="src/klotter/render/vertex_layout.h" declline="115" declcolumn="24"/>
+        <location file="src/klotter/render/vertex_layout.h" line="116" column="24" declfile="src/klotter/render/vertex_layout.h" declline="116" declcolumn="24"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Functions and types related to transforming generic mesh data to renderable data used by shaders. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

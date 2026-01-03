@@ -22,6 +22,7 @@
     <innerclass refid="structklotter_1_1BurHorizontalProvider" prot="public">klotter::BurHorizontalProvider</innerclass>
     <innerclass refid="structklotter_1_1BlurEffect" prot="public">klotter::BlurEffect</innerclass>
     <briefdescription>
+<para>A basic framework for applying post-processing effects and rendering the <ref refid="structklotter_1_1World" kindref="compound">World</ref>. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

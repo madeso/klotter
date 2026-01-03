@@ -349,6 +349,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Tools to build a <ref refid="structklotter_1_1Geom" kindref="compound">Geom</ref>. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

@@ -44,7 +44,7 @@ var searchData=
   ['build_5fhdr_5ffloating_5fframebuffer_41',['build_hdr_floating_framebuffer',['../group__create-framebuffer.html#gab35860a38dfdad20b779287031769a3e',1,'klotter']]],
   ['build_5fmsaa_5fframebuffer_42',['build_msaa_framebuffer',['../group__create-framebuffer.html#gad98a5583c84e57cc8dc42be2c1514e4a',1,'klotter']]],
   ['build_5fshadow_5fframebuffer_43',['build_shadow_framebuffer',['../group__create-framebuffer.html#ga3d4b4cc65449e3cf5cc8297475376703',1,'klotter']]],
-  ['build_5fsimple_5fframebuffer_44',['build_simple_framebuffer',['../group__texture.html#ga1460f45f666b8af9495c71d6bfeb1c7d',1,'klotter']]],
+  ['build_5fsimple_5fframebuffer_44',['build_simple_framebuffer',['../group__create-framebuffer.html#ga1460f45f666b8af9495c71d6bfeb1c7d',1,'klotter']]],
   ['buildarg_45',['BuildArg',['../structklotter_1_1BuildArg.html',1,'klotter']]],
   ['builder_46',['Builder',['../structklotter_1_1geom_1_1Builder.html',1,'klotter::geom']]],
   ['builder_47',['builder',['../structklotter_1_1BuildArg.html#ae4684359223ba3b80efb252682c90fc7',1,'klotter::BuildArg::builder'],['../group__geom-builder.html',1,'Geom builder']]],

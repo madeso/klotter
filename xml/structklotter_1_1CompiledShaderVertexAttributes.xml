@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="73" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="73" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="74" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1CompiledShaderVertexAttributes_1a5f9a0c9c028b7fe880257cd1d76c4923" prot="public" static="no" mutable="no">
         <type><ref refid="group__vertex-layout_1gaa3eb81233db95fb693918802ac36cc30" kindref="member">VertexTypes</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/vertex_layout.h" line="74" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="74" bodyend="-1"/>
+        <location file="src/klotter/render/vertex_layout.h" line="75" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="75" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -74,7 +74,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/render/vertex_layout.h" line="71" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="72" bodyend="75"/>
+    <location file="src/klotter/render/vertex_layout.h" line="72" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="73" bodyend="76"/>
     <listofallmembers>
       <member refid="structklotter_1_1CompiledShaderVertexAttributes_1a5f9a0c9c028b7fe880257cd1d76c4923" prot="public" virt="non-virtual"><scope>klotter::CompiledShaderVertexAttributes</scope><name>debug_types</name></member>
       <member refid="structklotter_1_1CompiledShaderVertexAttributes_1af04505096c36afa76e0ae0fe19bfdbee" prot="public" virt="non-virtual"><scope>klotter::CompiledShaderVertexAttributes</scope><name>elements</name></member>

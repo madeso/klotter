@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Klotter: Texture</title>
+<title>Klotter: Texture-like</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -111,14 +111,14 @@ $(function(){ initResizable(false); });
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">Texture</div></div>
+  <div class="headertitle"><div class="title">Texture-like</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__create-framebuffer.html">Create-framebuffer</a></td></tr>
-<tr class="memdesc:group__create-framebuffer"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__create-framebuffer.html">FrameBuffer creators</a></td></tr>
+<tr class="memdesc:group__create-framebuffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to create a <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -186,9 +186,6 @@ Functions</h2></td></tr>
 <tr class="separator:ga5c06f9cfdcfa6e0c973ff899e5a916ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac294a067af5e2b530a3cf9c2fdd303f0" id="r_gac294a067af5e2b530a3cf9c2fdd303f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac294a067af5e2b530a3cf9c2fdd303f0">klotter::load_cubemap_from_color</a> (<a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> <a class="el" href="#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> <a class="el" href="#gga96e6e729a16fb6dbf417daa7e61339caaab4086ecd47c568d5ba5739d4078988f">pixel</a>, <a class="el" href="#ga573ffb425f764bc26601e3883fce43cf">ColorData</a> cd)</td></tr>
 <tr class="separator:gac294a067af5e2b530a3cf9c2fdd303f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1460f45f666b8af9495c71d6bfeb1c7d" id="r_ga1460f45f666b8af9495c71d6bfeb1c7d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1460f45f666b8af9495c71d6bfeb1c7d">klotter::build_simple_framebuffer</a> (<a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size)</td></tr>
-<tr class="memdesc:ga1460f45f666b8af9495c71d6bfeb1c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a simple LDR frame buffer.  <br /></td></tr>
-<tr class="separator:ga1460f45f666b8af9495c71d6bfeb1c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2db91a5f624e2dc351118f2d7b0ecf31" id="r_ga2db91a5f624e2dc351118f2d7b0ecf31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2db91a5f624e2dc351118f2d7b0ecf31">klotter::resolve_multisampled_buffer</a> (const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;src, <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> *dst)</td></tr>
 <tr class="separator:ga2db91a5f624e2dc351118f2d7b0ecf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -199,6 +196,7 @@ Variables</h2></td></tr>
 <tr class="separator:ga10216e8af0ed877194fd22899e5b058b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Textures, cubemaps and frame buffers.</p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga1d677cc4a3cecec32f8e90f3ae62bf95" name="ga1d677cc4a3cecec32f8e90f3ae62bf95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1d677cc4a3cecec32f8e90f3ae62bf95">&#9670;&#160;</a></span>ColorBitsPerPixel</h2>
@@ -395,32 +393,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga1460f45f666b8af9495c71d6bfeb1c7d" name="ga1460f45f666b8af9495c71d6bfeb1c7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1460f45f666b8af9495c71d6bfeb1c7d">&#9670;&#160;</a></span>build_simple_framebuffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt; klotter::build_simple_framebuffer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;</td>          <td class="paramname"><span class="paramname"><em>size</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Build a simple LDR frame buffer. </p>
-<p>This is mostly used for post-processing. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">size</td><td>The size of the framebuffer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The framebuffer </dd></dl>
-
-</div>
-</div>
 <a id="ga263ed688bbd502fd2279d9ceb5bab9bf" name="ga263ed688bbd502fd2279d9ceb5bab9bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga263ed688bbd502fd2279d9ceb5bab9bf">&#9670;&#160;</a></span>color_from_rgba()</h2>
 

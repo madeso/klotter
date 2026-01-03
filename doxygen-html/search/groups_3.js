@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['framebuffer_0',['Create-framebuffer',['../group__create-framebuffer.html',1,'']]]
+  ['framebuffer_20creators_0',['FrameBuffer creators',['../group__create-framebuffer.html',1,'']]]
 ];

@@ -16,6 +16,6 @@ var searchData=
   ['build_5fhdr_5ffloating_5fframebuffer_13',['build_hdr_floating_framebuffer',['../group__create-framebuffer.html#gab35860a38dfdad20b779287031769a3e',1,'klotter']]],
   ['build_5fmsaa_5fframebuffer_14',['build_msaa_framebuffer',['../group__create-framebuffer.html#gad98a5583c84e57cc8dc42be2c1514e4a',1,'klotter']]],
   ['build_5fshadow_5fframebuffer_15',['build_shadow_framebuffer',['../group__create-framebuffer.html#ga3d4b4cc65449e3cf5cc8297475376703',1,'klotter']]],
-  ['build_5fsimple_5fframebuffer_16',['build_simple_framebuffer',['../group__texture.html#ga1460f45f666b8af9495c71d6bfeb1c7d',1,'klotter']]],
+  ['build_5fsimple_5fframebuffer_16',['build_simple_framebuffer',['../group__create-framebuffer.html#ga1460f45f666b8af9495c71d6bfeb1c7d',1,'klotter']]],
   ['burhorizontalprovider_17',['BurHorizontalProvider',['../structklotter_1_1BurHorizontalProvider.html#a5645460d8e0a3ed1189d5df37c422d18',1,'klotter::BurHorizontalProvider']]]
 ];

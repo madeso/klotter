@@ -927,7 +927,7 @@
       <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
       <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
       <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
-      <member refid="group__texture_1ga1460f45f666b8af9495c71d6bfeb1c7d" kind="function"><name>build_simple_framebuffer</name></member>
+      <member refid="group__create-framebuffer_1ga1460f45f666b8af9495c71d6bfeb1c7d" kind="function"><name>build_simple_framebuffer</name></member>
       <member refid="group__create-framebuffer_1gad98a5583c84e57cc8dc42be2c1514e4a" kind="function"><name>build_msaa_framebuffer</name></member>
       <member refid="group__create-framebuffer_1gab35860a38dfdad20b779287031769a3e" kind="function"><name>build_hdr_floating_framebuffer</name></member>
       <member refid="group__create-framebuffer_1ga3d4b4cc65449e3cf5cc8297475376703" kind="function"><name>build_shadow_framebuffer</name></member>

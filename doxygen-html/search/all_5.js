@@ -30,7 +30,7 @@ var searchData=
   ['fragment_27',['fragment',['../structklotter_1_1ShaderSource__withLayout.html#ad3c8f31d0432c9a95eb65c19fef97fa3',1,'klotter::ShaderSource_withLayout::fragment'],['../structklotter_1_1ShaderSource.html#a48a2e03510fe5f1f42060b9cb1a71966',1,'klotter::ShaderSource::fragment']]],
   ['frame_28',['Frame',['../structVisualDebugging_1_1Frame.html',1,'VisualDebugging::Frame'],['../structVisualDebugging_1_1Frame.html#a10f3d9515781ee16fe81f66445478593',1,'VisualDebugging::Frame::Frame()']]],
   ['framebuffer_29',['FrameBuffer',['../structklotter_1_1FrameBuffer.html',1,'klotter::FrameBuffer'],['../structklotter_1_1FrameBuffer.html#a52b8abf1a59fc5e7776245e0371d351b',1,'klotter::FrameBuffer::FrameBuffer(unsigned int f, const glm::ivec2 &amp;s)'],['../structklotter_1_1FrameBuffer.html#a09179c63fdfa5fd654c53e249d357da9',1,'klotter::FrameBuffer::FrameBuffer(const FrameBuffer &amp;)=delete'],['../structklotter_1_1FrameBuffer.html#ae9e61e8d6bc6040e77bae32b48fb34ac',1,'klotter::FrameBuffer::FrameBuffer(FrameBuffer &amp;&amp;)=delete']]],
-  ['framebuffer_30',['Create-framebuffer',['../group__create-framebuffer.html',1,'']]],
+  ['framebuffer_20creators_30',['FrameBuffer creators',['../group__create-framebuffer.html',1,'']]],
   ['frames_31',['frames',['../structVisualDebugging_1_1VisualDebug.html#a28233e45b9dadccfaf8028e93a0237fc',1,'VisualDebugging::VisualDebug']]],
   ['from_32',['from',['../structklotter_1_1DebugLine.html#afa0c9a0ada0ad0186082527930108f73',1,'klotter::DebugLine']]],
   ['front_33',['front',['../structklotter_1_1CameraVectors.html#a1462b3c73fdf42f65589e3f926d6d921',1,'klotter::CameraVectors::front'],['../group__render.html#gga2da9ff87267808b55c2680259db65b5cae6ec529ba185279aa0adcf93e645c7cd',1,'klotter::front']]],
