@@ -145,20 +145,24 @@ enum class ColorBitsPerPixel
 	use_8, use_16, use_32
 };
 
-/// \weakgroup create-framebuffer
-///@{
+
 /** Build a simple LDR frame buffer.
+ * 
  * This is mostly used for post-processing.
+ * 
+ * \ingroup create-framebuffer
+ * 
  * @param size The size of the framebuffer.
- * @return The framebuffer
+ * @return The created \ref FrameBuffer.
  */
 std::shared_ptr<FrameBuffer> build_simple_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size);
-
 
 
 /** Builds a multisample anti-aliasing (MSAA) framebuffer for high-quality rendering.
  *
  * This function creates a framebuffer object (FBO) with multisample support, allowing for smoother edges and reduced aliasing artifacts in rendered images.
+ * 
+ * \ingroup create-framebuffer
  *
  * @param size The dimensions (width, height) of the framebuffer in pixels.
  * @param msaa_samples The number of MSAA samples to use. Higher values provide better anti-aliasing but may impact performance. Typical values are 2, 4, or 8.
@@ -167,10 +171,27 @@ std::shared_ptr<FrameBuffer> build_simple_framebuffer(DEBUG_LABEL_ARG_MANY const
  */
 std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, int msaa_samples, ColorBitsPerPixel bits_per_pixel);
 
+
+/** Build a HDR frame buffer.
+ * 
+ * \ingroup create-framebuffer
+ * 
+ * @param size The resolution in pixels.
+ * @param render_world_color_bits_per_pixel How many bits per pixel to use
+ * @return The created \ref FrameBuffer
+ */
 std::shared_ptr<FrameBuffer> build_hdr_floating_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel);
+
+
+/** Create a depth-only framebuffer for shadow rendering.
+ * 
+ * \ingroup create-framebuffer
+ * 
+ * @param size The resolution in pixels.
+ * @return The created \ref FrameBuffer
+ */
 std::shared_ptr<FrameBuffer> build_shadow_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size);
 
-///@}
 
 /// raii class to render to a FrameBuffer
 struct BoundFbo
