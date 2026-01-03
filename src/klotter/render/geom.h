@@ -4,6 +4,7 @@ namespace klotter
 {
 
 /** \addtogroup geom Geom
+ * \brief Vertices and triangles without a material
  *  @{
 */
 

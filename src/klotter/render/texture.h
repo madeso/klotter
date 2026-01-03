@@ -7,7 +7,7 @@
 namespace klotter
 {
 
-/** \addtogroup texture Texture
+/** \addtogroup texture
  *  @{
 */
 

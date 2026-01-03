@@ -8,6 +8,7 @@ namespace klotter
 {
 
 /** \defgroup vertex-layout Vertex layout
+ * \brief Functions and types related to transforming generic mesh data to renderable data used by shaders.
  *  @{
 */
 

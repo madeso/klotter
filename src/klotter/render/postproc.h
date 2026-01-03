@@ -12,6 +12,7 @@ struct RenderWorld;
 struct ImguiShaderCache;
 
 /** \addtogroup postproc Post Processing
+ * \brief A basic framework for applying post-processing effects and rendering the \ref World.
  *  @{
 */
 
