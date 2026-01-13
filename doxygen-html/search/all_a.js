@@ -20,10 +20,10 @@ var searchData=
   ['like_17',['Texture-like',['../group__texture.html',1,'']]],
   ['lime_18',['lime',['../group__imguicolors.html#gacbc316ef8105da66f1d268c14463bd7e',1,'klotter::imgui']]],
   ['lin_5fcolors_19',['lin_colors',['../structklotter_1_1geom_1_1Builder.html#aebac05a07388fa568e1dcdc43d4065bb',1,'klotter::geom::Builder']]],
-  ['line_20',['line',['../structklotter_1_1LineDrawer.html#a27d1f010952138d24f987e721d28c590',1,'klotter::LineDrawer::line()'],['../group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a6438c669e0d0de98e6929c2cc0fac474',1,'klotter::line']]],
+  ['line_20',['line',['../structklotter_1_1LineDrawer.html#a5d578744ed660ec3b733aeb44a03440e',1,'klotter::LineDrawer::line()'],['../group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a6438c669e0d0de98e6929c2cc0fac474',1,'klotter::line']]],
   ['line_5fcolor_21',['line_color',['../structklotter_1_1SCurveImguiSettings.html#a0252dda4c60f6ad85152e086117c9167',1,'klotter::SCurveImguiSettings']]],
-  ['linear_22',['linear',['../group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caa9a932b3cb396238423eb2f33ec17d6aa',1,'klotter']]],
-  ['linear_5ffrom_5fsrgb_23',['linear_from_srgb',['../namespaceklotter.html#a8655e92bbc13aff3832b4fed06e62fb1',1,'klotter::linear_from_srgb(float value, float gamma)'],['../namespaceklotter.html#a16fc6bb5ae9c482d07217873f345e25e',1,'klotter::linear_from_srgb(const Color &amp;value, float gamma)']]],
+  ['linear_22',['linear',['../structklotter_1_1Lrgb.html#ac5bc2664a31632ecded60c41f653ce5e',1,'klotter::Lrgb::linear'],['../group__texture.html#gga96e6e729a16fb6dbf417daa7e61339caa9a932b3cb396238423eb2f33ec17d6aa',1,'klotter::linear']]],
+  ['linear_5ffrom_5fsrgb_23',['linear_from_srgb',['../namespaceklotter.html#a8655e92bbc13aff3832b4fed06e62fb1',1,'klotter::linear_from_srgb(float value, float gamma)'],['../namespaceklotter.html#abe7b86e3eb6ca8aaf9c6ff0ec463e6f2',1,'klotter::linear_from_srgb(const Color &amp;value, float gamma)']]],
   ['linear_5fto_5fgamma_5fshader_24',['linear_to_gamma_shader',['../structklotter_1_1ImguiShaderCache.html#a4e7263e61b0040d3d3eeb762312aa422',1,'klotter::ImguiShaderCache']]],
   ['linebatch_2eh_25',['linebatch.h',['../linebatch_8h.html',1,'']]],
   ['linedrawer_26',['LineDrawer',['../structklotter_1_1LineDrawer.html',1,'klotter::LineDrawer'],['../structklotter_1_1LineDrawer.html#ae877d9de19653d08a1a130962b22af26',1,'klotter::LineDrawer::LineDrawer()'],['../structklotter_1_1LineDrawer.html#abbc2ae539180f5d3fa3eee0a7dcf7332',1,'klotter::LineDrawer::LineDrawer(const LineDrawer &amp;)=delete'],['../structklotter_1_1LineDrawer.html#a96a7fd083431391a4921c021704ef508',1,'klotter::LineDrawer::LineDrawer(LineDrawer &amp;&amp;)=delete']]],
@@ -48,5 +48,6 @@ var searchData=
   ['location_45',['location',['../structklotter_1_1Uniform.html#a0a3d653eabb213c1f05a7ca494a5cf27',1,'klotter::Uniform']]],
   ['log_2eh_46',['log.h',['../log_8h.html',1,'']]],
   ['log_5ferror_47',['LOG_ERROR',['../log_8h.html#ad4a9117ce894e3319e903142347a0f63',1,'log.h']]],
-  ['log_5finfo_48',['LOG_INFO',['../log_8h.html#a378e28bfcb78d17285210d6bbb70a083',1,'log.h']]]
+  ['log_5finfo_48',['LOG_INFO',['../log_8h.html#a378e28bfcb78d17285210d6bbb70a083',1,'log.h']]],
+  ['lrgb_49',['Lrgb',['../structklotter_1_1Lrgb.html',1,'klotter']]]
 ];

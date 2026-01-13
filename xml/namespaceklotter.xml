@@ -61,6 +61,7 @@
     <innerclass refid="structklotter_1_1LoadedShader__Unlit" prot="public">klotter::LoadedShader_Unlit</innerclass>
     <innerclass refid="structklotter_1_1LoadedShader__Unlit__Container" prot="public">klotter::LoadedShader_Unlit_Container</innerclass>
     <innerclass refid="structklotter_1_1LocalAxis" prot="public">klotter::LocalAxis</innerclass>
+    <innerclass refid="structklotter_1_1Lrgb" prot="public">klotter::Lrgb</innerclass>
     <innerclass refid="structklotter_1_1Material" prot="public">klotter::Material</innerclass>
     <innerclass refid="structklotter_1_1MeshInstance" prot="public">klotter::MeshInstance</innerclass>
     <innerclass refid="structklotter_1_1MeshInstance__TransformInstanced" prot="public">klotter::MeshInstance_TransformInstanced</innerclass>
@@ -446,11 +447,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="20" column="7" declfile="src/klotter/render/color.h" declline="20" declcolumn="7"/>
+        <location file="src/klotter/render/color.h" line="28" column="7" declfile="src/klotter/render/color.h" declline="28" declcolumn="7"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a16fc6bb5ae9c482d07217873f345e25e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>glm::vec3</type>
-        <definition>glm::vec3 klotter::linear_from_srgb</definition>
+      <memberdef kind="function" id="namespaceklotter_1abe7b86e3eb6ca8aaf9c6ff0ec463e6f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Lrgb" kindref="compound">Lrgb</ref></type>
+        <definition>Lrgb klotter::linear_from_srgb</definition>
         <argsstring>(const Color &amp;value, float gamma)</argsstring>
         <name>linear_from_srgb</name>
         <qualifiedname>klotter::linear_from_srgb</qualifiedname>
@@ -468,7 +469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="21" column="11" declfile="src/klotter/render/color.h" declline="21" declcolumn="11"/>
+        <location file="src/klotter/render/color.h" line="29" column="6" declfile="src/klotter/render/color.h" declline="29" declcolumn="6"/>
       </memberdef>
       <member refid="group__render_1gaa34634737d2319b0f1c9ba860e01ef98" kind="function"><name>draw_frustum</name></member>
       <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
@@ -929,7 +930,7 @@
       <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
       <member refid="group__create-framebuffer_1ga1460f45f666b8af9495c71d6bfeb1c7d" kind="function"><name>build_simple_framebuffer</name></member>
       <member refid="group__create-framebuffer_1gad98a5583c84e57cc8dc42be2c1514e4a" kind="function"><name>build_msaa_framebuffer</name></member>
-      <member refid="group__create-framebuffer_1gab35860a38dfdad20b779287031769a3e" kind="function"><name>build_hdr_floating_framebuffer</name></member>
+      <member refid="group__create-framebuffer_1gae9ba25d4ccc7a39a4eba48bf6f5a529f" kind="function"><name>build_hdr_floating_framebuffer</name></member>
       <member refid="group__create-framebuffer_1ga3d4b4cc65449e3cf5cc8297475376703" kind="function"><name>build_shadow_framebuffer</name></member>
       <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
       <memberdef kind="function" id="namespaceklotter_1a1156efb8b28797f795987665d554aea3" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">

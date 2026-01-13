@@ -446,7 +446,7 @@
     <member refid="structklotter_1_1LineDrawer_1aff6d49567156644731eb342450946439" kind="function"><name>set_camera</name></member>
     <member refid="structklotter_1_1LineDrawer_1aa92cf02efddd7524dbed72224936957f" kind="function"><name>set_line_to_dash</name></member>
     <member refid="structklotter_1_1LineDrawer_1a5658383835548e490f8b8f003ec556f1" kind="function"><name>set_line_to_solid</name></member>
-    <member refid="structklotter_1_1LineDrawer_1a27d1f010952138d24f987e721d28c590" kind="function"><name>line</name></member>
+    <member refid="structklotter_1_1LineDrawer_1a5d578744ed660ec3b733aeb44a03440e" kind="function"><name>line</name></member>
     <member refid="structklotter_1_1LineDrawer_1a5d3831830d3d1c9365782985b54942a9" kind="function"><name>submit</name></member>
     <member refid="structklotter_1_1LineDrawer_1a260e80f8c6e81e060c65f1cbcc02e988" kind="function"><name>is_loaded</name></member>
   </compound>
@@ -521,6 +521,9 @@
     <member refid="structklotter_1_1LocalAxis_1ae5ad283982f8920ed21caac85d89a475" kind="variable"><name>x</name></member>
     <member refid="structklotter_1_1LocalAxis_1a9bde07a6037282bc241209cebbf5427f" kind="variable"><name>y</name></member>
     <member refid="structklotter_1_1LocalAxis_1afe3e756a531b074492e7d96fc6904eaa" kind="variable"><name>z</name></member>
+  </compound>
+  <compound refid="structklotter_1_1Lrgb" kind="struct"><name>klotter::Lrgb</name>
+    <member refid="structklotter_1_1Lrgb_1ac5bc2664a31632ecded60c41f653ce5e" kind="variable"><name>linear</name></member>
   </compound>
   <compound refid="structklotter_1_1Material" kind="struct"><name>klotter::Material</name>
     <member refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" kind="function"><name>Material</name></member>
@@ -1051,7 +1054,7 @@
     <member refid="group__render_1ga5068b304bb08be791391379a39514cb2" kind="function"><name>compile</name></member>
     <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
     <member refid="namespaceklotter_1a8655e92bbc13aff3832b4fed06e62fb1" kind="function"><name>linear_from_srgb</name></member>
-    <member refid="namespaceklotter_1a16fc6bb5ae9c482d07217873f345e25e" kind="function"><name>linear_from_srgb</name></member>
+    <member refid="namespaceklotter_1abe7b86e3eb6ca8aaf9c6ff0ec463e6f2" kind="function"><name>linear_from_srgb</name></member>
     <member refid="group__render_1gaa34634737d2319b0f1c9ba860e01ef98" kind="function"><name>draw_frustum</name></member>
     <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
     <member refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" kind="function"><name>setup_opengl_debug</name></member>
@@ -1087,7 +1090,7 @@
     <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
     <member refid="group__create-framebuffer_1ga1460f45f666b8af9495c71d6bfeb1c7d" kind="function"><name>build_simple_framebuffer</name></member>
     <member refid="group__create-framebuffer_1gad98a5583c84e57cc8dc42be2c1514e4a" kind="function"><name>build_msaa_framebuffer</name></member>
-    <member refid="group__create-framebuffer_1gab35860a38dfdad20b779287031769a3e" kind="function"><name>build_hdr_floating_framebuffer</name></member>
+    <member refid="group__create-framebuffer_1gae9ba25d4ccc7a39a4eba48bf6f5a529f" kind="function"><name>build_hdr_floating_framebuffer</name></member>
     <member refid="group__create-framebuffer_1ga3d4b4cc65449e3cf5cc8297475376703" kind="function"><name>build_shadow_framebuffer</name></member>
     <member refid="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" kind="function"><name>resolve_multisampled_buffer</name></member>
     <member refid="namespaceklotter_1a1156efb8b28797f795987665d554aea3" kind="function"><name>load_image_from_embedded</name></member>
@@ -1487,7 +1490,7 @@
   <compound refid="group__create-framebuffer" kind="group"><name>create-framebuffer</name>
     <member refid="group__create-framebuffer_1ga1460f45f666b8af9495c71d6bfeb1c7d" kind="function"><name>build_simple_framebuffer</name></member>
     <member refid="group__create-framebuffer_1gad98a5583c84e57cc8dc42be2c1514e4a" kind="function"><name>build_msaa_framebuffer</name></member>
-    <member refid="group__create-framebuffer_1gab35860a38dfdad20b779287031769a3e" kind="function"><name>build_hdr_floating_framebuffer</name></member>
+    <member refid="group__create-framebuffer_1gae9ba25d4ccc7a39a4eba48bf6f5a529f" kind="function"><name>build_hdr_floating_framebuffer</name></member>
     <member refid="group__create-framebuffer_1ga3d4b4cc65449e3cf5cc8297475376703" kind="function"><name>build_shadow_framebuffer</name></member>
   </compound>
   <compound refid="group__hash" kind="group"><name>hash</name>

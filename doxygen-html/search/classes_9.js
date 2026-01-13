@@ -10,5 +10,6 @@ var searchData=
   ['loadedshader_5fskybox_7',['LoadedShader_Skybox',['../structklotter_1_1LoadedShader__Skybox.html',1,'klotter']]],
   ['loadedshader_5funlit_8',['LoadedShader_Unlit',['../structklotter_1_1LoadedShader__Unlit.html',1,'klotter']]],
   ['loadedshader_5funlit_5fcontainer_9',['LoadedShader_Unlit_Container',['../structklotter_1_1LoadedShader__Unlit__Container.html',1,'klotter']]],
-  ['localaxis_10',['LocalAxis',['../structklotter_1_1LocalAxis.html',1,'klotter']]]
+  ['localaxis_10',['LocalAxis',['../structklotter_1_1LocalAxis.html',1,'klotter']]],
+  ['lrgb_11',['Lrgb',['../structklotter_1_1Lrgb.html',1,'klotter']]]
 ];

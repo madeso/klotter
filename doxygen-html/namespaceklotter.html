@@ -167,7 +167,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A temporary view of the local space of a camera.  <a href="structklotter_1_1CameraVectors.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Color.html">Color</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents color in gamma space (aka sRGB).  <a href="structklotter_1_1Color.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents color in gamma (non-linear) space (aka sRGB).  <a href="structklotter_1_1Color.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "compiled" camera for use in rendering.  <a href="structklotter_1_1CompiledCamera.html#details">More...</a><br /></td></tr>
@@ -297,6 +297,9 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unlit shader.  <a href="structklotter_1_1LoadedShader__Unlit__Container.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1LocalAxis.html">LocalAxis</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Lrgb.html">Lrgb</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a linear RGB color.  <a href="structklotter_1_1Lrgb.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Material.html">Material</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all materials.  <a href="structklotter_1_1Material.html#details">More...</a><br /></td></tr>
@@ -643,8 +646,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga96a0f5ab096cbed0b9ebdc24ac13e7ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8655e92bbc13aff3832b4fed06e62fb1" id="r_a8655e92bbc13aff3832b4fed06e62fb1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8655e92bbc13aff3832b4fed06e62fb1">linear_from_srgb</a> (float value, float gamma)</td></tr>
 <tr class="separator:a8655e92bbc13aff3832b4fed06e62fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16fc6bb5ae9c482d07217873f345e25e" id="r_a16fc6bb5ae9c482d07217873f345e25e"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16fc6bb5ae9c482d07217873f345e25e">linear_from_srgb</a> (const <a class="el" href="structklotter_1_1Color.html">Color</a> &amp;value, float gamma)</td></tr>
-<tr class="separator:a16fc6bb5ae9c482d07217873f345e25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7b86e3eb6ca8aaf9c6ff0ec463e6f2" id="r_abe7b86e3eb6ca8aaf9c6ff0ec463e6f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Lrgb.html">Lrgb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe7b86e3eb6ca8aaf9c6ff0ec463e6f2">linear_from_srgb</a> (const <a class="el" href="structklotter_1_1Color.html">Color</a> &amp;value, float gamma)</td></tr>
+<tr class="separator:abe7b86e3eb6ca8aaf9c6ff0ec463e6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa34634737d2319b0f1c9ba860e01ef98" id="r_gaa34634737d2319b0f1c9ba860e01ef98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gaa34634737d2319b0f1c9ba860e01ef98">draw_frustum</a> (<a class="el" href="structklotter_1_1DebugRender.html">DebugRender</a> *debug, const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;camera, const <a class="el" href="structklotter_1_1Color.html">Color</a> &amp;color)</td></tr>
 <tr class="separator:gaa34634737d2319b0f1c9ba860e01ef98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4758c0c17511f831624a7cc7dbac8f74" id="r_ga4758c0c17511f831624a7cc7dbac8f74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1ExtractedGeom.html">ExtractedGeom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__geom-builder.html#ga4758c0c17511f831624a7cc7dbac8f74">extract_geom</a> (const <a class="el" href="structklotter_1_1Geom.html">Geom</a> &amp;geom, const <a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a> &amp;layout)</td></tr>
@@ -725,9 +728,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gad98a5583c84e57cc8dc42be2c1514e4a" id="r_gad98a5583c84e57cc8dc42be2c1514e4a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__create-framebuffer.html#gad98a5583c84e57cc8dc42be2c1514e4a">build_msaa_framebuffer</a> (<a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size, int msaa_samples, <a class="el" href="group__texture.html#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a> bits_per_pixel)</td></tr>
 <tr class="memdesc:gad98a5583c84e57cc8dc42be2c1514e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a multisample anti-aliasing (MSAA) framebuffer for high-quality rendering.  <br /></td></tr>
 <tr class="separator:gad98a5583c84e57cc8dc42be2c1514e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab35860a38dfdad20b779287031769a3e" id="r_gab35860a38dfdad20b779287031769a3e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__create-framebuffer.html#gab35860a38dfdad20b779287031769a3e">build_hdr_floating_framebuffer</a> (<a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size, <a class="el" href="group__texture.html#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a> render_world_color_bits_per_pixel)</td></tr>
-<tr class="memdesc:gab35860a38dfdad20b779287031769a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a HDR frame buffer.  <br /></td></tr>
-<tr class="separator:gab35860a38dfdad20b779287031769a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9ba25d4ccc7a39a4eba48bf6f5a529f" id="r_gae9ba25d4ccc7a39a4eba48bf6f5a529f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__create-framebuffer.html#gae9ba25d4ccc7a39a4eba48bf6f5a529f">build_hdr_floating_framebuffer</a> (<a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size, <a class="el" href="group__texture.html#ga1d677cc4a3cecec32f8e90f3ae62bf95">ColorBitsPerPixel</a> bits_per_pixel)</td></tr>
+<tr class="memdesc:gae9ba25d4ccc7a39a4eba48bf6f5a529f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a HDR frame buffer.  <br /></td></tr>
+<tr class="separator:gae9ba25d4ccc7a39a4eba48bf6f5a529f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d4b4cc65449e3cf5cc8297475376703" id="r_ga3d4b4cc65449e3cf5cc8297475376703"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__create-framebuffer.html#ga3d4b4cc65449e3cf5cc8297475376703">build_shadow_framebuffer</a> (<a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const glm::ivec2 &amp;size)</td></tr>
 <tr class="memdesc:ga3d4b4cc65449e3cf5cc8297475376703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a depth-only framebuffer for shadow rendering.  <br /></td></tr>
 <tr class="separator:ga3d4b4cc65449e3cf5cc8297475376703"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1354,14 +1357,14 @@ template&lt;typename E&gt; </div>
 
 </div>
 </div>
-<a id="a16fc6bb5ae9c482d07217873f345e25e" name="a16fc6bb5ae9c482d07217873f345e25e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16fc6bb5ae9c482d07217873f345e25e">&#9670;&#160;</a></span>linear_from_srgb() <span class="overload">[1/2]</span></h2>
+<a id="abe7b86e3eb6ca8aaf9c6ff0ec463e6f2" name="abe7b86e3eb6ca8aaf9c6ff0ec463e6f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7b86e3eb6ca8aaf9c6ff0ec463e6f2">&#9670;&#160;</a></span>linear_from_srgb() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">glm::vec3 klotter::linear_from_srgb </td>
+          <td class="memname"><a class="el" href="structklotter_1_1Lrgb.html">Lrgb</a> klotter::linear_from_srgb </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structklotter_1_1Color.html">Color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
