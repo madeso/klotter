@@ -3,7 +3,8 @@
 namespace klotter
 {
 
-/// Represents color in gamma space (aka sRGB).
+/// Represents color in gamma (non-linear) space (aka sRGB).
+/// @see Lrgb
 struct Color
 {
 	float r;
@@ -17,8 +18,15 @@ struct Color
 	{}
 };
 
+/// Represents a linear RGB color.
+/// @see Color
+struct Lrgb
+{
+	glm::vec3 linear;
+};
+
 float linear_from_srgb(float value, float gamma);
-glm::vec3 linear_from_srgb(const Color& value, float gamma);
+Lrgb linear_from_srgb(const Color& value, float gamma);
 
 }
 

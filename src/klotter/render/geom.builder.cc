@@ -238,11 +238,11 @@ Geom Builder::to_geom() const
 		else
 		{
 			constexpr float default_gamma = 1.0f;
-			const auto linear_missing_color = linear_from_srgb(colors::white, default_gamma);
+			const auto missing_color = linear_from_srgb(colors::white, default_gamma);
 
 			const glm::vec3 pos = positions[c.position];
 			const glm::vec2 text = texcoords.empty() ? glm::vec2(0, 0) : texcoords[c.texture];
-			const glm::vec4 col = lin_colors.empty() ? glm::vec4{linear_missing_color, 1.0f} : lin_colors[c.color];
+			const glm::vec4 col = lin_colors.empty() ? glm::vec4{missing_color.linear, 1.0f} : lin_colors[c.color];
 			const glm::vec3 normal = normals.empty() == false ? normals[c.normal] : glm::vec3(1, 0, 0);
 			const auto ind = final_vertices.size();
 			final_vertices.emplace_back(klotter::Vertex{pos, normal, text, col});
@@ -337,7 +337,7 @@ namespace
 	{
 		constexpr float pd = 0.1f;
 		constexpr float td = 0.01f;
-		const auto ci = b.foa_color({linear_from_srgb(color, artist_gamma), 1.0f}, 0.001f);
+		const auto ci = b.foa_color({linear_from_srgb(color, artist_gamma).linear, 1.0f}, 0.001f);
 		const auto no = b.add_normal(normal);
 
 		const auto v0 = Vertex{b.foa_position(p[0].pos, pd), no, b.foa_text_coord(p[0].tex, td), ci};
@@ -506,7 +506,7 @@ Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count
 	constexpr float pi = 3.14159265358979323846f;
 
 	Builder ret;
-	ret.add_color({linear_from_srgb(color, artist_gamma), 1.0f});
+	ret.add_color({linear_from_srgb(color, artist_gamma).linear, 1.0f});
 
 	const auto radius = diameter / 2;
 

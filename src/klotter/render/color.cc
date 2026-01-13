@@ -18,14 +18,14 @@ float linear_from_srgb(float value, float gamma)
 
 
 
-glm::vec3 linear_from_srgb(const Color& value, float gamma)
+Lrgb linear_from_srgb(const Color& value, float gamma)
 {
 	return
-	{
+	{{
 		linear_from_srgb(value.r, gamma),
 		linear_from_srgb(value.g, gamma),
 		linear_from_srgb(value.b, gamma)
-	};
+	}};
 }
 
 

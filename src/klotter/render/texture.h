@@ -177,10 +177,10 @@ std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const g
  * \ingroup create-framebuffer
  * 
  * @param size The resolution in pixels.
- * @param render_world_color_bits_per_pixel How many bits per pixel to use
+ * @param bits_per_pixel How many bits per pixel to use
  * @return The created \ref FrameBuffer
  */
-std::shared_ptr<FrameBuffer> build_hdr_floating_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel);
+std::shared_ptr<FrameBuffer> build_hdr_floating_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel bits_per_pixel);
 
 
 /** Create a depth-only framebuffer for shadow rendering.

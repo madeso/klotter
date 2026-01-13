@@ -4,6 +4,7 @@
 
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/camera.h"
+#include "klotter/render/color.h"
 
 #include "klotter/dependency_glad.h"
 
@@ -171,7 +172,7 @@ bool LineDrawer::is_loaded() const
 	return shader.is_loaded();
 }
 
-void LineDrawer::line(const glm::vec3& world_from, const glm::vec3& world_to, const glm::vec3& color)
+void LineDrawer::line(const glm::vec3& world_from, const glm::vec3& world_to, const Lrgb& color)
 {
 	if (lines == max_lines)
 	{
@@ -186,9 +187,9 @@ void LineDrawer::line(const glm::vec3& world_from, const glm::vec3& world_to, co
 		data.push_back(world_position.y);
 		data.push_back(world_position.z);
 
-		data.push_back(color.x);
-		data.push_back(color.y);
-		data.push_back(color.z);
+		data.push_back(color.linear.x);
+		data.push_back(color.linear.y);
+		data.push_back(color.linear.z);
 	};
 
 	add_vertex(world_from);
