@@ -33,6 +33,7 @@ std::vector<glm::vec2> plot_line(const PlotRange& p, F f)
 
 struct SvgLine
 {
+	std::string label;
     std::string_view color;
     std::vector<glm::vec2> points;
 };
@@ -42,7 +43,7 @@ struct Svg
 {
     std::vector<SvgLine> lines;
 
-    Svg& add_line(const std::vector<glm::vec2>& points, std::string_view color);
+    Svg& add_line(std::string_view color, const std::vector<glm::vec2>& points, std::string label = "");
 
     void write(const std::string& file_path, float spacing);
 };

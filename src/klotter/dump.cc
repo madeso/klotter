@@ -51,9 +51,9 @@ std::optional<AABB2> calc_bounding_box(const Svg& svg)
 	return r;
 }
 
-Svg& Svg::add_line(const std::vector<glm::vec2>& points, std::string_view color)
+Svg& Svg::add_line(std::string_view color, const std::vector<glm::vec2>& points, std::string label)
 {
-	lines.push_back(SvgLine{color, points});
+	lines.push_back(SvgLine{std::move(label), color, points});
 	return *this;
 }
 
@@ -90,7 +90,13 @@ void Svg::write(const std::string& file_path, float space)
 
     for(const auto& line: lines)
     {
-        ofs << "<polyline fill=\"none\" stroke=\"" << line.color << "\" stroke-width=\"" << stroke_width << "px\" points=\"";
+		ofs << "<polyline ";
+        if (line.label.empty() == false)
+        {
+            // todo(Gustav): escape label
+			ofs << "id=\"" << line.label << "\" ";
+        }
+		ofs << "fill=\"none\" stroke=\"" << line.color << "\" stroke-width=\"" << stroke_width << "px\" points=\"";
         for (const auto& p : line.points) {
             // todo(Gustav): this transforms the points... can we use a viewbox or a transform instead and perhaps just scale the line thickness and (future) texts instead?
             ofs << px(p.x) << "," << py(p.y) << " ";
@@ -161,8 +167,11 @@ void Svg::write(const std::string& file_path, float space)
         for(const poly of lines) {
             const [p, dist] = closest(poly, {x: ev.offsetX, y: ev.offsetY});
             if(dist > 10) continue;
-            html += '<br /><span style="color:' + poly.attributes.stroke.value + '"">' +
-                px(p.x) + ' x ' + py(p.y) + '</span>';
+            html += '<br /><span style="color:' + poly.attributes.stroke.value + '"">';
+            if(poly.id) {
+                html += poly.id + ': '
+            }
+            html += px(p.x) + ' x ' + py(p.y) + '</span>';
         }
         hover.innerHTML = html;
 		hover.style.left = (ev.clientX + 10) + 'px';
