@@ -467,19 +467,19 @@ std::shared_ptr<FrameBuffer> build_simple_framebuffer(DEBUG_LABEL_ARG_MANY const
 }
 
 
-std::shared_ptr<FrameBuffer> build_hdr_floating_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel render_world_color_bits_per_pixel)
+std::shared_ptr<FrameBuffer> build_hdr_floating_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, ColorBitsPerPixel bits_per_pixel)
 {
 	return FrameBufferBuilder{size}
-		.with_color_bits(render_world_color_bits_per_pixel)
+		.with_color_bits(bits_per_pixel)
 		.build(USE_DEBUG_LABEL(debug_label));
 }
 
 
-std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, int msaa_samples, ColorBitsPerPixel render_world_color_bits_per_pixel)
+std::shared_ptr<FrameBuffer> build_msaa_framebuffer(DEBUG_LABEL_ARG_MANY const glm::ivec2& size, int msaa_samples, ColorBitsPerPixel bits_per_pixel)
 {
 	return FrameBufferBuilder{size}
 		.with_msaa(msaa_samples)
-		.with_color_bits(render_world_color_bits_per_pixel)
+		.with_color_bits(bits_per_pixel)
 		.with_depth()
 		.with_stencil()
 		.build(USE_DEBUG_LABEL(debug_label));
