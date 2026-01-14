@@ -881,10 +881,11 @@
   </compound>
   <compound refid="structSvg" kind="struct"><name>Svg</name>
     <member refid="structSvg_1ac6e350c3e8a110dc77e004b5bd415a7d" kind="variable"><name>lines</name></member>
-    <member refid="structSvg_1ab11a40259f86ff4bf7372fabbb0c5354" kind="function"><name>add_line</name></member>
+    <member refid="structSvg_1a4117dd11b37777a99b59cf801ff354b7" kind="function"><name>add_line</name></member>
     <member refid="structSvg_1a4c48cf4dd61080d58bab289ddceddf98" kind="function"><name>write</name></member>
   </compound>
   <compound refid="structSvgLine" kind="struct"><name>SvgLine</name>
+    <member refid="structSvgLine_1a0254b9517b5e9d90083d90a9779bc958" kind="variable"><name>label</name></member>
     <member refid="structSvgLine_1a7e89c7079405003305da33a697687d0b" kind="variable"><name>color</name></member>
     <member refid="structSvgLine_1a76bf588e50b5bde6d87d9549d6acee7f" kind="variable"><name>points</name></member>
   </compound>

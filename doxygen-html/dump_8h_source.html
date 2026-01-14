@@ -154,21 +154,22 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structSvgLine.html">   34</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structSvgLine.html">SvgLine</a></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structSvgLine.html#a7e89c7079405003305da33a697687d0b">   36</a></span>    std::string_view <a class="code hl_variable" href="structSvgLine.html#a7e89c7079405003305da33a697687d0b">color</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structSvgLine.html#a76bf588e50b5bde6d87d9549d6acee7f">   37</a></span>    std::vector&lt;glm::vec2&gt; <a class="code hl_variable" href="structSvgLine.html#a76bf588e50b5bde6d87d9549d6acee7f">points</a>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structSvgLine.html#a0254b9517b5e9d90083d90a9779bc958">   36</a></span>    std::string <a class="code hl_variable" href="structSvgLine.html#a0254b9517b5e9d90083d90a9779bc958">label</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structSvgLine.html#a7e89c7079405003305da33a697687d0b">   37</a></span>    std::string_view <a class="code hl_variable" href="structSvgLine.html#a7e89c7079405003305da33a697687d0b">color</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structSvgLine.html#a76bf588e50b5bde6d87d9549d6acee7f">   38</a></span>    std::vector&lt;glm::vec2&gt; <a class="code hl_variable" href="structSvgLine.html#a76bf588e50b5bde6d87d9549d6acee7f">points</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structSvg.html">   41</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structSvg.html">Svg</a></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d">   43</a></span>    std::vector&lt;SvgLine&gt; <a class="code hl_variable" href="structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d">lines</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structSvg.html#ab11a40259f86ff4bf7372fabbb0c5354">   45</a></span>    <a class="code hl_struct" href="structSvg.html">Svg</a>&amp; <a class="code hl_function" href="structSvg.html#ab11a40259f86ff4bf7372fabbb0c5354">add_line</a>(<span class="keyword">const</span> std::vector&lt;glm::vec2&gt;&amp; points, std::string_view color);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structSvg.html#a4c48cf4dd61080d58bab289ddceddf98">   47</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="structSvg.html#a4c48cf4dd61080d58bab289ddceddf98">write</a>(<span class="keyword">const</span> std::string&amp; file_path, <span class="keywordtype">float</span> spacing);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structSvg.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structSvg.html">Svg</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d">   44</a></span>    std::vector&lt;SvgLine&gt; <a class="code hl_variable" href="structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d">lines</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structSvg.html#a4117dd11b37777a99b59cf801ff354b7">   46</a></span>    <a class="code hl_struct" href="structSvg.html">Svg</a>&amp; <a class="code hl_function" href="structSvg.html#a4117dd11b37777a99b59cf801ff354b7">add_line</a>(std::string_view color, <span class="keyword">const</span> std::vector&lt;glm::vec2&gt;&amp; points, std::string label = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structSvg.html#a4c48cf4dd61080d58bab289ddceddf98">   48</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="structSvg.html#a4c48cf4dd61080d58bab289ddceddf98">write</a>(<span class="keyword">const</span> std::string&amp; file_path, <span class="keywordtype">float</span> spacing);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
 </div>
 <div class="ttc" id="adump_8h_html_a3ec0c1a817bf397046a03ef55c13c9de"><div class="ttname"><a href="dump_8h.html#a3ec0c1a817bf397046a03ef55c13c9de">plot_line</a></div><div class="ttdeci">std::vector&lt; glm::vec2 &gt; plot_line(const PlotRange &amp;p, F f)</div><div class="ttdef"><b>Definition</b> dump.h:24</div></div>
 <div class="ttc" id="anamespacesvg_html"><div class="ttname"><a href="namespacesvg.html">svg</a></div><div class="ttdef"><b>Definition</b> dump.h:4</div></div>
@@ -185,12 +186,13 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="astructPlotRange_html_a3ed06b9824af4a36190845b075f20658"><div class="ttname"><a href="structPlotRange.html#a3ed06b9824af4a36190845b075f20658">PlotRange::start</a></div><div class="ttdeci">float start</div><div class="ttdef"><b>Definition</b> dump.h:18</div></div>
 <div class="ttc" id="astructPlotRange_html_aae56ef81c1da0462b1ea13595713818a"><div class="ttname"><a href="structPlotRange.html#aae56ef81c1da0462b1ea13595713818a">PlotRange::end</a></div><div class="ttdeci">float end</div><div class="ttdef"><b>Definition</b> dump.h:19</div></div>
 <div class="ttc" id="astructSvgLine_html"><div class="ttname"><a href="structSvgLine.html">SvgLine</a></div><div class="ttdef"><b>Definition</b> dump.h:35</div></div>
-<div class="ttc" id="astructSvgLine_html_a76bf588e50b5bde6d87d9549d6acee7f"><div class="ttname"><a href="structSvgLine.html#a76bf588e50b5bde6d87d9549d6acee7f">SvgLine::points</a></div><div class="ttdeci">std::vector&lt; glm::vec2 &gt; points</div><div class="ttdef"><b>Definition</b> dump.h:37</div></div>
-<div class="ttc" id="astructSvgLine_html_a7e89c7079405003305da33a697687d0b"><div class="ttname"><a href="structSvgLine.html#a7e89c7079405003305da33a697687d0b">SvgLine::color</a></div><div class="ttdeci">std::string_view color</div><div class="ttdef"><b>Definition</b> dump.h:36</div></div>
-<div class="ttc" id="astructSvg_html"><div class="ttname"><a href="structSvg.html">Svg</a></div><div class="ttdef"><b>Definition</b> dump.h:42</div></div>
+<div class="ttc" id="astructSvgLine_html_a0254b9517b5e9d90083d90a9779bc958"><div class="ttname"><a href="structSvgLine.html#a0254b9517b5e9d90083d90a9779bc958">SvgLine::label</a></div><div class="ttdeci">std::string label</div><div class="ttdef"><b>Definition</b> dump.h:36</div></div>
+<div class="ttc" id="astructSvgLine_html_a76bf588e50b5bde6d87d9549d6acee7f"><div class="ttname"><a href="structSvgLine.html#a76bf588e50b5bde6d87d9549d6acee7f">SvgLine::points</a></div><div class="ttdeci">std::vector&lt; glm::vec2 &gt; points</div><div class="ttdef"><b>Definition</b> dump.h:38</div></div>
+<div class="ttc" id="astructSvgLine_html_a7e89c7079405003305da33a697687d0b"><div class="ttname"><a href="structSvgLine.html#a7e89c7079405003305da33a697687d0b">SvgLine::color</a></div><div class="ttdeci">std::string_view color</div><div class="ttdef"><b>Definition</b> dump.h:37</div></div>
+<div class="ttc" id="astructSvg_html"><div class="ttname"><a href="structSvg.html">Svg</a></div><div class="ttdef"><b>Definition</b> dump.h:43</div></div>
+<div class="ttc" id="astructSvg_html_a4117dd11b37777a99b59cf801ff354b7"><div class="ttname"><a href="structSvg.html#a4117dd11b37777a99b59cf801ff354b7">Svg::add_line</a></div><div class="ttdeci">Svg &amp; add_line(std::string_view color, const std::vector&lt; glm::vec2 &gt; &amp;points, std::string label=&quot;&quot;)</div></div>
 <div class="ttc" id="astructSvg_html_a4c48cf4dd61080d58bab289ddceddf98"><div class="ttname"><a href="structSvg.html#a4c48cf4dd61080d58bab289ddceddf98">Svg::write</a></div><div class="ttdeci">void write(const std::string &amp;file_path, float spacing)</div></div>
-<div class="ttc" id="astructSvg_html_ab11a40259f86ff4bf7372fabbb0c5354"><div class="ttname"><a href="structSvg.html#ab11a40259f86ff4bf7372fabbb0c5354">Svg::add_line</a></div><div class="ttdeci">Svg &amp; add_line(const std::vector&lt; glm::vec2 &gt; &amp;points, std::string_view color)</div></div>
-<div class="ttc" id="astructSvg_html_ac6e350c3e8a110dc77e004b5bd415a7d"><div class="ttname"><a href="structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d">Svg::lines</a></div><div class="ttdeci">std::vector&lt; SvgLine &gt; lines</div><div class="ttdef"><b>Definition</b> dump.h:43</div></div>
+<div class="ttc" id="astructSvg_html_ac6e350c3e8a110dc77e004b5bd415a7d"><div class="ttname"><a href="structSvg.html#ac6e350c3e8a110dc77e004b5bd415a7d">Svg::lines</a></div><div class="ttdeci">std::vector&lt; SvgLine &gt; lines</div><div class="ttdef"><b>Definition</b> dump.h:44</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

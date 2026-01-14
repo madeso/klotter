@@ -10,7 +10,7 @@ var searchData=
   ['add_5fface_7',['add_face',['../structklotter_1_1geom_1_1Builder.html#a108dd5e1bb46cd95cc94662b5ec741b9',1,'klotter::geom::Builder']]],
   ['add_5ffloat_5fdrag_5fprop_8',['add_float_drag_prop',['../structklotter_1_1SimpleEffect.html#aeb461dabc8e7c4f556e15462289bdf5e',1,'klotter::SimpleEffect']]],
   ['add_5ffloat_5fslider_5fprop_9',['add_float_slider_prop',['../structklotter_1_1SimpleEffect.html#ab923af34ed39a1ead379001243630521',1,'klotter::SimpleEffect']]],
-  ['add_5fline_10',['add_line',['../structSvg.html#ab11a40259f86ff4bf7372fabbb0c5354',1,'Svg::add_line()'],['../structklotter_1_1DebugRender.html#a9cbb501748d6e0e2132cf0bece044020',1,'klotter::DebugRender::add_line()']]],
+  ['add_5fline_10',['add_line',['../structSvg.html#a4117dd11b37777a99b59cf801ff354b7',1,'Svg::add_line()'],['../structklotter_1_1DebugRender.html#a9cbb501748d6e0e2132cf0bece044020',1,'klotter::DebugRender::add_line()']]],
   ['add_5fnormal_11',['add_normal',['../structklotter_1_1geom_1_1Builder.html#a170c3028daab22f3d9525886b87ccc20',1,'klotter::geom::Builder']]],
   ['add_5fposition_12',['add_position',['../structklotter_1_1geom_1_1Builder.html#ad060993f3073843868929ff6dd65b045',1,'klotter::geom::Builder']]],
   ['add_5fquad_13',['add_quad',['../structklotter_1_1geom_1_1Builder.html#a1d1bf15d326a7d2a101aedf3d1daa97e',1,'klotter::geom::Builder']]],
