@@ -50,6 +50,8 @@
     <innerclass refid="structklotter_1_1ImguiShaderCache" prot="public">klotter::ImguiShaderCache</innerclass>
     <innerclass refid="structklotter_1_1ImguiShaderProgram" prot="public">klotter::ImguiShaderProgram</innerclass>
     <innerclass refid="structklotter_1_1InstanceProp" prot="public">klotter::InstanceProp</innerclass>
+    <innerclass refid="structklotter_1_1Lab" prot="public">klotter::Lab</innerclass>
+    <innerclass refid="structklotter_1_1Lch" prot="public">klotter::Lch</innerclass>
     <innerclass refid="structklotter_1_1Lights" prot="public">klotter::Lights</innerclass>
     <innerclass refid="structklotter_1_1LineDrawer" prot="public">klotter::LineDrawer</innerclass>
     <innerclass refid="structklotter_1_1LoadedPostProcShader" prot="public">klotter::LoadedPostProcShader</innerclass>
@@ -447,7 +449,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="28" column="7" declfile="src/klotter/render/color.h" declline="28" declcolumn="7"/>
+        <location file="src/klotter/render/color.h" line="45" column="7" declfile="src/klotter/render/color.h" declline="45" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1abe7b86e3eb6ca8aaf9c6ff0ec463e6f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lrgb" kindref="compound">Lrgb</ref></type>
@@ -469,7 +471,79 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="29" column="6" declfile="src/klotter/render/color.h" declline="29" declcolumn="6"/>
+        <location file="src/klotter/render/color.h" line="46" column="6" declfile="src/klotter/render/color.h" declline="46" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a4a3e900ad6c1526a5155705a76c63395" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Lab" kindref="compound">Lab</ref></type>
+        <definition>Lab klotter::oklab_from_linear</definition>
+        <argsstring>(const Lrgb &amp;c)</argsstring>
+        <name>oklab_from_linear</name>
+        <qualifiedname>klotter::oklab_from_linear</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1Lrgb" kindref="compound">Lrgb</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="49" column="5" declfile="src/klotter/render/color.h" declline="49" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a2870ff528d84358b41398fa9f951b1c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Lrgb" kindref="compound">Lrgb</ref></type>
+        <definition>Lrgb klotter::linear_from_oklab</definition>
+        <argsstring>(const Lab &amp;c)</argsstring>
+        <name>linear_from_oklab</name>
+        <qualifiedname>klotter::linear_from_oklab</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1Lab" kindref="compound">Lab</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="50" column="6" declfile="src/klotter/render/color.h" declline="50" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1aa91916877c4ee9eada97d5d8989e4da1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Lch" kindref="compound">Lch</ref></type>
+        <definition>Lch klotter::oklch_from_oklab</definition>
+        <argsstring>(const Lab &amp;c)</argsstring>
+        <name>oklch_from_oklab</name>
+        <qualifiedname>klotter::oklch_from_oklab</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1Lab" kindref="compound">Lab</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="51" column="5" declfile="src/klotter/render/color.h" declline="51" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1abbc449cee223960d5f93b49f995b64d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Lab" kindref="compound">Lab</ref></type>
+        <definition>Lab klotter::oklab_from_oklch</definition>
+        <argsstring>(const Lch &amp;c)</argsstring>
+        <name>oklab_from_oklch</name>
+        <qualifiedname>klotter::oklab_from_oklch</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1Lch" kindref="compound">Lch</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="52" column="5" declfile="src/klotter/render/color.h" declline="52" declcolumn="5"/>
       </memberdef>
       <member refid="group__render_1gaa34634737d2319b0f1c9ba860e01ef98" kind="function"><name>draw_frustum</name></member>
       <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>

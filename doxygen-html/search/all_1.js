@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_0',['b',['../structklotter_1_1Color.html#a6cfd7db6a2ecf0b487a5869499914d76',1,'klotter::Color::b'],['../structklotter_1_1Face.html#a2f2d9992cca8c81ee5697cc64741d34d',1,'klotter::Face::b'],['../structVisualDebugging_1_1Color.html#a313c4f050e400d7221e347bd487d166c',1,'VisualDebugging::Color::b']]],
+  ['b_0',['b',['../structklotter_1_1Color.html#a6cfd7db6a2ecf0b487a5869499914d76',1,'klotter::Color::b'],['../structklotter_1_1Lab.html#a98748c713c3c0ee1264e305aa9c727ba',1,'klotter::Lab::b'],['../structklotter_1_1Face.html#a2f2d9992cca8c81ee5697cc64741d34d',1,'klotter::Face::b'],['../structVisualDebugging_1_1Color.html#a313c4f050e400d7221e347bd487d166c',1,'VisualDebugging::Color::b']]],
   ['back_1',['back',['../group__render.html#gga2da9ff87267808b55c2680259db65b5ca469bba0a564235dfceede42db14f17b0',1,'klotter']]],
   ['background_5fcolor_2',['background_color',['../structklotter_1_1SCurveImguiSettings.html#ab7d4a9fe5f4cb0dd7cf299800b310541',1,'klotter::SCurveImguiSettings']]],
   ['base_5fcast_3',['base_cast',['../namespaceklotter.html#aafbf3062eca044adc3d6d3cf54778a51',1,'klotter']]],

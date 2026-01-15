@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="158" column="17" declfile="src/klotter/render/texture.h" declline="158" declcolumn="17"/>
+        <location file="src/klotter/render/texture.h" line="159" column="17" declfile="src/klotter/render/texture.h" declline="159" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="group__create-framebuffer_1gad98a5583c84e57cc8dc42be2c1514e4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; FrameBuffer &gt;</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="172" column="17" declfile="src/klotter/render/texture.h" declline="172" declcolumn="17"/>
+        <location file="src/klotter/render/texture.h" line="173" column="17" declfile="src/klotter/render/texture.h" declline="173" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="group__create-framebuffer_1gae9ba25d4ccc7a39a4eba48bf6f5a529f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; FrameBuffer &gt;</type>
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="183" column="17" declfile="src/klotter/render/texture.h" declline="183" declcolumn="17"/>
+        <location file="src/klotter/render/texture.h" line="184" column="17" declfile="src/klotter/render/texture.h" declline="184" declcolumn="17"/>
       </memberdef>
       <memberdef kind="function" id="group__create-framebuffer_1ga3d4b4cc65449e3cf5cc8297475376703" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::shared_ptr&lt; FrameBuffer &gt;</type>
@@ -164,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="193" column="17" declfile="src/klotter/render/texture.h" declline="193" declcolumn="17"/>
+        <location file="src/klotter/render/texture.h" line="194" column="17" declfile="src/klotter/render/texture.h" declline="194" declcolumn="17"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

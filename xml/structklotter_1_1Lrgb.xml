@@ -20,7 +20,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Represents a linear RGB color. </para>
+<para>Represents a linear sRGB color. </para>
     </briefdescription>
     <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="structklotter_1_1Color" kindref="compound">Color</ref> </para>

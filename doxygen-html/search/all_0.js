@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['a_0',['a',['../structklotter_1_1Face.html#a6b31a3e3e29273c8174e15d763136b2c',1,'klotter::Face']]],
+  ['a_0',['a',['../structklotter_1_1Lab.html#ab2f12011c66348b6145080c1866259f4',1,'klotter::Lab::a'],['../structklotter_1_1Face.html#a6b31a3e3e29273c8174e15d763136b2c',1,'klotter::Face::a']]],
   ['activate_5ftexture_1',['activate_texture',['../structklotter_1_1StateChanger.html#abbae49c8836d55354a1ffd300ba59ee5',1,'klotter::StateChanger']]],
   ['active_5fdraw_5fcolor_5f_2',['active_draw_color_',['../structVisualDebugging_1_1SceneArtist.html#a421051607201e9d28ce5bd4e512d296a',1,'VisualDebugging::SceneArtist']]],
   ['active_5ftexture_3',['active_texture',['../structklotter_1_1OpenglStates.html#abc35a8245c75899fbf5242809bf19c69',1,'klotter::OpenglStates']]],
-  ['add_4',['add',['../structklotter_1_1UniformBufferCompiler.html#a1006307a4f7b45ce5b348a19b8b1b474',1,'klotter::UniformBufferCompiler']]],
+  ['add_4',['add',['../structklotter_1_1UniformBufferCompiler.html#a1006307a4f7b45ce5b348a19b8b1b474',1,'klotter::UniformBufferCompiler::add()'],['../structtesting_1_1Equaler.html#ae867aa9e5e1863840e96d77f859336b8',1,'testing::Equaler::add(const std::string &amp;name, const C &amp;convert)'],['../structtesting_1_1Equaler.html#a177ac354e2fb1f48c007e37dabc4be00',1,'testing::Equaler::add(const std::string &amp;name, const C &amp;convert, F min)']]],
   ['add_5fartist_5fto_5fcurrent_5fframe_5',['add_artist_to_current_frame',['../structVisualDebugging_1_1VisualDebug.html#a83f7edf19eba77caa312643aab7ecd3a',1,'VisualDebugging::VisualDebug']]],
   ['add_5fcolor_6',['add_color',['../structklotter_1_1geom_1_1Builder.html#ab4601163cdc114970ed8f8561ebc3804',1,'klotter::geom::Builder']]],
   ['add_5fface_7',['add_face',['../structklotter_1_1geom_1_1Builder.html#a108dd5e1bb46cd95cc94662b5ec741b9',1,'klotter::geom::Builder']]],

@@ -21,6 +21,7 @@
     <innerfile refid="pch_8public_8h">pch.public.h</innerfile>
     <innerfile refid="scurve_8h">scurve.h</innerfile>
     <innerfile refid="str_8h">str.h</innerfile>
+    <innerfile refid="test_8util_8h">test.util.h</innerfile>
     <innerfile refid="undef__windows_8h">undef_windows.h</innerfile>
     <innerfile refid="vdebug_8h">vdebug.h</innerfile>
     <briefdescription>

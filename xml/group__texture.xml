@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="50" column="1" bodyfile="src/klotter/render/texture.h" bodystart="50" bodyend="50"/>
+        <location file="src/klotter/render/texture.h" line="51" column="1" bodyfile="src/klotter/render/texture.h" bodystart="51" bodyend="51"/>
       </memberdef>
       <memberdef kind="enum" id="group__texture_1gad4a5a90c6e8064ff314642d5cd089849" prot="public" static="no" strong="yes">
         <type></type>
@@ -186,7 +186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="135" column="1" bodyfile="src/klotter/render/texture.h" bodystart="136" bodyend="139"/>
+        <location file="src/klotter/render/texture.h" line="136" column="1" bodyfile="src/klotter/render/texture.h" bodystart="137" bodyend="140"/>
       </memberdef>
       <memberdef kind="enum" id="group__texture_1ga1d677cc4a3cecec32f8e90f3ae62bf95" prot="public" static="no" strong="yes">
         <type></type>
@@ -227,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="142" column="1" bodyfile="src/klotter/render/texture.h" bodystart="143" bodyend="146"/>
+        <location file="src/klotter/render/texture.h" line="143" column="1" bodyfile="src/klotter/render/texture.h" bodystart="144" bodyend="147"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
@@ -245,7 +245,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="97" column="23" bodyfile="src/klotter/render/texture.h" bodystart="97" bodyend="-1"/>
+        <location file="src/klotter/render/texture.h" line="98" column="23" bodyfile="src/klotter/render/texture.h" bodystart="98" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -314,7 +314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="58" column="23" bodyfile="src/klotter/render/texture.h" bodystart="58" bodyend="63"/>
+        <location file="src/klotter/render/texture.h" line="59" column="23" bodyfile="src/klotter/render/texture.h" bodystart="59" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Texture2d</type>
@@ -348,7 +348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="93" column="11" declfile="src/klotter/render/texture.h" declline="93" declcolumn="11"/>
+        <location file="src/klotter/render/texture.h" line="94" column="11" declfile="src/klotter/render/texture.h" declline="94" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>TextureCubemap</type>
@@ -370,7 +370,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="108" column="16" declfile="src/klotter/render/texture.h" declline="108" declcolumn="16"/>
+        <location file="src/klotter/render/texture.h" line="109" column="16" declfile="src/klotter/render/texture.h" declline="109" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__texture_1ga2db91a5f624e2dc351118f2d7b0ecf31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -392,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/texture.h" line="210" column="6" declfile="src/klotter/render/texture.h" declline="210" declcolumn="6"/>
+        <location file="src/klotter/render/texture.h" line="211" column="6" declfile="src/klotter/render/texture.h" declline="211" declcolumn="6"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

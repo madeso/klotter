@@ -126,7 +126,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents color in gamma (non-linear) space (aka sRGB).  <a href="structklotter_1_1Color.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Lrgb.html">klotter::Lrgb</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a linear RGB color.  <a href="structklotter_1_1Lrgb.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a linear sRGB color.  <a href="structklotter_1_1Lrgb.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Lch.html">klotter::Lch</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a color in the OKlch color space.  <a href="structklotter_1_1Lch.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Lab.html">klotter::Lab</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a color in the OKlab color space.  <a href="structklotter_1_1Lab.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -142,6 +148,14 @@ Functions</h2></td></tr>
 <tr class="separator:a8655e92bbc13aff3832b4fed06e62fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe7b86e3eb6ca8aaf9c6ff0ec463e6f2" id="r_abe7b86e3eb6ca8aaf9c6ff0ec463e6f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Lrgb.html">Lrgb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#abe7b86e3eb6ca8aaf9c6ff0ec463e6f2">klotter::linear_from_srgb</a> (const <a class="el" href="structklotter_1_1Color.html">Color</a> &amp;value, float gamma)</td></tr>
 <tr class="separator:abe7b86e3eb6ca8aaf9c6ff0ec463e6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3e900ad6c1526a5155705a76c63395" id="r_a4a3e900ad6c1526a5155705a76c63395"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Lab.html">Lab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#a4a3e900ad6c1526a5155705a76c63395">klotter::oklab_from_linear</a> (const <a class="el" href="structklotter_1_1Lrgb.html">Lrgb</a> &amp;c)</td></tr>
+<tr class="separator:a4a3e900ad6c1526a5155705a76c63395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2870ff528d84358b41398fa9f951b1c7" id="r_a2870ff528d84358b41398fa9f951b1c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Lrgb.html">Lrgb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#a2870ff528d84358b41398fa9f951b1c7">klotter::linear_from_oklab</a> (const <a class="el" href="structklotter_1_1Lab.html">Lab</a> &amp;c)</td></tr>
+<tr class="separator:a2870ff528d84358b41398fa9f951b1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa91916877c4ee9eada97d5d8989e4da1" id="r_aa91916877c4ee9eada97d5d8989e4da1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Lch.html">Lch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#aa91916877c4ee9eada97d5d8989e4da1">klotter::oklch_from_oklab</a> (const <a class="el" href="structklotter_1_1Lab.html">Lab</a> &amp;c)</td></tr>
+<tr class="separator:aa91916877c4ee9eada97d5d8989e4da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc449cee223960d5f93b49f995b64d3" id="r_abbc449cee223960d5f93b49f995b64d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1Lab.html">Lab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter.html#abbc449cee223960d5f93b49f995b64d3">klotter::oklab_from_oklch</a> (const <a class="el" href="structklotter_1_1Lch.html">Lch</a> &amp;c)</td></tr>
+<tr class="separator:abbc449cee223960d5f93b49f995b64d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a084841f5ac61fab0097a9dd0cff4d5dc" id="r_a084841f5ac61fab0097a9dd0cff4d5dc"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structklotter_1_1Color.html">klotter::Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceklotter_1_1colors.html#a084841f5ac61fab0097a9dd0cff4d5dc">klotter::colors::rgb</a> (int r, int g, int b)</td></tr>
 <tr class="separator:a084841f5ac61fab0097a9dd0cff4d5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">

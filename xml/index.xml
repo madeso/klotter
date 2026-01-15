@@ -289,6 +289,17 @@
     <member refid="structklotter_1_1EffectStack_1a045d1a84ab1f0e78ac4382191f521c75" kind="function"><name>update</name></member>
     <member refid="structklotter_1_1EffectStack_1a49249317755cafe6db59ef29cea7bdc6" kind="function"><name>gui</name></member>
   </compound>
+  <compound refid="structtesting_1_1Equaler" kind="struct"><name>testing::Equaler</name>
+    <member refid="structtesting_1_1Equaler_1afa3d9482d49b217ea08caf8596fbef6d" kind="typedef"><name>Self</name></member>
+    <member refid="structtesting_1_1Equaler_1a819a25f88bab8531d5d4c7ce0dd99bd4" kind="variable"><name>lhs</name></member>
+    <member refid="structtesting_1_1Equaler_1a44d011be1a5b76ff243c4dca795fe954" kind="variable"><name>rhs</name></member>
+    <member refid="structtesting_1_1Equaler_1a36547fbf6f5422fb320449c2831ee94d" kind="variable"><name>failures</name></member>
+    <member refid="structtesting_1_1Equaler_1ab9144f3c32e47e93792971cede3046d7" kind="function"><name>Equaler</name></member>
+    <member refid="structtesting_1_1Equaler_1afb70cd013a90f1f06043bac7c059354b" kind="function"><name>impl</name></member>
+    <member refid="structtesting_1_1Equaler_1ae867aa9e5e1863840e96d77f859336b8" kind="function"><name>add</name></member>
+    <member refid="structtesting_1_1Equaler_1a177ac354e2fb1f48c007e37dabc4be00" kind="function"><name>add</name></member>
+    <member refid="structtesting_1_1Equaler_1a0670029c3c9f65de8ebe4f436666fb8e" kind="function"><name>resolve</name></member>
+  </compound>
   <compound refid="structklotter_1_1ExtractedAttribute" kind="struct"><name>klotter::ExtractedAttribute</name>
     <member refid="structklotter_1_1ExtractedAttribute_1a13b00d60b002e83054006e4bdac1300b" kind="variable"><name>type</name></member>
     <member refid="structklotter_1_1ExtractedAttribute_1a54a83941efe28b657cc235f2ea8af662" kind="variable"><name>count</name></member>
@@ -410,6 +421,16 @@
   <compound refid="structklotter_1_1InstanceProp" kind="struct"><name>klotter::InstanceProp</name>
     <member refid="structklotter_1_1InstanceProp_1a6099c86f6b1ab7dffa1720edab9b0142" kind="variable"><name>type</name></member>
     <member refid="structklotter_1_1InstanceProp_1aa0229f5fd2f21045c3489a05322c9b1a" kind="variable"><name>name</name></member>
+  </compound>
+  <compound refid="structklotter_1_1Lab" kind="struct"><name>klotter::Lab</name>
+    <member refid="structklotter_1_1Lab_1a9305301003a65627b0127cc09b0d148f" kind="variable"><name>l</name></member>
+    <member refid="structklotter_1_1Lab_1ab2f12011c66348b6145080c1866259f4" kind="variable"><name>a</name></member>
+    <member refid="structklotter_1_1Lab_1a98748c713c3c0ee1264e305aa9c727ba" kind="variable"><name>b</name></member>
+  </compound>
+  <compound refid="structklotter_1_1Lch" kind="struct"><name>klotter::Lch</name>
+    <member refid="structklotter_1_1Lch_1aa7eade69dc013d08f57961762e26c470" kind="variable"><name>l</name></member>
+    <member refid="structklotter_1_1Lch_1a08063f321f613a87ea3ecc526585ac41" kind="variable"><name>c</name></member>
+    <member refid="structklotter_1_1Lch_1a351d99bc07633ea30d2a1a5fb6442a42" kind="variable"><name>h</name></member>
   </compound>
   <compound refid="structklotter_1_1Lights" kind="struct"><name>klotter::Lights</name>
     <member refid="structklotter_1_1Lights_1a81ed1012bb866e7411836d2c1e078fb8" kind="variable"><name>ambient_color</name></member>
@@ -1056,6 +1077,10 @@
     <member refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kind="function"><name>screen_from_world</name></member>
     <member refid="namespaceklotter_1a8655e92bbc13aff3832b4fed06e62fb1" kind="function"><name>linear_from_srgb</name></member>
     <member refid="namespaceklotter_1abe7b86e3eb6ca8aaf9c6ff0ec463e6f2" kind="function"><name>linear_from_srgb</name></member>
+    <member refid="namespaceklotter_1a4a3e900ad6c1526a5155705a76c63395" kind="function"><name>oklab_from_linear</name></member>
+    <member refid="namespaceklotter_1a2870ff528d84358b41398fa9f951b1c7" kind="function"><name>linear_from_oklab</name></member>
+    <member refid="namespaceklotter_1aa91916877c4ee9eada97d5d8989e4da1" kind="function"><name>oklch_from_oklab</name></member>
+    <member refid="namespaceklotter_1abbc449cee223960d5f93b49f995b64d3" kind="function"><name>oklab_from_oklch</name></member>
     <member refid="group__render_1gaa34634737d2319b0f1c9ba860e01ef98" kind="function"><name>draw_frustum</name></member>
     <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
     <member refid="namespaceklotter_1a8063f4d09d3914dd0d4a926bb113e56b" kind="function"><name>setup_opengl_debug</name></member>
@@ -1171,6 +1196,9 @@
     <member refid="namespacesvg_1a5c20a783b7c14cc484b05482ba1ad114" kind="variable"><name>blue</name></member>
     <member refid="namespacesvg_1aafb8a48a5244e78109e971b73400358e" kind="variable"><name>vermillion</name></member>
     <member refid="namespacesvg_1a77d6e5012f32a5531daaae30ea8a163e" kind="variable"><name>reddish_purple</name></member>
+  </compound>
+  <compound refid="namespacetesting" kind="namespace"><name>testing</name>
+    <member refid="namespacetesting_1a7892b559aa25d888858fe6ff4de4d7d1" kind="variable"><name>machine_epsilon</name></member>
   </compound>
   <compound refid="namespaceVisualDebugging" kind="namespace"><name>VisualDebugging</name>
     <member refid="namespaceVisualDebugging_1a4a0ec37030187fc96b60600590802cf5" kind="function"><name>plot_line</name></member>
@@ -1343,6 +1371,8 @@
   <compound refid="scurve_8h" kind="file"><name>scurve.h</name>
   </compound>
   <compound refid="str_8h" kind="file"><name>str.h</name>
+  </compound>
+  <compound refid="test_8util_8h" kind="file"><name>test.util.h</name>
   </compound>
   <compound refid="undef__windows_8h" kind="file"><name>undef_windows.h</name>
   </compound>

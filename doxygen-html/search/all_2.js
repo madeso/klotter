@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['c_0',['c',['../structklotter_1_1Face.html#a0e3be30586dc7d66a2d70e1249dacb00',1,'klotter::Face']]],
+  ['c_0',['c',['../structklotter_1_1Lch.html#a08063f321f613a87ea3ecc526585ac41',1,'klotter::Lch::c'],['../structklotter_1_1Face.html#a0e3be30586dc7d66a2d70e1249dacb00',1,'klotter::Face::c']]],
   ['calculate_5fregion_1',['calculate_region',['../namespaceklotter.html#a60504853aeac4aeafebbe058813673ff',1,'klotter']]],
   ['calculate_5fs_5fcurve_2',['calculate_s_curve',['../group__scurcve.html#ga2c2164653e472f2eb8c12ab361bc7b8a',1,'klotter']]],
   ['camera_3',['Camera',['../structklotter_1_1Camera.html',1,'klotter']]],

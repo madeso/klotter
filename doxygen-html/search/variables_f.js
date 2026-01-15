@@ -12,6 +12,7 @@ var searchData=
   ['renderer_9',['renderer',['../structklotter_1_1PostProcArg.html#afb6209a69a9db4f6779c43290d6cc32c',1,'klotter::PostProcArg']]],
   ['resolution_5funi_10',['resolution_uni',['../structklotter_1_1LineDrawer.html#a02f5813ada4de1104582aed3aac54e07',1,'klotter::LineDrawer::resolution_uni'],['../structklotter_1_1LoadedPostProcShader.html#a3ad52ac1878403776878765d66e4a9d6',1,'klotter::LoadedPostProcShader::resolution_uni']]],
   ['result_11',['result',['../structklotter_1_1HashCombiner.html#a26bf8eb600fcab0bb021b3761e8ad8e2',1,'klotter::HashCombiner']]],
-  ['right_12',['right',['../structklotter_1_1CameraVectors.html#ae12a181bba402aad79fdd391ff41e3da',1,'klotter::CameraVectors']]],
-  ['rotation_13',['rotation',['../structklotter_1_1MeshInstance.html#ad280bee43f221a03ca600c0f6190a118',1,'klotter::MeshInstance']]]
+  ['rhs_12',['rhs',['../structtesting_1_1Equaler.html#a44d011be1a5b76ff243c4dca795fe954',1,'testing::Equaler']]],
+  ['right_13',['right',['../structklotter_1_1CameraVectors.html#ae12a181bba402aad79fdd391ff41e3da',1,'klotter::CameraVectors']]],
+  ['rotation_14',['rotation',['../structklotter_1_1MeshInstance.html#ad280bee43f221a03ca600c0f6190a118',1,'klotter::MeshInstance']]]
 ];

@@ -15,13 +15,14 @@ var searchData=
   ['enabled_12',['enabled',['../structklotter_1_1Effect.html#a5b3f083f8b7d5c62e8ffaae80690786f',1,'klotter::Effect']]],
   ['end_13',['end',['../structPlotRange.html#aae56ef81c1da0462b1ea13595713818a',1,'PlotRange::end'],['../structVisualDebugging_1_1PlotRange.html#af0d8da73b84b936ed164708b90b9774d',1,'VisualDebugging::PlotRange::end']]],
   ['equal_14',['equal',['../group__render.html#ggaf50df8edcb23dcda6cc8f1fd15918d69a465289687a70db7aa7217cc240c29f0f',1,'klotter']]],
-  ['exclude_15',['exclude',['../group__texture.html#gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef',1,'klotter']]],
-  ['exposure_16',['exposure',['../structklotter_1_1EffectStack.html#ae1b4343dbc50a5ae1b08aaf3efc20b68',1,'klotter::EffectStack::exposure'],['../structklotter_1_1RenderWorld.html#a0c96c544429ce3d6905ed01fe02b7805',1,'klotter::RenderWorld::exposure']]],
-  ['exposure_5funiform_17',['exposure_uniform',['../structklotter_1_1RealizeShader.html#a1dc6b3833c4e5a03fe9d1b1673527fd2',1,'klotter::RealizeShader']]],
-  ['extract_5fgeom_18',['extract_geom',['../group__geom-builder.html#ga4758c0c17511f831624a7cc7dbac8f74',1,'klotter']]],
-  ['extract_5fshader_19',['extract_shader',['../structklotter_1_1BloomRender.html#a8e9a87e5eb677a0530b4857f7de633f2',1,'klotter::BloomRender']]],
-  ['extractedattribute_20',['ExtractedAttribute',['../structklotter_1_1ExtractedAttribute.html',1,'klotter']]],
-  ['extractedattributetype_21',['ExtractedAttributeType',['../group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05',1,'klotter']]],
-  ['extractedgeom_22',['ExtractedGeom',['../structklotter_1_1ExtractedGeom.html',1,'klotter']]],
-  ['extractshader_23',['ExtractShader',['../structklotter_1_1ExtractShader.html',1,'klotter::ExtractShader'],['../structklotter_1_1ExtractShader.html#a440af25fd231083600036959f8c95326',1,'klotter::ExtractShader::ExtractShader()']]]
+  ['equaler_15',['Equaler',['../structtesting_1_1Equaler.html',1,'testing::Equaler&lt; T &gt;'],['../structtesting_1_1Equaler.html#ab9144f3c32e47e93792971cede3046d7',1,'testing::Equaler::Equaler()']]],
+  ['exclude_16',['exclude',['../group__texture.html#gga3257f86dae0e1a101035a7d4cd2026bca18acedb191d664dc01b71835ae33caef',1,'klotter']]],
+  ['exposure_17',['exposure',['../structklotter_1_1EffectStack.html#ae1b4343dbc50a5ae1b08aaf3efc20b68',1,'klotter::EffectStack::exposure'],['../structklotter_1_1RenderWorld.html#a0c96c544429ce3d6905ed01fe02b7805',1,'klotter::RenderWorld::exposure']]],
+  ['exposure_5funiform_18',['exposure_uniform',['../structklotter_1_1RealizeShader.html#a1dc6b3833c4e5a03fe9d1b1673527fd2',1,'klotter::RealizeShader']]],
+  ['extract_5fgeom_19',['extract_geom',['../group__geom-builder.html#ga4758c0c17511f831624a7cc7dbac8f74',1,'klotter']]],
+  ['extract_5fshader_20',['extract_shader',['../structklotter_1_1BloomRender.html#a8e9a87e5eb677a0530b4857f7de633f2',1,'klotter::BloomRender']]],
+  ['extractedattribute_21',['ExtractedAttribute',['../structklotter_1_1ExtractedAttribute.html',1,'klotter']]],
+  ['extractedattributetype_22',['ExtractedAttributeType',['../group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05',1,'klotter']]],
+  ['extractedgeom_23',['ExtractedGeom',['../structklotter_1_1ExtractedGeom.html',1,'klotter']]],
+  ['extractshader_24',['ExtractShader',['../structklotter_1_1ExtractShader.html',1,'klotter::ExtractShader'],['../structklotter_1_1ExtractShader.html#a440af25fd231083600036959f8c95326',1,'klotter::ExtractShader::ExtractShader()']]]
 ];
