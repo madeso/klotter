@@ -45,6 +45,7 @@ enum class ColorData
 	dont_care
 };
 
+// todo(Gustav): move to colors.h?
 /// A single color in a format to load directly into open gl texture(ABGR on little endian).
 /// @see \ref color_from_rgba
 enum class SingleColor : std::uint32_t {};
