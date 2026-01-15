@@ -18,15 +18,38 @@ struct Color
 	{}
 };
 
-/// Represents a linear RGB color.
+/// Represents a linear sRGB color.
 /// @see Color
 struct Lrgb
 {
 	glm::vec3 linear;
 };
 
+/// Represents a color in the OKlch color space.
+struct Lch
+{
+	float l;
+	float c;
+	float h;
+};
+
+/// Represents a color in the OKlab color space.
+struct Lab
+{
+	float l;
+	float a;
+	float b;
+};
+
+// linear-space gamma-space
 float linear_from_srgb(float value, float gamma);
 Lrgb linear_from_srgb(const Color& value, float gamma);
+
+// oklab & oklch
+Lab oklab_from_linear(const Lrgb& c);
+Lrgb linear_from_oklab(const Lab& c);
+Lch oklch_from_oklab(const Lab& c);
+Lab oklab_from_oklch(const Lch& c);
 
 }
 
