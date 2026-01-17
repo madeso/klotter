@@ -1,5 +1,7 @@
 #pragma once
 
+#include "klotter/angle.h"
+
 namespace klotter
 {
 
@@ -30,7 +32,7 @@ struct Lch
 {
 	float l;
 	float c;
-	float h;
+	Angle h;
 };
 
 /// Represents a color in the OKlab color space.

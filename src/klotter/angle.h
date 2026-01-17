@@ -3,7 +3,7 @@
 namespace klotter
 {
 
-constexpr float pi = 3.14159265359f;
+constexpr float pi = 3.14159265358979323846f;
 
 /// An angle in both degrees and radians.
 struct Angle

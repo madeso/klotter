@@ -70,14 +70,14 @@ Lrgb linear_from_oklab(const Lab& c)
 // https://en.wikipedia.org/wiki/Oklab_color_space#Conversion_to_and_from_Oklch
 Lch oklch_from_oklab(const Lab& c)
 {
-	return {.l = c.l, .c = std::sqrtf(c.a * c.a + c.b * c.b), .h = std::atan2f(c.b, c.a)};
+	return {.l = c.l, .c = std::sqrtf(c.a * c.a + c.b * c.b), .h = klotter::atan2(c.b, c.a)};
 }
 
 Lab oklab_from_oklch(const Lch& c)
 {
 	return
 	{
-		.l = c.l, .a = c.c *std::cos(c.h), .b = c.c *std::sin(c.h)
+		.l = c.l, .a = c.c *klotter::cos(c.h), .b = c.c *klotter::sin(c.h)
 	};
 }
 

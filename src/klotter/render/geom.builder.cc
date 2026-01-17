@@ -503,8 +503,6 @@ Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count
 	assert(longitude_count >= 3);
 	assert(latitude_count >= 2);
 
-	constexpr float pi = 3.14159265358979323846f;
-
 	Builder ret;
 	ret.add_color({linear_from_srgb(color, artist_gamma).linear, 1.0f});
 
