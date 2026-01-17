@@ -4,9 +4,15 @@
     <compoundname>geom.builder.h</compoundname>
     <includes refid="color_8h" local="yes">klotter/render/color.h</includes>
     <incdepgraph>
+      <node id="3">
+        <label>klotter/angle.h</label>
+        <link refid="angle_8h"/>
+      </node>
       <node id="2">
         <label>klotter/render/color.h</label>
         <link refid="color_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/klotter/render/geom.builder.h</label>

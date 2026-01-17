@@ -7,6 +7,10 @@
     <includes refid="shader__resource_8h" local="yes">klotter/render/shader_resource.h</includes>
     <includes refid="world_8h" local="yes">klotter/render/world.h</includes>
     <incdepgraph>
+      <node id="26">
+        <label>klotter/angle.h</label>
+        <link refid="angle_8h"/>
+      </node>
       <node id="5">
         <label>klotter/feature_flags.h</label>
         <link refid="feature__flags_8h"/>
@@ -18,6 +22,8 @@
       <node id="25">
         <label>klotter/render/color.h</label>
         <link refid="color_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
       </node>
       <node id="14">
         <label>klotter/render/compare.h</label>
@@ -42,9 +48,9 @@
         <link refid="material_8h"/>
         <childnode refid="25" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -111,7 +117,7 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="29">
+      <node id="30">
         <label>klotter/render/space.h</label>
         <link refid="space_8h"/>
       </node>
@@ -119,12 +125,12 @@
         <label>klotter/render/stencilaction.h</label>
         <link refid="stencilaction_8h"/>
       </node>
-      <node id="26">
+      <node id="27">
         <label>klotter/render/texture.h</label>
         <link refid="texture_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -156,7 +162,7 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -167,7 +173,7 @@
         <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="27">
+      <node id="28">
         <label>cstdint</label>
       </node>
       <node id="23">
@@ -176,7 +182,7 @@
       <node id="8">
         <label>map</label>
       </node>
-      <node id="28">
+      <node id="29">
         <label>memory</label>
       </node>
       <node id="10">

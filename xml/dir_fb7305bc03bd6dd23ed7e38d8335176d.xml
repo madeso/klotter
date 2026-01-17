@@ -3,6 +3,7 @@
   <compounddef id="dir_fb7305bc03bd6dd23ed7e38d8335176d" kind="dir">
     <compoundname>src/klotter</compoundname>
     <innerdir refid="dir_ed8e069d0ef105186a164ea7dd41c1e5">src/klotter/render</innerdir>
+    <innerfile refid="angle_8h">angle.h</innerfile>
     <innerfile refid="assert_8h">assert.h</innerfile>
     <innerfile refid="cint_8h">cint.h</innerfile>
     <innerfile refid="compiler__warning_8h">compiler_warning.h</innerfile>

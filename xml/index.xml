@@ -1,5 +1,22 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
+  <compound refid="structklotter_1_1Angle" kind="struct"><name>klotter::Angle</name>
+    <member refid="structklotter_1_1Angle_1a922bbf9a6d5687ad731bae426d126dbe" kind="variable"><name>radians</name></member>
+    <member refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" kind="function"><name>from_degrees</name></member>
+    <member refid="structklotter_1_1Angle_1abd55a79db7ec4747cab7f43ff214e992" kind="function"><name>from_radians</name></member>
+    <member refid="structklotter_1_1Angle_1ab0695c7ba1e1cacefc5b775b8b250c11" kind="function"><name>wrap</name></member>
+    <member refid="structklotter_1_1Angle_1acfb8ec7a021fc7e3bf0b904930bc4761" kind="function"><name>as_degrees</name></member>
+    <member refid="structklotter_1_1Angle_1a2a96e52b6f3cc819e31b4c034819ec8c" kind="function"><name>as_radians</name></member>
+    <member refid="structklotter_1_1Angle_1a68d7f23d71c9ecea05e6a72b4f12856b" kind="function"><name>get_wrapped</name></member>
+    <member refid="structklotter_1_1Angle_1a812e61327ca964e449e1a6f48f1d4a98" kind="function"><name>operator+=</name></member>
+    <member refid="structklotter_1_1Angle_1a42f0052dc8c45299515e010c9ae55ff1" kind="function"><name>operator-=</name></member>
+    <member refid="structklotter_1_1Angle_1a25eb6b0b3e66b5a655d22ec9db1bef0f" kind="function"><name>operator*=</name></member>
+    <member refid="structklotter_1_1Angle_1a5775e24d67d3789ae9485d8bc035bb95" kind="function"><name>operator/=</name></member>
+    <member refid="structklotter_1_1Angle_1a7ed9538f2a2f4291f88dc29a744cbd49" kind="function"><name>operator-</name></member>
+    <member refid="structklotter_1_1Angle_1a0f09392a226607e8deecb574a6f82f1c" kind="function"><name>Angle</name></member>
+    <member refid="structklotter_1_1Angle_1abcdb2d726dff9b7b9e7c0f74e92af536" kind="function"><name>deg_from_rad</name></member>
+    <member refid="structklotter_1_1Angle_1a448b1e59effabb21096efbb51bbcee70" kind="function"><name>rad_from_deg</name></member>
+  </compound>
   <compound refid="structklotter_1_1App" kind="struct"><name>klotter::App</name>
     <member refid="structklotter_1_1App_1a0010a1af3138595dffbb2935c9434d07" kind="variable"><name>camera</name></member>
     <member refid="structklotter_1_1App_1ac4f30b81850fb6e66026121dcf45b6e2" kind="function"><name>on_frame</name></member>
@@ -430,7 +447,7 @@
   <compound refid="structklotter_1_1Lch" kind="struct"><name>klotter::Lch</name>
     <member refid="structklotter_1_1Lch_1aa7eade69dc013d08f57961762e26c470" kind="variable"><name>l</name></member>
     <member refid="structklotter_1_1Lch_1a08063f321f613a87ea3ecc526585ac41" kind="variable"><name>c</name></member>
-    <member refid="structklotter_1_1Lch_1a351d99bc07633ea30d2a1a5fb6442a42" kind="variable"><name>h</name></member>
+    <member refid="structklotter_1_1Lch_1a43f461c4bc7d194a1a547e4de7aeca35" kind="variable"><name>h</name></member>
   </compound>
   <compound refid="structklotter_1_1Lights" kind="struct"><name>klotter::Lights</name>
     <member refid="structklotter_1_1Lights_1a81ed1012bb866e7411836d2c1e078fb8" kind="variable"><name>ambient_color</name></member>
@@ -1059,6 +1076,11 @@
     <member refid="group__render_1ga1c638300d3c0acd1ab75efc88f4aa741" kind="typedef"><name>StencilOp</name></member>
     <member refid="group__vertex-layout_1gab14e38875ed51577f61fbbe750a605ea" kind="typedef"><name>ShaderVertexAttributes</name></member>
     <member refid="group__vertex-layout_1gaa3eb81233db95fb693918802ac36cc30" kind="typedef"><name>VertexTypes</name></member>
+    <member refid="namespaceklotter_1ad14058e4ce56cc788a355182fa1ccb15" kind="variable"><name>pi</name></member>
+    <member refid="namespaceklotter_1a8aaf866b3d17fedb350670093bbd9c6c" kind="variable"><name>one_turn</name></member>
+    <member refid="namespaceklotter_1a0ebf20e966edbb933ea95787ecdc3cd2" kind="variable"><name>half_turn</name></member>
+    <member refid="namespaceklotter_1a84c3879dc24efbeae6a4fa4bc242c846" kind="variable"><name>quarter_turn</name></member>
+    <member refid="namespaceklotter_1aaddcab2fc4549ebf9d63449df0097e9a" kind="variable"><name>no_rotation</name></member>
     <member refid="namespaceklotter_1a43f9bbbce92ceeed2837fcace91d9612" kind="variable"><name>MAX_TEXTURES_SUPPORTED</name></member>
     <member refid="namespaceklotter_1af84f50d2d555a52091dca0e8b0707f8a" kind="variable"><name>ALMOST_ZERO</name></member>
     <member refid="namespaceklotter_1a6d9726b7a1f0528975dfda6051f71743" kind="variable"><name>ALPHA_TRANSPARENCY_LIMIT</name></member>
@@ -1066,6 +1088,22 @@
     <member refid="namespaceklotter_1a095e93aa73a0f90b24c3e84cc8fe2afe" kind="variable"><name>BLUR_SAMPLES</name></member>
     <member refid="namespaceklotter_1a86f2208b879c568d1ee1e6e771c0caa1" kind="variable"><name>UP</name></member>
     <member refid="group__texture_1ga10216e8af0ed877194fd22899e5b058b" kind="variable"><name>cubemap_size</name></member>
+    <member refid="namespaceklotter_1a02552efce1cc7408842fa1a4e64c4ae4" kind="function"><name>sin</name></member>
+    <member refid="namespaceklotter_1a36bef14e8a3a9a40e71b5b360dbe29f3" kind="function"><name>cos</name></member>
+    <member refid="namespaceklotter_1a4c0dfb7276dcd53235ced43a51a08f35" kind="function"><name>tan</name></member>
+    <member refid="namespaceklotter_1a0cf17ea42ff3932fcf76a01e9d117a99" kind="function"><name>asin</name></member>
+    <member refid="namespaceklotter_1a0cc508fc02a7dd8e5f3319ae74721625" kind="function"><name>acos</name></member>
+    <member refid="namespaceklotter_1a3c50e831985cee2c1041b6cb88b72361" kind="function"><name>atan</name></member>
+    <member refid="namespaceklotter_1af9468387d17a15198af00182c14f84c9" kind="function"><name>atan2</name></member>
+    <member refid="namespaceklotter_1a2fc40ae46a4af625ed0a4e029c72b473" kind="function"><name>operator+</name></member>
+    <member refid="namespaceklotter_1a85128374237dd740fd8eb9609ee093eb" kind="function"><name>operator-</name></member>
+    <member refid="namespaceklotter_1ab6a7553328386855a9b6586192c6245e" kind="function"><name>operator*</name></member>
+    <member refid="namespaceklotter_1aad1cae1566e31d25a61ba4a4152a6174" kind="function"><name>operator/</name></member>
+    <member refid="namespaceklotter_1afa6496732526b62d0a52645e9e6fd7ba" kind="function"><name>operator*</name></member>
+    <member refid="namespaceklotter_1aeb8c3ef695e24d0e483f36c5f509b95c" kind="function"><name>operator&lt;</name></member>
+    <member refid="namespaceklotter_1a6dfd2fc16a77b02664baffceccf37ff1" kind="function"><name>operator&lt;=</name></member>
+    <member refid="namespaceklotter_1a3e70662928de1589e49a0942fa0ca7dd" kind="function"><name>operator&gt;</name></member>
+    <member refid="namespaceklotter_1a2e8f20ebe2edb2a93bbce9199e6b7ae4" kind="function"><name>operator&gt;=</name></member>
     <member refid="namespaceklotter_1aafbf3062eca044adc3d6d3cf54778a51" kind="function"><name>base_cast</name></member>
     <member refid="namespaceklotter_1a97ebef3ce88032d5a9016b09c001d176" kind="function"><name>is_flag_set</name></member>
     <member refid="namespaceklotter_1a70c3ecdc0214c61c6277dda3f1f5f963" kind="function"><name>test_themes</name></member>
@@ -1217,6 +1255,8 @@
     <member refid="namespaceVisualDebugging_1_1Colors_1ad07c3dd984bea8d656d3eba4d38f8c3c" kind="variable"><name>black</name></member>
   </compound>
   <compound refid="topics_8h" kind="file"><name>topics.h</name>
+  </compound>
+  <compound refid="angle_8h" kind="file"><name>angle.h</name>
   </compound>
   <compound refid="assert_8h" kind="file"><name>assert.h</name>
     <member refid="assert_8h_1aca68c0d4ac8df0838e209fb5300f7be3" kind="define"><name>ASSERT</name></member>

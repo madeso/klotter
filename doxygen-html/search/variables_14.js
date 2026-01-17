@@ -1,12 +1,21 @@
 var searchData=
 [
-  ['white_0',['white',['../group__imguicolors.html#ga3bf146ca37035a30171e70de8f9c8e69',1,'klotter::imgui::white'],['../namespaceklotter_1_1colors.html#a31ced28375c71daf9b639bdcb0e282e8',1,'klotter::colors::white'],['../namespaceVisualDebugging_1_1Colors.html#aca2c2af7b16321d48a0ab354820a6757',1,'VisualDebugging::Colors::white']]],
-  ['widget_5fborder_1',['widget_border',['../structklotter_1_1SCurveImguiSettings.html#a8230b6db647ca138608e3c231f69d993',1,'klotter::SCurveImguiSettings']]],
-  ['widget_5fsize_2',['widget_size',['../structklotter_1_1SCurveImguiSettings.html#a97bec8de74ff2f48bdc3425827ee1331',1,'klotter::SCurveImguiSettings']]],
-  ['window_5fsize_3',['window_size',['../structklotter_1_1PostProcArg.html#af8b4768a61672c5d15f7dbd363bef215',1,'klotter::PostProcArg::window_size'],['../structklotter_1_1BuildArg.html#a3db0e7328f926a793438016339563e24',1,'klotter::BuildArg::window_size'],['../structklotter_1_1EffectStack.html#a69f6d22d0045f408054bd97ed6a67c66',1,'klotter::EffectStack::window_size'],['../structklotter_1_1RenderWorld.html#a93e35103ec16f4e85876bc457d3b5b0b',1,'klotter::RenderWorld::window_size']]],
-  ['world_4',['world',['../structklotter_1_1PostProcArg.html#ae521c7b4cb6fef35f2a72569076209df',1,'klotter::PostProcArg']]],
-  ['world_5ffrom_5flocal_5funi_5',['world_from_local_uni',['../structklotter_1_1LoadedShader__SingleColor.html#a2871864eddb63c2d7545c77d93023491',1,'klotter::LoadedShader_SingleColor::world_from_local_uni'],['../structklotter_1_1LoadedShader__OnlyDepth.html#a3a2367ed94c50f8280c425bc5fcba4c2',1,'klotter::LoadedShader_OnlyDepth::world_from_local_uni'],['../structklotter_1_1LoadedShader__Unlit.html#a539d07d5134064aa9e1dcf0ef093c7d2',1,'klotter::LoadedShader_Unlit::world_from_local_uni'],['../structklotter_1_1LoadedShader__Default.html#a19434b2494aa3403a36ee38529e670dd',1,'klotter::LoadedShader_Default::world_from_local_uni']]],
-  ['world_5ffrom_5flocals_6',['world_from_locals',['../structklotter_1_1MeshInstance__TransformInstanced.html#a35913435778f8c6634d2bc6a4e3ad218',1,'klotter::MeshInstance_TransformInstanced']]],
-  ['world_5fpos_5funi_7',['world_pos_uni',['../structklotter_1_1FrustumLightUniforms.html#a5ddcc07c053643551d55f402ec0efd29',1,'klotter::FrustumLightUniforms']]],
-  ['world_5fposition_8',['world_position',['../structklotter_1_1MeshInstance.html#aa66d5c0ed6cd84d457a9c3c48b518ed0',1,'klotter::MeshInstance']]]
+  ['v0_0',['v0',['../structklotter_1_1geom_1_1Triangle.html#a61be1f89bfcc389f270530ec1ac5238d',1,'klotter::geom::Triangle']]],
+  ['v1_1',['v1',['../structklotter_1_1geom_1_1Triangle.html#ad35134c153b48f099577b23dcf0c7f7f',1,'klotter::geom::Triangle']]],
+  ['v2_2',['v2',['../structklotter_1_1geom_1_1Triangle.html#a49c1f90c967a98d15c2330469c330196',1,'klotter::geom::Triangle']]],
+  ['va_3',['va',['../structklotter_1_1LineDrawer.html#a52c18c43c89566f13ab8478dec427eb4',1,'klotter::LineDrawer']]],
+  ['value_4',['value',['../structklotter_1_1FloatDragShaderProp.html#a6664119eb134454d8ef61979bbbc73fb',1,'klotter::FloatDragShaderProp::value'],['../structklotter_1_1FloatSliderShaderProp.html#a34eaecd8ec3a52fa9a146a17fbab666d',1,'klotter::FloatSliderShaderProp::value']]],
+  ['vao_5',['vao',['../structklotter_1_1CompiledGeom.html#a9c61cb6bfef749b69af91f6802dcb67a',1,'klotter::CompiledGeom::vao'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a853a5b1e570c8eeece2e23110a45040d',1,'klotter::CompiledGeom_TransformInstance::vao']]],
+  ['vb_6',['vb',['../structklotter_1_1LineDrawer.html#a7beef0fd9940b73c8023a0c2f9af54c4',1,'klotter::LineDrawer']]],
+  ['vbo_7',['vbo',['../structklotter_1_1CompiledGeom.html#a9d480775171d797a0604199ce661b0c1',1,'klotter::CompiledGeom::vbo'],['../structklotter_1_1CompiledGeom__TransformInstance.html#a0e178ef0c09b2968213783208092dcf7',1,'klotter::CompiledGeom_TransformInstance::vbo']]],
+  ['vermillion_8',['vermillion',['../namespacesvg.html#aafb8a48a5244e78109e971b73400358e',1,'svg']]],
+  ['vert_9',['vert',['../structklotter_1_1BlurEffect.html#a987f9b83de4e9c7935207f5da9776736',1,'klotter::BlurEffect']]],
+  ['vert_5fp_10',['vert_p',['../structklotter_1_1BlurEffect.html#a4619799774fcac1b4fb0293b7403f8ab',1,'klotter::BlurEffect']]],
+  ['vertex_11',['vertex',['../structklotter_1_1ShaderSource__withLayout.html#aac692ba1345ceaf0c763d523f9ec1afd',1,'klotter::ShaderSource_withLayout::vertex'],['../structklotter_1_1ShaderSource.html#a6b9e1c440250f9b203724b907da93f18',1,'klotter::ShaderSource::vertex']]],
+  ['vertices_12',['vertices',['../structklotter_1_1Geom.html#a5f55a031de35199a3bd11ca612a08aae',1,'klotter::Geom']]],
+  ['verydarkgrey_13',['veryDarkGrey',['../namespaceVisualDebugging_1_1Colors.html#a9c99a0c3dd5c14dfc176d245918fb95c',1,'VisualDebugging::Colors']]],
+  ['view_5ffrom_5fworld_14',['view_from_world',['../structklotter_1_1CompiledCamera.html#a8069b0435d682041843d9af2c4f49f19',1,'klotter::CompiledCamera']]],
+  ['view_5ffrom_5fworld_5funi_15',['view_from_world_uni',['../structklotter_1_1LineDrawer.html#a8268353446742e802b34b01fa62276cc',1,'klotter::LineDrawer::view_from_world_uni'],['../structklotter_1_1CameraUniformBuffer.html#aaae605f9cf97189117b80735ec12b77f',1,'klotter::CameraUniformBuffer::view_from_world_uni']]],
+  ['view_5fposition_5funi_16',['view_position_uni',['../structklotter_1_1LoadedShader__Default.html#ab94e2191d8eb5b45a7b5ecea9baab7c4',1,'klotter::LoadedShader_Default']]],
+  ['violet_17',['violet',['../group__imguicolors.html#gac5bdda2c8e3ff8f790e81e5c992f2296',1,'klotter::imgui']]]
 ];

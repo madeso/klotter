@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="31" column="7" bodyfile="src/klotter/render/color.h" bodystart="31" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="33" column="7" bodyfile="src/klotter/render/color.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1Lch_1a08063f321f613a87ea3ecc526585ac41" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -30,11 +30,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="32" column="7" bodyfile="src/klotter/render/color.h" bodystart="32" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="34" column="7" bodyfile="src/klotter/render/color.h" bodystart="34" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1Lch_1a351d99bc07633ea30d2a1a5fb6442a42" prot="public" static="no" mutable="no">
-        <type>float</type>
-        <definition>float klotter::Lch::h</definition>
+      <memberdef kind="variable" id="structklotter_1_1Lch_1a43f461c4bc7d194a1a547e4de7aeca35" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">Angle</ref></type>
+        <definition>Angle klotter::Lch::h</definition>
         <argsstring></argsstring>
         <name>h</name>
         <qualifiedname>klotter::Lch::h</qualifiedname>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="33" column="7" bodyfile="src/klotter/render/color.h" bodystart="33" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="35" column="7" bodyfile="src/klotter/render/color.h" bodystart="35" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -52,10 +52,23 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/color.h" line="29" column="1" bodyfile="src/klotter/render/color.h" bodystart="30" bodyend="34"/>
+    <collaborationgraph>
+      <node id="2">
+        <label>klotter::Angle</label>
+        <link refid="structklotter_1_1Angle"/>
+      </node>
+      <node id="1">
+        <label>klotter::Lch</label>
+        <link refid="structklotter_1_1Lch"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>h</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/color.h" line="31" column="1" bodyfile="src/klotter/render/color.h" bodystart="32" bodyend="36"/>
     <listofallmembers>
       <member refid="structklotter_1_1Lch_1a08063f321f613a87ea3ecc526585ac41" prot="public" virt="non-virtual"><scope>klotter::Lch</scope><name>c</name></member>
-      <member refid="structklotter_1_1Lch_1a351d99bc07633ea30d2a1a5fb6442a42" prot="public" virt="non-virtual"><scope>klotter::Lch</scope><name>h</name></member>
+      <member refid="structklotter_1_1Lch_1a43f461c4bc7d194a1a547e4de7aeca35" prot="public" virt="non-virtual"><scope>klotter::Lch</scope><name>h</name></member>
       <member refid="structklotter_1_1Lch_1aa7eade69dc013d08f57961762e26c470" prot="public" virt="non-virtual"><scope>klotter::Lch</scope><name>l</name></member>
     </listofallmembers>
   </compounddef>

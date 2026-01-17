@@ -9,10 +9,14 @@
     <includes local="yes">imgui.h</includes>
     <includes local="no">memory</includes>
     <incdepgraph>
-      <node id="25">
+      <node id="14">
+        <label>klotter/angle.h</label>
+        <link refid="angle_8h"/>
+      </node>
+      <node id="26">
         <label>klotter/dependency_sdl.h</label>
         <link refid="dependency__sdl_8h"/>
-        <childnode refid="26" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
       </node>
       <node id="9">
@@ -28,9 +32,9 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-        <childnode refid="25" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -52,6 +56,8 @@
       <node id="13">
         <label>klotter/render/color.h</label>
         <link refid="color_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
       </node>
       <node id="12">
         <label>klotter/render/debug.h</label>
@@ -63,7 +69,7 @@
         <label>klotter/render/enable_high_performance_graphics.h</label>
         <link refid="enable__high__performance__graphics_8h"/>
       </node>
-      <node id="15">
+      <node id="16">
         <label>klotter/render/material.h</label>
         <link refid="material_8h"/>
         <childnode refid="13" relation="include">
@@ -72,7 +78,7 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="8">
@@ -81,13 +87,13 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="15">
         <label>klotter/render/postproc.h</label>
         <link refid="postproc_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="18">
         <label>klotter/render/render_settings.h</label>
         <link refid="render__settings_8h"/>
       </node>
@@ -98,15 +104,15 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -121,58 +127,58 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="19">
         <label>klotter/render/vertex_layout.h</label>
         <link refid="vertex__layout_8h"/>
-        <childnode refid="19" relation="include">
-        </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-      </node>
-      <node id="21">
-        <label>klotter/render/world.h</label>
-        <link refid="world_8h"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="22">
-        <label>klotter/scurve.h</label>
-        <link refid="scurve_8h"/>
+        <label>klotter/render/world.h</label>
+        <link refid="world_8h"/>
         <childnode refid="23" relation="include">
         </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
       </node>
-      <node id="26">
+      <node id="23">
+        <label>klotter/scurve.h</label>
+        <link refid="scurve_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
         <label>SDL.h</label>
       </node>
       <node id="10">
         <label>cstdint</label>
       </node>
-      <node id="23">
+      <node id="24">
         <label>imgui.h</label>
       </node>
-      <node id="19">
+      <node id="20">
         <label>map</label>
       </node>
       <node id="11">
         <label>memory</label>
       </node>
-      <node id="16">
+      <node id="17">
         <label>optional</label>
       </node>
-      <node id="20">
+      <node id="21">
         <label>set</label>
       </node>
-      <node id="24">
+      <node id="25">
         <label>unordered_set</label>
       </node>
     </incdepgraph>

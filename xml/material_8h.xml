@@ -9,47 +9,53 @@
     <includedby refid="renderer_8h" local="yes">src/klotter/render/renderer.h</includedby>
     <includedby refid="world_8h" local="yes">src/klotter/render/world.h</includedby>
     <incdepgraph>
-      <node id="5">
+      <node id="3">
+        <label>klotter/angle.h</label>
+        <link refid="angle_8h"/>
+      </node>
+      <node id="6">
         <label>klotter/feature_flags.h</label>
         <link refid="feature__flags_8h"/>
       </node>
       <node id="2">
         <label>klotter/render/color.h</label>
         <link refid="color_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/klotter/render/material.h</label>
         <link refid="material_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
-      <node id="4">
+      <node id="5">
         <label>klotter/render/opengl_labels.h</label>
         <link refid="opengl__labels_8h"/>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>klotter/render/texture.h</label>
-        <link refid="texture_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>cstdint</label>
+      <node id="4">
+        <label>klotter/render/texture.h</label>
+        <link refid="texture_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="7">
-        <label>memory</label>
+        <label>cstdint</label>
       </node>
       <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="9">
         <label>optional</label>
       </node>
     </incdepgraph>
