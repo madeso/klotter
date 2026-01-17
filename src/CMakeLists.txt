@@ -83,6 +83,7 @@ set(src_render
 
 set(src_base
     klotter/assert.cc klotter/assert.h
+    klotter/angle.cc klotter/angle.h
     klotter/cint.h
     klotter/compiler_warning.h
     klotter/cpp.cc klotter/cpp.h
