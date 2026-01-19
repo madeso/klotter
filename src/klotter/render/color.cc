@@ -39,26 +39,26 @@ Lab oklab_from_linear(const Lrgb& c)
 	const auto m = 0.2119034982f * cr + 0.6806995451f * cg + 0.1073969566f * cb;
 	const auto s = 0.0883024619f * cr + 0.2817188376f * cg + 0.6299787005f * cb;
 
-	const auto l_ = std::cbrtf(l);
-	const auto m_ = std::cbrtf(m);
-	const auto s_ = std::cbrtf(s);
+	const auto lp = std::cbrtf(l);
+	const auto mp = std::cbrtf(m);
+	const auto sp = std::cbrtf(s);
 
 	return {
-		.l = 0.2104542553f * l_ + 0.7936177850f * m_ - 0.0040720468f * s_,
-		.a = 1.9779984951f * l_ - 2.4285922050f * m_ + 0.4505937099f * s_,
-		.b = 0.0259040371f * l_ + 0.7827717662f * m_ - 0.8086757660f * s_,
+		.l = 0.2104542553f * lp + 0.7936177850f * mp - 0.0040720468f * sp,
+		.a = 1.9779984951f * lp - 2.4285922050f * mp + 0.4505937099f * sp,
+		.b = 0.0259040371f * lp + 0.7827717662f * mp - 0.8086757660f * sp,
 	};
 }
 
 Lrgb linear_from_oklab(const Lab& c)
 {
-	const auto l_ = c.l + 0.3963377774f * c.a + 0.2158037573f * c.b;
-	const auto m_ = c.l - 0.1055613458f * c.a - 0.0638541728f * c.b;
-	const auto s_ = c.l - 0.0894841775f * c.a - 1.2914855480f * c.b;
+	const auto lp = c.l + 0.3963377774f * c.a + 0.2158037573f * c.b;
+	const auto mp = c.l - 0.1055613458f * c.a - 0.0638541728f * c.b;
+	const auto sp = c.l - 0.0894841775f * c.a - 1.2914855480f * c.b;
 
-	const auto l = l_ * l_ * l_;
-	const auto m = m_ * m_ * m_;
-	const auto s = s_ * s_ * s_;
+	const auto l = lp * lp * lp;
+	const auto m = mp * mp * mp;
+	const auto s = sp * sp * sp;
 
 	return {{
 		+4.0767416621f * l - 3.3077115913f * m + 0.2309699292f * s,

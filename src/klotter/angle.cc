@@ -1,5 +1,5 @@
 #include "klotter/angle.h"
-#include "assert.h"
+#include "klotter/assert.h"
 
 #include <cmath>
 
