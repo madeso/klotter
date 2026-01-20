@@ -16,8 +16,6 @@ float linear_from_srgb(float value, float gamma)
 }
 
 
-
-
 Lrgb linear_from_srgb(const Color& value, float gamma)
 {
 	return
@@ -26,6 +24,17 @@ Lrgb linear_from_srgb(const Color& value, float gamma)
 		linear_from_srgb(value.g, gamma),
 		linear_from_srgb(value.b, gamma)
 	}};
+}
+
+float srgb_from_linear(float lin)
+{
+	// https://youtu.be/_zQ_uBAHA4A?t=1333
+	return std::max(1.055f * std::pow(lin, 0.416666667f) - 0.055f, 0.0f);
+}
+
+Color srgb_from_linear(const Lrgb& value)
+{
+	return {srgb_from_linear(value.linear[0]), srgb_from_linear(value.linear[1]), srgb_from_linear(value.linear[2])};
 }
 
 

@@ -9,6 +9,15 @@ using namespace klotter;
 
 namespace
 {
+catchy::FalseString are_equal(const Color& lhs, const Color& rhs)
+{
+	return testing::Equaler{lhs, rhs}
+		.add("r", [](const auto& c) { return c.r; }, testing::machine_epsilon)
+		.add("g", [](const auto& c) { return c.g; }, testing::machine_epsilon)
+		.add("b", [](const auto& c) { return c.b; }, testing::machine_epsilon)
+		.resolve();
+}
+
 catchy::FalseString are_equal(const Lrgb& lhs, const Lrgb& rhs)
 {
 	return testing::Equaler{lhs, rhs}
@@ -44,6 +53,8 @@ TEST_CASE("color space conversion black/white", "[color]")
 	    CHECK(are_equal(linear_from_srgb(Color{0.0f, 0.0f, 0.0f}, ignore_gamma), {{0.0f, 0.0f, 0.0f}}));
 		CHECK(are_equal(linear_from_srgb(Color{1.0f, 1.0f, 1.0f}, ignore_gamma), {{1.0f, 1.0f, 1.0f}}));
 	}
+	CHECK(are_equal(srgb_from_linear(Lrgb{{0.0f, 0.0f, 0.0f}}), Color{0.0f, 0.0f, 0.0f}));
+	CHECK(are_equal(srgb_from_linear(Lrgb{{1.0f, 1.0f, 1.0f}}), Color{1.0f, 1.0f, 1.0f}));
 
     CHECK(are_equal(oklab_from_linear({{0.0f, 0.0f, 0.0f}}), {0.0f, 0.0f, 0.0f}));
     CHECK(are_equal(linear_from_oklab({0.0f, 0.0f, 0.0f}), {{0.0f, 0.0f, 0.0f}}));

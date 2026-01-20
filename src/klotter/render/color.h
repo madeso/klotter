@@ -47,6 +47,9 @@ struct Lab
 float linear_from_srgb(float value, float gamma);
 Lrgb linear_from_srgb(const Color& value, float gamma);
 
+float srgb_from_linear(float value);
+Color srgb_from_linear(const Lrgb& value);
+
 // oklab & oklch
 Lab oklab_from_linear(const Lrgb& c);
 Lrgb linear_from_oklab(const Lab& c);
