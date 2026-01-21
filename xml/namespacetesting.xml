@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespacetesting" kind="namespace" language="C++">
+    <compoundname>testing</compoundname>
+    <innerclass refid="structtesting_1_1Equaler" prot="public">testing::Equaler</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacetesting_1a7892b559aa25d888858fe6ff4de4d7d1" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>float</type>
+        <definition>float testing::machine_epsilon</definition>
+        <argsstring></argsstring>
+        <name>machine_epsilon</name>
+        <qualifiedname>testing::machine_epsilon</qualifiedname>
+        <initializer>= 0.001f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/test.util.h" line="8" column="17" bodyfile="src/klotter/test.util.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/test.util.h" line="5" column="1"/>
+  </compounddef>
+</doxygen>

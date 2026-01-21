@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="camera_8h" kind="file" language="C++">
+    <compoundname>camera.h</compoundname>
+    <includes refid="space_8h" local="yes">klotter/render/space.h</includes>
+    <includedby refid="klotter_8h" local="yes">src/klotter/klotter.h</includedby>
+    <includedby refid="shadow_8h" local="yes">src/klotter/render/shadow.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/klotter/render/camera.h</label>
+        <link refid="camera_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter/render/space.h</label>
+        <link refid="space_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/klotter/klotter.h</label>
+        <link refid="klotter_8h"/>
+      </node>
+      <node id="1">
+        <label>src/klotter/render/camera.h</label>
+        <link refid="camera_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/klotter/render/shadow.h</label>
+        <link refid="shadow_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structklotter_1_1Camera" prot="public">klotter::Camera</innerclass>
+    <innerclass refid="structklotter_1_1OrthoCamera" prot="public">klotter::OrthoCamera</innerclass>
+    <innerclass refid="structklotter_1_1CompiledCamera" prot="public">klotter::CompiledCamera</innerclass>
+    <innernamespace refid="namespaceklotter">klotter</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="space_8h" kindref="compound">klotter/render/space.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceklotter" kindref="compound">klotter</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>rename<sp/>to<sp/>PerspectiveCamera?<sp/>or<sp/>PerspCamera?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="structklotter_1_1Camera" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1Camera" kindref="compound">Camera</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="structklotter_1_1Camera_1a44876819aa360977eb57fbc806766656" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Camera_1a44876819aa360977eb57fbc806766656" kindref="member">fov</ref><sp/>=<sp/>45.0f;</highlight></codeline>
+<codeline lineno="17" refid="structklotter_1_1Camera_1ae97d581da5fb4a150c56f128346ce0a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Camera_1ae97d581da5fb4a150c56f128346ce0a5" kindref="member">near</ref><sp/>=<sp/>0.1f;</highlight></codeline>
+<codeline lineno="18" refid="structklotter_1_1Camera_1aa5580be75db05bc2a99273caf62b3394" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Camera_1aa5580be75db05bc2a99273caf62b3394" kindref="member">far</ref><sp/>=<sp/>100.0f;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="structklotter_1_1Camera_1a95a31013fb1a105c79f2df166c099e46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1Camera_1a95a31013fb1a105c79f2df166c099e46" kindref="member">position</ref><sp/>=<sp/>glm::vec3{0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structklotter_1_1Camera_1a51008746c43ccdb08d655e9f2f230472" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Camera_1a51008746c43ccdb08d655e9f2f230472" kindref="member">yaw</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="23" refid="structklotter_1_1Camera_1a239ef16a40798863e933a2b56db8de78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Camera_1a239ef16a40798863e933a2b56db8de78" kindref="member">pitch</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="structklotter_1_1OrthoCamera" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1OrthoCamera" kindref="compound">OrthoCamera</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29" refid="structklotter_1_1OrthoCamera_1aab878670ba7a0c8357015426cbae5fe8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1OrthoCamera_1aab878670ba7a0c8357015426cbae5fe8" kindref="member">size</ref><sp/>=<sp/>100.0f;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="structklotter_1_1OrthoCamera_1a770146cc46fe2e3b200f670c9983fcb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1OrthoCamera_1a770146cc46fe2e3b200f670c9983fcb4" kindref="member">near</ref><sp/>=<sp/>0.1f;</highlight></codeline>
+<codeline lineno="32" refid="structklotter_1_1OrthoCamera_1aad849b9d7c4ae2741c230f1978add4fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1OrthoCamera_1aad849b9d7c4ae2741c230f1978add4fe" kindref="member">far</ref><sp/>=<sp/>100.0f;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="structklotter_1_1OrthoCamera_1ab5f7e056f935b49c22d6c80e82f67c6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1OrthoCamera_1ab5f7e056f935b49c22d6c80e82f67c6d" kindref="member">position</ref><sp/>=<sp/>glm::vec3{0.0f,<sp/>0.0f,<sp/>0.0f};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="structklotter_1_1OrthoCamera_1ad585a230be64c783909c5d9719a8256d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1OrthoCamera_1ad585a230be64c783909c5d9719a8256d" kindref="member">yaw</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="37" refid="structklotter_1_1OrthoCamera_1ada539ed8a71d3a041487ef1a9754e4da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1OrthoCamera_1ada539ed8a71d3a041487ef1a9754e4da" kindref="member">pitch</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structklotter_1_1CompiledCamera" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45" refid="structklotter_1_1CompiledCamera_1a8649d737ca17ac556fdfe9e8b064e461" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::mat4<sp/><ref refid="structklotter_1_1CompiledCamera_1a8649d737ca17ac556fdfe9e8b064e461" kindref="member">clip_from_view</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structklotter_1_1CompiledCamera_1a8069b0435d682041843d9af2c4f49f19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::mat4<sp/><ref refid="structklotter_1_1CompiledCamera_1a8069b0435d682041843d9af2c4f49f19" kindref="member">view_from_world</ref>;</highlight></codeline>
+<codeline lineno="49" refid="structklotter_1_1CompiledCamera_1a27367e1205196de6e8c6c8c66ee56ff9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1CompiledCamera_1a27367e1205196de6e8c6c8c66ee56ff9" kindref="member">position</ref>;</highlight></codeline>
+<codeline lineno="50" refid="structklotter_1_1CompiledCamera_1af8f3aacb0e4384ae60db486c14dfdb60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>glm::vec3<sp/><ref refid="structklotter_1_1CompiledCamera_1af8f3aacb0e4384ae60db486c14dfdb60" kindref="member">in</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1CameraVectors" kindref="compound">CameraVectors</ref><sp/><ref refid="group__render_1gaa482e8fe45daf1b222cbb8afc10f1d8b" kindref="member">create_vectors</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Camera" kindref="compound">Camera</ref>&amp;<sp/>camera);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>the<sp/>meaning<sp/>of<sp/>this<sp/>function<sp/>is<sp/>unclear...<sp/>move<sp/>closer<sp/>to<sp/>usage<sp/>or<sp/>remove?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" refkind="member"><highlight class="normal">glm::mat4<sp/><ref refid="group__render_1ga3ceb6e1d2428afc0bd213b454601023a" kindref="member">create_view_from_world_mat</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1CameraVectors" kindref="compound">CameraVectors</ref>&amp;<sp/>cv);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref><sp/><ref refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kindref="member">compile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1Camera" kindref="compound">Camera</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::ivec2&amp;<sp/>window_size);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="group__render_1ga5068b304bb08be791391379a39514cb2" refkind="member"><highlight class="normal"><ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref><sp/><ref refid="group__render_1ga877a3ed04c88761bdfb420e7d4190be4" kindref="member">compile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1OrthoCamera" kindref="compound">OrthoCamera</ref>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::ivec2&amp;<sp/>window_size);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//<sp/>todo(Gustav):<sp/>also<sp/>include<sp/>depth,<sp/>what<sp/>happens<sp/>if<sp/>the<sp/>position<sp/>is<sp/>behind?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" refkind="member"><highlight class="normal">glm::vec2<sp/><ref refid="group__render_1ga96a0f5ab096cbed0b9ebdc24ac13e7ca" kindref="member">screen_from_world</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structklotter_1_1CompiledCamera" kindref="compound">CompiledCamera</ref>&amp;<sp/>cam,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec3&amp;<sp/>world_pos,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>glm::vec2&amp;<sp/><ref refid="group__render_1gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da" kindref="member">resolution</ref>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>namespace<sp/>klotter</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/render/camera.h"/>
+  </compounddef>
+</doxygen>
