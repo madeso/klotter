@@ -1,5 +1,3 @@
-
-
 #include "klotter/imgui.theme.h"
 
 #include "klotter/render/color.h"
