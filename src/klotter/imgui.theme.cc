@@ -25,159 +25,123 @@ struct SelectedTheme
 	int* selection;
 };
 
-void test_themes()
+void set_color(ImGuiStyle& style, ImGuiCol_ color, const Lch& lch)
 {
-	std::vector<ThemeColor*> colors;
-	
-	#define USE_COLOR(name) \
-		do \
-		{ \
-			static ThemeColor color = { #name, {1.0f, 0.0f, Angle::from_degrees(50.0f)} };\
-			colors.emplace_back(&color);\
-		} while(false)
-	// bkg
-	USE_COLOR(bg_dark);
-	USE_COLOR(bg);
-	USE_COLOR(bg_light);
-	USE_COLOR(border);
-	// text
-	USE_COLOR(text);
-	USE_COLOR(text_muted);
-	// buttons
-	USE_COLOR(primary);
-	USE_COLOR(secondary);
-	// messages
-	USE_COLOR(danger);
-	USE_COLOR(warning);
-	USE_COLOR(success);
-	USE_COLOR(info);
-	#undef USE_COLOR
+	const auto lab = oklab_from_oklch(lch);
+	const auto lin = linear_from_oklab(lab);
+	const auto rgb = srgb_from_linear(lin);
+	style.Colors[color] = ImVec4(rgb.r, rgb.g, rgb.b, 1.0f);
+}
 
-	if (ImGui::BeginTable("Colors", 4))
-	{
-		// ImGuiTableColumnFlags_
-		ImGui::TableSetupColumn("Color");
-		ImGui::TableSetupColumn("Light");
-		ImGui::TableSetupColumn("Chroma");
-		ImGui::TableSetupColumn("Hue");
-		ImGui::TableHeadersRow();
-		for (const auto& c : colors)
-		{
-			ImGui::PushID(c);
-
-			ImGui::TableNextRow();
-
-			ImGui::TableNextColumn();
-			ImGui::TextUnformatted(c->name.c_str());
-
-			ImGui::TableNextColumn();
-			ImGui::SliderFloat("##l", &c->color.l, 0.0f, 1.0f);
-
-			ImGui::TableNextColumn();
-			ImGui::SliderFloat("##c", &c->color.c, 0.0f, 1.0f);
-
-			ImGui::TableNextColumn();
-			auto deg = c->color.h.as_degrees();
-			if (ImGui::SliderFloat("##h", &deg, 0.0f, 360.0f))
-			{
-				c->color.h = Angle::from_degrees(deg);
-			}
-
-			ImGui::PopID();
-		}
-		ImGui::EndTable();
-	}
-
+void setup_custom_theme()
+{
+	// themes
 	ImGuiStyle& style = ImGui::GetStyle();
 
+	style.WindowTitleAlign = {0.5f, 0.5f};
+	style.WindowPadding = {10, 8};
+	style.FramePadding = {10, 4};
+	style.ItemSpacing = {10, 4};
+	style.ItemInnerSpacing = {10, 4};
 	style.WindowRounding = 8.0f;
 	style.ChildRounding = 8.0f;
 	style.FrameRounding = 6.0f;
 	style.PopupRounding = 6.0f;
 	style.ScrollbarRounding = 6.0f;
+	style.ScrollbarPadding = 3;
 	style.GrabRounding = 6.0f;
 	style.TabRounding = 6.0f;
 
+	// // bkg
+	const auto light = false;
+	const auto chroma = 0.0f;
+	const auto hue = Angle::from_degrees(214);
+
+	// bottom
+	auto bg_dark = Lch{light ? 0.9f : 0, chroma, hue};
+	// middle
+	auto bg = Lch{light ? 0.95f : 0.1f, chroma, hue};
+	// top
+	auto bg_light = Lch{light ? 1.0f : 0.3f, chroma, hue};
+
+	auto border = Lch{0, chroma, hue};
 	
-	std::vector<SelectedTheme> selections;
-	#define USE_THEME(x) \
-		do \
-		{ \
-		static int sel = -1;\
-		selections.emplace_back(SelectedTheme { #x, x, &sel});\
-		} while (false)
-	USE_THEME(ImGuiCol_Text);
-	USE_THEME(ImGuiCol_TextDisabled);
-	USE_THEME(ImGuiCol_WindowBg);
-	USE_THEME(ImGuiCol_ChildBg);
-	USE_THEME(ImGuiCol_PopupBg);
-	USE_THEME(ImGuiCol_Border);
-	USE_THEME(ImGuiCol_FrameBg);
-	USE_THEME(ImGuiCol_FrameBgHovered);
-	USE_THEME(ImGuiCol_TitleBg);
-	USE_THEME(ImGuiCol_TitleBgActive);
-	USE_THEME(ImGuiCol_TitleBgCollapsed);
-	USE_THEME(ImGuiCol_MenuBarBg);
-	USE_THEME(ImGuiCol_ScrollbarGrabActive);
-	USE_THEME(ImGuiCol_CheckMark);
-	USE_THEME(ImGuiCol_SliderGrab);
-	USE_THEME(ImGuiCol_Header);
-	USE_THEME(ImGuiCol_HeaderHovered);
-	USE_THEME(ImGuiCol_SeparatorActive);
-	USE_THEME(ImGuiCol_ResizeGrip);
-	USE_THEME(ImGuiCol_ResizeGripHovered);
-	USE_THEME(ImGuiCol_InputTextCursor);
-	USE_THEME(ImGuiCol_TabHovered);
-	USE_THEME(ImGuiCol_Tab);
-	USE_THEME(ImGuiCol_TabSelected);
-	USE_THEME(ImGuiCol_TabSelectedOverline);
-	USE_THEME(ImGuiCol_TabDimmed);
-	USE_THEME(ImGuiCol_TabDimmedSelected);
-	USE_THEME(ImGuiCol_TabDimmedSelectedOverline);
-	USE_THEME(ImGuiCol_PlotLines);
-	USE_THEME(ImGuiCol_TableHeaderBg);
-	USE_THEME(ImGuiCol_TableBorderStrong);
-	USE_THEME(ImGuiCol_TableBorderLight);
-	USE_THEME(ImGuiCol_TableRowBg);
-	USE_THEME(ImGuiCol_TableRowBgAlt);
-	USE_THEME(ImGuiCol_TextLink);
-	USE_THEME(ImGuiCol_TextSelectedBg);
-	USE_THEME(ImGuiCol_TreeLines);
-	USE_THEME(ImGuiCol_DragDropTarget);
-	USE_THEME(ImGuiCol_UnsavedMarker);
-	USE_THEME(ImGuiCol_NavCursor);
-	USE_THEME(ImGuiCol_NavWindowingHighlight);
-	USE_THEME(ImGuiCol_NavWindowingDimBg);
-	USE_THEME(ImGuiCol_ModalWindowDimBg);
-	#undef USE_THEME
+	// // text
+	// headings
+	auto text = Lch{light ? 0.05f : 0.95f, chroma, hue};
+	auto text_muted = Lch{light ? 0.30f : 0.70f, chroma, hue};
+	
+	// // buttons
+	auto primary = Lch{0, chroma, hue};
+	auto secondary = Lch{0, chroma, hue};
+	
+	// // messages
+	// USE_COLOR(danger);
+	// USE_COLOR(warning);
+	// USE_COLOR(success);
+	// USE_COLOR(info);
 
-	for (const auto& s: selections)
+	set_color(style, ImGuiCol_Text, text);
+	// set_color(style, ImGuiCol_TextDisabled, lch_color);
+	set_color(style, ImGuiCol_WindowBg, bg_dark);
+	set_color(style, ImGuiCol_ChildBg, bg_dark);
+	set_color(style, ImGuiCol_PopupBg, bg_dark);
+	
+	set_color(style, ImGuiCol_BorderShadow, bg_light);
+	set_color(style, ImGuiCol_Border, bg_light);
+
+	set_color(style, ImGuiCol_FrameBg, bg);
+	set_color(style, ImGuiCol_FrameBgHovered, bg_light);
+	set_color(style, ImGuiCol_FrameBgActive, bg_light);
+	
+	set_color(style, ImGuiCol_TitleBg, bg_dark);
+	set_color(style, ImGuiCol_TitleBgActive, bg_light);
+	set_color(style, ImGuiCol_TitleBgCollapsed, bg_dark);
+
+	set_color(style, ImGuiCol_MenuBarBg, bg_light);
+
+	set_color(style, ImGuiCol_Separator, bg_light);
+	// set_color(style, ImGuiCol_SeparatorActive, lch_color);
+
+	// set_color(style, ImGuiCol_ScrollbarGrabActive, bg_light);
+	// set_color(style, ImGuiCol_CheckMark, lch_color);
+	// set_color(style, ImGuiCol_SliderGrab, lch_color);
+	// set_color(style, ImGuiCol_Header, lch_color);
+	// set_color(style, ImGuiCol_HeaderHovered, lch_color);
+	
+	set_color(style, ImGuiCol_ResizeGrip, bg_light);
+	set_color(style, ImGuiCol_ResizeGripHovered, bg);
+
+	// set_color(style, ImGuiCol_InputTextCursor, lch_color);
+	// set_color(style, ImGuiCol_TabHovered, lch_color);
+	// set_color(style, ImGuiCol_Tab, lch_color);
+	// set_color(style, ImGuiCol_TabSelected, lch_color);
+	// set_color(style, ImGuiCol_TabSelectedOverline, lch_color);
+	// set_color(style, ImGuiCol_TabDimmed, lch_color);
+	// set_color(style, ImGuiCol_TabDimmedSelected, lch_color);
+	// set_color(style, ImGuiCol_TabDimmedSelectedOverline, lch_color);
+	// set_color(style, ImGuiCol_PlotLines, lch_color);
+	// set_color(style, ImGuiCol_TableHeaderBg, lch_color);
+	// set_color(style, ImGuiCol_TableBorderStrong, lch_color);
+	// set_color(style, ImGuiCol_TableBorderLight, lch_color);
+	// set_color(style, ImGuiCol_TableRowBg, lch_color);
+	// set_color(style, ImGuiCol_TableRowBgAlt, lch_color);
+	// set_color(style, ImGuiCol_TextLink, lch_color);
+	// set_color(style, ImGuiCol_TextSelectedBg, lch_color);
+	// set_color(style, ImGuiCol_TreeLines, lch_color);
+	// set_color(style, ImGuiCol_DragDropTarget, lch_color);
+	// set_color(style, ImGuiCol_UnsavedMarker, lch_color);
+	// set_color(style, ImGuiCol_NavCursor, lch_color);
+	// set_color(style, ImGuiCol_NavWindowingHighlight, lch_color);
+	// set_color(style, ImGuiCol_NavWindowingDimBg, lch_color);
+	// set_color(style, ImGuiCol_ModalWindowDimBg, lch_color);
+}
+
+void test_themes()
+{
+	if (ImGui::Button("setup"))
 	{
-		ImGui::PushID(s.selection);
-		if (ImGui::BeginCombo(s.name.c_str(), *s.selection != -1 ? colors[*s.selection]->name.c_str() : "???"))
-		{
-			int id = 0;
-			for (const auto& c: colors)
-			{
-				bool selected = *s.selection == id;
-				if (ImGui::Selectable(c->name.c_str(), &selected))
-				{
-					*s.selection = id;
-				}
-				id += 1;
-			}
-			ImGui::EndCombo();
-		}
-		ImGui::PopID();
-
-		if (*s.selection != -1)
-		{
-			const auto& lch = colors[*s.selection]->color;
-			const auto lab = oklab_from_oklch(lch);
-			const auto lin = linear_from_oklab(lab);
-			const auto rgb = srgb_from_linear(lin);
-			style.Colors[s.id] = ImVec4(rgb.r, rgb.g, rgb.b, 1.0f);
-		}
+		setup_custom_theme();
 	}
 }
 
