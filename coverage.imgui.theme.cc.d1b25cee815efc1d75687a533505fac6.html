@@ -69,7 +69,7 @@
     <div role="rowheader" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">Blocks</div>
   </div>
   <div class="Box-row Box-row--focus-gray py-2 d-flex">
-    <div role="gridcell" class="color-fg-muted flex-auto min-width-0 col-md-2"><a href="#l186">klotter::test_themes() (src/klotter/imgui.theme.cc:186)</a>    </div>
+    <div role="gridcell" class="color-fg-muted flex-auto min-width-0 col-md-2"><a href="#l150">klotter::test_themes() (src/klotter/imgui.theme.cc:150)</a>    </div>
     <div role="gridcell" class="color-fg-muted flex-auto min-width-0 d-flex flex-justify-end flex-wrap flex-items-baseline" data-sort="0">not called</div>
     <div role="gridcell" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">0.0%</div>
     <div role="gridcell" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">-%</div>
@@ -297,7 +297,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="kt">void</span><span class="w"> </span><span class="nf">test_themes</span><span class="p">()</span></td>
+        <td class="src"><span class="kt">void</span><span class="w"> </span><span class="nf">set_color</span><span class="p">(</span><span class="n">ImGuiStyle</span><span class="o">&amp;</span><span class="w"> </span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Lch</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lch</span><span class="p">)</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l29" href="#l29">29</a></td>
@@ -311,434 +311,434 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ThemeColor</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">colors</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">lab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oklab_from_oklch</span><span class="p">(</span><span class="n">lch</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l31" href="#l31">31</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span></td>
+        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">lin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linear_from_oklab</span><span class="p">(</span><span class="n">lab</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l32" href="#l32">32</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="cp">#define USE_COLOR(name) \</span></td>
+        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">srgb_from_linear</span><span class="p">(</span><span class="n">lin</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l33" href="#l33">33</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">		do \</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">Colors</span><span class="p">[</span><span class="n">color</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImVec4</span><span class="p">(</span><span class="n">rgb</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">rgb</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">rgb</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l34" href="#l34">34</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">		{ \</span></td>
+        <td class="src"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l35" href="#l35">35</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">			static ThemeColor color = { #name, {1.0f, 0.0f, Angle::from_degrees(50.0f)} };\</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l36" href="#l36">36</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">			colors.emplace_back(&amp;color);\</span></td>
+        <td class="src"><span class="kt">void</span><span class="w"> </span><span class="nf">setup_custom_theme</span><span class="p">()</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l37" href="#l37">37</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">		} while(false)</span></td>
+        <td class="src"><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l38" href="#l38">38</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="c1">// bkg</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// themes</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l39" href="#l39">39</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">bg_dark</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">ImGuiStyle</span><span class="o">&amp;</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">GetStyle</span><span class="p">();</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l40" href="#l40">40</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">bg</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l41" href="#l41">41</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">bg_light</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">WindowTitleAlign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.5f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l42" href="#l42">42</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">border</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">WindowPadding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l43" href="#l43">43</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="c1">// text</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">FramePadding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l44" href="#l44">44</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">text</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">ItemSpacing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l45" href="#l45">45</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">text_muted</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">ItemInnerSpacing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l46" href="#l46">46</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="c1">// buttons</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">WindowRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l47" href="#l47">47</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">primary</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">ChildRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l48" href="#l48">48</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">secondary</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">FrameRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l49" href="#l49">49</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="c1">// messages</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">PopupRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l50" href="#l50">50</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">danger</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">ScrollbarRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l51" href="#l51">51</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">warning</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">ScrollbarPadding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l52" href="#l52">52</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">success</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">GrabRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l53" href="#l53">53</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_COLOR</span><span class="p">(</span><span class="n">info</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">TabRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l54" href="#l54">54</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="cp">#undef USE_COLOR</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l55" href="#l55">55</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="c1">// // bkg</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l56" href="#l56">56</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ImGui</span><span class="o">::</span><span class="n">BeginTable</span><span class="p">(</span><span class="s">&quot;Colors&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span></td>
+        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">light</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l57" href="#l57">57</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="p">{</span></td>
+        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">chroma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l58" href="#l58">58</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="c1">// ImGuiTableColumnFlags_</span></td>
+        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">hue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mi">214</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l59" href="#l59">59</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableSetupColumn</span><span class="p">(</span><span class="s">&quot;Color&quot;</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l60" href="#l60">60</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableSetupColumn</span><span class="p">(</span><span class="s">&quot;Light&quot;</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// bottom</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableSetupColumn</span><span class="p">(</span><span class="s">&quot;Chroma&quot;</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">bg_dark</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lch</span><span class="p">{</span><span class="n">light</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0.9f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="n">hue</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableSetupColumn</span><span class="p">(</span><span class="s">&quot;Hue&quot;</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// middle</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l63" href="#l63">63</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableHeadersRow</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">bg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lch</span><span class="p">{</span><span class="n">light</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0.95f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">,</span><span class="w"> </span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="n">hue</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l64" href="#l64">64</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">colors</span><span class="p">)</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// top</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l65" href="#l65">65</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="p">{</span></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">bg_light</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lch</span><span class="p">{</span><span class="n">light</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1.0f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0.3f</span><span class="p">,</span><span class="w"> </span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="n">hue</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l66" href="#l66">66</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">PushID</span><span class="p">(</span><span class="n">c</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l67" href="#l67">67</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">border</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lch</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="n">hue</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l68" href="#l68">68</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableNextRow</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l69" href="#l69">69</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="c1">// // text</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l70" href="#l70">70</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableNextColumn</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// headings</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l71" href="#l71">71</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TextUnformatted</span><span class="p">(</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lch</span><span class="p">{</span><span class="n">light</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0.05f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0.95f</span><span class="p">,</span><span class="w"> </span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="n">hue</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l72" href="#l72">72</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">text_muted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lch</span><span class="p">{</span><span class="n">light</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0.30f</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0.70f</span><span class="p">,</span><span class="w"> </span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="n">hue</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l73" href="#l73">73</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableNextColumn</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l74" href="#l74">74</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;##l&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">color</span><span class="p">.</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// // buttons</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l75" href="#l75">75</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">primary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lch</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="n">hue</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l76" href="#l76">76</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableNextColumn</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">secondary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Lch</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">chroma</span><span class="p">,</span><span class="w"> </span><span class="n">hue</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l77" href="#l77">77</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;##c&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">color</span><span class="p">.</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l78" href="#l78">78</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="c1">// // messages</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l79" href="#l79">79</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">TableNextColumn</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// USE_COLOR(danger);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l80" href="#l80">80</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="k">auto</span><span class="w"> </span><span class="n">deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="o">-&gt;</span><span class="n">color</span><span class="p">.</span><span class="n">h</span><span class="p">.</span><span class="n">as_degrees</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// USE_COLOR(warning);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l81" href="#l81">81</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;##h&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">deg</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">360.0f</span><span class="p">))</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// USE_COLOR(success);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l82" href="#l82">82</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="p">{</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// USE_COLOR(info);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l83" href="#l83">83</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">				</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">color</span><span class="p">.</span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="n">deg</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l84" href="#l84">84</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="p">}</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_Text</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l85" href="#l85">85</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TextDisabled, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l86" href="#l86">86</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">PopID</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_WindowBg</span><span class="p">,</span><span class="w"> </span><span class="n">bg_dark</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l87" href="#l87">87</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="p">}</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_ChildBg</span><span class="p">,</span><span class="w"> </span><span class="n">bg_dark</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l88" href="#l88">88</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">EndTable</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_PopupBg</span><span class="p">,</span><span class="w"> </span><span class="n">bg_dark</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l89" href="#l89">89</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="p">}</span></td>
+        <td class="src"><span class="w">	</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l90" href="#l90">90</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_BorderShadow</span><span class="p">,</span><span class="w"> </span><span class="n">bg_light</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l91" href="#l91">91</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">ImGuiStyle</span><span class="o">&amp;</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">GetStyle</span><span class="p">();</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_Border</span><span class="p">,</span><span class="w"> </span><span class="n">bg_light</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l92" href="#l92">92</a></td>
@@ -752,49 +752,49 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">WindowRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.0f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_FrameBg</span><span class="p">,</span><span class="w"> </span><span class="n">bg</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l94" href="#l94">94</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">ChildRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.0f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_FrameBgHovered</span><span class="p">,</span><span class="w"> </span><span class="n">bg_light</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l95" href="#l95">95</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">FrameRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_FrameBgActive</span><span class="p">,</span><span class="w"> </span><span class="n">bg_light</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l96" href="#l96">96</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">PopupRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l97" href="#l97">97</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">ScrollbarRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_TitleBg</span><span class="p">,</span><span class="w"> </span><span class="n">bg_dark</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l98" href="#l98">98</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">GrabRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_TitleBgActive</span><span class="p">,</span><span class="w"> </span><span class="n">bg_light</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l99" href="#l99">99</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">style</span><span class="p">.</span><span class="n">TabRounding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.0f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_TitleBgCollapsed</span><span class="p">,</span><span class="w"> </span><span class="n">bg_dark</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l100" href="#l100">100</a></td>
@@ -808,364 +808,364 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_MenuBarBg</span><span class="p">,</span><span class="w"> </span><span class="n">bg_light</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l102" href="#l102">102</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">SelectedTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">selections</span><span class="p">;</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l103" href="#l103">103</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="cp">#define USE_THEME(x) \</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_Separator</span><span class="p">,</span><span class="w"> </span><span class="n">bg_light</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l104" href="#l104">104</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">		do \</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_SeparatorActive, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l105" href="#l105">105</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">		{ \</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l106" href="#l106">106</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">		static int sel = -1;\</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_ScrollbarGrabActive, bg_light);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l107" href="#l107">107</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">		selections.emplace_back(SelectedTheme { #x, x, &amp;sel});\</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_CheckMark, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l108" href="#l108">108</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">		} while (false)</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_SliderGrab, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l109" href="#l109">109</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_Text</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_Header, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l110" href="#l110">110</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TextDisabled</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_HeaderHovered, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l111" href="#l111">111</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_WindowBg</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l112" href="#l112">112</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_ChildBg</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_ResizeGrip</span><span class="p">,</span><span class="w"> </span><span class="n">bg_light</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l113" href="#l113">113</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_PopupBg</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="n">set_color</span><span class="p">(</span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">ImGuiCol_ResizeGripHovered</span><span class="p">,</span><span class="w"> </span><span class="n">bg</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l114" href="#l114">114</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_Border</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l115" href="#l115">115</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_FrameBg</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_InputTextCursor, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l116" href="#l116">116</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_FrameBgHovered</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TabHovered, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l117" href="#l117">117</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TitleBg</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_Tab, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l118" href="#l118">118</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TitleBgActive</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TabSelected, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l119" href="#l119">119</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TitleBgCollapsed</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TabSelectedOverline, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l120" href="#l120">120</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_MenuBarBg</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TabDimmed, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l121" href="#l121">121</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_ScrollbarGrabActive</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TabDimmedSelected, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l122" href="#l122">122</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_CheckMark</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TabDimmedSelectedOverline, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l123" href="#l123">123</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_SliderGrab</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_PlotLines, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l124" href="#l124">124</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_Header</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TableHeaderBg, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l125" href="#l125">125</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_HeaderHovered</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TableBorderStrong, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l126" href="#l126">126</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_SeparatorActive</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TableBorderLight, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l127" href="#l127">127</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_ResizeGrip</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TableRowBg, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l128" href="#l128">128</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_ResizeGripHovered</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TableRowBgAlt, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l129" href="#l129">129</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_InputTextCursor</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TextLink, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l130" href="#l130">130</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TabHovered</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TextSelectedBg, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l131" href="#l131">131</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_Tab</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_TreeLines, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l132" href="#l132">132</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TabSelected</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_DragDropTarget, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l133" href="#l133">133</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TabSelectedOverline</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_UnsavedMarker, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l134" href="#l134">134</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TabDimmed</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_NavCursor, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l135" href="#l135">135</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TabDimmedSelected</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_NavWindowingHighlight, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l136" href="#l136">136</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TabDimmedSelectedOverline</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_NavWindowingDimBg, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l137" href="#l137">137</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_PlotLines</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// set_color(style, ImGuiCol_ModalWindowDimBg, lch_color);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l138" href="#l138">138</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TableHeaderBg</span><span class="p">);</span></td>
+        <td class="src"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l139" href="#l139">139</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TableBorderStrong</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l140" href="#l140">140</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TableBorderLight</span><span class="p">);</span></td>
+        <td class="src"><span class="kt">void</span><span class="w"> </span><span class="nf">test_themes</span><span class="p">()</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l141" href="#l141">141</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TableRowBg</span><span class="p">);</span></td>
+        <td class="src"><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l142" href="#l142">142</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TableRowBgAlt</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ImGui</span><span class="o">::</span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;setup&quot;</span><span class="p">))</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l143" href="#l143">143</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TextLink</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l144" href="#l144">144</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TextSelectedBg</span><span class="p">);</span></td>
+        <td class="src"><span class="w">		</span><span class="n">setup_custom_theme</span><span class="p">();</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l145" href="#l145">145</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_TreeLines</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l146" href="#l146">146</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_DragDropTarget</span><span class="p">);</span></td>
+        <td class="src"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l147" href="#l147">147</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_UnsavedMarker</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l148" href="#l148">148</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_NavCursor</span><span class="p">);</span></td>
+        <td class="src"><span class="cp">#else</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l149" href="#l149">149</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_NavWindowingHighlight</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l150" href="#l150">150</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_NavWindowingDimBg</span><span class="p">);</span></td>
+        <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+        <td class="src uncoveredLine show_uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">test_themes</span><span class="p">()</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l151" href="#l151">151</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">USE_THEME</span><span class="p">(</span><span class="n">ImGuiCol_ModalWindowDimBg</span><span class="p">);</span></td>
+        <td class="src"><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l152" href="#l152">152</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="cp">#undef USE_THEME</span></td>
+        <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+        <td class="src uncoveredLine show_uncoveredLine"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l153" href="#l153">153</a></td>
@@ -1179,283 +1179,31 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">s</span><span class="o">:</span><span class="w"> </span><span class="n">selections</span><span class="p">)</span></td>
+        <td class="src"><span class="cp">#endif</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l155" href="#l155">155</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="p">{</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l156" href="#l156">156</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">PushID</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">selection</span><span class="p">);</span></td>
+        <td class="src"><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l157" href="#l157">157</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ImGui</span><span class="o">::</span><span class="n">BeginCombo</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">.</span><span class="n">selection</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">colors</span><span class="p">[</span><span class="o">*</span><span class="n">s</span><span class="p">.</span><span class="n">selection</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;???&quot;</span><span class="p">))</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l158" href="#l158">158</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="p">{</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l159" href="#l159">159</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l160" href="#l160">160</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="o">:</span><span class="w"> </span><span class="n">colors</span><span class="p">)</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l161" href="#l161">161</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="p">{</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l162" href="#l162">162</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">				</span><span class="kt">bool</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">.</span><span class="n">selection</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">id</span><span class="p">;</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l163" href="#l163">163</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">				</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ImGui</span><span class="o">::</span><span class="n">Selectable</span><span class="p">(</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="o">&amp;</span><span class="n">selected</span><span class="p">))</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l164" href="#l164">164</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">				</span><span class="p">{</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l165" href="#l165">165</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">					</span><span class="o">*</span><span class="n">s</span><span class="p">.</span><span class="n">selection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l166" href="#l166">166</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">				</span><span class="p">}</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l167" href="#l167">167</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">				</span><span class="n">id</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l168" href="#l168">168</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="p">}</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l169" href="#l169">169</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">ImGui</span><span class="o">::</span><span class="n">EndCombo</span><span class="p">();</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l170" href="#l170">170</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="p">}</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l171" href="#l171">171</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">ImGui</span><span class="o">::</span><span class="n">PopID</span><span class="p">();</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l172" href="#l172">172</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l173" href="#l173">173</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">s</span><span class="p">.</span><span class="n">selection</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l174" href="#l174">174</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="p">{</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l175" href="#l175">175</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">lch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colors</span><span class="p">[</span><span class="o">*</span><span class="n">s</span><span class="p">.</span><span class="n">selection</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">color</span><span class="p">;</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l176" href="#l176">176</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">lab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">oklab_from_oklch</span><span class="p">(</span><span class="n">lch</span><span class="p">);</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l177" href="#l177">177</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">lin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linear_from_oklab</span><span class="p">(</span><span class="n">lab</span><span class="p">);</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l178" href="#l178">178</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">srgb_from_linear</span><span class="p">(</span><span class="n">lin</span><span class="p">);</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l179" href="#l179">179</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">style</span><span class="p">.</span><span class="n">Colors</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">id</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImVec4</span><span class="p">(</span><span class="n">rgb</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">rgb</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">rgb</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l180" href="#l180">180</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="p">}</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l181" href="#l181">181</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="p">}</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l182" href="#l182">182</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">}</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l183" href="#l183">183</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l184" href="#l184">184</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">#else</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l185" href="#l185">185</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l186" href="#l186">186</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-        <td class="src uncoveredLine show_uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">test_themes</span><span class="p">()</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l187" href="#l187">187</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">{</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l188" href="#l188">188</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-        <td class="src uncoveredLine show_uncoveredLine"><span class="p">}</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l189" href="#l189">189</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l190" href="#l190">190</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">#endif</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l191" href="#l191">191</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l192" href="#l192">192</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l193" href="#l193">193</a></td>
-        <td class="text-right src linenos ws-unset">
-        </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
-      </tr>
-      <tr>
-        <td class="text-right src linenos"><a class="normal" id="l194" href="#l194">194</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
@@ -1468,7 +1216,7 @@
         <hr class="block-separator"/>
         <footer class="text-center">
           Created using <a href="http://gcovr.com/en/8.6">GCOVR (Version 8.6)</a>
-          at 2026-01-21 16:07:05
+          at 2026-02-07 21:06:33
         </footer>
       </div>
     </div>
