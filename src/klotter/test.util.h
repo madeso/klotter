@@ -1,5 +1,9 @@
 #pragma once
 
+#include <algorithm>
+#include <cmath>
+#include <string>
+
 #include "catchy/falsestring.h"
 
 namespace testing
@@ -31,10 +35,16 @@ struct Equaler
 	{
 		const auto l = convert(lhs);
 		const auto r = convert(rhs);
-		if (compare(l, r) == false)
+		const catchy::FalseString c = compare(l, r);
+		if (c.IsTrue() == false)
 		{
 			std::ostringstream ss;
 			ss << name << ": " << l << " != " << r;
+			// hack: since empty string is true, let's use a single space as <no reason>
+			if(c.reason != " ")
+			{
+				ss << " (" << c.reason << ")";
+			}
 			failures.emplace_back(ss.str());
 		}
 		return *this;
@@ -42,13 +52,24 @@ struct Equaler
 
 	template<typename C>
 	Self& add(const std::string& name, const C& convert){
-		return impl(name, convert, [](const auto& l, const auto& r) { return l == r; });
+		return impl(name, convert, [](const auto& l, const auto& r) {
+			const auto same = l == r;
+			if (same) return catchy::FalseString::True();
+			return catchy::FalseString::False(" ");
+		});
 	}
 
 	template<typename C, typename F>
 	Self& add(const std::string& name, const C& convert, F min)
 	{
-		return impl(name, convert, [min](const auto& l, const auto& r) { return std::abs(l-r) < min; });
+		return impl(name, convert, [min](const auto& l, const auto& r) {
+			const auto diff = std::abs(l - r);
+			const auto close = diff < min;
+			if (close) return catchy::FalseString::True();
+			std::ostringstream ss;
+			ss << "difference " << diff << " is larger than " << min;
+			return catchy::FalseString::False(ss.str());
+		});
 	}
 
 	[[nodiscard]] catchy::FalseString resolve() const
