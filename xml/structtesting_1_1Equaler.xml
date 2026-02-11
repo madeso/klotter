@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="13" column="1" bodyfile="src/klotter/test.util.h" bodystart="13" bodyend="-1"/>
+        <location file="src/klotter/test.util.h" line="17" column="1" bodyfile="src/klotter/test.util.h" bodystart="17" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="15" column="3" bodyfile="src/klotter/test.util.h" bodystart="15" bodyend="-1"/>
+        <location file="src/klotter/test.util.h" line="19" column="3" bodyfile="src/klotter/test.util.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structtesting_1_1Equaler_1a44d011be1a5b76ff243c4dca795fe954" prot="public" static="no" mutable="no">
         <type>T</type>
@@ -51,7 +51,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="16" column="3" bodyfile="src/klotter/test.util.h" bodystart="16" bodyend="-1"/>
+        <location file="src/klotter/test.util.h" line="20" column="3" bodyfile="src/klotter/test.util.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structtesting_1_1Equaler_1a36547fbf6f5422fb320449c2831ee94d" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::string &gt;</type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="18" column="13" bodyfile="src/klotter/test.util.h" bodystart="18" bodyend="-1"/>
+        <location file="src/klotter/test.util.h" line="22" column="13" bodyfile="src/klotter/test.util.h" bodystart="22" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="20" column="1" bodyfile="src/klotter/test.util.h" bodystart="20" bodyend="23"/>
+        <location file="src/klotter/test.util.h" line="24" column="1" bodyfile="src/klotter/test.util.h" bodystart="24" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="structtesting_1_1Equaler_1afb70cd013a90f1f06043bac7c059354b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -123,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="26" column="6" bodyfile="src/klotter/test.util.h" bodystart="26" bodyend="41"/>
+        <location file="src/klotter/test.util.h" line="30" column="6" bodyfile="src/klotter/test.util.h" bodystart="30" bodyend="51"/>
       </memberdef>
       <memberdef kind="function" id="structtesting_1_1Equaler_1ae867aa9e5e1863840e96d77f859336b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="44" column="6" bodyfile="src/klotter/test.util.h" bodystart="44" bodyend="46"/>
+        <location file="src/klotter/test.util.h" line="54" column="6" bodyfile="src/klotter/test.util.h" bodystart="54" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="structtesting_1_1Equaler_1a177ac354e2fb1f48c007e37dabc4be00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -184,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="49" column="6" bodyfile="src/klotter/test.util.h" bodystart="49" bodyend="52"/>
+        <location file="src/klotter/test.util.h" line="63" column="6" bodyfile="src/klotter/test.util.h" bodystart="63" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="structtesting_1_1Equaler_1a0670029c3c9f65de8ebe4f436666fb8e" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>catchy::FalseString</type>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="54" column="22" bodyfile="src/klotter/test.util.h" bodystart="54" bodyend="69"/>
+        <location file="src/klotter/test.util.h" line="75" column="22" bodyfile="src/klotter/test.util.h" bodystart="75" bodyend="90"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -235,7 +235,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/test.util.h" line="11" column="1" bodyfile="src/klotter/test.util.h" bodystart="12" bodyend="70"/>
+    <location file="src/klotter/test.util.h" line="15" column="1" bodyfile="src/klotter/test.util.h" bodystart="16" bodyend="91"/>
     <listofallmembers>
       <member refid="structtesting_1_1Equaler_1ae867aa9e5e1863840e96d77f859336b8" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>add</name></member>
       <member refid="structtesting_1_1Equaler_1a177ac354e2fb1f48c007e37dabc4be00" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>add</name></member>

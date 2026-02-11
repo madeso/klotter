@@ -37,12 +37,13 @@ var searchData=
   ['simpleeffect_34',['SimpleEffect',['../structklotter_1_1SimpleEffect.html#a59d2eedda1246a07369c1515bf46a3f7',1,'klotter::SimpleEffect']]],
   ['sin_35',['sin',['../namespaceklotter.html#a02552efce1cc7408842fa1a4e64c4ae4',1,'klotter']]],
   ['sizet_5ffrom_5fint_36',['sizet_from_int',['../cint_8h.html#a9097907fede91ff15df8ec70ae803abd',1,'cint.h']]],
-  ['srgb_5ffrom_5flinear_37',['srgb_from_linear',['../namespaceklotter.html#a77f8087e1f318ea3e978c99e2facf5c9',1,'klotter::srgb_from_linear(float value)'],['../namespaceklotter.html#acff1cf6c69fa583ab1ae3afe7a865556',1,'klotter::srgb_from_linear(const Lrgb &amp;value)']]],
-  ['statechanger_38',['StateChanger',['../structklotter_1_1StateChanger.html#ac054b4d5f9441fdf5d63d343a50682c9',1,'klotter::StateChanger']]],
-  ['stencil_5ffunc_39',['stencil_func',['../structklotter_1_1StateChanger.html#a526cf05c48c5b7d9d617e30a665bed70',1,'klotter::StateChanger']]],
-  ['stencil_5fmask_40',['stencil_mask',['../structklotter_1_1StateChanger.html#a71c569b580b89d7c5979bcb041c44be5',1,'klotter::StateChanger']]],
-  ['stencil_5fop_41',['stencil_op',['../structklotter_1_1StateChanger.html#ad9fd74dfef0eb9ada6a0d781d29bc076',1,'klotter::StateChanger']]],
-  ['stencil_5ftest_42',['stencil_test',['../structklotter_1_1StateChanger.html#ab9b21b1f81a47ab53c0fc868cb03a5c3',1,'klotter::StateChanger']]],
-  ['str_43',['str',['../structStr.html#ae5bcd149c44251ab778610f5dfaff12d',1,'Str']]],
-  ['submit_44',['submit',['../structklotter_1_1LineDrawer.html#a5d3831830d3d1c9365782985b54942a9',1,'klotter::LineDrawer']]]
+  ['srgb_5ffrom_5fhsl_37',['srgb_from_hsl',['../namespaceklotter.html#a80b1c233e0149ef4f67d4fa768327f67',1,'klotter']]],
+  ['srgb_5ffrom_5flinear_38',['srgb_from_linear',['../namespaceklotter.html#a77f8087e1f318ea3e978c99e2facf5c9',1,'klotter::srgb_from_linear(float value)'],['../namespaceklotter.html#acff1cf6c69fa583ab1ae3afe7a865556',1,'klotter::srgb_from_linear(const Lrgb &amp;value)']]],
+  ['statechanger_39',['StateChanger',['../structklotter_1_1StateChanger.html#ac054b4d5f9441fdf5d63d343a50682c9',1,'klotter::StateChanger']]],
+  ['stencil_5ffunc_40',['stencil_func',['../structklotter_1_1StateChanger.html#a526cf05c48c5b7d9d617e30a665bed70',1,'klotter::StateChanger']]],
+  ['stencil_5fmask_41',['stencil_mask',['../structklotter_1_1StateChanger.html#a71c569b580b89d7c5979bcb041c44be5',1,'klotter::StateChanger']]],
+  ['stencil_5fop_42',['stencil_op',['../structklotter_1_1StateChanger.html#ad9fd74dfef0eb9ada6a0d781d29bc076',1,'klotter::StateChanger']]],
+  ['stencil_5ftest_43',['stencil_test',['../structklotter_1_1StateChanger.html#ab9b21b1f81a47ab53c0fc868cb03a5c3',1,'klotter::StateChanger']]],
+  ['str_44',['str',['../structStr.html#ae5bcd149c44251ab778610f5dfaff12d',1,'Str']]],
+  ['submit_45',['submit',['../structklotter_1_1LineDrawer.html#a5d3831830d3d1c9365782985b54942a9',1,'klotter::LineDrawer']]]
 ];

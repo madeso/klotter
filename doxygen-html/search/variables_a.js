@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['l_0',['l',['../structklotter_1_1Lch.html#aa7eade69dc013d08f57961762e26c470',1,'klotter::Lch::l'],['../structklotter_1_1Lab.html#a9305301003a65627b0127cc09b0d148f',1,'klotter::Lab::l']]],
+  ['l_0',['l',['../structklotter_1_1Hsl.html#a3cf46c19955dbe7f7f09b5339d150e89',1,'klotter::Hsl::l'],['../structklotter_1_1Lch.html#aa7eade69dc013d08f57961762e26c470',1,'klotter::Lch::l'],['../structklotter_1_1Lab.html#a9305301003a65627b0127cc09b0d148f',1,'klotter::Lab::l']]],
   ['label_1',['label',['../structSvgLine.html#a0254b9517b5e9d90083d90a9779bc958',1,'SvgLine']]],
   ['last_5fbloom_5fblur_5findex_2',['last_bloom_blur_index',['../structklotter_1_1RenderWorld.html#a50b93c67171958ea83a5acffb927909d',1,'klotter::RenderWorld']]],
   ['last_5fsource_3',['last_source',['../structklotter_1_1CompiledStack.html#a442cf553eb97dd8d5921b7a4d5c20bc2',1,'klotter::CompiledStack']]],

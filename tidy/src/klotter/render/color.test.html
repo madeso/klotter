@@ -6,7 +6,53 @@
 </head>
 <body>
 <h1>src/klotter/render/color.test.cc</h1>
+<span id='bugprone-narrowing-conversions'>&nbsp;</span>
+<span id='cppcoreguidelines-narrowing-conversions'>&nbsp;</span>
+<hr>
+<h3>warning: narrowing conversion from &#39;int&#39; to &#39;float&#39;</h3>
+<code>[bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions]</code>
+<p><i>src/klotter/render/color.test.cc 87 : 35</i></p>
+<pre>
+   87 |         return {.h = Angle::from_degrees(deg), .s = s/100.0f, .l=l/100.0f};
+      |                                          ^
+</pre>
+<hr>
+<h3>warning: narrowing conversion from &#39;int&#39; to &#39;float&#39;</h3>
+<code>[bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions]</code>
+<p><i>src/klotter/render/color.test.cc 92 : 10</i></p>
+<pre>
+   92 |         return {r / 255.0f, g / 255.0f, b / 255.0f};
+      |                 ^
+</pre>
+<hr>
+<h3>warning: narrowing conversion from &#39;int&#39; to &#39;float&#39;</h3>
+<code>[bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions]</code>
+<p><i>src/klotter/render/color.test.cc 92 : 22</i></p>
+<pre>
+   92 |         return {r / 255.0f, g / 255.0f, b / 255.0f};
+      |                             ^
+</pre>
+<hr>
+<h3>warning: narrowing conversion from &#39;int&#39; to &#39;float&#39;</h3>
+<code>[bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions]</code>
+<p><i>src/klotter/render/color.test.cc 92 : 34</i></p>
+<pre>
+   92 |         return {r / 255.0f, g / 255.0f, b / 255.0f};
+      |                                         ^
+</pre>
 <!--
+/home/runner/work/klotter/klotter/src/klotter/render/color.test.cc:87:35: warning: narrowing conversion from 'int' to 'float' [bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions]
+   87 |         return {.h = Angle::from_degrees(deg), .s = s/100.0f, .l=l/100.0f};
+      |                                          ^
+/home/runner/work/klotter/klotter/src/klotter/render/color.test.cc:92:10: warning: narrowing conversion from 'int' to 'float' [bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions]
+   92 |         return {r / 255.0f, g / 255.0f, b / 255.0f};
+      |                 ^
+/home/runner/work/klotter/klotter/src/klotter/render/color.test.cc:92:22: warning: narrowing conversion from 'int' to 'float' [bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions]
+   92 |         return {r / 255.0f, g / 255.0f, b / 255.0f};
+      |                             ^
+/home/runner/work/klotter/klotter/src/klotter/render/color.test.cc:92:34: warning: narrowing conversion from 'int' to 'float' [bugprone-narrowing-conversions,cppcoreguidelines-narrowing-conversions]
+   92 |         return {r / 255.0f, g / 255.0f, b / 255.0f};
+      |                                         ^
 -->
 </body>
 </html>

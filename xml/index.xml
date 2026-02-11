@@ -420,6 +420,11 @@
     <member refid="structklotter_1_1HashCombiner_1a26bf8eb600fcab0bb021b3761e8ad8e2" kind="variable"><name>result</name></member>
     <member refid="structklotter_1_1HashCombiner_1a65dfeacdc4930769b33d9f68dd509f4a" kind="function"><name>combine</name></member>
   </compound>
+  <compound refid="structklotter_1_1Hsl" kind="struct"><name>klotter::Hsl</name>
+    <member refid="structklotter_1_1Hsl_1a1948eb3a42912be27ad7023e702d7c01" kind="variable"><name>h</name></member>
+    <member refid="structklotter_1_1Hsl_1a1c3c78494a8bc3c9535dc724b5ee4da3" kind="variable"><name>s</name></member>
+    <member refid="structklotter_1_1Hsl_1a3cf46c19955dbe7f7f09b5339d150e89" kind="variable"><name>l</name></member>
+  </compound>
   <compound refid="structklotter_1_1ImguiShaderCache" kind="struct"><name>klotter::ImguiShaderCache</name>
     <member refid="structklotter_1_1ImguiShaderCache_1a4e7263e61b0040d3d3eeb762312aa422" kind="variable"><name>linear_to_gamma_shader</name></member>
     <member refid="structklotter_1_1ImguiShaderCache_1a4733c47be41caba510608091d655cf04" kind="variable"><name>depth_ortho_shader</name></member>
@@ -1117,6 +1122,7 @@
     <member refid="namespaceklotter_1abe7b86e3eb6ca8aaf9c6ff0ec463e6f2" kind="function"><name>linear_from_srgb</name></member>
     <member refid="namespaceklotter_1a77f8087e1f318ea3e978c99e2facf5c9" kind="function"><name>srgb_from_linear</name></member>
     <member refid="namespaceklotter_1acff1cf6c69fa583ab1ae3afe7a865556" kind="function"><name>srgb_from_linear</name></member>
+    <member refid="namespaceklotter_1a80b1c233e0149ef4f67d4fa768327f67" kind="function"><name>srgb_from_hsl</name></member>
     <member refid="namespaceklotter_1a4a3e900ad6c1526a5155705a76c63395" kind="function"><name>oklab_from_linear</name></member>
     <member refid="namespaceklotter_1a2870ff528d84358b41398fa9f951b1c7" kind="function"><name>linear_from_oklab</name></member>
     <member refid="namespaceklotter_1aa91916877c4ee9eada97d5d8989e4da1" kind="function"><name>oklch_from_oklab</name></member>
