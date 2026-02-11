@@ -20,6 +20,15 @@ struct Color
 	{}
 };
 
+
+// A color is sRGB space
+struct Hsl
+{
+	Angle h;
+	float s;
+	float l;
+};
+
 /// Represents a linear sRGB color.
 /// @see Color
 struct Lrgb
@@ -49,6 +58,8 @@ Lrgb linear_from_srgb(const Color& value, float gamma);
 
 float srgb_from_linear(float value);
 Color srgb_from_linear(const Lrgb& value);
+
+Color srgb_from_hsl(const Hsl& hsl);
 
 // oklab & oklch
 Lab oklab_from_linear(const Lrgb& c);

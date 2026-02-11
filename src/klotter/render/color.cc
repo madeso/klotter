@@ -37,6 +37,57 @@ Color srgb_from_linear(const Lrgb& value)
 	return {srgb_from_linear(value.linear[0]), srgb_from_linear(value.linear[1]), srgb_from_linear(value.linear[2])};
 }
 
+Color srgb_from_hsl(const Hsl& hsl)
+{
+	// https://www.rapidtables.com/convert/color/hsl-to-rgb.html
+
+	const auto h = hsl.h.as_degrees();
+	const auto s = hsl.s;
+	const auto l = hsl.l;
+
+	const auto c = (1.0f - std::fabs(2.0f * l - 1.0f)) * s;
+	const auto x = c * (1.0f - std::fabs(std::fmod(h / 60.0f, 2.0f) - 1.0f));
+
+	const auto m = l - c / 2.0f;
+
+	float r1;
+	float g1;
+	float b1;
+
+	if (h < 60.0f) {
+		r1 = c;
+		g1 = x;
+		b1 = 0;
+	} else if (h < 120.0f) {
+		r1 = x;
+		g1 = c;
+		b1 = 0;
+	} else if (h < 180.0f) {
+		r1 = 0;
+		g1 = c;
+		b1 = x;
+	} else if (h < 240.0f) {
+		r1 = 0;
+		g1 = x;
+		b1 = c;
+	} else if (h < 300.0f) {
+		r1 = x;
+		g1 = 0;
+		b1 = c;
+	} else {
+		r1 = c;
+		g1 = 0;
+		b1 = x;
+	}
+
+	
+	const auto r = r1 + m;
+	const auto g = g1 + m;
+	const auto b = b1 + m;
+
+	return {r, g, b};
+}
+
 
 Lab oklab_from_linear(const Lrgb& c)
 {
