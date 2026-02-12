@@ -49,7 +49,7 @@ struct Material
 struct UnlitMaterial : Material
 {
 	const LoadedShader_Unlit_Container* shader_container;
-	Color color = colors::white;
+	Rgb color = colors::white;
 	float alpha = 1.0f;
 	std::shared_ptr<Texture2d> texture;
 
@@ -68,11 +68,11 @@ struct UnlitMaterial : Material
 struct DefaultMaterial : Material
 {
 	const LoadedShader_Default_Container* shader_container = nullptr;
-	Color color = colors::white;
+	Rgb color = colors::white;
 	float alpha = 1.0f;
 
-	Color ambient_tint = colors::white;
-	Color specular_color = colors::white;
+	Rgb ambient_tint = colors::white;
+	Rgb specular_color = colors::white;
 	float shininess = 32.0f;
 	float emissive_factor = 0.0f;
 

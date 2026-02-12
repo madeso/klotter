@@ -333,7 +333,7 @@ namespace
 		glm::vec2 tex;
 	};
 
-	void add_quad_to_builder(Builder& b, bool invert, const Color& color, glm::vec3 normal, const std::array<Pt, 4>& p)
+	void add_quad_to_builder(Builder& b, bool invert, const Rgb& color, glm::vec3 normal, const std::array<Pt, 4>& p)
 	{
 		constexpr float pd = 0.1f;
 		constexpr float td = 0.01f;
@@ -349,7 +349,7 @@ namespace
 	}
 }
 
-Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const Color& color)
+Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const Rgb& color)
 {
 	const auto invert = normals_facing == NormalsFacing::In;
 	Builder b;
@@ -427,7 +427,7 @@ Builder create_box(float x, float y, float z, NormalsFacing normals_facing, cons
 	return b;
 }
 
-Builder create_xz_plane(float x, float z, bool invert, const Color& color)
+Builder create_xz_plane(float x, float z, bool invert, const Rgb& color)
 {
 	Builder b;
 
@@ -452,7 +452,7 @@ Builder create_xz_plane(float x, float z, bool invert, const Color& color)
 }
 
 
-Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& color)
+Builder create_xy_plane(float x, float y, SideCount two_sided, const Rgb& color)
 {
 	Builder b;
 
@@ -498,7 +498,7 @@ Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& colo
 
 
 // based on https://gist.github.com/Pikachuxxxx/5c4c490a7d7679824e0e18af42918efc
-Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const Color& color)
+Builder create_uv_sphere(float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const Rgb& color)
 {
 	assert(longitude_count >= 3);
 	assert(latitude_count >= 2);

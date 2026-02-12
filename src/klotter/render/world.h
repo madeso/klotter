@@ -85,7 +85,7 @@ struct MeshInstance
 	std::shared_ptr<CompiledGeom> geom;
 	std::shared_ptr<Material> material;
 
-	std::optional<Color> outline;
+	std::optional<Rgb> outline;
 
 	glm::vec3 world_position = glm::vec3{0.0f};
 	glm::vec3 rotation = glm::vec3{0.0f};  ///< yaw pitch roll
@@ -121,7 +121,7 @@ struct DirectionalLight
 	float pitch = 0;
 	float yaw = 0;
 
-	Color color = colors::white;
+	Rgb color = colors::white;
 	float specular_strength = 1.0f;
 	float diffuse_strength = 1.0f;
 };
@@ -134,7 +134,7 @@ struct PointLight
 	float max_range = 20.0f;
 	SCurve curve = SCurve::light_curve();	///< curve and ui, needs to be trimmed down for actual renderer
 
-	Color color = colors::white;
+	Rgb color = colors::white;
 	float specular_strength = 1.0f;
 	float diffuse_strength = 1.0f;
 };
@@ -154,7 +154,7 @@ struct FrustumLight
 	float max_range = 20.0f;
 	SCurve curve = SCurve::light_curve();  ///< curve and ui, needs to be trimmed down for actual renderer
 
-	Color color = colors::white;
+	Rgb color = colors::white;
 	float specular_strength = 1.0f;
 	float diffuse_strength = 1.0f;
 
@@ -164,7 +164,7 @@ struct FrustumLight
 /// All lights in a world.
 struct Lights
 {
-	Color ambient_color = colors::white;
+	Rgb ambient_color = colors::white;
 	float ambient_strength = 0.029f;
 
 	float shadow_near = 1.0f;
@@ -192,7 +192,7 @@ struct World
 	std::vector<std::shared_ptr<MeshInstance_TransformInstanced>> instances;
 	Lights lights;
 
-	Color clear_color = colors::black;
+	Rgb clear_color = colors::black;
 	std::optional<Skybox> skybox;
 };
 

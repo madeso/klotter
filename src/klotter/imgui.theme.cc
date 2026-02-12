@@ -32,9 +32,9 @@ float clip_float(float f)
 	return f;
 }
 
-Lrgb clip_lin(Lrgb c)
+Lin_rgb clip_lin(Lin_rgb c)
 {
-	const auto ret = Lrgb {{clip_float(c.linear.r), clip_float(c.linear.g), clip_float(c.linear.b)}};
+	const auto ret = Lin_rgb {{clip_float(c.linear.r), clip_float(c.linear.g), clip_float(c.linear.b)}};
 	return ret;
 }
 

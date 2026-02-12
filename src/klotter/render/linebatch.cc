@@ -172,7 +172,7 @@ bool LineDrawer::is_loaded() const
 	return shader.is_loaded();
 }
 
-void LineDrawer::line(const glm::vec3& world_from, const glm::vec3& world_to, const Lrgb& color)
+void LineDrawer::line(const glm::vec3& world_from, const glm::vec3& world_to, const Lin_rgb& color)
 {
 	if (lines == max_lines)
 	{

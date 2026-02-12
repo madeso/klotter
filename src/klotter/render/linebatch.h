@@ -6,7 +6,7 @@ namespace klotter
 {
 
 struct CompiledCamera;
-struct Lrgb;
+struct Lin_rgb;
 
 /// A utility to draw 3d lines.
 /// Helps to batch lines for rendering.
@@ -40,7 +40,7 @@ struct LineDrawer
 	void set_camera(const CompiledCamera& cc);
 	void set_line_to_dash(const glm::vec2& resolution, float dash_size, float gap_size);
 	void set_line_to_solid();
-	void line(const glm::vec3& world_from, const glm::vec3& world_to, const Lrgb& color);
+	void line(const glm::vec3& world_from, const glm::vec3& world_to, const Lin_rgb& color);
 	void submit();
 
 	[[nodiscard]] bool is_loaded() const;

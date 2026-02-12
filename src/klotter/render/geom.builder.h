@@ -97,15 +97,15 @@ struct Builder
 /// @param normals_facing Specifies the direction the box's normals are facing.
 /// @param color The color of the box.
 /// @return A \ref Builder representing the generated mesh.
-Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const Color& color = colors::white);
+Builder create_box(float x, float y, float z, NormalsFacing normals_facing, const Rgb& color = colors::white);
 
 
 
-Builder create_xz_plane(float x, float z, bool invert, const Color& color = colors::white);
+Builder create_xz_plane(float x, float z, bool invert, const Rgb& color = colors::white);
 
 
 
-Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& color = colors::white);
+Builder create_xy_plane(float x, float y, SideCount two_sided, const Rgb& color = colors::white);
 
 
 
@@ -117,7 +117,7 @@ Builder create_xy_plane(float x, float y, SideCount two_sided, const Color& colo
 /// @param color The color to apply to the sphere.
 /// @return A \ref Builder object representing the generated mesh.
 Builder create_uv_sphere(
-	float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const Color& color = colors::white
+	float diameter, int longitude_count, int latitude_count, NormalsFacing normals_facing, const Rgb& color = colors::white
 );
 
 /**

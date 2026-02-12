@@ -22,7 +22,7 @@ static void imgui_label(const char* const label, const std::string& text)
 	ImGui::LabelText(label, "%s", text.c_str());
 }
 
-static void imgui_color(const char* const label, klotter::Color* color)
+static void imgui_color(const char* const label, klotter::Rgb* color)
 {
 	ImGui::ColorEdit3(label, &color->r);
 }

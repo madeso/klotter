@@ -16,7 +16,7 @@ float linear_from_srgb(float value, float gamma)
 }
 
 
-Lrgb linear_from_srgb(const Color& value, float gamma)
+Lin_rgb linear_from_srgb(const Rgb& value, float gamma)
 {
 	return
 	{{
@@ -34,13 +34,13 @@ float srgb_from_linear(float lin)
 }
 
 
-Color srgb_from_linear(const Lrgb& value)
+Rgb srgb_from_linear(const Lin_rgb& value)
 {
 	return {srgb_from_linear(value.linear[0]), srgb_from_linear(value.linear[1]), srgb_from_linear(value.linear[2])};
 }
 
 
-Color srgb_from_hsl(const Hsl& hsl)
+Rgb srgb_from_hsl(const Hsl& hsl)
 {
 	// https://www.rapidtables.com/convert/color/hsl-to-rgb.html
 
@@ -310,7 +310,7 @@ float sgn(float x)
 }
 
 
-Lrgb gamut_clip_preserve_chroma(const Lrgb& rgb)
+Lin_rgb gamut_clip_preserve_chroma(const Lin_rgb& rgb)
 {
 	if (rgb.linear.r < 1 && rgb.linear.g < 1 && rgb.linear.b < 1 &&
 		rgb.linear.r > 0 && rgb.linear.g > 0 && rgb.linear.b > 0)
@@ -336,7 +336,7 @@ Lrgb gamut_clip_preserve_chroma(const Lrgb& rgb)
 }
 
 
-Lrgb gamut_clip_project_to_0_5(const Lrgb& rgb)
+Lin_rgb gamut_clip_project_to_0_5(const Lin_rgb& rgb)
 {
 	if (rgb.linear.r < 1 && rgb.linear.g < 1 && rgb.linear.b < 1 &&
 		rgb.linear.r > 0 && rgb.linear.g > 0 && rgb.linear.b > 0)
@@ -362,7 +362,7 @@ Lrgb gamut_clip_project_to_0_5(const Lrgb& rgb)
 }
 
 
-Lrgb gamut_clip_project_to_L_cusp(const Lrgb& rgb)
+Lin_rgb gamut_clip_project_to_L_cusp(const Lin_rgb& rgb)
 {
 	if (rgb.linear.r < 1 && rgb.linear.g < 1 && rgb.linear.b < 1 &&
 		rgb.linear.r > 0 && rgb.linear.g > 0 && rgb.linear.b > 0)
@@ -392,7 +392,7 @@ Lrgb gamut_clip_project_to_L_cusp(const Lrgb& rgb)
 }
 
 
-Lrgb gamut_clip_adaptive_L0_0_5(const Lrgb& rgb, float alpha)
+Lin_rgb gamut_clip_adaptive_L0_0_5(const Lin_rgb& rgb, float alpha)
 {
 	if (rgb.linear.r < 1 && rgb.linear.g < 1 && rgb.linear.b < 1 &&
 		rgb.linear.r > 0 && rgb.linear.g > 0 && rgb.linear.b > 0)
@@ -420,7 +420,7 @@ Lrgb gamut_clip_adaptive_L0_0_5(const Lrgb& rgb, float alpha)
 }
 
 
-Lrgb gamut_clip_adaptive_L0_L_cusp(const Lrgb& rgb, float alpha)
+Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha)
 {
 	if (rgb.linear.r < 1 && rgb.linear.g < 1 && rgb.linear.b < 1 &&
 		rgb.linear.r > 0 && rgb.linear.g > 0 && rgb.linear.b > 0)
@@ -453,7 +453,7 @@ Lrgb gamut_clip_adaptive_L0_L_cusp(const Lrgb& rgb, float alpha)
 }
 
 
-Lab oklab_from_linear(const Lrgb& c)
+Lab oklab_from_linear(const Lin_rgb& c)
 {
 	const auto cr = c.linear.r;
 	const auto cg = c.linear.g;
@@ -474,7 +474,7 @@ Lab oklab_from_linear(const Lrgb& c)
 	};
 }
 
-Lrgb linear_from_oklab(const Lab& c)
+Lin_rgb linear_from_oklab(const Lab& c)
 {
 	const auto lp = c.l + 0.3963377774f * c.a + 0.2158037573f * c.b;
 	const auto mp = c.l - 0.1055613458f * c.a - 0.0638541728f * c.b;

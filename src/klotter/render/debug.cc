@@ -5,7 +5,7 @@
 namespace klotter
 {
 
-void DebugRender::add_line(const glm::vec3& from, const glm::vec3& to, const Color& color)
+void DebugRender::add_line(const glm::vec3& from, const glm::vec3& to, const Rgb& color)
 {
 	lines.emplace_back(DebugLine{from, to, color});
 }
@@ -22,7 +22,7 @@ glm::vec3 world_from_ndc(const CompiledCamera& camera, const glm::vec3& ndc)
 	return out_world;
 }
 
-void draw_frustum(DebugRender* debug, const CompiledCamera& camera, const Color& color)
+void draw_frustum(DebugRender* debug, const CompiledCamera& camera, const Rgb& color)
 {
 	const auto near_bot_left = world_from_ndc(camera, {-1.0f, -1.0f, -1.0f});
 	const auto near_bot_right = world_from_ndc(camera, {+1.0f, -1.0f, -1.0f});

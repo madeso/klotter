@@ -9,7 +9,7 @@ using namespace klotter;
 
 namespace
 {
-catchy::FalseString are_equal(const Color& lhs, const Color& rhs)
+catchy::FalseString are_equal(const Rgb& lhs, const Rgb& rhs)
 {
 	const auto rgb255 = 1.5f;
 	return testing::Equaler{lhs, rhs}
@@ -19,7 +19,7 @@ catchy::FalseString are_equal(const Color& lhs, const Color& rhs)
 		.resolve();
 }
 
-catchy::FalseString are_equal(const Lrgb& lhs, const Lrgb& rhs)
+catchy::FalseString are_equal(const Lin_rgb& lhs, const Lin_rgb& rhs)
 {
 	return testing::Equaler{lhs, rhs}
         .add("r", [](const auto& c) { return c.linear.r;}, testing::machine_epsilon)
@@ -51,11 +51,11 @@ TEST_CASE("color space conversion black/white", "[color]")
     SECTION("gamma was ignored")
     {
         const float ignore_gamma = GENERATE(1.0f, 2.2f);
-	    CHECK(are_equal(linear_from_srgb(Color{0.0f, 0.0f, 0.0f}, ignore_gamma), {{0.0f, 0.0f, 0.0f}}));
-		CHECK(are_equal(linear_from_srgb(Color{1.0f, 1.0f, 1.0f}, ignore_gamma), {{1.0f, 1.0f, 1.0f}}));
+	    CHECK(are_equal(linear_from_srgb(Rgb{0.0f, 0.0f, 0.0f}, ignore_gamma), {{0.0f, 0.0f, 0.0f}}));
+		CHECK(are_equal(linear_from_srgb(Rgb{1.0f, 1.0f, 1.0f}, ignore_gamma), {{1.0f, 1.0f, 1.0f}}));
 	}
-	CHECK(are_equal(srgb_from_linear(Lrgb{{0.0f, 0.0f, 0.0f}}), Color{0.0f, 0.0f, 0.0f}));
-	CHECK(are_equal(srgb_from_linear(Lrgb{{1.0f, 1.0f, 1.0f}}), Color{1.0f, 1.0f, 1.0f}));
+	CHECK(are_equal(srgb_from_linear(Lin_rgb{{0.0f, 0.0f, 0.0f}}), Rgb{0.0f, 0.0f, 0.0f}));
+	CHECK(are_equal(srgb_from_linear(Lin_rgb{{1.0f, 1.0f, 1.0f}}), Rgb{1.0f, 1.0f, 1.0f}));
 
     CHECK(are_equal(oklab_from_linear({{0.0f, 0.0f, 0.0f}}), {0.0f, 0.0f, 0.0f}));
     CHECK(are_equal(linear_from_oklab({0.0f, 0.0f, 0.0f}), {{0.0f, 0.0f, 0.0f}}));
@@ -66,7 +66,7 @@ TEST_CASE("color space conversion black/white", "[color]")
 TEST_CASE("color space conversion sky blue", "[color]")
 {
 	// sky blue from bang-wong palette converted with external tool https://apps.colorjs.io/picker/
-	const auto lrgb = Lrgb{{0.0930589628f, 0.4564110232f, 0.8148465722f}};
+	const auto lrgb = Lin_rgb{{0.0930589628f, 0.4564110232f, 0.8148465722f}};
 	const auto oklab = Lab{.l = 0.7345201878f, .a = -0.0653327754f, .b = -0.0975091851f};
 	const auto oklch = Lch{.l = 0.7345201878f, .c = 0.1173729642f, .h = Angle::from_degrees(236.1772573f)};
 	
@@ -87,7 +87,7 @@ Hsl hsl(int deg, float s, float l)
 	return {.h = Angle::from_degrees(deg), .s = s/100.0f, .l=l/100.0f};
 }
 
-Color rgb(int r, int g, int b)
+Rgb rgb(int r, int g, int b)
 {
 	return {r / 255.0f, g / 255.0f, b / 255.0f};
 }
@@ -95,22 +95,22 @@ Color rgb(int r, int g, int b)
 TEST_CASE("rgb -> hsl", "[color]")
 {
 	// https://ethanschoonover.com/solarized/
-	CHECK(are_equal(srgb_from_hsl(hsl(192, 100.0f, 10.6f)), Color{  0.0f / 255.0f,  43.0f/255.0f,  54.0f/255.0f})); // base03
-	CHECK(are_equal(srgb_from_hsl(hsl(192, 80.8f,  14.3f)), Color{  7.0f / 255.0f,  54.0f/255.0f,  66.0f/255.0f})); // base02
-	CHECK(are_equal(srgb_from_hsl(hsl(194, 14.1f,  40.2f)), Color{ 88.0f / 255.0f, 110.0f/255.0f, 117.0f/255.0f})); // base01
-	CHECK(are_equal(srgb_from_hsl(hsl(196, 12.9f,  45.5f)), Color{101.0f / 255.0f, 123.0f/255.0f, 131.0f/255.0f})); // base00
-	CHECK(are_equal(srgb_from_hsl(hsl(186, 8.3f,  55.1f)), Color{131.0f / 255.0f, 148.0f/255.0f, 150.0f/255.0f})); // base0
-	CHECK(are_equal(srgb_from_hsl(hsl(180, 6.9f,  60.4f)), Color{147.0f / 255.0f, 161.0f/255.0f, 161.0f/255.0f})); // base1
-	CHECK(are_equal(srgb_from_hsl(hsl(46, 42.4f,  88.4f)), Color{238.0f / 255.0f, 232.0f/255.0f, 213.0f/255.0f})); // base2
-	CHECK(are_equal(srgb_from_hsl(hsl(44, 86.7f,  94.1f)), Color{253.0f / 255.0f, 246.0f/255.0f, 227.0f/255.0f})); // base3
-	CHECK(are_equal(srgb_from_hsl(hsl(45, 100.0f, 35.5f)), Color{181.0f / 255.0f, 137.0f/255.0f,   0.0f/255.0f})); // yellow
-	CHECK(are_equal(srgb_from_hsl(hsl(18, 80.4f,  44.1f)), Color{203.0f / 255.0f,  75.0f/255.0f,  22.0f/255.0f})); // orange
-	CHECK(are_equal(srgb_from_hsl(hsl(1, 71.2f,  52.4f)), Color{220.0f / 255.0f,  50.0f/255.0f,  47.0f/255.0f})); // red
-	CHECK(are_equal(srgb_from_hsl(hsl(331, 64.1f,  52.0f)), Color{211.0f / 255.0f,  54.0f/255.0f, 130.0f/255.0f})); // magenta
-	CHECK(are_equal(srgb_from_hsl(hsl(237, 42.7f,  59.6f)), Color{108.0f / 255.0f, 113.0f/255.0f, 196.0f/255.0f})); // violet
-	CHECK(are_equal(srgb_from_hsl(hsl(205, 69.4f,  48.6f)), Color{ 38.0f / 255.0f, 139.0f/255.0f, 210.0f/255.0f})); // blue
-	CHECK(are_equal(srgb_from_hsl(hsl(175, 58.6f,  39.8f)), Color{ 42.0f / 255.0f, 161.0f/255.0f, 152.0f/255.0f})); // cyan
-	CHECK(are_equal(srgb_from_hsl(hsl(68, 100.0f, 30.0f)), Color{133.0f / 255.0f, 153.0f / 255.0f, 0.0f / 255.0f})); // green
+	CHECK(are_equal(srgb_from_hsl(hsl(192, 100.0f, 10.6f)), Rgb{  0.0f / 255.0f,  43.0f/255.0f,  54.0f/255.0f})); // base03
+	CHECK(are_equal(srgb_from_hsl(hsl(192, 80.8f,  14.3f)), Rgb{  7.0f / 255.0f,  54.0f/255.0f,  66.0f/255.0f})); // base02
+	CHECK(are_equal(srgb_from_hsl(hsl(194, 14.1f,  40.2f)), Rgb{ 88.0f / 255.0f, 110.0f/255.0f, 117.0f/255.0f})); // base01
+	CHECK(are_equal(srgb_from_hsl(hsl(196, 12.9f,  45.5f)), Rgb{101.0f / 255.0f, 123.0f/255.0f, 131.0f/255.0f})); // base00
+	CHECK(are_equal(srgb_from_hsl(hsl(186, 8.3f,  55.1f)), Rgb{131.0f / 255.0f, 148.0f/255.0f, 150.0f/255.0f})); // base0
+	CHECK(are_equal(srgb_from_hsl(hsl(180, 6.9f,  60.4f)), Rgb{147.0f / 255.0f, 161.0f/255.0f, 161.0f/255.0f})); // base1
+	CHECK(are_equal(srgb_from_hsl(hsl(46, 42.4f,  88.4f)), Rgb{238.0f / 255.0f, 232.0f/255.0f, 213.0f/255.0f})); // base2
+	CHECK(are_equal(srgb_from_hsl(hsl(44, 86.7f,  94.1f)), Rgb{253.0f / 255.0f, 246.0f/255.0f, 227.0f/255.0f})); // base3
+	CHECK(are_equal(srgb_from_hsl(hsl(45, 100.0f, 35.5f)), Rgb{181.0f / 255.0f, 137.0f/255.0f,   0.0f/255.0f})); // yellow
+	CHECK(are_equal(srgb_from_hsl(hsl(18, 80.4f,  44.1f)), Rgb{203.0f / 255.0f,  75.0f/255.0f,  22.0f/255.0f})); // orange
+	CHECK(are_equal(srgb_from_hsl(hsl(1, 71.2f,  52.4f)), Rgb{220.0f / 255.0f,  50.0f/255.0f,  47.0f/255.0f})); // red
+	CHECK(are_equal(srgb_from_hsl(hsl(331, 64.1f,  52.0f)), Rgb{211.0f / 255.0f,  54.0f/255.0f, 130.0f/255.0f})); // magenta
+	CHECK(are_equal(srgb_from_hsl(hsl(237, 42.7f,  59.6f)), Rgb{108.0f / 255.0f, 113.0f/255.0f, 196.0f/255.0f})); // violet
+	CHECK(are_equal(srgb_from_hsl(hsl(205, 69.4f,  48.6f)), Rgb{ 38.0f / 255.0f, 139.0f/255.0f, 210.0f/255.0f})); // blue
+	CHECK(are_equal(srgb_from_hsl(hsl(175, 58.6f,  39.8f)), Rgb{ 42.0f / 255.0f, 161.0f/255.0f, 152.0f/255.0f})); // cyan
+	CHECK(are_equal(srgb_from_hsl(hsl(68, 100.0f, 30.0f)), Rgb{133.0f / 255.0f, 153.0f / 255.0f, 0.0f / 255.0f})); // green
 
   	CHECK(are_equal(srgb_from_hsl(hsl(0,0,0)           ), rgb(0,0,0)       )); // Black  
   	CHECK(are_equal(srgb_from_hsl(hsl(0,0,100)         ), rgb(255,255,255) )); // White  
