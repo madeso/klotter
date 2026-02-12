@@ -62,10 +62,20 @@ Color srgb_from_linear(const Lrgb& value);
 Color srgb_from_hsl(const Hsl& hsl);
 
 // oklab & oklch
+// from: https://bottosson.github.io/posts/oklab/
+
 Lab oklab_from_linear(const Lrgb& c);
 Lrgb linear_from_oklab(const Lab& c);
 Lch oklch_from_oklab(const Lab& c);
 Lab oklab_from_oklch(const Lch& c);
+
+
+// gammut clipping functions from https://bottosson.github.io/posts/gamutclipping/
+Lrgb gamut_clip_preserve_chroma(const Lrgb& rgb);
+Lrgb gamut_clip_project_to_0_5(const Lrgb& rgb);
+Lrgb gamut_clip_project_to_L_cusp(const Lrgb& rgb);
+Lrgb gamut_clip_adaptive_L0_0_5(const Lrgb& rgb, float alpha = 0.05f);
+Lrgb gamut_clip_adaptive_L0_L_cusp(const Lrgb& rgb, float alpha = 0.05f);
 
 }
 
