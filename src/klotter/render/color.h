@@ -2,6 +2,8 @@
 
 #include "klotter/angle.h"
 
+// todo(Gustav): split into 2 headers, one color (rgb + linear) and one extra
+
 namespace klotter
 {
 
@@ -20,20 +22,27 @@ struct Rgb
 	{}
 };
 
-
-// A color is sRGB space
-struct Hsl
-{
-	Angle h;
-	float s;
-	float l;
-};
-
 /// Represents a linear sRGB color.
 /// @see Color
 struct Lin_rgb
 {
 	glm::vec3 linear;
+};
+
+/// Represents a color in the OKhsv color space
+struct HSVal
+{
+	float hue; // angle 0-1
+	float saturation;
+	float value;
+};
+
+/// Represents a color in the OKhsl color space
+struct HSLig
+{
+	float hue; // angle 0-1
+	float saturation;
+	float lightness;
 };
 
 /// Represents a color in the OKlch color space.
@@ -53,17 +62,19 @@ struct Lab
 };
 
 // linear-space gamma-space
+// todo(Gustav): should the functions that take gamma still be used?
 float linear_from_srgb(float value, float gamma);
 Lin_rgb linear_from_srgb(const Rgb& value, float gamma);
+
+float linear_from_srgb(float value);
+Lin_rgb linear_from_srgb(const Rgb& value);
 
 float srgb_from_linear(float value);
 Rgb srgb_from_linear(const Lin_rgb& value);
 
-Rgb srgb_from_hsl(const Hsl& hsl);
 
 // oklab & oklch
 // from: https://bottosson.github.io/posts/oklab/
-
 Lab oklab_from_linear(const Lin_rgb& c);
 Lin_rgb linear_from_oklab(const Lab& c);
 Lch oklch_from_oklab(const Lab& c);
@@ -76,6 +87,15 @@ Lin_rgb gamut_clip_project_to_0_5(const Lin_rgb& rgb);
 Lin_rgb gamut_clip_project_to_L_cusp(const Lin_rgb& rgb);
 Lin_rgb gamut_clip_adaptive_L0_0_5(const Lin_rgb& rgb, float alpha = 0.05f);
 Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha = 0.05f);
+
+
+
+
+Rgb srgb_from_hsv(const HSVal& hsv);
+HSVal hsv_from_srgb(const Rgb& rgb);
+
+Rgb srgb_from_hsl(const HSLig& hsl);
+HSLig hsl_from_srgb(const Rgb& rgb);
 
 }
 
