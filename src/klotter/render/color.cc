@@ -507,8 +507,8 @@ Rgb srgb_from_hsv(const HSVal& hsv)
 	const auto s = hsv.saturation;
 	const auto v = hsv.value;
 
-	const auto a_ = cosf(2.f * pi * h);
-	const auto b_ = sinf(2.f * pi * h);
+	const auto a_ = klotter::cos(h);
+	const auto b_ = klotter::sin(h);
 
 	const auto cusp = find_cusp(a_, b_);
 	const auto ST_max = ST_from_cusp(cusp);
@@ -553,7 +553,7 @@ HSVal hsv_from_srgb(const Rgb& rgb)
 	const auto b_ = lab.b / C;
 
 	auto L = lab.l;
-	auto h = 0.5f + 0.5f * atan2f(-lab.b, -lab.a) / pi;
+	auto h = klotter::atan2(-lab.b, -lab.a);
 
 	const auto cusp = find_cusp(a_, b_);
 	const auto ST_max = ST_from_cusp(cusp);
@@ -672,8 +672,8 @@ Rgb srgb_from_hsl(const HSLig& hsl)
 		return {0.f, 0.f, 0.f};
 	}
 
-	const auto a_ = cosf(2.f * pi * h);
-	const auto b_ = sinf(2.f * pi * h);
+	const auto a_ = klotter::cos(h);
+	const auto b_ = klotter::sin(h);
 	const auto L = toe_inv(l);
 
 	const auto cs = get_Cs(L, a_, b_);
@@ -724,7 +724,7 @@ HSLig hsl_from_srgb(const Rgb& rgb)
 	const auto b_ = lab.b / C;
 
 	const auto L = lab.l;
-	const auto h = 0.5f + 0.5f * atan2f(-lab.b, -lab.a) / pi;
+	const auto h = klotter::atan2(-lab.b, -lab.a);
 
 	const auto cs = get_Cs(L, a_, b_);
 	const auto C_0 = cs.C_0;

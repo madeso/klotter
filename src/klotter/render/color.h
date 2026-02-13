@@ -32,7 +32,7 @@ struct Lin_rgb
 /// Represents a color in the OKhsv color space
 struct HSVal
 {
-	float hue; // angle 0-1
+	Angle hue;
 	float saturation;
 	float value;
 };
@@ -40,7 +40,7 @@ struct HSVal
 /// Represents a color in the OKhsl color space
 struct HSLig
 {
-	float hue; // angle 0-1
+	Angle hue;
 	float saturation;
 	float lightness;
 };
