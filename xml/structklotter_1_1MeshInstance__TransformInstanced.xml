@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1MeshInstance__TransformInstanced" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::MeshInstance_TransformInstanced</compoundname>
+    <includes refid="world_8h" local="no">world.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1MeshInstance__TransformInstanced_1ad14910f961fedc36210d3173fca24ab4" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1CompiledGeom__TransformInstance" kindref="compound">CompiledGeom_TransformInstance</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;CompiledGeom_TransformInstance&gt; klotter::MeshInstance_TransformInstanced::geom</definition>
+        <argsstring></argsstring>
+        <name>geom</name>
+        <qualifiedname>klotter::MeshInstance_TransformInstanced::geom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="102" column="17" bodyfile="src/klotter/render/world.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1MeshInstance__TransformInstanced_1ad01fe393f543e9f9bfb9335621b75395" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1Material" kindref="compound">Material</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Material&gt; klotter::MeshInstance_TransformInstanced::material</definition>
+        <argsstring></argsstring>
+        <name>material</name>
+        <qualifiedname>klotter::MeshInstance_TransformInstanced::material</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="103" column="17" bodyfile="src/klotter/render/world.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1MeshInstance__TransformInstanced_1a35913435778f8c6634d2bc6a4e3ad218" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; glm::mat4 &gt;</type>
+        <definition>std::vector&lt;glm::mat4&gt; klotter::MeshInstance_TransformInstanced::world_from_locals</definition>
+        <argsstring></argsstring>
+        <name>world_from_locals</name>
+        <qualifiedname>klotter::MeshInstance_TransformInstanced::world_from_locals</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/world.h" line="107" column="13" bodyfile="src/klotter/render/world.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Stores <ref refid="structklotter_1_1Geom" kindref="compound">Geom</ref> + <ref refid="structklotter_1_1Material" kindref="compound">Material</ref> (aka a mesh) and its current transform but instanced for faster rendering. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>klotter::CompiledGeom_TransformInstance</label>
+        <link refid="structklotter_1_1CompiledGeom__TransformInstance"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>klotter::Material</label>
+        <link refid="structklotter_1_1Material"/>
+      </node>
+      <node id="1">
+        <label>klotter::MeshInstance_TransformInstanced</label>
+        <link refid="structklotter_1_1MeshInstance__TransformInstanced"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>material</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>world_from_locals</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::CompiledGeom_TransformInstance &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::shared_ptr&lt; klotter::Material &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::unordered_set&lt; VertexType &gt;</label>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; glm::mat4 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/world.h" line="100" column="1" bodyfile="src/klotter/render/world.h" bodystart="101" bodyend="108"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad14910f961fedc36210d3173fca24ab4" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>geom</name></member>
+      <member refid="structklotter_1_1MeshInstance__TransformInstanced_1ad01fe393f543e9f9bfb9335621b75395" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>material</name></member>
+      <member refid="structklotter_1_1MeshInstance__TransformInstanced_1a35913435778f8c6634d2bc6a4e3ad218" prot="public" virt="non-virtual"><scope>klotter::MeshInstance_TransformInstanced</scope><name>world_from_locals</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

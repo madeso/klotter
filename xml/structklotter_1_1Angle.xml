@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1Angle" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::Angle</compoundname>
+    <includes refid="angle_8h" local="no">angle.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structklotter_1_1Angle_1a922bbf9a6d5687ad731bae426d126dbe" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::Angle::radians</definition>
+        <argsstring></argsstring>
+        <name>radians</name>
+        <qualifiedname>klotter::Angle::radians</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="47" column="11" bodyfile="src/klotter/angle.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" prot="public" static="yes" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">Angle</ref></type>
+        <definition>static constexpr Angle klotter::Angle::from_degrees</definition>
+        <argsstring>(float degrees)</argsstring>
+        <name>from_degrees</name>
+        <qualifiedname>klotter::Angle::from_degrees</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>degrees</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="12" column="5" bodyfile="src/klotter/angle.h" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1abd55a79db7ec4747cab7f43ff214e992" prot="public" static="yes" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">Angle</ref></type>
+        <definition>static constexpr Angle klotter::Angle::from_radians</definition>
+        <argsstring>(float radians)</argsstring>
+        <name>from_radians</name>
+        <qualifiedname>klotter::Angle::from_radians</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>radians</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="18" column="5" bodyfile="src/klotter/angle.h" bodystart="18" bodyend="21"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1Angle_1ab0695c7ba1e1cacefc5b775b8b250c11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::Angle::wrap</definition>
+        <argsstring>()</argsstring>
+        <name>wrap</name>
+        <qualifiedname>klotter::Angle::wrap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="23" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1acfb8ec7a021fc7e3bf0b904930bc4761" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float klotter::Angle::as_degrees</definition>
+        <argsstring>() const</argsstring>
+        <name>as_degrees</name>
+        <qualifiedname>klotter::Angle::as_degrees</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="27" column="5" bodyfile="src/klotter/angle.h" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1a2a96e52b6f3cc819e31b4c034819ec8c" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float klotter::Angle::as_radians</definition>
+        <argsstring>() const</argsstring>
+        <name>as_radians</name>
+        <qualifiedname>klotter::Angle::as_radians</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="33" column="5" bodyfile="src/klotter/angle.h" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1a68d7f23d71c9ecea05e6a72b4f12856b" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">Angle</ref></type>
+        <definition>Angle klotter::Angle::get_wrapped</definition>
+        <argsstring>() const</argsstring>
+        <name>get_wrapped</name>
+        <qualifiedname>klotter::Angle::get_wrapped</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="38" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1a812e61327ca964e449e1a6f48f1d4a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::Angle::operator+=</definition>
+        <argsstring>(const Angle &amp;rhs)</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>klotter::Angle::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1Angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="40" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1a42f0052dc8c45299515e010c9ae55ff1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::Angle::operator-=</definition>
+        <argsstring>(const Angle &amp;rhs)</argsstring>
+        <name>operator-=</name>
+        <qualifiedname>klotter::Angle::operator-=</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1Angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="41" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1a25eb6b0b3e66b5a655d22ec9db1bef0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::Angle::operator*=</definition>
+        <argsstring>(float rhs)</argsstring>
+        <name>operator*=</name>
+        <qualifiedname>klotter::Angle::operator*=</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="42" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1a5775e24d67d3789ae9485d8bc035bb95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void klotter::Angle::operator/=</definition>
+        <argsstring>(float rhs)</argsstring>
+        <name>operator/=</name>
+        <qualifiedname>klotter::Angle::operator/=</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="43" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1a7ed9538f2a2f4291f88dc29a744cbd49" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">Angle</ref></type>
+        <definition>Angle klotter::Angle::operator-</definition>
+        <argsstring>() const</argsstring>
+        <name>operator-</name>
+        <qualifiedname>klotter::Angle::operator-</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="44" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="structklotter_1_1Angle_1a0f09392a226607e8deecb574a6f82f1c" prot="private" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>klotter::Angle::Angle</definition>
+        <argsstring>(float r)</argsstring>
+        <name>Angle</name>
+        <qualifiedname>klotter::Angle::Angle</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="49" column="24" bodyfile="src/klotter/angle.h" bodystart="49" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="structklotter_1_1Angle_1abcdb2d726dff9b7b9e7c0f74e92af536" prot="private" static="yes" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static constexpr float klotter::Angle::deg_from_rad</definition>
+        <argsstring>(float radians)</argsstring>
+        <name>deg_from_rad</name>
+        <qualifiedname>klotter::Angle::deg_from_rad</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>radians</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="52" column="5" bodyfile="src/klotter/angle.h" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1Angle_1a448b1e59effabb21096efbb51bbcee70" prot="private" static="yes" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static constexpr float klotter::Angle::rad_from_deg</definition>
+        <argsstring>(float degrees)</argsstring>
+        <name>rad_from_deg</name>
+        <qualifiedname>klotter::Angle::rad_from_deg</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>degrees</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/angle.h" line="58" column="5" bodyfile="src/klotter/angle.h" bodystart="58" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>An angle in both degrees and radians. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/angle.h" line="9" column="1" bodyfile="src/klotter/angle.h" bodystart="10" bodyend="62"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1Angle_1a0f09392a226607e8deecb574a6f82f1c" prot="private" virt="non-virtual"><scope>klotter::Angle</scope><name>Angle</name></member>
+      <member refid="structklotter_1_1Angle_1acfb8ec7a021fc7e3bf0b904930bc4761" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>as_degrees</name></member>
+      <member refid="structklotter_1_1Angle_1a2a96e52b6f3cc819e31b4c034819ec8c" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>as_radians</name></member>
+      <member refid="structklotter_1_1Angle_1abcdb2d726dff9b7b9e7c0f74e92af536" prot="private" virt="non-virtual"><scope>klotter::Angle</scope><name>deg_from_rad</name></member>
+      <member refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>from_degrees</name></member>
+      <member refid="structklotter_1_1Angle_1abd55a79db7ec4747cab7f43ff214e992" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>from_radians</name></member>
+      <member refid="structklotter_1_1Angle_1a68d7f23d71c9ecea05e6a72b4f12856b" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>get_wrapped</name></member>
+      <member refid="structklotter_1_1Angle_1a25eb6b0b3e66b5a655d22ec9db1bef0f" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>operator*=</name></member>
+      <member refid="structklotter_1_1Angle_1a812e61327ca964e449e1a6f48f1d4a98" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>operator+=</name></member>
+      <member refid="structklotter_1_1Angle_1a7ed9538f2a2f4291f88dc29a744cbd49" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>operator-</name></member>
+      <member refid="structklotter_1_1Angle_1a42f0052dc8c45299515e010c9ae55ff1" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>operator-=</name></member>
+      <member refid="structklotter_1_1Angle_1a5775e24d67d3789ae9485d8bc035bb95" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>operator/=</name></member>
+      <member refid="structklotter_1_1Angle_1a448b1e59effabb21096efbb51bbcee70" prot="private" virt="non-virtual"><scope>klotter::Angle</scope><name>rad_from_deg</name></member>
+      <member refid="structklotter_1_1Angle_1a922bbf9a6d5687ad731bae426d126dbe" prot="private" virt="non-virtual"><scope>klotter::Angle</scope><name>radians</name></member>
+      <member refid="structklotter_1_1Angle_1ab0695c7ba1e1cacefc5b775b8b250c11" prot="public" virt="non-virtual"><scope>klotter::Angle</scope><name>wrap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

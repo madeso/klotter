@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1FloatSliderShaderProp" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::FloatSliderShaderProp</compoundname>
+    <basecompoundref refid="structklotter_1_1ShaderProp" prot="public" virt="non-virtual">klotter::ShaderProp</basecompoundref>
+    <includes refid="postproc_8internal_8h" local="no">postproc.internal.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1a921d30c4c7caff395f87eae689094cb1" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::FloatSliderShaderProp::uniform</definition>
+        <argsstring></argsstring>
+        <name>uniform</name>
+        <qualifiedname>klotter::FloatSliderShaderProp::uniform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="86" column="9" bodyfile="src/klotter/render/postproc.internal.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1a620879ab8993dffafbebb2b846143dd2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string klotter::FloatSliderShaderProp::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>klotter::FloatSliderShaderProp::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="87" column="13" bodyfile="src/klotter/render/postproc.internal.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1a34eaecd8ec3a52fa9a146a17fbab666d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::FloatSliderShaderProp::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>klotter::FloatSliderShaderProp::value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="88" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1af00913195f8b2d1df24399babe2e4670" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::FloatSliderShaderProp::min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <qualifiedname>klotter::FloatSliderShaderProp::min</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="89" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1FloatSliderShaderProp_1a8414339be4d0247e5440fe1a3c578f4b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::FloatSliderShaderProp::max</definition>
+        <argsstring></argsstring>
+        <name>max</name>
+        <qualifiedname>klotter::FloatSliderShaderProp::max</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="90" column="7" bodyfile="src/klotter/render/postproc.internal.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1FloatSliderShaderProp_1a594675312b454da4b4a06c9fcced5338" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::FloatSliderShaderProp::FloatSliderShaderProp</definition>
+        <argsstring>(const LoadedPostProcShader &amp;shader, const std::string &amp;n, float v, float mi, float ma)</argsstring>
+        <name>FloatSliderShaderProp</name>
+        <qualifiedname>klotter::FloatSliderShaderProp::FloatSliderShaderProp</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>mi</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1FloatSliderShaderProp_1a0163d7e00d82aa251a1d29c382b2967e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void klotter::FloatSliderShaderProp::use</definition>
+        <argsstring>(const PostProcArg &amp;, ShaderProgram &amp;shader) override</argsstring>
+        <name>use</name>
+        <qualifiedname>klotter::FloatSliderShaderProp::use</qualifiedname>
+        <reimplements refid="structklotter_1_1ShaderProp_1a26bcff51c572a232c0c8470a2a478f5e">use</reimplements>
+        <param>
+          <type>const <ref refid="structklotter_1_1PostProcArg" kindref="compound">PostProcArg</ref> &amp;</type>
+        </param>
+        <param>
+          <type><ref refid="structklotter_1_1ShaderProgram" kindref="compound">ShaderProgram</ref> &amp;</type>
+          <declname>shader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="96" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="structklotter_1_1FloatSliderShaderProp_1a31aea0b3e9f3216b724b8f1b84a3c605" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void klotter::FloatSliderShaderProp::gui</definition>
+        <argsstring>() override</argsstring>
+        <name>gui</name>
+        <qualifiedname>klotter::FloatSliderShaderProp::gui</qualifiedname>
+        <reimplements refid="structklotter_1_1ShaderProp_1a5881c9f48139157903842901f6165c28">gui</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/postproc.internal.h" line="98" column="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A float shader property that is a slider. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>klotter::FloatSliderShaderProp</label>
+        <link refid="structklotter_1_1FloatSliderShaderProp"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::ShaderProp</label>
+        <link refid="structklotter_1_1ShaderProp"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::FloatSliderShaderProp</label>
+        <link refid="structklotter_1_1FloatSliderShaderProp"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>uniform</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>klotter::ShaderProp</label>
+        <link refid="structklotter_1_1ShaderProp"/>
+      </node>
+      <node id="3">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="4">
+        <label>std::string</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/postproc.internal.h" line="84" column="1" bodyfile="src/klotter/render/postproc.internal.h" bodystart="85" bodyend="99"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1FloatSliderShaderProp_1a594675312b454da4b4a06c9fcced5338" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>FloatSliderShaderProp</name></member>
+      <member refid="structklotter_1_1FloatSliderShaderProp_1a31aea0b3e9f3216b724b8f1b84a3c605" prot="public" virt="virtual"><scope>klotter::FloatSliderShaderProp</scope><name>gui</name></member>
+      <member refid="structklotter_1_1FloatSliderShaderProp_1a8414339be4d0247e5440fe1a3c578f4b" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>max</name></member>
+      <member refid="structklotter_1_1FloatSliderShaderProp_1af00913195f8b2d1df24399babe2e4670" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>min</name></member>
+      <member refid="structklotter_1_1FloatSliderShaderProp_1a620879ab8993dffafbebb2b846143dd2" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>name</name></member>
+      <member refid="structklotter_1_1ShaderProp_1a6b417085805c23b107f89f0bf57a0959" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1ShaderProp_1a8b1fc90f5a3e0f2605d36e7d0cbcfaa7" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>operator=</name></member>
+      <member refid="structklotter_1_1ShaderProp_1afd8562fd9345fbc2c80cd0d196ce12ff" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>ShaderProp</name></member>
+      <member refid="structklotter_1_1ShaderProp_1adfe6c1570dc234838d121d2e9b515223" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>ShaderProp</name></member>
+      <member refid="structklotter_1_1ShaderProp_1a0de3a9acf2218f6171779ee84e6a31fb" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>ShaderProp</name></member>
+      <member refid="structklotter_1_1FloatSliderShaderProp_1a921d30c4c7caff395f87eae689094cb1" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>uniform</name></member>
+      <member refid="structklotter_1_1FloatSliderShaderProp_1a0163d7e00d82aa251a1d29c382b2967e" prot="public" virt="virtual"><scope>klotter::FloatSliderShaderProp</scope><name>use</name></member>
+      <member refid="structklotter_1_1FloatSliderShaderProp_1a34eaecd8ec3a52fa9a146a17fbab666d" prot="public" virt="non-virtual"><scope>klotter::FloatSliderShaderProp</scope><name>value</name></member>
+      <member refid="structklotter_1_1ShaderProp_1a3b2afd1a1a741fee9ae837da87a49332" prot="public" virt="virtual"><scope>klotter::FloatSliderShaderProp</scope><name>~ShaderProp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
