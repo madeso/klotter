@@ -370,8 +370,8 @@ Lin_rgb gamut_clip_adaptive_L0_0_5(const Lin_rgb& rgb, float alpha)
 	const auto b_ = lab.b / C;
 
 	const auto Ld = L - 0.5f;
-	const auto e1 = 0.5f + fabs(Ld) + alpha * C;
-	const auto L0 = 0.5f * (1.f + sgn(Ld) * (e1 - sqrtf(e1 * e1 - 2.f * fabs(Ld))));
+	const auto e1 = 0.5f + std::abs(Ld) + alpha * C;
+	const auto L0 = 0.5f * (1.f + sgn(Ld) * (e1 - sqrtf(e1 * e1 - 2.f * std::abs(Ld))));
 
 	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
 	const auto L_clipped = L0 * (1.f - t) + t * L;
@@ -403,8 +403,8 @@ Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha)
 	const auto Ld = L - cusp.l;
 	const auto k = 2.f * (Ld > 0 ? 1.f - cusp.l : cusp.l);
 
-	const auto e1 = 0.5f * k + fabs(Ld) + alpha * C / k;
-	const auto L0 = cusp.l + 0.5f * (sgn(Ld) * (e1 - sqrtf(e1 * e1 - 2.f * k * fabs(Ld))));
+	const auto e1 = 0.5f * k + std::abs(Ld) + alpha * C / k;
+	const auto L0 = cusp.l + 0.5f * (sgn(Ld) * (e1 - sqrtf(e1 * e1 - 2.f * k * std::abs(Ld))));
 
 	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
 	const auto L_clipped = L0 * (1.f - t) + t * L;
