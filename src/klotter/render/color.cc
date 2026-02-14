@@ -283,7 +283,7 @@ Lin_rgb gamut_clip_preserve_chroma(const Lin_rgb& rgb)
 
 	const auto L = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, sqrtf(lab.a * lab.a + lab.b * lab.b));
+	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
 	const auto a_ = lab.a / C;
 	const auto b_ = lab.b / C;
 
@@ -309,7 +309,7 @@ Lin_rgb gamut_clip_project_to_0_5(const Lin_rgb& rgb)
 
 	const auto L = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, sqrtf(lab.a * lab.a + lab.b * lab.b));
+	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
 	const auto a_ = lab.a / C;
 	const auto b_ = lab.b / C;
 
@@ -335,7 +335,7 @@ Lin_rgb gamut_clip_project_to_L_cusp(const Lin_rgb& rgb)
 
 	const auto L = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, sqrtf(lab.a * lab.a + lab.b * lab.b));
+	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
 	const auto a_ = lab.a / C;
 	const auto b_ = lab.b / C;
 
@@ -365,13 +365,13 @@ Lin_rgb gamut_clip_adaptive_L0_0_5(const Lin_rgb& rgb, float alpha)
 
 	const auto L = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, sqrtf(lab.a * lab.a + lab.b * lab.b));
+	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
 	const auto a_ = lab.a / C;
 	const auto b_ = lab.b / C;
 
 	const auto Ld = L - 0.5f;
 	const auto e1 = 0.5f + std::abs(Ld) + alpha * C;
-	const auto L0 = 0.5f * (1.f + sgn(Ld) * (e1 - sqrtf(e1 * e1 - 2.f * std::abs(Ld))));
+	const auto L0 = 0.5f * (1.f + sgn(Ld) * (e1 - std::sqrt(e1 * e1 - 2.f * std::abs(Ld))));
 
 	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
 	const auto L_clipped = L0 * (1.f - t) + t * L;
@@ -393,7 +393,7 @@ Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha)
 
 	const auto L = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, sqrtf(lab.a * lab.a + lab.b * lab.b));
+	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
 	const auto a_ = lab.a / C;
 	const auto b_ = lab.b / C;
 
@@ -404,7 +404,7 @@ Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha)
 	const auto k = 2.f * (Ld > 0 ? 1.f - cusp.l : cusp.l);
 
 	const auto e1 = 0.5f * k + std::abs(Ld) + alpha * C / k;
-	const auto L0 = cusp.l + 0.5f * (sgn(Ld) * (e1 - sqrtf(e1 * e1 - 2.f * k * std::abs(Ld))));
+	const auto L0 = cusp.l + 0.5f * (sgn(Ld) * (e1 - std::sqrt(e1 * e1 - 2.f * k * std::abs(Ld))));
 
 	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
 	const auto L_clipped = L0 * (1.f - t) + t * L;
@@ -455,7 +455,7 @@ Lin_rgb linear_from_oklab(const Lab& c)
 // https://en.wikipedia.org/wiki/Oklab_color_space#Conversion_to_and_from_Oklch
 Lch oklch_from_oklab(const Lab& c)
 {
-	return {.l = c.l, .c = std::sqrtf(c.a * c.a + c.b * c.b), .h = klotter::atan2(c.b, c.a)};
+	return {.l = c.l, .c = std::std::sqrt(c.a * c.a + c.b * c.b), .h = klotter::atan2(c.b, c.a)};
 }
 
 Lab oklab_from_oklch(const Lch& c)
@@ -469,7 +469,7 @@ Lab oklab_from_oklch(const Lch& c)
 
 // Alternative representation of (L_cusp, C_cusp)
 // Encoded so S = C_cusp/L_cusp and T = C_cusp/(1-L_cusp)
-// The maximum value for C in the triangle is then found as fmin(S*L, T*(1-L)), for a given L
+// The maximum value for C in the triangle is then found as std::min(S*L, T*(1-L)), for a given L
 struct ST
 {
 	float S;
@@ -482,7 +482,7 @@ float toe(float x)
 	constexpr float k_1 = 0.206f;
 	constexpr float k_2 = 0.03f;
 	constexpr float k_3 = (1.f + k_1) / (1.f + k_2);
-	return 0.5f * (k_3 * x - k_1 + sqrtf((k_3 * x - k_1) * (k_3 * x - k_1) + 4 * k_2 * k_3 * x));
+	return 0.5f * (k_3 * x - k_1 + std::sqrt((k_3 * x - k_1) * (k_3 * x - k_1) + 4 * k_2 * k_3 * x));
 }
 
 // inverse toe function for L_r
@@ -535,7 +535,7 @@ Rgb srgb_from_hsv(const HSVal& hsv)
 	L = L_new;
 
 	const auto rgb_scale = linear_from_oklab({L_vt, a_ * C_vt, b_ * C_vt});
-	float scale_L = cbrtf(1.f / fmax(fmax(rgb_scale.linear.r, rgb_scale.linear.g), fmax(rgb_scale.linear.b, 0.f)));
+	float scale_L = cbrtf(1.f / std::max(std::max(rgb_scale.linear.r, rgb_scale.linear.g), std::max(rgb_scale.linear.b, 0.f)));
 
 	L = L * scale_L;
 	C = C * scale_L;
@@ -548,7 +548,7 @@ HSVal hsv_from_srgb(const Rgb& rgb)
 {
 	const auto lab = oklab_from_linear(linear_from_srgb(rgb));
 
-	auto C = sqrtf(lab.a * lab.a + lab.b * lab.b);
+	auto C = std::sqrt(lab.a * lab.a + lab.b * lab.b);
 	const auto a_ = lab.a / C;
 	const auto b_ = lab.b / C;
 
@@ -573,7 +573,7 @@ HSVal hsv_from_srgb(const Rgb& rgb)
 
 	// we can then use these to invert the step that compensates for the toe and the curved top part of the triangle:
 	const auto rgb_scale = linear_from_oklab({.l = L_vt, .a = a_ * C_vt, .b = b_ * C_vt});
-	const auto scale_L = cbrtf(1.f / fmax(fmax(rgb_scale.linear.r, rgb_scale.linear.g), fmax(rgb_scale.linear.b, 0.f)));
+	const auto scale_L = cbrtf(1.f / std::max(std::max(rgb_scale.linear.r, rgb_scale.linear.g), std::max(rgb_scale.linear.b, 0.f)));
 
 	L = L / scale_L;
 	C = C / scale_L;
@@ -631,7 +631,7 @@ Cs get_Cs(float L, float a_, float b_)
 	const auto ST_max = ST_from_cusp(cusp);
 
 	// Scale factor to compensate for the curved part of gamut shape:
-	const auto k = C_max / fmin((L * ST_max.S), (1 - L) * ST_max.T);
+	const auto k = C_max / std::min((L * ST_max.S), (1 - L) * ST_max.T);
 
 	float C_mid;
 	{
@@ -640,7 +640,7 @@ Cs get_Cs(float L, float a_, float b_)
 		// Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
 		const auto C_a = L * ST_mid.S;
 		const auto C_b = (1.f - L) * ST_mid.T;
-		C_mid = 0.9f * k * sqrtf(sqrtf(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
+		C_mid = 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
 	}
 
 	float C_0;
@@ -650,7 +650,7 @@ Cs get_Cs(float L, float a_, float b_)
 		const auto C_b = (1.f - L) * 0.8f;
 
 		// Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-		C_0 = sqrtf(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+		C_0 = std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
 	}
 
 	return {.C_0 = C_0, .C_mid = C_mid, .C_max = C_max};
@@ -719,7 +719,7 @@ HSLig hsl_from_srgb(const Rgb& rgb)
 {
 	const auto lab = oklab_from_linear(linear_from_srgb(rgb));
 
-	const auto C = sqrtf(lab.a * lab.a + lab.b * lab.b);
+	const auto C = std::sqrt(lab.a * lab.a + lab.b * lab.b);
 	const auto a_ = lab.a / C;
 	const auto b_ = lab.b / C;
 
