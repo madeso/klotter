@@ -455,7 +455,7 @@ Lin_rgb linear_from_oklab(const Lab& c)
 // https://en.wikipedia.org/wiki/Oklab_color_space#Conversion_to_and_from_Oklch
 Lch oklch_from_oklab(const Lab& c)
 {
-	return {.l = c.l, .c = std::std::sqrt(c.a * c.a + c.b * c.b), .h = klotter::atan2(c.b, c.a)};
+	return {.l = c.l, .c = std::sqrt(c.a * c.a + c.b * c.b), .h = klotter::atan2(c.b, c.a)};
 }
 
 Lab oklab_from_oklch(const Lch& c)
