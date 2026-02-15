@@ -257,8 +257,15 @@ float find_gamut_intersection(float a, float b, float L1, float C1, float L0)
 
 float clamp(float x, float min, float max)
 {
-	if (x < min) return min;
-	if (x > max) return max;
+	if (x < min)
+	{
+		return min;
+	}
+
+	if (x > max)
+	{
+		return max;
+	}
 
 	return x;
 }
