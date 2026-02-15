@@ -2576,7 +2576,7 @@
       |                                          ~                   ~
       |                                          l                   l
   635 | 
-  636 |         float C_mid;
+  636 |         const auto C_mid = [&amp;]
   637 |         {
   638 |                 const auto ST_mid = get_ST_mid(a_, b_);
   639 | 
@@ -2606,7 +2606,7 @@
   633 |         // Scale factor to compensate for the curved part of gamut shape:
   634 |         const auto k = C_max / std::min((L * ST_max.S), (1 - L) * ST_max.T);
   635 | 
-  636 |         float C_mid;
+  636 |         const auto C_mid = [&amp;]
   637 |         {
   638 |                 const auto ST_mid = get_ST_mid(a_, b_);
       |                                                ~~
@@ -2633,7 +2633,7 @@
   633 |         // Scale factor to compensate for the curved part of gamut shape:
   634 |         const auto k = C_max / std::min((L * ST_max.S), (1 - L) * ST_max.T);
   635 | 
-  636 |         float C_mid;
+  636 |         const auto C_mid = [&amp;]
   637 |         {
   638 |                 const auto ST_mid = get_ST_mid(a_, b_);
       |                                                    ~~
@@ -2669,31 +2669,13 @@
       |                                              st_max               st_max
 </pre>
 <hr>
-<h3>warning: variable &#39;C_mid&#39; is not initialized</h3>
-<code>[cppcoreguidelines-init-variables]</code>
-<p><i>src/klotter/render/color.cc 636 : 8</i></p>
-<pre>
-  636 |         float C_mid;
-      |               ^    
-      |                     = NAN
-</pre>
-<hr>
-<h3>warning: invalid case style for local variable &#39;C_mid&#39;</h3>
+<h3>warning: invalid case style for local constant &#39;C_mid&#39;</h3>
 <code>[readability-identifier-naming]</code>
-<p><i>src/klotter/render/color.cc 636 : 8</i></p>
+<p><i>src/klotter/render/color.cc 636 : 13</i></p>
 <pre>
-  636 |         float C_mid;
-      |               ^~~~~
-      |               c_mid
-  637 |         {
-  638 |                 const auto ST_mid = get_ST_mid(a_, b_);
-  639 | 
-  640 |                 // Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-  641 |                 const auto C_a = L * ST_mid.S;
-  642 |                 const auto C_b = (1.f - L) * ST_mid.T;
-  643 |                 C_mid = 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
-      |                 ~~~~~
-      |                 c_mid
+  636 |         const auto C_mid = [&amp;]
+      |                    ^~~~~
+      |                    c_mid
 </pre>
 <hr>
 <h3>warning: invalid case style for local constant &#39;ST_mid&#39;</h3>
@@ -2721,9 +2703,9 @@
       |                            ^~~
       |                            c_a
   642 |                 const auto C_b = (1.f - L) * ST_mid.T;
-  643 |                 C_mid = 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
-      |                                                                      ~~~   ~~~   ~~~   ~~~
-      |                                                                      c_a   c_a   c_a   c_a
+  643 |                 return 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
+      |                                                                     ~~~   ~~~   ~~~   ~~~
+      |                                                                     c_a   c_a   c_a   c_a
 </pre>
 <hr>
 <h3>warning: invalid case style for local constant &#39;C_b&#39;</h3>
@@ -2733,37 +2715,26 @@
   642 |                 const auto C_b = (1.f - L) * ST_mid.T;
       |                            ^~~
       |                            c_b
-  643 |                 C_mid = 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
-      |                                                                                                      ~~~   ~~~   ~~~   ~~~
-      |                                                                                                      c_b   c_b   c_b   c_b
+  643 |                 return 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
+      |                                                                                                     ~~~   ~~~   ~~~   ~~~
+      |                                                                                                     c_b   c_b   c_b   c_b
 </pre>
 <hr>
-<h3>warning: variable &#39;C_0&#39; is not initialized</h3>
-<code>[cppcoreguidelines-init-variables]</code>
-<p><i>src/klotter/render/color.cc 646 : 8</i></p>
-<pre>
-  646 |         float C_0;
-      |               ^  
-      |                   = NAN
-</pre>
-<hr>
-<h3>warning: invalid case style for local variable &#39;C_0&#39;</h3>
+<h3>warning: invalid case style for local constant &#39;C_0&#39;</h3>
 <code>[readability-identifier-naming]</code>
-<p><i>src/klotter/render/color.cc 646 : 8</i></p>
+<p><i>src/klotter/render/color.cc 646 : 13</i></p>
 <pre>
-  646 |         float C_0;
-      |               ^~~
-      |               c_0
+  646 |         const auto C_0 = [&amp;]
+      |                    ^~~
+      |                    c_0
   647 |         {
   648 |                 // for C_0, the shape is independent of hue, so ST are constant. Values picked to roughly be the average values of ST.
   649 |                 const auto C_a = L * 0.4f;
   650 |                 const auto C_b = (1.f - L) * 0.8f;
   651 | 
   652 |                 // Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-  653 |                 C_0 = std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
-      |                 ~~~
-      |                 c_0
-  654 |         }
+  653 |                 return std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+  654 |         }();
   655 | 
   656 |         return {.C_0 = C_0, .C_mid = C_mid, .C_max = C_max};
       |                        ~~~
@@ -2780,9 +2751,9 @@
   650 |                 const auto C_b = (1.f - L) * 0.8f;
   651 | 
   652 |                 // Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-  653 |                 C_0 = std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
-      |                                               ~~~   ~~~
-      |                                               c_a   c_a
+  653 |                 return std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+      |                                                ~~~   ~~~
+      |                                                c_a   c_a
 </pre>
 <hr>
 <h3>warning: invalid case style for local constant &#39;C_b&#39;</h3>
@@ -2794,9 +2765,9 @@
       |                            c_b
   651 | 
   652 |                 // Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-  653 |                 C_0 = std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
-      |                                                                   ~~~   ~~~
-      |                                                                   c_b   c_b
+  653 |                 return std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+      |                                                                    ~~~   ~~~
+      |                                                                    c_b   c_b
 </pre>
 <hr>
 <h3>warning: invalid case style for local constant &#39;a_&#39;</h3>
@@ -2868,58 +2839,13 @@
       |                    c_max
 </pre>
 <hr>
-<h3>warning: multiple declarations in a single statement reduces readability</h3>
-<code>[readability-isolate-declaration]</code>
-<p><i>src/klotter/render/color.cc 692 : 2</i></p>
-<pre>
-  692 |         float C, t, k_0, k_1, k_2;
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
-</pre>
-<hr>
-<h3>warning: variable &#39;C&#39; is not initialized</h3>
-<code>[cppcoreguidelines-init-variables]</code>
-<p><i>src/klotter/render/color.cc 692 : 8</i></p>
-<pre>
-  692 |         float C, t, k_0, k_1, k_2;
-      |               ^
-</pre>
-<hr>
-<h3>warning: invalid case style for local variable &#39;C&#39;</h3>
+<h3>warning: invalid case style for local constant &#39;C&#39;</h3>
 <code>[readability-identifier-naming]</code>
-<p><i>src/klotter/render/color.cc 692 : 8</i></p>
+<p><i>src/klotter/render/color.cc 692 : 13</i></p>
 <pre>
-</pre>
-<hr>
-<h3>warning: variable &#39;t&#39; is not initialized</h3>
-<code>[cppcoreguidelines-init-variables]</code>
-<p><i>src/klotter/render/color.cc 692 : 11</i></p>
-<pre>
-  692 |         float C, t, k_0, k_1, k_2;
-      |                  ^
-</pre>
-<hr>
-<h3>warning: variable &#39;k_0&#39; is not initialized</h3>
-<code>[cppcoreguidelines-init-variables]</code>
-<p><i>src/klotter/render/color.cc 692 : 14</i></p>
-<pre>
-  692 |         float C, t, k_0, k_1, k_2;
-      |                     ^
-</pre>
-<hr>
-<h3>warning: variable &#39;k_1&#39; is not initialized</h3>
-<code>[cppcoreguidelines-init-variables]</code>
-<p><i>src/klotter/render/color.cc 692 : 19</i></p>
-<pre>
-  692 |         float C, t, k_0, k_1, k_2;
-      |                          ^
-</pre>
-<hr>
-<h3>warning: variable &#39;k_2&#39; is not initialized</h3>
-<code>[cppcoreguidelines-init-variables]</code>
-<p><i>src/klotter/render/color.cc 692 : 24</i></p>
-<pre>
-  692 |         float C, t, k_0, k_1, k_2;
-      |                               ^
+  692 |         const auto C = [&amp;]() {
+      |                    ^
+      |                    c
 </pre>
 <hr>
 <h3>warning: invalid case style for local constant &#39;C&#39;</h3>
@@ -2999,7 +2925,7 @@
   736 |         const auto mid = 0.8f;
   737 |         const auto mid_inv = 1.25f;
   738 | 
-  739 |         float s;
+  739 |         const float s = [&amp;]() {
   740 |         if (C &lt; C_mid)
   741 |         {
   742 |                 const auto k_1 = mid * C_0;
@@ -3021,7 +2947,7 @@
   736 |         const auto mid = 0.8f;
   737 |         const auto mid_inv = 1.25f;
   738 | 
-  739 |         float s;
+  739 |         const float s = [&amp;]() {
   740 |         if (C &lt; C_mid)
       |                 ~~~~~
       |                 c_mid
@@ -3039,15 +2965,6 @@
   732 |         const auto C_max = cs.C_max;
       |                    ^~~~~
       |                    c_max
-</pre>
-<hr>
-<h3>warning: variable &#39;s&#39; is not initialized</h3>
-<code>[cppcoreguidelines-init-variables]</code>
-<p><i>src/klotter/render/color.cc 739 : 8</i></p>
-<pre>
-  739 |         float s;
-      |               ^
-      |                 = NAN
 </pre>
 <!--
 /home/runner/work/klotter/klotter/src/klotter/render/color.cc:64:2: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
@@ -4769,7 +4686,7 @@ note: this fix will not be applied because it overlaps with another fix
       |                                          ~                   ~
       |                                          l                   l
   635 | 
-  636 |         float C_mid;
+  636 |         const auto C_mid = [&]
   637 |         {
   638 |                 const auto ST_mid = get_ST_mid(a_, b_);
   639 | 
@@ -4794,7 +4711,7 @@ note: this fix will not be applied because it overlaps with another fix
   633 |         // Scale factor to compensate for the curved part of gamut shape:
   634 |         const auto k = C_max / std::min((L * ST_max.S), (1 - L) * ST_max.T);
   635 | 
-  636 |         float C_mid;
+  636 |         const auto C_mid = [&]
   637 |         {
   638 |                 const auto ST_mid = get_ST_mid(a_, b_);
       |                                                ~~
@@ -4816,7 +4733,7 @@ note: this fix will not be applied because it overlaps with another fix
   633 |         // Scale factor to compensate for the curved part of gamut shape:
   634 |         const auto k = C_max / std::min((L * ST_max.S), (1 - L) * ST_max.T);
   635 | 
-  636 |         float C_mid;
+  636 |         const auto C_mid = [&]
   637 |         {
   638 |                 const auto ST_mid = get_ST_mid(a_, b_);
       |                                                    ~~
@@ -4840,23 +4757,10 @@ note: this fix will not be applied because it overlaps with another fix
   634 |         const auto k = C_max / std::min((L * ST_max.S), (1 - L) * ST_max.T);
       |                                              ~~~~~~               ~~~~~~
       |                                              st_max               st_max
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:636:8: warning: variable 'C_mid' is not initialized [cppcoreguidelines-init-variables]
-  636 |         float C_mid;
-      |               ^    
-      |                     = NAN
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:636:8: warning: invalid case style for local variable 'C_mid' [readability-identifier-naming]
-  636 |         float C_mid;
-      |               ^~~~~
-      |               c_mid
-  637 |         {
-  638 |                 const auto ST_mid = get_ST_mid(a_, b_);
-  639 | 
-  640 |                 // Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-  641 |                 const auto C_a = L * ST_mid.S;
-  642 |                 const auto C_b = (1.f - L) * ST_mid.T;
-  643 |                 C_mid = 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
-      |                 ~~~~~
-      |                 c_mid
+/home/runner/work/klotter/klotter/src/klotter/render/color.cc:636:13: warning: invalid case style for local constant 'C_mid' [readability-identifier-naming]
+  636 |         const auto C_mid = [&]
+      |                    ^~~~~
+      |                    c_mid
 /home/runner/work/klotter/klotter/src/klotter/render/color.cc:638:14: warning: invalid case style for local constant 'ST_mid' [readability-identifier-naming]
   638 |                 const auto ST_mid = get_ST_mid(a_, b_);
       |                            ^~~~~~
@@ -4874,34 +4778,28 @@ note: this fix will not be applied because it overlaps with another fix
       |                            ^~~
       |                            c_a
   642 |                 const auto C_b = (1.f - L) * ST_mid.T;
-  643 |                 C_mid = 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
-      |                                                                      ~~~   ~~~   ~~~   ~~~
-      |                                                                      c_a   c_a   c_a   c_a
+  643 |                 return 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
+      |                                                                     ~~~   ~~~   ~~~   ~~~
+      |                                                                     c_a   c_a   c_a   c_a
 /home/runner/work/klotter/klotter/src/klotter/render/color.cc:642:14: warning: invalid case style for local constant 'C_b' [readability-identifier-naming]
   642 |                 const auto C_b = (1.f - L) * ST_mid.T;
       |                            ^~~
       |                            c_b
-  643 |                 C_mid = 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
-      |                                                                                                      ~~~   ~~~   ~~~   ~~~
-      |                                                                                                      c_b   c_b   c_b   c_b
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:646:8: warning: variable 'C_0' is not initialized [cppcoreguidelines-init-variables]
-  646 |         float C_0;
-      |               ^  
-      |                   = NAN
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:646:8: warning: invalid case style for local variable 'C_0' [readability-identifier-naming]
-  646 |         float C_0;
-      |               ^~~
-      |               c_0
+  643 |                 return 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
+      |                                                                                                     ~~~   ~~~   ~~~   ~~~
+      |                                                                                                     c_b   c_b   c_b   c_b
+/home/runner/work/klotter/klotter/src/klotter/render/color.cc:646:13: warning: invalid case style for local constant 'C_0' [readability-identifier-naming]
+  646 |         const auto C_0 = [&]
+      |                    ^~~
+      |                    c_0
   647 |         {
   648 |                 // for C_0, the shape is independent of hue, so ST are constant. Values picked to roughly be the average values of ST.
   649 |                 const auto C_a = L * 0.4f;
   650 |                 const auto C_b = (1.f - L) * 0.8f;
   651 | 
   652 |                 // Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-  653 |                 C_0 = std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
-      |                 ~~~
-      |                 c_0
-  654 |         }
+  653 |                 return std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+  654 |         }();
   655 | 
   656 |         return {.C_0 = C_0, .C_mid = C_mid, .C_max = C_max};
       |                        ~~~
@@ -4913,18 +4811,18 @@ note: this fix will not be applied because it overlaps with another fix
   650 |                 const auto C_b = (1.f - L) * 0.8f;
   651 | 
   652 |                 // Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-  653 |                 C_0 = std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
-      |                                               ~~~   ~~~
-      |                                               c_a   c_a
+  653 |                 return std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+      |                                                ~~~   ~~~
+      |                                                c_a   c_a
 /home/runner/work/klotter/klotter/src/klotter/render/color.cc:650:14: warning: invalid case style for local constant 'C_b' [readability-identifier-naming]
   650 |                 const auto C_b = (1.f - L) * 0.8f;
       |                            ^~~
       |                            c_b
   651 | 
   652 |                 // Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-  653 |                 C_0 = std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
-      |                                                                   ~~~   ~~~
-      |                                                                   c_b   c_b
+  653 |                 return std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+      |                                                                    ~~~   ~~~
+      |                                                                    c_b   c_b
 /home/runner/work/klotter/klotter/src/klotter/render/color.cc:675:13: warning: invalid case style for local constant 'a_' [readability-identifier-naming]
   675 |         const auto a_ = klotter::cos(h);
       |                    ^~
@@ -4964,31 +4862,10 @@ note: this fix will not be applied because it overlaps with another fix
   682 |         const auto C_max = cs.C_max;
       |                    ^~~~~
       |                    c_max
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:692:2: warning: multiple declarations in a single statement reduces readability [readability-isolate-declaration]
-  692 |         float C, t, k_0, k_1, k_2;
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:692:8: warning: variable 'C' is not initialized [cppcoreguidelines-init-variables]
-  692 |         float C, t, k_0, k_1, k_2;
-      |               ^
-note: this fix will not be applied because it overlaps with another fix
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:692:8: warning: invalid case style for local variable 'C' [readability-identifier-naming]
-note: this fix will not be applied because it overlaps with another fix
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:692:11: warning: variable 't' is not initialized [cppcoreguidelines-init-variables]
-  692 |         float C, t, k_0, k_1, k_2;
-      |                  ^
-note: this fix will not be applied because it overlaps with another fix
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:692:14: warning: variable 'k_0' is not initialized [cppcoreguidelines-init-variables]
-  692 |         float C, t, k_0, k_1, k_2;
-      |                     ^
-note: this fix will not be applied because it overlaps with another fix
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:692:19: warning: variable 'k_1' is not initialized [cppcoreguidelines-init-variables]
-  692 |         float C, t, k_0, k_1, k_2;
-      |                          ^
-note: this fix will not be applied because it overlaps with another fix
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:692:24: warning: variable 'k_2' is not initialized [cppcoreguidelines-init-variables]
-  692 |         float C, t, k_0, k_1, k_2;
-      |                               ^
-note: this fix will not be applied because it overlaps with another fix
+/home/runner/work/klotter/klotter/src/klotter/render/color.cc:692:13: warning: invalid case style for local constant 'C' [readability-identifier-naming]
+  692 |         const auto C = [&]() {
+      |                    ^
+      |                    c
 /home/runner/work/klotter/klotter/src/klotter/render/color.cc:722:13: warning: invalid case style for local constant 'C' [readability-identifier-naming]
   722 |         const auto C = std::sqrt(lab.a * lab.a + lab.b * lab.b);
       |                    ^
@@ -5043,7 +4920,7 @@ note: this fix will not be applied because it overlaps with another fix
   736 |         const auto mid = 0.8f;
   737 |         const auto mid_inv = 1.25f;
   738 | 
-  739 |         float s;
+  739 |         const float s = [&]() {
   740 |         if (C < C_mid)
   741 |         {
   742 |                 const auto k_1 = mid * C_0;
@@ -5060,7 +4937,7 @@ note: this fix will not be applied because it overlaps with another fix
   736 |         const auto mid = 0.8f;
   737 |         const auto mid_inv = 1.25f;
   738 | 
-  739 |         float s;
+  739 |         const float s = [&]() {
   740 |         if (C < C_mid)
       |                 ~~~~~
       |                 c_mid
@@ -5073,10 +4950,6 @@ note: this fix will not be applied because it overlaps with another fix
   732 |         const auto C_max = cs.C_max;
       |                    ^~~~~
       |                    c_max
-/home/runner/work/klotter/klotter/src/klotter/render/color.cc:739:8: warning: variable 's' is not initialized [cppcoreguidelines-init-variables]
-  739 |         float s;
-      |               ^
-      |                 = NAN
 -->
 </body>
 </html>
