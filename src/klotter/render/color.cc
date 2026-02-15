@@ -633,25 +633,25 @@ Cs get_Cs(float L, float a_, float b_)
 	// Scale factor to compensate for the curved part of gamut shape:
 	const auto k = C_max / std::min((L * ST_max.S), (1 - L) * ST_max.T);
 
-	float C_mid;
+	const auto C_mid = [&]
 	{
 		const auto ST_mid = get_ST_mid(a_, b_);
 
 		// Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
 		const auto C_a = L * ST_mid.S;
 		const auto C_b = (1.f - L) * ST_mid.T;
-		C_mid = 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
-	}
+		return 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
+	}();
 
-	float C_0;
+	const auto C_0 = [&]
 	{
 		// for C_0, the shape is independent of hue, so ST are constant. Values picked to roughly be the average values of ST.
 		const auto C_a = L * 0.4f;
 		const auto C_b = (1.f - L) * 0.8f;
 
 		// Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-		C_0 = std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
-	}
+		return std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+	}();
 
 	return {.C_0 = C_0, .C_mid = C_mid, .C_max = C_max};
 }
@@ -689,27 +689,27 @@ Rgb srgb_from_hsl(const HSLig& hsl)
 	const auto mid = 0.8f;
 	const auto mid_inv = 1.25f;
 
-	float C, t, k_0, k_1, k_2;
+	const auto C = [&]() {
+		if (s < mid)
+		{
+			const auto t = mid_inv * s;
 
-	if (s < mid)
-	{
-		t = mid_inv * s;
+			const auto k_1 = mid * C_0;
+			const auto k_2 = (1.f - k_1 / C_mid);
 
-		k_1 = mid * C_0;
-		k_2 = (1.f - k_1 / C_mid);
+			return t * k_1 / (1.f - k_2 * t);
+		}
+		else
+		{
+			const auto t = (s - mid) / (1 - mid);
 
-		C = t * k_1 / (1.f - k_2 * t);
-	}
-	else
-	{
-		t = (s - mid) / (1 - mid);
+			const auto k_0 = C_mid;
+			const auto k_1 = (1.f - mid) * C_mid * C_mid * mid_inv * mid_inv / C_0;
+			const auto k_2 = (1.f - (k_1) / (C_max - C_mid));
 
-		k_0 = C_mid;
-		k_1 = (1.f - mid) * C_mid * C_mid * mid_inv * mid_inv / C_0;
-		k_2 = (1.f - (k_1) / (C_max - C_mid));
-
-		C = k_0 + t * k_1 / (1.f - k_2 * t);
-	}
+			return k_0 + t * k_1 / (1.f - k_2 * t);
+		}
+	}();
 
 	const auto rgb = linear_from_oklab({L, C * a_, C * b_});
 	return srgb_from_linear(rgb);
@@ -736,14 +736,14 @@ HSLig hsl_from_srgb(const Rgb& rgb)
 	const auto mid = 0.8f;
 	const auto mid_inv = 1.25f;
 
-	float s;
+	const float s = [&]() {
 	if (C < C_mid)
 	{
 		const auto k_1 = mid * C_0;
 		const auto k_2 = (1.f - k_1 / C_mid);
 
 		const auto t = C / (k_1 + k_2 * C);
-		s = t * mid;
+		return t * mid;
 	}
 	else
 	{
@@ -752,8 +752,8 @@ HSLig hsl_from_srgb(const Rgb& rgb)
 		const auto k_2 = (1.f - (k_1) / (C_max - C_mid));
 
 		const auto t = (C - k_0) / (k_1 + k_2 * (C - k_0));
-		s = mid + (1.f - mid) * t;
-	}
+		return mid + (1.f - mid) * t;
+	}}();
 
 	const auto l = toe(L);
 	return {.hue = h, .saturation = s, .lightness = l};
