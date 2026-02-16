@@ -10,20 +10,7 @@ namespace klotter
 #if FF_HAS(ENABLE_THEMES)
 
 
-// current system is inspired by https://www.youtube.com/watch?v=vvPklRN0Tco
-
-struct ThemeColor
-{
-	std::string name;
-	Lch color;
-};
-
-struct SelectedTheme
-{
-	std::string name;
-	int id;
-	int* selection;
-};
+// current system is inspired by https://www.youtube.com/watch?v=vvPklRN0Tc
 
 struct GuiColor
 {
