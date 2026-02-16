@@ -766,4 +766,17 @@ HSLig hsl_from_srgb(const Rgb& rgb)
 	return {.hue = h, .saturation = s, .lightness = l};
 }
 
+float keep_within01(float f)
+{
+	if (f <= 0) return 0;
+	if (f >= 1) return 1;
+	return f;
+}
+
+Lin_rgb keep_within(Lin_rgb c)
+{
+	const auto ret = Lin_rgb{{keep_within01(c.linear.r), keep_within01(c.linear.g), keep_within01(c.linear.b)}};
+	return ret;
+}
+
 }

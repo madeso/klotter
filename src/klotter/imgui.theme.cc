@@ -25,19 +25,6 @@ struct SelectedTheme
 	int* selection;
 };
 
-float clip_float(float f)
-{
-	if (f <= 0) return 0;
-	if (f >= 1) return 1;
-	return f;
-}
-
-Lin_rgb clip_lin(Lin_rgb c)
-{
-	const auto ret = Lin_rgb {{clip_float(c.linear.r), clip_float(c.linear.g), clip_float(c.linear.b)}};
-	return ret;
-}
-
 struct GuiColor
 {
 	float chroma;
@@ -50,7 +37,7 @@ ImVec4 imgui_from_lch(float lightness, const GuiColor& color)
 	const auto lab = oklab_from_oklch(lch);
 	const auto lin = linear_from_oklab(lab);
 	// const auto lin_pre = gamut_clip_preserve_chroma(lin);
-	const auto lin_pre = clip_lin(lin);
+	const auto lin_pre = keep_within(lin);
 	const auto rgb = srgb_from_linear(lin_pre);
 	const auto ret = ImVec4{rgb.r, rgb.g, rgb.b, 1.0f};
 	return ret;

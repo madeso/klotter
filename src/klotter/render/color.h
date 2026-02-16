@@ -97,6 +97,9 @@ HSVal hsv_from_srgb(const Rgb& rgb);
 Rgb srgb_from_hsl(const HSLig& hsl);
 HSLig hsl_from_srgb(const Rgb& rgb);
 
+float keep_within01(float f);
+Lin_rgb keep_within(Lin_rgb c);
+
 }
 
 namespace klotter::colors
