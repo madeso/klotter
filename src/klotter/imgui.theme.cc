@@ -10,7 +10,7 @@ namespace klotter
 #if FF_HAS(ENABLE_THEMES)
 
 
-// current system is inspired byg https://www.youtube.com/watch?v=vvPklRN0Tco
+// current system is inspired by https://www.youtube.com/watch?v=vvPklRN0Tco
 
 struct ThemeColor
 {
@@ -38,8 +38,15 @@ Lin_rgb clip_lin(Lin_rgb c)
 	return ret;
 }
 
-ImVec4 imgui_from_lch(const Lch& lch)
+struct GuiColor
 {
+	float chroma;
+	Angle hue;
+};
+
+ImVec4 imgui_from_lch(float lightness, const GuiColor& color)
+{
+	const auto lch = Lch{.l = lightness, .c = color.chroma, .h = color.hue};
 	const auto lab = oklab_from_oklch(lch);
 	const auto lin = linear_from_oklab(lab);
 	// const auto lin_pre = gamut_clip_preserve_chroma(lin);
@@ -49,7 +56,7 @@ ImVec4 imgui_from_lch(const Lch& lch)
 	return ret;
 }
 
-void setup_custom_theme(float chroma, float angle, float hist_chroma, float hist_angle)
+void setup_custom_theme(const GuiColor& common, const GuiColor& histogram)
 {
 	// themes
 	ImGuiStyle& style = ImGui::GetStyle();
@@ -70,21 +77,19 @@ void setup_custom_theme(float chroma, float angle, float hist_chroma, float hist
 	style.TabBarOverlineSize = 2.0f;
 
 	// // bkg
-	const auto hue = Angle::from_degrees(angle);
-	const auto hist_hue = Angle::from_degrees(hist_angle);
 	
-	auto bg_dark = imgui_from_lch({0.1f, chroma, hue});
-	auto bg = imgui_from_lch({0.2f, chroma, hue});
-	auto bg_light = imgui_from_lch({0.3f, chroma, hue});
-	auto bg_lighter = imgui_from_lch({0.4f, chroma, hue});
+	auto bg_dark = imgui_from_lch(0.1f, common);
+	auto bg = imgui_from_lch(0.2f, common);
+	auto bg_light = imgui_from_lch(0.3f, common);
+	auto bg_lighter = imgui_from_lch(0.4f, common);
 
-	auto text = imgui_from_lch({0.95f, chroma, hue});
-	auto text_muted = imgui_from_lch({0.70f, chroma, hue});
+	auto text = imgui_from_lch(0.95f, common);
+	auto text_muted = imgui_from_lch(0.70f, common);
 
-	auto interactive = imgui_from_lch({0.50f, chroma, hue});
+	auto interactive = imgui_from_lch(0.50f, common);
 
-	auto hist_default = imgui_from_lch({0.80f, hist_chroma, hist_hue});
-	auto hist_interactive = imgui_from_lch({0.91f, hist_chroma, hist_hue});
+	auto hist_default = imgui_from_lch(0.80f, histogram);
+	auto hist_interactive = imgui_from_lch(0.91f, histogram);
 	
 	
 	style.Colors[ImGuiCol_Text] = text;
@@ -158,18 +163,16 @@ void setup_custom_theme(float chroma, float angle, float hist_chroma, float hist
 
 void test_themes()
 {
-	static float chroma = 0.0f;
-	static float angle = 214.0f;
+	static GuiColor common = {0.0f, Angle::from_degrees(214.0f)};
 
-	static float hist_chroma = 0.18f;
-	static float hist_angle = 110.0f;
+	static GuiColor histogram = {0.18f, Angle::from_degrees(110.0f)};
 
-	bool changed = false;
-	changed = ImGui::SliderFloat("Chroma", &chroma, 0.0f, 0.05f) || changed;
-	changed = ImGui::SliderFloat("Hue", &angle, 0.0f, 360.0f) || changed;
+	static bool changed = true;
+	changed = ImGui::SliderFloat("Chroma", &common.chroma, 0.0f, 0.05f) || changed;
+	changed = ImGui::SliderAngle("Hue", &common.hue.radians, 0.0f) || changed;
 
-	changed = ImGui::SliderFloat("Hist Chroma", &hist_chroma, 0.0f, 0.8f) || changed;
-	changed = ImGui::SliderFloat("Hist Hue", &hist_angle, 0.0f, 360.0f) || changed;
+	changed = ImGui::SliderFloat("Hist Chroma", &histogram.chroma, 0.0f, 0.8f) || changed;
+	changed = ImGui::SliderAngle("Hist Hue", &histogram.hue.radians, 0.0f) || changed;
 
 	if (ImGui::Button("setup"))
 	{
@@ -178,7 +181,8 @@ void test_themes()
 
 	if (changed)
 	{
-		setup_custom_theme(chroma, angle, hist_chroma, hist_angle);
+		setup_custom_theme(common, histogram);
+		changed = false;
 	}
 }
 

@@ -43,9 +43,10 @@ struct Angle
     void operator/=(float rhs);
     Angle operator-() const;
 
-private:
+
     float radians;
 
+   private:
     constexpr explicit Angle(float r) : radians(r) {}
 
     [[nodiscard]] static constexpr float
