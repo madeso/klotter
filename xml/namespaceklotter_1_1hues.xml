@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceklotter_1_1hues" kind="namespace" language="C++">
+    <compoundname>klotter::hues</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceklotter_1_1hues_1a7b176681563b6ede4aa9332814f6ea1f" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
+        <definition>klotter::Angle klotter::hues::red</definition>
+        <argsstring></argsstring>
+        <name>red</name>
+        <qualifiedname>klotter::hues::red</qualifiedname>
+        <initializer>= <ref refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" kindref="member">Angle::from_degrees</ref>(0.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="112" column="26" bodyfile="src/klotter/render/color.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1_1hues_1a63a1b821ec9c8d77fcb626a32ccb04d6" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
+        <definition>klotter::Angle klotter::hues::orange</definition>
+        <argsstring></argsstring>
+        <name>orange</name>
+        <qualifiedname>klotter::hues::orange</qualifiedname>
+        <initializer>= <ref refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" kindref="member">Angle::from_degrees</ref>(30.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="113" column="26" bodyfile="src/klotter/render/color.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1_1hues_1a811748b8448cb83c5d279edecce8651b" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
+        <definition>klotter::Angle klotter::hues::yellow</definition>
+        <argsstring></argsstring>
+        <name>yellow</name>
+        <qualifiedname>klotter::hues::yellow</qualifiedname>
+        <initializer>= <ref refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" kindref="member">Angle::from_degrees</ref>(60.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="114" column="26" bodyfile="src/klotter/render/color.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1_1hues_1a9a4d90ea4d20ea27488fdcb19760f710" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
+        <definition>klotter::Angle klotter::hues::green</definition>
+        <argsstring></argsstring>
+        <name>green</name>
+        <qualifiedname>klotter::hues::green</qualifiedname>
+        <initializer>= <ref refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" kindref="member">Angle::from_degrees</ref>(120.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="115" column="26" bodyfile="src/klotter/render/color.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1_1hues_1a8536bf87901d0851cded34ab8202eabe" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
+        <definition>klotter::Angle klotter::hues::cyan</definition>
+        <argsstring></argsstring>
+        <name>cyan</name>
+        <qualifiedname>klotter::hues::cyan</qualifiedname>
+        <initializer>= <ref refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" kindref="member">Angle::from_degrees</ref>(180.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="116" column="26" bodyfile="src/klotter/render/color.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1_1hues_1ac089b51750850812fc9b0e419a2859e9" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
+        <definition>klotter::Angle klotter::hues::blue</definition>
+        <argsstring></argsstring>
+        <name>blue</name>
+        <qualifiedname>klotter::hues::blue</qualifiedname>
+        <initializer>= <ref refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" kindref="member">Angle::from_degrees</ref>(240.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="117" column="26" bodyfile="src/klotter/render/color.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceklotter_1_1hues_1ad46cfc10ce3b88f9bd65d137f20f4eac" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
+        <definition>klotter::Angle klotter::hues::magenta</definition>
+        <argsstring></argsstring>
+        <name>magenta</name>
+        <qualifiedname>klotter::hues::magenta</qualifiedname>
+        <initializer>= <ref refid="structklotter_1_1Angle_1a8b9368db882cc4e5a64cffcb524d5c37" kindref="member">Angle::from_degrees</ref>(300.0f)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="118" column="26" bodyfile="src/klotter/render/color.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/render/color.h" line="109" column="1"/>
+  </compounddef>
+</doxygen>

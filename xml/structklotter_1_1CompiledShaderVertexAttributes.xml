@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1CompiledShaderVertexAttributes" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::CompiledShaderVertexAttributes</compoundname>
+    <includes refid="vertex__layout_8h" local="no">vertex_layout.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1CompiledShaderVertexAttributes_1af04505096c36afa76e0ae0fe19bfdbee" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structklotter_1_1CompiledVertexElement" kindref="compound">CompiledVertexElement</ref> &gt;</type>
+        <definition>std::vector&lt;CompiledVertexElement&gt; klotter::CompiledShaderVertexAttributes::elements</definition>
+        <argsstring></argsstring>
+        <name>elements</name>
+        <qualifiedname>klotter::CompiledShaderVertexAttributes::elements</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/vertex_layout.h" line="74" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1CompiledShaderVertexAttributes_1a5f9a0c9c028b7fe880257cd1d76c4923" prot="public" static="no" mutable="no">
+        <type><ref refid="group__vertex-layout_1gaa3eb81233db95fb693918802ac36cc30" kindref="member">VertexTypes</ref></type>
+        <definition>VertexTypes klotter::CompiledShaderVertexAttributes::debug_types</definition>
+        <argsstring></argsstring>
+        <name>debug_types</name>
+        <qualifiedname>klotter::CompiledShaderVertexAttributes::debug_types</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/vertex_layout.h" line="75" column="13" bodyfile="src/klotter/render/vertex_layout.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A list of <ref refid="structklotter_1_1CompiledVertexElement" kindref="compound">CompiledVertexElement</ref> (for shader) </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::CompiledShaderVertexAttributes</label>
+        <link refid="structklotter_1_1CompiledShaderVertexAttributes"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>debug_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::CompiledVertexElement</label>
+        <link refid="structklotter_1_1CompiledVertexElement"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="4">
+        <label>std::string</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; klotter::CompiledVertexElement &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/vertex_layout.h" line="72" column="1" bodyfile="src/klotter/render/vertex_layout.h" bodystart="73" bodyend="76"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1CompiledShaderVertexAttributes_1a5f9a0c9c028b7fe880257cd1d76c4923" prot="public" virt="non-virtual"><scope>klotter::CompiledShaderVertexAttributes</scope><name>debug_types</name></member>
+      <member refid="structklotter_1_1CompiledShaderVertexAttributes_1af04505096c36afa76e0ae0fe19bfdbee" prot="public" virt="non-virtual"><scope>klotter::CompiledShaderVertexAttributes</scope><name>elements</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

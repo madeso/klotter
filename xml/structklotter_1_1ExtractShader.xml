@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1ExtractShader" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::ExtractShader</compoundname>
+    <includes refid="shader__resource_8h" local="no">shader_resource.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1ExtractShader_1a26d8853725fe5465550d40d0b70c9dd9" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;LoadedPostProcShader&gt; klotter::ExtractShader::shader</definition>
+        <argsstring></argsstring>
+        <name>shader</name>
+        <qualifiedname>klotter::ExtractShader::shader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="260" column="17" bodyfile="src/klotter/render/shader_resource.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ExtractShader_1ac2145f587c7304542d1ee2ffafe19d07" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::ExtractShader::cutoff_uniform</definition>
+        <argsstring></argsstring>
+        <name>cutoff_uniform</name>
+        <qualifiedname>klotter::ExtractShader::cutoff_uniform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="261" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1ExtractShader_1a9dfbf7230c6d1a615eb939aa282c5653" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1Uniform" kindref="compound">Uniform</ref></type>
+        <definition>Uniform klotter::ExtractShader::softness_uniform</definition>
+        <argsstring></argsstring>
+        <name>softness_uniform</name>
+        <qualifiedname>klotter::ExtractShader::softness_uniform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="262" column="9" bodyfile="src/klotter/render/shader_resource.h" bodystart="262" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structklotter_1_1ExtractShader_1a440af25fd231083600036959f8c95326" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>klotter::ExtractShader::ExtractShader</definition>
+        <argsstring>(std::shared_ptr&lt; LoadedPostProcShader &gt; &amp;&amp;sh)</argsstring>
+        <name>ExtractShader</name>
+        <qualifiedname>klotter::ExtractShader::ExtractShader</qualifiedname>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="structklotter_1_1LoadedPostProcShader" kindref="compound">LoadedPostProcShader</ref> &gt; &amp;&amp;</type>
+          <declname>sh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/shader_resource.h" line="258" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Extracts data for a bloom. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::ExtractShader</label>
+        <link refid="structklotter_1_1ExtractShader"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>shader</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>cutoff_uniform</edgelabel>
+          <edgelabel>softness_uniform</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>klotter::LoadedPostProcShader</label>
+        <link refid="structklotter_1_1LoadedPostProcShader"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>program</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>tex_input_uniform</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>klotter::ShaderProgram</label>
+        <link refid="structklotter_1_1ShaderProgram"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>debug_vertex_types</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>klotter::Uniform</label>
+        <link refid="structklotter_1_1Uniform"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>std::basic_string&lt; Char &gt;</label>
+      </node>
+      <node id="2">
+        <label>std::shared_ptr&lt; klotter::LoadedPostProcShader &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::shared_ptr&lt; klotter::ShaderProgram &gt;</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::string</label>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; VertexType &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/shader_resource.h" line="256" column="1" bodyfile="src/klotter/render/shader_resource.h" bodystart="257" bodyend="263"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1ExtractShader_1ac2145f587c7304542d1ee2ffafe19d07" prot="public" virt="non-virtual"><scope>klotter::ExtractShader</scope><name>cutoff_uniform</name></member>
+      <member refid="structklotter_1_1ExtractShader_1a440af25fd231083600036959f8c95326" prot="public" virt="non-virtual"><scope>klotter::ExtractShader</scope><name>ExtractShader</name></member>
+      <member refid="structklotter_1_1ExtractShader_1a26d8853725fe5465550d40d0b70c9dd9" prot="public" virt="non-virtual"><scope>klotter::ExtractShader</scope><name>shader</name></member>
+      <member refid="structklotter_1_1ExtractShader_1a9dfbf7230c6d1a615eb939aa282c5653" prot="public" virt="non-virtual"><scope>klotter::ExtractShader</scope><name>softness_uniform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dump_8h" kind="file" language="C++">
+    <compoundname>dump.h</compoundname>
+    <innerclass refid="structPlotRange" prot="public">PlotRange</innerclass>
+    <innerclass refid="structSvgLine" prot="public">SvgLine</innerclass>
+    <innerclass refid="structSvg" prot="public">Svg</innerclass>
+    <innernamespace refid="namespacesvg">svg</innernamespace>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="dump_8h_1a3ec0c1a817bf397046a03ef55c13c9de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; glm::vec2 &gt;</type>
+        <definition>std::vector&lt; glm::vec2 &gt; plot_line</definition>
+        <argsstring>(const PlotRange &amp;p, F f)</argsstring>
+        <name>plot_line</name>
+        <param>
+          <type>const <ref refid="structPlotRange" kindref="compound">PlotRange</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>F</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/dump.h" line="24" column="13" bodyfile="src/klotter/dump.h" bodystart="24" bodyend="32"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="namespacesvg" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacesvg" kindref="compound">svg</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bang-wong<sp/>color<sp/>palette</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="namespacesvg_1a144a301c78eebaeeafe0310491bab985" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="namespacesvg_1a144a301c78eebaeeafe0310491bab985" kindref="member">black</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#000000&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7" refid="namespacesvg_1a3a884137493ea364ea2efa84604404dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="namespacesvg_1a3a884137493ea364ea2efa84604404dd" kindref="member">orange</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#e69f00&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8" refid="namespacesvg_1ac071d0ceb3a22d5b415c37c50bd94c62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="namespacesvg_1ac071d0ceb3a22d5b415c37c50bd94c62" kindref="member">sky_blue</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#56b4e9&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9" refid="namespacesvg_1ac195755e6719ff7caaed1bb9d802f173" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="namespacesvg_1ac195755e6719ff7caaed1bb9d802f173" kindref="member">bluish_green</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#009e73&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10" refid="namespacesvg_1aee358cf276fafda794264c2f6849bcec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="namespacesvg_1aee358cf276fafda794264c2f6849bcec" kindref="member">yellow</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#f0e442&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="11" refid="namespacesvg_1a5c20a783b7c14cc484b05482ba1ad114" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="namespacesvg_1a5c20a783b7c14cc484b05482ba1ad114" kindref="member">blue</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#0072b2&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12" refid="namespacesvg_1aafb8a48a5244e78109e971b73400358e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="namespacesvg_1aafb8a48a5244e78109e971b73400358e" kindref="member">vermillion</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#d55e00&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13" refid="namespacesvg_1a77d6e5012f32a5531daaae30ea8a163e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>std::string_view<sp/><ref refid="namespacesvg_1a77d6e5012f32a5531daaae30ea8a163e" kindref="member">reddish_purple</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;#cc79a7&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structPlotRange" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPlotRange" kindref="compound">PlotRange</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18" refid="structPlotRange_1a3ed06b9824af4a36190845b075f20658" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structPlotRange_1a3ed06b9824af4a36190845b075f20658" kindref="member">start</ref>;</highlight></codeline>
+<codeline lineno="19" refid="structPlotRange_1aae56ef81c1da0462b1ea13595713818a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structPlotRange_1aae56ef81c1da0462b1ea13595713818a" kindref="member">end</ref>;</highlight></codeline>
+<codeline lineno="20" refid="structPlotRange_1a3ce32efc8597c15695c3cd6990ab1cfe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structPlotRange_1a3ce32efc8597c15695c3cd6990ab1cfe" kindref="member">step</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>F&gt;</highlight></codeline>
+<codeline lineno="24" refid="dump_8h_1a3ec0c1a817bf397046a03ef55c13c9de" refkind="member"><highlight class="normal">std::vector&lt;glm::vec2&gt;<sp/><ref refid="dump_8h_1a3ec0c1a817bf397046a03ef55c13c9de" kindref="member">plot_line</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structPlotRange" kindref="compound">PlotRange</ref>&amp;<sp/>p,<sp/>F<sp/>f)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;glm::vec2&gt;<sp/>points;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>p.<ref refid="structPlotRange_1a3ed06b9824af4a36190845b075f20658" kindref="member">start</ref>;<sp/>x<sp/>&lt;=<sp/>p.<ref refid="structPlotRange_1aae56ef81c1da0462b1ea13595713818a" kindref="member">end</ref>;<sp/>x<sp/>+=<sp/>p.<ref refid="structPlotRange_1a3ce32efc8597c15695c3cd6990ab1cfe" kindref="member">step</ref>)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>points.emplace_back(x,<sp/>f(x));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>points;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="structSvgLine" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structSvgLine" kindref="compound">SvgLine</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="structSvgLine_1a0254b9517b5e9d90083d90a9779bc958" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structSvgLine_1a0254b9517b5e9d90083d90a9779bc958" kindref="member">label</ref>;</highlight></codeline>
+<codeline lineno="37" refid="structSvgLine_1a7e89c7079405003305da33a697687d0b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string_view<sp/><ref refid="structSvgLine_1a7e89c7079405003305da33a697687d0b" kindref="member">color</ref>;</highlight></codeline>
+<codeline lineno="38" refid="structSvgLine_1a76bf588e50b5bde6d87d9549d6acee7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;glm::vec2&gt;<sp/><ref refid="structSvgLine_1a76bf588e50b5bde6d87d9549d6acee7f" kindref="member">points</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="structSvg" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structSvg" kindref="compound">Svg</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44" refid="structSvg_1ac6e350c3e8a110dc77e004b5bd415a7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;SvgLine&gt;<sp/><ref refid="structSvg_1ac6e350c3e8a110dc77e004b5bd415a7d" kindref="member">lines</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="structSvg_1a4117dd11b37777a99b59cf801ff354b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structSvg" kindref="compound">Svg</ref>&amp;<sp/><ref refid="structSvg_1a4117dd11b37777a99b59cf801ff354b7" kindref="member">add_line</ref>(std::string_view<sp/>color,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;glm::vec2&gt;&amp;<sp/>points,<sp/>std::string<sp/>label<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structSvg_1a4c48cf4dd61080d58bab289ddceddf98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structSvg_1a4c48cf4dd61080d58bab289ddceddf98" kindref="member">write</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>file_path,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>spacing);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="src/klotter/dump.h"/>
+  </compounddef>
+</doxygen>
