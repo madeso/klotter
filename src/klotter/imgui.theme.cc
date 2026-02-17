@@ -14,18 +14,23 @@ namespace klotter
 
 struct GuiColor
 {
-	float chroma;
+	float saturation;
 	Angle hue;
 };
 
 ImVec4 imgui_from_lch(float lightness, const GuiColor& color)
 {
-	const auto lch = Lch{.l = lightness, .c = color.chroma, .h = color.hue};
-	const auto lab = oklab_from_oklch(lch);
-	const auto lin = linear_from_oklab(lab);
-	// const auto lin_pre = gamut_clip_preserve_chroma(lin);
-	const auto lin_pre = keep_within(lin);
-	const auto rgb = srgb_from_linear(lin_pre);
+	const auto hsl = HSLig{.hue = color.hue, .saturation = color.saturation, .lightness = lightness};
+
+	// const auto lch = Lch{.l = lightness, .c = color.chroma, .h = color.hue};
+	// const auto lab = oklab_from_oklch(lch);
+	// const auto lin = linear_from_oklab(lab);
+	// // const auto lin_pre = gamut_clip_preserve_chroma(lin);
+	// const auto lin_pre = keep_within(lin);
+	// const auto rgb = srgb_from_linear(lin_pre);
+
+	const auto rgb = srgb_from_hsl_classic(hsl);
+
 	const auto ret = ImVec4{rgb.r, rgb.g, rgb.b, 1.0f};
 	return ret;
 }
@@ -137,15 +142,15 @@ void setup_custom_theme(const GuiColor& common, const GuiColor& histogram)
 
 void test_themes()
 {
-	static GuiColor common = {0.0f, Angle::from_degrees(214.0f)};
+	static GuiColor common = {.saturation = 0.3f, .hue = hues::green};
 
-	static GuiColor histogram = {0.18f, Angle::from_degrees(110.0f)};
+	static GuiColor histogram = {.saturation = 0.5f, .hue = hues::yellow};
 
 	static bool changed = true;
-	changed = ImGui::SliderFloat("Chroma", &common.chroma, 0.0f, 0.05f) || changed;
+	changed = ImGui::SliderFloat("Chroma", &common.saturation, 0.0f, 1.0f) || changed;
 	changed = ImGui::SliderAngle("Hue", &common.hue.radians, 0.0f) || changed;
 
-	changed = ImGui::SliderFloat("Hist Chroma", &histogram.chroma, 0.0f, 0.8f) || changed;
+	changed = ImGui::SliderFloat("Hist Chroma", &histogram.saturation, 0.0f, 1.0f) || changed;
 	changed = ImGui::SliderAngle("Hist Hue", &histogram.hue.radians, 0.0f) || changed;
 
 	if (ImGui::Button("setup"))
