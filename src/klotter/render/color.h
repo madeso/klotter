@@ -97,9 +97,25 @@ HSVal hsv_from_srgb(const Rgb& rgb);
 Rgb srgb_from_hsl(const HSLig& hsl);
 HSLig hsl_from_srgb(const Rgb& rgb);
 
+// srgb from hsl (not ok hsl)
+// todo(Gustav): introduce more types
+Rgb srgb_from_hsl_classic(const HSLig& hsl);
+
 float keep_within01(float f);
 Lin_rgb keep_within(Lin_rgb c);
 
+}
+
+namespace klotter::hues
+{
+// https://tympanus.net/codrops/css_reference/hsl/
+constexpr klotter::Angle red = Angle::from_degrees(0.0f);
+constexpr klotter::Angle orange = Angle::from_degrees(30.0f);
+constexpr klotter::Angle yellow = Angle::from_degrees(60.0f);
+constexpr klotter::Angle green = Angle::from_degrees(120.0f);
+constexpr klotter::Angle cyan = Angle::from_degrees(180.0f);
+constexpr klotter::Angle blue = Angle::from_degrees(240.0f);
+constexpr klotter::Angle magenta = Angle::from_degrees(300.0f);
 }
 
 namespace klotter::colors

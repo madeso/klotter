@@ -81,3 +81,52 @@ TEST_CASE("color space conversion sky blue", "[color]")
 	// CHECK(are_equal(srgb_from_linear(linear_from_oklab(oklab_from_oklch({0.1441f, 0.0498f, Angle::from_degrees(264.0f)}))), 
 	// Color{0x2/255.f, 0x8/255.0f, 0x1e/255.0f}));
 }
+
+
+HSLig hsl(int deg, float s, float l)
+{
+	return {.hue = Angle::from_degrees(deg), .saturation = s/100.0f, .lightness=l/100.0f};
+}
+
+Rgb rgb(int r, int g, int b)
+{
+	return {r / 255.0f, g / 255.0f, b / 255.0f};
+}
+
+TEST_CASE("rgb -> hsl", "[color]")
+{
+	// https://ethanschoonover.com/solarized/
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(192, 100.0f, 10.6f)), Rgb{  0.0f / 255.0f,  43.0f/255.0f,  54.0f/255.0f})); // base03
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(192, 80.8f,  14.3f)), Rgb{  7.0f / 255.0f,  54.0f/255.0f,  66.0f/255.0f})); // base02
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(194, 14.1f,  40.2f)), Rgb{ 88.0f / 255.0f, 110.0f/255.0f, 117.0f/255.0f})); // base01
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(196, 12.9f,  45.5f)), Rgb{101.0f / 255.0f, 123.0f/255.0f, 131.0f/255.0f})); // base00
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(186, 8.3f,  55.1f)), Rgb{131.0f / 255.0f, 148.0f/255.0f, 150.0f/255.0f})); // base0
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(180, 6.9f,  60.4f)), Rgb{147.0f / 255.0f, 161.0f/255.0f, 161.0f/255.0f})); // base1
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(46, 42.4f,  88.4f)), Rgb{238.0f / 255.0f, 232.0f/255.0f, 213.0f/255.0f})); // base2
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(44, 86.7f,  94.1f)), Rgb{253.0f / 255.0f, 246.0f/255.0f, 227.0f/255.0f})); // base3
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(45, 100.0f, 35.5f)), Rgb{181.0f / 255.0f, 137.0f/255.0f,   0.0f/255.0f})); // yellow
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(18, 80.4f,  44.1f)), Rgb{203.0f / 255.0f,  75.0f/255.0f,  22.0f/255.0f})); // orange
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(1, 71.2f,  52.4f)), Rgb{220.0f / 255.0f,  50.0f/255.0f,  47.0f/255.0f})); // red
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(331, 64.1f,  52.0f)), Rgb{211.0f / 255.0f,  54.0f/255.0f, 130.0f/255.0f})); // magenta
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(237, 42.7f,  59.6f)), Rgb{108.0f / 255.0f, 113.0f/255.0f, 196.0f/255.0f})); // violet
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(205, 69.4f,  48.6f)), Rgb{ 38.0f / 255.0f, 139.0f/255.0f, 210.0f/255.0f})); // blue
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(175, 58.6f,  39.8f)), Rgb{ 42.0f / 255.0f, 161.0f/255.0f, 152.0f/255.0f})); // cyan
+	CHECK(are_equal(srgb_from_hsl_classic(hsl(68, 100.0f, 30.0f)), Rgb{133.0f / 255.0f, 153.0f / 255.0f, 0.0f / 255.0f})); // green
+
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(0,0,0)           ), rgb(0,0,0)       )); // Black  
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(0,0,100)         ), rgb(255,255,255) )); // White  
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(0,100,50)        ), rgb(255,0,0)     )); // Red    
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(120,100,50)      ), rgb(0,255,0)     )); // Lime   
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(240,100,50)      ), rgb(0,0,255)     )); // Blue   
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(60,100,50)       ), rgb(255,255,0)   )); // Yellow 
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(180,100,50)      ), rgb(0,255,255)   )); // Cyan   
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(300,100,50)      ), rgb(255,0,255)   )); // Magenta
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(0,0,75)          ), rgb(191,191,191) )); // Silver 
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(0,0,50)          ), rgb(128,128,128) )); // Gray   
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(0,100,25)        ), rgb(128,0,0)     )); // Maroon 
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(60,100,25)       ), rgb(128,128,0)   )); // Olive  
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(120,100,25)      ), rgb(0,128,0)     )); // Green  
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(300,100,25)      ), rgb(128,0,128)   )); // Purple 
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(180,100,25)      ), rgb(0,128,128)   )); // Teal   
+  	CHECK(are_equal(srgb_from_hsl_classic(hsl(240,100,25)      ), rgb(0,0,128)     )); // Navy   
+}
