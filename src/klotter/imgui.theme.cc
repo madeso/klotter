@@ -20,16 +20,16 @@ struct GuiColor
 
 ImVec4 imgui_from_lch(float lightness, const GuiColor& color)
 {
-	const auto hsl = HSLig{.hue = color.hue, .saturation = color.saturation, .lightness = lightness};
+	const auto hsl = Hsl{.hue = color.hue, .saturation = color.saturation, .lightness = lightness};
 
-	// const auto lch = Lch{.l = lightness, .c = color.chroma, .h = color.hue};
+	// const auto lch = OkLch{.l = lightness, .c = color.chroma, .h = color.hue};
 	// const auto lab = oklab_from_oklch(lch);
 	// const auto lin = linear_from_oklab(lab);
 	// // const auto lin_pre = gamut_clip_preserve_chroma(lin);
 	// const auto lin_pre = keep_within(lin);
 	// const auto rgb = srgb_from_linear(lin_pre);
 
-	const auto rgb = srgb_from_hsl_classic(hsl);
+	const auto rgb = srgb_from_hsl(hsl);
 
 	const auto ret = ImVec4{rgb.r, rgb.g, rgb.b, 1.0f};
 	return ret;

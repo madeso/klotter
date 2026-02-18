@@ -30,7 +30,7 @@ struct Lin_rgb
 };
 
 /// Represents a color in the OKhsv color space
-struct HSVal
+struct OkHsv
 {
 	Angle hue;
 	float saturation;
@@ -38,7 +38,15 @@ struct HSVal
 };
 
 /// Represents a color in the OKhsl color space
-struct HSLig
+struct OkHsl
+{
+	Angle hue;
+	float saturation;
+	float lightness;
+};
+
+/// Represents a color in the sRGB color space.
+struct Hsl
 {
 	Angle hue;
 	float saturation;
@@ -46,7 +54,7 @@ struct HSLig
 };
 
 /// Represents a color in the OKlch color space.
-struct Lch
+struct OkLch
 {
 	float l;
 	float c;
@@ -54,7 +62,7 @@ struct Lch
 };
 
 /// Represents a color in the OKlab color space.
-struct Lab
+struct OkLab
 {
 	float l;
 	float a;
@@ -75,10 +83,10 @@ Rgb srgb_from_linear(const Lin_rgb& value);
 
 // oklab & oklch
 // from: https://bottosson.github.io/posts/oklab/
-Lab oklab_from_linear(const Lin_rgb& c);
-Lin_rgb linear_from_oklab(const Lab& c);
-Lch oklch_from_oklab(const Lab& c);
-Lab oklab_from_oklch(const Lch& c);
+OkLab oklab_from_linear(const Lin_rgb& c);
+Lin_rgb linear_from_oklab(const OkLab& c);
+OkLch oklch_from_oklab(const OkLab& c);
+OkLab oklab_from_oklch(const OkLch& c);
 
 
 // gammut clipping functions from https://bottosson.github.io/posts/gamutclipping/
@@ -91,15 +99,14 @@ Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha = 0.05f);
 
 
 
-Rgb srgb_from_hsv(const HSVal& hsv);
-HSVal hsv_from_srgb(const Rgb& rgb);
+Rgb srgb_from_okhsv(const OkHsv& hsv);
+OkHsv okhsv_from_srgb(const Rgb& rgb);
 
-Rgb srgb_from_hsl(const HSLig& hsl);
-HSLig hsl_from_srgb(const Rgb& rgb);
+Rgb srgb_from_okhsl(const OkHsl& hsl);
+OkHsl okhsl_from_srgb(const Rgb& rgb);
 
 // srgb from hsl (not ok hsl)
-// todo(Gustav): introduce more types
-Rgb srgb_from_hsl_classic(const HSLig& hsl);
+Rgb srgb_from_hsl(const Hsl& hsl);
 
 float keep_within01(float f);
 Lin_rgb keep_within(Lin_rgb c);

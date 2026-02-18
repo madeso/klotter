@@ -421,7 +421,7 @@ Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha)
 }
 
 
-Lab oklab_from_linear(const Lin_rgb& c)
+OkLab oklab_from_linear(const Lin_rgb& c)
 {
 	const auto cr = c.linear.r;
 	const auto cg = c.linear.g;
@@ -442,7 +442,7 @@ Lab oklab_from_linear(const Lin_rgb& c)
 	};
 }
 
-Lin_rgb linear_from_oklab(const Lab& c)
+Lin_rgb linear_from_oklab(const OkLab& c)
 {
 	const auto lp = c.l + 0.3963377774f * c.a + 0.2158037573f * c.b;
 	const auto mp = c.l - 0.1055613458f * c.a - 0.0638541728f * c.b;
@@ -460,12 +460,12 @@ Lin_rgb linear_from_oklab(const Lab& c)
 }
 
 // https://en.wikipedia.org/wiki/Oklab_color_space#Conversion_to_and_from_Oklch
-Lch oklch_from_oklab(const Lab& c)
+OkLch oklch_from_oklab(const OkLab& c)
 {
 	return {.l = c.l, .c = std::sqrt(c.a * c.a + c.b * c.b), .h = klotter::atan2(c.b, c.a)};
 }
 
-Lab oklab_from_oklch(const Lch& c)
+OkLab oklab_from_oklch(const OkLch& c)
 {
 	return
 	{
@@ -508,7 +508,7 @@ ST ST_from_cusp(const LC& cusp)
 	return {.S = C / L, .T = C / (1 - L)};
 }
 
-Rgb srgb_from_hsv(const HSVal& hsv)
+Rgb srgb_from_okhsv(const OkHsv& hsv)
 {
 	const auto h = hsv.hue;
 	const auto s = hsv.saturation;
@@ -551,7 +551,7 @@ Rgb srgb_from_hsv(const HSVal& hsv)
 	return srgb_from_linear(rgb);
 }
 
-HSVal hsv_from_srgb(const Rgb& rgb)
+OkHsv okhsv_from_srgb(const Rgb& rgb)
 {
 	const auto lab = oklab_from_linear(linear_from_srgb(rgb));
 
@@ -663,7 +663,7 @@ Cs get_Cs(float L, float a_, float b_)
 	return {.C_0 = C_0, .C_mid = C_mid, .C_max = C_max};
 }
 
-Rgb srgb_from_hsl(const HSLig& hsl)
+Rgb srgb_from_okhsl(const OkHsl& hsl)
 {
 	const auto h = hsl.hue;
 	const auto s = hsl.saturation;
@@ -722,7 +722,7 @@ Rgb srgb_from_hsl(const HSLig& hsl)
 	return srgb_from_linear(rgb);
 }
 
-HSLig hsl_from_srgb(const Rgb& rgb)
+OkHsl okhsl_from_srgb(const Rgb& rgb)
 {
 	const auto lab = oklab_from_linear(linear_from_srgb(rgb));
 
@@ -779,7 +779,7 @@ Lin_rgb keep_within(Lin_rgb c)
 	return ret;
 }
 
-Rgb srgb_from_hsl_classic(const HSLig& hsl)
+Rgb srgb_from_hsl(const Hsl& hsl)
 {
 	// https://www.rapidtables.com/convert/color/hsl-to-rgb.html
 
