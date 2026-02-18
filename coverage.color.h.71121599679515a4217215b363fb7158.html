@@ -332,7 +332,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">HSVal</span></td>
+        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">OkHsv</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l34" href="#l34">34</a></td>
@@ -388,7 +388,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">HSLig</span></td>
+        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">OkHsl</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l42" href="#l42">42</a></td>
@@ -437,14 +437,14 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">/// Represents a color in the OKlch color space.</span></td>
+        <td class="src"><span class="c1">/// Represents a color in the sRGB color space.</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l49" href="#l49">49</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">Lch</span></td>
+        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">Hsl</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l50" href="#l50">50</a></td>
@@ -458,21 +458,21 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">l</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">Angle</span><span class="w"> </span><span class="n">hue</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l52" href="#l52">52</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">c</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">saturation</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l53" href="#l53">53</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">Angle</span><span class="w"> </span><span class="n">h</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">lightness</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l54" href="#l54">54</a></td>
@@ -493,14 +493,14 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">/// Represents a color in the OKlab color space.</span></td>
+        <td class="src"><span class="c1">/// Represents a color in the OKlch color space.</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l57" href="#l57">57</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">Lab</span></td>
+        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">OkLch</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l58" href="#l58">58</a></td>
@@ -521,14 +521,14 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">c</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l61" href="#l61">61</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">Angle</span><span class="w"> </span><span class="n">h</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l62" href="#l62">62</a></td>
@@ -549,49 +549,49 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// linear-space gamma-space</span></td>
+        <td class="src"><span class="c1">/// Represents a color in the OKlab color space.</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l65" href="#l65">65</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// todo(Gustav): should the functions that take gamma still be used?</span></td>
+        <td class="src"><span class="k">struct</span><span class="w"> </span><span class="nc">OkLab</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l66" href="#l66">66</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="kt">float</span><span class="w"> </span><span class="nf">linear_from_srgb</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gamma</span><span class="p">);</span></td>
+        <td class="src"><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l67" href="#l67">67</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">linear_from_srgb</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gamma</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">l</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l68" href="#l68">68</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l69" href="#l69">69</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="kt">float</span><span class="w"> </span><span class="nf">linear_from_srgb</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l70" href="#l70">70</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">linear_from_srgb</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">);</span></td>
+        <td class="src"><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l71" href="#l71">71</a></td>
@@ -605,70 +605,70 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="kt">float</span><span class="w"> </span><span class="nf">srgb_from_linear</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">);</span></td>
+        <td class="src"><span class="c1">// linear-space gamma-space</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l73" href="#l73">73</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Rgb</span><span class="w"> </span><span class="nf">srgb_from_linear</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">);</span></td>
+        <td class="src"><span class="c1">// todo(Gustav): should the functions that take gamma still be used?</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l74" href="#l74">74</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="kt">float</span><span class="w"> </span><span class="nf">linear_from_srgb</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gamma</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l75" href="#l75">75</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">linear_from_srgb</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gamma</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l76" href="#l76">76</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// oklab &amp; oklch</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l77" href="#l77">77</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// from: https://bottosson.github.io/posts/oklab/</span></td>
+        <td class="src"><span class="kt">float</span><span class="w"> </span><span class="nf">linear_from_srgb</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l78" href="#l78">78</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lab</span><span class="w"> </span><span class="nf">oklab_from_linear</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">linear_from_srgb</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l79" href="#l79">79</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">linear_from_oklab</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l80" href="#l80">80</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lch</span><span class="w"> </span><span class="nf">oklch_from_oklab</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
+        <td class="src"><span class="kt">float</span><span class="w"> </span><span class="nf">srgb_from_linear</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l81" href="#l81">81</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lab</span><span class="w"> </span><span class="nf">oklab_from_oklch</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lch</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Rgb</span><span class="w"> </span><span class="nf">srgb_from_linear</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l82" href="#l82">82</a></td>
@@ -689,42 +689,42 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// gammut clipping functions from https://bottosson.github.io/posts/gamutclipping/</span></td>
+        <td class="src"><span class="c1">// oklab &amp; oklch</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l85" href="#l85">85</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_preserve_chroma</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
+        <td class="src"><span class="c1">// from: https://bottosson.github.io/posts/oklab/</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l86" href="#l86">86</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_project_to_0_5</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
+        <td class="src"><span class="n">OkLab</span><span class="w"> </span><span class="nf">oklab_from_linear</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l87" href="#l87">87</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_project_to_L_cusp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">linear_from_oklab</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OkLab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l88" href="#l88">88</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_adaptive_L0_0_5</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05f</span><span class="p">);</span></td>
+        <td class="src"><span class="n">OkLch</span><span class="w"> </span><span class="nf">oklch_from_oklab</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OkLab</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l89" href="#l89">89</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_adaptive_L0_L_cusp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05f</span><span class="p">);</span></td>
+        <td class="src"><span class="n">OkLab</span><span class="w"> </span><span class="nf">oklab_from_oklch</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OkLch</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l90" href="#l90">90</a></td>
@@ -745,49 +745,49 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="c1">// gammut clipping functions from https://bottosson.github.io/posts/gamutclipping/</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l93" href="#l93">93</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_preserve_chroma</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l94" href="#l94">94</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Rgb</span><span class="w"> </span><span class="nf">srgb_from_hsv</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HSVal</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hsv</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_project_to_0_5</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l95" href="#l95">95</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">HSVal</span><span class="w"> </span><span class="nf">hsv_from_srgb</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_project_to_L_cusp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l96" href="#l96">96</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_adaptive_L0_0_5</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l97" href="#l97">97</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Rgb</span><span class="w"> </span><span class="nf">srgb_from_hsl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HSLig</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hsl</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">gamut_clip_adaptive_L0_L_cusp</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Lin_rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l98" href="#l98">98</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">HSLig</span><span class="w"> </span><span class="nf">hsl_from_srgb</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l99" href="#l99">99</a></td>
@@ -801,297 +801,346 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// srgb from hsl (not ok hsl)</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l101" href="#l101">101</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// todo(Gustav): introduce more types</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l102" href="#l102">102</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Rgb</span><span class="w"> </span><span class="nf">srgb_from_hsl_classic</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">HSLig</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hsl</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Rgb</span><span class="w"> </span><span class="nf">srgb_from_okhsv</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OkHsv</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hsv</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l103" href="#l103">103</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">OkHsv</span><span class="w"> </span><span class="nf">okhsv_from_srgb</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l104" href="#l104">104</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="kt">float</span><span class="w"> </span><span class="nf">keep_within01</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l105" href="#l105">105</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">keep_within</span><span class="p">(</span><span class="n">Lin_rgb</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Rgb</span><span class="w"> </span><span class="nf">srgb_from_okhsl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OkHsl</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hsl</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l106" href="#l106">106</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">OkHsl</span><span class="w"> </span><span class="nf">okhsl_from_srgb</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rgb</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l107" href="#l107">107</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">}</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l108" href="#l108">108</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="c1">// srgb from hsl (not ok hsl)</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l109" href="#l109">109</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">namespace</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">hues</span></td>
+        <td class="src"><span class="n">Rgb</span><span class="w"> </span><span class="nf">srgb_from_hsl</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Hsl</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hsl</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l110" href="#l110">110</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">{</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l111" href="#l111">111</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// https://tympanus.net/codrops/css_reference/hsl/</span></td>
+        <td class="src"><span class="kt">float</span><span class="w"> </span><span class="nf">keep_within01</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l112" href="#l112">112</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">);</span></td>
+        <td class="src"><span class="n">Lin_rgb</span><span class="w"> </span><span class="nf">keep_within</span><span class="p">(</span><span class="n">Lin_rgb</span><span class="w"> </span><span class="n">c</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l113" href="#l113">113</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">orange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">30.0f</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l114" href="#l114">114</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">yellow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">60.0f</span><span class="p">);</span></td>
+        <td class="src"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l115" href="#l115">115</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">green</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">120.0f</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l116" href="#l116">116</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">cyan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">180.0f</span><span class="p">);</span></td>
+        <td class="src"><span class="n">namespace</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">hues</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l117" href="#l117">117</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">240.0f</span><span class="p">);</span></td>
+        <td class="src"><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l118" href="#l118">118</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">magenta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">300.0f</span><span class="p">);</span></td>
+        <td class="src"><span class="c1">// https://tympanus.net/codrops/css_reference/hsl/</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l119" href="#l119">119</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">}</span></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">red</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l120" href="#l120">120</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">orange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">30.0f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l121" href="#l121">121</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">namespace</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">colors</span></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">yellow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">60.0f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l122" href="#l122">122</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">{</span></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">green</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">120.0f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l123" href="#l123">123</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">cyan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">180.0f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l124" href="#l124">124</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">240.0f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l125" href="#l125">125</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">{</span></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Angle</span><span class="w"> </span><span class="n">magenta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Angle</span><span class="o">::</span><span class="n">from_degrees</span><span class="p">(</span><span class="mf">300.0f</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l126" href="#l126">126</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">255.0f</span><span class="p">,</span><span class="w"> </span><span class="n">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">255.0f</span><span class="p">,</span><span class="w"> </span><span class="n">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">255.0f</span><span class="p">};</span></td>
+        <td class="src"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l127" href="#l127">127</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">}</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l128" href="#l128">128</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">namespace</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">colors</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l129" href="#l129">129</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">white</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="p">{</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">};</span></td>
+        <td class="src"><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l130" href="#l130">130</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">black</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="p">{</span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">};</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l131" href="#l131">131</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l132" href="#l132">132</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="c1">// https://www.nature.com/articles/nmeth.1618</span></td>
+        <td class="src"><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l133" href="#l133">133</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">orange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="mi">159</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">255.0f</span><span class="p">,</span><span class="w"> </span><span class="n">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">255.0f</span><span class="p">,</span><span class="w"> </span><span class="n">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">255.0f</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l134" href="#l134">134</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">blue_sky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">86</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">233</span><span class="p">);</span></td>
+        <td class="src"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l135" href="#l135">135</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">green_bluish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">158</span><span class="p">,</span><span class="w"> </span><span class="mi">115</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l136" href="#l136">136</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">yellow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">228</span><span class="p">,</span><span class="w"> </span><span class="mi">66</span><span class="p">);</span></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">white</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="p">{</span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l137" href="#l137">137</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w"> </span><span class="mi">178</span><span class="p">);</span></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">black</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="p">{</span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l138" href="#l138">138</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">red_vermillion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">213</span><span class="p">,</span><span class="w"> </span><span class="mi">94</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l139" href="#l139">139</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">purple_redish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="w"> </span><span class="mi">121</span><span class="p">,</span><span class="w"> </span><span class="mi">167</span><span class="p">);</span></td>
+        <td class="src"><span class="c1">// https://www.nature.com/articles/nmeth.1618</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l140" href="#l140">140</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">orange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="mi">159</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l141" href="#l141">141</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter::colors</span></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">blue_sky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">86</span><span class="p">,</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">233</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l142" href="#l142">142</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">green_bluish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">158</span><span class="p">,</span><span class="w"> </span><span class="mi">115</span><span class="p">);</span></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l143" href="#l143">143</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">yellow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">240</span><span class="p">,</span><span class="w"> </span><span class="mi">228</span><span class="p">,</span><span class="w"> </span><span class="mi">66</span><span class="p">);</span></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l144" href="#l144">144</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">blue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">114</span><span class="p">,</span><span class="w"> </span><span class="mi">178</span><span class="p">);</span></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l145" href="#l145">145</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">red_vermillion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">213</span><span class="p">,</span><span class="w"> </span><span class="mi">94</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l146" href="#l146">146</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="n">constexpr</span><span class="w"> </span><span class="n">klotter</span><span class="o">::</span><span class="n">Rgb</span><span class="w"> </span><span class="n">purple_redish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rgb</span><span class="p">(</span><span class="mi">204</span><span class="p">,</span><span class="w"> </span><span class="mi">121</span><span class="p">,</span><span class="w"> </span><span class="mi">167</span><span class="p">);</span></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l147" href="#l147">147</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l148" href="#l148">148</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter::colors</span></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l149" href="#l149">149</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
@@ -1104,7 +1153,7 @@
         <hr class="block-separator"/>
         <footer class="text-center">
           Created using <a href="http://gcovr.com/en/8.6">GCOVR (Version 8.6)</a>
-          at 2026-02-17 19:17:47
+          at 2026-02-18 16:12:50
         </footer>
       </div>
     </div>

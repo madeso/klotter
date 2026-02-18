@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['c_0',['c',['../structklotter_1_1Lch.html#a08063f321f613a87ea3ecc526585ac41',1,'klotter::Lch::c'],['../structklotter_1_1Face.html#a0e3be30586dc7d66a2d70e1249dacb00',1,'klotter::Face::c']]],
+  ['c_0',['c',['../structklotter_1_1OkLch.html#aa912dbbc6ce2276a9a2219a045f4126b',1,'klotter::OkLch::c'],['../structklotter_1_1Face.html#a0e3be30586dc7d66a2d70e1249dacb00',1,'klotter::Face::c']]],
   ['camera_1',['camera',['../structklotter_1_1App.html#a0010a1af3138595dffbb2935c9434d07',1,'klotter::App::camera'],['../structklotter_1_1PostProcArg.html#a5f841578f5f3c3ad12f200a179c3c4c1',1,'klotter::PostProcArg::camera']]],
   ['camera_5funiform_5fbuffer_2',['camera_uniform_buffer',['../structklotter_1_1RendererPimpl.html#a146ca5e38bd4c8a717795a173c657e89',1,'klotter::RendererPimpl']]],
   ['clear_5fcolor_3',['clear_color',['../structklotter_1_1World.html#ad698f3a30ca3cfa9825ffe883109639f',1,'klotter::World']]],

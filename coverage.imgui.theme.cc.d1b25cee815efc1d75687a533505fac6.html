@@ -262,7 +262,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">hsl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HSLig</span><span class="p">{.</span><span class="n">hue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">hue</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">saturation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">saturation</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">lightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lightness</span><span class="p">};</span></td>
+        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">hsl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hsl</span><span class="p">{.</span><span class="n">hue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">hue</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">saturation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">saturation</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">lightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lightness</span><span class="p">};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l24" href="#l24">24</a></td>
@@ -276,7 +276,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="c1">// const auto lch = Lch{.l = lightness, .c = color.chroma, .h = color.hue};</span></td>
+        <td class="src"><span class="w">	</span><span class="c1">// const auto lch = OkLch{.l = lightness, .c = color.chroma, .h = color.hue};</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l26" href="#l26">26</a></td>
@@ -325,7 +325,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">srgb_from_hsl_classic</span><span class="p">(</span><span class="n">hsl</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">srgb_from_hsl</span><span class="p">(</span><span class="n">hsl</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l33" href="#l33">33</a></td>
@@ -1356,7 +1356,7 @@
         <hr class="block-separator"/>
         <footer class="text-center">
           Created using <a href="http://gcovr.com/en/8.6">GCOVR (Version 8.6)</a>
-          at 2026-02-17 19:17:47
+          at 2026-02-18 16:12:50
         </footer>
       </div>
     </div>

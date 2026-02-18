@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="112" column="26" bodyfile="src/klotter/render/color.h" bodystart="112" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="119" column="26" bodyfile="src/klotter/render/color.h" bodystart="119" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1hues_1a63a1b821ec9c8d77fcb626a32ccb04d6" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="113" column="26" bodyfile="src/klotter/render/color.h" bodystart="113" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="120" column="26" bodyfile="src/klotter/render/color.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1hues_1a811748b8448cb83c5d279edecce8651b" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="114" column="26" bodyfile="src/klotter/render/color.h" bodystart="114" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="121" column="26" bodyfile="src/klotter/render/color.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1hues_1a9a4d90ea4d20ea27488fdcb19760f710" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="115" column="26" bodyfile="src/klotter/render/color.h" bodystart="115" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="122" column="26" bodyfile="src/klotter/render/color.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1hues_1a8536bf87901d0851cded34ab8202eabe" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="116" column="26" bodyfile="src/klotter/render/color.h" bodystart="116" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="123" column="26" bodyfile="src/klotter/render/color.h" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1hues_1ac089b51750850812fc9b0e419a2859e9" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="117" column="26" bodyfile="src/klotter/render/color.h" bodystart="117" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="124" column="26" bodyfile="src/klotter/render/color.h" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1hues_1ad46cfc10ce3b88f9bd65d137f20f4eac" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Angle" kindref="compound">klotter::Angle</ref></type>
@@ -106,13 +106,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="118" column="26" bodyfile="src/klotter/render/color.h" bodystart="118" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="125" column="26" bodyfile="src/klotter/render/color.h" bodystart="125" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/klotter/render/color.h" line="109" column="1"/>
+    <location file="src/klotter/render/color.h" line="116" column="1"/>
   </compounddef>
 </doxygen>

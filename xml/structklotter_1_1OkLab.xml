@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1OkLab" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::OkLab</compoundname>
+    <includes refid="color_8h" local="no">color.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1OkLab_1a0774a3eae87cd483535eecaea32714db" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OkLab::l</definition>
+        <argsstring></argsstring>
+        <name>l</name>
+        <qualifiedname>klotter::OkLab::l</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="67" column="7" bodyfile="src/klotter/render/color.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OkLab_1a0172f18194fc971e7a1f575bd3755a5c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OkLab::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <qualifiedname>klotter::OkLab::a</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="68" column="7" bodyfile="src/klotter/render/color.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1OkLab_1aa1d3410b3c25bf93437cfa6802673458" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float klotter::OkLab::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <qualifiedname>klotter::OkLab::b</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="69" column="7" bodyfile="src/klotter/render/color.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents a color in the OKlab color space. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/klotter/render/color.h" line="65" column="1" bodyfile="src/klotter/render/color.h" bodystart="66" bodyend="70"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1OkLab_1a0172f18194fc971e7a1f575bd3755a5c" prot="public" virt="non-virtual"><scope>klotter::OkLab</scope><name>a</name></member>
+      <member refid="structklotter_1_1OkLab_1aa1d3410b3c25bf93437cfa6802673458" prot="public" virt="non-virtual"><scope>klotter::OkLab</scope><name>b</name></member>
+      <member refid="structklotter_1_1OkLab_1a0774a3eae87cd483535eecaea32714db" prot="public" virt="non-virtual"><scope>klotter::OkLab</scope><name>l</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

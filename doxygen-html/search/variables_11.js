@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sample_5fcount_0',['sample_count',['../structklotter_1_1BlurOptions.html#a33059a8882525f6d1d82baeaf4c0d10a',1,'klotter::BlurOptions']]],
-  ['saturation_1',['saturation',['../structklotter_1_1HSVal.html#a188f6a7ceae9179e92856e30610a88e0',1,'klotter::HSVal::saturation'],['../structklotter_1_1HSLig.html#a050c04145bfdfb6986399d923f3cfe67',1,'klotter::HSLig::saturation']]],
+  ['saturation_1',['saturation',['../structklotter_1_1OkHsv.html#a395dac2e5951448248fcea83a500c9d7',1,'klotter::OkHsv::saturation'],['../structklotter_1_1OkHsl.html#a905a6477fa91534e94bf0b7b1b2cb4c5',1,'klotter::OkHsl::saturation'],['../structklotter_1_1Hsl.html#a6d217442285ad78dbb5cd8e4cbc6bb9e',1,'klotter::Hsl::saturation']]],
   ['settings_2',['settings',['../structklotter_1_1Renderer.html#a4003f3fcc5f8bf2524fe1e23b3bb9bff',1,'klotter::Renderer']]],
   ['setup_3',['setup',['../structklotter_1_1CameraUniformBuffer.html#a369782736daee9677a8d7c285cd92fd2',1,'klotter::CameraUniformBuffer']]],
   ['shader_4',['shader',['../structklotter_1_1LineDrawer.html#a24ce3da96e78f1d1346fd1af2cf0c341',1,'klotter::LineDrawer::shader'],['../structklotter_1_1SimpleEffect.html#a3b0db69f934eb0a04439d37da6022aae',1,'klotter::SimpleEffect::shader'],['../structklotter_1_1ExtractShader.html#a26d8853725fe5465550d40d0b70c9dd9',1,'klotter::ExtractShader::shader'],['../structklotter_1_1PingPongBlurShader.html#aa4489466c7f677289c52d3e3b8220916',1,'klotter::PingPongBlurShader::shader']]],

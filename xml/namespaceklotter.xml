@@ -47,13 +47,10 @@
     <innerclass refid="structklotter_1_1FullScreenGeom" prot="public">klotter::FullScreenGeom</innerclass>
     <innerclass refid="structklotter_1_1Geom" prot="public">klotter::Geom</innerclass>
     <innerclass refid="structklotter_1_1HashCombiner" prot="public">klotter::HashCombiner</innerclass>
-    <innerclass refid="structklotter_1_1HSLig" prot="public">klotter::HSLig</innerclass>
-    <innerclass refid="structklotter_1_1HSVal" prot="public">klotter::HSVal</innerclass>
+    <innerclass refid="structklotter_1_1Hsl" prot="public">klotter::Hsl</innerclass>
     <innerclass refid="structklotter_1_1ImguiShaderCache" prot="public">klotter::ImguiShaderCache</innerclass>
     <innerclass refid="structklotter_1_1ImguiShaderProgram" prot="public">klotter::ImguiShaderProgram</innerclass>
     <innerclass refid="structklotter_1_1InstanceProp" prot="public">klotter::InstanceProp</innerclass>
-    <innerclass refid="structklotter_1_1Lab" prot="public">klotter::Lab</innerclass>
-    <innerclass refid="structklotter_1_1Lch" prot="public">klotter::Lch</innerclass>
     <innerclass refid="structklotter_1_1Lights" prot="public">klotter::Lights</innerclass>
     <innerclass refid="structklotter_1_1Lin__rgb" prot="public">klotter::Lin_rgb</innerclass>
     <innerclass refid="structklotter_1_1LineDrawer" prot="public">klotter::LineDrawer</innerclass>
@@ -69,6 +66,10 @@
     <innerclass refid="structklotter_1_1Material" prot="public">klotter::Material</innerclass>
     <innerclass refid="structklotter_1_1MeshInstance" prot="public">klotter::MeshInstance</innerclass>
     <innerclass refid="structklotter_1_1MeshInstance__TransformInstanced" prot="public">klotter::MeshInstance_TransformInstanced</innerclass>
+    <innerclass refid="structklotter_1_1OkHsl" prot="public">klotter::OkHsl</innerclass>
+    <innerclass refid="structklotter_1_1OkHsv" prot="public">klotter::OkHsv</innerclass>
+    <innerclass refid="structklotter_1_1OkLab" prot="public">klotter::OkLab</innerclass>
+    <innerclass refid="structklotter_1_1OkLch" prot="public">klotter::OkLch</innerclass>
     <innerclass refid="structklotter_1_1OpenglStates" prot="public">klotter::OpenglStates</innerclass>
     <innerclass refid="structklotter_1_1OrthoCamera" prot="public">klotter::OrthoCamera</innerclass>
     <innerclass refid="structklotter_1_1PingPongBlurShader" prot="public">klotter::PingPongBlurShader</innerclass>
@@ -856,7 +857,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="66" column="7" declfile="src/klotter/render/color.h" declline="66" declcolumn="7"/>
+        <location file="src/klotter/render/color.h" line="74" column="7" declfile="src/klotter/render/color.h" declline="74" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1acb2e7dbe3c65b95f23cc0d97ac0860a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
@@ -878,7 +879,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="67" column="9" declfile="src/klotter/render/color.h" declline="67" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="75" column="9" declfile="src/klotter/render/color.h" declline="75" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1aa6490decef270ab2984a3cf5078891c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -896,7 +897,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="69" column="7" declfile="src/klotter/render/color.h" declline="69" declcolumn="7"/>
+        <location file="src/klotter/render/color.h" line="77" column="7" declfile="src/klotter/render/color.h" declline="77" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ab898348e80ef9e72c50cec2d506b4b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
@@ -914,7 +915,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="70" column="9" declfile="src/klotter/render/color.h" declline="70" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="78" column="9" declfile="src/klotter/render/color.h" declline="78" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a77f8087e1f318ea3e978c99e2facf5c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -932,7 +933,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="72" column="7" declfile="src/klotter/render/color.h" declline="72" declcolumn="7"/>
+        <location file="src/klotter/render/color.h" line="80" column="7" declfile="src/klotter/render/color.h" declline="80" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a993e9fae4780369cb74395684ec7c55c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">Rgb</ref></type>
@@ -950,11 +951,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="73" column="5" declfile="src/klotter/render/color.h" declline="73" declcolumn="5"/>
+        <location file="src/klotter/render/color.h" line="81" column="5" declfile="src/klotter/render/color.h" declline="81" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a0eeaa9f0dd4476767e6ce9573620ed52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structklotter_1_1Lab" kindref="compound">Lab</ref></type>
-        <definition>Lab klotter::oklab_from_linear</definition>
+      <memberdef kind="function" id="namespaceklotter_1a2753246b716c053b1602e59c8c7a9458" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1OkLab" kindref="compound">OkLab</ref></type>
+        <definition>OkLab klotter::oklab_from_linear</definition>
         <argsstring>(const Lin_rgb &amp;c)</argsstring>
         <name>oklab_from_linear</name>
         <qualifiedname>klotter::oklab_from_linear</qualifiedname>
@@ -968,16 +969,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="78" column="5" declfile="src/klotter/render/color.h" declline="78" declcolumn="5"/>
+        <location file="src/klotter/render/color.h" line="86" column="7" declfile="src/klotter/render/color.h" declline="86" declcolumn="7"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a0b5a2f51a6dd10f87b3555863b0e0f4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a905b607987e50936c2090c22073364d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
         <definition>Lin_rgb klotter::linear_from_oklab</definition>
-        <argsstring>(const Lab &amp;c)</argsstring>
+        <argsstring>(const OkLab &amp;c)</argsstring>
         <name>linear_from_oklab</name>
         <qualifiedname>klotter::linear_from_oklab</qualifiedname>
         <param>
-          <type>const <ref refid="structklotter_1_1Lab" kindref="compound">Lab</ref> &amp;</type>
+          <type>const <ref refid="structklotter_1_1OkLab" kindref="compound">OkLab</ref> &amp;</type>
           <declname>c</declname>
         </param>
         <briefdescription>
@@ -986,16 +987,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="79" column="9" declfile="src/klotter/render/color.h" declline="79" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="87" column="9" declfile="src/klotter/render/color.h" declline="87" declcolumn="9"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1aa91916877c4ee9eada97d5d8989e4da1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structklotter_1_1Lch" kindref="compound">Lch</ref></type>
-        <definition>Lch klotter::oklch_from_oklab</definition>
-        <argsstring>(const Lab &amp;c)</argsstring>
+      <memberdef kind="function" id="namespaceklotter_1a565fff9daa46f167ae417a429a4b5d0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1OkLch" kindref="compound">OkLch</ref></type>
+        <definition>OkLch klotter::oklch_from_oklab</definition>
+        <argsstring>(const OkLab &amp;c)</argsstring>
         <name>oklch_from_oklab</name>
         <qualifiedname>klotter::oklch_from_oklab</qualifiedname>
         <param>
-          <type>const <ref refid="structklotter_1_1Lab" kindref="compound">Lab</ref> &amp;</type>
+          <type>const <ref refid="structklotter_1_1OkLab" kindref="compound">OkLab</ref> &amp;</type>
           <declname>c</declname>
         </param>
         <briefdescription>
@@ -1004,16 +1005,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="80" column="5" declfile="src/klotter/render/color.h" declline="80" declcolumn="5"/>
+        <location file="src/klotter/render/color.h" line="88" column="7" declfile="src/klotter/render/color.h" declline="88" declcolumn="7"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1abbc449cee223960d5f93b49f995b64d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structklotter_1_1Lab" kindref="compound">Lab</ref></type>
-        <definition>Lab klotter::oklab_from_oklch</definition>
-        <argsstring>(const Lch &amp;c)</argsstring>
+      <memberdef kind="function" id="namespaceklotter_1abecc229b3edb314ee60933c65cc81408" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1OkLab" kindref="compound">OkLab</ref></type>
+        <definition>OkLab klotter::oklab_from_oklch</definition>
+        <argsstring>(const OkLch &amp;c)</argsstring>
         <name>oklab_from_oklch</name>
         <qualifiedname>klotter::oklab_from_oklch</qualifiedname>
         <param>
-          <type>const <ref refid="structklotter_1_1Lch" kindref="compound">Lch</ref> &amp;</type>
+          <type>const <ref refid="structklotter_1_1OkLch" kindref="compound">OkLch</ref> &amp;</type>
           <declname>c</declname>
         </param>
         <briefdescription>
@@ -1022,7 +1023,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="81" column="5" declfile="src/klotter/render/color.h" declline="81" declcolumn="5"/>
+        <location file="src/klotter/render/color.h" line="89" column="7" declfile="src/klotter/render/color.h" declline="89" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a2e77bdffc98bc4f5b8711ebdce32396b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
@@ -1040,7 +1041,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="85" column="9" declfile="src/klotter/render/color.h" declline="85" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="93" column="9" declfile="src/klotter/render/color.h" declline="93" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a4bf28a41210fe9c834eb78ba8b7fd546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
@@ -1058,7 +1059,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="86" column="9" declfile="src/klotter/render/color.h" declline="86" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="94" column="9" declfile="src/klotter/render/color.h" declline="94" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a32ee983d04535448f593d2f27b497efc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
@@ -1076,7 +1077,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="87" column="9" declfile="src/klotter/render/color.h" declline="87" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="95" column="9" declfile="src/klotter/render/color.h" declline="95" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a44e21c51edebf3a192fd2ef62fd0b380" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
@@ -1099,7 +1100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="88" column="9" declfile="src/klotter/render/color.h" declline="88" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="96" column="9" declfile="src/klotter/render/color.h" declline="96" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a510c98aa8bbb4369d0ffde7e02f909c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
@@ -1122,16 +1123,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="89" column="9" declfile="src/klotter/render/color.h" declline="89" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="97" column="9" declfile="src/klotter/render/color.h" declline="97" declcolumn="9"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1ae7951d71181ca8c99cbc5af95fc60ca0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1abfbca6fa14dda715d1b03624ae731395" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">Rgb</ref></type>
-        <definition>Rgb klotter::srgb_from_hsv</definition>
-        <argsstring>(const HSVal &amp;hsv)</argsstring>
-        <name>srgb_from_hsv</name>
-        <qualifiedname>klotter::srgb_from_hsv</qualifiedname>
+        <definition>Rgb klotter::srgb_from_okhsv</definition>
+        <argsstring>(const OkHsv &amp;hsv)</argsstring>
+        <name>srgb_from_okhsv</name>
+        <qualifiedname>klotter::srgb_from_okhsv</qualifiedname>
         <param>
-          <type>const <ref refid="structklotter_1_1HSVal" kindref="compound">HSVal</ref> &amp;</type>
+          <type>const <ref refid="structklotter_1_1OkHsv" kindref="compound">OkHsv</ref> &amp;</type>
           <declname>hsv</declname>
         </param>
         <briefdescription>
@@ -1140,14 +1141,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="94" column="5" declfile="src/klotter/render/color.h" declline="94" declcolumn="5"/>
+        <location file="src/klotter/render/color.h" line="102" column="5" declfile="src/klotter/render/color.h" declline="102" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a32dff84d8f4f2f8fde21bbcdbe0b2bef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structklotter_1_1HSVal" kindref="compound">HSVal</ref></type>
-        <definition>HSVal klotter::hsv_from_srgb</definition>
+      <memberdef kind="function" id="namespaceklotter_1ab3885f0d2606b41b346a1d53888919d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1OkHsv" kindref="compound">OkHsv</ref></type>
+        <definition>OkHsv klotter::okhsv_from_srgb</definition>
         <argsstring>(const Rgb &amp;rgb)</argsstring>
-        <name>hsv_from_srgb</name>
-        <qualifiedname>klotter::hsv_from_srgb</qualifiedname>
+        <name>okhsv_from_srgb</name>
+        <qualifiedname>klotter::okhsv_from_srgb</qualifiedname>
         <param>
           <type>const <ref refid="structklotter_1_1Rgb" kindref="compound">Rgb</ref> &amp;</type>
           <declname>rgb</declname>
@@ -1158,16 +1159,52 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="95" column="7" declfile="src/klotter/render/color.h" declline="95" declcolumn="7"/>
+        <location file="src/klotter/render/color.h" line="103" column="7" declfile="src/klotter/render/color.h" declline="103" declcolumn="7"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a1c47cf4f07d3273821a68396497e0755" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a97020627e564dc4a83f028ac39de03dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Rgb" kindref="compound">Rgb</ref></type>
+        <definition>Rgb klotter::srgb_from_okhsl</definition>
+        <argsstring>(const OkHsl &amp;hsl)</argsstring>
+        <name>srgb_from_okhsl</name>
+        <qualifiedname>klotter::srgb_from_okhsl</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1OkHsl" kindref="compound">OkHsl</ref> &amp;</type>
+          <declname>hsl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="105" column="5" declfile="src/klotter/render/color.h" declline="105" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a05b6eddbf2ac0008ca51b0355031c444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1OkHsl" kindref="compound">OkHsl</ref></type>
+        <definition>OkHsl klotter::okhsl_from_srgb</definition>
+        <argsstring>(const Rgb &amp;rgb)</argsstring>
+        <name>okhsl_from_srgb</name>
+        <qualifiedname>klotter::okhsl_from_srgb</qualifiedname>
+        <param>
+          <type>const <ref refid="structklotter_1_1Rgb" kindref="compound">Rgb</ref> &amp;</type>
+          <declname>rgb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="106" column="7" declfile="src/klotter/render/color.h" declline="106" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1a064266477694436455736beda57c3884" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">Rgb</ref></type>
         <definition>Rgb klotter::srgb_from_hsl</definition>
-        <argsstring>(const HSLig &amp;hsl)</argsstring>
+        <argsstring>(const Hsl &amp;hsl)</argsstring>
         <name>srgb_from_hsl</name>
         <qualifiedname>klotter::srgb_from_hsl</qualifiedname>
         <param>
-          <type>const <ref refid="structklotter_1_1HSLig" kindref="compound">HSLig</ref> &amp;</type>
+          <type>const <ref refid="structklotter_1_1Hsl" kindref="compound">Hsl</ref> &amp;</type>
           <declname>hsl</declname>
         </param>
         <briefdescription>
@@ -1176,43 +1213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="97" column="5" declfile="src/klotter/render/color.h" declline="97" declcolumn="5"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a990f273dfa7b6564798ed8f1f72d1ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structklotter_1_1HSLig" kindref="compound">HSLig</ref></type>
-        <definition>HSLig klotter::hsl_from_srgb</definition>
-        <argsstring>(const Rgb &amp;rgb)</argsstring>
-        <name>hsl_from_srgb</name>
-        <qualifiedname>klotter::hsl_from_srgb</qualifiedname>
-        <param>
-          <type>const <ref refid="structklotter_1_1Rgb" kindref="compound">Rgb</ref> &amp;</type>
-          <declname>rgb</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/color.h" line="98" column="7" declfile="src/klotter/render/color.h" declline="98" declcolumn="7"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a1dce229c0271355b87a1e0ea50811cb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="structklotter_1_1Rgb" kindref="compound">Rgb</ref></type>
-        <definition>Rgb klotter::srgb_from_hsl_classic</definition>
-        <argsstring>(const HSLig &amp;hsl)</argsstring>
-        <name>srgb_from_hsl_classic</name>
-        <qualifiedname>klotter::srgb_from_hsl_classic</qualifiedname>
-        <param>
-          <type>const <ref refid="structklotter_1_1HSLig" kindref="compound">HSLig</ref> &amp;</type>
-          <declname>hsl</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/klotter/render/color.h" line="102" column="5" declfile="src/klotter/render/color.h" declline="102" declcolumn="5"/>
+        <location file="src/klotter/render/color.h" line="109" column="5" declfile="src/klotter/render/color.h" declline="109" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a38e6a6b782abacfc63d7c91cd741490a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -1230,7 +1231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="104" column="7" declfile="src/klotter/render/color.h" declline="104" declcolumn="7"/>
+        <location file="src/klotter/render/color.h" line="111" column="7" declfile="src/klotter/render/color.h" declline="111" declcolumn="7"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a55ff2860edc6d3800aaa94107f2d0da4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
@@ -1248,7 +1249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="105" column="9" declfile="src/klotter/render/color.h" declline="105" declcolumn="9"/>
+        <location file="src/klotter/render/color.h" line="112" column="9" declfile="src/klotter/render/color.h" declline="112" declcolumn="9"/>
       </memberdef>
       <member refid="group__render_1ga77aaf7badac01676f001166f56e55d86" kind="function"><name>draw_frustum</name></member>
       <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>

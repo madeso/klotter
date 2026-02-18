@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['h_0',['h',['../structklotter_1_1Lch.html#a43f461c4bc7d194a1a547e4de7aeca35',1,'klotter::Lch']]],
+  ['h_0',['h',['../structklotter_1_1OkLch.html#a72f2d0d1c23429e3a14e1b621f571193',1,'klotter::OkLch']]],
   ['half_5fturn_1',['half_turn',['../namespaceklotter.html#a0ebf20e966edbb933ea95787ecdc3cd2',1,'klotter']]],
   ['hash_20util_2',['Hash-util',['../group__hash.html',1,'']]],
   ['hash_2eh_3',['hash.h',['../hash_8h.html',1,'']]],
@@ -11,9 +11,6 @@ var searchData=
   ['hori_8',['hori',['../structklotter_1_1BlurEffect.html#a797295631c7220e0afda1135f8e94e61',1,'klotter::BlurEffect']]],
   ['hori_5fp_9',['hori_p',['../structklotter_1_1BlurEffect.html#abb8ab5ec73719ee4e1bbe7a3a2b443e4',1,'klotter::BlurEffect']]],
   ['horizontal_10',['horizontal',['../namespaceklotter.html#a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f',1,'klotter']]],
-  ['hsl_5ffrom_5fsrgb_11',['hsl_from_srgb',['../namespaceklotter.html#a990f273dfa7b6564798ed8f1f72d1ead',1,'klotter']]],
-  ['hslig_12',['HSLig',['../structklotter_1_1HSLig.html',1,'klotter']]],
-  ['hsv_5ffrom_5fsrgb_13',['hsv_from_srgb',['../namespaceklotter.html#a32dff84d8f4f2f8fde21bbcdbe0b2bef',1,'klotter']]],
-  ['hsval_14',['HSVal',['../structklotter_1_1HSVal.html',1,'klotter']]],
-  ['hue_15',['hue',['../structklotter_1_1HSVal.html#a415c9c2e884693c4fcb44ec0cf2beccd',1,'klotter::HSVal::hue'],['../structklotter_1_1HSLig.html#a9e09f863522b8037d4c4473d4921c17b',1,'klotter::HSLig::hue']]]
+  ['hsl_11',['Hsl',['../structklotter_1_1Hsl.html',1,'klotter']]],
+  ['hue_12',['hue',['../structklotter_1_1OkHsv.html#a34ca5a95744d47db399931a1c64d2db4',1,'klotter::OkHsv::hue'],['../structklotter_1_1OkHsl.html#a6ea4a7fc9a0afed34fcfc2a42081f4f8',1,'klotter::OkHsl::hue'],['../structklotter_1_1Hsl.html#a9a65f753440e4e93f74b5b600cb43a94',1,'klotter::Hsl::hue']]]
 ];

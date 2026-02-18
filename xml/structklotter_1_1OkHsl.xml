@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
-  <compounddef id="structklotter_1_1HSLig" kind="struct" language="C++" prot="public">
-    <compoundname>klotter::HSLig</compoundname>
+  <compounddef id="structklotter_1_1OkHsl" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::OkHsl</compoundname>
     <includes refid="color_8h" local="no">color.h</includes>
     <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structklotter_1_1HSLig_1a9e09f863522b8037d4c4473d4921c17b" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1OkHsl_1a6ea4a7fc9a0afed34fcfc2a42081f4f8" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1Angle" kindref="compound">Angle</ref></type>
-        <definition>Angle klotter::HSLig::hue</definition>
+        <definition>Angle klotter::OkHsl::hue</definition>
         <argsstring></argsstring>
         <name>hue</name>
-        <qualifiedname>klotter::HSLig::hue</qualifiedname>
+        <qualifiedname>klotter::OkHsl::hue</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -18,12 +18,12 @@
         </inbodydescription>
         <location file="src/klotter/render/color.h" line="43" column="7" bodyfile="src/klotter/render/color.h" bodystart="43" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1HSLig_1a050c04145bfdfb6986399d923f3cfe67" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1OkHsl_1a905a6477fa91534e94bf0b7b1b2cb4c5" prot="public" static="no" mutable="no">
         <type>float</type>
-        <definition>float klotter::HSLig::saturation</definition>
+        <definition>float klotter::OkHsl::saturation</definition>
         <argsstring></argsstring>
         <name>saturation</name>
-        <qualifiedname>klotter::HSLig::saturation</qualifiedname>
+        <qualifiedname>klotter::OkHsl::saturation</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -32,12 +32,12 @@
         </inbodydescription>
         <location file="src/klotter/render/color.h" line="44" column="7" bodyfile="src/klotter/render/color.h" bodystart="44" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1HSLig_1ac8a0ec7f015631001c1b0bc78aa923b1" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structklotter_1_1OkHsl_1ae30e18185910c6d2c462413f709315c9" prot="public" static="no" mutable="no">
         <type>float</type>
-        <definition>float klotter::HSLig::lightness</definition>
+        <definition>float klotter::OkHsl::lightness</definition>
         <argsstring></argsstring>
         <name>lightness</name>
-        <qualifiedname>klotter::HSLig::lightness</qualifiedname>
+        <qualifiedname>klotter::OkHsl::lightness</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -58,8 +58,8 @@
         <link refid="structklotter_1_1Angle"/>
       </node>
       <node id="1">
-        <label>klotter::HSLig</label>
-        <link refid="structklotter_1_1HSLig"/>
+        <label>klotter::OkHsl</label>
+        <link refid="structklotter_1_1OkHsl"/>
         <childnode refid="2" relation="usage">
           <edgelabel>hue</edgelabel>
         </childnode>
@@ -67,9 +67,9 @@
     </collaborationgraph>
     <location file="src/klotter/render/color.h" line="41" column="1" bodyfile="src/klotter/render/color.h" bodystart="42" bodyend="46"/>
     <listofallmembers>
-      <member refid="structklotter_1_1HSLig_1a9e09f863522b8037d4c4473d4921c17b" prot="public" virt="non-virtual"><scope>klotter::HSLig</scope><name>hue</name></member>
-      <member refid="structklotter_1_1HSLig_1ac8a0ec7f015631001c1b0bc78aa923b1" prot="public" virt="non-virtual"><scope>klotter::HSLig</scope><name>lightness</name></member>
-      <member refid="structklotter_1_1HSLig_1a050c04145bfdfb6986399d923f3cfe67" prot="public" virt="non-virtual"><scope>klotter::HSLig</scope><name>saturation</name></member>
+      <member refid="structklotter_1_1OkHsl_1a6ea4a7fc9a0afed34fcfc2a42081f4f8" prot="public" virt="non-virtual"><scope>klotter::OkHsl</scope><name>hue</name></member>
+      <member refid="structklotter_1_1OkHsl_1ae30e18185910c6d2c462413f709315c9" prot="public" virt="non-virtual"><scope>klotter::OkHsl</scope><name>lightness</name></member>
+      <member refid="structklotter_1_1OkHsl_1a905a6477fa91534e94bf0b7b1b2cb4c5" prot="public" virt="non-virtual"><scope>klotter::OkHsl</scope><name>saturation</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

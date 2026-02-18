@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_0',['b',['../structklotter_1_1Rgb.html#a01589cf639eaf449ca1f012f933cb954',1,'klotter::Rgb::b'],['../structklotter_1_1Lab.html#a98748c713c3c0ee1264e305aa9c727ba',1,'klotter::Lab::b'],['../structklotter_1_1Face.html#a2f2d9992cca8c81ee5697cc64741d34d',1,'klotter::Face::b'],['../structVisualDebugging_1_1Color.html#a313c4f050e400d7221e347bd487d166c',1,'VisualDebugging::Color::b']]],
+  ['b_0',['b',['../structklotter_1_1Rgb.html#a01589cf639eaf449ca1f012f933cb954',1,'klotter::Rgb::b'],['../structklotter_1_1OkLab.html#aa1d3410b3c25bf93437cfa6802673458',1,'klotter::OkLab::b'],['../structklotter_1_1Face.html#a2f2d9992cca8c81ee5697cc64741d34d',1,'klotter::Face::b'],['../structVisualDebugging_1_1Color.html#a313c4f050e400d7221e347bd487d166c',1,'VisualDebugging::Color::b']]],
   ['background_5fcolor_1',['background_color',['../structklotter_1_1SCurveImguiSettings.html#ab7d4a9fe5f4cb0dd7cf299800b310541',1,'klotter::SCurveImguiSettings']]],
   ['billboarding_2',['billboarding',['../structklotter_1_1MeshInstance.html#aff607bdafdbd54b577438161f1be2d55',1,'klotter::MeshInstance']]],
   ['binding_5fpoint_3',['binding_point',['../structklotter_1_1UniformBufferSetup.html#a138668806c1a68b305bf477067ee1775',1,'klotter::UniformBufferSetup']]],

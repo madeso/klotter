@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../structklotter_1_1Lab.html#ab2f12011c66348b6145080c1866259f4',1,'klotter::Lab::a'],['../structklotter_1_1Face.html#a6b31a3e3e29273c8174e15d763136b2c',1,'klotter::Face::a']]],
+  ['a_0',['a',['../structklotter_1_1OkLab.html#a0172f18194fc971e7a1f575bd3755a5c',1,'klotter::OkLab::a'],['../structklotter_1_1Face.html#a6b31a3e3e29273c8174e15d763136b2c',1,'klotter::Face::a']]],
   ['acos_1',['acos',['../namespaceklotter.html#a0cc508fc02a7dd8e5f3319ae74721625',1,'klotter']]],
   ['activate_5ftexture_2',['activate_texture',['../structklotter_1_1StateChanger.html#abbae49c8836d55354a1ffd300ba59ee5',1,'klotter::StateChanger']]],
   ['active_5fdraw_5fcolor_5f_3',['active_draw_color_',['../structVisualDebugging_1_1SceneArtist.html#a421051607201e9d28ce5bd4e512d296a',1,'VisualDebugging::SceneArtist']]],

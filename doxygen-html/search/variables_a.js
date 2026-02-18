@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['l_0',['l',['../structklotter_1_1Lch.html#aa7eade69dc013d08f57961762e26c470',1,'klotter::Lch::l'],['../structklotter_1_1Lab.html#a9305301003a65627b0127cc09b0d148f',1,'klotter::Lab::l']]],
+  ['l_0',['l',['../structklotter_1_1OkLch.html#a6a7775ec79b9fe66cd6fdbcec603aabd',1,'klotter::OkLch::l'],['../structklotter_1_1OkLab.html#a0774a3eae87cd483535eecaea32714db',1,'klotter::OkLab::l']]],
   ['label_1',['label',['../structSvgLine.html#a0254b9517b5e9d90083d90a9779bc958',1,'SvgLine']]],
   ['last_5fbloom_5fblur_5findex_2',['last_bloom_blur_index',['../structklotter_1_1RenderWorld.html#a50b93c67171958ea83a5acffb927909d',1,'klotter::RenderWorld']]],
   ['last_5fsource_3',['last_source',['../structklotter_1_1CompiledStack.html#a442cf553eb97dd8d5921b7a4d5c20bc2',1,'klotter::CompiledStack']]],
@@ -14,7 +14,7 @@ var searchData=
   ['lightblue_11',['lightBlue',['../namespaceVisualDebugging_1_1Colors.html#a060c5a014e7747f414e9c74c518a4bbf',1,'VisualDebugging::Colors']]],
   ['lightgreen_12',['lightGreen',['../namespaceVisualDebugging_1_1Colors.html#a9dcb4c33b6e1921b5e86d6f76e57f208',1,'VisualDebugging::Colors']]],
   ['lightgrey_13',['lightGrey',['../namespaceVisualDebugging_1_1Colors.html#adfcbc40215f755ce04ebe8a3cfc3565b',1,'VisualDebugging::Colors']]],
-  ['lightness_14',['lightness',['../structklotter_1_1HSLig.html#ac8a0ec7f015631001c1b0bc78aa923b1',1,'klotter::HSLig']]],
+  ['lightness_14',['lightness',['../structklotter_1_1OkHsl.html#ae30e18185910c6d2c462413f709315c9',1,'klotter::OkHsl::lightness'],['../structklotter_1_1Hsl.html#aec7ce4b4d5ac01ae017f517bcd43152d',1,'klotter::Hsl::lightness']]],
   ['lightred_15',['lightRed',['../namespaceVisualDebugging_1_1Colors.html#a5d3364cdb55e52c3e865bb9acab35ad1',1,'VisualDebugging::Colors']]],
   ['lights_16',['lights',['../structklotter_1_1World.html#a3fbb4f1f21c97a7f1cc7e11bc5f26a0b',1,'klotter::World']]],
   ['lime_17',['lime',['../group__imguicolors.html#gacbc316ef8105da66f1d268c14463bd7e',1,'klotter::imgui']]],
