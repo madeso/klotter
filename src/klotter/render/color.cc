@@ -2,6 +2,7 @@
 
 #include "imgui.h"
 
+#include <algorithm>
 #include <cmath>
 
 namespace klotter
@@ -101,45 +102,45 @@ float compute_max_saturation(float a, float b)
 	}
 
 	// Approximate max saturation using a polynomial:
-	float S = k0 + k1 * a + k2 * b + k3 * a * a + k4 * a * b;
+	float big_s = k0 + k1 * a + k2 * b + k3 * a * a + k4 * a * b;
 
 	// Do one step Halley's method to get closer
 	// this gives an error less than 10e6, except for some blue hues where the dS/dh is close to infinite
 	// this should be sufficient for most applications, otherwise do two/three steps
 
-	float k_l = +0.3963377774f * a + 0.2158037573f * b;
-	float k_m = -0.1055613458f * a - 0.0638541728f * b;
-	float k_s = -0.0894841775f * a - 1.2914855480f * b;
+	const auto k_l = +0.3963377774f * a + 0.2158037573f * b;
+	const auto k_m = -0.1055613458f * a - 0.0638541728f * b;
+	const auto k_s = -0.0894841775f * a - 1.2914855480f * b;
 
 	{
-		float l_ = 1.f + S * k_l;
-		float m_ = 1.f + S * k_m;
-		float s_ = 1.f + S * k_s;
+		const auto l_prim = 1.f + big_s * k_l;
+		const auto m_prim = 1.f + big_s * k_m;
+		const auto s_prim = 1.f + big_s * k_s;
 
-		float l = l_ * l_ * l_;
-		float m = m_ * m_ * m_;
-		float s = s_ * s_ * s_;
+		const auto l = l_prim * l_prim * l_prim;
+		const auto m = m_prim * m_prim * m_prim;
+		const auto s = s_prim * s_prim * s_prim;
 
-		float l_dS = 3.f * k_l * l_ * l_;
-		float m_dS = 3.f * k_m * m_ * m_;
-		float s_dS = 3.f * k_s * s_ * s_;
+		const auto l_d_big_s = 3.f * k_l * l_prim * l_prim;
+		const auto m_d_big_s = 3.f * k_m * m_prim * m_prim;
+		const auto s_d_big_s = 3.f * k_s * s_prim * s_prim;
 
-		float l_dS2 = 6.f * k_l * k_l * l_;
-		float m_dS2 = 6.f * k_m * k_m * m_;
-		float s_dS2 = 6.f * k_s * k_s * s_;
+		const auto l_d_big_s2 = 6.f * k_l * k_l * l_prim;
+		const auto m_d_big_s2 = 6.f * k_m * k_m * m_prim;
+		const auto s_d_big_s2 = 6.f * k_s * k_s * s_prim;
 
-		float f = wl * l + wm * m + ws * s;
-		float f1 = wl * l_dS + wm * m_dS + ws * s_dS;
-		float f2 = wl * l_dS2 + wm * m_dS2 + ws * s_dS2;
+		const auto f = wl * l + wm * m + ws * s;
+		const auto f1 = wl * l_d_big_s + wm * m_d_big_s + ws * s_d_big_s;
+		const auto f2 = wl * l_d_big_s2 + wm * m_d_big_s2 + ws * s_d_big_s2;
 
-		S = S - f * f1 / (f1 * f1 - 0.5f * f * f2);
+		big_s = big_s - f * f1 / (f1 * f1 - 0.5f * f * f2);
 	}
 
-	return S;
+	return big_s;
 }
 
 
-struct LC
+struct Lc
 {
 	float l;
 	float c;
@@ -148,17 +149,17 @@ struct LC
 
 /// finds L_cusp and C_cusp for a given hue
 /// a and b must be normalized so a^2 + b^2 == 1
-LC find_cusp(float a, float b)
+Lc find_cusp(float a, float b)
 {
 	// First, find the maximum saturation (saturation S = C/L)
-	float S_cusp = compute_max_saturation(a, b);
+	const auto big_s_cusp = compute_max_saturation(a, b);
 
 	// Convert to linear sRGB to find the first point where at least one of r,g or b >= 1:
-	const auto rgb_at_max = linear_from_oklab({1, S_cusp * a, S_cusp * b});
-	float L_cusp = cbrtf(1.f / std::max(std::max(rgb_at_max.linear.r, rgb_at_max.linear.g), rgb_at_max.linear.b));
-	float C_cusp = L_cusp * S_cusp;
+	const auto rgb_at_max = linear_from_oklab({.l = 1, .a = big_s_cusp * a, .b = big_s_cusp * b});
+	const auto big_l_cusp = cbrtf(1.f / std::max({rgb_at_max.linear.r, rgb_at_max.linear.g, rgb_at_max.linear.b}));
+	const auto big_c_cusp = big_l_cusp * big_s_cusp;
 
-	return {L_cusp, C_cusp};
+	return {.l = big_l_cusp, .c = big_c_cusp};
 }
 
 
@@ -166,87 +167,87 @@ LC find_cusp(float a, float b)
 /// `L = L0 * (1 - t) + t * L1;`
 /// `C = t * C1;`
 /// a and b must be normalized so a^2 + b^2 == 1
-float find_gamut_intersection(float a, float b, float L1, float C1, float L0)
+float find_gamut_intersection(float a, float b, float big_l1, float big_c1, float big_l0)
 {
 	// Find the cusp of the gamut triangle
-	LC cusp = find_cusp(a, b);
+	const auto cusp = find_cusp(a, b);
 
 	// Find the intersection for upper and lower half separately
 	float t;
-	if (((L1 - L0) * cusp.c - (cusp.l - L0) * C1) <= 0.f)
+	if (((big_l1 - big_l0) * cusp.c - (cusp.l - big_l0) * big_c1) <= 0.f)
 	{
 		// Lower half
 
-		t = cusp.c * L0 / (C1 * cusp.l + cusp.c * (L0 - L1));
+		t = cusp.c * big_l0 / (big_c1 * cusp.l + cusp.c * (big_l0 - big_l1));
 	}
 	else
 	{
 		// Upper half
 
 		// First intersect with triangle
-		t = cusp.c * (L0 - 1.f) / (C1 * (cusp.l - 1.f) + cusp.c * (L0 - L1));
+		t = cusp.c * (big_l0 - 1.f) / (big_c1 * (cusp.l - 1.f) + cusp.c * (big_l0 - big_l1));
 
 		// Then one-step Halley's method
 		{
-			float dL = L1 - L0;
-			float dC = C1;
+			const auto d_big_l = big_l1 - big_l0;
+			const auto d_big_c = big_c1;
 
-			float k_l = +0.3963377774f * a + 0.2158037573f * b;
-			float k_m = -0.1055613458f * a - 0.0638541728f * b;
-			float k_s = -0.0894841775f * a - 1.2914855480f * b;
+			const auto k_l = +0.3963377774f * a + 0.2158037573f * b;
+			const auto k_m = -0.1055613458f * a - 0.0638541728f * b;
+			const auto k_s = -0.0894841775f * a - 1.2914855480f * b;
 
-			float l_dt = dL + dC * k_l;
-			float m_dt = dL + dC * k_m;
-			float s_dt = dL + dC * k_s;
+			const auto l_dt = d_big_l + d_big_c * k_l;
+			const auto m_dt = d_big_l + d_big_c * k_m;
+			const auto s_dt = d_big_l + d_big_c * k_s;
 
 
 			// If higher accuracy is required, 2 or 3 iterations of the following block can be used:
 			{
-				float L = L0 * (1.f - t) + t * L1;
-				float C = t * C1;
+				const auto big_l = big_l0 * (1.f - t) + t * big_l1;
+				const auto big_c = t * big_c1;
 
-				float l_ = L + C * k_l;
-				float m_ = L + C * k_m;
-				float s_ = L + C * k_s;
+				const auto l_prim = big_l + big_c * k_l;
+				const auto m_prim = big_l + big_c * k_m;
+				const auto s_prim = big_l + big_c * k_s;
 
-				float l = l_ * l_ * l_;
-				float m = m_ * m_ * m_;
-				float s = s_ * s_ * s_;
+				const auto l = l_prim * l_prim * l_prim;
+				const auto m = m_prim * m_prim * m_prim;
+				const auto s = s_prim * s_prim * s_prim;
 
-				float ldt = 3 * l_dt * l_ * l_;
-				float mdt = 3 * m_dt * m_ * m_;
-				float sdt = 3 * s_dt * s_ * s_;
+				const auto ldt = 3 * l_dt * l_prim * l_prim;
+				const auto mdt = 3 * m_dt * m_prim * m_prim;
+				const auto sdt = 3 * s_dt * s_prim * s_prim;
 
-				float ldt2 = 6 * l_dt * l_dt * l_;
-				float mdt2 = 6 * m_dt * m_dt * m_;
-				float sdt2 = 6 * s_dt * s_dt * s_;
+				const auto ldt2 = 6 * l_dt * l_dt * l_prim;
+				const auto mdt2 = 6 * m_dt * m_dt * m_prim;
+				const auto sdt2 = 6 * s_dt * s_dt * s_prim;
 
-				float r = 4.0767416621f * l - 3.3077115913f * m + 0.2309699292f * s - 1;
-				float r1 = 4.0767416621f * ldt - 3.3077115913f * mdt + 0.2309699292f * sdt;
-				float r2 = 4.0767416621f * ldt2 - 3.3077115913f * mdt2 + 0.2309699292f * sdt2;
+				const auto r = 4.0767416621f * l - 3.3077115913f * m + 0.2309699292f * s - 1;
+				const auto r1 = 4.0767416621f * ldt - 3.3077115913f * mdt + 0.2309699292f * sdt;
+				const auto r2 = 4.0767416621f * ldt2 - 3.3077115913f * mdt2 + 0.2309699292f * sdt2;
 
-				float u_r = r1 / (r1 * r1 - 0.5f * r * r2);
-				float t_r = -r * u_r;
+				const auto u_r = r1 / (r1 * r1 - 0.5f * r * r2);
+				auto t_r = -r * u_r;
 
-				float g = -1.2684380046f * l + 2.6097574011f * m - 0.3413193965f * s - 1;
-				float g1 = -1.2684380046f * ldt + 2.6097574011f * mdt - 0.3413193965f * sdt;
-				float g2 = -1.2684380046f * ldt2 + 2.6097574011f * mdt2 - 0.3413193965f * sdt2;
+				const auto g = -1.2684380046f * l + 2.6097574011f * m - 0.3413193965f * s - 1;
+				const auto g1 = -1.2684380046f * ldt + 2.6097574011f * mdt - 0.3413193965f * sdt;
+				const auto g2 = -1.2684380046f * ldt2 + 2.6097574011f * mdt2 - 0.3413193965f * sdt2;
 
-				float u_g = g1 / (g1 * g1 - 0.5f * g * g2);
-				float t_g = -g * u_g;
+				const auto u_g = g1 / (g1 * g1 - 0.5f * g * g2);
+				auto t_g = -g * u_g;
 
-				float b0 = -0.0041960863f * l - 0.7034186147f * m + 1.7076147010f * s - 1;
-				float b1 = -0.0041960863f * ldt - 0.7034186147f * mdt + 1.7076147010f * sdt;
-				float b2 = -0.0041960863f * ldt2 - 0.7034186147f * mdt2 + 1.7076147010f * sdt2;
+				const auto b0 = -0.0041960863f * l - 0.7034186147f * m + 1.7076147010f * s - 1;
+				const auto b1 = -0.0041960863f * ldt - 0.7034186147f * mdt + 1.7076147010f * sdt;
+				const auto b2 = -0.0041960863f * ldt2 - 0.7034186147f * mdt2 + 1.7076147010f * sdt2;
 
-				float u_b = b1 / (b1 * b1 - 0.5f * b0 * b2);
-				float t_b = -b0 * u_b;
+				const auto u_b = b1 / (b1 * b1 - 0.5f * b0 * b2);
+				auto t_b = -b0 * u_b;
 
 				t_r = u_r >= 0.f ? t_r : FLT_MAX;
 				t_g = u_g >= 0.f ? t_g : FLT_MAX;
 				t_b = u_b >= 0.f ? t_b : FLT_MAX;
 
-				t += std::min(t_r, std::min(t_g, t_b));
+				t += std::min({t_r, t_g, t_b});
 			}
 		}
 	}
@@ -288,19 +289,19 @@ Lin_rgb gamut_clip_preserve_chroma(const Lin_rgb& rgb)
 
 	const auto lab = oklab_from_linear(rgb);
 
-	const auto L = lab.l;
+	const auto big_l = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
-	const auto a_ = lab.a / C;
-	const auto b_ = lab.b / C;
+	const auto big_c = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
+	const auto a_prim = lab.a / big_c;
+	const auto b_prim = lab.b / big_c;
 
-	const auto L0 = clamp(L, 0, 1);
+	const auto big_l0 = clamp(big_l, 0, 1);
 
-	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
-	const auto L_clipped = L0 * (1 - t) + t * L;
-	const auto C_clipped = t * C;
+	const auto t = find_gamut_intersection(a_prim, b_prim, big_l, big_c, big_l0);
+	const auto big_l_clipped = big_l0 * (1 - t) + t * big_l;
+	const auto big_c_clipped = t * big_c;
 
-	return linear_from_oklab({L_clipped, C_clipped * a_, C_clipped * b_});
+	return linear_from_oklab({.l = big_l_clipped, .a = big_c_clipped * a_prim, .b = big_c_clipped * b_prim});
 }
 
 
@@ -314,23 +315,23 @@ Lin_rgb gamut_clip_project_to_0_5(const Lin_rgb& rgb)
 
 	const auto lab = oklab_from_linear(rgb);
 
-	const auto L = lab.l;
+	const auto big_l = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
-	const auto a_ = lab.a / C;
-	const auto b_ = lab.b / C;
+	const auto big_c = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
+	const auto a_prim = lab.a / big_c;
+	const auto b_prim = lab.b / big_c;
 
-	const auto L0 = 0.5f;
+	const auto big_l0 = 0.5f;
 
-	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
-	const auto L_clipped = L0 * (1 - t) + t * L;
-	const auto C_clipped = t * C;
+	const auto t = find_gamut_intersection(a_prim, b_prim, big_l, big_c, big_l0);
+	const auto big_l_clipped = big_l0 * (1 - t) + t * big_l;
+	const auto big_c_clipped = t * big_c;
 
-	return linear_from_oklab({L_clipped, C_clipped * a_, C_clipped * b_});
+	return linear_from_oklab({.l = big_l_clipped, .a = big_c_clipped * a_prim, .b = big_c_clipped * b_prim});
 }
 
 
-Lin_rgb gamut_clip_project_to_L_cusp(const Lin_rgb& rgb)
+Lin_rgb gamut_clip_project_to_l_cusp(const Lin_rgb& rgb)
 {
 	if (rgb.linear.r < 1 && rgb.linear.g < 1 && rgb.linear.b < 1 &&
 		rgb.linear.r > 0 && rgb.linear.g > 0 && rgb.linear.b > 0)
@@ -340,23 +341,23 @@ Lin_rgb gamut_clip_project_to_L_cusp(const Lin_rgb& rgb)
 
 	const auto lab = oklab_from_linear(rgb);
 
-	const auto L = lab.l;
+	const auto big_l = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
-	const auto a_ = lab.a / C;
-	const auto b_ = lab.b / C;
+	const auto big_c = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
+	const auto a_prim = lab.a / big_c;
+	const auto b_prim = lab.b / big_c;
 
 	// The cusp is computed here and in find_gamut_intersection, an optimized solution would only compute it once.
-	const auto cusp = find_cusp(a_, b_);
+	const auto cusp = find_cusp(a_prim, b_prim);
 
-	const auto L0 = cusp.l;
+	const auto big_l0 = cusp.l;
 
-	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
+	const auto t = find_gamut_intersection(a_prim, b_prim, big_l, big_c, big_l0);
 
-	const auto L_clipped = L0 * (1 - t) + t * L;
-	const auto C_clipped = t * C;
+	const auto big_l_clipped = big_l0 * (1 - t) + t * big_l;
+	const auto big_c_clipped = t * big_c;
 
-	return linear_from_oklab({L_clipped, C_clipped * a_, C_clipped * b_});
+	return linear_from_oklab({.l = big_l_clipped, .a = big_c_clipped * a_prim, .b = big_c_clipped * b_prim});
 }
 
 
@@ -370,25 +371,25 @@ Lin_rgb gamut_clip_adaptive_L0_0_5(const Lin_rgb& rgb, float alpha)
 
 	const auto lab = oklab_from_linear(rgb);
 
-	const auto L = lab.l;
+	const auto big_l = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
-	const auto a_ = lab.a / C;
-	const auto b_ = lab.b / C;
+	const auto big_c = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
+	const auto a_prim = lab.a / big_c;
+	const auto b_prim = lab.b / big_c;
 
-	const auto Ld = L - 0.5f;
-	const auto e1 = 0.5f + std::abs(Ld) + alpha * C;
-	const auto L0 = 0.5f * (1.f + sgn(Ld) * (e1 - std::sqrt(e1 * e1 - 2.f * std::abs(Ld))));
+	const auto big_ld = big_l - 0.5f;
+	const auto e1 = 0.5f + std::abs(big_ld) + alpha * big_c;
+	const auto big_l0 = 0.5f * (1.f + sgn(big_ld) * (e1 - std::sqrt(e1 * e1 - 2.f * std::abs(big_ld))));
 
-	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
-	const auto L_clipped = L0 * (1.f - t) + t * L;
-	const auto C_clipped = t * C;
+	const auto t = find_gamut_intersection(a_prim, b_prim, big_l, big_c, big_l0);
+	const auto big_l_clipped = big_l0 * (1.f - t) + t * big_l;
+	const auto big_c_clipped = t * big_c;
 
-	return linear_from_oklab({L_clipped, C_clipped * a_, C_clipped * b_});
+	return linear_from_oklab({big_l_clipped, big_c_clipped * a_prim, big_c_clipped * b_prim});
 }
 
 
-Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha)
+Lin_rgb gamut_clip_adaptive_l0_l_cusp(const Lin_rgb& rgb, float alpha)
 {
 	if (rgb.linear.r < 1 && rgb.linear.g < 1 && rgb.linear.b < 1 &&
 		rgb.linear.r > 0 && rgb.linear.g > 0 && rgb.linear.b > 0)
@@ -398,26 +399,26 @@ Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha)
 
 	const auto lab = oklab_from_linear(rgb);
 
-	const auto L = lab.l;
+	const auto big_l = lab.l;
 	const auto eps = 0.00001f;
-	const auto C = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
-	const auto a_ = lab.a / C;
-	const auto b_ = lab.b / C;
+	const auto big_c = std::max(eps, std::sqrt(lab.a * lab.a + lab.b * lab.b));
+	const auto a_prim = lab.a / big_c;
+	const auto b_prim = lab.b / big_c;
 
 	// The cusp is computed here and in find_gamut_intersection, an optimized solution would only compute it once.
-	const auto cusp = find_cusp(a_, b_);
+	const auto cusp = find_cusp(a_prim, b_prim);
 
-	const auto Ld = L - cusp.l;
-	const auto k = 2.f * (Ld > 0 ? 1.f - cusp.l : cusp.l);
+	const auto big_ld = big_l - cusp.l;
+	const auto k = 2.f * (big_ld > 0 ? 1.f - cusp.l : cusp.l);
 
-	const auto e1 = 0.5f * k + std::abs(Ld) + alpha * C / k;
-	const auto L0 = cusp.l + 0.5f * (sgn(Ld) * (e1 - std::sqrt(e1 * e1 - 2.f * k * std::abs(Ld))));
+	const auto e1 = 0.5f * k + std::abs(big_ld) + alpha * big_c / k;
+	const auto big_l0 = cusp.l + 0.5f * (sgn(big_ld) * (e1 - std::sqrt(e1 * e1 - 2.f * k * std::abs(big_ld))));
 
-	const auto t = find_gamut_intersection(a_, b_, L, C, L0);
-	const auto L_clipped = L0 * (1.f - t) + t * L;
-	const auto C_clipped = t * C;
+	const auto t = find_gamut_intersection(a_prim, b_prim, big_l, big_c, big_l0);
+	const auto big_l_clipped = big_l0 * (1.f - t) + t * big_l;
+	const auto big_c_clipped = t * big_c;
 
-	return linear_from_oklab({L_clipped, C_clipped * a_, C_clipped * b_});
+	return linear_from_oklab({.l = big_l_clipped, .a = big_c_clipped * a_prim, .b = big_c_clipped * b_prim});
 }
 
 
@@ -477,10 +478,10 @@ OkLab oklab_from_oklch(const OkLch& c)
 // Alternative representation of (L_cusp, C_cusp)
 // Encoded so S = C_cusp/L_cusp and T = C_cusp/(1-L_cusp)
 // The maximum value for C in the triangle is then found as std::min(S*L, T*(1-L)), for a given L
-struct ST
+struct St
 {
-	float S;
-	float T;
+	float s;
+	float t;
 };
 
 // toe function for L_r
@@ -501,11 +502,11 @@ float toe_inv(float x)
 	return (x * x + k_1 * x) / (k_3 * (x + k_2));
 }
 
-ST ST_from_cusp(const LC& cusp)
+St st_from_cusp(const Lc& cusp)
 {
-	const auto L = cusp.l;
-	const auto C = cusp.c;
-	return {.S = C / L, .T = C / (1 - L)};
+	const auto big_l = cusp.l;
+	const auto big_c = cusp.c;
+	return {.s = big_c / big_l, .t = big_c / (1 - big_l)};
 }
 
 Rgb srgb_from_okhsv(const OkHsv& hsv)
@@ -514,40 +515,40 @@ Rgb srgb_from_okhsv(const OkHsv& hsv)
 	const auto s = hsv.saturation;
 	const auto v = hsv.value;
 
-	const auto a_ = klotter::cos(h);
-	const auto b_ = klotter::sin(h);
+	const auto a_prim = klotter::cos(h);
+	const auto b_prim = klotter::sin(h);
 
-	const auto cusp = find_cusp(a_, b_);
-	const auto ST_max = ST_from_cusp(cusp);
-	const auto S_max = ST_max.S;
-	const auto T_max = ST_max.T;
-	const auto S_0 = 0.5f;
-	const auto k = 1 - S_0 / S_max;
+	const auto cusp = find_cusp(a_prim, b_prim);
+	const auto big_st_max = st_from_cusp(cusp);
+	const auto big_s_max = big_st_max.s;
+	const auto big_t_max = big_st_max.t;
+	const auto big_s_0 = 0.5f;
+	const auto k = 1 - big_s_0 / big_s_max;
 
 	// first we compute L and V as if the gamut is a perfect triangle:
 
 	// L, C when v==1:
-	const auto L_v = 1 - s * S_0 / (S_0 + T_max - T_max * k * s);
-	const auto C_v = s * T_max * S_0 / (S_0 + T_max - T_max * k * s);
+	const auto big_l_v = 1 - s * big_s_0 / (big_s_0 + big_t_max - big_t_max * k * s);
+	const auto big_c_v = s * big_t_max * big_s_0 / (big_s_0 + big_t_max - big_t_max * k * s);
 
-	auto L = v * L_v;
-	auto C = v * C_v;
+	auto big_l = v * big_l_v;
+	auto big_c = v * big_c_v;
 
 	// then we compensate for both toe and the curved top part of the triangle:
-	const auto L_vt = toe_inv(L_v);
-	const auto C_vt = C_v * L_vt / L_v;
+	const auto big_l_vt = toe_inv(big_l_v);
+	const auto big_c_vt = big_c_v * big_l_vt / big_l_v;
 
-	const auto L_new = toe_inv(L);
-	C = C * L_new / L;
-	L = L_new;
+	const auto big_l_new = toe_inv(big_l);
+	big_c = big_c * big_l_new / big_l;
+	big_l = big_l_new;
 
-	const auto rgb_scale = linear_from_oklab({L_vt, a_ * C_vt, b_ * C_vt});
-	float scale_L = cbrtf(1.f / std::max(std::max(rgb_scale.linear.r, rgb_scale.linear.g), std::max(rgb_scale.linear.b, 0.f)));
+	const auto rgb_scale = linear_from_oklab({.l = big_l_vt, .a = a_prim * big_c_vt, .b = b_prim * big_c_vt});
+	const auto scale_big_l = cbrtf(1.f / std::max({rgb_scale.linear.r, rgb_scale.linear.g, rgb_scale.linear.b, 0.f}));
 
-	L = L * scale_L;
-	C = C * scale_L;
+	big_l = big_l * scale_big_l;
+	big_c = big_c * scale_big_l;
 
-	const auto rgb = linear_from_oklab({L, C * a_, C * b_});
+	const auto rgb = linear_from_oklab({big_l, big_c * a_prim, big_c * b_prim});
 	return srgb_from_linear(rgb);
 }
 
@@ -555,43 +556,43 @@ OkHsv okhsv_from_srgb(const Rgb& rgb)
 {
 	const auto lab = oklab_from_linear(linear_from_srgb(rgb));
 
-	auto C = std::sqrt(lab.a * lab.a + lab.b * lab.b);
-	const auto a_ = lab.a / C;
-	const auto b_ = lab.b / C;
+	auto big_c = std::sqrt(lab.a * lab.a + lab.b * lab.b);
+	const auto a_prim = lab.a / big_c;
+	const auto b_prim = lab.b / big_c;
 
-	auto L = lab.l;
-	auto h = klotter::atan2(-lab.b, -lab.a);
+	auto big_l = lab.l;
+	const auto h = klotter::atan2(-lab.b, -lab.a);
 
-	const auto cusp = find_cusp(a_, b_);
-	const auto ST_max = ST_from_cusp(cusp);
-	const auto S_max = ST_max.S;
-	const auto T_max = ST_max.T;
-	const auto S_0 = 0.5f;
-	const auto k = 1 - S_0 / S_max;
+	const auto cusp = find_cusp(a_prim, b_prim);
+	const auto big_st_max = st_from_cusp(cusp);
+	const auto big_s_max = big_st_max.s;
+	const auto big_t_max = big_st_max.t;
+	const auto big_s_0 = 0.5f;
+	const auto k = 1 - big_s_0 / big_s_max;
 
 	// first we find L_v, C_v, L_vt and C_vt
 
-	const auto t = T_max / (C + L * T_max);
-	const auto L_v = t * L;
-	const auto C_v = t * C;
+	const auto t = big_t_max / (big_c + big_l * big_t_max);
+	const auto big_l_v = t * big_l;
+	const auto big_c_v = t * big_c;
 
-	const auto L_vt = toe_inv(L_v);
-	const auto C_vt = C_v * L_vt / L_v;
+	const auto big_l_vt = toe_inv(big_l_v);
+	const auto big_c_vt = big_c_v * big_l_vt / big_l_v;
 
 	// we can then use these to invert the step that compensates for the toe and the curved top part of the triangle:
-	const auto rgb_scale = linear_from_oklab({.l = L_vt, .a = a_ * C_vt, .b = b_ * C_vt});
-	const auto scale_L = cbrtf(1.f / std::max(std::max(rgb_scale.linear.r, rgb_scale.linear.g), std::max(rgb_scale.linear.b, 0.f)));
+	const auto rgb_scale = linear_from_oklab({.l = big_l_vt, .a = a_prim * big_c_vt, .b = b_prim * big_c_vt});
+	const auto scale_big_l = cbrtf(1.f / std::max(std::max(rgb_scale.linear.r, rgb_scale.linear.g), std::max(rgb_scale.linear.b, 0.f)));
 
-	L = L / scale_L;
-	C = C / scale_L;
+	big_l = big_l / scale_big_l;
+	big_c = big_c / scale_big_l;
 
-	C = C * toe(L) / L;
-	L = toe(L);
+	big_c = big_c * toe(big_l) / big_l;
+	big_l = toe(big_l);
 
 	// we can now compute v and s:
 
-	const auto v = L / L_v;
-	const auto s = (S_0 + T_max) * C_v / ((T_max * S_0) + T_max * k * C_v);
+	const auto v = big_l / big_l_v;
+	const auto s = (big_s_0 + big_t_max) * big_c_v / ((big_t_max * big_s_0) + big_t_max * k * big_c_v);
 
 	return {.hue = h, .saturation = s, .value = v};
 }
@@ -600,67 +601,67 @@ OkHsv okhsv_from_srgb(const Rgb& rgb)
 // Returns a smooth approximation of the location of the cusp
 // This polynomial was created by an optimization process
 // It has been designed so that S_mid < S_max and T_mid < T_max
-ST get_ST_mid(float a_, float b_)
+St get_st_mid(float a_prim, float b_prim)
 {
-	const auto S = 0.11516993f
+	const auto big_s = 0.11516993f
 			+ 1.f
-				  / (+7.44778970f + 4.15901240f * b_
-					 + a_
-						   * (-2.19557347f + 1.75198401f * b_
-							  + a_
-									* (-2.13704948f - 10.02301043f * b_
-									   + a_ * (-4.24894561f + 5.38770819f * b_ + 4.69891013f * a_))));
+				  / (+7.44778970f + 4.15901240f * b_prim
+					 + a_prim
+						   * (-2.19557347f + 1.75198401f * b_prim
+							  + a_prim
+									* (-2.13704948f - 10.02301043f * b_prim
+									   + a_prim * (-4.24894561f + 5.38770819f * b_prim + 4.69891013f * a_prim))));
 
-	const auto T = 0.11239642f
+	const auto big_t = 0.11239642f
 			+ 1.f
-				  / (+1.61320320f - 0.68124379f * b_
-					 + a_
-						   * (+0.40370612f + 0.90148123f * b_
-							  + a_
-									* (-0.27087943f + 0.61223990f * b_
-									   + a_ * (+0.00299215f - 0.45399568f * b_ - 0.14661872f * a_))));
+				  / (+1.61320320f - 0.68124379f * b_prim
+					 + a_prim
+						   * (+0.40370612f + 0.90148123f * b_prim
+							  + a_prim
+									* (-0.27087943f + 0.61223990f * b_prim
+									   + a_prim * (+0.00299215f - 0.45399568f * b_prim - 0.14661872f * a_prim))));
 
-	return {.S = S, .T = T};
+	return {.s = big_s, .t = big_t};
 }
 
 struct Cs
 {
-	float C_0;
-	float C_mid;
-	float C_max;
+	float c_0;
+	float c_mid;
+	float c_max;
 };
 
-Cs get_Cs(float L, float a_, float b_)
+Cs get_cs(float big_l, float a_prim, float b_prim)
 {
-	const auto cusp = find_cusp(a_, b_);
+	const auto cusp = find_cusp(a_prim, b_prim);
 
-	const auto C_max = find_gamut_intersection(a_, b_, L, 1, L);
-	const auto ST_max = ST_from_cusp(cusp);
+	const auto big_c_max = find_gamut_intersection(a_prim, b_prim, big_l, 1, big_l);
+	const auto big_st_max = st_from_cusp(cusp);
 
 	// Scale factor to compensate for the curved part of gamut shape:
-	const auto k = C_max / std::min((L * ST_max.S), (1 - L) * ST_max.T);
+	const auto k = big_c_max / std::min((big_l * big_st_max.s), (1 - big_l) * big_st_max.t);
 
-	const auto C_mid = [&]
+	const auto big_c_mid = [&]
 	{
-		const auto ST_mid = get_ST_mid(a_, b_);
+		const auto big_st_mid = get_st_mid(a_prim, b_prim);
 
 		// Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-		const auto C_a = L * ST_mid.S;
-		const auto C_b = (1.f - L) * ST_mid.T;
-		return 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (C_a * C_a * C_a * C_a) + 1.f / (C_b * C_b * C_b * C_b))));
+		const auto big_c_a = big_l * big_st_mid.s;
+		const auto big_c_b = (1.f - big_l) * big_st_mid.t;
+		return 0.9f * k * std::sqrt(std::sqrt(1.f / (1.f / (big_c_a * big_c_a * big_c_a * big_c_a) + 1.f / (big_c_b * big_c_b * big_c_b * big_c_b))));
 	}();
 
-	const auto C_0 = [&]
+	const auto big_c_0 = [&]
 	{
 		// for C_0, the shape is independent of hue, so ST are constant. Values picked to roughly be the average values of ST.
-		const auto C_a = L * 0.4f;
-		const auto C_b = (1.f - L) * 0.8f;
+		const auto big_c_a = big_l * 0.4f;
+		const auto big_c_b = (1.f - big_l) * 0.8f;
 
 		// Use a soft minimum function, instead of a sharp triangle shape to get a smooth value for chroma.
-		return std::sqrt(1.f / (1.f / (C_a * C_a) + 1.f / (C_b * C_b)));
+		return std::sqrt(1.f / (1.f / (big_c_a * big_c_a) + 1.f / (big_c_b * big_c_b)));
 	}();
 
-	return {.C_0 = C_0, .C_mid = C_mid, .C_max = C_max};
+	return {.c_0 = big_c_0, .c_mid = big_c_mid, .c_max = big_c_max};
 }
 
 Rgb srgb_from_okhsl(const OkHsl& hsl)
@@ -673,20 +674,20 @@ Rgb srgb_from_okhsl(const OkHsl& hsl)
 	{
 		return {1.f, 1.f, 1.f};
 	}
-
-	else if (l == 0.f)
+	
+	if (l == 0.f)
 	{
 		return {0.f, 0.f, 0.f};
 	}
 
-	const auto a_ = klotter::cos(h);
-	const auto b_ = klotter::sin(h);
-	const auto L = toe_inv(l);
+	const auto ap = klotter::cos(h);
+	const auto bp = klotter::sin(h);
+	const auto big_l = toe_inv(l);
 
-	const auto cs = get_Cs(L, a_, b_);
-	const auto C_0 = cs.C_0;
-	const auto C_mid = cs.C_mid;
-	const auto C_max = cs.C_max;
+	const auto cs = get_cs(big_l, ap, bp);
+	const auto c_0 = cs.c_0;
+	const auto c_mid = cs.c_mid;
+	const auto c_max = cs.c_max;
 
 	// Interpolate the three values for C so that:
 	// At s=0: dC/ds = C_0, C=0
@@ -696,13 +697,13 @@ Rgb srgb_from_okhsl(const OkHsl& hsl)
 	const auto mid = 0.8f;
 	const auto mid_inv = 1.25f;
 
-	const auto C = [&]() {
+	const auto big_c = [&]() {
 		if (s < mid)
 		{
 			const auto t = mid_inv * s;
 
-			const auto k_1 = mid * C_0;
-			const auto k_2 = (1.f - k_1 / C_mid);
+			const auto k_1 = mid * c_0;
+			const auto k_2 = (1.f - k_1 / c_mid);
 
 			return t * k_1 / (1.f - k_2 * t);
 		}
@@ -710,15 +711,15 @@ Rgb srgb_from_okhsl(const OkHsl& hsl)
 		{
 			const auto t = (s - mid) / (1 - mid);
 
-			const auto k_0 = C_mid;
-			const auto k_1 = (1.f - mid) * C_mid * C_mid * mid_inv * mid_inv / C_0;
-			const auto k_2 = (1.f - (k_1) / (C_max - C_mid));
+			const auto k_0 = c_mid;
+			const auto k_1 = (1.f - mid) * c_mid * c_mid * mid_inv * mid_inv / c_0;
+			const auto k_2 = (1.f - (k_1) / (c_max - c_mid));
 
 			return k_0 + t * k_1 / (1.f - k_2 * t);
 		}
 	}();
 
-	const auto rgb = linear_from_oklab({L, C * a_, C * b_});
+	const auto rgb = linear_from_oklab({.l = big_l, .a = big_c * ap, .b = big_c * bp});
 	return srgb_from_linear(rgb);
 }
 
@@ -726,17 +727,17 @@ OkHsl okhsl_from_srgb(const Rgb& rgb)
 {
 	const auto lab = oklab_from_linear(linear_from_srgb(rgb));
 
-	const auto C = std::sqrt(lab.a * lab.a + lab.b * lab.b);
-	const auto a_ = lab.a / C;
-	const auto b_ = lab.b / C;
+	const auto big_c = std::sqrt(lab.a * lab.a + lab.b * lab.b);
+	const auto a_prim = lab.a / big_c;
+	const auto b_prim = lab.b / big_c;
 
-	const auto L = lab.l;
+	const auto big_l = lab.l;
 	const auto h = klotter::atan2(-lab.b, -lab.a);
 
-	const auto cs = get_Cs(L, a_, b_);
-	const auto C_0 = cs.C_0;
-	const auto C_mid = cs.C_mid;
-	const auto C_max = cs.C_max;
+	const auto cs = get_cs(big_l, a_prim, b_prim);
+	const auto big_c_0 = cs.c_0;
+	const auto big_c_mid = cs.c_mid;
+	const auto big_c_max = cs.c_max;
 
 	// Inverse of the interpolation in okhsl_to_srgb:
 
@@ -744,25 +745,25 @@ OkHsl okhsl_from_srgb(const Rgb& rgb)
 	const auto mid_inv = 1.25f;
 
 	const float s = [&]() {
-	if (C < C_mid)
+	if (big_c < big_c_mid)
 	{
-		const auto k_1 = mid * C_0;
-		const auto k_2 = (1.f - k_1 / C_mid);
+		const auto k_1 = mid * big_c_0;
+		const auto k_2 = (1.f - k_1 / big_c_mid);
 
-		const auto t = C / (k_1 + k_2 * C);
+		const auto t = big_c / (k_1 + k_2 * big_c);
 		return t * mid;
 	}
 	else
 	{
-		const auto k_0 = C_mid;
-		const auto k_1 = (1.f - mid) * C_mid * C_mid * mid_inv * mid_inv / C_0;
-		const auto k_2 = (1.f - (k_1) / (C_max - C_mid));
+		const auto k_0 = big_c_mid;
+		const auto k_1 = (1.f - mid) * big_c_mid * big_c_mid * mid_inv * mid_inv / big_c_0;
+		const auto k_2 = (1.f - (k_1) / (big_c_max - big_c_mid));
 
-		const auto t = (C - k_0) / (k_1 + k_2 * (C - k_0));
+		const auto t = (big_c - k_0) / (k_1 + k_2 * (big_c - k_0));
 		return mid + (1.f - mid) * t;
 	}}();
 
-	const auto l = toe(L);
+	const auto l = toe(big_l);
 	return {.hue = h, .saturation = s, .lightness = l};
 }
 
@@ -792,42 +793,31 @@ Rgb srgb_from_hsl(const Hsl& hsl)
 
 	const auto m = l - c / 2.0f;
 
-	float r1;
-	float g1;
-	float b1;
+	const auto ret = [m](float r1, float g1, float b1)
+	{
+		const auto r = r1 + m;
+		const auto g = g1 + m;
+		const auto b = b1 + m;
+
+		return Rgb{r, g, b};
+	};
 
 	if (h < 60.0f) {
-		r1 = c;
-		g1 = x;
-		b1 = 0;
-	} else if (h < 120.0f) {
-		r1 = x;
-		g1 = c;
-		b1 = 0;
-	} else if (h < 180.0f) {
-		r1 = 0;
-		g1 = c;
-		b1 = x;
-	} else if (h < 240.0f) {
-		r1 = 0;
-		g1 = x;
-		b1 = c;
-	} else if (h < 300.0f) {
-		r1 = x;
-		g1 = 0;
-		b1 = c;
-	} else {
-		r1 = c;
-		g1 = 0;
-		b1 = x;
+		return ret(c, x, 0);
 	}
-
-	
-	const auto r = r1 + m;
-	const auto g = g1 + m;
-	const auto b = b1 + m;
-
-	return {r, g, b};
+	if (h < 120.0f) {
+		return ret(x, c, 0);
+	}
+	if (h < 180.0f) {
+		return ret(0, c, x);
+	}
+	if (h < 240.0f) {
+		return ret(0, x, c);
+	}
+	if (h < 300.0f) {
+		return ret(x, 0, c);
+	}
+	return ret(c, 0, x);
 }
 
 }

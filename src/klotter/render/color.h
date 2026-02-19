@@ -92,9 +92,9 @@ OkLab oklab_from_oklch(const OkLch& c);
 // gammut clipping functions from https://bottosson.github.io/posts/gamutclipping/
 Lin_rgb gamut_clip_preserve_chroma(const Lin_rgb& rgb);
 Lin_rgb gamut_clip_project_to_0_5(const Lin_rgb& rgb);
-Lin_rgb gamut_clip_project_to_L_cusp(const Lin_rgb& rgb);
+Lin_rgb gamut_clip_project_to_l_cusp(const Lin_rgb& rgb);
 Lin_rgb gamut_clip_adaptive_L0_0_5(const Lin_rgb& rgb, float alpha = 0.05f);
-Lin_rgb gamut_clip_adaptive_L0_L_cusp(const Lin_rgb& rgb, float alpha = 0.05f);
+Lin_rgb gamut_clip_adaptive_l0_l_cusp(const Lin_rgb& rgb, float alpha = 0.05f);
 
 
 
