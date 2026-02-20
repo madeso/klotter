@@ -1061,12 +1061,12 @@
         </inbodydescription>
         <location file="src/klotter/render/color.h" line="94" column="9" declfile="src/klotter/render/color.h" declline="94" declcolumn="9"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a32ee983d04535448f593d2f27b497efc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1a59a8ded81ca4a230296d520c98826edd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
-        <definition>Lin_rgb klotter::gamut_clip_project_to_L_cusp</definition>
+        <definition>Lin_rgb klotter::gamut_clip_project_to_l_cusp</definition>
         <argsstring>(const Lin_rgb &amp;rgb)</argsstring>
-        <name>gamut_clip_project_to_L_cusp</name>
-        <qualifiedname>klotter::gamut_clip_project_to_L_cusp</qualifiedname>
+        <name>gamut_clip_project_to_l_cusp</name>
+        <qualifiedname>klotter::gamut_clip_project_to_l_cusp</qualifiedname>
         <param>
           <type>const <ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref> &amp;</type>
           <declname>rgb</declname>
@@ -1102,12 +1102,12 @@
         </inbodydescription>
         <location file="src/klotter/render/color.h" line="96" column="9" declfile="src/klotter/render/color.h" declline="96" declcolumn="9"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceklotter_1a510c98aa8bbb4369d0ffde7e02f909c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceklotter_1aab5f91bb1d46977fe4b79823e087e50e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref></type>
-        <definition>Lin_rgb klotter::gamut_clip_adaptive_L0_L_cusp</definition>
+        <definition>Lin_rgb klotter::gamut_clip_adaptive_l0_l_cusp</definition>
         <argsstring>(const Lin_rgb &amp;rgb, float alpha=0.05f)</argsstring>
-        <name>gamut_clip_adaptive_L0_L_cusp</name>
-        <qualifiedname>klotter::gamut_clip_adaptive_L0_L_cusp</qualifiedname>
+        <name>gamut_clip_adaptive_l0_l_cusp</name>
+        <qualifiedname>klotter::gamut_clip_adaptive_l0_l_cusp</qualifiedname>
         <param>
           <type>const <ref refid="structklotter_1_1Lin__rgb" kindref="compound">Lin_rgb</ref> &amp;</type>
           <declname>rgb</declname>

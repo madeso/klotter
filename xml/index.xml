@@ -1140,9 +1140,9 @@
     <member refid="namespaceklotter_1abecc229b3edb314ee60933c65cc81408" kind="function"><name>oklab_from_oklch</name></member>
     <member refid="namespaceklotter_1a2e77bdffc98bc4f5b8711ebdce32396b" kind="function"><name>gamut_clip_preserve_chroma</name></member>
     <member refid="namespaceklotter_1a4bf28a41210fe9c834eb78ba8b7fd546" kind="function"><name>gamut_clip_project_to_0_5</name></member>
-    <member refid="namespaceklotter_1a32ee983d04535448f593d2f27b497efc" kind="function"><name>gamut_clip_project_to_L_cusp</name></member>
+    <member refid="namespaceklotter_1a59a8ded81ca4a230296d520c98826edd" kind="function"><name>gamut_clip_project_to_l_cusp</name></member>
     <member refid="namespaceklotter_1a44e21c51edebf3a192fd2ef62fd0b380" kind="function"><name>gamut_clip_adaptive_L0_0_5</name></member>
-    <member refid="namespaceklotter_1a510c98aa8bbb4369d0ffde7e02f909c6" kind="function"><name>gamut_clip_adaptive_L0_L_cusp</name></member>
+    <member refid="namespaceklotter_1aab5f91bb1d46977fe4b79823e087e50e" kind="function"><name>gamut_clip_adaptive_l0_l_cusp</name></member>
     <member refid="namespaceklotter_1abfbca6fa14dda715d1b03624ae731395" kind="function"><name>srgb_from_okhsv</name></member>
     <member refid="namespaceklotter_1ab3885f0d2606b41b346a1d53888919d6" kind="function"><name>okhsv_from_srgb</name></member>
     <member refid="namespaceklotter_1a97020627e564dc4a83f028ac39de03dc" kind="function"><name>srgb_from_okhsl</name></member>
