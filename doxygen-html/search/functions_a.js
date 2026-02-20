@@ -1,13 +1,21 @@
 var searchData=
 [
-  ['make_5fblur_5feffect_0',['make_blur_effect',['../structklotter_1_1Renderer.html#a1017b27e7fa7e2a1aaa7c0e1b314a390',1,'klotter::Renderer']]],
-  ['make_5fdamage_5feffect_1',['make_damage_effect',['../structklotter_1_1Renderer.html#a1f8377eb4c1b66a3de23123a7f917db5',1,'klotter::Renderer']]],
-  ['make_5fdefault_5fmaterial_2',['make_default_material',['../structklotter_1_1Renderer.html#a64e9817e792941443e3c7fd50d3bcfeb',1,'klotter::Renderer']]],
-  ['make_5fgrayscale_5feffect_3',['make_grayscale_effect',['../structklotter_1_1Renderer.html#ae20631a1fa40c300046db20a41f234f6',1,'klotter::Renderer']]],
-  ['make_5finvert_5feffect_4',['make_invert_effect',['../structklotter_1_1Renderer.html#a4c1c7030d3569a433b31a2c501143e47',1,'klotter::Renderer']]],
-  ['make_5fmesh_5finstance_5',['make_mesh_instance',['../group__render.html#gab1c7bfa5f2902fc511ab0ef72a8d3f6b',1,'klotter::make_mesh_instance(std::shared_ptr&lt; CompiledGeom &gt; geom, std::shared_ptr&lt; Material &gt; mat)'],['../group__render.html#ga14106c01b64a4fb907c564373ba5e691',1,'klotter::make_mesh_instance(std::shared_ptr&lt; CompiledGeom_TransformInstance &gt; geom, std::shared_ptr&lt; Material &gt; mat)']]],
-  ['make_5fskybox_6',['make_skybox',['../structklotter_1_1Renderer.html#a6c10f931f84d4c16cdf5ce442ea5db58',1,'klotter::Renderer']]],
-  ['make_5funlit_5fmaterial_7',['make_unlit_material',['../structklotter_1_1Renderer.html#ade91c2a35ede1e145068650eeebe3350',1,'klotter::Renderer']]],
-  ['material_8',['Material',['../structklotter_1_1Material.html#a24140b226196668917743a48c1d5361b',1,'klotter::Material::Material()=default'],['../structklotter_1_1Material.html#ace5e0bd7d0fc1daad0f181dc42dfa6af',1,'klotter::Material::Material(const Material &amp;)=delete'],['../structklotter_1_1Material.html#a9775d81964f25d6af45a2a91b46a548f',1,'klotter::Material::Material(Material &amp;&amp;)=delete']]],
-  ['move_9',['move',['../structklotter_1_1geom_1_1Builder.html#aa6ae34b81a5b711fd60b55ba96a4efa0',1,'klotter::geom::Builder']]]
+  ['light_5fcurve_0',['light_curve',['../structklotter_1_1SCurve.html#ac5fa9b42ca1c9962dea20fc7dcdab2b8',1,'klotter::SCurve::light_curve()'],['../structklotter_1_1SCurveGuiState.html#a0c91d8105da1f7b0c59d8e2fb2316cd7',1,'klotter::SCurveGuiState::light_curve()']]],
+  ['line_1',['line',['../structklotter_1_1LineDrawer.html#a1c86f3dcd6c5a8b2b62e7fd8bc44a950',1,'klotter::LineDrawer']]],
+  ['linear_5ffrom_5foklab_2',['linear_from_oklab',['../namespaceklotter.html#a905b607987e50936c2090c22073364d0',1,'klotter']]],
+  ['linear_5ffrom_5fsrgb_3',['linear_from_srgb',['../namespaceklotter.html#a8655e92bbc13aff3832b4fed06e62fb1',1,'klotter::linear_from_srgb(float value, float gamma)'],['../namespaceklotter.html#acb2e7dbe3c65b95f23cc0d97ac0860a3',1,'klotter::linear_from_srgb(const Rgb &amp;value, float gamma)'],['../namespaceklotter.html#aa6490decef270ab2984a3cf5078891c6',1,'klotter::linear_from_srgb(float value)'],['../namespaceklotter.html#ab898348e80ef9e72c50cec2d506b4b32',1,'klotter::linear_from_srgb(const Rgb &amp;value)']]],
+  ['linedrawer_4',['LineDrawer',['../structklotter_1_1LineDrawer.html#ae877d9de19653d08a1a130962b22af26',1,'klotter::LineDrawer::LineDrawer()'],['../structklotter_1_1LineDrawer.html#abbc2ae539180f5d3fa3eee0a7dcf7332',1,'klotter::LineDrawer::LineDrawer(const LineDrawer &amp;)=delete'],['../structklotter_1_1LineDrawer.html#a96a7fd083431391a4921c021704ef508',1,'klotter::LineDrawer::LineDrawer(LineDrawer &amp;&amp;)=delete']]],
+  ['load_5fcubemap_5ffrom_5fcolor_5',['load_cubemap_from_color',['../group__texture.html#gac294a067af5e2b530a3cf9c2fdd303f0',1,'klotter']]],
+  ['load_5fcubemap_5ffrom_5fembedded_6',['load_cubemap_from_embedded',['../namespaceklotter.html#af82d4ce7672a21ad965ac46e5a17ccea',1,'klotter']]],
+  ['load_5fimage_5ffrom_5fcolor_7',['load_image_from_color',['../group__texture.html#ga5c06f9cfdcfa6e0c973ff899e5a916ff',1,'klotter']]],
+  ['load_5fimage_5ffrom_5fembedded_8',['load_image_from_embedded',['../namespaceklotter.html#a1156efb8b28797f795987665d554aea3',1,'klotter']]],
+  ['load_5fshader_5fsource_9',['load_shader_source',['../namespaceklotter.html#ac791fb4c896293314ab4bc3e6257fbcd',1,'klotter']]],
+  ['load_5fshaders_10',['load_shaders',['../group__render.html#gaae619e8aae48dd7405f07dfbca0e1505',1,'klotter']]],
+  ['load_5fskybox_5fsource_11',['load_skybox_source',['../namespaceklotter.html#ab77d87614fce92926c05c1cf4ac83bfa',1,'klotter']]],
+  ['loadedpostprocshader_12',['LoadedPostProcShader',['../structklotter_1_1LoadedPostProcShader.html#ab3e27ddc81e87d1ac1cfd7824c97722b',1,'klotter::LoadedPostProcShader']]],
+  ['loadedshader_5fdefault_13',['LoadedShader_Default',['../structklotter_1_1LoadedShader__Default.html#a3e67cf04e788a3c9a079d4b3b423f4c6',1,'klotter::LoadedShader_Default']]],
+  ['loadedshader_5fonlydepth_14',['LoadedShader_OnlyDepth',['../structklotter_1_1LoadedShader__OnlyDepth.html#ae13d3db7c18d22f10dff873bdf5dd6e9',1,'klotter::LoadedShader_OnlyDepth']]],
+  ['loadedshader_5fsinglecolor_15',['LoadedShader_SingleColor',['../structklotter_1_1LoadedShader__SingleColor.html#a78fd1a7a6acfb086b714d9ebafe1374a',1,'klotter::LoadedShader_SingleColor']]],
+  ['loadedshader_5fskybox_16',['LoadedShader_Skybox',['../structklotter_1_1LoadedShader__Skybox.html#a8087ee41a2ac5ead432b60aa682aff5f',1,'klotter::LoadedShader_Skybox']]],
+  ['loadedshader_5funlit_17',['LoadedShader_Unlit',['../structklotter_1_1LoadedShader__Unlit.html#a0b51dc62bde3db127b96b139e2af0163',1,'klotter::LoadedShader_Unlit']]]
 ];

@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="136" column="16" bodyfile="src/klotter/render/color.h" bodystart="136" bodyend="136"/>
+        <location file="src/klotter/render/color.h" line="143" column="16" bodyfile="src/klotter/render/color.h" bodystart="143" bodyend="143"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1colors_1ab808cde67cb3eea65b6c3296c91d56b2" prot="public" static="no" constexpr="yes" mutable="no">
         <type>auto</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="137" column="16" bodyfile="src/klotter/render/color.h" bodystart="137" bodyend="137"/>
+        <location file="src/klotter/render/color.h" line="144" column="16" bodyfile="src/klotter/render/color.h" bodystart="144" bodyend="144"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1colors_1a9081ff68787c6502367643a3fa11d252" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">klotter::Rgb</ref></type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="140" column="24" bodyfile="src/klotter/render/color.h" bodystart="140" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="147" column="24" bodyfile="src/klotter/render/color.h" bodystart="147" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1colors_1ae37e18dbb3887a9a397a169e668cde6d" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">klotter::Rgb</ref></type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="141" column="24" bodyfile="src/klotter/render/color.h" bodystart="141" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="148" column="24" bodyfile="src/klotter/render/color.h" bodystart="148" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1colors_1a27838d4f92a63598eb370a485d23aea6" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">klotter::Rgb</ref></type>
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="142" column="24" bodyfile="src/klotter/render/color.h" bodystart="142" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="149" column="24" bodyfile="src/klotter/render/color.h" bodystart="149" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1colors_1aa92e3485a977d52e14588e1dc1a47d07" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">klotter::Rgb</ref></type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="143" column="24" bodyfile="src/klotter/render/color.h" bodystart="143" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="150" column="24" bodyfile="src/klotter/render/color.h" bodystart="150" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1colors_1a4e6eb17b5b67ed67ac394be4af0fe3f9" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">klotter::Rgb</ref></type>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="144" column="24" bodyfile="src/klotter/render/color.h" bodystart="144" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="151" column="24" bodyfile="src/klotter/render/color.h" bodystart="151" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1colors_1a56926054783fd413ddc87d30380f27bf" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">klotter::Rgb</ref></type>
@@ -121,7 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="145" column="24" bodyfile="src/klotter/render/color.h" bodystart="145" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="152" column="24" bodyfile="src/klotter/render/color.h" bodystart="152" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceklotter_1_1colors_1a9e6f7eeaf1420c7b982ea477424ebc16" prot="public" static="no" constexpr="yes" mutable="no">
         <type><ref refid="structklotter_1_1Rgb" kindref="compound">klotter::Rgb</ref></type>
@@ -136,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="146" column="24" bodyfile="src/klotter/render/color.h" bodystart="146" bodyend="-1"/>
+        <location file="src/klotter/render/color.h" line="153" column="24" bodyfile="src/klotter/render/color.h" bodystart="153" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -159,12 +159,40 @@
           <declname>b</declname>
         </param>
         <briefdescription>
+<para>helper function to create a rgb color with code similar to css causing some editors to display a color box </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/color.h" line="131" column="24" bodyfile="src/klotter/render/color.h" bodystart="131" bodyend="134"/>
+        <location file="src/klotter/render/color.h" line="132" column="24" bodyfile="src/klotter/render/color.h" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceklotter_1_1colors_1a3ac535f1f5f045d899d15e5da494f459" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structklotter_1_1Hsl" kindref="compound">Hsl</ref></type>
+        <definition>Hsl klotter::colors::hsl</definition>
+        <argsstring>(int deg, float s, float l)</argsstring>
+        <name>hsl</name>
+        <qualifiedname>klotter::colors::hsl</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>deg</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+<para>helper function to create a hsl color with code similar to css causing some editors to display a color box </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/color.h" line="138" column="15" bodyfile="src/klotter/render/color.h" bodystart="138" bodyend="141"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -12,5 +12,6 @@ var searchData=
   ['hori_5fp_9',['hori_p',['../structklotter_1_1BlurEffect.html#abb8ab5ec73719ee4e1bbe7a3a2b443e4',1,'klotter::BlurEffect']]],
   ['horizontal_10',['horizontal',['../namespaceklotter.html#a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f',1,'klotter']]],
   ['hsl_11',['Hsl',['../structklotter_1_1Hsl.html',1,'klotter']]],
-  ['hue_12',['hue',['../structklotter_1_1OkHsv.html#a34ca5a95744d47db399931a1c64d2db4',1,'klotter::OkHsv::hue'],['../structklotter_1_1OkHsl.html#a6ea4a7fc9a0afed34fcfc2a42081f4f8',1,'klotter::OkHsl::hue'],['../structklotter_1_1Hsl.html#a9a65f753440e4e93f74b5b600cb43a94',1,'klotter::Hsl::hue']]]
+  ['hsl_12',['hsl',['../namespaceklotter_1_1colors.html#a3ac535f1f5f045d899d15e5da494f459',1,'klotter::colors']]],
+  ['hue_13',['hue',['../structklotter_1_1OkHsv.html#a34ca5a95744d47db399931a1c64d2db4',1,'klotter::OkHsv::hue'],['../structklotter_1_1OkHsl.html#a6ea4a7fc9a0afed34fcfc2a42081f4f8',1,'klotter::OkHsl::hue'],['../structklotter_1_1Hsl.html#a9a65f753440e4e93f74b5b600cb43a94',1,'klotter::Hsl::hue']]]
 ];

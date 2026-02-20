@@ -1224,6 +1224,7 @@
     <member refid="namespaceklotter_1_1colors_1a56926054783fd413ddc87d30380f27bf" kind="variable"><name>red_vermillion</name></member>
     <member refid="namespaceklotter_1_1colors_1a9e6f7eeaf1420c7b982ea477424ebc16" kind="variable"><name>purple_redish</name></member>
     <member refid="namespaceklotter_1_1colors_1aed35afde2944f3a4a38f27822d304e26" kind="function"><name>rgb</name></member>
+    <member refid="namespaceklotter_1_1colors_1a3ac535f1f5f045d899d15e5da494f459" kind="function"><name>hsl</name></member>
   </compound>
   <compound refid="namespaceklotter_1_1geom" kind="namespace"><name>klotter::geom</name>
     <member refid="group__geom-builder_1gafd45e29b267702b718a50f2b5552b9dd" kind="enum"><name>SideCount</name></member>
