@@ -53,6 +53,17 @@ Rgb srgb_from_linear(const Lin_rgb& value)
 	return {srgb_from_linear(value.linear[0]), srgb_from_linear(value.linear[1]), srgb_from_linear(value.linear[2])};
 }
 
+struct MaxSaturationCoefficients
+{
+	float k0;
+	float k1;
+	float k2;
+	float k3;
+	float k4;
+	float wl;
+	float wm;
+	float ws;
+};
 
 // Finds the maximum saturation possible for a given hue that fits in sRGB
 // Saturation here is defined as S = C/L
@@ -62,47 +73,56 @@ float compute_max_saturation(float a, float b)
 	// Max saturation will be when one of r, g or b goes below zero.
 
 	// Select different coefficients depending on which component goes below zero first
-	float k0, k1, k2, k3, k4, wl, wm, ws;
-
-	if (-1.88170328f * a - 0.80936493f * b > 1)
-	{
-		// Red component
-		k0 = +1.19086277f;
-		k1 = +1.76576728f;
-		k2 = +0.59662641f;
-		k3 = +0.75515197f;
-		k4 = +0.56771245f;
-		wl = +4.0767416621f;
-		wm = -3.3077115913f;
-		ws = +0.2309699292f;
-	}
-	else if (1.81444104f * a - 1.19445276f * b > 1)
-	{
-		// Green component
-		k0 = +0.73956515f;
-		k1 = -0.45954404f;
-		k2 = +0.08285427f;
-		k3 = +0.12541070f;
-		k4 = +0.14503204f;
-		wl = -1.2684380046f;
-		wm = +2.6097574011f;
-		ws = -0.3413193965f;
-	}
-	else
-	{
-		// Blue component
-		k0 = +1.35733652f;
-		k1 = -0.00915799f;
-		k2 = -1.15130210f;
-		k3 = -0.50559606f;
-		k4 = +0.00692167f;
-		wl = -0.0041960863f;
-		wm = -0.7034186147f;
-		ws = +1.7076147010f;
-	}
+	const auto c = ([&]() -> MaxSaturationCoefficients {
+		if (-1.88170328f * a - 0.80936493f * b > 1)
+		{
+			// Red component
+			return
+			{
+				.k0 = +1.19086277f,
+				.k1 = +1.76576728f,
+				.k2 = +0.59662641f,
+				.k3 = +0.75515197f,
+				.k4 = +0.56771245f,
+				.wl = +4.0767416621f,
+				.wm = -3.3077115913f,
+				.ws = +0.2309699292f,
+			};
+		}
+		else if (1.81444104f * a - 1.19445276f * b > 1)
+		{
+			// Green component
+			return
+			{
+				.k0 = +0.73956515f,
+				.k1 = -0.45954404f,
+				.k2 = +0.08285427f,
+				.k3 = +0.12541070f,
+				.k4 = +0.14503204f,
+				.wl = -1.2684380046f,
+				.wm = +2.6097574011f,
+				.ws = -0.3413193965f,
+			};
+		}
+		else
+		{
+			// Blue component
+			return
+			{
+				.k0 = +1.35733652f,
+				.k1 = -0.00915799f,
+				.k2 = -1.15130210f,
+				.k3 = -0.50559606f,
+				.k4 = +0.00692167f,
+				.wl = -0.0041960863f,
+				.wm = -0.7034186147f,
+				.ws = +1.7076147010f,
+			};
+		}
+	})();
 
 	// Approximate max saturation using a polynomial:
-	float big_s = k0 + k1 * a + k2 * b + k3 * a * a + k4 * a * b;
+	float big_s = c.k0 + c.k1 * a + c.k2 * b + c.k3 * a * a + c.k4 * a * b;
 
 	// Do one step Halley's method to get closer
 	// this gives an error less than 10e6, except for some blue hues where the dS/dh is close to infinite
@@ -129,9 +149,9 @@ float compute_max_saturation(float a, float b)
 		const auto m_d_big_s2 = 6.f * k_m * k_m * m_prim;
 		const auto s_d_big_s2 = 6.f * k_s * k_s * s_prim;
 
-		const auto f = wl * l + wm * m + ws * s;
-		const auto f1 = wl * l_d_big_s + wm * m_d_big_s + ws * s_d_big_s;
-		const auto f2 = wl * l_d_big_s2 + wm * m_d_big_s2 + ws * s_d_big_s2;
+		const auto f = c.wl * l + c.wm * m + c.ws * s;
+		const auto f1 = c.wl * l_d_big_s + c.wm * m_d_big_s + c.ws * s_d_big_s;
+		const auto f2 = c.wl * l_d_big_s2 + c.wm * m_d_big_s2 + c.ws * s_d_big_s2;
 
 		big_s = big_s - f * f1 / (f1 * f1 - 0.5f * f * f2);
 	}
