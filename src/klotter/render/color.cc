@@ -584,9 +584,9 @@ OkHsv okhsv_from_srgb(const Rgb& rgb)
 	const auto scale_big_l = cbrtf(1.f / std::max(std::max(rgb_scale.linear.r, rgb_scale.linear.g), std::max(rgb_scale.linear.b, 0.f)));
 
 	big_l = big_l / scale_big_l;
-	big_c = big_c / scale_big_l;
+	// big_c = big_c / scale_big_l;
 
-	big_c = big_c * toe(big_l) / big_l;
+	// big_c = big_c * toe(big_l) / big_l;
 	big_l = toe(big_l);
 
 	// we can now compute v and s:
