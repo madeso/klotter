@@ -128,9 +128,16 @@ constexpr klotter::Angle magenta = Angle::from_degrees(300.0f);
 namespace klotter::colors
 {
 
+/// helper function to create a rgb color with code similar to css causing some editors to display a color box
 constexpr klotter::Rgb rgb(int r, int g, int b)
 {
 	return {static_cast<float>(r) / 255.0f, static_cast<float>(g) / 255.0f, static_cast<float>(b) / 255.0f};
+}
+
+/// helper function to create a hsl color with code similar to css causing some editors to display a color box
+constexpr Hsl hsl(int deg, float s, float l)
+{
+	return {.hue = Angle::from_degrees(static_cast<float>(deg)), .saturation = s / 100.0f, .lightness = l / 100.0f};
 }
 
 constexpr auto white = klotter::Rgb{1.0f, 1.0f, 1.0f};

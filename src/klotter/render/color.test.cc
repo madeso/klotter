@@ -82,19 +82,10 @@ TEST_CASE("color space conversion sky blue", "[color]")
 	// Color{0x2/255.f, 0x8/255.0f, 0x1e/255.0f}));
 }
 
-
-Hsl hsl(int deg, float s, float l)
-{
-	return {.hue = Angle::from_degrees(deg), .saturation = s/100.0f, .lightness=l/100.0f};
-}
-
-Rgb rgb(int r, int g, int b)
-{
-	return {r / 255.0f, g / 255.0f, b / 255.0f};
-}
-
 TEST_CASE("rgb -> hsl", "[color]")
 {
+	using namespace klotter::colors;
+
 	// https://ethanschoonover.com/solarized/
 	CHECK(are_equal(srgb_from_hsl(hsl(192, 100.0f, 10.6f)), Rgb{  0.0f / 255.0f,  43.0f/255.0f,  54.0f/255.0f})); // base03
 	CHECK(are_equal(srgb_from_hsl(hsl(192, 80.8f,  14.3f)), Rgb{  7.0f / 255.0f,  54.0f/255.0f,  66.0f/255.0f})); // base02
