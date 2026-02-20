@@ -769,8 +769,16 @@ OkHsl okhsl_from_srgb(const Rgb& rgb)
 
 float keep_within01(float f)
 {
-	if (f <= 0) return 0;
-	if (f >= 1) return 1;
+	if (f <= 0)
+	{
+		return 0;
+	}
+
+	if (f >= 1)
+	{
+		return 1;
+	}
+	
 	return f;
 }
 
