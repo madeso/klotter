@@ -193,83 +193,77 @@ float find_gamut_intersection(float a, float b, float big_l1, float big_c1, floa
 	const auto cusp = find_cusp(a, b);
 
 	// Find the intersection for upper and lower half separately
-	float t;
 	if (((big_l1 - big_l0) * cusp.c - (cusp.l - big_l0) * big_c1) <= 0.f)
 	{
 		// Lower half
-
-		t = cusp.c * big_l0 / (big_c1 * cusp.l + cusp.c * (big_l0 - big_l1));
+		return cusp.c * big_l0 / (big_c1 * cusp.l + cusp.c * (big_l0 - big_l1));
 	}
-	else
+
+	// Upper half
+
+	// First intersect with triangle
+	float t = cusp.c * (big_l0 - 1.f) / (big_c1 * (cusp.l - 1.f) + cusp.c * (big_l0 - big_l1));
+
+	// Then one-step Halley's method
+	const auto d_big_l = big_l1 - big_l0;
+	const auto d_big_c = big_c1;
+
+	const auto k_l = +0.3963377774f * a + 0.2158037573f * b;
+	const auto k_m = -0.1055613458f * a - 0.0638541728f * b;
+	const auto k_s = -0.0894841775f * a - 1.2914855480f * b;
+
+	const auto l_dt = d_big_l + d_big_c * k_l;
+	const auto m_dt = d_big_l + d_big_c * k_m;
+	const auto s_dt = d_big_l + d_big_c * k_s;
+
+
+	// If higher accuracy is required, 2 or 3 iterations of the following block can be used:
 	{
-		// Upper half
+		const auto big_l = big_l0 * (1.f - t) + t * big_l1;
+		const auto big_c = t * big_c1;
 
-		// First intersect with triangle
-		t = cusp.c * (big_l0 - 1.f) / (big_c1 * (cusp.l - 1.f) + cusp.c * (big_l0 - big_l1));
+		const auto l_prim = big_l + big_c * k_l;
+		const auto m_prim = big_l + big_c * k_m;
+		const auto s_prim = big_l + big_c * k_s;
 
-		// Then one-step Halley's method
-		{
-			const auto d_big_l = big_l1 - big_l0;
-			const auto d_big_c = big_c1;
+		const auto l = l_prim * l_prim * l_prim;
+		const auto m = m_prim * m_prim * m_prim;
+		const auto s = s_prim * s_prim * s_prim;
 
-			const auto k_l = +0.3963377774f * a + 0.2158037573f * b;
-			const auto k_m = -0.1055613458f * a - 0.0638541728f * b;
-			const auto k_s = -0.0894841775f * a - 1.2914855480f * b;
+		const auto ldt = 3 * l_dt * l_prim * l_prim;
+		const auto mdt = 3 * m_dt * m_prim * m_prim;
+		const auto sdt = 3 * s_dt * s_prim * s_prim;
 
-			const auto l_dt = d_big_l + d_big_c * k_l;
-			const auto m_dt = d_big_l + d_big_c * k_m;
-			const auto s_dt = d_big_l + d_big_c * k_s;
+		const auto ldt2 = 6 * l_dt * l_dt * l_prim;
+		const auto mdt2 = 6 * m_dt * m_dt * m_prim;
+		const auto sdt2 = 6 * s_dt * s_dt * s_prim;
 
+		const auto r = 4.0767416621f * l - 3.3077115913f * m + 0.2309699292f * s - 1;
+		const auto r1 = 4.0767416621f * ldt - 3.3077115913f * mdt + 0.2309699292f * sdt;
+		const auto r2 = 4.0767416621f * ldt2 - 3.3077115913f * mdt2 + 0.2309699292f * sdt2;
 
-			// If higher accuracy is required, 2 or 3 iterations of the following block can be used:
-			{
-				const auto big_l = big_l0 * (1.f - t) + t * big_l1;
-				const auto big_c = t * big_c1;
+		const auto u_r = r1 / (r1 * r1 - 0.5f * r * r2);
+		auto t_r = -r * u_r;
 
-				const auto l_prim = big_l + big_c * k_l;
-				const auto m_prim = big_l + big_c * k_m;
-				const auto s_prim = big_l + big_c * k_s;
+		const auto g = -1.2684380046f * l + 2.6097574011f * m - 0.3413193965f * s - 1;
+		const auto g1 = -1.2684380046f * ldt + 2.6097574011f * mdt - 0.3413193965f * sdt;
+		const auto g2 = -1.2684380046f * ldt2 + 2.6097574011f * mdt2 - 0.3413193965f * sdt2;
 
-				const auto l = l_prim * l_prim * l_prim;
-				const auto m = m_prim * m_prim * m_prim;
-				const auto s = s_prim * s_prim * s_prim;
+		const auto u_g = g1 / (g1 * g1 - 0.5f * g * g2);
+		auto t_g = -g * u_g;
 
-				const auto ldt = 3 * l_dt * l_prim * l_prim;
-				const auto mdt = 3 * m_dt * m_prim * m_prim;
-				const auto sdt = 3 * s_dt * s_prim * s_prim;
+		const auto b0 = -0.0041960863f * l - 0.7034186147f * m + 1.7076147010f * s - 1;
+		const auto b1 = -0.0041960863f * ldt - 0.7034186147f * mdt + 1.7076147010f * sdt;
+		const auto b2 = -0.0041960863f * ldt2 - 0.7034186147f * mdt2 + 1.7076147010f * sdt2;
 
-				const auto ldt2 = 6 * l_dt * l_dt * l_prim;
-				const auto mdt2 = 6 * m_dt * m_dt * m_prim;
-				const auto sdt2 = 6 * s_dt * s_dt * s_prim;
+		const auto u_b = b1 / (b1 * b1 - 0.5f * b0 * b2);
+		auto t_b = -b0 * u_b;
 
-				const auto r = 4.0767416621f * l - 3.3077115913f * m + 0.2309699292f * s - 1;
-				const auto r1 = 4.0767416621f * ldt - 3.3077115913f * mdt + 0.2309699292f * sdt;
-				const auto r2 = 4.0767416621f * ldt2 - 3.3077115913f * mdt2 + 0.2309699292f * sdt2;
+		t_r = u_r >= 0.f ? t_r : FLT_MAX;
+		t_g = u_g >= 0.f ? t_g : FLT_MAX;
+		t_b = u_b >= 0.f ? t_b : FLT_MAX;
 
-				const auto u_r = r1 / (r1 * r1 - 0.5f * r * r2);
-				auto t_r = -r * u_r;
-
-				const auto g = -1.2684380046f * l + 2.6097574011f * m - 0.3413193965f * s - 1;
-				const auto g1 = -1.2684380046f * ldt + 2.6097574011f * mdt - 0.3413193965f * sdt;
-				const auto g2 = -1.2684380046f * ldt2 + 2.6097574011f * mdt2 - 0.3413193965f * sdt2;
-
-				const auto u_g = g1 / (g1 * g1 - 0.5f * g * g2);
-				auto t_g = -g * u_g;
-
-				const auto b0 = -0.0041960863f * l - 0.7034186147f * m + 1.7076147010f * s - 1;
-				const auto b1 = -0.0041960863f * ldt - 0.7034186147f * mdt + 1.7076147010f * sdt;
-				const auto b2 = -0.0041960863f * ldt2 - 0.7034186147f * mdt2 + 1.7076147010f * sdt2;
-
-				const auto u_b = b1 / (b1 * b1 - 0.5f * b0 * b2);
-				auto t_b = -b0 * u_b;
-
-				t_r = u_r >= 0.f ? t_r : FLT_MAX;
-				t_g = u_g >= 0.f ? t_g : FLT_MAX;
-				t_b = u_b >= 0.f ? t_b : FLT_MAX;
-
-				t += std::min({t_r, t_g, t_b});
-			}
-		}
+		t += std::min({t_r, t_g, t_b});
 	}
 
 	return t;
