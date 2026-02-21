@@ -18,6 +18,18 @@ struct GuiColor
 	Angle hue;
 };
 
+struct DoubleColor
+{
+	Rgb hover;
+	Rgb normal;
+};
+
+ImVec4 imgui_from_rgb(const Rgb& rgb)
+{
+	const auto ret = ImVec4{rgb.r, rgb.g, rgb.b, 1.0f};
+	return ret;
+}
+
 ImVec4 imgui_from_lch(float lightness, const GuiColor& color)
 {
 	const auto hsl = Hsl{.hue = color.hue, .saturation = color.saturation, .lightness = lightness};
@@ -30,12 +42,10 @@ ImVec4 imgui_from_lch(float lightness, const GuiColor& color)
 	// const auto rgb = srgb_from_linear(lin_pre);
 
 	const auto rgb = srgb_from_hsl(hsl);
-
-	const auto ret = ImVec4{rgb.r, rgb.g, rgb.b, 1.0f};
-	return ret;
+	return imgui_from_rgb(rgb);
 }
 
-void setup_custom_theme(const GuiColor& common, const GuiColor& histogram)
+void setup_custom_theme(const GuiColor& common, const DoubleColor& histogram, const GuiColor& link)
 {
 	// themes
 	ImGuiStyle& style = ImGui::GetStyle();
@@ -57,18 +67,21 @@ void setup_custom_theme(const GuiColor& common, const GuiColor& histogram)
 
 	// // bkg
 	
-	auto bg_dark = imgui_from_lch(0.1f, common);
-	auto bg = imgui_from_lch(0.2f, common);
-	auto bg_light = imgui_from_lch(0.3f, common);
-	auto bg_lighter = imgui_from_lch(0.4f, common);
+	auto bg_dark = imgui_from_lch(0.01f, common);
+	auto bg = imgui_from_lch(0.15f, common);
+	auto bg_light = imgui_from_lch(0.2f, common);
+	auto bg_lighter = imgui_from_lch(0.3f, common);
 
-	auto text = imgui_from_lch(0.95f, common);
+	const auto text_lightness = 0.95f;
+
+	auto text = imgui_from_lch(text_lightness, common);
 	auto text_muted = imgui_from_lch(0.70f, common);
 
 	auto interactive = imgui_from_lch(0.50f, common);
 
-	auto hist_default = imgui_from_lch(0.80f, histogram);
-	auto hist_interactive = imgui_from_lch(0.91f, histogram);
+	auto hist_default = imgui_from_rgb(histogram.normal);
+	auto hist_interactive = imgui_from_rgb(histogram.hover);
+	auto text_link = imgui_from_lch(text_lightness, link);
 	
 	
 	style.Colors[ImGuiCol_Text] = text;
@@ -129,7 +142,7 @@ void setup_custom_theme(const GuiColor& common, const GuiColor& histogram)
 	style.Colors[ImGuiCol_TableRowBg] = bg_dark;            // Table row background (even rows)
 	style.Colors[ImGuiCol_TableRowBgAlt] = bg;         // Table row background (odd rows)
 	
-	// style.Colors[ImGuiCol_TextLink] = color;              // Hyperlink color
+	style.Colors[ImGuiCol_TextLink] = text_link;              // Hyperlink color
 	style.Colors[ImGuiCol_TextSelectedBg] = bg_lighter;        // Selected text inside an InputText
 	style.Colors[ImGuiCol_TreeLines] = interactive;             // Tree node hierarchy outlines when using ImGuiTreeNodeFlags_DrawLines
 	style.Colors[ImGuiCol_DragDropTarget] = hist_interactive;        // Rectangle highlighting a drop target
@@ -142,16 +155,24 @@ void setup_custom_theme(const GuiColor& common, const GuiColor& histogram)
 
 void test_themes()
 {
-	static GuiColor common = {.saturation = 0.3f, .hue = hues::green};
+	static GuiColor common = {.saturation = 0.14f, .hue = hues::green};
 
-	static GuiColor histogram = {.saturation = 0.5f, .hue = hues::yellow};
+	static GuiColor link = {.saturation = 0.8f, .hue = hues::blue};
 
 	static bool changed = true;
 	changed = ImGui::SliderFloat("Chroma", &common.saturation, 0.0f, 1.0f) || changed;
 	changed = ImGui::SliderAngle("Hue", &common.hue.radians, 0.0f) || changed;
 
-	changed = ImGui::SliderFloat("Hist Chroma", &histogram.saturation, 0.0f, 1.0f) || changed;
-	changed = ImGui::SliderAngle("Hist Hue", &histogram.hue.radians, 0.0f) || changed;
+	changed = ImGui::SliderFloat("Link Chroma", &link.saturation, 0.0f, 1.0f) || changed;
+	changed = ImGui::SliderAngle("Link Hue", &link.hue.radians, 0.0f) || changed;
+
+	static float hist_lightness = 0.5f;
+	changed = ImGui::SliderFloat("Histogram Lightness", &hist_lightness, 0.0f, 0.5f) || changed;
+
+	static float saturation_hover = 0.8f;
+	changed = ImGui::SliderFloat("Histogram Hover Saturation", &saturation_hover, 0.0f, 1.0f) || changed;
+	static float saturation_normal = 1.0f;
+	changed = ImGui::SliderFloat("Histogram Normal Saturation", &saturation_normal, 0.0f, 1.0f) || changed;
 
 	if (ImGui::Button("setup"))
 	{
@@ -160,7 +181,12 @@ void test_themes()
 
 	if (changed)
 	{
-		setup_custom_theme(common, histogram);
+		setup_custom_theme(
+			common,
+			{.hover = srgb_from_hsl({.hue = hues::yellow, .saturation = saturation_hover, .lightness = hist_lightness}),
+			 .normal = srgb_from_hsl({.hue = hues::yellow, .saturation = saturation_normal, .lightness = hist_lightness})},
+			link
+		);
 		changed = false;
 	}
 }
