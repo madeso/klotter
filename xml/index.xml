@@ -308,8 +308,11 @@
     <member refid="structtesting_1_1Equaler_1ab9144f3c32e47e93792971cede3046d7" kind="function"><name>Equaler</name></member>
     <member refid="structtesting_1_1Equaler_1afb70cd013a90f1f06043bac7c059354b" kind="function"><name>impl</name></member>
     <member refid="structtesting_1_1Equaler_1ae867aa9e5e1863840e96d77f859336b8" kind="function"><name>add</name></member>
+    <member refid="structtesting_1_1Equaler_1abe04566c2d23886ee7626a0da93f4acc" kind="function"><name>add</name></member>
     <member refid="structtesting_1_1Equaler_1a177ac354e2fb1f48c007e37dabc4be00" kind="function"><name>add</name></member>
     <member refid="structtesting_1_1Equaler_1a0670029c3c9f65de8ebe4f436666fb8e" kind="function"><name>resolve</name></member>
+    <member refid="structtesting_1_1Equaler_1a473e966d1525031823ddc0ac6eec01c1" kind="function"><name>levenshtein</name></member>
+    <member refid="structtesting_1_1Equaler_1a210d091d16adb5a5bde24d74cabd5a1c" kind="function"><name>find_index_of_first_diff</name></member>
   </compound>
   <compound refid="structklotter_1_1ExtractedAttribute" kind="struct"><name>klotter::ExtractedAttribute</name>
     <member refid="structklotter_1_1ExtractedAttribute_1a13b00d60b002e83054006e4bdac1300b" kind="variable"><name>type</name></member>

@@ -152,6 +152,28 @@
         </inbodydescription>
         <location file="src/klotter/test.util.h" line="54" column="6" bodyfile="src/klotter/test.util.h" bodystart="54" bodyend="60"/>
       </memberdef>
+      <memberdef kind="function" id="structtesting_1_1Equaler_1abe04566c2d23886ee7626a0da93f4acc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtesting_1_1Equaler_1afa3d9482d49b217ea08caf8596fbef6d" kindref="member">Self</ref> &amp;</type>
+        <definition>Self &amp; testing::Equaler&lt; T &gt;::add</definition>
+        <argsstring>(const std::string &amp;name, std::string(*convert)(const T &amp;))</argsstring>
+        <name>add</name>
+        <qualifiedname>testing::Equaler::add</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string(*)(const T &amp;)</type>
+          <declname>convert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/test.util.h" line="62" column="6" bodyfile="src/klotter/test.util.h" bodystart="62" bodyend="75"/>
+      </memberdef>
       <memberdef kind="function" id="structtesting_1_1Equaler_1a177ac354e2fb1f48c007e37dabc4be00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -184,7 +206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="63" column="6" bodyfile="src/klotter/test.util.h" bodystart="63" bodyend="73"/>
+        <location file="src/klotter/test.util.h" line="78" column="6" bodyfile="src/klotter/test.util.h" bodystart="78" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="structtesting_1_1Equaler_1a0670029c3c9f65de8ebe4f436666fb8e" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>catchy::FalseString</type>
@@ -198,7 +220,53 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/test.util.h" line="75" column="22" bodyfile="src/klotter/test.util.h" bodystart="75" bodyend="90"/>
+        <location file="src/klotter/test.util.h" line="90" column="22" bodyfile="src/klotter/test.util.h" bodystart="90" bodyend="105"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structtesting_1_1Equaler_1a473e966d1525031823ddc0ac6eec01c1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int testing::Equaler&lt; T &gt;::levenshtein</definition>
+        <argsstring>(const std::string &amp;foo, const std::string &amp;bar)</argsstring>
+        <name>levenshtein</name>
+        <qualifiedname>testing::Equaler::levenshtein</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>foo</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/test.util.h" line="108" column="12" bodyfile="src/klotter/test.util.h" bodystart="108" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="structtesting_1_1Equaler_1a210d091d16adb5a5bde24d74cabd5a1c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>static std::size_t testing::Equaler&lt; T &gt;::find_index_of_first_diff</definition>
+        <argsstring>(const std::string &amp;first, const std::string &amp;second)</argsstring>
+        <name>find_index_of_first_diff</name>
+        <qualifiedname>testing::Equaler::find_index_of_first_diff</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>second</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/test.util.h" line="147" column="20" bodyfile="src/klotter/test.util.h" bodystart="147" bodyend="154"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -235,13 +303,16 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/klotter/test.util.h" line="15" column="1" bodyfile="src/klotter/test.util.h" bodystart="16" bodyend="91"/>
+    <location file="src/klotter/test.util.h" line="15" column="1" bodyfile="src/klotter/test.util.h" bodystart="16" bodyend="155"/>
     <listofallmembers>
       <member refid="structtesting_1_1Equaler_1ae867aa9e5e1863840e96d77f859336b8" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>add</name></member>
+      <member refid="structtesting_1_1Equaler_1abe04566c2d23886ee7626a0da93f4acc" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>add</name></member>
       <member refid="structtesting_1_1Equaler_1a177ac354e2fb1f48c007e37dabc4be00" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>add</name></member>
       <member refid="structtesting_1_1Equaler_1ab9144f3c32e47e93792971cede3046d7" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>Equaler</name></member>
       <member refid="structtesting_1_1Equaler_1a36547fbf6f5422fb320449c2831ee94d" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>failures</name></member>
+      <member refid="structtesting_1_1Equaler_1a210d091d16adb5a5bde24d74cabd5a1c" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>find_index_of_first_diff</name></member>
       <member refid="structtesting_1_1Equaler_1afb70cd013a90f1f06043bac7c059354b" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>impl</name></member>
+      <member refid="structtesting_1_1Equaler_1a473e966d1525031823ddc0ac6eec01c1" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>levenshtein</name></member>
       <member refid="structtesting_1_1Equaler_1a819a25f88bab8531d5d4c7ce0dd99bd4" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>lhs</name></member>
       <member refid="structtesting_1_1Equaler_1a0670029c3c9f65de8ebe4f436666fb8e" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>resolve</name></member>
       <member refid="structtesting_1_1Equaler_1a44d011be1a5b76ff243c4dca795fe954" prot="public" virt="non-virtual"><scope>testing::Equaler</scope><name>rhs</name></member>

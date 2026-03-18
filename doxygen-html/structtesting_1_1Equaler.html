@@ -112,6 +112,7 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structtesting_1_1Equaler-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">testing::Equaler&lt; T &gt; Struct Template Reference</div></div>
@@ -135,11 +136,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae867aa9e5e1863840e96d77f859336b8" id="r_ae867aa9e5e1863840e96d77f859336b8"><td class="memTemplParams" colspan="2">template&lt;typename C&gt; </td></tr>
 <tr class="memitem:ae867aa9e5e1863840e96d77f859336b8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#afa3d9482d49b217ea08caf8596fbef6d">Self</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae867aa9e5e1863840e96d77f859336b8">add</a> (const std::string &amp;name, const C &amp;convert)</td></tr>
 <tr class="separator:ae867aa9e5e1863840e96d77f859336b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe04566c2d23886ee7626a0da93f4acc" id="r_abe04566c2d23886ee7626a0da93f4acc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#afa3d9482d49b217ea08caf8596fbef6d">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe04566c2d23886ee7626a0da93f4acc">add</a> (const std::string &amp;name, std::string(*convert)(const T &amp;))</td></tr>
+<tr class="separator:abe04566c2d23886ee7626a0da93f4acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a177ac354e2fb1f48c007e37dabc4be00" id="r_a177ac354e2fb1f48c007e37dabc4be00"><td class="memTemplParams" colspan="2">template&lt;typename C, typename F&gt; </td></tr>
 <tr class="memitem:a177ac354e2fb1f48c007e37dabc4be00"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#afa3d9482d49b217ea08caf8596fbef6d">Self</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a177ac354e2fb1f48c007e37dabc4be00">add</a> (const std::string &amp;name, const C &amp;convert, F min)</td></tr>
 <tr class="separator:a177ac354e2fb1f48c007e37dabc4be00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0670029c3c9f65de8ebe4f436666fb8e" id="r_a0670029c3c9f65de8ebe4f436666fb8e"><td class="memItemLeft" align="right" valign="top">catchy::FalseString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0670029c3c9f65de8ebe4f436666fb8e">resolve</a> () const</td></tr>
 <tr class="separator:a0670029c3c9f65de8ebe4f436666fb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a473e966d1525031823ddc0ac6eec01c1" id="r_a473e966d1525031823ddc0ac6eec01c1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a473e966d1525031823ddc0ac6eec01c1">levenshtein</a> (const std::string &amp;foo, const std::string &amp;bar)</td></tr>
+<tr class="separator:a473e966d1525031823ddc0ac6eec01c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a210d091d16adb5a5bde24d74cabd5a1c" id="r_a210d091d16adb5a5bde24d74cabd5a1c"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a210d091d16adb5a5bde24d74cabd5a1c">find_index_of_first_diff</a> (const std::string &amp;first, const std::string &amp;second)</td></tr>
+<tr class="separator:a210d091d16adb5a5bde24d74cabd5a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -201,7 +211,7 @@ template&lt;typename T&gt; </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae867aa9e5e1863840e96d77f859336b8" name="ae867aa9e5e1863840e96d77f859336b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae867aa9e5e1863840e96d77f859336b8">&#9670;&#160;</a></span>add() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae867aa9e5e1863840e96d77f859336b8">&#9670;&#160;</a></span>add() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,7 +244,7 @@ template&lt;typename C&gt; </div>
 </div>
 </div>
 <a id="a177ac354e2fb1f48c007e37dabc4be00" name="a177ac354e2fb1f48c007e37dabc4be00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a177ac354e2fb1f48c007e37dabc4be00">&#9670;&#160;</a></span>add() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a177ac354e2fb1f48c007e37dabc4be00">&#9670;&#160;</a></span>add() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,6 +275,68 @@ template&lt;typename C, typename F&gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe04566c2d23886ee7626a0da93f4acc" name="abe04566c2d23886ee7626a0da93f4acc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe04566c2d23886ee7626a0da93f4acc">&#9670;&#160;</a></span>add() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#afa3d9482d49b217ea08caf8596fbef6d">Self</a> &amp; <a class="el" href="structtesting_1_1Equaler.html">testing::Equaler</a>&lt; T &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string(*</td>          <td class="paramname"><span class="paramname"><em>convert&#160;</em></span>)(const T &amp;)&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a210d091d16adb5a5bde24d74cabd5a1c" name="a210d091d16adb5a5bde24d74cabd5a1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a210d091d16adb5a5bde24d74cabd5a1c">&#9670;&#160;</a></span>find_index_of_first_diff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::size_t <a class="el" href="structtesting_1_1Equaler.html">testing::Equaler</a>&lt; T &gt;::find_index_of_first_diff </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -303,6 +375,37 @@ template&lt;typename F, typename C&gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a473e966d1525031823ddc0ac6eec01c1" name="a473e966d1525031823ddc0ac6eec01c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473e966d1525031823ddc0ac6eec01c1">&#9670;&#160;</a></span>levenshtein()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int <a class="el" href="structtesting_1_1Equaler.html">testing::Equaler</a>&lt; T &gt;::levenshtein </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>foo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>bar</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
