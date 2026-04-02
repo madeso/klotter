@@ -65,16 +65,21 @@ message(STATUS "Test themes: ${ENABLE_THEMES}")
 
 ###################################################################################################
 # helper libraries
+
+
+# edit and continue
 add_library(edit_and_continue INTERFACE)
+add_library(klotter::edit_and_continue ALIAS edit_and_continue)
 if(MSVC)
     # ZI = add debug information with edit and continue support to the target
     # Zi = same with edit and continue disabled
     target_compile_options(edit_and_continue INTERFACE "/ZI")
     target_link_options(edit_and_continue INTERFACE "/INCREMENTAL")
 endif()
-add_library(klotter::edit_and_continue ALIAS edit_and_continue)
 
+# project options
 add_library(project_options INTERFACE)
+add_library(klotter::project_options ALIAS project_options)
 target_link_libraries(project_options INTERFACE klotter::edit_and_continue)
 target_compile_features(project_options INTERFACE cxx_std_20)
 include(cmake/Sanitizers.cmake)
@@ -85,6 +90,7 @@ target_feature_flags(project_options INTERFACE
     ENABLE_THEMES
 )
 
+# coverage
 if(GENERATE_COVERAGE)
     # inspired by https://github.com/JoakimSoderberg/coveralls-cmake
     if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
@@ -92,28 +98,23 @@ if(GENERATE_COVERAGE)
     else()
         message(FATAL_ERROR "Compiler ${CMAKE_C_COMPILER_ID} is not supported!")
     endif()
-
     if(NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
         message(FATAL_ERROR "Code coverage results with an optimised (non-Debug) build may be misleading!")
     endif()
-
     message(STATUS "Coverage enabled")
-
     # based on
     # https://github.com/cpp-best-practices/cpp_starter_project/blob/main/cmake/Sanitizers.cmake#L6
-
     # --coverage is a synonym for -fprofile-arcs -ftest-coverage (when compiling) and -lgcov (when linking).
     # https://gcc.gnu.org/onlinedocs/gcc-6.2.0/gcc/Instrumentation-Options.html
     target_compile_options(project_options INTERFACE -fprofile-arcs -ftest-coverage -O0 -g)
     target_link_libraries(project_options INTERFACE -lgcov)
 endif()
 
-add_library(klotter::project_options ALIAS project_options)
-
+# project warnings
 add_library(project_warnings INTERFACE)
+add_library(klotter::project_warnings ALIAS project_warnings)
 include(cmake/CompilerWarnings.cmake)
 set_project_warnings(project_warnings)
-add_library(klotter::project_warnings ALIAS project_warnings)
 
 
 
