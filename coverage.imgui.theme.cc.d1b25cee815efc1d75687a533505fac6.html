@@ -69,7 +69,7 @@
     <div role="rowheader" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">Blocks</div>
   </div>
   <div class="Box-row Box-row--focus-gray py-2 d-flex">
-    <div role="gridcell" class="color-fg-muted flex-auto min-width-0 col-md-2"><a href="#l196">klotter::test_themes() (src/klotter/imgui.theme.cc:196)</a>    </div>
+    <div role="gridcell" class="color-fg-muted flex-auto min-width-0 col-md-2"><a href="#l200">klotter::test_themes() (src/klotter/imgui.theme.cc:200)</a>    </div>
     <div role="gridcell" class="color-fg-muted flex-auto min-width-0 d-flex flex-justify-end flex-wrap flex-items-baseline" data-sort="0">not called</div>
     <div role="gridcell" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">0.0%</div>
     <div role="gridcell" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">-%</div>
@@ -437,7 +437,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="kt">void</span><span class="w"> </span><span class="nf">setup_custom_theme</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">GuiColor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">common</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DoubleColor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">histogram</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">GuiColor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">link</span><span class="p">)</span></td>
+        <td class="src"><span class="kt">void</span><span class="w"> </span><span class="nf">setup_custom_theme</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">GuiColor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">common</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DoubleColor</span><span class="o">&amp;</span><span class="w"> </span><span class="n">histogram</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Rgb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">link</span><span class="p">)</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l49" href="#l49">49</a></td>
@@ -689,7 +689,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">text_link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imgui_from_lch</span><span class="p">(</span><span class="n">text_lightness</span><span class="p">,</span><span class="w"> </span><span class="n">link</span><span class="p">);</span></td>
+        <td class="src"><span class="w">	</span><span class="k">auto</span><span class="w"> </span><span class="n">text_link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">imgui_from_rgb</span><span class="p">(</span><span class="n">link</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l85" href="#l85">85</a></td>
@@ -1221,77 +1221,77 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="n">GuiColor</span><span class="w"> </span><span class="n">link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">saturation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8f</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">hue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hues</span><span class="o">::</span><span class="n">blue</span><span class="p">};</span></td>
+        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l161" href="#l161">161</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Chroma&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">common</span><span class="p">.</span><span class="n">saturation</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l162" href="#l162">162</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderAngle</span><span class="p">(</span><span class="s">&quot;Hue&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">common</span><span class="p">.</span><span class="n">hue</span><span class="p">.</span><span class="n">radians</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l163" href="#l163">163</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Chroma&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">common</span><span class="p">.</span><span class="n">saturation</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l164" href="#l164">164</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderAngle</span><span class="p">(</span><span class="s">&quot;Hue&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">common</span><span class="p">.</span><span class="n">hue</span><span class="p">.</span><span class="n">radians</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hist_lightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l165" href="#l165">165</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Histogram Lightness&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hist_lightness</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l166" href="#l166">166</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Link Chroma&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">link</span><span class="p">.</span><span class="n">saturation</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l167" href="#l167">167</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderAngle</span><span class="p">(</span><span class="s">&quot;Link Hue&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">link</span><span class="p">.</span><span class="n">hue</span><span class="p">.</span><span class="n">radians</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">saturation_hover</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l168" href="#l168">168</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">saturation_normal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l169" href="#l169">169</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">hist_lightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Histogram Hover Saturation&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">saturation_hover</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l170" href="#l170">170</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Histogram Lightness&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hist_lightness</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Histogram Normal Saturation&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">saturation_normal</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l171" href="#l171">171</a></td>
@@ -1305,28 +1305,28 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">saturation_hover</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">link_saturation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.9f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l173" href="#l173">173</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Histogram Hover Saturation&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">saturation_hover</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">link_lightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.65f</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l174" href="#l174">174</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="k">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">saturation_normal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Link Saturation&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">link_saturation</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l175" href="#l175">175</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Histogram Normal Saturation&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">saturation_normal</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
+        <td class="src"><span class="w">	</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ImGui</span><span class="o">::</span><span class="n">SliderFloat</span><span class="p">(</span><span class="s">&quot;Link Lightness&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">link_lightness</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">changed</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l176" href="#l176">176</a></td>
@@ -1417,77 +1417,77 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">			</span><span class="n">link</span></td>
+        <td class="src"><span class="w">			</span><span class="n">srgb_from_hsl</span><span class="p">({</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l189" href="#l189">189</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="p">);</span></td>
+        <td class="src"><span class="w">				</span><span class="p">.</span><span class="n">hue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hues</span><span class="o">::</span><span class="n">blue</span><span class="p">,</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l190" href="#l190">190</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">		</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
+        <td class="src"><span class="w">				</span><span class="p">.</span><span class="n">saturation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">link_saturation</span><span class="p">,</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l191" href="#l191">191</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="w">	</span><span class="p">}</span></td>
+        <td class="src"><span class="w">				</span><span class="p">.</span><span class="n">lightness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">link_lightness</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l192" href="#l192">192</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">}</span></td>
+        <td class="src"><span class="w">			</span><span class="p">})</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l193" href="#l193">193</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">		</span><span class="p">);</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l194" href="#l194">194</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">#else</span></td>
+        <td class="src"><span class="w">		</span><span class="n">changed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l195" href="#l195">195</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="w">	</span><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l196" href="#l196">196</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
-        <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-        <td class="src uncoveredLine show_uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">test_themes</span><span class="p">()</span></td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l197" href="#l197">197</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">{</span></td>
+        <td class="src"></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l198" href="#l198">198</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
-        <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-        <td class="src uncoveredLine show_uncoveredLine"><span class="p">}</span></td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="cp">#else</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l199" href="#l199">199</a></td>
@@ -1500,22 +1500,22 @@
         <td class="text-right src linenos"><a class="normal" id="l200" href="#l200">200</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">#endif</span></td>
+        <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+        <td class="src uncoveredLine show_uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">test_themes</span><span class="p">()</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l201" href="#l201">201</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"></td>
+        <td class="src"><span class="p">{</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l202" href="#l202">202</a></td>
         <td class="text-right src linenos ws-unset">
         </td>
-        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+        <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
+        <td class="src uncoveredLine show_uncoveredLine"><span class="p">}</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l203" href="#l203">203</a></td>
@@ -1529,6 +1529,34 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="cp">#endif</span></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l205" href="#l205">205</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l206" href="#l206">206</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"><span class="p">}</span><span class="w">  </span><span class="c1">//  namespace klotter</span></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l207" href="#l207">207</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
+        <td class="src"></td>
+      </tr>
+      <tr>
+        <td class="text-right src linenos"><a class="normal" id="l208" href="#l208">208</a></td>
+        <td class="text-right src linenos ws-unset">
+        </td>
+        <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
         <td class="src"></td>
       </tr>
     </table>
@@ -1538,7 +1566,7 @@
         <hr class="block-separator"/>
         <footer class="text-center">
           Created using <a href="http://gcovr.com/en/8.6">GCOVR (Version 8.6)</a>
-          at 2026-03-18 07:37:55
+          at 2026-04-02 13:11:41
         </footer>
       </div>
     </div>
