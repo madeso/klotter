@@ -41,7 +41,7 @@ var searchData=
   ['srgb_5ffrom_5flinear_38',['srgb_from_linear',['../namespaceklotter.html#a77f8087e1f318ea3e978c99e2facf5c9',1,'klotter::srgb_from_linear(float value)'],['../namespaceklotter.html#a993e9fae4780369cb74395684ec7c55c',1,'klotter::srgb_from_linear(const Lin_rgb &amp;value)']]],
   ['srgb_5ffrom_5fokhsl_39',['srgb_from_okhsl',['../namespaceklotter.html#a97020627e564dc4a83f028ac39de03dc',1,'klotter']]],
   ['srgb_5ffrom_5fokhsv_40',['srgb_from_okhsv',['../namespaceklotter.html#abfbca6fa14dda715d1b03624ae731395',1,'klotter']]],
-  ['statechanger_41',['StateChanger',['../structklotter_1_1StateChanger.html#ac054b4d5f9441fdf5d63d343a50682c9',1,'klotter::StateChanger']]],
+  ['statechanger_41',['StateChanger',['../structklotter_1_1StateChanger.html#a76104f932015df6d20728d80d2291906',1,'klotter::StateChanger']]],
   ['stencil_5ffunc_42',['stencil_func',['../structklotter_1_1StateChanger.html#a526cf05c48c5b7d9d617e30a665bed70',1,'klotter::StateChanger']]],
   ['stencil_5fmask_43',['stencil_mask',['../structklotter_1_1StateChanger.html#a71c569b580b89d7c5979bcb041c44be5',1,'klotter::StateChanger']]],
   ['stencil_5fop_44',['stencil_op',['../structklotter_1_1StateChanger.html#ad9fd74dfef0eb9ada6a0d781d29bc076',1,'klotter::StateChanger']]],

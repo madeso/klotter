@@ -254,8 +254,8 @@
     <member refid="structklotter_1_1DefaultMaterial_1a3330cba4bf44bfe72783e8555f7b0f77" kind="function"><name>DefaultMaterial</name></member>
     <member refid="structklotter_1_1DefaultMaterial_1afcb65bb4df7f01d99dc756c3a7aecbb1" kind="function"><name>use_shader</name></member>
     <member refid="structklotter_1_1DefaultMaterial_1a0e86acb1ff001c929d35a5654e667259" kind="function"><name>set_uniforms</name></member>
-    <member refid="structklotter_1_1DefaultMaterial_1ad2b6a047d7b0440e03426f2fd5561f0b" kind="function"><name>bind_textures</name></member>
-    <member refid="structklotter_1_1DefaultMaterial_1a07358b6eb7c2082fc2b93ab146d4f64f" kind="function"><name>apply_lights</name></member>
+    <member refid="structklotter_1_1DefaultMaterial_1abbd99ed895bfc373c88960917a9d7853" kind="function"><name>bind_textures</name></member>
+    <member refid="structklotter_1_1DefaultMaterial_1ae92d2009ccdd0e26a6a15de6dc10ab7c" kind="function"><name>apply_lights</name></member>
     <member refid="structklotter_1_1DefaultMaterial_1a908a00a5227daaa63e74bc197fd6e6af" kind="function"><name>is_transparent</name></member>
   </compound>
   <compound refid="structklotter_1_1DirectionalLight" kind="struct"><name>klotter::DirectionalLight</name>
@@ -564,8 +564,8 @@
     <member refid="structklotter_1_1Material_1af6386229d9bf2a00f8d43173388a11a7" kind="function"><name>operator=</name></member>
     <member refid="structklotter_1_1Material_1acc7a0623867b0770e101cdcca4c294ce" kind="function"><name>use_shader</name></member>
     <member refid="structklotter_1_1Material_1aefed8390f6292db10e329947cbfc8927" kind="function"><name>set_uniforms</name></member>
-    <member refid="structklotter_1_1Material_1ad85a4d46e7cef0f29370c1c70db495be" kind="function"><name>bind_textures</name></member>
-    <member refid="structklotter_1_1Material_1a54c02acb7ce2d5c1ab8637a819a52d76" kind="function"><name>apply_lights</name></member>
+    <member refid="structklotter_1_1Material_1afbd3b076b7edaddfffc6b418345a193f" kind="function"><name>bind_textures</name></member>
+    <member refid="structklotter_1_1Material_1a3fa9e74eac210c656bb8186785fd7d50" kind="function"><name>apply_lights</name></member>
     <member refid="structklotter_1_1Material_1a1bc8203ffbdf63223113a444dd1cf4a9" kind="function"><name>is_transparent</name></member>
   </compound>
   <compound refid="structklotter_1_1MeshInstance" kind="struct"><name>klotter::MeshInstance</name>
@@ -601,22 +601,6 @@
     <member refid="structklotter_1_1OkLch_1a6a7775ec79b9fe66cd6fdbcec603aabd" kind="variable"><name>l</name></member>
     <member refid="structklotter_1_1OkLch_1aa912dbbc6ce2276a9a2219a045f4126b" kind="variable"><name>c</name></member>
     <member refid="structklotter_1_1OkLch_1a72f2d0d1c23429e3a14e1b621f571193" kind="variable"><name>h</name></member>
-  </compound>
-  <compound refid="structklotter_1_1OpenglStates" kind="struct"><name>klotter::OpenglStates</name>
-    <member refid="structklotter_1_1OpenglStates_1a89ee7105fbafa9f60684e3c06035f6ba" kind="variable"><name>cull_face</name></member>
-    <member refid="structklotter_1_1OpenglStates_1aca8b5650ca44492042e731110c5f4177" kind="variable"><name>cull_face_mode</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a5de98224948c114a0bf2c0ccb864b1f9" kind="variable"><name>blending</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a4789747bc8bfd5cb450ff49824b919e0" kind="variable"><name>blend_mode</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a8442f7d639433cd010d7762c4840e32e" kind="variable"><name>depth_test</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a62492eb93fad0b62e25746dd9519b3ab" kind="variable"><name>depth_mask</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a594056223592f160701bcaae4d02806f" kind="variable"><name>depth_func</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a68cdfa7a0607de2cb1841ae79261653e" kind="variable"><name>stencil_test</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a90695fe8cd6640b6d9ee540d4f583bca" kind="variable"><name>stencil_mask</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a25febe869bee7f6251f482106cd7ed9c" kind="variable"><name>render_mode</name></member>
-    <member refid="structklotter_1_1OpenglStates_1af00a0141580a5e0169bb9cfa44b355b2" kind="variable"><name>stencil_func</name></member>
-    <member refid="structklotter_1_1OpenglStates_1af1e8ecdb450e36a413e6b35ce753c352" kind="variable"><name>stencil_op</name></member>
-    <member refid="structklotter_1_1OpenglStates_1abc35a8245c75899fbf5242809bf19c69" kind="variable"><name>active_texture</name></member>
-    <member refid="structklotter_1_1OpenglStates_1a86522266949d8aee0bf4e2b53a9131f2" kind="variable"><name>texture_bound</name></member>
   </compound>
   <compound refid="structklotter_1_1OrthoCamera" kind="struct"><name>klotter::OrthoCamera</name>
     <member refid="structklotter_1_1OrthoCamera_1aab878670ba7a0c8357015426cbae5fe8" kind="variable"><name>size</name></member>
@@ -707,7 +691,7 @@
   <compound refid="structklotter_1_1RendererPimpl" kind="struct"><name>klotter::RendererPimpl</name>
     <member refid="structklotter_1_1RendererPimpl_1a146ca5e38bd4c8a717795a173c657e89" kind="variable"><name>camera_uniform_buffer</name></member>
     <member refid="structklotter_1_1RendererPimpl_1a8707601c657c0774f0e7022c259f2cd5" kind="variable"><name>shaders_resources</name></member>
-    <member refid="structklotter_1_1RendererPimpl_1a30fac033e1f7db0bff6ddf2c36728c80" kind="variable"><name>states</name></member>
+    <member refid="structklotter_1_1RendererPimpl_1ae696e7db74b8c0852abc421d7796f441" kind="variable"><name>states</name></member>
     <member refid="structklotter_1_1RendererPimpl_1a94bf72a0e910b1795c10682f118a7cba" kind="variable"><name>debug_drawer</name></member>
     <member refid="structklotter_1_1RendererPimpl_1a81cf9becda0b96defeb78b8f4ccd81bc" kind="variable"><name>full_screen_geom</name></member>
     <member refid="structklotter_1_1RendererPimpl_1a5589ea5eb933cefc1fd719af2ae2f432" kind="function"><name>RendererPimpl</name></member>
@@ -910,9 +894,25 @@
     <member refid="structklotter_1_1Skybox_1a7445eed37dea92e56a90fa647e83af82" kind="variable"><name>geom</name></member>
     <member refid="structklotter_1_1Skybox_1a0b52d43c85b813bfa90059abe97319b0" kind="variable"><name>cubemap</name></member>
   </compound>
+  <compound refid="structklotter_1_1State" kind="struct"><name>klotter::State</name>
+    <member refid="structklotter_1_1State_1a55232e3cfaa51e5464c61a3e522cc09c" kind="variable"><name>cull_face</name></member>
+    <member refid="structklotter_1_1State_1ac3ff30f6568384151b92d810a07057d2" kind="variable"><name>cull_face_mode</name></member>
+    <member refid="structklotter_1_1State_1a7bf7d5131fc6f0f53867b72e2fb91d99" kind="variable"><name>blending</name></member>
+    <member refid="structklotter_1_1State_1a484abba5e62ec9bdad99415680a63a8e" kind="variable"><name>blend_mode</name></member>
+    <member refid="structklotter_1_1State_1a9a0ae1ff724e415a04a5bcd578880981" kind="variable"><name>depth_test</name></member>
+    <member refid="structklotter_1_1State_1ae04aa568a4096225de3095b19f1b11d7" kind="variable"><name>depth_mask</name></member>
+    <member refid="structklotter_1_1State_1a10b6642edb4a042408a036a155683f0a" kind="variable"><name>depth_func</name></member>
+    <member refid="structklotter_1_1State_1a5df7eb582ec53de92ec5a145c6791f9c" kind="variable"><name>stencil_test</name></member>
+    <member refid="structklotter_1_1State_1a5f3c68a1d92bd08da3cd8615d2c26492" kind="variable"><name>stencil_mask</name></member>
+    <member refid="structklotter_1_1State_1a860241208395cb68c0d77d0d44f587a0" kind="variable"><name>render_mode</name></member>
+    <member refid="structklotter_1_1State_1a42f645212fa150ea3485eef82531c9c3" kind="variable"><name>stencil_func</name></member>
+    <member refid="structklotter_1_1State_1a04ac9d25e6325a73309f23f534bab29d" kind="variable"><name>stencil_op</name></member>
+    <member refid="structklotter_1_1State_1a665077ef0be1c8669ff72d5379a3389e" kind="variable"><name>active_texture</name></member>
+    <member refid="structklotter_1_1State_1a835630b29a716270a779af8f75dde93d" kind="variable"><name>texture_bound</name></member>
+  </compound>
   <compound refid="structklotter_1_1StateChanger" kind="struct"><name>klotter::StateChanger</name>
-    <member refid="structklotter_1_1StateChanger_1aee93777d716b4aa71e478ac0798168c9" kind="variable"><name>states</name></member>
-    <member refid="structklotter_1_1StateChanger_1ac054b4d5f9441fdf5d63d343a50682c9" kind="function"><name>StateChanger</name></member>
+    <member refid="structklotter_1_1StateChanger_1a8ba471f76d36bd96c9c867784c37ae91" kind="variable"><name>states</name></member>
+    <member refid="structklotter_1_1StateChanger_1a76104f932015df6d20728d80d2291906" kind="function"><name>StateChanger</name></member>
     <member refid="structklotter_1_1StateChanger_1a41280644fa164a17e213a1025c7168d2" kind="function"><name>cull_face</name></member>
     <member refid="structklotter_1_1StateChanger_1a656b206c64adb701104ddd5d19063d9f" kind="function"><name>blending</name></member>
     <member refid="structklotter_1_1StateChanger_1a70cb029500702452e680e238a41c19c7" kind="function"><name>depth_test</name></member>
@@ -1004,8 +1004,8 @@
     <member refid="structklotter_1_1UnlitMaterial_1abeea77af30a3fe439dcf57f07dee7e30" kind="function"><name>UnlitMaterial</name></member>
     <member refid="structklotter_1_1UnlitMaterial_1a24a10994b33c725dc865ac96d8a6bdc8" kind="function"><name>use_shader</name></member>
     <member refid="structklotter_1_1UnlitMaterial_1a943b628224cf9d4eab243c7a344961a1" kind="function"><name>set_uniforms</name></member>
-    <member refid="structklotter_1_1UnlitMaterial_1a4a647c9b677bbb4ee9a36333eb42cc8c" kind="function"><name>bind_textures</name></member>
-    <member refid="structklotter_1_1UnlitMaterial_1a08cab92f0b59a39ae2adb6cfa51ca7e1" kind="function"><name>apply_lights</name></member>
+    <member refid="structklotter_1_1UnlitMaterial_1a3ebe334aaa583bef9cc89d69edc580d1" kind="function"><name>bind_textures</name></member>
+    <member refid="structklotter_1_1UnlitMaterial_1a037a7a7266f985a9232f12dabbef4c88" kind="function"><name>apply_lights</name></member>
     <member refid="structklotter_1_1UnlitMaterial_1a13281148f24bc55c04ba816c9aab8d1e" kind="function"><name>is_transparent</name></member>
   </compound>
   <compound refid="structklotter_1_1geom_1_1Vertex" kind="struct"><name>klotter::geom::Vertex</name>
@@ -1058,11 +1058,7 @@
     <member refid="structklotter_1_1World_1a3f1bf3f492e9654b5ad192377811dffb" kind="variable"><name>skybox</name></member>
   </compound>
   <compound refid="namespaceklotter" kind="namespace"><name>klotter</name>
-    <member refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kind="enum"><name>Blend</name></member>
-    <member refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kind="enum"><name>Compare</name></member>
-    <member refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kind="enum"><name>CullFace</name></member>
     <member refid="group__geom-builder_1ga09f336a0f9a765edc85ba7fb234aed05" kind="enum"><name>ExtractedAttributeType</name></member>
-    <member refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kind="enum"><name>RenderMode</name></member>
     <member refid="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41" kind="enum"><name>BlurType</name></member>
     <member refid="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f" kind="enumvalue"><name>horizontal</name></member>
     <member refid="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3" kind="enumvalue"><name>vertical</name></member>
@@ -1072,6 +1068,10 @@
     <member refid="group__render_1gad119e3d8725413aad6d684e0ec1c22aa" kind="enum"><name>TransformSource</name></member>
     <member refid="group__render_1ga358c9176a5069a7059c1497704cd2875" kind="enum"><name>PostProcSetup</name></member>
     <member refid="group__render_1ga3453e147b5d5dff196af8e69e2adfc3b" kind="enum"><name>UseTransparency</name></member>
+    <member refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kind="enum"><name>Blend</name></member>
+    <member refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kind="enum"><name>Compare</name></member>
+    <member refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kind="enum"><name>CullFace</name></member>
+    <member refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kind="enum"><name>RenderMode</name></member>
     <member refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kind="enum"><name>StencilAction</name></member>
     <member refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kind="enum"><name>TextureEdge</name></member>
     <member refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kind="enum"><name>TextureRenderStyle</name></member>
@@ -1180,9 +1180,9 @@
     <member refid="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" kind="function"><name>load_shaders</name></member>
     <member refid="namespaceklotter_1ab09bdef90f85425a3769b9fb36aa7973" kind="function"><name>compile_the_shadow_camera</name></member>
     <member refid="namespaceklotter_1a531baa4b9f91162f31830d9dd415d002" kind="function"><name>create_vectors</name></member>
-    <member refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kind="function"><name>bind_texture_2d</name></member>
-    <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
-    <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
+    <member refid="group__render_1gacf6e4d923581ef2457698fd8db724908" kind="function"><name>bind_texture_2d</name></member>
+    <member refid="group__render_1gac8e4ffd0c343793a41be1451741a5f37" kind="function"><name>bind_texture_2d</name></member>
+    <member refid="group__render_1ga74beb484c9321e88ebfed48c9546c95a" kind="function"><name>bind_texture_cubemap</name></member>
     <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
     <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
     <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>
@@ -1368,17 +1368,11 @@
   </compound>
   <compound refid="assets_8h" kind="file"><name>assets.h</name>
   </compound>
-  <compound refid="blend_8h" kind="file"><name>blend.h</name>
-  </compound>
   <compound refid="camera_8h" kind="file"><name>camera.h</name>
   </compound>
   <compound refid="color_8h" kind="file"><name>color.h</name>
   </compound>
-  <compound refid="compare_8h" kind="file"><name>compare.h</name>
-  </compound>
   <compound refid="constants_8h" kind="file"><name>constants.h</name>
-  </compound>
-  <compound refid="cullface_8h" kind="file"><name>cullface.h</name>
   </compound>
   <compound refid="debug_8h" kind="file"><name>debug.h</name>
   </compound>
@@ -1405,8 +1399,6 @@
     <member refid="group__debug_1ga10eb5091115388a6d2525316155779f8" kind="define"><name>USE_DEBUG_LABEL</name></member>
     <member refid="group__debug_1ga29b5fd80a12ba3e8016e12479c06e495" kind="define"><name>USE_DEBUG_LABEL_MANY</name></member>
   </compound>
-  <compound refid="opengl__states_8h" kind="file"><name>opengl_states.h</name>
-  </compound>
   <compound refid="opengl__utils_8h" kind="file"><name>opengl_utils.h</name>
     <member refid="opengl__utils_8h_1a3bc128ee3dd125d5880c96123bd94b57" kind="define"><name>SET_DEBUG_LABEL</name></member>
     <member refid="opengl__utils_8h_1a1ad1aec82d9e68a43fd2638eec356cfb" kind="define"><name>SET_DEBUG_LABEL_NAMED</name></member>
@@ -1422,8 +1414,6 @@
   </compound>
   <compound refid="renderer_8pimpl_8h" kind="file"><name>renderer.pimpl.h</name>
   </compound>
-  <compound refid="rendermode_8h" kind="file"><name>rendermode.h</name>
-  </compound>
   <compound refid="shader_8h" kind="file"><name>shader.h</name>
   </compound>
   <compound refid="shader_8source_8h" kind="file"><name>shader.source.h</name>
@@ -1434,9 +1424,7 @@
   </compound>
   <compound refid="space_8h" kind="file"><name>space.h</name>
   </compound>
-  <compound refid="statechanger_8h" kind="file"><name>statechanger.h</name>
-  </compound>
-  <compound refid="stencilaction_8h" kind="file"><name>stencilaction.h</name>
+  <compound refid="state_8h" kind="file"><name>state.h</name>
   </compound>
   <compound refid="texture_8h" kind="file"><name>texture.h</name>
   </compound>
@@ -1498,6 +1486,17 @@
     <member refid="group__geom-builder_1ga4758c0c17511f831624a7cc7dbac8f74" kind="function"><name>extract_geom</name></member>
   </compound>
   <compound refid="group__render" kind="group"><name>render</name>
+    <member refid="group__render_1gad119e3d8725413aad6d684e0ec1c22aa" kind="enum"><name>TransformSource</name></member>
+    <member refid="group__render_1ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d" kind="enumvalue"><name>Uniform</name></member>
+    <member refid="group__render_1ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728" kind="enumvalue"><name>Instanced_mat4</name></member>
+    <member refid="group__render_1ga358c9176a5069a7059c1497704cd2875" kind="enum"><name>PostProcSetup</name></member>
+    <member refid="group__render_1gga358c9176a5069a7059c1497704cd2875a334c4a4c42fdb79d7ebc3e73b517e6f8" kind="enumvalue"><name>none</name></member>
+    <member refid="group__render_1gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d" kind="enumvalue"><name>factor</name></member>
+    <member refid="group__render_1gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da" kind="enumvalue"><name>resolution</name></member>
+    <member refid="group__render_1gga358c9176a5069a7059c1497704cd2875a07cc694b9b3fc636710fa08b6922c42b" kind="enumvalue"><name>time</name></member>
+    <member refid="group__render_1ga3453e147b5d5dff196af8e69e2adfc3b" kind="enum"><name>UseTransparency</name></member>
+    <member refid="group__render_1gga3453e147b5d5dff196af8e69e2adfc3baa6105c0a611b41b08f1209506350279e" kind="enumvalue"><name>yes</name></member>
+    <member refid="group__render_1gga3453e147b5d5dff196af8e69e2adfc3ba7fa3b767c460b54a2be4d49030b349c7" kind="enumvalue"><name>no</name></member>
     <member refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kind="enum"><name>Blend</name></member>
     <member refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481bad02c4c4cde7ae76252540d116a40f23a" kind="enumvalue"><name>zero</name></member>
     <member refid="group__render_1ggac6cdf1ef1b23f9fc7361b5add6bf481baf97c5d29941bfb1b2fdab0874906ab82" kind="enumvalue"><name>one</name></member>
@@ -1535,17 +1534,6 @@
     <member refid="group__render_1gga58b3e0e4918f62f8cf5fa2c0e3ec9718aa552c74784b3a82177bca6c8adde0efb" kind="enumvalue"><name>fill</name></member>
     <member refid="group__render_1gga58b3e0e4918f62f8cf5fa2c0e3ec9718a6438c669e0d0de98e6929c2cc0fac474" kind="enumvalue"><name>line</name></member>
     <member refid="group__render_1gga58b3e0e4918f62f8cf5fa2c0e3ec9718a78ee54aa8f813885fe2fe20d232518b9" kind="enumvalue"><name>point</name></member>
-    <member refid="group__render_1gad119e3d8725413aad6d684e0ec1c22aa" kind="enum"><name>TransformSource</name></member>
-    <member refid="group__render_1ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d" kind="enumvalue"><name>Uniform</name></member>
-    <member refid="group__render_1ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728" kind="enumvalue"><name>Instanced_mat4</name></member>
-    <member refid="group__render_1ga358c9176a5069a7059c1497704cd2875" kind="enum"><name>PostProcSetup</name></member>
-    <member refid="group__render_1gga358c9176a5069a7059c1497704cd2875a334c4a4c42fdb79d7ebc3e73b517e6f8" kind="enumvalue"><name>none</name></member>
-    <member refid="group__render_1gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d" kind="enumvalue"><name>factor</name></member>
-    <member refid="group__render_1gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da" kind="enumvalue"><name>resolution</name></member>
-    <member refid="group__render_1gga358c9176a5069a7059c1497704cd2875a07cc694b9b3fc636710fa08b6922c42b" kind="enumvalue"><name>time</name></member>
-    <member refid="group__render_1ga3453e147b5d5dff196af8e69e2adfc3b" kind="enum"><name>UseTransparency</name></member>
-    <member refid="group__render_1gga3453e147b5d5dff196af8e69e2adfc3baa6105c0a611b41b08f1209506350279e" kind="enumvalue"><name>yes</name></member>
-    <member refid="group__render_1gga3453e147b5d5dff196af8e69e2adfc3ba7fa3b767c460b54a2be4d49030b349c7" kind="enumvalue"><name>no</name></member>
     <member refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kind="enum"><name>StencilAction</name></member>
     <member refid="group__render_1ggac7b12ed0e553cee508d8ca86f8c8e84fa18ccf61d533b600bbf5a963359223fe4" kind="enumvalue"><name>keep</name></member>
     <member refid="group__render_1ggac7b12ed0e553cee508d8ca86f8c8e84fad02c4c4cde7ae76252540d116a40f23a" kind="enumvalue"><name>zero</name></member>
@@ -1583,9 +1571,9 @@
     <member refid="group__render_1ga520b75edd8118f7827919d7890a3fbd9" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1ga8072e6de57f4c7633a25803ddf551385" kind="function"><name>shader_from_container</name></member>
     <member refid="group__render_1gaae619e8aae48dd7405f07dfbca0e1505" kind="function"><name>load_shaders</name></member>
-    <member refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kind="function"><name>bind_texture_2d</name></member>
-    <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
-    <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
+    <member refid="group__render_1gacf6e4d923581ef2457698fd8db724908" kind="function"><name>bind_texture_2d</name></member>
+    <member refid="group__render_1gac8e4ffd0c343793a41be1451741a5f37" kind="function"><name>bind_texture_2d</name></member>
+    <member refid="group__render_1ga74beb484c9321e88ebfed48c9546c95a" kind="function"><name>bind_texture_cubemap</name></member>
     <member refid="group__render_1ga32f679ec0675359820f93cfb44c2fc48" kind="function"><name>compile_geom</name></member>
     <member refid="group__render_1ga5b8a0dd10d8f433def90492f9f0ef96d" kind="function"><name>compile_geom_with_transform_instance</name></member>
     <member refid="group__render_1gab1c7bfa5f2902fc511ab0ef72a8d3f6b" kind="function"><name>make_mesh_instance</name></member>

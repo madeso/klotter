@@ -384,13 +384,6 @@
           <edgelabel>world_from_locals</edgelabel>
         </childnode>
       </node>
-      <node id="71">
-        <label>klotter::OpenglStates</label>
-        <link refid="structklotter_1_1OpenglStates"/>
-        <childnode refid="72" relation="usage">
-          <edgelabel>texture_bound</edgelabel>
-        </childnode>
-      </node>
       <node id="70">
         <label>klotter::PingPongBlurShader</label>
         <link refid="structklotter_1_1PingPongBlurShader"/>
@@ -536,6 +529,13 @@
         </childnode>
         <childnode refid="70" relation="usage">
           <edgelabel>pp_ping</edgelabel>
+        </childnode>
+      </node>
+      <node id="71">
+        <label>klotter::State</label>
+        <link refid="structklotter_1_1State"/>
+        <childnode refid="72" relation="usage">
+          <edgelabel>texture_bound</edgelabel>
         </childnode>
       </node>
       <node id="27">

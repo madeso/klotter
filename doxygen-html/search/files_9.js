@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['klotter_2eh_0',['klotter.h',['../klotter_8h.html',1,'']]]
+  ['linebatch_2eh_0',['linebatch.h',['../linebatch_8h.html',1,'']]],
+  ['log_2eh_1',['log.h',['../log_8h.html',1,'']]]
 ];

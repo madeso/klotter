@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['enable_5fhigh_5fperformance_5fgraphics_2eh_0',['enable_high_performance_graphics.h',['../enable__high__performance__graphics_8h.html',1,'']]]
+  ['feature_5fflags_2eh_0',['feature_flags.h',['../feature__flags_8h.html',1,'']]],
+  ['fullscreen_2eh_1',['fullscreen.h',['../fullscreen_8h.html',1,'']]]
 ];

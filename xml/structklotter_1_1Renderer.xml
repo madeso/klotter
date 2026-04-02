@@ -606,13 +606,6 @@
           <edgelabel>transparency_shader</edgelabel>
         </childnode>
       </node>
-      <node id="43">
-        <label>klotter::OpenglStates</label>
-        <link refid="structklotter_1_1OpenglStates"/>
-        <childnode refid="44" relation="usage">
-          <edgelabel>texture_bound</edgelabel>
-        </childnode>
-      </node>
       <node id="42">
         <label>klotter::PingPongBlurShader</label>
         <link refid="structklotter_1_1PingPongBlurShader"/>
@@ -731,6 +724,13 @@
         </childnode>
         <childnode refid="42" relation="usage">
           <edgelabel>pp_ping</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>klotter::State</label>
+        <link refid="structklotter_1_1State"/>
+        <childnode refid="44" relation="usage">
+          <edgelabel>texture_bound</edgelabel>
         </childnode>
       </node>
       <node id="25">

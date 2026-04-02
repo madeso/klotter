@@ -327,9 +327,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1OkLch.html">OkLch</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a color in the OKlch color space.  <a href="structklotter_1_1OkLch.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "cache" for the current open gl state.  <a href="structklotter_1_1OpenglStates.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1OrthoCamera.html">OrthoCamera</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A orthographic camera representation.  <a href="structklotter_1_1OrthoCamera.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -408,6 +405,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1Skybox.html">Skybox</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A skybox model with a cubemap texture.  <a href="structklotter_1_1Skybox.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1State.html">State</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "cache" for the current open gl state.  <a href="structklotter_1_1State.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1StateChanger.html">StateChanger</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper class to change both the opengl state and the cache.  <a href="structklotter_1_1StateChanger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -463,6 +463,35 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:ga09f336a0f9a765edc85ba7fb234aed05" id="r_ga09f336a0f9a765edc85ba7fb234aed05"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05">ExtractedAttributeType</a> { <a class="el" href="group__geom-builder.html#gga09f336a0f9a765edc85ba7fb234aed05a22ae0e2b89e5e3d477f988cc36d3272b">ExtractedAttributeType::Float</a>
+ }</td></tr>
+<tr class="memdesc:ga09f336a0f9a765edc85ba7fb234aed05"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a extracted attribute, like 'float'.  <a href="group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05">More...</a><br /></td></tr>
+<tr class="separator:ga09f336a0f9a765edc85ba7fb234aed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29abf84c1c3f13eee4a0e7ce2c6ffc41" id="r_a29abf84c1c3f13eee4a0e7ce2c6ffc41"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29abf84c1c3f13eee4a0e7ce2c6ffc41">BlurType</a> { <a class="el" href="#a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f">horizontal</a>
+, <a class="el" href="#a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3">vertical</a>
+ }</td></tr>
+<tr class="separator:a29abf84c1c3f13eee4a0e7ce2c6ffc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3616a1e9adb2f3b4af13a7d9770b92f7" id="r_a3616a1e9adb2f3b4af13a7d9770b92f7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3616a1e9adb2f3b4af13a7d9770b92f7">IsGauss</a> { <a class="el" href="#a3616a1e9adb2f3b4af13a7d9770b92f7a7fa3b767c460b54a2be4d49030b349c7">no</a>
+, <a class="el" href="#a3616a1e9adb2f3b4af13a7d9770b92f7aa6105c0a611b41b08f1209506350279e">yes</a>
+ }</td></tr>
+<tr class="separator:a3616a1e9adb2f3b4af13a7d9770b92f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad119e3d8725413aad6d684e0ec1c22aa" id="r_gad119e3d8725413aad6d684e0ec1c22aa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gad119e3d8725413aad6d684e0ec1c22aa">TransformSource</a> { <a class="el" href="group__render.html#ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d">TransformSource::Uniform</a>
+, <a class="el" href="group__render.html#ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728">TransformSource::Instanced_mat4</a>
+ }</td></tr>
+<tr class="memdesc:gad119e3d8725413aad6d684e0ec1c22aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum describing on how the model transform is provided.  <a href="group__render.html#gad119e3d8725413aad6d684e0ec1c22aa">More...</a><br /></td></tr>
+<tr class="separator:gad119e3d8725413aad6d684e0ec1c22aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga358c9176a5069a7059c1497704cd2875" id="r_ga358c9176a5069a7059c1497704cd2875"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> { <a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875a334c4a4c42fdb79d7ebc3e73b517e6f8">PostProcSetup::none</a> = 0
+, <a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d">PostProcSetup::factor</a> = 1 &lt;&lt; 1
+, <a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">PostProcSetup::resolution</a> = 1 &lt;&lt; 2
+, <a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875a07cc694b9b3fc636710fa08b6922c42b">PostProcSetup::time</a> = 1 &lt;&lt; 3
+ }</td></tr>
+<tr class="memdesc:ga358c9176a5069a7059c1497704cd2875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for what features each postproc shader wants.  <a href="group__render.html#ga358c9176a5069a7059c1497704cd2875">More...</a><br /></td></tr>
+<tr class="separator:ga358c9176a5069a7059c1497704cd2875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3453e147b5d5dff196af8e69e2adfc3b" id="r_ga3453e147b5d5dff196af8e69e2adfc3b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga3453e147b5d5dff196af8e69e2adfc3b">UseTransparency</a> { <a class="el" href="group__render.html#gga3453e147b5d5dff196af8e69e2adfc3baa6105c0a611b41b08f1209506350279e">UseTransparency::yes</a>
+, <a class="el" href="group__render.html#gga3453e147b5d5dff196af8e69e2adfc3ba7fa3b767c460b54a2be4d49030b349c7">UseTransparency::no</a>
+ }</td></tr>
+<tr class="memdesc:ga3453e147b5d5dff196af8e69e2adfc3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "named boolean".  <a href="group__render.html#ga3453e147b5d5dff196af8e69e2adfc3b">More...</a><br /></td></tr>
+<tr class="separator:ga3453e147b5d5dff196af8e69e2adfc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac6cdf1ef1b23f9fc7361b5add6bf481b" id="r_gac6cdf1ef1b23f9fc7361b5add6bf481b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gac6cdf1ef1b23f9fc7361b5add6bf481b">Blend</a> { <br />
 &#160;&#160;<a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481bad02c4c4cde7ae76252540d116a40f23a">Blend::zero</a>
 , <a class="el" href="group__render.html#ggac6cdf1ef1b23f9fc7361b5add6bf481baf97c5d29941bfb1b2fdab0874906ab82">Blend::one</a>
@@ -508,40 +537,11 @@ Enumerations</h2></td></tr>
 , <a class="el" href="group__render.html#gga2da9ff87267808b55c2680259db65b5cad46b3c78f91c7d43349252714bf07404">CullFace::front_and_back</a>
  }</td></tr>
 <tr class="separator:ga2da9ff87267808b55c2680259db65b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09f336a0f9a765edc85ba7fb234aed05" id="r_ga09f336a0f9a765edc85ba7fb234aed05"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05">ExtractedAttributeType</a> { <a class="el" href="group__geom-builder.html#gga09f336a0f9a765edc85ba7fb234aed05a22ae0e2b89e5e3d477f988cc36d3272b">ExtractedAttributeType::Float</a>
- }</td></tr>
-<tr class="memdesc:ga09f336a0f9a765edc85ba7fb234aed05"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of a extracted attribute, like 'float'.  <a href="group__geom-builder.html#ga09f336a0f9a765edc85ba7fb234aed05">More...</a><br /></td></tr>
-<tr class="separator:ga09f336a0f9a765edc85ba7fb234aed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga58b3e0e4918f62f8cf5fa2c0e3ec9718" id="r_ga58b3e0e4918f62f8cf5fa2c0e3ec9718"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga58b3e0e4918f62f8cf5fa2c0e3ec9718">RenderMode</a> { <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718aa552c74784b3a82177bca6c8adde0efb">RenderMode::fill</a>
 , <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a6438c669e0d0de98e6929c2cc0fac474">RenderMode::line</a>
 , <a class="el" href="group__render.html#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a78ee54aa8f813885fe2fe20d232518b9">RenderMode::point</a>
  }</td></tr>
 <tr class="separator:ga58b3e0e4918f62f8cf5fa2c0e3ec9718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29abf84c1c3f13eee4a0e7ce2c6ffc41" id="r_a29abf84c1c3f13eee4a0e7ce2c6ffc41"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29abf84c1c3f13eee4a0e7ce2c6ffc41">BlurType</a> { <a class="el" href="#a29abf84c1c3f13eee4a0e7ce2c6ffc41a4505cad087312551a6fbbe6ebe163e0f">horizontal</a>
-, <a class="el" href="#a29abf84c1c3f13eee4a0e7ce2c6ffc41ae6dec152d6a941fccb0a5e8cc2579cc3">vertical</a>
- }</td></tr>
-<tr class="separator:a29abf84c1c3f13eee4a0e7ce2c6ffc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3616a1e9adb2f3b4af13a7d9770b92f7" id="r_a3616a1e9adb2f3b4af13a7d9770b92f7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3616a1e9adb2f3b4af13a7d9770b92f7">IsGauss</a> { <a class="el" href="#a3616a1e9adb2f3b4af13a7d9770b92f7a7fa3b767c460b54a2be4d49030b349c7">no</a>
-, <a class="el" href="#a3616a1e9adb2f3b4af13a7d9770b92f7aa6105c0a611b41b08f1209506350279e">yes</a>
- }</td></tr>
-<tr class="separator:a3616a1e9adb2f3b4af13a7d9770b92f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad119e3d8725413aad6d684e0ec1c22aa" id="r_gad119e3d8725413aad6d684e0ec1c22aa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gad119e3d8725413aad6d684e0ec1c22aa">TransformSource</a> { <a class="el" href="group__render.html#ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d">TransformSource::Uniform</a>
-, <a class="el" href="group__render.html#ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728">TransformSource::Instanced_mat4</a>
- }</td></tr>
-<tr class="memdesc:gad119e3d8725413aad6d684e0ec1c22aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum describing on how the model transform is provided.  <a href="group__render.html#gad119e3d8725413aad6d684e0ec1c22aa">More...</a><br /></td></tr>
-<tr class="separator:gad119e3d8725413aad6d684e0ec1c22aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga358c9176a5069a7059c1497704cd2875" id="r_ga358c9176a5069a7059c1497704cd2875"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga358c9176a5069a7059c1497704cd2875">PostProcSetup</a> { <a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875a334c4a4c42fdb79d7ebc3e73b517e6f8">PostProcSetup::none</a> = 0
-, <a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d">PostProcSetup::factor</a> = 1 &lt;&lt; 1
-, <a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">PostProcSetup::resolution</a> = 1 &lt;&lt; 2
-, <a class="el" href="group__render.html#gga358c9176a5069a7059c1497704cd2875a07cc694b9b3fc636710fa08b6922c42b">PostProcSetup::time</a> = 1 &lt;&lt; 3
- }</td></tr>
-<tr class="memdesc:ga358c9176a5069a7059c1497704cd2875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for what features each postproc shader wants.  <a href="group__render.html#ga358c9176a5069a7059c1497704cd2875">More...</a><br /></td></tr>
-<tr class="separator:ga358c9176a5069a7059c1497704cd2875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3453e147b5d5dff196af8e69e2adfc3b" id="r_ga3453e147b5d5dff196af8e69e2adfc3b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga3453e147b5d5dff196af8e69e2adfc3b">UseTransparency</a> { <a class="el" href="group__render.html#gga3453e147b5d5dff196af8e69e2adfc3baa6105c0a611b41b08f1209506350279e">UseTransparency::yes</a>
-, <a class="el" href="group__render.html#gga3453e147b5d5dff196af8e69e2adfc3ba7fa3b767c460b54a2be4d49030b349c7">UseTransparency::no</a>
- }</td></tr>
-<tr class="memdesc:ga3453e147b5d5dff196af8e69e2adfc3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "named boolean".  <a href="group__render.html#ga3453e147b5d5dff196af8e69e2adfc3b">More...</a><br /></td></tr>
-<tr class="separator:ga3453e147b5d5dff196af8e69e2adfc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7b12ed0e553cee508d8ca86f8c8e84f" id="r_gac7b12ed0e553cee508d8ca86f8c8e84f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gac7b12ed0e553cee508d8ca86f8c8e84f">StencilAction</a> { <br />
 &#160;&#160;<a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fa18ccf61d533b600bbf5a963359223fe4">StencilAction::keep</a>
 , <a class="el" href="group__render.html#ggac7b12ed0e553cee508d8ca86f8c8e84fad02c4c4cde7ae76252540d116a40f23a">StencilAction::zero</a>
@@ -801,12 +801,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a531baa4b9f91162f31830d9dd415d002" id="r_a531baa4b9f91162f31830d9dd415d002"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1CameraVectors.html">CameraVectors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a531baa4b9f91162f31830d9dd415d002">create_vectors</a> (float yaw, float pitch)</td></tr>
 <tr class="memdesc:a531baa4b9f91162f31830d9dd415d002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capture the local space of a "camera" us ing only the rotation.  <br /></td></tr>
 <tr class="separator:a531baa4b9f91162f31830d9dd415d002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7128958c7209702f57eb63c4cded569" id="r_gaf7128958c7209702f57eb63c4cded569"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gaf7128958c7209702f57eb63c4cded569">bind_texture_2d</a> (<a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a> &amp;texture)</td></tr>
-<tr class="separator:gaf7128958c7209702f57eb63c4cded569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3d85b6d989f4f351a4cfd15bcc40082" id="r_gad3d85b6d989f4f351a4cfd15bcc40082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gad3d85b6d989f4f351a4cfd15bcc40082">bind_texture_2d</a> (<a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;texture)</td></tr>
-<tr class="separator:gad3d85b6d989f4f351a4cfd15bcc40082"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5d96ca0c687bebbefbb7a53db9bb47bd" id="r_ga5d96ca0c687bebbefbb7a53db9bb47bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga5d96ca0c687bebbefbb7a53db9bb47bd">bind_texture_cubemap</a> (<a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a> &amp;texture)</td></tr>
-<tr class="separator:ga5d96ca0c687bebbefbb7a53db9bb47bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf6e4d923581ef2457698fd8db724908" id="r_gacf6e4d923581ef2457698fd8db724908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gacf6e4d923581ef2457698fd8db724908">bind_texture_2d</a> (<a class="el" href="structklotter_1_1State.html">State</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a> &amp;texture)</td></tr>
+<tr class="separator:gacf6e4d923581ef2457698fd8db724908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8e4ffd0c343793a41be1451741a5f37" id="r_gac8e4ffd0c343793a41be1451741a5f37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#gac8e4ffd0c343793a41be1451741a5f37">bind_texture_2d</a> (<a class="el" href="structklotter_1_1State.html">State</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;texture)</td></tr>
+<tr class="separator:gac8e4ffd0c343793a41be1451741a5f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74beb484c9321e88ebfed48c9546c95a" id="r_ga74beb484c9321e88ebfed48c9546c95a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__render.html#ga74beb484c9321e88ebfed48c9546c95a">bind_texture_cubemap</a> (<a class="el" href="structklotter_1_1State.html">State</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a> &amp;texture)</td></tr>
+<tr class="separator:ga74beb484c9321e88ebfed48c9546c95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga263ed688bbd502fd2279d9ceb5bab9bf" id="r_ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__texture.html#ga263ed688bbd502fd2279d9ceb5bab9bf">color_from_rgba</a> (uint8_t r, uint8_t g, uint8_t b, uint8_t a)</td></tr>
 <tr class="memdesc:ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="group__texture.html#ga9733fe97e5e653625387fead61ef06a3">SingleColor</a> value from individual red, green, blue, and alpha components.  <br /></td></tr>
 <tr class="separator:ga263ed688bbd502fd2279d9ceb5bab9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>

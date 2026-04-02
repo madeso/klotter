@@ -14,7 +14,7 @@ var searchData=
   ['texcoords_11',['texcoords',['../structklotter_1_1geom_1_1Builder.html#abd7ede50a96f5807c123cb917eecd349',1,'klotter::geom::Builder']]],
   ['texture_12',['texture',['../structklotter_1_1geom_1_1Vertex.html#ab7010ae753e9318118337b31fa88430f',1,'klotter::geom::Vertex::texture'],['../structklotter_1_1UnlitMaterial.html#a7801e658eb779b80ebca950cab56a54f',1,'klotter::UnlitMaterial::texture'],['../structklotter_1_1Uniform.html#a2546427ecf437a68f5170f9eae34f2e8',1,'klotter::Uniform::texture']]],
   ['texture_5fattrib_13',['texture_attrib',['../structklotter_1_1ImguiShaderProgram.html#ab0924c5059e77dafd887d52dabbbcb07',1,'klotter::ImguiShaderProgram']]],
-  ['texture_5fbound_14',['texture_bound',['../structklotter_1_1OpenglStates.html#a86522266949d8aee0bf4e2b53a9131f2',1,'klotter::OpenglStates']]],
+  ['texture_5fbound_14',['texture_bound',['../structklotter_1_1State.html#a835630b29a716270a779af8f75dde93d',1,'klotter::State']]],
   ['threshold_15',['threshold',['../structklotter_1_1SCurve.html#a320a7b49516a92878efb2f4ece195c32',1,'klotter::SCurve']]],
   ['time_16',['time',['../structklotter_1_1SimpleEffect.html#a00a31874597c071d487222993b1254af',1,'klotter::SimpleEffect']]],
   ['time_5funi_17',['time_uni',['../structklotter_1_1LoadedPostProcShader.html#a99c2cbec10319108c1ffde8f035b6e8b',1,'klotter::LoadedPostProcShader']]],

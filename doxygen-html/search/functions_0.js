@@ -15,7 +15,7 @@ var searchData=
   ['add_5ftext_5fcoord_12',['add_text_coord',['../structklotter_1_1geom_1_1Builder.html#a1d23996bf8e3a67534d7b4c0fe5bab4c',1,'klotter::geom::Builder']]],
   ['add_5ftriangle_13',['add_triangle',['../structklotter_1_1geom_1_1Builder.html#a2221d13065eb2546d6f454d8f1a04b95',1,'klotter::geom::Builder']]],
   ['addartist_14',['AddArtist',['../structVisualDebugging_1_1Frame.html#a756e184e7affa1ad0f9ab3d7e9995867',1,'VisualDebugging::Frame']]],
-  ['apply_5flights_15',['apply_lights',['../structklotter_1_1Material.html#a54c02acb7ce2d5c1ab8637a819a52d76',1,'klotter::Material::apply_lights()'],['../structklotter_1_1UnlitMaterial.html#a08cab92f0b59a39ae2adb6cfa51ca7e1',1,'klotter::UnlitMaterial::apply_lights()'],['../structklotter_1_1DefaultMaterial.html#a07358b6eb7c2082fc2b93ab146d4f64f',1,'klotter::DefaultMaterial::apply_lights()']]],
+  ['apply_5flights_15',['apply_lights',['../structklotter_1_1Material.html#a3fa9e74eac210c656bb8186785fd7d50',1,'klotter::Material::apply_lights()'],['../structklotter_1_1UnlitMaterial.html#a037a7a7266f985a9232f12dabbef4c88',1,'klotter::UnlitMaterial::apply_lights()'],['../structklotter_1_1DefaultMaterial.html#ae92d2009ccdd0e26a6a15de6dc10ab7c',1,'klotter::DefaultMaterial::apply_lights()']]],
   ['as_5fdegrees_16',['as_degrees',['../structklotter_1_1Angle.html#acfb8ec7a021fc7e3bf0b904930bc4761',1,'klotter::Angle']]],
   ['as_5fradians_17',['as_radians',['../structklotter_1_1Angle.html#a2a96e52b6f3cc819e31b4c034819ec8c',1,'klotter::Angle']]],
   ['asin_18',['asin',['../namespaceklotter.html#a0cf17ea42ff3932fcf76a01e9d117a99',1,'klotter']]],

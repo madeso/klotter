@@ -149,10 +149,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acc7a0623867b0770e101cdcca4c294ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefed8390f6292db10e329947cbfc8927" id="r_aefed8390f6292db10e329947cbfc8927"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefed8390f6292db10e329947cbfc8927">set_uniforms</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;, const <a class="el" href="structklotter_1_1CompiledCamera.html">CompiledCamera</a> &amp;, const std::optional&lt; glm::mat4 &gt; &amp;)=0</td></tr>
 <tr class="separator:aefed8390f6292db10e329947cbfc8927"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad85a4d46e7cef0f29370c1c70db495be" id="r_ad85a4d46e7cef0f29370c1c70db495be"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad85a4d46e7cef0f29370c1c70db495be">bind_textures</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;, <a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, <a class="el" href="structklotter_1_1Assets.html">Assets</a> *assets)=0</td></tr>
-<tr class="separator:ad85a4d46e7cef0f29370c1c70db495be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54c02acb7ce2d5c1ab8637a819a52d76" id="r_a54c02acb7ce2d5c1ab8637a819a52d76"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54c02acb7ce2d5c1ab8637a819a52d76">apply_lights</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;, const <a class="el" href="structklotter_1_1Lights.html">Lights</a> &amp;lights, const <a class="el" href="structklotter_1_1RenderSettings.html">RenderSettings</a> &amp;settings, <a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, <a class="el" href="structklotter_1_1Assets.html">Assets</a> *assets)=0</td></tr>
-<tr class="separator:a54c02acb7ce2d5c1ab8637a819a52d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd3b076b7edaddfffc6b418345a193f" id="r_afbd3b076b7edaddfffc6b418345a193f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbd3b076b7edaddfffc6b418345a193f">bind_textures</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;, <a class="el" href="structklotter_1_1State.html">State</a> *states, <a class="el" href="structklotter_1_1Assets.html">Assets</a> *assets)=0</td></tr>
+<tr class="separator:afbd3b076b7edaddfffc6b418345a193f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa9e74eac210c656bb8186785fd7d50" id="r_a3fa9e74eac210c656bb8186785fd7d50"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fa9e74eac210c656bb8186785fd7d50">apply_lights</a> (const <a class="el" href="structklotter_1_1RenderContext.html">RenderContext</a> &amp;, const <a class="el" href="structklotter_1_1Lights.html">Lights</a> &amp;lights, const <a class="el" href="structklotter_1_1RenderSettings.html">RenderSettings</a> &amp;settings, <a class="el" href="structklotter_1_1State.html">State</a> *states, <a class="el" href="structklotter_1_1Assets.html">Assets</a> *assets)=0</td></tr>
+<tr class="separator:a3fa9e74eac210c656bb8186785fd7d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bc8203ffbdf63223113a444dd1cf4a9" id="r_a1bc8203ffbdf63223113a444dd1cf4a9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bc8203ffbdf63223113a444dd1cf4a9">is_transparent</a> () const =0</td></tr>
 <tr class="separator:a1bc8203ffbdf63223113a444dd1cf4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -260,8 +260,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a54c02acb7ce2d5c1ab8637a819a52d76" name="a54c02acb7ce2d5c1ab8637a819a52d76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54c02acb7ce2d5c1ab8637a819a52d76">&#9670;&#160;</a></span>apply_lights()</h2>
+<a id="a3fa9e74eac210c656bb8186785fd7d50" name="a3fa9e74eac210c656bb8186785fd7d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fa9e74eac210c656bb8186785fd7d50">&#9670;&#160;</a></span>apply_lights()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,7 +287,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1State.html">State</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -302,12 +302,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structklotter_1_1DefaultMaterial.html#a07358b6eb7c2082fc2b93ab146d4f64f">klotter::DefaultMaterial</a>, and <a class="el" href="structklotter_1_1UnlitMaterial.html#a08cab92f0b59a39ae2adb6cfa51ca7e1">klotter::UnlitMaterial</a>.</p>
+<p>Implemented in <a class="el" href="structklotter_1_1DefaultMaterial.html#ae92d2009ccdd0e26a6a15de6dc10ab7c">klotter::DefaultMaterial</a>, and <a class="el" href="structklotter_1_1UnlitMaterial.html#a037a7a7266f985a9232f12dabbef4c88">klotter::UnlitMaterial</a>.</p>
 
 </div>
 </div>
-<a id="ad85a4d46e7cef0f29370c1c70db495be" name="ad85a4d46e7cef0f29370c1c70db495be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad85a4d46e7cef0f29370c1c70db495be">&#9670;&#160;</a></span>bind_textures()</h2>
+<a id="afbd3b076b7edaddfffc6b418345a193f" name="afbd3b076b7edaddfffc6b418345a193f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd3b076b7edaddfffc6b418345a193f">&#9670;&#160;</a></span>bind_textures()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,7 +323,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1State.html">State</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -338,7 +338,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="structklotter_1_1DefaultMaterial.html#ad2b6a047d7b0440e03426f2fd5561f0b">klotter::DefaultMaterial</a>, and <a class="el" href="structklotter_1_1UnlitMaterial.html#a4a647c9b677bbb4ee9a36333eb42cc8c">klotter::UnlitMaterial</a>.</p>
+<p>Implemented in <a class="el" href="structklotter_1_1DefaultMaterial.html#abbd99ed895bfc373c88960917a9d7853">klotter::DefaultMaterial</a>, and <a class="el" href="structklotter_1_1UnlitMaterial.html#a3ebe334aaa583bef9cc89d69edc580d1">klotter::UnlitMaterial</a>.</p>
 
 </div>
 </div>

@@ -125,18 +125,18 @@
         </inbodydescription>
         <location file="src/klotter/render/material.h" line="58" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a4a647c9b677bbb4ee9a36333eb42cc8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a3ebe334aaa583bef9cc89d69edc580d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void klotter::UnlitMaterial::bind_textures</definition>
-        <argsstring>(const RenderContext &amp;, OpenglStates *states, Assets *assets) override</argsstring>
+        <argsstring>(const RenderContext &amp;, State *states, Assets *assets) override</argsstring>
         <name>bind_textures</name>
         <qualifiedname>klotter::UnlitMaterial::bind_textures</qualifiedname>
-        <reimplements refid="structklotter_1_1Material_1ad85a4d46e7cef0f29370c1c70db495be">bind_textures</reimplements>
+        <reimplements refid="structklotter_1_1Material_1afbd3b076b7edaddfffc6b418345a193f">bind_textures</reimplements>
         <param>
           <type>const <ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref> &amp;</type>
         </param>
         <param>
-          <type><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref> *</type>
+          <type><ref refid="structklotter_1_1State" kindref="compound">State</ref> *</type>
           <declname>states</declname>
         </param>
         <param>
@@ -151,13 +151,13 @@
         </inbodydescription>
         <location file="src/klotter/render/material.h" line="59" column="6"/>
       </memberdef>
-      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a08cab92f0b59a39ae2adb6cfa51ca7e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="structklotter_1_1UnlitMaterial_1a037a7a7266f985a9232f12dabbef4c88" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void klotter::UnlitMaterial::apply_lights</definition>
-        <argsstring>(const RenderContext &amp;, const Lights &amp;lights, const RenderSettings &amp;settings, OpenglStates *states, Assets *assets) override</argsstring>
+        <argsstring>(const RenderContext &amp;, const Lights &amp;lights, const RenderSettings &amp;settings, State *states, Assets *assets) override</argsstring>
         <name>apply_lights</name>
         <qualifiedname>klotter::UnlitMaterial::apply_lights</qualifiedname>
-        <reimplements refid="structklotter_1_1Material_1a54c02acb7ce2d5c1ab8637a819a52d76">apply_lights</reimplements>
+        <reimplements refid="structklotter_1_1Material_1a3fa9e74eac210c656bb8186785fd7d50">apply_lights</reimplements>
         <param>
           <type>const <ref refid="structklotter_1_1RenderContext" kindref="compound">RenderContext</ref> &amp;</type>
         </param>
@@ -170,7 +170,7 @@
           <declname>settings</declname>
         </param>
         <param>
-          <type><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref> *</type>
+          <type><ref refid="structklotter_1_1State" kindref="compound">State</ref> *</type>
           <declname>states</declname>
         </param>
         <param>
@@ -335,8 +335,8 @@
     <location file="src/klotter/render/material.h" line="49" column="1" bodyfile="src/klotter/render/material.h" bodystart="50" bodyend="65"/>
     <listofallmembers>
       <member refid="structklotter_1_1UnlitMaterial_1a4f569b97cfba5e690ae58b220f50acf8" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>alpha</name></member>
-      <member refid="structklotter_1_1UnlitMaterial_1a08cab92f0b59a39ae2adb6cfa51ca7e1" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>apply_lights</name></member>
-      <member refid="structklotter_1_1UnlitMaterial_1a4a647c9b677bbb4ee9a36333eb42cc8c" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>bind_textures</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a037a7a7266f985a9232f12dabbef4c88" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>apply_lights</name></member>
+      <member refid="structklotter_1_1UnlitMaterial_1a3ebe334aaa583bef9cc89d69edc580d1" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>bind_textures</name></member>
       <member refid="structklotter_1_1UnlitMaterial_1a611f54874af6023c9e8bcc4476a34b48" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>color</name></member>
       <member refid="structklotter_1_1UnlitMaterial_1a13281148f24bc55c04ba816c9aab8d1e" prot="public" virt="virtual"><scope>klotter::UnlitMaterial</scope><name>is_transparent</name></member>
       <member refid="structklotter_1_1Material_1a24140b226196668917743a48c1d5361b" prot="public" virt="non-virtual"><scope>klotter::UnlitMaterial</scope><name>Material</name></member>

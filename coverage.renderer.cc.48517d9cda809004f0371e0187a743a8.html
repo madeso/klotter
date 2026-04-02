@@ -181,7 +181,7 @@
     <div role="gridcell" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">0.0%</div>
   </div>
   <div class="Box-row Box-row--focus-gray py-2 d-flex">
-    <div role="gridcell" class="color-fg-muted flex-auto min-width-0 col-md-2"><a href="#l135">klotter::render_debug_lines(std::vector&lt;klotter::DebugLine, std::allocator&lt;klotter::DebugLine&gt; &gt; const&amp;, klotter::OpenglStates*, klotter::LineDrawer*, klotter::CompiledCamera const&amp;, glm::vec&lt;2, int, (glm::qualifier)0&gt; const&amp;, float) (src/klotter/render/renderer.cc:135)</a>    </div>
+    <div role="gridcell" class="color-fg-muted flex-auto min-width-0 col-md-2"><a href="#l135">klotter::render_debug_lines(std::vector&lt;klotter::DebugLine, std::allocator&lt;klotter::DebugLine&gt; &gt; const&amp;, klotter::State*, klotter::LineDrawer*, klotter::CompiledCamera const&amp;, glm::vec&lt;2, int, (glm::qualifier)0&gt; const&amp;, float) (src/klotter/render/renderer.cc:135)</a>    </div>
     <div role="gridcell" class="color-fg-muted flex-auto min-width-0 d-flex flex-justify-end flex-wrap flex-items-baseline" data-sort="0">not called</div>
     <div role="gridcell" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">0.0%</div>
     <div role="gridcell" class="color-fg-muted d-flex flex-justify-end flex-wrap col-2">0.0%</div>
@@ -297,7 +297,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src pr-2 pl-2 color-fg-muted text-right"></td>
-        <td class="src"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;klotter/render/statechanger.h&quot;</span></td>
+        <td class="src"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;klotter/render/state.h&quot;</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l12" href="#l12">12</a></td>
@@ -1165,7 +1165,7 @@
         <td class="text-right src linenos ws-unset">
         </td>
         <td class="src uncoveredLine show_uncoveredLine pr-2 pl-2 color-fg-muted text-right">&cross;</td>
-        <td class="src uncoveredLine show_uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">render_debug_lines</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">DebugLine</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">debug_lines</span><span class="p">,</span><span class="w"> </span><span class="n">OpenglStates</span><span class="o">*</span><span class="w"> </span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">LineDrawer</span><span class="o">*</span><span class="w"> </span><span class="n">drawer</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">compiled_camera</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">window_size</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gamma</span><span class="p">)</span></td>
+        <td class="src uncoveredLine show_uncoveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">render_debug_lines</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">DebugLine</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">debug_lines</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="o">*</span><span class="w"> </span><span class="n">states</span><span class="p">,</span><span class="w"> </span><span class="n">LineDrawer</span><span class="o">*</span><span class="w"> </span><span class="n">drawer</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">CompiledCamera</span><span class="o">&amp;</span><span class="w"> </span><span class="n">compiled_camera</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">glm</span><span class="o">::</span><span class="n">ivec2</span><span class="o">&amp;</span><span class="w"> </span><span class="n">window_size</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">gamma</span><span class="p">)</span></td>
       </tr>
       <tr>
         <td class="text-right src linenos"><a class="normal" id="l136" href="#l136">136</a></td>
@@ -3183,7 +3183,7 @@
         <hr class="block-separator"/>
         <footer class="text-center">
           Created using <a href="http://gcovr.com/en/8.6">GCOVR (Version 8.6)</a>
-          at 2026-04-02 13:11:41
+          at 2026-04-02 18:56:55
         </footer>
       </div>
     </div>

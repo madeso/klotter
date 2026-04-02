@@ -14,8 +14,9 @@ var searchData=
   ['shadowcontext_11',['ShadowContext',['../structklotter_1_1ShadowContext.html',1,'klotter']]],
   ['simpleeffect_12',['SimpleEffect',['../structklotter_1_1SimpleEffect.html',1,'klotter']]],
   ['skybox_13',['Skybox',['../structklotter_1_1Skybox.html',1,'klotter']]],
-  ['statechanger_14',['StateChanger',['../structklotter_1_1StateChanger.html',1,'klotter']]],
-  ['str_15',['Str',['../structStr.html',1,'']]],
-  ['svg_16',['Svg',['../structSvg.html',1,'']]],
-  ['svgline_17',['SvgLine',['../structSvgLine.html',1,'']]]
+  ['state_14',['State',['../structklotter_1_1State.html',1,'klotter']]],
+  ['statechanger_15',['StateChanger',['../structklotter_1_1StateChanger.html',1,'klotter']]],
+  ['str_16',['Str',['../structStr.html',1,'']]],
+  ['svg_17',['Svg',['../structSvg.html',1,'']]],
+  ['svgline_18',['SvgLine',['../structSvgLine.html',1,'']]]
 ];

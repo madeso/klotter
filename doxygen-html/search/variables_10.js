@@ -8,7 +8,7 @@ var searchData=
   ['red_5',['red',['../group__imguicolors.html#ga2b7da2e18316f6c2522c96be0d56ada5',1,'klotter::imgui::red'],['../namespaceklotter_1_1hues.html#a7b176681563b6ede4aa9332814f6ea1f',1,'klotter::hues::red']]],
   ['red_5fvermillion_6',['red_vermillion',['../namespaceklotter_1_1colors.html#a56926054783fd413ddc87d30380f27bf',1,'klotter::colors']]],
   ['reddish_5fpurple_7',['reddish_purple',['../namespacesvg.html#a77d6e5012f32a5531daaae30ea8a163e',1,'svg']]],
-  ['render_5fmode_8',['render_mode',['../structklotter_1_1OpenglStates.html#a25febe869bee7f6251f482106cd7ed9c',1,'klotter::OpenglStates']]],
+  ['render_5fmode_8',['render_mode',['../structklotter_1_1State.html#a860241208395cb68c0d77d0d44f587a0',1,'klotter::State']]],
   ['render_5fworld_9',['render_world',['../structklotter_1_1EffectStack.html#a3135bf919d6557fc6b131048cc30fb11',1,'klotter::EffectStack']]],
   ['renderer_10',['renderer',['../structklotter_1_1PostProcArg.html#afb6209a69a9db4f6779c43290d6cc32c',1,'klotter::PostProcArg']]],
   ['resolution_5funi_11',['resolution_uni',['../structklotter_1_1LineDrawer.html#a02f5813ada4de1104582aed3aac54e07',1,'klotter::LineDrawer::resolution_uni'],['../structklotter_1_1LoadedPostProcShader.html#a3ad52ac1878403776878765d66e4a9d6',1,'klotter::LoadedPostProcShader::resolution_uni']]],

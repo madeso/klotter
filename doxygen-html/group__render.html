@@ -143,9 +143,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1DefaultMaterial.html">klotter::DefaultMaterial</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A material affected by light.  <a href="structklotter_1_1DefaultMaterial.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1OpenglStates.html">klotter::OpenglStates</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "cache" for the current open gl state.  <a href="structklotter_1_1OpenglStates.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1RenderSettings.html">klotter::RenderSettings</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Startup settings for the renderer.  <a href="structklotter_1_1RenderSettings.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,6 +203,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1ShaderResource.html">klotter::ShaderResource</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">All loaded shaders.  <a href="structklotter_1_1ShaderResource.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1State.html">klotter::State</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "cache" for the current open gl state.  <a href="structklotter_1_1State.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structklotter_1_1StateChanger.html">klotter::StateChanger</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper class to change both the opengl state and the cache.  <a href="structklotter_1_1StateChanger.html#details">More...</a><br /></td></tr>
@@ -271,6 +271,23 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:gad119e3d8725413aad6d684e0ec1c22aa" id="r_gad119e3d8725413aad6d684e0ec1c22aa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad119e3d8725413aad6d684e0ec1c22aa">klotter::TransformSource</a> { <a class="el" href="#ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d">klotter::TransformSource::Uniform</a>
+, <a class="el" href="#ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728">klotter::TransformSource::Instanced_mat4</a>
+ }</td></tr>
+<tr class="memdesc:gad119e3d8725413aad6d684e0ec1c22aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum describing on how the model transform is provided.  <a href="#gad119e3d8725413aad6d684e0ec1c22aa">More...</a><br /></td></tr>
+<tr class="separator:gad119e3d8725413aad6d684e0ec1c22aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga358c9176a5069a7059c1497704cd2875" id="r_ga358c9176a5069a7059c1497704cd2875"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga358c9176a5069a7059c1497704cd2875">klotter::PostProcSetup</a> { <a class="el" href="#gga358c9176a5069a7059c1497704cd2875a334c4a4c42fdb79d7ebc3e73b517e6f8">klotter::PostProcSetup::none</a> = 0
+, <a class="el" href="#gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d">klotter::PostProcSetup::factor</a> = 1 &lt;&lt; 1
+, <a class="el" href="#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">klotter::PostProcSetup::resolution</a> = 1 &lt;&lt; 2
+, <a class="el" href="#gga358c9176a5069a7059c1497704cd2875a07cc694b9b3fc636710fa08b6922c42b">klotter::PostProcSetup::time</a> = 1 &lt;&lt; 3
+ }</td></tr>
+<tr class="memdesc:ga358c9176a5069a7059c1497704cd2875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for what features each postproc shader wants.  <a href="#ga358c9176a5069a7059c1497704cd2875">More...</a><br /></td></tr>
+<tr class="separator:ga358c9176a5069a7059c1497704cd2875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3453e147b5d5dff196af8e69e2adfc3b" id="r_ga3453e147b5d5dff196af8e69e2adfc3b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3453e147b5d5dff196af8e69e2adfc3b">klotter::UseTransparency</a> { <a class="el" href="#gga3453e147b5d5dff196af8e69e2adfc3baa6105c0a611b41b08f1209506350279e">klotter::UseTransparency::yes</a>
+, <a class="el" href="#gga3453e147b5d5dff196af8e69e2adfc3ba7fa3b767c460b54a2be4d49030b349c7">klotter::UseTransparency::no</a>
+ }</td></tr>
+<tr class="memdesc:ga3453e147b5d5dff196af8e69e2adfc3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "named boolean".  <a href="#ga3453e147b5d5dff196af8e69e2adfc3b">More...</a><br /></td></tr>
+<tr class="separator:ga3453e147b5d5dff196af8e69e2adfc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac6cdf1ef1b23f9fc7361b5add6bf481b" id="r_gac6cdf1ef1b23f9fc7361b5add6bf481b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac6cdf1ef1b23f9fc7361b5add6bf481b">klotter::Blend</a> { <br />
 &#160;&#160;<a class="el" href="#ggac6cdf1ef1b23f9fc7361b5add6bf481bad02c4c4cde7ae76252540d116a40f23a">klotter::Blend::zero</a>
 , <a class="el" href="#ggac6cdf1ef1b23f9fc7361b5add6bf481baf97c5d29941bfb1b2fdab0874906ab82">klotter::Blend::one</a>
@@ -321,23 +338,6 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#gga58b3e0e4918f62f8cf5fa2c0e3ec9718a78ee54aa8f813885fe2fe20d232518b9">klotter::RenderMode::point</a>
  }</td></tr>
 <tr class="separator:ga58b3e0e4918f62f8cf5fa2c0e3ec9718"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad119e3d8725413aad6d684e0ec1c22aa" id="r_gad119e3d8725413aad6d684e0ec1c22aa"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad119e3d8725413aad6d684e0ec1c22aa">klotter::TransformSource</a> { <a class="el" href="#ggad119e3d8725413aad6d684e0ec1c22aaaf19516d11f2946f894070e92fcb56b6d">klotter::TransformSource::Uniform</a>
-, <a class="el" href="#ggad119e3d8725413aad6d684e0ec1c22aaa4bea50b56977df9fca1533e78fce2728">klotter::TransformSource::Instanced_mat4</a>
- }</td></tr>
-<tr class="memdesc:gad119e3d8725413aad6d684e0ec1c22aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum describing on how the model transform is provided.  <a href="#gad119e3d8725413aad6d684e0ec1c22aa">More...</a><br /></td></tr>
-<tr class="separator:gad119e3d8725413aad6d684e0ec1c22aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga358c9176a5069a7059c1497704cd2875" id="r_ga358c9176a5069a7059c1497704cd2875"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga358c9176a5069a7059c1497704cd2875">klotter::PostProcSetup</a> { <a class="el" href="#gga358c9176a5069a7059c1497704cd2875a334c4a4c42fdb79d7ebc3e73b517e6f8">klotter::PostProcSetup::none</a> = 0
-, <a class="el" href="#gga358c9176a5069a7059c1497704cd2875a742f32c65ffd18b766fa307f8de2d47d">klotter::PostProcSetup::factor</a> = 1 &lt;&lt; 1
-, <a class="el" href="#gga358c9176a5069a7059c1497704cd2875ab7e164b34ff76b1cda93a058604190da">klotter::PostProcSetup::resolution</a> = 1 &lt;&lt; 2
-, <a class="el" href="#gga358c9176a5069a7059c1497704cd2875a07cc694b9b3fc636710fa08b6922c42b">klotter::PostProcSetup::time</a> = 1 &lt;&lt; 3
- }</td></tr>
-<tr class="memdesc:ga358c9176a5069a7059c1497704cd2875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for what features each postproc shader wants.  <a href="#ga358c9176a5069a7059c1497704cd2875">More...</a><br /></td></tr>
-<tr class="separator:ga358c9176a5069a7059c1497704cd2875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3453e147b5d5dff196af8e69e2adfc3b" id="r_ga3453e147b5d5dff196af8e69e2adfc3b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3453e147b5d5dff196af8e69e2adfc3b">klotter::UseTransparency</a> { <a class="el" href="#gga3453e147b5d5dff196af8e69e2adfc3baa6105c0a611b41b08f1209506350279e">klotter::UseTransparency::yes</a>
-, <a class="el" href="#gga3453e147b5d5dff196af8e69e2adfc3ba7fa3b767c460b54a2be4d49030b349c7">klotter::UseTransparency::no</a>
- }</td></tr>
-<tr class="memdesc:ga3453e147b5d5dff196af8e69e2adfc3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "named boolean".  <a href="#ga3453e147b5d5dff196af8e69e2adfc3b">More...</a><br /></td></tr>
-<tr class="separator:ga3453e147b5d5dff196af8e69e2adfc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7b12ed0e553cee508d8ca86f8c8e84f" id="r_gac7b12ed0e553cee508d8ca86f8c8e84f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac7b12ed0e553cee508d8ca86f8c8e84f">klotter::StencilAction</a> { <br />
 &#160;&#160;<a class="el" href="#ggac7b12ed0e553cee508d8ca86f8c8e84fa18ccf61d533b600bbf5a963359223fe4">klotter::StencilAction::keep</a>
 , <a class="el" href="#ggac7b12ed0e553cee508d8ca86f8c8e84fad02c4c4cde7ae76252540d116a40f23a">klotter::StencilAction::zero</a>
@@ -404,12 +404,12 @@ Functions</h2></td></tr>
 <tr class="separator:ga8072e6de57f4c7633a25803ddf551385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaae619e8aae48dd7405f07dfbca0e1505" id="r_gaae619e8aae48dd7405f07dfbca0e1505"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structklotter_1_1ShaderResource.html">ShaderResource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaae619e8aae48dd7405f07dfbca0e1505">klotter::load_shaders</a> (const <a class="el" href="structklotter_1_1CameraUniformBuffer.html">CameraUniformBuffer</a> &amp;desc, const <a class="el" href="structklotter_1_1RenderSettings.html">RenderSettings</a> &amp;settings, const <a class="el" href="structklotter_1_1FullScreenGeom.html">FullScreenGeom</a> &amp;full_screen)</td></tr>
 <tr class="separator:gaae619e8aae48dd7405f07dfbca0e1505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7128958c7209702f57eb63c4cded569" id="r_gaf7128958c7209702f57eb63c4cded569"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf7128958c7209702f57eb63c4cded569">klotter::bind_texture_2d</a> (<a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a> &amp;texture)</td></tr>
-<tr class="separator:gaf7128958c7209702f57eb63c4cded569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3d85b6d989f4f351a4cfd15bcc40082" id="r_gad3d85b6d989f4f351a4cfd15bcc40082"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3d85b6d989f4f351a4cfd15bcc40082">klotter::bind_texture_2d</a> (<a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;texture)</td></tr>
-<tr class="separator:gad3d85b6d989f4f351a4cfd15bcc40082"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5d96ca0c687bebbefbb7a53db9bb47bd" id="r_ga5d96ca0c687bebbefbb7a53db9bb47bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5d96ca0c687bebbefbb7a53db9bb47bd">klotter::bind_texture_cubemap</a> (<a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a> &amp;texture)</td></tr>
-<tr class="separator:ga5d96ca0c687bebbefbb7a53db9bb47bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf6e4d923581ef2457698fd8db724908" id="r_gacf6e4d923581ef2457698fd8db724908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacf6e4d923581ef2457698fd8db724908">klotter::bind_texture_2d</a> (<a class="el" href="structklotter_1_1State.html">State</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1Texture2d.html">Texture2d</a> &amp;texture)</td></tr>
+<tr class="separator:gacf6e4d923581ef2457698fd8db724908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8e4ffd0c343793a41be1451741a5f37" id="r_gac8e4ffd0c343793a41be1451741a5f37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8e4ffd0c343793a41be1451741a5f37">klotter::bind_texture_2d</a> (<a class="el" href="structklotter_1_1State.html">State</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1FrameBuffer.html">FrameBuffer</a> &amp;texture)</td></tr>
+<tr class="separator:gac8e4ffd0c343793a41be1451741a5f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74beb484c9321e88ebfed48c9546c95a" id="r_ga74beb484c9321e88ebfed48c9546c95a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga74beb484c9321e88ebfed48c9546c95a">klotter::bind_texture_cubemap</a> (<a class="el" href="structklotter_1_1State.html">State</a> *states, const <a class="el" href="structklotter_1_1Uniform.html">Uniform</a> &amp;uniform, const <a class="el" href="structklotter_1_1TextureCubemap.html">TextureCubemap</a> &amp;texture)</td></tr>
+<tr class="separator:ga74beb484c9321e88ebfed48c9546c95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga32f679ec0675359820f93cfb44c2fc48" id="r_ga32f679ec0675359820f93cfb44c2fc48"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1CompiledGeom.html">CompiledGeom</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga32f679ec0675359820f93cfb44c2fc48">klotter::compile_geom</a> (<a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const <a class="el" href="structklotter_1_1Geom.html">Geom</a> &amp;, const <a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a> &amp;layout)</td></tr>
 <tr class="separator:ga32f679ec0675359820f93cfb44c2fc48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5b8a0dd10d8f433def90492f9f0ef96d" id="r_ga5b8a0dd10d8f433def90492f9f0ef96d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structklotter_1_1CompiledGeom__TransformInstance.html">CompiledGeom_TransformInstance</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b8a0dd10d8f433def90492f9f0ef96d">klotter::compile_geom_with_transform_instance</a> (<a class="el" href="group__debug.html#gabd34c805e47ae972bc6f5b1e406e921d">DEBUG_LABEL_ARG_MANY</a> const <a class="el" href="structklotter_1_1Geom.html">Geom</a> &amp;, const <a class="el" href="structklotter_1_1CompiledGeomVertexAttributes.html">CompiledGeomVertexAttributes</a> &amp;layout, std::size_t max_instances)</td></tr>
@@ -798,8 +798,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gad3d85b6d989f4f351a4cfd15bcc40082" name="gad3d85b6d989f4f351a4cfd15bcc40082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad3d85b6d989f4f351a4cfd15bcc40082">&#9670;&#160;</a></span>bind_texture_2d() <span class="overload">[1/2]</span></h2>
+<a id="gac8e4ffd0c343793a41be1451741a5f37" name="gac8e4ffd0c343793a41be1451741a5f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8e4ffd0c343793a41be1451741a5f37">&#9670;&#160;</a></span>bind_texture_2d() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -807,7 +807,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void klotter::bind_texture_2d </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1State.html">State</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -824,8 +824,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaf7128958c7209702f57eb63c4cded569" name="gaf7128958c7209702f57eb63c4cded569"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf7128958c7209702f57eb63c4cded569">&#9670;&#160;</a></span>bind_texture_2d() <span class="overload">[2/2]</span></h2>
+<a id="gacf6e4d923581ef2457698fd8db724908" name="gacf6e4d923581ef2457698fd8db724908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf6e4d923581ef2457698fd8db724908">&#9670;&#160;</a></span>bind_texture_2d() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -833,7 +833,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void klotter::bind_texture_2d </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1State.html">State</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -850,8 +850,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga5d96ca0c687bebbefbb7a53db9bb47bd" name="ga5d96ca0c687bebbefbb7a53db9bb47bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5d96ca0c687bebbefbb7a53db9bb47bd">&#9670;&#160;</a></span>bind_texture_cubemap()</h2>
+<a id="ga74beb484c9321e88ebfed48c9546c95a" name="ga74beb484c9321e88ebfed48c9546c95a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74beb484c9321e88ebfed48c9546c95a">&#9670;&#160;</a></span>bind_texture_cubemap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -859,7 +859,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void klotter::bind_texture_cubemap </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structklotter_1_1OpenglStates.html">OpenglStates</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structklotter_1_1State.html">State</a> *</td>          <td class="paramname"><span class="paramname"><em>states</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

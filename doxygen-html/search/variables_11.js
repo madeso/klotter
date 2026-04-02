@@ -34,11 +34,11 @@ var searchData=
   ['speed_31',['speed',['../structklotter_1_1FloatDragShaderProp.html#ad36bed4fdaba81b5be72b49eeb43bb7e',1,'klotter::FloatDragShaderProp']]],
   ['ss_32',['ss',['../structStr.html#aa315682ec6b061b2e4211000a006596a',1,'Str']]],
   ['start_33',['start',['../structPlotRange.html#a3ed06b9824af4a36190845b075f20658',1,'PlotRange::start'],['../structVisualDebugging_1_1PlotRange.html#acffb797f20011d668fcfab18bc46b71f',1,'VisualDebugging::PlotRange::start']]],
-  ['states_34',['states',['../structklotter_1_1RendererPimpl.html#a30fac033e1f7db0bff6ddf2c36728c80',1,'klotter::RendererPimpl::states'],['../structklotter_1_1StateChanger.html#aee93777d716b4aa71e478ac0798168c9',1,'klotter::StateChanger::states']]],
-  ['stencil_5ffunc_35',['stencil_func',['../structklotter_1_1OpenglStates.html#af00a0141580a5e0169bb9cfa44b355b2',1,'klotter::OpenglStates']]],
-  ['stencil_5fmask_36',['stencil_mask',['../structklotter_1_1OpenglStates.html#a90695fe8cd6640b6d9ee540d4f583bca',1,'klotter::OpenglStates']]],
-  ['stencil_5fop_37',['stencil_op',['../structklotter_1_1OpenglStates.html#af1e8ecdb450e36a413e6b35ce753c352',1,'klotter::OpenglStates']]],
-  ['stencil_5ftest_38',['stencil_test',['../structklotter_1_1OpenglStates.html#a68cdfa7a0607de2cb1841ae79261653e',1,'klotter::OpenglStates']]],
+  ['states_34',['states',['../structklotter_1_1RendererPimpl.html#ae696e7db74b8c0852abc421d7796f441',1,'klotter::RendererPimpl::states'],['../structklotter_1_1StateChanger.html#a8ba471f76d36bd96c9c867784c37ae91',1,'klotter::StateChanger::states']]],
+  ['stencil_5ffunc_35',['stencil_func',['../structklotter_1_1State.html#a42f645212fa150ea3485eef82531c9c3',1,'klotter::State']]],
+  ['stencil_5fmask_36',['stencil_mask',['../structklotter_1_1State.html#a5f3c68a1d92bd08da3cd8615d2c26492',1,'klotter::State']]],
+  ['stencil_5fop_37',['stencil_op',['../structklotter_1_1State.html#a04ac9d25e6325a73309f23f534bab29d',1,'klotter::State']]],
+  ['stencil_5ftest_38',['stencil_test',['../structklotter_1_1State.html#a5df7eb582ec53de92ec5a145c6791f9c',1,'klotter::State']]],
   ['step_39',['step',['../structPlotRange.html#a3ce32efc8597c15695c3cd6990ab1cfe',1,'PlotRange::step'],['../structVisualDebugging_1_1PlotRange.html#a552aa8a97e652118164d0fcb519fdcda',1,'VisualDebugging::PlotRange::step']]],
   ['stride_40',['stride',['../structklotter_1_1ExtractedGeom.html#a88aa2dea435a4e337465450b863fe03f',1,'klotter::ExtractedGeom']]]
 ];

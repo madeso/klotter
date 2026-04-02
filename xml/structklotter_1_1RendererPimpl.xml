@@ -32,9 +32,9 @@
         </inbodydescription>
         <location file="src/klotter/render/renderer.pimpl.h" line="19" column="16" bodyfile="src/klotter/render/renderer.pimpl.h" bodystart="19" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structklotter_1_1RendererPimpl_1a30fac033e1f7db0bff6ddf2c36728c80" prot="public" static="no" mutable="no">
-        <type><ref refid="structklotter_1_1OpenglStates" kindref="compound">OpenglStates</ref></type>
-        <definition>OpenglStates klotter::RendererPimpl::states</definition>
+      <memberdef kind="variable" id="structklotter_1_1RendererPimpl_1ae696e7db74b8c0852abc421d7796f441" prot="public" static="no" mutable="no">
+        <type><ref refid="structklotter_1_1State" kindref="compound">State</ref></type>
+        <definition>State klotter::RendererPimpl::states</definition>
         <argsstring></argsstring>
         <name>states</name>
         <qualifiedname>klotter::RendererPimpl::states</qualifiedname>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/renderer.pimpl.h" line="20" column="14" bodyfile="src/klotter/render/renderer.pimpl.h" bodystart="20" bodyend="-1"/>
+        <location file="src/klotter/render/renderer.pimpl.h" line="20" column="7" bodyfile="src/klotter/render/renderer.pimpl.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structklotter_1_1RendererPimpl_1a94bf72a0e910b1795c10682f118a7cba" prot="public" static="no" mutable="no">
         <type><ref refid="structklotter_1_1LineDrawer" kindref="compound">LineDrawer</ref></type>
@@ -326,13 +326,6 @@
           <edgelabel>transparency_shader</edgelabel>
         </childnode>
       </node>
-      <node id="35">
-        <label>klotter::OpenglStates</label>
-        <link refid="structklotter_1_1OpenglStates"/>
-        <childnode refid="36" relation="usage">
-          <edgelabel>texture_bound</edgelabel>
-        </childnode>
-      </node>
       <node id="34">
         <label>klotter::PingPongBlurShader</label>
         <link refid="structklotter_1_1PingPongBlurShader"/>
@@ -427,6 +420,13 @@
         </childnode>
         <childnode refid="34" relation="usage">
           <edgelabel>pp_ping</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>klotter::State</label>
+        <link refid="structklotter_1_1State"/>
+        <childnode refid="36" relation="usage">
+          <edgelabel>texture_bound</edgelabel>
         </childnode>
       </node>
       <node id="17">
@@ -533,7 +533,7 @@
       <member refid="structklotter_1_1RendererPimpl_1a81cf9becda0b96defeb78b8f4ccd81bc" prot="public" virt="non-virtual"><scope>klotter::RendererPimpl</scope><name>full_screen_geom</name></member>
       <member refid="structklotter_1_1RendererPimpl_1a5589ea5eb933cefc1fd719af2ae2f432" prot="public" virt="non-virtual"><scope>klotter::RendererPimpl</scope><name>RendererPimpl</name></member>
       <member refid="structklotter_1_1RendererPimpl_1a8707601c657c0774f0e7022c259f2cd5" prot="public" virt="non-virtual"><scope>klotter::RendererPimpl</scope><name>shaders_resources</name></member>
-      <member refid="structklotter_1_1RendererPimpl_1a30fac033e1f7db0bff6ddf2c36728c80" prot="public" virt="non-virtual"><scope>klotter::RendererPimpl</scope><name>states</name></member>
+      <member refid="structklotter_1_1RendererPimpl_1ae696e7db74b8c0852abc421d7796f441" prot="public" virt="non-virtual"><scope>klotter::RendererPimpl</scope><name>states</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

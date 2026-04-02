@@ -70,7 +70,6 @@
     <innerclass refid="structklotter_1_1OkHsv" prot="public">klotter::OkHsv</innerclass>
     <innerclass refid="structklotter_1_1OkLab" prot="public">klotter::OkLab</innerclass>
     <innerclass refid="structklotter_1_1OkLch" prot="public">klotter::OkLch</innerclass>
-    <innerclass refid="structklotter_1_1OpenglStates" prot="public">klotter::OpenglStates</innerclass>
     <innerclass refid="structklotter_1_1OrthoCamera" prot="public">klotter::OrthoCamera</innerclass>
     <innerclass refid="structklotter_1_1PingPongBlurShader" prot="public">klotter::PingPongBlurShader</innerclass>
     <innerclass refid="structklotter_1_1PointLight" prot="public">klotter::PointLight</innerclass>
@@ -98,6 +97,7 @@
     <innerclass refid="structklotter_1_1ShadowContext" prot="public">klotter::ShadowContext</innerclass>
     <innerclass refid="structklotter_1_1SimpleEffect" prot="public">klotter::SimpleEffect</innerclass>
     <innerclass refid="structklotter_1_1Skybox" prot="public">klotter::Skybox</innerclass>
+    <innerclass refid="structklotter_1_1State" prot="public">klotter::State</innerclass>
     <innerclass refid="structklotter_1_1StateChanger" prot="public">klotter::StateChanger</innerclass>
     <innerclass refid="structklotter_1_1Texture2d" prot="public">klotter::Texture2d</innerclass>
     <innerclass refid="structklotter_1_1TextureCubemap" prot="public">klotter::TextureCubemap</innerclass>
@@ -115,11 +115,7 @@
     <innernamespace refid="namespaceklotter_1_1hues">klotter::hues</innernamespace>
     <innernamespace refid="namespaceklotter_1_1imgui">klotter::imgui</innernamespace>
     <sectiondef kind="enum">
-      <member refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kind="enum"><name>Blend</name></member>
-      <member refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kind="enum"><name>Compare</name></member>
-      <member refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kind="enum"><name>CullFace</name></member>
       <member refid="group__geom-builder_1ga09f336a0f9a765edc85ba7fb234aed05" kind="enum"><name>ExtractedAttributeType</name></member>
-      <member refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kind="enum"><name>RenderMode</name></member>
       <memberdef kind="enum" id="namespaceklotter_1a29abf84c1c3f13eee4a0e7ce2c6ffc41" prot="public" static="no" strong="yes">
         <type></type>
         <name>BlurType</name>
@@ -181,6 +177,10 @@
       <member refid="group__render_1gad119e3d8725413aad6d684e0ec1c22aa" kind="enum"><name>TransformSource</name></member>
       <member refid="group__render_1ga358c9176a5069a7059c1497704cd2875" kind="enum"><name>PostProcSetup</name></member>
       <member refid="group__render_1ga3453e147b5d5dff196af8e69e2adfc3b" kind="enum"><name>UseTransparency</name></member>
+      <member refid="group__render_1gac6cdf1ef1b23f9fc7361b5add6bf481b" kind="enum"><name>Blend</name></member>
+      <member refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kind="enum"><name>Compare</name></member>
+      <member refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kind="enum"><name>CullFace</name></member>
+      <member refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kind="enum"><name>RenderMode</name></member>
       <member refid="group__render_1gac7b12ed0e553cee508d8ca86f8c8e84f" kind="enum"><name>StencilAction</name></member>
       <member refid="group__texture_1ga975d5c1b5f6b62b122652d21e890346e" kind="enum"><name>TextureEdge</name></member>
       <member refid="group__texture_1ga96e6e729a16fb6dbf417daa7e61339ca" kind="enum"><name>TextureRenderStyle</name></member>
@@ -1702,9 +1702,9 @@
         </inbodydescription>
         <location file="src/klotter/render/space.h" line="17" column="15" declfile="src/klotter/render/space.h" declline="17" declcolumn="15"/>
       </memberdef>
-      <member refid="group__render_1gaf7128958c7209702f57eb63c4cded569" kind="function"><name>bind_texture_2d</name></member>
-      <member refid="group__render_1gad3d85b6d989f4f351a4cfd15bcc40082" kind="function"><name>bind_texture_2d</name></member>
-      <member refid="group__render_1ga5d96ca0c687bebbefbb7a53db9bb47bd" kind="function"><name>bind_texture_cubemap</name></member>
+      <member refid="group__render_1gacf6e4d923581ef2457698fd8db724908" kind="function"><name>bind_texture_2d</name></member>
+      <member refid="group__render_1gac8e4ffd0c343793a41be1451741a5f37" kind="function"><name>bind_texture_2d</name></member>
+      <member refid="group__render_1ga74beb484c9321e88ebfed48c9546c95a" kind="function"><name>bind_texture_cubemap</name></member>
       <member refid="group__texture_1ga263ed688bbd502fd2279d9ceb5bab9bf" kind="function"><name>color_from_rgba</name></member>
       <member refid="group__texture_1ga5c06f9cfdcfa6e0c973ff899e5a916ff" kind="function"><name>load_image_from_color</name></member>
       <member refid="group__texture_1gac294a067af5e2b530a3cf9c2fdd303f0" kind="function"><name>load_cubemap_from_color</name></member>

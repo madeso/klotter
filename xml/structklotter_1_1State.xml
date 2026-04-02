@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structklotter_1_1State" kind="struct" language="C++" prot="public">
+    <compoundname>klotter::State</compoundname>
+    <includes refid="state_8h" local="no">state.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structklotter_1_1State_1a55232e3cfaa51e5464c61a3e522cc09c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::State::cull_face</definition>
+        <argsstring></argsstring>
+        <name>cull_face</name>
+        <qualifiedname>klotter::State::cull_face</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="120" column="15" bodyfile="src/klotter/render/state.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1ac3ff30f6568384151b92d810a07057d2" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1ga2da9ff87267808b55c2680259db65b5c" kindref="member">CullFace</ref> &gt;</type>
+        <definition>std::optional&lt;CullFace&gt; klotter::State::cull_face_mode</definition>
+        <argsstring></argsstring>
+        <name>cull_face_mode</name>
+        <qualifiedname>klotter::State::cull_face_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="121" column="15" bodyfile="src/klotter/render/state.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a7bf7d5131fc6f0f53867b72e2fb91d99" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::State::blending</definition>
+        <argsstring></argsstring>
+        <name>blending</name>
+        <qualifiedname>klotter::State::blending</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="123" column="15" bodyfile="src/klotter/render/state.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a484abba5e62ec9bdad99415680a63a8e" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1ga2bf0fb4228d3cf9922870684f4b25e81" kindref="member">BlendMode</ref> &gt;</type>
+        <definition>std::optional&lt;BlendMode&gt; klotter::State::blend_mode</definition>
+        <argsstring></argsstring>
+        <name>blend_mode</name>
+        <qualifiedname>klotter::State::blend_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="124" column="15" bodyfile="src/klotter/render/state.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a9a0ae1ff724e415a04a5bcd578880981" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::State::depth_test</definition>
+        <argsstring></argsstring>
+        <name>depth_test</name>
+        <qualifiedname>klotter::State::depth_test</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="126" column="15" bodyfile="src/klotter/render/state.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1ae04aa568a4096225de3095b19f1b11d7" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::State::depth_mask</definition>
+        <argsstring></argsstring>
+        <name>depth_mask</name>
+        <qualifiedname>klotter::State::depth_mask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="127" column="15" bodyfile="src/klotter/render/state.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a10b6642edb4a042408a036a155683f0a" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1gaf50df8edcb23dcda6cc8f1fd15918d69" kindref="member">Compare</ref> &gt;</type>
+        <definition>std::optional&lt;Compare&gt; klotter::State::depth_func</definition>
+        <argsstring></argsstring>
+        <name>depth_func</name>
+        <qualifiedname>klotter::State::depth_func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="128" column="15" bodyfile="src/klotter/render/state.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a5df7eb582ec53de92ec5a145c6791f9c" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; bool &gt;</type>
+        <definition>std::optional&lt;bool&gt; klotter::State::stencil_test</definition>
+        <argsstring></argsstring>
+        <name>stencil_test</name>
+        <qualifiedname>klotter::State::stencil_test</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="130" column="15" bodyfile="src/klotter/render/state.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a5f3c68a1d92bd08da3cd8615d2c26492" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref> &gt;</type>
+        <definition>std::optional&lt;u32&gt; klotter::State::stencil_mask</definition>
+        <argsstring></argsstring>
+        <name>stencil_mask</name>
+        <qualifiedname>klotter::State::stencil_mask</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="131" column="15" bodyfile="src/klotter/render/state.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a860241208395cb68c0d77d0d44f587a0" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1ga58b3e0e4918f62f8cf5fa2c0e3ec9718" kindref="member">RenderMode</ref> &gt;</type>
+        <definition>std::optional&lt;RenderMode&gt; klotter::State::render_mode</definition>
+        <argsstring></argsstring>
+        <name>render_mode</name>
+        <qualifiedname>klotter::State::render_mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="133" column="15" bodyfile="src/klotter/render/state.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a42f645212fa150ea3485eef82531c9c3" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1gad39dccc38e66e47ae52ef347a685cf07" kindref="member">StencilFunc</ref> &gt;</type>
+        <definition>std::optional&lt;StencilFunc&gt; klotter::State::stencil_func</definition>
+        <argsstring></argsstring>
+        <name>stencil_func</name>
+        <qualifiedname>klotter::State::stencil_func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="134" column="15" bodyfile="src/klotter/render/state.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a04ac9d25e6325a73309f23f534bab29d" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; <ref refid="group__render_1ga1c638300d3c0acd1ab75efc88f4aa741" kindref="member">StencilOp</ref> &gt;</type>
+        <definition>std::optional&lt;StencilOp&gt; klotter::State::stencil_op</definition>
+        <argsstring></argsstring>
+        <name>stencil_op</name>
+        <qualifiedname>klotter::State::stencil_op</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="135" column="15" bodyfile="src/klotter/render/state.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a665077ef0be1c8669ff72d5379a3389e" prot="public" static="no" mutable="no">
+        <type>std::optional&lt; int &gt;</type>
+        <definition>std::optional&lt;int&gt; klotter::State::active_texture</definition>
+        <argsstring></argsstring>
+        <name>active_texture</name>
+        <qualifiedname>klotter::State::active_texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="137" column="15" bodyfile="src/klotter/render/state.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structklotter_1_1State_1a835630b29a716270a779af8f75dde93d" prot="public" static="no" mutable="no">
+        <type>std::array&lt; std::optional&lt; unsigned int &gt;, <ref refid="namespaceklotter_1a43f9bbbce92ceeed2837fcace91d9612" kindref="member">MAX_TEXTURES_SUPPORTED</ref> &gt;</type>
+        <definition>std::array&lt;std::optional&lt;unsigned int&gt;, MAX_TEXTURES_SUPPORTED&gt; klotter::State::texture_bound</definition>
+        <argsstring></argsstring>
+        <name>texture_bound</name>
+        <qualifiedname>klotter::State::texture_bound</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/klotter/render/state.h" line="138" column="12" bodyfile="src/klotter/render/state.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A &quot;cache&quot; for the current open gl state. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>klotter::State</label>
+        <link refid="structklotter_1_1State"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>texture_bound</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::array&lt; std::optional&lt; unsigned int &gt;, MAX_TEXTURES_SUPPORTED &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/klotter/render/state.h" line="118" column="1" bodyfile="src/klotter/render/state.h" bodystart="119" bodyend="139"/>
+    <listofallmembers>
+      <member refid="structklotter_1_1State_1a665077ef0be1c8669ff72d5379a3389e" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>active_texture</name></member>
+      <member refid="structklotter_1_1State_1a484abba5e62ec9bdad99415680a63a8e" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>blend_mode</name></member>
+      <member refid="structklotter_1_1State_1a7bf7d5131fc6f0f53867b72e2fb91d99" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>blending</name></member>
+      <member refid="structklotter_1_1State_1a55232e3cfaa51e5464c61a3e522cc09c" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>cull_face</name></member>
+      <member refid="structklotter_1_1State_1ac3ff30f6568384151b92d810a07057d2" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>cull_face_mode</name></member>
+      <member refid="structklotter_1_1State_1a10b6642edb4a042408a036a155683f0a" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>depth_func</name></member>
+      <member refid="structklotter_1_1State_1ae04aa568a4096225de3095b19f1b11d7" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>depth_mask</name></member>
+      <member refid="structklotter_1_1State_1a9a0ae1ff724e415a04a5bcd578880981" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>depth_test</name></member>
+      <member refid="structklotter_1_1State_1a860241208395cb68c0d77d0d44f587a0" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>render_mode</name></member>
+      <member refid="structklotter_1_1State_1a42f645212fa150ea3485eef82531c9c3" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>stencil_func</name></member>
+      <member refid="structklotter_1_1State_1a5f3c68a1d92bd08da3cd8615d2c26492" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>stencil_mask</name></member>
+      <member refid="structklotter_1_1State_1a04ac9d25e6325a73309f23f534bab29d" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>stencil_op</name></member>
+      <member refid="structklotter_1_1State_1a5df7eb582ec53de92ec5a145c6791f9c" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>stencil_test</name></member>
+      <member refid="structklotter_1_1State_1a835630b29a716270a779af8f75dde93d" prot="public" virt="non-virtual"><scope>klotter::State</scope><name>texture_bound</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
