@@ -132,7 +132,7 @@ void batch_lines(LineDrawer* drawer, const std::vector<DebugLine>& debug_lines, 
 	drawer->submit();
 }
 
-void render_debug_lines(const std::vector<DebugLine>& debug_lines, OpenglStates* states, LineDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size, float gamma)
+void render_debug_lines(const std::vector<DebugLine>& debug_lines, State* states, LineDrawer* drawer, const CompiledCamera& compiled_camera, const glm::ivec2& window_size, float gamma)
 {
 	if (debug_lines.empty())
 	{

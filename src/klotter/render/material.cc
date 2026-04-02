@@ -51,7 +51,7 @@ void UnlitMaterial::set_uniforms(
 	set_optional_mat(shader.program.get(), shader.world_from_local_uni, world_from_local);
 }
 
-void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
+void UnlitMaterial::bind_textures(const RenderContext& rc, State* states, Assets* assets)
 {
 	std::shared_ptr<Texture2d> t = texture;
 	if (t == nullptr)
@@ -62,7 +62,7 @@ void UnlitMaterial::bind_textures(const RenderContext& rc, OpenglStates* states,
 	bind_texture_2d(states, shader_from_container(*shader_container, rc).tex_diffuse_uniform, *t);
 }
 
-void UnlitMaterial::apply_lights(const RenderContext&, const Lights&, const RenderSettings&, OpenglStates*, Assets*)
+void UnlitMaterial::apply_lights(const RenderContext&, const Lights&, const RenderSettings&, State*, Assets*)
 {
 	// no lights for unlit material
 }
@@ -123,7 +123,7 @@ std::shared_ptr<Texture2d> get_or_black(Assets* assets, std::shared_ptr<Texture2
 	}
 };
 
-void DefaultMaterial::bind_textures(const RenderContext& rc, OpenglStates* states, Assets* assets)
+void DefaultMaterial::bind_textures(const RenderContext& rc, State* states, Assets* assets)
 {
 	const auto& shader = shader_from_container(*shader_container, rc);
 	bind_texture_2d(states, shader.tex_diffuse_uniform, *get_or_white(assets, diffuse));
@@ -132,7 +132,7 @@ void DefaultMaterial::bind_textures(const RenderContext& rc, OpenglStates* state
 }
 
 void DefaultMaterial::apply_lights(
-	const RenderContext& rc, const Lights& lights, const RenderSettings& settings, OpenglStates* states, Assets* assets
+	const RenderContext& rc, const Lights& lights, const RenderSettings& settings, State* states, Assets* assets
 )
 {
 	const auto& shader = shader_from_container(*shader_container, rc);

@@ -17,7 +17,7 @@ struct RendererPimpl
 {
 	CameraUniformBuffer camera_uniform_buffer;
 	ShaderResource shaders_resources;
-	OpenglStates states;
+	State states;
 	LineDrawer debug_drawer;
 	std::shared_ptr<CompiledGeom> full_screen_geom;
 

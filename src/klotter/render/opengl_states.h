@@ -27,7 +27,7 @@ using StencilFunc = std::tuple<Compare, i32, u32>;
 using StencilOp = std::tuple<StencilAction, StencilAction, StencilAction>;
 
 /// A "cache" for the current open gl state.
-struct OpenglStates
+struct State
 {
 	std::optional<bool> cull_face;
 	std::optional<CullFace> cull_face_mode;

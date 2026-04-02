@@ -71,7 +71,7 @@ GLenum enum_from_sa (StencilAction sa)
 	}
 };
 
-StateChanger::StateChanger(OpenglStates* s)
+StateChanger::StateChanger(State* s)
 	: states(s)
 {
 }
@@ -255,7 +255,7 @@ StateChanger& StateChanger::bind_texture_cubemap(int slot, unsigned int texture)
 	return *this;
 }
 
-void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const Texture2d& texture)
+void bind_texture_2d(State* states, const Uniform& uniform, const Texture2d& texture)
 {
 	if (uniform.is_valid() == false)
 	{
@@ -266,7 +266,7 @@ void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const Texture
 	StateChanger{states}.activate_texture(uniform.texture).bind_texture_2d(uniform.texture, texture.id);
 }
 
-void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const FrameBuffer& texture)
+void bind_texture_2d(State* states, const Uniform& uniform, const FrameBuffer& texture)
 {
 	if (uniform.is_valid() == false)
 	{
@@ -278,7 +278,7 @@ void bind_texture_2d(OpenglStates* states, const Uniform& uniform, const FrameBu
 	StateChanger{states}.activate_texture(uniform.texture).bind_texture_2d(uniform.texture, texture.id);
 }
 
-void bind_texture_cubemap(OpenglStates* states, const Uniform& uniform, const TextureCubemap& texture)
+void bind_texture_cubemap(State* states, const Uniform& uniform, const TextureCubemap& texture)
 {
 	if (uniform.is_valid() == false)
 	{
