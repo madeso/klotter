@@ -1,11 +1,11 @@
-#include "klotter/render/statechanger.h"
+#include "klotter/render/state.h"
+
 
 #include "klotter/assert.h"
 #include "klotter/cint.h"
 
 #include "klotter/render/texture.h"
 #include "klotter/render/uniform.h"
-#include "klotter/render/opengl_states.h"
 #include "klotter/render/opengl_utils.h"
 
 namespace klotter

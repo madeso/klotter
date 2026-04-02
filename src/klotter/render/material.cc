@@ -10,7 +10,7 @@
 #include "klotter/render/shader.h"
 #include "klotter/render/shader_resource.h"
 #include "klotter/render/world.h"
-#include "klotter/render/statechanger.h"
+#include "klotter/render/state.h"
 #include "klotter/render/constants.h"
 
 

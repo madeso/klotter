@@ -8,7 +8,7 @@
 #include "klotter/render/geom.h"
 #include "klotter/render/opengl_utils.h"
 #include "klotter/render/renderer.pimpl.h"
-#include "klotter/render/statechanger.h"
+#include "klotter/render/state.h"
 #include "klotter/render/constants.h"
 
 namespace klotter

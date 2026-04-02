@@ -11,7 +11,7 @@
 #include "klotter/render/renderer.pimpl.h"
 #include "klotter/render/shader_resource.h"
 #include "klotter/render/shader.h"
-#include "klotter/render/statechanger.h"
+#include "klotter/render/state.h"
 #include "klotter/render/ui.h"
 #include "klotter/render/camera.h"
 #include "klotter/render/shadow.h"

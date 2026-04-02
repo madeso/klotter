@@ -34,12 +34,7 @@ embed(src_assets
 )
 
 set(src_render
-    klotter/render/rendermode.cc klotter/render/rendermode.h
-    klotter/render/cullface.cc klotter/render/cullface.h
-    klotter/render/blend.cc klotter/render/blend.h
-    klotter/render/compare.cc klotter/render/compare.h
-    klotter/render/stencilaction.cc klotter/render/stencilaction.h
-    klotter/render/opengl_states.cc klotter/render/opengl_states.h
+    klotter/render/state.cc klotter/render/state.h
     klotter/render/render_settings.cc klotter/render/render_settings.h
     klotter/render/material.cc klotter/render/material.h
     klotter/render/world.cc klotter/render/world.h
@@ -47,7 +42,6 @@ set(src_render
     klotter/render/postproc.cc klotter/render/postproc.h
     klotter/render/postproc.internal.cc klotter/render/postproc.internal.h
     klotter/render/shader_resource.cc klotter/render/shader_resource.h
-    klotter/render/statechanger.cc klotter/render/statechanger.h
     klotter/render/fullscreen.cc klotter/render/fullscreen.h
 
     klotter/render/renderer.cc klotter/render/renderer.h

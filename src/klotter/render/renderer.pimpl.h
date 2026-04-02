@@ -1,7 +1,7 @@
 #pragma once
 
 #include "klotter/render/linebatch.h"
-#include "klotter/render/opengl_states.h"
+#include "klotter/render/state.h"
 #include "klotter/render/shader_resource.h"
 #include "klotter/render/world.h"
 
