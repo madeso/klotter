@@ -11,8 +11,8 @@
         </childnode>
       </node>
       <node id="3">
-        <label>src/klotter/pch.private.h</label>
-        <link refid="pch_8private_8h"/>
+        <label>src/klotter/render/opengl_utils.h</label>
+        <link refid="opengl__utils_8h"/>
       </node>
       <node id="1">
         <label>src/klotter/undef_windows.h</label>

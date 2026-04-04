@@ -1265,7 +1265,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="9" column="6" declfile="src/klotter/render/opengl_utils.h" declline="9" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="10" column="6" declfile="src/klotter/render/opengl_utils.h" declline="10" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1ad8e391c995de185fccf27218b510d64c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLenum</type>
@@ -1283,7 +1283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="11" column="8" declfile="src/klotter/render/opengl_utils.h" declline="11" declcolumn="8"/>
+        <location file="src/klotter/render/opengl_utils.h" line="12" column="8" declfile="src/klotter/render/opengl_utils.h" declline="12" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a39a1f0561a351daea1f54fe4668f13b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLuint</type>
@@ -1301,7 +1301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="12" column="8" declfile="src/klotter/render/opengl_utils.h" declline="12" declcolumn="8"/>
+        <location file="src/klotter/render/opengl_utils.h" line="13" column="8" declfile="src/klotter/render/opengl_utils.h" declline="13" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a9d876cb69f1c84348365ee0532e917a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLsizeiptr</type>
@@ -1319,7 +1319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="13" column="12" declfile="src/klotter/render/opengl_utils.h" declline="13" declcolumn="12"/>
+        <location file="src/klotter/render/opengl_utils.h" line="14" column="12" declfile="src/klotter/render/opengl_utils.h" declline="14" declcolumn="12"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a1ca0c6c0baa5f5bef547de0ae2e1b599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>GLsizei</type>
@@ -1337,7 +1337,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="14" column="9" declfile="src/klotter/render/opengl_utils.h" declline="14" declcolumn="9"/>
+        <location file="src/klotter/render/opengl_utils.h" line="15" column="9" declfile="src/klotter/render/opengl_utils.h" declline="15" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6c289ace2f2ad87891be1f0825aa3893" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -1351,7 +1351,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="16" column="5" declfile="src/klotter/render/opengl_utils.h" declline="16" declcolumn="5"/>
+        <location file="src/klotter/render/opengl_utils.h" line="17" column="5" declfile="src/klotter/render/opengl_utils.h" declline="17" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a939548cd29b251463ed344cde014e212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1369,7 +1369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="17" column="6" declfile="src/klotter/render/opengl_utils.h" declline="17" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="18" column="6" declfile="src/klotter/render/opengl_utils.h" declline="18" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a6b9047ff3f4c1bc18394f9404fa00f6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="pch_8public_8h_1a70c1fcc1a4e96af8f6580f708657cd41" kindref="member">u32</ref></type>
@@ -1383,7 +1383,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="19" column="5" declfile="src/klotter/render/opengl_utils.h" declline="19" declcolumn="5"/>
+        <location file="src/klotter/render/opengl_utils.h" line="20" column="5" declfile="src/klotter/render/opengl_utils.h" declline="20" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a17b0082d237f487d14ccf319d15f8e08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1401,7 +1401,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="20" column="6" declfile="src/klotter/render/opengl_utils.h" declline="20" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="21" column="6" declfile="src/klotter/render/opengl_utils.h" declline="21" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a9c262112545baed06ed5325e9796633d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1419,7 +1419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="22" column="6" declfile="src/klotter/render/opengl_utils.h" declline="22" declcolumn="6"/>
+        <location file="src/klotter/render/opengl_utils.h" line="23" column="6" declfile="src/klotter/render/opengl_utils.h" declline="23" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a9bd81ae1288afd6864048084bd7c4c9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>glm::mat4</type>
@@ -1437,7 +1437,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="25" column="11" declfile="src/klotter/render/opengl_utils.h" declline="25" declcolumn="11"/>
+        <location file="src/klotter/render/opengl_utils.h" line="26" column="11" declfile="src/klotter/render/opengl_utils.h" declline="26" declcolumn="11"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a7befceb30fc99ff7fc48cf45778136e9" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1451,7 +1451,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/klotter/render/opengl_utils.h" line="69" column="16" bodyfile="src/klotter/render/opengl_utils.h" bodystart="69" bodyend="71"/>
+        <location file="src/klotter/render/opengl_utils.h" line="70" column="16" bodyfile="src/klotter/render/opengl_utils.h" bodystart="70" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="namespaceklotter_1a3f825575d127751358894415f96c5bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

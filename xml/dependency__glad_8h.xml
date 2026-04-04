@@ -4,7 +4,7 @@
     <compoundname>dependency_glad.h</compoundname>
     <includes local="yes">glad/glad.h</includes>
     <includes refid="undef__windows_8h" local="yes">klotter/undef_windows.h</includes>
-    <includedby refid="pch_8private_8h" local="yes">src/klotter/pch.private.h</includedby>
+    <includedby refid="opengl__utils_8h" local="yes">src/klotter/render/opengl_utils.h</includedby>
     <incdepgraph>
       <node id="1">
         <label>src/klotter/dependency_glad.h</label>
@@ -30,8 +30,8 @@
         </childnode>
       </node>
       <node id="2">
-        <label>src/klotter/pch.private.h</label>
-        <link refid="pch_8private_8h"/>
+        <label>src/klotter/render/opengl_utils.h</label>
+        <link refid="opengl__utils_8h"/>
       </node>
     </invincdepgraph>
     <briefdescription>
