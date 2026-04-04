@@ -525,38 +525,38 @@ ShaderResource load_shaders(const CameraUniformBuffer& desc, const RenderSetting
 
 	return {
 		// todo(Gustav): not really happy with sending "the same" argument twice, loaded_X.program and loaded_X.geom_layout
-		LoadedShader_SingleColor{std::move(loaded_single_color.program), loaded_single_color.geom_layout, desc},
-		LoadedShader_OnlyDepth{
+		.single_color_shader = LoadedShader_SingleColor{std::move(loaded_single_color.program), loaded_single_color.geom_layout, desc},
+		.depth_transform_uniform = LoadedShader_OnlyDepth{
 			TransformSource::Uniform, std::move(loaded_depth_transform_uniform.program),
 			loaded_depth_transform_uniform.geom_layout,
 			desc
 		},
-		LoadedShader_OnlyDepth{
+		.depth_transform_instanced_mat4 = LoadedShader_OnlyDepth{
 			TransformSource::Instanced_mat4,
 			std::move(loaded_depth_transform_instanced_mat4.program),
 			loaded_depth_transform_instanced_mat4.geom_layout,
 			desc
 		},
-		LoadedShader_Skybox{std::move(loaded_skybox_shader.program), loaded_skybox_shader.geom_layout, desc},
-		LoadedShader_Unlit_Container{
+		.skybox_shader = LoadedShader_Skybox{std::move(loaded_skybox_shader.program), loaded_skybox_shader.geom_layout, desc},
+		.unlit_shader_container = LoadedShader_Unlit_Container{
 			loaded_unlit.geom_layout,
 			LoadedShader_Unlit{TransformSource::Uniform, std::move(loaded_unlit.program), desc},
 			LoadedShader_Unlit{TransformSource::Uniform, std::move(loaded_unlit_transparency.program), desc}
 		},
-		LoadedShader_Default_Container{
+		.default_shader_container = LoadedShader_Default_Container{
 			loaded_default.geom_layout,
 			LoadedShader_Default{TransformSource::Uniform, std::move(loaded_default.program), settings, desc},
 			LoadedShader_Default{TransformSource::Uniform, std::move(loaded_default_transparency.program), settings, desc},
 			LoadedShader_Default{TransformSource::Instanced_mat4, std::move(loaded_default_instanced.program), settings, desc}
 		},
-		pp_invert,
-		pp_grayscale,
-		pp_damage,
-		pp_blurv,
-		pp_blurh,
-		pp_realize,
-		pp_extract,
-		pp_ping
+		.pp_invert = pp_invert,
+		.pp_grayscale = pp_grayscale,
+		.pp_damage = pp_damage,
+		.pp_blurv = pp_blurv,
+		.pp_blurh = pp_blurh,
+		.pp_realize = pp_realize,
+		.pp_extract = pp_extract,
+		.pp_ping = pp_ping
 	};
 }
 
