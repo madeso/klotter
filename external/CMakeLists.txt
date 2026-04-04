@@ -145,7 +145,7 @@ add_library(external::glm ALIAS external_glm)
 
 
 ###################################################################################################
-# dear_imgui
+## DearIMGUI
 set(dear_imgui_src
     imgui/imconfig.h
     imgui/imgui_demo.cpp
