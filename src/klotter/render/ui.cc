@@ -2,6 +2,7 @@
 
 #include "klotter/str.h"
 #include "klotter/cint.h"
+#include "klotter/dependency_glad.h"
 
 #include "klotter/render/texture.h"
 

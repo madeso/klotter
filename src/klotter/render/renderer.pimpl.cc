@@ -1,5 +1,7 @@
 ﻿#include "klotter/log.h"
 
+#include "klotter/dependency_glad.h"
+
 #include "klotter/render/fullscreen.h"
 #include "klotter/render/renderer.pimpl.h"
 #include "klotter/render/shader_resource.h"

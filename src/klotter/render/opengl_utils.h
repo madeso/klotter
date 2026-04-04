@@ -1,6 +1,7 @@
 #pragma once
 
 #include "klotter/feature_flags.h"
+#include "klotter/dependency_glad.h"
 
 namespace klotter
 {
